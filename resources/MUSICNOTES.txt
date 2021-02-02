@@ -1,0 +1,275 @@
+$02:C92F - edit and exit menu for testing sfx/music
+
+0x01 - Short beep
+0x02 - Opening something
+0x03 - Closing something
+0x04 - Buzzer
+0x05 - Phone thingy
+0x06 - Quiet boop
+0x07 - Digging like noise
+0x08 - Static
+0x09 - Stairs
+0x0A - Hitting wall
+0x0B - Falling
+0x0C - Rising
+0x0D - Encroaching song
+0x0E - Bibble boop
+0x0F - Stompy crunch
+0x10 - Crunchy stomp
+0x11 - Slash
+0x12 - Hit or something
+0x13 - Glump
+0x14 - Blunt hit
+0x15 - Some kinda fssh
+0x16 - Higher pitch slash?
+0x17 - Some kinda drum hit
+0x18 - Machine gun?
+0x19 - Some kinda bass drum?
+0x1A - Some kinda shoot?
+0x1B - Sad explosion
+0x1C - Fire?
+0x1D - Soft static
+0x1E - RPG
+0x1F - Fufwoosh
+0x20 - Telekinetic abduction idk
+0x21 - Healing?
+0x22 - Dying or something
+0x23 - Aliving
+0x24 - Not nothing TODO
+0x25 - Not nothing TODO
+0x26 - Not nothing TODO
+0x27 - Nothing
+0x28 - Nothing
+0x29 - Nothing
+0x2A - Fwooshy slashy
+0x2B - Same as SFX0A but has unreachable data
+0x2C - Zigzaggy
+0x2D - Grmp
+0x2E - Kirby swallowing an enemy
+0x2F - Some sad teleport
+0x30 - Slap
+0x31 - Fat quiet teleport
+0x32 - UFO
+0x33 - UFO street race
+0x34 - UFO take off
+0x35 - UFO shooting you
+0x36 - Nothing
+0x37 - Nothing
+0x38 - "Demon Appears"
+0x39 - "Demon Appears" with a noise
+0x3A - "Demon Appears" with a static noise
+0x3B - "Demon Appears" with a slash noise
+0x3C - "Battle"
+0x3D - "Level Up"
+0x3E - Nothing
+0x3F - "Demon Appears" with a bloop
+0x40 - Whatever is in $7000
+0x41 - Nothing
+0x42 - "Demon Appears" with a mean noise
+0x43 - "Demon Appears" with an explosion
+// below here, APU needs to load stuff
+0x44 - "Jakyou"
+0x45 - "Law"
+0x46 - "Chaos"
+0x47 - "Neutral"
+0x48 - "Ginza"
+0x49 - "Cathedral"
+0x4A - "Shibuya"
+0x4B - "Shitenou's Lair"
+0x4C - "Embassy"
+0x4D - "Arcade"
+0x4E - "Kichijoi"
+0x4F - "Ruins"
+0x50 - "Shop"
+0x51 - "Boss Battle"
+0x52 - "Dream"
+0x53 - "Home"
+0x54 - "Pascal's Theme"
+0x55 - Unused song
+0x56 - "Game Over"
+0x57 - "Terminal"
+0x58 - "Epilogue"
+0x59 - "Ginza"
+0x5A - "Ginza"
+0x5B - "Ginza"
+0x5C - "Ginza"
+0x5D - "Title" - opening
+0x5E - Title screen
+0x5F - "Ending"
+0x60 - Null pointer crash
+0x61 - level up again?
+0x62+ invalid pointers
+
+what's at $7000?
+
+music engine at $0300
+
+Sample pointers: $2000
+Track pointers at $7800
+
+If Size.15==0 then
+	if Size.14==0 then
+		address = $7800
+	else
+		address = $7000
+else
+	Write to samples table and samples
+
+Package					Data loc		Loop		Size
+00			0CB508		------			$0300*		$3795
+
+There's 2 songs here
+Jakyou
+01			0C8184		0C82CC			$0000		$036F
+						0CA1E3			$0000		$0044	($4044)
+						0DAA3A			$0009		$0090	($8090)
+						0DA90D			$001B		$0129	($8129)
+
+Law
+02			0C8196		0C863F			$0000		$0126
+						0DBDD9			$001B		$1CD4	($9CD4)
+						0DDAB1			$001B		$1074	($9074)
+
+Chaos
+03			0C81A4		0C8769			$0000		$0069
+						0DBDD9			$001B		$1CD4	($9CD4)
+						0DDAB1			$001B		$1074	($9074)
+
+Neutral
+04			0C81B2		0C87D6			$0000		$0092
+						0DBDD9			$001B		$1CD4	($9CD4)
+
+Ginza
+22
+23
+24
+25
+05			0C81BC		0C886C			$0000		$0446
+						0D88E4			$001B		$0129	($8129)
+						0D883E			$001B		$00A2	($80A2)
+
+Cathedral
+06			0C81CA		0C8CB6			$0000		$0113
+						0DBDD9			$001B		$1CD4	($9CD4)
+
+Shibuya
+07			0C81D4		0C8DCD			$0000		$016A
+						0DB353			$057C		$068A	($868A)
+						0DBDD9			$001B		$1CD4	($9CD4)
+						0DB9E1			$02EB		$03BA	($83BA)
+
+Shitenou
+08			0C81E6		0C8F3B			$0000		$0128
+						0DA774			$001B		$0195	($8195)
+		0DBDD9			$001B		$1CD4	($9CD4)
+
+Embassy
+09			0C81F4		0C9067			$0000		$00A6
+						0D8A11			$0009		$0051	($8051)
+
+Arcade
+10			0C81FE		0C9111			$0000		$0216
+						0D8000			$03F0		$083A	($883A)
+						0DA774			$001B		$0195	($8195)
+
+Kichijoi
+11			0C820C		0C932B			$0000		$012E
+						0DB1C8			$001B		$0129	($8129)
+						0E8000			$001B		$23B8	($A3B8)
+
+Ruins
+12			0C821A		0C945D			$0000		$06DE
+						0D8A11			$0009		$0051	($8051)
+						0DA774			$001B		$0195	($8195)
+
+Shop
+13			0C8228		0C9B3F			$0000		$01E7
+						0DB2F5			$001B		$005A	($805A)
+						0DEB29			$0249		$02D0	($82D0)
+
+Boss
+14			0C8236		0C9D2A			$0000		$02AC
+						0D8A66			$1D0A		$1D0A	($9D0A)
+						0DB353			$057C		$068A	($868A)
+
+Dream
+15			0C8244		0CA08D			$0000		$00CB
+
+Home
+16			0C824A		0CA22B			$0000		$0342
+						0D8000			$03F0		$083A	($883A)
+						0D8A11			$0009		$0051	($8051)
+
+Pascal
+17			0C8258		0CA571			$0000		$012D
+						0D8A11			$0009		$0051	($8051)
+						0DA774			$001B		$0195	($8195)
+
+CyborgKiller
+18			0C8266		0CA6A2			$0000		$0199
+						0EA3BC			$001B		$01B0	($81B0)
+						0D8A66			$1D0A		$1D0A	($9D0A)
+
+Game Over
+19			0C8274		0CA83F			$0000		$01F8
+						0D8000			$03F0		$083A	($883A)
+						0DBDD9			$001B		$1CD4	($9CD4)
+
+Terminal
+20			0C8282		0CAA3B			$0000		$0076
+
+Epilogue
+21			0C8288		0CB157			$0000		$03AD
+						0DBDD9			$001B		$1CD4	($9CD4)
+						0DDAB1			$001B		$1074	($9074)
+						0D8000			$03F0		$083A	($883A)
+						0DA774			$001B		$0195	($8195)
+
+Opening
+26			0C829E		0C9FDA			$0000		$00AF
+						0DBDD9			$001B		$1CD4	($9CD4)
+
+Title screen
+27			0C82A8		0CA15C			$0000		$0083
+						0DAACE			$05E8		$06F6	($86F6)
+
+Ending
+28			0C82B2		0CAAB5			$0000		$069E	($469E)
+						0D8000			$03F0		$083A	($883A)
+						0D8A11			$0009		$0051	($8051)
+						0DB9E1			$02EB		$03BA	($83BA)
+						0DBDD9			$001B		$1CD4	($9CD4)
+						0DA774			$001B		$0195	($8195)
+
+Always loaded samples:
+Sample	Name			Address		Start	End		Loop				Size
+$00		Bass drum		$0CD24C		$2040	$2883	$2883 ($0843)		$0843
+$01		Snare drum		$0CDA8F		$2883	$3489	$3489 ($0C06)		$0C06
+$02		Wobbly sine		$0CE695		$3489	$36C9	$34A4 ($001B)		$0240
+$03		Sine A			$0CE8D5		$36C9	$36FF	$36E4 ($001B)		$0036
+$04		Grunge A		$0CE90B		$36FF	$38AF	$371A ($001B)		$01B0
+$05		Buzzer			$0CEABB		$38AF	$3951	$38CA ($001B)		$00A2
+$06		Grungy buzz		$0CEB5D		$3951	$39F3	$396C ($001B)		$00A2
+$07		Organ A			$0CEBFF		$39F3	$3A95	$3A0E ($001B)		$00A2
+
+Arbitrary samples: (start at $3A95; pointers at $2020)
+Address						Loop size	File size
+$0D8000		Horn thing		$03F0		$083A
+$0D883E		Thick buzz		$001B		$00A2
+$0D88E4		Grunge B		$001B		$0129
+$0D8A11		Whiny buzz		$0009		$0051
+$0D8A66		Orchestra hit	$1D0A		$1D0A
+$0DA774		Sine B			$001B		$0195
+$0DA90D		Thick Organ		$001B		$0129
+$0DAA3A		Organ B			$0009		$0090
+$0DAACE		Grunge Organ	$05E8		$06F6
+$0DB1C8		Grunge C		$001B		$0129
+$0DB2F5		Buzzer B		$001B		$005A
+$0DB353		Slap bass		$057C		$068A
+$0DB9E1		Some drum		$02EB		$03BA
+$0DBDD9		Choir A			$001B		$1CD4
+$0DDAB1		Choir B			$001B		$1074
+$0DEB29		Grungy buzz B	$0249		$02D0
+$0E8000		Breathy vox		$001B		$23B8
+$0EA3BC		Grunge D		$001B		$01B0
+$0DBD9F		High buzz		$001B		$0036	(unused)

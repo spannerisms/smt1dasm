@@ -1,0 +1,100 @@
+pointers at 01ec22
+branch0F
+EXIT_
+fd0ea
+
+c3b8
+
+
+0C814C
+
+00c872 - controller dpad stuff
+
+
+some data at 07e78a
+07eec6
+routines to analyze:
+008f7e
+
+
+FD3ED - cursor gfx
+fdafc - font gfx
+0FE800+ graphics something
+
+00a232
+0384F5
+0385e9
+03825B
+03837c
+03957A
+00ba70
+03861d
+00a71e
+00B4E1
+00bb1c
+00c409
+02c98f
+009643
+
+018aa7
+
+0f9f97 putting addresses places??
+
+03c515->03b134
+
+038602
+	Y = A & 0x07
+	X = A>>3
+	Set bit Y in $07C0, X
+038301
+	Sets C0 to be a pointer to the start of banks 8,9,A, or B
+	Then uses that to set up a pointer from the start of the bank
+
+0FDEBE tile maps?
+
+00B652
+00B779 does some indexing of bank 07
+	following routines, seems gfx related
+music related routines:
+00C197
+00C91A
+00CB52
+00CBBF
+00CE07
+00CE6E
+00CFA2
+00D082
+00D15E
+00D304
+02813F
+028156
+0296EB
+029E97
+029FCC
+02A10D
+02A51F
+02C8E9
+02CA4B
+02CE87
+02D0B8
+02D7C0
+02D9DF
+02DA8C
+02DB45
+02DB59
+check bank03
+
+
+
+check bank0C code
+routine tracker:
+
+data to mark
+
+; are these pointers for more data? 038301
+088000
+098000
+0a8000
+0b8000
+
+03a09d

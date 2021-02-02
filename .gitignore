@@ -1,0 +1,5 @@
+*.sfc
+*.lnk
+*.jar
+test/*
+bin/*

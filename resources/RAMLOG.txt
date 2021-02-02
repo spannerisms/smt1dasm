@@ -1,0 +1,338 @@
+$00[0x20] - used every frame for something
+
+$80[0x3] - indirect reads from bank07?
+$90[0x3] - used to hold pointers for music data
+$94[0x2] - holds address of music transfer
+$96[0x2] - holds size of data transfer
+$9E[0x2] - oam stuff?
+$C0[0x3] - used for indirect loads
+$C3[0x3] - used for secondary text reading
+$E0 - used for indirect addressing a lot
+
+$0100[0x02] - Number of DMAs to do
+$0102[0x02] - location to write to
+$0104[0x02] - Size of transfer
+$0106[0x0210] - arb dma data
+
+$0400[0x100] - mirror of SRAM 70:X700 story stuff mostly it seems
+
+$0450 caches controller input for parsing
+$0460 used to index a jump table
+$0468 used for a jump at one point
+
+$0500[0x2] - used with demon stats? number of combatants?
+$0502[0x2] - Seems to be index of demon into stats table at $1000
+$050A[?] - 2 byte demon ids
+$0512[0x2] - 
+$0514[0x2] - 
+
+$052A[0x2] - seems to be battle mode flags?
+	ORA $2000 whe escaping?
+
+$0564[0x2] - something loading demons?
+$0578 - number of max stat points
+
+$0688 - inventory page
+$068A - inventory buffer position
+$0690 - used for jumps but also compared against things???
+
+$06A0[0x40] - Buffer for listing items
+$06E4[0x01] - holds cursor row at least once
+
+$0700[0x100] - mirror of SRAM 70:X000 inventory in some fashion
+
+text stuff?
+$0900[0x40] - words to write for text?
+$0940[0x40] - another text buffer? maybe for accents and such?
+$0980[0x2] - contains $0A33 +4 at one point for caching
+
+$098C[0x40??] - buffer for rearranging items
+
+$09F0[0x2] - inventory buffer offset? (in high byte)
+$09F2[0x1] - Column of cursor when selecting in menu
+$09F3[0x1] - Row of cursor when selecting in menu
+$09F4[0x1] - something with menus
+		0x8B seems to be for character selection
+		0x8C in stat selection??
+		0x8D seems to be for spell/item selection
+
+$09F8[0x1] - something menu
+
+
+$0A24[0x2] - holds index for which bank to look at
+$0A26[0x2] - holds info for findings pointers in banks 8,9,A,B
+$0A2C[0x1] - top byte of tile value for writing text?
+$0A33[0x2] - flag for whether to call 039653 in some cases; text?
+$0A33[0x1] - position counter for text?
+$0A3C[0x1] - if 1, text commands are +0x60
+$0A3E[0x2] - caches spell offsets at one point
+$0A50[0x1] - Used when adding an item to inventory
+$0A51[0x1] - Used when removing an item
+		0x00       search inventory
+		0x01-0x7F  take from slot
+		0x80-0xFF  search specific character's equipment
+
+$0A52[0x1] - caches spell selection at one point
+$0A58[0x1] - Flag for adding/removing items to/from inventory; FF = failure
+
+$0A71 - holds stuff
+$0A72 - holds stuff
+$0A73[0x1] - used for indexing a loop in bank02
+$0A74[0x1] - $0A73 resets at this value?
+$0A75[0x4] - some value for X
+$0A79[0x4] - some value
+
+$0B00[0x2] - X OAM coordinate of OW pin
+$0B02[0x2] - Y OAM coordinate of OW pin
+
+$0B04[0x2] - X Coordinate on OW (different from SRAM; steps of 2)
+$0B06[0x2] - Y Coordinate on OW (different from SRAM; steps of 2)
+
+$0B08[0x2] - X Camera stuff on OW
+$0B0A[0x2] - Y Camera stuff on OW
+
+$0B0C[0x2] - X Camera calculation stuff on OW
+$0B0E[0x2] - Y Camera calculation stuff on OW
+
+$0B14[0x1] - something for different overworld input stuff?
+
+$0B16[0x1] - overworld movement index values
+
+
+$0B19[0x2] - Caches OW camera coord X
+$0B1B[0x2] - Caches OW camera coord Y
+
+$0B21[0x8] - something with overworld tile types
+$0B2A[0x1] - saves the above
+
+$0B2D[0x1] - some frame counter
+
+$0B32[0x2] - mirror of $04B0?
+$0B34[0x1] - Step counter for changing moon phase (at least in OW)
+
+$0B38[0x1] - Cycles 0,2,4,6
+$0B39[0x1] - Counter for $03B8 [0-7]
+$0B3A[0x1] - Step for idle hud;
+	FF - nothing
+	01 - drop and draw money
+	02 - done and draw MAG
+
+$0B3B[0x1] - Counts up when idle for showing stuff after 2s (0x77)
+
+$0BE?-$0BFF - Some set of stuff?
+
+$0C5C[0x2] - VRAM address used for overworld HUD
+$0CC6[?] - Text buffer used for overworld HUD
+
+$0CFF[0x2] - idk but seems to cap at $0168
+
+$0D11[0x2] - VRAM code address
+$0D15[0x2] - some counter for X in intro
+$0D19[0x1] - used in intro to flag skippable stuff
+
+$0E02[0x2] - Offset in SRAM for where to write
+$0E04[0x2] - Save file ID? 0 or 1
+
+$0E00[0x20?] - scratch data for random shit
+$0E10[0x8?] - used for multiplication in bank03
+	E10 * E12 -> X
+	E10 * E13 -> Y
+	Yl + Xh -> Z
+	E11 * E12 -> W
+	Wl + Zl -> T[0x3]
+	E11 * E13 -> M
+	Ml + Tm -> Tm
+	Mh + Th -> Th
+
+
+$0E80 - used for tracking offsets in equipment stat routines; scratch
+
+$0E8A - used for debug? timer with menus
+$0E8C[0x2] - VRAM address of top cursor position?
+
+$0E9A[0x2] - has current position for menu
+$0E9C[0xA] - up to 5 steps of $0E9A cached
+
+$0EA8[0x2] - max position in menu
+$0EAA[0xA] - up to 5 steps of $0EA8 cached
+
+$0EB6[0x2] - has previous position for menu
+$0EB8[0xA] - up to 5 steps of $0EB8 cached
+
+$0EC4[0x2] - Char count (low) and tile props (high)
+$0EC6[0xA] - up to 5 steps of $0EC4 cached
+
+$0ED2[0x2] - Step counter for nesting menus
+
+$0ED5[0x5] - Used for RNG
+
+$0EF1 - scratch? holds a vram address for cardinal direction; also used for cursor
+$0EF5 - timer for cursor blink; counts down from 0x10
+$0EF6 - controls under "cursor" blink; $00 = on | $80 = off
+
+$0EFB - scratch space? holds top byte of tiles when doing equip text
+
+$0F00 - mirror of $4200
+$0F06 - cache of $420B for later?
+$0F0E - flag for updating BG scroll?
+$0F0E - some number of addresses used to cache HDMA values it seems
+$0F0F[0x20] - 4 HDMA properties
+
+h: BYsS UDLR
+l: AXlr 0000
+$0F2B - Filtered joypad 1 input - ($0F2D AND $0F2F) EOR $0F2D
+$0F2D - Joypad 1 input ($4218)
+$0F2F - Previous frame joypad 1 input
+
+$0F31 - Filtered joypad 2 input - ($0F33 AND $0F35) EOR $0F33
+$0F33 - Joypad 2 input ($421A)
+$0F35 - Previous frame joypad 2 input
+
+$0F44 - mirror of OBSEL
+$0F45 - mirror of BGMODE
+$0F46 - mirror of MOSAIC
+$0F47 - mirror of BG1SC
+
+
+$0F48 - mirror of BG2SC
+$0F49 - mirror of BG3SC
+$0F4A - mirror of BG4SC
+$0F4B - mirror of BG12NBA
+$0F4C - mirror of BG23NBA
+$0F4D[0x2] - mirror of BG1HOFS
+$0F4F[0x2] - mirror of BG1VOFS
+$0F51[0x2] - mirror of BG2HOFS
+$0F53[0x2] - mirror of BG2VOFS
+
+a lot of $0F4x+ seems to mirror $21XX, fill in later
+look at routine 02987B
+
+$0F77 - SUBDES for IRQ?
+$0F7C - CGADSUB for IRQ?
+$0F7E - NMI flag (bit 7); also flags whether to transfer OAM
+$0F81 - seems to flag IRQ?
+$0F83 seems to hold the APU port for writing with routine in bank0C
+$0F84[0x4] - mirrors of apu ports i guess
+
+
+$0F88[0x2] - caches size of music transfer
+$0F8A[0x2] - caches size of music transfer
+$0F8C[0x2] - bytes remaining in music transfer
+
+$0FC0[0x10] - used for updating underworld tilemap; counters mostly?
+$0FC4[0x2] - used to index $04E95A
+$0FC6[0x2] - used to index $04E95A
+
+$1000[0x600] - mirror of SRAM $70:X100
+$1600[0x60] - demon stats similar layout to player stats
+	0x60 per demon?
+	$1600[0x2] - always $8000?
+	$1602[0x2] - always $0000?
+	$1604[0x2] - ID (0x100+ seems to mean boss battle)
+	$1606[0x2] - 
+	$1608[0x2] - 
+	$160A[0x2] - Level
+	$160C[0x2] - 
+	$160E[0x2] - 
+
+	$1610[0x2] - STR
+	$1612[0x2] - MAG
+	$1614[0x2] - INT
+	$1616[0x2] - STM
+	$1618[0x2] - SPD
+	$161A[0x2] - LUK
+	$161C[0x2] - STAT_11C
+	$161E[0x2] - Nothing
+
+	$1620[0x2] - Nothing
+	$1622[0x2] - Power
+	$1624[0x2] - Accuracy
+	$1626[0x2] - Defense
+	$1628[0x2] - Evade
+	$162A[0x2] - M.Power
+	$162C[0x2] - M.Effect
+	$162E[0x2] - HP Current
+
+	$1630[0x2] - HP Max
+	$1632[0x2] - MP Current
+	$1634[0x2] - MP Max
+	$1636[0x2] - 
+	$1638[0x2] - 
+	$163A[0x2] - 
+	$163C[0x2] - 
+	$163E[0x2] - Move 1
+
+	$1640[0x2] - Move 2
+	$1642[0x2] - Move 3
+	$1644[0x2] - 
+	$1646[0x2] - 
+	$1648[0x2] - 
+	$164A[0x2] - CP
+	$164C[0x2] - 
+	$164E[0x2] - Nothing
+
+gonna call these vectors or some shit
+$1900 - 2 properties for different jump garbage; seems to shuffle around a lot
+$1900[0x04] - Banks of pointers for jumps
+$1904[0x04] - DB of pointers for jumps
+$1908[0x04] - Processor flags to OR in for jumps
+$190C[0x08] - return addresses cached when using vectors
+$1914[0x08] - Stack pointers
+$191C[0x1] - current routine step?? seems to max at 4
+$191E[0x3] - used for indirect jml
+$1921[0x2] - caches stack before vector stuff
+$1925[0x1] - max vector step
+$1926[0x1] - something to do with updating HDMAs from WRAM
+$1927[0x1] - something to do with updating HDMAs from WRAM
+
+$1946 - oam indexing?
+$1947 - address?
+$1956
+
+
+$1A00[0x40] - some array of addresses in bank06
+
+only changed when $0400 is 0x80+; routine 00d3f9
+$1A00[0x1] - holds stuff after using dpad in underworld
+	0x80 - move forward
+	0x90 - turn right
+	0x80 - turn left
+	0x90 - turn around
+
+
+; Static table, never changes, probably to do with OAM
+$1B20[0x40] - idk yet? initted with 0000-01E8
+
+$7E:2000[0x220] - OAM buffer
+
+$7E:2220[0x???] - Seems to modify arbitrary VRAM characters' palettes
+	Seems to take a character and 
+	$2220 is counter?
+	format is?:
+		Address[0x2] - (cached in 1926)
+		Tiles[0x2] - number of consecutive tiles after first one
+
+$7E:22FD something with arbitrary CGRAM writes?
+	$22FD - decremented until 0, seems to be a count of CGRAM transfers
+	format seems to be:
+	CGRAM index[0x1], No. colors to transfer[0x1], col0[0x2], col1[0x2]...
+
+$7E:2300[0x100] - copy of CGRAM?
+$7E:2500[0x100] - CGRAM buffer
+
+$7E:2700[0x43] - BG3 HDMA table
+$7E:2800[0x100] - HDMA table
+
+$7E:3000[0x400] - mirror of SRAM $70:X800
+$7E:3400[0x100] - mirror of SRAM $70:XC00
+$7E:3500[0x100] - mirror of SRAM $70:XD00
+
+$7E:8000[0x???] - OW tilemap something
+$7E:B000[0x???] - OW tilemap something
+$7E:D000[0x???] - Overworld tiles32
+
+$7E:FFE0[0x13] - "programming by cozy!" - checksum for the wram check?
+$7E:FFFE[0x2] - zeroed for some reason on init?
+
+$7F:5000[0x380] - set to all 0x09B4 at some point
+$7F:5800[0x380] - set to all 0x09B4 at some point

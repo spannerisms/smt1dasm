@@ -1,0 +1,110 @@
+SRAM at 70:0000
+Game 2 SRAM 70:1000
+
+SRAM	WRAM		SIZE
+------------------------------------------------------------
+$x000	$7E:0700	0x100
+------------------------------------------------------------
+$x000	$7E:0700	0x0C	Slots for characters?
+$x00C	$7E:070C	2		Underworld oordinates
+$x00E	$7E:070E	2		IDK coordinates of some kind?
+$x015	$7E:0715	1		Current character's offset into stats
+
+$x020	$7E:0720	?		Some sort of offset I say
+
+$x060	$7E:0760	1		Number of stat points left to distribute
+
+$x064	$7E:0764	12		Copy of $1010 before distribution
+$x070	$7E:0770	12		Copy of $1036 before distribution
+
+$x080	$7E:0780	0x40	Inventory items
+
+$x0C0	$7E:07C0	0x20	Game progress flags
+
+$x0EE	$7E:07EE	1		Mirror of moon phase in $70:x70F?
+
+$x0F5	$7E:07F5	1		Overworld X coordinate
+$x0F6	$7E:07F6	1		Overworld Y coordinate
+
+------------------------------------------------------------
+$x100	$7E:1000	0x600
+------------------------------------------------------------
+$x102	$7E:1002	2		Combat status
+$x104	$7E:1004	2		Spell address offset?
+$x108	$7E:1008	2		???
+$x10A	$7E:100A	2		MC Level
+$x10C	$7E:100C	4		MC XP
+$x110	$7E:1010	2		MC STR
+$x112	$7E:1012	2		MC INT
+$x114	$7E:1014	2		MC MAG
+$x116	$7E:1016	2		MC STM
+$x118	$7E:1018	2		MC SPD
+$x11A	$7E:101A	2		MC LUK
+$x11C	$7E:101C	2		STAT_11C
+
+$x11E	$7E:101E	2		MC Swd Power
+$x120	$7E:1020	2		MC Swd Accur
+$x122	$7E:1022	2		MC Gun Power
+$x124	$7E:1024	2		MC Gun Accur
+
+$x126	$7E:1026	2		MC Defense
+$x128	$7E:1028	2		MC Evade
+$x12A	$7E:102A	2		MC M. Power
+$x12C	$7E:102C	2		MC M. Effect
+
+$x12E	$7E:102E	2		MC HP Current
+$x130	$7E:1030	2		MC HP Max
+$x132	$7E:1032	2		MC MP Current
+$x134	$7E:1034	2		MC MP Max
+
+$x136	$7E:1036	2		MC STR bonus
+$x138	$7E:1038	2		MC INT bonus
+$x13A	$7E:103A	2		MC MAG bonus
+$x13C	$7E:103C	2		MC STM bonus
+$x13E	$7E:103E	2		MC SPD bonus
+$x140	$7E:1040	2		MC LUK bonus
+
+$x142	$7E:1042	2		MC Swd equip
+$x144	$7E:1044	2		MC Gun equip
+$x146	$7E:1046	2		MC Ammo equip
+$x148	$7E:1048	2		MC Head equip
+$x14A	$7E:104A	2		MC Body equip
+$x14C	$7E:104C	2		MC Arm equip
+$x14E	$7E:104E	2		MC Leg equip
+
+$x158	$7E:1058	2		Action?
+
+
++0x60 for next character
+
+------------------------------------------------------------
+$x700	$7E:0400	0x100
+------------------------------------------------------------
+$x704	$7E:0404	1		Something that does something battle
+$x705	$7E:0405	4		Money
+$x709	$7E:0409	4		MAG
+$x70D	$7E:040D	1		Current direction
+$x70E	$7E:040E	1		Previous direction
+$x70F	$7E:040F	1		0xMS - M moon phase, S steps /15
+$x710	$7E:0410	8		Chase name
+$x718	$7E:0418	8		Momo name
+$x720	$7E:0420	8		Jimmy name
+$x728	$7E:0428	8		"him" name
+
+$x750	$7E:0450	1		Last turn/move? 1 right, 2 left, 3 turnaround
+$x751	$7E:0451	1		Frame counter
+
+$x75B	$7E:04B0	2		Some OW movement counter; caps at 1000
+
+------------------------------------------------------------
+$x800	$7E:3000	0x400
+------------------------------------------------------------
+Probably visited map squares
+
+------------------------------------------------------------
+$xC00	$7E:3400	0x100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$xD00	$7E:3500	0x100
+------------------------------------------------------------
