@@ -80,9 +80,9 @@ endmacro
 !DSP_CTRL_ROM = $80 ; Reading $FFC0-$FFFF is ROM
 !DSP_CTRL_RAM = $00 ; Reading $FFC0-$FFFF is RAM
 
-;===============================================================================
+;===================================================================================================
 ; Song parsing
-;===============================================================================
+;===================================================================================================
 !HEADERCOMMAND_F0_RESET_DSP = $F0
 !HEADERCOMMAND_F1_SET_CONTROL = $F1
 !HEADERCOMMAND_F2_SET_B3 = $F2
@@ -118,9 +118,9 @@ endmacro
 !SFX_CHANNEL_6 = $0E
 !SFX_CHANNEL_7 = $0F
 
-;===============================================================================
+;===================================================================================================
 ; 
-;===============================================================================
+;===================================================================================================
 !TRACKCOMMAND_C0_ChangeTimer0         = $C0
 !TRACKCOMMAND_C1_Nothing              = $C1
 !TRACKCOMMAND_C2_PitchBend_Off        = $C2
@@ -190,9 +190,9 @@ endmacro
 !PITCH_SHIFT_LOOP_POINT = $80
 !PITCH_SHIFT_DO_LOOP = $81
 
-;===============================================================================
+;===================================================================================================
 ; Notes
-;===============================================================================
+;===================================================================================================
 C2	= $00
 Cs2	= $01
 Df2	= $01
@@ -283,7 +283,7 @@ Cf6	= $2F
 R	= $30
 TIE = $31
 
-;===============================================================================
+;===================================================================================================
 ArbSong_7000 = $7000
 ArbSong_7800 = $7800
 
@@ -316,15 +316,14 @@ Channel_Loop_A_Hi = $80 ; [16]
 Channel_Loop_B_Lo = $90 ; [16]
 Channel_Loop_B_Hi = $A0 ; [16]
 
-FLAGS_B0 = $B0
 ; 7... .21.
 ; 1 - working with SFX atm?
 ;     echo related too?
 ; 2 - busy? set when mvol fade
 ; 7 - idk set when track byte not 30 or 31
 ;     prevents KON
+FLAGS_B0 = $B0
 
-DSP_PERMISSION = $B1 ; something to do with which channel types are playing?
 ; .... .210
 ; 0 - for control register?
 ; 1 - seems to prevent any DSP channel changes
@@ -335,14 +334,15 @@ DSP_PERMISSION = $B1 ; something to do with which channel types are playing?
 ;     prevents noise writes
 ; 2 - seems to be set when music channel is active
 ;     prevents KON
+DSP_PERMISSION = $B1 ; something to do with which channel types are playing?
 
-PerformFlags = $B2
 ; .654 .2.0
 ; 0 - pitch bend it seems
 ; 2 - ??? can be set by commands
 ; 4 - seems cleared but never tested for
 ; 5 - KOFF channel? idk clear when track byte not 30 flag for koff?
 ; 6 - set when preset pitch shifting allowed
+PerformFlags = $B2
 
 FLAGS_B3 = $B3 ; seems completely unused
 

@@ -6,6 +6,7 @@ math pri on
 org $808000
 table "textcharmap.txt"
 incsrc "registers.asm"
+incsrc "macros_and_functions.asm"
 incsrc "defines.asm"
 incsrc "spcdefines.asm"
 incsrc "kana.asm"
