@@ -231,7 +231,7 @@ data0381BC:
 #_0381C4: dw $00C1,$00CC,$0101,$010C
 #_0381CC: dw $0141,$014C,$0181,$018C
 
-routine0381D4:
+TextExtCMD_74:
 #_0381D4: SEP #$20
 #_0381D6: LDA.w $07E1
 #_0381D9: STA.w $0C4E
@@ -248,11 +248,15 @@ routine0381DC:
 #_0381F3: JSR WriteTextIndexW0A39
 #_0381F6: RTS
 
-routine0381F7:
+;===================================================================================================
+
+TextExtCMD_5D:
 #_0381F7: JSL routine02CDBC
 #_0381FB: JSL routine02CE87
 #_0381FF: JSL routine0F84F6
 #_038203: RTS
+
+;===================================================================================================
 
 routine038204:
 #_038204: PHP
@@ -326,6 +330,8 @@ Update19XXuntil0100:
 #_038275: PLP
 #_038276: RTL
 
+;===================================================================================================
+
 routine038277:
 #_038277: PHP
 #_038278: REP #$30
@@ -390,7 +396,12 @@ routine0382C2:
 #_0382D6: AND.w #$00FF
 #_0382D9: ASL A
 #_0382DA: TAX
-#_0382DB: LDA.w TextDataBankStarts,X
+
+; TODO WTF this tends to read from bank 07 when called via some menus
+; Making this, generally, open bus then
+; it doesn't matter, as it shortly thereafter reads the correct values
+; in bank03 when called again
+#_0382DB: LDA.w TextDataBankStarts,X 
 #_0382DE: STA.w $00C0
 #_0382E1: LDA.w $0A24
 #_0382E4: AND.w #$00FF
@@ -409,8 +420,11 @@ routine0382C2:
 #_0382FB: PLA
 #_0382FC: RTS
 
+;===================================================================================================
+
 RelocateTextPointer_long:
 #_0382FD: JSR RelocateTextPointer
+
 #_038300: RTL
 
 ;===================================================================================================
@@ -471,6 +485,10 @@ routine03834C:
 #_038351: PLB
 #_038352: BRA .branch0383C4
 
+;===================================================================================================
+; Used for TALK in COMBAT
+; 
+;===================================================================================================
 routine038354:
 #_038354: PHP
 #_038355: SEP #$20
@@ -494,7 +512,7 @@ routine038354:
 #_038377: JSR routine0382C2
 #_03837A: BRA .branch038358
 
-routine03837C:
+#routine03837C:
 #_03837C: PHP
 #_03837D: SEP #$20
 #_03837F: STZ.w $0A3C
@@ -600,106 +618,113 @@ data038423:
 
 ; TODO unmerge higher text commands
 TextCommands:
-#_038425: dw TextCommand_00_SetProgressBit
-#_038427: dw TextCommand_01_ClearProgressBit
-#_038429: dw TextCommand_02
-#_03842B: dw TextCommand_03_RelocateTextPointer
-#_03842D: dw TextCommand_04
-#_03842F: dw TextCommand_05_WriteToAPU
-#_038431: dw TextCommand_06
-#_038433: dw TextCommand_07
-#_038435: dw TextCommand_08
-#_038437: dw TextCommand_09_CheckYENForNextMessage
-#_038439: dw TextCommand_0A_GiveMoney
-#_03843B: dw TextCommand_0B_CheckMAGForNextMessage
-#_03843D: dw TextCommand_0C_AddMAG
-#_03843F: dw TextCommand_0D_CheckInventoryForItem
-#_038441: dw TextCommand_0E
-#_038443: dw TextCommand_0F
-#_038445: dw TextCommand_10_SetSpellMaybe
-#_038447: dw TextCommand_11
-#_038449: dw TextCommand_12
-#_03844B: dw TextCommand_13
-#_03844D: dw TextCommand_14_LoadDemonData
-#_03844F: dw TextCommand_15
-#_038451: dw TextCommand_16
-#_038453: dw TextCommand_16
-#_038455: dw TextCommand_18
-#_038457: dw TextCommand_19
-#_038459: dw TextCommand_1A
-#_03845B: dw TextCommand_1B
-#_03845D: dw TextCommand_1C
-#_03845F: dw TextCommand_1D_WriteMomoName
-#_038461: dw TextCommand_1E_WriteJimmyName
-#_038463: dw TextCommand_1F_Write_him_Name
-#_038465: dw TextCommand_20_WriteChaseName
-#_038467: dw TextCommand_21
-#_038469: dw TextCommand_22
-#_03846B: dw TextCommand_23
-#_03846D: dw TextCommand_24
-#_03846F: dw TextCommand_25
-#_038471: dw TextCommand_26
-#_038473: dw TextCommand_27_RNGDecision
-#_038475: dw TextCommand_28
-#_038477: dw TextCommand_29
-#_038479: dw TextCommand_2A
-#_03847B: dw TextCommand_2B
-#_03847D: dw TextCommand_2C
-#_03847F: dw TextCommand_2D
-#_038481: dw TextCommand_2E
-#_038483: dw TextCommand_2F
-#_038485: dw TextCommand_30
-#_038487: dw TextCommand_31
-#_038489: dw TextCommand_32
-#_03848B: dw TextCommand_33
-#_03848D: dw TextCommand_34
-#_03848F: dw TextCommand_35
-#_038491: dw TextCommand_36
-#_038493: dw TextCommand_37
-#_038495: dw TextCommand_38
-#_038497: dw TextCommand_39
-#_038499: dw TextCommand_2E
-#_03849B: dw TextCommand_3B
-#_03849D: dw TextCommand_3C
-#_03849F: dw TextCommand_3D
-#_0384A1: dw TextCommand_3E
-#_0384A3: dw TextCommand_3F
-#_0384A5: dw TextCommand_40
-#_0384A7: dw TextCommand_41
-#_0384A9: dw TextCommand_42
-#_0384AB: dw TextCommand_43
-#_0384AD: dw TextCommand_44
-#_0384AF: dw TextCommand_45
-#_0384B1: dw TextCommand_46
-#_0384B3: dw TextCommand_47
-#_0384B5: dw TextCommand_48
-#_0384B7: dw TextCommand_03_RelocateTextPointer
-#_0384B9: dw TextCommand_05_WriteToAPU
-#_0384BB: dw TextCommand_22
-#_0384BD: dw TextCommand_23
-#_0384BF: dw TextCommand_4D
-#_0384C1: dw TextCommand_4E
-#_0384C3: dw TextCommand_28
-#_0384C5: dw TextCommand_29
-#_0384C7: dw TextCommand_2A
-#_0384C9: dw TextCommand_08
-#_0384CB: dw TextCommand_2C
-#_0384CD: dw TextCommand_2B
-#_0384CF: dw TextCommand_55
-#_0384D1: dw TextCommand_56
-#_0384D3: dw TextCommand_57
-#_0384D5: dw TextCommand_20_WriteChaseName
-#_0384D7: dw TextCommand_59
-#_0384D9: dw TextCommand_5A
-#_0384DB: dw TextCommand_5B
-#_0384DD: dw TextCommand_02
-#_0384DF: dw TextCommand_5D
-#_0384E1: dw TextCommand_5E
-#_0384E3: dw TextCommand_2F
+#_038425: dw TextCommand_00_SetProgressBit             ; 0xD0
+#_038427: dw TextCommand_01_ClearProgressBit           ; 0xD1
+#_038429: dw TextCommand_02                            ; 0xD2
+#_03842B: dw TextCommand_03_RelocateTextPointer        ; 0xD3
+#_03842D: dw TextCommand_04                            ; 0xD4
+#_03842F: dw TextCommand_05_WriteToAPU                 ; 0xD5
+#_038431: dw TextCommand_06                            ; 0xD6
+#_038433: dw TextCommand_07                            ; 0xD7
+#_038435: dw TextCommand_08                            ; 0xD8
+#_038437: dw TextCommand_09_CheckYENForNextMessage     ; 0xD9
+#_038439: dw TextCommand_0A_GiveMoney                  ; 0xDA
+#_03843B: dw TextCommand_0B_CheckMAGForNextMessage     ; 0xDB
+#_03843D: dw TextCommand_0C_AddMAG                     ; 0xDC
+#_03843F: dw TextCommand_0D_CheckInventoryForItem      ; 0xDD
+#_038441: dw TextCommand_0E                            ; 0xDE
+#_038443: dw TextCommand_0F                            ; 0xDF
+#_038445: dw TextCommand_10_SetSpellMaybe              ; 0xE0
+#_038447: dw TextCommand_11                            ; 0xE1
+#_038449: dw TextCommand_12                            ; 0xE2
+#_03844B: dw TextCommand_13                            ; 0xE3
+#_03844D: dw TextCommand_14_LoadDemonData              ; 0xE4
+#_03844F: dw TextCommand_15                            ; 0xE5
+#_038451: dw TextCommand_16                            ; 0xE6
+#_038453: dw TextCommand_17                            ; 0xE7
+#_038455: dw TextCommand_18                            ; 0xE8
+#_038457: dw TextCommand_19                            ; 0xE9
+#_038459: dw TextCommand_1A                            ; 0xEA
+#_03845B: dw TextCommand_1B                            ; 0xEB
+#_03845D: dw TextCommand_1C                            ; 0xEC
+#_03845F: dw TextCommand_1D_WriteMomoName              ; 0xED
+#_038461: dw TextCommand_1E_WriteJimmyName             ; 0xEE
+#_038463: dw TextCommand_1F_Write_him_Name             ; 0xEF
+#_038465: dw TextCommand_20_WriteChaseName             ; 0xF0
+#_038467: dw TextCommand_21                            ; 0xF1
+#_038469: dw TextCommand_22                            ; 0xF2
+#_03846B: dw TextCommand_23                            ; 0xF3
+#_03846D: dw TextCommand_24                            ; 0xF4
+#_03846F: dw TextCommand_25                            ; 0xF5
+#_038471: dw TextCommand_26                            ; 0xF6
+#_038473: dw TextCommand_27_RNGDecision                ; 0xF7
+#_038475: dw TextCommand_28                            ; 0xF8
+#_038477: dw TextCommand_29                            ; 0xF9
+#_038479: dw TextCommand_2A                            ; 0xFA
+#_03847B: dw TextCommand_2B                            ; 0xFB
+#_03847D: dw TextCommand_2C                            ; 0xFC
+#_03847F: dw TextCommand_2D                            ; 0xFD
+#_038481: dw TextCommand_2E                            ; 0xFE
+#_038483: dw TextCommand_2F                            ; 0xFF
 
+;---------------------------------------------------------------------------------------------------
+
+#_038485: dw TextCommand_30                            ; 0xD0
+#_038487: dw TextCommand_31                            ; 0xD1
+#_038489: dw TextCommand_32                            ; 0xD2
+#_03848B: dw TextCommand_33                            ; 0xD3
+#_03848D: dw TextCommand_34                            ; 0xD4
+#_03848F: dw TextCommand_35                            ; 0xD5
+#_038491: dw TextCommand_36                            ; 0xD6
+#_038493: dw TextCommand_37                            ; 0xD7
+#_038495: dw TextCommand_38                            ; 0xD8
+#_038497: dw TextCommand_39                            ; 0xD9
+#_038499: dw TextCommand_2E                            ; 0xDA
+#_03849B: dw TextCommand_3B                            ; 0xDB
+#_03849D: dw TextCommand_3C                            ; 0xDC
+#_03849F: dw TextCommand_3D                            ; 0xDD
+#_0384A1: dw TextCommand_3E                            ; 0xDE
+#_0384A3: dw TextCommand_3F                            ; 0xDF
+#_0384A5: dw TextCommand_40                            ; 0xE0
+#_0384A7: dw TextCommand_41                            ; 0xE1
+#_0384A9: dw TextCommand_42                            ; 0xE2
+#_0384AB: dw TextCommand_43                            ; 0xE3
+#_0384AD: dw TextCommand_44                            ; 0xE4
+#_0384AF: dw TextCommand_45                            ; 0xE5
+#_0384B1: dw TextCommand_46                            ; 0xE6
+#_0384B3: dw TextCommand_47                            ; 0xE7
+#_0384B5: dw TextCommand_48                            ; 0xE8
+#_0384B7: dw TextCommand_03_RelocateTextPointer        ; 0xE9
+#_0384B9: dw TextCommand_05_WriteToAPU                 ; 0xEA
+#_0384BB: dw TextCommand_22                            ; 0xEB
+#_0384BD: dw TextCommand_23                            ; 0xEC
+#_0384BF: dw TextCommand_4D                            ; 0xED
+#_0384C1: dw TextCommand_4E                            ; 0xEE
+#_0384C3: dw TextCommand_28                            ; 0xEF
+#_0384C5: dw TextCommand_29                            ; 0xF0
+#_0384C7: dw TextCommand_2A                            ; 0xF1
+#_0384C9: dw TextCommand_08                            ; 0xF2
+#_0384CB: dw TextCommand_2C                            ; 0xF3
+#_0384CD: dw TextCommand_2B                            ; 0xF4
+#_0384CF: dw TextCommand_55                            ; 0xF5
+#_0384D1: dw TextCommand_56                            ; 0xF6
+#_0384D3: dw TextCommand_57                            ; 0xF7
+#_0384D5: dw TextCommand_20_WriteChaseName             ; 0xF8
+#_0384D7: dw TextCommand_59                            ; 0xF9
+#_0384D9: dw TextCommand_5A                            ; 0xFA
+#_0384DB: dw TextCommand_5B                            ; 0xFB
+#_0384DD: dw TextCommand_02                            ; 0xFC
+#_0384DF: dw TextCommand_5D                            ; 0xFD
+#_0384E1: dw TextCommand_5E                            ; 0xFE
+#_0384E3: dw TextCommand_2F                            ; 0xFF
+
+;===================================================================================================
+; TODO timers?
 data0384E5:
 #_0384E5: db $D4,$D8,$E2,$E3,$F8,$F9,$FA,$FC
 #_0384ED: db $FF,$F2,$EF,$F0,$F1,$F3,$FF
+
+;===================================================================================================
 
 ; TODO POSSIBLY UNUSED ROUTINE
 ; what reason do I have to believe this is a routine
@@ -707,9 +732,13 @@ data0384E5:
 routine0384F4:
 #_0384F4: RTS
 
+;===================================================================================================
+
 routine0384F9_long:
 #_0384F5: JSR routine0384F9
 #_0384F8: RTL
+
+;===================================================================================================
 
 routine0384F9:
 #_0384F9: PHP
@@ -842,26 +871,39 @@ data0385AF:
 #_0385BF: db $77,$78,$79,$7A,$76,$77,$78,$79
 #_0385C7: db $7A
 
+;===================================================================================================
+
 routine0385C8:
 #_0385C8: PHX
 #_0385C9: PHP
+
 #_0385CA: SEP #$30
+
 #_0385CC: LDX.w $0A33
 #_0385CF: STA.w $0900,X
+
 #_0385D2: LDA.b #$CF
 #_0385D4: STA.w $0940,X
+
 #_0385D7: LDA.w $0A2C
 #_0385DA: STA.w $0901,X
 #_0385DD: STA.w $0941,X
+
 #_0385E0: INC.w $0A33
 #_0385E3: INC.w $0A33
+
 #_0385E6: PLP
 #_0385E7: PLX
+
 #_0385E8: RTL
+
+;===================================================================================================
 
 GetNextTextByte_long:
 #_0385E9: JSR GetNextTextByte
 #_0385EC: RTL
+
+;===================================================================================================
 
 GetNextTextByte:
 #_0385ED: PHY
@@ -876,9 +918,13 @@ GetNextTextByte:
 #_0385FB: PLY
 #_0385FC: RTS
 
+;===================================================================================================
+
 TextCommand_00_SetProgressBit:
 #_0385FD: SEP #$30
 #_0385FF: JSR GetNextTextByte
+
+;===================================================================================================
 
 SetGameProgressBit:
 #_038602: PHP
@@ -1019,6 +1065,8 @@ TextCommand_05_WriteToAPU:
 #_0386C2: STA.w $05BA
 #_0386C5: RTS
 
+;===================================================================================================
+
 TextCommand_06:
 #_0386C6: SEP #$20
 
@@ -1039,6 +1087,8 @@ TextCommand_06:
 .branch0386E4
 #_0386E4: JSL routine02E6C9
 #_0386E8: RTS
+
+;===================================================================================================
 
 TextCommand_07:
 #_0386E9: SEP #$30
@@ -1189,6 +1239,8 @@ TextCommand_08:
 #_0387FA: JSL Update19XXuntil0100
 #_0387FE: RTS
 
+;===================================================================================================
+
 routine0387FF:
 #_0387FF: REP #$20
 #_038801: LDA.w $0F2B
@@ -1267,6 +1319,8 @@ routine0387FF:
 #_038880: LDA.b #$FF
 #_038882: RTS
 
+;===================================================================================================
+
 routine038883:
 #_038883: PHP
 #_038884: LDA.w $0B5F
@@ -1280,6 +1334,8 @@ routine038883:
 #_03889C: PLP
 #_03889D: RTS
 
+;===================================================================================================
+
 routine03889E:
 #_03889E: PHP
 #_03889F: REP #$20
@@ -1289,6 +1345,8 @@ routine03889E:
 #_0388A8: STA.w $0A2F
 #_0388AB: PLP
 #_0388AC: RTS
+
+;===================================================================================================
 
 routine0388AD:
 #_0388AD: PHP
@@ -1368,18 +1426,20 @@ TextCommand_0A_GiveMoney:
 ;===================================================================================================
 TextRead32bitfrom24:
 #_03891C: PHP
+
 #_03891D: SEP #$20
 
 #_03891F: STZ.w $0E03
+
 #_038922: JSR GetNextTextByte
-
 #_038925: STA.w $0E00
+
 #_038928: JSR GetNextTextByte
-
 #_03892B: STA.w $0E01
-#_03892E: JSR GetNextTextByte
 
+#_03892E: JSR GetNextTextByte
 #_038931: STA.w $0E02
+
 #_038934: AND.b #$FF
 #_038936: BPL .nosignextension
 
@@ -1387,11 +1447,12 @@ TextRead32bitfrom24:
 
 .nosignextension
 #_03893B: PLP
+
 #_03893C: RTS
 
 ;===================================================================================================
 ; Read a 24 bit number
-; If MAG>X
+; If MAG<X
 ;   relocate
 ;===================================================================================================
 TextCommand_0B_CheckMAGForNextMessage:
@@ -1450,14 +1511,19 @@ TextCommand_0D_CheckInventoryForItem:
 #_03898E: JSR GetNextTextByte
 #_038991: RTS
 
+;===================================================================================================
+
 TextCommand_0E:
 #_038992: SEP #$20
+
 #_038994: JSR GetNextTextByte
 #_038997: STA.w $050B
 #_03899A: STA.w $0BEE
+
 #_03899D: JSR GetNextTextByte
 #_0389A0: JSR GetNextTextByte
 #_0389A3: STA.w $0BED
+
 #_0389A6: STA.w $050A
 #_0389A9: LDA.b #$00
 #_0389AB: JSR SetBF3BF9fromBFDpA
@@ -1493,10 +1559,14 @@ TextCommand_10_SetSpellMaybe:
 ;===================================================================================================
 TextCommand_11:
 #_0389D3: REP #$20
+
 #_0389D5: JSR GetNextTextByte
 #_0389D8: AND.w #$00FF
 #_0389DB: STA.w $0A50
+
 #_0389DE: RTS
+
+;===================================================================================================
 
 TextCommand_12:
 #_0389DF: JSR TextCommand_29
@@ -1508,7 +1578,7 @@ TextCommand_12:
 #_0389EB: REP #$10
 #_0389ED: JSR GetNextTextByte
 
-.branch0389F0
+routine0389F0:
 #_0389F0: REP #$20
 #_0389F2: AND.w #$00FF
 #_0389F5: ASL A
@@ -1596,6 +1666,8 @@ TextCommand_12:
 #_038A97: BEQ .branch038A7F
 
 #_038A99: RTS
+
+;===================================================================================================
 
 routine038A9A:
 #_038A9A: REP #$20
@@ -1726,6 +1798,8 @@ routine038A9A:
 #_038B8B: LDA.b #$FF
 #_038B8D: RTS
 
+;===================================================================================================
+
 routine038B8E:
 #_038B8E: JSL Update19XXuntil0100
 
@@ -1752,6 +1826,8 @@ routine038B8E:
 #_038BB8: STA.w $0980
 #_038BBB: STA.w $0A2F
 #_038BBE: RTS
+
+;===================================================================================================
 
 routine038BBF:
 #_038BBF: REP #$20
@@ -1799,6 +1875,8 @@ routine038BBF:
 
 #_038C0D: RTS
 
+;===================================================================================================
+
 routine038C0E:
 #_038C0E: SEP #$20
 #_038C10: LDA.w $0B3E
@@ -1833,6 +1911,8 @@ routine038C0E:
 #_038C46: JSL Update19XXuntil0100
 #_038C4A: RTS
 
+;===================================================================================================
+
 routine038C4B:
 #_038C4B: REP #$20
 #_038C4D: LDA.w $0A20
@@ -1863,6 +1943,8 @@ routine038C4B:
 #_038C82: JSL Update19XXuntil0100
 #_038C86: RTS
 
+;===================================================================================================
+
 routine038C87:
 #_038C87: REP #$20
 #_038C89: LDA.w $0A1E
@@ -1885,6 +1967,8 @@ routine038C87:
 #_038CB4: STA.w $0100
 #_038CB7: JSL Update19XXuntil0100
 #_038CBB: RTS
+
+;===================================================================================================
 
 routine038CBC:
 #_038CBC: PHP
@@ -1927,6 +2011,8 @@ routine038CBC:
 #_038CF2: PLP
 #_038CF3: RTS
 
+;===================================================================================================
+
 routine038CF4:
 #_038CF4: SEP #$30
 #_038CF6: LDA.b #$05
@@ -1947,6 +2033,8 @@ routine038CF4:
 .branch038D17
 #_038D17: JSL routine02C8E9
 #_038D1B: RTS
+
+;===================================================================================================
 
 routine038D1C:
 #_038D1C: SEP #$30
@@ -1981,6 +2069,8 @@ routine038D1C:
 #_038D4C: LDA.b #YEN
 #_038D4E: JSL routine0385C8
 #_038D52: RTS
+
+;===================================================================================================
 
 routine038D53:
 #_038D53: PHP
@@ -2018,6 +2108,8 @@ routine038D53:
 #_038D8C: PLA
 #_038D8D: PLP
 #_038D8E: RTS
+
+;===================================================================================================
 
 routine038D8F:
 #_038D8F: PHP
@@ -2162,6 +2254,8 @@ TextCommand_13:
 #_038E69: JSR RelocateTextPointer
 #_038E6C: RTS
 
+;===================================================================================================
+
 routine038E6D:
 #_038E6D: JSR TextCommand_29
 
@@ -2229,6 +2323,8 @@ TextCommand_14_LoadDemonData:
 #_038EEB: JSL LoadDemonEverything
 #_038EEF: RTS
 
+;===================================================================================================
+
 TextCommand_15:
 #_038EF0: REP #$30
 #_038EF2: JSR GetNextTextByte
@@ -2260,6 +2356,8 @@ data038F1C:
 #_038F22: dw routine038F4C
 #_038F24: dw routine038F26
 
+;===================================================================================================
+
 routine038F26:
 #_038F26: JSL routine01B4EA
 #_038F2A: LDA.w #$4000
@@ -2268,9 +2366,13 @@ routine038F26:
 #_038F34: JSL routine01B647
 #_038F38: BRA .branch038F5A
 
+;===================================================================================================
+
 routine038F3A:
 #_038F3A: JSL routine01B4EA
 #_038F3E: BRA routine038F56
+
+;===================================================================================================
 
 routine038F40:
 #_038F40: JSL routine01B4EA
@@ -2278,10 +2380,14 @@ routine038F40:
 #_038F47: STA.w $0528
 #_038F4A: BRA routine038F56
 
+;===================================================================================================
+
 routine038F4C:
 #_038F4C: JSL routine01B4EA
 #_038F50: LDA.w #$8000
 #_038F53: STA.w $0528
+
+;===================================================================================================
 
 routine038F56:
 #_038F56: JSL routine01B51F
@@ -2334,6 +2440,8 @@ routine038F56:
 #_038FBF: STA.w $0A2F
 #_038FC2: RTS
 
+;===================================================================================================
+
 TextCommand_16:
 #_038FC3: SEP #$20
 #_038FC5: JSR GetNextTextByte
@@ -2366,6 +2474,8 @@ TextCommand_16:
 #_038FFB: STA.w $0A22
 #_038FFE: JMP .branch038F7D
 
+;===================================================================================================
+
 TextCommand_17:
 #_039001: REP #$20
 #_039003: JSR GetNextTextByte
@@ -2377,10 +2487,15 @@ TextCommand_17:
 #_039010: STZ.w $0524
 #_039013: RTS
 
+;===================================================================================================
+
 TextCommand_18:
 #_039014: REP #$20
+
 #_039016: LDA.w $050C
-#_039019: JMP .branch03925C
+#_039019: JMP routine03925C
+
+;===================================================================================================
 
 TextCommand_19:
 #_03901C: SEP #$30
@@ -2425,6 +2540,8 @@ TextCommand_19:
 data03905A:
 #_03905A: db $01,$02,$04,$08,$03,$05,$09,$06
 #_039062: db $0A,$0C,$07,$0B,$0D,$0E,$0F
+
+;===================================================================================================
 
 TextCommand_1A:
 #_039069: JSL routine0F945E
@@ -2473,6 +2590,8 @@ TextCommand_1A:
 #_0390C4: DEC.w $0A3D
 #_0390C7: RTS
 
+;===================================================================================================
+
 TextCommand_1B:
 #_0390C8: SEP #$20
 #_0390CA: JSR GetNextTextByte
@@ -2494,6 +2613,8 @@ TextCommand_1B:
 #_0390F5: STA.w $0524
 #_0390F8: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine0390F9:
 #_0390F9: SEP #$20
@@ -2508,6 +2629,8 @@ routine0390F9:
 #_039107: JSR GetNextTextByte
 #_03910A: RTS
 
+;===================================================================================================
+
 TextCommand_1C:
 #_03910B: REP #$30
 #_03910D: LDA.w $0A3E
@@ -2521,40 +2644,59 @@ TextCommand_1C:
 
 #_03911A: REP #$20
 #_03911C: PLA
-#_03911D: JMP .branch03925C
+#_03911D: JMP routine03925C
 
 .branch039120
 #_039120: AND.w #$000F
 #_039123: JSL WriteCharacterName
 #_039127: RTS
 
+;===================================================================================================
+
 TextCommand_1D_WriteMomoName:
 #_039128: SEP #$20
+
 #_03912A: LDA.b #$01
 #_03912C: JSL WriteCharacterName
+
 #_039130: RTS
+
+;===================================================================================================
 
 TextCommand_1E_WriteJimmyName:
 #_039131: SEP #$20
+
 #_039133: LDA.b #$02
 #_039135: JSL WriteCharacterName
+
 #_039139: RTS
+
+;===================================================================================================
 
 TextCommand_1F_Write_him_Name_long:
 #_03913A: JSR TextCommand_1F_Write_him_Name
+
 #_03913D: RTL
+
+;===================================================================================================
 
 TextCommand_1F_Write_him_Name:
 #_03913E: SEP #$20
+
 #_039140: LDA.b #$03
 #_039142: JSL WriteCharacterName
+
 #_039146: RTS
+
+;===================================================================================================
 
 TextCommand_20_WriteChaseName:
 #_039147: SEP #$20
 #_039149: LDA.b #$00
 #_03914B: JSL WriteCharacterName
 #_03914F: RTS
+
+;===================================================================================================
 
 TextCommand_21:
 #_039150: REP #$30
@@ -2619,6 +2761,8 @@ TextCommand_21:
 #_0391AB: JSL WriteNextMessageChar
 #_0391AF: RTS
 
+;===================================================================================================
+
 TextCommand_22:
 #_0391B0: SEP #$30
 #_0391B2: INC.w $0A3D
@@ -2669,9 +2813,13 @@ TextCommand_22:
 #_039210: DEC.w $0A3D
 #_039213: RTS
 
+;===================================================================================================
+
 TextCommand_23_long:
 #_039214: JSR TextCommand_23
 #_039217: RTL
+
+;===================================================================================================
 
 TextCommand_23:
 #_039218: SEP #$20
@@ -2687,6 +2835,8 @@ TextCommand_23:
 #_039230: JSR WriteTextIndexW0A39
 #_039233: RTS
 
+;===================================================================================================
+
 TextCommand_24:
 #_039234: SEP #$20
 #_039236: LDA.b #SpellNamePointers>>16
@@ -2701,6 +2851,8 @@ TextCommand_24:
 #_03924C: JSR WriteTextIndexW0A39
 #_03924F: RTS
 
+;===================================================================================================
+
 TextCommand_25:
 #_039250: SEP #$20
 #_039252: LDA.b #DemonNamePointers>>16
@@ -2709,10 +2861,10 @@ TextCommand_25:
 #_039257: REP #$20
 #_039259: LDA.w $050A
 
-.branch03925C
+routine03925C:
 #_03925C: STA.w $0A39
 #_03925F: CMP.w #$0100
-#_039262: BCS .branch03926E
+#_039262: BCS .boss_name
 
 #_039264: LDA.w #DemonNamePointers>>0
 
@@ -2721,22 +2873,24 @@ TextCommand_25:
 #_03926A: JSR WriteTextIndexW0A39
 #_03926D: RTS
 
-.branch03926E
+.boss_name
 #_03926E: AND.w #$00FF
 #_039271: STA.w $0A39
-#_039274: LDA.w #data09F3BD>>0
+#_039274: LDA.w #BossNamePointers>>0
 #_039277: BRA .branch039267
+
+;===================================================================================================
 
 TextCommand_26:
 #_039279: SEP #$20
-#_03927B: LDA.b #DATA_09F429>>16
+#_03927B: LDA.b #ClassNamePointers>>16
 #_03927D: STA.w $00C5
 
 #_039280: REP #$20
 #_039282: LDA.w $0506
 #_039285: AND.w #$00FF
 #_039288: STA.w $0A39
-#_03928B: LDA.w #DATA_09F429>>0
+#_03928B: LDA.w #ClassNamePointers>>0
 #_03928E: STA.w $00C3
 #_039291: JSR WriteTextIndexW0A39
 #_039294: RTS
@@ -2747,8 +2901,10 @@ TextCommand_26:
 TextCommand_27_RNGDecision:
 #_039295: SEP #$20
 #_039297: SEP #$10
+
 #_039299: JSR GetNextTextByte
 #_03929C: STA.w $0E00
+
 #_03929F: JSR GetNextTextByte
 
 #CODE_0392A2:
@@ -2769,9 +2925,13 @@ TextCommand_27_RNGDecision:
 .fail
 #_0392BC: RTS
 
+;===================================================================================================
+
 routine0392C1_long:
 #_0392BD: JSR routine0392C1
 #_0392C0: RTL
+
+;===================================================================================================
 
 routine0392C1:
 #_0392C1: REP #$30
@@ -2880,6 +3040,7 @@ TextCommand_28:
 .branch03938C
 #_03938C: JSR GetNextTextByte
 #_03938F: STA.w $0E00
+
 #_039392: LDA.w $09F3
 #_039395: BNE .branch03939D
 
@@ -2901,14 +3062,20 @@ data0393A8:
 data0393AE:
 #_0393AE: dw $2026,$2026,$2028
 
+;===================================================================================================
+
 TextCommand_29:
 #_0393B4: JSR routine0384F9
 #_0393B7: JSL Update19XXuntil0100
 
 #_0393BB: REP #$20
+
 #_0393BD: INC.w $0A28
 #_0393C0: JSR routine0393C4
+
 #_0393C3: RTS
+
+;===================================================================================================
 
 routine0393C4:
 #_0393C4: REP #$20
@@ -3107,9 +3274,13 @@ TextCommand_2D:
 #_03951C: STA.w $0A3B
 #_03951F: RTS
 
+;===================================================================================================
+
 TextCommand_2E:
 #_039520: JSR routine03A768
 #_039523: RTS
+
+;===================================================================================================
 
 TextCommand_2F:
 #_039524: JSR routine0384F9
@@ -3233,6 +3404,8 @@ Multiply_AX_b03:
 
 #_0395FF: RTS
 
+;===================================================================================================
+
 routine039600:
 #_039600: PHX
 #_039601: PHP
@@ -3327,9 +3500,13 @@ R039653_SomeTextPars:
 #_0396A8: STA.w $0100
 #_0396AB: RTS
 
+;===================================================================================================
+
 ClearTextBuffer_long:
 #_0396AC: JSR ClearTextBuffer
 #_0396AF: RTL
+
+;===================================================================================================
 
 ClearTextBuffer:
 #_0396B0: PHX
@@ -3350,6 +3527,8 @@ ClearTextBuffer:
 #_0396C6: PLA
 #_0396C7: PLX
 #_0396C8: RTS
+
+;===================================================================================================
 
 routine0396C9:
 #_0396C9: REP #$30
@@ -3984,7 +4163,7 @@ routine03A768:
 
 .branch03A772
 #_03A783: REP #$20
-#_03A785: LDA.w data03A87F,X
+#_03A785: LDA.w .vectors_2,X
 #_03A788: STA.w $00E0
 #_03A78B: LDA.w #.exit-1
 #_03A78E: PHA
@@ -3995,134 +4174,140 @@ routine03A768:
 
 ; TODO see when this happens
 data03A793:
-#_03A793: dw routine03A886
-#_03A795: dw routine03A89B
-#_03A797: dw routine03A8AE
-#_03A799: dw routine03A8F1
-#_03A79B: dw routine03A92A
-#_03A79D: dw routine03A952
-#_03A79F: dw routine03A97A
-#_03A7A1: dw routine03A990
-#_03A7A3: dw .branch03A99F
-#_03A7A5: dw routine03AA0A
-#_03A7A7: dw routine03AA3D
-#_03A7A9: dw routine03AA5C
-#_03A7AB: dw routine03AACF
-#_03A7AD: dw routine03AC19
-#_03A7AF: dw routine03AC9A
-#_03A7B1: dw routine03AC9D
-#_03A7B3: dw routine03ACA7
-#_03A7B5: dw routine03ACB1
-#_03A7B7: dw routine03ACBB
-#_03A7B9: dw routine03ACC5
-#_03A7BB: dw routine03ACE8
-#_03A7BD: dw routine03ACF1
-#_03A7BF: dw routine03AD42
-#_03A7C1: dw routine03AD81
-#_03A7C3: dw routine038000
-#_03A7C5: dw routine0381DC
-#_03A7C7: dw routine03AD8D
-#_03A7C9: dw routine03AE09
-#_03A7CB: dw routine03AE0E
-#_03A7CD: dw TextCommand_57
-#_03A7CF: dw routine03DF23
-#_03A7D1: dw routine03AE62
-#_03A7D3: dw routine03AEB4
-#_03A7D5: dw routine03AEDD
-#_03A7D7: dw routine03AEF1
-#_03A7D9: dw routine03AF05
-#_03A7DB: dw routine03AF74
-#_03A7DD: dw routine03AFE3
-#_03A7DF: dw routine03B034
-#_03A7E1: dw routine03B0F1
-#_03A7E3: dw AddItemToInventory
-#_03A7E5: dw TakeItemFromSomewhere
-#_03A7E7: dw routine03B203
-#_03A7E9: dw routine03B21B
-#_03A7EB: dw routine02D59F_bounce
-#_03A7ED: dw routine03B274
-#_03A7EF: dw routine03B27E
-#_03A7F1: dw routine03B2AE
-#_03A7F3: dw routine03B2ED
-#_03A7F5: dw routine03B328
-#_03A7F7: dw routine03B395
-#_03A7F9: dw routine03B415
-#_03A7FB: dw routine03B42F
-#_03A7FD: dw routine03B43A
-#_03A7FF: dw routine03B45D
-#_03A801: dw routine03B479
-#_03A803: dw routine03B486
-#_03A805: dw routine03B4B7
-#_03A807: dw routine03BE09
-#_03A809: dw routine03BE3F
-#_03A80B: dw routine03BE60
-#_03A80D: dw routine03BE93
-#_03A80F: dw TextCommand_55
-#_03A811: dw routine03A885
-#_03A813: dw routine0F9D30_bounce
-#_03A815: dw routine03BEE1
-#_03A817: dw routine03BF21
-#_03A819: dw routine03BF90
-#_03A81B: dw routine03BF99
-#_03A81D: dw routine03BFC6
-#_03A81F: dw routine03BFE9
-#_03A821: dw routine03C02A
-#_03A823: dw routine03C03D
-#_03A825: dw routine03C079
-#_03A827: dw routine03C08D
-#_03A829: dw routine03C136
-#_03A82B: dw routine03C1FC
-#_03A82D: dw routine03C2D0
-#_03A82F: dw routine03C2F3
-#_03A831: dw routine03C33F
-#_03A833: dw routine03DF18
-#_03A835: dw routine03DEA4
-#_03A837: dw routine03C3A1
-#_03A839: dw routine03C3E7
-#_03A83B: dw routine03C3E7
-#_03A83D: dw routine03C409
-#_03A83F: dw routine0FA412_bounce
-#_03A841: dw routine0F9C77_bounce
-#_03A843: dw routine03C4E2
-#_03A845: dw routine03C500
-#_03A847: dw routine03C52F
-#_03A849: dw routine03C556
-#_03A84B: dw routine0FA25E_bounce
-#_03A84D: dw routine0381F7
-#_03A84F: dw routine029E97_bounce
-#_03A851: dw routine03C43F
-#_03A853: dw routine029FCC_bounce
-#_03A855: dw routine0FA3BD_bounce
-#_03A857: dw routine0FA371_bounce
-#_03A859: dw routine0FA14D_bounce
-#_03A85B: dw routine0F9D99_bounce
-#_03A85D: dw routine02A017_bounce
-#_03A85F: dw routine03C58F
-#_03A861: dw routine03C59E
-#_03A863: dw routine03C5A3
-#_03A865: dw routine03C5A8
-#_03A867: dw routine03C5AD
-#_03A869: dw routine03C5B2
-#_03A86B: dw routine03C5B7
-#_03A86D: dw routine03C5BC
-#_03A86F: dw routine03C5C1
-#_03A871: dw routine03C5C6
-#_03A873: dw routine03C5CB
-#_03A875: dw routine03C5D0
-#_03A877: dw routine03C5D5
-#_03A879: dw routine03C5DA
-#_03A87B: dw routine0381D4
-#_03A87D: dw routine03C5DF
+#_03A793: dw TextExtCMD_00          ; 0x00
+#_03A795: dw TextExtCMD_01          ; 0x01
+#_03A797: dw TextExtCMD_02          ; 0x02
+#_03A799: dw TextExtCMD_03          ; 0x03
+#_03A79B: dw TextExtCMD_04          ; 0x04
+#_03A79D: dw TextExtCMD_05          ; 0x05
+#_03A79F: dw TextExtCMD_06          ; 0x06
+#_03A7A1: dw TextExtCMD_07          ; 0x07
+#_03A7A3: dw TextExtCMD_08          ; 0x08
+#_03A7A5: dw TextExtCMD_09          ; 0x09
+#_03A7A7: dw TextExtCMD_0A          ; 0x0A
+#_03A7A9: dw TextExtCMD_0B          ; 0x0B
+#_03A7AB: dw TextExtCMD_0C          ; 0x0C
+#_03A7AD: dw TextExtCMD_0D          ; 0x0D
+#_03A7AF: dw TextExtCMD_0E          ; 0x0E
+#_03A7B1: dw TextExtCMD_0F          ; 0x0F
+#_03A7B3: dw TextExtCMD_10          ; 0x10
+#_03A7B5: dw TextExtCMD_11          ; 0x11
+#_03A7B7: dw TextExtCMD_12          ; 0x12
+#_03A7B9: dw TextExtCMD_13          ; 0x13
+#_03A7BB: dw TextExtCMD_14          ; 0x14
+#_03A7BD: dw TextExtCMD_15          ; 0x15
+#_03A7BF: dw TextExtCMD_16          ; 0x16
+#_03A7C1: dw TextExtCMD_17          ; 0x17
+#_03A7C3: dw routine038000          ; 0x18
+#_03A7C5: dw routine0381DC          ; 0x19
+#_03A7C7: dw TextExtCMD_1A          ; 0x1A
+#_03A7C9: dw TextExtCMD_1B          ; 0x1B
+#_03A7CB: dw TextExtCMD_1C          ; 0x1C
+#_03A7CD: dw TextCommand_57         ; 0x1D
+#_03A7CF: dw TextExtCMD_1E          ; 0x1E
+#_03A7D1: dw TextExtCMD_1F          ; 0x1F
+#_03A7D3: dw TextExtCMD_20          ; 0x20
+#_03A7D5: dw TextExtCMD_21          ; 0x21
+#_03A7D7: dw TextExtCMD_22          ; 0x22
+#_03A7D9: dw TextExtCMD_23          ; 0x23
+#_03A7DB: dw TextExtCMD_24          ; 0x24
+#_03A7DD: dw TextExtCMD_25          ; 0x25
+#_03A7DF: dw TextExtCMD_26          ; 0x26
+#_03A7E1: dw TextExtCMD_27          ; 0x27
+#_03A7E3: dw AddItemToInventory     ; 0x28
+#_03A7E5: dw TakeItemFromSomewhere  ; 0x29
+#_03A7E7: dw TextExtCMD_2A          ; 0x2A
+#_03A7E9: dw TextExtCMD_2B          ; 0x2B
+#_03A7EB: dw TextExtCMD_2C          ; 0x2C
+#_03A7ED: dw TextExtCMD_2D          ; 0x2D
+#_03A7EF: dw TextExtCMD_2E          ; 0x2E
+#_03A7F1: dw TextExtCMD_2F          ; 0x2F
+#_03A7F3: dw TextExtCMD_30          ; 0x30
+#_03A7F5: dw TextExtCMD_31          ; 0x31
+#_03A7F7: dw TextExtCMD_32          ; 0x32
+#_03A7F9: dw TextExtCMD_33          ; 0x33
+#_03A7FB: dw TextExtCMD_34          ; 0x34
+#_03A7FD: dw TextExtCMD_35          ; 0x35
+#_03A7FF: dw TextExtCMD_36          ; 0x36
+#_03A801: dw TextExtCMD_37          ; 0x37
+#_03A803: dw TextExtCMD_38          ; 0x38
+#_03A805: dw TextExtCMD_39          ; 0x39
+#_03A807: dw TextExtCMD_3A          ; 0x3A
+#_03A809: dw TextExtCMD_3B          ; 0x3B
+#_03A80B: dw TextExtCMD_3C          ; 0x3C
+#_03A80D: dw TextExtCMD_3D          ; 0x3D
+#_03A80F: dw TextCommand_55         ; 0x3E
+#_03A811: dw TextExtCMD_3F          ; 0x3F
+#_03A813: dw TextExtCMD_40          ; 0x40
+#_03A815: dw TextExtCMD_41          ; 0x41
+#_03A817: dw TextExtCMD_42          ; 0x42
+#_03A819: dw TextExtCMD_43          ; 0x43
+#_03A81B: dw TextExtCMD_44          ; 0x44
+#_03A81D: dw TextExtCMD_45          ; 0x45
+#_03A81F: dw TextExtCMD_46          ; 0x46
+#_03A821: dw TextExtCMD_47          ; 0x47
+#_03A823: dw TextExtCMD_48          ; 0x48
+#_03A825: dw TextExtCMD_49          ; 0x49
+#_03A827: dw TextExtCMD_4A          ; 0x4A
+#_03A829: dw TextExtCMD_4B          ; 0x4B
+#_03A82B: dw TextExtCMD_4C          ; 0x4C
+#_03A82D: dw TextExtCMD_4D          ; 0x4D
+#_03A82F: dw TextExtCMD_4E          ; 0x4E
+#_03A831: dw TextExtCMD_4F          ; 0x4F
+#_03A833: dw TextExtCMD_50          ; 0x50
+#_03A835: dw TextExtCMD_51          ; 0x51
+#_03A837: dw TextExtCMD_52          ; 0x52
+#_03A839: dw TextExtCMD_53          ; 0x53
+#_03A83B: dw TextExtCMD_53          ; 0x54
+#_03A83D: dw TextExtCMD_55          ; 0x55
+#_03A83F: dw TextExtCMD_56          ; 0x56
+#_03A841: dw TextExtCMD_57          ; 0x57
+#_03A843: dw TextExtCMD_58          ; 0x58
+#_03A845: dw TextExtCMD_59          ; 0x59
+#_03A847: dw TextExtCMD_5A          ; 0x5A
+#_03A849: dw TextExtCMD_5B          ; 0x5B
+#_03A84B: dw TextExtCMD_5C          ; 0x5C
+#_03A84D: dw TextExtCMD_5D          ; 0x5D
+#_03A84F: dw TextExtCMD_5E          ; 0x5E
+#_03A851: dw TextExtCMD_5F          ; 0x5F
+#_03A853: dw TextExtCMD_60          ; 0x60
+#_03A855: dw TextExtCMD_61          ; 0x61
+#_03A857: dw TextExtCMD_62          ; 0x62
+#_03A859: dw TextExtCMD_63          ; 0x63
+#_03A85B: dw TextExtCMD_64          ; 0x64
+#_03A85D: dw TextExtCMD_65          ; 0x65
+#_03A85F: dw TextExtCMD_66          ; 0x66
+#_03A861: dw TextExtCMD_67          ; 0x67
+#_03A863: dw TextExtCMD_68          ; 0x68
+#_03A865: dw TextExtCMD_69          ; 0x69
+#_03A867: dw TextExtCMD_6A          ; 0x6A
+#_03A869: dw TextExtCMD_6B          ; 0x6B
+#_03A86B: dw TextExtCMD_6C          ; 0x6C
+#_03A86D: dw TextExtCMD_6D          ; 0x6D
+#_03A86F: dw TextExtCMD_6E          ; 0x6E
+#_03A871: dw TextExtCMD_6F          ; 0x6F
+#_03A873: dw TextExtCMD_70          ; 0x70
+#_03A875: dw TextExtCMD_71          ; 0x71
+#_03A877: dw TextExtCMD_72          ; 0x72
+#_03A879: dw TextExtCMD_73          ; 0x73
+#_03A87B: dw TextExtCMD_74          ; 0x74
+#_03A87D: dw TextExtCMD_75          ; 0x75
 
-data03A87F:
+;---------------------------------------------------------------------------------------------------
+
+.vectors_2:
 #_03A87F: dw routine03D2DA
 #_03A881: dw routine03D2F7
 #_03A883: dw routine03D32B
 
-routine03A885:
+;---------------------------------------------------------------------------------------------------
+
+TextExtCMD_3F:
 #_03A885: RTS
 
-routine03A886:
+;===================================================================================================
+
+TextExtCMD_00:
 #_03A886: SEP #$20
 #_03A888: JSR GetNextTextByte
 #_03A88B: CMP.w $1012
@@ -4131,12 +4316,16 @@ routine03A886:
 #_03A890: JSR GetNextTextByte
 #_03A893: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 #branch03A894:
 #_03A894: JSR GetNextTextByte
 #_03A897: JSR RelocateTextPointer
 #_03A89A: RTS
 
-routine03A89B:
+;===================================================================================================
+
+TextExtCMD_01:
 #_03A89B: SEP #$20
 #_03A89D: JSR Load8Bit00
 #_03A8A0: CMP.w $1012
@@ -4145,25 +4334,30 @@ routine03A89B:
 #_03A8A5: JSR GetNextTextByte
 #_03A8A8: RTS
 
+;===================================================================================================
+
 Load8Bit00:
 #_03A8A9: SEP #$20
 #_03A8AB: LDA.b #$00
 #_03A8AD: RTS
 
-routine03A8AE:
+;===================================================================================================
+
+TextExtCMD_02:
 #_03A8AE: SEP #$20
 #_03A8B0: JSR GetNextTextByte
 #_03A8B3: STZ.w $0E01
 #_03A8B6: STA.w $0E00
 #_03A8B9: AND.b #$FF
-#_03A8BB: BPL .branch03A8C0
+#_03A8BB: BPL .positive
 
 #_03A8BD: DEC.w $0E01
 
-.branch03A8C0
+.positive
 #_03A8C0: LDA.b #$FB
 #_03A8C2: JSL TestGameProgressBit
 #_03A8C6: BCC .branch03A8C9
+
 #_03A8C8: RTS
 
 .branch03A8C9
@@ -4179,19 +4373,23 @@ routine03A8AE:
 #_03A8DD: RTS
 
 .branch03A8DE
-#_03A8DE: BPL .branch03A8E7
+#_03A8DE: BPL .dont_clear
 
 #_03A8E0: STZ.w $101C
 #_03A8E3: STZ.w $107C
+
 #_03A8E6: RTS
 
-.branch03A8E7
+.dont_clear
 #_03A8E7: LDA.w #$00FF
 #_03A8EA: STA.w $101C
 #_03A8ED: STA.w $107C
+
 #_03A8F0: RTS
 
-routine03A8F1:
+;===================================================================================================
+
+TextExtCMD_03:
 #_03A8F1: SEP #$20
 #_03A8F3: JSR GetNextTextByte
 #_03A8F6: AND.b #$FF
@@ -4227,12 +4425,17 @@ routine03A8F1:
 #_03A926: STA.w $107C
 #_03A929: RTS
 
-routine03A92A:
+;===================================================================================================
+
+TextExtCMD_04:
 #_03A92A: SEP #$20
+
 #_03A92C: JSR GetNextTextByte
 #_03A92F: STA.w $0E00
+
 #_03A932: JSR GetNextTextByte
 #_03A935: STA.w $0E01
+
 #_03A938: LDA.w $101C
 #_03A93B: CMP.b #$70
 #_03A93D: BCC .branch03A94B
@@ -4252,12 +4455,17 @@ routine03A92A:
 #_03A94E: JSR RelocateTextPointer
 #_03A951: RTS
 
-routine03A952:
+;===================================================================================================
+
+TextExtCMD_05:
 #_03A952: SEP #$20
+
 #_03A954: JSR GetNextTextByte
 #_03A957: STA.w $0E00
+
 #_03A95A: JSR GetNextTextByte
 #_03A95D: STA.w $0E01
+
 #_03A960: CMP.w $101C
 #_03A963: BCC .branch03A973
 
@@ -4274,16 +4482,19 @@ routine03A952:
 .branch03A973
 #_03A973: JSR GetNextTextByte
 #_03A976: JSR RelocateTextPointer
+
 #_03A979: RTS
 
 ;===================================================================================================
 ; Test MC level
 ; TODO
 ;===================================================================================================
-routine03A97A:
+TextExtCMD_06:
 #_03A97A: SEP #$20
+
 #_03A97C: JSR GetNextTextByte
 #_03A97F: DEC A
+
 #_03A980: CMP.w $100A
 #_03A983: BCS .branch03A989
 
@@ -4295,7 +4506,9 @@ routine03A97A:
 #_03A98C: JSR RelocateTextPointer
 #_03A98F: RTS
 
-routine03A990:
+;===================================================================================================
+
+TextExtCMD_07:
 #_03A990: JSR routine0384F9
 
 #_03A993: SEP #$30
@@ -4305,7 +4518,9 @@ routine03A990:
 #_03A99A: JSL Update19xxUntilYZero
 #_03A99E: RTS
 
-.branch03A99F
+;===================================================================================================
+
+TextExtCMD_08:
 #_03A99F: SEP #$30
 #_03A9A1: JSR GetNextTextByte
 #_03A9A4: CMP.b #$04
@@ -4344,6 +4559,8 @@ routine03A990:
 #_03A9D9: JSR GetNextTextByte
 #_03A9DC: RTS
 
+;===================================================================================================
+
 routine03A9DD:
 #_03A9DD: PHA
 #_03A9DE: PHX
@@ -4377,7 +4594,9 @@ routine03A9DD:
 #_03AA08: PLA
 #_03AA09: RTS
 
-routine03AA0A:
+;===================================================================================================
+
+TextExtCMD_09:
 #_03AA0A: JSR routine03A9DD
 
 #_03AA0D: REP #$30
@@ -4411,7 +4630,9 @@ routine03AA0A:
 #_03AA39: JSR GetNextTextByte
 #_03AA3C: RTS
 
-routine03AA3D:
+;===================================================================================================
+
+TextExtCMD_0A:
 #_03AA3D: SEP #$20
 #_03AA3F: LDA.w $040F
 #_03AA42: LSR A
@@ -4431,7 +4652,9 @@ routine03AA3D:
 #_03AA58: JSR GetNextTextByte
 #_03AA5B: RTS
 
-routine03AA5C:
+;===================================================================================================
+
+TextExtCMD_0B:
 #_03AA5C: SEP #$30
 #_03AA5E: JSR GetNextTextByte
 #_03AA61: CMP.b #$FF
@@ -4447,6 +4670,8 @@ routine03AA5C:
 #_03AA75: JSR routine03AA7C
 #_03AA78: JSR routine00A17E_bounce
 #_03AA7B: RTS
+
+;===================================================================================================
 
 routine03AA7C:
 #_03AA7C: REP #$30
@@ -4493,8 +4718,10 @@ routine03AA7C:
 #_03AACB: JSR routine00A17E_bounce
 #_03AACE: RTS
 
+;===================================================================================================
+
 ; TODO stat creation?
-routine03AACF:
+TextExtCMD_0C:
 #_03AACF: REP #$30
 #_03AAD1: JSR GetNextTextByte
 #_03AAD4: AND.w #$0003
@@ -4524,6 +4751,8 @@ routine03AACF:
 .stat_offsets
 #_03AB03: dw $0000, $0060, $00C0, $0120
 
+;===================================================================================================
+
 routine03AB0B:
 #_03AB0B: LDA.w $0E00
 #_03AB0E: ASL A
@@ -4552,6 +4781,8 @@ routine03AB33:
 #_03AB37: STA.w $0A71
 #_03AB3A: JSR routine03ABE6
 #_03AB3D: RTS
+
+;===================================================================================================
 
 routine03AB3E:
 #_03AB3E: LDA.w $0E00
@@ -4673,7 +4904,7 @@ routine03ABE6:
 #_03AC17: PLP
 #_03AC18: RTS
 
-routine03AC19:
+TextExtCMD_0D:
 #_03AC19: SEP #$30
 #_03AC1B: JSR GetNextTextByte
 #_03AC1E: CMP.b #$FF
@@ -4732,36 +4963,57 @@ Bits_Descending_15to0:
 #_03AC8A: dw $0080,$0040,$0020,$0010
 #_03AC92: dw $0008,$0004,$0002,$0001
 
-routine03AC9A:
+;===================================================================================================
+
+TextExtCMD_0E:
 #_03AC9A: SEP #$20
 #_03AC9C: RTS
 
-routine03AC9D:
+;===================================================================================================
+
+TextExtCMD_0F:
 #_03AC9D: SEP #$20
+
 #_03AC9F: LDA.b #$00
 #_03ACA1: STA.w $0BA3
+
 #_03ACA4: JMP .branch03D893
 
-routine03ACA7:
+;===================================================================================================
+
+TextExtCMD_10:
 #_03ACA7: SEP #$20
+
 #_03ACA9: LDA.b #$01
 #_03ACAB: STA.w $0BA3
+
 #_03ACAE: JMP .branch03D893
 
-routine03ACB1:
+;===================================================================================================
+
+TextExtCMD_11:
 #_03ACB1: SEP #$20
+
 #_03ACB3: LDA.b #$03
 #_03ACB5: STA.w $0BA3
+
 #_03ACB8: JMP .branch03D893
 
-routine03ACBB:
+;===================================================================================================
+
+TextExtCMD_12:
 #_03ACBB: SEP #$20
+
 #_03ACBD: LDA.b #$02
 #_03ACBF: STA.w $0BA3
+
 #_03ACC2: JMP .branch03D893
 
-routine03ACC5:
+;===================================================================================================
+
+TextExtCMD_13:
 #_03ACC5: REP #$30
+
 #_03ACC7: LDX.w #$0180
 
 .branch03ACCA
@@ -4784,13 +5036,19 @@ routine03ACC5:
 #_03ACE4: JSR RelocateTextPointer
 #_03ACE7: RTS
 
-routine03ACE8:
+;===================================================================================================
+
+TextExtCMD_14:
 #_03ACE8: SEP #$20
+
 #_03ACEA: JSR GetNextTextByte
 #_03ACED: STA.w $0A2C
+
 #_03ACF0: RTS
 
-routine03ACF1:
+;===================================================================================================
+
+TextExtCMD_15:
 #_03ACF1: REP #$30
 #_03ACF3: JSR GetNextTextByte
 #_03ACF6: STA.w $0E02
@@ -4838,7 +5096,9 @@ routine03ACF1:
 data03AD3C:
 #_03AD3C: dw $38FF,$0700,$C000
 
-routine03AD42:
+;===================================================================================================
+
+TextExtCMD_16:
 #_03AD42: REP #$30
 #_03AD44: LDX.w #$0000
 
@@ -4877,14 +5137,20 @@ routine03AD42:
 #_03AD7D: JSR GetNextTextByte
 #_03AD80: RTS
 
-routine03AD81:
+;===================================================================================================
+
+TextExtCMD_17:
 #_03AD81: SEP #$20
+
 #_03AD83: JSR GetNextTextByte
 #_03AD86: STA.w $0BE2
 #_03AD89: STA.w $07E1
+
 #_03AD8C: RTS
 
-routine03AD8D:
+;===================================================================================================
+
+TextExtCMD_1A:
 #_03AD8D: SEP #$30
 #_03AD8F: JSR GetNextTextByte
 #_03AD92: AND.b #$FF
@@ -4944,11 +5210,13 @@ routine03AD8D:
 #_03AE05: STA.w $046A
 #_03AE08: RTS
 
-routine03AE09:
+TextExtCMD_1B:
 #_03AE09: SEP #$30
-#_03AE0B: JMP routine03AD8D
+#_03AE0B: JMP TextExtCMD_1A
 
-routine03AE0E:
+;===================================================================================================
+
+TextExtCMD_1C:
 #_03AE0E: SEP #$30
 #_03AE10: JSR GetNextTextByte
 #_03AE13: ASL A
@@ -4989,6 +5257,8 @@ routine03AE0E:
 #_03AE47: JSL routine009443
 #_03AE4B: RTS
 
+;===================================================================================================
+
 TextCommand_57:
 #_03AE4C: SEP #$20
 #_03AE4E: JSR GetNextTextByte
@@ -4999,7 +5269,9 @@ TextCommand_57:
 #_03AE5E: JSR routine0382C2
 #_03AE61: RTS
 
-routine03AE62:
+;===================================================================================================
+
+TextExtCMD_1F:
 #_03AE62: REP #$30
 #_03AE64: LDA.w $0C0B
 #_03AE67: STA.w $050A
@@ -5043,7 +5315,9 @@ routine03AE62:
 
 #_03AEB2: BRA .branch03AE7F
 
-routine03AEB4:
+;===================================================================================================
+
+TextExtCMD_20:
 #_03AEB4: REP #$30
 #_03AEB6: LDA.w $0C0B
 #_03AEB9: STA.w $050A
@@ -5063,35 +5337,49 @@ routine03AEB4:
 #_03AED9: JSR GetNextTextByte
 #_03AEDC: RTS
 
-routine03AEDD:
+;===================================================================================================
+
+TextExtCMD_21:
 #_03AEDD: SEP #$30
+
 #_03AEDF: LDA.w $0A58
-#_03AEE2: BNE .branch03AEEB
+#_03AEE2: BNE .fail
 
 #_03AEE4: JSR GetNextTextByte
 #_03AEE7: JSR RelocateTextPointer
+
 #_03AEEA: RTS
 
-.branch03AEEB
+.fail
 #_03AEEB: REP #$20
+
 #_03AEED: INC.w $00C0
+
 #_03AEF0: RTS
 
-routine03AEF1:
+;===================================================================================================
+
+TextExtCMD_22:
 #_03AEF1: SEP #$30
+
 #_03AEF3: LDA.w $0A58
-#_03AEF6: BEQ .branch03AEFF
+#_03AEF6: BEQ .success
 
 #_03AEF8: JSR GetNextTextByte
 #_03AEFB: JSR RelocateTextPointer
+
 #_03AEFE: RTS
 
-.branch03AEFF
+.success
 #_03AEFF: REP #$20
+
 #_03AF01: INC.w $00C0
+
 #_03AF04: RTS
 
-routine03AF05:
+;===================================================================================================
+
+TextExtCMD_23:
 #_03AF05: REP #$30
 #_03AF07: JSR GetNextTextByte
 #_03AF0A: AND.w #$00FF
@@ -5158,7 +5446,9 @@ routine03AF05:
 
 #_03AF71: JMP routine00A17E_bounce
 
-routine03AF74:
+;===================================================================================================
+
+TextExtCMD_24:
 #_03AF74: REP #$30
 #_03AF76: JSR GetNextTextByte
 #_03AF79: AND.w #$00FF
@@ -5225,7 +5515,9 @@ routine03AF74:
 
 #_03AFE0: JMP routine00A17E_bounce
 
-routine03AFE3:
+;===================================================================================================
+
+TextExtCMD_25:
 #_03AFE3: REP #$30
 #_03AFE5: JSR GetNextTextByte
 #_03AFE8: AND.w #$00FF
@@ -5270,11 +5562,15 @@ routine03AFE3:
 #_03B02A: CMP.w #$0600
 #_03B02D: BNE .branch03B009
 
+;===================================================================================================
+
 routine00A17E_bounce:
 #_03B02F: JSL routine00A17E
 #_03B033: RTS
 
-routine03B034:
+;===================================================================================================
+
+TextExtCMD_26:
 #_03B034: SEP #$20
 #_03B036: JSR GetNextTextByte
 #_03B039: CMP.b #$04
@@ -5364,13 +5660,17 @@ routine03B034:
 #_03B0CB: STA.w $1000,X
 #_03B0CE: JMP routine00A17E_bounce
 
+;===================================================================================================
+
 CharacterOffsets_bank03:
 #_03B0D1: dw $0000, $0060, $00C0, $0120
 #_03B0D9: dw $0180, $01E0, $0240, $02A0
 #_03B0E1: dw $0300, $0360, $03C0, $0420
 #_03B0E9: dw $0480, $04E0, $0540, $05A0
 
-routine03B0F1:
+;===================================================================================================
+
+TextExtCMD_27:
 #_03B0F1: SEP #$20
 #_03B0F3: JSR GetNextTextByte
 #_03B0F6: CMP.b #$04
@@ -5459,6 +5759,8 @@ AddItemToInventory:
 
 .exit
 #_03B172: RTS
+
+;===================================================================================================
 
 TakeItemFromSomewhere_long:
 #_03B173: JSR TakeItemFromSomewhere
@@ -5561,20 +5863,28 @@ TakeItemFromSomewhere:
 #_03B1FE: JSL UpdatePlayerStats
 #_03B202: RTS
 
-routine03B203:
+;===================================================================================================
+
+TextExtCMD_2A:
+
 #_03B203: SEP #$30
+
 #_03B205: LDA.b #$FF
 #_03B207: STA.w $0EEF
 #_03B20A: JSL routine02E87C
 
 #_03B20E: REP #$20
+
 #_03B210: LDA.w $0A0B
 #_03B213: CLC
 #_03B214: ADC.w #$0041
 #_03B217: STA.w $0A1A
+
 #_03B21A: RTS
 
-routine03B21B:
+;===================================================================================================
+
+TextExtCMD_2B:
 #_03B21B: REP #$30
 #_03B21D: JSR GetNextTextByte
 #_03B220: AND.w #$00FF
@@ -5626,17 +5936,25 @@ routine03B21B:
 #_03B26B: JSR GetNextTextByte
 #_03B26E: RTS
 
-routine02D59F_bounce:
+;===================================================================================================
+
+TextExtCMD_2C:
 #_03B26F: JSL routine02D59F
 #_03B273: RTS
 
-routine03B274:
+;===================================================================================================
+
+TextExtCMD_2D:
 #_03B274: SEP #$30
+
 #_03B276: JSR GetNextTextByte
 #_03B279: JSL routine00B99C
+
 #_03B27D: RTS
 
-routine03B27E:
+;===================================================================================================
+
+TextExtCMD_2E:
 #_03B27E: REP #$30
 #_03B280: JSR GetNextTextByte
 #_03B283: AND.w #$00FF
@@ -5662,7 +5980,9 @@ routine03B27E:
 #_03B2AA: JSR RelocateTextPointer
 #_03B2AD: RTS
 
-routine03B2AE:
+;===================================================================================================
+
+TextExtCMD_2F:
 #_03B2AE: SEP #$30
 #_03B2B0: LDA.l $0022FD
 #_03B2B4: BEQ .branch03B2BA
@@ -5698,7 +6018,9 @@ routine03B2AE:
 #_03B2E8: JSL Transfer16Colors_F9AFA
 #_03B2EC: RTS
 
-routine03B2ED:
+;===================================================================================================
+
+TextExtCMD_30:
 #_03B2ED: SEP #$30
 #_03B2EF: JSR GetNextTextByte
 #_03B2F2: AND.b #$FF
@@ -5735,7 +6057,9 @@ routine03B2ED:
 #_03B323: JSL AddSelfAsVector
 #_03B327: RTS
 
-routine03B328:
+;===================================================================================================
+
+TextExtCMD_31:
 #_03B328: SEP #$20
 #_03B32A: INC.w $0A3D
 #_03B32D: JSR GetNextTextByte
@@ -5791,7 +6115,9 @@ routine03B328:
 #_03B391: DEC.w $0A3D
 #_03B394: RTS
 
-routine03B395:
+;===================================================================================================
+
+TextExtCMD_32:
 #_03B395: REP #$30
 #_03B397: LDA.w $0C41
 #_03B39A: AND.w #$00FF
@@ -5864,7 +6190,9 @@ routine03B395:
 #_03B411: STZ.w $0A33
 #_03B414: RTS
 
-routine03B415:
+;===================================================================================================
+
+TextExtCMD_33:
 #_03B415: SEP #$30
 #_03B417: JSR GetNextTextByte
 #_03B41A: PHA
@@ -5881,13 +6209,19 @@ routine03B415:
 #_03B42B: JSR RelocateTextPointer
 #_03B42E: RTS
 
-routine03B42F:
-#_03B42F: SEP #$30
-#_03B431: STZ.w $0A33
-#_03B434: LDA.w $0C41
-#_03B437: JMP .branch0389F0
+;===================================================================================================
 
-routine03B43A:
+TextExtCMD_34:
+#_03B42F: SEP #$30
+
+#_03B431: STZ.w $0A33
+
+#_03B434: LDA.w $0C41
+#_03B437: JMP routine0389F0
+
+;===================================================================================================
+
+TextExtCMD_35:
 #_03B43A: REP #$20
 #_03B43C: LDA.w $0407
 #_03B43F: CMP.w $0A16
@@ -5910,7 +6244,9 @@ routine03B43A:
 #_03B459: JSR RelocateTextPointer
 #_03B45C: RTS
 
-routine03B45D:
+;===================================================================================================
+
+TextExtCMD_36:
 #_03B45D: REP #$20
 #_03B45F: LDA.w $0A14
 #_03B462: STA.w $0E10
@@ -5925,13 +6261,17 @@ routine03B45D:
 #_03B474: JSL routine03D775
 #_03B478: RTS
 
-routine03B479:
+;===================================================================================================
+
+TextExtCMD_37:
 #_03B479: JSL routine0F9493
 #_03B47D: JSL routine00C7AA
 #_03B481: JSL routine0F84F6
 #_03B485: RTS
 
-routine03B486:
+;===================================================================================================
+
+TextExtCMD_38:
 #_03B486: SEP #$20
 #_03B488: LDA.b #$03
 #_03B48A: STA.w $0F76
@@ -5960,7 +6300,9 @@ routine03B486:
 
 #_03B4B6: RTS
 
-routine03B4B7:
+;===================================================================================================
+
+TextExtCMD_39:
 #_03B4B7: REP #$30
 #_03B4B9: LDA.w #$0017
 #_03B4BC: JSL routine02F609
@@ -5982,6 +6324,8 @@ routine03B4B7:
 #_03B4D9: STA.w $0F76
 #_03B4DC: STA.w SUBDES
 #_03B4DF: RTS
+
+;===================================================================================================
 
 routine03B4E0:
 #_03B4E0: PHP
@@ -6096,6 +6440,8 @@ data03B5A6:
 #_03B5EE: db $02,$04,$02,$04,$02,$01,$03,$01
 #_03B5F6: db $03,$01,$03,$01,$03,$01,$03,$01
 
+;===================================================================================================
+
 routine03B5FE:
 #_03B5FE: PHP
 #_03B5FF: PHB
@@ -6122,7 +6468,7 @@ routine03B5FE:
 #_03B623: AND.w #$0003
 #_03B626: TAX
 #_03B627: PHA
-#_03B628: LDA.w data03B639,X
+#_03B628: LDA.w .data03B639,X
 #_03B62B: AND.w #$00FF
 #_03B62E: STA.w $0A59
 #_03B631: PLA
@@ -6133,7 +6479,7 @@ routine03B5FE:
 .branch03B637
 #_03B637: BRA .branch03B63C
 
-data03B639:
+.data03B639:
 #_03B639: db $0D,$0C,$14
 
 .branch03B63C
@@ -6222,6 +6568,8 @@ data03B639:
 #_03B6F0: JSR routine03B9A4
 #_03B6F3: JSR routine03BCD3
 #_03B6F6: JMP .branch03B677
+
+;===================================================================================================
 
 routine03B6F9:
 #_03B6F9: SEP #$30
@@ -6362,6 +6710,8 @@ routine03B6F9:
 #_03B815: STZ.w $09F3
 #_03B818: RTS
 
+;===================================================================================================
+
 routine03B819:
 #_03B819: JSR routine03B8BC
 
@@ -6393,6 +6743,8 @@ data03B868:
 #_03B868: db $2E,$4C,$4A,$27,$2A,$26,$31,$27
 #_03B870: db $51,$CF,$28,$4B,$52,$37,$2C,$34
 #_03B878: db $2F,$26
+
+;===================================================================================================
 
 routine03B87A:
 #_03B87A: PHP
@@ -6437,6 +6789,8 @@ routine03B87A:
 #_03B8BA: PLP
 #_03B8BB: RTS
 
+;===================================================================================================
+
 routine03B8BC:
 #_03B8BC: SEP #$30
 #_03B8BE: JSR routine03B8CD
@@ -6446,6 +6800,8 @@ routine03B8BC:
 #_03B8C6: STA.w $0E08
 #_03B8C9: JSR routine03B93B
 #_03B8CC: RTS
+
+;===================================================================================================
 
 routine03B8CD:
 #_03B8CD: PHP
@@ -6468,6 +6824,8 @@ routine03B8CD:
 #_03B8E3: STA.w $0E00
 #_03B8E6: PLP
 #_03B8E7: RTS
+
+;===================================================================================================
 
 routine03B8E8:
 #_03B8E8: SEP #$30
@@ -6510,6 +6868,8 @@ routine03B8E8:
 #_03B934: STA.w $0E08
 #_03B937: JSR routine03B93B
 #_03B93A: RTS
+
+;===================================================================================================
 
 routine03B93B:
 #_03B93B: REP #$30
@@ -6564,6 +6924,8 @@ routine03B93B:
 
 #_03B99F: JSL AddSelfAsVectorAndMakeSpace
 #_03B9A3: RTS
+
+;===================================================================================================
 
 routine03B9A4:
 #_03B9A4: SEP #$30
@@ -6732,6 +7094,8 @@ routine03BA87:
 #_03BAFD: JSR routine03B93B
 #_03BB00: RTS
 
+;===================================================================================================
+
 routine03BB01:
 #_03BB01: REP #$20
 #_03BB03: LDA.w #$2D00
@@ -6843,6 +7207,8 @@ routine03BB01:
 #_03BBEA: ORA.b #$08
 #_03BBEC: STA.w $0F0E
 #_03BBEF: RTS
+
+;===================================================================================================
 
 routine03BBF0:
 #_03BBF0: REP #$20
@@ -6959,6 +7325,8 @@ routine03BBF0:
 #_03BCCF: STA.w $0F0E
 #_03BCD2: RTS
 
+;===================================================================================================
+
 routine03BCD3:
 #_03BCD3: REP #$30
 #_03BCD5: LDA.w #!SFX_08
@@ -6983,6 +7351,8 @@ routine03BCD3:
 
 #_03BCFB: RTS
 
+;===================================================================================================
+
 routine03BCFC:
 #_03BCFC: REP #$30
 #_03BCFE: LDA.w #!SFX_08
@@ -7004,6 +7374,8 @@ routine03BCFC:
 #_03BD1E: DEC A
 #_03BD1F: BPL .branch03BD08
 #_03BD21: RTS
+
+;===================================================================================================
 
 routine03BD22:
 #_03BD22: REP #$30
@@ -7079,7 +7451,9 @@ data03BD8F:
 #_03BDFF: dw $4936,$0103,$0103,$0103
 #_03BE07: dw $0103
 
-routine03BE09:
+;===================================================================================================
+
+TextExtCMD_3A:
 #_03BE09: REP #$30
 #_03BE0B: JSR GetNextTextByte
 #_03BE0E: AND.w #$00FF
@@ -7107,8 +7481,11 @@ routine03BE09:
 #_03BE2F: dw $FF00,$0070,$0100,$0070
 #_03BE37: dw $FF00,$0030,$0100,$0030
 
-routine03BE3F:
+;===================================================================================================
+
+TextExtCMD_3B:
 #_03BE3F: SEP #$30
+
 #_03BE41: LDA.b #$28
 #_03BE43: JSL routine02F609
 
@@ -7124,9 +7501,12 @@ routine03BE3F:
 #_03BE58: JSR SetGameProgressBit
 
 #_03BE5B: JSL routine029650
+
 #_03BE5F: RTS
 
-routine03BE60:
+;===================================================================================================
+
+TextExtCMD_3C:
 #_03BE60: JSL routine03BE71
 #_03BE64: BCC .branch03BE6D
 
@@ -7137,6 +7517,8 @@ routine03BE60:
 .branch03BE6D
 #_03BE6D: JSR GetNextTextByte
 #_03BE70: RTS
+
+;===================================================================================================
 
 routine03BE71:
 #_03BE71: PHP
@@ -7169,7 +7551,9 @@ routine03BE71:
 #_03BE91: CLC
 #_03BE92: RTL
 
-routine03BE93:
+;===================================================================================================
+
+TextExtCMD_3D:
 #_03BE93: REP #$30
 #_03BE95: LDA.w #$000C
 #_03BE98: STA.w $0E00
@@ -7203,6 +7587,8 @@ routine03BE93:
 #_03BEC3: JSR GetNextTextByte
 #_03BEC6: RTS
 
+;===================================================================================================
+
 TextCommand_55:
 #_03BEC7: SEP #$30
 #_03BEC9: JSR GetNextTextByte
@@ -7213,11 +7599,15 @@ TextCommand_55:
 #_03BED8: STZ.w $0A57
 #_03BEDB: RTS
 
-routine0F9D30_bounce:
+;===================================================================================================
+
+TextExtCMD_40:
 #_03BEDC: JSL routine0F9D30
 #_03BEE0: RTS
 
-routine03BEE1:
+;===================================================================================================
+
+TextExtCMD_41:
 #_03BEE1: SEP #$30
 #_03BEE3: JSR GetNextTextByte
 #_03BEE6: TAX
@@ -7251,7 +7641,9 @@ routine03BEE1:
 #_03BF1D: JSR RelocateTextPointer
 #_03BF20: RTS
 
-routine03BF21:
+;===================================================================================================
+
+TextExtCMD_42:
 #_03BF21: SEP #$30
 #_03BF23: JSL DarkenScreen
 
@@ -7302,13 +7694,17 @@ routine03BF21:
 #_03BF8C: JSR SetGameProgressBit
 #_03BF8F: RTS
 
-routine03BF90:
+;===================================================================================================
+
+TextExtCMD_43:
 #_03BF90: SEP #$20
 #_03BF92: JSR GetNextTextByte
 #_03BF95: STA.w $0453
 #_03BF98: RTS
 
-routine03BF99:
+;===================================================================================================
+
+TextExtCMD_44:
 #_03BF99: REP #$30
 #_03BF9B: LDA.w $050A
 #_03BF9E: ASL A
@@ -7335,7 +7731,9 @@ routine03BF99:
 #_03BFC2: JSR RelocateTextPointer
 #_03BFC5: RTS
 
-routine03BFC6:
+;===================================================================================================
+
+TextExtCMD_45:
 #_03BFC6: SEP #$30
 #_03BFC8: JSR GetNextTextByte
 #_03BFCB: AND.b #$FF
@@ -7360,7 +7758,9 @@ routine03BFEE_long:
 #_03BFE5: JSR routine03BFEE
 #_03BFE8: RTL
 
-routine03BFE9:
+;===================================================================================================
+
+TextExtCMD_46:
 #_03BFE9: SEP #$30
 #_03BFEB: JSR GetNextTextByte
 
@@ -7402,7 +7802,9 @@ routine03BFEE:
 #_03C025: STA.l $7E22FD
 #_03C029: RTS
 
-routine03C02A:
+;===================================================================================================
+
+TextExtCMD_47:
 #_03C02A: REP #$30
 #_03C02C: JSR GetNextTextByte
 #_03C02F: AND.w #$0007
@@ -7414,12 +7816,15 @@ routine03C02A:
 #_03C039: JSR GetNextTextByte
 #_03C03C: RTS
 
-routine03C03D:
+;===================================================================================================
+
+TextExtCMD_48:
 #_03C03D: REP #$30
 #_03C03F: LDA.w $0405
 #_03C042: SEC
 #_03C043: SBC.w #$03E8
 #_03C046: STA.w $0405
+
 #_03C049: LDA.w $0407
 #_03C04C: SBC.w #$0000
 #_03C04F: STA.w $0407
@@ -7442,21 +7847,28 @@ routine03C03D:
 #_03C075: JSR RelocateTextPointer
 #_03C078: RTS
 
-routine03C079:
+;===================================================================================================
+
+TextExtCMD_49:
 #_03C079: SEP #$30
+
 #_03C07B: LDA.w $07E0
 #_03C07E: CMP.b #$0A
 #_03C080: BCS .branch03C086
 
 #_03C082: JSR GetNextTextByte
+
 #_03C085: RTS
 
 .branch03C086
 #_03C086: JSR GetNextTextByte
 #_03C089: JSR RelocateTextPointer
+
 #_03C08C: RTS
 
-routine03C08D:
+;===================================================================================================
+
+TextExtCMD_4A:
 #_03C08D: SEP #$20
 #_03C08F: INC.w $0A3D
 
@@ -7518,6 +7930,8 @@ routine03C08D:
 #_03C0EE: DEC.w $0A3D
 #_03C0F1: RTS
 
+;===================================================================================================
+
 routine03C0F2:
 #_03C0F2: PHP
 #_03C0F3: REP #$30
@@ -7529,6 +7943,8 @@ routine03C0F2:
 #_03C0FC: LDX.w CharacterOffsets_bank03,Y
 #_03C0FF: PLY
 #_03C100: BRA .branch03C10B
+
+;===================================================================================================
 
 routine03C102:
 #_03C102: PHP
@@ -7564,7 +7980,9 @@ routine03C102:
 #_03C134: PLP
 #_03C135: RTS
 
-routine03C136:
+;===================================================================================================
+
+TextExtCMD_4B:
 #_03C136: REP #$30
 #_03C138: LDA.w #$0007
 #_03C13B: STA.w $0E00
@@ -7603,11 +8021,11 @@ routine03C136:
 #_03C182: STA.w $0A14
 #_03C185: STZ.w $0A16
 #_03C188: PHP
-#_03C189: LDA.w #$F782
+#_03C189: LDA.w #DrinkNamePointers
 #_03C18C: STA.w $00C3
 
 #_03C18F: SEP #$20
-#_03C191: LDA.b #$09
+#_03C191: LDA.b #DrinkNamePointers>>16
 #_03C193: STA.w $00C5
 #_03C196: JSR WriteTextIndexW0A39
 
@@ -7615,7 +8033,7 @@ routine03C136:
 #_03C19B: LDA.w #$001E
 #_03C19E: STA.w $0A33
 #_03C1A1: JSR routine038D1C
-#_03C1A4: JSR routine03B45D
+#_03C1A4: JSR TextExtCMD_36
 #_03C1A7: JSR routine0384F9
 #_03C1AA: JSL Update19XXuntil0100
 #_03C1AE: PLP
@@ -7657,8 +8075,10 @@ routine03C136:
 #_03C1F8: JSR RelocateTextPointer
 #_03C1FB: RTS
 
+;===================================================================================================
+
 ; TODO something with healing
-routine03C1FC:
+TextExtCMD_4C:
 #_03C1FC: REP #$30
 #_03C1FE: JSR GetNextTextByte
 #_03C201: AND.w #$00FF
@@ -7730,6 +8150,8 @@ routine03C1FC:
 #_03C28E: JSR RelocateTextPointer
 #_03C291: RTS
 
+;===================================================================================================
+
 HealPercetageOfHP:
 #_03C292: PHX
 #_03C293: LDA.w $1030,X
@@ -7747,6 +8169,8 @@ HealPercetageOfHP:
 .branch03C2AD
 #_03C2AD: STA.w $102E,X
 #_03C2B0: RTS
+
+;===================================================================================================
 
 HealPercetageOfMP:
 #_03C2B1: PHX
@@ -7766,9 +8190,11 @@ HealPercetageOfMP:
 #_03C2CC: STA.w $1032,X
 #_03C2CF: RTS
 
-routine03C2D0:
+;===================================================================================================
+
+TextExtCMD_4D:
 #_03C2D0: SEP #$20
-#_03C2D2: LDA.b #$09
+#_03C2D2: LDA.b #DrinkNamePointers>>16
 #_03C2D4: STA.w $00C5
 
 #_03C2D7: REP #$30
@@ -7778,12 +8204,14 @@ routine03C2D0:
 #_03C2E0: LDA.w $0BE5,Y
 #_03C2E3: AND.w #$00FF
 #_03C2E6: STA.w $0A39
-#_03C2E9: LDA.w #$F782
+#_03C2E9: LDA.w #DrinkNamePointers
 #_03C2EC: STA.w $00C3
 #_03C2EF: JSR WriteTextIndexW0A39
 #_03C2F2: RTS
 
-routine03C2F3:
+;===================================================================================================
+
+TextExtCMD_4E:
 #_03C2F3: REP #$30
 #_03C2F5: JSR GetNextTextByte
 #_03C2F8: STA.w $0E00
@@ -7805,6 +8233,8 @@ routine03C2F3:
 #_03C314: JSR RelocateTextPointer
 #_03C317: RTS
 
+;===================================================================================================
+
 data03C318:
 #_03C318: db $00,$01,$02,$03,$04,$05,$03,$04
 #_03C320: db $05,$03,$04,$05,$03,$04,$05,$06
@@ -7815,7 +8245,7 @@ data03C336:
 #_03C336: db $28,$32,$3C,$46,$4B,$50,$0C,$0F
 #_03C33E: db $12
 
-routine03C33F:
+TextExtCMD_4F:
 #_03C33F: JSL routine0F945E
 
 #_03C343: REP #$20
@@ -7863,7 +8293,9 @@ routine03C33F:
 #_03C39D: DEC.w $0A3D
 #_03C3A0: RTS
 
-routine03C3A1:
+;===================================================================================================
+
+TextExtCMD_52:
 #_03C3A1: REP #$30
 #_03C3A3: LDA.w #$0900
 #_03C3A6: STA.w $0E00
@@ -7906,51 +8338,75 @@ routine03C3A1:
 #_03C3E3: JSR GetNextTextByte
 #_03C3E6: RTS
 
-routine03C3E7:
+;===================================================================================================
+
+TextExtCMD_53:
 #_03C3E7: REP #$30
+
 #_03C3E9: LDA.w $0405
 #_03C3EC: SEC
 #_03C3ED: SBC.w $0A14
 #_03C3F0: STA.w $0405
+
 #_03C3F3: LDA.w $0407
 #_03C3F6: SBC.w $0A16
 #_03C3F9: STA.w $0407
+
 #_03C3FC: JSL ClipToRangeMoneyAndMAG
+
 #_03C400: JSL routine009F56
 #_03C404: JSL routine009FDE
+
 #_03C408: RTS
 
-routine03C409:
+;===================================================================================================
+
+TextExtCMD_55:
 #_03C409: REP #$30
+
 #_03C40B: LDA.w $0405
 #_03C40E: CLC
 #_03C40F: ADC.w $0A14
 #_03C412: STA.w $0405
+
 #_03C415: LDA.w $0407
 #_03C418: ADC.w $0A16
 #_03C41B: STA.w $0407
+
 #_03C41E: JSL ClipToRangeMoneyAndMAG
+
 #_03C422: JSL routine009F56
 #_03C426: JSL routine009FDE
+
 #_03C42A: RTS
 
-routine0FA412_bounce:
+;===================================================================================================
+
+TextExtCMD_56:
 #_03C42B: JSL routine0FA412
 #_03C42F: RTS
 
-routine0F9C77_bounce:
+;===================================================================================================
+
+TextExtCMD_57:
 #_03C430: JSL routine0F9C77
 #_03C434: RTS
 
-routine029E97_bounce:
+;===================================================================================================
+
+TextExtCMD_5E:
 #_03C435: JSL routine029E97
 #_03C439: RTS
 
-routine029FCC_bounce:
+;===================================================================================================
+
+TextExtCMD_60:
 #_03C43A: JSL routine029FCC
 #_03C43E: RTS
 
-routine03C43F:
+;===================================================================================================
+
+TextExtCMD_5F:
 #_03C43F: REP #$30
 #_03C441: STZ.w $0E00
 #_03C444: STZ.w $0E02
@@ -8023,6 +8479,8 @@ routine03C43F:
 #_03C4C4: JSR RelocateTextPointer
 #_03C4C7: RTS
 
+;===================================================================================================
+
 routine03C4C8:
 #_03C4C8: PHP
 #_03C4C9: SEP #$30
@@ -8048,29 +8506,36 @@ routine03C4C8:
 #_03C4E0: PLP
 #_03C4E1: RTS
 
-routine03C4E2:
+;===================================================================================================
+
+TextExtCMD_58:
 #_03C4E2: PHP
+
 #_03C4E3: SEP #$30
+
 #_03C4E5: JSR GetNextTextByte
 #_03C4E8: STA.w $0E00
+
 #_03C4EB: JSR routine03C4C8
 #_03C4EE: CPY.w $0E00
 #_03C4F1: BCS .branch03C4FB
 
 #_03C4F3: JSR GetNextTextByte
 #_03C4F6: JSR RelocateTextPointer
+
 #_03C4F9: PLP
 #_03C4FA: RTS
 
 .branch03C4FB
 #_03C4FB: JSR GetNextTextByte
+
 #_03C4FE: PLP
 #_03C4FF: RTS
 
 ;===================================================================================================
 ; TODO this looks interesting
 ;===================================================================================================
-routine03C500:
+TextExtCMD_59:
 #_03C500: PHP
 #_03C501: SEP #$30
 #_03C503: LDA.w $0C39
@@ -8093,7 +8558,9 @@ data03C523:
 #_03C523: db $CB,$DF,$D4,$BB,$E0,$B9,$E1,$C9
 #_03C52B: db $D6,$DE,$D5,$BC
 
-routine03C52F:
+;===================================================================================================
+
+TextExtCMD_5A:
 #_03C52F: SEP #$30
 #_03C531: LDA.w $0C39
 #_03C534: STA.w $0A50
@@ -8109,7 +8576,9 @@ routine03C52F:
 #_03C552: JSR TakeItemFromSomewhere
 #_03C555: RTS
 
-routine03C556:
+;===================================================================================================
+
+TextExtCMD_5B:
 #_03C556: PHP
 #_03C557: SEP #$30
 #_03C559: JSL routine0FA2B4
@@ -8127,93 +8596,140 @@ routine03C556:
 #_03C56F: PLP
 #_03C570: RTS
 
-routine0FA25E_bounce:
+;===================================================================================================
+
+TextExtCMD_5C:
 #_03C571: JSL routine0FA25E
 #_03C575: RTS
 
-routine0FA3BD_bounce:
+;===================================================================================================
+
+TextExtCMD_61:
 #_03C576: JSL routine0FA3BD
 #_03C57A: RTS
 
-routine0FA371_bounce:
+;===================================================================================================
+
+TextExtCMD_62:
 #_03C57B: JSL routine0FA371
 #_03C57F: RTS
 
-routine0FA14D_bounce:
+;===================================================================================================
+
+TextExtCMD_63:
 #_03C580: JSL routine0FA14D
 #_03C584: RTS
 
-routine0F9D99_bounce:
+;===================================================================================================
+
+TextExtCMD_64:
 #_03C585: JSL routine0F9D99
 #_03C589: RTS
 
-routine02A017_bounce:
+;===================================================================================================
+
+TextExtCMD_65:
 #_03C58A: JSL routine02A017
 #_03C58E: RTS
 
-routine03C58F:
+;===================================================================================================
+
+TextExtCMD_66:
 #_03C58F: SEP #$30
+
 #_03C591: LDA.b #$A7
 #_03C593: JSL routine0385C8
+
 #_03C597: LDA.b #$A8
 #_03C599: JSL routine0385C8
+
 #_03C59D: RTS
 
-routine03C59E:
+;===================================================================================================
+
+TextExtCMD_67:
 #_03C59E: JSL routine0F907A
 #_03C5A2: RTS
 
-routine03C5A3:
+;===================================================================================================
+
+TextExtCMD_68:
 #_03C5A3: JSL routine0F90C6
 #_03C5A7: RTS
 
-routine03C5A8:
+;===================================================================================================
+
+TextExtCMD_69:
 #_03C5A8: JSL routine0F90EB
 #_03C5AC: RTS
 
-routine03C5AD:
+;===================================================================================================
+
+TextExtCMD_6A:
 #_03C5AD: JSL routine0FAEF9
 #_03C5B1: RTS
 
-routine03C5B2:
+;===================================================================================================
+
+TextExtCMD_6B:
 #_03C5B2: JSL routine0F9D65
 #_03C5B6: RTS
 
-routine03C5B7:
+;===================================================================================================
+
+TextExtCMD_6C:
 #_03C5B7: JSL routine0F903F
 #_03C5BB: RTS
 
-routine03C5BC:
+;===================================================================================================
+
+TextExtCMD_6D:
 #_03C5BC: JSL routine0F8FA1
 #_03C5C0: RTS
 
-routine03C5C1:
+;===================================================================================================
+
+TextExtCMD_6E:
 #_03C5C1: JSL routine0F8FCF
 #_03C5C5: RTS
 
-routine03C5C6:
+;===================================================================================================
+
+TextExtCMD_6F:
 #_03C5C6: JSL routine0FA333
 #_03C5CA: RTS
 
-routine03C5CB:
+;===================================================================================================
+
+TextExtCMD_70:
 #_03C5CB: JSL routine0FA346
 #_03C5CF: RTS
 
-routine03C5D0:
+;===================================================================================================
+
+TextExtCMD_71:
 #_03C5D0: JSL routine0380FA
 #_03C5D4: RTS
 
-routine03C5D5:
+;===================================================================================================
+
+TextExtCMD_72:
 #_03C5D5: JSL routine0F916F
 #_03C5D9: RTS
 
-routine03C5DA:
+;===================================================================================================
+
+TextExtCMD_73:
 #_03C5DA: JSL routine0F9833
 #_03C5DE: RTS
 
-routine03C5DF:
+;===================================================================================================
+
+TextExtCMD_75:
 #_03C5DF: JSL routine0FA470
 #_03C5E3: RTS
+
+;===================================================================================================
 
 TextCommand_30:
 #_03C5E4: SEP #$30
@@ -8270,12 +8786,17 @@ TextCommand_30:
 #_03C640: STA.w $0A4A
 #_03C643: RTS
 
+;===================================================================================================
+
 TextCommand_31:
 #_03C644: SEP #$30
+
 #_03C646: JSR GetNextTextByte
 #_03C649: STA.w $0E00
+
 #_03C64C: JSR GetNextTextByte
 #_03C64F: STA.w $0E02
+
 #_03C652: LDA.w $040F
 #_03C655: AND.b #$F0
 #_03C657: CMP.b #$80
@@ -8309,6 +8830,8 @@ TextCommand_31:
 #_03C686: BNE .branch03C670
 #_03C688: RTS
 
+;===================================================================================================
+
 routine03C689:
 #_03C689: LDA.w $0E02
 #_03C68C: JSR RelocateTextPointer
@@ -8317,19 +8840,27 @@ routine03C689:
 #_03C696: RTS
 
 TextCommand_32:
-#_03C697: JMP routine03AA0A
+#_03C697: JMP TextExtCMD_09
+
+;===================================================================================================
 
 ; TODO POSSIBLY UNUSED ROUTINE
 routine03C69A:
-#_03C69A: JMP .branch03A99F
+#_03C69A: JMP TextExtCMD_08
+
+;===================================================================================================
 
 TextCommand_34:
 #_03C69D: SEP #$30
+
 #_03C69F: JSR GetNextTextByte
 #_03C6A2: TAY
+
 #_03C6A3: LDA.w data03C6C0,Y
 #_03C6A6: STA.w $0E00
+
 #_03C6A9: JSL GetRandomInt
+
 #_03C6AD: LDA.w $0ED5
 #_03C6B0: CMP.w $0E00
 #_03C6B3: BCS .branch03C6BC
@@ -8344,6 +8875,8 @@ TextCommand_34:
 
 data03C6C0:
 #_03C6C0: db $80,$40,$20,$10,$08,$04
+
+;===================================================================================================
 
 TextCommand_35:
 #_03C6C6: REP #$30
@@ -8461,6 +8994,8 @@ TextCommand_36:
 #_03C798: JSR RelocateTextPointer
 #_03C79B: RTS
 
+;===================================================================================================
+
 TextCommand_37:
 #_03C79C: REP #$30
 #_03C79E: JSR GetNextTextByte
@@ -8487,6 +9022,8 @@ TextCommand_37:
 
 data03C7CE:
 #_03C7CE: db $0F,$1F,$3F
+
+;===================================================================================================
 
 TextCommand_38:
 #_03C7D1: REP #$30
@@ -8520,6 +9057,8 @@ TextCommand_38:
 data03C810:
 #_03C810: db $07,$0F,$1F
 
+;===================================================================================================
+
 TextCommand_39:
 #_03C813: REP #$30
 #_03C815: LDA.w $1010
@@ -8542,6 +9081,8 @@ TextCommand_39:
 #_03C837: JSR GetNextTextByte
 #_03C83A: JSR RelocateTextPointer
 #_03C83D: RTS
+
+;===================================================================================================
 
 TextCommand_3B:
 #_03C83E: REP #$30
@@ -8641,6 +9182,8 @@ TextCommand_3C:
 #_03C8F4: JSR RelocateTextPointer
 #_03C8F7: RTS
 
+;===================================================================================================
+
 TextCommand_3D:
 #_03C8F8: REP #$30
 #_03C8FA: STZ.w $0A44
@@ -8712,6 +9255,8 @@ routine03C95C:
 #_03C982: JSL routine0F945E
 #_03C986: RTS
 
+;===================================================================================================
+
 routine03C987:
 #_03C987: REP #$30
 #_03C989: JSL routine03CCB1
@@ -8729,6 +9274,8 @@ routine03C987:
 #_03C9AD: JSL routine0F945E
 #_03C9B1: RTS
 
+;===================================================================================================
+
 routine03C9B2:
 #_03C9B2: REP #$30
 #_03C9B4: LDA.w #$00B2
@@ -8745,6 +9292,8 @@ routine03C9B2:
 
 .EXIT_03C9CE
 #_03C9CE: RTS
+
+;===================================================================================================
 
 routine03C9CF:
 #_03C9CF: REP #$30
@@ -8765,6 +9314,8 @@ routine03C9CF:
 .EXIT_03C9F1
 #_03C9F1: RTS
 
+;===================================================================================================
+
 routine03C9F2:
 #_03C9F2: REP #$30
 #_03C9F4: LDA.w #$00B4
@@ -8781,6 +9332,8 @@ routine03C9F2:
 
 .EXIT_03CA0E
 #_03CA0E: RTS
+
+;===================================================================================================
 
 routine03CA0F:
 #_03CA0F: REP #$20
@@ -8803,6 +9356,8 @@ routine03CA0F:
 .branch03CA2F
 #_03CA2F: INC A
 #_03CA30: RTS
+
+;===================================================================================================
 
 TextCommand_3E:
 #_03CA31: REP #$30
@@ -8964,6 +9519,8 @@ TextCommand_3E:
 
 #_03CB33: RTS
 
+;===================================================================================================
+
 TextCommand_3F:
 #_03CB34: REP #$30
 #_03CB36: JSR GetNextTextByte
@@ -8975,6 +9532,8 @@ TextCommand_3F:
 #_03CB44: STA.w $1002
 #_03CB47: JSL routine00A17E
 #_03CB4B: RTS
+
+;===================================================================================================
 
 TextCommand_40:
 #_03CB4C: REP #$30
@@ -9036,11 +9595,15 @@ routine03CBAE:
 #_03CBB5: STA.w $0A46
 #_03CBB8: RTS
 
+;===================================================================================================
+
 routine03CBB9:
 #_03CBB9: JSL routine03CCB1
 #_03CBBD: JSR routine03CBC4
 #_03CBC0: STA.w $0A46
 #_03CBC3: RTS
+
+;===================================================================================================
 
 routine03CBC4:
 #_03CBC4: STA.w $0E10
@@ -9066,9 +9629,13 @@ routine03CBC4:
 #_03CBF7: LDA.w $0E00
 #_03CBFA: RTS
 
+;===================================================================================================
+
 routine03CBFB:
 #_03CBFB: STZ.w $0A46
 #_03CBFE: RTS
+
+;===================================================================================================
 
 routine03CBFF:
 #_03CBFF: JSL GetRandomInt
@@ -9079,6 +9646,8 @@ routine03CBFF:
 
 #_03CC0E: STA.w $0A46
 #_03CC11: RTS
+
+;===================================================================================================
 
 routine03CC12:
 #_03CC12: REP #$30
@@ -9109,6 +9678,8 @@ data03CC60:
 #_03CC90: db $EF,$FF,$EF,$F0,$F7,$FF,$FF,$5F
 #_03CC98: db $9F,$DF,$EF,$FF
 
+;===================================================================================================
+
 routine03C99C:
 #_03CC9C: PHP
 #_03CC9D: PHB
@@ -9121,14 +9692,16 @@ routine03C99C:
 #_03CCA8: ASL A
 #_03CCA9: ASL A
 #_03CCAA: ASL A
-#_03CCAB: BNE .EXIT_03CCAE
+#_03CCAB: BNE .exit
 
 #_03CCAD: INC A
 
-.EXIT_03CCAE
+.exit
 #_03CCAE: PLB
 #_03CCAF: PLP
 #_03CCB0: RTL
+
+;===================================================================================================
 
 routine03CCB1:
 #_03CCB1: PHP
@@ -9144,6 +9717,8 @@ routine03CCB1:
 #_03CCBF: PLB
 #_03CCC0: PLP
 #_03CCC1: RTL
+
+;===================================================================================================
 
 TextCommand_5D:
 #_03CCC2: REP #$30
@@ -9242,6 +9817,8 @@ routine03CD39:
 #_03CD70: PLP
 #_03CD71: RTS
 
+;===================================================================================================
+
 routine03CD72:
 #_03CD72: SEP #$30
 #_03CD74: LDA.b #$B4
@@ -9317,6 +9894,8 @@ data03CDF1:
 #_03CDF1: db $07,$05,$04,$0A,$0A,$08,$09,$04
 #_03CDF9: db $09,$07,$08,$05
 
+;===================================================================================================
+
 TextCommand_41:
 #_03CDFD: REP #$30
 #_03CDFF: JSR GetNextTextByte
@@ -9340,6 +9919,8 @@ TextCommand_41:
 
 data03CE1F:
 #_03CE1F: dw $0000,$0001,$0002
+
+;===================================================================================================
 
 TextCommand_42:
 #_03CE25: REP #$30
@@ -9370,6 +9951,8 @@ TextCommand_42:
 
 #_03CE4E: RTS
 
+;===================================================================================================
+
 TextCommand_43:
 #_03CE4F: REP #$30
 #_03CE51: LDA.w $0409
@@ -9392,6 +9975,8 @@ TextCommand_43:
 #_03CE76: SBC.w $0E02
 #_03CE79: STA.w $040B
 #_03CE7C: RTS
+
+;===================================================================================================
 
 TextCommand_44:
 #_03CE7D: REP #$30
@@ -9423,6 +10008,8 @@ TextCommand_44:
 
 #_03CEAA: RTS
 
+;===================================================================================================
+
 TextCommand_45:
 #_03CEAB: REP #$30
 #_03CEAD: JSR GetNextTextByte
@@ -9451,6 +10038,8 @@ TextCommand_45:
 .branch03CED1
 #_03CED1: STZ.w $0A40
 #_03CED4: RTS
+
+;===================================================================================================
 
 TextCommand_46:
 #_03CED5: REP #$30
@@ -9481,6 +10070,8 @@ TextCommand_46:
 #_03CEFB: STZ.w $0A42
 #_03CEFE: RTS
 
+;===================================================================================================
+
 TextCommand_47:
 #_03CEFF: REP #$30
 #_03CF01: LDX.w #$0000
@@ -9502,6 +10093,8 @@ TextCommand_47:
 #_03CF20: LDA.w $0E00,X
 #_03CF23: JSR RelocateTextPointer
 #_03CF26: RTS
+
+;===================================================================================================
 
 TextCommand_48:
 #_03CF27: SEP #$20
@@ -9571,6 +10164,8 @@ TextCommand_48:
 #_03CFAF: DEC.w $0A3D
 #_03CFB2: RTS
 
+;===================================================================================================
+
 data03CFB3:
 #_03CFB3: db $16,$18,$19,$1A,$1B,$16,$18,$19
 #_03CFBB: db $1A,$1B,$1C,$1C,$1C
@@ -9578,6 +10173,8 @@ data03CFB3:
 data03CFC0:
 #_03CFC0: db $04,$03,$03,$01,$01,$04,$03,$03
 #_03CFC8: db $01,$01,$01,$01,$01
+
+;===================================================================================================
 
 TextCommand_4D:
 #_03CFCD: SEP #$20
@@ -9593,19 +10190,23 @@ TextCommand_4D:
 #_03CFE5: JSR WriteTextIndexW0A39
 #_03CFE8: RTS
 
+;===================================================================================================
+
 TextCommand_4E:
 #_03CFE9: SEP #$20
-#_03CFEB: LDA.b #DATA_09F429>>16
+#_03CFEB: LDA.b #ClassNamePointers>>16
 #_03CFED: STA.w $00C5
 
 #_03CFF0: REP #$30
 #_03CFF2: LDX.w $0526
 #_03CFF5: LDA.w $1006,X
 #_03CFF8: STA.w $0A39
-#_03CFFB: LDA.w #DATA_09F429>>0
+#_03CFFB: LDA.w #ClassNamePointers>>0
 #_03CFFE: STA.w $00C3
 #_03D001: JSR WriteTextIndexW0A39
 #_03D004: RTS
+
+;===================================================================================================
 
 routine03D005:
 #_03D005: PHP
@@ -9623,6 +10224,8 @@ data03D014:
 #_03D024: db $04,$05,$06,$07,$07,$07,$0B,$0B
 #_03D02C: db $0B,$01,$02,$04,$05,$06,$07,$09
 #_03D034: db $09,$09,$0A,$0C
+
+;===================================================================================================
 
 TextCommand_56:
 #_03D038: SEP #$30
@@ -9648,10 +10251,14 @@ routine03D056:
 #_03D059: JSR routine03D096
 #_03D05C: RTS
 
+;===================================================================================================
+
 routine03D05D:
 #_03D05D: JSR routine03D096
 #_03D060: JSR routine03D0DF
 #_03D063: RTS
+
+;===================================================================================================
 
 routine03D064:
 #_03D064: SEP #$20
@@ -9660,6 +10267,8 @@ routine03D064:
 #_03D06B: STZ.w $0A51
 #_03D06E: JSR TextCommand_23
 #_03D071: RTS
+
+;===================================================================================================
 
 routine03D072:
 #_03D072: SEP #$20
@@ -9678,6 +10287,8 @@ TextCommand_23_localbounce:
 #_03D084: JSR TextCommand_23
 #_03D087: RTS
 
+;===================================================================================================
+
 routine03D088:
 #_03D088: SEP #$20
 #_03D08A: LDA.b #$B4
@@ -9685,6 +10296,8 @@ routine03D088:
 #_03D08F: STZ.w $0A51
 #_03D092: JSR TextCommand_23
 #_03D095: RTS
+
+;===================================================================================================
 
 routine03D096:
 #_03D096: REP #$30
@@ -9708,6 +10321,8 @@ routine03D096:
 
 #_03D0BA: RTS
 
+;===================================================================================================
+
 routine03D0BB:
 #_03D0BB: LDA.w #$00EC
 #_03D0BE: JSL TestGameProgressBit
@@ -9727,6 +10342,8 @@ routine03D0BB:
 #_03D0D8: INC.w $0A33
 #_03D0DB: INC.w $0A33
 #_03D0DE: RTS
+
+;===================================================================================================
 
 routine03D0DF:
 #_03D0DF: LDA.w #$20A7
@@ -9771,6 +10388,8 @@ TextCommand_59:
 #_03D13A: JSR GetNextTextByte
 #_03D13D: JSR RelocateTextPointer
 #_03D140: RTS
+
+;===================================================================================================
 
 TextCommand_5A:
 #_03D141: REP #$30
@@ -9974,6 +10593,8 @@ TextCommand_5E:
 #_03D2D4: STA.w $0A42
 #_03D2D7: JMP TextCommand_2F
 
+;===================================================================================================
+
 routine03D2DA:
 #_03D2DA: REP #$30
 #_03D2DC: LDX.w #$0060
@@ -9991,6 +10612,8 @@ routine03D2DA:
 #_03D2F0: JSR GetNextTextByte
 #_03D2F3: JSR RelocateTextPointer
 #_03D2F6: RTS
+
+;===================================================================================================
 
 routine03D2F7:
 #_03D2F7: REP #$30
@@ -10017,6 +10640,8 @@ routine03D2F7:
 #_03D31B: JSR RelocateTextPointer
 #_03D31E: RTS
 
+;===================================================================================================
+
 routine03D31F:
 #_03D31F: PHP
 #_03D320: REP #$30
@@ -10025,6 +10650,8 @@ routine03D31F:
 #_03D326: ADC.w $0514
 #_03D329: PLP
 #_03D32A: RTL
+
+;===================================================================================================
 
 routine03D32B:
 #_03D32B: REP #$30
@@ -10039,6 +10666,8 @@ routine03D32B:
 #_03D33A: JSR GetNextTextByte
 #_03D33D: JSR RelocateTextPointer
 #_03D340: RTS
+
+;===================================================================================================
 
 routine03D341:
 #_03D341: PHP
@@ -10171,6 +10800,8 @@ routine03D3B2:
 #_03D410: SEP #$20
 #_03D412: RTS
 
+;===================================================================================================
+
 routine03D413:
 #_03D413: SEP #$30
 #_03D415: LDA.w $0BA3
@@ -10265,6 +10896,8 @@ routine03D4CC:
 #_03D4F9: PLP
 #_03D4FA: RTS
 
+;===================================================================================================
+
 routine03D4FB:
 #_03D4FB: PHP
 #_03D4FC: REP #$30
@@ -10314,6 +10947,8 @@ TextWhiteSpaceFill:
 #_03D536: PLX
 #_03D537: RTS
 
+;===================================================================================================
+
 routine03D538:
 #_03D538: PHP
 #_03D539: SEP #$30
@@ -10356,6 +10991,8 @@ routine03D559:
 #_03D566: TAX
 #_03D567: PLP
 #_03D568: RTS
+
+;===================================================================================================
 
 routine03D569:
 #_03D569: PHP
@@ -10424,6 +11061,8 @@ routine03D569:
 #_03D5FD: PLP
 #_03D5FE: RTS
 
+;===================================================================================================
+
 routine03D5FF:
 #_03D5FF: PHX
 #_03D600: LDX.w #$0007
@@ -10469,6 +11108,8 @@ routine03D61A:
 
 #_03D646: PLP
 #_03D647: RTS
+
+;===================================================================================================
 
 routine03D648:
 #_03D648: LDA.w $0E00
@@ -10563,6 +11204,8 @@ routine03D746:
 #_03D753: PLP
 #_03D754: RTS
 
+;===================================================================================================
+
 routine03D775:
 #_03D755: PHP
 #_03D756: REP #$20
@@ -10591,6 +11234,8 @@ routine03D775:
 #_03D778: PLB
 #_03D779: PLP
 #_03D77A: RTL
+
+;===================================================================================================
 
 HEXtoDEC_rightaligned_tiles_rtl:
 #_03D77B: PHP
@@ -10984,6 +11629,8 @@ HEXtoDEC_32bit_Bank03:
 #_03DA23: JSL routine00A056
 #_03DA27: RTS
 
+;===================================================================================================
+
 routine03DA28:
 #_03DA28: REP #$20
 #_03DA2A: LDA.w $0E00
@@ -11040,6 +11687,8 @@ routine03DA28:
 #_03DA77: DEC.w $107C
 #_03DA7A: RTS
 
+;===================================================================================================
+
 routine03DA7B:
 #_03DA7B: REP #$30
 #_03DA7D: LDA.w $0A0B
@@ -11094,6 +11743,8 @@ routine03DA7B:
 #_03DAD8: BPL .branch03DACA
 
 #_03DADA: RTS
+
+;===================================================================================================
 
 routine03DADB:
 #_03DADB: JSR TextWhiteSpaceFill
@@ -11262,6 +11913,8 @@ routine03DBD6:
 #_03DC59: STA.w $0A2C
 #_03DC5C: RTS
 
+;===================================================================================================
+
 routine03DC5D:
 #_03DC5D: SEP #$20
 #_03DC5F: LDA.b #$09
@@ -11282,6 +11935,8 @@ routine03DC5D:
 #_03DC7B: AND.w #$0003
 #_03DC7E: JSL WriteCharacterName
 #_03DC82: RTS
+
+;===================================================================================================
 
 routine03DC83:
 #_03DC83: SEP #$30
@@ -11329,6 +11984,8 @@ routine03DC83:
 .branch03DCD6
 #_03DCD6: JSL routine02C8E9
 #_03DCDA: RTS
+
+;===================================================================================================
 
 routine03DCDB:
 #_03DCDB: SEP #$20
@@ -11400,6 +12057,8 @@ routine03DCDB:
 #_03DD43: STA.w $0BE1
 #_03DD46: RTS
 
+;===================================================================================================
+
 routine03DD47:
 #_03DD47: REP #$30
 #_03DD49: LDA.w $0B3C
@@ -11419,6 +12078,8 @@ routine03DD47:
 #_03DD63: LDA.w data03DBB6,Y
 #_03DD66: STA.w $0BA1
 #_03DD69: RTS
+
+;===================================================================================================
 
 routine03DD6A:
 #_03DD6A: SEP #$30
@@ -11451,6 +12112,8 @@ routine03DD6A:
 .exit
 #_03DD93: RTS
 
+;===================================================================================================
+
 routine03DD94:
 #_03DD94: JSR routine03DD6A
 
@@ -11466,6 +12129,8 @@ routine03DD94:
 #_03DDA5: STA.w $1000,X
 #_03DDA8: JSL routine0F853F
 #_03DDAC: RTS
+
+;===================================================================================================
 
 routine03DDAD:
 #_03DDAD: REP #$30
@@ -11506,6 +12171,8 @@ routine03DDAD:
 #_03DDEE: STA.w $0A3B
 #_03DDF1: RTS
 
+;===================================================================================================
+
 routine03DDF2:
 #_03DDF2: REP #$30
 #_03DDF4: LDX.w $0BA1
@@ -11543,17 +12210,23 @@ routine03DE10:
 #_03DE2A: STA.w $1032,X
 #_03DE2D: RTS
 
+;===================================================================================================
+
 routine03DE2E:
 #_03DE2E: LDA.w $1002,X
 #_03DE31: AND.w #$C700
 #_03DE34: STA.w $1002,X
 #_03DE37: RTS
 
+;===================================================================================================
+
 routine03DE38:
 #_03DE38: LDA.w $1002,X
 #_03DE3B: AND.w #$F8FF
 #_03DE3E: STA.w $1002,X
 #_03DE41: RTS
+
+;===================================================================================================
 
 routine03DE42:
 #_03DE42: LDA.w $1002,X
@@ -11562,6 +12235,8 @@ routine03DE42:
 #_03DE4B: LDA.w #$0001
 #_03DE4E: STA.w $102E,X
 #_03DE51: RTS
+
+;===================================================================================================
 
 routine03DE52:
 #_03DE52: REP #$30
@@ -11601,7 +12276,9 @@ routine03DE52:
 data03DE9E:
 #_03DE9E: db $17,$19,$18,$0F,$23,$9A
 
-routine03DEA4:
+;===================================================================================================
+
+TextExtCMD_51:
 #_03DEA4: REP #$30
 #_03DEA6: STZ.w $0E00
 #_03DEA9: STZ.w $0E02
@@ -11673,13 +12350,17 @@ routine03DEA4:
 #_03DF14: JSR RelocateTextPointer
 #_03DF17: RTS
 
-routine03DF18:
+;===================================================================================================
+
+TextExtCMD_50:
 #_03DF18: REP #$30
 #_03DF1A: JSL routine0F9B8A
 #_03DF1E: JSL routine0F9BB1
 #_03DF22: RTS
 
-routine03DF23:
+;===================================================================================================
+
+TextExtCMD_1E:
 #_03DF23: REP #$30
 #_03DF25: LDX.w #$0016
 #_03DF28: LDA.w #$0000
@@ -11805,6 +12486,8 @@ routine03DFBD:
 #_03DFF3: CMP.w $0E00
 #_03DFF6: RTS
 
+;===================================================================================================
+
 routine03DFF7:
 #_03DFF7: SEP #$30
 #_03DFF9: LDA.b #$10
@@ -11922,6 +12605,8 @@ routine03E0BD:
 #_03E0C3: PLB
 #_03E0C4: RTL
 
+;===================================================================================================
+
 routine03E0C5:
 #_03E0C5: PHP
 #_03E0C6: SEP #$20
@@ -11952,6 +12637,8 @@ routine03E0C5:
 #_03E0EE: JSL routine0F8F26
 #_03E0F2: PLP
 #_03E0F3: RTS
+
+;===================================================================================================
 
 routine03E0F4:
 #_03E0F4: PHP
@@ -11987,6 +12674,8 @@ routine03E0F4:
 #_03E127: JSL routine0F8F34
 #_03E12B: PLP
 #_03E12C: RTS
+
+;===================================================================================================
 
 routine03E12D:
 #_03E12D: PHP
@@ -12095,6 +12784,8 @@ routine03E1AB:
 #_03E1E2: JSL Update19XXuntil0100
 #_03E1E6: RTS
 
+;===================================================================================================
+
 routine03E1E7:
 #_03E1E7: REP #$20
 #_03E1E9: LDA.w $0B5F
@@ -12140,14 +12831,14 @@ routine03E1E7:
 #_03E229: SEP #$20
 #_03E22B: LDA.b #$04
 #_03E22D: STA.w $0A33
-#_03E230: LDA.b #DATA_09F429>>16
+#_03E230: LDA.b #ClassNamePointers>>16
 #_03E232: STA.w $00C5
 
 #_03E235: REP #$20
 #_03E237: TXA
 #_03E238: ASL A
 #_03E239: TAX
-#_03E23A: LDA.w #DATA_09F429>>0
+#_03E23A: LDA.w #ClassNamePointers>>0
 #_03E23D: STA.w $00C3
 #_03E240: LDA.w $09AC,X
 #_03E243: AND.w #$00FF
@@ -12279,11 +12970,11 @@ routine03E1E7:
 
 #_03E30F: LDA.b #$28
 #_03E311: STA.w $0A33
-#_03E314: LDA.b #DATA_09F429>>16
+#_03E314: LDA.b #ClassNamePointers>>16
 #_03E316: STA.w $00C5
 
 #_03E319: REP #$20
-#_03E31B: LDA.w #DATA_09F429>>0
+#_03E31B: LDA.w #ClassNamePointers>>0
 #_03E31E: STA.w $00C3
 #_03E321: LDA.w $0C0D
 #_03E324: AND.w #$00FF
@@ -12331,6 +13022,8 @@ routine03E1E7:
 
 .EXIT_03E368
 #_03E368: RTS
+
+;===================================================================================================
 
 routine03E369:
 #_03E369: JSL Update19XXuntil0100
@@ -12436,11 +13129,11 @@ routine03E41C:
 #_03E432: JSL routine0385C8
 #_03E436: LDA.b #$04
 #_03E438: STA.w $0A33
-#_03E43B: LDA.b #DATA_09F429>>16
+#_03E43B: LDA.b #ClassNamePointers>>16
 #_03E43D: STA.w $00C5
 
 #_03E440: REP #$20
-#_03E442: LDA.w #DATA_09F429>>0
+#_03E442: LDA.w #ClassNamePointers>>0
 #_03E445: STA.w $00C3
 #_03E448: LDA.w $0BF3,X
 #_03E44B: AND.w #$00FF
@@ -12575,6 +13268,8 @@ routine03E41C:
 #_03E514: LDA.b #$20
 #_03E516: STA.w $0A2C
 #_03E519: RTS
+
+;===================================================================================================
 
 routine03E51A:
 #_03E51A: SEP #$20
@@ -12831,6 +13526,8 @@ routine03E640:
 #_03E68D: LDA.b #$0E
 #_03E68F: RTS
 
+;===================================================================================================
+
 routine03E690:
 #_03E690: REP #$30
 #_03E692: LDA.w $0A3B
@@ -12882,6 +13579,8 @@ routine03E690:
 #_03E6D8: LDA.w #$0006
 #_03E6DB: STA.w $0C11
 #_03E6DE: RTS
+
+;===================================================================================================
 
 routine03E6DF:
 #_03E6DF: PHP
@@ -13086,6 +13785,8 @@ routine03EA3F:
 #_03EA5E: STA.w $0BFF,X
 #_03EA61: RTS
 
+;===================================================================================================
+
 routine03EA62:
 #_03EA62: REP #$30
 #_03EA64: LDA.w #$FFFF
@@ -13095,6 +13796,8 @@ routine03EA62:
 #_03EA70: LDA.w #$0006
 #_03EA73: STA.w $0C11
 #_03EA76: RTS
+
+;===================================================================================================
 
 routine03EA77:
 #_03EA77: SEP #$20
@@ -13127,6 +13830,8 @@ routine03EA83:
 #_03EAA3: STA.w $0BED
 #_03EAA6: JSR routine03F230
 #_03EAA9: RTS
+
+;===================================================================================================
 
 routine03EAAA:
 #_03EAAA: REP #$30
@@ -13378,6 +14083,8 @@ routine03EC0C:
 #_03ECA5: STA.w $0C0D
 #_03ECA8: RTS
 
+;===================================================================================================
+
 routine03ECA9:
 #_03ECA9: DEC.w $0C0B
 #_03ECAC: LDA.w $0C0D
@@ -13403,6 +14110,8 @@ routine03ECA9:
 #_03ECC8: BMI .branch03ECBD
 
 #_03ECCA: RTS
+
+;===================================================================================================
 
 routine03ECCB:
 #_03ECCB: INC.w $0C0B
@@ -13502,6 +14211,8 @@ routine03EDFD:
 .branch03EE12
 #_03EE12: STY.w $0C0D
 #_03EE15: RTS
+
+;===================================================================================================
 
 routine03EE16:
 #_03EE16: LDA.w $0BF3
@@ -13674,6 +14385,8 @@ routine03EF23:
 #_03EF69: STA.w $0C0B
 #_03EF6C: RTS
 
+;===================================================================================================
+
 routine03EF6D:
 #_03EF6D: STA.w $0E00
 #_03EF70: TXA
@@ -13712,6 +14425,8 @@ routine03EF6D:
 #_03EFB6: STA.w $0C0B
 #_03EFB9: RTS
 
+;===================================================================================================
+
 routine03EFBA:
 #_03EFBA: PHP
 #_03EFBB: REP #$30
@@ -13725,6 +14440,8 @@ routine03EFBA:
 #_03EFC8: TAX
 #_03EFC9: PLP
 #_03EFCA: RTS
+
+;===================================================================================================
 
 routine03EFCB:
 #_03EFCB: REP #$30
@@ -14113,6 +14830,8 @@ routine03F258:
 #_03F283: JSR routine03F237
 #_03F286: RTS
 
+;===================================================================================================
+
 routine03F287:
 #_03F287: REP #$30
 #_03F289: STZ.w $0B4F
@@ -14388,6 +15107,8 @@ routine03F524:
 #_03F527: CMP.w $0BF3,X
 #_03F52A: RTS
 
+;===================================================================================================
+
 routine03F52B:
 #_03F52B: PHX
 #_03F52C: PHP
@@ -14442,6 +15163,8 @@ routine03F52B:
 #_03F576: PLX
 #_03F577: RTS
 
+;===================================================================================================
+
 routine03F578:
 #_03F578: REP #$30
 #_03F57A: LDA.w #$000A
@@ -14488,6 +15211,8 @@ routine03F578:
 #_03F5D0: STA.w $0C01
 #_03F5D3: JSR routine03EA83
 #_03F5D6: RTS
+
+;===================================================================================================
 
 routine03F5D7:
 #_03F5D7: REP #$30
@@ -14805,6 +15530,8 @@ data03F83B:
 
 #_03F865: RTS
 
+;===================================================================================================
+
 routine03F866:
 #_03F866: LDA.w $0BF3,X
 #_03F869: PHA
@@ -14831,6 +15558,8 @@ routine03F866:
 #_03F89A: PLA
 #_03F89B: STA.w $0BFF,Y
 #_03F89E: RTS
+
+;===================================================================================================
 
 routine03F89F:
 #_03F89F: REP #$30
@@ -14867,6 +15596,8 @@ routine03F89F:
 
 .exit
 #_03F8DF: RTS
+
+;===================================================================================================
 
 routine03F8E0:
 #_03F8E0: REP #$30
@@ -15010,6 +15741,8 @@ routine03F9A0:
 #_03F9B5: PLX
 #_03F9B6: RTS
 
+;===================================================================================================
+
 routine03F9B7:
 #_03F9B7: PHP
 #_03F9B8: REP #$30
@@ -15044,6 +15777,8 @@ routine03F9B7:
 #_03F9F2: PLB
 #_03F9F3: PLP
 #_03F9F4: RTL
+
+;===================================================================================================
 
 routine03F9F5:
 #_03F9F5: PHP
@@ -15128,6 +15863,8 @@ routine03F9F5:
 #_03FAAC: PLP
 #_03FAAD: RTS
 
+;===================================================================================================
+
 routine03FAAE:
 #_03FAAE: PHP
 #_03FAAF: JSL DarkenScreen
@@ -15174,6 +15911,8 @@ routine03FAAE:
 #_03FB20: PLP
 #_03FB21: RTS
 
+;===================================================================================================
+
 routine03FB22:
 #_03FB22: PHP
 #_03FB23: SEP #$30
@@ -15196,6 +15935,8 @@ routine03FB22:
 
 #_03FB43: PLP
 #_03FB44: RTS
+
+;===================================================================================================
 
 routine03FB45:
 #_03FB45: PHP
@@ -15260,6 +16001,8 @@ routine03FB45:
 #_03FBB5: PLP
 #_03FBB6: RTL
 
+;===================================================================================================
+
 routine03FBB7:
 #_03FBB7: PHP
 #_03FBB8: SEP #$30
@@ -15284,6 +16027,8 @@ routine03FBB7:
 .EXIT_03FBE1
 #_03FBE1: PLP
 #_03FBE2: RTS
+
+;===================================================================================================
 
 routine03FBE3:
 #_03FBE3: PHP
@@ -15321,6 +16066,8 @@ routine03FBE3:
 #_03FC0E: CLC
 #_03FC0F: RTS
 
+;===================================================================================================
+
 routine03FC10:
 #_03FC10: PHP
 #_03FC11: REP #$30
@@ -15349,14 +16096,14 @@ routine03FC10:
 #_03FC3F: SEP #$20
 #_03FC41: LDA.b #$04
 #_03FC43: STA.w $0A33
-#_03FC46: LDA.b #DATA_09F429>>16
+#_03FC46: LDA.b #ClassNamePointers>>16
 #_03FC48: STA.w $00C5
 
 #_03FC4B: REP #$20
 #_03FC4D: TXA
 #_03FC4E: ASL A
 #_03FC4F: TAX
-#_03FC50: LDA.w #DATA_09F429>>0
+#_03FC50: LDA.w #ClassNamePointers>>0
 #_03FC53: STA.w $00C3
 #_03FC56: LDA.w $09AC,X
 #_03FC59: AND.w #$00FF
@@ -15465,6 +16212,8 @@ routine03FC10:
 #_03FD15: PLP
 #_03FD16: RTS
 
+;===================================================================================================
+
 routine03FD17:
 #_03FD17: PHP
 #_03FD18: REP #$30
@@ -15503,14 +16252,14 @@ routine03FD17:
 #_03FD55: SEP #$20
 #_03FD57: LDA.b #$04
 #_03FD59: STA.w $0A33
-#_03FD5C: LDA.b #DATA_09F429>>16
+#_03FD5C: LDA.b #ClassNamePointers>>16
 #_03FD5E: STA.w $00C5
 
 #_03FD61: REP #$20
 #_03FD63: TXA
 #_03FD64: ASL A
 #_03FD65: TAX
-#_03FD66: LDA.w #DATA_09F429>>0
+#_03FD66: LDA.w #ClassNamePointers>>0
 #_03FD69: STA.w $00C3
 #_03FD6C: LDA.w $09AC,X
 #_03FD6F: AND.w #$00FF
@@ -15629,6 +16378,8 @@ routine03FD17:
 .EXIT_03FE3C
 #_03FE3C: PLP
 #_03FE3D: RTS
+
+;===================================================================================================
 
 routine03FE3E:
 #_03FE3E: PHX
@@ -15798,6 +16549,8 @@ UnusedThing03FEF4:
 .EXIT_03FF6D
 #_03FF6D: PLP
 #_03FF6E: RTS
+
+;===================================================================================================
 
 routine03FF6F:
 #_03FF6F: PHX

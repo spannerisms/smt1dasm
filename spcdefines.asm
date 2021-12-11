@@ -1,85 +1,3 @@
-struct DSP $F0
-	.Test: skip 1			; $F0 don't write here
-	.Control: skip 1		; $F1
-	.WriteAddr: skip 1		; $F2
-	.WriteData: skip 1		; $F3
-	.Port0: skip 1			; $F4
-	.Port1: skip 1			; $F5
-	.Port2: skip 1			; $F6
-	.Port3: skip 1			; $F7
-	.AUXIO4: skip 1			; $F8 not connected to ricoh
-	.AUXIO5: skip 1			; $F9 not connected to ricoh
-	.Timer0: skip 1			; $FA
-	.Timer1: skip 1			; $FB
-	.Timer2: skip 1			; $FC
-	.Counter0: skip 1		; $FD
-	.Counter1: skip 1		; $FE
-	.Counter2: skip 1		; $FF
-endstruct
-
-macro DSP_channel_defines(name, lowbyte)
-	!DSP_CH0_<name> #= $00|(<lowbyte>&$F)
-	!DSP_CH1_<name> #= $10|(<lowbyte>&$F)
-	!DSP_CH2_<name> #= $20|(<lowbyte>&$F)
-	!DSP_CH3_<name> #= $30|(<lowbyte>&$F)
-	!DSP_CH4_<name> #= $40|(<lowbyte>&$F)
-	!DSP_CH5_<name> #= $50|(<lowbyte>&$F)
-	!DSP_CH6_<name> #= $60|(<lowbyte>&$F)
-	!DSP_CH7_<name> #= $70|(<lowbyte>&$F)
-	!DSP_CHX_<name> #= <lowbyte>&$F
-endmacro
-
-%DSP_channel_defines("VOL_L", $00)
-%DSP_channel_defines("VOL_R", $01)
-%DSP_channel_defines("PITCH_L", $02)
-%DSP_channel_defines("PITCH_H", $03)
-%DSP_channel_defines("SRCN", $04)
-%DSP_channel_defines("ADSR_A", $05)
-%DSP_channel_defines("ADSR_B", $06)
-%DSP_channel_defines("GAIN", $07)
-%DSP_channel_defines("ENVX", $08)
-%DSP_channel_defines("OUT_X", $09)
-
-; $80+ are read-only mirrors of below
-!DSP_MVOL_L = $0C ; main volume
-!DSP_MVOL_R = $1C
-!DSP_EVOL_L = $2C ; echo volume
-!DSP_EVOL_R = $3C
-!DSP_KON = $4C ; key on bitfield - not an anime
-!DSP_KOF = $5C ; key off
-!DSP_FLG = $6C ; flags for mute, echo, reset, noise
-	!DSP_FLG_RESET = $80
-	!DSP_FLG_MUTE = $40
-	!DSP_FLG_ECEN = $20
-!DSP_ENDX = $7C ; bitfield
-!DSP_EFB = $0D ; echo feedback
-!DSP_PMON = $2D ; pitch modulation
-!DSP_NON = $3D ; noise enable
-!DSP_EON = $4D ; echo enable
-!DSP_DIR = $5D ; $xx00 for SRCN directory
-!DSP_ESA = $6D ; $xx00 for echo buffer
-!DSP_EDL = $7D ; $0x echo delay
-!DSP_FIR = $0F
-	!DSP_FIR_0 = $0F
-	!DSP_FIR_1 = $1F
-	!DSP_FIR_2 = $2F
-	!DSP_FIR_3 = $3F
-	!DSP_FIR_4 = $4F
-	!DSP_FIR_5 = $5F
-	!DSP_FIR_6 = $6F
-	!DSP_FIR_7 = $7F
-
-!DSP_CTRL_PORT_CLEAR_23    = $20
-!DSP_CTRL_PORT_CLEAR_01    = $10
-!DSP_CTRL_PORT_CLEAR_0123 #= !DSP_CTRL_PORT_CLEAR_23|!DSP_CTRL_PORT_CLEAR_01
-!DSP_CTRL_START_TIMER_2    = $04
-!DSP_CTRL_START_TIMER_1    = $02
-!DSP_CTRL_START_TIMER_0    = $01
-
-; $FFC0-$FFFF writes are always RAM
-!DSP_CTRL_ROM = $80 ; Reading $FFC0-$FFFF is ROM
-!DSP_CTRL_RAM = $00 ; Reading $FFC0-$FFFF is RAM
-
 ;===================================================================================================
 ; Song parsing
 ;===================================================================================================
@@ -186,7 +104,8 @@ endmacro
 !TRACKCOMMAND_FE_Set_B8               = $FE
 !TRACKCOMMAND_FF_EndTrack             = $FF
 
-;------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------
+
 !PITCH_SHIFT_LOOP_POINT = $80
 !PITCH_SHIFT_DO_LOOP = $81
 

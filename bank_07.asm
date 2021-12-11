@@ -2769,6 +2769,8 @@ UNREACH_07C155:
 #_07CBED: db $FF,$63,$C7,$EF,$FF,$37,$9B,$FF
 #_07CBF5: db $00,$5F,$AF,$EF,$FF
 
+;===================================================================================================
+
 ; Need to figure out all the stats
 DemonStats:
 .demon_000
@@ -2776,7 +2778,7 @@ DemonStats:
 #_07CBFB: dw 990, 822 ; HP, MP
 #_07CBFF: db 36, 18, 19, 20, 20, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC05: db 50, 0, 17, 5, 0 ; Bonuses maybe
-#_07CC0A: db !Move_12, !Move_16, !Move_2C
+#_07CC0A: db $12, $16, $2C ; Move12, Move16, Move2C
 #_07CC0D: db $70, $00, $77 ; no clue yet
 #_07CC10: db 57 ; CP
 #_07CC11: db $00 ; ill find out
@@ -2786,7 +2788,7 @@ DemonStats:
 #_07CC13: dw 840, 999 ; HP, MP
 #_07CC17: db 35, 13, 14, 20, 21, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC1D: db 72, 0, 22, 5, 0 ; Bonuses maybe
-#_07CC22: db !Move_09, !Move_0B, !Move_27
+#_07CC22: db $09, $0B, $27 ; Move09, Move0B, Move27
 #_07CC25: db $00, $00, $00 ; no clue yet
 #_07CC28: db 53 ; CP
 #_07CC29: db $00 ; ill find out
@@ -2796,7 +2798,7 @@ DemonStats:
 #_07CC2B: dw 818, 998 ; HP, MP
 #_07CC2F: db 34, 14, 15, 22, 13, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC35: db 64, 0, 20, 7, 0 ; Bonuses maybe
-#_07CC3A: db !Move_01, !Move_03, !Move_16
+#_07CC3A: db $01, $03, $16 ; Move01, Move03, Move16
 #_07CC3D: db $00, $00, $00 ; no clue yet
 #_07CC40: db 49 ; CP
 #_07CC41: db $00 ; ill find out
@@ -2806,7 +2808,7 @@ DemonStats:
 #_07CC43: dw 760, 526 ; HP, MP
 #_07CC47: db 31, 18, 19, 16, 10, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC4D: db 78, 0, 22, 7, 0 ; Bonuses maybe
-#_07CC52: db !Move_07, !Move_28, !Move_10
+#_07CC52: db $07, $28, $10 ; Move07, Move28, Move10
 #_07CC55: db $00, $00, $00 ; no clue yet
 #_07CC58: db 45 ; CP
 #_07CC59: db $00 ; ill find out
@@ -2816,7 +2818,7 @@ DemonStats:
 #_07CC5B: dw 630, 732 ; HP, MP
 #_07CC5F: db 29, 12, 15, 17, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC65: db 75, 0, 22, 4, 0 ; Bonuses maybe
-#_07CC6A: db !Move_16, !Move_19, !Move_0B
+#_07CC6A: db $16, $19, $0B ; Move16, Move19, Move0B
 #_07CC6D: db $00, $00, $00 ; no clue yet
 #_07CC70: db 40 ; CP
 #_07CC71: db $00 ; ill find out
@@ -2826,7 +2828,7 @@ DemonStats:
 #_07CC73: dw 455, 501 ; HP, MP
 #_07CC77: db 22, 14, 13, 14, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC7D: db 93, 0, 22, 4, 0 ; Bonuses maybe
-#_07CC82: db !Move_03, !Move_1D, !Move_20
+#_07CC82: db $03, $1D, $20 ; Move03, Move1D, Move20
 #_07CC85: db $00, $00, $00 ; no clue yet
 #_07CC88: db 31 ; CP
 #_07CC89: db $00 ; ill find out
@@ -2836,7 +2838,7 @@ DemonStats:
 #_07CC8B: dw 767, 299 ; HP, MP
 #_07CC8F: db 22, 15, 23, 12, 20, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CC95: db 42, 1, 19, 8, 0 ; Bonuses maybe
-#_07CC9A: db !Move_2E, !Move_35, !Move_33
+#_07CC9A: db $2E, $35, $33 ; Move2E, Move35, Move33
 #_07CC9D: db $00, $00, $00 ; no clue yet
 #_07CCA0: db 43 ; CP
 #_07CCA1: db $20 ; ill find out
@@ -2846,7 +2848,7 @@ DemonStats:
 #_07CCA3: dw 610, 300 ; HP, MP
 #_07CCA7: db 19, 15, 19, 13, 12, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CCAD: db 48, 1, 19, 5, 0 ; Bonuses maybe
-#_07CCB2: db !Move_2C, !Move_35, !Move_1D
+#_07CCB2: db $2C, $35, $1D ; Move2C, Move35, Move1D
 #_07CCB5: db $00, $00, $00 ; no clue yet
 #_07CCB8: db 35 ; CP
 #_07CCB9: db $20 ; ill find out
@@ -2856,7 +2858,7 @@ DemonStats:
 #_07CCBB: dw 450, 280 ; HP, MP
 #_07CCBF: db 14, 22, 19, 9, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CCC5: db 56, 2, 19, 5, 0 ; Bonuses maybe
-#_07CCCA: db !Move_29, !Move_28, !Move_26
+#_07CCCA: db $29, $28, $26 ; Move29, Move28, Move26
 #_07CCCD: db $00, $00, $00 ; no clue yet
 #_07CCD0: db 29 ; CP
 #_07CCD1: db $20 ; ill find out
@@ -2866,7 +2868,7 @@ DemonStats:
 #_07CCD3: dw 252, 210 ; HP, MP
 #_07CCD7: db 9, 13, 16, 11, 10, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CCDD: db 63, 1, 19, 5, 0 ; Bonuses maybe
-#_07CCE2: db !Move_1F, !Move_3C, !Move_37
+#_07CCE2: db $1F, $3C, $37 ; Move1F, Move3C, Move37
 #_07CCE5: db $00, $00, $00 ; no clue yet
 #_07CCE8: db 22 ; CP
 #_07CCE9: db $20 ; ill find out
@@ -2876,7 +2878,7 @@ DemonStats:
 #_07CCEB: dw 155, 128 ; HP, MP
 #_07CCEF: db 11, 9, 11, 10, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CCF5: db 70, 3, 19, 7, 0 ; Bonuses maybe
-#_07CCFA: db !Move_45, !Move_47, !Move_2B
+#_07CCFA: db $45, $47, $2B ; Move45, Move47, Move2B
 #_07CCFD: db $00, $00, $00 ; no clue yet
 #_07CD00: db 17 ; CP
 #_07CD01: db $20 ; ill find out
@@ -2886,7 +2888,7 @@ DemonStats:
 #_07CD03: dw 999, 340 ; HP, MP
 #_07CD07: db 40, 27, 29, 24, 25, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD0D: db 241, 0, 35, 7, 0 ; Bonuses maybe
-#_07CD12: db !Move_03, !Move_0B, !Move_12
+#_07CD12: db $03, $0B, $12 ; Move03, Move0B, Move12
 #_07CD15: db $00, $00, $00 ; no clue yet
 #_07CD18: db 74 ; CP
 #_07CD19: db $00 ; ill find out
@@ -2896,7 +2898,7 @@ DemonStats:
 #_07CD1B: dw 960, 310 ; HP, MP
 #_07CD1F: db 37, 16, 19, 21, 26, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD25: db 251, 0, 28, 5, 0 ; Bonuses maybe
-#_07CD2A: db !Move_0B, !Move_09, !Move_42
+#_07CD2A: db $0B, $09, $42 ; Move0B, Move09, Move42
 #_07CD2D: db $00, $00, $00 ; no clue yet
 #_07CD30: db 67 ; CP
 #_07CD31: db $00 ; ill find out
@@ -2906,7 +2908,7 @@ DemonStats:
 #_07CD33: dw 800, 280 ; HP, MP
 #_07CD37: db 35, 15, 15, 29, 16, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD3D: db 234, 0, 22, 4, 0 ; Bonuses maybe
-#_07CD42: db !Move_16, !Move_03, !Move_10
+#_07CD42: db $16, $03, $10 ; Move16, Move03, Move10
 #_07CD45: db $00, $00, $00 ; no clue yet
 #_07CD48: db 53 ; CP
 #_07CD49: db $00 ; ill find out
@@ -2916,7 +2918,7 @@ DemonStats:
 #_07CD4B: dw 830, 300 ; HP, MP
 #_07CD4F: db 31, 12, 11, 21, 30, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD55: db 227, 0, 22, 8, 0 ; Bonuses maybe
-#_07CD5A: db !Move_0F, !Move_0D, !Move_62
+#_07CD5A: db $0F, $0D, $62 ; Move0F, Move0D, Move62
 #_07CD5D: db $00, $00, $00 ; no clue yet
 #_07CD60: db 51 ; CP
 #_07CD61: db $00 ; ill find out
@@ -2926,7 +2928,7 @@ DemonStats:
 #_07CD63: dw 850, 240 ; HP, MP
 #_07CD67: db 33, 15, 16, 18, 18, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD6D: db 210, 0, 22, 4, 10 ; Bonuses maybe
-#_07CD72: db !Move_09, !Move_0B, !Move_28
+#_07CD72: db $09, $0B, $28 ; Move09, Move0B, Move28
 #_07CD75: db $00, $00, $00 ; no clue yet
 #_07CD78: db 49 ; CP
 #_07CD79: db $00 ; ill find out
@@ -2936,7 +2938,7 @@ DemonStats:
 #_07CD7B: dw 900, 64 ; HP, MP
 #_07CD7F: db 27, 17, 20, 17, 15, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD85: db 202, 0, 28, 4, 22 ; Bonuses maybe
-#_07CD8A: db !Move_01, !Move_03, !Move_18
+#_07CD8A: db $01, $03, $18 ; Move01, Move03, Move18
 #_07CD8D: db $00, $00, $00 ; no clue yet
 #_07CD90: db 46 ; CP
 #_07CD91: db $00 ; ill find out
@@ -2946,7 +2948,7 @@ DemonStats:
 #_07CD93: dw 728, 256 ; HP, MP
 #_07CD97: db 26, 16, 16, 18, 13, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CD9D: db 238, 0, 28, 4, 22 ; Bonuses maybe
-#_07CDA2: db !Move_0D, !Move_0F, !Move_2C
+#_07CDA2: db $0D, $0F, $2C ; Move0D, Move0F, Move2C
 #_07CDA5: db $00, $00, $00 ; no clue yet
 #_07CDA8: db 42 ; CP
 #_07CDA9: db $00 ; ill find out
@@ -2956,7 +2958,7 @@ DemonStats:
 #_07CDAB: dw 565, 235 ; HP, MP
 #_07CDAF: db 25, 10, 10, 20, 20, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CDB5: db 211, 0, 7, 0, 0 ; Bonuses maybe
-#_07CDBA: db !Move_01, !Move_03, !Move_16
+#_07CDBA: db $01, $03, $16 ; Move01, Move03, Move16
 #_07CDBD: db $00, $00, $00 ; no clue yet
 #_07CDC0: db 32 ; CP
 #_07CDC1: db $00 ; ill find out
@@ -2966,7 +2968,7 @@ DemonStats:
 #_07CDC3: dw 880, 180 ; HP, MP
 #_07CDC7: db 37, 16, 21, 22, 17, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CDCD: db 168, 0, 23, 4, 10 ; Bonuses maybe
-#_07CDD2: db !Move_2B, !Move_07, !Move_16
+#_07CDD2: db $2B, $07, $16 ; Move2B, Move07, Move16
 #_07CDD5: db $50, $00, $00 ; no clue yet
 #_07CDD8: db 51 ; CP
 #_07CDD9: db $00 ; ill find out
@@ -2976,7 +2978,7 @@ DemonStats:
 #_07CDDB: dw 660, 170 ; HP, MP
 #_07CDDF: db 35, 10, 13, 28, 19, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CDE5: db 176, 0, 23, 0, 0 ; Bonuses maybe
-#_07CDEA: db !Move_1A, !Move_27, !Move_4E
+#_07CDEA: db $1A, $27, $4E ; Move1A, Move27, Move4E
 #_07CDED: db $50, $00, $00 ; no clue yet
 #_07CDF0: db 47 ; CP
 #_07CDF1: db $00 ; ill find out
@@ -2986,7 +2988,7 @@ DemonStats:
 #_07CDF3: dw 656, 161 ; HP, MP
 #_07CDF7: db 34, 9, 12, 20, 23, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CDFD: db 150, 0, 23, 0, 0 ; Bonuses maybe
-#_07CE02: db !Move_09, !Move_0B, !Move_39
+#_07CE02: db $09, $0B, $39 ; Move09, Move0B, Move39
 #_07CE05: db $50, $00, $00 ; no clue yet
 #_07CE08: db 45 ; CP
 #_07CE09: db $00 ; ill find out
@@ -2996,7 +2998,7 @@ DemonStats:
 #_07CE0B: dw 707, 151 ; HP, MP
 #_07CE0F: db 34, 11, 16, 18, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CE15: db 146, 0, 23, 0, 0 ; Bonuses maybe
-#_07CE1A: db !Move_03, !Move_01, !Move_56
+#_07CE1A: db $03, $01, $56 ; Move03, Move01, Move56
 #_07CE1D: db $50, $00, $00 ; no clue yet
 #_07CE20: db 43 ; CP
 #_07CE21: db $00 ; ill find out
@@ -3006,7 +3008,7 @@ DemonStats:
 #_07CE23: dw 630, 148 ; HP, MP
 #_07CE27: db 33, 10, 11, 28, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CE2D: db 159, 0, 23, 0, 5 ; Bonuses maybe
-#_07CE32: db !Move_01, !Move_23, !Move_2B
+#_07CE32: db $01, $23, $2B ; Move01, Move23, Move2B
 #_07CE35: db $50, $00, $00 ; no clue yet
 #_07CE38: db 40 ; CP
 #_07CE39: db $00 ; ill find out
@@ -3016,7 +3018,7 @@ DemonStats:
 #_07CE3B: dw 660, 145 ; HP, MP
 #_07CE3F: db 31, 12, 20, 16, 15, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CE45: db 152, 0, 23, 0, 24 ; Bonuses maybe
-#_07CE4A: db !Move_0F, !Move_0D, !Move_1A
+#_07CE4A: db $0F, $0D, $1A ; Move0F, Move0D, Move1A
 #_07CE4D: db $50, $00, $00 ; no clue yet
 #_07CE50: db 38 ; CP
 #_07CE51: db $00 ; ill find out
@@ -3026,7 +3028,7 @@ DemonStats:
 #_07CE53: dw 640, 108 ; HP, MP
 #_07CE57: db 32, 9, 11, 13, 26, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CE5D: db 149, 0, 23, 0, 22 ; Bonuses maybe
-#_07CE62: db !Move_0B, !Move_23, !Move_25
+#_07CE62: db $0B, $23, $25 ; Move0B, Move23, Move25
 #_07CE65: db $50, $00, $00 ; no clue yet
 #_07CE68: db 36 ; CP
 #_07CE69: db $00 ; ill find out
@@ -3036,7 +3038,7 @@ DemonStats:
 #_07CE6B: dw 540, 110 ; HP, MP
 #_07CE6F: db 29, 11, 13, 14, 15, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CE75: db 166, 0, 23, 0, 0 ; Bonuses maybe
-#_07CE7A: db !Move_09, !Move_30, !Move_1E
+#_07CE7A: db $09, $30, $1E ; Move09, Move30, Move1E
 #_07CE7D: db $50, $00, $00 ; no clue yet
 #_07CE80: db 31 ; CP
 #_07CE81: db $00 ; ill find out
@@ -3046,7 +3048,7 @@ DemonStats:
 #_07CE83: dw 490, 90 ; HP, MP
 #_07CE87: db 28, 9, 10, 15, 14, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CE8D: db 164, 0, 23, 0, 0 ; Bonuses maybe
-#_07CE92: db !Move_0B, !Move_05, !Move_1A
+#_07CE92: db $0B, $05, $1A ; Move0B, Move05, Move1A
 #_07CE95: db $0F, $14, $00 ; no clue yet
 #_07CE98: db 29 ; CP
 #_07CE99: db $00 ; ill find out
@@ -3056,7 +3058,7 @@ DemonStats:
 #_07CE9B: dw 402, 120 ; HP, MP
 #_07CE9F: db 23, 11, 12, 17, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CEA5: db 177, 0, 23, 0, 0 ; Bonuses maybe
-#_07CEAA: db !Move_0D, !Move_11, !Move_2E
+#_07CEAA: db $0D, $11, $2E ; Move0D, Move11, Move2E
 #_07CEAD: db $00, $00, $00 ; no clue yet
 #_07CEB0: db 27 ; CP
 #_07CEB1: db $00 ; ill find out
@@ -3066,7 +3068,7 @@ DemonStats:
 #_07CEB3: dw 282, 142 ; HP, MP
 #_07CEB7: db 20, 9, 13, 12, 10, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CEBD: db 168, 0, 23, 0, 0 ; Bonuses maybe
-#_07CEC2: db !Move_1F, !Move_37, !Move_3D
+#_07CEC2: db $1F, $37, $3D ; Move1F, Move37, Move3D
 #_07CEC5: db $00, $00, $00 ; no clue yet
 #_07CEC8: db 21 ; CP
 #_07CEC9: db $00 ; ill find out
@@ -3076,7 +3078,7 @@ DemonStats:
 #_07CECB: dw 201, 80 ; HP, MP
 #_07CECF: db 17, 10, 9, 11, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CED5: db 170, 0, 23, 0, 0 ; Bonuses maybe
-#_07CEDA: db !Move_0D, !Move_05, !Move_17
+#_07CEDA: db $0D, $05, $17 ; Move0D, Move05, Move17
 #_07CEDD: db $00, $00, $00 ; no clue yet
 #_07CEE0: db 19 ; CP
 #_07CEE1: db $00 ; ill find out
@@ -3086,7 +3088,7 @@ DemonStats:
 #_07CEE3: dw 999, 400 ; HP, MP
 #_07CEE7: db 40, 24, 24, 24, 24, 24 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CEED: db 10, 0, 35, 8, 21 ; Bonuses maybe
-#_07CEF2: db !Move_2C, !Move_03, !Move_12
+#_07CEF2: db $2C, $03, $12 ; Move2C, Move03, Move12
 #_07CEF5: db $00, $00, $00 ; no clue yet
 #_07CEF8: db 72 ; CP
 #_07CEF9: db $00 ; ill find out
@@ -3096,7 +3098,7 @@ DemonStats:
 #_07CEFB: dw 930, 370 ; HP, MP
 #_07CEFF: db 34, 19, 19, 34, 19, 19 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF05: db 21, 0, 19, 7, 22 ; Bonuses maybe
-#_07CF0A: db !Move_0B, !Move_2C, !Move_2E
+#_07CF0A: db $0B, $2C, $2E ; Move0B, Move2C, Move2E
 #_07CF0D: db $00, $00, $00 ; no clue yet
 #_07CF10: db 64 ; CP
 #_07CF11: db $00 ; ill find out
@@ -3106,7 +3108,7 @@ DemonStats:
 #_07CF13: dw 940, 380 ; HP, MP
 #_07CF17: db 28, 18, 28, 18, 28, 18 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF1D: db 34, 0, 19, 7, 14 ; Bonuses maybe
-#_07CF22: db !Move_05, !Move_07, !Move_0B
+#_07CF22: db $05, $07, $0B ; Move05, Move07, Move0B
 #_07CF25: db $00, $00, $00 ; no clue yet
 #_07CF28: db 57 ; CP
 #_07CF29: db $00 ; ill find out
@@ -3116,7 +3118,7 @@ DemonStats:
 #_07CF2B: dw 900, 340 ; HP, MP
 #_07CF2F: db 30, 17, 17, 30, 17, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF35: db 42, 0, 19, 8, 10 ; Bonuses maybe
-#_07CF3A: db !Move_0F, !Move_1A, !Move_35
+#_07CF3A: db $0F, $1A, $35 ; Move0F, Move1A, Move35
 #_07CF3D: db $00, $00, $00 ; no clue yet
 #_07CF40: db 53 ; CP
 #_07CF41: db $00 ; ill find out
@@ -3126,7 +3128,7 @@ DemonStats:
 #_07CF43: dw 800, 310 ; HP, MP
 #_07CF47: db 30, 17, 17, 22, 17, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF4D: db 34, 0, 19, 7, 0 ; Bonuses maybe
-#_07CF52: db !Move_0F, !Move_26, !Move_39
+#_07CF52: db $0F, $26, $39 ; Move0F, Move26, Move39
 #_07CF55: db $20, $00, $00 ; no clue yet
 #_07CF58: db 45 ; CP
 #_07CF59: db $00 ; ill find out
@@ -3136,7 +3138,7 @@ DemonStats:
 #_07CF5B: dw 720, 290 ; HP, MP
 #_07CF5F: db 28, 16, 16, 16, 16, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF65: db 38, 0, 19, 0, 0 ; Bonuses maybe
-#_07CF6A: db !Move_2E, !Move_3C, !Move_34
+#_07CF6A: db $2E, $3C, $34 ; Move2E, Move3C, Move34
 #_07CF6D: db $20, $00, $00 ; no clue yet
 #_07CF70: db 42 ; CP
 #_07CF71: db $00 ; ill find out
@@ -3146,7 +3148,7 @@ DemonStats:
 #_07CF73: dw 630, 260 ; HP, MP
 #_07CF77: db 26, 14, 14, 18, 14, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF7D: db 46, 0, 19, 0, 0 ; Bonuses maybe
-#_07CF82: db !Move_09, !Move_20, !Move_1D
+#_07CF82: db $09, $20, $1D ; Move09, Move20, Move1D
 #_07CF85: db $20, $00, $00 ; no clue yet
 #_07CF88: db 36 ; CP
 #_07CF89: db $00 ; ill find out
@@ -3156,7 +3158,7 @@ DemonStats:
 #_07CF8B: dw 550, 160 ; HP, MP
 #_07CF8F: db 22, 17, 17, 17, 13, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CF95: db 52, 0, 19, 0, 0 ; Bonuses maybe
-#_07CF9A: db !Move_03, !Move_2E, !Move_36
+#_07CF9A: db $03, $2E, $36 ; Move03, Move2E, Move36
 #_07CF9D: db $20, $00, $02 ; no clue yet
 #_07CFA0: db 32 ; CP
 #_07CFA1: db $00 ; ill find out
@@ -3166,7 +3168,7 @@ DemonStats:
 #_07CFA3: dw 420, 150 ; HP, MP
 #_07CFA7: db 24, 11, 11, 20, 11, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CFAD: db 56, 0, 19, 0, 0 ; Bonuses maybe
-#_07CFB2: db !Move_16, !Move_23, !Move_24
+#_07CFB2: db $16, $23, $24 ; Move16, Move23, Move24
 #_07CFB5: db $20, $00, $02 ; no clue yet
 #_07CFB8: db 30 ; CP
 #_07CFB9: db $00 ; ill find out
@@ -3176,7 +3178,7 @@ DemonStats:
 #_07CFBB: dw 323, 140 ; HP, MP
 #_07CFBF: db 20, 12, 12, 12, 12, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CFC5: db 61, 0, 19, 0, 0 ; Bonuses maybe
-#_07CFCA: db !Move_01, !Move_15, !Move_2B
+#_07CFCA: db $01, $15, $2B ; Move01, Move15, Move2B
 #_07CFCD: db $13, $D4, $9E ; no clue yet
 #_07CFD0: db 27 ; CP
 #_07CFD1: db $62 ; ill find out
@@ -3186,7 +3188,7 @@ DemonStats:
 #_07CFD3: dw 70, 60 ; HP, MP
 #_07CFD7: db 14, 8, 8, 8, 8, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CFDD: db 65, 0, 19, 0, 16 ; Bonuses maybe
-#_07CFE2: db !Move_2D, !Move_15, !Move_30
+#_07CFE2: db $2D, $15, $30 ; Move2D, Move15, Move30
 #_07CFE5: db $13, $D4, $9E ; no clue yet
 #_07CFE8: db 14 ; CP
 #_07CFE9: db $62 ; ill find out
@@ -3196,7 +3198,7 @@ DemonStats:
 #_07CFEB: dw 930, 140 ; HP, MP
 #_07CFEF: db 38, 15, 19, 17, 20, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07CFF5: db 184, 0, 8, 0, 0 ; Bonuses maybe
-#_07CFFA: db !Move_59, !Move_65, !Move_68
+#_07CFFA: db $59, $65, $68 ; Move59, Move65, Move68
 #_07CFFD: db $00, $00, $00 ; no clue yet
 #_07D000: db 48 ; CP
 #_07D001: db $00 ; ill find out
@@ -3206,7 +3208,7 @@ DemonStats:
 #_07D003: dw 810, 150 ; HP, MP
 #_07D007: db 30, 15, 18, 20, 19, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D00D: db 173, 0, 10, 0, 0 ; Bonuses maybe
-#_07D012: db !Move_2E, !Move_65, !Move_66
+#_07D012: db $2E, $65, $66 ; Move2E, Move65, Move66
 #_07D015: db $00, $00, $00 ; no clue yet
 #_07D018: db 44 ; CP
 #_07D019: db $00 ; ill find out
@@ -3216,7 +3218,7 @@ DemonStats:
 #_07D01B: dw 780, 120 ; HP, MP
 #_07D01F: db 31, 10, 13, 15, 20, 19 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D025: db 169, 0, 20, 0, 0 ; Bonuses maybe
-#_07D02A: db !Move_4E, !Move_68, !Move_57
+#_07D02A: db $4E, $68, $57 ; Move4E, Move68, Move57
 #_07D02D: db $00, $00, $00 ; no clue yet
 #_07D030: db 40 ; CP
 #_07D031: db $00 ; ill find out
@@ -3226,7 +3228,7 @@ DemonStats:
 #_07D033: dw 710, 110 ; HP, MP
 #_07D037: db 29, 12, 14, 14, 22, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D03D: db 196, 0, 8, 0, 0 ; Bonuses maybe
-#_07D042: db !Move_58, !Move_50, !Move_68
+#_07D042: db $58, $50, $68 ; Move58, Move50, Move68
 #_07D045: db $05, $2F, $00 ; no clue yet
 #_07D048: db 37 ; CP
 #_07D049: db $00 ; ill find out
@@ -3236,7 +3238,7 @@ DemonStats:
 #_07D04B: dw 580, 100 ; HP, MP
 #_07D04F: db 26, 12, 16, 12, 16, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D055: db 161, 2, 8, 0, 0 ; Bonuses maybe
-#_07D05A: db !Move_0B, !Move_2E, !Move_33
+#_07D05A: db $0B, $2E, $33 ; Move0B, Move2E, Move33
 #_07D05D: db $00, $00, $00 ; no clue yet
 #_07D060: db 33 ; CP
 #_07D061: db $00 ; ill find out
@@ -3246,7 +3248,7 @@ DemonStats:
 #_07D063: dw 555, 90 ; HP, MP
 #_07D067: db 21, 10, 15, 11, 15, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D06D: db 171, 3, 10, 0, 0 ; Bonuses maybe
-#_07D072: db !Move_15, !Move_17, !Move_35
+#_07D072: db $15, $17, $35 ; Move15, Move17, Move35
 #_07D075: db $00, $00, $00 ; no clue yet
 #_07D078: db 29 ; CP
 #_07D079: db $00 ; ill find out
@@ -3256,7 +3258,7 @@ DemonStats:
 #_07D07B: dw 757, 323 ; HP, MP
 #_07D07F: db 18, 20, 19, 16, 28, 16 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D085: db 28, 0, 3, 8, 0 ; Bonuses maybe
-#_07D08A: db !Move_67, !Move_61, !Move_1E
+#_07D08A: db $67, $61, $1E ; Move67, Move61, Move1E
 #_07D08D: db $00, $00, $00 ; no clue yet
 #_07D090: db 43 ; CP
 #_07D091: db $00 ; ill find out
@@ -3266,7 +3268,7 @@ DemonStats:
 #_07D093: dw 688, 299 ; HP, MP
 #_07D097: db 17, 18, 18, 15, 26, 16 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D09D: db 30, 0, 7, 8, 0 ; Bonuses maybe
-#_07D0A2: db !Move_01, !Move_03, !Move_61
+#_07D0A2: db $01, $03, $61 ; Move01, Move03, Move61
 #_07D0A5: db $00, $00, $00 ; no clue yet
 #_07D0A8: db 38 ; CP
 #_07D0A9: db $00 ; ill find out
@@ -3276,7 +3278,7 @@ DemonStats:
 #_07D0AB: dw 600, 240 ; HP, MP
 #_07D0AF: db 16, 16, 16, 17, 25, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D0B5: db 31, 0, 7, 8, 0 ; Bonuses maybe
-#_07D0BA: db !Move_2B, !Move_4E, !Move_35
+#_07D0BA: db $2B, $4E, $35 ; Move2B, Move4E, Move35
 #_07D0BD: db $00, $00, $00 ; no clue yet
 #_07D0C0: db 34 ; CP
 #_07D0C1: db $00 ; ill find out
@@ -3286,7 +3288,7 @@ DemonStats:
 #_07D0C3: dw 477, 199 ; HP, MP
 #_07D0C7: db 15, 15, 15, 11, 23, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D0CD: db 32, 0, 3, 8, 0 ; Bonuses maybe
-#_07D0D2: db !Move_5C, !Move_61, !Move_17
+#_07D0D2: db $5C, $61, $17 ; Move5C, Move61, Move17
 #_07D0D5: db $00, $00, $00 ; no clue yet
 #_07D0D8: db 30 ; CP
 #_07D0D9: db $00 ; ill find out
@@ -3296,7 +3298,7 @@ DemonStats:
 #_07D0DB: dw 316, 202 ; HP, MP
 #_07D0DF: db 12, 11, 12, 14, 21, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D0E5: db 34, 0, 17, 8, 0 ; Bonuses maybe
-#_07D0EA: db !Move_2B, !Move_2D, !Move_34
+#_07D0EA: db $2B, $2D, $34 ; Move2B, Move2D, Move34
 #_07D0ED: db $00, $00, $00 ; no clue yet
 #_07D0F0: db 25 ; CP
 #_07D0F1: db $00 ; ill find out
@@ -3306,7 +3308,7 @@ DemonStats:
 #_07D0F3: dw 700, 100 ; HP, MP
 #_07D0F7: db 31, 13, 16, 17, 20, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D0FD: db 115, 0, 2, 0, 0 ; Bonuses maybe
-#_07D102: db !Move_4E, !Move_4A, !Move_30
+#_07D102: db $4E, $4A, $30 ; Move4E, Move4A, Move30
 #_07D105: db $00, $00, $00 ; no clue yet
 #_07D108: db 40 ; CP
 #_07D109: db $00 ; ill find out
@@ -3316,7 +3318,7 @@ DemonStats:
 #_07D10B: dw 650, 90 ; HP, MP
 #_07D10F: db 29, 9, 11, 18, 21, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D115: db 116, 0, 20, 0, 0 ; Bonuses maybe
-#_07D11A: db !Move_4E, !Move_57, !Move_5C
+#_07D11A: db $4E, $57, $5C ; Move4E, Move57, Move5C
 #_07D11D: db $00, $00, $00 ; no clue yet
 #_07D120: db 36 ; CP
 #_07D121: db $00 ; ill find out
@@ -3326,7 +3328,7 @@ DemonStats:
 #_07D123: dw 590, 80 ; HP, MP
 #_07D127: db 25, 10, 12, 19, 18, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D12D: db 113, 0, 2, 0, 0 ; Bonuses maybe
-#_07D132: db !Move_4A, !Move_57, !Move_16
+#_07D132: db $4A, $57, $16 ; Move4A, Move57, Move16
 #_07D135: db $00, $00, $00 ; no clue yet
 #_07D138: db 33 ; CP
 #_07D139: db $00 ; ill find out
@@ -3336,7 +3338,7 @@ DemonStats:
 #_07D13B: dw 525, 75 ; HP, MP
 #_07D13F: db 23, 8, 10, 21, 10, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D145: db 114, 0, 17, 0, 0 ; Bonuses maybe
-#_07D14A: db !Move_2C, !Move_2D, !Move_36
+#_07D14A: db $2C, $2D, $36 ; Move2C, Move2D, Move36
 #_07D14D: db $00, $00, $00 ; no clue yet
 #_07D150: db 28 ; CP
 #_07D151: db $00 ; ill find out
@@ -3346,7 +3348,7 @@ DemonStats:
 #_07D153: dw 505, 65 ; HP, MP
 #_07D157: db 23, 10, 12, 24, 9, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D15D: db 75, 0, 10, 0, 0 ; Bonuses maybe
-#_07D162: db !Move_63, !Move_4F, !Move_16
+#_07D162: db $63, $4F, $16 ; Move63, Move4F, Move16
 #_07D165: db $00, $00, $00 ; no clue yet
 #_07D168: db 27 ; CP
 #_07D169: db $00 ; ill find out
@@ -3356,7 +3358,7 @@ DemonStats:
 #_07D16B: dw 380, 70 ; HP, MP
 #_07D16F: db 22, 9, 12, 13, 14, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D175: db 67, 0, 17, 0, 0 ; Bonuses maybe
-#_07D17A: db !Move_3C, !Move_34, !Move_15
+#_07D17A: db $3C, $34, $15 ; Move3C, Move34, Move15
 #_07D17D: db $00, $00, $00 ; no clue yet
 #_07D180: db 24 ; CP
 #_07D181: db $00 ; ill find out
@@ -3366,7 +3368,7 @@ DemonStats:
 #_07D183: dw 290, 60 ; HP, MP
 #_07D187: db 19, 10, 11, 15, 11, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D18D: db 71, 0, 17, 0, 0 ; Bonuses maybe
-#_07D192: db !Move_60, !Move_29, !Move_33
+#_07D192: db $60, $29, $33 ; Move60, Move29, Move33
 #_07D195: db $00, $00, $00 ; no clue yet
 #_07D198: db 21 ; CP
 #_07D199: db $00 ; ill find out
@@ -3376,7 +3378,7 @@ DemonStats:
 #_07D19B: dw 171, 51 ; HP, MP
 #_07D19F: db 16, 6, 10, 10, 12, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D1A5: db 70, 0, 17, 0, 0 ; Bonuses maybe
-#_07D1AA: db !Move_2B, !Move_3B, !Move_32
+#_07D1AA: db $2B, $3B, $32 ; Move2B, Move3B, Move32
 #_07D1AD: db $00, $00, $00 ; no clue yet
 #_07D1B0: db 15 ; CP
 #_07D1B1: db $00 ; ill find out
@@ -3386,7 +3388,7 @@ DemonStats:
 #_07D1B3: dw 131, 41 ; HP, MP
 #_07D1B7: db 14, 7, 7, 9, 10, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D1BD: db 69, 0, 17, 0, 0 ; Bonuses maybe
-#_07D1C2: db !Move_15, !Move_30, !Move_63
+#_07D1C2: db $15, $30, $63 ; Move15, Move30, Move63
 #_07D1C5: db $00, $00, $00 ; no clue yet
 #_07D1C8: db 13 ; CP
 #_07D1C9: db $00 ; ill find out
@@ -3396,7 +3398,7 @@ DemonStats:
 #_07D1CB: dw 160, 55 ; HP, MP
 #_07D1CF: db 23, 9, 10, 13, 20, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D1D5: db 130, 0, 7, 0, 0 ; Bonuses maybe
-#_07D1DA: db !Move_01, !Move_03, !Move_3C
+#_07D1DA: db $01, $03, $3C ; Move01, Move03, Move3C
 #_07D1DD: db $00, $00, $00 ; no clue yet
 #_07D1E0: db 18 ; CP
 #_07D1E1: db $00 ; ill find out
@@ -3406,7 +3408,7 @@ DemonStats:
 #_07D1E3: dw 200, 60 ; HP, MP
 #_07D1E7: db 15, 10, 12, 15, 18, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D1ED: db 129, 0, 8, 0, 0 ; Bonuses maybe
-#_07D1F2: db !Move_2C, !Move_2E, !Move_09
+#_07D1F2: db $2C, $2E, $09 ; Move2C, Move2E, Move09
 #_07D1F5: db $00, $00, $00 ; no clue yet
 #_07D1F8: db 14 ; CP
 #_07D1F9: db $20 ; ill find out
@@ -3416,7 +3418,7 @@ DemonStats:
 #_07D1FB: dw 99, 70 ; HP, MP
 #_07D1FF: db 13, 14, 11, 7, 22, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D205: db 128, 0, 9, 7, 0 ; Bonuses maybe
-#_07D20A: db !Move_05, !Move_0A, !Move_1B
+#_07D20A: db $05, $0A, $1B ; Move05, Move0A, Move1B
 #_07D20D: db $00, $00, $00 ; no clue yet
 #_07D210: db 11 ; CP
 #_07D211: db $20 ; ill find out
@@ -3426,7 +3428,7 @@ DemonStats:
 #_07D213: dw 100, 50 ; HP, MP
 #_07D217: db 18, 8, 12, 16, 10, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D21D: db 127, 0, 10, 0, 0 ; Bonuses maybe
-#_07D222: db !Move_15, !Move_0F, !Move_27
+#_07D222: db $15, $0F, $27 ; Move15, Move0F, Move27
 #_07D225: db $00, $00, $00 ; no clue yet
 #_07D228: db 12 ; CP
 #_07D229: db $00 ; ill find out
@@ -3436,7 +3438,7 @@ DemonStats:
 #_07D22B: dw 60, 36 ; HP, MP
 #_07D22F: db 19, 7, 8, 7, 13, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D235: db 129, 0, 7, 0, 0 ; Bonuses maybe
-#_07D23A: db !Move_01, !Move_02, !Move_56
+#_07D23A: db $01, $02, $56 ; Move01, Move02, Move56
 #_07D23D: db $00, $00, $00 ; no clue yet
 #_07D240: db 9 ; CP
 #_07D241: db $00 ; ill find out
@@ -3446,7 +3448,7 @@ DemonStats:
 #_07D243: dw 50, 38 ; HP, MP
 #_07D247: db 11, 8, 13, 12, 9, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D24D: db 128, 0, 8, 0, 0 ; Bonuses maybe
-#_07D252: db !Move_2B, !Move_2D, !Move_09
+#_07D252: db $2B, $2D, $09 ; Move2B, Move2D, Move09
 #_07D255: db $00, $00, $00 ; no clue yet
 #_07D258: db 7 ; CP
 #_07D259: db $00 ; ill find out
@@ -3456,7 +3458,7 @@ DemonStats:
 #_07D25B: dw 45, 34 ; HP, MP
 #_07D25F: db 8, 12, 10, 6, 15, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D265: db 127, 0, 9, 4, 0 ; Bonuses maybe
-#_07D26A: db !Move_0E, !Move_05, !Move_1C
+#_07D26A: db $0E, $05, $1C ; Move0E, Move05, Move1C
 #_07D26D: db $00, $00, $00 ; no clue yet
 #_07D270: db 6 ; CP
 #_07D271: db $00 ; ill find out
@@ -3466,7 +3468,7 @@ DemonStats:
 #_07D273: dw 40, 26 ; HP, MP
 #_07D277: db 10, 7, 11, 14, 6, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D27D: db 126, 0, 10, 0, 0 ; Bonuses maybe
-#_07D282: db !Move_24, !Move_25, !Move_23
+#_07D282: db $24, $25, $23 ; Move24, Move25, Move23
 #_07D285: db $00, $00, $00 ; no clue yet
 #_07D288: db 5 ; CP
 #_07D289: db $00 ; ill find out
@@ -3476,7 +3478,7 @@ DemonStats:
 #_07D28B: dw 747, 171 ; HP, MP
 #_07D28F: db 36, 12, 16, 18, 24, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D295: db 242, 3, 23, 8, 10 ; Bonuses maybe
-#_07D29A: db !Move_54, !Move_10, !Move_18
+#_07D29A: db $54, $10, $18 ; Move54, Move10, Move18
 #_07D29D: db $20, $B4, $CB ; no clue yet
 #_07D2A0: db 39 ; CP
 #_07D2A1: db $20 ; ill find out
@@ -3486,7 +3488,7 @@ DemonStats:
 #_07D2A3: dw 644, 155 ; HP, MP
 #_07D2A7: db 33, 11, 13, 18, 23, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D2AD: db 238, 3, 23, 7, 16 ; Bonuses maybe
-#_07D2B2: db !Move_54, !Move_19, !Move_2C
+#_07D2B2: db $54, $19, $2C ; Move54, Move19, Move2C
 #_07D2B5: db $10, $B4, $EC ; no clue yet
 #_07D2B8: db 34 ; CP
 #_07D2B9: db $20 ; ill find out
@@ -3496,7 +3498,7 @@ DemonStats:
 #_07D2BB: dw 568, 142 ; HP, MP
 #_07D2BF: db 28, 10, 14, 15, 21, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D2C5: db 233, 5, 26, 0, 10 ; Bonuses maybe
-#_07D2CA: db !Move_1A, !Move_46, !Move_1D
+#_07D2CA: db $1A, $46, $1D ; Move1A, Move46, Move1D
 #_07D2CD: db $10, $B4, $92 ; no clue yet
 #_07D2D0: db 31 ; CP
 #_07D2D1: db $20 ; ill find out
@@ -3506,7 +3508,7 @@ DemonStats:
 #_07D2D3: dw 560, 110 ; HP, MP
 #_07D2D7: db 20, 10, 13, 16, 20, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D2DD: db 229, 7, 8, 10, 16 ; Bonuses maybe
-#_07D2E2: db !Move_64, !Move_2B, !Move_55
+#_07D2E2: db $64, $2B, $55 ; Move64, Move2B, Move55
 #_07D2E5: db $20, $B4, $01 ; no clue yet
 #_07D2E8: db 29 ; CP
 #_07D2E9: db $21 ; ill find out
@@ -3516,7 +3518,7 @@ DemonStats:
 #_07D2EB: dw 484, 131 ; HP, MP
 #_07D2EF: db 24, 9, 13, 13, 18, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D2F5: db 231, 23, 23, 4, 15 ; Bonuses maybe
-#_07D2FA: db !Move_54, !Move_03, !Move_45
+#_07D2FA: db $54, $03, $45 ; Move54, Move03, Move45
 #_07D2FD: db $10, $B4, $CB ; no clue yet
 #_07D300: db 27 ; CP
 #_07D301: db $21 ; ill find out
@@ -3526,7 +3528,7 @@ DemonStats:
 #_07D303: dw 404, 121 ; HP, MP
 #_07D307: db 21, 9, 10, 19, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D30D: db 240, 23, 25, 0, 17 ; Bonuses maybe
-#_07D312: db !Move_28, !Move_41, !Move_2E
+#_07D312: db $28, $41, $2E ; Move28, Move41, Move2E
 #_07D315: db $E7, $B8, $CA ; no clue yet
 #_07D318: db 24 ; CP
 #_07D319: db $20 ; ill find out
@@ -3536,7 +3538,7 @@ DemonStats:
 #_07D31B: dw 343, 101 ; HP, MP
 #_07D31F: db 20, 9, 10, 13, 18, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D325: db 209, 33, 23, 4, 10 ; Bonuses maybe
-#_07D32A: db !Move_0A, !Move_1F, !Move_21
+#_07D32A: db $0A, $1F, $21 ; Move0A, Move1F, Move21
 #_07D32D: db $D7, $21, $CA ; no clue yet
 #_07D330: db 22 ; CP
 #_07D331: db $20 ; ill find out
@@ -3546,7 +3548,7 @@ DemonStats:
 #_07D333: dw 252, 98 ; HP, MP
 #_07D337: db 17, 8, 11, 16, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D33D: db 198, 33, 1, 0, 11 ; Bonuses maybe
-#_07D342: db !Move_08, !Move_24, !Move_5B
+#_07D342: db $08, $24, $5B ; Move08, Move24, Move5B
 #_07D345: db $D6, $1A, $CA ; no clue yet
 #_07D348: db 20 ; CP
 #_07D349: db $21 ; ill find out
@@ -3556,7 +3558,7 @@ DemonStats:
 #_07D34B: dw 660, 220 ; HP, MP
 #_07D34F: db 30, 13, 13, 15, 26, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D355: db 82, 0, 9, 7, 5 ; Bonuses maybe
-#_07D35A: db !Move_0F, !Move_23, !Move_3A
+#_07D35A: db $0F, $23, $3A ; Move0F, Move23, Move3A
 #_07D35D: db $17, $33, $DC ; no clue yet
 #_07D360: db 36 ; CP
 #_07D361: db $11 ; ill find out
@@ -3566,7 +3568,7 @@ DemonStats:
 #_07D363: dw 626, 262 ; HP, MP
 #_07D367: db 26, 11, 15, 26, 12, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D36D: db 88, 7, 22, 0, 5 ; Bonuses maybe
-#_07D372: db !Move_17, !Move_2C, !Move_3E
+#_07D372: db $17, $2C, $3E ; Move17, Move2C, Move3E
 #_07D375: db $16, $D3, $DC ; no clue yet
 #_07D378: db 34 ; CP
 #_07D379: db $11 ; ill find out
@@ -3576,7 +3578,7 @@ DemonStats:
 #_07D37B: dw 525, 161 ; HP, MP
 #_07D37F: db 29, 12, 14, 18, 15, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D385: db 90, 64, 7, 0, 11 ; Bonuses maybe
-#_07D38A: db !Move_03, !Move_25, !Move_24
+#_07D38A: db $03, $25, $24 ; Move03, Move25, Move24
 #_07D38D: db $E0, $B4, $BA ; no clue yet
 #_07D390: db 31 ; CP
 #_07D391: db $11 ; ill find out
@@ -3586,7 +3588,7 @@ DemonStats:
 #_07D393: dw 585, 232 ; HP, MP
 #_07D397: db 24, 14, 16, 11, 21, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D39D: db 101, 80, 9, 0, 8 ; Bonuses maybe
-#_07D3A2: db !Move_1A, !Move_0F, !Move_61
+#_07D3A2: db $1A, $0F, $61 ; Move1A, Move0F, Move61
 #_07D3A5: db $D5, $2B, $BA ; no clue yet
 #_07D3A8: db 30 ; CP
 #_07D3A9: db $11 ; ill find out
@@ -3596,7 +3598,7 @@ DemonStats:
 #_07D3AB: dw 505, 202 ; HP, MP
 #_07D3AF: db 23, 16, 18, 12, 16, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D3B5: db 95, 48, 22, 0, 7 ; Bonuses maybe
-#_07D3BA: db !Move_01, !Move_03, !Move_39
+#_07D3BA: db $01, $03, $39 ; Move01, Move03, Move39
 #_07D3BD: db $D7, $C9, $BA ; no clue yet
 #_07D3C0: db 28 ; CP
 #_07D3C1: db $10 ; ill find out
@@ -3606,7 +3608,7 @@ DemonStats:
 #_07D3C3: dw 456, 141 ; HP, MP
 #_07D3C7: db 21, 12, 12, 11, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D3CD: db 98, 48, 9, 0, 10 ; Bonuses maybe
-#_07D3D2: db !Move_0F, !Move_24, !Move_23
+#_07D3D2: db $0F, $24, $23 ; Move0F, Move24, Move23
 #_07D3D5: db $D0, $B4, $BA ; no clue yet
 #_07D3D8: db 26 ; CP
 #_07D3D9: db $11 ; ill find out
@@ -3616,7 +3618,7 @@ DemonStats:
 #_07D3DB: dw 501, 191 ; HP, MP
 #_07D3DF: db 17, 14, 19, 13, 11, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D3E5: db 105, 32, 17, 0, 5 ; Bonuses maybe
-#_07D3EA: db !Move_17, !Move_35, !Move_3A
+#_07D3EA: db $17, $35, $3A ; Move17, Move35, Move3A
 #_07D3ED: db $10, $B4, $9C ; no clue yet
 #_07D3F0: db 24 ; CP
 #_07D3F1: db $11 ; ill find out
@@ -3626,7 +3628,7 @@ DemonStats:
 #_07D3F3: dw 246, 181 ; HP, MP
 #_07D3F7: db 13, 13, 17, 15, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D3FD: db 100, 64, 25, 4, 10 ; Bonuses maybe
-#_07D402: db !Move_0D, !Move_41, !Move_11
+#_07D402: db $0D, $41, $11 ; Move0D, Move41, Move11
 #_07D405: db $27, $C4, $89 ; no clue yet
 #_07D408: db 22 ; CP
 #_07D409: db $00 ; ill find out
@@ -3636,7 +3638,7 @@ DemonStats:
 #_07D40B: dw 313, 131 ; HP, MP
 #_07D40F: db 15, 11, 14, 10, 19, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D415: db 102, 24, 8, 0, 11 ; Bonuses maybe
-#_07D41A: db !Move_09, !Move_2B, !Move_55
+#_07D41A: db $09, $2B, $55 ; Move09, Move2B, Move55
 #_07D41D: db $D5, $20, $BA ; no clue yet
 #_07D420: db 20 ; CP
 #_07D421: db $11 ; ill find out
@@ -3646,7 +3648,7 @@ DemonStats:
 #_07D423: dw 152, 140 ; HP, MP
 #_07D427: db 11, 12, 11, 8, 13, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D42D: db 104, 18, 8, 0, 22 ; Bonuses maybe
-#_07D432: db !Move_24, !Move_1E, !Move_2D
+#_07D432: db $24, $1E, $2D ; Move24, Move1E, Move2D
 #_07D435: db $17, $0F, $0E ; no clue yet
 #_07D438: db 12 ; CP
 #_07D439: db $21 ; ill find out
@@ -3656,7 +3658,7 @@ DemonStats:
 #_07D43B: dw 62, 58 ; HP, MP
 #_07D43F: db 11, 9, 10, 8, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D445: db 108, 17, 7, 0, 21 ; Bonuses maybe
-#_07D44A: db !Move_01, !Move_05, !Move_1C
+#_07D44A: db $01, $05, $1C ; Move01, Move05, Move1C
 #_07D44D: db $17, $E9, $0E ; no clue yet
 #_07D450: db 9 ; CP
 #_07D451: db $20 ; ill find out
@@ -3666,7 +3668,7 @@ DemonStats:
 #_07D453: dw 590, 340 ; HP, MP
 #_07D457: db 26, 23, 20, 14, 18, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D45D: db 248, 40, 24, 7, 20 ; Bonuses maybe
-#_07D462: db !Move_5B, !Move_0B, !Move_43
+#_07D462: db $5B, $0B, $43 ; Move5B, Move0B, Move43
 #_07D465: db $20, $E4, $AD ; no clue yet
 #_07D468: db 38 ; CP
 #_07D469: db $10 ; ill find out
@@ -3676,7 +3678,7 @@ DemonStats:
 #_07D46B: dw 545, 323 ; HP, MP
 #_07D46F: db 20, 18, 24, 12, 16, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D475: db 240, 56, 25, 7, 18 ; Bonuses maybe
-#_07D47A: db !Move_54, !Move_19, !Move_4C
+#_07D47A: db $54, $19, $4C ; Move54, Move19, Move4C
 #_07D47D: db $17, $D1, $AD ; no clue yet
 #_07D480: db 33 ; CP
 #_07D481: db $21 ; ill find out
@@ -3686,7 +3688,7 @@ DemonStats:
 #_07D483: dw 499, 288 ; HP, MP
 #_07D487: db 18, 19, 22, 14, 13, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D48D: db 238, 39, 25, 4, 18 ; Bonuses maybe
-#_07D492: db !Move_54, !Move_1A, !Move_4B
+#_07D492: db $54, $1A, $4B ; Move54, Move1A, Move4B
 #_07D495: db $10, $B4, $AD ; no clue yet
 #_07D498: db 28 ; CP
 #_07D499: db $00 ; ill find out
@@ -3696,7 +3698,7 @@ DemonStats:
 #_07D49B: dw 484, 272 ; HP, MP
 #_07D49F: db 17, 16, 18, 11, 18, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D4A5: db 223, 23, 25, 4, 21 ; Bonuses maybe
-#_07D4AA: db !Move_09, !Move_19, !Move_40
+#_07D4AA: db $09, $19, $40 ; Move09, Move19, Move40
 #_07D4AD: db $E7, $CA, $AD ; no clue yet
 #_07D4B0: db 24 ; CP
 #_07D4B1: db $20 ; ill find out
@@ -3706,7 +3708,7 @@ DemonStats:
 #_07D4B3: dw 355, 266 ; HP, MP
 #_07D4B7: db 14, 14, 16, 10, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D4BD: db 221, 39, 25, 0, 20 ; Bonuses maybe
-#_07D4C2: db !Move_02, !Move_17, !Move_03
+#_07D4C2: db $02, $17, $03 ; Move02, Move17, Move03
 #_07D4C5: db $D0, $B4, $AD ; no clue yet
 #_07D4C8: db 22 ; CP
 #_07D4C9: db $01 ; ill find out
@@ -3716,7 +3718,7 @@ DemonStats:
 #_07D4CB: dw 144, 153 ; HP, MP
 #_07D4CF: db 11, 14, 16, 9, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D4D5: db 212, 40, 25, 0, 18 ; Bonuses maybe
-#_07D4DA: db !Move_05, !Move_5B, !Move_48
+#_07D4DA: db $05, $5B, $48 ; Move05, Move5B, Move48
 #_07D4DD: db $E7, $ED, $AD ; no clue yet
 #_07D4E0: db 15 ; CP
 #_07D4E1: db $21 ; ill find out
@@ -3726,7 +3728,7 @@ DemonStats:
 #_07D4E3: dw 62, 82 ; HP, MP
 #_07D4E7: db 12, 16, 12, 7, 10, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D4ED: db 201, 40, 14, 0, 18 ; Bonuses maybe
-#_07D4F2: db !Move_0D, !Move_1A, !Move_19
+#_07D4F2: db $0D, $1A, $19 ; Move0D, Move1A, Move19
 #_07D4F5: db $E7, $CC, $01 ; no clue yet
 #_07D4F8: db 9 ; CP
 #_07D4F9: db $02 ; ill find out
@@ -3736,7 +3738,7 @@ DemonStats:
 #_07D4FB: dw 39, 55 ; HP, MP
 #_07D4FF: db 10, 12, 11, 7, 7, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D505: db 196, 71, 14, 0, 18 ; Bonuses maybe
-#_07D50A: db !Move_09, !Move_26, !Move_15
+#_07D50A: db $09, $26, $15 ; Move09, Move26, Move15
 #_07D50D: db $37, $CB, $DB ; no clue yet
 #_07D510: db 7 ; CP
 #_07D511: db $01 ; ill find out
@@ -3746,7 +3748,7 @@ DemonStats:
 #_07D513: dw 22, 40 ; HP, MP
 #_07D517: db 7, 11, 8, 6, 10, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D51D: db 190, 39, 25, 0, 10 ; Bonuses maybe
-#_07D522: db !Move_22, !Move_0D, !Move_19
+#_07D522: db $22, $0D, $19 ; Move22, Move0D, Move19
 #_07D525: db $D0, $B4, $CB ; no clue yet
 #_07D528: db 3 ; CP
 #_07D529: db $01 ; ill find out
@@ -3756,7 +3758,7 @@ DemonStats:
 #_07D52B: dw 696, 292 ; HP, MP
 #_07D52F: db 27, 18, 22, 13, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D535: db 132, 130, 22, 5, 14 ; Bonuses maybe
-#_07D53A: db !Move_1C, !Move_28, !Move_0B
+#_07D53A: db $1C, $28, $0B ; Move1C, Move28, Move0B
 #_07D53D: db $13, $34, $AC ; no clue yet
 #_07D540: db 36 ; CP
 #_07D541: db $10 ; ill find out
@@ -3766,7 +3768,7 @@ DemonStats:
 #_07D543: dw 666, 399 ; HP, MP
 #_07D547: db 17, 17, 20, 12, 25, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D54D: db 134, 49, 22, 8, 18 ; Bonuses maybe
-#_07D552: db !Move_1D, !Move_0F, !Move_29
+#_07D552: db $1D, $0F, $29 ; Move1D, Move0F, Move29
 #_07D555: db $27, $EC, $AC ; no clue yet
 #_07D558: db 34 ; CP
 #_07D559: db $11 ; ill find out
@@ -3776,7 +3778,7 @@ DemonStats:
 #_07D55B: dw 600, 220 ; HP, MP
 #_07D55F: db 28, 15, 15, 17, 16, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D565: db 114, 129, 22, 5, 10 ; Bonuses maybe
-#_07D56A: db !Move_16, !Move_23, !Move_1E
+#_07D56A: db $16, $23, $1E ; Move16, Move23, Move1E
 #_07D56D: db $17, $ED, $AB ; no clue yet
 #_07D570: db 32 ; CP
 #_07D571: db $10 ; ill find out
@@ -3786,7 +3788,7 @@ DemonStats:
 #_07D573: dw 580, 190 ; HP, MP
 #_07D577: db 25, 15, 13, 18, 15, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D57D: db 116, 129, 22, 5, 10 ; Bonuses maybe
-#_07D582: db !Move_0D, !Move_24, !Move_21
+#_07D582: db $0D, $24, $21 ; Move0D, Move24, Move21
 #_07D585: db $17, $E9, $AB ; no clue yet
 #_07D588: db 30 ; CP
 #_07D589: db $10 ; ill find out
@@ -3796,7 +3798,7 @@ DemonStats:
 #_07D58B: dw 550, 150 ; HP, MP
 #_07D58F: db 20, 16, 12, 19, 12, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D595: db 133, 77, 11, 0, 17 ; Bonuses maybe
-#_07D59A: db !Move_05, !Move_06, !Move_2C
+#_07D59A: db $05, $06, $2C ; Move05, Move06, Move2C
 #_07D59D: db $E4, $E6, $AB ; no clue yet
 #_07D5A0: db 26 ; CP
 #_07D5A1: db $03 ; ill find out
@@ -3806,7 +3808,7 @@ DemonStats:
 #_07D5A3: dw 399, 260 ; HP, MP
 #_07D5A7: db 14, 14, 15, 9, 17, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D5AD: db 126, 71, 22, 8, 11 ; Bonuses maybe
-#_07D5B2: db !Move_1B, !Move_0F, !Move_19
+#_07D5B2: db $1B, $0F, $19 ; Move1B, Move0F, Move19
 #_07D5B5: db $E4, $EE, $AB ; no clue yet
 #_07D5B8: db 23 ; CP
 #_07D5B9: db $20 ; ill find out
@@ -3816,7 +3818,7 @@ DemonStats:
 #_07D5BB: dw 262, 135 ; HP, MP
 #_07D5BF: db 19, 11, 13, 11, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D5C5: db 131, 55, 21, 0, 15 ; Bonuses maybe
-#_07D5CA: db !Move_23, !Move_26, !Move_03
+#_07D5CA: db $23, $26, $03 ; Move23, Move26, Move03
 #_07D5CD: db $E6, $E4, $AB ; no clue yet
 #_07D5D0: db 20 ; CP
 #_07D5D1: db $01 ; ill find out
@@ -3826,7 +3828,7 @@ DemonStats:
 #_07D5D3: dw 120, 110 ; HP, MP
 #_07D5D7: db 15, 13, 13, 9, 11, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D5DD: db 118, 23, 21, 0, 14 ; Bonuses maybe
-#_07D5E2: db !Move_19, !Move_09, !Move_2B
+#_07D5E2: db $19, $09, $2B ; Move19, Move09, Move2B
 #_07D5E5: db $E8, $E9, $AB ; no clue yet
 #_07D5E8: db 14 ; CP
 #_07D5E9: db $22 ; ill find out
@@ -3836,7 +3838,7 @@ DemonStats:
 #_07D5EB: dw 132, 82 ; HP, MP
 #_07D5EF: db 16, 9, 8, 12, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D5F5: db 135, 71, 21, 0, 6 ; Bonuses maybe
-#_07D5FA: db !Move_1A, !Move_1E, !Move_39
+#_07D5FA: db $1A, $1E, $39 ; Move1A, Move1E, Move39
 #_07D5FD: db $E6, $EB, $AB ; no clue yet
 #_07D600: db 12 ; CP
 #_07D601: db $02 ; ill find out
@@ -3846,7 +3848,7 @@ DemonStats:
 #_07D603: dw 140, 115 ; HP, MP
 #_07D607: db 11, 14, 10, 7, 10, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D60D: db 130, 51, 8, 0, 10 ; Bonuses maybe
-#_07D612: db !Move_1D, !Move_2B, !Move_2D
+#_07D612: db $1D, $2B, $2D ; Move1D, Move2B, Move2D
 #_07D615: db $E8, $13, $AB ; no clue yet
 #_07D618: db 11 ; CP
 #_07D619: db $22 ; ill find out
@@ -3856,7 +3858,7 @@ DemonStats:
 #_07D61B: dw 75, 59 ; HP, MP
 #_07D61F: db 12, 8, 9, 8, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D625: db 124, 33, 21, 0, 11 ; Bonuses maybe
-#_07D62A: db !Move_08, !Move_48, !Move_46
+#_07D62A: db $08, $48, $46 ; Move08, Move48, Move46
 #_07D62D: db $17, $B4, $02 ; no clue yet
 #_07D630: db 9 ; CP
 #_07D631: db $01 ; ill find out
@@ -3866,7 +3868,7 @@ DemonStats:
 #_07D633: dw 57, 56 ; HP, MP
 #_07D637: db 8, 12, 10, 7, 8, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D63D: db 112, 17, 21, 0, 20 ; Bonuses maybe
-#_07D642: db !Move_47, !Move_1D, !Move_2D
+#_07D642: db $47, $1D, $2D ; Move47, Move1D, Move2D
 #_07D645: db $17, $0C, $AE ; no clue yet
 #_07D648: db 7 ; CP
 #_07D649: db $22 ; ill find out
@@ -3876,7 +3878,7 @@ DemonStats:
 #_07D64B: dw 45, 46 ; HP, MP
 #_07D64F: db 7, 8, 12, 5, 7, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D655: db 129, 16, 7, 0, 10 ; Bonuses maybe
-#_07D65A: db !Move_00, !Move_02, !Move_01
+#_07D65A: db $00, $02, $01 ; Move00, Move02, Move01
 #_07D65D: db $17, $C9, $DC ; no clue yet
 #_07D660: db 6 ; CP
 #_07D661: db $01 ; ill find out
@@ -3886,7 +3888,7 @@ DemonStats:
 #_07D663: dw 41, 43 ; HP, MP
 #_07D667: db 6, 5, 13, 6, 6, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D66D: db 122, 16, 11, 0, 10 ; Bonuses maybe
-#_07D672: db !Move_04, !Move_05, !Move_06
+#_07D672: db $04, $05, $06 ; Move04, Move05, Move06
 #_07D675: db $17, $CC, $DC ; no clue yet
 #_07D678: db 5 ; CP
 #_07D679: db $01 ; ill find out
@@ -3896,7 +3898,7 @@ DemonStats:
 #_07D67B: dw 36, 39 ; HP, MP
 #_07D67F: db 7, 8, 7, 7, 7, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D685: db 132, 49, 21, 0, 18 ; Bonuses maybe
-#_07D68A: db !Move_23, !Move_25, !Move_26
+#_07D68A: db $23, $25, $26 ; Move23, Move25, Move26
 #_07D68D: db $14, $08, $DC ; no clue yet
 #_07D690: db 4 ; CP
 #_07D691: db $02 ; ill find out
@@ -3906,7 +3908,7 @@ DemonStats:
 #_07D693: dw 15, 16 ; HP, MP
 #_07D697: db 2, 8, 9, 3, 8, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D69D: db 113, 145, 9, 0, 6 ; Bonuses maybe
-#_07D6A2: db !Move_1C, !Move_2A, !Move_09
+#_07D6A2: db $1C, $2A, $09 ; Move1C, Move2A, Move09
 #_07D6A5: db $27, $E6, $9E ; no clue yet
 #_07D6A8: db 1 ; CP
 #_07D6A9: db $22 ; ill find out
@@ -3916,7 +3918,7 @@ DemonStats:
 #_07D6AB: dw 711, 277 ; HP, MP
 #_07D6AF: db 30, 17, 19, 18, 16, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D6B5: db 189, 32, 7, 0, 14 ; Bonuses maybe
-#_07D6BA: db !Move_01, !Move_56, !Move_03
+#_07D6BA: db $01, $56, $03 ; Move01, Move56, Move03
 #_07D6BD: db $16, $36, $DB ; no clue yet
 #_07D6C0: db 38 ; CP
 #_07D6C1: db $10 ; ill find out
@@ -3926,7 +3928,7 @@ DemonStats:
 #_07D6C3: dw 655, 266 ; HP, MP
 #_07D6C7: db 29, 14, 17, 17, 20, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D6CD: db 183, 32, 11, 0, 21 ; Bonuses maybe
-#_07D6D2: db !Move_05, !Move_07, !Move_1E
+#_07D6D2: db $05, $07, $1E ; Move05, Move07, Move1E
 #_07D6D5: db $17, $CC, $CB ; no clue yet
 #_07D6D8: db 36 ; CP
 #_07D6D9: db $10 ; ill find out
@@ -3936,7 +3938,7 @@ DemonStats:
 #_07D6DB: dw 666, 292 ; HP, MP
 #_07D6DF: db 28, 16, 18, 16, 14, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D6E5: db 199, 0, 24, 0, 16 ; Bonuses maybe
-#_07D6EA: db !Move_4E, !Move_4F, !Move_50
+#_07D6EA: db $4E, $4F, $50 ; Move4E, Move4F, Move50
 #_07D6ED: db $E6, $2E, $DA ; no clue yet
 #_07D6F0: db 35 ; CP
 #_07D6F1: db $11 ; ill find out
@@ -3946,7 +3948,7 @@ DemonStats:
 #_07D6F3: dw 616, 252 ; HP, MP
 #_07D6F7: db 27, 14, 12, 17, 20, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D6FD: db 182, 134, 24, 0, 5 ; Bonuses maybe
-#_07D702: db !Move_17, !Move_18, !Move_35
+#_07D702: db $17, $18, $35 ; Move17, Move18, Move35
 #_07D705: db $26, $2D, $9A ; no clue yet
 #_07D708: db 33 ; CP
 #_07D709: db $10 ; ill find out
@@ -3956,7 +3958,7 @@ DemonStats:
 #_07D70B: dw 575, 242 ; HP, MP
 #_07D70F: db 26, 13, 16, 13, 17, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D715: db 174, 48, 7, 0, 11 ; Bonuses maybe
-#_07D71A: db !Move_01, !Move_57, !Move_5B
+#_07D71A: db $01, $57, $5B ; Move01, Move57, Move5B
 #_07D71D: db $D6, $29, $CA ; no clue yet
 #_07D720: db 30 ; CP
 #_07D721: db $11 ; ill find out
@@ -3966,7 +3968,7 @@ DemonStats:
 #_07D723: dw 533, 233 ; HP, MP
 #_07D727: db 24, 13, 15, 14, 14, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D72D: db 178, 32, 22, 4, 12 ; Bonuses maybe
-#_07D732: db !Move_1A, !Move_1D, !Move_03
+#_07D732: db $1A, $1D, $03 ; Move1A, Move1D, Move03
 #_07D735: db $D6, $27, $CA ; no clue yet
 #_07D738: db 28 ; CP
 #_07D739: db $10 ; ill find out
@@ -3976,7 +3978,7 @@ DemonStats:
 #_07D73B: dw 460, 195 ; HP, MP
 #_07D73F: db 22, 14, 14, 12, 11, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D745: db 181, 48, 13, 0, 6 ; Bonuses maybe
-#_07D74A: db !Move_0F, !Move_29, !Move_27
+#_07D74A: db $0F, $29, $27 ; Move0F, Move29, Move27
 #_07D74D: db $C0, $B4, $AD ; no clue yet
 #_07D750: db 25 ; CP
 #_07D751: db $10 ; ill find out
@@ -3986,7 +3988,7 @@ DemonStats:
 #_07D753: dw 363, 220 ; HP, MP
 #_07D757: db 20, 16, 12, 13, 10, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D75D: db 173, 136, 21, 0, 8 ; Bonuses maybe
-#_07D762: db !Move_1C, !Move_1D, !Move_3E
+#_07D762: db $1C, $1D, $3E ; Move1C, Move1D, Move3E
 #_07D765: db $D0, $B4, $CA ; no clue yet
 #_07D768: db 23 ; CP
 #_07D769: db $00 ; ill find out
@@ -3996,7 +3998,7 @@ DemonStats:
 #_07D76B: dw 248, 122 ; HP, MP
 #_07D76F: db 20, 11, 11, 10, 15, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D775: db 176, 32, 21, 0, 10 ; Bonuses maybe
-#_07D77A: db !Move_23, !Move_20, !Move_1B
+#_07D77A: db $23, $20, $1B ; Move23, Move20, Move1B
 #_07D77D: db $D7, $16, $CA ; no clue yet
 #_07D780: db 21 ; CP
 #_07D781: db $00 ; ill find out
@@ -4006,7 +4008,7 @@ DemonStats:
 #_07D783: dw 202, 116 ; HP, MP
 #_07D787: db 15, 11, 13, 11, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D78D: db 169, 32, 9, 5, 10 ; Bonuses maybe
-#_07D792: db !Move_22, !Move_21, !Move_03
+#_07D792: db $22, $21, $03 ; Move22, Move21, Move03
 #_07D795: db $D6, $EC, $CA ; no clue yet
 #_07D798: db 19 ; CP
 #_07D799: db $00 ; ill find out
@@ -4016,7 +4018,7 @@ DemonStats:
 #_07D79B: dw 152, 97 ; HP, MP
 #_07D79F: db 17, 9, 12, 12, 10, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D7A5: db 170, 32, 7, 0, 15 ; Bonuses maybe
-#_07D7AA: db !Move_01, !Move_69, !Move_1B
+#_07D7AA: db $01, $69, $1B ; Move01, Move69, Move1B
 #_07D7AD: db $D6, $EE, $CA ; no clue yet
 #_07D7B0: db 16 ; CP
 #_07D7B1: db $00 ; ill find out
@@ -4026,7 +4028,7 @@ DemonStats:
 #_07D7B3: dw 91, 112 ; HP, MP
 #_07D7B7: db 13, 9, 10, 6, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D7BD: db 171, 39, 8, 4, 10 ; Bonuses maybe
-#_07D7C2: db !Move_0A, !Move_55, !Move_51
+#_07D7C2: db $0A, $55, $51 ; Move0A, Move55, Move51
 #_07D7C5: db $10, $B4, $DC ; no clue yet
 #_07D7C8: db 11 ; CP
 #_07D7C9: db $00 ; ill find out
@@ -4036,7 +4038,7 @@ DemonStats:
 #_07D7CB: dw 58, 48 ; HP, MP
 #_07D7CF: db 11, 8, 9, 7, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D7D5: db 172, 134, 24, 0, 17 ; Bonuses maybe
-#_07D7DA: db !Move_0C, !Move_1E, !Move_17
+#_07D7DA: db $0C, $1E, $17 ; Move0C, Move1E, Move17
 #_07D7DD: db $1A, $B7, $DC ; no clue yet
 #_07D7E0: db 8 ; CP
 #_07D7E1: db $02 ; ill find out
@@ -4046,7 +4048,7 @@ DemonStats:
 #_07D7E3: dw 41, 36 ; HP, MP
 #_07D7E7: db 8, 7, 8, 6, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D7ED: db 160, 16, 9, 0, 10 ; Bonuses maybe
-#_07D7F2: db !Move_00, !Move_1B, !Move_1C
+#_07D7F2: db $00, $1B, $1C ; Move00, Move1B, Move1C
 #_07D7F5: db $1C, $C3, $DC ; no clue yet
 #_07D7F8: db 5 ; CP
 #_07D7F9: db $02 ; ill find out
@@ -4056,7 +4058,7 @@ DemonStats:
 #_07D7FB: dw 670, 99 ; HP, MP
 #_07D7FF: db 33, 12, 15, 16, 16, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D805: db 182, 0, 2, 5, 14 ; Bonuses maybe
-#_07D80A: db !Move_68, !Move_4E, !Move_57
+#_07D80A: db $68, $4E, $57 ; Move68, Move4E, Move57
 #_07D80D: db $27, $C9, $ED ; no clue yet
 #_07D810: db 36 ; CP
 #_07D811: db $10 ; ill find out
@@ -4066,7 +4068,7 @@ DemonStats:
 #_07D813: dw 630, 88 ; HP, MP
 #_07D817: db 24, 11, 14, 18, 22, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D81D: db 194, 129, 2, 10, 5 ; Bonuses maybe
-#_07D822: db !Move_57, !Move_66, !Move_FF
+#_07D822: db $57, $66, $FF ; Move57, Move66, MoveFF
 #_07D825: db $20, $EA, $1C ; no clue yet
 #_07D828: db 34 ; CP
 #_07D829: db $03 ; ill find out
@@ -4076,7 +4078,7 @@ DemonStats:
 #_07D82B: dw 610, 82 ; HP, MP
 #_07D82F: db 30, 13, 16, 14, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D835: db 189, 17, 20, 0, 10 ; Bonuses maybe
-#_07D83A: db !Move_4E, !Move_65, !Move_66
+#_07D83A: db $4E, $65, $66 ; Move4E, Move65, Move66
 #_07D83D: db $E7, $C9, $DB ; no clue yet
 #_07D840: db 32 ; CP
 #_07D841: db $11 ; ill find out
@@ -4086,7 +4088,7 @@ DemonStats:
 #_07D843: dw 590, 78 ; HP, MP
 #_07D847: db 27, 11, 14, 12, 15, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D84D: db 177, 33, 17, 0, 11 ; Bonuses maybe
-#_07D852: db !Move_57, !Move_53, !Move_68
+#_07D852: db $57, $53, $68 ; Move57, Move53, Move68
 #_07D855: db $D7, $CB, $DB ; no clue yet
 #_07D858: db 30 ; CP
 #_07D859: db $11 ; ill find out
@@ -4096,7 +4098,7 @@ DemonStats:
 #_07D85B: dw 515, 69 ; HP, MP
 #_07D85F: db 25, 10, 11, 18, 15, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D865: db 190, 48, 8, 0, 15 ; Bonuses maybe
-#_07D86A: db !Move_58, !Move_64, !Move_50
+#_07D86A: db $58, $64, $50 ; Move58, Move64, Move50
 #_07D86D: db $D7, $C7, $DB ; no clue yet
 #_07D870: db 28 ; CP
 #_07D871: db $03 ; ill find out
@@ -4106,7 +4108,7 @@ DemonStats:
 #_07D873: dw 433, 96 ; HP, MP
 #_07D877: db 24, 10, 12, 15, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D87D: db 171, 65, 8, 0, 12 ; Bonuses maybe
-#_07D882: db !Move_09, !Move_24, !Move_55
+#_07D882: db $09, $24, $55 ; Move09, Move24, Move55
 #_07D885: db $D5, $1C, $DB ; no clue yet
 #_07D888: db 24 ; CP
 #_07D889: db $11 ; ill find out
@@ -4116,7 +4118,7 @@ DemonStats:
 #_07D88B: dw 477, 270 ; HP, MP
 #_07D88F: db 14, 15, 19, 11, 24, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D895: db 87, 19, 3, 9, 10 ; Bonuses maybe
-#_07D89A: db !Move_48, !Move_1D, !Move_2D
+#_07D89A: db $48, $1D, $2D ; Move48, Move1D, Move2D
 #_07D89D: db $14, $E7, $8E ; no clue yet
 #_07D8A0: db 23 ; CP
 #_07D8A1: db $21 ; ill find out
@@ -4126,7 +4128,7 @@ DemonStats:
 #_07D8A3: dw 188, 122 ; HP, MP
 #_07D8A7: db 13, 11, 8, 12, 22, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D8AD: db 85, 32, 3, 8, 20 ; Bonuses maybe
-#_07D8B2: db !Move_5C, !Move_61, !Move_49
+#_07D8B2: db $5C, $61, $49 ; Move5C, Move61, Move49
 #_07D8B5: db $17, $EB, $8C ; no clue yet
 #_07D8B8: db 17 ; CP
 #_07D8B9: db $11 ; ill find out
@@ -4136,7 +4138,7 @@ DemonStats:
 #_07D8BB: dw 77, 68 ; HP, MP
 #_07D8BF: db 12, 10, 7, 7, 17, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D8C5: db 79, 51, 3, 8, 12 ; Bonuses maybe
-#_07D8CA: db !Move_5C, !Move_48, !Move_21
+#_07D8CA: db $5C, $48, $21 ; Move5C, Move48, Move21
 #_07D8CD: db $17, $EC, $8C ; no clue yet
 #_07D8D0: db 7 ; CP
 #_07D8D1: db $21 ; ill find out
@@ -4146,7 +4148,7 @@ DemonStats:
 #_07D8D3: dw 29, 49 ; HP, MP
 #_07D8D7: db 6, 8, 5, 5, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D8DD: db 81, 67, 3, 7, 11 ; Bonuses maybe
-#_07D8E2: db !Move_5C, !Move_1C, !Move_19
+#_07D8E2: db $5C, $1C, $19 ; Move5C, Move1C, Move19
 #_07D8E5: db $17, $0A, $8C ; no clue yet
 #_07D8E8: db 4 ; CP
 #_07D8E9: db $22 ; ill find out
@@ -4156,7 +4158,7 @@ DemonStats:
 #_07D8EB: dw 550, 67 ; HP, MP
 #_07D8EF: db 22, 9, 12, 16, 22, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D8F5: db 118, 0, 9, 8, 22 ; Bonuses maybe
-#_07D8FA: db !Move_5C, !Move_0F, !Move_57
+#_07D8FA: db $5C, $0F, $57 ; Move5C, Move0F, Move57
 #_07D8FD: db $10, $B4, $9C ; no clue yet
 #_07D900: db 28 ; CP
 #_07D901: db $03 ; ill find out
@@ -4166,7 +4168,7 @@ DemonStats:
 #_07D903: dw 420, 56 ; HP, MP
 #_07D907: db 25, 7, 10, 14, 18, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D90D: db 139, 2, 20, 0, 22 ; Bonuses maybe
-#_07D912: db !Move_57, !Move_4E, !Move_35
+#_07D912: db $57, $4E, $35 ; Move57, Move4E, Move35
 #_07D915: db $17, $B4, $AC ; no clue yet
 #_07D918: db 25 ; CP
 #_07D919: db $03 ; ill find out
@@ -4176,7 +4178,7 @@ DemonStats:
 #_07D91B: dw 400, 54 ; HP, MP
 #_07D91F: db 24, 6, 8, 15, 17, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D925: db 122, 33, 2, 0, 10 ; Bonuses maybe
-#_07D92A: db !Move_63, !Move_56, !Move_65
+#_07D92A: db $63, $56, $65 ; Move63, Move56, Move65
 #_07D92D: db $E0, $B4, $9C ; no clue yet
 #_07D930: db 24 ; CP
 #_07D931: db $03 ; ill find out
@@ -4186,7 +4188,7 @@ DemonStats:
 #_07D933: dw 380, 52 ; HP, MP
 #_07D937: db 22, 8, 8, 14, 18, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D93D: db 132, 34, 2, 0, 4 ; Bonuses maybe
-#_07D942: db !Move_57, !Move_3C, !Move_39
+#_07D942: db $57, $3C, $39 ; Move57, Move3C, Move39
 #_07D945: db $E5, $ED, $9C ; no clue yet
 #_07D948: db 23 ; CP
 #_07D949: db $03 ; ill find out
@@ -4196,7 +4198,7 @@ DemonStats:
 #_07D94B: dw 255, 48 ; HP, MP
 #_07D94F: db 20, 6, 7, 19, 14, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D955: db 130, 17, 2, 0, 5 ; Bonuses maybe
-#_07D95A: db !Move_69, !Move_60, !Move_32
+#_07D95A: db $69, $60, $32 ; Move69, Move60, Move32
 #_07D95D: db $E7, $D2, $9C ; no clue yet
 #_07D960: db 21 ; CP
 #_07D961: db $03 ; ill find out
@@ -4206,7 +4208,7 @@ DemonStats:
 #_07D963: dw 210, 42 ; HP, MP
 #_07D967: db 21, 4, 5, 13, 13, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D96D: db 125, 33, 2, 0, 15 ; Bonuses maybe
-#_07D972: db !Move_63, !Move_4A, !Move_65
+#_07D972: db $63, $4A, $65 ; Move63, Move4A, Move65
 #_07D975: db $D7, $B1, $9C ; no clue yet
 #_07D978: db 17 ; CP
 #_07D979: db $03 ; ill find out
@@ -4216,7 +4218,7 @@ DemonStats:
 #_07D97B: dw 106, 82 ; HP, MP
 #_07D97F: db 12, 12, 8, 8, 14, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D985: db 131, 35, 21, 7, 13 ; Bonuses maybe
-#_07D98A: db !Move_5C, !Move_0D, !Move_1D
+#_07D98A: db $5C, $0D, $1D ; Move5C, Move0D, Move1D
 #_07D98D: db $10, $B4, $0E ; no clue yet
 #_07D990: db 12 ; CP
 #_07D991: db $22 ; ill find out
@@ -4226,7 +4228,7 @@ DemonStats:
 #_07D993: dw 140, 28 ; HP, MP
 #_07D997: db 15, 6, 7, 17, 5, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D99D: db 115, 2, 2, 0, 15 ; Bonuses maybe
-#_07D9A2: db !Move_25, !Move_66, !Move_55
+#_07D9A2: db $25, $66, $55 ; Move25, Move66, Move55
 #_07D9A5: db $10, $B4, $AE ; no clue yet
 #_07D9A8: db 10 ; CP
 #_07D9A9: db $11 ; ill find out
@@ -4236,7 +4238,7 @@ DemonStats:
 #_07D9AB: dw 63, 41 ; HP, MP
 #_07D9AF: db 10, 8, 8, 7, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D9B5: db 120, 18, 21, 0, 5 ; Bonuses maybe
-#_07D9BA: db !Move_57, !Move_19, !Move_39
+#_07D9BA: db $57, $19, $39 ; Move57, Move19, Move39
 #_07D9BD: db $20, $B4, $9B ; no clue yet
 #_07D9C0: db 8 ; CP
 #_07D9C1: db $01 ; ill find out
@@ -4246,7 +4248,7 @@ DemonStats:
 #_07D9C3: dw 48, 12 ; HP, MP
 #_07D9C7: db 9, 7, 5, 5, 13, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D9CD: db 140, 1, 2, 0, 6 ; Bonuses maybe
-#_07D9D2: db !Move_0C, !Move_23, !Move_3B
+#_07D9D2: db $0C, $23, $3B ; Move0C, Move23, Move3B
 #_07D9D5: db $10, $B4, $BD ; no clue yet
 #_07D9D8: db 5 ; CP
 #_07D9D9: db $11 ; ill find out
@@ -4256,7 +4258,7 @@ DemonStats:
 #_07D9DB: dw 533, 88 ; HP, MP
 #_07D9DF: db 30, 10, 10, 18, 19, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D9E5: db 143, 1, 23, 0, 5 ; Bonuses maybe
-#_07D9EA: db !Move_03, !Move_09, !Move_32
+#_07D9EA: db $03, $09, $32 ; Move03, Move09, Move32
 #_07D9ED: db $16, $2A, $CB ; no clue yet
 #_07D9F0: db 22 ; CP
 #_07D9F1: db $00 ; ill find out
@@ -4266,7 +4268,7 @@ DemonStats:
 #_07D9F3: dw 411, 50 ; HP, MP
 #_07D9F7: db 28, 6, 6, 19, 21, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07D9FD: db 138, 0, 16, 0, 15 ; Bonuses maybe
-#_07DA02: db !Move_22, !Move_65, !Move_69
+#_07DA02: db $22, $65, $69 ; Move22, Move65, Move69
 #_07DA05: db $E6, $28, $AB ; no clue yet
 #_07DA08: db 20 ; CP
 #_07DA09: db $02 ; ill find out
@@ -4276,7 +4278,7 @@ DemonStats:
 #_07DA0B: dw 379, 66 ; HP, MP
 #_07DA0F: db 26, 9, 7, 15, 16, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DA15: db 141, 33, 20, 0, 11 ; Bonuses maybe
-#_07DA1A: db !Move_09, !Move_69, !Move_25
+#_07DA1A: db $09, $69, $25 ; Move09, Move69, Move25
 #_07DA1D: db $E7, $CA, $AB ; no clue yet
 #_07DA20: db 17 ; CP
 #_07DA21: db $02 ; ill find out
@@ -4286,7 +4288,7 @@ DemonStats:
 #_07DA23: dw 389, 55 ; HP, MP
 #_07DA27: db 25, 7, 9, 19, 12, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DA2D: db 142, 33, 20, 0, 17 ; Bonuses maybe
-#_07DA32: db !Move_52, !Move_1A, !Move_65
+#_07DA32: db $52, $1A, $65 ; Move52, Move1A, Move65
 #_07DA35: db $D7, $C8, $CA ; no clue yet
 #_07DA38: db 16 ; CP
 #_07DA39: db $02 ; ill find out
@@ -4296,7 +4298,7 @@ DemonStats:
 #_07DA3B: dw 222, 38 ; HP, MP
 #_07DA3F: db 22, 8, 9, 11, 13, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DA45: db 138, 50, 19, 0, 5 ; Bonuses maybe
-#_07DA4A: db !Move_2B, !Move_45, !Move_31
+#_07DA4A: db $2B, $45, $31 ; Move2B, Move45, Move31
 #_07DA4D: db $D6, $CE, $EA ; no clue yet
 #_07DA50: db 14 ; CP
 #_07DA51: db $21 ; ill find out
@@ -4306,7 +4308,7 @@ DemonStats:
 #_07DA53: dw 53, 14 ; HP, MP
 #_07DA57: db 14, 5, 5, 14, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DA5D: db 128, 165, 13, 0, 16 ; Bonuses maybe
-#_07DA62: db !Move_69, !Move_25, !Move_23
+#_07DA62: db $69, $25, $23 ; Move69, Move25, Move23
 #_07DA65: db $27, $0D, $AB ; no clue yet
 #_07DA68: db 9 ; CP
 #_07DA69: db $02 ; ill find out
@@ -4316,7 +4318,7 @@ DemonStats:
 #_07DA6B: dw 512, 128 ; HP, MP
 #_07DA6F: db 28, 8, 11, 19, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DA75: db 188, 1, 18, 0, 10 ; Bonuses maybe
-#_07DA7A: db !Move_23, !Move_24, !Move_65
+#_07DA7A: db $23, $24, $65 ; Move23, Move24, Move65
 #_07DA7D: db $D0, $00, $1A ; no clue yet
 #_07DA80: db 26 ; CP
 #_07DA81: db $11 ; ill find out
@@ -4326,7 +4328,7 @@ DemonStats:
 #_07DA83: dw 404, 108 ; HP, MP
 #_07DA87: db 26, 9, 10, 18, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DA8D: db 155, 177, 17, 0, 1 ; Bonuses maybe
-#_07DA92: db !Move_2B, !Move_33, !Move_34
+#_07DA92: db $2B, $33, $34 ; Move2B, Move33, Move34
 #_07DA95: db $C6, $24, $DE ; no clue yet
 #_07DA98: db 24 ; CP
 #_07DA99: db $11 ; ill find out
@@ -4336,7 +4338,7 @@ DemonStats:
 #_07DA9B: dw 377, 98 ; HP, MP
 #_07DA9F: db 23, 8, 10, 12, 20, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DAA5: db 198, 2, 18, 0, 11 ; Bonuses maybe
-#_07DAAA: db !Move_19, !Move_1E, !Move_21
+#_07DAAA: db $19, $1E, $21 ; Move19, Move1E, Move21
 #_07DAAD: db $D0, $B4, $CA ; no clue yet
 #_07DAB0: db 22 ; CP
 #_07DAB1: db $20 ; ill find out
@@ -4346,7 +4348,7 @@ DemonStats:
 #_07DAB3: dw 296, 85 ; HP, MP
 #_07DAB7: db 21, 9, 11, 12, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DABD: db 179, 33, 13, 0, 11 ; Bonuses maybe
-#_07DAC2: db !Move_0D, !Move_4A, !Move_2B
+#_07DAC2: db $0D, $4A, $2B ; Move0D, Move4A, Move2B
 #_07DAC5: db $D4, $1B, $CA ; no clue yet
 #_07DAC8: db 20 ; CP
 #_07DAC9: db $11 ; ill find out
@@ -4356,7 +4358,7 @@ DemonStats:
 #_07DACB: dw 135, 78 ; HP, MP
 #_07DACF: db 16, 8, 9, 15, 9, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DAD5: db 166, 65, 1, 0, 17 ; Bonuses maybe
-#_07DADA: db !Move_22, !Move_23, !Move_27
+#_07DADA: db $22, $23, $27 ; Move22, Move23, Move27
 #_07DADD: db $D5, $17, $CA ; no clue yet
 #_07DAE0: db 14 ; CP
 #_07DAE1: db $11 ; ill find out
@@ -4366,7 +4368,7 @@ DemonStats:
 #_07DAE3: dw 73, 58 ; HP, MP
 #_07DAE7: db 13, 6, 8, 9, 9, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DAED: db 159, 50, 1, 0, 20 ; Bonuses maybe
-#_07DAF2: db !Move_2A, !Move_09, !Move_30
+#_07DAF2: db $2A, $09, $30 ; Move2A, Move09, Move30
 #_07DAF5: db $17, $0B, $DA ; no clue yet
 #_07DAF8: db 8 ; CP
 #_07DAF9: db $01 ; ill find out
@@ -4376,7 +4378,7 @@ DemonStats:
 #_07DAFB: dw 51, 28 ; HP, MP
 #_07DAFF: db 12, 6, 7, 8, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB05: db 162, 50, 8, 0, 11 ; Bonuses maybe
-#_07DB0A: db !Move_08, !Move_2D, !Move_55
+#_07DB0A: db $08, $2D, $55 ; Move08, Move2D, Move55
 #_07DB0D: db $17, $09, $EA ; no clue yet
 #_07DB10: db 6 ; CP
 #_07DB11: db $02 ; ill find out
@@ -4386,7 +4388,7 @@ DemonStats:
 #_07DB13: dw 530, 120 ; HP, MP
 #_07DB17: db 30, 11, 13, 20, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB1D: db 72, 16, 10, 0, 17 ; Bonuses maybe
-#_07DB22: db !Move_25, !Move_65, !Move_2C
+#_07DB22: db $25, $65, $2C ; Move25, Move65, Move2C
 #_07DB25: db $10, $B4, $ED ; no clue yet
 #_07DB28: db 29 ; CP
 #_07DB29: db $11 ; ill find out
@@ -4396,7 +4398,7 @@ DemonStats:
 #_07DB2B: dw 540, 90 ; HP, MP
 #_07DB2F: db 24, 10, 11, 22, 11, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB35: db 98, 32, 10, 0, 15 ; Bonuses maybe
-#_07DB3A: db !Move_73, !Move_65, !Move_69
+#_07DB3A: db $73, $65, $69 ; Move73, Move65, Move69
 #_07DB3D: db $E0, $B4, $1C ; no clue yet
 #_07DB40: db 25 ; CP
 #_07DB41: db $02 ; ill find out
@@ -4406,7 +4408,7 @@ DemonStats:
 #_07DB43: dw 470, 110 ; HP, MP
 #_07DB47: db 23, 11, 13, 16, 15, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB4D: db 71, 16, 17, 0, 16 ; Bonuses maybe
-#_07DB52: db !Move_03, !Move_2C, !Move_16
+#_07DB52: db $03, $2C, $16 ; Move03, Move2C, Move16
 #_07DB55: db $E0, $B4, $EB ; no clue yet
 #_07DB58: db 24 ; CP
 #_07DB59: db $11 ; ill find out
@@ -4416,7 +4418,7 @@ DemonStats:
 #_07DB5B: dw 213, 72 ; HP, MP
 #_07DB5F: db 19, 8, 12, 17, 10, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB65: db 68, 149, 17, 1, 5 ; Bonuses maybe
-#_07DB6A: db !Move_15, !Move_2B, !Move_32
+#_07DB6A: db $15, $2B, $32 ; Move15, Move2B, Move32
 #_07DB6D: db $E5, $E6, $CB ; no clue yet
 #_07DB70: db 19 ; CP
 #_07DB71: db $11 ; ill find out
@@ -4426,7 +4428,7 @@ DemonStats:
 #_07DB73: dw 165, 65 ; HP, MP
 #_07DB77: db 18, 8, 10, 15, 9, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB7D: db 97, 16, 10, 0, 15 ; Bonuses maybe
-#_07DB82: db !Move_24, !Move_15, !Move_69
+#_07DB82: db $24, $15, $69 ; Move24, Move15, Move69
 #_07DB85: db $C6, $ED, $2A ; no clue yet
 #_07DB88: db 14 ; CP
 #_07DB89: db $11 ; ill find out
@@ -4436,7 +4438,7 @@ DemonStats:
 #_07DB8B: dw 105, 48 ; HP, MP
 #_07DB8F: db 17, 7, 8, 12, 7, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DB95: db 69, 32, 10, 0, 10 ; Bonuses maybe
-#_07DB9A: db !Move_05, !Move_06, !Move_24
+#_07DB9A: db $05, $06, $24 ; Move05, Move06, Move24
 #_07DB9D: db $D7, $CC, $1B ; no clue yet
 #_07DBA0: db 11 ; CP
 #_07DBA1: db $02 ; ill find out
@@ -4446,7 +4448,7 @@ DemonStats:
 #_07DBA3: dw 80, 42 ; HP, MP
 #_07DBA7: db 15, 6, 6, 11, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DBAD: db 87, 33, 10, 6, 10 ; Bonuses maybe
-#_07DBB2: db !Move_5F, !Move_1A, !Move_15
+#_07DBB2: db $5F, $1A, $15 ; Move5F, Move1A, Move15
 #_07DBB5: db $17, $D2, $AD ; no clue yet
 #_07DBB8: db 9 ; CP
 #_07DBB9: db $11 ; ill find out
@@ -4456,7 +4458,7 @@ DemonStats:
 #_07DBBB: dw 61, 27 ; HP, MP
 #_07DBBF: db 11, 7, 9, 10, 6, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DBC5: db 78, 17, 10, 0, 5 ; Bonuses maybe
-#_07DBCA: db !Move_04, !Move_49, !Move_06
+#_07DBCA: db $04, $49, $06 ; Move04, Move49, Move06
 #_07DBCD: db $E0, $B4, $29 ; no clue yet
 #_07DBD0: db 7 ; CP
 #_07DBD1: db $02 ; ill find out
@@ -4466,7 +4468,7 @@ DemonStats:
 #_07DBD3: dw 40, 24 ; HP, MP
 #_07DBD7: db 6, 5, 6, 8, 10, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DBDD: db 102, 1, 10, 0, 5 ; Bonuses maybe
-#_07DBE2: db !Move_24, !Move_25, !Move_2F
+#_07DBE2: db $24, $25, $2F ; Move24, Move25, Move2F
 #_07DBE5: db $E9, $D9, $29 ; no clue yet
 #_07DBE8: db 4 ; CP
 #_07DBE9: db $02 ; ill find out
@@ -4476,7 +4478,7 @@ DemonStats:
 #_07DBEB: dw 28, 25 ; HP, MP
 #_07DBEF: db 4, 7, 7, 7, 8, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DBF5: db 98, 129, 10, 0, 10 ; Bonuses maybe
-#_07DBFA: db !Move_0C, !Move_1A, !Move_23
+#_07DBFA: db $0C, $1A, $23 ; Move0C, Move1A, Move23
 #_07DBFD: db $E2, $B4, $29 ; no clue yet
 #_07DC00: db 3 ; CP
 #_07DC01: db $01 ; ill find out
@@ -4486,7 +4488,7 @@ DemonStats:
 #_07DC03: dw 18, 20 ; HP, MP
 #_07DC07: db 2, 8, 7, 7, 7, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC0D: db 94, 145, 10, 0, 16 ; Bonuses maybe
-#_07DC12: db !Move_25, !Move_46, !Move_22
+#_07DC12: db $25, $46, $22 ; Move25, Move46, Move22
 #_07DC15: db $12, $B6, $29 ; no clue yet
 #_07DC18: db 2 ; CP
 #_07DC19: db $01 ; ill find out
@@ -4496,7 +4498,7 @@ DemonStats:
 #_07DC1B: dw 400, 98 ; HP, MP
 #_07DC1F: db 25, 8, 8, 16, 20, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC25: db 136, 20, 18, 0, 21 ; Bonuses maybe
-#_07DC2A: db !Move_5C, !Move_57, !Move_69
+#_07DC2A: db $5C, $57, $69 ; Move5C, Move57, Move69
 #_07DC2D: db $10, $B4, $29 ; no clue yet
 #_07DC30: db 10 ; CP
 #_07DC31: db $12 ; ill find out
@@ -4506,7 +4508,7 @@ DemonStats:
 #_07DC33: dw 130, 56 ; HP, MP
 #_07DC37: db 14, 10, 7, 10, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC3D: db 128, 35, 18, 5, 13 ; Bonuses maybe
-#_07DC42: db !Move_5C, !Move_1C, !Move_23
+#_07DC42: db $5C, $1C, $23 ; Move5C, Move1C, Move23
 #_07DC45: db $17, $D1, $19 ; no clue yet
 #_07DC48: db 6 ; CP
 #_07DC49: db $22 ; ill find out
@@ -4516,7 +4518,7 @@ DemonStats:
 #_07DC4B: dw 30, 22 ; HP, MP
 #_07DC4F: db 5, 7, 6, 9, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC55: db 130, 130, 1, 0, 17 ; Bonuses maybe
-#_07DC5A: db !Move_24, !Move_2B, !Move_57
+#_07DC5A: db $24, $2B, $57 ; Move24, Move2B, Move57
 #_07DC5D: db $2A, $03, $3A ; no clue yet
 #_07DC60: db 1 ; CP
 #_07DC61: db $02 ; ill find out
@@ -4526,7 +4528,7 @@ DemonStats:
 #_07DC63: dw 510, 290 ; HP, MP
 #_07DC67: db 15, 28, 22, 13, 12, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC6D: db 32, 1, 18, 4, 9 ; Bonuses maybe
-#_07DC72: db !Move_0D, !Move_0F, !Move_36
+#_07DC72: db $0D, $0F, $36 ; Move0D, Move0F, Move36
 #_07DC75: db $29, $B3, $28 ; no clue yet
 #_07DC78: db 0 ; CP
 #_07DC79: db $30 ; ill find out
@@ -4536,7 +4538,7 @@ DemonStats:
 #_07DC7B: dw 305, 198 ; HP, MP
 #_07DC7F: db 13, 13, 12, 15, 14, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC85: db 33, 1, 1, 0, 17 ; Bonuses maybe
-#_07DC8A: db !Move_09, !Move_2B, !Move_11
+#_07DC8A: db $09, $2B, $11 ; Move09, Move2B, Move11
 #_07DC8D: db $16, $DC, $28 ; no clue yet
 #_07DC90: db 0 ; CP
 #_07DC91: db $30 ; ill find out
@@ -4546,7 +4548,7 @@ DemonStats:
 #_07DC93: dw 125, 42 ; HP, MP
 #_07DC97: db 14, 7, 5, 12, 15, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DC9D: db 38, 32, 1, 7, 10 ; Bonuses maybe
-#_07DCA2: db !Move_22, !Move_1E, !Move_20
+#_07DCA2: db $22, $1E, $20 ; Move22, Move1E, Move20
 #_07DCA5: db $E5, $18, $28 ; no clue yet
 #_07DCA8: db 0 ; CP
 #_07DCA9: db $30 ; ill find out
@@ -4556,7 +4558,7 @@ DemonStats:
 #_07DCAB: dw 81, 35 ; HP, MP
 #_07DCAF: db 12, 9, 6, 11, 7, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DCB5: db 45, 65, 1, 0, 1 ; Bonuses maybe
-#_07DCBA: db !Move_2D, !Move_FF, !Move_FF
+#_07DCBA: db $2D, $FF, $FF ; Move2D, MoveFF, MoveFF
 #_07DCBD: db $E4, $CD, $28 ; no clue yet
 #_07DCC0: db 0 ; CP
 #_07DCC1: db $30 ; ill find out
@@ -4566,7 +4568,7 @@ DemonStats:
 #_07DCC3: dw 540, 0 ; HP, MP
 #_07DCC7: db 20, 7, 7, 14, 26, 25 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DCCD: db 239, 0, 18, 1, 12 ; Bonuses maybe
-#_07DCD2: db !Move_69, !Move_67, !Move_60
+#_07DCD2: db $69, $67, $60 ; Move69, Move67, Move60
 #_07DCD5: db $27, $DF, $28 ; no clue yet
 #_07DCD8: db 0 ; CP
 #_07DCD9: db $40 ; ill find out
@@ -4576,7 +4578,7 @@ DemonStats:
 #_07DCDB: dw 502, 320 ; HP, MP
 #_07DCDF: db 13, 19, 24, 15, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DCE5: db 227, 21, 18, 0, 12 ; Bonuses maybe
-#_07DCEA: db !Move_0F, !Move_24, !Move_1F
+#_07DCEA: db $0F, $24, $1F ; Move0F, Move24, Move1F
 #_07DCED: db $E4, $DB, $28 ; no clue yet
 #_07DCF0: db 0 ; CP
 #_07DCF1: db $40 ; ill find out
@@ -4586,7 +4588,7 @@ DemonStats:
 #_07DCF3: dw 380, 188 ; HP, MP
 #_07DCF7: db 19, 10, 11, 12, 19, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DCFD: db 225, 34, 18, 1, 21 ; Bonuses maybe
-#_07DD02: db !Move_53, !Move_62, !Move_60
+#_07DD02: db $53, $62, $60 ; Move53, Move62, Move60
 #_07DD05: db $E7, $15, $28 ; no clue yet
 #_07DD08: db 0 ; CP
 #_07DD09: db $21 ; ill find out
@@ -4596,7 +4598,7 @@ DemonStats:
 #_07DD0B: dw 146, 122 ; HP, MP
 #_07DD0F: db 10, 11, 14, 11, 10, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DD15: db 223, 32, 1, 0, 19 ; Bonuses maybe
-#_07DD1A: db !Move_52, !Move_0D, !Move_09
+#_07DD1A: db $52, $0D, $09 ; Move52, Move0D, Move09
 #_07DD1D: db $D4, $D8, $28 ; no clue yet
 #_07DD20: db 0 ; CP
 #_07DD21: db $40 ; ill find out
@@ -4606,7 +4608,7 @@ DemonStats:
 #_07DD23: dw 95, 18 ; HP, MP
 #_07DD27: db 17, 8, 5, 9, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DD2D: db 222, 160, 1, 4, 1 ; Bonuses maybe
-#_07DD32: db !Move_63, !Move_FF, !Move_FF
+#_07DD32: db $63, $FF, $FF ; Move63, MoveFF, MoveFF
 #_07DD35: db $D0, $B4, $28 ; no clue yet
 #_07DD38: db 0 ; CP
 #_07DD39: db $40 ; ill find out
@@ -4616,7 +4618,7 @@ DemonStats:
 #_07DD3B: dw 75, 0 ; HP, MP
 #_07DD3F: db 11, 8, 6, 8, 10, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DD45: db 219, 64, 1, 0, 0 ; Bonuses maybe
-#_07DD4A: db !Move_FF, !Move_FF, !Move_FF
+#_07DD4A: db $FF, $FF, $FF ; MoveFF, MoveFF, MoveFF
 #_07DD4D: db $DA, $05, $28 ; no clue yet
 #_07DD50: db 0 ; CP
 #_07DD51: db $40 ; ill find out
@@ -4626,7 +4628,7 @@ DemonStats:
 #_07DD53: dw 737, 151 ; HP, MP
 #_07DD57: db 28, 21, 24, 20, 10, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DD5D: db 49, 128, 28, 4, 19 ; Bonuses maybe
-#_07DD62: db !Move_54, !Move_10, !Move_03
+#_07DD62: db $54, $10, $03 ; Move54, Move10, Move03
 #_07DD65: db $14, $D5, $ED ; no clue yet
 #_07DD68: db 38 ; CP
 #_07DD69: db $60 ; ill find out
@@ -4636,7 +4638,7 @@ DemonStats:
 #_07DD6B: dw 707, 141 ; HP, MP
 #_07DD6F: db 34, 12, 21, 14, 14, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DD75: db 52, 132, 28, 1, 10 ; Bonuses maybe
-#_07DD7A: db !Move_01, !Move_28, !Move_1A
+#_07DD7A: db $01, $28, $1A ; Move01, Move28, Move1A
 #_07DD7D: db $E4, $D6, $D1 ; no clue yet
 #_07DD80: db 35 ; CP
 #_07DD81: db $61 ; ill find out
@@ -4646,7 +4648,7 @@ DemonStats:
 #_07DD83: dw 747, 121 ; HP, MP
 #_07DD87: db 32, 14, 19, 13, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DD8D: db 41, 133, 28, 4, 17 ; Bonuses maybe
-#_07DD92: db !Move_4D, !Move_17, !Move_18
+#_07DD92: db $4D, $17, $18 ; Move4D, Move17, Move18
 #_07DD95: db $D6, $D3, $C1 ; no clue yet
 #_07DD98: db 32 ; CP
 #_07DD99: db $61 ; ill find out
@@ -4656,7 +4658,7 @@ DemonStats:
 #_07DD9B: dw 505, 212 ; HP, MP
 #_07DD9F: db 26, 10, 12, 15, 10, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DDA5: db 44, 133, 28, 4, 16 ; Bonuses maybe
-#_07DDAA: db !Move_09, !Move_0B, !Move_17
+#_07DDAA: db $09, $0B, $17 ; Move09, Move0B, Move17
 #_07DDAD: db $D4, $26, $C1 ; no clue yet
 #_07DDB0: db 24 ; CP
 #_07DDB1: db $61 ; ill find out
@@ -4666,7 +4668,7 @@ DemonStats:
 #_07DDB3: dw 989, 433 ; HP, MP
 #_07DDB7: db 37, 24, 26, 20, 23, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DDBD: db 250, 128, 33, 5, 11 ; Bonuses maybe
-#_07DDC2: db !Move_10, !Move_03, !Move_18
+#_07DDC2: db $10, $03, $18 ; Move10, Move03, Move18
 #_07DDC5: db $30, $B4, $43 ; no clue yet
 #_07DDC8: db 60 ; CP
 #_07DDC9: db $60 ; ill find out
@@ -4676,7 +4678,7 @@ DemonStats:
 #_07DDCB: dw 969, 343 ; HP, MP
 #_07DDCF: db 35, 20, 21, 18, 18, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DDD5: db 255, 132, 31, 0, 21 ; Bonuses maybe
-#_07DDDA: db !Move_0F, !Move_1D, !Move_2B
+#_07DDDA: db $0F, $1D, $2B ; Move0F, Move1D, Move2B
 #_07DDDD: db $35, $DA, $32 ; no clue yet
 #_07DDE0: db 56 ; CP
 #_07DDE1: db $62 ; ill find out
@@ -4686,7 +4688,7 @@ DemonStats:
 #_07DDE3: dw 949, 292 ; HP, MP
 #_07DDE7: db 33, 19, 22, 16, 21, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DDED: db 242, 128, 29, 8, 17 ; Bonuses maybe
-#_07DDF2: db !Move_0B, !Move_44, !Move_18
+#_07DDF2: db $0B, $44, $18 ; Move0B, Move44, Move18
 #_07DDF5: db $35, $E1, $32 ; no clue yet
 #_07DDF8: db 48 ; CP
 #_07DDF9: db $60 ; ill find out
@@ -4696,7 +4698,7 @@ DemonStats:
 #_07DDFB: dw 888, 262 ; HP, MP
 #_07DDFF: db 31, 18, 19, 23, 18, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE05: db 231, 129, 29, 7, 11 ; Bonuses maybe
-#_07DE0A: db !Move_09, !Move_20, !Move_1D
+#_07DE0A: db $09, $20, $1D ; Move09, Move20, Move1D
 #_07DE0D: db $30, $B4, $21 ; no clue yet
 #_07DE10: db 45 ; CP
 #_07DE11: db $61 ; ill find out
@@ -4706,7 +4708,7 @@ DemonStats:
 #_07DE13: dw 840, 180 ; HP, MP
 #_07DE17: db 29, 19, 15, 20, 19, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE1D: db 228, 129, 23, 8, 17 ; Bonuses maybe
-#_07DE22: db !Move_69, !Move_29, !Move_67
+#_07DE22: db $69, $29, $67 ; Move69, Move29, Move67
 #_07DE25: db $30, $B4, $21 ; no clue yet
 #_07DE28: db 41 ; CP
 #_07DE29: db $60 ; ill find out
@@ -4716,7 +4718,7 @@ DemonStats:
 #_07DE2B: dw 660, 82 ; HP, MP
 #_07DE2F: db 33, 13, 15, 13, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE35: db 193, 128, 18, 0, 22 ; Bonuses maybe
-#_07DE3A: db !Move_57, !Move_4E, !Move_28
+#_07DE3A: db $57, $4E, $28 ; Move57, Move4E, Move28
 #_07DE3D: db $E6, $35, $1C ; no clue yet
 #_07DE40: db 32 ; CP
 #_07DE41: db $62 ; ill find out
@@ -4726,7 +4728,7 @@ DemonStats:
 #_07DE43: dw 570, 28 ; HP, MP
 #_07DE47: db 25, 8, 10, 15, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE4D: db 188, 16, 2, 0, 10 ; Bonuses maybe
-#_07DE52: db !Move_64, !Move_65, !Move_68
+#_07DE52: db $64, $65, $68 ; Move64, Move65, Move68
 #_07DE55: db $10, $B4, $9B ; no clue yet
 #_07DE58: db 29 ; CP
 #_07DE59: db $53 ; ill find out
@@ -4736,7 +4738,7 @@ DemonStats:
 #_07DE5B: dw 440, 44 ; HP, MP
 #_07DE5F: db 27, 9, 10, 16, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE65: db 182, 16, 12, 0, 21 ; Bonuses maybe
-#_07DE6A: db !Move_5E, !Move_41, !Move_50
+#_07DE6A: db $5E, $41, $50 ; Move5E, Move41, Move50
 #_07DE6D: db $E5, $2C, $DB ; no clue yet
 #_07DE70: db 25 ; CP
 #_07DE71: db $53 ; ill find out
@@ -4746,7 +4748,7 @@ DemonStats:
 #_07DE73: dw 366, 30 ; HP, MP
 #_07DE77: db 22, 4, 9, 15, 17, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE7D: db 181, 16, 2, 4, 13 ; Bonuses maybe
-#_07DE82: db !Move_57, !Move_61, !Move_4E
+#_07DE82: db $57, $61, $4E ; Move57, Move61, Move4E
 #_07DE85: db $D6, $25, $9C ; no clue yet
 #_07DE88: db 20 ; CP
 #_07DE89: db $53 ; ill find out
@@ -4756,7 +4758,7 @@ DemonStats:
 #_07DE8B: dw 266, 24 ; HP, MP
 #_07DE8F: db 19, 4, 7, 14, 21, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DE95: db 179, 32, 2, 7, 23 ; Bonuses maybe
-#_07DE9A: db !Move_73, !Move_64, !Move_57
+#_07DE9A: db $73, $64, $57 ; Move73, Move64, Move57
 #_07DE9D: db $D6, $22, $9C ; no clue yet
 #_07DEA0: db 17 ; CP
 #_07DEA1: db $53 ; ill find out
@@ -4766,7 +4768,7 @@ DemonStats:
 #_07DEA3: dw 119, 12 ; HP, MP
 #_07DEA7: db 22, 3, 5, 12, 14, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DEAD: db 182, 48, 2, 0, 10 ; Bonuses maybe
-#_07DEB2: db !Move_5E, !Move_5A, !Move_74
+#_07DEB2: db $5E, $5A, $74 ; Move5E, Move5A, Move74
 #_07DEB5: db $D5, $B8, $AB ; no clue yet
 #_07DEB8: db 15 ; CP
 #_07DEB9: db $53 ; ill find out
@@ -4776,7 +4778,7 @@ DemonStats:
 #_07DEBB: dw 99, 10 ; HP, MP
 #_07DEBF: db 18, 4, 5, 11, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DEC5: db 178, 48, 2, 0, 17 ; Bonuses maybe
-#_07DECA: db !Move_2A, !Move_64, !Move_68
+#_07DECA: db $2A, $64, $68 ; Move2A, Move64, Move68
 #_07DECD: db $D6, $E4, $AB ; no clue yet
 #_07DED0: db 10 ; CP
 #_07DED1: db $53 ; ill find out
@@ -4786,7 +4788,7 @@ DemonStats:
 #_07DED3: dw 494, 79 ; HP, MP
 #_07DED7: db 15, 8, 9, 11, 36, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DEDD: db 53, 32, 3, 8, 12 ; Bonuses maybe
-#_07DEE2: db !Move_57, !Move_61, !Move_4F
+#_07DEE2: db $57, $61, $4F ; Move57, Move61, Move4F
 #_07DEE5: db $18, $E4, $9C ; no clue yet
 #_07DEE8: db 30 ; CP
 #_07DEE9: db $61 ; ill find out
@@ -4796,7 +4798,7 @@ DemonStats:
 #_07DEEB: dw 344, 65 ; HP, MP
 #_07DEEF: db 12, 9, 8, 10, 30, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DEF5: db 56, 32, 3, 8, 20 ; Bonuses maybe
-#_07DEFA: db !Move_5C, !Move_61, !Move_17
+#_07DEFA: db $5C, $61, $17 ; Move5C, Move61, Move17
 #_07DEFD: db $17, $EB, $9C ; no clue yet
 #_07DF00: db 22 ; CP
 #_07DF01: db $61 ; ill find out
@@ -4806,7 +4808,7 @@ DemonStats:
 #_07DF03: dw 89, 43 ; HP, MP
 #_07DF07: db 10, 7, 9, 9, 15, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF0D: db 58, 48, 3, 5, 10 ; Bonuses maybe
-#_07DF12: db !Move_5D, !Move_61, !Move_74
+#_07DF12: db $5D, $61, $74 ; Move5D, Move61, Move74
 #_07DF15: db $15, $EF, $AC ; no clue yet
 #_07DF18: db 11 ; CP
 #_07DF19: db $71 ; ill find out
@@ -4816,7 +4818,7 @@ DemonStats:
 #_07DF1B: dw 19, 26 ; HP, MP
 #_07DF1F: db 5, 6, 8, 6, 9, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF25: db 61, 16, 3, 0, 12 ; Bonuses maybe
-#_07DF2A: db !Move_0C, !Move_49, !Move_1B
+#_07DF2A: db $0C, $49, $1B ; Move0C, Move49, Move1B
 #_07DF2D: db $16, $E5, $CD ; no clue yet
 #_07DF30: db 4 ; CP
 #_07DF31: db $60 ; ill find out
@@ -4826,7 +4828,7 @@ DemonStats:
 #_07DF33: dw 666, 66 ; HP, MP
 #_07DF37: db 34, 11, 12, 16, 19, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF3D: db 142, 128, 23, 5, 14 ; Bonuses maybe
-#_07DF42: db !Move_5C, !Move_57, !Move_4F
+#_07DF42: db $5C, $57, $4F ; Move5C, Move57, Move4F
 #_07DF45: db $15, $31, $CE ; no clue yet
 #_07DF48: db 33 ; CP
 #_07DF49: db $62 ; ill find out
@@ -4836,7 +4838,7 @@ DemonStats:
 #_07DF4B: dw 620, 22 ; HP, MP
 #_07DF4F: db 20, 6, 7, 16, 25, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF55: db 141, 32, 12, 11, 12 ; Bonuses maybe
-#_07DF5A: db !Move_64, !Move_66, !Move_55
+#_07DF5A: db $64, $66, $55 ; Move64, Move66, Move55
 #_07DF5D: db $10, $B4, $02 ; no clue yet
 #_07DF60: db 22 ; CP
 #_07DF61: db $53 ; ill find out
@@ -4846,7 +4848,7 @@ DemonStats:
 #_07DF63: dw 444, 32 ; HP, MP
 #_07DF67: db 25, 9, 11, 15, 17, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF6D: db 141, 32, 2, 0, 10 ; Bonuses maybe
-#_07DF72: db !Move_60, !Move_4A, !Move_5A
+#_07DF72: db $60, $4A, $5A ; Move60, Move4A, Move5A
 #_07DF75: db $15, $23, $9C ; no clue yet
 #_07DF78: db 25 ; CP
 #_07DF79: db $61 ; ill find out
@@ -4856,7 +4858,7 @@ DemonStats:
 #_07DF7B: dw 499, 54 ; HP, MP
 #_07DF7F: db 16, 14, 16, 10, 18, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF85: db 140, 2, 26, 0, 14 ; Bonuses maybe
-#_07DF8A: db !Move_1C, !Move_1D, !Move_20
+#_07DF8A: db $1C, $1D, $20 ; Move1C, Move1D, Move20
 #_07DF8D: db $14, $D8, $9C ; no clue yet
 #_07DF90: db 24 ; CP
 #_07DF91: db $70 ; ill find out
@@ -4866,7 +4868,7 @@ DemonStats:
 #_07DF93: dw 134, 32 ; HP, MP
 #_07DF97: db 21, 4, 5, 11, 12, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DF9D: db 141, 64, 2, 0, 16 ; Bonuses maybe
-#_07DFA2: db !Move_57, !Move_63, !Move_01
+#_07DFA2: db $57, $63, $01 ; Move57, Move63, Move01
 #_07DFA5: db $10, $B4, $9C ; no clue yet
 #_07DFA8: db 15 ; CP
 #_07DFA9: db $52 ; ill find out
@@ -4876,7 +4878,7 @@ DemonStats:
 #_07DFAB: dw 88, 18 ; HP, MP
 #_07DFAF: db 16, 5, 5, 8, 10, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DFB5: db 143, 21, 2, 0, 15 ; Bonuses maybe
-#_07DFBA: db !Move_5C, !Move_59, !Move_49
+#_07DFBA: db $5C, $59, $49 ; Move5C, Move59, Move49
 #_07DFBD: db $26, $EF, $0C ; no clue yet
 #_07DFC0: db 10 ; CP
 #_07DFC1: db $53 ; ill find out
@@ -4886,7 +4888,7 @@ DemonStats:
 #_07DFC3: dw 722, 59 ; HP, MP
 #_07DFC7: db 30, 11, 12, 14, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DFCD: db 110, 0, 26, 0, 10 ; Bonuses maybe
-#_07DFD2: db !Move_40, !Move_50, !Move_49
+#_07DFD2: db $40, $50, $49 ; Move40, Move50, Move49
 #_07DFD5: db $27, $E8, $DB ; no clue yet
 #_07DFD8: db 28 ; CP
 #_07DFD9: db $61 ; ill find out
@@ -4896,7 +4898,7 @@ DemonStats:
 #_07DFDB: dw 500, 31 ; HP, MP
 #_07DFDF: db 32, 6, 9, 19, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DFE5: db 109, 48, 1, 0, 20 ; Bonuses maybe
-#_07DFEA: db !Move_73, !Move_65, !Move_0A
+#_07DFEA: db $73, $65, $0A ; Move73, Move65, Move0A
 #_07DFED: db $D5, $EA, $DA ; no clue yet
 #_07DFF0: db 27 ; CP
 #_07DFF1: db $52 ; ill find out
@@ -4906,7 +4908,7 @@ DemonStats:
 #_07DFF3: dw 465, 48 ; HP, MP
 #_07DFF7: db 28, 9, 10, 13, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07DFFD: db 107, 32, 1, 0, 13 ; Bonuses maybe
-#_07E002: db !Move_52, !Move_49, !Move_69
+#_07E002: db $52, $49, $69 ; Move52, Move49, Move69
 #_07E005: db $E6, $2A, $1A ; no clue yet
 #_07E008: db 26 ; CP
 #_07E009: db $60 ; ill find out
@@ -4916,7 +4918,7 @@ DemonStats:
 #_07E00B: dw 323, 42 ; HP, MP
 #_07E00F: db 21, 8, 8, 20, 13, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E015: db 110, 16, 11, 0, 12 ; Bonuses maybe
-#_07E01A: db !Move_05, !Move_58, !Move_07
+#_07E01A: db $05, $58, $07 ; Move05, Move58, Move07
 #_07E01D: db $E7, $EF, $DA ; no clue yet
 #_07E020: db 24 ; CP
 #_07E021: db $51 ; ill find out
@@ -4926,7 +4928,7 @@ DemonStats:
 #_07E023: dw 259, 38 ; HP, MP
 #_07E027: db 20, 7, 7, 11, 20, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E02D: db 108, 32, 1, 0, 21 ; Bonuses maybe
-#_07E032: db !Move_57, !Move_65, !Move_0D
+#_07E032: db $57, $65, $0D ; Move57, Move65, Move0D
 #_07E035: db $D6, $E8, $CA ; no clue yet
 #_07E038: db 20 ; CP
 #_07E039: db $61 ; ill find out
@@ -4936,7 +4938,7 @@ DemonStats:
 #_07E03B: dw 129, 28 ; HP, MP
 #_07E03F: db 15, 6, 7, 13, 13, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E045: db 103, 32, 11, 0, 13 ; Bonuses maybe
-#_07E04A: db !Move_05, !Move_07, !Move_62
+#_07E04A: db $05, $07, $62 ; Move05, Move07, Move62
 #_07E04D: db $D8, $EF, $CA ; no clue yet
 #_07E050: db 15 ; CP
 #_07E051: db $52 ; ill find out
@@ -4946,7 +4948,7 @@ DemonStats:
 #_07E053: dw 42, 16 ; HP, MP
 #_07E057: db 12, 4, 5, 10, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E05D: db 109, 80, 1, 0, 15 ; Bonuses maybe
-#_07E062: db !Move_2A, !Move_73, !Move_75
+#_07E062: db $2A, $73, $75 ; Move2A, Move73, Move75
 #_07E065: db $E9, $09, $2A ; no clue yet
 #_07E068: db 8 ; CP
 #_07E069: db $52 ; ill find out
@@ -4956,7 +4958,7 @@ DemonStats:
 #_07E06B: dw 26, 11 ; HP, MP
 #_07E06F: db 7, 4, 5, 12, 3, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E075: db 101, 160, 1, 2, 15 ; Bonuses maybe
-#_07E07A: db !Move_25, !Move_55, !Move_49
+#_07E07A: db $25, $55, $49 ; Move25, Move55, Move49
 #_07E07D: db $E7, $E5, $2B ; no clue yet
 #_07E080: db 4 ; CP
 #_07E081: db $52 ; ill find out
@@ -4966,7 +4968,7 @@ DemonStats:
 #_07E083: dw 20, 14 ; HP, MP
 #_07E087: db 4, 6, 5, 5, 10, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E08D: db 105, 16, 1, 0, 10 ; Bonuses maybe
-#_07E092: db !Move_08, !Move_5C, !Move_74
+#_07E092: db $08, $5C, $74 ; Move08, Move5C, Move74
 #_07E095: db $E0, $B4, $3A ; no clue yet
 #_07E098: db 2 ; CP
 #_07E099: db $51 ; ill find out
@@ -4976,7 +4978,7 @@ DemonStats:
 #_07E09B: dw 720, 200 ; HP, MP
 #_07E09F: db 12, 32, 22, 14, 8, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E0A5: db 203, 132, 24, 15, 19 ; Bonuses maybe
-#_07E0AA: db !Move_0B, !Move_4D, !Move_18
+#_07E0AA: db $0B, $4D, $18 ; Move0B, Move4D, Move18
 #_07E0AD: db $27, $EA, $3D ; no clue yet
 #_07E0B0: db 32 ; CP
 #_07E0B1: db $60 ; ill find out
@@ -4986,7 +4988,7 @@ DemonStats:
 #_07E0B3: dw 363, 52 ; HP, MP
 #_07E0B7: db 25, 7, 7, 29, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E0BD: db 202, 36, 12, 0, 21 ; Bonuses maybe
-#_07E0C2: db !Move_54, !Move_58, !Move_5E
+#_07E0C2: db $54, $58, $5E ; Move54, Move58, Move5E
 #_07E0C5: db $D0, $B4, $CE ; no clue yet
 #_07E0C8: db 25 ; CP
 #_07E0C9: db $52 ; ill find out
@@ -4996,7 +4998,7 @@ DemonStats:
 #_07E0CB: dw 353, 42 ; HP, MP
 #_07E0CF: db 20, 5, 8, 9, 26, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E0D5: db 190, 37, 24, 0, 16 ; Bonuses maybe
-#_07E0DA: db !Move_40, !Move_50, !Move_43
+#_07E0DA: db $40, $50, $43 ; Move40, Move50, Move43
 #_07E0DD: db $10, $B4, $DA ; no clue yet
 #_07E0E0: db 22 ; CP
 #_07E0E1: db $61 ; ill find out
@@ -5006,7 +5008,7 @@ DemonStats:
 #_07E0E3: dw 187, 46 ; HP, MP
 #_07E0E7: db 11, 7, 27, 10, 10, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E0ED: db 180, 52, 25, 0, 16 ; Bonuses maybe
-#_07E0F2: db !Move_46, !Move_03, !Move_01
+#_07E0F2: db $46, $03, $01 ; Move46, Move03, Move01
 #_07E0F5: db $D7, $1E, $BA ; no clue yet
 #_07E0F8: db 18 ; CP
 #_07E0F9: db $61 ; ill find out
@@ -5016,7 +5018,7 @@ DemonStats:
 #_07E0FB: dw 103, 38 ; HP, MP
 #_07E0FF: db 19, 5, 8, 14, 8, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E105: db 205, 53, 5, 0, 17 ; Bonuses maybe
-#_07E10A: db !Move_1A, !Move_05, !Move_17
+#_07E10A: db $1A, $05, $17 ; Move1A, Move05, Move17
 #_07E10D: db $D0, $B4, $BA ; no clue yet
 #_07E110: db 13 ; CP
 #_07E111: db $60 ; ill find out
@@ -5026,7 +5028,7 @@ DemonStats:
 #_07E113: dw 69, 19 ; HP, MP
 #_07E117: db 16, 7, 6, 14, 7, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E11D: db 199, 37, 5, 0, 10 ; Bonuses maybe
-#_07E122: db !Move_5E, !Move_4C, !Move_45
+#_07E122: db $5E, $4C, $45 ; Move5E, Move4C, Move45
 #_07E125: db $E7, $E8, $D9 ; no clue yet
 #_07E128: db 10 ; CP
 #_07E129: db $71 ; ill find out
@@ -5036,7 +5038,7 @@ DemonStats:
 #_07E12B: dw 52, 15 ; HP, MP
 #_07E12F: db 13, 6, 6, 11, 8, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E135: db 212, 52, 5, 0, 12 ; Bonuses maybe
-#_07E13A: db !Move_73, !Move_59, !Move_75
+#_07E13A: db $73, $59, $75 ; Move73, Move59, Move75
 #_07E13D: db $D4, $EB, $C9 ; no clue yet
 #_07E140: db 7 ; CP
 #_07E141: db $52 ; ill find out
@@ -5046,7 +5048,7 @@ DemonStats:
 #_07E143: dw 39, 29 ; HP, MP
 #_07E147: db 4, 7, 5, 5, 13, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E14D: db 201, 132, 14, 7, 9 ; Bonuses maybe
-#_07E152: db !Move_1B, !Move_01, !Move_FF
+#_07E152: db $1B, $01, $FF ; Move1B, Move01, MoveFF
 #_07E155: db $17, $E5, $1A ; no clue yet
 #_07E158: db 6 ; CP
 #_07E159: db $71 ; ill find out
@@ -5056,7 +5058,7 @@ DemonStats:
 #_07E15B: dw 25, 0 ; HP, MP
 #_07E15F: db 3, 5, 3, 7, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E165: db 210, 4, 4, 3, 10 ; Bonuses maybe
-#_07E16A: db !Move_5C, !Move_75, !Move_57
+#_07E16A: db $5C, $75, $57 ; Move5C, Move75, Move57
 #_07E16D: db $1A, $02, $19 ; no clue yet
 #_07E170: db 10 ; CP
 #_07E171: db $51 ; ill find out
@@ -5066,7 +5068,7 @@ DemonStats:
 #_07E173: dw 299, 31 ; HP, MP
 #_07E177: db 23, 8, 8, 22, 11, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E17D: db 166, 6, 13, 7, 13 ; Bonuses maybe
-#_07E182: db !Move_54, !Move_75, !Move_42
+#_07E182: db $54, $75, $42 ; Move54, Move75, Move42
 #_07E185: db $20, $B4, $DB ; no clue yet
 #_07E188: db 20 ; CP
 #_07E189: db $60 ; ill find out
@@ -5076,7 +5078,7 @@ DemonStats:
 #_07E18B: dw 144, 28 ; HP, MP
 #_07E18F: db 8, 14, 16, 9, 14, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E195: db 161, 22, 6, 0, 20 ; Bonuses maybe
-#_07E19A: db !Move_54, !Move_10, !Move_0F
+#_07E19A: db $54, $10, $0F ; Move54, Move10, Move0F
 #_07E19D: db $E0, $B4, $DA ; no clue yet
 #_07E1A0: db 12 ; CP
 #_07E1A1: db $B0 ; ill find out
@@ -5086,7 +5088,7 @@ DemonStats:
 #_07E1A3: dw 108, 21 ; HP, MP
 #_07E1A7: db 10, 8, 13, 10, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E1AD: db 156, 37, 14, 0, 10 ; Bonuses maybe
-#_07E1B2: db !Move_54, !Move_1A, !Move_4D
+#_07E1B2: db $54, $1A, $4D ; Move54, Move1A, Move4D
 #_07E1B5: db $E6, $B7, $BA ; no clue yet
 #_07E1B8: db 10 ; CP
 #_07E1B9: db $61 ; ill find out
@@ -5096,7 +5098,7 @@ DemonStats:
 #_07E1BB: dw 89, 16 ; HP, MP
 #_07E1BF: db 9, 7, 12, 10, 10, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E1C5: db 154, 101, 5, 3, 16 ; Bonuses maybe
-#_07E1CA: db !Move_54, !Move_75, !Move_59
+#_07E1CA: db $54, $75, $59 ; Move54, Move75, Move59
 #_07E1CD: db $E0, $B4, $BA ; no clue yet
 #_07E1D0: db 9 ; CP
 #_07E1D1: db $B0 ; ill find out
@@ -5106,7 +5108,7 @@ DemonStats:
 #_07E1D3: dw 34, 14 ; HP, MP
 #_07E1D7: db 8, 6, 13, 10, 8, 2 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E1DD: db 150, 37, 5, 0, 23 ; Bonuses maybe
-#_07E1E2: db !Move_0C, !Move_22, !Move_1E
+#_07E1E2: db $0C, $22, $1E ; Move0C, Move22, Move1E
 #_07E1E5: db $E5, $B7, $A9 ; no clue yet
 #_07E1E8: db 7 ; CP
 #_07E1E9: db $B0 ; ill find out
@@ -5116,7 +5118,7 @@ DemonStats:
 #_07E1EB: dw 40, 13 ; HP, MP
 #_07E1EF: db 7, 8, 12, 6, 6, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E1F5: db 148, 53, 6, 2, 12 ; Bonuses maybe
-#_07E1FA: db !Move_54, !Move_1A, !Move_1B
+#_07E1FA: db $54, $1A, $1B ; Move54, Move1A, Move1B
 #_07E1FD: db $17, $C7, $89 ; no clue yet
 #_07E200: db 5 ; CP
 #_07E201: db $B0 ; ill find out
@@ -5126,7 +5128,7 @@ DemonStats:
 #_07E203: dw 23, 9 ; HP, MP
 #_07E207: db 3, 6, 6, 7, 9, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E20D: db 145, 133, 6, 2, 2 ; Bonuses maybe
-#_07E212: db !Move_1B, !Move_FF, !Move_FF
+#_07E212: db $1B, $FF, $FF ; Move1B, MoveFF, MoveFF
 #_07E215: db $20, $B4, $88 ; no clue yet
 #_07E218: db 2 ; CP
 #_07E219: db $50 ; ill find out
@@ -5136,7 +5138,7 @@ DemonStats:
 #_07E21B: dw 186, 21 ; HP, MP
 #_07E21F: db 15, 5, 11, 10, 4, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E225: db 143, 53, 4, 6, 22 ; Bonuses maybe
-#_07E22A: db !Move_54, !Move_75, !Move_59
+#_07E22A: db $54, $75, $59 ; Move54, Move75, Move59
 #_07E22D: db $10, $B4, $BA ; no clue yet
 #_07E230: db 10 ; CP
 #_07E231: db $B0 ; ill find out
@@ -5146,7 +5148,7 @@ DemonStats:
 #_07E233: dw 57, 12 ; HP, MP
 #_07E237: db 9, 7, 6, 8, 6, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E23D: db 125, 36, 4, 10, 6 ; Bonuses maybe
-#_07E242: db !Move_73, !Move_75, !Move_FF
+#_07E242: db $73, $75, $FF ; Move73, Move75, MoveFF
 #_07E245: db $14, $42, $29 ; no clue yet
 #_07E248: db 6 ; CP
 #_07E249: db $B0 ; ill find out
@@ -5156,7 +5158,7 @@ DemonStats:
 #_07E24B: dw 53, 10 ; HP, MP
 #_07E24F: db 7, 6, 5, 7, 7, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E255: db 134, 52, 4, 3, 17 ; Bonuses maybe
-#_07E25A: db !Move_73, !Move_5E, !Move_59
+#_07E25A: db $73, $5E, $59 ; Move73, Move5E, Move59
 #_07E25D: db $E7, $C7, $59 ; no clue yet
 #_07E260: db 4 ; CP
 #_07E261: db $71 ; ill find out
@@ -5166,7 +5168,7 @@ DemonStats:
 #_07E263: dw 39, 8 ; HP, MP
 #_07E267: db 8, 6, 5, 5, 5, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E26D: db 130, 148, 4, 3, 10 ; Bonuses maybe
-#_07E272: db !Move_73, !Move_5D, !Move_75
+#_07E272: db $73, $5D, $75 ; Move73, Move5D, Move75
 #_07E275: db $E6, $40, $59 ; no clue yet
 #_07E278: db 3 ; CP
 #_07E279: db $B0 ; ill find out
@@ -5176,7 +5178,7 @@ DemonStats:
 #_07E27B: dw 46, 10 ; HP, MP
 #_07E27F: db 4, 5, 5, 5, 3, 2 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E285: db 140, 130, 4, 2, 5 ; Bonuses maybe
-#_07E28A: db !Move_75, !Move_5D, !Move_FF
+#_07E28A: db $75, $5D, $FF ; Move75, Move5D, MoveFF
 #_07E28D: db $18, $01, $69 ; no clue yet
 #_07E290: db 2 ; CP
 #_07E291: db $B0 ; ill find out
@@ -5186,7 +5188,7 @@ DemonStats:
 #_07E293: dw 32, 9 ; HP, MP
 #_07E297: db 3, 6, 4, 6, 4, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E29D: db 136, 130, 4, 3, 10 ; Bonuses maybe
-#_07E2A2: db !Move_73, !Move_75, !Move_5E
+#_07E2A2: db $73, $75, $5E ; Move73, Move75, Move5E
 #_07E2A5: db $18, $04, $69 ; no clue yet
 #_07E2A8: db 2 ; CP
 #_07E2A9: db $B0 ; ill find out
@@ -5196,7 +5198,7 @@ DemonStats:
 #_07E2AB: dw 31, 6 ; HP, MP
 #_07E2AF: db 2, 6, 5, 5, 2, 1 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E2B5: db 134, 4, 4, 3, 6 ; Bonuses maybe
-#_07E2BA: db !Move_73, !Move_58, !Move_FF
+#_07E2BA: db $73, $58, $FF ; Move73, Move58, MoveFF
 #_07E2BD: db $18, $B0, $69 ; no clue yet
 #_07E2C0: db 1 ; CP
 #_07E2C1: db $B0 ; ill find out
@@ -5206,7 +5208,7 @@ DemonStats:
 #_07E2C3: dw 470, 40 ; HP, MP
 #_07E2C7: db 19, 10, 14, 17, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E2CD: db 223, 20, 27, 4, 21 ; Bonuses maybe
-#_07E2D2: db !Move_0D, !Move_1A, !Move_40
+#_07E2D2: db $0D, $1A, $40 ; Move0D, Move1A, Move40
 #_07E2D5: db $EA, $1F, $BA ; no clue yet
 #_07E2D8: db 22 ; CP
 #_07E2D9: db $C0 ; ill find out
@@ -5216,7 +5218,7 @@ DemonStats:
 #_07E2DB: dw 450, 20 ; HP, MP
 #_07E2DF: db 14, 9, 12, 16, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E2E5: db 222, 20, 13, 0, 18 ; Bonuses maybe
-#_07E2EA: db !Move_73, !Move_54, !Move_50
+#_07E2EA: db $73, $54, $50 ; Move73, Move54, Move50
 #_07E2ED: db $E0, $B4, $28 ; no clue yet
 #_07E2F0: db 13 ; CP
 #_07E2F1: db $C0 ; ill find out
@@ -5226,7 +5228,7 @@ DemonStats:
 #_07E2F3: dw 52, 13 ; HP, MP
 #_07E2F7: db 7, 5, 6, 15, 7, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E2FD: db 221, 20, 12, 2, 7 ; Bonuses maybe
-#_07E302: db !Move_54, !Move_73, !Move_FF
+#_07E302: db $54, $73, $FF ; Move54, Move73, MoveFF
 #_07E305: db $E0, $B4, $28 ; no clue yet
 #_07E308: db 4 ; CP
 #_07E309: db $C0 ; ill find out
@@ -5236,7 +5238,7 @@ DemonStats:
 #_07E30B: dw 22, 9 ; HP, MP
 #_07E30F: db 2, 3, 3, 6, 10, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E315: db 220, 132, 25, 2, 17 ; Bonuses maybe
-#_07E31A: db !Move_73, !Move_0C, !Move_20
+#_07E31A: db $73, $0C, $20 ; Move73, Move0C, Move20
 #_07E31D: db $D0, $B4, $8A ; no clue yet
 #_07E320: db 2 ; CP
 #_07E321: db $C0 ; ill find out
@@ -5246,7 +5248,7 @@ DemonStats:
 #_07E323: dw 20, 0 ; HP, MP
 #_07E327: db 3, 6, 4, 7, 5, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E32D: db 201, 128, 1, 0, 2 ; Bonuses maybe
-#_07E332: db !Move_75, !Move_FF, !Move_FF
+#_07E332: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
 #_07E335: db $D5, $41, $70 ; no clue yet
 #_07E338: db 0 ; CP
 #_07E339: db $A0 ; ill find out
@@ -5256,7 +5258,7 @@ DemonStats:
 #_07E33B: dw 18, 0 ; HP, MP
 #_07E33F: db 3, 5, 4, 4, 6, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E345: db 200, 0, 1, 0, 2 ; Bonuses maybe
-#_07E34A: db !Move_74, !Move_FF, !Move_FF
+#_07E34A: db $74, $FF, $FF ; Move74, MoveFF, MoveFF
 #_07E34D: db $DA, $00, $70 ; no clue yet
 #_07E350: db 0 ; CP
 #_07E351: db $A0 ; ill find out
@@ -5266,7 +5268,7 @@ DemonStats:
 #_07E353: dw 180, 0 ; HP, MP
 #_07E357: db 12, 10, 6, 13, 20, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E35D: db 0, 16, 15, 12, 1 ; Bonuses maybe
-#_07E362: db !Move_75, !Move_FF, !Move_FF
+#_07E362: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
 #_07E365: db $1A, $C6, $A0 ; no clue yet
 #_07E368: db 0 ; CP
 #_07E369: db $B0 ; ill find out
@@ -5276,7 +5278,7 @@ DemonStats:
 #_07E36B: dw 80, 0 ; HP, MP
 #_07E36F: db 11, 9, 5, 20, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E375: db 0, 32, 15, 12, 2 ; Bonuses maybe
-#_07E37A: db !Move_75, !Move_FF, !Move_FF
+#_07E37A: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
 #_07E37D: db $1A, $C5, $A0 ; no clue yet
 #_07E380: db 0 ; CP
 #_07E381: db $B0 ; ill find out
@@ -5286,7 +5288,7 @@ DemonStats:
 #_07E383: dw 60, 0 ; HP, MP
 #_07E387: db 19, 4, 2, 15, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E38D: db 0, 32, 15, 0, 1 ; Bonuses maybe
-#_07E392: db !Move_75, !Move_FF, !Move_FF
+#_07E392: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
 #_07E395: db $1A, $C4, $A0 ; no clue yet
 #_07E398: db 0 ; CP
 #_07E399: db $B0 ; ill find out
@@ -5296,7 +5298,7 @@ DemonStats:
 #_07E39B: dw 40, 8 ; HP, MP
 #_07E39F: db 10, 6, 1, 8, 17, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E3A5: db 0, 64, 15, 0, 1 ; Bonuses maybe
-#_07E3AA: db !Move_53, !Move_FF, !Move_FF
+#_07E3AA: db $53, $FF, $FF ; Move53, MoveFF, MoveFF
 #_07E3AD: db $1A, $DF, $A0 ; no clue yet
 #_07E3B0: db 10 ; CP
 #_07E3B1: db $B0 ; ill find out
@@ -5306,7 +5308,7 @@ DemonStats:
 #_07E3B3: dw 80, 0 ; HP, MP
 #_07E3B7: db 9, 6, 6, 7, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E3BD: db 10, 144, 16, 0, 12 ; Bonuses maybe
-#_07E3C2: db !Move_73, !Move_4A, !Move_74
+#_07E3C2: db $73, $4A, $74 ; Move73, Move4A, Move74
 #_07E3C5: db $70, $B4, $06 ; no clue yet
 #_07E3C8: db 10 ; CP
 #_07E3C9: db $B0 ; ill find out
@@ -5316,7 +5318,7 @@ DemonStats:
 #_07E3CB: dw 13, 8 ; HP, MP
 #_07E3CF: db 2, 6, 3, 11, 1, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E3D5: db 20, 128, 16, 2, 6 ; Bonuses maybe
-#_07E3DA: db !Move_75, !Move_1B, !Move_FF
+#_07E3DA: db $75, $1B, $FF ; Move75, Move1B, MoveFF
 #_07E3DD: db $10, $B4, $0B ; no clue yet
 #_07E3E0: db 10 ; CP
 #_07E3E1: db $C0 ; ill find out
@@ -5326,7 +5328,7 @@ DemonStats:
 #_07E3E3: dw 0, 0 ; HP, MP
 #_07E3E7: db 0, 0, 0, 0, 0, 0 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E3ED: db 0, 0, 0, 0, 0 ; Bonuses maybe
-#_07E3F2: db !Move_00, !Move_00, !Move_00
+#_07E3F2: db $00, $00, $00 ; Move00, Move00, Move00
 #_07E3F5: db $00, $00, $00 ; no clue yet
 #_07E3F8: db 0 ; CP
 #_07E3F9: db $00 ; ill find out
@@ -5336,7 +5338,7 @@ DemonStats:
 #_07E3FB: dw 120, 55 ; HP, MP
 #_07E3FF: db 9, 8, 8, 7, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E405: db 168, 1, 21, 0, 11 ; Bonuses maybe
-#_07E40A: db !Move_1B, !Move_1C, !Move_19
+#_07E40A: db $1B, $1C, $19 ; Move1B, Move1C, Move19
 #_07E40D: db $30, $B4, $65 ; no clue yet
 #_07E410: db 0 ; CP
 #_07E411: db $FF ; ill find out
@@ -5346,7 +5348,7 @@ DemonStats:
 #_07E413: dw 132, 48 ; HP, MP
 #_07E417: db 7, 11, 9, 8, 14, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E41D: db 220, 0, 21, 4, 13 ; Bonuses maybe
-#_07E422: db !Move_20, !Move_1E, !Move_24
+#_07E422: db $20, $1E, $24 ; Move20, Move1E, Move24
 #_07E425: db $40, $B4, $65 ; no clue yet
 #_07E428: db 0 ; CP
 #_07E429: db $00 ; ill find out
@@ -5356,7 +5358,7 @@ DemonStats:
 #_07E42B: dw 398, 50 ; HP, MP
 #_07E42F: db 12, 10, 9, 12, 10, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E435: db 180, 0, 28, 0, 13 ; Bonuses maybe
-#_07E43A: db !Move_02, !Move_1A, !Move_0E
+#_07E43A: db $02, $1A, $0E ; Move02, Move1A, Move0E
 #_07E43D: db $40, $B4, $65 ; no clue yet
 #_07E440: db 0 ; CP
 #_07E441: db $00 ; ill find out
@@ -5366,7 +5368,7 @@ DemonStats:
 #_07E443: dw 440, 60 ; HP, MP
 #_07E447: db 14, 18, 11, 13, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E44D: db 210, 0, 28, 0, 10 ; Bonuses maybe
-#_07E452: db !Move_1A, !Move_69, !Move_2B
+#_07E452: db $1A, $69, $2B ; Move1A, Move69, Move2B
 #_07E455: db $4F, $0E, $65 ; no clue yet
 #_07E458: db 0 ; CP
 #_07E459: db $00 ; ill find out
@@ -5376,7 +5378,7 @@ DemonStats:
 #_07E45B: dw 482, 90 ; HP, MP
 #_07E45F: db 16, 10, 12, 15, 11, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E465: db 50, 0, 28, 0, 10 ; Bonuses maybe
-#_07E46A: db !Move_09, !Move_0A, !Move_4A
+#_07E46A: db $09, $0A, $4A ; Move09, Move0A, Move4A
 #_07E46D: db $40, $B4, $65 ; no clue yet
 #_07E470: db 0 ; CP
 #_07E471: db $00 ; ill find out
@@ -5386,7 +5388,7 @@ DemonStats:
 #_07E473: dw 320, 60 ; HP, MP
 #_07E477: db 22, 10, 11, 21, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E47D: db 60, 0, 0, 0, 20 ; Bonuses maybe
-#_07E482: db !Move_0D, !Move_2B, !Move_0F
+#_07E482: db $0D, $2B, $0F ; Move0D, Move2B, Move0F
 #_07E485: db $40, $B9, $65 ; no clue yet
 #_07E488: db 0 ; CP
 #_07E489: db $00 ; ill find out
@@ -5396,7 +5398,7 @@ DemonStats:
 #_07E48B: dw 310, 60 ; HP, MP
 #_07E48F: db 20, 14, 17, 23, 15, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E495: db 180, 0, 0, 0, 20 ; Bonuses maybe
-#_07E49A: db !Move_02, !Move_01, !Move_1A
+#_07E49A: db $02, $01, $1A ; Move02, Move01, Move1A
 #_07E49D: db $40, $B9, $65 ; no clue yet
 #_07E4A0: db 0 ; CP
 #_07E4A1: db $00 ; ill find out
@@ -5406,7 +5408,7 @@ DemonStats:
 #_07E4A3: dw 560, 50 ; HP, MP
 #_07E4A7: db 30, 10, 12, 21, 13, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E4AD: db 190, 0, 28, 7, 10 ; Bonuses maybe
-#_07E4B2: db !Move_1A, !Move_05, !Move_0B
+#_07E4B2: db $1A, $05, $0B ; Move1A, Move05, Move0B
 #_07E4B5: db $4F, $14, $65 ; no clue yet
 #_07E4B8: db 0 ; CP
 #_07E4B9: db $00 ; ill find out
@@ -5416,7 +5418,7 @@ DemonStats:
 #_07E4BB: dw 700, 90 ; HP, MP
 #_07E4BF: db 22, 17, 17, 15, 25, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E4C5: db 250, 0, 29, 10, 14 ; Bonuses maybe
-#_07E4CA: db !Move_0F, !Move_19, !Move_1D
+#_07E4CA: db $0F, $19, $1D ; Move0F, Move19, Move1D
 #_07E4CD: db $60, $B9, $06 ; no clue yet
 #_07E4D0: db 0 ; CP
 #_07E4D1: db $00 ; ill find out
@@ -5426,7 +5428,7 @@ DemonStats:
 #_07E4D3: dw 2272, 250 ; HP, MP
 #_07E4D7: db 30, 15, 16, 22, 12, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E4DD: db 167, 0, 51, 11, 11 ; Bonuses maybe
-#_07E4E2: db !Move_01, !Move_03, !Move_63
+#_07E4E2: db $01, $03, $63 ; Move01, Move03, Move63
 #_07E4E5: db $40, $B9, $65 ; no clue yet
 #_07E4E8: db 0 ; CP
 #_07E4E9: db $00 ; ill find out
@@ -5436,7 +5438,7 @@ DemonStats:
 #_07E4EB: dw 1002, 220 ; HP, MP
 #_07E4EF: db 28, 12, 14, 19, 15, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E4F5: db 202, 0, 30, 8, 12 ; Bonuses maybe
-#_07E4FA: db !Move_0F, !Move_46, !Move_17
+#_07E4FA: db $0F, $46, $17 ; Move0F, Move46, Move17
 #_07E4FD: db $40, $B9, $65 ; no clue yet
 #_07E500: db 0 ; CP
 #_07E501: db $00 ; ill find out
@@ -5446,7 +5448,7 @@ DemonStats:
 #_07E503: dw 1310, 0 ; HP, MP
 #_07E507: db 26, 26, 8, 28, 18, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E50D: db 8, 0, 30, 10, 4 ; Bonuses maybe
-#_07E512: db !Move_53, !Move_FF, !Move_FF
+#_07E512: db $53, $FF, $FF ; Move53, MoveFF, MoveFF
 #_07E515: db $40, $C6, $12 ; no clue yet
 #_07E518: db 0 ; CP
 #_07E519: db $00 ; ill find out
@@ -5456,7 +5458,7 @@ DemonStats:
 #_07E51B: dw 1540, 120 ; HP, MP
 #_07E51F: db 27, 21, 22, 24, 16, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E525: db 40, 0, 29, 5, 14 ; Bonuses maybe
-#_07E52A: db !Move_1C, !Move_1D, !Move_0F
+#_07E52A: db $1C, $1D, $0F ; Move1C, Move1D, Move0F
 #_07E52D: db $40, $B9, $65 ; no clue yet
 #_07E530: db 0 ; CP
 #_07E531: db $00 ; ill find out
@@ -5466,7 +5468,7 @@ DemonStats:
 #_07E533: dw 1820, 150 ; HP, MP
 #_07E537: db 29, 19, 19, 26, 21, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E53D: db 32, 0, 30, 8, 14 ; Bonuses maybe
-#_07E542: db !Move_0B, !Move_1D, !Move_16
+#_07E542: db $0B, $1D, $16 ; Move0B, Move1D, Move16
 #_07E545: db $40, $B9, $65 ; no clue yet
 #_07E548: db 0 ; CP
 #_07E549: db $00 ; ill find out
@@ -5476,7 +5478,7 @@ DemonStats:
 #_07E54B: dw 1610, 64 ; HP, MP
 #_07E54F: db 28, 15, 34, 29, 18, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E555: db 166, 0, 31, 5, 13 ; Bonuses maybe
-#_07E55A: db !Move_01, !Move_03, !Move_17
+#_07E55A: db $01, $03, $17 ; Move01, Move03, Move17
 #_07E55D: db $40, $B9, $65 ; no clue yet
 #_07E560: db 0 ; CP
 #_07E561: db $00 ; ill find out
@@ -5486,7 +5488,7 @@ DemonStats:
 #_07E563: dw 1520, 170 ; HP, MP
 #_07E567: db 30, 10, 13, 36, 19, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E56D: db 160, 0, 29, 5, 10 ; Bonuses maybe
-#_07E572: db !Move_1A, !Move_24, !Move_4E
+#_07E572: db $1A, $24, $4E ; Move1A, Move24, Move4E
 #_07E575: db $40, $B9, $65 ; no clue yet
 #_07E578: db 0 ; CP
 #_07E579: db $00 ; ill find out
@@ -5496,7 +5498,7 @@ DemonStats:
 #_07E57B: dw 1730, 20 ; HP, MP
 #_07E57F: db 29, 10, 14, 26, 16, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E585: db 151, 0, 29, 8, 15 ; Bonuses maybe
-#_07E58A: db !Move_68, !Move_4E, !Move_66
+#_07E58A: db $68, $4E, $66 ; Move68, Move4E, Move66
 #_07E58D: db $4F, $EA, $65 ; no clue yet
 #_07E590: db 0 ; CP
 #_07E591: db $00 ; ill find out
@@ -5506,7 +5508,7 @@ DemonStats:
 #_07E593: dw 1920, 200 ; HP, MP
 #_07E597: db 32, 17, 19, 30, 15, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E59D: db 245, 0, 30, 8, 10 ; Bonuses maybe
-#_07E5A2: db !Move_59, !Move_07, !Move_50
+#_07E5A2: db $59, $07, $50 ; Move59, Move07, Move50
 #_07E5A5: db $4F, $B9, $65 ; no clue yet
 #_07E5A8: db 0 ; CP
 #_07E5A9: db $00 ; ill find out
@@ -5516,7 +5518,7 @@ DemonStats:
 #_07E5AB: dw 2420, 310 ; HP, MP
 #_07E5AF: db 36, 20, 24, 25, 21, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E5B5: db 70, 0, 31, 9, 13 ; Bonuses maybe
-#_07E5BA: db !Move_12, !Move_16, !Move_2B
+#_07E5BA: db $12, $16, $2B ; Move12, Move16, Move2B
 #_07E5BD: db $32, $B9, $65 ; no clue yet
 #_07E5C0: db 0 ; CP
 #_07E5C1: db $00 ; ill find out
@@ -5526,7 +5528,7 @@ DemonStats:
 #_07E5C3: dw 2160, 256 ; HP, MP
 #_07E5C7: db 26, 20, 22, 24, 13, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E5CD: db 180, 0, 28, 10, 12 ; Bonuses maybe
-#_07E5D2: db !Move_0D, !Move_0F, !Move_2B
+#_07E5D2: db $0D, $0F, $2B ; Move0D, Move0F, Move2B
 #_07E5D5: db $4E, $B9, $65 ; no clue yet
 #_07E5D8: db 0 ; CP
 #_07E5D9: db $00 ; ill find out
@@ -5536,7 +5538,7 @@ DemonStats:
 #_07E5DB: dw 2060, 240 ; HP, MP
 #_07E5DF: db 37, 17, 18, 26, 19, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E5E5: db 190, 0, 30, 5, 21 ; Bonuses maybe
-#_07E5EA: db !Move_09, !Move_0B, !Move_28
+#_07E5EA: db $09, $0B, $28 ; Move09, Move0B, Move28
 #_07E5ED: db $4E, $B9, $65 ; no clue yet
 #_07E5F0: db 0 ; CP
 #_07E5F1: db $00 ; ill find out
@@ -5546,7 +5548,7 @@ DemonStats:
 #_07E5F3: dw 1700, 370 ; HP, MP
 #_07E5F7: db 33, 24, 24, 30, 20, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E5FD: db 21, 0, 34, 9, 21 ; Bonuses maybe
-#_07E602: db !Move_0B, !Move_05, !Move_28
+#_07E602: db $0B, $05, $28 ; Move0B, Move05, Move28
 #_07E605: db $4E, $B9, $65 ; no clue yet
 #_07E608: db 0 ; CP
 #_07E609: db $00 ; ill find out
@@ -5556,7 +5558,7 @@ DemonStats:
 #_07E60B: dw 2310, 340 ; HP, MP
 #_07E60F: db 22, 20, 19, 33, 18, 18 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E615: db 44, 0, 31, 8, 12 ; Bonuses maybe
-#_07E61A: db !Move_0F, !Move_1A, !Move_29
+#_07E61A: db $0F, $1A, $29 ; Move0F, Move1A, Move29
 #_07E61D: db $5E, $B9, $65 ; no clue yet
 #_07E620: db 0 ; CP
 #_07E621: db $00 ; ill find out
@@ -5566,7 +5568,7 @@ DemonStats:
 #_07E623: dw 2020, 380 ; HP, MP
 #_07E627: db 26, 26, 28, 21, 38, 19 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E62D: db 34, 0, 33, 10, 14 ; Bonuses maybe
-#_07E632: db !Move_05, !Move_07, !Move_0B
+#_07E632: db $05, $07, $0B ; Move05, Move07, Move0B
 #_07E635: db $5E, $B9, $65 ; no clue yet
 #_07E638: db 0 ; CP
 #_07E639: db $00 ; ill find out
@@ -5576,7 +5578,7 @@ DemonStats:
 #_07E63B: dw 1820, 180 ; HP, MP
 #_07E63F: db 33, 16, 17, 20, 18, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E645: db 200, 0, 32, 9, 10 ; Bonuses maybe
-#_07E64A: db !Move_1B, !Move_69, !Move_29
+#_07E64A: db $1B, $69, $29 ; Move1B, Move69, Move29
 #_07E64D: db $5E, $B9, $65 ; no clue yet
 #_07E650: db 0 ; CP
 #_07E651: db $00 ; ill find out
@@ -5586,7 +5588,7 @@ DemonStats:
 #_07E653: dw 1920, 450 ; HP, MP
 #_07E657: db 29, 31, 27, 23, 32, 16 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E65D: db 240, 0, 33, 10, 21 ; Bonuses maybe
-#_07E662: db !Move_1D, !Move_0B, !Move_24
+#_07E662: db $1D, $0B, $24 ; Move1D, Move0B, Move24
 #_07E665: db $5E, $B9, $65 ; no clue yet
 #_07E668: db 0 ; CP
 #_07E669: db $00 ; ill find out
@@ -5596,7 +5598,7 @@ DemonStats:
 #_07E66B: dw 2110, 360 ; HP, MP
 #_07E66F: db 35, 12, 15, 38, 28, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E675: db 233, 0, 30, 9, 14 ; Bonuses maybe
-#_07E67A: db !Move_03, !Move_56, !Move_4E
+#_07E67A: db $03, $56, $4E ; Move03, Move56, Move4E
 #_07E67D: db $50, $B9, $65 ; no clue yet
 #_07E680: db 0 ; CP
 #_07E681: db $00 ; ill find out
@@ -5606,7 +5608,7 @@ DemonStats:
 #_07E683: dw 2250, 300 ; HP, MP
 #_07E687: db 35, 14, 22, 31, 19, 23 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E68D: db 10, 0, 0, 8, 21 ; Bonuses maybe
-#_07E692: db !Move_0F, !Move_15, !Move_2B
+#_07E692: db $0F, $15, $2B ; Move0F, Move15, Move2B
 #_07E695: db $50, $B9, $65 ; no clue yet
 #_07E698: db 0 ; CP
 #_07E699: db $00 ; ill find out
@@ -5616,7 +5618,7 @@ DemonStats:
 #_07E69B: dw 2250, 300 ; HP, MP
 #_07E69F: db 37, 15, 20, 32, 21, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E6A5: db 245, 0, 0, 8, 19 ; Bonuses maybe
-#_07E6AA: db !Move_03, !Move_1A, !Move_1D
+#_07E6AA: db $03, $1A, $1D ; Move03, Move1A, Move1D
 #_07E6AD: db $50, $B9, $65 ; no clue yet
 #_07E6B0: db 0 ; CP
 #_07E6B1: db $00 ; ill find out
@@ -5626,7 +5628,7 @@ DemonStats:
 #_07E6B3: dw 1710, 400 ; HP, MP
 #_07E6B7: db 28, 24, 21, 23, 21, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E6BD: db 230, 0, 31, 9, 18 ; Bonuses maybe
-#_07E6C2: db !Move_19, !Move_1D, !Move_07
+#_07E6C2: db $19, $1D, $07 ; Move19, Move1D, Move07
 #_07E6C5: db $6E, $B9, $65 ; no clue yet
 #_07E6C8: db 0 ; CP
 #_07E6C9: db $00 ; ill find out
@@ -5636,7 +5638,7 @@ DemonStats:
 #_07E6CB: dw 2710, 433 ; HP, MP
 #_07E6CF: db 36, 15, 19, 23, 28, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E6D5: db 255, 0, 33, 11, 13 ; Bonuses maybe
-#_07E6DA: db !Move_10, !Move_50, !Move_42
+#_07E6DA: db $10, $50, $42 ; Move10, Move50, Move42
 #_07E6DD: db $5E, $B9, $65 ; no clue yet
 #_07E6E0: db 0 ; CP
 #_07E6E1: db $00 ; ill find out
@@ -5646,7 +5648,7 @@ DemonStats:
 #_07E6E3: dw 10000, 340 ; HP, MP
 #_07E6E7: db 40, 30, 40, 38, 40, 34 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E6ED: db 240, 0, 35, 11, 21 ; Bonuses maybe
-#_07E6F2: db !Move_03, !Move_69, !Move_13
+#_07E6F2: db $03, $69, $13 ; Move03, Move69, Move13
 #_07E6F5: db $7E, $B9, $65 ; no clue yet
 #_07E6F8: db 0 ; CP
 #_07E6F9: db $00 ; ill find out
@@ -5656,7 +5658,7 @@ DemonStats:
 #_07E6FB: dw 10000, 400 ; HP, MP
 #_07E6FF: db 40, 36, 38, 40, 30, 38 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E705: db 10, 0, 35, 11, 21 ; Bonuses maybe
-#_07E70A: db !Move_03, !Move_2B, !Move_13
+#_07E70A: db $03, $2B, $13 ; Move03, Move2B, Move13
 #_07E70D: db $7E, $B9, $65 ; no clue yet
 #_07E710: db 0 ; CP
 #_07E711: db $00 ; ill find out
@@ -5666,7 +5668,7 @@ DemonStats:
 #_07E713: dw 340, 80 ; HP, MP
 #_07E717: db 23, 9, 10, 16, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E71D: db 120, 0, 18, 4, 13 ; Bonuses maybe
-#_07E722: db !Move_09, !Move_69, !Move_24
+#_07E722: db $09, $69, $24 ; Move09, Move69, Move24
 #_07E725: db $60, $B9, $65 ; no clue yet
 #_07E728: db 0 ; CP
 #_07E729: db $00 ; ill find out
@@ -5676,7 +5678,7 @@ DemonStats:
 #_07E72B: dw 290, 70 ; HP, MP
 #_07E72F: db 18, 10, 13, 11, 8, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E735: db 118, 0, 18, 8, 14 ; Bonuses maybe
-#_07E73A: db !Move_2D, !Move_1E, !Move_23
+#_07E73A: db $2D, $1E, $23 ; Move2D, Move1E, Move23
 #_07E73D: db $60, $B9, $65 ; no clue yet
 #_07E740: db 0 ; CP
 #_07E741: db $00 ; ill find out
@@ -5686,7 +5688,7 @@ DemonStats:
 #_07E743: dw 999, 999 ; HP, MP
 #_07E747: db 25, 35, 25, 20, 40, 40 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E74D: db 127, 0, 24, 0, 14 ; Bonuses maybe
-#_07E752: db !Move_1C, !Move_1B, !Move_1D
+#_07E752: db $1C, $1B, $1D ; Move1C, Move1B, Move1D
 #_07E755: db $73, $37, $65 ; no clue yet
 #_07E758: db 0 ; CP
 #_07E759: db $00 ; ill find out
@@ -5696,10 +5698,12 @@ DemonStats:
 #_07E75B: dw 999, 999 ; HP, MP
 #_07E75F: db 40, 10, 25, 30, 35, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
 #_07E765: db 0, 0, 24, 0, 10 ; Bonuses maybe
-#_07E76A: db !Move_10, !Move_17, !Move_18
+#_07E76A: db $10, $17, $18 ; Move10, Move17, Move18
 #_07E76D: db $73, $30, $65 ; no clue yet
 #_07E770: db 0 ; CP
 #_07E771: db $00 ; ill find out
+
+;===================================================================================================
 
 data07E78A:
 #_07E78A: dw DMA_07E7F4

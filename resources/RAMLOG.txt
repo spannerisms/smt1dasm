@@ -59,7 +59,7 @@ $09F4[0x1] - something with menus
 $09F8[0x1] - something menu
 
 
-$0A24[0x2] - holds index for which bank to look at
+$0A24[0x2] - holds index for which sub bank to look at
 $0A26[0x2] - holds info for findings pointers in banks 8,9,A,B
 $0A2C[0x1] - top byte of tile value for writing text?
 $0A33[0x2] - flag for whether to call 039653 in some cases; text?
