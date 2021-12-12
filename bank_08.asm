@@ -438,11 +438,21 @@ Message_0881F0:
 #_0881F9: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_0881FA:
-#_0881FA: db $97,$F2,$38,$FC,$DC,$0A,$00,$00
-#_088202: db $FA,$02,$01,$FE,$66,$CF,$51,$CF
-#_08820A: db $F2,$2D,$FC,$FF
+
+; >[PWT:$38]
+; 10 を [PWT:$2D]
+Message_0881FA:
+#_0881FA: db $97 ; >
+#_0881FB: db $F2, $38 ; prewritten text $38
+#_0881FD: db $FC ; wait for key and new line
+#_0881FE: db $DC, $0A, $00, $00 ; give 10 MAG
+#_088202: db $FA ; clear message box
+#_088203: db $02, $01 ; 10
+#_088205: db $FE, $66 ; ext command 66: TODO
+#_088207: db $CF, $51, $CF ; ⎵を⎵
+#_08820A: db $F2, $2D ; prewritten text $2D
+#_08820C: db $FC ; wait for key and new line
+#_08820D: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -507,10 +517,20 @@ Message_08825F:
 #_088268: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_088269:
-#_088269: db $FE,$26,$04,$D1,$EB,$D4,$03,$F5
-#_088271: db $9A,$F9,$F2,$41,$FC,$E7,$00,$FF
+
+; [DEMON1]:
+; [PWT:$41]
+Message_088269:
+#_088269: db $FE, $26, $04 ; ext command 26: something 04 TODO
+#_08826C: db $D1, $EB ; clear progress bit $EB
+#_08826E: db $D4, $03 ; [COMMAND D4:03]
+#_088270: db $F5 ; write demon name from $050A
+#_088271: db $9A ; :
+#_088272: db $F9 ; new line
+#_088273: db $F2, $41 ; prewritten text $41
+#_088275: db $FC ; wait for key and new line
+#_088276: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_088278: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -1083,26 +1103,50 @@ Message_088595:
 #_0885A6: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_0885A7:
-#_0885A7: db $D6,$05,$9F,$60,$00,$FE,$07,$0B
-#_0885AF: db $D6,$05,$00,$FE,$07,$10,$D6,$05
-#_0885B7: db $9F,$80,$00,$FE,$07,$0B,$D6,$05
-#_0885BF: db $00,$FE,$07,$10,$D6,$05,$9F,$70
-#_0885C7: db $00,$FE,$07,$0B,$D6,$05,$00,$FE
-#_0885CF: db $07,$08,$D6,$05,$9F,$60,$00,$FE
-#_0885D7: db $07,$0B,$D6,$05,$00,$FE,$07,$08
-#_0885DF: db $D6,$05,$9F,$70,$00,$FE,$07,$08
-#_0885E7: db $D6,$05,$9F,$80,$00,$FE,$07,$03
-#_0885EF: db $D6,$05,$00,$FE,$07,$08,$D6,$05
-#_0885F7: db $00,$FE,$07,$06,$D6,$05,$9F,$60
-#_0885FF: db $00,$FE,$07,$07,$D6,$05,$9F,$70
-#_088607: db $00,$FE,$07,$04,$D6,$05,$00,$FE
-#_08860F: db $07,$07,$D6,$05,$00,$FE,$07,$04
-#_088617: db $D6,$05,$9F,$80,$00,$FE,$07,$06
-#_08861F: db $D6,$05,$9F,$60,$00,$FE,$07,$05
-#_088627: db $D6,$05,$00,$FE,$46,$09,$FE,$07
-#_08862F: db $06,$D6,$05,$00,$FE,$07,$03,$FF
+
+Message_0885A7:
+#_0885A7: db $D6, $05, $9F, $60, $00 ; [COMMAND D6:05,9F,60,00]
+#_0885AC: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885AF: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_0885B2: db $FE, $07, $10 ; ext command 07: something then wait 15 frames TODO
+#_0885B5: db $D6, $05, $9F, $80, $00 ; [COMMAND D6:05,9F,80,00]
+#_0885BA: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885BD: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_0885C0: db $FE, $07, $10 ; ext command 07: something then wait 15 frames TODO
+#_0885C3: db $D6, $05, $9F, $70, $00 ; [COMMAND D6:05,9F,70,00]
+#_0885C8: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885CB: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_0885CE: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885D1: db $D6, $05, $9F, $60, $00 ; [COMMAND D6:05,9F,60,00]
+#_0885D6: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885D9: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_0885DC: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885DF: db $D6, $05, $9F, $70, $00 ; [COMMAND D6:05,9F,70,00]
+#_0885E4: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885E7: db $D6, $05, $9F, $80, $00 ; [COMMAND D6:05,9F,80,00]
+#_0885EC: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_0885EF: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_0885F2: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885F5: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_0885F8: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_0885FB: db $D6, $05, $9F, $60, $00 ; [COMMAND D6:05,9F,60,00]
+#_088600: db $FE, $07, $07 ; ext command 07: something then wait 6 frames TODO
+#_088603: db $D6, $05, $9F, $70, $00 ; [COMMAND D6:05,9F,70,00]
+#_088608: db $FE, $07, $04 ; ext command 07: something then wait 3 frames TODO
+#_08860B: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_08860E: db $FE, $07, $07 ; ext command 07: something then wait 6 frames TODO
+#_088611: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_088614: db $FE, $07, $04 ; ext command 07: something then wait 3 frames TODO
+#_088617: db $D6, $05, $9F, $80, $00 ; [COMMAND D6:05,9F,80,00]
+#_08861C: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08861F: db $D6, $05, $9F, $60, $00 ; [COMMAND D6:05,9F,60,00]
+#_088624: db $FE, $07, $05 ; ext command 07: something then wait 4 frames TODO
+#_088627: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_08862A: db $FE, $46, $09 ; ext command 46: 09 TODO
+#_08862D: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_088630: db $D6, $05, $00 ; [COMMAND D6:05,00]
+#_088633: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_088636: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -1319,20 +1363,32 @@ Message_08878D:
 #_088791: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_088792:
-#_088792: db $FA,$FE,$31,$01,$FE,$32,$FE,$33
-#_08879A: db $00,$02,$FE,$33,$01,$06,$FE,$33
-#_0887A2: db $02,$08,$FE,$33,$03,$09,$FE,$33
-#_0887AA: db $04,$0A,$FE,$33,$05,$0A,$FE,$33
-#_0887B2: db $06,$0A,$FE,$33,$07,$0D,$FE,$33
-#_0887BA: db $FF,$0A
+
+; そ 1
+Message_088792:
+#_088792: db $FA ; clear message box
+#_088793: db $FE, $31, $01 ; ext command 31: 01 TODO
+#_088796: db $FE, $32, $FE ; ext command 32: something to message FE TODO
+#_088799: db $33, $00, $02 ; そ 1
+#_08879C: db $FE, $33, $01, $06 ; ext command 33: 01 06 TODO
+#_0887A0: db $FE, $33, $02, $08 ; ext command 33: 02 08 TODO
+#_0887A4: db $FE, $33, $03, $09 ; ext command 33: 03 09 TODO
+#_0887A8: db $FE, $33, $04, $0A ; ext command 33: 04 0A TODO
+#_0887AC: db $FE, $33, $05, $0A ; ext command 33: 05 0A TODO
+#_0887B0: db $FE, $33, $06, $0A ; ext command 33: 06 0A TODO
+#_0887B4: db $FE, $33, $07, $0D ; ext command 33: 07 0D TODO
+#_0887B8: db $FE, $33, $FF, $0A ; ext command 33: FF 0A TODO
 
 ;===================================================================================================
-; TODO
-DATA8_0887BC:
-#_0887BC: db $FA,$FE,$31,$02,$FE,$34,$01,$FA
-#_0887C4: db $FE,$31,$03,$F8,$04,$D3,$02
+
+Message_0887BC:
+#_0887BC: db $FA ; clear message box
+#_0887BD: db $FE, $31, $02 ; ext command 31: 02 TODO
+#_0887C0: db $FE, $34, $01 ; ext command 34: 01 TODO
+#_0887C3: db $FA ; clear message box
+#_0887C4: db $FE, $31, $03 ; ext command 31: 03 TODO
+#_0887C7: db $F8, $04 ; YES/NO - go to message $04 if YES
+#_0887C9: db $D3, $02 ; go to message $02
 
 ;===================================================================================================
 
@@ -1345,11 +1401,15 @@ Message_0887CB:
 #_0887DA: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
-; TODO
-DATA8_0887DC:
-#_0887DC: db $FE,$3C,$03,$FE,$35,$05,$FE,$28
-#_0887E4: db $FE,$54,$FE,$31,$05,$F8,$02,$D3
-#_0887EC: db $01
+
+Message_0887DC:
+#_0887DC: db $FE, $3C, $03 ; ext command 3C: 03 TODO
+#_0887DF: db $FE, $35, $05 ; ext command 35: 05 TODO
+#_0887E2: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_0887E4: db $FE, $54 ; ext command 54: take value in $0A14 away from money
+#_0887E6: db $FE, $31, $05 ; ext command 31: 05 TODO
+#_0887E9: db $F8, $02 ; YES/NO - go to message $02 if YES
+#_0887EB: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
 
@@ -1360,11 +1420,16 @@ Message_0887ED:
 #_0887F2: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
-; TODO
-DATA8_0887F4:
-#_0887F4: db $FE,$56,$0B,$FA,$FE,$31,$06,$E3
-#_0887FC: db $01,$FA,$FE,$31,$07,$F8,$07,$D3
-#_088804: db $06
+
+Message_0887F4:
+#_0887F4: db $FE, $56, $0B ; ext command 56: Call routine 0FA412 (possibly message 0B) TODO
+#_0887F7: db $FA ; clear message box
+#_0887F8: db $FE, $31, $06 ; ext command 31: 06 TODO
+#_0887FB: db $E3, $01 ; [COMMAND 13] go to message $01 maybe TODO
+#_0887FD: db $FA ; clear message box
+#_0887FE: db $FE, $31, $07 ; ext command 31: 07 TODO
+#_088801: db $F8, $07 ; YES/NO - go to message $07 if YES
+#_088803: db $D3, $06 ; go to message $06
 
 ;===================================================================================================
 
@@ -1376,14 +1441,16 @@ Message_088805:
 #_08880E: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
-; TODO
-DATA8_088810:
-#_088810: db $FE,$72,$01,$D3,$01
+
+Message_088810:
+#_088810: db $FE, $72, $01 ; ext command 72: R0F916F [01] TODO
+#_088813: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
-; TODO
-DATA8_088815:
-#_088815: db $FE,$72,$00,$D3,$01
+
+Message_088815:
+#_088815: db $FE, $72, $00 ; ext command 72: R0F916F [00] TODO
+#_088818: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
 
@@ -1414,10 +1481,16 @@ Message_08882F:
 #_08883F: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
-; TODO
-DATA8_088841:
-#_088841: db $FA,$AA,$27,$31,$4D,$95,$D8,$02
-#_088849: db $23,$0E,$24,$0F,$25,$01,$D3,$01
+
+; どうする?
+Message_088841:
+#_088841: db $FA ; clear message box
+#_088842: db $AA, $27, $31, $4D, $95 ; どうする?
+#_088847: db $D8, $02 ; option list with 2 options
+#_088849: db $23, $0E ; option 1 [0E]: message 23
+#_08884B: db $24, $0F ; option 2 [0F]: message 24
+#_08884D: db $25, $01 ; option 3 [01]: message 25
+#_08884F: db $D3, $01 ; go to message $01
 
 ;===================================================================================================
 
@@ -2975,8 +3048,8 @@ Message_08914F:
 #_089159: db $FF ; end of message
 
 ;===================================================================================================
-; TODO USED?
 
+; TODO USED?
 ; かってやって ください
 Message_08915A:
 #_08915A: db $2A, $58, $37, $48, $58, $37, $CF, $2C ; かってやって⎵く
@@ -4301,10 +4374,15 @@ Message_08958B:
 #_089590: db $FA ; clear message box
 
 ;===================================================================================================
-; TODO
-DATA8_089591:
-#_089591: db $FE,$4A,$01,$FE,$4B,$03,$FA,$FE
-#_089599: db $4C,$02,$FE,$4A,$02,$FC,$D3,$03
+
+Message_089591:
+#_089591: db $FE, $4A, $01 ; ext command 4A: 01 TODO
+#_089594: db $FE, $4B, $03 ; ext command 4B: 03 TODO
+#_089597: db $FA ; clear message box
+#_089598: db $FE, $4C, $02 ; ext command 4C: 02 TODO
+#_08959B: db $FE, $4A, $02 ; ext command 4A: 02 TODO
+#_08959E: db $FC ; wait for key and new line
+#_08959F: db $D3, $03 ; go to message $03
 
 ;===================================================================================================
 
@@ -4953,8 +5031,8 @@ Message_0898E4:
 
 ; バーテン:
 ; まあ ゆっくり たのしんで いきな
-; ところで [PWT:$4C]から かえってきた
-; やつが
+; ところで [PWT:$4C]から かえってきたや
+; つが
 ; ひとりだけ いたんだ
 ; いのちからがら にげだしてきたらしくて
 ; ひとこと いうのが やっとだったよ
@@ -5174,16 +5252,36 @@ Message_089AA2:
 #_089AF7: db $D3, $55 ; go to message $55
 
 ;===================================================================================================
-; TODO
-DATA8_089AF9:
-#_089AF9: db $FA,$29,$43,$28,$3A,$CF,$50,$34
-#_089B01: db $31,$47,$3D,$9C,$25,$4D,$E1,$F3
-#_089B09: db $FE,$3C,$56,$FC,$FA,$2E,$4E,$51
-#_089B11: db $CF,$47,$58,$37,$26,$2D,$F9,$2F
-#_089B19: db $9C,$30,$37,$26,$4D,$3F,$38,$3A
-#_089B21: db $CF,$25,$28,$4D,$A6,$4F,$27,$FC
-#_089B29: db $FA,$97,$F1,$3E,$CF,$F3,$51,$F9
-#_089B31: db $F2,$2D,$FE,$28,$FF
+
+; おまえに わたすものがある
+; これを もっていけ
+; さがしているひとに あえるだろう
+; >[NAME]は [ITEM]を
+; [PWT:$2D]
+Message_089AF9:
+#_089AF9: db $FA ; clear message box
+#_089AFA: db $29, $43, $28, $3A, $CF, $50, $34, $31 ; おまえに⎵わたす
+#_089B02: db $47, $3D, $9C, $25, $4D ; ものがある
+#_089B07: db $E1, $F3 ; set $0A50 to $F3
+#_089B09: db $FE, $3C, $56 ; ext command 3C: 56 TODO
+#_089B0C: db $FC ; wait for key and new line
+#_089B0D: db $FA ; clear message box
+#_089B0E: db $2E, $4E, $51, $CF, $47, $58, $37, $26 ; これを⎵もってい
+#_089B16: db $2D ; け
+#_089B17: db $F9 ; new line
+#_089B18: db $2F, $9C, $30, $37, $26, $4D, $3F, $38 ; さがしているひと
+#_089B20: db $3A, $CF, $25, $28, $4D, $A6, $4F, $27 ; に⎵あえるだろう
+#_089B28: db $FC ; wait for key and new line
+#_089B29: db $FA ; clear message box
+#_089B2A: db $97 ; >
+#_089B2B: db $F1 ; write specific name
+#_089B2C: db $3E, $CF ; は⎵
+#_089B2E: db $F3 ; write item name from $0A50
+#_089B2F: db $51 ; を
+#_089B30: db $F9 ; new line
+#_089B31: db $F2, $2D ; prewritten text $2D
+#_089B33: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_089B35: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -5317,7 +5415,7 @@ Message_089C14:
 ; [PWT:$84]
 Message_089C32:
 #_089C32: db $FE, $37 ; ext command 37: call 3 routines
-#_089C34: db $D7, $33 ; [COMMAND D7:33H|51]
+#_089C34: db $D7, $33 ; [COMMAND D7:33]
 #_089C36: db $D2, $12, $0E ; test progress bit $12 for message $0E
 #_089C39: db $D2, $10, $09 ; test progress bit $10 for message $09
 #_089C3C: db $D2, $0F, $01 ; test progress bit $0F for message $01
@@ -5430,8 +5528,8 @@ Message_089D29:
 ;===================================================================================================
 
 ; かのじょを はやく さがさないと[PWT:$0B]
-; さがすのを てつだって くれませんか?そうですか
-; [PWT:$0B]すみません
+; さがすのを てつだって くれませんか?
+; そうですか[PWT:$0B]すみません
 ; つい ゆめの つもりで
 ; きやすく たのんでしまったんです
 Message_089D2C:
@@ -5459,19 +5557,50 @@ Message_089D2C:
 #_089D86: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_089D87:
-#_089D87: db $D4,$03,$D6,$00,$2E,$70,$28,$42
-#_089D8F: db $52,$38,$27,$A9,$31,$2A,$CF,$F2
-#_089D97: db $0D,$A0,$A1,$26,$43,$31,$FC,$FE
-#_089D9F: db $26,$02,$FA,$97,$EE,$9C,$CF,$F2
-#_089DA7: db $2F,$FC,$D0,$10,$FA,$EE,$9A,$F9
-#_089DAF: db $2A,$3D,$A2,$57,$3D,$39,$43,$28
-#_089DB7: db $3E,$CF,$ED,$CF,$A9,$31,$FC,$FA
-#_089DBF: db $28,$58,$CF,$F0,$2C,$52,$3E,$F9
-#_089DC7: db $ED,$3D,$CF,$26,$28,$3D,$F9,$38
-#_089DCF: db $39,$4C,$3A,$CF,$31,$52,$A9,$26
-#_089DD7: db $34,$52,$A9,$31,$2A,$F2,$0B,$FC
+
+; ほんとうですか [PWT:$0D]ございます
+; >[JIMMY]が [PWT:$2F]
+; [JIMMY]:
+; かのじょのなまえは [MOMO] です
+; えっ [CHASE]くんは
+; [MOMO]の いえの
+; となりに すんでいたんですか[PWT:$0B]
+Message_089D87:
+#_089D87: db $D4, $03 ; [COMMAND D4:03]
+#_089D89: db $D6, $00, $2E, $70, $28 ; [COMMAND D6:00,2E,70,28]
+#_089D8E: db $42, $52, $38, $27, $A9, $31, $2A, $CF ; ほんとうですか⎵
+#_089D96: db $F2, $0D ; prewritten text $0D
+#_089D98: db $A0, $A1, $26, $43, $31 ; ございます
+#_089D9D: db $FC ; wait for key and new line
+#_089D9E: db $FE, $26, $02 ; ext command 26: something 02 TODO
+#_089DA1: db $FA ; clear message box
+#_089DA2: db $97 ; >
+#_089DA3: db $EE ; write lawful hero name
+#_089DA4: db $9C, $CF ; が⎵
+#_089DA6: db $F2, $2F ; prewritten text $2F
+#_089DA8: db $FC ; wait for key and new line
+#_089DA9: db $D0, $10 ; set progress bit $10
+#_089DAB: db $FA ; clear message box
+#_089DAC: db $EE ; write lawful hero name
+#_089DAD: db $9A ; :
+#_089DAE: db $F9 ; new line
+#_089DAF: db $2A, $3D, $A2, $57, $3D, $39, $43, $28 ; かのじょのなまえ
+#_089DB7: db $3E, $CF ; は⎵
+#_089DB9: db $ED ; write female protag name
+#_089DBA: db $CF, $A9, $31 ; ⎵です
+#_089DBD: db $FC ; wait for key and new line
+#_089DBE: db $FA ; clear message box
+#_089DBF: db $28, $58, $CF ; えっ⎵
+#_089DC2: db $F0 ; write player name
+#_089DC3: db $2C, $52, $3E ; くんは
+#_089DC6: db $F9 ; new line
+#_089DC7: db $ED ; write female protag name
+#_089DC8: db $3D, $CF, $26, $28, $3D ; の⎵いえの
+#_089DCD: db $F9 ; new line
+#_089DCE: db $38, $39, $4C, $3A, $CF, $31, $52, $A9 ; となりに⎵すんで
+#_089DD6: db $26, $34, $52, $A9, $31, $2A ; いたんですか
+#_089DDC: db $F2, $0B ; prewritten text $0B
+#_089DDE: db $FC ; wait for key and new line
 
 ;===================================================================================================
 
@@ -5593,12 +5722,11 @@ Message_089E7A:
 
 ;===================================================================================================
 
-; そかんじゃ:
+; かんじゃ:
 ; たいほしたのに どうして
 ; [PWT:$35]に いれるんだ?
 Message_089E92:
-#_089E92: db $D7, $85 ; [COMMAND D7:85H|133]
-#_089E94: db $33 ; そ
+#_089E92: db $D7, $85, $33 ; [COMMAND D7:85,33]
 #_089E95: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089E98: db $D6, $07, $69, $70, $28 ; [COMMAND D6:07,69,70,28]
 #_089E9D: db $2A, $52, $A2, $55, $9A ; かんじゃ:
@@ -5613,12 +5741,11 @@ Message_089E92:
 
 ;===================================================================================================
 
-; そかんじゃ:
+; かんじゃ:
 ; たすけてくれ! [PWT:$14] なんて
 ; いやだ!!
 Message_089EBC:
-#_089EBC: db $D7, $85 ; [COMMAND D7:85H|133]
-#_089EBE: db $33 ; そ
+#_089EBC: db $D7, $85, $33 ; [COMMAND D7:85,33]
 #_089EBF: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089EC2: db $D6, $07, $4A, $78, $28 ; [COMMAND D6:07,4A,78,28]
 #_089EC7: db $2A, $52, $A2, $55, $9A ; かんじゃ:
@@ -5633,13 +5760,12 @@ Message_089EBC:
 
 ;===================================================================================================
 
-; そかかりいん:
+; かかりいん:
 ; [PWT:$8F]は むてきの へいしをつくる
 ; じっけんを しているのです
 ; わたしも じっけんだいに なってしまう[PWT:$0B]
 Message_089EE3:
-#_089EE3: db $D7, $85 ; [COMMAND D7:85H|133]
-#_089EE5: db $33 ; そ
+#_089EE3: db $D7, $85, $33 ; [COMMAND D7:85,33]
 #_089EE6: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089EE9: db $D6, $07, $53, $70, $28 ; [COMMAND D6:07,53,70,28]
 #_089EEE: db $2A, $2A, $4C, $26, $52, $9A ; かかりいん:
@@ -5660,10 +5786,9 @@ Message_089EE3:
 
 ;===================================================================================================
 
-; そ[PWT:$83]:
+; [PWT:$83]:
 Message_089F2B:
-#_089F2B: db $D7, $85 ; [COMMAND D7:85H|133]
-#_089F2D: db $33 ; そ
+#_089F2B: db $D7, $85, $33 ; [COMMAND D7:85,33]
 #_089F2E: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089F31: db $D5, $47 ; send $47 to APU
 #_089F33: db $D6, $00, $2D, $70, $28 ; [COMMAND D6:00,2D,70,28]
@@ -5890,8 +6015,7 @@ Message_08A158:
 
 ;===================================================================================================
 
-; さあ 2Fの [PWT:$8F]しつへ いきたま
-; え
+; さあ 2Fの [PWT:$8F]しつへ いきたまえ
 ; ドアを あけておいた
 ; そこで もう1つの スイッチを きれば
 ; そとへ でられるはずだ
@@ -5969,11 +6093,12 @@ Message_08A1EA:
 
 ; [PWT:$8F]:
 ; [PWT:$04]は [PWT:$14]を
-; すませたのか?そうか ならば [PWT:$04]は
+; すませたのか?
+; そうか ならば [PWT:$04]は
 ; まだ わたしの いうことをきかぬ
 ; じゃあくな にんげんなのだな
 Message_08A1FD:
-#_08A1FD: db $D7, $0A ; [COMMAND D7:0AH|10]
+#_08A1FD: db $D7, $0A ; [COMMAND D7:0A]
 #_08A1FF: db $D2, $14, $24 ; test progress bit $14 for message $24
 #_08A202: db $D5, $46 ; send $46 to APU
 #_08A204: db $D6, $00, $38, $70, $28 ; [COMMAND D6:00,38,70,28]
@@ -6019,15 +6144,26 @@ Message_08A24F:
 #_08A273: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_08A274:
-#_08A274: db $FA,$F2,$04,$51,$CF,$A9,$2C,$3A
-#_08A27C: db $52,$9D,$57,$27,$3A,$F9,$2A,$26
-#_08A284: db $A5,$27,$CF,$30,$37,$48,$4D,$FC
-#_08A28C: db $FE,$46,$09,$FE,$07,$06,$D5,$39
-#_08A294: db $D6,$00,$9D,$78,$40,$FE,$07,$13
-#_08A29C: db $DE,$01,$00,$00,$01,$E4,$00,$E5
-#_08A2A4: db $01,$23
+
+; [PWT:$04]を でくにんぎょうに
+; かいぞう してやる
+Message_08A274:
+#_08A274: db $FA ; clear message box
+#_08A275: db $F2, $04 ; prewritten text $04
+#_08A277: db $51, $CF, $A9, $2C, $3A, $52, $9D, $57 ; を⎵でくにんぎょ
+#_08A27F: db $27, $3A ; うに
+#_08A281: db $F9 ; new line
+#_08A282: db $2A, $26, $A5, $27, $CF, $30, $37, $48 ; かいぞう⎵してや
+#_08A28A: db $4D ; る
+#_08A28B: db $FC ; wait for key and new line
+#_08A28C: db $FE, $46, $09 ; ext command 46: 09 TODO
+#_08A28F: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08A292: db $D5, $39 ; send $39 to APU
+#_08A294: db $D6, $00, $9D, $78, $40 ; [COMMAND D6:00,9D,78,40]
+#_08A299: db $FE, $07, $13 ; ext command 07: something then wait 18 frames TODO
+#_08A29C: db $DE, $01, $00, $00, $01 ; [COMMAND DE:01,00,00,01]
+#_08A2A1: db $E4, $00 ; load demon $00
+#_08A2A3: db $E5, $01, $23 ; [COMMAND E5:01,23]
 
 ;===================================================================================================
 
@@ -6165,44 +6301,103 @@ Message_08A349:
 #_08A388: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08A389:
-#_08A389: db $D5,$47,$D6,$00,$59,$70,$38,$FA
-#_08A391: db $97,$F2,$1A,$FC,$FA,$4F,$27,$A2
-#_08A399: db $52,$9A,$F9,$29,$43,$28,$9C,$CF
-#_08A3A1: db $F0,$2A,$FC,$E9,$00,$03,$FA,$29
-#_08A3A9: db $29,$26,$39,$4D,$CF,$35,$2A,$4B
-#_08A3B1: db $51,$F9,$36,$2A,$26,$2E,$39,$32
-#_08A3B9: db $4D,$CF,$2A,$47,$30,$4E,$52,$39
-#_08A3C1: db $FC,$FA,$3F,$2A,$4C,$38,$CF,$48
-#_08A3C9: db $44,$CF,$42,$27,$38,$CF,$2E,$52
-#_08A3D1: db $38,$52,$F9,$32,$2A,$26,$3D,$CF
-#_08A3D9: db $C4,$83,$8A,$69,$9C,$CF,$2C,$A3
-#_08A3E1: db $4E,$4A,$27,$38,$CF,$30,$37,$29
-#_08A3E9: db $4D,$F9,$26,$A3,$4E,$3A,$CF,$2A
-#_08A3F1: db $34,$45,$2E,$27,$38,$CF,$2D,$58
-#_08A3F9: db $2A,$3E,$CF,$29,$39,$A2,$A2,$55
-#_08A401: db $F9,$29,$43,$28,$39,$4B,$CF,$AA
-#_08A409: db $27,$31,$4D,$95,$FC,$FA,$26,$A3
-#_08A411: db $4E,$3A,$32,$4A,$CF,$47,$27,$CF
-#_08A419: db $3F,$2B,$2A,$28,$31,$2E,$38,$3E
-#_08A421: db $CF,$A9,$2B,$3B,$F9,$38,$4C,$25
-#_08A429: db $28,$A3,$CF,$35,$2A,$4B,$51,$CF
-#_08A431: db $44,$32,$37,$47,$4B,$29,$27,$2A
-#_08A439: db $FC,$D6,$00,$00,$D0,$FF,$D0,$FE
-#_08A441: db $FE,$1C,$01,$FE,$25,$FF,$FE,$23
-#_08A449: db $FF,$FE,$24,$FF,$FE,$1A,$12,$02
-#_08A451: db $00,$00,$02,$04,$D4,$03,$FE,$37
-#_08A459: db $FE,$1C,$00,$D6,$00,$1F,$70,$28
-#_08A461: db $FE,$45,$00,$01,$EE,$9A,$F9,$2E
-#_08A469: db $52,$AA,$3E,$CF,$39,$3A,$9C,$CF
-#_08A471: db $25,$4D,$52,$A9,$30,$57,$27,$95
-#_08A479: db $FC,$FE,$26,$02,$FA,$D6,$00,$00
-#_08A481: db $FE,$07,$3C,$D6,$00,$1F,$70,$28
-#_08A489: db $FE,$45,$00,$01,$EF,$9A,$F9,$7B
-#_08A491: db $BB,$2A,$4A,$CF,$3F,$4D,$43,$2A
-#_08A499: db $4B,$CF,$49,$46,$CF,$44,$37,$4D
-#_08A4A1: db $39,$52,$37,$FC,$FE,$26,$03,$FF
+
+; >[PWT:$1A]
+; ろうじん:
+; おまえが [CHASE]か
+; おおいなる ちからを
+; つかいこなせる かもしれんな
+; ひかりと やみ ほうと こんとん
+; せかいの バランスが くずれようと しておる
+; いずれに かたむこうと けっかは おなじじゃ
+; おまえなら どうする?
+; いずれにせよ もう ひきかえすことは できぬ
+; とりあえず ちからを みせてもらおうか
+; [JIMMY]:
+; こんどは なにが あるんでしょう?
+; [HIM]:
+; マジかよ ひるまから ゆめ みてるなんて
+Message_08A389:
+#_08A389: db $D5, $47 ; send $47 to APU
+#_08A38B: db $D6, $00, $59, $70, $38 ; [COMMAND D6:00,59,70,38]
+#_08A390: db $FA ; clear message box
+#_08A391: db $97 ; >
+#_08A392: db $F2, $1A ; prewritten text $1A
+#_08A394: db $FC ; wait for key and new line
+#_08A395: db $FA ; clear message box
+#_08A396: db $4F, $27, $A2, $52, $9A ; ろうじん:
+#_08A39B: db $F9 ; new line
+#_08A39C: db $29, $43, $28, $9C, $CF ; おまえが⎵
+#_08A3A1: db $F0 ; write player name
+#_08A3A2: db $2A ; か
+#_08A3A3: db $FC ; wait for key and new line
+#_08A3A4: db $E9, $00, $03 ; go to message $03 maybe TODO
+#_08A3A7: db $FA ; clear message box
+#_08A3A8: db $29, $29, $26, $39, $4D, $CF, $35, $2A ; おおいなる⎵ちか
+#_08A3B0: db $4B, $51 ; らを
+#_08A3B2: db $F9 ; new line
+#_08A3B3: db $36, $2A, $26, $2E, $39, $32, $4D, $CF ; つかいこなせる⎵
+#_08A3BB: db $2A, $47, $30, $4E, $52, $39 ; かもしれんな
+#_08A3C1: db $FC ; wait for key and new line
+#_08A3C2: db $FA ; clear message box
+#_08A3C3: db $3F, $2A, $4C, $38, $CF, $48, $44, $CF ; ひかりと⎵やみ⎵
+#_08A3CB: db $42, $27, $38, $CF, $2E, $52, $38, $52 ; ほうと⎵こんとん
+#_08A3D3: db $F9 ; new line
+#_08A3D4: db $32, $2A, $26, $3D, $CF, $C4, $83, $8A ; せかいの⎵バラン
+#_08A3DC: db $69, $9C, $CF, $2C, $A3, $4E, $4A, $27 ; スが⎵くずれよう
+#_08A3E4: db $38, $CF, $30, $37, $29, $4D ; と⎵しておる
+#_08A3EA: db $F9 ; new line
+#_08A3EB: db $26, $A3, $4E, $3A, $CF, $2A, $34, $45 ; いずれに⎵かたむ
+#_08A3F3: db $2E, $27, $38, $CF, $2D, $58, $2A, $3E ; こうと⎵けっかは
+#_08A3FB: db $CF, $29, $39, $A2, $A2, $55 ; ⎵おなじじゃ
+#_08A401: db $F9 ; new line
+#_08A402: db $29, $43, $28, $39, $4B, $CF, $AA, $27 ; おまえなら⎵どう
+#_08A40A: db $31, $4D, $95 ; する?
+#_08A40D: db $FC ; wait for key and new line
+#_08A40E: db $FA ; clear message box
+#_08A40F: db $26, $A3, $4E, $3A, $32, $4A, $CF, $47 ; いずれにせよ⎵も
+#_08A417: db $27, $CF, $3F, $2B, $2A, $28, $31, $2E ; う⎵ひきかえすこ
+#_08A41F: db $38, $3E, $CF, $A9, $2B, $3B ; とは⎵できぬ
+#_08A425: db $F9 ; new line
+#_08A426: db $38, $4C, $25, $28, $A3, $CF, $35, $2A ; とりあえず⎵ちか
+#_08A42E: db $4B, $51, $CF, $44, $32, $37, $47, $4B ; らを⎵みせてもら
+#_08A436: db $29, $27, $2A ; おうか
+#_08A439: db $FC ; wait for key and new line
+#_08A43A: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08A43D: db $D0, $FF ; set progress bit $FF
+#_08A43F: db $D0, $FE ; set progress bit $FE
+#_08A441: db $FE, $1C, $01 ; ext command 1C: $01 TODO
+#_08A444: db $FE, $25, $FF ; ext command 25: something FF TODO
+#_08A447: db $FE, $23, $FF ; ext command 23: something FF TODO
+#_08A44A: db $FE, $24, $FF ; ext command 24: something FF TODO
+#_08A44D: db $FE, $1A, $12, $02, $00, $00, $02, $04 ; ext command 1A: 12,02,00,00,02,04
+#_08A455: db $D4, $03 ; [COMMAND D4:03]
+#_08A457: db $FE, $37 ; ext command 37: call 3 routines
+#_08A459: db $FE, $1C, $00 ; ext command 1C: $00 TODO
+#_08A45C: db $D6, $00, $1F, $70, $28 ; [COMMAND D6:00,1F,70,28]
+#_08A461: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08A465: db $EE ; write lawful hero name
+#_08A466: db $9A ; :
+#_08A467: db $F9 ; new line
+#_08A468: db $2E, $52, $AA, $3E, $CF, $39, $3A, $9C ; こんどは⎵なにが
+#_08A470: db $CF, $25, $4D, $52, $A9, $30, $57, $27 ; ⎵あるんでしょう
+#_08A478: db $95 ; ?
+#_08A479: db $FC ; wait for key and new line
+#_08A47A: db $FE, $26, $02 ; ext command 26: something 02 TODO
+#_08A47D: db $FA ; clear message box
+#_08A47E: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08A481: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A484: db $D6, $00, $1F, $70, $28 ; [COMMAND D6:00,1F,70,28]
+#_08A489: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08A48D: db $EF ; write chaos hero name
+#_08A48E: db $9A ; :
+#_08A48F: db $F9 ; new line
+#_08A490: db $7B, $BB, $2A, $4A, $CF, $3F, $4D, $43 ; マジかよ⎵ひるま
+#_08A498: db $2A, $4B, $CF, $49, $46, $CF, $44, $37 ; から⎵ゆめ⎵みて
+#_08A4A0: db $4D, $39, $52, $37 ; るなんて
+#_08A4A4: db $FC ; wait for key and new line
+#_08A4A5: db $FE, $26, $03 ; ext command 26: something 03 TODO
+#_08A4A8: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -6257,7 +6452,7 @@ Message_08A4FC:
 ; ただいま れっしゃは すべて
 ; うんこうていし しております
 Message_08A520:
-#_08A520: db $D7, $0E ; [COMMAND D7:0EH|14]
+#_08A520: db $D7, $0E ; [COMMAND D7:0E]
 #_08A522: db $D2, $06, $05 ; test progress bit $06 for message $05
 #_08A525: db $D6, $00, $20, $40, $28 ; [COMMAND D6:00,20,40,28]
 #_08A52A: db $D6, $01, $20, $A0, $28 ; [COMMAND D6:01,20,A0,28]
@@ -6431,7 +6626,7 @@ Message_08A6B0:
 ; [ITEM]を おつかいください[PWT:$0B]
 ; [NAME]は [ITEM]を つかった
 Message_08A6D7:
-#_08A6D7: db $D7, $0E ; [COMMAND D7:0EH|14]
+#_08A6D7: db $D7, $0E ; [COMMAND D7:0E]
 #_08A6D9: db $97, $60, $66, $5A, $C5, $85 ; >エコービル
 #_08A6DF: db $FC ; wait for key and new line
 #_08A6E0: db $E1, $F0 ; set $0A50 to $F0
@@ -6467,7 +6662,7 @@ Message_08A70D:
 ; ウェイトレス:
 ; [PWT:$32]
 Message_08A712:
-#_08A712: db $D7, $17 ; [COMMAND D7:17H|23]
+#_08A712: db $D7, $17 ; [COMMAND D7:17]
 #_08A714: db $D6, $01, $41, $68, $28 ; [COMMAND D6:01,41,68,28]
 #_08A719: db $5F, $8D, $5E, $70, $86, $69, $9A ; ウェイトレス:
 #_08A720: db $F9 ; new line
@@ -6481,7 +6676,7 @@ Message_08A712:
 ; ウェイトレス:
 ; [PWT:$31]
 Message_08A727:
-#_08A727: db $D7, $17 ; [COMMAND D7:17H|23]
+#_08A727: db $D7, $17 ; [COMMAND D7:17]
 #_08A729: db $D6, $01, $41, $68, $28 ; [COMMAND D6:01,41,68,28]
 #_08A72E: db $5F, $8D, $5E, $70, $86, $69, $9A ; ウェイトレス:
 #_08A735: db $F9 ; new line
@@ -6495,7 +6690,7 @@ Message_08A727:
 ; >[PWT:$35]
 ; [PWT:$69]
 Message_08A73C:
-#_08A73C: db $D7, $0E ; [COMMAND D7:0EH|14]
+#_08A73C: db $D7, $0E ; [COMMAND D7:0E]
 #_08A73E: db $97 ; >
 #_08A73F: db $F2, $35 ; prewritten text $35
 #_08A741: db $FC ; wait for key and new line
@@ -6537,28 +6732,74 @@ Message_08A757:
 #_08A77B: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08A77C:
-#_08A77C: db $CF,$33,$4E,$26,$A2,$57,$27,$CF
-#_08A784: db $35,$2A,$2C,$3A,$CF,$2B,$34,$4B
-#_08A78C: db $F9,$29,$4E,$3D,$CF,$71,$5E,$78
-#_08A794: db $A9,$F2,$0B,$FC,$FA,$27,$58,$CF
-#_08A79C: db $27,$28,$58,$CF,$27,$28,$28,$28
-#_08A7A4: db $58,$CF,$9E,$28,$28,$28,$58,$FC
-#_08A7AC: db $FE,$45,$00,$01,$FE,$07,$3C,$D6
-#_08A7B4: db $00,$00,$DE,$00,$00,$E4,$01,$D5
-#_08A7BC: db $39,$E4,$00,$FE,$07,$3C,$D5,$3C
-#_08A7C4: db $D4,$02,$F6,$CF,$F5,$9C,$CF,$A9
-#_08A7CC: db $34,$94,$FE,$07,$3C,$F9,$F5,$3E
-#_08A7D4: db $CF,$38,$AC,$2A,$2A,$58,$37,$2B
-#_08A7DC: db $34,$94,$FC,$D5,$11,$FE,$1C,$03
-#_08A7E4: db $D5,$2D,$FE,$0B,$00,$19,$E7,$00
-#_08A7EC: db $FA,$97,$F5,$3E,$CF,$3A,$9F,$37
-#_08A7F4: db $26,$58,$34,$FC,$D5,$FD,$E1,$00
-#_08A7FC: db $FA,$F3,$9C,$CF,$29,$35,$37,$26
-#_08A804: db $4D,$FC,$FA,$F0,$3E,$CF,$F3,$51
-#_08A80C: db $F9,$F2,$2D,$FC,$FE,$28,$D0,$09
-#_08A814: db $FF
+
+;  それいじょう ちかくに きたら
+; おれの ナイフで[PWT:$0B]
+; うっ うえっ うえええっ ぐえええっ
+; [CLASS] [DEMON1]が でた!
+; [DEMON1]は とびかかってきた!
+; >[DEMON1]は にげていった
+; [ITEM]が おちている
+; [CHASE]は [ITEM]を
+; [PWT:$2D]
+Message_08A77C:
+#_08A77C: db $CF, $33, $4E, $26, $A2, $57, $27, $CF ; ⎵それいじょう⎵
+#_08A784: db $35, $2A, $2C, $3A, $CF, $2B, $34, $4B ; ちかくに⎵きたら
+#_08A78C: db $F9 ; new line
+#_08A78D: db $29, $4E, $3D, $CF, $71, $5E, $78, $A9 ; おれの⎵ナイフで
+#_08A795: db $F2, $0B ; prewritten text $0B
+#_08A797: db $FC ; wait for key and new line
+#_08A798: db $FA ; clear message box
+#_08A799: db $27, $58, $CF, $27, $28, $58, $CF, $27 ; うっ⎵うえっ⎵う
+#_08A7A1: db $28, $28, $28, $58, $CF, $9E, $28, $28 ; えええっ⎵ぐええ
+#_08A7A9: db $28, $58 ; えっ
+#_08A7AB: db $FC ; wait for key and new line
+#_08A7AC: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08A7B0: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A7B3: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08A7B6: db $DE, $00, $00, $E4, $01 ; [COMMAND DE:00,00,E4,01]
+#_08A7BB: db $D5, $39 ; send $39 to APU
+#_08A7BD: db $E4, $00 ; load demon $00
+#_08A7BF: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A7C2: db $D5, $3C ; send $3C to APU
+#_08A7C4: db $D4, $02 ; [COMMAND D4:02]
+#_08A7C6: db $F6 ; write class name from $506
+#_08A7C7: db $CF ; ⎵
+#_08A7C8: db $F5 ; write demon name from $050A
+#_08A7C9: db $9C, $CF, $A9, $34, $94 ; が⎵でた!
+#_08A7CE: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A7D1: db $F9 ; new line
+#_08A7D2: db $F5 ; write demon name from $050A
+#_08A7D3: db $3E, $CF, $38, $AC, $2A, $2A, $58, $37 ; は⎵とびかかって
+#_08A7DB: db $2B, $34, $94 ; きた!
+#_08A7DE: db $FC ; wait for key and new line
+#_08A7DF: db $D5, $11 ; send $11 to APU
+#_08A7E1: db $FE, $1C, $03 ; ext command 1C: $03 TODO
+#_08A7E4: db $D5, $2D ; send $2D to APU
+#_08A7E6: db $FE, $0B, $00, $19 ; ext command 0B: something 19, 00
+#_08A7EA: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08A7EC: db $FA ; clear message box
+#_08A7ED: db $97 ; >
+#_08A7EE: db $F5 ; write demon name from $050A
+#_08A7EF: db $3E, $CF, $3A, $9F, $37, $26, $58, $34 ; は⎵にげていった
+#_08A7F7: db $FC ; wait for key and new line
+#_08A7F8: db $D5, $FD ; send $FD to APU
+#_08A7FA: db $E1, $00 ; set $0A50 to $00
+#_08A7FC: db $FA ; clear message box
+#_08A7FD: db $F3 ; write item name from $0A50
+#_08A7FE: db $9C, $CF, $29, $35, $37, $26, $4D ; が⎵おちている
+#_08A805: db $FC ; wait for key and new line
+#_08A806: db $FA ; clear message box
+#_08A807: db $F0 ; write player name
+#_08A808: db $3E, $CF ; は⎵
+#_08A80A: db $F3 ; write item name from $0A50
+#_08A80B: db $51 ; を
+#_08A80C: db $F9 ; new line
+#_08A80D: db $F2, $2D ; prewritten text $2D
+#_08A80F: db $FC ; wait for key and new line
+#_08A810: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08A812: db $D0, $09 ; set progress bit $09
+#_08A814: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -6603,11 +6844,9 @@ Message_08A842:
 
 ;===================================================================================================
 
-; N
 Message_08A855:
 #_08A855: db $D5, $50 ; send $50 to APU
-#_08A857: db $D7, $85 ; [COMMAND D7:85H|133]
-#_08A859: db $18 ; N
+#_08A857: db $D7, $85, $18 ; [COMMAND D7:85,18]
 #_08A85A: db $D6, $00, $3D, $70, $28 ; [COMMAND D6:00,3D,70,28]
 #_08A85F: db $D2, $07, $18 ; test progress bit $07 for message $18
 #_08A862: db $D3, $19 ; go to message $19
@@ -7031,6 +7270,7 @@ Message_08ABF3:
 
 ;===================================================================================================
 
+
 ; [PWT:$82]
 ; >[PWT:$09]が
 ; つうしんファイルを うけとったようだ
@@ -7052,11 +7292,10 @@ Message_08ABF3:
 ; アクマと たたかい ひとびとを すくうために
 ; [PWT:$25]
 ; [PWT:$13][PWT:$08]を [PWT:$2D]
-; [PWT:$57]
 Message_08AC53:
 #_08AC53: db $D1, $FE ; clear progress bit $FE
 #_08AC55: db $D0, $04 ; set progress bit $04
-#_08AC57: db $D7, $07 ; [COMMAND D7:07H|7]
+#_08AC57: db $D7, $07 ; [COMMAND D7:07]
 #_08AC59: db $FE, $25, $FF ; ext command 25: something FF TODO
 #_08AC5C: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_08AC5F: db $FE, $24, $FF ; ext command 24: something FF TODO
@@ -7198,10 +7437,17 @@ Message_08ADCB:
 #_08ADCD: db $D1, $03 ; clear progress bit $03
 
 ;===================================================================================================
-; TODO
-DATA8_08ADCF:
-#_08ADCF: db $FA,$F2,$2E,$D8,$03,$0A,$07,$05
-#_08ADD7: db $05,$0D,$0B,$0B,$12,$D3,$12
+
+; [PWT:$2E]
+Message_08ADCF:
+#_08ADCF: db $FA ; clear message box
+#_08ADD0: db $F2, $2E ; prewritten text $2E
+#_08ADD2: db $D8, $03 ; option list with 3 options
+#_08ADD4: db $0A, $07 ; option 1 [07]: message 0A
+#_08ADD6: db $05, $05 ; option 2 [05]: message 05
+#_08ADD8: db $0D, $0B ; option 3 [0B]: message 0D
+#_08ADDA: db $0B, $12 ; option 4 [12]: message 0B
+#_08ADDC: db $D3, $12 ; go to message $12
 
 ;===================================================================================================
 
@@ -7611,14 +7857,14 @@ Message_08B188:
 
 Message_08B190:
 #_08B190: db $D6, $00, $00 ; [COMMAND D6:00,00]
-#_08B193: db $D7, $07 ; [COMMAND D7:07H|7]
+#_08B193: db $D7, $07 ; [COMMAND D7:07]
 #_08B195: db $D3, $03 ; go to message $03
 
 ;===================================================================================================
 
 ; はは:
 Message_08B197:
-#_08B197: db $D7, $05 ; [COMMAND D7:05H|5]
+#_08B197: db $D7, $05 ; [COMMAND D7:05]
 #_08B199: db $D2, $18, $2C ; test progress bit $18 for message $2C
 #_08B19C: db $D2, $15, $23 ; test progress bit $15 for message $23
 #_08B19F: db $D2, $06, $1B ; test progress bit $06 for message $1B
@@ -7823,10 +8069,14 @@ Message_08B372:
 #_08B382: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_08B383:
-#_08B383: db $FA,$F2,$2E,$D8,$01,$0C,$11,$0E
-#_08B38B: db $1D
+
+; [PWT:$2E]
+Message_08B383:
+#_08B383: db $FA ; clear message box
+#_08B384: db $F2, $2E ; prewritten text $2E
+#_08B386: db $D8, $01 ; option list with 1 options
+#_08B388: db $0C, $11 ; option 1 [11]: message 0C
+#_08B38A: db $0E, $1D ; option 2 [1D]: message 0E
 
 ;===================================================================================================
 
@@ -7904,47 +8154,110 @@ Message_08B40C:
 #_08B42E: db $D3, $1F ; go to message $1F
 
 ;===================================================================================================
-; TODO
-DATA8_08B430:
-#_08B430: db $E9,$0C,$1B,$D5,$46,$D6,$00,$4D
-#_08B438: db $78,$28,$3E,$3E,$9A,$F9,$29,$2A
-#_08B440: db $28,$4C,$39,$2F,$26,$CF,$F0,$F9
-#_08B448: db $50,$34,$30,$3E,$CF,$26,$36,$47
-#_08B450: db $CF,$25,$39,$34,$3D,$2E,$38,$F9
-#_08B458: db $30,$52,$B0,$26,$30,$37,$4D,$3D
-#_08B460: db $4A,$F9,$2B,$57,$27,$47,$CF,$4A
-#_08B468: db $2C,$AD,$A2,$3A,$CF,$2A,$28,$58
-#_08B470: db $37,$2B,$34,$50,$3C,$F9,$27,$4E
-#_08B478: db $30,$26,$50,$CF,$2F,$25,$CF,$2E
-#_08B480: db $58,$35,$41,$CF,$26,$4B,$58,$30
-#_08B488: db $55,$26,$F2,$0B,$FC,$FA,$AA,$27
-#_08B490: db $30,$34,$3D,$95,$CF,$3E,$48,$2C
-#_08B498: db $CF,$2E,$35,$4B,$41,$CF,$26,$4B
-#_08B4A0: db $58,$30,$55,$26,$F9,$50,$34,$30
-#_08B4A8: db $3E,$CF,$26,$36,$47,$CF,$25,$39
-#_08B4B0: db $34,$3D,$2E,$38,$F9,$25,$26,$30
-#_08B4B8: db $37,$26,$4D,$3D,$4A,$CF,$2F,$25
-#_08B4C0: db $94,$CF,$3E,$48,$2C,$94,$FE,$07
-#_08B4C8: db $24,$FC,$D4,$03,$EE,$9A,$F9,$39
-#_08B4D0: db $52,$A6,$2A,$CF,$41,$52,$A9,$31
-#_08B4D8: db $3C,$FC,$FA,$EF,$9A,$F9,$44,$57
-#_08B4E0: db $27,$39,$CF,$3A,$29,$26,$A6,$39
-#_08B4E8: db $FC,$FA,$5D,$64,$7B,$9A,$F9,$6D
-#_08B4F0: db $92,$F2,$0B,$62,$8A,$9C,$26,$26
-#_08B4F8: db $39,$FE,$07,$24,$F9,$F2,$0B,$29
-#_08B500: db $43,$28,$3D,$CF,$3E,$3E,$29,$48
-#_08B508: db $3E,$CF,$26,$34,$A6,$26,$34,$F9
-#_08B510: db $39,$25,$3A,$CF,$2A,$39,$30,$45
-#_08B518: db $2E,$38,$3E,$39,$26,$FC,$FA,$31
-#_08B520: db $9E,$3A,$CF,$25,$50,$32,$37,$48
-#_08B528: db $4D,$4A,$CF,$29,$4E,$3D,$CF,$3E
-#_08B530: db $4B,$3D,$39,$2A,$A9,$39,$94,$F9
-#_08B538: db $33,$3D,$43,$28,$3A,$CF,$32,$26
-#_08B540: db $A4,$26,$CF,$34,$3D,$30,$43,$32
-#_08B548: db $37,$2C,$4E,$4A,$FC,$DE,$01,$00
-#_08B550: db $01,$01,$FE,$46,$09,$FE,$07,$06
-#_08B558: db $D5,$39,$D6,$00,$9D,$78,$48,$FE
-#_08B560: db $07,$13,$E4,$00,$E5,$02,$25
+
+; はは:
+; おかえりなさい [CHASE]
+; わたしは いつも あなたのこと
+; しんぱいしてるのよ
+; きょうも よくぶじに かえってきたわね
+; うれしいわ さあ こっちへ いらっしゃい[PWT:$0B]
+; どうしたの? はやく こちらへ いらっしゃい
+; わたしは いつも あなたのこと
+; あいしているのよ さあ! はやく!
+; [JIMMY]:
+; なんだか へんですね
+; [HIM]:
+; みょうな においだな
+; アクマ:
+; チッ[PWT:$0B]カンがいいな
+; [PWT:$0B]おまえの ははおやは いただい
+; た
+; なあに かなしむことはない
+; すぐに あわせてやるよ おれの はらのなかでな!
+; そのまえに せいぜい たのしませてくれよ
+Message_08B430:
+#_08B430: db $E9, $0C, $1B ; go to message $1B maybe TODO
+#_08B433: db $D5, $46 ; send $46 to APU
+#_08B435: db $D6, $00, $4D, $78, $28 ; [COMMAND D6:00,4D,78,28]
+#_08B43A: db $3E, $3E, $9A ; はは:
+#_08B43D: db $F9 ; new line
+#_08B43E: db $29, $2A, $28, $4C, $39, $2F, $26, $CF ; おかえりなさい⎵
+#_08B446: db $F0 ; write player name
+#_08B447: db $F9 ; new line
+#_08B448: db $50, $34, $30, $3E, $CF, $26, $36, $47 ; わたしは⎵いつも
+#_08B450: db $CF, $25, $39, $34, $3D, $2E, $38 ; ⎵あなたのこと
+#_08B457: db $F9 ; new line
+#_08B458: db $30, $52, $B0, $26, $30, $37, $4D, $3D ; しんぱいしてるの
+#_08B460: db $4A ; よ
+#_08B461: db $F9 ; new line
+#_08B462: db $2B, $57, $27, $47, $CF, $4A, $2C, $AD ; きょうも⎵よくぶ
+#_08B46A: db $A2, $3A, $CF, $2A, $28, $58, $37, $2B ; じに⎵かえってき
+#_08B472: db $34, $50, $3C ; たわね
+#_08B475: db $F9 ; new line
+#_08B476: db $27, $4E, $30, $26, $50, $CF, $2F, $25 ; うれしいわ⎵さあ
+#_08B47E: db $CF, $2E, $58, $35, $41, $CF, $26, $4B ; ⎵こっちへ⎵いら
+#_08B486: db $58, $30, $55, $26 ; っしゃい
+#_08B48A: db $F2, $0B ; prewritten text $0B
+#_08B48C: db $FC ; wait for key and new line
+#_08B48D: db $FA ; clear message box
+#_08B48E: db $AA, $27, $30, $34, $3D, $95, $CF, $3E ; どうしたの?⎵は
+#_08B496: db $48, $2C, $CF, $2E, $35, $4B, $41, $CF ; やく⎵こちらへ⎵
+#_08B49E: db $26, $4B, $58, $30, $55, $26 ; いらっしゃい
+#_08B4A4: db $F9 ; new line
+#_08B4A5: db $50, $34, $30, $3E, $CF, $26, $36, $47 ; わたしは⎵いつも
+#_08B4AD: db $CF, $25, $39, $34, $3D, $2E, $38 ; ⎵あなたのこと
+#_08B4B4: db $F9 ; new line
+#_08B4B5: db $25, $26, $30, $37, $26, $4D, $3D, $4A ; あいしているのよ
+#_08B4BD: db $CF, $2F, $25, $94, $CF, $3E, $48, $2C ; ⎵さあ!⎵はやく
+#_08B4C5: db $94 ; !
+#_08B4C6: db $FE, $07, $24 ; ext command 07: something then wait 35 frames TODO
+#_08B4C9: db $FC ; wait for key and new line
+#_08B4CA: db $D4, $03 ; [COMMAND D4:03]
+#_08B4CC: db $EE ; write lawful hero name
+#_08B4CD: db $9A ; :
+#_08B4CE: db $F9 ; new line
+#_08B4CF: db $39, $52, $A6, $2A, $CF, $41, $52, $A9 ; なんだか⎵へんで
+#_08B4D7: db $31, $3C ; すね
+#_08B4D9: db $FC ; wait for key and new line
+#_08B4DA: db $FA ; clear message box
+#_08B4DB: db $EF ; write chaos hero name
+#_08B4DC: db $9A ; :
+#_08B4DD: db $F9 ; new line
+#_08B4DE: db $44, $57, $27, $39, $CF, $3A, $29, $26 ; みょうな⎵におい
+#_08B4E6: db $A6, $39 ; だな
+#_08B4E8: db $FC ; wait for key and new line
+#_08B4E9: db $FA ; clear message box
+#_08B4EA: db $5D, $64, $7B, $9A ; アクマ:
+#_08B4EE: db $F9 ; new line
+#_08B4EF: db $6D, $92 ; チッ
+#_08B4F1: db $F2, $0B ; prewritten text $0B
+#_08B4F3: db $62, $8A, $9C, $26, $26, $39 ; カンがいいな
+#_08B4F9: db $FE, $07, $24 ; ext command 07: something then wait 35 frames TODO
+#_08B4FC: db $F9 ; new line
+#_08B4FD: db $F2, $0B ; prewritten text $0B
+#_08B4FF: db $29, $43, $28, $3D, $CF, $3E, $3E, $29 ; おまえの⎵ははお
+#_08B507: db $48, $3E, $CF, $26, $34, $A6, $26, $34 ; やは⎵いただいた
+#_08B50F: db $F9 ; new line
+#_08B510: db $39, $25, $3A, $CF, $2A, $39, $30, $45 ; なあに⎵かなしむ
+#_08B518: db $2E, $38, $3E, $39, $26 ; ことはない
+#_08B51D: db $FC ; wait for key and new line
+#_08B51E: db $FA ; clear message box
+#_08B51F: db $31, $9E, $3A, $CF, $25, $50, $32, $37 ; すぐに⎵あわせて
+#_08B527: db $48, $4D, $4A, $CF, $29, $4E, $3D, $CF ; やるよ⎵おれの⎵
+#_08B52F: db $3E, $4B, $3D, $39, $2A, $A9, $39, $94 ; はらのなかでな!
+#_08B537: db $F9 ; new line
+#_08B538: db $33, $3D, $43, $28, $3A, $CF, $32, $26 ; そのまえに⎵せい
+#_08B540: db $A4, $26, $CF, $34, $3D, $30, $43, $32 ; ぜい⎵たのしませ
+#_08B548: db $37, $2C, $4E, $4A ; てくれよ
+#_08B54C: db $FC ; wait for key and new line
+#_08B54D: db $DE, $01, $00, $01, $01 ; [COMMAND DE:01,00,01,01]
+#_08B552: db $FE, $46, $09 ; ext command 46: 09 TODO
+#_08B555: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08B558: db $D5, $39 ; send $39 to APU
+#_08B55A: db $D6, $00, $9D, $78, $48 ; [COMMAND D6:00,9D,78,48]
+#_08B55F: db $FE, $07, $13 ; ext command 07: something then wait 18 frames TODO
+#_08B562: db $E4, $00 ; load demon $00
+#_08B564: db $E5, $02, $25 ; [COMMAND E5:02,25]
 
 ;===================================================================================================
 
@@ -7953,23 +8266,63 @@ Message_08B567:
 #_08B56A: db $D3, $24 ; go to message $24
 
 ;===================================================================================================
-; TODO
-DATA8_08B56C:
-#_08B56C: db $E7,$00,$D0,$18,$E1,$F0,$97,$F1
-#_08B574: db $3E,$CF,$F3,$51,$F9,$FE,$3C,$2B
-#_08B57C: db $F2,$2D,$FC,$FE,$28,$E9,$0C,$26
-#_08B584: db $FA,$EE,$9A,$F9,$2E,$52,$39,$38
-#_08B58C: db $2B,$3A,$CF,$39,$3A,$51,$26,$58
-#_08B594: db $37,$47,$CF,$39,$9E,$2F,$46,$3A
-#_08B59C: db $3E,$F9,$39,$4B,$39,$26,$38,$CF
-#_08B5A4: db $29,$47,$27,$2D,$AA,$F2,$0B,$F9
-#_08B5AC: db $F2,$0B,$2B,$51,$CF,$29,$38,$2F
-#_08B5B4: db $39,$26,$A9,$F2,$0B,$FC,$FA,$EF
-#_08B5BC: db $9A,$F9,$2B,$48,$31,$46,$3E,$CF
-#_08B5C4: db $4A,$32,$CF,$EE,$F9,$3E,$3E,$29
-#_08B5CC: db $48,$9C,$CF,$2E,$4F,$2F,$4E,$34
-#_08B5D4: db $52,$A6,$A5,$F9,$33,$58,$38,$30
-#_08B5DC: db $38,$26,$37,$CF,$48,$4E,$4A,$FC
+
+; >[NAME]は [ITEM]を
+; [PWT:$2D]
+; [JIMMY]:
+; こんなときに なにをいっても なぐさめには
+; ならないと おもうけど[PWT:$0B]
+; [PWT:$0B]きを おとさないで[PWT:$0B]
+; [HIM]:
+; きやすめは よせ [JIMMY]
+; ははおやが ころされたんだぞ
+; そっとしといて やれよ
+Message_08B56C:
+#_08B56C: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08B56E: db $D0, $18 ; set progress bit $18
+#_08B570: db $E1, $F0 ; set $0A50 to $F0
+#_08B572: db $97 ; >
+#_08B573: db $F1 ; write specific name
+#_08B574: db $3E, $CF ; は⎵
+#_08B576: db $F3 ; write item name from $0A50
+#_08B577: db $51 ; を
+#_08B578: db $F9 ; new line
+#_08B579: db $FE, $3C, $2B ; ext command 3C: 2B TODO
+#_08B57C: db $F2, $2D ; prewritten text $2D
+#_08B57E: db $FC ; wait for key and new line
+#_08B57F: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08B581: db $E9, $0C, $26 ; go to message $26 maybe TODO
+#_08B584: db $FA ; clear message box
+#_08B585: db $EE ; write lawful hero name
+#_08B586: db $9A ; :
+#_08B587: db $F9 ; new line
+#_08B588: db $2E, $52, $39, $38, $2B, $3A, $CF, $39 ; こんなときに⎵な
+#_08B590: db $3A, $51, $26, $58, $37, $47, $CF, $39 ; にをいっても⎵な
+#_08B598: db $9E, $2F, $46, $3A, $3E ; ぐさめには
+#_08B59D: db $F9 ; new line
+#_08B59E: db $39, $4B, $39, $26, $38, $CF, $29, $47 ; ならないと⎵おも
+#_08B5A6: db $27, $2D, $AA ; うけど
+#_08B5A9: db $F2, $0B ; prewritten text $0B
+#_08B5AB: db $F9 ; new line
+#_08B5AC: db $F2, $0B ; prewritten text $0B
+#_08B5AE: db $2B, $51, $CF, $29, $38, $2F, $39, $26 ; きを⎵おとさない
+#_08B5B6: db $A9 ; で
+#_08B5B7: db $F2, $0B ; prewritten text $0B
+#_08B5B9: db $FC ; wait for key and new line
+#_08B5BA: db $FA ; clear message box
+#_08B5BB: db $EF ; write chaos hero name
+#_08B5BC: db $9A ; :
+#_08B5BD: db $F9 ; new line
+#_08B5BE: db $2B, $48, $31, $46, $3E, $CF, $4A, $32 ; きやすめは⎵よせ
+#_08B5C6: db $CF ; ⎵
+#_08B5C7: db $EE ; write lawful hero name
+#_08B5C8: db $F9 ; new line
+#_08B5C9: db $3E, $3E, $29, $48, $9C, $CF, $2E, $4F ; ははおやが⎵ころ
+#_08B5D1: db $2F, $4E, $34, $52, $A6, $A5 ; されたんだぞ
+#_08B5D7: db $F9 ; new line
+#_08B5D8: db $33, $58, $38, $30, $38, $26, $37, $CF ; そっとしといて⎵
+#_08B5E0: db $48, $4E, $4A ; やれよ
+#_08B5E3: db $FC ; wait for key and new line
 
 ;===================================================================================================
 
@@ -8009,7 +8362,8 @@ Message_08B60B:
 ;===================================================================================================
 
 ; まるで つれていけと せがんで いるようだ
-; つれていきますか?[PWT:$0A]:
+; つれていきますか?
+; [PWT:$0A]:
 ; クォーン クォーン
 Message_08B611:
 #_08B611: db $43, $4D, $A9, $CF, $36, $4E, $37, $26 ; まるで⎵つれてい
@@ -8081,7 +8435,8 @@ Message_08B683:
 ;===================================================================================================
 
 ; >[PWT:$0A]が いる
-; はなしかけますか?[PWT:$0A]:
+; はなしかけますか?
+; [PWT:$0A]:
 ; クォーン
 Message_08B689:
 #_08B689: db $D5, $54 ; send $54 to APU
@@ -8142,7 +8497,7 @@ Message_08B6CC:
 ; となりのいしゃ:
 ; おお [CHASE]くんか
 Message_08B6D1:
-#_08B6D1: db $D7, $06 ; [COMMAND D7:06H|6]
+#_08B6D1: db $D7, $06 ; [COMMAND D7:06]
 #_08B6D3: db $D5, $54 ; send $54 to APU
 #_08B6D5: db $D6, $00, $40, $70, $28 ; [COMMAND D6:00,40,70,28]
 #_08B6DA: db $38, $39, $4C, $3D, $26, $30, $55, $9A ; となりのいしゃ:
@@ -8368,7 +8723,7 @@ Message_08B890:
 ; けはいは ないようだ
 Message_08B8BD:
 #_08B8BD: db $D2, $2F, $59 ; test progress bit $2F for message $59
-#_08B8C0: db $D7, $05 ; [COMMAND D7:05H|5]
+#_08B8C0: db $D7, $05 ; [COMMAND D7:05]
 #_08B8C2: db $D6, $00, $67, $70, $28 ; [COMMAND D6:00,67,70,28]
 #_08B8C7: db $29, $38, $2E, $9A ; おとこ:
 #_08B8CB: db $F9 ; new line
@@ -8400,7 +8755,7 @@ Message_08B8BD:
 ;===================================================================================================
 
 Message_08B927:
-#_08B927: db $D7, $05 ; [COMMAND D7:05H|5]
+#_08B927: db $D7, $05 ; [COMMAND D7:05]
 #_08B929: db $D5, $46 ; send $46 to APU
 
 ;===================================================================================================
@@ -8635,7 +8990,7 @@ Message_08BABB:
 ; さあ やっておしまい!
 Message_08BADF:
 #_08BADF: db $D5, $46 ; send $46 to APU
-#_08BAE1: db $D7, $21 ; [COMMAND D7:21H|33]
+#_08BAE1: db $D7, $21 ; [COMMAND D7:21]
 #_08BAE3: db $97, $3F, $4F, $AB, $3A, $3E, $CF ; >ひろばには⎵
 #_08BAEA: db $F2, $17 ; prewritten text $17
 #_08BAEC: db $AD, $34, $26, $3D, $CF, $41, $26, $30 ; ぶたいの⎵へいし
@@ -8722,7 +9077,7 @@ Message_08BADF:
 #_08BC0D: db $25, $52, $39, $26, $30, $37, $25, $9F ; あんないしてあげ
 #_08BC15: db $4D, $50 ; るわ
 #_08BC17: db $FC ; wait for key and new line
-#_08BC18: db $D7, $22 ; [COMMAND D7:22H|34]
+#_08BC18: db $D7, $22 ; [COMMAND D7:22]
 #_08BC1A: db $D6, $02, $2C, $70, $28 ; [COMMAND D6:02,2C,70,28]
 #_08BC1F: db $FA ; clear message box
 #_08BC20: db $2E, $4E, $A9, $CF ; これで⎵
@@ -8776,11 +9131,15 @@ Message_08BC90:
 #_08BC93: db $D3, $10 ; go to message $10
 
 ;===================================================================================================
-; TODO
-DATA8_08BC95:
-#_08BC95: db $E7,$00,$DE,$00,$00,$ED,$04,$EB
-#_08BC9D: db $00,$00,$E9,$04,$D5,$39,$E4,$00
-#_08BCA5: db $E4,$01,$E5,$81,$13
+
+Message_08BC95:
+#_08BC95: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08BC97: db $DE, $00, $00, $ED, $04 ; [COMMAND DE:00,00,ED,04]
+#_08BC9C: db $EB, $00, $00, $E9, $04 ; [COMMAND EB:00,00,E9,04]
+#_08BCA1: db $D5, $39 ; send $39 to APU
+#_08BCA3: db $E4, $00 ; load demon $00
+#_08BCA5: db $E4, $01 ; load demon $01
+#_08BCA7: db $E5, $81, $13 ; [COMMAND E5:81,13]
 
 ;===================================================================================================
 
@@ -8789,11 +9148,16 @@ Message_08BCAA:
 #_08BCAD: db $D3, $12 ; go to message $12
 
 ;===================================================================================================
-; TODO
-DATA8_08BCAF:
-#_08BCAF: db $E7,$00,$E7,$01,$DE,$00,$00,$E9
-#_08BCB7: db $04,$EB,$00,$00,$E2,$02,$D5,$39
-#_08BCBF: db $E4,$00,$E4,$01,$E5,$81,$15
+
+Message_08BCAF:
+#_08BCAF: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08BCB1: db $E7, $01 ; call routine 01E5CD with value 01 TODO
+#_08BCB3: db $DE, $00, $00, $E9, $04 ; [COMMAND DE:00,00,E9,04]
+#_08BCB8: db $EB, $00, $00, $E2, $02 ; [COMMAND EB:00,00,E2,02]
+#_08BCBD: db $D5, $39 ; send $39 to APU
+#_08BCBF: db $E4, $00 ; load demon $00
+#_08BCC1: db $E4, $01 ; load demon $01
+#_08BCC3: db $E5, $81, $15 ; [COMMAND E5:81,15]
 
 ;===================================================================================================
 
@@ -8830,7 +9194,7 @@ Message_08BCCB:
 ; [PWT:$03]も はやく ここから にげて[PWT:$0B]
 Message_08BCF2:
 #_08BCF2: db $D5, $47 ; send $47 to APU
-#_08BCF4: db $D7, $2A ; [COMMAND D7:2AH|42]
+#_08BCF4: db $D7, $2A ; [COMMAND D7:2A]
 #_08BCF6: db $D6, $02, $01, $70, $08 ; [COMMAND D6:02,01,70,08]
 #_08BCFB: db $D6, $04, $05, $70, $08 ; [COMMAND D6:04,05,70,08]
 #_08BD00: db $ED ; write female protag name
@@ -9180,47 +9544,97 @@ Message_08BFF6:
 #_08BFFA: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08BFFB:
-#_08BFFB: db $D5,$46,$D7,$20,$FE,$3A,$02,$00
-#_08C003: db $FE,$07,$FF,$D2,$2B,$2B,$D6,$00
-#_08C00B: db $99,$60,$20,$29,$38,$2E,$9A,$F9
-#_08C013: db $50,$34,$30,$3E,$CF,$2A,$26,$9F
-#_08C01B: db $52,$F2,$20,$3D,$CF,$B9,$70,$5F
-#_08C023: db $A9,$25,$4D,$94,$FC,$FA,$32,$2A
-#_08C02B: db $26,$3D,$CF,$AD,$52,$46,$26,$3E
-#_08C033: db $CF,$2C,$2F,$4C,$2B,$58,$37,$26
-#_08C03B: db $4D,$F9,$33,$4E,$3E,$CF,$A6,$26
-#_08C043: db $35,$B5,$5E,$5D,$2A,$4B,$3D,$CF
-#_08C04B: db $2F,$2C,$30,$56,$3D,$CF,$27,$28
-#_08C053: db $3A,$F9,$39,$4C,$34,$36,$CF,$AD
-#_08C05B: db $52,$46,$26,$CF,$A6,$2A,$4B,$A9
-#_08C063: db $25,$4D,$F9,$2F,$AE,$36,$CF,$3F
-#_08C06B: db $52,$2E,$52,$CF,$34,$34,$2A,$26
-#_08C073: db $9C,$F9,$32,$2A,$26,$51,$CF,$29
-#_08C07B: db $29,$27,$CF,$26,$43,$F9,$F2,$02
-#_08C083: db $3E,$CF,$5D,$64,$7B,$38,$CF,$4A
-#_08C08B: db $AB,$4E,$4D,$F9,$26,$3A,$30,$28
-#_08C093: db $3D,$CF,$2A,$44,$9C,$44,$51,$CF
-#_08C09B: db $46,$A1,$46,$2F,$32,$34,$FC,$FA
-#_08C0A3: db $33,$4E,$3E,$CF,$30,$52,$3D,$CF
-#_08C0AB: db $2B,$2B,$3A,$CF,$33,$39,$28,$4D
-#_08C0B3: db $34,$46,$A9,$25,$4D,$F9,$72,$92
-#_08C0BB: db $CD,$8A,$CF,$43,$58,$2F,$36,$2D
-#_08C0C3: db $26,$2A,$2C,$94,$F9,$2E,$3D,$CF
-#_08C0CB: db $2B,$57,$27,$40,$3D,$CF,$26,$52
-#_08C0D3: db $AF,$27,$51,$CF,$33,$30,$32,$52
-#_08C0DB: db $9C,$34,$46,$F9,$F2,$02,$3E,$CF
-#_08C0E3: db $26,$3A,$30,$28,$3D,$CF,$2A,$44
-#_08C0EB: db $9C,$44,$3D,$F9,$35,$2A,$4B,$51
-#_08C0F3: db $CF,$2A,$4C,$34,$F9,$2A,$44,$9C
-#_08C0FB: db $44,$38,$CF,$A2,$52,$4D,$26,$9C
-#_08C103: db $CF,$2B,$57,$27,$A5,$52,$31,$4D
-#_08C10B: db $F9,$81,$5A,$70,$CA,$5D,$51,$CF
-#_08C113: db $2B,$A3,$2B,$25,$9F,$4D,$CF,$34
-#_08C11B: db $46,$3A,$94,$FC,$D4,$03,$97,$28
-#_08C123: db $52,$A4,$36,$3E,$CF,$36,$A8,$26
-#_08C12B: db $37,$26,$4D,$FC,$FF
+
+; おとこ:
+; わたしは かいげん[PWT:$20]の ゴトウで
+; ある!
+; せかいの ぶんめいは くさりきっている
+; それは だいちガイアからの さくしゅの うえに
+; なりたつ ぶんめい だからである
+; さべつ ひんこん たたかいが
+; せかいを おおう いま
+; [PWT:$02]は アクマと よばれる
+; いにしえの かみがみを めざめさせた
+; それは しんの ききに そなえるためである
+; ニッポン まっさつけいかく!
+; この きょうふの いんぼうを そしせんがため
+; [PWT:$02]は いにしえの かみがみの
+; ちからを かりた
+; かみがみと じんるいが きょうぞんする
+; ユートピアを きずきあげる ために!
+; >えんぜつは つづいている
+Message_08BFFB:
+#_08BFFB: db $D5, $46 ; send $46 to APU
+#_08BFFD: db $D7, $20 ; [COMMAND D7:20]
+#_08BFFF: db $FE, $3A, $02, $00 ; ext command 3A: 02 00 TODO
+#_08C003: db $FE, $07, $FF ; ext command 07: something then wait 254 frames TODO
+#_08C006: db $D2, $2B, $2B ; test progress bit $2B for message $2B
+#_08C009: db $D6, $00, $99, $60, $20 ; [COMMAND D6:00,99,60,20]
+#_08C00E: db $29, $38, $2E, $9A ; おとこ:
+#_08C012: db $F9 ; new line
+#_08C013: db $50, $34, $30, $3E, $CF, $2A, $26, $9F ; わたしは⎵かいげ
+#_08C01B: db $52 ; ん
+#_08C01C: db $F2, $20 ; prewritten text $20
+#_08C01E: db $3D, $CF, $B9, $70, $5F, $A9, $25, $4D ; の⎵ゴトウである
+#_08C026: db $94 ; !
+#_08C027: db $FC ; wait for key and new line
+#_08C028: db $FA ; clear message box
+#_08C029: db $32, $2A, $26, $3D, $CF, $AD, $52, $46 ; せかいの⎵ぶんめ
+#_08C031: db $26, $3E, $CF, $2C, $2F, $4C, $2B, $58 ; いは⎵くさりきっ
+#_08C039: db $37, $26, $4D ; ている
+#_08C03C: db $F9 ; new line
+#_08C03D: db $33, $4E, $3E, $CF, $A6, $26, $35, $B5 ; それは⎵だいちガ
+#_08C045: db $5E, $5D, $2A, $4B, $3D, $CF, $2F, $2C ; イアからの⎵さく
+#_08C04D: db $30, $56, $3D, $CF, $27, $28, $3A ; しゅの⎵うえに
+#_08C054: db $F9 ; new line
+#_08C055: db $39, $4C, $34, $36, $CF, $AD, $52, $46 ; なりたつ⎵ぶんめ
+#_08C05D: db $26, $CF, $A6, $2A, $4B, $A9, $25, $4D ; い⎵だからである
+#_08C065: db $F9 ; new line
+#_08C066: db $2F, $AE, $36, $CF, $3F, $52, $2E, $52 ; さべつ⎵ひんこん
+#_08C06E: db $CF, $34, $34, $2A, $26, $9C ; ⎵たたかいが
+#_08C074: db $F9 ; new line
+#_08C075: db $32, $2A, $26, $51, $CF, $29, $29, $27 ; せかいを⎵おおう
+#_08C07D: db $CF, $26, $43 ; ⎵いま
+#_08C080: db $F9 ; new line
+#_08C081: db $F2, $02 ; prewritten text $02
+#_08C083: db $3E, $CF, $5D, $64, $7B, $38, $CF, $4A ; は⎵アクマと⎵よ
+#_08C08B: db $AB, $4E, $4D ; ばれる
+#_08C08E: db $F9 ; new line
+#_08C08F: db $26, $3A, $30, $28, $3D, $CF, $2A, $44 ; いにしえの⎵かみ
+#_08C097: db $9C, $44, $51, $CF, $46, $A1, $46, $2F ; がみを⎵めざめさ
+#_08C09F: db $32, $34 ; せた
+#_08C0A1: db $FC ; wait for key and new line
+#_08C0A2: db $FA ; clear message box
+#_08C0A3: db $33, $4E, $3E, $CF, $30, $52, $3D, $CF ; それは⎵しんの⎵
+#_08C0AB: db $2B, $2B, $3A, $CF, $33, $39, $28, $4D ; ききに⎵そなえる
+#_08C0B3: db $34, $46, $A9, $25, $4D ; ためである
+#_08C0B8: db $F9 ; new line
+#_08C0B9: db $72, $92, $CD, $8A, $CF, $43, $58, $2F ; ニッポン⎵まっさ
+#_08C0C1: db $36, $2D, $26, $2A, $2C, $94 ; つけいかく!
+#_08C0C7: db $F9 ; new line
+#_08C0C8: db $2E, $3D, $CF, $2B, $57, $27, $40, $3D ; この⎵きょうふの
+#_08C0D0: db $CF, $26, $52, $AF, $27, $51, $CF, $33 ; ⎵いんぼうを⎵そ
+#_08C0D8: db $30, $32, $52, $9C, $34, $46 ; しせんがため
+#_08C0DE: db $F9 ; new line
+#_08C0DF: db $F2, $02 ; prewritten text $02
+#_08C0E1: db $3E, $CF, $26, $3A, $30, $28, $3D, $CF ; は⎵いにしえの⎵
+#_08C0E9: db $2A, $44, $9C, $44, $3D ; かみがみの
+#_08C0EE: db $F9 ; new line
+#_08C0EF: db $35, $2A, $4B, $51, $CF, $2A, $4C, $34 ; ちからを⎵かりた
+#_08C0F7: db $F9 ; new line
+#_08C0F8: db $2A, $44, $9C, $44, $38, $CF, $A2, $52 ; かみがみと⎵じん
+#_08C100: db $4D, $26, $9C, $CF, $2B, $57, $27, $A5 ; るいが⎵きょうぞ
+#_08C108: db $52, $31, $4D ; んする
+#_08C10B: db $F9 ; new line
+#_08C10C: db $81, $5A, $70, $CA, $5D, $51, $CF, $2B ; ユートピアを⎵き
+#_08C114: db $A3, $2B, $25, $9F, $4D, $CF, $34, $46 ; ずきあげる⎵ため
+#_08C11C: db $3A, $94 ; に!
+#_08C11E: db $FC ; wait for key and new line
+#_08C11F: db $D4, $03 ; [COMMAND D4:03]
+#_08C121: db $97, $28, $52, $A4, $36, $3E, $CF, $36 ; >えんぜつは⎵つ
+#_08C129: db $A8, $26, $37, $26, $4D ; づいている
+#_08C12E: db $FC ; wait for key and new line
+#_08C12F: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -9243,7 +9657,7 @@ Message_08C130:
 ; ほおっておけば [PWT:$1C]は どうなる[PWT:$0B]
 Message_08C135:
 #_08C135: db $D2, $2F, $38 ; test progress bit $2F for message $38
-#_08C138: db $D7, $05 ; [COMMAND D7:05H|5]
+#_08C138: db $D7, $05 ; [COMMAND D7:05]
 #_08C13A: db $D5, $54 ; send $54 to APU
 #_08C13C: db $D6, $00, $68, $70, $28 ; [COMMAND D6:00,68,70,28]
 #_08C141: db $2C, $44, $35, $57, $27, $9A ; くみちょう:
@@ -9395,15 +9809,15 @@ Message_08C23B:
 ; かねの むだだぜ やめとけよ
 ; >[CHASE]は
 ; すこし おかねを わたそうとした
-; [PWT:$91][PWT:$0B]なんだ こ
-; りゃ!?
+; [PWT:$91][PWT:$0B]なんだ こり
+; ゃ!?
 ; マッカだせよ ℏじゃなけりゃ
 ; なにも かえねえよ
 ; びんぼうにんめ
-; [PWT:$18]の オザワの どれいに なっ
-; ちまえ
-; [PWT:$0B][PWT:$18]も しらね
-; えのかよ
+; [PWT:$18]の オザワの どれいに なっち
+; まえ
+; [PWT:$0B][PWT:$18]も しらねえ
+; のかよ
 ; ここから キタにでて ニシにいけば すぐだ
 ; >[NAME]の もっていた ￥は
 ; かみくずどうぜんに なってしまった
@@ -9465,11 +9879,14 @@ Message_08C2A4:
 #_08C35C: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_08C35D:
-#_08C35D: db $D9,$E8,$03,$00,$36,$DA,$18,$FC
-#_08C365: db $FF,$E1,$FE,$FE,$3C,$36,$FE,$28
-#_08C36D: db $D3,$35
+
+Message_08C35D:
+#_08C35D: db $D9 : dl $0003E8 : db $36 ; go to message $36 if money < 1000
+#_08C362: db $DA : dl $FFFC18 ; take 1000 money
+#_08C366: db $E1, $FE ; set $0A50 to $FE
+#_08C368: db $FE, $3C, $36 ; ext command 3C: 36 TODO
+#_08C36B: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08C36D: db $D3, $35 ; go to message $35
 
 ;===================================================================================================
 
@@ -9515,7 +9932,7 @@ Message_08C387:
 ; わたしは いそがしい
 ; またこんどに してくれ
 Message_08C3A9:
-#_08C3A9: db $D7, $24 ; [COMMAND D7:24H|36]
+#_08C3A9: db $D7, $24 ; [COMMAND D7:24]
 #_08C3AB: db $D5, $46 ; send $46 to APU
 #_08C3AD: db $D2, $47, $3A ; test progress bit $47 for message $3A
 #_08C3B0: db $DE, $01, $00, $07, $01 ; [COMMAND DE:01,00,07,01]
@@ -9724,20 +10141,44 @@ Message_08C4EB:
 #_08C5F5: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_08C5F6:
-#_08C5F6: db $D6,$00,$00,$F2,$7C,$F2,$7D,$D5
-#_08C5FE: db $39,$E4,$00,$D2,$49,$41,$D4,$02
-#_08C606: db $D5,$3C,$F6,$CF,$F5,$9C,$CF,$A9
-#_08C60E: db $34,$94,$FC,$FA,$5D,$64,$7B,$9C
-#_08C616: db $CF,$38,$36,$A4,$52,$CF,$29,$33
-#_08C61E: db $26,$2A,$2A,$58,$37,$2B,$34,$FC
-#_08C626: db $D5,$11,$FE,$1C,$03,$D5,$2D,$FE
-#_08C62E: db $0B,$FF,$3C,$E9,$02,$3E,$FA,$EE
-#_08C636: db $9A,$F9,$A6,$46,$A6,$94,$CF,$2E
-#_08C63E: db $26,$36,$3A,$3E,$CF,$2A,$37,$39
-#_08C646: db $26,$CF,$3A,$9F,$43,$30,$57,$27
-#_08C64E: db $94,$FC
+
+; [PWT:$7C][PWT:$7D]
+; [CLASS] [DEMON1]が でた!
+; アクマが とつぜん おそいかかってきた
+; [JIMMY]:
+; だめだ! こいつには かてない にげましょう!
+Message_08C5F6:
+#_08C5F6: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08C5F9: db $F2, $7C ; prewritten text $7C
+#_08C5FB: db $F2, $7D ; prewritten text $7D
+#_08C5FD: db $D5, $39 ; send $39 to APU
+#_08C5FF: db $E4, $00 ; load demon $00
+#_08C601: db $D2, $49, $41 ; test progress bit $49 for message $41
+#_08C604: db $D4, $02 ; [COMMAND D4:02]
+#_08C606: db $D5, $3C ; send $3C to APU
+#_08C608: db $F6 ; write class name from $506
+#_08C609: db $CF ; ⎵
+#_08C60A: db $F5 ; write demon name from $050A
+#_08C60B: db $9C, $CF, $A9, $34, $94 ; が⎵でた!
+#_08C610: db $FC ; wait for key and new line
+#_08C611: db $FA ; clear message box
+#_08C612: db $5D, $64, $7B, $9C, $CF, $38, $36, $A4 ; アクマが⎵とつぜ
+#_08C61A: db $52, $CF, $29, $33, $26, $2A, $2A, $58 ; ん⎵おそいかかっ
+#_08C622: db $37, $2B, $34 ; てきた
+#_08C625: db $FC ; wait for key and new line
+#_08C626: db $D5, $11 ; send $11 to APU
+#_08C628: db $FE, $1C, $03 ; ext command 1C: $03 TODO
+#_08C62B: db $D5, $2D ; send $2D to APU
+#_08C62D: db $FE, $0B, $FF, $3C ; ext command 0B: something 3C, FF
+#_08C631: db $E9, $02, $3E ; go to message $3E maybe TODO
+#_08C634: db $FA ; clear message box
+#_08C635: db $EE ; write lawful hero name
+#_08C636: db $9A ; :
+#_08C637: db $F9 ; new line
+#_08C638: db $A6, $46, $A6, $94, $CF, $2E, $26, $36 ; だめだ!⎵こいつ
+#_08C640: db $3A, $3E, $CF, $2A, $37, $39, $26, $CF ; には⎵かてない⎵
+#_08C648: db $3A, $9F, $43, $30, $57, $27, $94 ; にげましょう!
+#_08C64F: db $FC ; wait for key and new line
 
 ;===================================================================================================
 
@@ -9973,34 +10414,81 @@ Message_08C834:
 #_08C834: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
 
 ;===================================================================================================
-; TODO
-DATA8_08C837:
-#_08C837: db $D5,$2B,$D6,$00,$00,$D4,$03,$97
-#_08C83F: db $EF,$3E,$CF,$61,$BA,$88,$3A,$CF
-#_08C847: db $38,$AA,$46,$51,$2F,$30,$34,$FC
-#_08C84F: db $FE,$07,$40,$DE,$01,$00,$1C,$01
-#_08C857: db $E4,$00,$FA,$EF,$9A,$F9,$48,$58
-#_08C85F: db $38,$CF,$61,$BA,$88,$3A,$CF,$29
-#_08C867: db $38,$30,$43,$28,$51,$36,$2D,$34
-#_08C86F: db $F2,$0B,$F2,$0B,$FC,$FA,$F2,$0B
-#_08C877: db $F0,$94,$CF,$EE,$94,$F9,$F2,$04
-#_08C87F: db $CF,$44,$34,$26,$39,$CF,$25,$43
-#_08C887: db $26,$48,$4C,$2A,$34,$A2,$55,$F9
-#_08C88F: db $2E,$3D,$2F,$2B,$CF,$26,$2B,$3D
-#_08C897: db $AC,$4D,$2E,$38,$2F,$28,$CF,$A9
-#_08C89F: db $2B,$48,$30,$3C,$28,$A4,$94,$FC
-#_08C8A7: db $FA,$29,$4E,$3E,$CF,$9C,$58,$34
-#_08C8AF: db $26,$A9,$CF,$35,$2A,$4B,$51,$28
-#_08C8B7: db $34,$F9,$47,$27,$CF,$29,$43,$28
-#_08C8BF: db $34,$35,$38,$CF,$26,$58,$30,$57
-#_08C8C7: db $3A,$26,$4D,$CF,$3F,$36,$4A,$27
-#_08C8CF: db $47,$F9,$39,$2C,$39,$58,$34,$F2
-#_08C8D7: db $0B,$FC,$FA,$A2,$55,$25,$39,$CF
-#_08C8DF: db $26,$2B,$37,$34,$4B,$CF,$43,$34
-#_08C8E7: db $25,$29,$27,$A4,$FC,$E7,$00,$FE
-#_08C8EF: db $27,$03,$FA,$97,$EF,$3E,$CF,$2F
-#_08C8F7: db $58,$37,$26,$58,$34,$FC,$D0,$47
-#_08C8FF: db $D1,$FF,$FF
+
+; >[HIM]は オザワに とどめをさした
+; [HIM]:
+; やっと オザワに おとしまえをつけた[PWT:$0B][PWT:$0B]
+; [PWT:$0B][CHASE]! [JIMMY]!
+; [PWT:$04] みたいな あまいやりかたじゃ
+; このさき いきのびることさえ できやしねえぜ!
+; おれは がったいで ちからをえた
+; もう おまえたちと いっしょにいる ひつようも
+; なくなった[PWT:$0B]
+; じゃあな いきてたら またあおうぜ
+; >[HIM]は さっていった
+Message_08C837:
+#_08C837: db $D5, $2B ; send $2B to APU
+#_08C839: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08C83C: db $D4, $03 ; [COMMAND D4:03]
+#_08C83E: db $97 ; >
+#_08C83F: db $EF ; write chaos hero name
+#_08C840: db $3E, $CF, $61, $BA, $88, $3A, $CF, $38 ; は⎵オザワに⎵と
+#_08C848: db $AA, $46, $51, $2F, $30, $34 ; どめをさした
+#_08C84E: db $FC ; wait for key and new line
+#_08C84F: db $FE, $07, $40 ; ext command 07: something then wait 63 frames TODO
+#_08C852: db $DE, $01, $00, $1C, $01 ; [COMMAND DE:01,00,1C,01]
+#_08C857: db $E4, $00 ; load demon $00
+#_08C859: db $FA ; clear message box
+#_08C85A: db $EF ; write chaos hero name
+#_08C85B: db $9A ; :
+#_08C85C: db $F9 ; new line
+#_08C85D: db $48, $58, $38, $CF, $61, $BA, $88, $3A ; やっと⎵オザワに
+#_08C865: db $CF, $29, $38, $30, $43, $28, $51, $36 ; ⎵おとしまえをつ
+#_08C86D: db $2D, $34 ; けた
+#_08C86F: db $F2, $0B ; prewritten text $0B
+#_08C871: db $F2, $0B ; prewritten text $0B
+#_08C873: db $FC ; wait for key and new line
+#_08C874: db $FA ; clear message box
+#_08C875: db $F2, $0B ; prewritten text $0B
+#_08C877: db $F0 ; write player name
+#_08C878: db $94, $CF ; !⎵
+#_08C87A: db $EE ; write lawful hero name
+#_08C87B: db $94 ; !
+#_08C87C: db $F9 ; new line
+#_08C87D: db $F2, $04 ; prewritten text $04
+#_08C87F: db $CF, $44, $34, $26, $39, $CF, $25, $43 ; ⎵みたいな⎵あま
+#_08C887: db $26, $48, $4C, $2A, $34, $A2, $55 ; いやりかたじゃ
+#_08C88E: db $F9 ; new line
+#_08C88F: db $2E, $3D, $2F, $2B, $CF, $26, $2B, $3D ; このさき⎵いきの
+#_08C897: db $AC, $4D, $2E, $38, $2F, $28, $CF, $A9 ; びることさえ⎵で
+#_08C89F: db $2B, $48, $30, $3C, $28, $A4, $94 ; きやしねえぜ!
+#_08C8A6: db $FC ; wait for key and new line
+#_08C8A7: db $FA ; clear message box
+#_08C8A8: db $29, $4E, $3E, $CF, $9C, $58, $34, $26 ; おれは⎵がったい
+#_08C8B0: db $A9, $CF, $35, $2A, $4B, $51, $28, $34 ; で⎵ちからをえた
+#_08C8B8: db $F9 ; new line
+#_08C8B9: db $47, $27, $CF, $29, $43, $28, $34, $35 ; もう⎵おまえたち
+#_08C8C1: db $38, $CF, $26, $58, $30, $57, $3A, $26 ; と⎵いっしょにい
+#_08C8C9: db $4D, $CF, $3F, $36, $4A, $27, $47 ; る⎵ひつようも
+#_08C8D0: db $F9 ; new line
+#_08C8D1: db $39, $2C, $39, $58, $34 ; なくなった
+#_08C8D6: db $F2, $0B ; prewritten text $0B
+#_08C8D8: db $FC ; wait for key and new line
+#_08C8D9: db $FA ; clear message box
+#_08C8DA: db $A2, $55, $25, $39, $CF, $26, $2B, $37 ; じゃあな⎵いきて
+#_08C8E2: db $34, $4B, $CF, $43, $34, $25, $29, $27 ; たら⎵またあおう
+#_08C8EA: db $A4 ; ぜ
+#_08C8EB: db $FC ; wait for key and new line
+#_08C8EC: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08C8EE: db $FE, $27, $03 ; ext command 27: something 03 TODO
+#_08C8F1: db $FA ; clear message box
+#_08C8F2: db $97 ; >
+#_08C8F3: db $EF ; write chaos hero name
+#_08C8F4: db $3E, $CF, $2F, $58, $37, $26, $58, $34 ; は⎵さっていった
+#_08C8FC: db $FC ; wait for key and new line
+#_08C8FD: db $D0, $47 ; set progress bit $47
+#_08C8FF: db $D1, $FF ; clear progress bit $FF
+#_08C901: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -10103,13 +10591,26 @@ Message_08C978:
 #_08C98C: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_08C98D:
-#_08C98D: db $FA,$F2,$45,$FA,$F0,$3D,$CF,$2A
-#_08C995: db $4B,$A6,$2A,$4B,$F9,$35,$2A,$4B
-#_08C99D: db $9C,$CF,$3B,$2D,$37,$26,$58,$34
-#_08C9A5: db $F2,$0B,$FE,$1C,$03,$FE,$0B,$00
-#_08C9AD: db $0A,$FC,$D0,$4B,$D0,$A8,$FF
+
+; [PWT:$45]
+; [CHASE]の からだから
+; ちからが ぬけていった[PWT:$0B]
+Message_08C98D:
+#_08C98D: db $FA ; clear message box
+#_08C98E: db $F2, $45 ; prewritten text $45
+#_08C990: db $FA ; clear message box
+#_08C991: db $F0 ; write player name
+#_08C992: db $3D, $CF, $2A, $4B, $A6, $2A, $4B ; の⎵からだから
+#_08C999: db $F9 ; new line
+#_08C99A: db $35, $2A, $4B, $9C, $CF, $3B, $2D, $37 ; ちからが⎵ぬけて
+#_08C9A2: db $26, $58, $34 ; いった
+#_08C9A5: db $F2, $0B ; prewritten text $0B
+#_08C9A7: db $FE, $1C, $03 ; ext command 1C: $03 TODO
+#_08C9AA: db $FE, $0B, $00, $0A ; ext command 0B: something 0A, 00
+#_08C9AE: db $FC ; wait for key and new line
+#_08C9AF: db $D0, $4B ; set progress bit $4B
+#_08C9B1: db $D0, $A8 ; set progress bit $A8
+#_08C9B3: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -10132,7 +10633,7 @@ Message_08C9B4:
 ; [PWT:$18]の へいわは だいじょうぶなの
 ; だよ
 Message_08C9BB:
-#_08C9BB: db $D7, $24 ; [COMMAND D7:24H|36]
+#_08C9BB: db $D7, $24 ; [COMMAND D7:24]
 #_08C9BD: db $D2, $47, $5A ; test progress bit $47 for message $5A
 #_08C9C0: db $D6, $00, $A6, $70, $28 ; [COMMAND D6:00,A6,70,28]
 #_08C9C5: db $F2, $42 ; prewritten text $42
@@ -10461,8 +10962,8 @@ Message_08CC67:
 
 ; おんな:
 ; ちょっと いいですか?
-; あなたは カミを しんじますか?それは いけませ
-; ん
+; あなたは カミを しんじますか?
+; それは いけません
 ; わたしたち [PWT:$33]の ナカマに なっ
 ; て
 ; ともに カミに いのりましょう
@@ -11193,105 +11694,324 @@ Message_08D3A1:
 #_08D400: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08D401:
-#_08D401: db $F2,$16,$51,$CF,$34,$31,$2D,$37
-#_08D409: db $2C,$4E,$37,$F9,$42,$52,$38,$27
-#_08D411: db $3A,$CF,$25,$4C,$9C,$38,$27,$FC
-#_08D419: db $E9,$0C,$1B,$FA,$ED,$3D,$2E,$28
-#_08D421: db $9A,$F9,$F0,$2F,$52,$34,$35,$9C
-#_08D429: db $CF,$2B,$34,$3D,$A9,$31,$3C,$95
-#_08D431: db $FC,$FA,$F2,$15,$3D,$29,$38,$2E
-#_08D439: db $9A,$F9,$3E,$26,$CF,$33,$27,$A9
-#_08D441: db $31,$FC,$D6,$00,$00,$FA,$FE,$07
-#_08D449: db $3C,$D6,$00,$4C,$78,$28,$ED,$9A
-#_08D451: db $F9,$F0,$2F,$52,$F2,$0B,$F9,$EE
-#_08D459: db $2F,$52,$F2,$0B,$F9,$EF,$2F,$52
-#_08D461: db $F2,$0B,$F9,$42,$52,$38,$27,$3A
-#_08D469: db $CF,$F2,$31,$FC,$FA,$F2,$03,$3E
-#_08D471: db $CF,$50,$34,$30,$3D,$CF,$26,$3D
-#_08D479: db $35,$CF,$A6,$2D,$A9,$3E,$39,$2C
-#_08D481: db $F9,$F2,$1C,$3D,$CF,$3E,$46,$36
-#_08D489: db $51,$CF,$2A,$26,$3F,$31,$4D,$F9
-#_08D491: db $2F,$26,$A0,$3D,$CF,$2B,$AF,$27
-#_08D499: db $47,$CF,$31,$2C,$58,$37,$2C,$4E
-#_08D4A1: db $34,$3D,$A9,$31,$FC,$FA,$29,$4E
-#_08D4A9: db $26,$3A,$CF,$50,$34,$30,$34,$35
-#_08D4B1: db $9C,$CF,$36,$2A,$52,$A6,$A2,$57
-#_08D4B9: db $27,$42,$27,$51,$F9,$29,$29,$30
-#_08D4C1: db $28,$30,$43,$30,$57,$27,$FC,$FA
-#_08D4C9: db $EE,$2F,$52,$CF,$25,$39,$34,$9C
-#_08D4D1: db $CF,$29,$2F,$9C,$30,$3D,$F9,$ED
-#_08D4D9: db $2F,$52,$3E,$CF,$F2,$19,$3D,$F9
-#_08D4E1: db $F2,$17,$AD,$34,$26,$CF,$30,$4E
-#_08D4E9: db $26,$AD,$3A,$F9,$36,$4E,$2F,$4B
-#_08D4F1: db $4E,$34,$4A,$27,$A9,$31,$FC,$D4
-#_08D4F9: db $03,$EE,$9A,$F9,$33,$27,$A6,$58
-#_08D501: db $34,$3D,$2A,$F2,$0B,$FC,$FA,$ED
-#_08D509: db $9A,$F9,$EF,$2F,$52,$F9,$25,$39
-#_08D511: db $34,$47,$CF,$4A,$2C,$A0,$A5,$52
-#_08D519: db $A2,$3D,$CF,$61,$BA,$88,$F9,$2A
-#_08D521: db $4E,$38,$CF,$33,$3D,$B7,$85,$5A
-#_08D529: db $CB,$3D,$CF,$2A,$2C,$4E,$9C,$51
-#_08D531: db $F9,$F2,$02,$3E,$CF,$36,$2B,$38
-#_08D539: db $46,$43,$30,$34,$FC,$FA,$33,$2E
-#_08D541: db $51,$CF,$29,$33,$58,$37,$CF,$61
-#_08D549: db $BA,$88,$34,$35,$51,$CF,$38,$4B
-#_08D551: db $28,$4D,$F9,$2F,$2C,$32,$52,$51
-#_08D559: db $CF,$43,$47,$39,$2C,$3E,$A2,$46
-#_08D561: db $43,$31,$FC,$D6,$00,$00,$FE,$07
-#_08D569: db $3C,$D6,$00,$2E,$70,$28,$FA,$EE
-#_08D571: db $9A,$F9,$F0,$2C,$52,$CF,$AF,$2C
-#_08D579: db $3E,$F9,$ED,$51,$CF,$34,$31,$2D
-#_08D581: db $3A,$26,$2B,$43,$31,$F9,$3E,$48
-#_08D589: db $2C,$CF,$30,$39,$26,$38,$CF,$43
-#_08D591: db $3A,$25,$50,$39,$26,$CF,$2A,$47
-#_08D599: db $30,$4E,$43,$32,$52,$FC,$FA,$D6
-#_08D5A1: db $00,$00,$FE,$27,$02,$FE,$07,$3C
-#_08D5A9: db $DE,$01,$00,$35,$01,$E4,$00,$EF
-#_08D5B1: db $9A,$F9,$F0,$CF,$50,$4D,$26,$9C
-#_08D5B9: db $CF,$29,$4E,$47,$F9,$F2,$15,$3D
-#_08D5C1: db $CF,$2F,$2C,$32,$52,$3A,$CF,$26
-#_08D5C9: db $2C,$A4,$F9,$61,$BA,$88,$3E,$CF
-#_08D5D1: db $AA,$27,$30,$37,$47,$CF,$42,$27
-#_08D5D9: db $58,$37,$29,$2D,$39,$26,$52,$A6
-#_08D5E1: db $FC,$FA,$E7,$00,$FE,$27,$03,$FE
-#_08D5E9: db $07,$3C,$D6,$00,$4C,$78,$28,$ED
-#_08D5F1: db $9A,$F9,$25,$39,$34,$CF,$3F,$38
-#_08D5F9: db $4C,$3A,$CF,$39,$58,$37,$30,$43
-#_08D601: db $26,$43,$30,$34,$3C,$F2,$0B,$F9
-#_08D609: db $29,$3C,$9C,$26,$30,$43,$31,$F9
-#_08D611: db $50,$34,$30,$38,$CF,$2E,$27,$AA
-#_08D619: db $27,$51,$CF,$38,$47,$3A,$CF,$30
-#_08D621: db $37,$2C,$A6,$2F,$26,$FC,$FA,$F2
-#_08D629: db $19,$3D,$CF,$B9,$70,$5F,$38,$F9
-#_08D631: db $F2,$1B,$34,$26,$30,$3A,$CF,$25
-#_08D639: db $50,$39,$2D,$4E,$AB,$CF,$39,$4C
-#_08D641: db $43,$32,$52,$F9,$F2,$1C,$51,$CF
-#_08D649: db $3E,$46,$36,$2A,$4B,$CF,$31,$2C
-#_08D651: db $27,$34,$46,$3A,$FC,$D4,$03,$97
-#_08D659: db $ED,$9C,$CF,$F2,$2F,$FC,$FE,$26
-#_08D661: db $01,$FA,$ED,$9A,$F9,$F2,$19,$3D
-#_08D669: db $CF,$F2,$17,$AD,$34,$26,$CF,$30
-#_08D671: db $4E,$26,$AD,$3E,$F9,$F2,$18,$2A
-#_08D679: db $4B,$CF,$77,$B5,$68,$41,$CF,$26
-#_08D681: db $58,$34,$38,$2E,$4F,$A9,$31,$FC
-#_08D689: db $FA,$F2,$1B,$34,$26,$30,$2A,$52
-#_08D691: db $3E,$CF,$F2,$4C,$3A,$CF,$25,$4C
-#_08D699: db $43,$31,$9C,$F9,$F2,$19,$3D,$7C
-#_08D6A1: db $71,$7C,$3D,$CF,$82,$6E,$80,$2A
-#_08D6A9: db $4B,$F9,$35,$2A,$51,$CF,$38,$29
-#_08D6B1: db $4B,$39,$2D,$4E,$AB,$CF,$26,$2D
-#_08D6B9: db $39,$26,$A9,$30,$57,$27,$FC,$FA
-#_08D6C1: db $E1,$F2,$50,$34,$30,$34,$35,$9C
-#_08D6C9: db $CF,$4A,$27,$26,$30,$34,$F9,$2E
-#_08D6D1: db $3D,$CF,$F3,$9C,$CF,$25,$4E,$AB
-#_08D6D9: db $F9,$AA,$35,$4B,$3D,$CF,$39,$2A
-#_08D6E1: db $3A,$47,$CF,$3E,$26,$4E,$43,$31
-#_08D6E9: db $FC,$FA,$97,$F0,$3E,$CF,$F3,$51
-#_08D6F1: db $F9,$F2,$2D,$FC,$FE,$28,$FA,$ED
-#_08D6F9: db $9A,$F9,$2F,$25,$CF,$26,$2B,$43
-#_08D701: db $30,$57,$27,$FC,$D0,$0A,$FF
+
+; [PWT:$16]を たすけてくれて
+; ほんとうに ありがとう
+; [MOMO]のこえ:
+; [CHASE]さんたちが きたのですね?
+; [PWT:$15]のおとこ:
+; はい そうです
+; [MOMO]:
+; [CHASE]さん[PWT:$0B]
+; [JIMMY]さん[PWT:$0B]
+; [HIM]さん[PWT:$0B]
+; ほんとうに [PWT:$31]
+; [PWT:$03]は わたしの いのち だけでは
+; なく
+; [PWT:$1C]の はめつを かいひする
+; さいごの きぼうも すくってくれたのです
+; おれいに わたしたちが つかんだじょうほうを
+; おおしえしましょう
+; [JIMMY]さん あなたが おさがしの
+; [MOMO]さんは [PWT:$19]の
+; [PWT:$17]ぶたい しれいぶに
+; つれさられたようです
+; [JIMMY]:
+; そうだったのか[PWT:$0B]
+; [MOMO]:
+; [HIM]さん
+; あなたも よくごぞんじの オザワ
+; かれと そのグループの かくれがを
+; [PWT:$02]は つきとめました
+; そこを おそって オザワたちを とらえる
+; さくせんを まもなくはじめます
+; [JIMMY]:
+; [CHASE]くん ぼくは
+; [MOMO]を たすけにいきます
+; はやく しないと まにあわない かもしれません
+; [HIM]:
+; [CHASE] わるいが おれも
+; [PWT:$15]の さくせんに いくぜ
+; オザワは どうしても ほうっておけないんだ
+; [MOMO]:
+; あなた ひとりに なってしまいましたね[PWT:$0B]
+; おねがいします
+; わたしと こうどうを ともに してください
+; [PWT:$19]の ゴトウと
+; [PWT:$1B]たいしに あわなければ なりま
+; せん
+; [PWT:$1C]を はめつから すくうために
+; >[MOMO]が [PWT:$2F]
+; [MOMO]:
+; [PWT:$19]の [PWT:$17]ぶたい 
+; しれいぶは
+; [PWT:$18]から ヒガシへ いったところで
+; す
+; [PWT:$1B]たいしかんは [PWT:$4C]に
+;  ありますが
+; [PWT:$19]のミナミの ヨツヤから
+; ちかを とおらなければ いけないでしょう
+; わたしたちが よういした
+; この [ITEM]が あれば
+; どちらの なかにも はいれます
+; >[CHASE]は [ITEM]を
+; [PWT:$2D]
+; [MOMO]:
+; さあ いきましょう
+Message_08D401:
+#_08D401: db $F2, $16 ; prewritten text $16
+#_08D403: db $51, $CF, $34, $31, $2D, $37, $2C, $4E ; を⎵たすけてくれ
+#_08D40B: db $37 ; て
+#_08D40C: db $F9 ; new line
+#_08D40D: db $42, $52, $38, $27, $3A, $CF, $25, $4C ; ほんとうに⎵あり
+#_08D415: db $9C, $38, $27 ; がとう
+#_08D418: db $FC ; wait for key and new line
+#_08D419: db $E9, $0C, $1B ; go to message $1B maybe TODO
+#_08D41C: db $FA ; clear message box
+#_08D41D: db $ED ; write female protag name
+#_08D41E: db $3D, $2E, $28, $9A ; のこえ:
+#_08D422: db $F9 ; new line
+#_08D423: db $F0 ; write player name
+#_08D424: db $2F, $52, $34, $35, $9C, $CF, $2B, $34 ; さんたちが⎵きた
+#_08D42C: db $3D, $A9, $31, $3C, $95 ; のですね?
+#_08D431: db $FC ; wait for key and new line
+#_08D432: db $FA ; clear message box
+#_08D433: db $F2, $15 ; prewritten text $15
+#_08D435: db $3D, $29, $38, $2E, $9A ; のおとこ:
+#_08D43A: db $F9 ; new line
+#_08D43B: db $3E, $26, $CF, $33, $27, $A9, $31 ; はい⎵そうです
+#_08D442: db $FC ; wait for key and new line
+#_08D443: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08D446: db $FA ; clear message box
+#_08D447: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D44A: db $D6, $00, $4C, $78, $28 ; [COMMAND D6:00,4C,78,28]
+#_08D44F: db $ED ; write female protag name
+#_08D450: db $9A ; :
+#_08D451: db $F9 ; new line
+#_08D452: db $F0 ; write player name
+#_08D453: db $2F, $52 ; さん
+#_08D455: db $F2, $0B ; prewritten text $0B
+#_08D457: db $F9 ; new line
+#_08D458: db $EE ; write lawful hero name
+#_08D459: db $2F, $52 ; さん
+#_08D45B: db $F2, $0B ; prewritten text $0B
+#_08D45D: db $F9 ; new line
+#_08D45E: db $EF ; write chaos hero name
+#_08D45F: db $2F, $52 ; さん
+#_08D461: db $F2, $0B ; prewritten text $0B
+#_08D463: db $F9 ; new line
+#_08D464: db $42, $52, $38, $27, $3A, $CF ; ほんとうに⎵
+#_08D46A: db $F2, $31 ; prewritten text $31
+#_08D46C: db $FC ; wait for key and new line
+#_08D46D: db $FA ; clear message box
+#_08D46E: db $F2, $03 ; prewritten text $03
+#_08D470: db $3E, $CF, $50, $34, $30, $3D, $CF, $26 ; は⎵わたしの⎵い
+#_08D478: db $3D, $35, $CF, $A6, $2D, $A9, $3E, $39 ; のち⎵だけではな
+#_08D480: db $2C ; く
+#_08D481: db $F9 ; new line
+#_08D482: db $F2, $1C ; prewritten text $1C
+#_08D484: db $3D, $CF, $3E, $46, $36, $51, $CF, $2A ; の⎵はめつを⎵か
+#_08D48C: db $26, $3F, $31, $4D ; いひする
+#_08D490: db $F9 ; new line
+#_08D491: db $2F, $26, $A0, $3D, $CF, $2B, $AF, $27 ; さいごの⎵きぼう
+#_08D499: db $47, $CF, $31, $2C, $58, $37, $2C, $4E ; も⎵すくってくれ
+#_08D4A1: db $34, $3D, $A9, $31 ; たのです
+#_08D4A5: db $FC ; wait for key and new line
+#_08D4A6: db $FA ; clear message box
+#_08D4A7: db $29, $4E, $26, $3A, $CF, $50, $34, $30 ; おれいに⎵わたし
+#_08D4AF: db $34, $35, $9C, $CF, $36, $2A, $52, $A6 ; たちが⎵つかんだ
+#_08D4B7: db $A2, $57, $27, $42, $27, $51 ; じょうほうを
+#_08D4BD: db $F9 ; new line
+#_08D4BE: db $29, $29, $30, $28, $30, $43, $30, $57 ; おおしえしましょ
+#_08D4C6: db $27 ; う
+#_08D4C7: db $FC ; wait for key and new line
+#_08D4C8: db $FA ; clear message box
+#_08D4C9: db $EE ; write lawful hero name
+#_08D4CA: db $2F, $52, $CF, $25, $39, $34, $9C, $CF ; さん⎵あなたが⎵
+#_08D4D2: db $29, $2F, $9C, $30, $3D ; おさがしの
+#_08D4D7: db $F9 ; new line
+#_08D4D8: db $ED ; write female protag name
+#_08D4D9: db $2F, $52, $3E, $CF ; さんは⎵
+#_08D4DD: db $F2, $19 ; prewritten text $19
+#_08D4DF: db $3D ; の
+#_08D4E0: db $F9 ; new line
+#_08D4E1: db $F2, $17 ; prewritten text $17
+#_08D4E3: db $AD, $34, $26, $CF, $30, $4E, $26, $AD ; ぶたい⎵しれいぶ
+#_08D4EB: db $3A ; に
+#_08D4EC: db $F9 ; new line
+#_08D4ED: db $36, $4E, $2F, $4B, $4E, $34, $4A, $27 ; つれさられたよう
+#_08D4F5: db $A9, $31 ; です
+#_08D4F7: db $FC ; wait for key and new line
+#_08D4F8: db $D4, $03 ; [COMMAND D4:03]
+#_08D4FA: db $EE ; write lawful hero name
+#_08D4FB: db $9A ; :
+#_08D4FC: db $F9 ; new line
+#_08D4FD: db $33, $27, $A6, $58, $34, $3D, $2A ; そうだったのか
+#_08D504: db $F2, $0B ; prewritten text $0B
+#_08D506: db $FC ; wait for key and new line
+#_08D507: db $FA ; clear message box
+#_08D508: db $ED ; write female protag name
+#_08D509: db $9A ; :
+#_08D50A: db $F9 ; new line
+#_08D50B: db $EF ; write chaos hero name
+#_08D50C: db $2F, $52 ; さん
+#_08D50E: db $F9 ; new line
+#_08D50F: db $25, $39, $34, $47, $CF, $4A, $2C, $A0 ; あなたも⎵よくご
+#_08D517: db $A5, $52, $A2, $3D, $CF, $61, $BA, $88 ; ぞんじの⎵オザワ
+#_08D51F: db $F9 ; new line
+#_08D520: db $2A, $4E, $38, $CF, $33, $3D, $B7, $85 ; かれと⎵そのグル
+#_08D528: db $5A, $CB, $3D, $CF, $2A, $2C, $4E, $9C ; ープの⎵かくれが
+#_08D530: db $51 ; を
+#_08D531: db $F9 ; new line
+#_08D532: db $F2, $02 ; prewritten text $02
+#_08D534: db $3E, $CF, $36, $2B, $38, $46, $43, $30 ; は⎵つきとめまし
+#_08D53C: db $34 ; た
+#_08D53D: db $FC ; wait for key and new line
+#_08D53E: db $FA ; clear message box
+#_08D53F: db $33, $2E, $51, $CF, $29, $33, $58, $37 ; そこを⎵おそって
+#_08D547: db $CF, $61, $BA, $88, $34, $35, $51, $CF ; ⎵オザワたちを⎵
+#_08D54F: db $38, $4B, $28, $4D ; とらえる
+#_08D553: db $F9 ; new line
+#_08D554: db $2F, $2C, $32, $52, $51, $CF, $43, $47 ; さくせんを⎵まも
+#_08D55C: db $39, $2C, $3E, $A2, $46, $43, $31 ; なくはじめます
+#_08D563: db $FC ; wait for key and new line
+#_08D564: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08D567: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D56A: db $D6, $00, $2E, $70, $28 ; [COMMAND D6:00,2E,70,28]
+#_08D56F: db $FA ; clear message box
+#_08D570: db $EE ; write lawful hero name
+#_08D571: db $9A ; :
+#_08D572: db $F9 ; new line
+#_08D573: db $F0 ; write player name
+#_08D574: db $2C, $52, $CF, $AF, $2C, $3E ; くん⎵ぼくは
+#_08D57A: db $F9 ; new line
+#_08D57B: db $ED ; write female protag name
+#_08D57C: db $51, $CF, $34, $31, $2D, $3A, $26, $2B ; を⎵たすけにいき
+#_08D584: db $43, $31 ; ます
+#_08D586: db $F9 ; new line
+#_08D587: db $3E, $48, $2C, $CF, $30, $39, $26, $38 ; はやく⎵しないと
+#_08D58F: db $CF, $43, $3A, $25, $50, $39, $26, $CF ; ⎵まにあわない⎵
+#_08D597: db $2A, $47, $30, $4E, $43, $32, $52 ; かもしれません
+#_08D59E: db $FC ; wait for key and new line
+#_08D59F: db $FA ; clear message box
+#_08D5A0: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08D5A3: db $FE, $27, $02 ; ext command 27: something 02 TODO
+#_08D5A6: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D5A9: db $DE, $01, $00, $35, $01 ; [COMMAND DE:01,00,35,01]
+#_08D5AE: db $E4, $00 ; load demon $00
+#_08D5B0: db $EF ; write chaos hero name
+#_08D5B1: db $9A ; :
+#_08D5B2: db $F9 ; new line
+#_08D5B3: db $F0 ; write player name
+#_08D5B4: db $CF, $50, $4D, $26, $9C, $CF, $29, $4E ; ⎵わるいが⎵おれ
+#_08D5BC: db $47 ; も
+#_08D5BD: db $F9 ; new line
+#_08D5BE: db $F2, $15 ; prewritten text $15
+#_08D5C0: db $3D, $CF, $2F, $2C, $32, $52, $3A, $CF ; の⎵さくせんに⎵
+#_08D5C8: db $26, $2C, $A4 ; いくぜ
+#_08D5CB: db $F9 ; new line
+#_08D5CC: db $61, $BA, $88, $3E, $CF, $AA, $27, $30 ; オザワは⎵どうし
+#_08D5D4: db $37, $47, $CF, $42, $27, $58, $37, $29 ; ても⎵ほうってお
+#_08D5DC: db $2D, $39, $26, $52, $A6 ; けないんだ
+#_08D5E1: db $FC ; wait for key and new line
+#_08D5E2: db $FA ; clear message box
+#_08D5E3: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08D5E5: db $FE, $27, $03 ; ext command 27: something 03 TODO
+#_08D5E8: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D5EB: db $D6, $00, $4C, $78, $28 ; [COMMAND D6:00,4C,78,28]
+#_08D5F0: db $ED ; write female protag name
+#_08D5F1: db $9A ; :
+#_08D5F2: db $F9 ; new line
+#_08D5F3: db $25, $39, $34, $CF, $3F, $38, $4C, $3A ; あなた⎵ひとりに
+#_08D5FB: db $CF, $39, $58, $37, $30, $43, $26, $43 ; ⎵なってしまいま
+#_08D603: db $30, $34, $3C ; したね
+#_08D606: db $F2, $0B ; prewritten text $0B
+#_08D608: db $F9 ; new line
+#_08D609: db $29, $3C, $9C, $26, $30, $43, $31 ; おねがいします
+#_08D610: db $F9 ; new line
+#_08D611: db $50, $34, $30, $38, $CF, $2E, $27, $AA ; わたしと⎵こうど
+#_08D619: db $27, $51, $CF, $38, $47, $3A, $CF, $30 ; うを⎵ともに⎵し
+#_08D621: db $37, $2C, $A6, $2F, $26 ; てください
+#_08D626: db $FC ; wait for key and new line
+#_08D627: db $FA ; clear message box
+#_08D628: db $F2, $19 ; prewritten text $19
+#_08D62A: db $3D, $CF, $B9, $70, $5F, $38 ; の⎵ゴトウと
+#_08D630: db $F9 ; new line
+#_08D631: db $F2, $1B ; prewritten text $1B
+#_08D633: db $34, $26, $30, $3A, $CF, $25, $50, $39 ; たいしに⎵あわな
+#_08D63B: db $2D, $4E, $AB, $CF, $39, $4C, $43, $32 ; ければ⎵なりませ
+#_08D643: db $52 ; ん
+#_08D644: db $F9 ; new line
+#_08D645: db $F2, $1C ; prewritten text $1C
+#_08D647: db $51, $CF, $3E, $46, $36, $2A, $4B, $CF ; を⎵はめつから⎵
+#_08D64F: db $31, $2C, $27, $34, $46, $3A ; すくうために
+#_08D655: db $FC ; wait for key and new line
+#_08D656: db $D4, $03 ; [COMMAND D4:03]
+#_08D658: db $97 ; >
+#_08D659: db $ED ; write female protag name
+#_08D65A: db $9C, $CF ; が⎵
+#_08D65C: db $F2, $2F ; prewritten text $2F
+#_08D65E: db $FC ; wait for key and new line
+#_08D65F: db $FE, $26, $01 ; ext command 26: something 01 TODO
+#_08D662: db $FA ; clear message box
+#_08D663: db $ED ; write female protag name
+#_08D664: db $9A ; :
+#_08D665: db $F9 ; new line
+#_08D666: db $F2, $19 ; prewritten text $19
+#_08D668: db $3D, $CF ; の⎵
+#_08D66A: db $F2, $17 ; prewritten text $17
+#_08D66C: db $AD, $34, $26, $CF, $30, $4E, $26, $AD ; ぶたい⎵しれいぶ
+#_08D674: db $3E ; は
+#_08D675: db $F9 ; new line
+#_08D676: db $F2, $18 ; prewritten text $18
+#_08D678: db $2A, $4B, $CF, $77, $B5, $68, $41, $CF ; から⎵ヒガシへ⎵
+#_08D680: db $26, $58, $34, $38, $2E, $4F, $A9, $31 ; いったところです
+#_08D688: db $FC ; wait for key and new line
+#_08D689: db $FA ; clear message box
+#_08D68A: db $F2, $1B ; prewritten text $1B
+#_08D68C: db $34, $26, $30, $2A, $52, $3E, $CF ; たいしかんは⎵
+#_08D693: db $F2, $4C ; prewritten text $4C
+#_08D695: db $3A, $CF, $25, $4C, $43, $31, $9C ; に⎵ありますが
+#_08D69C: db $F9 ; new line
+#_08D69D: db $F2, $19 ; prewritten text $19
+#_08D69F: db $3D, $7C, $71, $7C, $3D, $CF, $82, $6E ; のミナミの⎵ヨツ
+#_08D6A7: db $80, $2A, $4B ; ヤから
+#_08D6AA: db $F9 ; new line
+#_08D6AB: db $35, $2A, $51, $CF, $38, $29, $4B, $39 ; ちかを⎵とおらな
+#_08D6B3: db $2D, $4E, $AB, $CF, $26, $2D, $39, $26 ; ければ⎵いけない
+#_08D6BB: db $A9, $30, $57, $27 ; でしょう
+#_08D6BF: db $FC ; wait for key and new line
+#_08D6C0: db $FA ; clear message box
+#_08D6C1: db $E1, $F2 ; set $0A50 to $F2
+#_08D6C3: db $50, $34, $30, $34, $35, $9C, $CF, $4A ; わたしたちが⎵よ
+#_08D6CB: db $27, $26, $30, $34 ; ういした
+#_08D6CF: db $F9 ; new line
+#_08D6D0: db $2E, $3D, $CF ; この⎵
+#_08D6D3: db $F3 ; write item name from $0A50
+#_08D6D4: db $9C, $CF, $25, $4E, $AB ; が⎵あれば
+#_08D6D9: db $F9 ; new line
+#_08D6DA: db $AA, $35, $4B, $3D, $CF, $39, $2A, $3A ; どちらの⎵なかに
+#_08D6E2: db $47, $CF, $3E, $26, $4E, $43, $31 ; も⎵はいれます
+#_08D6E9: db $FC ; wait for key and new line
+#_08D6EA: db $FA ; clear message box
+#_08D6EB: db $97 ; >
+#_08D6EC: db $F0 ; write player name
+#_08D6ED: db $3E, $CF ; は⎵
+#_08D6EF: db $F3 ; write item name from $0A50
+#_08D6F0: db $51 ; を
+#_08D6F1: db $F9 ; new line
+#_08D6F2: db $F2, $2D ; prewritten text $2D
+#_08D6F4: db $FC ; wait for key and new line
+#_08D6F5: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08D6F7: db $FA ; clear message box
+#_08D6F8: db $ED ; write female protag name
+#_08D6F9: db $9A ; :
+#_08D6FA: db $F9 ; new line
+#_08D6FB: db $2F, $25, $CF, $26, $2B, $43, $30, $57 ; さあ⎵いきましょ
+#_08D703: db $27 ; う
+#_08D704: db $FC ; wait for key and new line
+#_08D705: db $D0, $0A ; set progress bit $0A
+#_08D707: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -11465,7 +12185,7 @@ Message_08D85E:
 ; [PWT:$32]
 Message_08D8BA:
 #_08D8BA: db $D2, $2F, $57 ; test progress bit $2F for message $57
-#_08D8BD: db $D7, $16 ; [COMMAND D7:16H|22]
+#_08D8BD: db $D7, $16 ; [COMMAND D7:16]
 #_08D8BF: db $D6, $00, $42, $68, $28 ; [COMMAND D6:00,42,68,28]
 #_08D8C4: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D8C9: db $F9 ; new line
@@ -11480,7 +12200,7 @@ Message_08D8BA:
 ; [PWT:$31]
 Message_08D8D0:
 #_08D8D0: db $D2, $2F, $58 ; test progress bit $2F for message $58
-#_08D8D3: db $D7, $16 ; [COMMAND D7:16H|22]
+#_08D8D3: db $D7, $16 ; [COMMAND D7:16]
 #_08D8D5: db $D6, $00, $42, $68, $28 ; [COMMAND D6:00,42,68,28]
 #_08D8DA: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D8DF: db $F9 ; new line
@@ -11495,7 +12215,7 @@ Message_08D8D0:
 ; [PWT:$32]
 Message_08D8E6:
 #_08D8E6: db $D2, $2F, $59 ; test progress bit $2F for message $59
-#_08D8E9: db $D7, $16 ; [COMMAND D7:16H|22]
+#_08D8E9: db $D7, $16 ; [COMMAND D7:16]
 #_08D8EB: db $D6, $00, $42, $68, $28 ; [COMMAND D6:00,42,68,28]
 #_08D8F0: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D8F5: db $F9 ; new line
@@ -11510,7 +12230,7 @@ Message_08D8E6:
 ; [PWT:$31]
 Message_08D8FC:
 #_08D8FC: db $D2, $2F, $5A ; test progress bit $2F for message $5A
-#_08D8FF: db $D7, $16 ; [COMMAND D7:16H|22]
+#_08D8FF: db $D7, $16 ; [COMMAND D7:16]
 #_08D901: db $D6, $00, $42, $68, $28 ; [COMMAND D6:00,42,68,28]
 #_08D906: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D90B: db $F9 ; new line
@@ -11524,7 +12244,7 @@ Message_08D8FC:
 ; くろふく:
 Message_08D912:
 #_08D912: db $D2, $2F, $5B ; test progress bit $2F for message $5B
-#_08D915: db $D7, $15 ; [COMMAND D7:15H|21]
+#_08D915: db $D7, $15 ; [COMMAND D7:15]
 #_08D917: db $D6, $00, $64, $70, $28 ; [COMMAND D6:00,64,70,28]
 #_08D91C: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_08D921: db $F9 ; new line
@@ -11574,7 +12294,7 @@ Message_08D930:
 ; またのごらいてんを おまちしております
 Message_08D970:
 #_08D970: db $D2, $2F, $5D ; test progress bit $2F for message $5D
-#_08D973: db $D7, $15 ; [COMMAND D7:15H|21]
+#_08D973: db $D7, $15 ; [COMMAND D7:15]
 #_08D975: db $D6, $00, $64, $70, $28 ; [COMMAND D6:00,64,70,28]
 #_08D97A: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_08D97F: db $F9 ; new line
@@ -12074,7 +12794,8 @@ Message_08DDF4:
 ; おお だいはかいまえに つかわれていた
 ; ￥ を もってるじゃないか
 ; わしに ゆずってくれ ただとは いわん
-; なっ いいだろ?そうか[PWT:$0B]
+; なっ いいだろ?
+; そうか[PWT:$0B]
 Message_08DE1B:
 #_08DE1B: db $E1, $FE ; set $0A50 to $FE
 #_08DE1D: db $D6, $00, $89, $70, $28 ; [COMMAND D6:00,89,70,28]
@@ -12718,25 +13439,40 @@ Message_08E41D:
 
 Message_08E430:
 #_08E430: db $D5, $57 ; send $57 to APU
-#_08E432: db $D7, $04 ; [COMMAND D7:04H|4]
+#_08E432: db $D7, $04 ; [COMMAND D7:04]
 
 ;===================================================================================================
-; TODO
-DATA8_08E434:
-#_08E434: db $FE,$14,$20,$FE,$71,$FA,$2E,$35
-#_08E43C: db $4B,$3E,$CF,$FE,$74,$F9,$0D,$19
-#_08E444: db $17,$1A,$36,$27,$30,$52,$6C,$5A
-#_08E44C: db $7C,$71,$85,$CF,$A9,$31,$F9,$A0
-#_08E454: db $4C,$4A,$27,$3D,$2A,$34,$3E,$CF
-#_08E45C: db $5D,$64,$6A,$69,$30,$37,$2C,$A6
-#_08E464: db $2F,$26,$FC
+
+; こちらは 
+; COMPつうしんターミナル です
+; ごりようのかたは アクセスしてください
+Message_08E434:
+#_08E434: db $FE, $14, $20 ; ext command 14: set $0A2C to $20 TODO
+#_08E437: db $FE, $71 ; ext command 71: Call routine 0380FA TODO
+#_08E439: db $FA ; clear message box
+#_08E43A: db $2E, $35, $4B, $3E, $CF ; こちらは⎵
+#_08E43F: db $FE, $74 ; ext command 74: Write text from $07E1 TODO
+#_08E441: db $F9 ; new line
+#_08E442: db $0D, $19, $17, $1A, $36, $27, $30, $52 ; COMPつうしん
+#_08E44A: db $6C, $5A, $7C, $71, $85, $CF, $A9, $31 ; ターミナル⎵です
+#_08E452: db $F9 ; new line
+#_08E453: db $A0, $4C, $4A, $27, $3D, $2A, $34, $3E ; ごりようのかたは
+#_08E45B: db $CF, $5D, $64, $6A, $69, $30, $37, $2C ; ⎵アクセスしてく
+#_08E463: db $A6, $2F, $26 ; ださい
+#_08E466: db $FC ; wait for key and new line
 
 ;===================================================================================================
-; TODO
-DATA8_08E467:
-#_08E467: db $FE,$14,$20,$FA,$39,$3A,$51,$CF
-#_08E46F: db $30,$43,$31,$2A,$95,$D8,$02,$06
-#_08E477: db $0A,$05,$04,$19,$03
+
+; なにを しますか?
+Message_08E467:
+#_08E467: db $FE, $14, $20 ; ext command 14: set $0A2C to $20 TODO
+#_08E46A: db $FA ; clear message box
+#_08E46B: db $39, $3A, $51, $CF, $30, $43, $31, $2A ; なにを⎵しますか
+#_08E473: db $95 ; ?
+#_08E474: db $D8, $02 ; option list with 2 options
+#_08E476: db $06, $0A ; option 1 [0A]: message 06
+#_08E478: db $05, $04 ; option 2 [04]: message 05
+#_08E47A: db $19, $03 ; option 3 [03]: message 19
 
 ;===================================================================================================
 
@@ -12805,19 +13541,29 @@ Message_08E4E1:
 #_08E4F2: db $D3, $02 ; go to message $02
 
 ;===================================================================================================
-; TODO
-DATA8_08E4F4:
-#_08E4F4: db $FA,$FE,$6A,$09,$37,$52,$33,$27
-#_08E4FC: db $31,$4D,$AB,$30,$57,$51,$CF,$28
-#_08E504: db $4B,$52,$A9,$2C,$A6,$2F,$26,$FE
-#_08E50C: db $18,$02
+
+; てんそうするばしょを えらんでください
+Message_08E4F4:
+#_08E4F4: db $FA ; clear message box
+#_08E4F5: db $FE, $6A, $09 ; ext command 6A: R0FAEF9, maybe go to message 09 TODO
+#_08E4F8: db $37, $52, $33, $27, $31, $4D, $AB, $30 ; てんそうするばし
+#_08E500: db $57, $51, $CF, $28, $4B, $52, $A9, $2C ; ょを⎵えらんでく
+#_08E508: db $A6, $2F, $26 ; ださい
+#_08E50B: db $FE, $18, $02 ; ext command 18: $02 TODO
 
 ;===================================================================================================
-; TODO
-DATA8_08E50E:
-#_08E50E: db $FA,$A9,$3E,$CF,$FE,$19,$CF,$41
-#_08E516: db $F9,$37,$52,$33,$27,$30,$43,$31
-#_08E51E: db $FC,$FE,$5D
+
+; では  へ
+; てんそうします
+Message_08E50E:
+#_08E50E: db $FA ; clear message box
+#_08E50F: db $A9, $3E, $CF ; では⎵
+#_08E512: db $FE, $19 ; ext command 19: TODO
+#_08E514: db $CF, $41 ; ⎵へ
+#_08E516: db $F9 ; new line
+#_08E517: db $37, $52, $33, $27, $30, $43, $31 ; てんそうします
+#_08E51E: db $FC ; wait for key and new line
+#_08E51F: db $FE, $5D ; ext command 5D: call 3 routines TODO
 
 ;===================================================================================================
 
@@ -12957,30 +13703,57 @@ Message_08E59A:
 #_08E59D: db $D3, $23 ; go to message $23
 
 ;===================================================================================================
-; TODO
-DATA8_08E59F:
-#_08E59F: db $D7,$24,$D6,$00,$89,$70,$28,$FE
-#_08E5A7: db $70,$25,$FA,$A2,$26,$2F,$43,$9A
-#_08E5AF: db $F9,$30,$57,$27,$3C,$52,$34,$35
-#_08E5B7: db $4A,$F9,$43,$35,$3D,$47,$3D,$2A
-#_08E5BF: db $4B,$CF,$3E,$39,$30,$3E,$2B,$26
-#_08E5C7: db $37,$29,$4D,$FC,$2E,$2E,$47,$CF
-#_08E5CF: db $45,$2A,$30,$3D,$43,$35,$39,$44
-#_08E5D7: db $51,$CF,$38,$4C,$47,$AA,$30,$34
-#_08E5DF: db $F9,$31,$AE,$37,$3E,$CF,$29,$43
-#_08E5E7: db $28,$34,$35,$3D,$CF,$2A,$36,$48
-#_08E5EF: db $2C,$3D,$29,$2A,$9F,$93,$93,$93
-#_08E5F7: db $FC,$FA,$44,$39,$51,$CF,$A6,$26
-#_08E5FF: db $3F,$57,$27,$30,$37,$CF,$29,$4E
-#_08E607: db $26,$9C,$30,$34,$26,$F9,$2E,$3D
-#_08E60F: db $3E,$2E,$3D,$CF,$AA,$4E,$2A,$3F
-#_08E617: db $38,$36,$51,$CF,$29,$43,$28,$34
-#_08E61F: db $35,$3A,$48,$4F,$27,$FC,$D6,$00
-#_08E627: db $B6,$40,$48,$D6,$02,$B6,$70,$48
-#_08E62F: db $D6,$04,$B6,$A0,$48,$FA,$2F,$25
-#_08E637: db $CF,$28,$4B,$AD,$9C,$4A,$26,$F9
-#_08E63F: db $D8,$03,$1F,$27,$20,$28,$21,$29
-#_08E647: db $1E,$24
+
+; じいさま:
+; しょうねんたちよ
+; まちのものから はなしはきいておる
+; ここも むかしのまちなみを とりもどした
+; すべては おまえたちの かつやくのおかげ・・・
+; みなを だいひょうして おれいがしたい
+; このはこの どれかひとつを おまえたちにやろう
+; さあ えらぶがよい
+Message_08E59F:
+#_08E59F: db $D7, $24 ; [COMMAND D7:24]
+#_08E5A1: db $D6, $00, $89, $70, $28 ; [COMMAND D6:00,89,70,28]
+#_08E5A6: db $FE, $70, $25 ; ext command 70: R0FA346, maybe go to message 25 TODO
+#_08E5A9: db $FA ; clear message box
+#_08E5AA: db $A2, $26, $2F, $43, $9A ; じいさま:
+#_08E5AF: db $F9 ; new line
+#_08E5B0: db $30, $57, $27, $3C, $52, $34, $35, $4A ; しょうねんたちよ
+#_08E5B8: db $F9 ; new line
+#_08E5B9: db $43, $35, $3D, $47, $3D, $2A, $4B, $CF ; まちのものから⎵
+#_08E5C1: db $3E, $39, $30, $3E, $2B, $26, $37, $29 ; はなしはきいてお
+#_08E5C9: db $4D ; る
+#_08E5CA: db $FC ; wait for key and new line
+#_08E5CB: db $2E, $2E, $47, $CF, $45, $2A, $30, $3D ; ここも⎵むかしの
+#_08E5D3: db $43, $35, $39, $44, $51, $CF, $38, $4C ; まちなみを⎵とり
+#_08E5DB: db $47, $AA, $30, $34 ; もどした
+#_08E5DF: db $F9 ; new line
+#_08E5E0: db $31, $AE, $37, $3E, $CF, $29, $43, $28 ; すべては⎵おまえ
+#_08E5E8: db $34, $35, $3D, $CF, $2A, $36, $48, $2C ; たちの⎵かつやく
+#_08E5F0: db $3D, $29, $2A, $9F, $93, $93, $93 ; のおかげ・・・
+#_08E5F7: db $FC ; wait for key and new line
+#_08E5F8: db $FA ; clear message box
+#_08E5F9: db $44, $39, $51, $CF, $A6, $26, $3F, $57 ; みなを⎵だいひょ
+#_08E601: db $27, $30, $37, $CF, $29, $4E, $26, $9C ; うして⎵おれいが
+#_08E609: db $30, $34, $26 ; したい
+#_08E60C: db $F9 ; new line
+#_08E60D: db $2E, $3D, $3E, $2E, $3D, $CF, $AA, $4E ; このはこの⎵どれ
+#_08E615: db $2A, $3F, $38, $36, $51, $CF, $29, $43 ; かひとつを⎵おま
+#_08E61D: db $28, $34, $35, $3A, $48, $4F, $27 ; えたちにやろう
+#_08E624: db $FC ; wait for key and new line
+#_08E625: db $D6, $00, $B6, $40, $48 ; [COMMAND D6:00,B6,40,48]
+#_08E62A: db $D6, $02, $B6, $70, $48 ; [COMMAND D6:02,B6,70,48]
+#_08E62F: db $D6, $04, $B6, $A0, $48 ; [COMMAND D6:04,B6,A0,48]
+#_08E634: db $FA ; clear message box
+#_08E635: db $2F, $25, $CF, $28, $4B, $AD, $9C, $4A ; さあ⎵えらぶがよ
+#_08E63D: db $26 ; い
+#_08E63E: db $F9 ; new line
+#_08E63F: db $D8, $03 ; option list with 3 options
+#_08E641: db $1F, $27 ; option 1 [27]: message 1F
+#_08E643: db $20, $28 ; option 2 [28]: message 20
+#_08E645: db $21, $29 ; option 3 [29]: message 21
+#_08E647: db $1E, $24 ; option 4 [24]: message 1E
 
 ;===================================================================================================
 
@@ -13023,22 +13796,28 @@ Message_08E656:
 #_08E69E: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08E69F:
-#_08E69F: db $FE,$3C,$2B,$FE,$6E,$D6,$00,$B7
-#_08E6A7: db $40,$48,$D3,$2A
+
+Message_08E69F:
+#_08E69F: db $FE, $3C, $2B ; ext command 3C: 2B TODO
+#_08E6A2: db $FE, $6E ; ext command 6E: Call routine 0F8FCF TODO
+#_08E6A4: db $D6, $00, $B7, $40, $48 ; [COMMAND D6:00,B7,40,48]
+#_08E6A9: db $D3, $2A ; go to message $2A
 
 ;===================================================================================================
-; TODO
-DATA8_08E6AB:
-#_08E6AB: db $FE,$3C,$2B,$FE,$6E,$D6,$02,$B7
-#_08E6B3: db $70,$48,$D3,$2A
+
+Message_08E6AB:
+#_08E6AB: db $FE, $3C, $2B ; ext command 3C: 2B TODO
+#_08E6AE: db $FE, $6E ; ext command 6E: Call routine 0F8FCF TODO
+#_08E6B0: db $D6, $02, $B7, $70, $48 ; [COMMAND D6:02,B7,70,48]
+#_08E6B5: db $D3, $2A ; go to message $2A
 
 ;===================================================================================================
-; TODO
-DATA8_08E6B7:
-#_08E6B7: db $FE,$3C,$2B,$FE,$6E,$D6,$04,$B7
-#_08E6BF: db $A0,$48,$D3,$2A
+
+Message_08E6B7:
+#_08E6B7: db $FE, $3C, $2B ; ext command 3C: 2B TODO
+#_08E6BA: db $FE, $6E ; ext command 6E: Call routine 0F8FCF TODO
+#_08E6BC: db $D6, $04, $B7, $A0, $48 ; [COMMAND D6:04,B7,A0,48]
+#_08E6C1: db $D3, $2A ; go to message $2A
 
 ;===================================================================================================
 
@@ -13284,8 +14063,8 @@ Message_08E7E2:
 ;===================================================================================================
 
 ; もとのせかいに もどりたいなら
-; わたしのたのみ きいてくれるか?おぬしらのちから
-; では ここからでられんぞ
+; わたしのたのみ きいてくれるか?
+; おぬしらのちからでは ここからでられんぞ
 Message_08E904:
 #_08E904: db $47, $38, $3D, $32, $2A, $26, $3A, $CF ; もとのせかいに⎵
 #_08E90C: db $47, $AA, $4C, $34, $26, $39, $4B ; もどりたいなら
@@ -13414,8 +14193,8 @@ Message_08EA0F:
 ; ところで この[PWT:$36]に
 ; ふたりの かいじんが すみついておる
 ; かれらは いいぶきを もっているらしい
-; それを うけとってこい よいな?せっかく おしえ
-; て やったのに[PWT:$0B]
+; それを うけとってこい よいな?
+; せっかく おしえて やったのに[PWT:$0B]
 Message_08EA31:
 #_08EA31: db $E9, $0C, $0E ; go to message $0E maybe TODO
 #_08EA34: db $38, $2E, $4F, $A9, $CF, $2E, $3D ; ところで⎵この
@@ -13442,16 +14221,33 @@ Message_08EA31:
 #_08EA8D: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EA8E:
-#_08EA8E: db $D4,$03,$63,$6C,$3D,$CF,$38,$AC
-#_08EA96: db $4B,$51,$CF,$25,$2D,$37,$29,$26
-#_08EA9E: db $34,$F9,$26,$2C,$3D,$3E,$CF,$F0
-#_08EAA6: db $A6,$2D,$A6,$FC,$FA,$EE,$38,$CF
-#_08EAAE: db $EF,$3A,$3E,$F9,$42,$2A,$3A,$CF
-#_08EAB6: db $48,$4D,$2E,$38,$9C,$CF,$25,$4D
-#_08EABE: db $FC,$D0,$4A,$FE,$27,$02,$FE,$27
-#_08EAC6: db $03,$FF
+
+; キタの とびらを あけておいた
+; いくのは [CHASE]だけだ
+; [JIMMY]と [HIM]には
+; ほかに やることが ある
+Message_08EA8E:
+#_08EA8E: db $D4, $03 ; [COMMAND D4:03]
+#_08EA90: db $63, $6C, $3D, $CF, $38, $AC, $4B, $51 ; キタの⎵とびらを
+#_08EA98: db $CF, $25, $2D, $37, $29, $26, $34 ; ⎵あけておいた
+#_08EA9F: db $F9 ; new line
+#_08EAA0: db $26, $2C, $3D, $3E, $CF ; いくのは⎵
+#_08EAA5: db $F0 ; write player name
+#_08EAA6: db $A6, $2D, $A6 ; だけだ
+#_08EAA9: db $FC ; wait for key and new line
+#_08EAAA: db $FA ; clear message box
+#_08EAAB: db $EE ; write lawful hero name
+#_08EAAC: db $38, $CF ; と⎵
+#_08EAAE: db $EF ; write chaos hero name
+#_08EAAF: db $3A, $3E ; には
+#_08EAB1: db $F9 ; new line
+#_08EAB2: db $42, $2A, $3A, $CF, $48, $4D, $2E, $38 ; ほかに⎵やること
+#_08EABA: db $9C, $CF, $25, $4D ; が⎵ある
+#_08EABE: db $FC ; wait for key and new line
+#_08EABF: db $D0, $4A ; set progress bit $4A
+#_08EAC1: db $FE, $27, $02 ; ext command 27: something 02 TODO
+#_08EAC4: db $FE, $27, $03 ; ext command 27: something 03 TODO
+#_08EAC7: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -13500,34 +14296,89 @@ Message_08EB13:
 #_08EB25: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EB26:
-#_08EB26: db $2A,$28,$58,$37,$2B,$34,$39,$CF
-#_08EB2E: db $F0,$4A,$FC,$FA,$D6,$00,$00,$FE
-#_08EB36: db $07,$3C,$D6,$00,$2E,$70,$28,$EE
-#_08EB3E: db $9A,$F9,$AD,$A2,$A9,$CF,$39,$3A
-#_08EB46: db $4A,$4C,$A9,$31,$FC,$FA,$D6,$00
-#_08EB4E: db $00,$FE,$26,$02,$DE,$01,$00,$35
-#_08EB56: db $01,$E4,$00,$EF,$9A,$F9,$29,$33
-#_08EB5E: db $2A,$58,$34,$A2,$55,$3C,$28,$2A
-#_08EB66: db $FC,$E7,$00,$FA,$FE,$26,$03,$FE
-#_08EB6E: db $07,$3C,$D6,$00,$83,$70,$28,$F2
-#_08EB76: db $37,$9A,$F9
+
+; かえってきたな [CHASE]よ
+; [JIMMY]:
+; ぶじで なによりです
+; [HIM]:
+; おそかったじゃねえか
+; [PWT:$37]:
+Message_08EB26:
+#_08EB26: db $2A, $28, $58, $37, $2B, $34, $39, $CF ; かえってきたな⎵
+#_08EB2E: db $F0 ; write player name
+#_08EB2F: db $4A ; よ
+#_08EB30: db $FC ; wait for key and new line
+#_08EB31: db $FA ; clear message box
+#_08EB32: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08EB35: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08EB38: db $D6, $00, $2E, $70, $28 ; [COMMAND D6:00,2E,70,28]
+#_08EB3D: db $EE ; write lawful hero name
+#_08EB3E: db $9A ; :
+#_08EB3F: db $F9 ; new line
+#_08EB40: db $AD, $A2, $A9, $CF, $39, $3A, $4A, $4C ; ぶじで⎵なにより
+#_08EB48: db $A9, $31 ; です
+#_08EB4A: db $FC ; wait for key and new line
+#_08EB4B: db $FA ; clear message box
+#_08EB4C: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08EB4F: db $FE, $26, $02 ; ext command 26: something 02 TODO
+#_08EB52: db $DE, $01, $00, $35, $01 ; [COMMAND DE:01,00,35,01]
+#_08EB57: db $E4, $00 ; load demon $00
+#_08EB59: db $EF ; write chaos hero name
+#_08EB5A: db $9A ; :
+#_08EB5B: db $F9 ; new line
+#_08EB5C: db $29, $33, $2A, $58, $34, $A2, $55, $3C ; おそかったじゃね
+#_08EB64: db $28, $2A ; えか
+#_08EB66: db $FC ; wait for key and new line
+#_08EB67: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08EB69: db $FA ; clear message box
+#_08EB6A: db $FE, $26, $03 ; ext command 26: something 03 TODO
+#_08EB6D: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08EB70: db $D6, $00, $83, $70, $28 ; [COMMAND D6:00,83,70,28]
+#_08EB75: db $F2, $37 ; prewritten text $37
+#_08EB77: db $9A ; :
+#_08EB78: db $F9 ; new line
 
 ;===================================================================================================
-; TODO
-DATA8_08EB79:
-#_08EB79: db $A0,$2C,$4F,$27,$A6,$58,$34,$39
-#_08EB81: db $F9,$D0,$F1,$E1,$10,$FE,$28,$F0
-#_08EB89: db $3A,$3E,$CF,$2E,$4E,$51,$CF,$48
-#_08EB91: db $4F,$27,$FC,$FA,$FE,$3C,$15,$97
-#_08EB99: db $F0,$3E,$CF,$F3,$51,$F9,$F2,$2D
-#_08EBA1: db $FC,$FA,$F2,$37,$9A,$F9,$33,$4F
-#_08EBA9: db $33,$4F,$CF,$29,$3B,$30,$4B,$51
-#_08EBB1: db $CF,$47,$38,$3D,$32,$2A,$26,$3A
-#_08EBB9: db $F9,$47,$AA,$30,$37,$48,$4D,$38
-#_08EBC1: db $2B,$9C,$CF,$2B,$34,$4A,$27,$A6
-#_08EBC9: db $FC,$FA
+
+; ごくろうだったな
+; [CHASE]には これを やろう
+; >[CHASE]は [ITEM]を
+; [PWT:$2D]
+; [PWT:$37]:
+; そろそろ おぬしらを もとのせかいに
+; もどしてやるときが きたようだ
+Message_08EB79:
+#_08EB79: db $A0, $2C, $4F, $27, $A6, $58, $34, $39 ; ごくろうだったな
+#_08EB81: db $F9 ; new line
+#_08EB82: db $D0, $F1 ; set progress bit $F1
+#_08EB84: db $E1, $10 ; set $0A50 to $10
+#_08EB86: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08EB88: db $F0 ; write player name
+#_08EB89: db $3A, $3E, $CF, $2E, $4E, $51, $CF, $48 ; には⎵これを⎵や
+#_08EB91: db $4F, $27 ; ろう
+#_08EB93: db $FC ; wait for key and new line
+#_08EB94: db $FA ; clear message box
+#_08EB95: db $FE, $3C, $15 ; ext command 3C: 15 TODO
+#_08EB98: db $97 ; >
+#_08EB99: db $F0 ; write player name
+#_08EB9A: db $3E, $CF ; は⎵
+#_08EB9C: db $F3 ; write item name from $0A50
+#_08EB9D: db $51 ; を
+#_08EB9E: db $F9 ; new line
+#_08EB9F: db $F2, $2D ; prewritten text $2D
+#_08EBA1: db $FC ; wait for key and new line
+#_08EBA2: db $FA ; clear message box
+#_08EBA3: db $F2, $37 ; prewritten text $37
+#_08EBA5: db $9A ; :
+#_08EBA6: db $F9 ; new line
+#_08EBA7: db $33, $4F, $33, $4F, $CF, $29, $3B, $30 ; そろそろ⎵おぬし
+#_08EBAF: db $4B, $51, $CF, $47, $38, $3D, $32, $2A ; らを⎵もとのせか
+#_08EBB7: db $26, $3A ; いに
+#_08EBB9: db $F9 ; new line
+#_08EBBA: db $47, $AA, $30, $37, $48, $4D, $38, $2B ; もどしてやるとき
+#_08EBC2: db $9C, $CF, $2B, $34, $4A, $27, $A6 ; が⎵きたようだ
+#_08EBC9: db $FC ; wait for key and new line
+#_08EBCA: db $FA ; clear message box
 
 ;===================================================================================================
 
@@ -13592,7 +14443,8 @@ Message_08EC17:
 
 ;===================================================================================================
 
-; こうどうを きろくするのか?きろくしないのか
+; こうどうを きろくするのか?
+; きろくしないのか
 Message_08EC46:
 #_08EC46: db $FA ; clear message box
 #_08EC47: db $2E, $27, $AA, $27, $51, $CF, $2B, $4F ; こうどうを⎵きろ
@@ -13704,28 +14556,72 @@ Message_08ED07:
 #_08ED23: db $D3, $1D ; go to message $1D
 
 ;===================================================================================================
-; TODO
-DATA8_08ED25:
-#_08ED25: db $D2,$31,$20,$D5,$45,$D6,$00,$2B
-#_08ED2D: db $70,$48,$EE,$9A,$F9,$F2,$0B,$F2
-#_08ED35: db $0B,$F2,$0B,$FC,$A6,$4E,$A6,$94
-#_08ED3D: db $DF,$DF,$DF,$FC,$D6,$00,$2E,$70
-#_08ED45: db $28,$F2,$0B,$F0,$2C,$52,$94,$DF
-#_08ED4D: db $F9,$2E,$2E,$41,$CF,$2B,$37,$26
-#_08ED55: db $34,$52,$A9,$31,$2A,$FC,$FA,$2E
-#_08ED5D: db $2E,$3E,$CF,$26,$58,$34,$26,$F2
-#_08ED65: db $0B,$F9,$AF,$2C,$3E,$CF,$ED,$51
-#_08ED6D: db $CF,$2F,$9C,$30,$37,$26,$4D,$38
-#_08ED75: db $2B,$3A,$F9,$2B,$56,$27,$3A,$CF
-#_08ED7D: db $30,$4F,$26,$3F,$2A,$4C,$3A,$CF
-#_08ED85: db $36,$36,$43,$4E,$37,$F2,$0B,$F9
-#_08ED8D: db $2B,$9C,$CF,$36,$26,$34,$4B,$CF
-#_08ED95: db $2E,$2E,$3A,$CF,$26,$34,$52,$A9
-#_08ED9D: db $31,$F9,$38,$3A,$2A,$2C,$CF,$2E
-#_08EDA5: db $2E,$2A,$4B,$CF,$A9,$39,$2D,$4E
-#_08EDAD: db $AB,$CF,$26,$2D,$43,$32,$52,$3C
-#_08EDB5: db $FC,$D4,$03,$97,$EE,$9C,$CF,$F2
-#_08EDBD: db $2F,$FC,$FE,$26,$02,$D0,$31,$FF
+
+; [JIMMY]:
+; [PWT:$0B][PWT:$0B][PWT:$0B]
+; だれだ!
+; [PWT:$0B][CHASE]くん!
+; ここへ きていたんですか
+; ここは いったい[PWT:$0B]
+; ぼくは [MOMO]を さがしているときに
+; きゅうに しろいひかりに つつまれて[PWT:$0B]
+; きが ついたら ここに いたんです
+; とにかく ここから でなければ いけませんね
+; >[JIMMY]が [PWT:$2F]
+Message_08ED25:
+#_08ED25: db $D2, $31, $20 ; test progress bit $31 for message $20
+#_08ED28: db $D5, $45 ; send $45 to APU
+#_08ED2A: db $D6, $00, $2B, $70, $48 ; [COMMAND D6:00,2B,70,48]
+#_08ED2F: db $EE ; write lawful hero name
+#_08ED30: db $9A ; :
+#_08ED31: db $F9 ; new line
+#_08ED32: db $F2, $0B ; prewritten text $0B
+#_08ED34: db $F2, $0B ; prewritten text $0B
+#_08ED36: db $F2, $0B ; prewritten text $0B
+#_08ED38: db $FC ; wait for key and new line
+#_08ED39: db $A6, $4E, $A6, $94 ; だれだ!
+#_08ED3D: db $DF, $DF, $DF ; delay 7 frames [x3]
+#_08ED40: db $FC ; wait for key and new line
+#_08ED41: db $D6, $00, $2E, $70, $28 ; [COMMAND D6:00,2E,70,28]
+#_08ED46: db $F2, $0B ; prewritten text $0B
+#_08ED48: db $F0 ; write player name
+#_08ED49: db $2C, $52, $94 ; くん!
+#_08ED4C: db $DF ; delay 7 frames
+#_08ED4D: db $F9 ; new line
+#_08ED4E: db $2E, $2E, $41, $CF, $2B, $37, $26, $34 ; ここへ⎵きていた
+#_08ED56: db $52, $A9, $31, $2A ; んですか
+#_08ED5A: db $FC ; wait for key and new line
+#_08ED5B: db $FA ; clear message box
+#_08ED5C: db $2E, $2E, $3E, $CF, $26, $58, $34, $26 ; ここは⎵いったい
+#_08ED64: db $F2, $0B ; prewritten text $0B
+#_08ED66: db $F9 ; new line
+#_08ED67: db $AF, $2C, $3E, $CF ; ぼくは⎵
+#_08ED6B: db $ED ; write female protag name
+#_08ED6C: db $51, $CF, $2F, $9C, $30, $37, $26, $4D ; を⎵さがしている
+#_08ED74: db $38, $2B, $3A ; ときに
+#_08ED77: db $F9 ; new line
+#_08ED78: db $2B, $56, $27, $3A, $CF, $30, $4F, $26 ; きゅうに⎵しろい
+#_08ED80: db $3F, $2A, $4C, $3A, $CF, $36, $36, $43 ; ひかりに⎵つつま
+#_08ED88: db $4E, $37 ; れて
+#_08ED8A: db $F2, $0B ; prewritten text $0B
+#_08ED8C: db $F9 ; new line
+#_08ED8D: db $2B, $9C, $CF, $36, $26, $34, $4B, $CF ; きが⎵ついたら⎵
+#_08ED95: db $2E, $2E, $3A, $CF, $26, $34, $52, $A9 ; ここに⎵いたんで
+#_08ED9D: db $31 ; す
+#_08ED9E: db $F9 ; new line
+#_08ED9F: db $38, $3A, $2A, $2C, $CF, $2E, $2E, $2A ; とにかく⎵ここか
+#_08EDA7: db $4B, $CF, $A9, $39, $2D, $4E, $AB, $CF ; ら⎵でなければ⎵
+#_08EDAF: db $26, $2D, $43, $32, $52, $3C ; いけませんね
+#_08EDB5: db $FC ; wait for key and new line
+#_08EDB6: db $D4, $03 ; [COMMAND D4:03]
+#_08EDB8: db $97 ; >
+#_08EDB9: db $EE ; write lawful hero name
+#_08EDBA: db $9C, $CF ; が⎵
+#_08EDBC: db $F2, $2F ; prewritten text $2F
+#_08EDBE: db $FC ; wait for key and new line
+#_08EDBF: db $FE, $26, $02 ; ext command 26: something 02 TODO
+#_08EDC2: db $D0, $31 ; set progress bit $31
+#_08EDC4: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -13737,30 +14633,70 @@ Message_08EDC5:
 #_08EDC9: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EDCA:
-#_08EDCA: db $D2,$32,$22,$D5,$46,$D6,$00,$2A
-#_08EDD2: db $70,$48,$EF,$9A,$F9,$F2,$0B,$34
-#_08EDDA: db $CF,$34,$31,$2D,$37,$2C,$4E,$F9
-#_08EDE2: db $A6,$4E,$2A,$CF,$34,$31,$2D,$37
-#_08EDEA: db $2C,$4E,$FC,$FA,$F0,$2A,$94,$95
-#_08EDF2: db $DF,$CF,$34,$31,$2A,$58,$34,$A4
-#_08EDFA: db $FC,$D6,$00,$00,$DE,$01,$00,$35
-#_08EE02: db $01,$E4,$00,$61,$BA,$88,$3D,$48
-#_08EE0A: db $36,$47,$CF,$38,$4C,$3A,$9C,$30
-#_08EE12: db $35,$43,$58,$34,$30,$F9,$2E,$52
-#_08EE1A: db $39,$38,$2E,$4F,$3A,$CF,$40,$58
-#_08EE22: db $38,$AB,$2F,$4E,$37,$F9,$35,$2C
-#_08EE2A: db $30,$57,$27,$CF,$3F,$AA,$26,$46
-#_08EE32: db $3A,$25,$58,$34,$A4,$FC,$FA,$38
-#_08EE3A: db $3A,$2A,$2C,$CF,$2E,$2E,$3D,$5D
-#_08EE42: db $64,$7B,$3E,$F9,$29,$4E,$3F,$38
-#_08EE4A: db $4C,$A2,$55,$CF,$2B,$36,$26,$52
-#_08EE52: db $A6,$F9,$43,$34,$CF,$36,$26,$37
-#_08EE5A: db $2A,$32,$37,$47,$4B,$27,$A4,$FC
-#_08EE62: db $D4,$03,$97,$EF,$9C,$CF,$F2,$2F
-#_08EE6A: db $FC,$FE,$26,$03,$E7,$00,$D0,$32
-#_08EE72: db $FF
+
+; [HIM]:
+; [PWT:$0B]た たすけてくれ
+; だれか たすけてくれ
+; [CHASE]か!? たすかったぜ
+; オザワのやつも とりにがしちまったし
+; こんなところに ふっとばされて
+; ちくしょう ひどいめにあったぜ
+; とにかく ここのアクマは
+; おれひとりじゃ きついんだ
+; また ついてかせてもらうぜ
+; >[HIM]が [PWT:$2F]
+Message_08EDCA:
+#_08EDCA: db $D2, $32, $22 ; test progress bit $32 for message $22
+#_08EDCD: db $D5, $46 ; send $46 to APU
+#_08EDCF: db $D6, $00, $2A, $70, $48 ; [COMMAND D6:00,2A,70,48]
+#_08EDD4: db $EF ; write chaos hero name
+#_08EDD5: db $9A ; :
+#_08EDD6: db $F9 ; new line
+#_08EDD7: db $F2, $0B ; prewritten text $0B
+#_08EDD9: db $34, $CF, $34, $31, $2D, $37, $2C, $4E ; た⎵たすけてくれ
+#_08EDE1: db $F9 ; new line
+#_08EDE2: db $A6, $4E, $2A, $CF, $34, $31, $2D, $37 ; だれか⎵たすけて
+#_08EDEA: db $2C, $4E ; くれ
+#_08EDEC: db $FC ; wait for key and new line
+#_08EDED: db $FA ; clear message box
+#_08EDEE: db $F0 ; write player name
+#_08EDEF: db $2A, $94, $95 ; か!?
+#_08EDF2: db $DF ; delay 7 frames
+#_08EDF3: db $CF, $34, $31, $2A, $58, $34, $A4 ; ⎵たすかったぜ
+#_08EDFA: db $FC ; wait for key and new line
+#_08EDFB: db $D6, $00, $00 ; [COMMAND D6:00,00]
+#_08EDFE: db $DE, $01, $00, $35, $01 ; [COMMAND DE:01,00,35,01]
+#_08EE03: db $E4, $00 ; load demon $00
+#_08EE05: db $61, $BA, $88, $3D, $48, $36, $47, $CF ; オザワのやつも⎵
+#_08EE0D: db $38, $4C, $3A, $9C, $30, $35, $43, $58 ; とりにがしちまっ
+#_08EE15: db $34, $30 ; たし
+#_08EE17: db $F9 ; new line
+#_08EE18: db $2E, $52, $39, $38, $2E, $4F, $3A, $CF ; こんなところに⎵
+#_08EE20: db $40, $58, $38, $AB, $2F, $4E, $37 ; ふっとばされて
+#_08EE27: db $F9 ; new line
+#_08EE28: db $35, $2C, $30, $57, $27, $CF, $3F, $AA ; ちくしょう⎵ひど
+#_08EE30: db $26, $46, $3A, $25, $58, $34, $A4 ; いめにあったぜ
+#_08EE37: db $FC ; wait for key and new line
+#_08EE38: db $FA ; clear message box
+#_08EE39: db $38, $3A, $2A, $2C, $CF, $2E, $2E, $3D ; とにかく⎵ここの
+#_08EE41: db $5D, $64, $7B, $3E ; アクマは
+#_08EE45: db $F9 ; new line
+#_08EE46: db $29, $4E, $3F, $38, $4C, $A2, $55, $CF ; おれひとりじゃ⎵
+#_08EE4E: db $2B, $36, $26, $52, $A6 ; きついんだ
+#_08EE53: db $F9 ; new line
+#_08EE54: db $43, $34, $CF, $36, $26, $37, $2A, $32 ; また⎵ついてかせ
+#_08EE5C: db $37, $47, $4B, $27, $A4 ; てもらうぜ
+#_08EE61: db $FC ; wait for key and new line
+#_08EE62: db $D4, $03 ; [COMMAND D4:03]
+#_08EE64: db $97 ; >
+#_08EE65: db $EF ; write chaos hero name
+#_08EE66: db $9C, $CF ; が⎵
+#_08EE68: db $F2, $2F ; prewritten text $2F
+#_08EE6A: db $FC ; wait for key and new line
+#_08EE6B: db $FE, $26, $03 ; ext command 26: something 03 TODO
+#_08EE6E: db $E7, $00 ; call routine 01E5CD with value 00 TODO
+#_08EE70: db $D0, $32 ; set progress bit $32
+#_08EE72: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -13775,7 +14711,7 @@ Message_08EE73:
 
 ; >[ITEM]のいずみ
 Message_08EE78:
-#_08EE78: db $D7, $12 ; [COMMAND D7:12H|18]
+#_08EE78: db $D7, $12 ; [COMMAND D7:12]
 #_08EE7A: db $D5, $47 ; send $47 to APU
 #_08EE7C: db $E1, $B9 ; set $0A50 to $B9
 #_08EE7E: db $97 ; >
@@ -13815,11 +14751,21 @@ Message_08EE9D:
 #_08EEB0: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EEB1:
-#_08EEB1: db $D4,$03,$F1,$3E,$CF,$F3,$51,$F9
-#_08EEB9: db $FE,$3C,$28,$F2,$2D,$FC,$FE,$28
-#_08EEC1: db $FF
+
+; [NAME]は [ITEM]を
+; [PWT:$2D]
+Message_08EEB1:
+#_08EEB1: db $D4, $03 ; [COMMAND D4:03]
+#_08EEB3: db $F1 ; write specific name
+#_08EEB4: db $3E, $CF ; は⎵
+#_08EEB6: db $F3 ; write item name from $0A50
+#_08EEB7: db $51 ; を
+#_08EEB8: db $F9 ; new line
+#_08EEB9: db $FE, $3C, $28 ; ext command 3C: 28 TODO
+#_08EEBC: db $F2, $2D ; prewritten text $2D
+#_08EEBE: db $FC ; wait for key and new line
+#_08EEBF: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08EEC1: db $FF ; end of message
 
 ;===================================================================================================
 
@@ -13841,19 +14787,42 @@ Message_08EEC6:
 #_08EED2: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EED3:
-#_08EED3: db $DE,$01,$00,$21,$01,$EB,$01,$00
-#_08EEDB: db $22,$01,$E4,$00,$E4,$01,$D0,$3A
-#_08EEE3: db $F5,$9A,$F9,$A0,$2C,$4F,$27,$A6
-#_08EEEB: db $58,$34,$39,$CF,$2E,$2E,$51,$38
-#_08EEF3: db $29,$4E,$AB,$F9,$47,$38,$3D,$32
-#_08EEFB: db $2A,$26,$41,$47,$AA,$4E,$4D,$F2
-#_08EF03: db $0B,$FC,$FA,$E8,$9A,$F9,$F2,$0B
-#_08EF0B: db $A6,$9C,$CF,$29,$4E,$34,$35,$3A
-#_08EF13: db $CF,$2A,$37,$3C,$AB,$F9,$2E,$2E
-#_08EF1B: db $3E,$CF,$38,$29,$2F,$52,$94,$FC
-#_08EF23: db $D5,$39,$E5,$81,$2C
+
+; [DEMON1]:
+; ごくろうだったな ここをとおれば
+; もとのせかいへもどれる[PWT:$0B]
+; [DEMON2]:
+; [PWT:$0B]だが おれたちに かてねば
+; ここは とおさん!
+Message_08EED3:
+#_08EED3: db $DE, $01, $00, $21, $01 ; [COMMAND DE:01,00,21,01]
+#_08EED8: db $EB, $01, $00, $22, $01 ; [COMMAND EB:01,00,22,01]
+#_08EEDD: db $E4, $00 ; load demon $00
+#_08EEDF: db $E4, $01 ; load demon $01
+#_08EEE1: db $D0, $3A ; set progress bit $3A
+#_08EEE3: db $F5 ; write demon name from $050A
+#_08EEE4: db $9A ; :
+#_08EEE5: db $F9 ; new line
+#_08EEE6: db $A0, $2C, $4F, $27, $A6, $58, $34, $39 ; ごくろうだったな
+#_08EEEE: db $CF, $2E, $2E, $51, $38, $29, $4E, $AB ; ⎵ここをとおれば
+#_08EEF6: db $F9 ; new line
+#_08EEF7: db $47, $38, $3D, $32, $2A, $26, $41, $47 ; もとのせかいへも
+#_08EEFF: db $AA, $4E, $4D ; どれる
+#_08EF02: db $F2, $0B ; prewritten text $0B
+#_08EF04: db $FC ; wait for key and new line
+#_08EF05: db $FA ; clear message box
+#_08EF06: db $E8 ; write demon name from $050C
+#_08EF07: db $9A ; :
+#_08EF08: db $F9 ; new line
+#_08EF09: db $F2, $0B ; prewritten text $0B
+#_08EF0B: db $A6, $9C, $CF, $29, $4E, $34, $35, $3A ; だが⎵おれたちに
+#_08EF13: db $CF, $2A, $37, $3C, $AB ; ⎵かてねば
+#_08EF18: db $F9 ; new line
+#_08EF19: db $2E, $2E, $3E, $CF, $38, $29, $2F, $52 ; ここは⎵とおさん
+#_08EF21: db $94 ; !
+#_08EF22: db $FC ; wait for key and new line
+#_08EF23: db $D5, $39 ; send $39 to APU
+#_08EF25: db $E5, $81, $2C ; [COMMAND E5:81,2C]
 
 ;===================================================================================================
 
@@ -13923,10 +14892,15 @@ Message_08EF4F:
 #_08EFC6: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EFC7:
-#_08EFC7: db $D2,$3B,$46,$FE,$41,$00,$30,$F2
-#_08EFCF: db $3A,$D2,$EB,$2F,$D0,$3B
+
+; し[PWT:$3A]
+Message_08EFC7:
+#_08EFC7: db $D2, $3B, $46 ; test progress bit $3B for message $46
+#_08EFCA: db $FE, $41, $00 ; ext command 41: 00 TODO
+#_08EFCD: db $30 ; し
+#_08EFCE: db $F2, $3A ; prewritten text $3A
+#_08EFD0: db $D2, $EB, $2F ; test progress bit $EB for message $2F
+#_08EFD3: db $D0, $3B ; set progress bit $3B
 
 ;===================================================================================================
 
@@ -13942,10 +14916,15 @@ Message_08EFD6:
 #_08EFDA: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EFDB:
-#_08EFDB: db $D2,$3C,$46,$FE,$41,$01,$33,$F2
-#_08EFE3: db $3A,$D2,$EB,$32,$D0,$3C
+
+; そ[PWT:$3A]
+Message_08EFDB:
+#_08EFDB: db $D2, $3C, $46 ; test progress bit $3C for message $46
+#_08EFDE: db $FE, $41, $01 ; ext command 41: 01 TODO
+#_08EFE1: db $33 ; そ
+#_08EFE2: db $F2, $3A ; prewritten text $3A
+#_08EFE4: db $D2, $EB, $32 ; test progress bit $EB for message $32
+#_08EFE7: db $D0, $3C ; set progress bit $3C
 
 ;===================================================================================================
 
@@ -13961,10 +14940,15 @@ Message_08EFEA:
 #_08EFEE: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08EFEF:
-#_08EFEF: db $D2,$3D,$46,$FE,$41,$02,$36,$F2
-#_08EFF7: db $3A,$D2,$EB,$35,$D0,$3D
+
+; つ[PWT:$3A]
+Message_08EFEF:
+#_08EFEF: db $D2, $3D, $46 ; test progress bit $3D for message $46
+#_08EFF2: db $FE, $41, $02 ; ext command 41: 02 TODO
+#_08EFF5: db $36 ; つ
+#_08EFF6: db $F2, $3A ; prewritten text $3A
+#_08EFF8: db $D2, $EB, $35 ; test progress bit $EB for message $35
+#_08EFFB: db $D0, $3D ; set progress bit $3D
 
 ;===================================================================================================
 
@@ -13980,10 +14964,15 @@ Message_08EFFE:
 #_08F002: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08F003:
-#_08F003: db $D2,$3E,$46,$FE,$41,$03,$39,$F2
-#_08F00B: db $3A,$D2,$EB,$38,$D0,$3E
+
+; な[PWT:$3A]
+Message_08F003:
+#_08F003: db $D2, $3E, $46 ; test progress bit $3E for message $46
+#_08F006: db $FE, $41, $03 ; ext command 41: 03 TODO
+#_08F009: db $39 ; な
+#_08F00A: db $F2, $3A ; prewritten text $3A
+#_08F00C: db $D2, $EB, $38 ; test progress bit $EB for message $38
+#_08F00F: db $D0, $3E ; set progress bit $3E
 
 ;===================================================================================================
 
@@ -13999,10 +14988,15 @@ Message_08F012:
 #_08F016: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08F017:
-#_08F017: db $D2,$3F,$46,$FE,$41,$04,$3C,$F2
-#_08F01F: db $3A,$D2,$EB,$3B,$D0,$3F
+
+; ね[PWT:$3A]
+Message_08F017:
+#_08F017: db $D2, $3F, $46 ; test progress bit $3F for message $46
+#_08F01A: db $FE, $41, $04 ; ext command 41: 04 TODO
+#_08F01D: db $3C ; ね
+#_08F01E: db $F2, $3A ; prewritten text $3A
+#_08F020: db $D2, $EB, $3B ; test progress bit $EB for message $3B
+#_08F023: db $D0, $3F ; set progress bit $3F
 
 ;===================================================================================================
 
@@ -14018,10 +15012,15 @@ Message_08F026:
 #_08F02A: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08F02B:
-#_08F02B: db $D2,$40,$46,$FE,$41,$05,$3F,$F2
-#_08F033: db $3A,$D2,$EB,$3E,$D0,$40
+
+; ひ[PWT:$3A]
+Message_08F02B:
+#_08F02B: db $D2, $40, $46 ; test progress bit $40 for message $46
+#_08F02E: db $FE, $41, $05 ; ext command 41: 05 TODO
+#_08F031: db $3F ; ひ
+#_08F032: db $F2, $3A ; prewritten text $3A
+#_08F034: db $D2, $EB, $3E ; test progress bit $EB for message $3E
+#_08F037: db $D0, $40 ; set progress bit $40
 
 ;===================================================================================================
 
@@ -14037,10 +15036,15 @@ Message_08F03A:
 #_08F03E: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08F03F:
-#_08F03F: db $D2,$41,$46,$FE,$41,$06,$42,$F2
-#_08F047: db $3A,$D2,$EB,$41,$D0,$41
+
+; ほ[PWT:$3A]
+Message_08F03F:
+#_08F03F: db $D2, $41, $46 ; test progress bit $41 for message $46
+#_08F042: db $FE, $41, $06 ; ext command 41: 06 TODO
+#_08F045: db $42 ; ほ
+#_08F046: db $F2, $3A ; prewritten text $3A
+#_08F048: db $D2, $EB, $41 ; test progress bit $EB for message $41
+#_08F04B: db $D0, $41 ; set progress bit $41
 
 ;===================================================================================================
 
@@ -14056,10 +15060,15 @@ Message_08F04E:
 #_08F052: db $FF ; end of message
 
 ;===================================================================================================
-; TODO
-DATA8_08F053:
-#_08F053: db $D2,$42,$46,$FE,$41,$07,$45,$F2
-#_08F05B: db $3A,$D2,$EB,$44,$D0,$42
+
+; む[PWT:$3A]
+Message_08F053:
+#_08F053: db $D2, $42, $46 ; test progress bit $42 for message $46
+#_08F056: db $FE, $41, $07 ; ext command 41: 07 TODO
+#_08F059: db $45 ; む
+#_08F05A: db $F2, $3A ; prewritten text $3A
+#_08F05C: db $D2, $EB, $44 ; test progress bit $EB for message $44
+#_08F05F: db $D0, $42 ; set progress bit $42
 
 ;===================================================================================================
 
@@ -14317,11 +15326,23 @@ Message_08F212:
 #_08F25E: db $FA ; clear message box
 
 ;===================================================================================================
-; TODO
-DATA8_08F25F:
-#_08F25F: db $E1,$11,$97,$F0,$3E,$CF,$F3,$51
-#_08F267: db $F9,$FE,$3C,$5A,$F2,$2D,$FC,$FE
-#_08F26F: db $28,$D0,$23,$D3,$5B
+
+; >[CHASE]は [ITEM]を
+; [PWT:$2D]
+Message_08F25F:
+#_08F25F: db $E1, $11 ; set $0A50 to $11
+#_08F261: db $97 ; >
+#_08F262: db $F0 ; write player name
+#_08F263: db $3E, $CF ; は⎵
+#_08F265: db $F3 ; write item name from $0A50
+#_08F266: db $51 ; を
+#_08F267: db $F9 ; new line
+#_08F268: db $FE, $3C, $5A ; ext command 3C: 5A TODO
+#_08F26B: db $F2, $2D ; prewritten text $2D
+#_08F26D: db $FC ; wait for key and new line
+#_08F26E: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08F270: db $D0, $23 ; set progress bit $23
+#_08F272: db $D3, $5B ; go to message $5B
 
 ;===================================================================================================
 
@@ -14450,11 +15471,23 @@ Message_08F303:
 #_08F34D: db $FA ; clear message box
 
 ;===================================================================================================
-; TODO
-DATA8_08F34E:
-#_08F34E: db $E1,$12,$97,$F0,$3E,$CF,$F3,$51
-#_08F356: db $F9,$FE,$3C,$67,$F2,$2D,$FC,$FE
-#_08F35E: db $28,$D0,$24,$D3,$68
+
+; >[CHASE]は [ITEM]を
+; [PWT:$2D]
+Message_08F34E:
+#_08F34E: db $E1, $12 ; set $0A50 to $12
+#_08F350: db $97 ; >
+#_08F351: db $F0 ; write player name
+#_08F352: db $3E, $CF ; は⎵
+#_08F354: db $F3 ; write item name from $0A50
+#_08F355: db $51 ; を
+#_08F356: db $F9 ; new line
+#_08F357: db $FE, $3C, $67 ; ext command 3C: 67 TODO
+#_08F35A: db $F2, $2D ; prewritten text $2D
+#_08F35C: db $FC ; wait for key and new line
+#_08F35D: db $FE, $28 ; ext command 28: add item to inventory from $0A50
+#_08F35F: db $D0, $24 ; set progress bit $24
+#_08F361: db $D3, $68 ; go to message $68
 
 ;===================================================================================================
 
@@ -15817,6 +16850,9 @@ PTR16_08FC39:
 #_08FCAB: dw DATA8_08B827
 #_08FCAD: dw DATA8_08B88F
 #_08FCAF: dw DATA8_08B890
+
+;===================================================================================================
+
 PTR16_08FCB1:
 #_08FCB1: dw DATA8_08B8BD
 #_08FCB3: dw DATA8_08B927
@@ -15926,6 +16962,9 @@ PTR16_08FCB1:
 #_08FD83: dw DATA8_08CC43
 #_08FD85: dw DATA8_08CC46
 #_08FD87: dw DATA8_08CC67
+
+;===================================================================================================
+
 PTR16_08FD89:
 #_08FD89: dw DATA8_08CC83
 #_08FD8B: dw DATA8_08CCE0
@@ -16021,6 +17060,9 @@ PTR16_08FD89:
 #_08FE3F: dw DATA8_08E3D8
 #_08FE41: dw DATA8_08E401
 #_08FE43: dw DATA8_08E41D
+
+;===================================================================================================
+
 PTR16_08FE45:
 #_08FE45: dw DATA8_08E430
 #_08FE47: dw DATA8_08E434
@@ -16066,6 +17108,9 @@ PTR16_08FE45:
 #_08FE97: dw DATA8_08E6B7
 #_08FE99: dw DATA8_08E6C3
 #_08FE9B: dw DATA8_08E6DE
+
+;===================================================================================================
+
 PTR16_08FE9D:
 #_08FE9D: dw DATA8_08E6F1
 #_08FE9F: dw DATA8_08E6F3
@@ -16186,6 +17231,8 @@ PTR16_08FE9D:
 #_08FF85: dw DATA8_08F42A
 #_08FF87: dw DATA8_08F489
 
+;===================================================================================================
+
 data08FF89:
 #_08FF89: dw DATA8_08F48B
 #_08FF8B: dw DATA8_08F495
@@ -16196,6 +17243,8 @@ data08FF89:
 #_08FF95: dw DATA8_08F4D6
 #_08FF97: dw DATA8_08F4E1
 #_08FF99: dw DATA8_08F4E8
+
+;===================================================================================================
 
 data08FF9B:
 #_08FF9B: dw data08F4FE
@@ -16217,6 +17266,8 @@ data08FF9B:
 #_08FFBB: dw data08F562
 #_08FFBD: dw data08F568
 #_08FFBF: dw data08F570
+
+;===================================================================================================
 
 data08FFC1:
 #_08FFC1: dw data08F576

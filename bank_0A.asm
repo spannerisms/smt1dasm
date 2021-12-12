@@ -16734,4 +16734,3 @@ DATA8_0AFF28:
 #_0AFFE8: db $0D,$D4,$03,$F1,$3E,$CF,$F3,$51
 #_0AFFF0: db $F9,$FE,$3C,$10,$F2,$2D,$FC,$FE
 #_0AFFF8: db $28,$FF,$F2,$74,$D3,$0D,$FE,$AF
-
