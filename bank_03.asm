@@ -484,10 +484,16 @@ RelocateTextPointer:
 #_03833F: RTS
 
 TextDataBanks:
-#_038340: db $08,$09,$0A,$0B ; banks to read
+#_038340: db TextSets00>>16
+#_038341: db TextSets01>>16
+#_038342: db TextSets02>>16
+#_038343: db TextSets03>>16
 
 TextDataBankStarts:
-#_038344: dw $8000,$8000,$8000,$8000 ; start of the banks
+#_038344: dw TextSets00
+#_038346: dw TextSets01
+#_038348: dw TextSets02
+#_03834A: dw TextSets03
 
 routine03834C:
 #_03834C: PHP
@@ -969,9 +975,13 @@ TextCommand_SetBit:
 TextCommand_ResetBit:
 #_038629: db $FE,$FD,$FB,$F7,$EF,$DF,$BF,$7F
 
+;===================================================================================================
+
 TextCommand_01_ClearProgressBit:
 #_038631: SEP #$30
 #_038633: JSR GetNextTextByte
+
+;===================================================================================================
 
 ClearGameProgressBit:
 #_038636: PHA
@@ -991,15 +1001,20 @@ ClearGameProgressBit:
 #_03864B: PLB
 #_03864C: RTS
 
+;===================================================================================================
+
 ClearGameProgressBit_long:
 #_03864D: PHP
 #_03864E: JSR ClearGameProgressBit
 #_038651: PLP
 #_038652: RTL
 
+;===================================================================================================
+; relocate text pointer if condition met
+;===================================================================================================
 TextCommand_5C:
 TextCommand_02:
-#_038653: SEP #$30 ; relocate text pointer if condition met
+#_038653: SEP #$30
 #_038655: JSR GetNextTextByte
 #_038658: JSL TestGameProgressBit
 #_03865C: BCC .dontrelocate
@@ -1012,12 +1027,17 @@ TextCommand_02:
 #_038665: JSR GetNextTextByte
 #_038668: RTS
 
+;===================================================================================================
+; relocate text pointer always
+;===================================================================================================
 TextCommand_49_RelocateTextPointer:
 TextCommand_03_RelocateTextPointer:
-#_038669: SEP #$20 ; relocate text pointer always
+#_038669: SEP #$20
 #_03866B: SEP #$10
+
 #_03866D: JSR GetNextTextByte
 #_038670: JSR RelocateTextPointer
+
 #_038673: RTS
 
 ;===================================================================================================
@@ -1025,19 +1045,23 @@ TextCommand_03_RelocateTextPointer:
 TextCommand_04:
 #_038674: PHP
 #_038675: REP #$30
+
 #_038677: JSR GetNextTextByte
 #_03867A: AND.w #$00FF
 
 .branch03867D
 #_03867D: PHA
 #_03867E: PHP
+
 #_03867F: CMP.w $0A2A
 #_038682: BCS .branch038696
 
 #_038684: DEC.w $0A2A
 #_038687: LDA.w $0A2A
+
 #_03868A: JSL routine00BAC0
 #_03868E: JSL AddSelfAsVector
+
 #_038692: PLP
 #_038693: PLA
 #_038694: BRA .branch03867D
@@ -1054,8 +1078,7 @@ TextCommand_04:
 #_0386A5: RTS
 
 ;===================================================================================================
-; TODO what are these writes for?
-;===================================================================================================
+
 TextCommand_05_WriteToAPU:
 #_0386A6: SEP #$30
 #_0386A8: JSR GetNextTextByte
@@ -1542,15 +1565,18 @@ TextCommand_0E:
 #_03899D: JSR GetNextTextByte
 #_0389A0: JSR GetNextTextByte
 #_0389A3: STA.w $0BED
-
 #_0389A6: STA.w $050A
+
 #_0389A9: LDA.b #$00
 #_0389AB: JSR SetBF3BF9fromBFDpA
+
 #_0389AE: LDA.w $0BF3
 #_0389B1: STA.w $0506
+
 #_0389B4: JSR GetNextTextByte
 #_0389B7: STA.w $050E
 #_0389BA: STZ.w $0524
+
 #_0389BD: RTS
 
 ;===================================================================================================
@@ -2164,6 +2190,7 @@ routine038D8F:
 ;===================================================================================================
 TextCommand_13:
 #_038DB9: SEP #$30
+
 #_038DBB: JSL RearrangeItems
 #_038DBF: LDX.b #$00
 #_038DC1: STX.w $0C51
@@ -2497,6 +2524,7 @@ TextCommand_16:
 
 TextCommand_17:
 #_039001: REP #$20
+
 #_039003: JSR GetNextTextByte
 #_039006: AND.w #$0001
 #_039009: ASL A
@@ -3225,6 +3253,8 @@ TextCommand_2B:
 
 #_039486: RTS
 
+;===================================================================================================
+
 TextCommand_2C:
 #_039487: REP #$20
 #_039489: JSR routine0393C4
@@ -3278,6 +3308,10 @@ TextCommand_2C:
 #_0394E9: JSR routine0384F9
 #_0394EC: BRA .branch0394B6
 
+;===================================================================================================
+
+; TODO confirm unreachable?
+UNREACHABLE_0394EE:
 #_0394EE: SEP #$30
 #_0394F0: JSR GetNextTextByte
 #_0394F3: JSR RelocateTextPointer
@@ -3494,23 +3528,29 @@ WriteTextIndexW0A39:
 #_039652: RTS
 
 R039653_SomeTextPars:
+
 #_039653: REP #$30
 #_039655: LDA.w $0A33
 #_039658: CLC
 #_039659: ADC.w #$0004
 #_03965C: TAX
+
 #_03965D: LDA.w $0980
 #_039660: STA.w $0102
+
 #_039663: SEC
 #_039664: SBC.w #$0020
 #_039667: STA.w $0102,X
+
 #_03966A: LDA.w $0A33
 #_03966D: LSR A
 #_03966E: STA.w $0104
 #_039671: STA.w $0104,X
+
 #_039674: STA.w $0E00
 #_039677: STZ.w $0E02
 #_03967A: STX.w $0E04
+
 #_03967D: LDY.w #$0000
 
 .branch039680
@@ -3531,6 +3571,7 @@ R039653_SomeTextPars:
 
 #_0396A5: LDA.w #$0002
 #_0396A8: STA.w $0100
+
 #_0396AB: RTS
 
 ;===================================================================================================
@@ -4205,7 +4246,6 @@ routine03A768:
 .exit
 #_03A792: RTS
 
-; TODO see when this happens
 data03A793:
 #_03A793: dw TextExtCMD_00          ; 0x00
 #_03A795: dw TextExtCMD_01          ; 0x01
@@ -4545,10 +4585,13 @@ TextExtCMD_07:
 #_03A990: JSR routine0384F9
 
 #_03A993: SEP #$30
+
 #_03A995: JSR GetNextTextByte
 #_03A998: TAY
+
 #_03A999: DEY
 #_03A99A: JSL Update19xxUntilYZero
+
 #_03A99E: RTS
 
 ;===================================================================================================
@@ -9002,6 +9045,8 @@ TextCommand_35:
 #_03C74C: INX
 #_03C74D: BRA .branch03C73C
 
+;===================================================================================================
+
 data03C74F:
 #_03C74F: dw $B0AF,$B2B1,$B4B3,$B6B5
 #_03C757: dw $B8B7,$F8F7,$FFFF
@@ -9173,6 +9218,8 @@ TextCommand_3B:
 #_03C894: JSR GetNextTextByte
 #_03C897: JSR RelocateTextPointer
 #_03C89A: RTS
+
+;===================================================================================================
 
 TextCommand_3C:
 #_03C89B: REP #$30
@@ -10579,6 +10626,8 @@ data03D429:
 #_03D269: dw $8026,$8009,$8005,$8005
 #_03D271: dw $8003,$8007,$8007,$802A
 #_03D279: dw $802B,$802D
+
+;===================================================================================================
 
 TextCommand_5E:
 #_03D27D: SEP #$20

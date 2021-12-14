@@ -2,7 +2,7 @@ org $088000
 
 ;===================================================================================================
 
-data088000:
+TextSets03:
 #_088000: dw PTR16_08F5B9
 #_088002: dw PTR16_08F6DD
 #_088004: dw PTR16_08F6FF
@@ -99,7 +99,7 @@ Message_088059:
 ; ・・・
 Message_088062:
 #_088062: db $93, $93, $93 ; ・・・
-#_088065: db $FE, $07, $1E ; ext command 07: something then wait 29 frames TODO
+#_088065: db $FE, $07, $1E ; ext command 07: draw buffered text then wait 29 frames
 #_088068: db $FF ; end of message
 
 ;===================================================================================================
@@ -287,9 +287,7 @@ Message_08811B:
 Message_088124:
 #_088124: db $97, $BF, $5F, $8A, $87, $5A, $C3, $30 ; >ダウンロードし
 #_08812C: db $43, $31 ; ます
-#_08812E: db $DF ; delay 7 frames
-#_08812F: db $DF ; delay 7 frames
-#_088130: db $DF ; delay 7 frames
+#_08812E: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_088131: db $FF ; end of message
 
 ;===================================================================================================
@@ -525,7 +523,7 @@ Message_08825F:
 Message_088269:
 #_088269: db $FE, $26, $04 ; ext command 26: something 04 TODO
 #_08826C: db $D1, $EB ; clear progress bit $EB
-#_08826E: db $D4, $03 ; [COMMAND D4:03]
+#_08826E: db $D4, $03 ; set text box size to 3
 #_088270: db $F5 ; write demon name from $050A
 #_088271: db $9A ; :
 #_088272: db $F9 ; new line
@@ -728,9 +726,7 @@ Message_088380:
 #_088388: db $F2, $0B ; prewritten text 0B
 #_08838A: db $F9 ; new line
 #_08838B: db $A9, $2B, $34 ; できた
-#_08838E: db $DF ; delay 7 frames
-#_08838F: db $DF ; delay 7 frames
-#_088390: db $DF ; delay 7 frames
+#_08838E: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_088391: db $CF, $2E, $4E, $A9, $CF, $69, $70, $92 ; ⎵これで⎵ストッ
 #_088399: db $64, $A9, $2B, $4D ; クできる
 #_08839D: db $F9 ; new line
@@ -1015,13 +1011,9 @@ Message_088502:
 ; どうぐー どうぐー べんりな どうぐー
 Message_088511:
 #_088511: db $AA, $27, $9E, $5A ; どうぐー
-#_088515: db $DF ; delay 7 frames
-#_088516: db $DF ; delay 7 frames
-#_088517: db $DF ; delay 7 frames
+#_088515: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_088518: db $CF, $AA, $27, $9E, $5A ; ⎵どうぐー
-#_08851D: db $DF ; delay 7 frames
-#_08851E: db $DF ; delay 7 frames
-#_08851F: db $DF ; delay 7 frames
+#_08851D: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_088520: db $CF, $AE, $52, $4C, $39, $CF, $AA, $27 ; ⎵べんりな⎵どう
 #_088528: db $9E, $5A ; ぐー
 #_08852A: db $FF ; end of message
@@ -1044,7 +1036,7 @@ Message_08852B:
 ; [NAME]は
 ; たからばこを あきらめた
 Message_088543:
-#_088543: db $D4, $03 ; [COMMAND D4:03]
+#_088543: db $D4, $03 ; set text box size to 3
 #_088545: db $F1 ; write specific name
 #_088546: db $3E ; は
 #_088547: db $F9 ; new line
@@ -1056,7 +1048,7 @@ Message_088543:
 
 ; なかは からっぽだった
 Message_088555:
-#_088555: db $D4, $03 ; [COMMAND D4:03]
+#_088555: db $D4, $03 ; set text box size to 3
 #_088557: db $39, $2A, $3E, $CF, $2A, $4B, $58, $B4 ; なかは⎵からっぽ
 #_08855F: db $A6, $58, $34 ; だった
 #_088562: db $FF ; end of message
@@ -1113,60 +1105,60 @@ Message_088595:
 
 Message_0885A7:
 #_0885A7: db $D6, $05, $9F, $60, $00 ; place sprite 9F in slot 05 at XY:{60,00}
-#_0885AC: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885AC: db $FE, $07, $0B ; ext command 07: draw buffered text then wait 10 frames
 #_0885AF: db $D6, $05, $00 ; delete sprite in slot 05
-#_0885B2: db $FE, $07, $10 ; ext command 07: something then wait 15 frames TODO
+#_0885B2: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
 #_0885B5: db $D6, $05, $9F, $80, $00 ; place sprite 9F in slot 05 at XY:{80,00}
-#_0885BA: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885BA: db $FE, $07, $0B ; ext command 07: draw buffered text then wait 10 frames
 #_0885BD: db $D6, $05, $00 ; delete sprite in slot 05
-#_0885C0: db $FE, $07, $10 ; ext command 07: something then wait 15 frames TODO
+#_0885C0: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
 #_0885C3: db $D6, $05, $9F, $70, $00 ; place sprite 9F in slot 05 at XY:{70,00}
-#_0885C8: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885C8: db $FE, $07, $0B ; ext command 07: draw buffered text then wait 10 frames
 #_0885CB: db $D6, $05, $00 ; delete sprite in slot 05
-#_0885CE: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885CE: db $FE, $07, $08 ; ext command 07: draw buffered text then wait 7 frames
 #_0885D1: db $D6, $05, $9F, $60, $00 ; place sprite 9F in slot 05 at XY:{60,00}
-#_0885D6: db $FE, $07, $0B ; ext command 07: something then wait 10 frames TODO
+#_0885D6: db $FE, $07, $0B ; ext command 07: draw buffered text then wait 10 frames
 #_0885D9: db $D6, $05, $00 ; delete sprite in slot 05
-#_0885DC: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885DC: db $FE, $07, $08 ; ext command 07: draw buffered text then wait 7 frames
 #_0885DF: db $D6, $05, $9F, $70, $00 ; place sprite 9F in slot 05 at XY:{70,00}
-#_0885E4: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885E4: db $FE, $07, $08 ; ext command 07: draw buffered text then wait 7 frames
 #_0885E7: db $D6, $05, $9F, $80, $00 ; place sprite 9F in slot 05 at XY:{80,00}
-#_0885EC: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_0885EC: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_0885EF: db $D6, $05, $00 ; delete sprite in slot 05
-#_0885F2: db $FE, $07, $08 ; ext command 07: something then wait 7 frames TODO
+#_0885F2: db $FE, $07, $08 ; ext command 07: draw buffered text then wait 7 frames
 #_0885F5: db $D6, $05, $00 ; delete sprite in slot 05
-#_0885F8: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_0885F8: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_0885FB: db $D6, $05, $9F, $60, $00 ; place sprite 9F in slot 05 at XY:{60,00}
-#_088600: db $FE, $07, $07 ; ext command 07: something then wait 6 frames TODO
+#_088600: db $FE, $07, $07 ; ext command 07: draw buffered text then wait 6 frames
 #_088603: db $D6, $05, $9F, $70, $00 ; place sprite 9F in slot 05 at XY:{70,00}
-#_088608: db $FE, $07, $04 ; ext command 07: something then wait 3 frames TODO
+#_088608: db $FE, $07, $04 ; ext command 07: draw buffered text then wait 3 frames
 #_08860B: db $D6, $05, $00 ; delete sprite in slot 05
-#_08860E: db $FE, $07, $07 ; ext command 07: something then wait 6 frames TODO
+#_08860E: db $FE, $07, $07 ; ext command 07: draw buffered text then wait 6 frames
 #_088611: db $D6, $05, $00 ; delete sprite in slot 05
-#_088614: db $FE, $07, $04 ; ext command 07: something then wait 3 frames TODO
+#_088614: db $FE, $07, $04 ; ext command 07: draw buffered text then wait 3 frames
 #_088617: db $D6, $05, $9F, $80, $00 ; place sprite 9F in slot 05 at XY:{80,00}
-#_08861C: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08861C: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_08861F: db $D6, $05, $9F, $60, $00 ; place sprite 9F in slot 05 at XY:{60,00}
-#_088624: db $FE, $07, $05 ; ext command 07: something then wait 4 frames TODO
+#_088624: db $FE, $07, $05 ; ext command 07: draw buffered text then wait 4 frames
 #_088627: db $D6, $05, $00 ; delete sprite in slot 05
 #_08862A: db $FE, $46, $09 ; ext command 46: 09 TODO
-#_08862D: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08862D: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_088630: db $D6, $05, $00 ; delete sprite in slot 05
-#_088633: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_088633: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_088636: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_088637:
 #_088637: db $D6, $05, $9F, $80, $00 ; place sprite 9F in slot 05 at XY:{80,00}
-#_08863C: db $FE, $07, $02 ; ext command 07: something then wait 1 frames TODO
+#_08863C: db $FE, $07, $02 ; ext command 07: draw buffered text then wait 1 frames
 #_08863F: db $D6, $05, $9F, $70, $00 ; place sprite 9F in slot 05 at XY:{70,00}
-#_088644: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_088644: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_088647: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_088649: db $D6, $00, $00 ; delete sprite in slot 00
-#_08864C: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08864C: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08864F: db $D6, $05, $00 ; delete sprite in slot 05
-#_088652: db $FE, $07, $02 ; ext command 07: something then wait 1 frames TODO
+#_088652: db $FE, $07, $02 ; ext command 07: draw buffered text then wait 1 frames
 #_088655: db $D6, $05, $00 ; delete sprite in slot 05
 #_088658: db $D6, $07, $00 ; delete sprite in slot 07
 #_08865B: db $FF ; end of message
@@ -1493,7 +1485,7 @@ Message_08882F:
 Message_088841:
 #_088841: db $FA ; clear message box
 #_088842: db $AA, $27, $31, $4D, $95 ; どうする?
-#_088847: db $D8, $02 ; option list with 2 options
+#_088847: db $D8, $02 ; option list with 3 options
 #_088849: db $23, $0E ; option 1 [0E]: message 23
 #_08884B: db $24, $0F ; option 2 [0F]: message 24
 #_08884D: db $25, $01 ; option 3 [01]: message 25
@@ -5305,8 +5297,7 @@ Message_089B3D:
 ;===================================================================================================
 
 ; あの ゆりこって おんな
-; «リーダー»を ねらって ここに でいりしてたと
-; は
+; «リーダー»を ねらって ここに でいりしてたとは
 ; うかつだった
 ; これで «レジスタンス»も おしまいか
 Message_089B56:
@@ -5409,7 +5400,7 @@ Message_089C14:
 ; そこに はいってろ!
 Message_089C32:
 #_089C32: db $FE, $37 ; ext command 37: call 3 routines
-#_089C34: db $D7, $33 ; [COMMAND D7:33]
+#_089C34: db $D7, $33 ; load scene 33
 #_089C36: db $D2, $12, $0E ; test progress bit $12 for message $0E
 #_089C39: db $D2, $10, $09 ; test progress bit $10 for message $09
 #_089C3C: db $D2, $0F, $01 ; test progress bit $0F for message $01
@@ -5536,7 +5527,7 @@ Message_089D2C:
 #_089D48: db $A6, $58, $37, $CF, $2C, $4E, $43, $32 ; だって⎵くれませ
 #_089D50: db $52, $2A, $95 ; んか?
 #_089D53: db $F8, $05 ; YES/NO - go to message $05 if YES
-#_089D55: db $D4, $03 ; [COMMAND D4:03]
+#_089D55: db $D4, $03 ; set text box size to 3
 #_089D57: db $33, $27, $A9, $31, $2A ; そうですか
 #_089D5C: db $F2, $0B ; prewritten text 0B
 #_089D5E: db $31, $44, $43, $32, $52 ; すみません
@@ -5560,7 +5551,7 @@ Message_089D2C:
 ; [MOMO]の いえの
 ; となりに すんでいたんですか«・・・»
 Message_089D87:
-#_089D87: db $D4, $03 ; [COMMAND D4:03]
+#_089D87: db $D4, $03 ; set text box size to 3
 #_089D89: db $D6, $00, $2E, $70, $28 ; place sprite 2E in slot 00 at XY:{70,28}
 #_089D8E: db $42, $52, $38, $27, $A9, $31, $2A, $CF ; ほんとうですか⎵
 #_089D96: db $F2, $0D ; prewritten text 0D
@@ -5657,7 +5648,7 @@ Message_089E2F:
 #_089E3F: db $FA ; clear message box
 #_089E40: db $D5, $2B ; send $2B to APU
 #_089E42: db $D6, $07, $00 ; delete sprite in slot 07
-#_089E45: db $FE, $07, $40 ; ext command 07: something then wait 63 frames TODO
+#_089E45: db $FE, $07, $40 ; ext command 07: draw buffered text then wait 63 frames
 
 ;===================================================================================================
 
@@ -5720,7 +5711,7 @@ Message_089E7A:
 ; たいほしたのに どうして
 ; «びょういん»に いれるんだ?
 Message_089E92:
-#_089E92: db $D7, $85, $33 ; [COMMAND D7:85,33]
+#_089E92: db $D7, $85, $33 ; load scenes 85 and 33
 #_089E95: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089E98: db $D6, $07, $69, $70, $28 ; place sprite 69 in slot 07 at XY:{70,28}
 #_089E9D: db $2A, $52, $A2, $55, $9A ; かんじゃ:
@@ -5739,7 +5730,7 @@ Message_089E92:
 ; たすけてくれ! «かいぞうしゅじゅつ» なんて
 ; いやだ!!
 Message_089EBC:
-#_089EBC: db $D7, $85, $33 ; [COMMAND D7:85,33]
+#_089EBC: db $D7, $85, $33 ; load scenes 85 and 33
 #_089EBF: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089EC2: db $D6, $07, $4A, $78, $28 ; place sprite 4A in slot 07 at XY:{78,28}
 #_089EC7: db $2A, $52, $A2, $55, $9A ; かんじゃ:
@@ -5759,7 +5750,7 @@ Message_089EBC:
 ; じっけんを しているのです
 ; わたしも じっけんだいに なってしまう«・・・»
 Message_089EE3:
-#_089EE3: db $D7, $85, $33 ; [COMMAND D7:85,33]
+#_089EE3: db $D7, $85, $33 ; load scenes 85 and 33
 #_089EE6: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089EE9: db $D6, $07, $53, $70, $28 ; place sprite 53 in slot 07 at XY:{70,28}
 #_089EEE: db $2A, $2A, $4C, $26, $52, $9A ; かかりいん:
@@ -5782,7 +5773,7 @@ Message_089EE3:
 
 ; «くるまいすのおとこ»:
 Message_089F2B:
-#_089F2B: db $D7, $85, $33 ; [COMMAND D7:85,33]
+#_089F2B: db $D7, $85, $33 ; load scenes 85 and 33
 #_089F2E: db $D2, $14, $1B ; test progress bit $14 for message $1B
 #_089F31: db $D5, $47 ; send $47 to APU
 #_089F33: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
@@ -5941,7 +5932,7 @@ Message_089F7D:
 ; デビル アナライズ «プログラム»を
 ; «てにいれた»
 Message_08A0CB:
-#_08A0CB: db $D4, $03 ; [COMMAND D4:03]
+#_08A0CB: db $D4, $03 ; set text box size to 3
 #_08A0CD: db $33, $4E, $A9, $3E, $CF, $2B, $44, $3A ; それでは⎵きみに
 #_08A0D5: db $F9 ; new line
 #_08A0D6: db $2E, $3D, $CF ; この⎵
@@ -5957,7 +5948,7 @@ Message_08A0CB:
 #_08A0FD: db $26, $36, $A9, $47, $CF, $44, $4D, $2E ; いつでも⎵みるこ
 #_08A105: db $38, $9C, $A9, $2B, $4D ; とができる
 #_08A10A: db $FC ; wait for key and new line
-#_08A10B: db $D4, $03 ; [COMMAND D4:03]
+#_08A10B: db $D4, $03 ; set text box size to 3
 #_08A10D: db $97 ; >
 #_08A10E: db $F0 ; write player name
 #_08A10F: db $3E ; は
@@ -6015,7 +6006,7 @@ Message_08A158:
 ; そとへ でられるはずだ
 Message_08A170:
 #_08A170: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
-#_08A175: db $D4, $03 ; [COMMAND D4:03]
+#_08A175: db $D4, $03 ; set text box size to 3
 #_08A177: db $2F, $25, $CF, $03, $10, $3D, $CF ; さあ⎵2Fの⎵
 #_08A17E: db $F2, $8F ; prewritten text 8F
 #_08A180: db $30, $36, $41, $CF, $26, $2B, $34, $43 ; しつへ⎵いきたま
@@ -6079,7 +6070,7 @@ Message_08A1DA:
 
 Message_08A1EA:
 #_08A1EA: db $D6, $00, $76, $60, $28 ; place sprite 76 in slot 00 at XY:{60,28}
-#_08A1EF: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08A1EF: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08A1F2: db $D6, $00, $00 ; delete sprite in slot 00
 #_08A1F5: db $FE, $1A, $1C, $00, $01, $00, $02, $03 ; ext command 1A: 1C,00,01,00,02,03
 
@@ -6092,7 +6083,7 @@ Message_08A1EA:
 ; まだ わたしの いうことをきかぬ
 ; じゃあくな にんげんなのだな
 Message_08A1FD:
-#_08A1FD: db $D7, $0A ; [COMMAND D7:0A]
+#_08A1FD: db $D7, $0A ; load scene 0A
 #_08A1FF: db $D2, $14, $24 ; test progress bit $14 for message $24
 #_08A202: db $D5, $46 ; send $46 to APU
 #_08A204: db $D6, $00, $38, $70, $28 ; place sprite 38 in slot 00 at XY:{70,28}
@@ -6107,7 +6098,7 @@ Message_08A1FD:
 #_08A215: db $F9 ; new line
 #_08A216: db $31, $43, $32, $34, $3D, $2A, $95 ; すませたのか?
 #_08A21D: db $F8, $20 ; YES/NO - go to message $20 if YES
-#_08A21F: db $D4, $03 ; [COMMAND D4:03]
+#_08A21F: db $D4, $03 ; set text box size to 3
 #_08A221: db $33, $27, $2A, $CF, $39, $4B, $AB, $CF ; そうか⎵ならば⎵
 #_08A229: db $F2, $04 ; prewritten text 04
 #_08A22B: db $3E ; は
@@ -6126,7 +6117,7 @@ Message_08A1FD:
 ; «おまえたち»の こうどうは
 ; すべて おみとおしだ
 Message_08A24F:
-#_08A24F: db $D4, $03 ; [COMMAND D4:03]
+#_08A24F: db $D4, $03 ; set text box size to 3
 #_08A251: db $78, $78, $78, $78, $CF, $27, $33, $3E ; フフフフ⎵うそは
 #_08A259: db $CF, $41, $34, $A6, $39 ; ⎵へただな
 #_08A25E: db $FC ; wait for key and new line
@@ -6151,10 +6142,10 @@ Message_08A274:
 #_08A28A: db $4D ; る
 #_08A28B: db $FC ; wait for key and new line
 #_08A28C: db $FE, $46, $09 ; ext command 46: 09 TODO
-#_08A28F: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08A28F: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_08A292: db $D5, $39 ; send $39 to APU
 #_08A294: db $D6, $00, $9D, $78, $40 ; place sprite 9D in slot 00 at XY:{78,40}
-#_08A299: db $FE, $07, $13 ; ext command 07: something then wait 18 frames TODO
+#_08A299: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_08A29C: db $DE, $01, $00, $00, $01 ; [COMMAND DE:01,00,00,01]
 #_08A2A1: db $E4, $00 ; load demon $00
 #_08A2A3: db $E5, $01, $23 ; [COMMAND E5:01,23]
@@ -6187,7 +6178,7 @@ Message_08A2AB:
 ; >ここで «かいぞうしゅじゅつ»が
 ; おこなわれて いたようだ
 Message_08A2C3:
-#_08A2C3: db $D4, $03 ; [COMMAND D4:03]
+#_08A2C3: db $D4, $03 ; set text box size to 3
 #_08A2C5: db $97, $2E, $2E, $A9, $CF ; >ここで⎵
 #_08A2CA: db $F2, $14 ; prewritten text 14
 #_08A2CC: db $9C ; が
@@ -6248,7 +6239,7 @@ Message_08A314:
 
 Message_08A325:
 #_08A325: db $D6, $00, $75, $60, $28 ; place sprite 75 in slot 00 at XY:{60,28}
-#_08A32A: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08A32A: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08A32D: db $D6, $00, $00 ; delete sprite in slot 00
 #_08A330: db $D2, $0C, $2B ; test progress bit $0C for message $2B
 
@@ -6365,7 +6356,7 @@ Message_08A389:
 #_08A447: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_08A44A: db $FE, $24, $FF ; ext command 24: something FF TODO
 #_08A44D: db $FE, $1A, $12, $02, $00, $00, $02, $04 ; ext command 1A: 12,02,00,00,02,04
-#_08A455: db $D4, $03 ; [COMMAND D4:03]
+#_08A455: db $D4, $03 ; set text box size to 3
 #_08A457: db $FE, $37 ; ext command 37: call 3 routines
 #_08A459: db $FE, $1C, $00 ; ext command 1C: $00 TODO
 #_08A45C: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
@@ -6380,7 +6371,7 @@ Message_08A389:
 #_08A47A: db $FE, $26, $02 ; ext command 26: something 02 TODO
 #_08A47D: db $FA ; clear message box
 #_08A47E: db $D6, $00, $00 ; delete sprite in slot 00
-#_08A481: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A481: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A484: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
 #_08A489: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
 #_08A48D: db $EF ; write chaos hero name
@@ -6446,7 +6437,7 @@ Message_08A4FC:
 ; ただいま れっしゃは すべて
 ; うんこうていし しております
 Message_08A520:
-#_08A520: db $D7, $0E ; [COMMAND D7:0E]
+#_08A520: db $D7, $0E ; load scene 0E
 #_08A522: db $D2, $06, $05 ; test progress bit $06 for message $05
 #_08A525: db $D6, $00, $20, $40, $28 ; place sprite 20 in slot 00 at XY:{40,28}
 #_08A52A: db $D6, $01, $20, $A0, $28 ; place sprite 20 in slot 01 at XY:{A0,28}
@@ -6620,7 +6611,7 @@ Message_08A6B0:
 ; [ITEM]を おつかいください«・・・»
 ; [NAME]は [ITEM]を つかった
 Message_08A6D7:
-#_08A6D7: db $D7, $0E ; [COMMAND D7:0E]
+#_08A6D7: db $D7, $0E ; load scene 0E
 #_08A6D9: db $97, $60, $66, $5A, $C5, $85 ; >エコービル
 #_08A6DF: db $FC ; wait for key and new line
 #_08A6E0: db $E1, $F0 ; set $0A50 to $F0
@@ -6656,7 +6647,7 @@ Message_08A70D:
 ; ウェイトレス:
 ; «いらっしゃいませ»
 Message_08A712:
-#_08A712: db $D7, $17 ; [COMMAND D7:17]
+#_08A712: db $D7, $17 ; load scene 17
 #_08A714: db $D6, $01, $41, $68, $28 ; place sprite 41 in slot 01 at XY:{68,28}
 #_08A719: db $5F, $8D, $5E, $70, $86, $69, $9A ; ウェイトレス:
 #_08A720: db $F9 ; new line
@@ -6670,7 +6661,7 @@ Message_08A712:
 ; ウェイトレス:
 ; «ありがとうございました»
 Message_08A727:
-#_08A727: db $D7, $17 ; [COMMAND D7:17]
+#_08A727: db $D7, $17 ; load scene 17
 #_08A729: db $D6, $01, $41, $68, $28 ; place sprite 41 in slot 01 at XY:{68,28}
 #_08A72E: db $5F, $8D, $5E, $70, $86, $69, $9A ; ウェイトレス:
 #_08A735: db $F9 ; new line
@@ -6684,7 +6675,7 @@ Message_08A727:
 ; >«びょういん»
 ; «とびらは とざされている»
 Message_08A73C:
-#_08A73C: db $D7, $0E ; [COMMAND D7:0E]
+#_08A73C: db $D7, $0E ; load scene 0E
 #_08A73E: db $97 ; >
 #_08A73F: db $F2, $35 ; prewritten text 35
 #_08A741: db $FC ; wait for key and new line
@@ -6749,19 +6740,19 @@ Message_08A77C:
 #_08A7A9: db $28, $58 ; えっ
 #_08A7AB: db $FC ; wait for key and new line
 #_08A7AC: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
-#_08A7B0: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A7B0: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A7B3: db $D6, $00, $00 ; delete sprite in slot 00
 #_08A7B6: db $DE, $00, $00, $E4, $01 ; [COMMAND DE:00,00,E4,01]
 #_08A7BB: db $D5, $39 ; send $39 to APU
 #_08A7BD: db $E4, $00 ; load demon $00
-#_08A7BF: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A7BF: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A7C2: db $D5, $3C ; send $3C to APU
-#_08A7C4: db $D4, $02 ; [COMMAND D4:02]
+#_08A7C4: db $D4, $02 ; set text box size to 2
 #_08A7C6: db $F6 ; write class name from $506
 #_08A7C7: db $CF ; ⎵
 #_08A7C8: db $F5 ; write demon name from $050A
 #_08A7C9: db $9C, $CF, $A9, $34, $94 ; が⎵でた!
-#_08A7CE: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08A7CE: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A7D1: db $F9 ; new line
 #_08A7D2: db $F5 ; write demon name from $050A
 #_08A7D3: db $3E, $CF, $38, $AC, $2A, $2A, $58, $37 ; は⎵とびかかって
@@ -6840,7 +6831,7 @@ Message_08A842:
 
 Message_08A855:
 #_08A855: db $D5, $50 ; send $50 to APU
-#_08A857: db $D7, $85, $18 ; [COMMAND D7:85,18]
+#_08A857: db $D7, $85, $18 ; load scenes 85 and 18
 #_08A85A: db $D6, $00, $3D, $70, $28 ; place sprite 3D in slot 00 at XY:{70,28}
 #_08A85F: db $D2, $07, $18 ; test progress bit $07 for message $18
 #_08A862: db $D3, $19 ; go to message $19
@@ -7289,7 +7280,7 @@ Message_08ABF3:
 Message_08AC53:
 #_08AC53: db $D1, $FE ; clear progress bit $FE
 #_08AC55: db $D0, $04 ; set progress bit $04
-#_08AC57: db $D7, $07 ; [COMMAND D7:07]
+#_08AC57: db $D7, $07 ; load scene 07
 #_08AC59: db $FE, $25, $FF ; ext command 25: something FF TODO
 #_08AC5C: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_08AC5F: db $FE, $24, $FF ; ext command 24: something FF TODO
@@ -7362,10 +7353,10 @@ Message_08AC53:
 #_08AD57: db $26, $CF, $3F, $38, $AC, $38, $51, $CF ; い⎵ひとびとを⎵
 #_08AD5F: db $31, $2C, $27, $34, $46, $3A ; すくうために
 #_08AD65: db $FC ; wait for key and new line
-#_08AD66: db $D4, $03 ; [COMMAND D4:03]
+#_08AD66: db $D4, $03 ; set text box size to 3
 #_08AD68: db $F2, $25 ; prewritten text 25
 #_08AD6A: db $F9 ; new line
-#_08AD6B: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08AD6B: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08AD6E: db $F2, $13 ; prewritten text 13
 #_08AD70: db $F2, $08 ; prewritten text 08
 #_08AD72: db $51, $CF ; を⎵
@@ -7395,10 +7386,10 @@ Message_08AD7B:
 #_08AD88: db $2A, $52, $32, $26, $30, $34, $3D, $A9 ; かんせいしたので
 #_08AD90: db $CF, $29, $2C, $4F, $27 ; ⎵おくろう
 #_08AD95: db $FC ; wait for key and new line
-#_08AD96: db $D4, $03 ; [COMMAND D4:03]
+#_08AD96: db $D4, $03 ; set text box size to 3
 #_08AD98: db $F2, $25 ; prewritten text 25
 #_08AD9A: db $F9 ; new line
-#_08AD9B: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08AD9B: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08AD9E: db $F2, $59 ; prewritten text 59
 #_08ADA0: db $F2, $08 ; prewritten text 08
 #_08ADA2: db $51, $CF ; を⎵
@@ -7412,7 +7403,7 @@ Message_08AD7B:
 ; ははのこえ:
 ; [CHASE] いつまで ねてるの!
 Message_08ADA9:
-#_08ADA9: db $D4, $03 ; [COMMAND D4:03]
+#_08ADA9: db $D4, $03 ; set text box size to 3
 #_08ADAB: db $97, $36, $27, $30, $52, $9C, $CF, $2B ; >つうしんが⎵き
 #_08ADB3: db $4E, $34 ; れた
 #_08ADB5: db $FC ; wait for key and new line
@@ -7436,7 +7427,7 @@ Message_08ADCB:
 Message_08ADCF:
 #_08ADCF: db $FA ; clear message box
 #_08ADD0: db $F2, $2E ; prewritten text 2E
-#_08ADD2: db $D8, $03 ; option list with 3 options
+#_08ADD2: db $D8, $03 ; option list with 4 options
 #_08ADD4: db $0A, $07 ; option 1 [07]: message 0A
 #_08ADD6: db $05, $05 ; option 2 [05]: message 05
 #_08ADD8: db $0D, $0B ; option 3 [0B]: message 0D
@@ -7490,7 +7481,7 @@ Message_08ADEA:
 ; アクマにたいする はんのうは
 ; 2つの コマンドで しめされ«・・・»
 Message_08ADF0:
-#_08ADF0: db $D4, $03 ; [COMMAND D4:03]
+#_08ADF0: db $D4, $03 ; set text box size to 3
 #_08ADF2: db $97 ; >
 #_08ADF3: db $F2, $09 ; prewritten text 09
 #_08ADF5: db $36, $27, $30, $52, $51, $CF, $29, $2E ; つうしんを⎵おこ
@@ -7498,7 +7489,7 @@ Message_08ADF0:
 #_08AE01: db $FC ; wait for key and new line
 #_08AE02: db $FA ; clear message box
 #_08AE03: db $0E, $0E, $1D, $5A, $18, $0F, $1E ; DDSーNET
-#_08AE0A: db $FE, $07, $30 ; ext command 07: something then wait 47 frames TODO
+#_08AE0A: db $FE, $07, $30 ; ext command 07: draw buffered text then wait 47 frames
 #_08AE0D: db $F9 ; new line
 #_08AE0E: db $5D, $64, $6A, $69, $30, $43, $31 ; アクセスします
 #_08AE15: db $F2, $0B ; prewritten text 0B
@@ -7539,7 +7530,7 @@ Message_08ADF0:
 #_08AE73: db $FA ; clear message box
 #_08AE74: db $F2, $25 ; prewritten text 25
 #_08AE76: db $F9 ; new line
-#_08AE77: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08AE77: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08AE7A: db $F2, $13 ; prewritten text 13
 #_08AE7C: db $F2, $08 ; prewritten text 08
 #_08AE7E: db $93 ; ・
@@ -7636,7 +7627,7 @@ Message_08AF39:
 #_08AF64: db $FA ; clear message box
 #_08AF65: db $F2, $25 ; prewritten text 25
 #_08AF67: db $F9 ; new line
-#_08AF68: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08AF68: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08AF6B: db $F2, $59 ; prewritten text 59
 #_08AF6D: db $93 ; ・
 #_08AF6E: db $F2, $86 ; prewritten text 86
@@ -7776,7 +7767,7 @@ Message_08B00C:
 
 ; >つうしんが きれた
 Message_08B115:
-#_08B115: db $D4, $03 ; [COMMAND D4:03]
+#_08B115: db $D4, $03 ; set text box size to 3
 #_08B117: db $97, $36, $27, $30, $52, $9C, $CF, $2B ; >つうしんが⎵き
 #_08B11F: db $4E, $34 ; れた
 #_08B121: db $FC ; wait for key and new line
@@ -7785,7 +7776,7 @@ Message_08B115:
 ;===================================================================================================
 
 Message_08B124:
-#_08B124: db $D4, $03 ; [COMMAND D4:03]
+#_08B124: db $D4, $03 ; set text box size to 3
 #_08B126: db $D2, $04, $0C ; test progress bit $04 for message $0C
 #_08B129: db $D3, $0D ; go to message $0D
 
@@ -7822,7 +7813,7 @@ Message_08B152:
 #_08B157: db $3E, $CF, $3C, $45, $58, $34 ; は⎵ねむった
 #_08B15D: db $F2, $0B ; prewritten text 0B
 #_08B15F: db $FC ; wait for key and new line
-#_08B160: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08B160: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08B163: db $FE, $1C, $01 ; ext command 1C: $01 TODO
 #_08B166: db $FE, $25, $FF ; ext command 25: something FF TODO
 #_08B169: db $FE, $23, $FF ; ext command 23: something FF TODO
@@ -7843,7 +7834,7 @@ Message_08B177:
 ;===================================================================================================
 
 Message_08B188:
-#_08B188: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08B188: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08B18B: db $FE, $1C, $00 ; ext command 1C: $00 TODO
 #_08B18E: db $D3, $03 ; go to message $03
 
@@ -7851,19 +7842,19 @@ Message_08B188:
 
 Message_08B190:
 #_08B190: db $D6, $00, $00 ; delete sprite in slot 00
-#_08B193: db $D7, $07 ; [COMMAND D7:07]
+#_08B193: db $D7, $07 ; load scene 07
 #_08B195: db $D3, $03 ; go to message $03
 
 ;===================================================================================================
 
 ; はは:
 Message_08B197:
-#_08B197: db $D7, $05 ; [COMMAND D7:05]
+#_08B197: db $D7, $05 ; load scene 05
 #_08B199: db $D2, $18, $2C ; test progress bit $18 for message $2C
 #_08B19C: db $D2, $15, $23 ; test progress bit $15 for message $23
 #_08B19F: db $D2, $06, $1B ; test progress bit $06 for message $1B
 #_08B1A2: db $D6, $00, $4D, $78, $28 ; place sprite 4D in slot 00 at XY:{78,28}
-#_08B1A7: db $D4, $03 ; [COMMAND D4:03]
+#_08B1A7: db $D4, $03 ; set text box size to 3
 #_08B1A9: db $3E, $3E, $9A ; はは:
 #_08B1AC: db $F9 ; new line
 #_08B1AD: db $D2, $07, $13 ; test progress bit $07 for message $13
@@ -8028,7 +8019,7 @@ Message_08B2DF:
 #_08B323: db $F9 ; new line
 #_08B324: db $39, $3A, $CF, $25, $2A, $2C, $39, $58 ; なに⎵あかくなっ
 #_08B32C: db $37, $4D, $3D, $95 ; てるの?
-#_08B330: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08B330: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08B333: db $CF, $5F, $6B, $4A ; ⎵ウソよ
 #_08B337: db $FC ; wait for key and new line
 #_08B338: db $D0, $08 ; set progress bit $08
@@ -8068,7 +8059,7 @@ Message_08B372:
 Message_08B383:
 #_08B383: db $FA ; clear message box
 #_08B384: db $F2, $2E ; prewritten text 2E
-#_08B386: db $D8, $01 ; option list with 1 options
+#_08B386: db $D8, $01 ; option list with 2 options
 #_08B388: db $0C, $11 ; option 1 [11]: message 0C
 #_08B38A: db $0E, $1D ; option 2 [1D]: message 0E
 
@@ -8084,7 +8075,7 @@ Message_08B38C:
 ; きを つけてね [CHASE]
 ; あまり おそくならないようにね
 Message_08B392:
-#_08B392: db $D4, $03 ; [COMMAND D4:03]
+#_08B392: db $D4, $03 ; set text box size to 3
 #_08B394: db $3E, $3E, $9A ; はは:
 #_08B397: db $F9 ; new line
 #_08B398: db $2B, $51, $CF, $36, $2D, $37, $3C, $CF ; きを⎵つけてね⎵
@@ -8203,9 +8194,9 @@ Message_08B430:
 #_08B4B5: db $25, $26, $30, $37, $26, $4D, $3D, $4A ; あいしているのよ
 #_08B4BD: db $CF, $2F, $25, $94, $CF, $3E, $48, $2C ; ⎵さあ!⎵はやく
 #_08B4C5: db $94 ; !
-#_08B4C6: db $FE, $07, $24 ; ext command 07: something then wait 35 frames TODO
+#_08B4C6: db $FE, $07, $24 ; ext command 07: draw buffered text then wait 35 frames
 #_08B4C9: db $FC ; wait for key and new line
-#_08B4CA: db $D4, $03 ; [COMMAND D4:03]
+#_08B4CA: db $D4, $03 ; set text box size to 3
 #_08B4CC: db $EE ; write lawful hero name
 #_08B4CD: db $9A ; :
 #_08B4CE: db $F9 ; new line
@@ -8225,7 +8216,7 @@ Message_08B430:
 #_08B4EF: db $6D, $92 ; チッ
 #_08B4F1: db $F2, $0B ; prewritten text 0B
 #_08B4F3: db $62, $8A, $9C, $26, $26, $39 ; カンがいいな
-#_08B4F9: db $FE, $07, $24 ; ext command 07: something then wait 35 frames TODO
+#_08B4F9: db $FE, $07, $24 ; ext command 07: draw buffered text then wait 35 frames
 #_08B4FC: db $F9 ; new line
 #_08B4FD: db $F2, $0B ; prewritten text 0B
 #_08B4FF: db $29, $43, $28, $3D, $CF, $3E, $3E, $29 ; おまえの⎵ははお
@@ -8245,10 +8236,10 @@ Message_08B430:
 #_08B54C: db $FC ; wait for key and new line
 #_08B54D: db $DE, $01, $00, $01, $01 ; [COMMAND DE:01,00,01,01]
 #_08B552: db $FE, $46, $09 ; ext command 46: 09 TODO
-#_08B555: db $FE, $07, $06 ; ext command 07: something then wait 5 frames TODO
+#_08B555: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_08B558: db $D5, $39 ; send $39 to APU
 #_08B55A: db $D6, $00, $9D, $78, $48 ; place sprite 9D in slot 00 at XY:{78,48}
-#_08B55F: db $FE, $07, $13 ; ext command 07: something then wait 18 frames TODO
+#_08B55F: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_08B562: db $E4, $00 ; load demon $00
 #_08B564: db $E5, $02, $25 ; [COMMAND E5:02,25]
 
@@ -8323,8 +8314,8 @@ Message_08B56C:
 ; «バウ!ワウ!»«バウ!ワウ!»«バウ!ワウ!»
 ; >«イヌの パスカル»が とびこんできた
 Message_08B5E4:
-#_08B5E4: db $D4, $03 ; [COMMAND D4:03]
-#_08B5E6: db $FE, $07, $7F ; ext command 07: something then wait 126 frames TODO
+#_08B5E4: db $D4, $03 ; set text box size to 3
+#_08B5E6: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
 #_08B5E9: db $DE, $01, $00, $34, $01 ; [COMMAND DE:01,00,34,01]
 #_08B5EE: db $E4, $00 ; load demon $00
 #_08B5F0: db $F2, $0A ; prewritten text 0A
@@ -8367,7 +8358,7 @@ Message_08B611:
 #_08B628: db $36, $4E, $37, $26, $2B, $43, $31, $2A ; つれていきますか
 #_08B630: db $95 ; ?
 #_08B631: db $F8, $29 ; YES/NO - go to message $29 if YES
-#_08B633: db $D4, $03 ; [COMMAND D4:03]
+#_08B633: db $D4, $03 ; set text box size to 3
 #_08B635: db $F2, $0A ; prewritten text 0A
 #_08B637: db $9A ; :
 #_08B638: db $F9 ; new line
@@ -8382,7 +8373,7 @@ Message_08B611:
 ; «バウ!ワウ!»«バウ!ワウ!»
 ; >«イヌの パスカル»は ついてきた
 Message_08B645:
-#_08B645: db $D4, $03 ; [COMMAND D4:03]
+#_08B645: db $D4, $03 ; set text box size to 3
 #_08B647: db $F2, $0A ; prewritten text 0A
 #_08B649: db $9A ; :
 #_08B64A: db $F9 ; new line
@@ -8444,7 +8435,7 @@ Message_08B689:
 #_08B69E: db $3E, $39, $30, $2A, $2D, $43, $31, $2A ; はなしかけますか
 #_08B6A6: db $95 ; ?
 #_08B6A7: db $F8, $2E ; YES/NO - go to message $2E if YES
-#_08B6A9: db $D4, $03 ; [COMMAND D4:03]
+#_08B6A9: db $D4, $03 ; set text box size to 3
 #_08B6AB: db $F2, $0A ; prewritten text 0A
 #_08B6AD: db $9A ; :
 #_08B6AE: db $F9 ; new line
@@ -8458,7 +8449,7 @@ Message_08B689:
 ; «イヌの パスカル»:
 ; «バウ!ワウ!»«バウ!ワウ!»
 Message_08B6B7:
-#_08B6B7: db $D4, $03 ; [COMMAND D4:03]
+#_08B6B7: db $D4, $03 ; set text box size to 3
 #_08B6B9: db $F2, $0A ; prewritten text 0A
 #_08B6BB: db $9A ; :
 #_08B6BC: db $F9 ; new line
@@ -8490,7 +8481,7 @@ Message_08B6CC:
 ; となりのいしゃ:
 ; おお [CHASE]くんか
 Message_08B6D1:
-#_08B6D1: db $D7, $06 ; [COMMAND D7:06]
+#_08B6D1: db $D7, $06 ; load scene 06
 #_08B6D3: db $D5, $54 ; send $54 to APU
 #_08B6D5: db $D6, $00, $40, $70, $28 ; place sprite 40 in slot 00 at XY:{70,28}
 #_08B6DA: db $38, $39, $4C, $3D, $26, $30, $55, $9A ; となりのいしゃ:
@@ -8538,7 +8529,7 @@ Message_08B71E:
 #_08B736: db $F0 ; write player name
 #_08B737: db $2C, $52, $9C, $CF, $2B, $38, $4D, $A5 ; くんが⎵きとるぞ
 #_08B73F: db $FC ; wait for key and new line
-#_08B740: db $D4, $03 ; [COMMAND D4:03]
+#_08B740: db $D4, $03 ; set text box size to 3
 #_08B742: db $ED ; write female protag name
 #_08B743: db $3D, $2E, $28, $9A ; のこえ:
 #_08B747: db $F9 ; new line
@@ -8715,7 +8706,7 @@ Message_08B890:
 ; けはいは ないようだ
 Message_08B8BD:
 #_08B8BD: db $D2, $2F, $59 ; test progress bit $2F for message $59
-#_08B8C0: db $D7, $05 ; [COMMAND D7:05]
+#_08B8C0: db $D7, $05 ; load scene 05
 #_08B8C2: db $D6, $00, $67, $70, $28 ; place sprite 67 in slot 00 at XY:{70,28}
 #_08B8C7: db $29, $38, $2E, $9A ; おとこ:
 #_08B8CB: db $F9 ; new line
@@ -8747,7 +8738,7 @@ Message_08B8BD:
 ;===================================================================================================
 
 Message_08B927:
-#_08B927: db $D7, $05 ; [COMMAND D7:05]
+#_08B927: db $D7, $05 ; load scene 05
 #_08B929: db $D5, $46 ; send $46 to APU
 
 ;===================================================================================================
@@ -8892,7 +8883,7 @@ Message_08BA6E:
 #_08BA7F: db $F2, $0B ; prewritten text 0B
 #_08BA81: db $FC ; wait for key and new line
 #_08BA82: db $E9, $03, $08 ; go to message $08 maybe TODO
-#_08BA85: db $D4, $03 ; [COMMAND D4:03]
+#_08BA85: db $D4, $03 ; set text box size to 3
 #_08BA87: db $EF ; write chaos hero name
 #_08BA88: db $9A ; :
 #_08BA89: db $F9 ; new line
@@ -8950,8 +8941,7 @@ Message_08BABB:
 
 ;===================================================================================================
 
-; >ひろばには «クーデター»ぶたいの へいしたち
-; や
+; >ひろばには «クーデター»ぶたいの へいしたちや
 ; アクマたち そして ぐんしゅうが
 ; あつまっている
 ; [JIMMY]:
@@ -8981,7 +8971,7 @@ Message_08BABB:
 ; さあ やっておしまい!
 Message_08BADF:
 #_08BADF: db $D5, $46 ; send $46 to APU
-#_08BAE1: db $D7, $21 ; [COMMAND D7:21]
+#_08BAE1: db $D7, $21 ; load scene 21
 #_08BAE3: db $97, $3F, $4F, $AB, $3A, $3E, $CF ; >ひろばには⎵
 #_08BAEA: db $F2, $17 ; prewritten text 17
 #_08BAEC: db $AD, $34, $26, $3D, $CF, $41, $26, $30 ; ぶたいの⎵へいし
@@ -9068,7 +9058,7 @@ Message_08BADF:
 #_08BC0D: db $25, $52, $39, $26, $30, $37, $25, $9F ; あんないしてあげ
 #_08BC15: db $4D, $50 ; るわ
 #_08BC17: db $FC ; wait for key and new line
-#_08BC18: db $D7, $22 ; [COMMAND D7:22]
+#_08BC18: db $D7, $22 ; load scene 22
 #_08BC1A: db $D6, $02, $2C, $70, $28 ; place sprite 2C in slot 02 at XY:{70,28}
 #_08BC1F: db $FA ; clear message box
 #_08BC20: db $2E, $4E, $A9, $CF ; これで⎵
@@ -9092,7 +9082,7 @@ Message_08BADF:
 #_08BC63: db $43, $26, $94 ; まい!
 #_08BC66: db $FC ; wait for key and new line
 #_08BC67: db $D6, $02, $00 ; delete sprite in slot 02
-#_08BC6A: db $FE, $07, $78 ; ext command 07: something then wait 119 frames TODO
+#_08BC6A: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_08BC6D: db $FA ; clear message box
 #_08BC6E: db $DE, $00, $00, $EF, $08 ; [COMMAND DE:00,00,EF,08]
 #_08BC73: db $D5, $39 ; send $39 to APU
@@ -9109,7 +9099,7 @@ Message_08BC7A:
 
 Message_08BC7F:
 #_08BC7F: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_08BC81: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08BC81: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08BC84: db $D5, $39 ; send $39 to APU
 #_08BC86: db $DE, $00, $00, $ED, $08 ; [COMMAND DE:00,00,ED,08]
 #_08BC8B: db $E4, $00 ; load demon $00
@@ -9163,7 +9153,7 @@ Message_08BCC6:
 Message_08BCCB:
 #_08BCCB: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_08BCCD: db $E7, $01 ; call routine 01E5CD with value 01 TODO
-#_08BCCF: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08BCCF: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08BCD2: db $D6, $02, $2C, $70, $28 ; place sprite 2C in slot 02 at XY:{70,28}
 #_08BCD7: db $49, $4C, $2E, $9A ; ゆりこ:
 #_08BCDB: db $F9 ; new line
@@ -9173,7 +9163,7 @@ Message_08BCCB:
 #_08BCEA: db $FC ; wait for key and new line
 #_08BCEB: db $D6, $02, $00 ; delete sprite in slot 02
 #_08BCEE: db $FA ; clear message box
-#_08BCEF: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08BCEF: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 
 ;===================================================================================================
 
@@ -9185,7 +9175,7 @@ Message_08BCCB:
 ; «あなたがた»も はやく ここから にげて«・・・»
 Message_08BCF2:
 #_08BCF2: db $D5, $47 ; send $47 to APU
-#_08BCF4: db $D7, $2A ; [COMMAND D7:2A]
+#_08BCF4: db $D7, $2A ; load scene 2A
 #_08BCF6: db $D6, $02, $01, $70, $08 ; place sprite 01 in slot 02 at XY:{70,08}
 #_08BCFB: db $D6, $04, $05, $70, $08 ; place sprite 05 in slot 04 at XY:{70,08}
 #_08BD00: db $ED ; write female protag name
@@ -9415,8 +9405,7 @@ Message_08BED2:
 ;===================================================================================================
 
 ; よく きたな [CHASE]くん
-; ここは «ターミナルシステム»を かいはつしてい
-; た
+; ここは «ターミナルシステム»を かいはつしていた
 ; けんきゅうじょ
 ; だが ゴトウの ては ここにも のびていた
 Message_08BEF8:
@@ -9456,7 +9445,7 @@ Message_08BF3F:
 #_08BF4B: db $F9 ; new line
 #_08BF4C: db $F2, $85 ; prewritten text 85
 #_08BF4E: db $F8, $25 ; YES/NO - go to message $25 if YES
-#_08BF50: db $D4, $03 ; [COMMAND D4:03]
+#_08BF50: db $D4, $03 ; set text box size to 3
 #_08BF52: db $33, $4E, $3E, $CF, $36, $2A, $26, $2A ; それは⎵つかいか
 #_08BF5A: db $34, $9C, $CF, $50, $4D, $26, $3D, $A9 ; たが⎵わるいので
 #_08BF62: db $3E, $CF, $39, $26, $2A, $3C ; は⎵ないかね
@@ -9489,7 +9478,7 @@ Message_08BF86:
 ; ナカマに できる アクマの かずを
 ; ふやして あげようと おもったんだが«・・・»
 Message_08BF9A:
-#_08BF9A: db $D4, $03 ; [COMMAND D4:03]
+#_08BF9A: db $D4, $03 ; set text box size to 3
 #_08BF9C: db $33, $27, $2A, $CF, $32, $58, $2A, $2C ; そうか⎵せっかく
 #_08BFA4: db $F9 ; new line
 #_08BFA5: db $71, $62, $7B, $3A, $CF, $A9, $2B, $4D ; ナカマに⎵できる
@@ -9513,7 +9502,7 @@ Message_08BF9A:
 ; «わたしの アクマしょうかんプログラムも»
 ; より «つかいこなせる»だろう
 Message_08BFCE:
-#_08BFCE: db $D4, $03 ; [COMMAND D4:03]
+#_08BFCE: db $D4, $03 ; set text box size to 3
 #_08BFD0: db $A9, $3E, $CF ; では⎵
 #_08BFD3: db $F2, $09 ; prewritten text 09
 #_08BFD5: db $3D, $CF, $7E, $7F, $84, $5A, $51 ; の⎵メモリーを
@@ -9542,8 +9531,7 @@ Message_08BFF6:
 ;===================================================================================================
 
 ; おとこ:
-; わたしは かいげん«しれいかん»の ゴトウである
-; !
+; わたしは かいげん«しれいかん»の ゴトウである!
 ; せかいの ぶんめいは くさりきっている
 ; それは だいちガイアからの さくしゅの うえに
 ; なりたつ ぶんめい だからである
@@ -9561,9 +9549,9 @@ Message_08BFF6:
 ; >えんぜつは つづいている
 Message_08BFFB:
 #_08BFFB: db $D5, $46 ; send $46 to APU
-#_08BFFD: db $D7, $20 ; [COMMAND D7:20]
+#_08BFFD: db $D7, $20 ; load scene 20
 #_08BFFF: db $FE, $3A, $02, $00 ; ext command 3A: 02 00 TODO
-#_08C003: db $FE, $07, $FF ; ext command 07: something then wait 254 frames TODO
+#_08C003: db $FE, $07, $FF ; ext command 07: draw buffered text then wait 254 frames
 #_08C006: db $D2, $2B, $2B ; test progress bit $2B for message $2B
 #_08C009: db $D6, $00, $99, $60, $20 ; place sprite 99 in slot 00 at XY:{60,20}
 #_08C00E: db $29, $38, $2E, $9A ; おとこ:
@@ -9626,7 +9614,7 @@ Message_08BFFB:
 #_08C114: db $A3, $2B, $25, $9F, $4D, $CF, $34, $46 ; ずきあげる⎵ため
 #_08C11C: db $3A, $94 ; に!
 #_08C11E: db $FC ; wait for key and new line
-#_08C11F: db $D4, $03 ; [COMMAND D4:03]
+#_08C11F: db $D4, $03 ; set text box size to 3
 #_08C121: db $97, $28, $52, $A4, $36, $3E, $CF, $36 ; >えんぜつは⎵つ
 #_08C129: db $A8, $26, $37, $26, $4D ; づいている
 #_08C12E: db $FC ; wait for key and new line
@@ -9652,7 +9640,7 @@ Message_08C130:
 ; ほおっておけば «トウキョウ»は どうなる«・・・»
 Message_08C135:
 #_08C135: db $D2, $2F, $38 ; test progress bit $2F for message $38
-#_08C138: db $D7, $05 ; [COMMAND D7:05]
+#_08C138: db $D7, $05 ; load scene 05
 #_08C13A: db $D5, $54 ; send $54 to APU
 #_08C13C: db $D6, $00, $68, $70, $28 ; place sprite 68 in slot 00 at XY:{70,28}
 #_08C141: db $2C, $44, $35, $57, $27, $9A ; くみちょう:
@@ -9759,7 +9747,8 @@ Message_08C232:
 
 ;===================================================================================================
 
-; «みすぼらしいおとこ:»よお そこの にいちゃん
+; «みすぼらしいおとこ:»
+; よお そこの にいちゃん
 ; なんか めぐんでくれよお
 ; もう なんにちも たべてないんだよお
 ; たのむよ なあ
@@ -9788,7 +9777,7 @@ Message_08C23B:
 #_08C285: db $95 ; ?
 #_08C286: db $F9 ; new line
 #_08C287: db $F8, $34 ; YES/NO - go to message $34 if YES
-#_08C289: db $D4, $03 ; [COMMAND D4:03]
+#_08C289: db $D4, $03 ; set text box size to 3
 #_08C28B: db $EE ; write lawful hero name
 #_08C28C: db $9A ; :
 #_08C28D: db $F9 ; new line
@@ -9804,8 +9793,8 @@ Message_08C23B:
 ; かねの むだだぜ やめとけよ
 ; >[CHASE]は
 ; すこし おかねを わたそうとした
-; «みすぼらしいおとこ:»«・・・»なんだ こりゃ
-; !?
+; «みすぼらしいおとこ:»
+; «・・・»なんだ こりゃ!?
 ; マッカだせよ ℏじゃなけりゃ
 ; なにも かえねえよ
 ; びんぼうにんめ
@@ -9815,7 +9804,7 @@ Message_08C23B:
 ; >[NAME]の もっていた ￥は
 ; かみくずどうぜんに なってしまった
 Message_08C2A4:
-#_08C2A4: db $D4, $03 ; [COMMAND D4:03]
+#_08C2A4: db $D4, $03 ; set text box size to 3
 #_08C2A6: db $EF ; write chaos hero name
 #_08C2A7: db $9A ; :
 #_08C2A8: db $F9 ; new line
@@ -9860,7 +9849,7 @@ Message_08C2A4:
 #_08C32E: db $A9, $37, $CF, $72, $68, $3A, $26, $2D ; でて⎵ニシにいけ
 #_08C336: db $AB, $CF, $31, $9E, $A6 ; ば⎵すぐだ
 #_08C33B: db $FC ; wait for key and new line
-#_08C33C: db $D4, $03 ; [COMMAND D4:03]
+#_08C33C: db $D4, $03 ; set text box size to 3
 #_08C33E: db $97 ; >
 #_08C33F: db $F1 ; write specific name
 #_08C340: db $3D, $CF, $47, $58, $37, $26, $34, $CF ; の⎵もっていた⎵
@@ -9883,11 +9872,12 @@ Message_08C35D:
 
 ;===================================================================================================
 
-; «みすぼらしいおとこ:»けっ とっとと きえな!
+; «みすぼらしいおとこ:»
+; けっ とっとと きえな!
 Message_08C36F:
 #_08C36F: db $DA, $18, $FC, $FF ; take 1000 money
 #_08C373: db $D0, $EC ; set progress bit $EC
-#_08C375: db $D4, $03 ; [COMMAND D4:03]
+#_08C375: db $D4, $03 ; set text box size to 3
 #_08C377: db $F2, $91 ; prewritten text 91
 #_08C379: db $2D, $58, $CF, $38, $58, $38, $38, $CF ; けっ⎵とっとと⎵
 #_08C381: db $2B, $28, $39, $94 ; きえな!
@@ -9896,8 +9886,8 @@ Message_08C36F:
 
 ;===================================================================================================
 
-; «みすぼらしいおとこ:»なんだ かね もってねえ
-; のか
+; «みすぼらしいおとこ:»
+; なんだ かね もってねえのか
 ; マッカを かせげよ ℏをよ
 Message_08C387:
 #_08C387: db $F2, $91 ; prewritten text 91
@@ -9926,7 +9916,7 @@ Message_08C387:
 ; わたしは いそがしい
 ; またこんどに してくれ
 Message_08C3A9:
-#_08C3A9: db $D7, $24 ; [COMMAND D7:24]
+#_08C3A9: db $D7, $24 ; load scene 24
 #_08C3AB: db $D5, $46 ; send $46 to APU
 #_08C3AD: db $D2, $47, $3A ; test progress bit $47 for message $3A
 #_08C3B0: db $DE, $01, $00, $07, $01 ; [COMMAND DE:01,00,07,01]
@@ -9982,7 +9972,7 @@ Message_08C3A9:
 #_08C472: db $37, $2C, $4E ; てくれ
 #_08C475: db $FC ; wait for key and new line
 #_08C476: db $D6, $00, $00 ; delete sprite in slot 00
-#_08C479: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08C479: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 
 ;===================================================================================================
 
@@ -10004,8 +9994,7 @@ Message_08C47D:
 ; オザワ:
 ; «・・・»おっと [ITEM]を もっているな
 ; そんなものを つかったら
-; [CLASS] [DEMON1]でさえ ふういん
-; されてしまう
+; [CLASS] [DEMON1]でさえ ふういんされてしまう
 ; その あぶない ものを
 ; すててきたら また あってやろう
 ; では しつれいするよ
@@ -10058,8 +10047,7 @@ Message_08C483:
 ; [HIM]:
 ; うるさい! きさまだけは ぜったい ゆるさん!
 ; オザワ:
-; ききわけのないやつめ«・・・»[DEMON1]さ
-; ま
+; ききわけのないやつめ«・・・»[DEMON1]さま
 ; この めざわりな ガキどもを
 ; しまつしてください!
 Message_08C4EB:
@@ -10146,7 +10134,7 @@ Message_08C5F6:
 #_08C5FD: db $D5, $39 ; send $39 to APU
 #_08C5FF: db $E4, $00 ; load demon $00
 #_08C601: db $D2, $49, $41 ; test progress bit $49 for message $41
-#_08C604: db $D4, $02 ; [COMMAND D4:02]
+#_08C604: db $D4, $02 ; set text box size to 2
 #_08C606: db $D5, $3C ; send $3C to APU
 #_08C608: db $F6 ; write class name from $506
 #_08C609: db $CF ; ⎵
@@ -10213,8 +10201,7 @@ Message_08C665:
 ; どうしても わたしに さからうのだな?
 ; «サイコダイバー»に せいしんをいじらせて
 ; わたしの ドレイにしてやる
-; [DEMON1]さま こいつらを とらえてくださ
-; い!
+; [DEMON1]さま こいつらを とらえてください!
 Message_08C67A:
 #_08C67A: db $27, $4D, $2F, $26, $48, $36, $4B, $46 ; うるさいやつらめ
 #_08C682: db $F9 ; new line
@@ -10266,7 +10253,7 @@ Message_08C67A:
 ; [HIM]:
 ; いまの おれなら やつと たたかえるぞ!
 Message_08C722:
-#_08C722: db $D4, $03 ; [COMMAND D4:03]
+#_08C722: db $D4, $03 ; set text box size to 3
 #_08C724: db $EF ; write chaos hero name
 #_08C725: db $9A ; :
 #_08C726: db $F9 ; new line
@@ -10289,7 +10276,7 @@ Message_08C73F:
 ; たおすとは«・・・»«・・・»
 Message_08C744:
 #_08C744: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_08C746: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08C746: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08C749: db $D6, $00, $A8, $70, $28 ; place sprite A8 in slot 00 at XY:{70,28}
 #_08C74E: db $61, $BA, $88, $9A ; オザワ:
 #_08C752: db $F9 ; new line
@@ -10388,7 +10375,7 @@ Message_08C804:
 
 ; オザワ:
 Message_08C826:
-#_08C826: db $D4, $03 ; [COMMAND D4:03]
+#_08C826: db $D4, $03 ; set text box size to 3
 #_08C828: db $61, $BA, $88, $9A ; オザワ:
 #_08C82C: db $F9 ; new line
 #_08C82D: db $D3, $44 ; go to message $44
@@ -10420,13 +10407,13 @@ Message_08C834:
 Message_08C837:
 #_08C837: db $D5, $2B ; send $2B to APU
 #_08C839: db $D6, $00, $00 ; delete sprite in slot 00
-#_08C83C: db $D4, $03 ; [COMMAND D4:03]
+#_08C83C: db $D4, $03 ; set text box size to 3
 #_08C83E: db $97 ; >
 #_08C83F: db $EF ; write chaos hero name
 #_08C840: db $3E, $CF, $61, $BA, $88, $3A, $CF, $38 ; は⎵オザワに⎵と
 #_08C848: db $AA, $46, $51, $2F, $30, $34 ; どめをさした
 #_08C84E: db $FC ; wait for key and new line
-#_08C84F: db $FE, $07, $40 ; ext command 07: something then wait 63 frames TODO
+#_08C84F: db $FE, $07, $40 ; ext command 07: draw buffered text then wait 63 frames
 #_08C852: db $DE, $01, $00, $1C, $01 ; [COMMAND DE:01,00,1C,01]
 #_08C857: db $E4, $00 ; load demon $00
 #_08C859: db $FA ; clear message box
@@ -10622,12 +10609,11 @@ Message_08C9B4:
 ; «しせつけいさつ»ちょうかん:
 ; わたしは «シンジュク»の へいわをまもる
 ; «しせつけいさつ»の ちょうかんだ
-; «オザワさま»から じきじきに にんめいされたの
-; だ
+; «オザワさま»から じきじきに にんめいされたのだ
 ; わたしが いるかぎり
 ; «シンジュク»の へいわは だいじょうぶなのだよ
 Message_08C9BB:
-#_08C9BB: db $D7, $24 ; [COMMAND D7:24]
+#_08C9BB: db $D7, $24 ; load scene 24
 #_08C9BD: db $D2, $47, $5A ; test progress bit $47 for message $5A
 #_08C9C0: db $D6, $00, $A6, $70, $28 ; place sprite A6 in slot 00 at XY:{70,28}
 #_08C9C5: db $F2, $42 ; prewritten text 42
@@ -10902,7 +10888,7 @@ Message_08CB9B:
 #_08CC1C: db $58, $37, $CF, $39, $52, $3A, $CF, $39 ; って⎵なんに⎵な
 #_08CC24: db $4D, $52, $A9, $31 ; るんです
 #_08CC28: db $FC ; wait for key and new line
-#_08CC29: db $D4, $03 ; [COMMAND D4:03]
+#_08CC29: db $D4, $03 ; set text box size to 3
 #_08CC2B: db $EF ; write chaos hero name
 #_08CC2C: db $9A ; :
 #_08CC2D: db $F9 ; new line
@@ -10972,7 +10958,7 @@ Message_08CC83:
 #_08CC9C: db $25, $39, $34, $3E, $CF, $62, $7C, $51 ; あなたは⎵カミを
 #_08CCA4: db $CF, $30, $52, $A2, $43, $31, $2A, $95 ; ⎵しんじますか?
 #_08CCAC: db $F8, $01 ; YES/NO - go to message $01 if YES
-#_08CCAE: db $D4, $03 ; [COMMAND D4:03]
+#_08CCAE: db $D4, $03 ; set text box size to 3
 #_08CCB0: db $33, $4E, $3E, $CF, $26, $2D, $43, $32 ; それは⎵いけませ
 #_08CCB8: db $52 ; ん
 #_08CCB9: db $F9 ; new line
@@ -10993,7 +10979,7 @@ Message_08CC83:
 ; あなたも わたしたち «メシアきょう»の
 ; ナカマですね
 Message_08CCE0:
-#_08CCE0: db $D4, $03 ; [COMMAND D4:03]
+#_08CCE0: db $D4, $03 ; set text box size to 3
 #_08CCE2: db $33, $4E, $3E, $CF, $4A, $26, $2E, $38 ; それは⎵よいこと
 #_08CCEA: db $A9, $31 ; です
 #_08CCEC: db $F9 ; new line
@@ -11036,8 +11022,7 @@ Message_08CD03:
 ; «われわれ» じんるいに ちえをさずけるため
 ; ちじょうに おりたたれた «ルシファーさま»
 ; それゆえ かみのいかりにふれ
-; アクマにされながらも «われわれ» じんるいのた
-; め
+; アクマにされながらも «われわれ» じんるいのため
 ; かみと おおしくたたかわれた «ルシファーさま»
 Message_08CD44:
 #_08CD44: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
@@ -11144,8 +11129,7 @@ Message_08CE1D:
 
 ; おんな:
 ; «かいげんれい»なんて すぐに かいじょされるわ
-; «クーデター»だって かってに やらせとけばいい
-; のよ
+; «クーデター»だって かってに やらせとけばいいのよ
 ; «クーデター»ぶたいに さからうなんて
 ; バカらしいし アブないわよ
 Message_08CE8A:
@@ -11730,8 +11714,7 @@ Message_08D3A1:
 ; [MOMO]:
 ; «イチガヤ»の «クーデター»ぶたい しれいぶは
 ; «シンジュク»から ヒガシへ いったところです
-; «アメリカ»たいしかんは «ロッポンギ»に あり
-; ますが
+; «アメリカ»たいしかんは «ロッポンギ»に ありますが
 ; «イチガヤ»のミナミの ヨツヤから
 ; ちかを とおらなければ いけないでしょう
 ; わたしたちが よういした
@@ -11766,7 +11749,7 @@ Message_08D401:
 #_08D442: db $FC ; wait for key and new line
 #_08D443: db $D6, $00, $00 ; delete sprite in slot 00
 #_08D446: db $FA ; clear message box
-#_08D447: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D447: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08D44A: db $D6, $00, $4C, $78, $28 ; place sprite 4C in slot 00 at XY:{78,28}
 #_08D44F: db $ED ; write female protag name
 #_08D450: db $9A ; :
@@ -11825,7 +11808,7 @@ Message_08D401:
 #_08D4ED: db $36, $4E, $2F, $4B, $4E, $34, $4A, $27 ; つれさられたよう
 #_08D4F5: db $A9, $31 ; です
 #_08D4F7: db $FC ; wait for key and new line
-#_08D4F8: db $D4, $03 ; [COMMAND D4:03]
+#_08D4F8: db $D4, $03 ; set text box size to 3
 #_08D4FA: db $EE ; write lawful hero name
 #_08D4FB: db $9A ; :
 #_08D4FC: db $F9 ; new line
@@ -11859,7 +11842,7 @@ Message_08D401:
 #_08D55C: db $39, $2C, $3E, $A2, $46, $43, $31 ; なくはじめます
 #_08D563: db $FC ; wait for key and new line
 #_08D564: db $D6, $00, $00 ; delete sprite in slot 00
-#_08D567: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D567: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08D56A: db $D6, $00, $2E, $70, $28 ; place sprite 2E in slot 00 at XY:{70,28}
 #_08D56F: db $FA ; clear message box
 #_08D570: db $EE ; write lawful hero name
@@ -11879,7 +11862,7 @@ Message_08D401:
 #_08D59F: db $FA ; clear message box
 #_08D5A0: db $D6, $00, $00 ; delete sprite in slot 00
 #_08D5A3: db $FE, $27, $02 ; ext command 27: something 02 TODO
-#_08D5A6: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D5A6: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08D5A9: db $DE, $01, $00, $35, $01 ; [COMMAND DE:01,00,35,01]
 #_08D5AE: db $E4, $00 ; load demon $00
 #_08D5B0: db $EF ; write chaos hero name
@@ -11900,7 +11883,7 @@ Message_08D401:
 #_08D5E2: db $FA ; clear message box
 #_08D5E3: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_08D5E5: db $FE, $27, $03 ; ext command 27: something 03 TODO
-#_08D5E8: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08D5E8: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08D5EB: db $D6, $00, $4C, $78, $28 ; place sprite 4C in slot 00 at XY:{78,28}
 #_08D5F0: db $ED ; write female protag name
 #_08D5F1: db $9A ; :
@@ -11929,7 +11912,7 @@ Message_08D401:
 #_08D647: db $51, $CF, $3E, $46, $36, $2A, $4B, $CF ; を⎵はめつから⎵
 #_08D64F: db $31, $2C, $27, $34, $46, $3A ; すくうために
 #_08D655: db $FC ; wait for key and new line
-#_08D656: db $D4, $03 ; [COMMAND D4:03]
+#_08D656: db $D4, $03 ; set text box size to 3
 #_08D658: db $97 ; >
 #_08D659: db $ED ; write female protag name
 #_08D65A: db $9C, $CF ; が⎵
@@ -12168,7 +12151,7 @@ Message_08D85E:
 ; «いらっしゃいませ»
 Message_08D8BA:
 #_08D8BA: db $D2, $2F, $57 ; test progress bit $2F for message $57
-#_08D8BD: db $D7, $16 ; [COMMAND D7:16]
+#_08D8BD: db $D7, $16 ; load scene 16
 #_08D8BF: db $D6, $00, $42, $68, $28 ; place sprite 42 in slot 00 at XY:{68,28}
 #_08D8C4: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D8C9: db $F9 ; new line
@@ -12183,7 +12166,7 @@ Message_08D8BA:
 ; «ありがとうございました»
 Message_08D8D0:
 #_08D8D0: db $D2, $2F, $58 ; test progress bit $2F for message $58
-#_08D8D3: db $D7, $16 ; [COMMAND D7:16]
+#_08D8D3: db $D7, $16 ; load scene 16
 #_08D8D5: db $D6, $00, $42, $68, $28 ; place sprite 42 in slot 00 at XY:{68,28}
 #_08D8DA: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D8DF: db $F9 ; new line
@@ -12198,7 +12181,7 @@ Message_08D8D0:
 ; «いらっしゃいませ»
 Message_08D8E6:
 #_08D8E6: db $D2, $2F, $59 ; test progress bit $2F for message $59
-#_08D8E9: db $D7, $16 ; [COMMAND D7:16]
+#_08D8E9: db $D7, $16 ; load scene 16
 #_08D8EB: db $D6, $00, $42, $68, $28 ; place sprite 42 in slot 00 at XY:{68,28}
 #_08D8F0: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D8F5: db $F9 ; new line
@@ -12213,7 +12196,7 @@ Message_08D8E6:
 ; «ありがとうございました»
 Message_08D8FC:
 #_08D8FC: db $D2, $2F, $5A ; test progress bit $2F for message $5A
-#_08D8FF: db $D7, $16 ; [COMMAND D7:16]
+#_08D8FF: db $D7, $16 ; load scene 16
 #_08D901: db $D6, $00, $42, $68, $28 ; place sprite 42 in slot 00 at XY:{68,28}
 #_08D906: db $7A, $69, $6F, $69, $9A ; ホステス:
 #_08D90B: db $F9 ; new line
@@ -12227,7 +12210,7 @@ Message_08D8FC:
 ; くろふく:
 Message_08D912:
 #_08D912: db $D2, $2F, $5B ; test progress bit $2F for message $5B
-#_08D915: db $D7, $15 ; [COMMAND D7:15]
+#_08D915: db $D7, $15 ; load scene 15
 #_08D917: db $D6, $00, $64, $70, $28 ; place sprite 64 in slot 00 at XY:{70,28}
 #_08D91C: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_08D921: db $F9 ; new line
@@ -12277,7 +12260,7 @@ Message_08D930:
 ; またのごらいてんを おまちしております
 Message_08D970:
 #_08D970: db $D2, $2F, $5D ; test progress bit $2F for message $5D
-#_08D973: db $D7, $15 ; [COMMAND D7:15]
+#_08D973: db $D7, $15 ; load scene 15
 #_08D975: db $D6, $00, $64, $70, $28 ; place sprite 64 in slot 00 at XY:{70,28}
 #_08D97A: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_08D97F: db $F9 ; new line
@@ -12568,8 +12551,7 @@ Message_08DBF2:
 #_08DC27: db $FA ; clear message box
 #_08DC28: db $61, $BA, $88, $3D, $CF, $C4, $62, $80 ; オザワの⎵バカヤ
 #_08DC30: db $87, $5A, $94 ; ロー!
-#_08DC33: db $DF ; delay 7 frames
-#_08DC34: db $DF ; delay 7 frames
+#_08DC33: db $DF, $DF ; delay 7 frames [x2]
 #_08DC35: db $F9 ; new line
 #_08DC36: db $F2, $0B ; prewritten text 0B
 #_08DC38: db $29, $58, $38, $CF ; おっと⎵
@@ -12800,7 +12782,7 @@ Message_08DE1B:
 #_08DE6B: db $F9 ; new line
 #_08DE6C: db $39, $58, $CF, $26, $26, $A6, $4F, $95 ; なっ⎵いいだろ?
 #_08DE74: db $F8, $3F ; YES/NO - go to message $3F if YES
-#_08DE76: db $D4, $03 ; [COMMAND D4:03]
+#_08DE76: db $D4, $03 ; set text box size to 3
 #_08DE78: db $33, $27, $2A ; そうか
 #_08DE7B: db $F2, $0B ; prewritten text 0B
 #_08DE7D: db $FC ; wait for key and new line
@@ -12810,7 +12792,7 @@ Message_08DE1B:
 
 ; では ℏを やろう
 Message_08DE7F:
-#_08DE7F: db $D4, $03 ; [COMMAND D4:03]
+#_08DE7F: db $D4, $03 ; set text box size to 3
 #_08DE81: db $A9, $3E, $CF, $5C, $51, $CF, $48, $4F ; では⎵ℏを⎵やろ
 #_08DE89: db $27 ; う
 #_08DE8A: db $FC ; wait for key and new line
@@ -12865,8 +12847,7 @@ Message_08DECA:
 ;===================================================================================================
 
 ; «しせつけいさつ»:
-; «オザワさま»のもとで はたらいている われわれ
-; が
+; «オザワさま»のもとで はたらいている われわれが
 ; «シンジュク»の へいわを まもっているのだ!
 ; きさまら ありがたくおもうのが とうぜんだろう
 ; サケをもってこい!
@@ -12972,8 +12953,7 @@ Message_08DFEB:
 ; おとこ:
 ; «こうやって サケがのめる»
 ; のも
-; «オザワさま»が まちを おさめてくれる おかげ
-; だ
+; «オザワさま»が まちを おさめてくれる おかげだ
 Message_08DFF1:
 #_08DFF1: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_08DFF6: db $29, $38, $2E, $9A ; おとこ:
@@ -13260,7 +13240,7 @@ Message_08E1CD:
 #_08E2F6: db $FC ; wait for key and new line
 #_08E2F7: db $FA ; clear message box
 #_08E2F8: db $D6, $00, $00 ; delete sprite in slot 00
-#_08E2FB: db $FE, $07, $40 ; ext command 07: something then wait 63 frames TODO
+#_08E2FB: db $FE, $07, $40 ; ext command 07: draw buffered text then wait 63 frames
 #_08E2FE: db $D6, $00, $A6, $70, $28 ; place sprite A6 in slot 00 at XY:{70,28}
 #_08E303: db $F2, $42 ; prewritten text 42
 #_08E305: db $9A ; :
@@ -13292,8 +13272,7 @@ Message_08E326:
 ; «こうやって サケがのめる»
 ; のも
 ; きみたちの おかげだ
-; «・・・»もう せいしんに はいりこむ のうりょ
-; くは
+; «・・・»もう せいしんに はいりこむ のうりょくは
 ; つかわないことにするよ
 Message_08E329:
 #_08E329: db $D6, $00, $B1, $70, $38 ; place sprite B1 in slot 00 at XY:{70,38}
@@ -13422,7 +13401,7 @@ Message_08E41D:
 
 Message_08E430:
 #_08E430: db $D5, $57 ; send $57 to APU
-#_08E432: db $D7, $04 ; [COMMAND D7:04]
+#_08E432: db $D7, $04 ; load scene 04
 
 ;===================================================================================================
 
@@ -13452,7 +13431,7 @@ Message_08E467:
 #_08E46A: db $FA ; clear message box
 #_08E46B: db $39, $3A, $51, $CF, $30, $43, $31, $2A ; なにを⎵しますか
 #_08E473: db $95 ; ?
-#_08E474: db $D8, $02 ; option list with 2 options
+#_08E474: db $D8, $02 ; option list with 3 options
 #_08E476: db $06, $0A ; option 1 [0A]: message 06
 #_08E478: db $05, $04 ; option 2 [04]: message 05
 #_08E47A: db $19, $03 ; option 3 [03]: message 19
@@ -13696,7 +13675,7 @@ Message_08E59A:
 ; このはこの どれかひとつを おまえたちにやろう
 ; さあ えらぶがよい
 Message_08E59F:
-#_08E59F: db $D7, $24 ; [COMMAND D7:24]
+#_08E59F: db $D7, $24 ; load scene 24
 #_08E5A1: db $D6, $00, $89, $70, $28 ; place sprite 89 in slot 00 at XY:{70,28}
 #_08E5A6: db $FE, $70, $25 ; ext command 70: R0FA346, maybe go to message 25 TODO
 #_08E5A9: db $FA ; clear message box
@@ -13732,7 +13711,7 @@ Message_08E59F:
 #_08E635: db $2F, $25, $CF, $28, $4B, $AD, $9C, $4A ; さあ⎵えらぶがよ
 #_08E63D: db $26 ; い
 #_08E63E: db $F9 ; new line
-#_08E63F: db $D8, $03 ; option list with 3 options
+#_08E63F: db $D8, $03 ; option list with 4 options
 #_08E641: db $1F, $27 ; option 1 [27]: message 1F
 #_08E643: db $20, $28 ; option 2 [28]: message 20
 #_08E645: db $21, $29 ; option 3 [29]: message 21
@@ -13841,8 +13820,7 @@ Message_08E6F1:
 ; おとこ:
 ; めざめたか
 ; われは «エンノオヅノ»
-; «・・・»さて あと ふたり ながれついてるよう
-; だ
+; «・・・»さて あと ふたり ながれついてるようだ
 ; おぬしも よくしっているものだ
 ; さがしにいって やるがよい
 ; くわしいはなしは 3にん そろってからだ
@@ -14055,7 +14033,7 @@ Message_08E904:
 #_08E914: db $50, $34, $30, $3D, $34, $3D, $44, $CF ; わたしのたのみ⎵
 #_08E91C: db $2B, $26, $37, $2C, $4E, $4D, $2A, $95 ; きいてくれるか?
 #_08E924: db $F8, $08 ; YES/NO - go to message $08 if YES
-#_08E926: db $D4, $03 ; [COMMAND D4:03]
+#_08E926: db $D4, $03 ; set text box size to 3
 #_08E928: db $29, $3B, $30, $4B, $3D, $35, $2A, $4B ; おぬしらのちから
 #_08E930: db $A9, $3E, $CF, $2E, $2E, $2A, $4B, $A9 ; では⎵ここからで
 #_08E938: db $4B, $4E, $52, $A5 ; られんぞ
@@ -14071,7 +14049,7 @@ Message_08E904:
 ; ミナミの とびらを あけておいた
 ; たのんだぞ
 Message_08E93E:
-#_08E93E: db $D4, $03 ; [COMMAND D4:03]
+#_08E93E: db $D4, $03 ; set text box size to 3
 #_08E940: db $F2, $36 ; prewritten text 36
 #_08E942: db $3D, $29, $2C, $3A, $CF, $26, $A3, $44 ; のおくに⎵いずみ
 #_08E94A: db $9C, $25, $4D ; がある
@@ -14196,7 +14174,7 @@ Message_08EA31:
 #_08EA67: db $33, $4E, $51, $CF, $27, $2D, $38, $58 ; それを⎵うけとっ
 #_08EA6F: db $37, $2E, $26, $CF, $4A, $26, $39, $95 ; てこい⎵よいな?
 #_08EA77: db $F8, $0D ; YES/NO - go to message $0D if YES
-#_08EA79: db $D4, $03 ; [COMMAND D4:03]
+#_08EA79: db $D4, $03 ; set text box size to 3
 #_08EA7B: db $32, $58, $2A, $2C, $CF, $29, $30, $28 ; せっかく⎵おしえ
 #_08EA83: db $37, $CF, $48, $58, $34, $3D, $3A ; て⎵やったのに
 #_08EA8A: db $F2, $0B ; prewritten text 0B
@@ -14210,7 +14188,7 @@ Message_08EA31:
 ; [JIMMY]と [HIM]には
 ; ほかに やることが ある
 Message_08EA8E:
-#_08EA8E: db $D4, $03 ; [COMMAND D4:03]
+#_08EA8E: db $D4, $03 ; set text box size to 3
 #_08EA90: db $63, $6C, $3D, $CF, $38, $AC, $4B, $51 ; キタの⎵とびらを
 #_08EA98: db $CF, $25, $2D, $37, $29, $26, $34 ; ⎵あけておいた
 #_08EA9F: db $F9 ; new line
@@ -14293,7 +14271,7 @@ Message_08EB26:
 #_08EB30: db $FC ; wait for key and new line
 #_08EB31: db $FA ; clear message box
 #_08EB32: db $D6, $00, $00 ; delete sprite in slot 00
-#_08EB35: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08EB35: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08EB38: db $D6, $00, $2E, $70, $28 ; place sprite 2E in slot 00 at XY:{70,28}
 #_08EB3D: db $EE ; write lawful hero name
 #_08EB3E: db $9A ; :
@@ -14315,7 +14293,7 @@ Message_08EB26:
 #_08EB67: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_08EB69: db $FA ; clear message box
 #_08EB6A: db $FE, $26, $03 ; ext command 26: something 03 TODO
-#_08EB6D: db $FE, $07, $3C ; ext command 07: something then wait 59 frames TODO
+#_08EB6D: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08EB70: db $D6, $00, $83, $70, $28 ; place sprite 83 in slot 00 at XY:{70,28}
 #_08EB75: db $F2, $37 ; prewritten text 37
 #_08EB77: db $9A ; :
@@ -14388,8 +14366,7 @@ Message_08EBED:
 
 ;===================================================================================================
 
-; «・・・»と おもったが もちものが いっぱいだ
-; な
+; «・・・»と おもったが もちものが いっぱいだな
 ; «では もちものを へらしてこい»
 Message_08EBFC:
 #_08EBFC: db $F2, $0B ; prewritten text 0B
@@ -14433,7 +14410,7 @@ Message_08EC46:
 #_08EC47: db $2E, $27, $AA, $27, $51, $CF, $2B, $4F ; こうどうを⎵きろ
 #_08EC4F: db $2C, $31, $4D, $3D, $2A, $95 ; くするのか?
 #_08EC55: db $F8, $18 ; YES/NO - go to message $18 if YES
-#_08EC57: db $D4, $03 ; [COMMAND D4:03]
+#_08EC57: db $D4, $03 ; set text box size to 3
 #_08EC59: db $2B, $4F, $2C, $30, $39, $26, $3D, $2A ; きろくしないのか
 #_08EC61: db $FC ; wait for key and new line
 #_08EC62: db $D3, $1A ; go to message $1A
@@ -14458,14 +14435,14 @@ Message_08EC64:
 
 ; «はやく・・・でんげんを・きって・・・くれ・・・»
 Message_08EC81:
-#_08EC81: db $D4, $03 ; [COMMAND D4:03]
+#_08EC81: db $D4, $03 ; set text box size to 3
 #_08EC83: db $F2, $5D ; prewritten text 5D
 
 ;===================================================================================================
 
 ; まあ どうするかは «おまえたち»のかってだ
 Message_08EC85:
-#_08EC85: db $D4, $03 ; [COMMAND D4:03]
+#_08EC85: db $D4, $03 ; set text box size to 3
 #_08EC87: db $43, $25, $CF, $AA, $27, $31, $4D, $2A ; まあ⎵どうするか
 #_08EC8F: db $3E, $CF ; は⎵
 #_08EC91: db $F2, $04 ; prewritten text 04
@@ -14563,9 +14540,7 @@ Message_08ED25:
 #_08ED36: db $F2, $0B ; prewritten text 0B
 #_08ED38: db $FC ; wait for key and new line
 #_08ED39: db $A6, $4E, $A6, $94 ; だれだ!
-#_08ED3D: db $DF ; delay 7 frames
-#_08ED3E: db $DF ; delay 7 frames
-#_08ED3F: db $DF ; delay 7 frames
+#_08ED3D: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_08ED40: db $FC ; wait for key and new line
 #_08ED41: db $D6, $00, $2E, $70, $28 ; place sprite 2E in slot 00 at XY:{70,28}
 #_08ED46: db $F2, $0B ; prewritten text 0B
@@ -14598,7 +14573,7 @@ Message_08ED25:
 #_08EDA7: db $4B, $CF, $A9, $39, $2D, $4E, $AB, $CF ; ら⎵でなければ⎵
 #_08EDAF: db $26, $2D, $43, $32, $52, $3C ; いけませんね
 #_08EDB5: db $FC ; wait for key and new line
-#_08EDB6: db $D4, $03 ; [COMMAND D4:03]
+#_08EDB6: db $D4, $03 ; set text box size to 3
 #_08EDB8: db $97 ; >
 #_08EDB9: db $EE ; write lawful hero name
 #_08EDBA: db $9C, $CF ; が⎵
@@ -14672,7 +14647,7 @@ Message_08EDCA:
 #_08EE54: db $43, $34, $CF, $36, $26, $37, $2A, $32 ; また⎵ついてかせ
 #_08EE5C: db $37, $47, $4B, $27, $A4 ; てもらうぜ
 #_08EE61: db $FC ; wait for key and new line
-#_08EE62: db $D4, $03 ; [COMMAND D4:03]
+#_08EE62: db $D4, $03 ; set text box size to 3
 #_08EE64: db $97 ; >
 #_08EE65: db $EF ; write chaos hero name
 #_08EE66: db $9C, $CF ; が⎵
@@ -14696,7 +14671,7 @@ Message_08EE73:
 
 ; >[ITEM]のいずみ
 Message_08EE78:
-#_08EE78: db $D7, $12 ; [COMMAND D7:12]
+#_08EE78: db $D7, $12 ; load scene 12
 #_08EE7A: db $D5, $47 ; send $47 to APU
 #_08EE7C: db $E1, $B9 ; set $0A50 to $B9
 #_08EE7E: db $97 ; >
@@ -14740,7 +14715,7 @@ Message_08EE9D:
 ; [NAME]は [ITEM]を
 ; «てにいれた»
 Message_08EEB1:
-#_08EEB1: db $D4, $03 ; [COMMAND D4:03]
+#_08EEB1: db $D4, $03 ; set text box size to 3
 #_08EEB3: db $F1 ; write specific name
 #_08EEB4: db $3E, $CF ; は⎵
 #_08EEB6: db $F3 ; write item name from $0A50
@@ -14822,9 +14797,9 @@ Message_08EF2D:
 #_08EF2F: db $E7, $01 ; call routine 01E5CD with value 01 TODO
 #_08EF31: db $FA ; clear message box
 #_08EF32: db $D6, $00, $6F, $60, $28 ; place sprite 6F in slot 00 at XY:{60,28}
-#_08EF37: db $FE, $07, $78 ; ext command 07: something then wait 119 frames TODO
+#_08EF37: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_08EF3A: db $D6, $00, $78, $60, $28 ; place sprite 78 in slot 00 at XY:{60,28}
-#_08EF3F: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08EF3F: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08EF42: db $D6, $00, $00 ; delete sprite in slot 00
 #_08EF45: db $FE, $1A, $4F, $87, $19, $00, $00, $00 ; ext command 1A: 4F,87,19,00,00,00
 #_08EF4D: db $FE, $37 ; ext command 37: call 3 routines
@@ -14871,7 +14846,7 @@ Message_08EF4F:
 #_08EFB5: db $D1, $0C ; clear progress bit $0C
 #_08EFB7: db $D1, $0B ; clear progress bit $0B
 #_08EFB9: db $D0, $FF ; set progress bit $FF
-#_08EFBB: db $FE, $07, $7F ; ext command 07: something then wait 126 frames TODO
+#_08EFBB: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
 #_08EFBE: db $FE, $1B, $96, $35, $00, $00, $06, $0F ; ext command 1B: 96,35,00,00,06,0F
 #_08EFC6: db $FF ; end of message
 
@@ -15229,7 +15204,7 @@ Message_08F199:
 
 Message_08F1A4:
 #_08F1A4: db $D6, $00, $78, $60, $28 ; place sprite 78 in slot 00 at XY:{60,28}
-#_08F1A9: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08F1A9: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08F1AC: db $D6, $00, $00 ; delete sprite in slot 00
 #_08F1AF: db $FE, $1A, $41, $CB, $19, $00, $00, $00 ; ext command 1A: 41,CB,19,00,00,00
 #_08F1B7: db $FE, $37 ; ext command 37: call 3 routines
@@ -15304,7 +15279,7 @@ Message_08F212:
 #_08F21F: db $F9 ; new line
 #_08F220: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_08F222: db $D6, $00, $9D, $78, $30 ; place sprite 9D in slot 00 at XY:{78,30}
-#_08F227: db $FE, $07, $13 ; ext command 07: something then wait 18 frames TODO
+#_08F227: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_08F22A: db $D6, $00, $00 ; delete sprite in slot 00
 #_08F22D: db $DE, $01, $00, $1B, $01 ; [COMMAND DE:01,00,1B,01]
 #_08F232: db $E4, $00 ; load demon $00
@@ -15374,7 +15349,7 @@ Message_08F28A:
 
 Message_08F295:
 #_08F295: db $D6, $00, $78, $60, $28 ; place sprite 78 in slot 00 at XY:{60,28}
-#_08F29A: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08F29A: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08F29D: db $D6, $00, $00 ; delete sprite in slot 00
 #_08F2A0: db $FE, $1A, $4E, $4B, $19, $00, $00, $00 ; ext command 1A: 4E,4B,19,00,00,00
 #_08F2A8: db $FE, $37 ; ext command 37: call 3 routines
@@ -15449,7 +15424,7 @@ Message_08F303:
 #_08F310: db $F9 ; new line
 #_08F311: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_08F313: db $D6, $00, $9D, $78, $30 ; place sprite 9D in slot 00 at XY:{78,30}
-#_08F318: db $FE, $07, $13 ; ext command 07: something then wait 18 frames TODO
+#_08F318: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_08F31B: db $D6, $00, $00 ; delete sprite in slot 00
 #_08F31E: db $DE, $01, $00, $1C, $01 ; [COMMAND DE:01,00,1C,01]
 #_08F323: db $E4, $00 ; load demon $00
@@ -15529,7 +15504,7 @@ Message_08F386:
 
 Message_08F395:
 #_08F395: db $D6, $00, $78, $60, $28 ; place sprite 78 in slot 00 at XY:{60,28}
-#_08F39A: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08F39A: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08F39D: db $D6, $00, $00 ; delete sprite in slot 00
 #_08F3A0: db $D2, $0C, $6D ; test progress bit $0C for message $6D
 #_08F3A3: db $FE, $1A, $48, $8C, $19, $00, $00, $00 ; ext command 1A: 48,8C,19,00,00,00
@@ -15567,7 +15542,7 @@ Message_08F3C6:
 
 Message_08F3D5:
 #_08F3D5: db $D6, $00, $78, $60, $28 ; place sprite 78 in slot 00 at XY:{60,28}
-#_08F3DA: db $FE, $07, $03 ; ext command 07: something then wait 2 frames TODO
+#_08F3DA: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_08F3DD: db $D6, $00, $00 ; delete sprite in slot 00
 #_08F3E0: db $D2, $0B, $71 ; test progress bit $0B for message $71
 #_08F3E3: db $FE, $1A, $48, $03, $19, $00, $00, $00 ; ext command 1A: 48,03,19,00,00,00
@@ -15604,7 +15579,7 @@ Message_08F40F:
 #_08F418: db $ED ; write female protag name
 #_08F419: db $3D, $CF, $34, $43, $30, $26, $9C, $CF ; の⎵たましいが⎵
 #_08F421: db $25, $4B, $50, $4E, $34 ; あらわれた
-#_08F426: db $FE, $07, $C0 ; ext command 07: something then wait 191 frames TODO
+#_08F426: db $FE, $07, $C0 ; ext command 07: draw buffered text then wait 191 frames
 #_08F429: db $FA ; clear message box
 
 ;===================================================================================================
@@ -15627,22 +15602,22 @@ Message_08F42A:
 #_08F44A: db $2D, $A9, $47, $CF, $26, $2B, $3D, $AC ; けでも⎵いきのび
 #_08F452: db $37, $94 ; て!
 #_08F454: db $D2, $30, $75 ; test progress bit $30 for message $75
-#_08F457: db $FE, $07, $C0 ; ext command 07: something then wait 191 frames TODO
+#_08F457: db $FE, $07, $C0 ; ext command 07: draw buffered text then wait 191 frames
 #_08F45A: db $FA ; clear message box
 #_08F45B: db $A2, $2A, $52, $9C, $CF, $39, $26, $50 ; じかんが⎵ないわ
 #_08F463: db $F9 ; new line
-#_08F464: db $FE, $07, $40 ; ext command 07: something then wait 63 frames TODO
+#_08F464: db $FE, $07, $40 ; ext command 07: draw buffered text then wait 63 frames
 #_08F467: db $F2, $0B ; prewritten text 0B
 #_08F469: db $2F, $4A, $27, $39, $4B, $CF ; さようなら⎵
 #_08F46F: db $F0 ; write player name
 #_08F470: db $F2, $0B ; prewritten text 0B
-#_08F472: db $FE, $07, $C0 ; ext command 07: something then wait 191 frames TODO
+#_08F472: db $FE, $07, $C0 ; ext command 07: draw buffered text then wait 191 frames
 #_08F475: db $FA ; clear message box
 #_08F476: db $97 ; >
 #_08F477: db $ED ; write female protag name
 #_08F478: db $3E, $CF, $70, $83, $CD, $5A, $70, $51 ; は⎵トラポートを
 #_08F480: db $CF, $38, $39, $28, $34 ; ⎵となえた
-#_08F485: db $FE, $07, $C0 ; ext command 07: something then wait 191 frames TODO
+#_08F485: db $FE, $07, $C0 ; ext command 07: draw buffered text then wait 191 frames
 #_08F488: db $FF ; end of message
 
 ;===================================================================================================
@@ -17270,9 +17245,13 @@ data08FFC1:
 #_08FFCB: dw data08F599
 #_08FFCD: dw data08F5A1
 #_08FFCF: dw data08F5AB
+
+; TODO ????
 #_08FFD1: db $F5,$59,$F5,$60,$F5,$64,$F5,$6D
 #_08FFD9: db $F5,$72,$F5,$76,$F5,$7F,$F5,$85
 #_08FFE1: db $F5,$8D,$F5,$93,$F5,$97,$F5,$9B
 #_08FFE9: db $F5,$A3,$F5,$AE,$F5,$B6,$F5,$BE
 #_08FFF1: db $F5,$C8,$F5,$0C,$F6,$AD,$DE,$05
 #_08FFF9: db $DF,$52,$DF,$86,$DF,$BB,$A5
+
+;===================================================================================================

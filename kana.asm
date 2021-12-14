@@ -197,4 +197,4 @@ kPE = $CC ; ペ
 kPO = $CD ; ポ
 
 kVU = $CE ; ヴ
-BLNK = $CF
+BLNK = $CF ; ⎵
