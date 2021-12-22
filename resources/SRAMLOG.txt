@@ -5,12 +5,18 @@ SRAM	WRAM		SIZE
 ------------------------------------------------------------
 $x000	$7E:0700	0x100
 ------------------------------------------------------------
-$x000	$7E:0700	0x0C	Slots for characters?
-$x00C	$7E:070C	2		Underworld oordinates
+$x000	$7E:0700	0x0C	Slots for characters
+$x00C	$7E:070C	2		Underworld coordinates
 $x00E	$7E:070E	2		IDK coordinates of some kind?
+$x011	$7E:0711	1		
+$x012	$7E:0712	1		Flags something
+							bit 7 = moving?
+							0x03 = event?
 $x015	$7E:0715	1		Current character's offset into stats
 
 $x020	$7E:0720	?		Some sort of offset I say
+
+$x024	$7E:0724	2		Movement frame counter for dungeons
 
 $x060	$7E:0760	1		Number of stat points left to distribute
 
@@ -83,7 +89,7 @@ $x700	$7E:0400	0x100
 $x704	$7E:0404	1		Something that does something battle
 $x705	$7E:0405	4		Money
 $x709	$7E:0409	4		MAG
-$x70D	$7E:040D	1		Current direction
+$x70D	$7E:040D	1		Current direction (0=N, 1=E, 2=S, 3=W)
 $x70E	$7E:040E	1		Previous direction
 $x70F	$7E:040F	1		0xMS - M moon phase, S steps /15
 $x710	$7E:0410	8		Chase name
@@ -94,16 +100,19 @@ $x728	$7E:0428	8		"him" name
 $x750	$7E:0450	1		Last turn/move? 1 right, 2 left, 3 turnaround
 $x751	$7E:0451	1		Frame counter
 
+$x75C	$7E:045C	2		MAG taken per step (x10 with rollover)
+
 $x75B	$7E:04B0	2		Some OW movement counter; caps at 1000
 
 ------------------------------------------------------------
 $x800	$7E:3000	0x400
 ------------------------------------------------------------
-Probably visited map squares
+Visited map squares
 
 ------------------------------------------------------------
 $xC00	$7E:3400	0x100
 ------------------------------------------------------------
+chests seem to be here
 
 ------------------------------------------------------------
 $xD00	$7E:3500	0x100

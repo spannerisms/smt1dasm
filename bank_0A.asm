@@ -3,2503 +3,2503 @@ org $0A8000
 ;===================================================================================================
 
 TextSets02:
-#_0A8000: dw PTR16_0A8040
-#_0A8002: dw PTR16_0A8240
-#_0A8004: dw PTR16_0A824E
-#_0A8006: dw PTR16_0A8286
-#_0A8008: dw PTR16_0A82CA
-#_0A800A: dw PTR16_0A8308
-#_0A800C: dw PTR16_0A8340
-#_0A800E: dw PTR16_0A834E
-#_0A8010: dw PTR16_0A8368
-#_0A8012: dw PTR16_0A837E
-#_0A8014: dw PTR16_0A839E
-#_0A8016: dw PTR16_0A846A
-#_0A8018: dw PTR16_0A851C
-#_0A801A: dw PTR16_0A860E
-#_0A801C: dw PTR16_0A86EE
-#_0A801E: dw PTR16_0A87FA
-#_0A8020: dw PTR16_0A88D4
-#_0A8022: dw PTR16_0A891E
-#_0A8024: dw PTR16_0A8942
-#_0A8026: dw PTR16_0A8954
-#_0A8028: dw PTR16_0A8974
-#_0A802A: dw PTR16_0A8998
-#_0A802C: dw PTR16_0A89B0
-#_0A802E: dw PTR16_0A8B38
-#_0A8030: dw PTR16_0A8BF8
-#_0A8032: dw PTR16_0A8DAE
-#_0A8034: dw PTR16_0A8F64
-#_0A8036: dw PTR16_0A9026
-#_0A8038: dw PTR16_0A90E8
-#_0A803A: dw PTR16_0A914A
-#_0A803C: dw PTR16_0A91AA
-#_0A803E: dw PTR16_0A9210
+#_0A8000: dw Message_02_00_Pointers
+#_0A8002: dw Message_02_01_Pointers
+#_0A8004: dw Message_02_02_Pointers
+#_0A8006: dw Message_02_03_Pointers
+#_0A8008: dw Message_02_04_Pointers
+#_0A800A: dw Message_02_05_Pointers
+#_0A800C: dw Message_02_06_Pointers
+#_0A800E: dw Message_02_07_Pointers
+#_0A8010: dw Message_02_08_Pointers
+#_0A8012: dw Message_02_09_Pointers
+#_0A8014: dw Message_02_0A_Pointers
+#_0A8016: dw Message_02_0B_Pointers
+#_0A8018: dw Message_02_0C_Pointers
+#_0A801A: dw Message_02_0D_Pointers
+#_0A801C: dw Message_02_0E_Pointers
+#_0A801E: dw Message_02_0F_Pointers
+#_0A8020: dw Message_02_10_Pointers
+#_0A8022: dw Message_02_11_Pointers
+#_0A8024: dw Message_02_12_Pointers
+#_0A8026: dw Message_02_13_Pointers
+#_0A8028: dw Message_02_14_Pointers
+#_0A802A: dw Message_02_15_Pointers
+#_0A802C: dw Message_02_16_Pointers
+#_0A802E: dw Message_02_17_Pointers
+#_0A8030: dw Message_02_18_Pointers
+#_0A8032: dw Message_02_19_Pointers
+#_0A8034: dw Message_02_1A_Pointers
+#_0A8036: dw Message_02_1B_Pointers
+#_0A8038: dw Message_02_1C_Pointers
+#_0A803A: dw Message_02_1D_Pointers
+#_0A803C: dw Message_02_1E_Pointers
+#_0A803E: dw Message_02_1F_Pointers
 
 ;===================================================================================================
 
-PTR16_0A8040:
-#_0A8040: dw DATA8_0A9278
-#_0A8042: dw DATA8_0A9281
-#_0A8044: dw DATA8_0A9289
-#_0A8046: dw DATA8_0A929C
-#_0A8048: dw DATA8_0A92A6
-#_0A804A: dw DATA8_0A92B0
-#_0A804C: dw DATA8_0A92C0
-#_0A804E: dw DATA8_0A92CA
-#_0A8050: dw DATA8_0A92D3
-#_0A8052: dw DATA8_0A92D4
-#_0A8054: dw DATA8_0A92E7
-#_0A8056: dw DATA8_0A92F2
-#_0A8058: dw DATA8_0A930A
-#_0A805A: dw DATA8_0A9319
-#_0A805C: dw DATA8_0A932D
-#_0A805E: dw DATA8_0A9337
-#_0A8060: dw DATA8_0A933F
-#_0A8062: dw DATA8_0A934A
-#_0A8064: dw DATA8_0A9355
-#_0A8066: dw DATA8_0A9361
-#_0A8068: dw DATA8_0A9372
-#_0A806A: dw DATA8_0A9393
-#_0A806C: dw DATA8_0A939F
-#_0A806E: dw DATA8_0A93A8
-#_0A8070: dw DATA8_0A93AE
-#_0A8072: dw DATA8_0A93BB
-#_0A8074: dw DATA8_0A93C6
-#_0A8076: dw DATA8_0A93DA
-#_0A8078: dw DATA8_0A93EA
-#_0A807A: dw DATA8_0A93FB
-#_0A807C: dw DATA8_0A9415
-#_0A807E: dw DATA8_0A9416
-#_0A8080: dw DATA8_0A9429
-#_0A8082: dw DATA8_0A9431
-#_0A8084: dw DATA8_0A9443
-#_0A8086: dw DATA8_0A944D
-#_0A8088: dw DATA8_0A945E
-#_0A808A: dw DATA8_0A9476
-#_0A808C: dw DATA8_0A947C
-#_0A808E: dw DATA8_0A9486
-#_0A8090: dw DATA8_0A9499
-#_0A8092: dw DATA8_0A94A5
-#_0A8094: dw DATA8_0A94AB
-#_0A8096: dw DATA8_0A94AC
-#_0A8098: dw DATA8_0A94BF
-#_0A809A: dw DATA8_0A94C9
-#_0A809C: dw DATA8_0A94D0
-#_0A809E: dw DATA8_0A94E5
-#_0A80A0: dw DATA8_0A94F5
-#_0A80A2: dw DATA8_0A9503
-#_0A80A4: dw DATA8_0A950D
-#_0A80A6: dw DATA8_0A9515
-#_0A80A8: dw DATA8_0A951C
-#_0A80AA: dw DATA8_0A9527
-#_0A80AC: dw DATA8_0A9535
-#_0A80AE: dw DATA8_0A953C
-#_0A80B0: dw DATA8_0A954D
-#_0A80B2: dw DATA8_0A9561
-#_0A80B4: dw DATA8_0A9570
-#_0A80B6: dw DATA8_0A957A
-#_0A80B8: dw DATA8_0A9583
-#_0A80BA: dw DATA8_0A9588
-#_0A80BC: dw DATA8_0A9590
-#_0A80BE: dw DATA8_0A959D
-#_0A80C0: dw DATA8_0A95B1
-#_0A80C2: dw DATA8_0A95C7
-#_0A80C4: dw DATA8_0A95D5
-#_0A80C6: dw DATA8_0A95DF
-#_0A80C8: dw DATA8_0A95E8
-#_0A80CA: dw DATA8_0A95F2
-#_0A80CC: dw DATA8_0A95FF
-#_0A80CE: dw DATA8_0A960A
-#_0A80D0: dw DATA8_0A9625
-#_0A80D2: dw DATA8_0A963D
-#_0A80D4: dw DATA8_0A9649
-#_0A80D6: dw DATA8_0A964F
-#_0A80D8: dw DATA8_0A9656
-#_0A80DA: dw DATA8_0A966A
-#_0A80DC: dw DATA8_0A9684
-#_0A80DE: dw DATA8_0A969A
-#_0A80E0: dw DATA8_0A96AC
-#_0A80E2: dw DATA8_0A96B8
-#_0A80E4: dw DATA8_0A96C3
-#_0A80E6: dw DATA8_0A96CD
-#_0A80E8: dw DATA8_0A96E1
-#_0A80EA: dw DATA8_0A96F5
-#_0A80EC: dw DATA8_0A970A
-#_0A80EE: dw DATA8_0A971C
-#_0A80F0: dw DATA8_0A9725
-#_0A80F2: dw DATA8_0A972E
-#_0A80F4: dw DATA8_0A9738
-#_0A80F6: dw DATA8_0A9750
-#_0A80F8: dw DATA8_0A976A
-#_0A80FA: dw DATA8_0A9780
-#_0A80FC: dw DATA8_0A978C
-#_0A80FE: dw DATA8_0A97A0
-#_0A8100: dw DATA8_0A97AE
-#_0A8102: dw DATA8_0A97B8
-#_0A8104: dw DATA8_0A97C0
-#_0A8106: dw DATA8_0A97CF
-#_0A8108: dw DATA8_0A97DB
-#_0A810A: dw DATA8_0A97EB
-#_0A810C: dw DATA8_0A97F4
-#_0A810E: dw DATA8_0A9801
-#_0A8110: dw DATA8_0A9808
-#_0A8112: dw DATA8_0A981F
-#_0A8114: dw DATA8_0A9829
-#_0A8116: dw DATA8_0A9839
-#_0A8118: dw DATA8_0A983F
-#_0A811A: dw DATA8_0A9845
-#_0A811C: dw DATA8_0A9855
-#_0A811E: dw DATA8_0A986C
-#_0A8120: dw DATA8_0A987D
-#_0A8122: dw DATA8_0A988E
-#_0A8124: dw DATA8_0A989D
-#_0A8126: dw DATA8_0A98A6
-#_0A8128: dw DATA8_0A98B4
-#_0A812A: dw DATA8_0A98C9
-#_0A812C: dw DATA8_0A98DB
-#_0A812E: dw DATA8_0A98E8
-#_0A8130: dw DATA8_0A98FB
-#_0A8132: dw DATA8_0A9904
-#_0A8134: dw DATA8_0A9936
-#_0A8136: dw DATA8_0A9946
-#_0A8138: dw DATA8_0A9956
-#_0A813A: dw DATA8_0A9963
-#_0A813C: dw DATA8_0A996E
-#_0A813E: dw DATA8_0A997A
-#_0A8140: dw DATA8_0A9980
-#_0A8142: dw DATA8_0A998D
-#_0A8144: dw DATA8_0A999B
-#_0A8146: dw DATA8_0A99A4
-#_0A8148: dw DATA8_0A99AD
-#_0A814A: dw DATA8_0A99B7
-#_0A814C: dw DATA8_0A99D2
-#_0A814E: dw DATA8_0A99DB
-#_0A8150: dw DATA8_0A99E9
-#_0A8152: dw DATA8_0A99F3
-#_0A8154: dw DATA8_0A99FC
-#_0A8156: dw DATA8_0A9A0E
-#_0A8158: dw DATA8_0A9A21
-#_0A815A: dw DATA8_0A9A38
-#_0A815C: dw DATA8_0A9A50
-#_0A815E: dw DATA8_0A9A60
-#_0A8160: dw DATA8_0A9A76
-#_0A8162: dw DATA8_0A9A8D
-#_0A8164: dw DATA8_0A9A9A
-#_0A8166: dw DATA8_0A9AA8
-#_0A8168: dw DATA8_0A9AB2
-#_0A816A: dw DATA8_0A9AB7
-#_0A816C: dw DATA8_0A9AC0
-#_0A816E: dw DATA8_0A9AD6
-#_0A8170: dw DATA8_0A9ADE
-#_0A8172: dw DATA8_0A9AEB
-#_0A8174: dw DATA8_0A9B12
-#_0A8176: dw DATA8_0A9B22
-#_0A8178: dw DATA8_0A9B36
-#_0A817A: dw DATA8_0A9B4A
-#_0A817C: dw DATA8_0A9B56
-#_0A817E: dw DATA8_0A9B62
-#_0A8180: dw DATA8_0A9B69
-#_0A8182: dw DATA8_0A9B74
-#_0A8184: dw DATA8_0A9B7B
-#_0A8186: dw DATA8_0A9B93
-#_0A8188: dw DATA8_0A9B9C
-#_0A818A: dw DATA8_0A9BA5
-#_0A818C: dw DATA8_0A9BB4
-#_0A818E: dw DATA8_0A9BD2
-#_0A8190: dw DATA8_0A9BD8
-#_0A8192: dw DATA8_0A9BE0
-#_0A8194: dw DATA8_0A9BE7
-#_0A8196: dw DATA8_0A9BF7
-#_0A8198: dw DATA8_0A9C02
-#_0A819A: dw DATA8_0A9C14
-#_0A819C: dw DATA8_0A9C23
-#_0A819E: dw DATA8_0A9C2D
-#_0A81A0: dw DATA8_0A9C3B
-#_0A81A2: dw DATA8_0A9C45
-#_0A81A4: dw DATA8_0A9C4C
-#_0A81A6: dw DATA8_0A9C53
-#_0A81A8: dw DATA8_0A9C5A
-#_0A81AA: dw DATA8_0A9C75
-#_0A81AC: dw DATA8_0A9C7B
-#_0A81AE: dw DATA8_0A9C83
-#_0A81B0: dw DATA8_0A9C8A
-#_0A81B2: dw DATA8_0A9C94
-#_0A81B4: dw DATA8_0A9C9D
-#_0A81B6: dw DATA8_0A9CAA
-#_0A81B8: dw DATA8_0A9CAA
-#_0A81BA: dw DATA8_0A9CAA
-#_0A81BC: dw DATA8_0A9CAA
-#_0A81BE: dw DATA8_0A9CAA
-#_0A81C0: dw DATA8_0A9CAB
-#_0A81C2: dw DATA8_0A9CB3
-#_0A81C4: dw DATA8_0A9CC2
-#_0A81C6: dw DATA8_0A9CD0
-#_0A81C8: dw DATA8_0A9CDB
-#_0A81CA: dw DATA8_0A9CE5
-#_0A81CC: dw DATA8_0A9CF3
-#_0A81CE: dw DATA8_0A9D00
-#_0A81D0: dw DATA8_0A9D0A
-#_0A81D2: dw DATA8_0A9D15
-#_0A81D4: dw DATA8_0A9D20
-#_0A81D6: dw DATA8_0A9D2E
-#_0A81D8: dw DATA8_0A9D3D
-#_0A81DA: dw DATA8_0A9D4F
-#_0A81DC: dw DATA8_0A9D5D
-#_0A81DE: dw DATA8_0A9D6B
-#_0A81E0: dw DATA8_0A9D79
-#_0A81E2: dw DATA8_0A9D88
-#_0A81E4: dw DATA8_0A9D8D
-#_0A81E6: dw DATA8_0A9D9A
-#_0A81E8: dw DATA8_0A9DA4
-#_0A81EA: dw DATA8_0A9DB2
-#_0A81EC: dw DATA8_0A9DBF
-#_0A81EE: dw DATA8_0A9DCC
-#_0A81F0: dw DATA8_0A9DDC
-#_0A81F2: dw DATA8_0A9DEB
-#_0A81F4: dw DATA8_0A9DEB
-#_0A81F6: dw DATA8_0A9DEB
-#_0A81F8: dw DATA8_0A9DEB
-#_0A81FA: dw DATA8_0A9DEB
-#_0A81FC: dw DATA8_0A9DEC
-#_0A81FE: dw DATA8_0A9DFD
-#_0A8200: dw DATA8_0A9E0E
-#_0A8202: dw DATA8_0A9E1D
-#_0A8204: dw DATA8_0A9E28
-#_0A8206: dw DATA8_0A9E34
-#_0A8208: dw DATA8_0A9E35
-#_0A820A: dw DATA8_0A9E36
-#_0A820C: dw DATA8_0A9E43
-#_0A820E: dw DATA8_0A9E4F
-#_0A8210: dw DATA8_0A9E63
-#_0A8212: dw DATA8_0A9E71
-#_0A8214: dw DATA8_0A9E7D
-#_0A8216: dw DATA8_0A9E94
-#_0A8218: dw DATA8_0A9EB2
-#_0A821A: dw DATA8_0A9ECA
-#_0A821C: dw DATA8_0A9EDA
-#_0A821E: dw DATA8_0A9EEE
-#_0A8220: dw DATA8_0A9F03
-#_0A8222: dw DATA8_0A9F12
-#_0A8224: dw DATA8_0A9F22
-#_0A8226: dw DATA8_0A9F22
-#_0A8228: dw DATA8_0A9F23
-#_0A822A: dw DATA8_0A9F46
-#_0A822C: dw DATA8_0A9F53
-#_0A822E: dw DATA8_0A9F6E
-#_0A8230: dw DATA8_0A9F85
-#_0A8232: dw DATA8_0A9F85
-#_0A8234: dw DATA8_0A9F85
-#_0A8236: dw DATA8_0A9F85
-#_0A8238: dw DATA8_0A9F85
-#_0A823A: dw DATA8_0A9F85
-#_0A823C: dw DATA8_0A9F85
-#_0A823E: dw DATA8_0A9F85
+Message_02_00_Pointers:
+#_0A8040: dw Message_02_00_00
+#_0A8042: dw Message_02_00_01
+#_0A8044: dw Message_02_00_02
+#_0A8046: dw Message_02_00_03
+#_0A8048: dw Message_02_00_04
+#_0A804A: dw Message_02_00_05
+#_0A804C: dw Message_02_00_06
+#_0A804E: dw Message_02_00_07
+#_0A8050: dw Message_02_00_08
+#_0A8052: dw Message_02_00_09
+#_0A8054: dw Message_02_00_0A
+#_0A8056: dw Message_02_00_0B
+#_0A8058: dw Message_02_00_0C
+#_0A805A: dw Message_02_00_0D
+#_0A805C: dw Message_02_00_0E
+#_0A805E: dw Message_02_00_0F
+#_0A8060: dw Message_02_00_10
+#_0A8062: dw Message_02_00_11
+#_0A8064: dw Message_02_00_12
+#_0A8066: dw Message_02_00_13
+#_0A8068: dw Message_02_00_14
+#_0A806A: dw Message_02_00_15
+#_0A806C: dw Message_02_00_16
+#_0A806E: dw Message_02_00_17
+#_0A8070: dw Message_02_00_18
+#_0A8072: dw Message_02_00_19
+#_0A8074: dw Message_02_00_1A
+#_0A8076: dw Message_02_00_1B
+#_0A8078: dw Message_02_00_1C
+#_0A807A: dw Message_02_00_1D
+#_0A807C: dw Message_02_00_1E
+#_0A807E: dw Message_02_00_1F
+#_0A8080: dw Message_02_00_20
+#_0A8082: dw Message_02_00_21
+#_0A8084: dw Message_02_00_22
+#_0A8086: dw Message_02_00_23
+#_0A8088: dw Message_02_00_24
+#_0A808A: dw Message_02_00_25
+#_0A808C: dw Message_02_00_26
+#_0A808E: dw Message_02_00_27
+#_0A8090: dw Message_02_00_28
+#_0A8092: dw Message_02_00_29
+#_0A8094: dw Message_02_00_2A
+#_0A8096: dw Message_02_00_2B
+#_0A8098: dw Message_02_00_2C
+#_0A809A: dw Message_02_00_2D
+#_0A809C: dw Message_02_00_2E
+#_0A809E: dw Message_02_00_2F
+#_0A80A0: dw Message_02_00_30
+#_0A80A2: dw Message_02_00_31
+#_0A80A4: dw Message_02_00_32
+#_0A80A6: dw Message_02_00_33
+#_0A80A8: dw Message_02_00_34
+#_0A80AA: dw Message_02_00_35
+#_0A80AC: dw Message_02_00_36
+#_0A80AE: dw Message_02_00_37
+#_0A80B0: dw Message_02_00_38
+#_0A80B2: dw Message_02_00_39
+#_0A80B4: dw Message_02_00_3A
+#_0A80B6: dw Message_02_00_3B
+#_0A80B8: dw Message_02_00_3C
+#_0A80BA: dw Message_02_00_3D
+#_0A80BC: dw Message_02_00_3E
+#_0A80BE: dw Message_02_00_3F
+#_0A80C0: dw Message_02_00_40
+#_0A80C2: dw Message_02_00_41
+#_0A80C4: dw Message_02_00_42
+#_0A80C6: dw Message_02_00_43
+#_0A80C8: dw Message_02_00_44
+#_0A80CA: dw Message_02_00_45
+#_0A80CC: dw Message_02_00_46
+#_0A80CE: dw Message_02_00_47
+#_0A80D0: dw Message_02_00_48
+#_0A80D2: dw Message_02_00_49
+#_0A80D4: dw Message_02_00_4A
+#_0A80D6: dw Message_02_00_4B
+#_0A80D8: dw Message_02_00_4C
+#_0A80DA: dw Message_02_00_4D
+#_0A80DC: dw Message_02_00_4E
+#_0A80DE: dw Message_02_00_4F
+#_0A80E0: dw Message_02_00_50
+#_0A80E2: dw Message_02_00_51
+#_0A80E4: dw Message_02_00_52
+#_0A80E6: dw Message_02_00_53
+#_0A80E8: dw Message_02_00_54
+#_0A80EA: dw Message_02_00_55
+#_0A80EC: dw Message_02_00_56
+#_0A80EE: dw Message_02_00_57
+#_0A80F0: dw Message_02_00_58
+#_0A80F2: dw Message_02_00_59
+#_0A80F4: dw Message_02_00_5A
+#_0A80F6: dw Message_02_00_5B
+#_0A80F8: dw Message_02_00_5C
+#_0A80FA: dw Message_02_00_5D
+#_0A80FC: dw Message_02_00_5E
+#_0A80FE: dw Message_02_00_5F
+#_0A8100: dw Message_02_00_60
+#_0A8102: dw Message_02_00_61
+#_0A8104: dw Message_02_00_62
+#_0A8106: dw Message_02_00_63
+#_0A8108: dw Message_02_00_64
+#_0A810A: dw Message_02_00_65
+#_0A810C: dw Message_02_00_66
+#_0A810E: dw Message_02_00_67
+#_0A8110: dw Message_02_00_68
+#_0A8112: dw Message_02_00_69
+#_0A8114: dw Message_02_00_6A
+#_0A8116: dw Message_02_00_6B
+#_0A8118: dw Message_02_00_6C
+#_0A811A: dw Message_02_00_6D
+#_0A811C: dw Message_02_00_6E
+#_0A811E: dw Message_02_00_6F
+#_0A8120: dw Message_02_00_70
+#_0A8122: dw Message_02_00_71
+#_0A8124: dw Message_02_00_72
+#_0A8126: dw Message_02_00_73
+#_0A8128: dw Message_02_00_74
+#_0A812A: dw Message_02_00_75
+#_0A812C: dw Message_02_00_76
+#_0A812E: dw Message_02_00_77
+#_0A8130: dw Message_02_00_78
+#_0A8132: dw Message_02_00_79
+#_0A8134: dw Message_02_00_7A
+#_0A8136: dw Message_02_00_7B
+#_0A8138: dw Message_02_00_7C
+#_0A813A: dw Message_02_00_7D
+#_0A813C: dw Message_02_00_7E
+#_0A813E: dw Message_02_00_7F
+#_0A8140: dw Message_02_00_80
+#_0A8142: dw Message_02_00_81
+#_0A8144: dw Message_02_00_82
+#_0A8146: dw Message_02_00_83
+#_0A8148: dw Message_02_00_84
+#_0A814A: dw Message_02_00_85
+#_0A814C: dw Message_02_00_86
+#_0A814E: dw Message_02_00_87
+#_0A8150: dw Message_02_00_88
+#_0A8152: dw Message_02_00_89
+#_0A8154: dw Message_02_00_8A
+#_0A8156: dw Message_02_00_8B
+#_0A8158: dw Message_02_00_8C
+#_0A815A: dw Message_02_00_8D
+#_0A815C: dw Message_02_00_8E
+#_0A815E: dw Message_02_00_8F
+#_0A8160: dw Message_02_00_90
+#_0A8162: dw Message_02_00_91
+#_0A8164: dw Message_02_00_92
+#_0A8166: dw Message_02_00_93
+#_0A8168: dw Message_02_00_94
+#_0A816A: dw Message_02_00_95
+#_0A816C: dw Message_02_00_96
+#_0A816E: dw Message_02_00_97
+#_0A8170: dw Message_02_00_98
+#_0A8172: dw Message_02_00_99
+#_0A8174: dw Message_02_00_9A
+#_0A8176: dw Message_02_00_9B
+#_0A8178: dw Message_02_00_9C
+#_0A817A: dw Message_02_00_9D
+#_0A817C: dw Message_02_00_9E
+#_0A817E: dw Message_02_00_9F
+#_0A8180: dw Message_02_00_A0
+#_0A8182: dw Message_02_00_A1
+#_0A8184: dw Message_02_00_A2
+#_0A8186: dw Message_02_00_A3
+#_0A8188: dw Message_02_00_A4
+#_0A818A: dw Message_02_00_A5
+#_0A818C: dw Message_02_00_A6
+#_0A818E: dw Message_02_00_A7
+#_0A8190: dw Message_02_00_A8
+#_0A8192: dw Message_02_00_A9
+#_0A8194: dw Message_02_00_AA
+#_0A8196: dw Message_02_00_AB
+#_0A8198: dw Message_02_00_AC
+#_0A819A: dw Message_02_00_AD
+#_0A819C: dw Message_02_00_AE
+#_0A819E: dw Message_02_00_AF
+#_0A81A0: dw Message_02_00_B0
+#_0A81A2: dw Message_02_00_B1
+#_0A81A4: dw Message_02_00_B2
+#_0A81A6: dw Message_02_00_B3
+#_0A81A8: dw Message_02_00_B4
+#_0A81AA: dw Message_02_00_B5
+#_0A81AC: dw Message_02_00_B6
+#_0A81AE: dw Message_02_00_B7
+#_0A81B0: dw Message_02_00_B8
+#_0A81B2: dw Message_02_00_B9
+#_0A81B4: dw Message_02_00_BA
+#_0A81B6: dw Message_02_00_BB
+#_0A81B8: dw Message_02_00_BB
+#_0A81BA: dw Message_02_00_BB
+#_0A81BC: dw Message_02_00_BB
+#_0A81BE: dw Message_02_00_BB
+#_0A81C0: dw Message_02_00_C0
+#_0A81C2: dw Message_02_00_C1
+#_0A81C4: dw Message_02_00_C2
+#_0A81C6: dw Message_02_00_C3
+#_0A81C8: dw Message_02_00_C4
+#_0A81CA: dw Message_02_00_C5
+#_0A81CC: dw Message_02_00_C6
+#_0A81CE: dw Message_02_00_C7
+#_0A81D0: dw Message_02_00_C8
+#_0A81D2: dw Message_02_00_C9
+#_0A81D4: dw Message_02_00_CA
+#_0A81D6: dw Message_02_00_CB
+#_0A81D8: dw Message_02_00_CC
+#_0A81DA: dw Message_02_00_CD
+#_0A81DC: dw Message_02_00_CE
+#_0A81DE: dw Message_02_00_CF
+#_0A81E0: dw Message_02_00_D0
+#_0A81E2: dw Message_02_00_D1
+#_0A81E4: dw Message_02_00_D2
+#_0A81E6: dw Message_02_00_D3
+#_0A81E8: dw Message_02_00_D4
+#_0A81EA: dw Message_02_00_D5
+#_0A81EC: dw Message_02_00_D6
+#_0A81EE: dw Message_02_00_D7
+#_0A81F0: dw Message_02_00_D8
+#_0A81F2: dw Message_02_00_D9
+#_0A81F4: dw Message_02_00_D9
+#_0A81F6: dw Message_02_00_D9
+#_0A81F8: dw Message_02_00_D9
+#_0A81FA: dw Message_02_00_D9
+#_0A81FC: dw Message_02_00_DE
+#_0A81FE: dw Message_02_00_DF
+#_0A8200: dw Message_02_00_E0
+#_0A8202: dw Message_02_00_E1
+#_0A8204: dw Message_02_00_E2
+#_0A8206: dw Message_02_00_E3
+#_0A8208: dw Message_02_00_E4
+#_0A820A: dw Message_02_00_E5
+#_0A820C: dw Message_02_00_E6
+#_0A820E: dw Message_02_00_E7
+#_0A8210: dw Message_02_00_E8
+#_0A8212: dw Message_02_00_E9
+#_0A8214: dw Message_02_00_EA
+#_0A8216: dw Message_02_00_EB
+#_0A8218: dw Message_02_00_EC
+#_0A821A: dw Message_02_00_ED
+#_0A821C: dw Message_02_00_EE
+#_0A821E: dw Message_02_00_EF
+#_0A8220: dw Message_02_00_F0
+#_0A8222: dw Message_02_00_F1
+#_0A8224: dw Message_02_00_F2
+#_0A8226: dw Message_02_00_F2
+#_0A8228: dw Message_02_00_F4
+#_0A822A: dw Message_02_00_F5
+#_0A822C: dw Message_02_00_F6
+#_0A822E: dw Message_02_00_F7
+#_0A8230: dw Message_02_00_F8
+#_0A8232: dw Message_02_00_F8
+#_0A8234: dw Message_02_00_F8
+#_0A8236: dw Message_02_00_F8
+#_0A8238: dw Message_02_00_F8
+#_0A823A: dw Message_02_00_F8
+#_0A823C: dw Message_02_00_F8
+#_0A823E: dw Message_02_00_F8
 
 ;===================================================================================================
 
-PTR16_0A8240:
-#_0A8240: dw DATA8_0A9F86
-#_0A8242: dw DATA8_0A9FA7
-#_0A8244: dw DATA8_0A9FA9
-#_0A8246: dw DATA8_0A9FAB
-#_0A8248: dw DATA8_0A9FBE
-#_0A824A: dw DATA8_0A9FD0
-#_0A824C: dw DATA8_0A9FDC
+Message_02_01_Pointers:
+#_0A8240: dw Message_02_01_00
+#_0A8242: dw Message_02_01_01
+#_0A8244: dw Message_02_01_02
+#_0A8246: dw Message_02_01_03
+#_0A8248: dw Message_02_01_04
+#_0A824A: dw Message_02_01_05
+#_0A824C: dw Message_02_01_06
 
 ;===================================================================================================
 
-PTR16_0A824E:
-#_0A824E: dw DATA8_0A9FF8
-#_0A8250: dw DATA8_0A9FFE
-#_0A8252: dw DATA8_0AA00E
-#_0A8254: dw DATA8_0AA022
-#_0A8256: dw DATA8_0AA028
-#_0A8258: dw DATA8_0AA02D
-#_0A825A: dw DATA8_0AA03C
-#_0A825C: dw DATA8_0AA042
-#_0A825E: dw DATA8_0AA059
-#_0A8260: dw DATA8_0AA062
-#_0A8262: dw DATA8_0AA071
-#_0A8264: dw DATA8_0AA077
-#_0A8266: dw DATA8_0AA083
-#_0A8268: dw DATA8_0AA089
-#_0A826A: dw DATA8_0AA099
-#_0A826C: dw DATA8_0AA0A5
-#_0A826E: dw DATA8_0AA0AB
-#_0A8270: dw DATA8_0AA0BB
-#_0A8272: dw DATA8_0AA0C4
-#_0A8274: dw DATA8_0AA0CA
-#_0A8276: dw DATA8_0AA0D5
-#_0A8278: dw DATA8_0AA0E1
-#_0A827A: dw DATA8_0AA0E6
-#_0A827C: dw DATA8_0AA0F2
-#_0A827E: dw DATA8_0AA0F7
-#_0A8280: dw DATA8_0AA0FD
-#_0A8282: dw DATA8_0AA103
-#_0A8284: dw DATA8_0AA10C
+Message_02_02_Pointers:
+#_0A824E: dw Message_02_02_00
+#_0A8250: dw Message_02_02_01
+#_0A8252: dw Message_02_02_02
+#_0A8254: dw Message_02_02_03
+#_0A8256: dw Message_02_02_04
+#_0A8258: dw Message_02_02_05
+#_0A825A: dw Message_02_02_06
+#_0A825C: dw Message_02_02_07
+#_0A825E: dw Message_02_02_08
+#_0A8260: dw Message_02_02_09
+#_0A8262: dw Message_02_02_0A
+#_0A8264: dw Message_02_02_0B
+#_0A8266: dw Message_02_02_0C
+#_0A8268: dw Message_02_02_0D
+#_0A826A: dw Message_02_02_0E
+#_0A826C: dw Message_02_02_0F
+#_0A826E: dw Message_02_02_10
+#_0A8270: dw Message_02_02_11
+#_0A8272: dw Message_02_02_12
+#_0A8274: dw Message_02_02_13
+#_0A8276: dw Message_02_02_14
+#_0A8278: dw Message_02_02_15
+#_0A827A: dw Message_02_02_16
+#_0A827C: dw Message_02_02_17
+#_0A827E: dw Message_02_02_18
+#_0A8280: dw Message_02_02_19
+#_0A8282: dw Message_02_02_1A
+#_0A8284: dw Message_02_02_1B
 
 ;===================================================================================================
 
-PTR16_0A8286:
-#_0A8286: dw DATA8_0AA112
-#_0A8288: dw DATA8_0AA118
-#_0A828A: dw DATA8_0AA128
-#_0A828C: dw DATA8_0AA12D
-#_0A828E: dw DATA8_0AA13E
-#_0A8290: dw DATA8_0AA147
-#_0A8292: dw DATA8_0AA154
-#_0A8294: dw DATA8_0AA157
-#_0A8296: dw DATA8_0AA163
-#_0A8298: dw DATA8_0AA169
-#_0A829A: dw DATA8_0AA179
-#_0A829C: dw DATA8_0AA181
-#_0A829E: dw DATA8_0AA18A
-#_0A82A0: dw DATA8_0AA198
-#_0A82A2: dw DATA8_0AA1A9
-#_0A82A4: dw DATA8_0AA1B2
-#_0A82A6: dw DATA8_0AA1B7
-#_0A82A8: dw DATA8_0AA1C0
-#_0A82AA: dw DATA8_0AA1CA
-#_0A82AC: dw DATA8_0AA1D6
-#_0A82AE: dw DATA8_0AA1E1
-#_0A82B0: dw DATA8_0AA1E6
-#_0A82B2: dw DATA8_0AA1EF
-#_0A82B4: dw DATA8_0AA1F4
-#_0A82B6: dw DATA8_0AA1FD
-#_0A82B8: dw DATA8_0AA20C
-#_0A82BA: dw DATA8_0AA212
-#_0A82BC: dw DATA8_0AA22A
-#_0A82BE: dw DATA8_0AA232
-#_0A82C0: dw DATA8_0AA23B
-#_0A82C2: dw DATA8_0AA241
-#_0A82C4: dw DATA8_0AA251
-#_0A82C6: dw DATA8_0AA254
-#_0A82C8: dw DATA8_0AA25C
+Message_02_03_Pointers:
+#_0A8286: dw Message_02_03_00
+#_0A8288: dw Message_02_03_01
+#_0A828A: dw Message_02_03_02
+#_0A828C: dw Message_02_03_03
+#_0A828E: dw Message_02_03_04
+#_0A8290: dw Message_02_03_05
+#_0A8292: dw Message_02_03_06
+#_0A8294: dw Message_02_03_07
+#_0A8296: dw Message_02_03_08
+#_0A8298: dw Message_02_03_09
+#_0A829A: dw Message_02_03_0A
+#_0A829C: dw Message_02_03_0B
+#_0A829E: dw Message_02_03_0C
+#_0A82A0: dw Message_02_03_0D
+#_0A82A2: dw Message_02_03_0E
+#_0A82A4: dw Message_02_03_0F
+#_0A82A6: dw Message_02_03_10
+#_0A82A8: dw Message_02_03_11
+#_0A82AA: dw Message_02_03_12
+#_0A82AC: dw Message_02_03_13
+#_0A82AE: dw Message_02_03_14
+#_0A82B0: dw Message_02_03_15
+#_0A82B2: dw Message_02_03_16
+#_0A82B4: dw Message_02_03_17
+#_0A82B6: dw Message_02_03_18
+#_0A82B8: dw Message_02_03_19
+#_0A82BA: dw Message_02_03_1A
+#_0A82BC: dw Message_02_03_1B
+#_0A82BE: dw Message_02_03_1C
+#_0A82C0: dw Message_02_03_1D
+#_0A82C2: dw Message_02_03_1E
+#_0A82C4: dw Message_02_03_1F
+#_0A82C6: dw Message_02_03_20
+#_0A82C8: dw Message_02_03_21
 
 ;===================================================================================================
 
-PTR16_0A82CA:
-#_0A82CA: dw DATA8_0AA261
-#_0A82CC: dw DATA8_0AA266
-#_0A82CE: dw DATA8_0AA276
-#_0A82D0: dw DATA8_0AA27E
-#_0A82D2: dw DATA8_0AA28C
-#_0A82D4: dw DATA8_0AA295
-#_0A82D6: dw DATA8_0AA298
-#_0A82D8: dw DATA8_0AA29D
-#_0A82DA: dw DATA8_0AA2B6
-#_0A82DC: dw DATA8_0AA2BE
-#_0A82DE: dw DATA8_0AA2C4
-#_0A82E0: dw DATA8_0AA2E0
-#_0A82E2: dw DATA8_0AA2EC
-#_0A82E4: dw DATA8_0AA2F1
-#_0A82E6: dw DATA8_0AA2F4
-#_0A82E8: dw DATA8_0AA2F6
-#_0A82EA: dw DATA8_0AA2FF
-#_0A82EC: dw DATA8_0AA30B
-#_0A82EE: dw DATA8_0AA319
-#_0A82F0: dw DATA8_0AA322
-#_0A82F2: dw DATA8_0AA332
-#_0A82F4: dw DATA8_0AA33B
-#_0A82F6: dw DATA8_0AA36D
-#_0A82F8: dw DATA8_0AA376
-#_0A82FA: dw DATA8_0AA386
-#_0A82FC: dw DATA8_0AA38B
-#_0A82FE: dw DATA8_0AA39C
-#_0A8300: dw DATA8_0AA3A5
-#_0A8302: dw DATA8_0AA3AA
-#_0A8304: dw DATA8_0AA3BA
-#_0A8306: dw DATA8_0AA3C3
+Message_02_04_Pointers:
+#_0A82CA: dw Message_02_04_00
+#_0A82CC: dw Message_02_04_01
+#_0A82CE: dw Message_02_04_02
+#_0A82D0: dw Message_02_04_03
+#_0A82D2: dw Message_02_04_04
+#_0A82D4: dw Message_02_04_05
+#_0A82D6: dw Message_02_04_06
+#_0A82D8: dw Message_02_04_07
+#_0A82DA: dw Message_02_04_08
+#_0A82DC: dw Message_02_04_09
+#_0A82DE: dw Message_02_04_0A
+#_0A82E0: dw Message_02_04_0B
+#_0A82E2: dw Message_02_04_0C
+#_0A82E4: dw Message_02_04_0D
+#_0A82E6: dw Message_02_04_0E
+#_0A82E8: dw Message_02_04_0F
+#_0A82EA: dw Message_02_04_10
+#_0A82EC: dw Message_02_04_11
+#_0A82EE: dw Message_02_04_12
+#_0A82F0: dw Message_02_04_13
+#_0A82F2: dw Message_02_04_14
+#_0A82F4: dw Message_02_04_15
+#_0A82F6: dw Message_02_04_16
+#_0A82F8: dw Message_02_04_17
+#_0A82FA: dw Message_02_04_18
+#_0A82FC: dw Message_02_04_19
+#_0A82FE: dw Message_02_04_1A
+#_0A8300: dw Message_02_04_1B
+#_0A8302: dw Message_02_04_1C
+#_0A8304: dw Message_02_04_1D
+#_0A8306: dw Message_02_04_1E
 
 ;===================================================================================================
 
-PTR16_0A8308:
-#_0A8308: dw DATA8_0AA3C9
-#_0A830A: dw DATA8_0AA3CF
-#_0A830C: dw DATA8_0AA3DF
-#_0A830E: dw DATA8_0AA3E4
-#_0A8310: dw DATA8_0AA3ED
-#_0A8312: dw DATA8_0AA3F6
-#_0A8314: dw DATA8_0AA41B
-#_0A8316: dw DATA8_0AA421
-#_0A8318: dw DATA8_0AA424
-#_0A831A: dw DATA8_0AA434
-#_0A831C: dw DATA8_0AA439
-#_0A831E: dw DATA8_0AA43F
-#_0A8320: dw DATA8_0AA445
-#_0A8322: dw DATA8_0AA452
-#_0A8324: dw DATA8_0AA458
-#_0A8326: dw DATA8_0AA464
-#_0A8328: dw DATA8_0AA469
-#_0A832A: dw DATA8_0AA479
-#_0A832C: dw DATA8_0AA485
-#_0A832E: dw DATA8_0AA48A
-#_0A8330: dw DATA8_0AA48F
-#_0A8332: dw DATA8_0AA495
-#_0A8334: dw DATA8_0AA49B
-#_0A8336: dw DATA8_0AA4A3
-#_0A8338: dw DATA8_0AA4AD
-#_0A833A: dw DATA8_0AA4BD
-#_0A833C: dw DATA8_0AA4CD
-#_0A833E: dw DATA8_0AA4D2
+Message_02_05_Pointers:
+#_0A8308: dw Message_02_05_00
+#_0A830A: dw Message_02_05_01
+#_0A830C: dw Message_02_05_02
+#_0A830E: dw Message_02_05_03
+#_0A8310: dw Message_02_05_04
+#_0A8312: dw Message_02_05_05
+#_0A8314: dw Message_02_05_06
+#_0A8316: dw Message_02_05_07
+#_0A8318: dw Message_02_05_08
+#_0A831A: dw Message_02_05_09
+#_0A831C: dw Message_02_05_0A
+#_0A831E: dw Message_02_05_0B
+#_0A8320: dw Message_02_05_0C
+#_0A8322: dw Message_02_05_0D
+#_0A8324: dw Message_02_05_0E
+#_0A8326: dw Message_02_05_0F
+#_0A8328: dw Message_02_05_10
+#_0A832A: dw Message_02_05_11
+#_0A832C: dw Message_02_05_12
+#_0A832E: dw Message_02_05_13
+#_0A8330: dw Message_02_05_14
+#_0A8332: dw Message_02_05_15
+#_0A8334: dw Message_02_05_16
+#_0A8336: dw Message_02_05_17
+#_0A8338: dw Message_02_05_18
+#_0A833A: dw Message_02_05_19
+#_0A833C: dw Message_02_05_1A
+#_0A833E: dw Message_02_05_1B
 
 ;===================================================================================================
 
-PTR16_0A8340:
-#_0A8340: dw DATA8_0AA4DB
-#_0A8342: dw DATA8_0AA4F1
-#_0A8344: dw DATA8_0AA503
-#_0A8346: dw DATA8_0AA508
-#_0A8348: dw DATA8_0AA50E
-#_0A834A: dw DATA8_0AA51A
-#_0A834C: dw DATA8_0AA51F
+Message_02_06_Pointers:
+#_0A8340: dw Message_02_06_00
+#_0A8342: dw Message_02_06_01
+#_0A8344: dw Message_02_06_02
+#_0A8346: dw Message_02_06_03
+#_0A8348: dw Message_02_06_04
+#_0A834A: dw Message_02_06_05
+#_0A834C: dw Message_02_06_06
 
 ;===================================================================================================
 
-PTR16_0A834E:
-#_0A834E: dw DATA8_0AA525
-#_0A8350: dw DATA8_0AA538
-#_0A8352: dw DATA8_0AA548
-#_0A8354: dw DATA8_0AA54D
-#_0A8356: dw DATA8_0AA553
-#_0A8358: dw DATA8_0AA55F
-#_0A835A: dw DATA8_0AA565
-#_0A835C: dw DATA8_0AA571
-#_0A835E: dw DATA8_0AA576
-#_0A8360: dw DATA8_0AA57F
-#_0A8362: dw DATA8_0AA582
-#_0A8364: dw DATA8_0AA592
-#_0A8366: dw DATA8_0AA597
+Message_02_07_Pointers:
+#_0A834E: dw Message_02_07_00
+#_0A8350: dw Message_02_07_01
+#_0A8352: dw Message_02_07_02
+#_0A8354: dw Message_02_07_03
+#_0A8356: dw Message_02_07_04
+#_0A8358: dw Message_02_07_05
+#_0A835A: dw Message_02_07_06
+#_0A835C: dw Message_02_07_07
+#_0A835E: dw Message_02_07_08
+#_0A8360: dw Message_02_07_09
+#_0A8362: dw Message_02_07_0A
+#_0A8364: dw Message_02_07_0B
+#_0A8366: dw Message_02_07_0C
 
 ;===================================================================================================
 
-PTR16_0A8368:
-#_0A8368: dw DATA8_0AA59C
-#_0A836A: dw DATA8_0AA5B2
-#_0A836C: dw DATA8_0AA5B8
-#_0A836E: dw DATA8_0AA5BD
-#_0A8370: dw DATA8_0AA5D1
-#_0A8372: dw DATA8_0AA5D9
-#_0A8374: dw DATA8_0AA5DE
-#_0A8376: dw DATA8_0AA5EC
-#_0A8378: dw DATA8_0AA60A
-#_0A837A: dw DATA8_0AA612
-#_0A837C: dw DATA8_0AA617
+Message_02_08_Pointers:
+#_0A8368: dw Message_02_08_00
+#_0A836A: dw Message_02_08_01
+#_0A836C: dw Message_02_08_02
+#_0A836E: dw Message_02_08_03
+#_0A8370: dw Message_02_08_04
+#_0A8372: dw Message_02_08_05
+#_0A8374: dw Message_02_08_06
+#_0A8376: dw Message_02_08_07
+#_0A8378: dw Message_02_08_08
+#_0A837A: dw Message_02_08_09
+#_0A837C: dw Message_02_08_0A
 
 ;===================================================================================================
 
-PTR16_0A837E:
-#_0A837E: dw DATA8_0AA622
-#_0A8380: dw DATA8_0AA635
-#_0A8382: dw DATA8_0AA638
-#_0A8384: dw DATA8_0AA63E
-#_0A8386: dw DATA8_0AA643
-#_0A8388: dw DATA8_0AA64C
-#_0A838A: dw DATA8_0AA651
-#_0A838C: dw DATA8_0AA661
-#_0A838E: dw DATA8_0AA66C
-#_0A8390: dw DATA8_0AA67C
-#_0A8392: dw DATA8_0AA68C
-#_0A8394: dw DATA8_0AA68F
-#_0A8396: dw DATA8_0AA699
-#_0A8398: dw DATA8_0AA69E
-#_0A839A: dw DATA8_0AA6A2
-#_0A839C: dw DATA8_0AA6A7
+Message_02_09_Pointers:
+#_0A837E: dw Message_02_09_00
+#_0A8380: dw Message_02_09_01
+#_0A8382: dw Message_02_09_02
+#_0A8384: dw Message_02_09_03
+#_0A8386: dw Message_02_09_04
+#_0A8388: dw Message_02_09_05
+#_0A838A: dw Message_02_09_06
+#_0A838C: dw Message_02_09_07
+#_0A838E: dw Message_02_09_08
+#_0A8390: dw Message_02_09_09
+#_0A8392: dw Message_02_09_0A
+#_0A8394: dw Message_02_09_0B
+#_0A8396: dw Message_02_09_0C
+#_0A8398: dw Message_02_09_0D
+#_0A839A: dw Message_02_09_0E
+#_0A839C: dw Message_02_09_0F
 
 ;===================================================================================================
 
-PTR16_0A839E:
-#_0A839E: dw DATA8_0AA6B2
-#_0A83A0: dw DATA8_0AA6BB
-#_0A83A2: dw DATA8_0AA6CB
-#_0A83A4: dw DATA8_0AA6D0
-#_0A83A6: dw DATA8_0AA6D3
-#_0A83A8: dw DATA8_0AA6DF
-#_0A83AA: dw DATA8_0AA6E1
-#_0A83AC: dw DATA8_0AA6EF
-#_0A83AE: dw DATA8_0AA6FB
-#_0A83B0: dw DATA8_0AA6FE
-#_0A83B2: dw DATA8_0AA709
-#_0A83B4: dw DATA8_0AA715
-#_0A83B6: dw DATA8_0AA71A
-#_0A83B8: dw DATA8_0AA722
-#_0A83BA: dw DATA8_0AA72A
-#_0A83BC: dw DATA8_0AA732
-#_0A83BE: dw DATA8_0AA73B
-#_0A83C0: dw DATA8_0AA749
-#_0A83C2: dw DATA8_0AA758
-#_0A83C4: dw DATA8_0AA75D
-#_0A83C6: dw DATA8_0AA76D
-#_0A83C8: dw DATA8_0AA77C
-#_0A83CA: dw DATA8_0AA78C
-#_0A83CC: dw DATA8_0AA791
-#_0A83CE: dw DATA8_0AA79D
-#_0A83D0: dw DATA8_0AA79F
-#_0A83D2: dw DATA8_0AA7A4
-#_0A83D4: dw DATA8_0AA7B4
-#_0A83D6: dw DATA8_0AA7C6
-#_0A83D8: dw DATA8_0AA7D1
-#_0A83DA: dw DATA8_0AA7D6
-#_0A83DC: dw DATA8_0AA7DE
-#_0A83DE: dw DATA8_0AA7E7
-#_0A83E0: dw DATA8_0AA7ED
-#_0A83E2: dw DATA8_0AA7F6
-#_0A83E4: dw DATA8_0AA806
-#_0A83E6: dw DATA8_0AA812
-#_0A83E8: dw DATA8_0AA81B
-#_0A83EA: dw DATA8_0AA82B
-#_0A83EC: dw DATA8_0AA836
-#_0A83EE: dw DATA8_0AA841
-#_0A83F0: dw DATA8_0AA850
-#_0A83F2: dw DATA8_0AA85F
-#_0A83F4: dw DATA8_0AA86A
-#_0A83F6: dw DATA8_0AA87A
-#_0A83F8: dw DATA8_0AA888
-#_0A83FA: dw DATA8_0AA891
-#_0A83FC: dw DATA8_0AA89D
-#_0A83FE: dw DATA8_0AA8AC
-#_0A8400: dw DATA8_0AA8B8
-#_0A8402: dw DATA8_0AA8C6
-#_0A8404: dw DATA8_0AA8D5
-#_0A8406: dw DATA8_0AA8EA
-#_0A8408: dw DATA8_0AA8F3
-#_0A840A: dw DATA8_0AA903
-#_0A840C: dw DATA8_0AA90C
-#_0A840E: dw DATA8_0AA919
-#_0A8410: dw DATA8_0AA922
-#_0A8412: dw DATA8_0AA930
-#_0A8414: dw DATA8_0AA940
-#_0A8416: dw DATA8_0AA94E
-#_0A8418: dw DATA8_0AA959
-#_0A841A: dw DATA8_0AA966
-#_0A841C: dw DATA8_0AA976
-#_0A841E: dw DATA8_0AA983
-#_0A8420: dw DATA8_0AA98F
-#_0A8422: dw DATA8_0AA997
-#_0A8424: dw DATA8_0AA9A2
-#_0A8426: dw DATA8_0AA9B5
-#_0A8428: dw DATA8_0AA9CF
-#_0A842A: dw DATA8_0AA9D4
-#_0A842C: dw DATA8_0AA9E3
-#_0A842E: dw DATA8_0AA9E9
-#_0A8430: dw DATA8_0AA9F2
-#_0A8432: dw DATA8_0AA9F8
-#_0A8434: dw DATA8_0AA9FD
-#_0A8436: dw DATA8_0AAA0D
-#_0A8438: dw DATA8_0AAA33
-#_0A843A: dw DATA8_0AAA41
-#_0A843C: dw DATA8_0AAA4A
-#_0A843E: dw DATA8_0AAA52
-#_0A8440: dw DATA8_0AAA57
-#_0A8442: dw DATA8_0AAA72
-#_0A8444: dw DATA8_0AAA85
-#_0A8446: dw DATA8_0AAA8B
-#_0A8448: dw DATA8_0AAA90
-#_0A844A: dw DATA8_0AAA93
-#_0A844C: dw DATA8_0AAA9E
-#_0A844E: dw DATA8_0AAAA4
-#_0A8450: dw DATA8_0AAAB0
-#_0A8452: dw DATA8_0AAABE
-#_0A8454: dw DATA8_0AAAC6
-#_0A8456: dw DATA8_0AAACC
-#_0A8458: dw DATA8_0AAADC
-#_0A845A: dw DATA8_0AAAF0
-#_0A845C: dw DATA8_0AAAF9
-#_0A845E: dw DATA8_0AAB05
-#_0A8460: dw DATA8_0AAB11
-#_0A8462: dw DATA8_0AAB13
-#_0A8464: dw DATA8_0AAB18
-#_0A8466: dw DATA8_0AAB23
-#_0A8468: dw DATA8_0AAB2F
+Message_02_0A_Pointers:
+#_0A839E: dw Message_02_0A_00
+#_0A83A0: dw Message_02_0A_01
+#_0A83A2: dw Message_02_0A_02
+#_0A83A4: dw Message_02_0A_03
+#_0A83A6: dw Message_02_0A_04
+#_0A83A8: dw Message_02_0A_05
+#_0A83AA: dw Message_02_0A_06
+#_0A83AC: dw Message_02_0A_07
+#_0A83AE: dw Message_02_0A_08
+#_0A83B0: dw Message_02_0A_09
+#_0A83B2: dw Message_02_0A_0A
+#_0A83B4: dw Message_02_0A_0B
+#_0A83B6: dw Message_02_0A_0C
+#_0A83B8: dw Message_02_0A_0D
+#_0A83BA: dw Message_02_0A_0E
+#_0A83BC: dw Message_02_0A_0F
+#_0A83BE: dw Message_02_0A_10
+#_0A83C0: dw Message_02_0A_11
+#_0A83C2: dw Message_02_0A_12
+#_0A83C4: dw Message_02_0A_13
+#_0A83C6: dw Message_02_0A_14
+#_0A83C8: dw Message_02_0A_15
+#_0A83CA: dw Message_02_0A_16
+#_0A83CC: dw Message_02_0A_17
+#_0A83CE: dw Message_02_0A_18
+#_0A83D0: dw Message_02_0A_19
+#_0A83D2: dw Message_02_0A_1A
+#_0A83D4: dw Message_02_0A_1B
+#_0A83D6: dw Message_02_0A_1C
+#_0A83D8: dw Message_02_0A_1D
+#_0A83DA: dw Message_02_0A_1E
+#_0A83DC: dw Message_02_0A_1F
+#_0A83DE: dw Message_02_0A_20
+#_0A83E0: dw Message_02_0A_21
+#_0A83E2: dw Message_02_0A_22
+#_0A83E4: dw Message_02_0A_23
+#_0A83E6: dw Message_02_0A_24
+#_0A83E8: dw Message_02_0A_25
+#_0A83EA: dw Message_02_0A_26
+#_0A83EC: dw Message_02_0A_27
+#_0A83EE: dw Message_02_0A_28
+#_0A83F0: dw Message_02_0A_29
+#_0A83F2: dw Message_02_0A_2A
+#_0A83F4: dw Message_02_0A_2B
+#_0A83F6: dw Message_02_0A_2C
+#_0A83F8: dw Message_02_0A_2D
+#_0A83FA: dw Message_02_0A_2E
+#_0A83FC: dw Message_02_0A_2F
+#_0A83FE: dw Message_02_0A_30
+#_0A8400: dw Message_02_0A_31
+#_0A8402: dw Message_02_0A_32
+#_0A8404: dw Message_02_0A_33
+#_0A8406: dw Message_02_0A_34
+#_0A8408: dw Message_02_0A_35
+#_0A840A: dw Message_02_0A_36
+#_0A840C: dw Message_02_0A_37
+#_0A840E: dw Message_02_0A_38
+#_0A8410: dw Message_02_0A_39
+#_0A8412: dw Message_02_0A_3A
+#_0A8414: dw Message_02_0A_3B
+#_0A8416: dw Message_02_0A_3C
+#_0A8418: dw Message_02_0A_3D
+#_0A841A: dw Message_02_0A_3E
+#_0A841C: dw Message_02_0A_3F
+#_0A841E: dw Message_02_0A_40
+#_0A8420: dw Message_02_0A_41
+#_0A8422: dw Message_02_0A_42
+#_0A8424: dw Message_02_0A_43
+#_0A8426: dw Message_02_0A_44
+#_0A8428: dw Message_02_0A_45
+#_0A842A: dw Message_02_0A_46
+#_0A842C: dw Message_02_0A_47
+#_0A842E: dw Message_02_0A_48
+#_0A8430: dw Message_02_0A_49
+#_0A8432: dw Message_02_0A_4A
+#_0A8434: dw Message_02_0A_4B
+#_0A8436: dw Message_02_0A_4C
+#_0A8438: dw Message_02_0A_4D
+#_0A843A: dw Message_02_0A_4E
+#_0A843C: dw Message_02_0A_4F
+#_0A843E: dw Message_02_0A_50
+#_0A8440: dw Message_02_0A_51
+#_0A8442: dw Message_02_0A_52
+#_0A8444: dw Message_02_0A_53
+#_0A8446: dw Message_02_0A_54
+#_0A8448: dw Message_02_0A_55
+#_0A844A: dw Message_02_0A_56
+#_0A844C: dw Message_02_0A_57
+#_0A844E: dw Message_02_0A_58
+#_0A8450: dw Message_02_0A_59
+#_0A8452: dw Message_02_0A_5A
+#_0A8454: dw Message_02_0A_5B
+#_0A8456: dw Message_02_0A_5C
+#_0A8458: dw Message_02_0A_5D
+#_0A845A: dw Message_02_0A_5E
+#_0A845C: dw Message_02_0A_5F
+#_0A845E: dw Message_02_0A_60
+#_0A8460: dw Message_02_0A_61
+#_0A8462: dw Message_02_0A_62
+#_0A8464: dw Message_02_0A_63
+#_0A8466: dw Message_02_0A_64
+#_0A8468: dw Message_02_0A_65
 
 ;===================================================================================================
 
-PTR16_0A846A:
-#_0A846A: dw DATA8_0AAB32
-#_0A846C: dw DATA8_0AAB3B
-#_0A846E: dw DATA8_0AAB4B
-#_0A8470: dw DATA8_0AAB59
-#_0A8472: dw DATA8_0AAB62
-#_0A8474: dw DATA8_0AAB65
-#_0A8476: dw DATA8_0AAB73
-#_0A8478: dw DATA8_0AAB83
-#_0A847A: dw DATA8_0AAB8B
-#_0A847C: dw DATA8_0AABA7
-#_0A847E: dw DATA8_0AABBC
-#_0A8480: dw DATA8_0AABC4
-#_0A8482: dw DATA8_0AABCA
-#_0A8484: dw DATA8_0AABE5
-#_0A8486: dw DATA8_0AABEE
-#_0A8488: dw DATA8_0AABFA
-#_0A848A: dw DATA8_0AABFF
-#_0A848C: dw DATA8_0AAC0F
-#_0A848E: dw DATA8_0AAC2E
-#_0A8490: dw DATA8_0AAC34
-#_0A8492: dw DATA8_0AAC3D
-#_0A8494: dw DATA8_0AAC4E
-#_0A8496: dw DATA8_0AAC54
-#_0A8498: dw DATA8_0AAC64
-#_0A849A: dw DATA8_0AAC69
-#_0A849C: dw DATA8_0AAC71
-#_0A849E: dw DATA8_0AAC74
-#_0A84A0: dw DATA8_0AAC84
-#_0A84A2: dw DATA8_0AAC8F
-#_0A84A4: dw DATA8_0AAC9D
-#_0A84A6: dw DATA8_0AACAC
-#_0A84A8: dw DATA8_0AACB8
-#_0A84AA: dw DATA8_0AACC0
-#_0A84AC: dw DATA8_0AACCE
-#_0A84AE: dw DATA8_0AACDE
-#_0A84B0: dw DATA8_0AACE3
-#_0A84B2: dw DATA8_0AACEC
-#_0A84B4: dw DATA8_0AACFB
-#_0A84B6: dw DATA8_0AAD18
-#_0A84B8: dw DATA8_0AAD27
-#_0A84BA: dw DATA8_0AAD33
-#_0A84BC: dw DATA8_0AAD39
-#_0A84BE: dw DATA8_0AAD45
-#_0A84C0: dw DATA8_0AAD4D
-#_0A84C2: dw DATA8_0AAD5D
-#_0A84C4: dw DATA8_0AAD68
-#_0A84C6: dw DATA8_0AAD71
-#_0A84C8: dw DATA8_0AAD7D
-#_0A84CA: dw DATA8_0AAD83
-#_0A84CC: dw DATA8_0AAD85
-#_0A84CE: dw DATA8_0AAD87
-#_0A84D0: dw DATA8_0AAD93
-#_0A84D2: dw DATA8_0AAD9C
-#_0A84D4: dw DATA8_0AADA1
-#_0A84D6: dw DATA8_0AADA6
-#_0A84D8: dw DATA8_0AADB6
-#_0A84DA: dw DATA8_0AADCE
-#_0A84DC: dw DATA8_0AADD9
-#_0A84DE: dw DATA8_0AADE2
-#_0A84E0: dw DATA8_0AADE8
-#_0A84E2: dw DATA8_0AADF8
-#_0A84E4: dw DATA8_0AAE02
-#_0A84E6: dw DATA8_0AAE0C
-#_0A84E8: dw DATA8_0AAE1B
-#_0A84EA: dw DATA8_0AAE30
-#_0A84EC: dw DATA8_0AAE32
-#_0A84EE: dw DATA8_0AAE3F
-#_0A84F0: dw DATA8_0AAE4B
-#_0A84F2: dw DATA8_0AAE60
-#_0A84F4: dw DATA8_0AAE6B
-#_0A84F6: dw DATA8_0AAE70
-#_0A84F8: dw DATA8_0AAE76
-#_0A84FA: dw DATA8_0AAE80
-#_0A84FC: dw DATA8_0AAE85
-#_0A84FE: dw DATA8_0AAE95
-#_0A8500: dw DATA8_0AAEAD
-#_0A8502: dw DATA8_0AAEBC
-#_0A8504: dw DATA8_0AAEC5
-#_0A8506: dw DATA8_0AAECA
-#_0A8508: dw DATA8_0AAED2
-#_0A850A: dw DATA8_0AAEE2
-#_0A850C: dw DATA8_0AAEEB
-#_0A850E: dw DATA8_0AAEFB
-#_0A8510: dw DATA8_0AAF00
-#_0A8512: dw DATA8_0AAF09
-#_0A8514: dw DATA8_0AAF0F
-#_0A8516: dw DATA8_0AAF1B
-#_0A8518: dw DATA8_0AAF23
-#_0A851A: dw DATA8_0AAF2F
+Message_02_0B_Pointers:
+#_0A846A: dw Message_02_0B_00
+#_0A846C: dw Message_02_0B_01
+#_0A846E: dw Message_02_0B_02
+#_0A8470: dw Message_02_0B_03
+#_0A8472: dw Message_02_0B_04
+#_0A8474: dw Message_02_0B_05
+#_0A8476: dw Message_02_0B_06
+#_0A8478: dw Message_02_0B_07
+#_0A847A: dw Message_02_0B_08
+#_0A847C: dw Message_02_0B_09
+#_0A847E: dw Message_02_0B_0A
+#_0A8480: dw Message_02_0B_0B
+#_0A8482: dw Message_02_0B_0C
+#_0A8484: dw Message_02_0B_0D
+#_0A8486: dw Message_02_0B_0E
+#_0A8488: dw Message_02_0B_0F
+#_0A848A: dw Message_02_0B_10
+#_0A848C: dw Message_02_0B_11
+#_0A848E: dw Message_02_0B_12
+#_0A8490: dw Message_02_0B_13
+#_0A8492: dw Message_02_0B_14
+#_0A8494: dw Message_02_0B_15
+#_0A8496: dw Message_02_0B_16
+#_0A8498: dw Message_02_0B_17
+#_0A849A: dw Message_02_0B_18
+#_0A849C: dw Message_02_0B_19
+#_0A849E: dw Message_02_0B_1A
+#_0A84A0: dw Message_02_0B_1B
+#_0A84A2: dw Message_02_0B_1C
+#_0A84A4: dw Message_02_0B_1D
+#_0A84A6: dw Message_02_0B_1E
+#_0A84A8: dw Message_02_0B_1F
+#_0A84AA: dw Message_02_0B_20
+#_0A84AC: dw Message_02_0B_21
+#_0A84AE: dw Message_02_0B_22
+#_0A84B0: dw Message_02_0B_23
+#_0A84B2: dw Message_02_0B_24
+#_0A84B4: dw Message_02_0B_25
+#_0A84B6: dw Message_02_0B_26
+#_0A84B8: dw Message_02_0B_27
+#_0A84BA: dw Message_02_0B_28
+#_0A84BC: dw Message_02_0B_29
+#_0A84BE: dw Message_02_0B_2A
+#_0A84C0: dw Message_02_0B_2B
+#_0A84C2: dw Message_02_0B_2C
+#_0A84C4: dw Message_02_0B_2D
+#_0A84C6: dw Message_02_0B_2E
+#_0A84C8: dw Message_02_0B_2F
+#_0A84CA: dw Message_02_0B_30
+#_0A84CC: dw Message_02_0B_31
+#_0A84CE: dw Message_02_0B_32
+#_0A84D0: dw Message_02_0B_33
+#_0A84D2: dw Message_02_0B_34
+#_0A84D4: dw Message_02_0B_35
+#_0A84D6: dw Message_02_0B_36
+#_0A84D8: dw Message_02_0B_37
+#_0A84DA: dw Message_02_0B_38
+#_0A84DC: dw Message_02_0B_39
+#_0A84DE: dw Message_02_0B_3A
+#_0A84E0: dw Message_02_0B_3B
+#_0A84E2: dw Message_02_0B_3C
+#_0A84E4: dw Message_02_0B_3D
+#_0A84E6: dw Message_02_0B_3E
+#_0A84E8: dw Message_02_0B_3F
+#_0A84EA: dw Message_02_0B_40
+#_0A84EC: dw Message_02_0B_41
+#_0A84EE: dw Message_02_0B_42
+#_0A84F0: dw Message_02_0B_43
+#_0A84F2: dw Message_02_0B_44
+#_0A84F4: dw Message_02_0B_45
+#_0A84F6: dw Message_02_0B_46
+#_0A84F8: dw Message_02_0B_47
+#_0A84FA: dw Message_02_0B_48
+#_0A84FC: dw Message_02_0B_49
+#_0A84FE: dw Message_02_0B_4A
+#_0A8500: dw Message_02_0B_4B
+#_0A8502: dw Message_02_0B_4C
+#_0A8504: dw Message_02_0B_4D
+#_0A8506: dw Message_02_0B_4E
+#_0A8508: dw Message_02_0B_4F
+#_0A850A: dw Message_02_0B_50
+#_0A850C: dw Message_02_0B_51
+#_0A850E: dw Message_02_0B_52
+#_0A8510: dw Message_02_0B_53
+#_0A8512: dw Message_02_0B_54
+#_0A8514: dw Message_02_0B_55
+#_0A8516: dw Message_02_0B_56
+#_0A8518: dw Message_02_0B_57
+#_0A851A: dw Message_02_0B_58
 
 ;===================================================================================================
 
-PTR16_0A851C:
-#_0A851C: dw DATA8_0AAF37
-#_0A851E: dw DATA8_0AAF40
-#_0A8520: dw DATA8_0AAF50
-#_0A8522: dw DATA8_0AAF55
-#_0A8524: dw DATA8_0AAF63
-#_0A8526: dw DATA8_0AAF6B
-#_0A8528: dw DATA8_0AAF7B
-#_0A852A: dw DATA8_0AAF89
-#_0A852C: dw DATA8_0AAF8F
-#_0A852E: dw DATA8_0AAF9E
-#_0A8530: dw DATA8_0AAFA3
-#_0A8532: dw DATA8_0AAFAE
-#_0A8534: dw DATA8_0AAFBB
-#_0A8536: dw DATA8_0AAFC1
-#_0A8538: dw DATA8_0AAFCD
-#_0A853A: dw DATA8_0AAFD3
-#_0A853C: dw DATA8_0AAFE3
-#_0A853E: dw DATA8_0AAFE8
-#_0A8540: dw DATA8_0AAFF1
-#_0A8542: dw DATA8_0AAFF9
-#_0A8544: dw DATA8_0AAFFE
-#_0A8546: dw DATA8_0AB003
-#_0A8548: dw DATA8_0AB01F
-#_0A854A: dw DATA8_0AB038
-#_0A854C: dw DATA8_0AB040
-#_0A854E: dw DATA8_0AB049
-#_0A8550: dw DATA8_0AB055
-#_0A8552: dw DATA8_0AB068
-#_0A8554: dw DATA8_0AB070
-#_0A8556: dw DATA8_0AB074
-#_0A8558: dw DATA8_0AB078
-#_0A855A: dw DATA8_0AB080
-#_0A855C: dw DATA8_0AB084
-#_0A855E: dw DATA8_0AB08A
-#_0A8560: dw DATA8_0AB092
-#_0A8562: dw DATA8_0AB09A
-#_0A8564: dw DATA8_0AB0A2
-#_0A8566: dw DATA8_0AB0A8
-#_0A8568: dw DATA8_0AB0B1
-#_0A856A: dw DATA8_0AB0B9
-#_0A856C: dw DATA8_0AB0C1
-#_0A856E: dw DATA8_0AB0C9
-#_0A8570: dw DATA8_0AB0D5
-#_0A8572: dw DATA8_0AB0E8
-#_0A8574: dw DATA8_0AB0FB
-#_0A8576: dw DATA8_0AB104
-#_0A8578: dw DATA8_0AB114
-#_0A857A: dw DATA8_0AB11D
-#_0A857C: dw DATA8_0AB126
-#_0A857E: dw DATA8_0AB12F
-#_0A8580: dw DATA8_0AB132
-#_0A8582: dw DATA8_0AB14A
-#_0A8584: dw DATA8_0AB15D
-#_0A8586: dw DATA8_0AB169
-#_0A8588: dw DATA8_0AB171
-#_0A858A: dw DATA8_0AB17A
-#_0A858C: dw DATA8_0AB190
-#_0A858E: dw DATA8_0AB196
-#_0A8590: dw DATA8_0AB1A7
-#_0A8592: dw DATA8_0AB1B7
-#_0A8594: dw DATA8_0AB1BC
-#_0A8596: dw DATA8_0AB1BF
-#_0A8598: dw DATA8_0AB1CF
-#_0A859A: dw DATA8_0AB1DF
-#_0A859C: dw DATA8_0AB1EA
-#_0A859E: dw DATA8_0AB1F9
-#_0A85A0: dw DATA8_0AB1FF
-#_0A85A2: dw DATA8_0AB208
-#_0A85A4: dw DATA8_0AB20E
-#_0A85A6: dw DATA8_0AB213
-#_0A85A8: dw DATA8_0AB223
-#_0A85AA: dw DATA8_0AB22D
-#_0A85AC: dw DATA8_0AB235
-#_0A85AE: dw DATA8_0AB23A
-#_0A85B0: dw DATA8_0AB246
-#_0A85B2: dw DATA8_0AB254
-#_0A85B4: dw DATA8_0AB262
-#_0A85B6: dw DATA8_0AB267
-#_0A85B8: dw DATA8_0AB278
-#_0A85BA: dw DATA8_0AB27E
-#_0A85BC: dw DATA8_0AB28A
-#_0A85BE: dw DATA8_0AB296
-#_0A85C0: dw DATA8_0AB298
-#_0A85C2: dw DATA8_0AB2A5
-#_0A85C4: dw DATA8_0AB2A7
-#_0A85C6: dw DATA8_0AB2B3
-#_0A85C8: dw DATA8_0AB2BE
-#_0A85CA: dw DATA8_0AB2CA
-#_0A85CC: dw DATA8_0AB2D4
-#_0A85CE: dw DATA8_0AB2D9
-#_0A85D0: dw DATA8_0AB2E8
-#_0A85D2: dw DATA8_0AB304
-#_0A85D4: dw DATA8_0AB309
-#_0A85D6: dw DATA8_0AB30E
-#_0A85D8: dw DATA8_0AB316
-#_0A85DA: dw DATA8_0AB31B
-#_0A85DC: dw DATA8_0AB320
-#_0A85DE: dw DATA8_0AB32A
-#_0A85E0: dw DATA8_0AB32F
-#_0A85E2: dw DATA8_0AB33B
-#_0A85E4: dw DATA8_0AB34B
-#_0A85E6: dw DATA8_0AB350
-#_0A85E8: dw DATA8_0AB35C
-#_0A85EA: dw DATA8_0AB367
-#_0A85EC: dw DATA8_0AB36C
-#_0A85EE: dw DATA8_0AB372
-#_0A85F0: dw DATA8_0AB37B
-#_0A85F2: dw DATA8_0AB381
-#_0A85F4: dw DATA8_0AB389
-#_0A85F6: dw DATA8_0AB394
-#_0A85F8: dw DATA8_0AB399
-#_0A85FA: dw DATA8_0AB3A1
-#_0A85FC: dw DATA8_0AB3A9
-#_0A85FE: dw DATA8_0AB3B2
-#_0A8600: dw DATA8_0AB3C5
-#_0A8602: dw DATA8_0AB3D9
-#_0A8604: dw DATA8_0AB3E2
-#_0A8606: dw DATA8_0AB3E7
-#_0A8608: dw DATA8_0AB3F3
-#_0A860A: dw DATA8_0AB3F8
-#_0A860C: dw DATA8_0AB404
+Message_02_0C_Pointers:
+#_0A851C: dw Message_02_0C_00
+#_0A851E: dw Message_02_0C_01
+#_0A8520: dw Message_02_0C_02
+#_0A8522: dw Message_02_0C_03
+#_0A8524: dw Message_02_0C_04
+#_0A8526: dw Message_02_0C_05
+#_0A8528: dw Message_02_0C_06
+#_0A852A: dw Message_02_0C_07
+#_0A852C: dw Message_02_0C_08
+#_0A852E: dw Message_02_0C_09
+#_0A8530: dw Message_02_0C_0A
+#_0A8532: dw Message_02_0C_0B
+#_0A8534: dw Message_02_0C_0C
+#_0A8536: dw Message_02_0C_0D
+#_0A8538: dw Message_02_0C_0E
+#_0A853A: dw Message_02_0C_0F
+#_0A853C: dw Message_02_0C_10
+#_0A853E: dw Message_02_0C_11
+#_0A8540: dw Message_02_0C_12
+#_0A8542: dw Message_02_0C_13
+#_0A8544: dw Message_02_0C_14
+#_0A8546: dw Message_02_0C_15
+#_0A8548: dw Message_02_0C_16
+#_0A854A: dw Message_02_0C_17
+#_0A854C: dw Message_02_0C_18
+#_0A854E: dw Message_02_0C_19
+#_0A8550: dw Message_02_0C_1A
+#_0A8552: dw Message_02_0C_1B
+#_0A8554: dw Message_02_0C_1C
+#_0A8556: dw Message_02_0C_1D
+#_0A8558: dw Message_02_0C_1E
+#_0A855A: dw Message_02_0C_1F
+#_0A855C: dw Message_02_0C_20
+#_0A855E: dw Message_02_0C_21
+#_0A8560: dw Message_02_0C_22
+#_0A8562: dw Message_02_0C_23
+#_0A8564: dw Message_02_0C_24
+#_0A8566: dw Message_02_0C_25
+#_0A8568: dw Message_02_0C_26
+#_0A856A: dw Message_02_0C_27
+#_0A856C: dw Message_02_0C_28
+#_0A856E: dw Message_02_0C_29
+#_0A8570: dw Message_02_0C_2A
+#_0A8572: dw Message_02_0C_2B
+#_0A8574: dw Message_02_0C_2C
+#_0A8576: dw Message_02_0C_2D
+#_0A8578: dw Message_02_0C_2E
+#_0A857A: dw Message_02_0C_2F
+#_0A857C: dw Message_02_0C_30
+#_0A857E: dw Message_02_0C_31
+#_0A8580: dw Message_02_0C_32
+#_0A8582: dw Message_02_0C_33
+#_0A8584: dw Message_02_0C_34
+#_0A8586: dw Message_02_0C_35
+#_0A8588: dw Message_02_0C_36
+#_0A858A: dw Message_02_0C_37
+#_0A858C: dw Message_02_0C_38
+#_0A858E: dw Message_02_0C_39
+#_0A8590: dw Message_02_0C_3A
+#_0A8592: dw Message_02_0C_3B
+#_0A8594: dw Message_02_0C_3C
+#_0A8596: dw Message_02_0C_3D
+#_0A8598: dw Message_02_0C_3E
+#_0A859A: dw Message_02_0C_3F
+#_0A859C: dw Message_02_0C_40
+#_0A859E: dw Message_02_0C_41
+#_0A85A0: dw Message_02_0C_42
+#_0A85A2: dw Message_02_0C_43
+#_0A85A4: dw Message_02_0C_44
+#_0A85A6: dw Message_02_0C_45
+#_0A85A8: dw Message_02_0C_46
+#_0A85AA: dw Message_02_0C_47
+#_0A85AC: dw Message_02_0C_48
+#_0A85AE: dw Message_02_0C_49
+#_0A85B0: dw Message_02_0C_4A
+#_0A85B2: dw Message_02_0C_4B
+#_0A85B4: dw Message_02_0C_4C
+#_0A85B6: dw Message_02_0C_4D
+#_0A85B8: dw Message_02_0C_4E
+#_0A85BA: dw Message_02_0C_4F
+#_0A85BC: dw Message_02_0C_50
+#_0A85BE: dw Message_02_0C_51
+#_0A85C0: dw Message_02_0C_52
+#_0A85C2: dw Message_02_0C_53
+#_0A85C4: dw Message_02_0C_54
+#_0A85C6: dw Message_02_0C_55
+#_0A85C8: dw Message_02_0C_56
+#_0A85CA: dw Message_02_0C_57
+#_0A85CC: dw Message_02_0C_58
+#_0A85CE: dw Message_02_0C_59
+#_0A85D0: dw Message_02_0C_5A
+#_0A85D2: dw Message_02_0C_5B
+#_0A85D4: dw Message_02_0C_5C
+#_0A85D6: dw Message_02_0C_5D
+#_0A85D8: dw Message_02_0C_5E
+#_0A85DA: dw Message_02_0C_5F
+#_0A85DC: dw Message_02_0C_60
+#_0A85DE: dw Message_02_0C_61
+#_0A85E0: dw Message_02_0C_62
+#_0A85E2: dw Message_02_0C_63
+#_0A85E4: dw Message_02_0C_64
+#_0A85E6: dw Message_02_0C_65
+#_0A85E8: dw Message_02_0C_66
+#_0A85EA: dw Message_02_0C_67
+#_0A85EC: dw Message_02_0C_68
+#_0A85EE: dw Message_02_0C_69
+#_0A85F0: dw Message_02_0C_6A
+#_0A85F2: dw Message_02_0C_6B
+#_0A85F4: dw Message_02_0C_6C
+#_0A85F6: dw Message_02_0C_6D
+#_0A85F8: dw Message_02_0C_6E
+#_0A85FA: dw Message_02_0C_6F
+#_0A85FC: dw Message_02_0C_70
+#_0A85FE: dw Message_02_0C_71
+#_0A8600: dw Message_02_0C_72
+#_0A8602: dw Message_02_0C_73
+#_0A8604: dw Message_02_0C_74
+#_0A8606: dw Message_02_0C_75
+#_0A8608: dw Message_02_0C_76
+#_0A860A: dw Message_02_0C_77
+#_0A860C: dw Message_02_0C_78
 
 ;===================================================================================================
 
-PTR16_0A860E:
-#_0A860E: dw DATA8_0AB40A
-#_0A8610: dw DATA8_0AB413
-#_0A8612: dw DATA8_0AB423
-#_0A8614: dw DATA8_0AB42B
-#_0A8616: dw DATA8_0AB431
-#_0A8618: dw DATA8_0AB43F
-#_0A861A: dw DATA8_0AB448
-#_0A861C: dw DATA8_0AB452
-#_0A861E: dw DATA8_0AB462
-#_0A8620: dw DATA8_0AB47F
-#_0A8622: dw DATA8_0AB484
-#_0A8624: dw DATA8_0AB48B
-#_0A8626: dw DATA8_0AB490
-#_0A8628: dw DATA8_0AB496
-#_0A862A: dw DATA8_0AB49B
-#_0A862C: dw DATA8_0AB4A3
-#_0A862E: dw DATA8_0AB4A6
-#_0A8630: dw DATA8_0AB4B4
-#_0A8632: dw DATA8_0AB4C4
-#_0A8634: dw DATA8_0AB4D3
-#_0A8636: dw DATA8_0AB4D9
-#_0A8638: dw DATA8_0AB4DE
-#_0A863A: dw DATA8_0AB4E3
-#_0A863C: dw DATA8_0AB4FA
-#_0A863E: dw DATA8_0AB505
-#_0A8640: dw DATA8_0AB50B
-#_0A8642: dw DATA8_0AB522
-#_0A8644: dw DATA8_0AB527
-#_0A8646: dw DATA8_0AB532
-#_0A8648: dw DATA8_0AB538
-#_0A864A: dw DATA8_0AB544
-#_0A864C: dw DATA8_0AB552
-#_0A864E: dw DATA8_0AB560
-#_0A8650: dw DATA8_0AB565
-#_0A8652: dw DATA8_0AB576
-#_0A8654: dw DATA8_0AB582
-#_0A8656: dw DATA8_0AB584
-#_0A8658: dw DATA8_0AB591
-#_0A865A: dw DATA8_0AB59D
-#_0A865C: dw DATA8_0AB5AF
-#_0A865E: dw DATA8_0AB5B4
-#_0A8660: dw DATA8_0AB5BC
-#_0A8662: dw DATA8_0AB5CA
-#_0A8664: dw DATA8_0AB5D9
-#_0A8666: dw DATA8_0AB5DE
-#_0A8668: dw DATA8_0AB5E6
-#_0A866A: dw DATA8_0AB5F6
-#_0A866C: dw DATA8_0AB5FB
-#_0A866E: dw DATA8_0AB60B
-#_0A8670: dw DATA8_0AB610
-#_0A8672: dw DATA8_0AB620
-#_0A8674: dw DATA8_0AB629
-#_0A8676: dw DATA8_0AB634
-#_0A8678: dw DATA8_0AB63D
-#_0A867A: dw DATA8_0AB646
-#_0A867C: dw DATA8_0AB649
-#_0A867E: dw DATA8_0AB651
-#_0A8680: dw DATA8_0AB659
-#_0A8682: dw DATA8_0AB666
-#_0A8684: dw DATA8_0AB66E
-#_0A8686: dw DATA8_0AB677
-#_0A8688: dw DATA8_0AB67C
-#_0A868A: dw DATA8_0AB681
-#_0A868C: dw DATA8_0AB686
-#_0A868E: dw DATA8_0AB696
-#_0A8690: dw DATA8_0AB69E
-#_0A8692: dw DATA8_0AB6A6
-#_0A8694: dw DATA8_0AB6AE
-#_0A8696: dw DATA8_0AB6BC
-#_0A8698: dw DATA8_0AB6C4
-#_0A869A: dw DATA8_0AB6D0
-#_0A869C: dw DATA8_0AB6E0
-#_0A869E: dw DATA8_0AB6EF
-#_0A86A0: dw DATA8_0AB6F9
-#_0A86A2: dw DATA8_0AB705
-#_0A86A4: dw DATA8_0AB70A
-#_0A86A6: dw DATA8_0AB71A
-#_0A86A8: dw DATA8_0AB728
-#_0A86AA: dw DATA8_0AB731
-#_0A86AC: dw DATA8_0AB744
-#_0A86AE: dw DATA8_0AB749
-#_0A86B0: dw DATA8_0AB751
-#_0A86B2: dw DATA8_0AB761
-#_0A86B4: dw DATA8_0AB76C
-#_0A86B6: dw DATA8_0AB771
-#_0A86B8: dw DATA8_0AB776
-#_0A86BA: dw DATA8_0AB780
-#_0A86BC: dw DATA8_0AB786
-#_0A86BE: dw DATA8_0AB78B
-#_0A86C0: dw DATA8_0AB793
-#_0A86C2: dw DATA8_0AB79C
-#_0A86C4: dw DATA8_0AB7A8
-#_0A86C6: dw DATA8_0AB7AD
-#_0A86C8: dw DATA8_0AB7B2
-#_0A86CA: dw DATA8_0AB7BA
-#_0A86CC: dw DATA8_0AB7C3
-#_0A86CE: dw DATA8_0AB7CB
-#_0A86D0: dw DATA8_0AB7DB
-#_0A86D2: dw DATA8_0AB7E3
-#_0A86D4: dw DATA8_0AB7E8
-#_0A86D6: dw DATA8_0AB7ED
-#_0A86D8: dw DATA8_0AB7F6
-#_0A86DA: dw DATA8_0AB809
-#_0A86DC: dw DATA8_0AB80E
-#_0A86DE: dw DATA8_0AB81A
-#_0A86E0: dw DATA8_0AB81D
-#_0A86E2: dw DATA8_0AB822
-#_0A86E4: dw DATA8_0AB82E
-#_0A86E6: dw DATA8_0AB833
-#_0A86E8: dw DATA8_0AB840
-#_0A86EA: dw DATA8_0AB84D
-#_0A86EC: dw DATA8_0AB855
+Message_02_0D_Pointers:
+#_0A860E: dw Message_02_0D_00
+#_0A8610: dw Message_02_0D_01
+#_0A8612: dw Message_02_0D_02
+#_0A8614: dw Message_02_0D_03
+#_0A8616: dw Message_02_0D_04
+#_0A8618: dw Message_02_0D_05
+#_0A861A: dw Message_02_0D_06
+#_0A861C: dw Message_02_0D_07
+#_0A861E: dw Message_02_0D_08
+#_0A8620: dw Message_02_0D_09
+#_0A8622: dw Message_02_0D_0A
+#_0A8624: dw Message_02_0D_0B
+#_0A8626: dw Message_02_0D_0C
+#_0A8628: dw Message_02_0D_0D
+#_0A862A: dw Message_02_0D_0E
+#_0A862C: dw Message_02_0D_0F
+#_0A862E: dw Message_02_0D_10
+#_0A8630: dw Message_02_0D_11
+#_0A8632: dw Message_02_0D_12
+#_0A8634: dw Message_02_0D_13
+#_0A8636: dw Message_02_0D_14
+#_0A8638: dw Message_02_0D_15
+#_0A863A: dw Message_02_0D_16
+#_0A863C: dw Message_02_0D_17
+#_0A863E: dw Message_02_0D_18
+#_0A8640: dw Message_02_0D_19
+#_0A8642: dw Message_02_0D_1A
+#_0A8644: dw Message_02_0D_1B
+#_0A8646: dw Message_02_0D_1C
+#_0A8648: dw Message_02_0D_1D
+#_0A864A: dw Message_02_0D_1E
+#_0A864C: dw Message_02_0D_1F
+#_0A864E: dw Message_02_0D_20
+#_0A8650: dw Message_02_0D_21
+#_0A8652: dw Message_02_0D_22
+#_0A8654: dw Message_02_0D_23
+#_0A8656: dw Message_02_0D_24
+#_0A8658: dw Message_02_0D_25
+#_0A865A: dw Message_02_0D_26
+#_0A865C: dw Message_02_0D_27
+#_0A865E: dw Message_02_0D_28
+#_0A8660: dw Message_02_0D_29
+#_0A8662: dw Message_02_0D_2A
+#_0A8664: dw Message_02_0D_2B
+#_0A8666: dw Message_02_0D_2C
+#_0A8668: dw Message_02_0D_2D
+#_0A866A: dw Message_02_0D_2E
+#_0A866C: dw Message_02_0D_2F
+#_0A866E: dw Message_02_0D_30
+#_0A8670: dw Message_02_0D_31
+#_0A8672: dw Message_02_0D_32
+#_0A8674: dw Message_02_0D_33
+#_0A8676: dw Message_02_0D_34
+#_0A8678: dw Message_02_0D_35
+#_0A867A: dw Message_02_0D_36
+#_0A867C: dw Message_02_0D_37
+#_0A867E: dw Message_02_0D_38
+#_0A8680: dw Message_02_0D_39
+#_0A8682: dw Message_02_0D_3A
+#_0A8684: dw Message_02_0D_3B
+#_0A8686: dw Message_02_0D_3C
+#_0A8688: dw Message_02_0D_3D
+#_0A868A: dw Message_02_0D_3E
+#_0A868C: dw Message_02_0D_3F
+#_0A868E: dw Message_02_0D_40
+#_0A8690: dw Message_02_0D_41
+#_0A8692: dw Message_02_0D_42
+#_0A8694: dw Message_02_0D_43
+#_0A8696: dw Message_02_0D_44
+#_0A8698: dw Message_02_0D_45
+#_0A869A: dw Message_02_0D_46
+#_0A869C: dw Message_02_0D_47
+#_0A869E: dw Message_02_0D_48
+#_0A86A0: dw Message_02_0D_49
+#_0A86A2: dw Message_02_0D_4A
+#_0A86A4: dw Message_02_0D_4B
+#_0A86A6: dw Message_02_0D_4C
+#_0A86A8: dw Message_02_0D_4D
+#_0A86AA: dw Message_02_0D_4E
+#_0A86AC: dw Message_02_0D_4F
+#_0A86AE: dw Message_02_0D_50
+#_0A86B0: dw Message_02_0D_51
+#_0A86B2: dw Message_02_0D_52
+#_0A86B4: dw Message_02_0D_53
+#_0A86B6: dw Message_02_0D_54
+#_0A86B8: dw Message_02_0D_55
+#_0A86BA: dw Message_02_0D_56
+#_0A86BC: dw Message_02_0D_57
+#_0A86BE: dw Message_02_0D_58
+#_0A86C0: dw Message_02_0D_59
+#_0A86C2: dw Message_02_0D_5A
+#_0A86C4: dw Message_02_0D_5B
+#_0A86C6: dw Message_02_0D_5C
+#_0A86C8: dw Message_02_0D_5D
+#_0A86CA: dw Message_02_0D_5E
+#_0A86CC: dw Message_02_0D_5F
+#_0A86CE: dw Message_02_0D_60
+#_0A86D0: dw Message_02_0D_61
+#_0A86D2: dw Message_02_0D_62
+#_0A86D4: dw Message_02_0D_63
+#_0A86D6: dw Message_02_0D_64
+#_0A86D8: dw Message_02_0D_65
+#_0A86DA: dw Message_02_0D_66
+#_0A86DC: dw Message_02_0D_67
+#_0A86DE: dw Message_02_0D_68
+#_0A86E0: dw Message_02_0D_69
+#_0A86E2: dw Message_02_0D_6A
+#_0A86E4: dw Message_02_0D_6B
+#_0A86E6: dw Message_02_0D_6C
+#_0A86E8: dw Message_02_0D_6D
+#_0A86EA: dw Message_02_0D_6E
+#_0A86EC: dw Message_02_0D_6F
 
 ;===================================================================================================
 
-PTR16_0A86EE:
-#_0A86EE: dw DATA8_0AB860
-#_0A86F0: dw DATA8_0AB869
-#_0A86F2: dw DATA8_0AB879
-#_0A86F4: dw DATA8_0AB87E
-#_0A86F6: dw DATA8_0AB881
-#_0A86F8: dw DATA8_0AB88D
-#_0A86FA: dw DATA8_0AB895
-#_0A86FC: dw DATA8_0AB89D
-#_0A86FE: dw DATA8_0AB8AB
-#_0A8700: dw DATA8_0AB8B0
-#_0A8702: dw DATA8_0AB8B9
-#_0A8704: dw DATA8_0AB8C3
-#_0A8706: dw DATA8_0AB8C9
-#_0A8708: dw DATA8_0AB8D9
-#_0A870A: dw DATA8_0AB8E4
-#_0A870C: dw DATA8_0AB8EA
-#_0A870E: dw DATA8_0AB8FE
-#_0A8710: dw DATA8_0AB906
-#_0A8712: dw DATA8_0AB90B
-#_0A8714: dw DATA8_0AB91B
-#_0A8716: dw DATA8_0AB923
-#_0A8718: dw DATA8_0AB92B
-#_0A871A: dw DATA8_0AB933
-#_0A871C: dw DATA8_0AB941
-#_0A871E: dw DATA8_0AB946
-#_0A8720: dw DATA8_0AB94F
-#_0A8722: dw DATA8_0AB95E
-#_0A8724: dw DATA8_0AB966
-#_0A8726: dw DATA8_0AB96C
-#_0A8728: dw DATA8_0AB978
-#_0A872A: dw DATA8_0AB97D
-#_0A872C: dw DATA8_0AB985
-#_0A872E: dw DATA8_0AB98D
-#_0A8730: dw DATA8_0AB993
-#_0A8732: dw DATA8_0AB9A2
-#_0A8734: dw DATA8_0AB9A7
-#_0A8736: dw DATA8_0AB9B6
-#_0A8738: dw DATA8_0AB9CA
-#_0A873A: dw DATA8_0AB9CF
-#_0A873C: dw DATA8_0AB9D4
-#_0A873E: dw DATA8_0AB9E0
-#_0A8740: dw DATA8_0AB9EB
-#_0A8742: dw DATA8_0AB9F5
-#_0A8744: dw DATA8_0AB9FA
-#_0A8746: dw DATA8_0ABA06
-#_0A8748: dw DATA8_0ABA1A
-#_0A874A: dw DATA8_0ABA1F
-#_0A874C: dw DATA8_0ABA28
-#_0A874E: dw DATA8_0ABA2E
-#_0A8750: dw DATA8_0ABA3E
-#_0A8752: dw DATA8_0ABA51
-#_0A8754: dw DATA8_0ABA5C
-#_0A8756: dw DATA8_0ABA67
-#_0A8758: dw DATA8_0ABA7F
-#_0A875A: dw DATA8_0ABA84
-#_0A875C: dw DATA8_0ABA89
-#_0A875E: dw DATA8_0ABA91
-#_0A8760: dw DATA8_0ABA9A
-#_0A8762: dw DATA8_0ABAA3
-#_0A8764: dw DATA8_0ABAA8
-#_0A8766: dw DATA8_0ABAB1
-#_0A8768: dw DATA8_0ABAB9
-#_0A876A: dw DATA8_0ABAC1
-#_0A876C: dw DATA8_0ABAC9
-#_0A876E: dw DATA8_0ABAD7
-#_0A8770: dw DATA8_0ABADC
-#_0A8772: dw DATA8_0ABAEB
-#_0A8774: dw DATA8_0ABAFC
-#_0A8776: dw DATA8_0ABB0C
-#_0A8778: dw DATA8_0ABB11
-#_0A877A: dw DATA8_0ABB19
-#_0A877C: dw DATA8_0ABB1F
-#_0A877E: dw DATA8_0ABB29
-#_0A8780: dw DATA8_0ABB42
-#_0A8782: dw DATA8_0ABB5A
-#_0A8784: dw DATA8_0ABB67
-#_0A8786: dw DATA8_0ABB75
-#_0A8788: dw DATA8_0ABB7A
-#_0A878A: dw DATA8_0ABB82
-#_0A878C: dw DATA8_0ABB87
-#_0A878E: dw DATA8_0ABB91
-#_0A8790: dw DATA8_0ABB97
-#_0A8792: dw DATA8_0ABBA5
-#_0A8794: dw DATA8_0ABBA8
-#_0A8796: dw DATA8_0ABBAD
-#_0A8798: dw DATA8_0ABBBD
-#_0A879A: dw DATA8_0ABBC9
-#_0A879C: dw DATA8_0ABBD1
-#_0A879E: dw DATA8_0ABBDA
-#_0A87A0: dw DATA8_0ABBEA
-#_0A87A2: dw DATA8_0ABBF2
-#_0A87A4: dw DATA8_0ABC03
-#_0A87A6: dw DATA8_0ABC14
-#_0A87A8: dw DATA8_0ABC21
-#_0A87AA: dw DATA8_0ABC23
-#_0A87AC: dw DATA8_0ABC29
-#_0A87AE: dw DATA8_0ABC34
-#_0A87B0: dw DATA8_0ABC44
-#_0A87B2: dw DATA8_0ABC4B
-#_0A87B4: dw DATA8_0ABC51
-#_0A87B6: dw DATA8_0ABC56
-#_0A87B8: dw DATA8_0ABC5B
-#_0A87BA: dw DATA8_0ABC61
-#_0A87BC: dw DATA8_0ABC70
-#_0A87BE: dw DATA8_0ABC84
-#_0A87C0: dw DATA8_0ABC89
-#_0A87C2: dw DATA8_0ABC8E
-#_0A87C4: dw DATA8_0ABC9E
-#_0A87C6: dw DATA8_0ABCA3
-#_0A87C8: dw DATA8_0ABCAF
-#_0A87CA: dw DATA8_0ABCBA
-#_0A87CC: dw DATA8_0ABCCD
-#_0A87CE: dw DATA8_0ABCD2
-#_0A87D0: dw DATA8_0ABCDA
-#_0A87D2: dw DATA8_0ABCE3
-#_0A87D4: dw DATA8_0ABCF3
-#_0A87D6: dw DATA8_0ABCF9
-#_0A87D8: dw DATA8_0ABCFE
-#_0A87DA: dw DATA8_0ABD0E
-#_0A87DC: dw DATA8_0ABD19
-#_0A87DE: dw DATA8_0ABD1E
-#_0A87E0: dw DATA8_0ABD26
-#_0A87E2: dw DATA8_0ABD2E
-#_0A87E4: dw DATA8_0ABD3E
-#_0A87E6: dw DATA8_0ABD49
-#_0A87E8: dw DATA8_0ABD5C
-#_0A87EA: dw DATA8_0ABD64
-#_0A87EC: dw DATA8_0ABD72
-#_0A87EE: dw DATA8_0ABD77
-#_0A87F0: dw DATA8_0ABD7C
-#_0A87F2: dw DATA8_0ABD88
-#_0A87F4: dw DATA8_0ABD8D
-#_0A87F6: dw DATA8_0ABD9A
-#_0A87F8: dw DATA8_0ABDA2
+Message_02_0E_Pointers:
+#_0A86EE: dw Message_02_0E_00
+#_0A86F0: dw Message_02_0E_01
+#_0A86F2: dw Message_02_0E_02
+#_0A86F4: dw Message_02_0E_03
+#_0A86F6: dw Message_02_0E_04
+#_0A86F8: dw Message_02_0E_05
+#_0A86FA: dw Message_02_0E_06
+#_0A86FC: dw Message_02_0E_07
+#_0A86FE: dw Message_02_0E_08
+#_0A8700: dw Message_02_0E_09
+#_0A8702: dw Message_02_0E_0A
+#_0A8704: dw Message_02_0E_0B
+#_0A8706: dw Message_02_0E_0C
+#_0A8708: dw Message_02_0E_0D
+#_0A870A: dw Message_02_0E_0E
+#_0A870C: dw Message_02_0E_0F
+#_0A870E: dw Message_02_0E_10
+#_0A8710: dw Message_02_0E_11
+#_0A8712: dw Message_02_0E_12
+#_0A8714: dw Message_02_0E_13
+#_0A8716: dw Message_02_0E_14
+#_0A8718: dw Message_02_0E_15
+#_0A871A: dw Message_02_0E_16
+#_0A871C: dw Message_02_0E_17
+#_0A871E: dw Message_02_0E_18
+#_0A8720: dw Message_02_0E_19
+#_0A8722: dw Message_02_0E_1A
+#_0A8724: dw Message_02_0E_1B
+#_0A8726: dw Message_02_0E_1C
+#_0A8728: dw Message_02_0E_1D
+#_0A872A: dw Message_02_0E_1E
+#_0A872C: dw Message_02_0E_1F
+#_0A872E: dw Message_02_0E_20
+#_0A8730: dw Message_02_0E_21
+#_0A8732: dw Message_02_0E_22
+#_0A8734: dw Message_02_0E_23
+#_0A8736: dw Message_02_0E_24
+#_0A8738: dw Message_02_0E_25
+#_0A873A: dw Message_02_0E_26
+#_0A873C: dw Message_02_0E_27
+#_0A873E: dw Message_02_0E_28
+#_0A8740: dw Message_02_0E_29
+#_0A8742: dw Message_02_0E_2A
+#_0A8744: dw Message_02_0E_2B
+#_0A8746: dw Message_02_0E_2C
+#_0A8748: dw Message_02_0E_2D
+#_0A874A: dw Message_02_0E_2E
+#_0A874C: dw Message_02_0E_2F
+#_0A874E: dw Message_02_0E_30
+#_0A8750: dw Message_02_0E_31
+#_0A8752: dw Message_02_0E_32
+#_0A8754: dw Message_02_0E_33
+#_0A8756: dw Message_02_0E_34
+#_0A8758: dw Message_02_0E_35
+#_0A875A: dw Message_02_0E_36
+#_0A875C: dw Message_02_0E_37
+#_0A875E: dw Message_02_0E_38
+#_0A8760: dw Message_02_0E_39
+#_0A8762: dw Message_02_0E_3A
+#_0A8764: dw Message_02_0E_3B
+#_0A8766: dw Message_02_0E_3C
+#_0A8768: dw Message_02_0E_3D
+#_0A876A: dw Message_02_0E_3E
+#_0A876C: dw Message_02_0E_3F
+#_0A876E: dw Message_02_0E_40
+#_0A8770: dw Message_02_0E_41
+#_0A8772: dw Message_02_0E_42
+#_0A8774: dw Message_02_0E_43
+#_0A8776: dw Message_02_0E_44
+#_0A8778: dw Message_02_0E_45
+#_0A877A: dw Message_02_0E_46
+#_0A877C: dw Message_02_0E_47
+#_0A877E: dw Message_02_0E_48
+#_0A8780: dw Message_02_0E_49
+#_0A8782: dw Message_02_0E_4A
+#_0A8784: dw Message_02_0E_4B
+#_0A8786: dw Message_02_0E_4C
+#_0A8788: dw Message_02_0E_4D
+#_0A878A: dw Message_02_0E_4E
+#_0A878C: dw Message_02_0E_4F
+#_0A878E: dw Message_02_0E_50
+#_0A8790: dw Message_02_0E_51
+#_0A8792: dw Message_02_0E_52
+#_0A8794: dw Message_02_0E_53
+#_0A8796: dw Message_02_0E_54
+#_0A8798: dw Message_02_0E_55
+#_0A879A: dw Message_02_0E_56
+#_0A879C: dw Message_02_0E_57
+#_0A879E: dw Message_02_0E_58
+#_0A87A0: dw Message_02_0E_59
+#_0A87A2: dw Message_02_0E_5A
+#_0A87A4: dw Message_02_0E_5B
+#_0A87A6: dw Message_02_0E_5C
+#_0A87A8: dw Message_02_0E_5D
+#_0A87AA: dw Message_02_0E_5E
+#_0A87AC: dw Message_02_0E_5F
+#_0A87AE: dw Message_02_0E_60
+#_0A87B0: dw Message_02_0E_61
+#_0A87B2: dw Message_02_0E_62
+#_0A87B4: dw Message_02_0E_63
+#_0A87B6: dw Message_02_0E_64
+#_0A87B8: dw Message_02_0E_65
+#_0A87BA: dw Message_02_0E_66
+#_0A87BC: dw Message_02_0E_67
+#_0A87BE: dw Message_02_0E_68
+#_0A87C0: dw Message_02_0E_69
+#_0A87C2: dw Message_02_0E_6A
+#_0A87C4: dw Message_02_0E_6B
+#_0A87C6: dw Message_02_0E_6C
+#_0A87C8: dw Message_02_0E_6D
+#_0A87CA: dw Message_02_0E_6E
+#_0A87CC: dw Message_02_0E_6F
+#_0A87CE: dw Message_02_0E_70
+#_0A87D0: dw Message_02_0E_71
+#_0A87D2: dw Message_02_0E_72
+#_0A87D4: dw Message_02_0E_73
+#_0A87D6: dw Message_02_0E_74
+#_0A87D8: dw Message_02_0E_75
+#_0A87DA: dw Message_02_0E_76
+#_0A87DC: dw Message_02_0E_77
+#_0A87DE: dw Message_02_0E_78
+#_0A87E0: dw Message_02_0E_79
+#_0A87E2: dw Message_02_0E_7A
+#_0A87E4: dw Message_02_0E_7B
+#_0A87E6: dw Message_02_0E_7C
+#_0A87E8: dw Message_02_0E_7D
+#_0A87EA: dw Message_02_0E_7E
+#_0A87EC: dw Message_02_0E_7F
+#_0A87EE: dw Message_02_0E_80
+#_0A87F0: dw Message_02_0E_81
+#_0A87F2: dw Message_02_0E_82
+#_0A87F4: dw Message_02_0E_83
+#_0A87F6: dw Message_02_0E_84
+#_0A87F8: dw Message_02_0E_85
 
 ;===================================================================================================
 
-PTR16_0A87FA:
-#_0A87FA: dw DATA8_0ABDCA
-#_0A87FC: dw DATA8_0ABDD3
-#_0A87FE: dw DATA8_0ABDE3
-#_0A8800: dw DATA8_0ABDED
-#_0A8802: dw DATA8_0ABDF0
-#_0A8804: dw DATA8_0ABDF3
-#_0A8806: dw DATA8_0ABDF6
-#_0A8808: dw DATA8_0ABE00
-#_0A880A: dw DATA8_0ABE06
-#_0A880C: dw DATA8_0ABE16
-#_0A880E: dw DATA8_0ABE1E
-#_0A8810: dw DATA8_0ABE37
-#_0A8812: dw DATA8_0ABE3C
-#_0A8814: dw DATA8_0ABE44
-#_0A8816: dw DATA8_0ABE4A
-#_0A8818: dw DATA8_0ABE4F
-#_0A881A: dw DATA8_0ABE5B
-#_0A881C: dw DATA8_0ABE60
-#_0A881E: dw DATA8_0ABE65
-#_0A8820: dw DATA8_0ABE6A
-#_0A8822: dw DATA8_0ABE7A
-#_0A8824: dw DATA8_0ABE82
-#_0A8826: dw DATA8_0ABE8A
-#_0A8828: dw DATA8_0ABE92
-#_0A882A: dw DATA8_0ABE9B
-#_0A882C: dw DATA8_0ABE9E
-#_0A882E: dw DATA8_0ABEA9
-#_0A8830: dw DATA8_0ABEAE
-#_0A8832: dw DATA8_0ABEB8
-#_0A8834: dw DATA8_0ABEC8
-#_0A8836: dw DATA8_0ABEDB
-#_0A8838: dw DATA8_0ABEE4
-#_0A883A: dw DATA8_0ABEEA
-#_0A883C: dw DATA8_0ABEF1
-#_0A883E: dw DATA8_0ABEFA
-#_0A8840: dw DATA8_0ABF02
-#_0A8842: dw DATA8_0ABF0A
-#_0A8844: dw DATA8_0ABF1A
-#_0A8846: dw DATA8_0ABF25
-#_0A8848: dw DATA8_0ABF2D
-#_0A884A: dw DATA8_0ABF35
-#_0A884C: dw DATA8_0ABF3D
-#_0A884E: dw DATA8_0ABF42
-#_0A8850: dw DATA8_0ABF48
-#_0A8852: dw DATA8_0ABF4D
-#_0A8854: dw DATA8_0ABF5D
-#_0A8856: dw DATA8_0ABF62
-#_0A8858: dw DATA8_0ABF6A
-#_0A885A: dw DATA8_0ABF79
-#_0A885C: dw DATA8_0ABF7E
-#_0A885E: dw DATA8_0ABF8C
-#_0A8860: dw DATA8_0ABF97
-#_0A8862: dw DATA8_0ABF9C
-#_0A8864: dw DATA8_0ABFA5
-#_0A8866: dw DATA8_0ABFB1
-#_0A8868: dw DATA8_0ABFC0
-#_0A886A: dw DATA8_0ABFD0
-#_0A886C: dw DATA8_0ABFDC
-#_0A886E: dw DATA8_0ABFE4
-#_0A8870: dw DATA8_0ABFF2
-#_0A8872: dw DATA8_0ABFF7
-#_0A8874: dw DATA8_0ABFFD
-#_0A8876: dw DATA8_0AC006
-#_0A8878: dw DATA8_0AC00C
-#_0A887A: dw DATA8_0AC018
-#_0A887C: dw DATA8_0AC022
-#_0A887E: dw DATA8_0AC028
-#_0A8880: dw DATA8_0AC02D
-#_0A8882: dw DATA8_0AC036
-#_0A8884: dw DATA8_0AC03B
-#_0A8886: dw DATA8_0AC040
-#_0A8888: dw DATA8_0AC050
-#_0A888A: dw DATA8_0AC068
-#_0A888C: dw DATA8_0AC073
-#_0A888E: dw DATA8_0AC083
-#_0A8890: dw DATA8_0AC08D
-#_0A8892: dw DATA8_0AC092
-#_0A8894: dw DATA8_0AC09D
-#_0A8896: dw DATA8_0AC0A3
-#_0A8898: dw DATA8_0AC0B8
-#_0A889A: dw DATA8_0AC0C1
-#_0A889C: dw DATA8_0AC0CD
-#_0A889E: dw DATA8_0AC0E2
-#_0A88A0: dw DATA8_0AC0ED
-#_0A88A2: dw DATA8_0AC0FD
-#_0A88A4: dw DATA8_0AC10E
-#_0A88A6: dw DATA8_0AC116
-#_0A88A8: dw DATA8_0AC11B
-#_0A88AA: dw DATA8_0AC120
-#_0A88AC: dw DATA8_0AC130
-#_0A88AE: dw DATA8_0AC13B
-#_0A88B0: dw DATA8_0AC149
-#_0A88B2: dw DATA8_0AC157
-#_0A88B4: dw DATA8_0AC15C
-#_0A88B6: dw DATA8_0AC165
-#_0A88B8: dw DATA8_0AC16F
-#_0A88BA: dw DATA8_0AC174
-#_0A88BC: dw DATA8_0AC184
-#_0A88BE: dw DATA8_0AC19C
-#_0A88C0: dw DATA8_0AC1A7
-#_0A88C2: dw DATA8_0AC1AC
-#_0A88C4: dw DATA8_0AC1B1
-#_0A88C6: dw DATA8_0AC1B9
-#_0A88C8: dw DATA8_0AC1C9
-#_0A88CA: dw DATA8_0AC1D2
-#_0A88CC: dw DATA8_0AC1E2
-#_0A88CE: dw DATA8_0AC1ED
-#_0A88D0: dw DATA8_0AC1F3
-#_0A88D2: dw DATA8_0AC1FB
+Message_02_0F_Pointers:
+#_0A87FA: dw Message_02_0F_00
+#_0A87FC: dw Message_02_0F_01
+#_0A87FE: dw Message_02_0F_02
+#_0A8800: dw Message_02_0F_03
+#_0A8802: dw Message_02_0F_04
+#_0A8804: dw Message_02_0F_05
+#_0A8806: dw Message_02_0F_06
+#_0A8808: dw Message_02_0F_07
+#_0A880A: dw Message_02_0F_08
+#_0A880C: dw Message_02_0F_09
+#_0A880E: dw Message_02_0F_0A
+#_0A8810: dw Message_02_0F_0B
+#_0A8812: dw Message_02_0F_0C
+#_0A8814: dw Message_02_0F_0D
+#_0A8816: dw Message_02_0F_0E
+#_0A8818: dw Message_02_0F_0F
+#_0A881A: dw Message_02_0F_10
+#_0A881C: dw Message_02_0F_11
+#_0A881E: dw Message_02_0F_12
+#_0A8820: dw Message_02_0F_13
+#_0A8822: dw Message_02_0F_14
+#_0A8824: dw Message_02_0F_15
+#_0A8826: dw Message_02_0F_16
+#_0A8828: dw Message_02_0F_17
+#_0A882A: dw Message_02_0F_18
+#_0A882C: dw Message_02_0F_19
+#_0A882E: dw Message_02_0F_1A
+#_0A8830: dw Message_02_0F_1B
+#_0A8832: dw Message_02_0F_1C
+#_0A8834: dw Message_02_0F_1D
+#_0A8836: dw Message_02_0F_1E
+#_0A8838: dw Message_02_0F_1F
+#_0A883A: dw Message_02_0F_20
+#_0A883C: dw Message_02_0F_21
+#_0A883E: dw Message_02_0F_22
+#_0A8840: dw Message_02_0F_23
+#_0A8842: dw Message_02_0F_24
+#_0A8844: dw Message_02_0F_25
+#_0A8846: dw Message_02_0F_26
+#_0A8848: dw Message_02_0F_27
+#_0A884A: dw Message_02_0F_28
+#_0A884C: dw Message_02_0F_29
+#_0A884E: dw Message_02_0F_2A
+#_0A8850: dw Message_02_0F_2B
+#_0A8852: dw Message_02_0F_2C
+#_0A8854: dw Message_02_0F_2D
+#_0A8856: dw Message_02_0F_2E
+#_0A8858: dw Message_02_0F_2F
+#_0A885A: dw Message_02_0F_30
+#_0A885C: dw Message_02_0F_31
+#_0A885E: dw Message_02_0F_32
+#_0A8860: dw Message_02_0F_33
+#_0A8862: dw Message_02_0F_34
+#_0A8864: dw Message_02_0F_35
+#_0A8866: dw Message_02_0F_36
+#_0A8868: dw Message_02_0F_37
+#_0A886A: dw Message_02_0F_38
+#_0A886C: dw Message_02_0F_39
+#_0A886E: dw Message_02_0F_3A
+#_0A8870: dw Message_02_0F_3B
+#_0A8872: dw Message_02_0F_3C
+#_0A8874: dw Message_02_0F_3D
+#_0A8876: dw Message_02_0F_3E
+#_0A8878: dw Message_02_0F_3F
+#_0A887A: dw Message_02_0F_40
+#_0A887C: dw Message_02_0F_41
+#_0A887E: dw Message_02_0F_42
+#_0A8880: dw Message_02_0F_43
+#_0A8882: dw Message_02_0F_44
+#_0A8884: dw Message_02_0F_45
+#_0A8886: dw Message_02_0F_46
+#_0A8888: dw Message_02_0F_47
+#_0A888A: dw Message_02_0F_48
+#_0A888C: dw Message_02_0F_49
+#_0A888E: dw Message_02_0F_4A
+#_0A8890: dw Message_02_0F_4B
+#_0A8892: dw Message_02_0F_4C
+#_0A8894: dw Message_02_0F_4D
+#_0A8896: dw Message_02_0F_4E
+#_0A8898: dw Message_02_0F_4F
+#_0A889A: dw Message_02_0F_50
+#_0A889C: dw Message_02_0F_51
+#_0A889E: dw Message_02_0F_52
+#_0A88A0: dw Message_02_0F_53
+#_0A88A2: dw Message_02_0F_54
+#_0A88A4: dw Message_02_0F_55
+#_0A88A6: dw Message_02_0F_56
+#_0A88A8: dw Message_02_0F_57
+#_0A88AA: dw Message_02_0F_58
+#_0A88AC: dw Message_02_0F_59
+#_0A88AE: dw Message_02_0F_5A
+#_0A88B0: dw Message_02_0F_5B
+#_0A88B2: dw Message_02_0F_5C
+#_0A88B4: dw Message_02_0F_5D
+#_0A88B6: dw Message_02_0F_5E
+#_0A88B8: dw Message_02_0F_5F
+#_0A88BA: dw Message_02_0F_60
+#_0A88BC: dw Message_02_0F_61
+#_0A88BE: dw Message_02_0F_62
+#_0A88C0: dw Message_02_0F_63
+#_0A88C2: dw Message_02_0F_64
+#_0A88C4: dw Message_02_0F_65
+#_0A88C6: dw Message_02_0F_66
+#_0A88C8: dw Message_02_0F_67
+#_0A88CA: dw Message_02_0F_68
+#_0A88CC: dw Message_02_0F_69
+#_0A88CE: dw Message_02_0F_6A
+#_0A88D0: dw Message_02_0F_6B
+#_0A88D2: dw Message_02_0F_6C
 
 ;===================================================================================================
 
-PTR16_0A88D4:
-#_0A88D4: dw DATA8_0AC204
-#_0A88D6: dw DATA8_0AC211
-#_0A88D8: dw DATA8_0AC214
-#_0A88DA: dw DATA8_0AC21A
-#_0A88DC: dw DATA8_0AC222
-#_0A88DE: dw DATA8_0AC228
-#_0A88E0: dw DATA8_0AC23C
-#_0A88E2: dw DATA8_0AC245
-#_0A88E4: dw DATA8_0AC24A
-#_0A88E6: dw DATA8_0AC256
-#_0A88E8: dw DATA8_0AC25E
-#_0A88EA: dw DATA8_0AC272
-#_0A88EC: dw DATA8_0AC277
-#_0A88EE: dw DATA8_0AC27C
-#_0A88F0: dw DATA8_0AC289
-#_0A88F2: dw DATA8_0AC28B
-#_0A88F4: dw DATA8_0AC29E
-#_0A88F6: dw DATA8_0AC2A1
-#_0A88F8: dw DATA8_0AC2A6
-#_0A88FA: dw DATA8_0AC2AC
-#_0A88FC: dw DATA8_0AC2B1
-#_0A88FE: dw DATA8_0AC2BA
-#_0A8900: dw DATA8_0AC2BF
-#_0A8902: dw DATA8_0AC2C5
-#_0A8904: dw DATA8_0AC2CE
-#_0A8906: dw DATA8_0AC2D6
-#_0A8908: dw DATA8_0AC2E8
-#_0A890A: dw DATA8_0AC2FA
-#_0A890C: dw DATA8_0AC2FF
-#_0A890E: dw DATA8_0AC304
-#_0A8910: dw DATA8_0AC30A
-#_0A8912: dw DATA8_0AC31C
-#_0A8914: dw DATA8_0AC32E
-#_0A8916: dw DATA8_0AC333
-#_0A8918: dw DATA8_0AC339
-#_0A891A: dw DATA8_0AC345
-#_0A891C: dw DATA8_0AC34E
+Message_02_10_Pointers:
+#_0A88D4: dw Message_02_10_00
+#_0A88D6: dw Message_02_10_01
+#_0A88D8: dw Message_02_10_02
+#_0A88DA: dw Message_02_10_03
+#_0A88DC: dw Message_02_10_04
+#_0A88DE: dw Message_02_10_05
+#_0A88E0: dw Message_02_10_06
+#_0A88E2: dw Message_02_10_07
+#_0A88E4: dw Message_02_10_08
+#_0A88E6: dw Message_02_10_09
+#_0A88E8: dw Message_02_10_0A
+#_0A88EA: dw Message_02_10_0B
+#_0A88EC: dw Message_02_10_0C
+#_0A88EE: dw Message_02_10_0D
+#_0A88F0: dw Message_02_10_0E
+#_0A88F2: dw Message_02_10_0F
+#_0A88F4: dw Message_02_10_10
+#_0A88F6: dw Message_02_10_11
+#_0A88F8: dw Message_02_10_12
+#_0A88FA: dw Message_02_10_13
+#_0A88FC: dw Message_02_10_14
+#_0A88FE: dw Message_02_10_15
+#_0A8900: dw Message_02_10_16
+#_0A8902: dw Message_02_10_17
+#_0A8904: dw Message_02_10_18
+#_0A8906: dw Message_02_10_19
+#_0A8908: dw Message_02_10_1A
+#_0A890A: dw Message_02_10_1B
+#_0A890C: dw Message_02_10_1C
+#_0A890E: dw Message_02_10_1D
+#_0A8910: dw Message_02_10_1E
+#_0A8912: dw Message_02_10_1F
+#_0A8914: dw Message_02_10_20
+#_0A8916: dw Message_02_10_21
+#_0A8918: dw Message_02_10_22
+#_0A891A: dw Message_02_10_23
+#_0A891C: dw Message_02_10_24
 
 ;===================================================================================================
 
-PTR16_0A891E:
-#_0A891E: dw DATA8_0AC350
-#_0A8920: dw DATA8_0AC35D
-#_0A8922: dw DATA8_0AC361
-#_0A8924: dw DATA8_0AC368
-#_0A8926: dw DATA8_0AC37A
-#_0A8928: dw DATA8_0AC37D
-#_0A892A: dw DATA8_0AC380
-#_0A892C: dw DATA8_0AC385
-#_0A892E: dw DATA8_0AC393
-#_0A8930: dw DATA8_0AC39D
-#_0A8932: dw DATA8_0AC3A3
-#_0A8934: dw DATA8_0AC3A6
-#_0A8936: dw DATA8_0AC3AB
-#_0A8938: dw DATA8_0AC3BD
-#_0A893A: dw DATA8_0AC3CF
-#_0A893C: dw DATA8_0AC3D4
-#_0A893E: dw DATA8_0AC3E6
-#_0A8940: dw DATA8_0AC3F8
+Message_02_11_Pointers:
+#_0A891E: dw Message_02_11_00
+#_0A8920: dw Message_02_11_01
+#_0A8922: dw Message_02_11_02
+#_0A8924: dw Message_02_11_03
+#_0A8926: dw Message_02_11_04
+#_0A8928: dw Message_02_11_05
+#_0A892A: dw Message_02_11_06
+#_0A892C: dw Message_02_11_07
+#_0A892E: dw Message_02_11_08
+#_0A8930: dw Message_02_11_09
+#_0A8932: dw Message_02_11_0A
+#_0A8934: dw Message_02_11_0B
+#_0A8936: dw Message_02_11_0C
+#_0A8938: dw Message_02_11_0D
+#_0A893A: dw Message_02_11_0E
+#_0A893C: dw Message_02_11_0F
+#_0A893E: dw Message_02_11_10
+#_0A8940: dw Message_02_11_11
 
 ;===================================================================================================
 
-PTR16_0A8942:
-#_0A8942: dw DATA8_0AC401
-#_0A8944: dw DATA8_0AC417
-#_0A8946: dw DATA8_0AC420
-#_0A8948: dw DATA8_0AC424
-#_0A894A: dw DATA8_0AC435
-#_0A894C: dw DATA8_0AC43C
-#_0A894E: dw DATA8_0AC448
-#_0A8950: dw DATA8_0AC456
-#_0A8952: dw DATA8_0AC464
+Message_02_12_Pointers:
+#_0A8942: dw Message_02_12_00
+#_0A8944: dw Message_02_12_01
+#_0A8946: dw Message_02_12_02
+#_0A8948: dw Message_02_12_03
+#_0A894A: dw Message_02_12_04
+#_0A894C: dw Message_02_12_05
+#_0A894E: dw Message_02_12_06
+#_0A8950: dw Message_02_12_07
+#_0A8952: dw Message_02_12_08
 
 ;===================================================================================================
 
-PTR16_0A8954:
-#_0A8954: dw DATA8_0AC46D
-#_0A8956: dw DATA8_0AC480
-#_0A8958: dw DATA8_0AC490
-#_0A895A: dw DATA8_0AC49B
-#_0A895C: dw DATA8_0AC4AB
-#_0A895E: dw DATA8_0AC4AE
-#_0A8960: dw DATA8_0AC4B4
-#_0A8962: dw DATA8_0AC4C4
-#_0A8964: dw DATA8_0AC4CD
-#_0A8966: dw DATA8_0AC4D0
-#_0A8968: dw DATA8_0AC4E0
-#_0A896A: dw DATA8_0AC4E5
-#_0A896C: dw DATA8_0AC4EB
-#_0A896E: dw DATA8_0AC4F5
-#_0A8970: dw DATA8_0AC502
-#_0A8972: dw DATA8_0AC507
+Message_02_13_Pointers:
+#_0A8954: dw Message_02_13_00
+#_0A8956: dw Message_02_13_01
+#_0A8958: dw Message_02_13_02
+#_0A895A: dw Message_02_13_03
+#_0A895C: dw Message_02_13_04
+#_0A895E: dw Message_02_13_05
+#_0A8960: dw Message_02_13_06
+#_0A8962: dw Message_02_13_07
+#_0A8964: dw Message_02_13_08
+#_0A8966: dw Message_02_13_09
+#_0A8968: dw Message_02_13_0A
+#_0A896A: dw Message_02_13_0B
+#_0A896C: dw Message_02_13_0C
+#_0A896E: dw Message_02_13_0D
+#_0A8970: dw Message_02_13_0E
+#_0A8972: dw Message_02_13_0F
 
 ;===================================================================================================
 
-PTR16_0A8974:
-#_0A8974: dw DATA8_0AC512
-#_0A8976: dw DATA8_0AC51E
-#_0A8978: dw DATA8_0AC523
-#_0A897A: dw DATA8_0AC529
-#_0A897C: dw DATA8_0AC52C
-#_0A897E: dw DATA8_0AC532
-#_0A8980: dw DATA8_0AC537
-#_0A8982: dw DATA8_0AC53F
-#_0A8984: dw DATA8_0AC544
-#_0A8986: dw DATA8_0AC555
-#_0A8988: dw DATA8_0AC55A
-#_0A898A: dw DATA8_0AC566
-#_0A898C: dw DATA8_0AC568
-#_0A898E: dw DATA8_0AC56D
-#_0A8990: dw DATA8_0AC575
-#_0A8992: dw DATA8_0AC57A
-#_0A8994: dw DATA8_0AC58C
-#_0A8996: dw DATA8_0AC591
+Message_02_14_Pointers:
+#_0A8974: dw Message_02_14_00
+#_0A8976: dw Message_02_14_01
+#_0A8978: dw Message_02_14_02
+#_0A897A: dw Message_02_14_03
+#_0A897C: dw Message_02_14_04
+#_0A897E: dw Message_02_14_05
+#_0A8980: dw Message_02_14_06
+#_0A8982: dw Message_02_14_07
+#_0A8984: dw Message_02_14_08
+#_0A8986: dw Message_02_14_09
+#_0A8988: dw Message_02_14_0A
+#_0A898A: dw Message_02_14_0B
+#_0A898C: dw Message_02_14_0C
+#_0A898E: dw Message_02_14_0D
+#_0A8990: dw Message_02_14_0E
+#_0A8992: dw Message_02_14_0F
+#_0A8994: dw Message_02_14_10
+#_0A8996: dw Message_02_14_11
 
 ;===================================================================================================
 
-PTR16_0A8998:
-#_0A8998: dw DATA8_0AC593
-#_0A899A: dw DATA8_0AC5AB
-#_0A899C: dw DATA8_0AC5B4
-#_0A899E: dw DATA8_0AC5BA
-#_0A89A0: dw DATA8_0AC5C8
-#_0A89A2: dw DATA8_0AC5D1
-#_0A89A4: dw DATA8_0AC5D6
-#_0A89A6: dw DATA8_0AC5DC
-#_0A89A8: dw DATA8_0AC5E2
-#_0A89AA: dw DATA8_0AC5F0
-#_0A89AC: dw DATA8_0AC5F9
-#_0A89AE: dw DATA8_0AC605
+Message_02_15_Pointers:
+#_0A8998: dw Message_02_15_00
+#_0A899A: dw Message_02_15_01
+#_0A899C: dw Message_02_15_02
+#_0A899E: dw Message_02_15_03
+#_0A89A0: dw Message_02_15_04
+#_0A89A2: dw Message_02_15_05
+#_0A89A4: dw Message_02_15_06
+#_0A89A6: dw Message_02_15_07
+#_0A89A8: dw Message_02_15_08
+#_0A89AA: dw Message_02_15_09
+#_0A89AC: dw Message_02_15_0A
+#_0A89AE: dw Message_02_15_0B
 
 ;===================================================================================================
 
-PTR16_0A89B0:
-#_0A89B0: dw DATA8_0AC62B
-#_0A89B2: dw DATA8_0AC646
-#_0A89B4: dw DATA8_0AC65A
-#_0A89B6: dw DATA8_0AC66E
-#_0A89B8: dw DATA8_0AC676
-#_0A89BA: dw DATA8_0AC67D
-#_0A89BC: dw DATA8_0AC682
-#_0A89BE: dw DATA8_0AC685
-#_0A89C0: dw DATA8_0AC688
-#_0A89C2: dw DATA8_0AC6A5
-#_0A89C4: dw DATA8_0AC6C7
-#_0A89C6: dw DATA8_0AC6E7
-#_0A89C8: dw DATA8_0AC6F9
-#_0A89CA: dw DATA8_0AC720
-#_0A89CC: dw DATA8_0AC764
-#_0A89CE: dw DATA8_0AC782
-#_0A89D0: dw DATA8_0AC796
-#_0A89D2: dw DATA8_0AC7A5
-#_0A89D4: dw DATA8_0AC7BB
-#_0A89D6: dw DATA8_0AC7C5
-#_0A89D8: dw DATA8_0AC7C8
-#_0A89DA: dw DATA8_0AC7E9
-#_0A89DC: dw DATA8_0AC810
-#_0A89DE: dw DATA8_0AC817
-#_0A89E0: dw DATA8_0AC81A
-#_0A89E2: dw DATA8_0AC829
-#_0A89E4: dw DATA8_0AC844
-#_0A89E6: dw DATA8_0AC869
-#_0A89E8: dw DATA8_0AC883
-#_0A89EA: dw DATA8_0AC892
-#_0A89EC: dw DATA8_0AC8A0
-#_0A89EE: dw DATA8_0AC8B0
-#_0A89F0: dw DATA8_0AC8BD
-#_0A89F2: dw DATA8_0AC8C3
-#_0A89F4: dw DATA8_0AC8C6
-#_0A89F6: dw DATA8_0AC8EE
-#_0A89F8: dw DATA8_0AC8FB
-#_0A89FA: dw DATA8_0AC909
-#_0A89FC: dw DATA8_0AC90F
-#_0A89FE: dw DATA8_0AC928
-#_0A8A00: dw DATA8_0AC92B
-#_0A8A02: dw DATA8_0AC92C
-#_0A8A04: dw DATA8_0AC92D
-#_0A8A06: dw DATA8_0AC92E
-#_0A8A08: dw DATA8_0AC92F
-#_0A8A0A: dw DATA8_0AC94E
-#_0A8A0C: dw DATA8_0AC966
-#_0A8A0E: dw DATA8_0AC98F
-#_0A8A10: dw DATA8_0AC99E
-#_0A8A12: dw DATA8_0AC9A1
-#_0A8A14: dw DATA8_0AC9AA
-#_0A8A16: dw DATA8_0AC9AF
-#_0A8A18: dw DATA8_0AC9B2
-#_0A8A1A: dw DATA8_0AC9B5
-#_0A8A1C: dw DATA8_0AC9B8
-#_0A8A1E: dw DATA8_0AC9BB
-#_0A8A20: dw DATA8_0AC9BE
-#_0A8A22: dw DATA8_0AC9C8
-#_0A8A24: dw DATA8_0AC9E3
-#_0A8A26: dw DATA8_0AC9FA
-#_0A8A28: dw DATA8_0ACA0C
-#_0A8A2A: dw DATA8_0ACA26
-#_0A8A2C: dw DATA8_0ACA4E
-#_0A8A2E: dw DATA8_0ACA6B
-#_0A8A30: dw DATA8_0ACA77
-#_0A8A32: dw DATA8_0ACA99
-#_0A8A34: dw DATA8_0ACAA4
-#_0A8A36: dw DATA8_0ACAAF
-#_0A8A38: dw DATA8_0ACAB6
-#_0A8A3A: dw DATA8_0ACAB9
-#_0A8A3C: dw DATA8_0ACABC
-#_0A8A3E: dw DATA8_0ACABF
-#_0A8A40: dw DATA8_0ACAC2
-#_0A8A42: dw DATA8_0ACAC3
-#_0A8A44: dw DATA8_0ACAC4
-#_0A8A46: dw DATA8_0ACAC5
-#_0A8A48: dw DATA8_0ACAC6
-#_0A8A4A: dw DATA8_0ACADA
-#_0A8A4C: dw DATA8_0ACAEB
-#_0A8A4E: dw DATA8_0ACAEE
-#_0A8A50: dw DATA8_0ACAF5
-#_0A8A52: dw DATA8_0ACAF6
-#_0A8A54: dw DATA8_0ACAF7
-#_0A8A56: dw DATA8_0ACAF8
-#_0A8A58: dw DATA8_0ACAF9
-#_0A8A5A: dw DATA8_0ACB0B
-#_0A8A5C: dw DATA8_0ACB23
-#_0A8A5E: dw DATA8_0ACB3B
-#_0A8A60: dw DATA8_0ACB3E
-#_0A8A62: dw DATA8_0ACB3F
-#_0A8A64: dw DATA8_0ACB40
-#_0A8A66: dw DATA8_0ACB41
-#_0A8A68: dw DATA8_0ACB42
-#_0A8A6A: dw DATA8_0ACB60
-#_0A8A6C: dw DATA8_0ACB76
-#_0A8A6E: dw DATA8_0ACB98
-#_0A8A70: dw DATA8_0ACB9B
-#_0A8A72: dw DATA8_0ACB9C
-#_0A8A74: dw DATA8_0ACB9D
-#_0A8A76: dw DATA8_0ACB9E
-#_0A8A78: dw DATA8_0ACB9F
-#_0A8A7A: dw DATA8_0ACBAE
-#_0A8A7C: dw DATA8_0ACBBF
-#_0A8A7E: dw DATA8_0ACBCC
-#_0A8A80: dw DATA8_0ACBDA
-#_0A8A82: dw DATA8_0ACBEC
-#_0A8A84: dw DATA8_0ACC0B
-#_0A8A86: dw DATA8_0ACC22
-#_0A8A88: dw DATA8_0ACC2F
-#_0A8A8A: dw DATA8_0ACC40
-#_0A8A8C: dw DATA8_0ACC63
-#_0A8A8E: dw DATA8_0ACC83
-#_0A8A90: dw DATA8_0ACC91
-#_0A8A92: dw DATA8_0ACC94
-#_0A8A94: dw DATA8_0ACCAA
-#_0A8A96: dw DATA8_0ACCAD
-#_0A8A98: dw DATA8_0ACCBF
-#_0A8A9A: dw DATA8_0ACCD9
-#_0A8A9C: dw DATA8_0ACCFA
-#_0A8A9E: dw DATA8_0ACD0B
-#_0A8AA0: dw DATA8_0ACD1D
-#_0A8AA2: dw DATA8_0ACD30
-#_0A8AA4: dw DATA8_0ACD48
-#_0A8AA6: dw DATA8_0ACD4D
-#_0A8AA8: dw DATA8_0ACD53
-#_0A8AAA: dw DATA8_0ACD69
-#_0A8AAC: dw DATA8_0ACD7A
-#_0A8AAE: dw DATA8_0ACD7D
-#_0A8AB0: dw DATA8_0ACD96
-#_0A8AB2: dw DATA8_0ACDAD
-#_0A8AB4: dw DATA8_0ACDC0
-#_0A8AB6: dw DATA8_0ACDC3
-#_0A8AB8: dw DATA8_0ACDC6
-#_0A8ABA: dw DATA8_0ACDE2
-#_0A8ABC: dw DATA8_0ACE18
-#_0A8ABE: dw DATA8_0ACE41
-#_0A8AC0: dw DATA8_0ACE4A
-#_0A8AC2: dw DATA8_0ACE65
-#_0A8AC4: dw DATA8_0ACE87
-#_0A8AC6: dw DATA8_0ACEA1
-#_0A8AC8: dw DATA8_0ACEB5
-#_0A8ACA: dw DATA8_0ACECE
-#_0A8ACC: dw DATA8_0ACEE1
-#_0A8ACE: dw DATA8_0ACEF9
-#_0A8AD0: dw DATA8_0ACF06
-#_0A8AD2: dw DATA8_0ACF19
-#_0A8AD4: dw DATA8_0ACF2E
-#_0A8AD6: dw DATA8_0ACF46
-#_0A8AD8: dw DATA8_0ACF51
-#_0A8ADA: dw DATA8_0ACF66
-#_0A8ADC: dw DATA8_0ACF77
-#_0A8ADE: dw DATA8_0ACF91
-#_0A8AE0: dw DATA8_0ACFAE
-#_0A8AE2: dw DATA8_0ACFC9
-#_0A8AE4: dw DATA8_0ACFE7
-#_0A8AE6: dw DATA8_0ACFFB
-#_0A8AE8: dw DATA8_0AD007
-#_0A8AEA: dw DATA8_0AD02C
-#_0A8AEC: dw DATA8_0AD040
-#_0A8AEE: dw DATA8_0AD053
-#_0A8AF0: dw DATA8_0AD060
-#_0A8AF2: dw DATA8_0AD07E
-#_0A8AF4: dw DATA8_0AD098
-#_0A8AF6: dw DATA8_0AD0AA
-#_0A8AF8: dw DATA8_0AD0BF
-#_0A8AFA: dw DATA8_0AD0D3
-#_0A8AFC: dw DATA8_0AD0EB
-#_0A8AFE: dw DATA8_0AD10D
-#_0A8B00: dw DATA8_0AD117
-#_0A8B02: dw DATA8_0AD12D
-#_0A8B04: dw DATA8_0AD140
-#_0A8B06: dw DATA8_0AD155
-#_0A8B08: dw DATA8_0AD158
-#_0A8B0A: dw DATA8_0AD159
-#_0A8B0C: dw DATA8_0AD15A
-#_0A8B0E: dw DATA8_0AD15B
-#_0A8B10: dw DATA8_0AD15C
-#_0A8B12: dw DATA8_0AD16E
-#_0A8B14: dw DATA8_0AD185
-#_0A8B16: dw DATA8_0AD18E
-#_0A8B18: dw DATA8_0AD19F
-#_0A8B1A: dw DATA8_0AD1A2
-#_0A8B1C: dw DATA8_0AD1BF
-#_0A8B1E: dw DATA8_0AD1C2
-#_0A8B20: dw DATA8_0AD1DB
-#_0A8B22: dw DATA8_0AD1EC
-#_0A8B24: dw DATA8_0AD206
-#_0A8B26: dw DATA8_0AD21B
-#_0A8B28: dw DATA8_0AD22D
-#_0A8B2A: dw DATA8_0AD230
-#_0A8B2C: dw DATA8_0AD23C
-#_0A8B2E: dw DATA8_0AD244
-#_0A8B30: dw DATA8_0AD24B
-#_0A8B32: dw DATA8_0AD255
-#_0A8B34: dw DATA8_0AD26C
-#_0A8B36: dw DATA8_0AD274
+Message_02_16_Pointers:
+#_0A89B0: dw Message_02_16_00
+#_0A89B2: dw Message_02_16_01
+#_0A89B4: dw Message_02_16_02
+#_0A89B6: dw Message_02_16_03
+#_0A89B8: dw Message_02_16_04
+#_0A89BA: dw Message_02_16_05
+#_0A89BC: dw Message_02_16_06
+#_0A89BE: dw Message_02_16_07
+#_0A89C0: dw Message_02_16_08
+#_0A89C2: dw Message_02_16_09
+#_0A89C4: dw Message_02_16_0A
+#_0A89C6: dw Message_02_16_0B
+#_0A89C8: dw Message_02_16_0C
+#_0A89CA: dw Message_02_16_0D
+#_0A89CC: dw Message_02_16_0E
+#_0A89CE: dw Message_02_16_0F
+#_0A89D0: dw Message_02_16_10
+#_0A89D2: dw Message_02_16_11
+#_0A89D4: dw Message_02_16_12
+#_0A89D6: dw Message_02_16_13
+#_0A89D8: dw Message_02_16_14
+#_0A89DA: dw Message_02_16_15
+#_0A89DC: dw Message_02_16_16
+#_0A89DE: dw Message_02_16_17
+#_0A89E0: dw Message_02_16_18
+#_0A89E2: dw Message_02_16_19
+#_0A89E4: dw Message_02_16_1A
+#_0A89E6: dw Message_02_16_1B
+#_0A89E8: dw Message_02_16_1C
+#_0A89EA: dw Message_02_16_1D
+#_0A89EC: dw Message_02_16_1E
+#_0A89EE: dw Message_02_16_1F
+#_0A89F0: dw Message_02_16_20
+#_0A89F2: dw Message_02_16_21
+#_0A89F4: dw Message_02_16_22
+#_0A89F6: dw Message_02_16_23
+#_0A89F8: dw Message_02_16_24
+#_0A89FA: dw Message_02_16_25
+#_0A89FC: dw Message_02_16_26
+#_0A89FE: dw Message_02_16_27
+#_0A8A00: dw Message_02_16_28
+#_0A8A02: dw Message_02_16_29
+#_0A8A04: dw Message_02_16_2A
+#_0A8A06: dw Message_02_16_2B
+#_0A8A08: dw Message_02_16_2C
+#_0A8A0A: dw Message_02_16_2D
+#_0A8A0C: dw Message_02_16_2E
+#_0A8A0E: dw Message_02_16_2F
+#_0A8A10: dw Message_02_16_30
+#_0A8A12: dw Message_02_16_31
+#_0A8A14: dw Message_02_16_32
+#_0A8A16: dw Message_02_16_33
+#_0A8A18: dw Message_02_16_34
+#_0A8A1A: dw Message_02_16_35
+#_0A8A1C: dw Message_02_16_36
+#_0A8A1E: dw Message_02_16_37
+#_0A8A20: dw Message_02_16_38
+#_0A8A22: dw Message_02_16_39
+#_0A8A24: dw Message_02_16_3A
+#_0A8A26: dw Message_02_16_3B
+#_0A8A28: dw Message_02_16_3C
+#_0A8A2A: dw Message_02_16_3D
+#_0A8A2C: dw Message_02_16_3E
+#_0A8A2E: dw Message_02_16_3F
+#_0A8A30: dw Message_02_16_40
+#_0A8A32: dw Message_02_16_41
+#_0A8A34: dw Message_02_16_42
+#_0A8A36: dw Message_02_16_43
+#_0A8A38: dw Message_02_16_44
+#_0A8A3A: dw Message_02_16_45
+#_0A8A3C: dw Message_02_16_46
+#_0A8A3E: dw Message_02_16_47
+#_0A8A40: dw Message_02_16_48
+#_0A8A42: dw Message_02_16_49
+#_0A8A44: dw Message_02_16_4A
+#_0A8A46: dw Message_02_16_4B
+#_0A8A48: dw Message_02_16_4C
+#_0A8A4A: dw Message_02_16_4D
+#_0A8A4C: dw Message_02_16_4E
+#_0A8A4E: dw Message_02_16_4F
+#_0A8A50: dw Message_02_16_50
+#_0A8A52: dw Message_02_16_51
+#_0A8A54: dw Message_02_16_52
+#_0A8A56: dw Message_02_16_53
+#_0A8A58: dw Message_02_16_54
+#_0A8A5A: dw Message_02_16_55
+#_0A8A5C: dw Message_02_16_56
+#_0A8A5E: dw Message_02_16_57
+#_0A8A60: dw Message_02_16_58
+#_0A8A62: dw Message_02_16_59
+#_0A8A64: dw Message_02_16_5A
+#_0A8A66: dw Message_02_16_5B
+#_0A8A68: dw Message_02_16_5C
+#_0A8A6A: dw Message_02_16_5D
+#_0A8A6C: dw Message_02_16_5E
+#_0A8A6E: dw Message_02_16_5F
+#_0A8A70: dw Message_02_16_60
+#_0A8A72: dw Message_02_16_61
+#_0A8A74: dw Message_02_16_62
+#_0A8A76: dw Message_02_16_63
+#_0A8A78: dw Message_02_16_64
+#_0A8A7A: dw Message_02_16_65
+#_0A8A7C: dw Message_02_16_66
+#_0A8A7E: dw Message_02_16_67
+#_0A8A80: dw Message_02_16_68
+#_0A8A82: dw Message_02_16_69
+#_0A8A84: dw Message_02_16_6A
+#_0A8A86: dw Message_02_16_6B
+#_0A8A88: dw Message_02_16_6C
+#_0A8A8A: dw Message_02_16_6D
+#_0A8A8C: dw Message_02_16_6E
+#_0A8A8E: dw Message_02_16_6F
+#_0A8A90: dw Message_02_16_70
+#_0A8A92: dw Message_02_16_71
+#_0A8A94: dw Message_02_16_72
+#_0A8A96: dw Message_02_16_73
+#_0A8A98: dw Message_02_16_74
+#_0A8A9A: dw Message_02_16_75
+#_0A8A9C: dw Message_02_16_76
+#_0A8A9E: dw Message_02_16_77
+#_0A8AA0: dw Message_02_16_78
+#_0A8AA2: dw Message_02_16_79
+#_0A8AA4: dw Message_02_16_7A
+#_0A8AA6: dw Message_02_16_7B
+#_0A8AA8: dw Message_02_16_7C
+#_0A8AAA: dw Message_02_16_7D
+#_0A8AAC: dw Message_02_16_7E
+#_0A8AAE: dw Message_02_16_7F
+#_0A8AB0: dw Message_02_16_80
+#_0A8AB2: dw Message_02_16_81
+#_0A8AB4: dw Message_02_16_82
+#_0A8AB6: dw Message_02_16_83
+#_0A8AB8: dw Message_02_16_84
+#_0A8ABA: dw Message_02_16_85
+#_0A8ABC: dw Message_02_16_86
+#_0A8ABE: dw Message_02_16_87
+#_0A8AC0: dw Message_02_16_88
+#_0A8AC2: dw Message_02_16_89
+#_0A8AC4: dw Message_02_16_8A
+#_0A8AC6: dw Message_02_16_8B
+#_0A8AC8: dw Message_02_16_8C
+#_0A8ACA: dw Message_02_16_8D
+#_0A8ACC: dw Message_02_16_8E
+#_0A8ACE: dw Message_02_16_8F
+#_0A8AD0: dw Message_02_16_90
+#_0A8AD2: dw Message_02_16_91
+#_0A8AD4: dw Message_02_16_92
+#_0A8AD6: dw Message_02_16_93
+#_0A8AD8: dw Message_02_16_94
+#_0A8ADA: dw Message_02_16_95
+#_0A8ADC: dw Message_02_16_96
+#_0A8ADE: dw Message_02_16_97
+#_0A8AE0: dw Message_02_16_98
+#_0A8AE2: dw Message_02_16_99
+#_0A8AE4: dw Message_02_16_9A
+#_0A8AE6: dw Message_02_16_9B
+#_0A8AE8: dw Message_02_16_9C
+#_0A8AEA: dw Message_02_16_9D
+#_0A8AEC: dw Message_02_16_9E
+#_0A8AEE: dw Message_02_16_9F
+#_0A8AF0: dw Message_02_16_A0
+#_0A8AF2: dw Message_02_16_A1
+#_0A8AF4: dw Message_02_16_A2
+#_0A8AF6: dw Message_02_16_A3
+#_0A8AF8: dw Message_02_16_A4
+#_0A8AFA: dw Message_02_16_A5
+#_0A8AFC: dw Message_02_16_A6
+#_0A8AFE: dw Message_02_16_A7
+#_0A8B00: dw Message_02_16_A8
+#_0A8B02: dw Message_02_16_A9
+#_0A8B04: dw Message_02_16_AA
+#_0A8B06: dw Message_02_16_AB
+#_0A8B08: dw Message_02_16_AC
+#_0A8B0A: dw Message_02_16_AD
+#_0A8B0C: dw Message_02_16_AE
+#_0A8B0E: dw Message_02_16_AF
+#_0A8B10: dw Message_02_16_B0
+#_0A8B12: dw Message_02_16_B1
+#_0A8B14: dw Message_02_16_B2
+#_0A8B16: dw Message_02_16_B3
+#_0A8B18: dw Message_02_16_B4
+#_0A8B1A: dw Message_02_16_B5
+#_0A8B1C: dw Message_02_16_B6
+#_0A8B1E: dw Message_02_16_B7
+#_0A8B20: dw Message_02_16_B8
+#_0A8B22: dw Message_02_16_B9
+#_0A8B24: dw Message_02_16_BA
+#_0A8B26: dw Message_02_16_BB
+#_0A8B28: dw Message_02_16_BC
+#_0A8B2A: dw Message_02_16_BD
+#_0A8B2C: dw Message_02_16_BE
+#_0A8B2E: dw Message_02_16_BF
+#_0A8B30: dw Message_02_16_C0
+#_0A8B32: dw Message_02_16_C1
+#_0A8B34: dw Message_02_16_C2
+#_0A8B36: dw Message_02_16_C3
 
 ;===================================================================================================
 
-PTR16_0A8B38:
-#_0A8B38: dw DATA8_0AD277
-#_0A8B3A: dw DATA8_0AD27A
-#_0A8B3C: dw DATA8_0AD28A
-#_0A8B3E: dw DATA8_0AD297
-#_0A8B40: dw DATA8_0AD29F
-#_0A8B42: dw DATA8_0AD2A2
-#_0A8B44: dw DATA8_0AD2AF
-#_0A8B46: dw DATA8_0AD2BF
-#_0A8B48: dw DATA8_0AD2C2
-#_0A8B4A: dw DATA8_0AD2D7
-#_0A8B4C: dw DATA8_0AD2E7
-#_0A8B4E: dw DATA8_0AD2EA
-#_0A8B50: dw DATA8_0AD2F6
-#_0A8B52: dw DATA8_0AD308
-#_0A8B54: dw DATA8_0AD318
-#_0A8B56: dw DATA8_0AD31E
-#_0A8B58: dw DATA8_0AD321
-#_0A8B5A: dw DATA8_0AD324
-#_0A8B5C: dw DATA8_0AD32F
-#_0A8B5E: dw DATA8_0AD332
-#_0A8B60: dw DATA8_0AD33B
-#_0A8B62: dw DATA8_0AD350
-#_0A8B64: dw DATA8_0AD363
-#_0A8B66: dw DATA8_0AD371
-#_0A8B68: dw DATA8_0AD379
-#_0A8B6A: dw DATA8_0AD37C
-#_0A8B6C: dw DATA8_0AD385
-#_0A8B6E: dw DATA8_0AD390
-#_0A8B70: dw DATA8_0AD397
-#_0A8B72: dw DATA8_0AD39D
-#_0A8B74: dw DATA8_0AD3BC
-#_0A8B76: dw DATA8_0AD3C2
-#_0A8B78: dw DATA8_0AD3CF
-#_0A8B7A: dw DATA8_0AD3D2
-#_0A8B7C: dw DATA8_0AD3F1
-#_0A8B7E: dw DATA8_0AD407
-#_0A8B80: dw DATA8_0AD40D
-#_0A8B82: dw DATA8_0AD410
-#_0A8B84: dw DATA8_0AD420
-#_0A8B86: dw DATA8_0AD430
-#_0A8B88: dw DATA8_0AD438
-#_0A8B8A: dw DATA8_0AD43B
-#_0A8B8C: dw DATA8_0AD44A
-#_0A8B8E: dw DATA8_0AD459
-#_0A8B90: dw DATA8_0AD45F
-#_0A8B92: dw DATA8_0AD462
-#_0A8B94: dw DATA8_0AD474
-#_0A8B96: dw DATA8_0AD480
-#_0A8B98: dw DATA8_0AD487
-#_0A8B9A: dw DATA8_0AD48A
-#_0A8B9C: dw DATA8_0AD490
-#_0A8B9E: dw DATA8_0AD493
-#_0A8BA0: dw DATA8_0AD49C
-#_0A8BA2: dw DATA8_0AD4A9
-#_0A8BA4: dw DATA8_0AD4B3
-#_0A8BA6: dw DATA8_0AD4C9
-#_0A8BA8: dw DATA8_0AD4CC
-#_0A8BAA: dw DATA8_0AD4DA
-#_0A8BAC: dw DATA8_0AD4E7
-#_0A8BAE: dw DATA8_0AD4FA
-#_0A8BB0: dw DATA8_0AD4FD
-#_0A8BB2: dw DATA8_0AD503
-#_0A8BB4: dw DATA8_0AD50A
-#_0A8BB6: dw DATA8_0AD514
-#_0A8BB8: dw DATA8_0AD51E
-#_0A8BBA: dw DATA8_0AD533
-#_0A8BBC: dw DATA8_0AD539
-#_0A8BBE: dw DATA8_0AD53C
-#_0A8BC0: dw DATA8_0AD545
-#_0A8BC2: dw DATA8_0AD54C
-#_0A8BC4: dw DATA8_0AD54F
-#_0A8BC6: dw DATA8_0AD552
-#_0A8BC8: dw DATA8_0AD555
-#_0A8BCA: dw DATA8_0AD558
-#_0A8BCC: dw DATA8_0AD55B
-#_0A8BCE: dw DATA8_0AD55E
-#_0A8BD0: dw DATA8_0AD561
-#_0A8BD2: dw DATA8_0AD56C
-#_0A8BD4: dw DATA8_0AD56F
-#_0A8BD6: dw DATA8_0AD572
-#_0A8BD8: dw DATA8_0AD580
-#_0A8BDA: dw DATA8_0AD583
-#_0A8BDC: dw DATA8_0AD588
-#_0A8BDE: dw DATA8_0AD58B
-#_0A8BE0: dw DATA8_0AD59B
-#_0A8BE2: dw DATA8_0AD5A3
-#_0A8BE4: dw DATA8_0AD5A6
-#_0A8BE6: dw DATA8_0AD5A9
-#_0A8BE8: dw DATA8_0AD5AC
-#_0A8BEA: dw DATA8_0AD5AF
-#_0A8BEC: dw DATA8_0AD5C9
-#_0A8BEE: dw DATA8_0AD5CC
-#_0A8BF0: dw DATA8_0AD5D5
-#_0A8BF2: dw DATA8_0AD5E9
-#_0A8BF4: dw DATA8_0AD5F2
-#_0A8BF6: dw DATA8_0AD60A
+Message_02_17_Pointers:
+#_0A8B38: dw Message_02_17_00
+#_0A8B3A: dw Message_02_17_01
+#_0A8B3C: dw Message_02_17_02
+#_0A8B3E: dw Message_02_17_03
+#_0A8B40: dw Message_02_17_04
+#_0A8B42: dw Message_02_17_05
+#_0A8B44: dw Message_02_17_06
+#_0A8B46: dw Message_02_17_07
+#_0A8B48: dw Message_02_17_08
+#_0A8B4A: dw Message_02_17_09
+#_0A8B4C: dw Message_02_17_0A
+#_0A8B4E: dw Message_02_17_0B
+#_0A8B50: dw Message_02_17_0C
+#_0A8B52: dw Message_02_17_0D
+#_0A8B54: dw Message_02_17_0E
+#_0A8B56: dw Message_02_17_0F
+#_0A8B58: dw Message_02_17_10
+#_0A8B5A: dw Message_02_17_11
+#_0A8B5C: dw Message_02_17_12
+#_0A8B5E: dw Message_02_17_13
+#_0A8B60: dw Message_02_17_14
+#_0A8B62: dw Message_02_17_15
+#_0A8B64: dw Message_02_17_16
+#_0A8B66: dw Message_02_17_17
+#_0A8B68: dw Message_02_17_18
+#_0A8B6A: dw Message_02_17_19
+#_0A8B6C: dw Message_02_17_1A
+#_0A8B6E: dw Message_02_17_1B
+#_0A8B70: dw Message_02_17_1C
+#_0A8B72: dw Message_02_17_1D
+#_0A8B74: dw Message_02_17_1E
+#_0A8B76: dw Message_02_17_1F
+#_0A8B78: dw Message_02_17_20
+#_0A8B7A: dw Message_02_17_21
+#_0A8B7C: dw Message_02_17_22
+#_0A8B7E: dw Message_02_17_23
+#_0A8B80: dw Message_02_17_24
+#_0A8B82: dw Message_02_17_25
+#_0A8B84: dw Message_02_17_26
+#_0A8B86: dw Message_02_17_27
+#_0A8B88: dw Message_02_17_28
+#_0A8B8A: dw Message_02_17_29
+#_0A8B8C: dw Message_02_17_2A
+#_0A8B8E: dw Message_02_17_2B
+#_0A8B90: dw Message_02_17_2C
+#_0A8B92: dw Message_02_17_2D
+#_0A8B94: dw Message_02_17_2E
+#_0A8B96: dw Message_02_17_2F
+#_0A8B98: dw Message_02_17_30
+#_0A8B9A: dw Message_02_17_31
+#_0A8B9C: dw Message_02_17_32
+#_0A8B9E: dw Message_02_17_33
+#_0A8BA0: dw Message_02_17_34
+#_0A8BA2: dw Message_02_17_35
+#_0A8BA4: dw Message_02_17_36
+#_0A8BA6: dw Message_02_17_37
+#_0A8BA8: dw Message_02_17_38
+#_0A8BAA: dw Message_02_17_39
+#_0A8BAC: dw Message_02_17_3A
+#_0A8BAE: dw Message_02_17_3B
+#_0A8BB0: dw Message_02_17_3C
+#_0A8BB2: dw Message_02_17_3D
+#_0A8BB4: dw Message_02_17_3E
+#_0A8BB6: dw Message_02_17_3F
+#_0A8BB8: dw Message_02_17_40
+#_0A8BBA: dw Message_02_17_41
+#_0A8BBC: dw Message_02_17_42
+#_0A8BBE: dw Message_02_17_43
+#_0A8BC0: dw Message_02_17_44
+#_0A8BC2: dw Message_02_17_45
+#_0A8BC4: dw Message_02_17_46
+#_0A8BC6: dw Message_02_17_47
+#_0A8BC8: dw Message_02_17_48
+#_0A8BCA: dw Message_02_17_49
+#_0A8BCC: dw Message_02_17_4A
+#_0A8BCE: dw Message_02_17_4B
+#_0A8BD0: dw Message_02_17_4C
+#_0A8BD2: dw Message_02_17_4D
+#_0A8BD4: dw Message_02_17_4E
+#_0A8BD6: dw Message_02_17_4F
+#_0A8BD8: dw Message_02_17_50
+#_0A8BDA: dw Message_02_17_51
+#_0A8BDC: dw Message_02_17_52
+#_0A8BDE: dw Message_02_17_53
+#_0A8BE0: dw Message_02_17_54
+#_0A8BE2: dw Message_02_17_55
+#_0A8BE4: dw Message_02_17_56
+#_0A8BE6: dw Message_02_17_57
+#_0A8BE8: dw Message_02_17_58
+#_0A8BEA: dw Message_02_17_59
+#_0A8BEC: dw Message_02_17_5A
+#_0A8BEE: dw Message_02_17_5B
+#_0A8BF0: dw Message_02_17_5C
+#_0A8BF2: dw Message_02_17_5D
+#_0A8BF4: dw Message_02_17_5E
+#_0A8BF6: dw Message_02_17_5F
 
 ;===================================================================================================
 
-PTR16_0A8BF8:
-#_0A8BF8: dw DATA8_0AD60D
-#_0A8BFA: dw DATA8_0AD61F
-#_0A8BFC: dw DATA8_0AD633
-#_0A8BFE: dw DATA8_0AD64B
-#_0A8C00: dw DATA8_0AD650
-#_0A8C02: dw DATA8_0AD657
-#_0A8C04: dw DATA8_0AD65D
-#_0A8C06: dw DATA8_0AD675
-#_0A8C08: dw DATA8_0AD683
-#_0A8C0A: dw DATA8_0AD6A5
-#_0A8C0C: dw DATA8_0AD6CD
-#_0A8C0E: dw DATA8_0AD6E4
-#_0A8C10: dw DATA8_0AD6FF
-#_0A8C12: dw DATA8_0AD705
-#_0A8C14: dw DATA8_0AD708
-#_0A8C16: dw DATA8_0AD70B
-#_0A8C18: dw DATA8_0AD728
-#_0A8C1A: dw DATA8_0AD738
-#_0A8C1C: dw DATA8_0AD74A
-#_0A8C1E: dw DATA8_0AD74B
-#_0A8C20: dw DATA8_0AD74C
-#_0A8C22: dw DATA8_0AD74D
-#_0A8C24: dw DATA8_0AD750
-#_0A8C26: dw DATA8_0AD75E
-#_0A8C28: dw DATA8_0AD761
-#_0A8C2A: dw DATA8_0AD764
-#_0A8C2C: dw DATA8_0AD77D
-#_0A8C2E: dw DATA8_0AD780
-#_0A8C30: dw DATA8_0AD783
-#_0A8C32: dw DATA8_0AD79E
-#_0A8C34: dw DATA8_0AD7A1
-#_0A8C36: dw DATA8_0AD7B0
-#_0A8C38: dw DATA8_0AD7C2
-#_0A8C3A: dw DATA8_0AD7D2
-#_0A8C3C: dw DATA8_0AD7ED
-#_0A8C3E: dw DATA8_0AD7F8
-#_0A8C40: dw DATA8_0AD7FB
-#_0A8C42: dw DATA8_0AD81A
-#_0A8C44: dw DATA8_0AD823
-#_0A8C46: dw DATA8_0AD826
-#_0A8C48: dw DATA8_0AD829
-#_0A8C4A: dw DATA8_0AD82C
-#_0A8C4C: dw DATA8_0AD82F
-#_0A8C4E: dw DATA8_0AD832
-#_0A8C50: dw DATA8_0AD843
-#_0A8C52: dw DATA8_0AD852
-#_0A8C54: dw DATA8_0AD888
-#_0A8C56: dw DATA8_0AD89A
-#_0A8C58: dw DATA8_0AD8BC
-#_0A8C5A: dw DATA8_0AD8BD
-#_0A8C5C: dw DATA8_0AD8BE
-#_0A8C5E: dw DATA8_0AD8BF
-#_0A8C60: dw DATA8_0AD8C2
-#_0A8C62: dw DATA8_0AD8C5
-#_0A8C64: dw DATA8_0AD8C8
-#_0A8C66: dw DATA8_0AD8CB
-#_0A8C68: dw DATA8_0AD8CE
-#_0A8C6A: dw DATA8_0AD8D1
-#_0A8C6C: dw DATA8_0AD8EB
-#_0A8C6E: dw DATA8_0AD8F4
-#_0A8C70: dw DATA8_0AD902
-#_0A8C72: dw DATA8_0AD903
-#_0A8C74: dw DATA8_0AD904
-#_0A8C76: dw DATA8_0AD905
-#_0A8C78: dw DATA8_0AD915
-#_0A8C7A: dw DATA8_0AD921
-#_0A8C7C: dw DATA8_0AD934
-#_0A8C7E: dw DATA8_0AD937
-#_0A8C80: dw DATA8_0AD93D
-#_0A8C82: dw DATA8_0AD942
-#_0A8C84: dw DATA8_0AD961
-#_0A8C86: dw DATA8_0AD96E
-#_0A8C88: dw DATA8_0AD971
-#_0A8C8A: dw DATA8_0AD972
-#_0A8C8C: dw DATA8_0AD973
-#_0A8C8E: dw DATA8_0AD974
-#_0A8C90: dw DATA8_0AD97E
-#_0A8C92: dw DATA8_0AD989
-#_0A8C94: dw DATA8_0AD99B
-#_0A8C96: dw DATA8_0AD99E
-#_0A8C98: dw DATA8_0AD9A1
-#_0A8C9A: dw DATA8_0AD9B2
-#_0A8C9C: dw DATA8_0AD9D1
-#_0A8C9E: dw DATA8_0AD9EC
-#_0A8CA0: dw DATA8_0ADA29
-#_0A8CA2: dw DATA8_0ADA2C
-#_0A8CA4: dw DATA8_0ADA34
-#_0A8CA6: dw DATA8_0ADA37
-#_0A8CA8: dw DATA8_0ADA48
-#_0A8CAA: dw DATA8_0ADA57
-#_0A8CAC: dw DATA8_0ADA63
-#_0A8CAE: dw DATA8_0ADA64
-#_0A8CB0: dw DATA8_0ADA65
-#_0A8CB2: dw DATA8_0ADA66
-#_0A8CB4: dw DATA8_0ADA75
-#_0A8CB6: dw DATA8_0ADA78
-#_0A8CB8: dw DATA8_0ADA8D
-#_0A8CBA: dw DATA8_0ADA90
-#_0A8CBC: dw DATA8_0ADAA5
-#_0A8CBE: dw DATA8_0ADABD
-#_0A8CC0: dw DATA8_0ADAFB
-#_0A8CC2: dw DATA8_0ADB0E
-#_0A8CC4: dw DATA8_0ADB58
-#_0A8CC6: dw DATA8_0ADB7D
-#_0A8CC8: dw DATA8_0ADBB1
-#_0A8CCA: dw DATA8_0ADBD4
-#_0A8CCC: dw DATA8_0ADBEB
-#_0A8CCE: dw DATA8_0ADC0D
-#_0A8CD0: dw DATA8_0ADC2E
-#_0A8CD2: dw DATA8_0ADC55
-#_0A8CD4: dw DATA8_0ADC65
-#_0A8CD6: dw DATA8_0ADC7F
-#_0A8CD8: dw DATA8_0ADCD5
-#_0A8CDA: dw DATA8_0ADCED
-#_0A8CDC: dw DATA8_0ADD06
-#_0A8CDE: dw DATA8_0ADD09
-#_0A8CE0: dw DATA8_0ADD18
-#_0A8CE2: dw DATA8_0ADD3E
-#_0A8CE4: dw DATA8_0ADD3F
-#_0A8CE6: dw DATA8_0ADD40
-#_0A8CE8: dw DATA8_0ADD41
-#_0A8CEA: dw DATA8_0ADD57
-#_0A8CEC: dw DATA8_0ADD68
-#_0A8CEE: dw DATA8_0ADD79
-#_0A8CF0: dw DATA8_0ADD7C
-#_0A8CF2: dw DATA8_0ADD7F
-#_0A8CF4: dw DATA8_0ADDA1
-#_0A8CF6: dw DATA8_0ADDA2
-#_0A8CF8: dw DATA8_0ADDA3
-#_0A8CFA: dw DATA8_0ADDA4
-#_0A8CFC: dw DATA8_0ADDA5
-#_0A8CFE: dw DATA8_0ADDA6
-#_0A8D00: dw DATA8_0ADDA7
-#_0A8D02: dw DATA8_0ADDB2
-#_0A8D04: dw DATA8_0ADDB5
-#_0A8D06: dw DATA8_0ADDC4
-#_0A8D08: dw DATA8_0ADDC7
-#_0A8D0A: dw DATA8_0ADDD5
-#_0A8D0C: dw DATA8_0ADDF5
-#_0A8D0E: dw DATA8_0ADDFF
-#_0A8D10: dw DATA8_0ADE02
-#_0A8D12: dw DATA8_0ADE0E
-#_0A8D14: dw DATA8_0ADE11
-#_0A8D16: dw DATA8_0ADE1E
-#_0A8D18: dw DATA8_0ADE29
-#_0A8D1A: dw DATA8_0ADE33
-#_0A8D1C: dw DATA8_0ADE42
-#_0A8D1E: dw DATA8_0ADE4B
-#_0A8D20: dw DATA8_0ADE4E
-#_0A8D22: dw DATA8_0ADE51
-#_0A8D24: dw DATA8_0ADE54
-#_0A8D26: dw DATA8_0ADE57
-#_0A8D28: dw DATA8_0ADE5A
-#_0A8D2A: dw DATA8_0ADE5D
-#_0A8D2C: dw DATA8_0ADE66
-#_0A8D2E: dw DATA8_0ADE69
-#_0A8D30: dw DATA8_0ADE6C
-#_0A8D32: dw DATA8_0ADE88
-#_0A8D34: dw DATA8_0ADE8B
-#_0A8D36: dw DATA8_0ADEAD
-#_0A8D38: dw DATA8_0ADEBA
-#_0A8D3A: dw DATA8_0ADEC3
-#_0A8D3C: dw DATA8_0ADED2
-#_0A8D3E: dw DATA8_0ADEE7
-#_0A8D40: dw DATA8_0ADEEA
-#_0A8D42: dw DATA8_0ADEED
-#_0A8D44: dw DATA8_0ADEFB
-#_0A8D46: dw DATA8_0ADEFE
-#_0A8D48: dw DATA8_0ADF01
-#_0A8D4A: dw DATA8_0ADF09
-#_0A8D4C: dw DATA8_0ADF0F
-#_0A8D4E: dw DATA8_0ADF1E
-#_0A8D50: dw DATA8_0ADF21
-#_0A8D52: dw DATA8_0ADF24
-#_0A8D54: dw DATA8_0ADF27
-#_0A8D56: dw DATA8_0ADF2A
-#_0A8D58: dw DATA8_0ADF2D
-#_0A8D5A: dw DATA8_0ADF30
-#_0A8D5C: dw DATA8_0ADF33
-#_0A8D5E: dw DATA8_0ADF36
-#_0A8D60: dw DATA8_0ADF39
-#_0A8D62: dw DATA8_0ADF4A
-#_0A8D64: dw DATA8_0ADF4D
-#_0A8D66: dw DATA8_0ADF50
-#_0A8D68: dw DATA8_0ADF53
-#_0A8D6A: dw DATA8_0ADF56
-#_0A8D6C: dw DATA8_0ADF59
-#_0A8D6E: dw DATA8_0ADF69
-#_0A8D70: dw DATA8_0ADF6C
-#_0A8D72: dw DATA8_0ADF81
-#_0A8D74: dw DATA8_0ADF9E
-#_0A8D76: dw DATA8_0ADFA1
-#_0A8D78: dw DATA8_0ADFB4
-#_0A8D7A: dw DATA8_0ADFBA
-#_0A8D7C: dw DATA8_0ADFC0
-#_0A8D7E: dw DATA8_0ADFCF
-#_0A8D80: dw DATA8_0ADFD5
-#_0A8D82: dw DATA8_0ADFD8
-#_0A8D84: dw DATA8_0ADFDB
-#_0A8D86: dw DATA8_0ADFDE
-#_0A8D88: dw DATA8_0ADFE1
-#_0A8D8A: dw DATA8_0ADFF1
-#_0A8D8C: dw DATA8_0ADFF4
-#_0A8D8E: dw DATA8_0ADFF7
-#_0A8D90: dw DATA8_0ADFFA
-#_0A8D92: dw DATA8_0ADFFD
-#_0A8D94: dw DATA8_0AE007
-#_0A8D96: dw DATA8_0AE00D
-#_0A8D98: dw DATA8_0AE010
-#_0A8D9A: dw DATA8_0AE018
-#_0A8D9C: dw DATA8_0AE01B
-#_0A8D9E: dw DATA8_0AE01E
-#_0A8DA0: dw DATA8_0AE021
-#_0A8DA2: dw DATA8_0AE024
-#_0A8DA4: dw DATA8_0AE027
-#_0A8DA6: dw DATA8_0AE039
-#_0A8DA8: dw DATA8_0AE03C
-#_0A8DAA: dw DATA8_0AE04D
-#_0A8DAC: dw DATA8_0AE05B
+Message_02_18_Pointers:
+#_0A8BF8: dw Message_02_18_00
+#_0A8BFA: dw Message_02_18_01
+#_0A8BFC: dw Message_02_18_02
+#_0A8BFE: dw Message_02_18_03
+#_0A8C00: dw Message_02_18_04
+#_0A8C02: dw Message_02_18_05
+#_0A8C04: dw Message_02_18_06
+#_0A8C06: dw Message_02_18_07
+#_0A8C08: dw Message_02_18_08
+#_0A8C0A: dw Message_02_18_09
+#_0A8C0C: dw Message_02_18_0A
+#_0A8C0E: dw Message_02_18_0B
+#_0A8C10: dw Message_02_18_0C
+#_0A8C12: dw Message_02_18_0D
+#_0A8C14: dw Message_02_18_0E
+#_0A8C16: dw Message_02_18_0F
+#_0A8C18: dw Message_02_18_10
+#_0A8C1A: dw Message_02_18_11
+#_0A8C1C: dw Message_02_18_12
+#_0A8C1E: dw Message_02_18_13
+#_0A8C20: dw Message_02_18_14
+#_0A8C22: dw Message_02_18_15
+#_0A8C24: dw Message_02_18_16
+#_0A8C26: dw Message_02_18_17
+#_0A8C28: dw Message_02_18_18
+#_0A8C2A: dw Message_02_18_19
+#_0A8C2C: dw Message_02_18_1A
+#_0A8C2E: dw Message_02_18_1B
+#_0A8C30: dw Message_02_18_1C
+#_0A8C32: dw Message_02_18_1D
+#_0A8C34: dw Message_02_18_1E
+#_0A8C36: dw Message_02_18_1F
+#_0A8C38: dw Message_02_18_20
+#_0A8C3A: dw Message_02_18_21
+#_0A8C3C: dw Message_02_18_22
+#_0A8C3E: dw Message_02_18_23
+#_0A8C40: dw Message_02_18_24
+#_0A8C42: dw Message_02_18_25
+#_0A8C44: dw Message_02_18_26
+#_0A8C46: dw Message_02_18_27
+#_0A8C48: dw Message_02_18_28
+#_0A8C4A: dw Message_02_18_29
+#_0A8C4C: dw Message_02_18_2A
+#_0A8C4E: dw Message_02_18_2B
+#_0A8C50: dw Message_02_18_2C
+#_0A8C52: dw Message_02_18_2D
+#_0A8C54: dw Message_02_18_2E
+#_0A8C56: dw Message_02_18_2F
+#_0A8C58: dw Message_02_18_30
+#_0A8C5A: dw Message_02_18_31
+#_0A8C5C: dw Message_02_18_32
+#_0A8C5E: dw Message_02_18_33
+#_0A8C60: dw Message_02_18_34
+#_0A8C62: dw Message_02_18_35
+#_0A8C64: dw Message_02_18_36
+#_0A8C66: dw Message_02_18_37
+#_0A8C68: dw Message_02_18_38
+#_0A8C6A: dw Message_02_18_39
+#_0A8C6C: dw Message_02_18_3A
+#_0A8C6E: dw Message_02_18_3B
+#_0A8C70: dw Message_02_18_3C
+#_0A8C72: dw Message_02_18_3D
+#_0A8C74: dw Message_02_18_3E
+#_0A8C76: dw Message_02_18_3F
+#_0A8C78: dw Message_02_18_40
+#_0A8C7A: dw Message_02_18_41
+#_0A8C7C: dw Message_02_18_42
+#_0A8C7E: dw Message_02_18_43
+#_0A8C80: dw Message_02_18_44
+#_0A8C82: dw Message_02_18_45
+#_0A8C84: dw Message_02_18_46
+#_0A8C86: dw Message_02_18_47
+#_0A8C88: dw Message_02_18_48
+#_0A8C8A: dw Message_02_18_49
+#_0A8C8C: dw Message_02_18_4A
+#_0A8C8E: dw Message_02_18_4B
+#_0A8C90: dw Message_02_18_4C
+#_0A8C92: dw Message_02_18_4D
+#_0A8C94: dw Message_02_18_4E
+#_0A8C96: dw Message_02_18_4F
+#_0A8C98: dw Message_02_18_50
+#_0A8C9A: dw Message_02_18_51
+#_0A8C9C: dw Message_02_18_52
+#_0A8C9E: dw Message_02_18_53
+#_0A8CA0: dw Message_02_18_54
+#_0A8CA2: dw Message_02_18_55
+#_0A8CA4: dw Message_02_18_56
+#_0A8CA6: dw Message_02_18_57
+#_0A8CA8: dw Message_02_18_58
+#_0A8CAA: dw Message_02_18_59
+#_0A8CAC: dw Message_02_18_5A
+#_0A8CAE: dw Message_02_18_5B
+#_0A8CB0: dw Message_02_18_5C
+#_0A8CB2: dw Message_02_18_5D
+#_0A8CB4: dw Message_02_18_5E
+#_0A8CB6: dw Message_02_18_5F
+#_0A8CB8: dw Message_02_18_60
+#_0A8CBA: dw Message_02_18_61
+#_0A8CBC: dw Message_02_18_62
+#_0A8CBE: dw Message_02_18_63
+#_0A8CC0: dw Message_02_18_64
+#_0A8CC2: dw Message_02_18_65
+#_0A8CC4: dw Message_02_18_66
+#_0A8CC6: dw Message_02_18_67
+#_0A8CC8: dw Message_02_18_68
+#_0A8CCA: dw Message_02_18_69
+#_0A8CCC: dw Message_02_18_6A
+#_0A8CCE: dw Message_02_18_6B
+#_0A8CD0: dw Message_02_18_6C
+#_0A8CD2: dw Message_02_18_6D
+#_0A8CD4: dw Message_02_18_6E
+#_0A8CD6: dw Message_02_18_6F
+#_0A8CD8: dw Message_02_18_70
+#_0A8CDA: dw Message_02_18_71
+#_0A8CDC: dw Message_02_18_72
+#_0A8CDE: dw Message_02_18_73
+#_0A8CE0: dw Message_02_18_74
+#_0A8CE2: dw Message_02_18_75
+#_0A8CE4: dw Message_02_18_76
+#_0A8CE6: dw Message_02_18_77
+#_0A8CE8: dw Message_02_18_78
+#_0A8CEA: dw Message_02_18_79
+#_0A8CEC: dw Message_02_18_7A
+#_0A8CEE: dw Message_02_18_7B
+#_0A8CF0: dw Message_02_18_7C
+#_0A8CF2: dw Message_02_18_7D
+#_0A8CF4: dw Message_02_18_7E
+#_0A8CF6: dw Message_02_18_7F
+#_0A8CF8: dw Message_02_18_80
+#_0A8CFA: dw Message_02_18_81
+#_0A8CFC: dw Message_02_18_82
+#_0A8CFE: dw Message_02_18_83
+#_0A8D00: dw Message_02_18_84
+#_0A8D02: dw Message_02_18_85
+#_0A8D04: dw Message_02_18_86
+#_0A8D06: dw Message_02_18_87
+#_0A8D08: dw Message_02_18_88
+#_0A8D0A: dw Message_02_18_89
+#_0A8D0C: dw Message_02_18_8A
+#_0A8D0E: dw Message_02_18_8B
+#_0A8D10: dw Message_02_18_8C
+#_0A8D12: dw Message_02_18_8D
+#_0A8D14: dw Message_02_18_8E
+#_0A8D16: dw Message_02_18_8F
+#_0A8D18: dw Message_02_18_90
+#_0A8D1A: dw Message_02_18_91
+#_0A8D1C: dw Message_02_18_92
+#_0A8D1E: dw Message_02_18_93
+#_0A8D20: dw Message_02_18_94
+#_0A8D22: dw Message_02_18_95
+#_0A8D24: dw Message_02_18_96
+#_0A8D26: dw Message_02_18_97
+#_0A8D28: dw Message_02_18_98
+#_0A8D2A: dw Message_02_18_99
+#_0A8D2C: dw Message_02_18_9A
+#_0A8D2E: dw Message_02_18_9B
+#_0A8D30: dw Message_02_18_9C
+#_0A8D32: dw Message_02_18_9D
+#_0A8D34: dw Message_02_18_9E
+#_0A8D36: dw Message_02_18_9F
+#_0A8D38: dw Message_02_18_A0
+#_0A8D3A: dw Message_02_18_A1
+#_0A8D3C: dw Message_02_18_A2
+#_0A8D3E: dw Message_02_18_A3
+#_0A8D40: dw Message_02_18_A4
+#_0A8D42: dw Message_02_18_A5
+#_0A8D44: dw Message_02_18_A6
+#_0A8D46: dw Message_02_18_A7
+#_0A8D48: dw Message_02_18_A8
+#_0A8D4A: dw Message_02_18_A9
+#_0A8D4C: dw Message_02_18_AA
+#_0A8D4E: dw Message_02_18_AB
+#_0A8D50: dw Message_02_18_AC
+#_0A8D52: dw Message_02_18_AD
+#_0A8D54: dw Message_02_18_AE
+#_0A8D56: dw Message_02_18_AF
+#_0A8D58: dw Message_02_18_B0
+#_0A8D5A: dw Message_02_18_B1
+#_0A8D5C: dw Message_02_18_B2
+#_0A8D5E: dw Message_02_18_B3
+#_0A8D60: dw Message_02_18_B4
+#_0A8D62: dw Message_02_18_B5
+#_0A8D64: dw Message_02_18_B6
+#_0A8D66: dw Message_02_18_B7
+#_0A8D68: dw Message_02_18_B8
+#_0A8D6A: dw Message_02_18_B9
+#_0A8D6C: dw Message_02_18_BA
+#_0A8D6E: dw Message_02_18_BB
+#_0A8D70: dw Message_02_18_BC
+#_0A8D72: dw Message_02_18_BD
+#_0A8D74: dw Message_02_18_BE
+#_0A8D76: dw Message_02_18_BF
+#_0A8D78: dw Message_02_18_C0
+#_0A8D7A: dw Message_02_18_C1
+#_0A8D7C: dw Message_02_18_C2
+#_0A8D7E: dw Message_02_18_C3
+#_0A8D80: dw Message_02_18_C4
+#_0A8D82: dw Message_02_18_C5
+#_0A8D84: dw Message_02_18_C6
+#_0A8D86: dw Message_02_18_C7
+#_0A8D88: dw Message_02_18_C8
+#_0A8D8A: dw Message_02_18_C9
+#_0A8D8C: dw Message_02_18_CA
+#_0A8D8E: dw Message_02_18_CB
+#_0A8D90: dw Message_02_18_CC
+#_0A8D92: dw Message_02_18_CD
+#_0A8D94: dw Message_02_18_CE
+#_0A8D96: dw Message_02_18_CF
+#_0A8D98: dw Message_02_18_D0
+#_0A8D9A: dw Message_02_18_D1
+#_0A8D9C: dw Message_02_18_D2
+#_0A8D9E: dw Message_02_18_D3
+#_0A8DA0: dw Message_02_18_D4
+#_0A8DA2: dw Message_02_18_D5
+#_0A8DA4: dw Message_02_18_D6
+#_0A8DA6: dw Message_02_18_D7
+#_0A8DA8: dw Message_02_18_D8
+#_0A8DAA: dw Message_02_18_D9
+#_0A8DAC: dw Message_02_18_DA
 
 ;===================================================================================================
 
-PTR16_0A8DAE:
-#_0A8DAE: dw DATA8_0AE087
-#_0A8DB0: dw DATA8_0AE08A
-#_0A8DB2: dw DATA8_0AE096
-#_0A8DB4: dw DATA8_0AE09B
-#_0A8DB6: dw DATA8_0AE0A0
-#_0A8DB8: dw DATA8_0AE0A6
-#_0A8DBA: dw DATA8_0AE0AB
-#_0A8DBC: dw DATA8_0AE0AE
-#_0A8DBE: dw DATA8_0AE0BE
-#_0A8DC0: dw DATA8_0AE0D1
-#_0A8DC2: dw DATA8_0AE0DD
-#_0A8DC4: dw DATA8_0AE0EA
-#_0A8DC6: dw DATA8_0AE106
-#_0A8DC8: dw DATA8_0AE10B
-#_0A8DCA: dw DATA8_0AE116
-#_0A8DCC: dw DATA8_0AE120
-#_0A8DCE: dw DATA8_0AE123
-#_0A8DD0: dw DATA8_0AE126
-#_0A8DD2: dw DATA8_0AE12B
-#_0A8DD4: dw DATA8_0AE13D
-#_0A8DD6: dw DATA8_0AE151
-#_0A8DD8: dw DATA8_0AE163
-#_0A8DDA: dw DATA8_0AE173
-#_0A8DDC: dw DATA8_0AE184
-#_0A8DDE: dw DATA8_0AE196
-#_0A8DE0: dw DATA8_0AE1BC
-#_0A8DE2: dw DATA8_0AE1D8
-#_0A8DE4: dw DATA8_0AE1E3
-#_0A8DE6: dw DATA8_0AE1F2
-#_0A8DE8: dw DATA8_0AE209
-#_0A8DEA: dw DATA8_0AE228
-#_0A8DEC: dw DATA8_0AE241
-#_0A8DEE: dw DATA8_0AE25E
-#_0A8DF0: dw DATA8_0AE26E
-#_0A8DF2: dw DATA8_0AE280
-#_0A8DF4: dw DATA8_0AE293
-#_0A8DF6: dw DATA8_0AE2A5
-#_0A8DF8: dw DATA8_0AE2AB
-#_0A8DFA: dw DATA8_0AE2B2
-#_0A8DFC: dw DATA8_0AE2B7
-#_0A8DFE: dw DATA8_0AE2BA
-#_0A8E00: dw DATA8_0AE2BD
-#_0A8E02: dw DATA8_0AE2C0
-#_0A8E04: dw DATA8_0AE2C3
-#_0A8E06: dw DATA8_0AE2CE
-#_0A8E08: dw DATA8_0AE2D8
-#_0A8E0A: dw DATA8_0AE2EA
-#_0A8E0C: dw DATA8_0AE2FD
-#_0A8E0E: dw DATA8_0AE31D
-#_0A8E10: dw DATA8_0AE331
-#_0A8E12: dw DATA8_0AE334
-#_0A8E14: dw DATA8_0AE337
-#_0A8E16: dw DATA8_0AE33F
-#_0A8E18: dw DATA8_0AE343
-#_0A8E1A: dw DATA8_0AE34C
-#_0A8E1C: dw DATA8_0AE358
-#_0A8E1E: dw DATA8_0AE363
-#_0A8E20: dw DATA8_0AE374
-#_0A8E22: dw DATA8_0AE37F
-#_0A8E24: dw DATA8_0AE391
-#_0A8E26: dw DATA8_0AE398
-#_0A8E28: dw DATA8_0AE3A0
-#_0A8E2A: dw DATA8_0AE3A8
-#_0A8E2C: dw DATA8_0AE3B1
-#_0A8E2E: dw DATA8_0AE3BB
-#_0A8E30: dw DATA8_0AE3C2
-#_0A8E32: dw DATA8_0AE3CB
-#_0A8E34: dw DATA8_0AE3CE
-#_0A8E36: dw DATA8_0AE3DC
-#_0A8E38: dw DATA8_0AE3EB
-#_0A8E3A: dw DATA8_0AE405
-#_0A8E3C: dw DATA8_0AE40D
-#_0A8E3E: dw DATA8_0AE415
-#_0A8E40: dw DATA8_0AE41D
-#_0A8E42: dw DATA8_0AE427
-#_0A8E44: dw DATA8_0AE430
-#_0A8E46: dw DATA8_0AE43A
-#_0A8E48: dw DATA8_0AE445
-#_0A8E4A: dw DATA8_0AE451
-#_0A8E4C: dw DATA8_0AE461
-#_0A8E4E: dw DATA8_0AE474
-#_0A8E50: dw DATA8_0AE484
-#_0A8E52: dw DATA8_0AE49D
-#_0A8E54: dw DATA8_0AE4A3
-#_0A8E56: dw DATA8_0AE4B5
-#_0A8E58: dw DATA8_0AE4B8
-#_0A8E5A: dw DATA8_0AE4C6
-#_0A8E5C: dw DATA8_0AE4D3
-#_0A8E5E: dw DATA8_0AE4DF
-#_0A8E60: dw DATA8_0AE4F3
-#_0A8E62: dw DATA8_0AE4F9
-#_0A8E64: dw DATA8_0AE506
-#_0A8E66: dw DATA8_0AE515
-#_0A8E68: dw DATA8_0AE521
-#_0A8E6A: dw DATA8_0AE531
-#_0A8E6C: dw DATA8_0AE534
-#_0A8E6E: dw DATA8_0AE537
-#_0A8E70: dw DATA8_0AE53A
-#_0A8E72: dw DATA8_0AE53D
-#_0A8E74: dw DATA8_0AE545
-#_0A8E76: dw DATA8_0AE55A
-#_0A8E78: dw DATA8_0AE571
-#_0A8E7A: dw DATA8_0AE581
-#_0A8E7C: dw DATA8_0AE595
-#_0A8E7E: dw DATA8_0AE59F
-#_0A8E80: dw DATA8_0AE5A9
-#_0A8E82: dw DATA8_0AE5BA
-#_0A8E84: dw DATA8_0AE5D3
-#_0A8E86: dw DATA8_0AE5EE
-#_0A8E88: dw DATA8_0AE60B
-#_0A8E8A: dw DATA8_0AE616
-#_0A8E8C: dw DATA8_0AE621
-#_0A8E8E: dw DATA8_0AE639
-#_0A8E90: dw DATA8_0AE640
-#_0A8E92: dw DATA8_0AE648
-#_0A8E94: dw DATA8_0AE64B
-#_0A8E96: dw DATA8_0AE65A
-#_0A8E98: dw DATA8_0AE667
-#_0A8E9A: dw DATA8_0AE672
-#_0A8E9C: dw DATA8_0AE681
-#_0A8E9E: dw DATA8_0AE691
-#_0A8EA0: dw DATA8_0AE6A7
-#_0A8EA2: dw DATA8_0AE6BC
-#_0A8EA4: dw DATA8_0AE6C8
-#_0A8EA6: dw DATA8_0AE6CB
-#_0A8EA8: dw DATA8_0AE6D4
-#_0A8EAA: dw DATA8_0AE6DA
-#_0A8EAC: dw DATA8_0AE6E8
-#_0A8EAE: dw DATA8_0AE705
-#_0A8EB0: dw DATA8_0AE70E
-#_0A8EB2: dw DATA8_0AE717
-#_0A8EB4: dw DATA8_0AE720
-#_0A8EB6: dw DATA8_0AE72A
-#_0A8EB8: dw DATA8_0AE739
-#_0A8EBA: dw DATA8_0AE74D
-#_0A8EBC: dw DATA8_0AE75C
-#_0A8EBE: dw DATA8_0AE75F
-#_0A8EC0: dw DATA8_0AE76E
-#_0A8EC2: dw DATA8_0AE780
-#_0A8EC4: dw DATA8_0AE78F
-#_0A8EC6: dw DATA8_0AE79A
-#_0A8EC8: dw DATA8_0AE7A6
-#_0A8ECA: dw DATA8_0AE7A9
-#_0A8ECC: dw DATA8_0AE7AF
-#_0A8ECE: dw DATA8_0AE7B8
-#_0A8ED0: dw DATA8_0AE7C4
-#_0A8ED2: dw DATA8_0AE7D1
-#_0A8ED4: dw DATA8_0AE7DF
-#_0A8ED6: dw DATA8_0AE7E2
-#_0A8ED8: dw DATA8_0AE7E8
-#_0A8EDA: dw DATA8_0AE7FB
-#_0A8EDC: dw DATA8_0AE80B
-#_0A8EDE: dw DATA8_0AE81D
-#_0A8EE0: dw DATA8_0AE830
-#_0A8EE2: dw DATA8_0AE833
-#_0A8EE4: dw DATA8_0AE83A
-#_0A8EE6: dw DATA8_0AE841
-#_0A8EE8: dw DATA8_0AE85C
-#_0A8EEA: dw DATA8_0AE85F
-#_0A8EEC: dw DATA8_0AE862
-#_0A8EEE: dw DATA8_0AE86F
-#_0A8EF0: dw DATA8_0AE878
-#_0A8EF2: dw DATA8_0AE88A
-#_0A8EF4: dw DATA8_0AE895
-#_0A8EF6: dw DATA8_0AE8A8
-#_0A8EF8: dw DATA8_0AE8B2
-#_0A8EFA: dw DATA8_0AE8C1
-#_0A8EFC: dw DATA8_0AE8CF
-#_0A8EFE: dw DATA8_0AE8DB
-#_0A8F00: dw DATA8_0AE8E8
-#_0A8F02: dw DATA8_0AE8FE
-#_0A8F04: dw DATA8_0AE90C
-#_0A8F06: dw DATA8_0AE915
-#_0A8F08: dw DATA8_0AE923
-#_0A8F0A: dw DATA8_0AE927
-#_0A8F0C: dw DATA8_0AE934
-#_0A8F0E: dw DATA8_0AE93F
-#_0A8F10: dw DATA8_0AE94C
-#_0A8F12: dw DATA8_0AE959
-#_0A8F14: dw DATA8_0AE968
-#_0A8F16: dw DATA8_0AE974
-#_0A8F18: dw DATA8_0AE977
-#_0A8F1A: dw DATA8_0AE987
-#_0A8F1C: dw DATA8_0AE992
-#_0A8F1E: dw DATA8_0AE997
-#_0A8F20: dw DATA8_0AE99F
-#_0A8F22: dw DATA8_0AE9A2
-#_0A8F24: dw DATA8_0AE9B7
-#_0A8F26: dw DATA8_0AE9BA
-#_0A8F28: dw DATA8_0AE9C1
-#_0A8F2A: dw DATA8_0AE9C4
-#_0A8F2C: dw DATA8_0AE9D0
-#_0A8F2E: dw DATA8_0AE9DA
-#_0A8F30: dw DATA8_0AE9E1
-#_0A8F32: dw DATA8_0AE9E7
-#_0A8F34: dw DATA8_0AE9ED
-#_0A8F36: dw DATA8_0AE9F3
-#_0A8F38: dw DATA8_0AE9F6
-#_0A8F3A: dw DATA8_0AE9FC
-#_0A8F3C: dw DATA8_0AE9FF
-#_0A8F3E: dw DATA8_0AEA15
-#_0A8F40: dw DATA8_0AEA1C
-#_0A8F42: dw DATA8_0AEA22
-#_0A8F44: dw DATA8_0AEA25
-#_0A8F46: dw DATA8_0AEA28
-#_0A8F48: dw DATA8_0AEA2B
-#_0A8F4A: dw DATA8_0AEA2E
-#_0A8F4C: dw DATA8_0AEA31
-#_0A8F4E: dw DATA8_0AEA36
-#_0A8F50: dw DATA8_0AEA3B
-#_0A8F52: dw DATA8_0AEA40
-#_0A8F54: dw DATA8_0AEA43
-#_0A8F56: dw DATA8_0AEA49
-#_0A8F58: dw DATA8_0AEA4D
-#_0A8F5A: dw DATA8_0AEA6C
-#_0A8F5C: dw DATA8_0AEA78
-#_0A8F5E: dw DATA8_0AEA93
-#_0A8F60: dw DATA8_0AEAA0
-#_0A8F62: dw DATA8_0AEAB5
+Message_02_19_Pointers:
+#_0A8DAE: dw Message_02_19_00
+#_0A8DB0: dw Message_02_19_01
+#_0A8DB2: dw Message_02_19_02
+#_0A8DB4: dw Message_02_19_03
+#_0A8DB6: dw Message_02_19_04
+#_0A8DB8: dw Message_02_19_05
+#_0A8DBA: dw Message_02_19_06
+#_0A8DBC: dw Message_02_19_07
+#_0A8DBE: dw Message_02_19_08
+#_0A8DC0: dw Message_02_19_09
+#_0A8DC2: dw Message_02_19_0A
+#_0A8DC4: dw Message_02_19_0B
+#_0A8DC6: dw Message_02_19_0C
+#_0A8DC8: dw Message_02_19_0D
+#_0A8DCA: dw Message_02_19_0E
+#_0A8DCC: dw Message_02_19_0F
+#_0A8DCE: dw Message_02_19_10
+#_0A8DD0: dw Message_02_19_11
+#_0A8DD2: dw Message_02_19_12
+#_0A8DD4: dw Message_02_19_13
+#_0A8DD6: dw Message_02_19_14
+#_0A8DD8: dw Message_02_19_15
+#_0A8DDA: dw Message_02_19_16
+#_0A8DDC: dw Message_02_19_17
+#_0A8DDE: dw Message_02_19_18
+#_0A8DE0: dw Message_02_19_19
+#_0A8DE2: dw Message_02_19_1A
+#_0A8DE4: dw Message_02_19_1B
+#_0A8DE6: dw Message_02_19_1C
+#_0A8DE8: dw Message_02_19_1D
+#_0A8DEA: dw Message_02_19_1E
+#_0A8DEC: dw Message_02_19_1F
+#_0A8DEE: dw Message_02_19_20
+#_0A8DF0: dw Message_02_19_21
+#_0A8DF2: dw Message_02_19_22
+#_0A8DF4: dw Message_02_19_23
+#_0A8DF6: dw Message_02_19_24
+#_0A8DF8: dw Message_02_19_25
+#_0A8DFA: dw Message_02_19_26
+#_0A8DFC: dw Message_02_19_27
+#_0A8DFE: dw Message_02_19_28
+#_0A8E00: dw Message_02_19_29
+#_0A8E02: dw Message_02_19_2A
+#_0A8E04: dw Message_02_19_2B
+#_0A8E06: dw Message_02_19_2C
+#_0A8E08: dw Message_02_19_2D
+#_0A8E0A: dw Message_02_19_2E
+#_0A8E0C: dw Message_02_19_2F
+#_0A8E0E: dw Message_02_19_30
+#_0A8E10: dw Message_02_19_31
+#_0A8E12: dw Message_02_19_32
+#_0A8E14: dw Message_02_19_33
+#_0A8E16: dw Message_02_19_34
+#_0A8E18: dw Message_02_19_35
+#_0A8E1A: dw Message_02_19_36
+#_0A8E1C: dw Message_02_19_37
+#_0A8E1E: dw Message_02_19_38
+#_0A8E20: dw Message_02_19_39
+#_0A8E22: dw Message_02_19_3A
+#_0A8E24: dw Message_02_19_3B
+#_0A8E26: dw Message_02_19_3C
+#_0A8E28: dw Message_02_19_3D
+#_0A8E2A: dw Message_02_19_3E
+#_0A8E2C: dw Message_02_19_3F
+#_0A8E2E: dw Message_02_19_40
+#_0A8E30: dw Message_02_19_41
+#_0A8E32: dw Message_02_19_42
+#_0A8E34: dw Message_02_19_43
+#_0A8E36: dw Message_02_19_44
+#_0A8E38: dw Message_02_19_45
+#_0A8E3A: dw Message_02_19_46
+#_0A8E3C: dw Message_02_19_47
+#_0A8E3E: dw Message_02_19_48
+#_0A8E40: dw Message_02_19_49
+#_0A8E42: dw Message_02_19_4A
+#_0A8E44: dw Message_02_19_4B
+#_0A8E46: dw Message_02_19_4C
+#_0A8E48: dw Message_02_19_4D
+#_0A8E4A: dw Message_02_19_4E
+#_0A8E4C: dw Message_02_19_4F
+#_0A8E4E: dw Message_02_19_50
+#_0A8E50: dw Message_02_19_51
+#_0A8E52: dw Message_02_19_52
+#_0A8E54: dw Message_02_19_53
+#_0A8E56: dw Message_02_19_54
+#_0A8E58: dw Message_02_19_55
+#_0A8E5A: dw Message_02_19_56
+#_0A8E5C: dw Message_02_19_57
+#_0A8E5E: dw Message_02_19_58
+#_0A8E60: dw Message_02_19_59
+#_0A8E62: dw Message_02_19_5A
+#_0A8E64: dw Message_02_19_5B
+#_0A8E66: dw Message_02_19_5C
+#_0A8E68: dw Message_02_19_5D
+#_0A8E6A: dw Message_02_19_5E
+#_0A8E6C: dw Message_02_19_5F
+#_0A8E6E: dw Message_02_19_60
+#_0A8E70: dw Message_02_19_61
+#_0A8E72: dw Message_02_19_62
+#_0A8E74: dw Message_02_19_63
+#_0A8E76: dw Message_02_19_64
+#_0A8E78: dw Message_02_19_65
+#_0A8E7A: dw Message_02_19_66
+#_0A8E7C: dw Message_02_19_67
+#_0A8E7E: dw Message_02_19_68
+#_0A8E80: dw Message_02_19_69
+#_0A8E82: dw Message_02_19_6A
+#_0A8E84: dw Message_02_19_6B
+#_0A8E86: dw Message_02_19_6C
+#_0A8E88: dw Message_02_19_6D
+#_0A8E8A: dw Message_02_19_6E
+#_0A8E8C: dw Message_02_19_6F
+#_0A8E8E: dw Message_02_19_70
+#_0A8E90: dw Message_02_19_71
+#_0A8E92: dw Message_02_19_72
+#_0A8E94: dw Message_02_19_73
+#_0A8E96: dw Message_02_19_74
+#_0A8E98: dw Message_02_19_75
+#_0A8E9A: dw Message_02_19_76
+#_0A8E9C: dw Message_02_19_77
+#_0A8E9E: dw Message_02_19_78
+#_0A8EA0: dw Message_02_19_79
+#_0A8EA2: dw Message_02_19_7A
+#_0A8EA4: dw Message_02_19_7B
+#_0A8EA6: dw Message_02_19_7C
+#_0A8EA8: dw Message_02_19_7D
+#_0A8EAA: dw Message_02_19_7E
+#_0A8EAC: dw Message_02_19_7F
+#_0A8EAE: dw Message_02_19_80
+#_0A8EB0: dw Message_02_19_81
+#_0A8EB2: dw Message_02_19_82
+#_0A8EB4: dw Message_02_19_83
+#_0A8EB6: dw Message_02_19_84
+#_0A8EB8: dw Message_02_19_85
+#_0A8EBA: dw Message_02_19_86
+#_0A8EBC: dw Message_02_19_87
+#_0A8EBE: dw Message_02_19_88
+#_0A8EC0: dw Message_02_19_89
+#_0A8EC2: dw Message_02_19_8A
+#_0A8EC4: dw Message_02_19_8B
+#_0A8EC6: dw Message_02_19_8C
+#_0A8EC8: dw Message_02_19_8D
+#_0A8ECA: dw Message_02_19_8E
+#_0A8ECC: dw Message_02_19_8F
+#_0A8ECE: dw Message_02_19_90
+#_0A8ED0: dw Message_02_19_91
+#_0A8ED2: dw Message_02_19_92
+#_0A8ED4: dw Message_02_19_93
+#_0A8ED6: dw Message_02_19_94
+#_0A8ED8: dw Message_02_19_95
+#_0A8EDA: dw Message_02_19_96
+#_0A8EDC: dw Message_02_19_97
+#_0A8EDE: dw Message_02_19_98
+#_0A8EE0: dw Message_02_19_99
+#_0A8EE2: dw Message_02_19_9A
+#_0A8EE4: dw Message_02_19_9B
+#_0A8EE6: dw Message_02_19_9C
+#_0A8EE8: dw Message_02_19_9D
+#_0A8EEA: dw Message_02_19_9E
+#_0A8EEC: dw Message_02_19_9F
+#_0A8EEE: dw Message_02_19_A0
+#_0A8EF0: dw Message_02_19_A1
+#_0A8EF2: dw Message_02_19_A2
+#_0A8EF4: dw Message_02_19_A3
+#_0A8EF6: dw Message_02_19_A4
+#_0A8EF8: dw Message_02_19_A5
+#_0A8EFA: dw Message_02_19_A6
+#_0A8EFC: dw Message_02_19_A7
+#_0A8EFE: dw Message_02_19_A8
+#_0A8F00: dw Message_02_19_A9
+#_0A8F02: dw Message_02_19_AA
+#_0A8F04: dw Message_02_19_AB
+#_0A8F06: dw Message_02_19_AC
+#_0A8F08: dw Message_02_19_AD
+#_0A8F0A: dw Message_02_19_AE
+#_0A8F0C: dw Message_02_19_AF
+#_0A8F0E: dw Message_02_19_B0
+#_0A8F10: dw Message_02_19_B1
+#_0A8F12: dw Message_02_19_B2
+#_0A8F14: dw Message_02_19_B3
+#_0A8F16: dw Message_02_19_B4
+#_0A8F18: dw Message_02_19_B5
+#_0A8F1A: dw Message_02_19_B6
+#_0A8F1C: dw Message_02_19_B7
+#_0A8F1E: dw Message_02_19_B8
+#_0A8F20: dw Message_02_19_B9
+#_0A8F22: dw Message_02_19_BA
+#_0A8F24: dw Message_02_19_BB
+#_0A8F26: dw Message_02_19_BC
+#_0A8F28: dw Message_02_19_BD
+#_0A8F2A: dw Message_02_19_BE
+#_0A8F2C: dw Message_02_19_BF
+#_0A8F2E: dw Message_02_19_C0
+#_0A8F30: dw Message_02_19_C1
+#_0A8F32: dw Message_02_19_C2
+#_0A8F34: dw Message_02_19_C3
+#_0A8F36: dw Message_02_19_C4
+#_0A8F38: dw Message_02_19_C5
+#_0A8F3A: dw Message_02_19_C6
+#_0A8F3C: dw Message_02_19_C7
+#_0A8F3E: dw Message_02_19_C8
+#_0A8F40: dw Message_02_19_C9
+#_0A8F42: dw Message_02_19_CA
+#_0A8F44: dw Message_02_19_CB
+#_0A8F46: dw Message_02_19_CC
+#_0A8F48: dw Message_02_19_CD
+#_0A8F4A: dw Message_02_19_CE
+#_0A8F4C: dw Message_02_19_CF
+#_0A8F4E: dw Message_02_19_D0
+#_0A8F50: dw Message_02_19_D1
+#_0A8F52: dw Message_02_19_D2
+#_0A8F54: dw Message_02_19_D3
+#_0A8F56: dw Message_02_19_D4
+#_0A8F58: dw Message_02_19_D5
+#_0A8F5A: dw Message_02_19_D6
+#_0A8F5C: dw Message_02_19_D7
+#_0A8F5E: dw Message_02_19_D8
+#_0A8F60: dw Message_02_19_D9
+#_0A8F62: dw Message_02_19_DA
 
 ;===================================================================================================
 
-PTR16_0A8F64:
-#_0A8F64: dw DATA8_0AEAC9
-#_0A8F66: dw DATA8_0AEACA
-#_0A8F68: dw DATA8_0AEAD1
-#_0A8F6A: dw DATA8_0AEAD1
-#_0A8F6C: dw DATA8_0AEAD1
-#_0A8F6E: dw DATA8_0AEAD1
-#_0A8F70: dw DATA8_0AEAD1
-#_0A8F72: dw DATA8_0AEAD1
-#_0A8F74: dw DATA8_0AEAD1
-#_0A8F76: dw DATA8_0AEAD1
-#_0A8F78: dw DATA8_0AEAD1
-#_0A8F7A: dw DATA8_0AEAD1
-#_0A8F7C: dw DATA8_0AEAD1
-#_0A8F7E: dw DATA8_0AEAD1
-#_0A8F80: dw DATA8_0AEAD1
-#_0A8F82: dw DATA8_0AEAD1
-#_0A8F84: dw DATA8_0AEAD1
-#_0A8F86: dw DATA8_0AEAD1
-#_0A8F88: dw DATA8_0AEAD1
-#_0A8F8A: dw DATA8_0AEAD1
-#_0A8F8C: dw DATA8_0AEAD1
-#_0A8F8E: dw DATA8_0AEAD1
-#_0A8F90: dw DATA8_0AEAD1
-#_0A8F92: dw DATA8_0AEAD1
-#_0A8F94: dw DATA8_0AEAD1
-#_0A8F96: dw DATA8_0AEAD1
-#_0A8F98: dw DATA8_0AEAD1
-#_0A8F9A: dw DATA8_0AEAD1
-#_0A8F9C: dw DATA8_0AEAD1
-#_0A8F9E: dw DATA8_0AEAD1
-#_0A8FA0: dw DATA8_0AEAD1
-#_0A8FA2: dw DATA8_0AEAD1
-#_0A8FA4: dw DATA8_0AEAD1
-#_0A8FA6: dw DATA8_0AEAD1
-#_0A8FA8: dw DATA8_0AEAD1
-#_0A8FAA: dw DATA8_0AEAD1
-#_0A8FAC: dw DATA8_0AEAD1
-#_0A8FAE: dw DATA8_0AEAD1
-#_0A8FB0: dw DATA8_0AEAD1
-#_0A8FB2: dw DATA8_0AEAD1
-#_0A8FB4: dw DATA8_0AEAD1
-#_0A8FB6: dw DATA8_0AEAD1
-#_0A8FB8: dw DATA8_0AEAD1
-#_0A8FBA: dw DATA8_0AEAD1
-#_0A8FBC: dw DATA8_0AEAD1
-#_0A8FBE: dw DATA8_0AEAD1
-#_0A8FC0: dw DATA8_0AEAD1
-#_0A8FC2: dw DATA8_0AEAD1
-#_0A8FC4: dw DATA8_0AEAD2
-#_0A8FC6: dw DATA8_0AEAE1
-#_0A8FC8: dw DATA8_0AEAE4
-#_0A8FCA: dw DATA8_0AEAE4
-#_0A8FCC: dw DATA8_0AEAE4
-#_0A8FCE: dw DATA8_0AEAE4
-#_0A8FD0: dw DATA8_0AEAE4
-#_0A8FD2: dw DATA8_0AEAE4
-#_0A8FD4: dw DATA8_0AEAE4
-#_0A8FD6: dw DATA8_0AEAE5
-#_0A8FD8: dw DATA8_0AEAE8
-#_0A8FDA: dw DATA8_0AEAEF
-#_0A8FDC: dw DATA8_0AEAF6
-#_0A8FDE: dw DATA8_0AEB01
-#_0A8FE0: dw DATA8_0AEB0D
-#_0A8FE2: dw DATA8_0AEB10
-#_0A8FE4: dw DATA8_0AEB18
-#_0A8FE6: dw DATA8_0AEB1B
-#_0A8FE8: dw DATA8_0AEB1E
-#_0A8FEA: dw DATA8_0AEB29
-#_0A8FEC: dw DATA8_0AEB34
-#_0A8FEE: dw DATA8_0AEB40
-#_0A8FF0: dw DATA8_0AEB43
-#_0A8FF2: dw DATA8_0AEB46
-#_0A8FF4: dw DATA8_0AEB5E
-#_0A8FF6: dw DATA8_0AEB6C
-#_0A8FF8: dw DATA8_0AEB77
-#_0A8FFA: dw DATA8_0AEB7A
-#_0A8FFC: dw DATA8_0AEB7D
-#_0A8FFE: dw DATA8_0AEB7E
-#_0A9000: dw DATA8_0AEB7F
-#_0A9002: dw DATA8_0AEB80
-#_0A9004: dw DATA8_0AEB81
-#_0A9006: dw DATA8_0AEB8B
-#_0A9008: dw DATA8_0AEB9D
-#_0A900A: dw DATA8_0AEBAF
-#_0A900C: dw DATA8_0AEBBC
-#_0A900E: dw DATA8_0AEBD5
-#_0A9010: dw DATA8_0AEBE8
-#_0A9012: dw DATA8_0AEC14
-#_0A9014: dw DATA8_0AEC27
-#_0A9016: dw DATA8_0AEC53
-#_0A9018: dw DATA8_0AEC5E
-#_0A901A: dw DATA8_0AEC75
-#_0A901C: dw DATA8_0AEC78
-#_0A901E: dw DATA8_0AEC95
-#_0A9020: dw DATA8_0AEC98
-#_0A9022: dw DATA8_0AECA3
-#_0A9024: dw DATA8_0AECA4
+Message_02_1A_Pointers:
+#_0A8F64: dw Message_02_1A_00
+#_0A8F66: dw Message_02_1A_01
+#_0A8F68: dw Message_02_1A_02
+#_0A8F6A: dw Message_02_1A_02
+#_0A8F6C: dw Message_02_1A_02
+#_0A8F6E: dw Message_02_1A_02
+#_0A8F70: dw Message_02_1A_02
+#_0A8F72: dw Message_02_1A_02
+#_0A8F74: dw Message_02_1A_02
+#_0A8F76: dw Message_02_1A_02
+#_0A8F78: dw Message_02_1A_02
+#_0A8F7A: dw Message_02_1A_02
+#_0A8F7C: dw Message_02_1A_02
+#_0A8F7E: dw Message_02_1A_02
+#_0A8F80: dw Message_02_1A_02
+#_0A8F82: dw Message_02_1A_02
+#_0A8F84: dw Message_02_1A_02
+#_0A8F86: dw Message_02_1A_02
+#_0A8F88: dw Message_02_1A_02
+#_0A8F8A: dw Message_02_1A_02
+#_0A8F8C: dw Message_02_1A_02
+#_0A8F8E: dw Message_02_1A_02
+#_0A8F90: dw Message_02_1A_02
+#_0A8F92: dw Message_02_1A_02
+#_0A8F94: dw Message_02_1A_02
+#_0A8F96: dw Message_02_1A_02
+#_0A8F98: dw Message_02_1A_02
+#_0A8F9A: dw Message_02_1A_02
+#_0A8F9C: dw Message_02_1A_02
+#_0A8F9E: dw Message_02_1A_02
+#_0A8FA0: dw Message_02_1A_02
+#_0A8FA2: dw Message_02_1A_02
+#_0A8FA4: dw Message_02_1A_02
+#_0A8FA6: dw Message_02_1A_02
+#_0A8FA8: dw Message_02_1A_02
+#_0A8FAA: dw Message_02_1A_02
+#_0A8FAC: dw Message_02_1A_02
+#_0A8FAE: dw Message_02_1A_02
+#_0A8FB0: dw Message_02_1A_02
+#_0A8FB2: dw Message_02_1A_02
+#_0A8FB4: dw Message_02_1A_02
+#_0A8FB6: dw Message_02_1A_02
+#_0A8FB8: dw Message_02_1A_02
+#_0A8FBA: dw Message_02_1A_02
+#_0A8FBC: dw Message_02_1A_02
+#_0A8FBE: dw Message_02_1A_02
+#_0A8FC0: dw Message_02_1A_02
+#_0A8FC2: dw Message_02_1A_02
+#_0A8FC4: dw Message_02_1A_30
+#_0A8FC6: dw Message_02_1A_31
+#_0A8FC8: dw Message_02_1A_32
+#_0A8FCA: dw Message_02_1A_32
+#_0A8FCC: dw Message_02_1A_32
+#_0A8FCE: dw Message_02_1A_32
+#_0A8FD0: dw Message_02_1A_32
+#_0A8FD2: dw Message_02_1A_32
+#_0A8FD4: dw Message_02_1A_32
+#_0A8FD6: dw Message_02_1A_39
+#_0A8FD8: dw Message_02_1A_3A
+#_0A8FDA: dw Message_02_1A_3B
+#_0A8FDC: dw Message_02_1A_3C
+#_0A8FDE: dw Message_02_1A_3D
+#_0A8FE0: dw Message_02_1A_3E
+#_0A8FE2: dw Message_02_1A_3F
+#_0A8FE4: dw Message_02_1A_40
+#_0A8FE6: dw Message_02_1A_41
+#_0A8FE8: dw Message_02_1A_42
+#_0A8FEA: dw Message_02_1A_43
+#_0A8FEC: dw Message_02_1A_44
+#_0A8FEE: dw Message_02_1A_45
+#_0A8FF0: dw Message_02_1A_46
+#_0A8FF2: dw Message_02_1A_47
+#_0A8FF4: dw Message_02_1A_48
+#_0A8FF6: dw Message_02_1A_49
+#_0A8FF8: dw Message_02_1A_4A
+#_0A8FFA: dw Message_02_1A_4B
+#_0A8FFC: dw Message_02_1A_4C
+#_0A8FFE: dw Message_02_1A_4D
+#_0A9000: dw Message_02_1A_4E
+#_0A9002: dw Message_02_1A_4F
+#_0A9004: dw Message_02_1A_50
+#_0A9006: dw Message_02_1A_51
+#_0A9008: dw Message_02_1A_52
+#_0A900A: dw Message_02_1A_53
+#_0A900C: dw Message_02_1A_54
+#_0A900E: dw Message_02_1A_55
+#_0A9010: dw Message_02_1A_56
+#_0A9012: dw Message_02_1A_57
+#_0A9014: dw Message_02_1A_58
+#_0A9016: dw Message_02_1A_59
+#_0A9018: dw Message_02_1A_5A
+#_0A901A: dw Message_02_1A_5B
+#_0A901C: dw Message_02_1A_5C
+#_0A901E: dw Message_02_1A_5D
+#_0A9020: dw Message_02_1A_5E
+#_0A9022: dw Message_02_1A_5F
+#_0A9024: dw Message_02_1A_60
 
 ;===================================================================================================
 
-PTR16_0A9026:
-#_0A9026: dw DATA8_0AECA7
-#_0A9028: dw DATA8_0AECA8
-#_0A902A: dw DATA8_0AECAD
-#_0A902C: dw DATA8_0AECAD
-#_0A902E: dw DATA8_0AECAD
-#_0A9030: dw DATA8_0AECAD
-#_0A9032: dw DATA8_0AECAD
-#_0A9034: dw DATA8_0AECAD
-#_0A9036: dw DATA8_0AECAD
-#_0A9038: dw DATA8_0AECAD
-#_0A903A: dw DATA8_0AECAD
-#_0A903C: dw DATA8_0AECAD
-#_0A903E: dw DATA8_0AECAD
-#_0A9040: dw DATA8_0AECAD
-#_0A9042: dw DATA8_0AECAD
-#_0A9044: dw DATA8_0AECAD
-#_0A9046: dw DATA8_0AECAD
-#_0A9048: dw DATA8_0AECAD
-#_0A904A: dw DATA8_0AECAD
-#_0A904C: dw DATA8_0AECAD
-#_0A904E: dw DATA8_0AECAD
-#_0A9050: dw DATA8_0AECAD
-#_0A9052: dw DATA8_0AECAD
-#_0A9054: dw DATA8_0AECAD
-#_0A9056: dw DATA8_0AECAD
-#_0A9058: dw DATA8_0AECAD
-#_0A905A: dw DATA8_0AECAD
-#_0A905C: dw DATA8_0AECAD
-#_0A905E: dw DATA8_0AECAD
-#_0A9060: dw DATA8_0AECAD
-#_0A9062: dw DATA8_0AECAD
-#_0A9064: dw DATA8_0AECAD
-#_0A9066: dw DATA8_0AECAD
-#_0A9068: dw DATA8_0AECAD
-#_0A906A: dw DATA8_0AECAD
-#_0A906C: dw DATA8_0AECAD
-#_0A906E: dw DATA8_0AECAD
-#_0A9070: dw DATA8_0AECAD
-#_0A9072: dw DATA8_0AECAD
-#_0A9074: dw DATA8_0AECAD
-#_0A9076: dw DATA8_0AECAD
-#_0A9078: dw DATA8_0AECAD
-#_0A907A: dw DATA8_0AECAD
-#_0A907C: dw DATA8_0AECAD
-#_0A907E: dw DATA8_0AECAD
-#_0A9080: dw DATA8_0AECAD
-#_0A9082: dw DATA8_0AECAD
-#_0A9084: dw DATA8_0AECAD
-#_0A9086: dw DATA8_0AECAE
-#_0A9088: dw DATA8_0AECC0
-#_0A908A: dw DATA8_0AECC3
-#_0A908C: dw DATA8_0AECC3
-#_0A908E: dw DATA8_0AECC3
-#_0A9090: dw DATA8_0AECC3
-#_0A9092: dw DATA8_0AECC3
-#_0A9094: dw DATA8_0AECC3
-#_0A9096: dw DATA8_0AECC3
-#_0A9098: dw DATA8_0AECC4
-#_0A909A: dw DATA8_0AECC7
-#_0A909C: dw DATA8_0AECD1
-#_0A909E: dw DATA8_0AECD4
-#_0A90A0: dw DATA8_0AECD7
-#_0A90A2: dw DATA8_0AECDA
-#_0A90A4: dw DATA8_0AECE9
-#_0A90A6: dw DATA8_0AECEC
-#_0A90A8: dw DATA8_0AED13
-#_0A90AA: dw DATA8_0AED1B
-#_0A90AC: dw DATA8_0AED1E
-#_0A90AE: dw DATA8_0AED21
-#_0A90B0: dw DATA8_0AED34
-#_0A90B2: dw DATA8_0AED37
-#_0A90B4: dw DATA8_0AED3A
-#_0A90B6: dw DATA8_0AED4D
-#_0A90B8: dw DATA8_0AED50
-#_0A90BA: dw DATA8_0AED53
-#_0A90BC: dw DATA8_0AED56
-#_0A90BE: dw DATA8_0AED59
-#_0A90C0: dw DATA8_0AED5A
-#_0A90C2: dw DATA8_0AED5B
-#_0A90C4: dw DATA8_0AED5C
-#_0A90C6: dw DATA8_0AED5D
-#_0A90C8: dw DATA8_0AED69
-#_0A90CA: dw DATA8_0AED76
-#_0A90CC: dw DATA8_0AED84
-#_0A90CE: dw DATA8_0AED84
-#_0A90D0: dw DATA8_0AED9C
-#_0A90D2: dw DATA8_0AEDAB
-#_0A90D4: dw DATA8_0AEDCE
-#_0A90D6: dw DATA8_0AEDD5
-#_0A90D8: dw DATA8_0AEDD6
-#_0A90DA: dw DATA8_0AEDD9
-#_0A90DC: dw DATA8_0AEDDF
-#_0A90DE: dw DATA8_0AEDE2
-#_0A90E0: dw DATA8_0AEDF4
-#_0A90E2: dw DATA8_0AEDF7
-#_0A90E4: dw DATA8_0AEE01
-#_0A90E6: dw DATA8_0AEE1E
+Message_02_1B_Pointers:
+#_0A9026: dw Message_02_1B_00
+#_0A9028: dw Message_02_1B_01
+#_0A902A: dw Message_02_1B_02
+#_0A902C: dw Message_02_1B_02
+#_0A902E: dw Message_02_1B_02
+#_0A9030: dw Message_02_1B_02
+#_0A9032: dw Message_02_1B_02
+#_0A9034: dw Message_02_1B_02
+#_0A9036: dw Message_02_1B_02
+#_0A9038: dw Message_02_1B_02
+#_0A903A: dw Message_02_1B_02
+#_0A903C: dw Message_02_1B_02
+#_0A903E: dw Message_02_1B_02
+#_0A9040: dw Message_02_1B_02
+#_0A9042: dw Message_02_1B_02
+#_0A9044: dw Message_02_1B_02
+#_0A9046: dw Message_02_1B_02
+#_0A9048: dw Message_02_1B_02
+#_0A904A: dw Message_02_1B_02
+#_0A904C: dw Message_02_1B_02
+#_0A904E: dw Message_02_1B_02
+#_0A9050: dw Message_02_1B_02
+#_0A9052: dw Message_02_1B_02
+#_0A9054: dw Message_02_1B_02
+#_0A9056: dw Message_02_1B_02
+#_0A9058: dw Message_02_1B_02
+#_0A905A: dw Message_02_1B_02
+#_0A905C: dw Message_02_1B_02
+#_0A905E: dw Message_02_1B_02
+#_0A9060: dw Message_02_1B_02
+#_0A9062: dw Message_02_1B_02
+#_0A9064: dw Message_02_1B_02
+#_0A9066: dw Message_02_1B_02
+#_0A9068: dw Message_02_1B_02
+#_0A906A: dw Message_02_1B_02
+#_0A906C: dw Message_02_1B_02
+#_0A906E: dw Message_02_1B_02
+#_0A9070: dw Message_02_1B_02
+#_0A9072: dw Message_02_1B_02
+#_0A9074: dw Message_02_1B_02
+#_0A9076: dw Message_02_1B_02
+#_0A9078: dw Message_02_1B_02
+#_0A907A: dw Message_02_1B_02
+#_0A907C: dw Message_02_1B_02
+#_0A907E: dw Message_02_1B_02
+#_0A9080: dw Message_02_1B_02
+#_0A9082: dw Message_02_1B_02
+#_0A9084: dw Message_02_1B_02
+#_0A9086: dw Message_02_1B_30
+#_0A9088: dw Message_02_1B_31
+#_0A908A: dw Message_02_1B_32
+#_0A908C: dw Message_02_1B_32
+#_0A908E: dw Message_02_1B_32
+#_0A9090: dw Message_02_1B_32
+#_0A9092: dw Message_02_1B_32
+#_0A9094: dw Message_02_1B_32
+#_0A9096: dw Message_02_1B_32
+#_0A9098: dw Message_02_1B_39
+#_0A909A: dw Message_02_1B_3A
+#_0A909C: dw Message_02_1B_3B
+#_0A909E: dw Message_02_1B_3C
+#_0A90A0: dw Message_02_1B_3D
+#_0A90A2: dw Message_02_1B_3E
+#_0A90A4: dw Message_02_1B_3F
+#_0A90A6: dw Message_02_1B_40
+#_0A90A8: dw Message_02_1B_41
+#_0A90AA: dw Message_02_1B_42
+#_0A90AC: dw Message_02_1B_43
+#_0A90AE: dw Message_02_1B_44
+#_0A90B0: dw Message_02_1B_45
+#_0A90B2: dw Message_02_1B_46
+#_0A90B4: dw Message_02_1B_47
+#_0A90B6: dw Message_02_1B_48
+#_0A90B8: dw Message_02_1B_49
+#_0A90BA: dw Message_02_1B_4A
+#_0A90BC: dw Message_02_1B_4B
+#_0A90BE: dw Message_02_1B_4C
+#_0A90C0: dw Message_02_1B_4D
+#_0A90C2: dw Message_02_1B_4E
+#_0A90C4: dw Message_02_1B_4F
+#_0A90C6: dw Message_02_1B_50
+#_0A90C8: dw Message_02_1B_51
+#_0A90CA: dw Message_02_1B_52
+#_0A90CC: dw Message_02_1B_53
+#_0A90CE: dw Message_02_1B_53
+#_0A90D0: dw Message_02_1B_55
+#_0A90D2: dw Message_02_1B_56
+#_0A90D4: dw Message_02_1B_57
+#_0A90D6: dw Message_02_1B_58
+#_0A90D8: dw Message_02_1B_59
+#_0A90DA: dw Message_02_1B_5A
+#_0A90DC: dw Message_02_1B_5B
+#_0A90DE: dw Message_02_1B_5C
+#_0A90E0: dw Message_02_1B_5D
+#_0A90E2: dw Message_02_1B_5E
+#_0A90E4: dw Message_02_1B_5F
+#_0A90E6: dw Message_02_1B_60
 
 ;===================================================================================================
 
-PTR16_0A90E8:
-#_0A90E8: dw DATA8_0AEE21
-#_0A90EA: dw DATA8_0AEE32
-#_0A90EC: dw DATA8_0AEE35
-#_0A90EE: dw DATA8_0AEE53
-#_0A90F0: dw DATA8_0AEE62
-#_0A90F2: dw DATA8_0AEE72
-#_0A90F4: dw DATA8_0AEE7E
-#_0A90F6: dw DATA8_0AEE8E
-#_0A90F8: dw DATA8_0AEE8E
-#_0A90FA: dw DATA8_0AEE8E
-#_0A90FC: dw DATA8_0AEE8E
-#_0A90FE: dw DATA8_0AEE8E
-#_0A9100: dw DATA8_0AEE8E
-#_0A9102: dw DATA8_0AEE8E
-#_0A9104: dw DATA8_0AEE8E
-#_0A9106: dw DATA8_0AEE8E
-#_0A9108: dw DATA8_0AEE8E
-#_0A910A: dw DATA8_0AEE8E
-#_0A910C: dw DATA8_0AEE8E
-#_0A910E: dw DATA8_0AEE8E
-#_0A9110: dw DATA8_0AEE8E
-#_0A9112: dw DATA8_0AEE8E
-#_0A9114: dw DATA8_0AEE8E
-#_0A9116: dw DATA8_0AEE8E
-#_0A9118: dw DATA8_0AEE8E
-#_0A911A: dw DATA8_0AEE8E
-#_0A911C: dw DATA8_0AEE8E
-#_0A911E: dw DATA8_0AEE8E
-#_0A9120: dw DATA8_0AEE8E
-#_0A9122: dw DATA8_0AEE8E
-#_0A9124: dw DATA8_0AEE8E
-#_0A9126: dw DATA8_0AEE8E
-#_0A9128: dw DATA8_0AEE8E
-#_0A912A: dw DATA8_0AEE8E
-#_0A912C: dw DATA8_0AEE8E
-#_0A912E: dw DATA8_0AEE8E
-#_0A9130: dw DATA8_0AEE8E
-#_0A9132: dw DATA8_0AEE8E
-#_0A9134: dw DATA8_0AEE8E
-#_0A9136: dw DATA8_0AEE8E
-#_0A9138: dw DATA8_0AEE8E
-#_0A913A: dw DATA8_0AEE8E
-#_0A913C: dw DATA8_0AEE8E
-#_0A913E: dw DATA8_0AEE8E
-#_0A9140: dw DATA8_0AEE8E
-#_0A9142: dw DATA8_0AEE8E
-#_0A9144: dw DATA8_0AEE8E
-#_0A9146: dw DATA8_0AEE8E
-#_0A9148: dw DATA8_0AEE8F
+Message_02_1C_Pointers:
+#_0A90E8: dw Message_02_1C_00
+#_0A90EA: dw Message_02_1C_01
+#_0A90EC: dw Message_02_1C_02
+#_0A90EE: dw Message_02_1C_03
+#_0A90F0: dw Message_02_1C_04
+#_0A90F2: dw Message_02_1C_05
+#_0A90F4: dw Message_02_1C_06
+#_0A90F6: dw Message_02_1C_07
+#_0A90F8: dw Message_02_1C_07
+#_0A90FA: dw Message_02_1C_07
+#_0A90FC: dw Message_02_1C_07
+#_0A90FE: dw Message_02_1C_07
+#_0A9100: dw Message_02_1C_07
+#_0A9102: dw Message_02_1C_07
+#_0A9104: dw Message_02_1C_07
+#_0A9106: dw Message_02_1C_07
+#_0A9108: dw Message_02_1C_07
+#_0A910A: dw Message_02_1C_07
+#_0A910C: dw Message_02_1C_07
+#_0A910E: dw Message_02_1C_07
+#_0A9110: dw Message_02_1C_07
+#_0A9112: dw Message_02_1C_07
+#_0A9114: dw Message_02_1C_07
+#_0A9116: dw Message_02_1C_07
+#_0A9118: dw Message_02_1C_07
+#_0A911A: dw Message_02_1C_07
+#_0A911C: dw Message_02_1C_07
+#_0A911E: dw Message_02_1C_07
+#_0A9120: dw Message_02_1C_07
+#_0A9122: dw Message_02_1C_07
+#_0A9124: dw Message_02_1C_07
+#_0A9126: dw Message_02_1C_07
+#_0A9128: dw Message_02_1C_07
+#_0A912A: dw Message_02_1C_07
+#_0A912C: dw Message_02_1C_07
+#_0A912E: dw Message_02_1C_07
+#_0A9130: dw Message_02_1C_07
+#_0A9132: dw Message_02_1C_07
+#_0A9134: dw Message_02_1C_07
+#_0A9136: dw Message_02_1C_07
+#_0A9138: dw Message_02_1C_07
+#_0A913A: dw Message_02_1C_07
+#_0A913C: dw Message_02_1C_07
+#_0A913E: dw Message_02_1C_07
+#_0A9140: dw Message_02_1C_07
+#_0A9142: dw Message_02_1C_07
+#_0A9144: dw Message_02_1C_07
+#_0A9146: dw Message_02_1C_07
+#_0A9148: dw Message_02_1C_30
 
 ;===================================================================================================
 
-PTR16_0A914A:
-#_0A914A: dw DATA8_0AEE92
-#_0A914C: dw DATA8_0AEE9F
-#_0A914E: dw DATA8_0AEEAF
-#_0A9150: dw DATA8_0AEEBC
-#_0A9152: dw DATA8_0AEECC
-#_0A9154: dw DATA8_0AEED9
-#_0A9156: dw DATA8_0AEEE9
-#_0A9158: dw DATA8_0AEEED
-#_0A915A: dw DATA8_0AEEFE
-#_0A915C: dw DATA8_0AEF0F
-#_0A915E: dw DATA8_0AEF20
-#_0A9160: dw DATA8_0AEF25
-#_0A9162: dw DATA8_0AEF2D
-#_0A9164: dw DATA8_0AEF33
-#_0A9166: dw DATA8_0AEF3F
-#_0A9168: dw DATA8_0AEF4B
-#_0A916A: dw DATA8_0AEF57
-#_0A916C: dw DATA8_0AEF63
-#_0A916E: dw DATA8_0AEF6D
-#_0A9170: dw DATA8_0AEF78
-#_0A9172: dw DATA8_0AEF84
-#_0A9174: dw DATA8_0AEF91
-#_0A9176: dw DATA8_0AEF9E
-#_0A9178: dw DATA8_0AEFAD
-#_0A917A: dw DATA8_0AEFBA
-#_0A917C: dw DATA8_0AEFCB
-#_0A917E: dw DATA8_0AEFD8
-#_0A9180: dw DATA8_0AEFE5
-#_0A9182: dw DATA8_0AEFF2
-#_0A9184: dw DATA8_0AF001
-#_0A9186: dw DATA8_0AF00E
-#_0A9188: dw DATA8_0AF01B
-#_0A918A: dw DATA8_0AF02A
-#_0A918C: dw DATA8_0AF037
-#_0A918E: dw DATA8_0AF044
-#_0A9190: dw DATA8_0AF055
-#_0A9192: dw DATA8_0AF062
-#_0A9194: dw DATA8_0AF06F
-#_0A9196: dw DATA8_0AF07E
-#_0A9198: dw DATA8_0AF08B
-#_0A919A: dw DATA8_0AF098
-#_0A919C: dw DATA8_0AF0A5
-#_0A919E: dw DATA8_0AF0B4
-#_0A91A0: dw DATA8_0AF0C1
-#_0A91A2: dw DATA8_0AF0CE
-#_0A91A4: dw DATA8_0AF0DF
-#_0A91A6: dw DATA8_0AF0EC
-#_0A91A8: dw DATA8_0AF0F9
+Message_02_1D_Pointers:
+#_0A914A: dw Message_02_1D_00
+#_0A914C: dw Message_02_1D_01
+#_0A914E: dw Message_02_1D_02
+#_0A9150: dw Message_02_1D_03
+#_0A9152: dw Message_02_1D_04
+#_0A9154: dw Message_02_1D_05
+#_0A9156: dw Message_02_1D_06
+#_0A9158: dw Message_02_1D_07
+#_0A915A: dw Message_02_1D_08
+#_0A915C: dw Message_02_1D_09
+#_0A915E: dw Message_02_1D_0A
+#_0A9160: dw Message_02_1D_0B
+#_0A9162: dw Message_02_1D_0C
+#_0A9164: dw Message_02_1D_0D
+#_0A9166: dw Message_02_1D_0E
+#_0A9168: dw Message_02_1D_0F
+#_0A916A: dw Message_02_1D_10
+#_0A916C: dw Message_02_1D_11
+#_0A916E: dw Message_02_1D_12
+#_0A9170: dw Message_02_1D_13
+#_0A9172: dw Message_02_1D_14
+#_0A9174: dw Message_02_1D_15
+#_0A9176: dw Message_02_1D_16
+#_0A9178: dw Message_02_1D_17
+#_0A917A: dw Message_02_1D_18
+#_0A917C: dw Message_02_1D_19
+#_0A917E: dw Message_02_1D_1A
+#_0A9180: dw Message_02_1D_1B
+#_0A9182: dw Message_02_1D_1C
+#_0A9184: dw Message_02_1D_1D
+#_0A9186: dw Message_02_1D_1E
+#_0A9188: dw Message_02_1D_1F
+#_0A918A: dw Message_02_1D_20
+#_0A918C: dw Message_02_1D_21
+#_0A918E: dw Message_02_1D_22
+#_0A9190: dw Message_02_1D_23
+#_0A9192: dw Message_02_1D_24
+#_0A9194: dw Message_02_1D_25
+#_0A9196: dw Message_02_1D_26
+#_0A9198: dw Message_02_1D_27
+#_0A919A: dw Message_02_1D_28
+#_0A919C: dw Message_02_1D_29
+#_0A919E: dw Message_02_1D_2A
+#_0A91A0: dw Message_02_1D_2B
+#_0A91A2: dw Message_02_1D_2C
+#_0A91A4: dw Message_02_1D_2D
+#_0A91A6: dw Message_02_1D_2E
+#_0A91A8: dw Message_02_1D_2F
 
 ;===================================================================================================
 
-PTR16_0A91AA:
-#_0A91AA: dw DATA8_0AF108
-#_0A91AC: dw DATA8_0AF154
-#_0A91AE: dw DATA8_0AF177
-#_0A91B0: dw DATA8_0AF194
-#_0A91B2: dw DATA8_0AF220
-#_0A91B4: dw DATA8_0AF29F
-#_0A91B6: dw DATA8_0AF2CB
-#_0A91B8: dw DATA8_0AF2E9
-#_0A91BA: dw DATA8_0AF369
-#_0A91BC: dw DATA8_0AF3C6
-#_0A91BE: dw DATA8_0AF3EA
-#_0A91C0: dw DATA8_0AF405
-#_0A91C2: dw DATA8_0AF461
-#_0A91C4: dw DATA8_0AF4EC
-#_0A91C6: dw DATA8_0AF52F
-#_0A91C8: dw DATA8_0AF535
-#_0A91CA: dw DATA8_0AF539
-#_0A91CC: dw DATA8_0AF587
-#_0A91CE: dw DATA8_0AF58C
-#_0A91D0: dw DATA8_0AF58E
-#_0A91D2: dw DATA8_0AF5FF
-#_0A91D4: dw DATA8_0AF681
-#_0A91D6: dw DATA8_0AF6B0
-#_0A91D8: dw DATA8_0AF6E4
-#_0A91DA: dw DATA8_0AF71C
-#_0A91DC: dw DATA8_0AF758
-#_0A91DE: dw DATA8_0AF75A
-#_0A91E0: dw DATA8_0AF7DE
-#_0A91E2: dw DATA8_0AF7EE
-#_0A91E4: dw DATA8_0AF839
-#_0A91E6: dw DATA8_0AF84F
-#_0A91E8: dw DATA8_0AF850
-#_0A91EA: dw DATA8_0AF8B3
-#_0A91EC: dw DATA8_0AF91F
-#_0A91EE: dw DATA8_0AF955
-#_0A91F0: dw DATA8_0AF95A
-#_0A91F2: dw DATA8_0AFA05
-#_0A91F4: dw DATA8_0AFA60
-#_0A91F6: dw DATA8_0AFA78
-#_0A91F8: dw DATA8_0AFA9E
-#_0A91FA: dw DATA8_0AFABD
-#_0A91FC: dw DATA8_0AFAC0
-#_0A91FE: dw DATA8_0AFAC5
-#_0A9200: dw DATA8_0AFACA
-#_0A9202: dw DATA8_0AFAF1
-#_0A9204: dw DATA8_0AFB08
-#_0A9206: dw DATA8_0AFB09
-#_0A9208: dw DATA8_0AFB34
-#_0A920A: dw DATA8_0AFB6E
-#_0A920C: dw DATA8_0AFB93
-#_0A920E: dw DATA8_0AFB96
+Message_02_1E_Pointers:
+#_0A91AA: dw Message_02_1E_00
+#_0A91AC: dw Message_02_1E_01
+#_0A91AE: dw Message_02_1E_02
+#_0A91B0: dw Message_02_1E_03
+#_0A91B2: dw Message_02_1E_04
+#_0A91B4: dw Message_02_1E_05
+#_0A91B6: dw Message_02_1E_06
+#_0A91B8: dw Message_02_1E_07
+#_0A91BA: dw Message_02_1E_08
+#_0A91BC: dw Message_02_1E_09
+#_0A91BE: dw Message_02_1E_0A
+#_0A91C0: dw Message_02_1E_0B
+#_0A91C2: dw Message_02_1E_0C
+#_0A91C4: dw Message_02_1E_0D
+#_0A91C6: dw Message_02_1E_0E
+#_0A91C8: dw Message_02_1E_0F
+#_0A91CA: dw Message_02_1E_10
+#_0A91CC: dw Message_02_1E_11
+#_0A91CE: dw Message_02_1E_12
+#_0A91D0: dw Message_02_1E_13
+#_0A91D2: dw Message_02_1E_14
+#_0A91D4: dw Message_02_1E_15
+#_0A91D6: dw Message_02_1E_16
+#_0A91D8: dw Message_02_1E_17
+#_0A91DA: dw Message_02_1E_18
+#_0A91DC: dw Message_02_1E_19
+#_0A91DE: dw Message_02_1E_1A
+#_0A91E0: dw Message_02_1E_1B
+#_0A91E2: dw Message_02_1E_1C
+#_0A91E4: dw Message_02_1E_1D
+#_0A91E6: dw Message_02_1E_1E
+#_0A91E8: dw Message_02_1E_1F
+#_0A91EA: dw Message_02_1E_20
+#_0A91EC: dw Message_02_1E_21
+#_0A91EE: dw Message_02_1E_22
+#_0A91F0: dw Message_02_1E_23
+#_0A91F2: dw Message_02_1E_24
+#_0A91F4: dw Message_02_1E_25
+#_0A91F6: dw Message_02_1E_26
+#_0A91F8: dw Message_02_1E_27
+#_0A91FA: dw Message_02_1E_28
+#_0A91FC: dw Message_02_1E_29
+#_0A91FE: dw Message_02_1E_2A
+#_0A9200: dw Message_02_1E_2B
+#_0A9202: dw Message_02_1E_2C
+#_0A9204: dw Message_02_1E_2D
+#_0A9206: dw Message_02_1E_2E
+#_0A9208: dw Message_02_1E_2F
+#_0A920A: dw Message_02_1E_30
+#_0A920C: dw Message_02_1E_31
+#_0A920E: dw Message_02_1E_32
 
 ;===================================================================================================
 
-PTR16_0A9210:
-#_0A9210: dw DATA8_0AFB9A
-#_0A9212: dw DATA8_0AFBAA
-#_0A9214: dw DATA8_0AFBD6
-#_0A9216: dw DATA8_0AFBFD
-#_0A9218: dw DATA8_0AFC10
-#_0A921A: dw DATA8_0AFC18
-#_0A921C: dw DATA8_0AFC1E
-#_0A921E: dw DATA8_0AFC34
-#_0A9220: dw DATA8_0AFC39
-#_0A9222: dw DATA8_0AFC43
-#_0A9224: dw DATA8_0AFC48
-#_0A9226: dw DATA8_0AFC5B
-#_0A9228: dw DATA8_0AFC60
-#_0A922A: dw DATA8_0AFC8C
-#_0A922C: dw DATA8_0AFC9A
-#_0A922E: dw DATA8_0AFC9E
-#_0A9230: dw DATA8_0AFCA2
-#_0A9232: dw DATA8_0AFCBC
-#_0A9234: dw DATA8_0AFCC5
-#_0A9236: dw DATA8_0AFCFA
-#_0A9238: dw DATA8_0AFD1F
-#_0A923A: dw DATA8_0AFD32
-#_0A923C: dw DATA8_0AFD84
-#_0A923E: dw DATA8_0AFD95
-#_0A9240: dw DATA8_0AFDA4
-#_0A9242: dw DATA8_0AFDBF
-#_0A9244: dw DATA8_0AFDC2
-#_0A9246: dw DATA8_0AFDCA
-#_0A9248: dw DATA8_0AFDD0
-#_0A924A: dw DATA8_0AFDE6
-#_0A924C: dw DATA8_0AFDEB
-#_0A924E: dw DATA8_0AFDF5
-#_0A9250: dw DATA8_0AFDFA
-#_0A9252: dw DATA8_0AFE0D
-#_0A9254: dw DATA8_0AFE12
-#_0A9256: dw DATA8_0AFE19
-#_0A9258: dw DATA8_0AFE1D
-#_0A925A: dw DATA8_0AFE52
-#_0A925C: dw DATA8_0AFE79
-#_0A925E: dw DATA8_0AFE84
-#_0A9260: dw DATA8_0AFE8C
-#_0A9262: dw DATA8_0AFE92
-#_0A9264: dw DATA8_0AFEA8
-#_0A9266: dw DATA8_0AFEAD
-#_0A9268: dw DATA8_0AFEB7
-#_0A926A: dw DATA8_0AFEBC
-#_0A926C: dw DATA8_0AFECF
-#_0A926E: dw DATA8_0AFED4
-#_0A9270: dw DATA8_0AFEDB
-#_0A9272: dw DATA8_0AFEDF
-#_0A9274: dw DATA8_0AFEE9
-#_0A9276: dw DATA8_0AFF28
+Message_02_1F_Pointers:
+#_0A9210: dw Message_02_1F_00
+#_0A9212: dw Message_02_1F_01
+#_0A9214: dw Message_02_1F_02
+#_0A9216: dw Message_02_1F_03
+#_0A9218: dw Message_02_1F_04
+#_0A921A: dw Message_02_1F_05
+#_0A921C: dw Message_02_1F_06
+#_0A921E: dw Message_02_1F_07
+#_0A9220: dw Message_02_1F_08
+#_0A9222: dw Message_02_1F_09
+#_0A9224: dw Message_02_1F_0A
+#_0A9226: dw Message_02_1F_0B
+#_0A9228: dw Message_02_1F_0C
+#_0A922A: dw Message_02_1F_0D
+#_0A922C: dw Message_02_1F_0E
+#_0A922E: dw Message_02_1F_0F
+#_0A9230: dw Message_02_1F_10
+#_0A9232: dw Message_02_1F_11
+#_0A9234: dw Message_02_1F_12
+#_0A9236: dw Message_02_1F_13
+#_0A9238: dw Message_02_1F_14
+#_0A923A: dw Message_02_1F_15
+#_0A923C: dw Message_02_1F_16
+#_0A923E: dw Message_02_1F_17
+#_0A9240: dw Message_02_1F_18
+#_0A9242: dw Message_02_1F_19
+#_0A9244: dw Message_02_1F_1A
+#_0A9246: dw Message_02_1F_1B
+#_0A9248: dw Message_02_1F_1C
+#_0A924A: dw Message_02_1F_1D
+#_0A924C: dw Message_02_1F_1E
+#_0A924E: dw Message_02_1F_1F
+#_0A9250: dw Message_02_1F_20
+#_0A9252: dw Message_02_1F_21
+#_0A9254: dw Message_02_1F_22
+#_0A9256: dw Message_02_1F_23
+#_0A9258: dw Message_02_1F_24
+#_0A925A: dw Message_02_1F_25
+#_0A925C: dw Message_02_1F_26
+#_0A925E: dw Message_02_1F_27
+#_0A9260: dw Message_02_1F_28
+#_0A9262: dw Message_02_1F_29
+#_0A9264: dw Message_02_1F_2A
+#_0A9266: dw Message_02_1F_2B
+#_0A9268: dw Message_02_1F_2C
+#_0A926A: dw Message_02_1F_2D
+#_0A926C: dw Message_02_1F_2E
+#_0A926E: dw Message_02_1F_2F
+#_0A9270: dw Message_02_1F_30
+#_0A9272: dw Message_02_1F_31
+#_0A9274: dw Message_02_1F_32
+#_0A9276: dw Message_02_1F_33
 
 ;===================================================================================================
 
 ; [CLASSX] [DEMONX]さまだぞ!
-Message_0A9278:
+Message_02_00_00:
 #_0A9278: db $EE ; [set2] write class name indexed from $0526
 #_0A9279: db $CF ; ⎵
 #_0A927A: db $ED ; [set2] write demon name indexed from $0526
@@ -2509,14 +2509,14 @@ Message_0A9278:
 ;===================================================================================================
 
 ; ひゃーははは!
-Message_0A9281:
+Message_02_00_01:
 #_0A9281: db $3F, $55, $5A, $3E, $3E, $3E, $94 ; ひゃーははは!
 #_0A9288: db $FF ; end of message
 
 ;===================================================================================================
 
 ; オレは きょう ちに うえてるんだ!
-Message_0A9289:
+Message_02_00_02:
 #_0A9289: db $61, $86, $3E, $CF, $2B, $57, $27, $CF ; オレは⎵きょう⎵
 #_0A9291: db $35, $3A, $CF, $27, $28, $37, $4D, $52 ; ちに⎵うえてるん
 #_0A9299: db $A6, $94 ; だ!
@@ -2525,7 +2525,7 @@ Message_0A9289:
 ;===================================================================================================
 
 ; なんでも いたしま
-Message_0A929C:
+Message_02_00_03:
 #_0A929C: db $39, $52, $A9, $47, $CF, $26, $34, $30 ; なんでも⎵いたし
 #_0A92A4: db $43 ; ま
 #_0A92A5: db $FF ; end of message
@@ -2533,7 +2533,7 @@ Message_0A929C:
 ;===================================================================================================
 
 ; アンタは もしや!
-Message_0A92A6:
+Message_02_00_04:
 #_0A92A6: db $5D, $8A, $6C, $3E, $CF, $47, $30, $48 ; アンタは⎵もしや
 #_0A92AE: db $94 ; !
 #_0A92AF: db $FF ; end of message
@@ -2541,7 +2541,7 @@ Message_0A92A6:
 ;===================================================================================================
 
 ; [CHASE]の あしもとに ひざまづいた
-Message_0A92B0:
+Message_02_00_05:
 #_0A92B0: db $F8 ; [set2] write player name
 #_0A92B1: db $3D, $CF, $25, $30, $47, $38, $3A, $CF ; の⎵あしもとに⎵
 #_0A92B9: db $3F, $A1, $43, $A8, $26, $34 ; ひざまづいた
@@ -2550,7 +2550,7 @@ Message_0A92B0:
 ;===================================================================================================
 
 ; ようを いってみろ
-Message_0A92C0:
+Message_02_00_06:
 #_0A92C0: db $4A, $27, $51, $CF, $26, $58, $37, $44 ; ようを⎵いってみ
 #_0A92C8: db $4F ; ろ
 #_0A92C9: db $FF ; end of message
@@ -2558,19 +2558,19 @@ Message_0A92C0:
 ;===================================================================================================
 
 ; ぶっとばしてやる
-Message_0A92CA:
+Message_02_00_07:
 #_0A92CA: db $AD, $58, $38, $AB, $30, $37, $48, $4D ; ぶっとばしてやる
 #_0A92D2: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0A92D3:
+Message_02_00_08:
 #_0A92D3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; みかけによらず どきょうが あるな!
-Message_0A92D4:
+Message_02_00_09:
 #_0A92D4: db $44, $2A, $2D, $3A, $4A, $4B, $A3, $CF ; みかけによらず⎵
 #_0A92DC: db $AA, $2B, $57, $27, $9C, $CF, $25, $4D ; どきょうが⎵ある
 #_0A92E4: db $39, $94 ; な!
@@ -2579,7 +2579,7 @@ Message_0A92D4:
 ;===================================================================================================
 
 ; フォッフォッフォッ!
-Message_0A92E7:
+Message_02_00_0A:
 #_0A92E7: db $78, $8E, $92, $78, $8E, $92, $78, $8E ; フォッフォッフォ
 #_0A92EF: db $92, $94 ; ッ!
 #_0A92F1: db $FF ; end of message
@@ -2587,7 +2587,7 @@ Message_0A92E7:
 ;===================================================================================================
 
 ; ア・アンタ なにもんだよ ホントに ニンゲン?
-Message_0A92F2:
+Message_02_00_0B:
 #_0A92F2: db $5D, $93, $5D, $8A, $6C, $CF, $39, $3A ; ア・アンタ⎵なに
 #_0A92FA: db $47, $52, $A6, $4A, $CF, $7A, $8A, $70 ; もんだよ⎵ホント
 #_0A9302: db $3A, $CF, $72, $8A, $B8, $8A, $95 ; に⎵ニンゲン?
@@ -2596,7 +2596,7 @@ Message_0A92F2:
 ;===================================================================================================
 
 ; はなせば わかるよ・・・ナ?
-Message_0A930A:
+Message_02_00_0C:
 #_0A930A: db $3E, $39, $32, $AB, $CF, $50, $2A, $4D ; はなせば⎵わかる
 #_0A9312: db $4A, $93, $93, $93, $71, $95 ; よ・・・ナ?
 #_0A9318: db $FF ; end of message
@@ -2604,7 +2604,7 @@ Message_0A930A:
 ;===================================================================================================
 
 ; お・おれは そんな つもりじゃあ・・・
-Message_0A9319:
+Message_02_00_0D:
 #_0A9319: db $29, $93, $29, $4E, $3E, $CF, $33, $52 ; お・おれは⎵そん
 #_0A9321: db $39, $CF, $36, $47, $4C, $A2, $55, $25 ; な⎵つもりじゃあ
 #_0A9329: db $93, $93, $93 ; ・・・
@@ -2613,7 +2613,7 @@ Message_0A9319:
 ;===================================================================================================
 
 ; なにか さしだした
-Message_0A932D:
+Message_02_00_0E:
 #_0A932D: db $39, $3A, $2A, $CF, $2F, $30, $A6, $30 ; なにか⎵さしだし
 #_0A9335: db $34 ; た
 #_0A9336: db $FF ; end of message
@@ -2621,14 +2621,14 @@ Message_0A932D:
 ;===================================================================================================
 
 ; グオオオオー!
-Message_0A9337:
+Message_02_00_0F:
 #_0A9337: db $B7, $61, $61, $61, $61, $5A, $94 ; グオオオオー!
 #_0A933E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[DEMONX]は わらっている
-Message_0A933F:
+Message_02_00_10:
 #_0A933F: db $97 ; >
 #_0A9340: db $ED ; [set2] write demon name indexed from $0526
 #_0A9341: db $3E, $CF, $50, $4B, $58, $37, $26, $4D ; は⎵わらっている
@@ -2637,7 +2637,7 @@ Message_0A933F:
 ;===================================================================================================
 
 ; わがはいは [CLASSX] [DEMONX]!
-Message_0A934A:
+Message_02_00_11:
 #_0A934A: db $50, $9C, $3E, $26, $3E, $CF ; わがはいは⎵
 #_0A9350: db $EE ; [set2] write class name indexed from $0526
 #_0A9351: db $CF ; ⎵
@@ -2648,7 +2648,7 @@ Message_0A934A:
 ;===================================================================================================
 
 ; ぐッ・ぐッ・ぐッ・ぐッ
-Message_0A9355:
+Message_02_00_12:
 #_0A9355: db $9E, $92, $93, $9E, $92, $93, $9E, $92 ; ぐッ・ぐッ・ぐッ
 #_0A935D: db $93, $9E, $92 ; ・ぐッ
 #_0A9360: db $FF ; end of message
@@ -2656,7 +2656,7 @@ Message_0A9355:
 ;===================================================================================================
 
 ; この いわを すでで くだいてみ
-Message_0A9361:
+Message_02_00_13:
 #_0A9361: db $2E, $3D, $CF, $26, $50, $51, $CF, $31 ; この⎵いわを⎵す
 #_0A9369: db $A9, $A9, $CF, $2C, $A6, $26, $37, $44 ; でで⎵くだいてみ
 #_0A9371: db $FF ; end of message
@@ -2665,7 +2665,7 @@ Message_0A9361:
 
 ; [CHASE]に いわを さしだしている
 ; おなじことを ためして みますか?
-Message_0A9372:
+Message_02_00_14:
 #_0A9372: db $F8 ; [set2] write player name
 #_0A9373: db $3A, $CF, $26, $50, $51, $CF, $2F, $30 ; に⎵いわを⎵さし
 #_0A937B: db $A6, $30, $37, $26, $4D ; だしている
@@ -2678,7 +2678,7 @@ Message_0A9372:
 ;===================================================================================================
 
 ; き・きさまあ・・・・・
-Message_0A9393:
+Message_02_00_15:
 #_0A9393: db $2B, $93, $2B, $2F, $43, $25, $93, $93 ; き・きさまあ・・
 #_0A939B: db $93, $93, $93 ; ・・・
 #_0A939E: db $FF ; end of message
@@ -2686,21 +2686,21 @@ Message_0A9393:
 ;===================================================================================================
 
 ; むむむ・・・・!
-Message_0A939F:
+Message_02_00_16:
 #_0A939F: db $45, $45, $45, $93, $93, $93, $93, $94 ; むむむ・・・・!
 #_0A93A7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やなやつ!
-Message_0A93A8:
+Message_02_00_17:
 #_0A93A8: db $48, $39, $48, $36, $94 ; やなやつ!
 #_0A93AD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; じょうとう じゃねえか!
-Message_0A93AE:
+Message_02_00_18:
 #_0A93AE: db $A2, $57, $27, $38, $27, $CF, $A2, $55 ; じょうとう⎵じゃ
 #_0A93B6: db $3C, $28, $2A, $94 ; ねえか!
 #_0A93BA: db $FF ; end of message
@@ -2708,7 +2708,7 @@ Message_0A93AE:
 ;===================================================================================================
 
 ; ぐるるるるる・・・・
-Message_0A93BB:
+Message_02_00_19:
 #_0A93BB: db $9E, $4D, $4D, $4D, $4D, $4D, $93, $93 ; ぐるるるるる・・
 #_0A93C3: db $93, $93 ; ・・
 #_0A93C5: db $FF ; end of message
@@ -2716,7 +2716,7 @@ Message_0A93BB:
 ;===================================================================================================
 
 ;  わがはいを だれだと おもっておる!
-Message_0A93C6:
+Message_02_00_1A:
 #_0A93C6: db $CF, $50, $9C, $3E, $26, $51, $CF, $A6 ; ⎵わがはいを⎵だ
 #_0A93CE: db $4E, $A6, $38, $CF, $29, $47, $58, $37 ; れだと⎵おもって
 #_0A93D6: db $29, $4D, $94 ; おる!
@@ -2725,7 +2725,7 @@ Message_0A93C6:
 ;===================================================================================================
 
 ; ケッ・・・きもちわるい ヤツ!
-Message_0A93DA:
+Message_02_00_1B:
 #_0A93DA: db $65, $92, $93, $93, $93, $2B, $47, $35 ; ケッ・・・きもち
 #_0A93E2: db $50, $4D, $26, $CF, $80, $6E, $94 ; わるい⎵ヤツ!
 #_0A93E9: db $FF ; end of message
@@ -2733,7 +2733,7 @@ Message_0A93DA:
 ;===================================================================================================
 
 ; >[DEMONX]は きくたいせいに はいった
-Message_0A93EA:
+Message_02_00_1C:
 #_0A93EA: db $97 ; >
 #_0A93EB: db $ED ; [set2] write demon name indexed from $0526
 #_0A93EC: db $3E, $CF, $2B, $2C, $34, $26, $32, $26 ; は⎵きくたいせい
@@ -2744,7 +2744,7 @@ Message_0A93EA:
 
 ; [DEMONX]は いわを もちあげると
 ; くだいて みせた・・・
-Message_0A93FB:
+Message_02_00_1D:
 #_0A93FB: db $ED ; [set2] write demon name indexed from $0526
 #_0A93FC: db $3E, $CF, $26, $50, $51, $CF, $47, $35 ; は⎵いわを⎵もち
 #_0A9404: db $25, $9F, $4D, $38 ; あげると
@@ -2755,32 +2755,32 @@ Message_0A93FB:
 
 ;===================================================================================================
 
-Message_0A9415:
+Message_02_00_1E:
 #_0A9415: db $FF ; end of message
 
 ;===================================================================================================
 
 ; でかいくち たたくんなら 
 ; «この いわを すでで くだいてみ»な!
-Message_0A9416:
+Message_02_00_1F:
 #_0A9416: db $A9, $2A, $26, $2C, $35, $CF, $34, $34 ; でかいくち⎵たた
 #_0A941E: db $2C, $52, $39, $4B, $CF ; くんなら⎵
 #_0A9423: db $F0 ; [set2] new line
-#_0A9424: db $EB, $13 ; prewritten text 13
+#_0A9424: db $EB, $13 ; [set2] prewritten text 13
 #_0A9426: db $39, $94 ; な!
 #_0A9428: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ぎゃはははは!
-Message_0A9429:
+Message_02_00_20:
 #_0A9429: db $9D, $55, $3E, $3E, $3E, $3E, $94 ; ぎゃはははは!
 #_0A9430: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  ような ニンゲンは はじめてだ!
-Message_0A9431:
+Message_02_00_21:
 #_0A9431: db $CF, $4A, $27, $39, $CF, $72, $8A, $B8 ; ⎵ような⎵ニンゲ
 #_0A9439: db $8A, $3E, $CF, $3E, $A2, $46, $37, $A6 ; ンは⎵はじめてだ
 #_0A9441: db $94 ; !
@@ -2789,7 +2789,7 @@ Message_0A9431:
 ;===================================================================================================
 
 ; ひゃっひゃっひゃ!
-Message_0A9443:
+Message_02_00_22:
 #_0A9443: db $3F, $55, $58, $3F, $55, $58, $3F, $55 ; ひゃっひゃっひゃ
 #_0A944B: db $94 ; !
 #_0A944C: db $FF ; end of message
@@ -2797,7 +2797,7 @@ Message_0A9443:
 ;===================================================================================================
 
 ; ニンゲンの ナカマに なれだと?
-Message_0A944D:
+Message_02_00_23:
 #_0A944D: db $72, $8A, $B8, $8A, $3D, $CF, $71, $62 ; ニンゲンの⎵ナカ
 #_0A9455: db $7B, $3A, $CF, $39, $4E, $A6, $38, $95 ; マに⎵なれだと?
 #_0A945D: db $FF ; end of message
@@ -2805,7 +2805,7 @@ Message_0A944D:
 ;===================================================================================================
 
 ; つぎにあうまで いのちを だいじに するんだな
-Message_0A945E:
+Message_02_00_24:
 #_0A945E: db $36, $9D, $3A, $25, $27, $43, $A9, $CF ; つぎにあうまで⎵
 #_0A9466: db $26, $3D, $35, $51, $CF, $A6, $26, $A2 ; いのちを⎵だいじ
 #_0A946E: db $3A, $CF, $31, $4D, $52, $A6, $39 ; に⎵するんだな
@@ -2814,14 +2814,14 @@ Message_0A945E:
 ;===================================================================================================
 
 ; きにいった
-Message_0A9476:
+Message_02_00_25:
 #_0A9476: db $2B, $3A, $26, $58, $34 ; きにいった
 #_0A947B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なにが のぞみだ?
-Message_0A947C:
+Message_02_00_26:
 #_0A947C: db $39, $3A, $9C, $CF, $3D, $A5, $44, $A6 ; なにが⎵のぞみだ
 #_0A9484: db $95 ; ?
 #_0A9485: db $FF ; end of message
@@ -2829,7 +2829,7 @@ Message_0A947C:
 ;===================================================================================================
 
 ; では その つよさを みせてやろう!
-Message_0A9486:
+Message_02_00_27:
 #_0A9486: db $A9, $3E, $CF, $33, $3D, $CF, $36, $4A ; では⎵その⎵つよ
 #_0A948E: db $2F, $51, $CF, $44, $32, $37, $48, $4F ; さを⎵みせてやろ
 #_0A9496: db $27, $94 ; う!
@@ -2838,7 +2838,7 @@ Message_0A9486:
 ;===================================================================================================
 
 ; はなしを きいてやろう
-Message_0A9499:
+Message_02_00_28:
 #_0A9499: db $3E, $39, $30, $51, $CF, $2B, $26, $37 ; はなしを⎵きいて
 #_0A94A1: db $48, $4F, $27 ; やろう
 #_0A94A4: db $FF ; end of message
@@ -2846,19 +2846,19 @@ Message_0A9499:
 ;===================================================================================================
 
 ; ばかに し
-Message_0A94A5:
+Message_02_00_29:
 #_0A94A5: db $AB, $2A, $3A, $CF, $30 ; ばかに⎵し
 #_0A94AA: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0A94AB:
+Message_02_00_2A:
 #_0A94AB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; これでも もって とっとと うせろ!
-Message_0A94AC:
+Message_02_00_2B:
 #_0A94AC: db $2E, $4E, $A9, $47, $CF, $47, $58, $37 ; これでも⎵もって
 #_0A94B4: db $CF, $38, $58, $38, $38, $CF, $27, $32 ; ⎵とっとと⎵うせ
 #_0A94BC: db $4F, $94 ; ろ!
@@ -2867,7 +2867,7 @@ Message_0A94AC:
 ;===================================================================================================
 
 ; きいたこと ないぞ
-Message_0A94BF:
+Message_02_00_2C:
 #_0A94BF: db $2B, $26, $34, $2E, $38, $CF, $39, $26 ; きいたこと⎵ない
 #_0A94C7: db $A5 ; ぞ
 #_0A94C8: db $FF ; end of message
@@ -2875,14 +2875,14 @@ Message_0A94BF:
 ;===================================================================================================
 
 ; おそいわあ!
-Message_0A94C9:
+Message_02_00_2D:
 #_0A94C9: db $29, $33, $26, $50, $25, $94 ; おそいわあ!
 #_0A94CF: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いますぐ あのよに おくってやるぜー!!
-Message_0A94D0:
+Message_02_00_2E:
 #_0A94D0: db $26, $43, $31, $9E, $CF, $25, $3D, $4A ; いますぐ⎵あのよ
 #_0A94D8: db $3A, $CF, $29, $2C, $58, $37, $48, $4D ; に⎵おくってやる
 #_0A94E0: db $A4, $5A, $94, $94 ; ぜー!!
@@ -2891,7 +2891,7 @@ Message_0A94D0:
 ;===================================================================================================
 
 ; もう 1ど チャンスを やろう
-Message_0A94E5:
+Message_02_00_2F:
 #_0A94E5: db $47, $27, $CF, $02, $AA, $CF, $6D, $8F ; もう⎵1ど⎵チャ
 #_0A94ED: db $8A, $69, $51, $CF, $48, $4F, $27 ; ンスを⎵やろう
 #_0A94F4: db $FF ; end of message
@@ -2899,7 +2899,7 @@ Message_0A94E5:
 ;===================================================================================================
 
 ; はなしを きこうじゃないか
-Message_0A94F5:
+Message_02_00_30:
 #_0A94F5: db $3E, $39, $30, $51, $CF, $2B, $2E, $27 ; はなしを⎵きこう
 #_0A94FD: db $A2, $55, $39, $26, $2A ; じゃないか
 #_0A9502: db $FF ; end of message
@@ -2907,7 +2907,7 @@ Message_0A94F5:
 ;===================================================================================================
 
 ; ようを いってみろ
-Message_0A9503:
+Message_02_00_31:
 #_0A9503: db $4A, $27, $51, $CF, $26, $58, $37, $44 ; ようを⎵いってみ
 #_0A950B: db $4F ; ろ
 #_0A950C: db $FF ; end of message
@@ -2915,24 +2915,24 @@ Message_0A9503:
 ;===================================================================================================
 
 ; ほしがっている
-Message_0A950D:
+Message_02_00_32:
 #_0A950D: db $42, $30, $9C, $58, $37, $26, $4D ; ほしがっている
 #_0A9514: db $FF ; end of message
 
 ;===================================================================================================
 
 ; [DEMONX]は [￥GIVEME] を
-Message_0A9515:
+Message_02_00_33:
 #_0A9515: db $ED ; [set2] write demon name indexed from $0526
 #_0A9516: db $3E, $CF ; は⎵
-#_0A9518: db $F6 ; ask for currency or item
+#_0A9518: db $F6 ; [set2] ask for currency or item
 #_0A9519: db $CF, $51 ; ⎵を
 #_0A951B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いやとは いわんな?
-Message_0A951C:
+Message_02_00_34:
 #_0A951C: db $26, $48, $38, $3E, $CF, $26, $50, $52 ; いやとは⎵いわん
 #_0A9524: db $39, $95 ; な?
 #_0A9526: db $FF ; end of message
@@ -2940,7 +2940,7 @@ Message_0A951C:
 ;===================================================================================================
 
 ; うーむ まだ ものたりんな
-Message_0A9527:
+Message_02_00_35:
 #_0A9527: db $27, $5A, $45, $CF, $43, $A6, $CF, $47 ; うーむ⎵まだ⎵も
 #_0A952F: db $3D, $34, $4C, $52, $39 ; のたりんな
 #_0A9534: db $FF ; end of message
@@ -2948,14 +2948,14 @@ Message_0A9527:
 ;===================================================================================================
 
 ; なんだとお?
-Message_0A9535:
+Message_02_00_36:
 #_0A9535: db $39, $52, $A6, $38, $29, $95 ; なんだとお?
 #_0A953B: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  アンタの いのちが ほしいナ!
-Message_0A953C:
+Message_02_00_37:
 #_0A953C: db $CF, $5D, $8A, $6C, $3D, $CF, $26, $3D ; ⎵アンタの⎵いの
 #_0A9544: db $35, $9C, $CF, $42, $30, $26, $71, $94 ; ちが⎵ほしいナ!
 #_0A954C: db $FF ; end of message
@@ -2963,7 +2963,7 @@ Message_0A953C:
 ;===================================================================================================
 
 ; そんなら オマエの いのちを よこせ!
-Message_0A954D:
+Message_02_00_38:
 #_0A954D: db $33, $52, $39, $4B, $CF, $61, $7B, $60 ; そんなら⎵オマエ
 #_0A9555: db $3D, $CF, $26, $3D, $35, $51, $CF, $4A ; の⎵いのちを⎵よ
 #_0A955D: db $2E, $32, $94 ; こせ!
@@ -2972,7 +2972,7 @@ Message_0A954D:
 ;===================================================================================================
 
 ; やっぱり かねが ねらいか!
-Message_0A9561:
+Message_02_00_39:
 #_0A9561: db $48, $58, $B0, $4C, $CF, $2A, $3C, $9C ; やっぱり⎵かねが
 #_0A9569: db $CF, $3C, $4B, $26, $2A, $94 ; ⎵ねらいか!
 #_0A956F: db $FF ; end of message
@@ -2980,7 +2980,7 @@ Message_0A9561:
 ;===================================================================================================
 
 ; ぜったい やだー!
-Message_0A9570:
+Message_02_00_3A:
 #_0A9570: db $A4, $58, $34, $26, $CF, $48, $A6, $5A ; ぜったい⎵やだー
 #_0A9578: db $94 ; !
 #_0A9579: db $FF ; end of message
@@ -2988,28 +2988,28 @@ Message_0A9570:
 ;===================================================================================================
 
 ; これで いいか?
-Message_0A957A:
+Message_02_00_3B:
 #_0A957A: db $2E, $4E, $A9, $CF, $26, $26, $2A, $95 ; これで⎵いいか?
 #_0A9582: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いやだね
-Message_0A9583:
+Message_02_00_3C:
 #_0A9583: db $26, $48, $A6, $3C ; いやだね
 #_0A9587: db $FF ; end of message
 
 ;===================================================================================================
 
 ; そんなことか!
-Message_0A9588:
+Message_02_00_3D:
 #_0A9588: db $33, $52, $39, $2E, $38, $2A, $94 ; そんなことか!
 #_0A958F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; [DEMONX]は きびすを かえした
-Message_0A9590:
+Message_02_00_3E:
 #_0A9590: db $ED ; [set2] write demon name indexed from $0526
 #_0A9591: db $3E, $CF, $2B, $AC, $31, $51, $CF, $2A ; は⎵きびすを⎵か
 #_0A9599: db $28, $30, $34 ; えした
@@ -3019,7 +3019,7 @@ Message_0A9590:
 
 ; [DEMONX]が [CHASE]の
 ; ふくを かんで ひきとめた
-Message_0A959D:
+Message_02_00_3F:
 #_0A959D: db $ED ; [set2] write demon name indexed from $0526
 #_0A959E: db $9C, $CF ; が⎵
 #_0A95A0: db $F8 ; [set2] write player name
@@ -3033,9 +3033,9 @@ Message_0A959D:
 
 ; おれさまは «[￥GIVEME] いただきたい»
 ; これで ナカマに なろう
-Message_0A95B1:
+Message_02_00_40:
 #_0A95B1: db $29, $4E, $2F, $43, $3E, $CF ; おれさまは⎵
-#_0A95B7: db $EB, $A3 ; prewritten text A3
+#_0A95B7: db $EB, $A3 ; [set2] prewritten text A3
 #_0A95B9: db $F0 ; [set2] new line
 #_0A95BA: db $2E, $4E, $A9, $CF, $71, $62, $7B, $3A ; これで⎵ナカマに
 #_0A95C2: db $CF, $39, $4F, $27 ; ⎵なろう
@@ -3044,7 +3044,7 @@ Message_0A95B1:
 ;===================================================================================================
 
 ; そんだけで いいから・・・
-Message_0A95C7:
+Message_02_00_41:
 #_0A95C7: db $33, $52, $A6, $2D, $A9, $CF, $26, $26 ; そんだけで⎵いい
 #_0A95CF: db $2A, $4B, $93, $93, $93 ; から・・・
 #_0A95D4: db $FF ; end of message
@@ -3052,34 +3052,34 @@ Message_0A95C7:
 ;===================================================================================================
 
 ; ついでに [￥GIVEME] だな
-Message_0A95D5:
+Message_02_00_42:
 #_0A95D5: db $36, $26, $A9, $3A, $CF ; ついでに⎵
-#_0A95DA: db $F6 ; ask for currency or item
+#_0A95DA: db $F6 ; [set2] ask for currency or item
 #_0A95DB: db $CF, $A6, $39 ; ⎵だな
 #_0A95DE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; [DEMONX]は さらに [￥GIVEME]
-Message_0A95DF:
+Message_02_00_43:
 #_0A95DF: db $ED ; [set2] write demon name indexed from $0526
 #_0A95E0: db $3E, $CF, $2F, $4B, $3A, $CF ; は⎵さらに⎵
-#_0A95E6: db $F6 ; ask for currency or item
+#_0A95E6: db $F6 ; [set2] ask for currency or item
 #_0A95E7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; そんなら [￥GIVEME] だな
-Message_0A95E8:
+Message_02_00_44:
 #_0A95E8: db $33, $52, $39, $4B, $CF ; そんなら⎵
-#_0A95ED: db $F6 ; ask for currency or item
+#_0A95ED: db $F6 ; [set2] ask for currency or item
 #_0A95EE: db $CF, $A6, $39 ; ⎵だな
 #_0A95F1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; では これで しつれい!
-Message_0A95F2:
+Message_02_00_45:
 #_0A95F2: db $A9, $3E, $CF, $2E, $4E, $A9, $CF, $30 ; では⎵これで⎵し
 #_0A95FA: db $36, $4E, $26, $94 ; つれい!
 #_0A95FE: db $FF ; end of message
@@ -3087,7 +3087,7 @@ Message_0A95F2:
 ;===================================================================================================
 
 ; いって いいんだな!
-Message_0A95FF:
+Message_02_00_46:
 #_0A95FF: db $26, $58, $37, $CF, $26, $26, $52, $A6 ; いって⎵いいんだ
 #_0A9607: db $39, $94 ; な!
 #_0A9609: db $FF ; end of message
@@ -3096,7 +3096,7 @@ Message_0A95FF:
 
 ; グオオオーン! [DEMONX]は くやしそうに
 ; ひとこえ ほえた
-Message_0A960A:
+Message_02_00_47:
 #_0A960A: db $B7, $61, $61, $61, $5A, $8A, $94, $CF ; グオオオーン!⎵
 #_0A9612: db $ED ; [set2] write demon name indexed from $0526
 #_0A9613: db $3E, $CF, $2C, $48, $30, $33, $27, $3A ; は⎵くやしそうに
@@ -3108,7 +3108,7 @@ Message_0A960A:
 
 ; >[CHASE]の がんこうは するどく
 ; [DEMONX]を とらえた!
-Message_0A9625:
+Message_02_00_48:
 #_0A9625: db $97 ; >
 #_0A9626: db $F8 ; [set2] write player name
 #_0A9627: db $3D, $CF, $9C, $52, $2E, $27, $3E, $CF ; の⎵がんこうは⎵
@@ -3121,7 +3121,7 @@ Message_0A9625:
 ;===================================================================================================
 
 ; >[DEMONX]は あばれだした!
-Message_0A963D:
+Message_02_00_49:
 #_0A963D: db $97 ; >
 #_0A963E: db $ED ; [set2] write demon name indexed from $0526
 #_0A963F: db $3E, $CF, $25, $AB, $4E, $A6, $30, $34 ; は⎵あばれだした
@@ -3131,21 +3131,21 @@ Message_0A963D:
 ;===================================================================================================
 
 ; いちぞくの
-Message_0A9649:
+Message_02_00_4A:
 #_0A9649: db $26, $35, $A5, $2C, $3D ; いちぞくの
 #_0A964E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おぼえてろ!
-Message_0A964F:
+Message_02_00_4B:
 #_0A964F: db $29, $AF, $28, $37, $4F, $94 ; おぼえてろ!
 #_0A9655: db $FF ; end of message
 
 ;===================================================================================================
 
 ; この わたしが ニンゲンを おそれるか
-Message_0A9656:
+Message_02_00_4C:
 #_0A9656: db $2E, $3D, $CF, $50, $34, $30, $9C, $CF ; この⎵わたしが⎵
 #_0A965E: db $72, $8A, $B8, $8A, $51, $CF, $29, $33 ; ニンゲンを⎵おそ
 #_0A9666: db $4E, $4D, $2A ; れるか
@@ -3155,7 +3155,7 @@ Message_0A9656:
 
 ; その どきょうに めんじて
 ; はなしを きいてやろう
-Message_0A966A:
+Message_02_00_4D:
 #_0A966A: db $33, $3D, $CF, $AA, $2B, $57, $27, $3A ; その⎵どきょうに
 #_0A9672: db $CF, $46, $52, $A2, $37 ; ⎵めんじて
 #_0A9677: db $F0 ; [set2] new line
@@ -3167,7 +3167,7 @@ Message_0A966A:
 
 ; はなしあいも わるくは ないな
 ; そうだろ?
-Message_0A9684:
+Message_02_00_4E:
 #_0A9684: db $3E, $39, $30, $25, $26, $47, $CF, $50 ; はなしあいも⎵わ
 #_0A968C: db $4D, $2C, $3E, $CF, $39, $26, $39 ; るくは⎵ないな
 #_0A9693: db $F0 ; [set2] new line
@@ -3177,7 +3177,7 @@ Message_0A9684:
 ;===================================================================================================
 
 ; これを やるから ほっといてくれ!
-Message_0A969A:
+Message_02_00_4F:
 #_0A969A: db $2E, $4E, $51, $CF, $48, $4D, $2A, $4B ; これを⎵やるから
 #_0A96A2: db $CF, $42, $58, $38, $26, $37, $2C, $4E ; ⎵ほっといてくれ
 #_0A96AA: db $94 ; !
@@ -3186,7 +3186,7 @@ Message_0A969A:
 ;===================================================================================================
 
 ; はっはっはっはっはっ!
-Message_0A96AC:
+Message_02_00_50:
 #_0A96AC: db $3E, $58, $3E, $58, $3E, $58, $3E, $58 ; はっはっはっはっ
 #_0A96B4: db $3E, $58, $94 ; はっ!
 #_0A96B7: db $FF ; end of message
@@ -3194,7 +3194,7 @@ Message_0A96AC:
 ;===================================================================================================
 
 ; グフフフフフ・・・・
-Message_0A96B8:
+Message_02_00_51:
 #_0A96B8: db $B7, $78, $78, $78, $78, $78, $93, $93 ; グフフフフフ・・
 #_0A96C0: db $93, $93 ; ・・
 #_0A96C2: db $FF ; end of message
@@ -3202,7 +3202,7 @@ Message_0A96B8:
 ;===================================================================================================
 
 ; はなしを きこうぞ
-Message_0A96C3:
+Message_02_00_52:
 #_0A96C3: db $3E, $39, $30, $51, $CF, $2B, $2E, $27 ; はなしを⎵きこう
 #_0A96CB: db $A5 ; ぞ
 #_0A96CC: db $FF ; end of message
@@ -3210,7 +3210,7 @@ Message_0A96C3:
 ;===================================================================================================
 
 ; やめんか! あたまが おかしくなりそう
-Message_0A96CD:
+Message_02_00_53:
 #_0A96CD: db $48, $46, $52, $2A, $94, $CF, $25, $34 ; やめんか!⎵あた
 #_0A96D5: db $43, $9C, $CF, $29, $2A, $30, $2C, $39 ; まが⎵おかしくな
 #_0A96DD: db $4C, $33, $27 ; りそう
@@ -3219,7 +3219,7 @@ Message_0A96CD:
 ;===================================================================================================
 
 ; きも すわってるな・・・こっち こいや
-Message_0A96E1:
+Message_02_00_54:
 #_0A96E1: db $2B, $47, $CF, $31, $50, $58, $37, $4D ; きも⎵すわってる
 #_0A96E9: db $39, $93, $93, $93, $2E, $58, $35, $CF ; な・・・こっち⎵
 #_0A96F1: db $2E, $26, $48 ; こいや
@@ -3228,7 +3228,7 @@ Message_0A96E1:
 ;===================================================================================================
 
 ; はなしが あるなら こちらに くるのだ!
-Message_0A96F5:
+Message_02_00_55:
 #_0A96F5: db $3E, $39, $30, $9C, $CF, $25, $4D, $39 ; はなしが⎵あるな
 #_0A96FD: db $4B, $CF, $2E, $35, $4B, $3A, $CF, $2C ; ら⎵こちらに⎵く
 #_0A9705: db $4D, $3D, $A6, $94 ; るのだ!
@@ -3237,7 +3237,7 @@ Message_0A96F5:
 ;===================================================================================================
 
 ; おくびょうものに ようは ないわ!
-Message_0A970A:
+Message_02_00_56:
 #_0A970A: db $29, $2C, $AC, $57, $27, $47, $3D, $3A ; おくびょうものに
 #_0A9712: db $CF, $4A, $27, $3E, $CF, $39, $26, $50 ; ⎵ようは⎵ないわ
 #_0A971A: db $94 ; !
@@ -3246,21 +3246,21 @@ Message_0A970A:
 ;===================================================================================================
 
 ; おじけづいたな!
-Message_0A971C:
+Message_02_00_57:
 #_0A971C: db $29, $A2, $2D, $A8, $26, $34, $39, $94 ; おじけづいたな!
 #_0A9724: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ワシャ かえるよ
-Message_0A9725:
+Message_02_00_58:
 #_0A9725: db $88, $68, $8F, $CF, $2A, $28, $4D, $4A ; ワシャ⎵かえるよ
 #_0A972D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なにが めあてだ?
-Message_0A972E:
+Message_02_00_59:
 #_0A972E: db $39, $3A, $9C, $CF, $46, $25, $37, $A6 ; なにが⎵めあてだ
 #_0A9736: db $95 ; ?
 #_0A9737: db $FF ; end of message
@@ -3269,7 +3269,7 @@ Message_0A972E:
 
 ; コレを やる
 ; いちから でなおせ おろかものが
-Message_0A9738:
+Message_02_00_5A:
 #_0A9738: db $66, $86, $51, $CF, $48, $4D ; コレを⎵やる
 #_0A973E: db $F0 ; [set2] new line
 #_0A973F: db $26, $35, $2A, $4B, $CF, $A9, $39, $29 ; いちから⎵でなお
@@ -3280,7 +3280,7 @@ Message_0A9738:
 
 ; くだらんものと はなす ひまは ない
 ; さらば・・・
-Message_0A9750:
+Message_02_00_5B:
 #_0A9750: db $2C, $A6, $4B, $52, $47, $3D, $38, $CF ; くだらんものと⎵
 #_0A9758: db $3E, $39, $31, $CF, $3F, $43, $3E, $CF ; はなす⎵ひまは⎵
 #_0A9760: db $39, $26 ; ない
@@ -3292,7 +3292,7 @@ Message_0A9750:
 
 ; われは こうきなる [CLASSX]の
 ; いちぞくの もの
-Message_0A976A:
+Message_02_00_5C:
 #_0A976A: db $50, $4E, $3E, $CF, $2E, $27, $2B, $39 ; われは⎵こうきな
 #_0A9772: db $4D, $CF ; る⎵
 #_0A9774: db $EE ; [set2] write class name indexed from $0526
@@ -3305,20 +3305,20 @@ Message_0A976A:
 
 ; ワシは [CLASSX] [DEMONX]だ
 ; «ようを いってみろ»
-Message_0A9780:
+Message_02_00_5D:
 #_0A9780: db $88, $68, $3E, $CF ; ワシは⎵
 #_0A9784: db $EE ; [set2] write class name indexed from $0526
 #_0A9785: db $CF ; ⎵
 #_0A9786: db $ED ; [set2] write demon name indexed from $0526
 #_0A9787: db $A6 ; だ
 #_0A9788: db $F0 ; [set2] new line
-#_0A9789: db $EB, $06 ; prewritten text 06
+#_0A9789: db $EB, $06 ; [set2] prewritten text 06
 #_0A978B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; は! な・なんの ごようで しょうか?
-Message_0A978C:
+Message_02_00_5E:
 #_0A978C: db $3E, $94, $CF, $39, $93, $39, $52, $3D ; は!⎵な・なんの
 #_0A9794: db $CF, $A0, $4A, $27, $A9, $CF, $30, $57 ; ⎵ごようで⎵しょ
 #_0A979C: db $27, $2A, $95 ; うか?
@@ -3327,7 +3327,7 @@ Message_0A978C:
 ;===================================================================================================
 
 ; ワシに な・に・か・・・?
-Message_0A97A0:
+Message_02_00_5F:
 #_0A97A0: db $88, $68, $3A, $CF, $39, $93, $3A, $93 ; ワシに⎵な・に・
 #_0A97A8: db $2A, $93, $93, $93, $95 ; か・・・?
 #_0A97AD: db $FF ; end of message
@@ -3335,7 +3335,7 @@ Message_0A97A0:
 ;===================================================================================================
 
 ; なに やってんだ?
-Message_0A97AE:
+Message_02_00_60:
 #_0A97AE: db $39, $3A, $CF, $48, $58, $37, $52, $A6 ; なに⎵やってんだ
 #_0A97B6: db $95 ; ?
 #_0A97B7: db $FF ; end of message
@@ -3343,15 +3343,15 @@ Message_0A97AE:
 ;===================================================================================================
 
 ; はーはははは!
-Message_0A97B8:
+Message_02_00_61:
 #_0A97B8: db $3E, $5A, $3E, $3E, $3E, $3E, $94 ; はーはははは!
 #_0A97BF: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ε» みんな こわしてやる!
-Message_0A97C0:
-#_0A97C0: db $EB, $2A ; prewritten text 2A
+Message_02_00_62:
+#_0A97C0: db $EB, $2A ; [set2] prewritten text 2A
 #_0A97C2: db $CF, $44, $52, $39, $CF, $2E, $50, $30 ; ⎵みんな⎵こわし
 #_0A97CA: db $37, $48, $4D, $94 ; てやる!
 #_0A97CE: db $FF ; end of message
@@ -3360,16 +3360,16 @@ Message_0A97C0:
 
 ; できるな・・・・
 ; «ようを いってみろ»
-Message_0A97CF:
+Message_02_00_63:
 #_0A97CF: db $A9, $2B, $4D, $39, $93, $93, $93, $93 ; できるな・・・・
 #_0A97D7: db $F0 ; [set2] new line
-#_0A97D8: db $EB, $06 ; prewritten text 06
+#_0A97D8: db $EB, $06 ; [set2] prewritten text 06
 #_0A97DA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ようが あるなら なを なのれ
-Message_0A97DB:
+Message_02_00_64:
 #_0A97DB: db $4A, $27, $9C, $CF, $25, $4D, $39, $4B ; ようが⎵あるなら
 #_0A97E3: db $CF, $39, $51, $CF, $39, $3D, $4E ; ⎵なを⎵なのれ
 #_0A97EA: db $FF ; end of message
@@ -3377,14 +3377,14 @@ Message_0A97DB:
 ;===================================================================================================
 
 ; キサマが・・・・
-Message_0A97EB:
+Message_02_00_65:
 #_0A97EB: db $63, $67, $7B, $9C, $93, $93, $93, $93 ; キサマが・・・・
 #_0A97F3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なにい? オマエが・・・
-Message_0A97F4:
+Message_02_00_66:
 #_0A97F4: db $39, $3A, $26, $95, $CF, $61, $7B, $60 ; なにい?⎵オマエ
 #_0A97FC: db $9C, $93, $93, $93 ; が・・・
 #_0A9800: db $FF ; end of message
@@ -3392,7 +3392,7 @@ Message_0A97F4:
 ;===================================================================================================
 
 ; おもしろい 
-Message_0A9801:
+Message_02_00_67:
 #_0A9801: db $29, $47, $30, $4F, $26, $CF ; おもしろい⎵
 #_0A9807: db $FF ; end of message
 
@@ -3400,9 +3400,9 @@ Message_0A9801:
 
 ; ワシに [￥GIVEME] くれや
 ; そんなら ナカマに なる
-Message_0A9808:
+Message_02_00_68:
 #_0A9808: db $88, $68, $3A, $CF ; ワシに⎵
-#_0A980C: db $F6 ; ask for currency or item
+#_0A980C: db $F6 ; [set2] ask for currency or item
 #_0A980D: db $CF, $2C, $4E, $48 ; ⎵くれや
 #_0A9811: db $F0 ; [set2] new line
 #_0A9812: db $33, $52, $39, $4B, $CF, $71, $62, $7B ; そんなら⎵ナカマ
@@ -3413,8 +3413,8 @@ Message_0A9808:
 
 ; «[￥GIVEME] いただきたい»
 ; だせるかな?
-Message_0A981F:
-#_0A981F: db $EB, $A3 ; prewritten text A3
+Message_02_00_69:
+#_0A981F: db $EB, $A3 ; [set2] prewritten text A3
 #_0A9821: db $F0 ; [set2] new line
 #_0A9822: db $A6, $32, $4D, $2A, $39, $95 ; だせるかな?
 #_0A9828: db $FF ; end of message
@@ -3423,9 +3423,9 @@ Message_0A981F:
 
 ; さらに «[￥GIVEME] いただきたい»
 ; これで きめよう
-Message_0A9829:
+Message_02_00_6A:
 #_0A9829: db $2F, $4B, $3A, $CF ; さらに⎵
-#_0A982D: db $EB, $A3 ; prewritten text A3
+#_0A982D: db $EB, $A3 ; [set2] prewritten text A3
 #_0A982F: db $F0 ; [set2] new line
 #_0A9830: db $2E, $4E, $A9, $CF, $2B, $46, $4A, $27 ; これで⎵きめよう
 #_0A9838: db $FF ; end of message
@@ -3434,29 +3434,29 @@ Message_0A9829:
 
 ; «ついでに [￥GIVEME] だな»
 ; «いやとは いわんな?»
-Message_0A9839:
-#_0A9839: db $EB, $42 ; prewritten text 42
+Message_02_00_6B:
+#_0A9839: db $EB, $42 ; [set2] prewritten text 42
 #_0A983B: db $F0 ; [set2] new line
-#_0A983C: db $EB, $34 ; prewritten text 34
+#_0A983C: db $EB, $34 ; [set2] prewritten text 34
 #_0A983E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなら [￥GIVEME] だな»
 ; «いやとは いわんな?»
-Message_0A983F:
-#_0A983F: db $EB, $44 ; prewritten text 44
+Message_02_00_6C:
+#_0A983F: db $EB, $44 ; [set2] prewritten text 44
 #_0A9841: db $F0 ; [set2] new line
-#_0A9842: db $EB, $34 ; prewritten text 34
+#_0A9842: db $EB, $34 ; [set2] prewritten text 34
 #_0A9844: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ならば «[￥GIVEME] いただきたい»
 ; これで きめよう
-Message_0A9845:
+Message_02_00_6D:
 #_0A9845: db $39, $4B, $AB, $CF ; ならば⎵
-#_0A9849: db $EB, $A3 ; prewritten text A3
+#_0A9849: db $EB, $A3 ; [set2] prewritten text A3
 #_0A984B: db $F0 ; [set2] new line
 #_0A984C: db $2E, $4E, $A9, $CF, $2B, $46, $4A, $27 ; これで⎵きめよう
 #_0A9854: db $FF ; end of message
@@ -3464,7 +3464,7 @@ Message_0A9845:
 ;===================================================================================================
 
 ; むむむむ・・・ワシは こんな やすく ない!
-Message_0A9855:
+Message_02_00_6E:
 #_0A9855: db $45, $45, $45, $45, $93, $93, $93, $88 ; むむむむ・・・ワ
 #_0A985D: db $68, $3E, $CF, $2E, $52, $39, $CF, $48 ; シは⎵こんな⎵や
 #_0A9865: db $31, $2C, $CF, $39, $26, $94 ; すく⎵ない!
@@ -3473,7 +3473,7 @@ Message_0A9855:
 ;===================================================================================================
 
 ; まだ まんぞくとは いえぬ・・・
-Message_0A986C:
+Message_02_00_6F:
 #_0A986C: db $43, $A6, $CF, $43, $52, $A5, $2C, $38 ; まだ⎵まんぞくと
 #_0A9874: db $3E, $CF, $26, $28, $3B, $93, $93, $93 ; は⎵いえぬ・・・
 #_0A987C: db $FF ; end of message
@@ -3481,7 +3481,7 @@ Message_0A986C:
 ;===================================================================================================
 
 ; キサマの いのちを いただこう!
-Message_0A987D:
+Message_02_00_70:
 #_0A987D: db $63, $67, $7B, $3D, $CF, $26, $3D, $35 ; キサマの⎵いのち
 #_0A9885: db $51, $CF, $26, $34, $A6, $2E, $27, $94 ; を⎵いただこう!
 #_0A988D: db $FF ; end of message
@@ -3489,7 +3489,7 @@ Message_0A987D:
 ;===================================================================================================
 
 ; オマエの いのちも よこせ!
-Message_0A988E:
+Message_02_00_71:
 #_0A988E: db $61, $7B, $60, $3D, $CF, $26, $3D, $35 ; オマエの⎵いのち
 #_0A9896: db $47, $CF, $4A, $2E, $32, $94 ; も⎵よこせ!
 #_0A989C: db $FF ; end of message
@@ -3497,14 +3497,14 @@ Message_0A988E:
 ;===================================================================================================
 
 ; なにか たりん!
-Message_0A989D:
+Message_02_00_72:
 #_0A989D: db $39, $3A, $2A, $CF, $34, $4C, $52, $94 ; なにか⎵たりん!
 #_0A98A5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ほかに ほしいものか・・・
-Message_0A98A6:
+Message_02_00_73:
 #_0A98A6: db $42, $2A, $3A, $CF, $42, $30, $26, $47 ; ほかに⎵ほしいも
 #_0A98AE: db $3D, $2A, $93, $93, $93 ; のか・・・
 #_0A98B3: db $FF ; end of message
@@ -3512,7 +3512,7 @@ Message_0A98A6:
 ;===================================================================================================
 
 ; ならば キサマの いのちを いただきたい
-Message_0A98B4:
+Message_02_00_74:
 #_0A98B4: db $39, $4B, $AB, $CF, $63, $67, $7B, $3D ; ならば⎵キサマの
 #_0A98BC: db $CF, $26, $3D, $35, $51, $CF, $26, $34 ; ⎵いのちを⎵いた
 #_0A98C4: db $A6, $2B, $34, $26 ; だきたい
@@ -3521,7 +3521,7 @@ Message_0A98B4:
 ;===================================================================================================
 
 ; かねだってえ!? かねだってえ!?
-Message_0A98C9:
+Message_02_00_75:
 #_0A98C9: db $2A, $3C, $A6, $58, $37, $28, $94, $95 ; かねだってえ!?
 #_0A98D1: db $CF, $2A, $3C, $A6, $58, $37, $28, $94 ; ⎵かねだってえ!
 #_0A98D9: db $95 ; ?
@@ -3530,7 +3530,7 @@ Message_0A98C9:
 ;===================================================================================================
 
 ; では うけとるが いい!
-Message_0A98DB:
+Message_02_00_76:
 #_0A98DB: db $A9, $3E, $CF, $27, $2D, $38, $4D, $9C ; では⎵うけとるが
 #_0A98E3: db $CF, $26, $26, $94 ; ⎵いい!
 #_0A98E7: db $FF ; end of message
@@ -3538,7 +3538,7 @@ Message_0A98DB:
 ;===================================================================================================
 
 ; こいつを もって とっとと きえな!
-Message_0A98E8:
+Message_02_00_77:
 #_0A98E8: db $2E, $26, $36, $51, $CF, $47, $58, $37 ; こいつを⎵もって
 #_0A98F0: db $CF, $38, $58, $38, $38, $CF, $2B, $28 ; ⎵とっとと⎵きえ
 #_0A98F8: db $39, $94 ; な!
@@ -3547,7 +3547,7 @@ Message_0A98E8:
 ;===================================================================================================
 
 ; そうか わかった
-Message_0A98FB:
+Message_02_00_78:
 #_0A98FB: db $33, $27, $2A, $CF, $50, $2A, $58, $34 ; そうか⎵わかった
 #_0A9903: db $FF ; end of message
 
@@ -3557,7 +3557,7 @@ Message_0A98FB:
 ; この[CLASSX] [DEMONX]
 ; きょうより あなたの しもべ
 ; なんなりと おもうしつけ ください
-Message_0A9904:
+Message_02_00_79:
 #_0A9904: db $2E, $4E, $A9, $CF, $43, $52, $A5, $2C ; これで⎵まんぞく
 #_0A990C: db $A6 ; だ
 #_0A990D: db $F3 ; [set2] wait for key and new line
@@ -3578,7 +3578,7 @@ Message_0A9904:
 ;===================================================================================================
 
 ; これで けいやく せいりつだ!
-Message_0A9936:
+Message_02_00_7A:
 #_0A9936: db $2E, $4E, $A9, $CF, $2D, $26, $48, $2C ; これで⎵けいやく
 #_0A993E: db $CF, $32, $26, $4C, $36, $A6, $94 ; ⎵せいりつだ!
 #_0A9945: db $FF ; end of message
@@ -3586,7 +3586,7 @@ Message_0A9936:
 ;===================================================================================================
 
 ; まだ なにも はなしていないぞ
-Message_0A9946:
+Message_02_00_7B:
 #_0A9946: db $43, $A6, $CF, $39, $3A, $47, $CF, $3E ; まだ⎵なにも⎵は
 #_0A994E: db $39, $30, $37, $26, $39, $26, $A5 ; なしていないぞ
 #_0A9955: db $FF ; end of message
@@ -3595,20 +3595,20 @@ Message_0A9946:
 
 ; ワシに [￥GIVEME] くれや
 ; «そんだけで いいから・・・»
-Message_0A9956:
+Message_02_00_7C:
 #_0A9956: db $88, $68, $3A, $CF ; ワシに⎵
-#_0A995A: db $F6 ; ask for currency or item
+#_0A995A: db $F6 ; [set2] ask for currency or item
 #_0A995B: db $CF, $2C, $4E, $48 ; ⎵くれや
 #_0A995F: db $F0 ; [set2] new line
-#_0A9960: db $EB, $41 ; prewritten text 41
+#_0A9960: db $EB, $41 ; [set2] prewritten text 41
 #_0A9962: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «[￥GIVEME] いただきたい»
 ; どうだろうか?
-Message_0A9963:
-#_0A9963: db $EB, $A3 ; prewritten text A3
+Message_02_00_7D:
+#_0A9963: db $EB, $A3 ; [set2] prewritten text A3
 #_0A9965: db $F0 ; [set2] new line
 #_0A9966: db $AA, $27, $A6, $4F, $27, $2A, $95 ; どうだろうか?
 #_0A996D: db $FF ; end of message
@@ -3617,8 +3617,8 @@ Message_0A9963:
 
 ; «さらに [￥GIVEME] を いただけんかな»
 ; これで きめよう
-Message_0A996E:
-#_0A996E: db $EB, $AA ; prewritten text AA
+Message_02_00_7E:
+#_0A996E: db $EB, $AA ; [set2] prewritten text AA
 #_0A9970: db $F0 ; [set2] new line
 #_0A9971: db $2E, $4E, $A9, $CF, $2B, $46, $4A, $27 ; これで⎵きめよう
 #_0A9979: db $FF ; end of message
@@ -3627,25 +3627,25 @@ Message_0A996E:
 
 ; «ついでに [￥GIVEME] だな»
 ; «そんだけで いいから・・・»
-Message_0A997A:
-#_0A997A: db $EB, $42 ; prewritten text 42
+Message_02_00_7F:
+#_0A997A: db $EB, $42 ; [set2] prewritten text 42
 #_0A997C: db $F0 ; [set2] new line
-#_0A997D: db $EB, $41 ; prewritten text 41
+#_0A997D: db $EB, $41 ; [set2] prewritten text 41
 #_0A997F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ならば [￥GIVEME] で どうか?
-Message_0A9980:
+Message_02_00_80:
 #_0A9980: db $39, $4B, $AB, $CF ; ならば⎵
-#_0A9984: db $F6 ; ask for currency or item
+#_0A9984: db $F6 ; [set2] ask for currency or item
 #_0A9985: db $CF, $A9, $CF, $AA, $27, $2A, $95 ; ⎵で⎵どうか?
 #_0A998C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[DEMONX]は けいかい している
-Message_0A998D:
+Message_02_00_81:
 #_0A998D: db $97 ; >
 #_0A998E: db $ED ; [set2] write demon name indexed from $0526
 #_0A998F: db $3E, $CF, $2D, $26, $2A, $26, $CF, $30 ; は⎵けいかい⎵し
@@ -3655,21 +3655,21 @@ Message_0A998D:
 ;===================================================================================================
 
 ; ほっほっほっほっ
-Message_0A999B:
+Message_02_00_82:
 #_0A999B: db $42, $58, $42, $58, $42, $58, $42, $58 ; ほっほっほっほっ
 #_0A99A3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きゃーはははは!
-Message_0A99A4:
+Message_02_00_83:
 #_0A99A4: db $2B, $55, $5A, $3E, $3E, $3E, $3E, $94 ; きゃーはははは!
 #_0A99AC: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はなし きいたげる
-Message_0A99AD:
+Message_02_00_84:
 #_0A99AD: db $3E, $39, $30, $CF, $2B, $26, $34, $9F ; はなし⎵きいたげ
 #_0A99B5: db $4D ; る
 #_0A99B6: db $FF ; end of message
@@ -3678,7 +3678,7 @@ Message_0A99AD:
 
 ; この [CLASSX] [DEMONX]を
 ; ほんきで おこらせた ようだな・・・
-Message_0A99B7:
+Message_02_00_85:
 #_0A99B7: db $2E, $3D, $CF ; この⎵
 #_0A99BA: db $EE ; [set2] write class name indexed from $0526
 #_0A99BB: db $CF ; ⎵
@@ -3693,14 +3693,14 @@ Message_0A99B7:
 ;===================================================================================================
 
 ; うふふふふ・・・
-Message_0A99D2:
+Message_02_00_86:
 #_0A99D2: db $27, $40, $40, $40, $40, $93, $93, $93 ; うふふふふ・・・
 #_0A99DA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ねえ あたしのこと すき?
-Message_0A99DB:
+Message_02_00_87:
 #_0A99DB: db $3C, $28, $CF, $25, $34, $30, $3D, $2E ; ねえ⎵あたしのこ
 #_0A99E3: db $38, $CF, $31, $2B, $95 ; と⎵すき?
 #_0A99E8: db $FF ; end of message
@@ -3708,7 +3708,7 @@ Message_0A99DB:
 ;===================================================================================================
 
 ; もういい やめろ!
-Message_0A99E9:
+Message_02_00_88:
 #_0A99E9: db $47, $27, $26, $26, $CF, $48, $46, $4F ; もういい⎵やめろ
 #_0A99F1: db $94 ; !
 #_0A99F2: db $FF ; end of message
@@ -3716,14 +3716,14 @@ Message_0A99E9:
 ;===================================================================================================
 
 ;  デビルバスター
-Message_0A99F3:
+Message_02_00_89:
 #_0A99F3: db $CF, $C2, $C5, $85, $C4, $69, $6C, $5A ; ⎵デビルバスター
 #_0A99FB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なんでも おのぞみ どおり するわ
-Message_0A99FC:
+Message_02_00_8A:
 #_0A99FC: db $39, $52, $A9, $47, $CF, $29, $3D, $A5 ; なんでも⎵おのぞ
 #_0A9A04: db $44, $CF, $AA, $29, $4C, $CF, $31, $4D ; み⎵どおり⎵する
 #_0A9A0C: db $50 ; わ
@@ -3732,7 +3732,7 @@ Message_0A99FC:
 ;===================================================================================================
 
 ; あなたの ような ひと はじめてよ!
-Message_0A9A0E:
+Message_02_00_8B:
 #_0A9A0E: db $25, $39, $34, $3D, $CF, $4A, $27, $39 ; あなたの⎵ような
 #_0A9A16: db $CF, $3F, $38, $CF, $3E, $A2, $46, $37 ; ⎵ひと⎵はじめて
 #_0A9A1E: db $4A, $94 ; よ!
@@ -3742,7 +3742,7 @@ Message_0A9A0E:
 
 ; おんなは プレゼントに よわいのよ
 ; わかる?
-Message_0A9A21:
+Message_02_00_8C:
 #_0A9A21: db $29, $52, $39, $3E, $CF, $CB, $86, $BD ; おんなは⎵プレゼ
 #_0A9A29: db $8A, $70, $3A, $CF, $4A, $50, $26, $3D ; ントに⎵よわいの
 #_0A9A31: db $4A ; よ
@@ -3753,7 +3753,7 @@ Message_0A9A21:
 ;===================================================================================================
 
 ; きたれ わがいちぞくの ちにうえたる ものよ!
-Message_0A9A38:
+Message_02_00_8D:
 #_0A9A38: db $2B, $34, $4E, $CF, $50, $9C, $26, $35 ; きたれ⎵わがいち
 #_0A9A40: db $A5, $2C, $3D, $CF, $35, $3A, $27, $28 ; ぞくの⎵ちにうえ
 #_0A9A48: db $34, $4D, $CF, $47, $3D, $4A, $94 ; たる⎵ものよ!
@@ -3763,18 +3763,18 @@ Message_0A9A38:
 
 ; うそでも うれしい!
 ; «はなし きいたげる»わ!
-Message_0A9A50:
+Message_02_00_8E:
 #_0A9A50: db $27, $33, $A9, $47, $CF, $27, $4E, $30 ; うそでも⎵うれし
 #_0A9A58: db $26, $94 ; い!
 #_0A9A5A: db $F0 ; [set2] new line
-#_0A9A5B: db $EB, $84 ; prewritten text 84
+#_0A9A5B: db $EB, $84 ; [set2] prewritten text 84
 #_0A9A5D: db $50, $94 ; わ!
 #_0A9A5F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ひとのこの ぶんざいで みのほど しらずよ
-Message_0A9A60:
+Message_02_00_8F:
 #_0A9A60: db $3F, $38, $3D, $2E, $3D, $CF, $AD, $52 ; ひとのこの⎵ぶん
 #_0A9A68: db $A1, $26, $A9, $CF, $44, $3D, $42, $AA ; ざいで⎵みのほど
 #_0A9A70: db $CF, $30, $4B, $A3, $4A ; ⎵しらずよ
@@ -3783,7 +3783,7 @@ Message_0A9A60:
 ;===================================================================================================
 
 ; この くちさきだけの けがらわしい げろうめ
-Message_0A9A76:
+Message_02_00_90:
 #_0A9A76: db $2E, $3D, $CF, $2C, $35, $2F, $2B, $A6 ; この⎵くちさきだ
 #_0A9A7E: db $2D, $3D, $CF, $2D, $9C, $4B, $50, $30 ; けの⎵けがらわし
 #_0A9A86: db $26, $CF, $9F, $4F, $27, $46 ; い⎵げろうめ
@@ -3792,7 +3792,7 @@ Message_0A9A76:
 ;===================================================================================================
 
 ; こころにも ないことを!
-Message_0A9A8D:
+Message_02_00_91:
 #_0A9A8D: db $2E, $2E, $4F, $3A, $47, $CF, $39, $26 ; こころにも⎵ない
 #_0A9A95: db $2E, $38, $51, $94 ; ことを!
 #_0A9A99: db $FF ; end of message
@@ -3800,7 +3800,7 @@ Message_0A9A8D:
 ;===================================================================================================
 
 ; わらわに なにか ようか?
-Message_0A9A9A:
+Message_02_00_92:
 #_0A9A9A: db $50, $4B, $50, $3A, $CF, $39, $3A, $2A ; わらわに⎵なにか
 #_0A9AA2: db $CF, $4A, $27, $2A, $95 ; ⎵ようか?
 #_0A9AA7: db $FF ; end of message
@@ -3808,7 +3808,7 @@ Message_0A9A9A:
 ;===================================================================================================
 
 ; なにが おのぞみ?
-Message_0A9AA8:
+Message_02_00_93:
 #_0A9AA8: db $39, $3A, $9C, $CF, $29, $3D, $A5, $44 ; なにが⎵おのぞみ
 #_0A9AB0: db $95 ; ?
 #_0A9AB1: db $FF ; end of message
@@ -3816,14 +3816,14 @@ Message_0A9AA8:
 ;===================================================================================================
 
 ; しらぬわ
-Message_0A9AB2:
+Message_02_00_94:
 #_0A9AB2: db $30, $4B, $3B, $50 ; しらぬわ
 #_0A9AB6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; むなくそわるい!
-Message_0A9AB7:
+Message_02_00_95:
 #_0A9AB7: db $45, $39, $2C, $33, $50, $4D, $26, $94 ; むなくそわるい!
 #_0A9ABF: db $FF ; end of message
 
@@ -3831,7 +3831,7 @@ Message_0A9AB7:
 
 ; ねえ めを とじて!
 ; いいこと したげるわ
-Message_0A9AC0:
+Message_02_00_96:
 #_0A9AC0: db $3C, $28, $CF, $46, $51, $CF, $38, $A2 ; ねえ⎵めを⎵とじ
 #_0A9AC8: db $37, $94 ; て!
 #_0A9ACA: db $F0 ; [set2] new line
@@ -3842,15 +3842,15 @@ Message_0A9AC0:
 ;===================================================================================================
 
 ; [￥GIVEME] ちょうだい
-Message_0A9AD6:
-#_0A9AD6: db $F6 ; ask for currency or item
+Message_02_00_97:
+#_0A9AD6: db $F6 ; [set2] ask for currency or item
 #_0A9AD7: db $CF, $35, $57, $27, $A6, $26 ; ⎵ちょうだい
 #_0A9ADD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; こうかい するでないぞ!
-Message_0A9ADE:
+Message_02_00_98:
 #_0A9ADE: db $2E, $27, $2A, $26, $CF, $31, $4D, $A9 ; こうかい⎵するで
 #_0A9AE6: db $39, $26, $A5, $94 ; ないぞ!
 #_0A9AEA: db $FF ; end of message
@@ -3860,7 +3860,7 @@ Message_0A9ADE:
 ; おまえの いのちを おくれ・・・
 ; しこうの かいらくを あたえようぞ!
 ; «ほっほっほっほっ»
-Message_0A9AEB:
+Message_02_00_99:
 #_0A9AEB: db $29, $43, $28, $3D, $CF, $26, $3D, $35 ; おまえの⎵いのち
 #_0A9AF3: db $51, $CF, $29, $2C, $4E, $93, $93, $93 ; を⎵おくれ・・・
 #_0A9AFB: db $F0 ; [set2] new line
@@ -3868,13 +3868,13 @@ Message_0A9AEB:
 #_0A9B04: db $2C, $51, $CF, $25, $34, $28, $4A, $27 ; くを⎵あたえよう
 #_0A9B0C: db $A5, $94 ; ぞ!
 #_0A9B0E: db $F0 ; [set2] new line
-#_0A9B0F: db $EB, $82 ; prewritten text 82
+#_0A9B0F: db $EB, $82 ; [set2] prewritten text 82
 #_0A9B11: db $FF ; end of message
 
 ;===================================================================================================
 
 ; だめだめ! ぜんぜん だめよ!
-Message_0A9B12:
+Message_02_00_9A:
 #_0A9B12: db $A6, $46, $A6, $46, $94, $CF, $A4, $52 ; だめだめ!⎵ぜん
 #_0A9B1A: db $A4, $52, $CF, $A6, $46, $4A, $94 ; ぜん⎵だめよ!
 #_0A9B21: db $FF ; end of message
@@ -3882,7 +3882,7 @@ Message_0A9B12:
 ;===================================================================================================
 
 ; あたしは あなたのすべてが ほしいの!
-Message_0A9B22:
+Message_02_00_9B:
 #_0A9B22: db $25, $34, $30, $3E, $CF, $25, $39, $34 ; あたしは⎵あなた
 #_0A9B2A: db $3D, $31, $AE, $37, $9C, $CF, $42, $30 ; のすべてが⎵ほし
 #_0A9B32: db $26, $3D, $94 ; いの!
@@ -3891,7 +3891,7 @@ Message_0A9B22:
 ;===================================================================================================
 
 ; そうか では ちまつりに してやろう!
-Message_0A9B36:
+Message_02_00_9C:
 #_0A9B36: db $33, $27, $2A, $CF, $A9, $3E, $CF, $35 ; そうか⎵では⎵ち
 #_0A9B3E: db $43, $36, $4C, $3A, $CF, $30, $37, $48 ; まつりに⎵してや
 #_0A9B46: db $4F, $27, $94 ; ろう!
@@ -3900,7 +3900,7 @@ Message_0A9B36:
 ;===================================================================================================
 
 ; えー? じゃあね・・・
-Message_0A9B4A:
+Message_02_00_9D:
 #_0A9B4A: db $28, $5A, $95, $CF, $A2, $55, $25, $3C ; えー?⎵じゃあね
 #_0A9B52: db $93, $93, $93 ; ・・・
 #_0A9B55: db $FF ; end of message
@@ -3909,23 +3909,23 @@ Message_0A9B4A:
 
 ; この げろうが!
 ; «やっぱり かねが ねらいか!»
-Message_0A9B56:
+Message_02_00_9E:
 #_0A9B56: db $2E, $3D, $CF, $9F, $4F, $27, $9C, $94 ; この⎵げろうが!
 #_0A9B5E: db $F0 ; [set2] new line
-#_0A9B5F: db $EB, $39 ; prewritten text 39
+#_0A9B5F: db $EB, $39 ; [set2] prewritten text 39
 #_0A9B61: db $FF ; end of message
 
 ;===================================================================================================
 
 ; つまんない!
-Message_0A9B62:
+Message_02_00_9F:
 #_0A9B62: db $36, $43, $52, $39, $26, $94 ; つまんない!
 #_0A9B68: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はい わたしたわよ!
-Message_0A9B69:
+Message_02_00_A0:
 #_0A9B69: db $3E, $26, $CF, $50, $34, $30, $34, $50 ; はい⎵わたしたわ
 #_0A9B71: db $4A, $94 ; よ!
 #_0A9B73: db $FF ; end of message
@@ -3933,14 +3933,14 @@ Message_0A9B69:
 ;===================================================================================================
 
 ; しょうちした
-Message_0A9B74:
+Message_02_00_A1:
 #_0A9B74: db $30, $57, $27, $35, $30, $34 ; しょうちした
 #_0A9B7A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きょうより おんみは わらわの しゅじん・・・
-Message_0A9B7B:
+Message_02_00_A2:
 #_0A9B7B: db $2B, $57, $27, $4A, $4C, $CF, $29, $52 ; きょうより⎵おん
 #_0A9B83: db $44, $3E, $CF, $50, $4B, $50, $3D, $CF ; みは⎵わらわの⎵
 #_0A9B8B: db $30, $56, $A2, $52, $93, $93, $93 ; しゅじん・・・
@@ -3949,26 +3949,26 @@ Message_0A9B7B:
 ;===================================================================================================
 
 ; [￥GIVEME] いただきたい
-Message_0A9B93:
-#_0A9B93: db $F6 ; ask for currency or item
+Message_02_00_A3:
+#_0A9B93: db $F6 ; [set2] ask for currency or item
 #_0A9B94: db $CF, $26, $34, $A6, $2B, $34, $26 ; ⎵いただきたい
 #_0A9B9B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ならば [￥GIVEME] だ!
-Message_0A9B9C:
+Message_02_00_A4:
 #_0A9B9C: db $39, $4B, $AB, $CF ; ならば⎵
-#_0A9BA0: db $F6 ; ask for currency or item
+#_0A9BA0: db $F6 ; [set2] ask for currency or item
 #_0A9BA1: db $CF, $A6, $94 ; ⎵だ!
 #_0A9BA4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; この [￥GIVEME] は けがれている!
-Message_0A9BA5:
+Message_02_00_A5:
 #_0A9BA5: db $2E, $3D, $CF ; この⎵
-#_0A9BA8: db $F6 ; ask for currency or item
+#_0A9BA8: db $F6 ; [set2] ask for currency or item
 #_0A9BA9: db $CF, $3E, $CF, $2D, $9C, $4E, $37, $26 ; ⎵は⎵けがれてい
 #_0A9BB1: db $4D, $94 ; る!
 #_0A9BB3: db $FF ; end of message
@@ -3977,7 +3977,7 @@ Message_0A9BA5:
 
 ; かみに そむく はいしんしゃめ!
 ; こうかいさせて やろう!
-Message_0A9BB4:
+Message_02_00_A6:
 #_0A9BB4: db $2A, $44, $3A, $CF, $33, $45, $2C, $CF ; かみに⎵そむく⎵
 #_0A9BBC: db $3E, $26, $30, $52, $30, $55, $46, $94 ; はいしんしゃめ!
 #_0A9BC4: db $F0 ; [set2] new line
@@ -3988,31 +3988,31 @@ Message_0A9BB4:
 ;===================================================================================================
 
 ; きょひする
-Message_0A9BD2:
+Message_02_00_A7:
 #_0A9BD2: db $2B, $57, $3F, $31, $4D ; きょひする
 #_0A9BD7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おことわりだ!
-Message_0A9BD8:
+Message_02_00_A8:
 #_0A9BD8: db $29, $2E, $38, $50, $4C, $A6, $94 ; おことわりだ!
 #_0A9BDF: db $FF ; end of message
 
 ;===================================================================================================
 
 ; [￥GIVEME] よこしな
-Message_0A9BE0:
-#_0A9BE0: db $F6 ; ask for currency or item
+Message_02_00_A9:
+#_0A9BE0: db $F6 ; [set2] ask for currency or item
 #_0A9BE1: db $CF, $4A, $2E, $30, $39 ; ⎵よこしな
 #_0A9BE6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; さらに [￥GIVEME] を いただけんかな
-Message_0A9BE7:
+Message_02_00_AA:
 #_0A9BE7: db $2F, $4B, $3A, $CF ; さらに⎵
-#_0A9BEB: db $F6 ; ask for currency or item
+#_0A9BEB: db $F6 ; [set2] ask for currency or item
 #_0A9BEC: db $CF, $51, $CF, $26, $34, $A6, $2D, $52 ; ⎵を⎵いただけん
 #_0A9BF4: db $2A, $39 ; かな
 #_0A9BF6: db $FF ; end of message
@@ -4020,7 +4020,7 @@ Message_0A9BE7:
 ;===================================================================================================
 
 ; そうですか! では 
-Message_0A9BF7:
+Message_02_00_AB:
 #_0A9BF7: db $33, $27, $A9, $31, $2A, $94, $CF, $A9 ; そうですか!⎵で
 #_0A9BFF: db $3E, $CF ; は⎵
 #_0A9C01: db $FF ; end of message
@@ -4028,7 +4028,7 @@ Message_0A9BF7:
 ;===================================================================================================
 
 ; だすもん だして もらおうか・・・
-Message_0A9C02:
+Message_02_00_AC:
 #_0A9C02: db $A6, $31, $47, $52, $CF, $A6, $30, $37 ; だすもん⎵だして
 #_0A9C0A: db $CF, $47, $4B, $29, $27, $2A, $93, $93 ; ⎵もらおうか・・
 #_0A9C12: db $93 ; ・
@@ -4037,7 +4037,7 @@ Message_0A9C02:
 ;===================================================================================================
 
 ; なにものだ? なを なのれ!
-Message_0A9C14:
+Message_02_00_AD:
 #_0A9C14: db $39, $3A, $47, $3D, $A6, $95, $CF, $39 ; なにものだ?⎵な
 #_0A9C1C: db $51, $CF, $39, $3D, $4E, $94 ; を⎵なのれ!
 #_0A9C22: db $FF ; end of message
@@ -4045,7 +4045,7 @@ Message_0A9C14:
 ;===================================================================================================
 
 ; あやしい やつめ!
-Message_0A9C23:
+Message_02_00_AE:
 #_0A9C23: db $25, $48, $30, $26, $CF, $48, $36, $46 ; あやしい⎵やつめ
 #_0A9C2B: db $94 ; !
 #_0A9C2C: db $FF ; end of message
@@ -4053,7 +4053,7 @@ Message_0A9C23:
 ;===================================================================================================
 
 ; >[DEMONX]は くちぶえを ふいた
-Message_0A9C2D:
+Message_02_00_AF:
 #_0A9C2D: db $97 ; >
 #_0A9C2E: db $ED ; [set2] write demon name indexed from $0526
 #_0A9C2F: db $3E, $CF, $2C, $35, $AD, $28, $51, $CF ; は⎵くちぶえを⎵
@@ -4063,7 +4063,7 @@ Message_0A9C2D:
 ;===================================================================================================
 
 ; なにしに きた!?
-Message_0A9C3B:
+Message_02_00_B0:
 #_0A9C3B: db $39, $3A, $30, $3A, $CF, $2B, $34, $94 ; なにしに⎵きた!
 #_0A9C43: db $95 ; ?
 #_0A9C44: db $FF ; end of message
@@ -4071,21 +4071,21 @@ Message_0A9C3B:
 ;===================================================================================================
 
 ; くずめ・・・
-Message_0A9C45:
+Message_02_00_B1:
 #_0A9C45: db $2C, $A3, $46, $93, $93, $93 ; くずめ・・・
 #_0A9C4B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おろかもんが
-Message_0A9C4C:
+Message_02_00_B2:
 #_0A9C4C: db $29, $4F, $2A, $47, $52, $9C ; おろかもんが
 #_0A9C52: db $FF ; end of message
 
 ;===================================================================================================
 
 ; くわせものが
-Message_0A9C53:
+Message_02_00_B3:
 #_0A9C53: db $2C, $50, $32, $47, $3D, $9C ; くわせものが
 #_0A9C59: db $FF ; end of message
 
@@ -4093,7 +4093,7 @@ Message_0A9C53:
 
 ; >[CHASE]は [DEMONX]が
 ; ようきゅうしたぶんを もっていなかった
-Message_0A9C5A:
+Message_02_00_B4:
 #_0A9C5A: db $97 ; >
 #_0A9C5B: db $F8 ; [set2] write player name
 #_0A9C5C: db $3E, $CF ; は⎵
@@ -4108,29 +4108,29 @@ Message_0A9C5A:
 ;===================================================================================================
 
 ; ナカマを 
-Message_0A9C75:
+Message_02_00_B5:
 #_0A9C75: db $71, $62, $7B, $51, $CF ; ナカマを⎵
 #_0A9C7A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ナカマを »よろしく 
-Message_0A9C7B:
-#_0A9C7B: db $EB, $B5 ; prewritten text B5
+Message_02_00_B6:
+#_0A9C7B: db $EB, $B5 ; [set2] prewritten text B5
 #_0A9C7D: db $4A, $4F, $30, $2C, $CF ; よろしく⎵
 #_0A9C82: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なかよくして
-Message_0A9C83:
+Message_02_00_B7:
 #_0A9C83: db $39, $2A, $4A, $2C, $30, $37 ; なかよくして
 #_0A9C89: db $FF ; end of message
 
 ;===================================================================================================
 
 ; あたしの ともだち
-Message_0A9C8A:
+Message_02_00_B8:
 #_0A9C8A: db $25, $34, $30, $3D, $CF, $38, $47, $A6 ; あたしの⎵ともだ
 #_0A9C92: db $35 ; ち
 #_0A9C93: db $FF ; end of message
@@ -4138,33 +4138,34 @@ Message_0A9C8A:
 ;===================================================================================================
 
 ; ナカマヲ タノム
-Message_0A9C94:
+Message_02_00_B9:
 #_0A9C94: db $71, $62, $7B, $89, $CF, $6C, $75, $7D ; ナカマヲ⎵タノム
 #_0A9C9C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; を ころして へいきなの?
-Message_0A9C9D:
+Message_02_00_BA:
 #_0A9C9D: db $51, $CF, $2E, $4F, $30, $37, $CF, $41 ; を⎵ころして⎵へ
 #_0A9CA5: db $26, $2B, $39, $3D, $95 ; いきなの?
+#_0A9CAA: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0A9CAA:
+Message_02_00_BB:
 #_0A9CAA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; どうしますか?
-Message_0A9CAB:
+Message_02_00_C0:
 #_0A9CAB: db $AA, $27, $30, $43, $31, $2A, $95 ; どうしますか?
 #_0A9CB2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[DEMONX]が ちょうはつしています
-Message_0A9CB3:
+Message_02_00_C1:
 #_0A9CB3: db $97 ; >
 #_0A9CB4: db $ED ; [set2] write demon name indexed from $0526
 #_0A9CB5: db $9C, $CF, $35, $57, $27, $3E, $36, $30 ; が⎵ちょうはつし
@@ -4175,11 +4176,11 @@ Message_0A9CB3:
 
 ; >[CHASE]は [￥GIVEME] を
 ; てにいれた
-Message_0A9CC2:
+Message_02_00_C2:
 #_0A9CC2: db $97 ; >
 #_0A9CC3: db $F8 ; [set2] write player name
 #_0A9CC4: db $3E, $CF ; は⎵
-#_0A9CC6: db $F6 ; ask for currency or item
+#_0A9CC6: db $F6 ; [set2] ask for currency or item
 #_0A9CC7: db $CF, $51 ; ⎵を
 #_0A9CC9: db $F0 ; [set2] new line
 #_0A9CCA: db $37, $3A, $26, $4E, $34 ; てにいれた
@@ -4188,7 +4189,7 @@ Message_0A9CC2:
 ;===================================================================================================
 
 ; >[DEMONX]に ばかにされた
-Message_0A9CD0:
+Message_02_00_C3:
 #_0A9CD0: db $97 ; >
 #_0A9CD1: db $ED ; [set2] write demon name indexed from $0526
 #_0A9CD2: db $3A, $CF, $AB, $2A, $3A, $2F, $4E, $34 ; に⎵ばかにされた
@@ -4197,7 +4198,7 @@ Message_0A9CD0:
 ;===================================================================================================
 
 ; >[DEMONX]が よんでいる
-Message_0A9CDB:
+Message_02_00_C4:
 #_0A9CDB: db $97 ; >
 #_0A9CDC: db $ED ; [set2] write demon name indexed from $0526
 #_0A9CDD: db $9C, $CF, $4A, $52, $A9, $26, $4D ; が⎵よんでいる
@@ -4206,7 +4207,7 @@ Message_0A9CDB:
 ;===================================================================================================
 
 ; >[DEMONX]は ナカマをよんだ!!
-Message_0A9CE5:
+Message_02_00_C5:
 #_0A9CE5: db $97 ; >
 #_0A9CE6: db $ED ; [set2] write demon name indexed from $0526
 #_0A9CE7: db $3E, $CF, $71, $62, $7B, $51, $4A, $52 ; は⎵ナカマをよん
@@ -4216,7 +4217,7 @@ Message_0A9CE5:
 ;===================================================================================================
 
 ; >[DEMONX]は けいかいしている
-Message_0A9CF3:
+Message_02_00_C6:
 #_0A9CF3: db $97 ; >
 #_0A9CF4: db $ED ; [set2] write demon name indexed from $0526
 #_0A9CF5: db $3E, $CF, $2D, $26, $2A, $26, $30, $37 ; は⎵けいかいして
@@ -4226,7 +4227,7 @@ Message_0A9CF3:
 ;===================================================================================================
 
 ; >[DEMONX]に わらわれた
-Message_0A9D00:
+Message_02_00_C7:
 #_0A9D00: db $97 ; >
 #_0A9D01: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D02: db $3A, $CF, $50, $4B, $50, $4E, $34 ; に⎵わらわれた
@@ -4235,7 +4236,7 @@ Message_0A9D00:
 ;===================================================================================================
 
 ; >[DEMONX]は おどしてきた
-Message_0A9D0A:
+Message_02_00_C8:
 #_0A9D0A: db $97 ; >
 #_0A9D0B: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D0C: db $3E, $CF, $29, $AA, $30, $37, $2B, $34 ; は⎵おどしてきた
@@ -4244,7 +4245,7 @@ Message_0A9D0A:
 ;===================================================================================================
 
 ; >[DEMONX]は おこっている
-Message_0A9D15:
+Message_02_00_C9:
 #_0A9D15: db $97 ; >
 #_0A9D16: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D17: db $3E, $CF, $29, $2E, $58, $37, $26, $4D ; は⎵おこっている
@@ -4253,7 +4254,7 @@ Message_0A9D15:
 ;===================================================================================================
 
 ; >[DEMONX]が なまえをきいてきた
-Message_0A9D20:
+Message_02_00_CA:
 #_0A9D20: db $97 ; >
 #_0A9D21: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D22: db $9C, $CF, $39, $43, $28, $51, $2B, $26 ; が⎵なまえをきい
@@ -4263,7 +4264,7 @@ Message_0A9D20:
 ;===================================================================================================
 
 ; >[DEMONX]は なんたいかにげだした
-Message_0A9D2E:
+Message_02_00_CB:
 #_0A9D2E: db $97 ; >
 #_0A9D2F: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D30: db $3E, $CF, $39, $52, $34, $26, $2A, $3A ; は⎵なんたいかに
@@ -4274,7 +4275,7 @@ Message_0A9D2E:
 
 ; >[DEMONX]は [CHASE]のことを
 ; しらないようだ
-Message_0A9D3D:
+Message_02_00_CC:
 #_0A9D3D: db $97 ; >
 #_0A9D3E: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D3F: db $3E, $CF ; は⎵
@@ -4287,7 +4288,7 @@ Message_0A9D3D:
 ;===================================================================================================
 
 ; >[DEMONX]を ナカマにしますか?
-Message_0A9D4F:
+Message_02_00_CD:
 #_0A9D4F: db $97 ; >
 #_0A9D50: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D51: db $51, $CF, $71, $62, $7B, $3A, $30, $43 ; を⎵ナカマにしま
@@ -4297,7 +4298,7 @@ Message_0A9D4F:
 ;===================================================================================================
 
 ; >[DEMONX]は おだてに おこった
-Message_0A9D5D:
+Message_02_00_CE:
 #_0A9D5D: db $97 ; >
 #_0A9D5E: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D5F: db $3E, $CF, $29, $A6, $37, $3A, $CF, $29 ; は⎵おだてに⎵お
@@ -4307,7 +4308,7 @@ Message_0A9D5D:
 ;===================================================================================================
 
 ; >[DEMONX]に からかわれています
-Message_0A9D6B:
+Message_02_00_CF:
 #_0A9D6B: db $97 ; >
 #_0A9D6C: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D6D: db $3A, $CF, $2A, $4B, $2A, $50, $4E, $37 ; に⎵からかわれて
@@ -4317,7 +4318,7 @@ Message_0A9D6B:
 ;===================================================================================================
 
 ; >[DEMONX]は たちさろうとしている
-Message_0A9D79:
+Message_02_00_D0:
 #_0A9D79: db $97 ; >
 #_0A9D7A: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D7B: db $3E, $CF, $34, $35, $2F, $4F, $27, $38 ; は⎵たちさろうと
@@ -4327,14 +4328,14 @@ Message_0A9D79:
 ;===================================================================================================
 
 ; むだだ!
-Message_0A9D88:
+Message_02_00_D1:
 #_0A9D88: db $45, $A6, $A6, $94 ; むだだ!
 #_0A9D8C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いまさら ておくれだぜ!
-Message_0A9D8D:
+Message_02_00_D2:
 #_0A9D8D: db $26, $43, $2F, $4B, $CF, $37, $29, $2C ; いまさら⎵ておく
 #_0A9D95: db $4E, $A6, $A4, $94 ; れだぜ!
 #_0A9D99: db $FF ; end of message
@@ -4342,7 +4343,7 @@ Message_0A9D8D:
 ;===================================================================================================
 
 ; [DEMONX]は ひるんでいる
-Message_0A9D9A:
+Message_02_00_D3:
 #_0A9D9A: db $ED ; [set2] write demon name indexed from $0526
 #_0A9D9B: db $3E, $CF, $3F, $4D, $52, $A9, $26, $4D ; は⎵ひるんでいる
 #_0A9DA3: db $FF ; end of message
@@ -4350,7 +4351,7 @@ Message_0A9D9A:
 ;===================================================================================================
 
 ; >せっとくは しっぱいした
-Message_0A9DA4:
+Message_02_00_D4:
 #_0A9DA4: db $97, $32, $58, $38, $2C, $3E, $CF, $30 ; >せっとくは⎵し
 #_0A9DAC: db $58, $B0, $26, $30, $34 ; っぱいした
 #_0A9DB1: db $FF ; end of message
@@ -4358,7 +4359,7 @@ Message_0A9DA4:
 ;===================================================================================================
 
 ; >[DEMONX]は いかく している
-Message_0A9DB2:
+Message_02_00_D5:
 #_0A9DB2: db $97 ; >
 #_0A9DB3: db $ED ; [set2] write demon name indexed from $0526
 #_0A9DB4: db $3E, $CF, $26, $2A, $2C, $CF, $30, $37 ; は⎵いかく⎵して
@@ -4368,9 +4369,9 @@ Message_0A9DB2:
 ;===================================================================================================
 
 ; >[￥GIVEME] を あたえますか?
-Message_0A9DBF:
+Message_02_00_D6:
 #_0A9DBF: db $97 ; >
-#_0A9DC0: db $F6 ; ask for currency or item
+#_0A9DC0: db $F6 ; [set2] ask for currency or item
 #_0A9DC1: db $CF, $51, $CF, $25, $34, $28, $43, $31 ; ⎵を⎵あたえます
 #_0A9DC9: db $2A, $95 ; か?
 #_0A9DCB: db $FF ; end of message
@@ -4378,7 +4379,7 @@ Message_0A9DBF:
 ;===================================================================================================
 
 ; >なにを ようきゅうしますか?
-Message_0A9DCC:
+Message_02_00_D7:
 #_0A9DCC: db $97, $39, $3A, $51, $CF, $4A, $27, $2B ; >なにを⎵ようき
 #_0A9DD4: db $56, $27, $30, $43, $31, $2A, $95 ; ゅうしますか?
 #_0A9DDB: db $FF ; end of message
@@ -4387,24 +4388,25 @@ Message_0A9DCC:
 
 ; >[DEMONX]は [￥GIVEME] を
 ; おとしていった
-Message_0A9DDC:
+Message_02_00_D8:
 #_0A9DDC: db $97 ; >
 #_0A9DDD: db $ED ; [set2] write demon name indexed from $0526
 #_0A9DDE: db $3E, $CF ; は⎵
-#_0A9DE0: db $F6 ; ask for currency or item
+#_0A9DE0: db $F6 ; [set2] ask for currency or item
 #_0A9DE1: db $CF, $51 ; ⎵を
 #_0A9DE3: db $F0 ; [set2] new line
 #_0A9DE4: db $29, $38, $30, $37, $26, $58, $34 ; おとしていった
+#_0A9DEB: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0A9DEB:
+Message_02_00_D9:
 #_0A9DEB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[CHASE]は みごとに いわをくだいた
-Message_0A9DEC:
+Message_02_00_DE:
 #_0A9DEC: db $97 ; >
 #_0A9DED: db $F8 ; [set2] write player name
 #_0A9DEE: db $3E, $CF, $44, $A0, $38, $3A, $CF, $26 ; は⎵みごとに⎵い
@@ -4414,7 +4416,7 @@ Message_0A9DEC:
 ;===================================================================================================
 
 ; >[CHASE]には いわを くだけなかった
-Message_0A9DFD:
+Message_02_00_DF:
 #_0A9DFD: db $97 ; >
 #_0A9DFE: db $F8 ; [set2] write player name
 #_0A9DFF: db $3A, $3E, $CF, $26, $50, $51, $CF, $2C ; には⎵いわを⎵く
@@ -4425,7 +4427,7 @@ Message_0A9DFD:
 
 ; >[CLASSX] [DEMONX]は
 ; ナカマに なった
-Message_0A9E0E:
+Message_02_00_E0:
 #_0A9E0E: db $97 ; >
 #_0A9E0F: db $EE ; [set2] write class name indexed from $0526
 #_0A9E10: db $CF ; ⎵
@@ -4438,7 +4440,7 @@ Message_0A9E0E:
 ;===================================================================================================
 
 ; >[DEMONX]は さっていった
-Message_0A9E1D:
+Message_02_00_E1:
 #_0A9E1D: db $97 ; >
 #_0A9E1E: db $ED ; [set2] write demon name indexed from $0526
 #_0A9E1F: db $3E, $CF, $2F, $58, $37, $26, $58, $34 ; は⎵さっていった
@@ -4447,7 +4449,7 @@ Message_0A9E1D:
 ;===================================================================================================
 
 ; >[DEMONX]は にげていった!
-Message_0A9E28:
+Message_02_00_E2:
 #_0A9E28: db $97 ; >
 #_0A9E29: db $ED ; [set2] write demon name indexed from $0526
 #_0A9E2A: db $3E, $CF, $3A, $9F, $37, $26, $58, $34 ; は⎵にげていった
@@ -4456,18 +4458,18 @@ Message_0A9E28:
 
 ;===================================================================================================
 
-Message_0A9E34:
+Message_02_00_E3:
 #_0A9E34: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0A9E35:
+Message_02_00_E4:
 #_0A9E35: db $FF ; end of message
 
 ;===================================================================================================
 
 ; だめだ にげられない!!
-Message_0A9E36:
+Message_02_00_E5:
 #_0A9E36: db $A6, $46, $A6, $CF, $3A, $9F, $4B, $4E ; だめだ⎵にげられ
 #_0A9E3E: db $39, $26, $94, $94 ; ない!!
 #_0A9E42: db $FF ; end of message
@@ -4475,7 +4477,7 @@ Message_0A9E36:
 ;===================================================================================================
 
 ; >[CHASE]たちは にげだした
-Message_0A9E43:
+Message_02_00_E6:
 #_0A9E43: db $97 ; >
 #_0A9E44: db $F8 ; [set2] write player name
 #_0A9E45: db $34, $35, $3E, $CF, $3A, $9F, $A6, $30 ; たちは⎵にげだし
@@ -4486,7 +4488,7 @@ Message_0A9E43:
 
 ; >[CHASE]の うたは
 ; [CLASSX] [DEMONX]を とりこにした
-Message_0A9E4F:
+Message_02_00_E7:
 #_0A9E4F: db $97 ; >
 #_0A9E50: db $F8 ; [set2] write player name
 #_0A9E51: db $3D, $CF, $27, $34, $3E ; の⎵うたは
@@ -4500,7 +4502,7 @@ Message_0A9E4F:
 ;===================================================================================================
 
 ; >アクマは むし している
-Message_0A9E63:
+Message_02_00_E8:
 #_0A9E63: db $97, $5D, $64, $7B, $3E, $CF, $45, $30 ; >アクマは⎵むし
 #_0A9E6B: db $CF, $30, $37, $26, $4D ; ⎵している
 #_0A9E70: db $FF ; end of message
@@ -4508,7 +4510,7 @@ Message_0A9E63:
 ;===================================================================================================
 
 ; >[DEMONX]は ちかづいてきた
-Message_0A9E71:
+Message_02_00_E9:
 #_0A9E71: db $97 ; >
 #_0A9E72: db $ED ; [set2] write demon name indexed from $0526
 #_0A9E73: db $3E, $CF, $35, $2A, $A8, $26, $37, $2B ; は⎵ちかづいてき
@@ -4519,7 +4521,7 @@ Message_0A9E71:
 
 ; >[DEMONX]に すきが できた
 ; こうげき しますか?
-Message_0A9E7D:
+Message_02_00_EA:
 #_0A9E7D: db $97 ; >
 #_0A9E7E: db $ED ; [set2] write demon name indexed from $0526
 #_0A9E7F: db $3A, $CF, $31, $2B, $9C, $CF, $A9, $2B ; に⎵すきが⎵でき
@@ -4533,7 +4535,7 @@ Message_0A9E7D:
 
 ; >[DEMONX]も つられて おどりだした!
 ; このまま おどりますか?
-Message_0A9E94:
+Message_02_00_EB:
 #_0A9E94: db $97 ; >
 #_0A9E95: db $ED ; [set2] write demon name indexed from $0526
 #_0A9E96: db $47, $CF, $36, $4B, $4E, $37, $CF, $29 ; も⎵つられて⎵お
@@ -4547,7 +4549,7 @@ Message_0A9E94:
 
 ; >[CHASE]と [DEMONX]は
 ; ひとばんじゅう おどりあかした!
-Message_0A9EB2:
+Message_02_00_EC:
 #_0A9EB2: db $97 ; >
 #_0A9EB3: db $F8 ; [set2] write player name
 #_0A9EB4: db $38, $CF ; と⎵
@@ -4561,7 +4563,7 @@ Message_0A9EB2:
 ;===================================================================================================
 
 ; >だいぶ きまずく なってきた
-Message_0A9ECA:
+Message_02_00_ED:
 #_0A9ECA: db $97, $A6, $26, $AD, $CF, $2B, $43, $A3 ; >だいぶ⎵きまず
 #_0A9ED2: db $2C, $CF, $39, $58, $37, $2B, $34 ; く⎵なってきた
 #_0A9ED9: db $FF ; end of message
@@ -4569,7 +4571,7 @@ Message_0A9ECA:
 ;===================================================================================================
 
 ; ・・・・・・・・・・・・・ ・ ・ ・
-Message_0A9EDA:
+Message_02_00_EE:
 #_0A9EDA: db $93, $93, $93, $93, $93, $93, $93, $93 ; ・・・・・・・・
 #_0A9EE2: db $93, $93, $93, $93, $93, $CF, $93, $CF ; ・・・・・⎵・⎵
 #_0A9EEA: db $93, $CF, $93 ; ・⎵・
@@ -4579,7 +4581,7 @@ Message_0A9EDA:
 
 ; >[CHASE]の がんこうは
 ; [DEMONX]を とりこに した
-Message_0A9EEE:
+Message_02_00_EF:
 #_0A9EEE: db $97 ; >
 #_0A9EEF: db $F8 ; [set2] write player name
 #_0A9EF0: db $3D, $CF, $9C, $52, $2E, $27, $3E ; の⎵がんこうは
@@ -4592,7 +4594,7 @@ Message_0A9EEE:
 ;===================================================================================================
 
 ; >[DEMONX]は にげようと している
-Message_0A9F03:
+Message_02_00_F0:
 #_0A9F03: db $97 ; >
 #_0A9F04: db $ED ; [set2] write demon name indexed from $0526
 #_0A9F05: db $3E, $CF, $3A, $9F, $4A, $27, $38, $CF ; は⎵にげようと⎵
@@ -4602,7 +4604,7 @@ Message_0A9F03:
 ;===================================================================================================
 
 ; >[DEMONX]は いいきに なっています
-Message_0A9F12:
+Message_02_00_F1:
 #_0A9F12: db $97 ; >
 #_0A9F13: db $ED ; [set2] write demon name indexed from $0526
 #_0A9F14: db $3E, $CF, $26, $26, $2B, $3A, $CF, $39 ; は⎵いいきに⎵な
@@ -4611,14 +4613,14 @@ Message_0A9F12:
 
 ;===================================================================================================
 
-Message_0A9F22:
+Message_02_00_F2:
 #_0A9F22: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[CHASE]は もうれつな すいまに
 ; とらわれ ねむりに おちていった・・・
-Message_0A9F23:
+Message_02_00_F4:
 #_0A9F23: db $97 ; >
 #_0A9F24: db $F8 ; [set2] write player name
 #_0A9F25: db $3E, $CF, $47, $27, $4E, $36, $39, $CF ; は⎵もうれつな⎵
@@ -4633,7 +4635,7 @@ Message_0A9F23:
 
 ; >[CHASE]は
 ; [DEMONX]に みいられた
-Message_0A9F46:
+Message_02_00_F5:
 #_0A9F46: db $97 ; >
 #_0A9F47: db $F8 ; [set2] write player name
 #_0A9F48: db $3E ; は
@@ -4646,7 +4648,7 @@ Message_0A9F46:
 
 ; >[DEMONX]は [CHASE]の
 ; ナカマが いっぱいなので さっていった
-Message_0A9F53:
+Message_02_00_F6:
 #_0A9F53: db $97 ; >
 #_0A9F54: db $ED ; [set2] write demon name indexed from $0526
 #_0A9F55: db $3E, $CF ; は⎵
@@ -4662,27 +4664,27 @@ Message_0A9F53:
 
 ; >[DEMONX]は [CHASE]の
 ; [￥GIVEME] を うけとると さっていった
-Message_0A9F6E:
+Message_02_00_F7:
 #_0A9F6E: db $97 ; >
 #_0A9F6F: db $ED ; [set2] write demon name indexed from $0526
 #_0A9F70: db $3E, $CF ; は⎵
 #_0A9F72: db $F8 ; [set2] write player name
 #_0A9F73: db $3D ; の
 #_0A9F74: db $F0 ; [set2] new line
-#_0A9F75: db $F6 ; ask for currency or item
+#_0A9F75: db $F6 ; [set2] ask for currency or item
 #_0A9F76: db $CF, $51, $CF, $27, $2D, $38, $4D, $38 ; ⎵を⎵うけとると
 #_0A9F7E: db $CF, $2F, $58, $37, $26, $58, $34 ; ⎵さっていった
 #_0A9F85: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0A9F85:
+Message_02_00_F8:
 #_0A9F85: db $FF ; end of message
 
 ;===================================================================================================
 
 ; どんな たいどでせっしますか?
-Message_0A9F86:
+Message_02_01_00:
 #_0A9F86: db $F1 ; [set2] clear message box
 #_0A9F87: db $FB, $00, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 00 is nonzero; otherwise reset
 #_0A9F8A: db $D0, $03 ; [set2] maybe go to message $03
@@ -4697,18 +4699,18 @@ Message_0A9F86:
 
 ;===================================================================================================
 
-Message_0A9FA7:
+Message_02_01_01:
 #_0A9FA7: db $D3, $00 ; [set2] [COMMAND 33:00]
 
 ;===================================================================================================
 
-Message_0A9FA9:
+Message_02_01_02:
 #_0A9FA9: db $D3, $01 ; [set2] [COMMAND 33:01]
 
 ;===================================================================================================
 
 ; >[DEMONX]は みみを かそうとしない!
-Message_0A9FAB:
+Message_02_01_03:
 #_0A9FAB: db $97 ; >
 #_0A9FAC: db $ED ; [set2] write demon name indexed from $0526
 #_0A9FAD: db $3E, $CF, $44, $44, $51, $CF, $2A, $33 ; は⎵みみを⎵かそ
@@ -4719,7 +4721,7 @@ Message_0A9FAB:
 ;===================================================================================================
 
 ; >だめだ はなしにならない!!
-Message_0A9FBE:
+Message_02_01_04:
 #_0A9FBE: db $97, $A6, $46, $A6, $CF, $3E, $39, $30 ; >だめだ⎵はなし
 #_0A9FC6: db $3A, $39, $4B, $39, $26, $94, $94 ; にならない!!
 #_0A9FCD: db $F3 ; [set2] wait for key and new line
@@ -4728,7 +4730,7 @@ Message_0A9FBE:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0A9FD0:
+Message_02_01_05:
 #_0A9FD0: db $E8, $31 ; [set2] [COMMAND 48:31]
 #_0A9FD2: db $F3 ; [set2] wait for key and new line
 #_0A9FD3: db $F1 ; [set2] clear message box
@@ -4744,7 +4746,7 @@ Message_0A9FD0:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0A9FDC:
+Message_02_01_06:
 #_0A9FDC: db $DD ; [set2] [COMMAND 3D]
 #_0A9FDD: db $97 ; >
 #_0A9FDE: db $ED ; [set2] write demon name indexed from $0526
@@ -4765,7 +4767,7 @@ Message_0A9FDC:
 
 ;===================================================================================================
 
-Message_0A9FF8:
+Message_02_02_00:
 #_0A9FF8: db $F1 ; [set2] clear message box
 #_0A9FF9: db $E7, $01, $01, $0D, $16 ; [set2] randomly pick from messages 01, 01, 0D, 16
 
@@ -4773,7 +4775,7 @@ Message_0A9FF8:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0A9FFE:
+Message_02_02_01:
 #_0A9FFE: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA000: db $F3 ; [set2] wait for key and new line
 #_0AA001: db $F1 ; [set2] clear message box
@@ -4790,7 +4792,7 @@ Message_0A9FFE:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AA00E:
+Message_02_02_02:
 #_0AA00E: db $D8, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
 #_0AA011: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AA014: db $E8, $37 ; [set2] [COMMAND 48:37]
@@ -4806,14 +4808,14 @@ Message_0AA00E:
 
 ;===================================================================================================
 
-Message_0AA022:
+Message_02_02_03:
 #_0AA022: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0AA024: db $EF, $05 ; [set2] YES/NO - go to message $05 if YES
 #_0AA026: db $E9, $04 ; [set2] go to message $04
 
 ;===================================================================================================
 
-Message_0AA028:
+Message_02_02_04:
 #_0AA028: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AA02A: db $F3 ; [set2] wait for key and new line
 #_0AA02B: db $E9, $00 ; [set2] go to message $00
@@ -4822,7 +4824,7 @@ Message_0AA028:
 
 ; «>[CHASE]は もうれつな すいまに»
 ; «とらわれ ねむりに おちていった・・・»
-Message_0AA02D:
+Message_02_02_05:
 #_0AA02D: db $EB, $F4 ; [set2] prewritten text F4
 #_0AA02F: db $F3 ; [set2] wait for key and new line
 #_0AA030: db $F1 ; [set2] clear message box
@@ -4836,7 +4838,7 @@ Message_0AA02D:
 
 ;===================================================================================================
 
-Message_0AA03C:
+Message_02_02_06:
 #_0AA03C: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA03E: db $F3 ; [set2] wait for key and new line
 #_0AA03F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -4845,7 +4847,7 @@ Message_0AA03C:
 
 ; «>[DEMONX]は いいきに なっています»
 ; «どうしますか?»
-Message_0AA042:
+Message_02_02_07:
 #_0AA042: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA044: db $F3 ; [set2] wait for key and new line
 #_0AA045: db $F1 ; [set2] clear message box
@@ -4863,7 +4865,7 @@ Message_0AA042:
 
 ;===================================================================================================
 
-Message_0AA059:
+Message_02_02_08:
 #_0AA059: db $D6, $01, $0A ; [set2] go to message 0A if RNG, 01 TODO
 #_0AA05C: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AA05E: db $EF, $09 ; [set2] YES/NO - go to message $09 if YES
@@ -4873,7 +4875,7 @@ Message_0AA059:
 
 ; «>[CHASE]は»
 ; «[DEMONX]に みいられた»
-Message_0AA062:
+Message_02_02_09:
 #_0AA062: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AA064: db $F3 ; [set2] wait for key and new line
 #_0AA065: db $F1 ; [set2] clear message box
@@ -4887,7 +4889,7 @@ Message_0AA062:
 
 ;===================================================================================================
 
-Message_0AA071:
+Message_02_02_0A:
 #_0AA071: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AA073: db $F3 ; [set2] wait for key and new line
 #_0AA074: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -4896,7 +4898,7 @@ Message_0AA071:
 
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
-Message_0AA077:
+Message_02_02_0B:
 #_0AA077: db $D8, $02, $0C ; [set2] go to message 0C if RNG, 02 TODO
 #_0AA07A: db $EB, $EF ; [set2] prewritten text EF
 #_0AA07C: db $F3 ; [set2] wait for key and new line
@@ -4907,7 +4909,7 @@ Message_0AA077:
 
 ;===================================================================================================
 
-Message_0AA083:
+Message_02_02_0C:
 #_0AA083: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AA085: db $F3 ; [set2] wait for key and new line
 #_0AA086: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -4916,7 +4918,7 @@ Message_0AA083:
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AA089:
+Message_02_02_0D:
 #_0AA089: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA08B: db $F3 ; [set2] wait for key and new line
 #_0AA08C: db $F1 ; [set2] clear message box
@@ -4930,7 +4932,7 @@ Message_0AA089:
 
 ;===================================================================================================
 
-Message_0AA099:
+Message_02_02_0E:
 #_0AA099: db $D6, $01, $10 ; [set2] go to message 10 if RNG, 01 TODO
 #_0AA09C: db $D7, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AA09F: db $E8, $06 ; [set2] [COMMAND 48:06]
@@ -4939,7 +4941,7 @@ Message_0AA099:
 
 ;===================================================================================================
 
-Message_0AA0A5:
+Message_02_02_0F:
 #_0AA0A5: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA0A7: db $F3 ; [set2] wait for key and new line
 #_0AA0A8: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -4948,7 +4950,7 @@ Message_0AA0A5:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AA0AB:
+Message_02_02_10:
 #_0AA0AB: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA0AD: db $F3 ; [set2] wait for key and new line
 #_0AA0AE: db $F1 ; [set2] clear message box
@@ -4962,7 +4964,7 @@ Message_0AA0AB:
 
 ;===================================================================================================
 
-Message_0AA0BB:
+Message_02_02_11:
 #_0AA0BB: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA0BD: db $F3 ; [set2] wait for key and new line
 #_0AA0BE: db $F1 ; [set2] clear message box
@@ -4972,14 +4974,14 @@ Message_0AA0BB:
 
 ;===================================================================================================
 
-Message_0AA0C4:
+Message_02_02_12:
 #_0AA0C4: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AA0C6: db $F3 ; [set2] wait for key and new line
 #_0AA0C7: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AA0CA:
+Message_02_02_13:
 #_0AA0CA: db $D8, $01, $0C ; [set2] go to message 0C if RNG, 01 TODO
 #_0AA0CD: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0AA0D0: db $E8, $0E ; [set2] [COMMAND 48:0E]
@@ -4989,7 +4991,7 @@ Message_0AA0CA:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AA0D5:
+Message_02_02_14:
 #_0AA0D5: db $DA, $01, $15 ; [set2] ext command 01: go to message 15 if MC INT = 0
 #_0AA0D8: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AA0DA: db $F3 ; [set2] wait for key and new line
@@ -5000,7 +5002,7 @@ Message_0AA0D5:
 
 ;===================================================================================================
 
-Message_0AA0E1:
+Message_02_02_15:
 #_0AA0E1: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AA0E3: db $F3 ; [set2] wait for key and new line
 #_0AA0E4: db $E9, $00 ; [set2] go to message $00
@@ -5009,30 +5011,30 @@ Message_0AA0E1:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AA0E6:
-#_0AA0E6: db $EB, $E8 ; prewritten text E8
+Message_02_02_16:
+#_0AA0E6: db $EB, $E8 ; [set2] prewritten text E8
 #_0AA0E8: db $F3 ; [set2] wait for key and new line
 #_0AA0E9: db $F1 ; [set2] clear message box
-#_0AA0EA: db $EB, $C0 ; prewritten text C0
+#_0AA0EA: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA0EC: db $F2, $01 ; [set2] option list with 2 options
 #_0AA0EE: db $0E, $08 ; option 1 [08]: message 0E
 #_0AA0F0: db $14, $17 ; option 2 [17]: message 14
 
 ;===================================================================================================
 
-Message_0AA0F2:
+Message_02_02_17:
 #_0AA0F2: db $E7, $18, $19, $1A, $1B ; [set2] randomly pick from messages 18, 19, 1A, 1B
 
 ;===================================================================================================
 
-Message_0AA0F7:
+Message_02_02_18:
 #_0AA0F7: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AA0F9: db $F3 ; [set2] wait for key and new line
 #_0AA0FA: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
 
 ;===================================================================================================
 
-Message_0AA0FD:
+Message_02_02_19:
 #_0AA0FD: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AA0FF: db $F3 ; [set2] wait for key and new line
 #_0AA100: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
@@ -5040,7 +5042,7 @@ Message_0AA0FD:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA103:
+Message_02_02_1A:
 #_0AA103: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AA105: db $F3 ; [set2] wait for key and new line
 #_0AA106: db $F1 ; [set2] clear message box
@@ -5050,14 +5052,14 @@ Message_0AA103:
 
 ;===================================================================================================
 
-Message_0AA10C:
+Message_02_02_1B:
 #_0AA10C: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA10E: db $F3 ; [set2] wait for key and new line
 #_0AA10F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AA112:
+Message_02_03_00:
 #_0AA112: db $F1 ; [set2] clear message box
 #_0AA113: db $E7, $01, $01, $09, $1A ; [set2] randomly pick from messages 01, 01, 09, 1A
 
@@ -5065,7 +5067,7 @@ Message_0AA112:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AA118:
+Message_02_03_01:
 #_0AA118: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA11A: db $F3 ; [set2] wait for key and new line
 #_0AA11B: db $F1 ; [set2] clear message box
@@ -5079,7 +5081,7 @@ Message_0AA118:
 
 ;===================================================================================================
 
-Message_0AA128:
+Message_02_03_02:
 #_0AA128: db $D5, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
 #_0AA12B: db $E9, $03 ; [set2] go to message $03
 
@@ -5088,7 +5090,7 @@ Message_0AA128:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AA12D:
+Message_02_03_03:
 #_0AA12D: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AA130: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA132: db $F3 ; [set2] wait for key and new line
@@ -5104,7 +5106,7 @@ Message_0AA12D:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AA13E:
+Message_02_03_04:
 #_0AA13E: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA140: db $F3 ; [set2] wait for key and new line
 #_0AA141: db $F1 ; [set2] clear message box
@@ -5114,7 +5116,7 @@ Message_0AA13E:
 
 ;===================================================================================================
 
-Message_0AA147:
+Message_02_03_05:
 #_0AA147: db $D5, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AA14A: db $E8, $1E ; [set2] [COMMAND 48:1E]
 #_0AA14C: db $EF, $03 ; [set2] YES/NO - go to message $03 if YES
@@ -5124,14 +5126,14 @@ Message_0AA147:
 
 ;===================================================================================================
 
-Message_0AA154:
+Message_02_03_06:
 #_0AA154: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
-Message_0AA157:
+Message_02_03_07:
 #_0AA157: db $D8, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
 #_0AA15A: db $EB, $EF ; [set2] prewritten text EF
 #_0AA15C: db $F3 ; [set2] wait for key and new line
@@ -5142,7 +5144,7 @@ Message_0AA157:
 
 ;===================================================================================================
 
-Message_0AA163:
+Message_02_03_08:
 #_0AA163: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AA165: db $F3 ; [set2] wait for key and new line
 #_0AA166: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -5151,7 +5153,7 @@ Message_0AA163:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0AA169:
+Message_02_03_09:
 #_0AA169: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA16B: db $F3 ; [set2] wait for key and new line
 #_0AA16C: db $F1 ; [set2] clear message box
@@ -5165,14 +5167,14 @@ Message_0AA169:
 
 ;===================================================================================================
 
-Message_0AA179:
+Message_02_03_0A:
 #_0AA179: db $D5, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AA17C: db $E7, $0B, $0C, $08, $0D ; [set2] randomly pick from messages 0B, 0C, 08, 0D
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA181:
+Message_02_03_0B:
 #_0AA181: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA183: db $F3 ; [set2] wait for key and new line
 #_0AA184: db $F1 ; [set2] clear message box
@@ -5185,7 +5187,7 @@ Message_0AA181:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AA18A:
+Message_02_03_0C:
 #_0AA18A: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA18C: db $F3 ; [set2] wait for key and new line
 #_0AA18D: db $F1 ; [set2] clear message box
@@ -5201,7 +5203,7 @@ Message_0AA18A:
 
 ; «>[DEMONX]を ナカマにしますか?»
 ; «>[DEMONX]は さっていった»
-Message_0AA198:
+Message_02_03_0D:
 #_0AA198: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AA19A: db $F3 ; [set2] wait for key and new line
 #_0AA19B: db $F1 ; [set2] clear message box
@@ -5216,7 +5218,7 @@ Message_0AA198:
 
 ;===================================================================================================
 
-Message_0AA1A9:
+Message_02_03_0E:
 #_0AA1A9: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0AA1AB: db $F3 ; [set2] wait for key and new line
 #_0AA1AC: db $F1 ; [set2] clear message box
@@ -5226,13 +5228,13 @@ Message_0AA1A9:
 
 ;===================================================================================================
 
-Message_0AA1B2:
+Message_02_03_0F:
 #_0AA1B2: db $E7, $09, $09, $10, $11 ; [set2] randomly pick from messages 09, 09, 10, 11
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA1B7:
+Message_02_03_10:
 #_0AA1B7: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA1B9: db $F3 ; [set2] wait for key and new line
 #_0AA1BA: db $F1 ; [set2] clear message box
@@ -5242,7 +5244,7 @@ Message_0AA1B7:
 
 ;===================================================================================================
 
-Message_0AA1C0:
+Message_02_03_11:
 #_0AA1C0: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA1C2: db $EF, $12 ; [set2] YES/NO - go to message $12 if YES
 #_0AA1C4: db $E8, $1D ; [set2] [COMMAND 48:1D]
@@ -5251,7 +5253,7 @@ Message_0AA1C0:
 
 ;===================================================================================================
 
-Message_0AA1CA:
+Message_02_03_12:
 #_0AA1CA: db $D7, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
 #_0AA1CD: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA1CF: db $F3 ; [set2] wait for key and new line
@@ -5264,7 +5266,7 @@ Message_0AA1CA:
 
 ; «>[CHASE]は»
 ; «[DEMONX]に みいられた»
-Message_0AA1D6:
+Message_02_03_13:
 #_0AA1D6: db $EB, $F5 ; [set2] prewritten text F5
 #_0AA1D8: db $F3 ; [set2] wait for key and new line
 #_0AA1D9: db $F1 ; [set2] clear message box
@@ -5275,12 +5277,12 @@ Message_0AA1D6:
 
 ;===================================================================================================
 
-Message_0AA1E1:
+Message_02_03_14:
 #_0AA1E1: db $E7, $09, $15, $0D, $19 ; [set2] randomly pick from messages 09, 15, 0D, 19
 
 ;===================================================================================================
 
-Message_0AA1E6:
+Message_02_03_15:
 #_0AA1E6: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0AA1E8: db $EF, $16 ; [set2] YES/NO - go to message $16 if YES
 #_0AA1EA: db $E8, $44 ; [set2] [COMMAND 48:44]
@@ -5289,13 +5291,13 @@ Message_0AA1E6:
 
 ;===================================================================================================
 
-Message_0AA1EF:
+Message_02_03_16:
 #_0AA1EF: db $E7, $17, $17, $0C, $18 ; [set2] randomly pick from messages 17, 17, 0C, 18
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA1F4:
+Message_02_03_17:
 #_0AA1F4: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA1F6: db $F3 ; [set2] wait for key and new line
 #_0AA1F7: db $F1 ; [set2] clear message box
@@ -5307,7 +5309,7 @@ Message_0AA1F4:
 
 ; «>[CHASE]は もうれつな すいまに»
 ; «とらわれ ねむりに おちていった・・・»
-Message_0AA1FD:
+Message_02_03_18:
 #_0AA1FD: db $EB, $F4 ; [set2] prewritten text F4
 #_0AA1FF: db $F3 ; [set2] wait for key and new line
 #_0AA200: db $DF, $09 ; [set2] [COMMAND 3F:09]
@@ -5321,7 +5323,7 @@ Message_0AA1FD:
 
 ;===================================================================================================
 
-Message_0AA20C:
+Message_02_03_19:
 #_0AA20C: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AA20E: db $F3 ; [set2] wait for key and new line
 #_0AA20F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -5330,7 +5332,7 @@ Message_0AA20C:
 
 ; >[DEMONX]は あまえてきた
 ; «どうしますか?»
-Message_0AA212:
+Message_02_03_1A:
 #_0AA212: db $E8, $0B ; [set2] [COMMAND 48:0B]
 #_0AA214: db $F3 ; [set2] wait for key and new line
 #_0AA215: db $F1 ; [set2] clear message box
@@ -5346,14 +5348,14 @@ Message_0AA212:
 
 ;===================================================================================================
 
-Message_0AA22A:
+Message_02_03_1B:
 #_0AA22A: db $D5, $01, $1D ; [set2] go to message 1D if RNG, 01 TODO
 #_0AA22D: db $E7, $04, $1C, $19, $19 ; [set2] randomly pick from messages 04, 1C, 19, 19
 
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AA232:
+Message_02_03_1C:
 #_0AA232: db $E8, $1F ; [set2] [COMMAND 48:1F]
 #_0AA234: db $F3 ; [set2] wait for key and new line
 #_0AA235: db $F1 ; [set2] clear message box
@@ -5363,7 +5365,7 @@ Message_0AA232:
 
 ;===================================================================================================
 
-Message_0AA23B:
+Message_02_03_1D:
 #_0AA23B: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA23D: db $F3 ; [set2] wait for key and new line
 #_0AA23E: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -5372,7 +5374,7 @@ Message_0AA23B:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AA241:
+Message_02_03_1E:
 #_0AA241: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AA243: db $F3 ; [set2] wait for key and new line
 #_0AA244: db $F1 ; [set2] clear message box
@@ -5386,14 +5388,14 @@ Message_0AA241:
 
 ;===================================================================================================
 
-Message_0AA251:
+Message_02_03_1F:
 #_0AA251: db $F7, $02, $80 ; [set2] [COMMAND 57] $02 $80 TODO
 
 ;===================================================================================================
 
 ; «>[CHASE]の うたは»
 ; «[CLASSX] [DEMONX]を とりこにした»
-Message_0AA254:
+Message_02_03_20:
 #_0AA254: db $D8, $01, $21 ; [set2] go to message 21 if RNG, 01 TODO
 #_0AA257: db $EB, $E7 ; [set2] prewritten text E7
 #_0AA259: db $F3 ; [set2] wait for key and new line
@@ -5401,21 +5403,21 @@ Message_0AA254:
 
 ;===================================================================================================
 
-Message_0AA25C:
+Message_02_03_21:
 #_0AA25C: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AA25E: db $F3 ; [set2] wait for key and new line
 #_0AA25F: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AA261:
+Message_02_04_00:
 #_0AA261: db $E7, $01, $01, $10, $17 ; [set2] randomly pick from messages 01, 01, 10, 17
 
 ;===================================================================================================
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AA266:
+Message_02_04_01:
 #_0AA266: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AA268: db $F3 ; [set2] wait for key and new line
 #_0AA269: db $F1 ; [set2] clear message box
@@ -5429,7 +5431,7 @@ Message_0AA266:
 
 ;===================================================================================================
 
-Message_0AA276:
+Message_02_04_02:
 #_0AA276: db $D5, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
 #_0AA279: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AA27C: db $E9, $03 ; [set2] go to message $03
@@ -5439,7 +5441,7 @@ Message_0AA276:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AA27E:
+Message_02_04_03:
 #_0AA27E: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA280: db $F3 ; [set2] wait for key and new line
 #_0AA281: db $F1 ; [set2] clear message box
@@ -5454,7 +5456,7 @@ Message_0AA27E:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AA28C:
+Message_02_04_04:
 #_0AA28C: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA28E: db $F3 ; [set2] wait for key and new line
 #_0AA28F: db $F1 ; [set2] clear message box
@@ -5464,12 +5466,12 @@ Message_0AA28C:
 
 ;===================================================================================================
 
-Message_0AA295:
+Message_02_04_05:
 #_0AA295: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AA298:
+Message_02_04_06:
 #_0AA298: db $D5, $02, $07 ; [set2] go to message 07 if RNG, 02 TODO
 #_0AA29B: db $E9, $03 ; [set2] go to message $03
 
@@ -5477,7 +5479,7 @@ Message_0AA298:
 
 ; «>[DEMONX]が よんでいる»
 ; >ちかづきますか?
-Message_0AA29D:
+Message_02_04_07:
 #_0AA29D: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA29F: db $F3 ; [set2] wait for key and new line
 #_0AA2A0: db $F1 ; [set2] clear message box
@@ -5493,14 +5495,14 @@ Message_0AA29D:
 
 ;===================================================================================================
 
-Message_0AA2B6:
+Message_02_04_08:
 #_0AA2B6: db $D7, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AA2B9: db $D4, $00, $0A ; [set2] go to message 0A if RNG, 00 TODO
 #_0AA2BC: db $E9, $09 ; [set2] go to message $09
 
 ;===================================================================================================
 
-Message_0AA2BE:
+Message_02_04_09:
 #_0AA2BE: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AA2C0: db $F3 ; [set2] wait for key and new line
 #_0AA2C1: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
@@ -5512,7 +5514,7 @@ Message_0AA2BE:
 ; «>[DEMONX]を ナカマにしますか?»
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0AA2C4:
+Message_02_04_0A:
 #_0AA2C4: db $EB, $EA ; [set2] prewritten text EA
 #_0AA2C6: db $EF, $0E ; [set2] YES/NO - go to message $0E if YES
 #_0AA2C8: db $E8, $20 ; [set2] [COMMAND 48:20]
@@ -5534,7 +5536,7 @@ Message_0AA2C4:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AA2E0:
+Message_02_04_0B:
 #_0AA2E0: db $DA, $01, $05 ; [set2] ext command 01: go to message 05 if MC INT = 0
 #_0AA2E3: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AA2E5: db $F3 ; [set2] wait for key and new line
@@ -5546,24 +5548,24 @@ Message_0AA2E0:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA2EC:
+Message_02_04_0C:
 #_0AA2EC: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA2EE: db $F3 ; [set2] wait for key and new line
 #_0AA2EF: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0AA2F1:
+Message_02_04_0D:
 #_0AA2F1: db $F7, $2F, $80 ; [set2] [COMMAND 57] $2F $80 TODO
 
 ;===================================================================================================
 
-Message_0AA2F4:
+Message_02_04_0E:
 #_0AA2F4: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
-Message_0AA2F6:
+Message_02_04_0F:
 #_0AA2F6: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA2F8: db $F3 ; [set2] wait for key and new line
 #_0AA2F9: db $F1 ; [set2] clear message box
@@ -5574,7 +5576,7 @@ Message_0AA2F6:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AA2FF:
+Message_02_04_10:
 #_0AA2FF: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA301: db $F3 ; [set2] wait for key and new line
 #_0AA302: db $F1 ; [set2] clear message box
@@ -5585,7 +5587,7 @@ Message_0AA2FF:
 
 ;===================================================================================================
 
-Message_0AA30B:
+Message_02_04_11:
 #_0AA30B: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0AA30E: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA311: db $D4, $00, $13 ; [set2] go to message 13 if RNG, 00 TODO
@@ -5594,7 +5596,7 @@ Message_0AA30B:
 
 ;===================================================================================================
 
-Message_0AA319:
+Message_02_04_12:
 #_0AA319: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA31B: db $F3 ; [set2] wait for key and new line
 #_0AA31C: db $F1 ; [set2] clear message box
@@ -5606,7 +5608,7 @@ Message_0AA319:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AA322:
+Message_02_04_13:
 #_0AA322: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA324: db $F3 ; [set2] wait for key and new line
 #_0AA325: db $F1 ; [set2] clear message box
@@ -5620,7 +5622,7 @@ Message_0AA322:
 
 ;===================================================================================================
 
-Message_0AA332:
+Message_02_04_14:
 #_0AA332: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AA334: db $F3 ; [set2] wait for key and new line
 #_0AA335: db $F1 ; [set2] clear message box
@@ -5635,7 +5637,7 @@ Message_0AA332:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AA33B:
+Message_02_04_15:
 #_0AA33B: db $D8, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
 #_0AA33E: db $DA, $00, $0B, $97 ; [set2] ext command 00: go to message 97 if MC INT > 11
 #_0AA342: db $ED ; [set2] write demon name indexed from $0526
@@ -5656,7 +5658,7 @@ Message_0AA33B:
 
 ;===================================================================================================
 
-Message_0AA36D:
+Message_02_04_16:
 #_0AA36D: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA36F: db $F3 ; [set2] wait for key and new line
 #_0AA370: db $F1 ; [set2] clear message box
@@ -5667,7 +5669,7 @@ Message_0AA36D:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0AA376:
+Message_02_04_17:
 #_0AA376: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA378: db $F3 ; [set2] wait for key and new line
 #_0AA379: db $F1 ; [set2] clear message box
@@ -5681,7 +5683,7 @@ Message_0AA376:
 
 ;===================================================================================================
 
-Message_0AA386:
+Message_02_04_18:
 #_0AA386: db $D5, $00, $19 ; [set2] go to message 19 if RNG, 00 TODO
 #_0AA389: db $E9, $16 ; [set2] go to message $16
 
@@ -5690,7 +5692,7 @@ Message_0AA386:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AA38B:
+Message_02_04_19:
 #_0AA38B: db $D7, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
 #_0AA38E: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0AA390: db $F3 ; [set2] wait for key and new line
@@ -5706,7 +5708,7 @@ Message_0AA38B:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA39C:
+Message_02_04_1A:
 #_0AA39C: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA39E: db $F3 ; [set2] wait for key and new line
 #_0AA39F: db $F1 ; [set2] clear message box
@@ -5716,14 +5718,14 @@ Message_0AA39C:
 
 ;===================================================================================================
 
-Message_0AA3A5:
+Message_02_04_1B:
 #_0AA3A5: db $E7, $17, $1C, $1E, $0B ; [set2] randomly pick from messages 17, 1C, 1E, 0B
 
 ;===================================================================================================
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AA3AA:
+Message_02_04_1C:
 #_0AA3AA: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA3AC: db $F3 ; [set2] wait for key and new line
 #_0AA3AD: db $F1 ; [set2] clear message box
@@ -5737,7 +5739,7 @@ Message_0AA3AA:
 
 ;===================================================================================================
 
-Message_0AA3BA:
+Message_02_04_1D:
 #_0AA3BA: db $D4, $01, $17 ; [set2] go to message 17 if RNG, 01 TODO
 #_0AA3BD: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AA3BF: db $F3 ; [set2] wait for key and new line
@@ -5745,14 +5747,14 @@ Message_0AA3BA:
 
 ;===================================================================================================
 
-Message_0AA3C3:
+Message_02_04_1E:
 #_0AA3C3: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA3C5: db $F3 ; [set2] wait for key and new line
 #_0AA3C6: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AA3C9:
+Message_02_05_00:
 #_0AA3C9: db $F1 ; [set2] clear message box
 #_0AA3CA: db $E7, $01, $01, $0E, $18 ; [set2] randomly pick from messages 01, 01, 0E, 18
 
@@ -5760,7 +5762,7 @@ Message_0AA3C9:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AA3CF:
+Message_02_05_01:
 #_0AA3CF: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA3D1: db $F3 ; [set2] wait for key and new line
 #_0AA3D2: db $F1 ; [set2] clear message box
@@ -5774,13 +5776,13 @@ Message_0AA3CF:
 
 ;===================================================================================================
 
-Message_0AA3DF:
+Message_02_05_02:
 #_0AA3DF: db $D5, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
 #_0AA3E2: db $E9, $03 ; [set2] go to message $03
 
 ;===================================================================================================
 
-Message_0AA3E4:
+Message_02_05_03:
 #_0AA3E4: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AA3E7: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA3E9: db $F3 ; [set2] wait for key and new line
@@ -5789,7 +5791,7 @@ Message_0AA3E4:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AA3ED:
+Message_02_05_04:
 #_0AA3ED: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA3EF: db $F3 ; [set2] wait for key and new line
 #_0AA3F0: db $F1 ; [set2] clear message box
@@ -5802,7 +5804,7 @@ Message_0AA3ED:
 ; >[DEMONX]は
 ; あまり どうようしていないようだ
 ; «どうしますか?»
-Message_0AA3F6:
+Message_02_05_05:
 #_0AA3F6: db $D5, $01, $07 ; [set2] go to message 07 if RNG, 01 TODO
 #_0AA3F9: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0AA3FB: db $F3 ; [set2] wait for key and new line
@@ -5822,21 +5824,21 @@ Message_0AA3F6:
 
 ;===================================================================================================
 
-Message_0AA41B:
+Message_02_05_06:
 #_0AA41B: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AA41D: db $F3 ; [set2] wait for key and new line
 #_0AA41E: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
 
 ;===================================================================================================
 
-Message_0AA421:
+Message_02_05_07:
 #_0AA421: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AA424:
+Message_02_05_08:
 #_0AA424: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA426: db $F3 ; [set2] wait for key and new line
 #_0AA427: db $F1 ; [set2] clear message box
@@ -5850,19 +5852,19 @@ Message_0AA424:
 
 ;===================================================================================================
 
-Message_0AA434:
+Message_02_05_09:
 #_0AA434: db $E7, $0A, $0B, $0C, $0D ; [set2] randomly pick from messages 0A, 0B, 0C, 0D
 
 ;===================================================================================================
 
-Message_0AA439:
+Message_02_05_0A:
 #_0AA439: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AA43B: db $F3 ; [set2] wait for key and new line
 #_0AA43C: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
 
 ;===================================================================================================
 
-Message_0AA43F:
+Message_02_05_0B:
 #_0AA43F: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AA441: db $F3 ; [set2] wait for key and new line
 #_0AA442: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
@@ -5870,7 +5872,7 @@ Message_0AA43F:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA445:
+Message_02_05_0C:
 #_0AA445: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA447: db $F3 ; [set2] wait for key and new line
 #_0AA448: db $F1 ; [set2] clear message box
@@ -5883,7 +5885,7 @@ Message_0AA445:
 
 ;===================================================================================================
 
-Message_0AA452:
+Message_02_05_0D:
 #_0AA452: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AA454: db $F3 ; [set2] wait for key and new line
 #_0AA455: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -5892,7 +5894,7 @@ Message_0AA452:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AA458:
+Message_02_05_0E:
 #_0AA458: db $EB, $E8 ; [set2] prewritten text E8
 #_0AA45A: db $F3 ; [set2] wait for key and new line
 #_0AA45B: db $F1 ; [set2] clear message box
@@ -5903,7 +5905,7 @@ Message_0AA458:
 
 ;===================================================================================================
 
-Message_0AA464:
+Message_02_05_0F:
 #_0AA464: db $D7, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
 #_0AA467: db $E9, $10 ; [set2] go to message $10
 
@@ -5911,7 +5913,7 @@ Message_0AA464:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0AA469:
+Message_02_05_10:
 #_0AA469: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AA46B: db $F3 ; [set2] wait for key and new line
 #_0AA46C: db $F1 ; [set2] clear message box
@@ -5927,7 +5929,7 @@ Message_0AA469:
 
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
-Message_0AA479:
+Message_02_05_11:
 #_0AA479: db $D8, $02, $12 ; [set2] go to message 12 if RNG, 02 TODO
 #_0AA47C: db $EB, $48 ; [set2] prewritten text 48
 #_0AA47E: db $F3 ; [set2] wait for key and new line
@@ -5938,26 +5940,26 @@ Message_0AA479:
 
 ;===================================================================================================
 
-Message_0AA485:
+Message_02_05_12:
 #_0AA485: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AA487: db $F3 ; [set2] wait for key and new line
 #_0AA488: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AA48A:
+Message_02_05_13:
 #_0AA48A: db $D5, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
 #_0AA48D: db $E9, $04 ; [set2] go to message $04
 
 ;===================================================================================================
 
-Message_0AA48F:
+Message_02_05_14:
 #_0AA48F: db $F9, $01, $15 ; [set2] [COMMAND 59] go to message 15 if something 01 TODO
 #_0AA492: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AA495:
+Message_02_05_15:
 #_0AA495: db $F1 ; [set2] clear message box
 #_0AA496: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA498: db $F3 ; [set2] wait for key and new line
@@ -5966,7 +5968,7 @@ Message_0AA495:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AA49B:
+Message_02_05_16:
 #_0AA49B: db $F9, $00, $17 ; [set2] [COMMAND 59] go to message 17 if something 00 TODO
 #_0AA49E: db $EB, $E6 ; [set2] prewritten text E6
 #_0AA4A0: db $F3 ; [set2] wait for key and new line
@@ -5975,7 +5977,7 @@ Message_0AA49B:
 ;===================================================================================================
 
 ; «だめだ にげられない!!»
-Message_0AA4A3:
+Message_02_05_17:
 #_0AA4A3: db $EB, $E5 ; [set2] prewritten text E5
 #_0AA4A5: db $F3 ; [set2] wait for key and new line
 #_0AA4A6: db $F1 ; [set2] clear message box
@@ -5987,7 +5989,7 @@ Message_0AA4A3:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AA4AD:
+Message_02_05_18:
 #_0AA4AD: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AA4AF: db $F3 ; [set2] wait for key and new line
 #_0AA4B0: db $F1 ; [set2] clear message box
@@ -6003,7 +6005,7 @@ Message_0AA4AD:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AA4BD:
+Message_02_05_19:
 #_0AA4BD: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AA4BF: db $F3 ; [set2] wait for key and new line
 #_0AA4C0: db $F1 ; [set2] clear message box
@@ -6017,15 +6019,14 @@ Message_0AA4BD:
 
 ;===================================================================================================
 
-Message_0AA4CD:
+Message_02_05_1A:
 #_0AA4CD: db $D4, $01, $1B ; [set2] go to message 1B if RNG, 01 TODO
-#_0AA4D0: db $E9, $10 ; [set2] go to message $10B if RNG, 01 TODO
 #_0AA4D0: db $E9, $10 ; [set2] go to message $10
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA4D2:
+Message_02_05_1B:
 #_0AA4D2: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA4D4: db $F3 ; [set2] wait for key and new line
 #_0AA4D5: db $F1 ; [set2] clear message box
@@ -6037,7 +6038,7 @@ Message_0AA4D2:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AA4DB:
+Message_02_06_00:
 #_0AA4DB: db $FC, $E9, $06 ; [set2] test progress bit $E9 for message $06
 #_0AA4DE: db $D4, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
 #_0AA4E1: db $E8, $51 ; [set2] [COMMAND 48:51]
@@ -6054,7 +6055,7 @@ Message_0AA4DB:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AA4F1:
+Message_02_06_01:
 #_0AA4F1: db $D4, $00, $03 ; [set2] go to message 03 if RNG, 00 TODO
 #_0AA4F4: db $D4, $00, $02 ; [set2] go to message 02 if RNG, 00 TODO
 #_0AA4F7: db $E8, $5C ; [set2] [COMMAND 48:5C]
@@ -6068,14 +6069,14 @@ Message_0AA4F1:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA503:
+Message_02_06_02:
 #_0AA503: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA505: db $F3 ; [set2] wait for key and new line
 #_0AA506: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0AA508:
+Message_02_06_03:
 #_0AA508: db $E8, $61 ; [set2] [COMMAND 48:61]
 #_0AA50A: db $F3 ; [set2] wait for key and new line
 #_0AA50B: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -6083,7 +6084,7 @@ Message_0AA508:
 ;===================================================================================================
 
 ; «>[DEMONX]は ちかづいてきた»
-Message_0AA50E:
+Message_02_06_04:
 #_0AA50E: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA511: db $F9, $00, $05 ; [set2] [COMMAND 59] go to message 05 if something 00 TODO
 #_0AA514: db $EB, $E9 ; [set2] prewritten text E9
@@ -6092,14 +6093,14 @@ Message_0AA50E:
 
 ;===================================================================================================
 
-Message_0AA51A:
+Message_02_06_05:
 #_0AA51A: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA51C: db $F3 ; [set2] wait for key and new line
 #_0AA51D: db $FE, $02 ; [set2] [COMMAND 5E:02]
 
 ;===================================================================================================
 
-Message_0AA51F:
+Message_02_06_06:
 #_0AA51F: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AA521: db $F3 ; [set2] wait for key and new line
 #_0AA522: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -6108,7 +6109,7 @@ Message_0AA51F:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AA525:
+Message_02_07_00:
 #_0AA525: db $D4, $00, $0A ; [set2] go to message 0A if RNG, 00 TODO
 #_0AA528: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA52A: db $F3 ; [set2] wait for key and new line
@@ -6125,7 +6126,7 @@ Message_0AA525:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AA538:
+Message_02_07_01:
 #_0AA538: db $E8, $5A ; [set2] [COMMAND 48:5A]
 #_0AA53A: db $F3 ; [set2] wait for key and new line
 #_0AA53B: db $F1 ; [set2] clear message box
@@ -6139,13 +6140,13 @@ Message_0AA538:
 
 ;===================================================================================================
 
-Message_0AA548:
+Message_02_07_02:
 #_0AA548: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AA54B: db $E9, $03 ; [set2] go to message $03
 
 ;===================================================================================================
 
-Message_0AA54D:
+Message_02_07_03:
 #_0AA54D: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AA54F: db $F3 ; [set2] wait for key and new line
 #_0AA550: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -6153,7 +6154,7 @@ Message_0AA54D:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AA553:
+Message_02_07_04:
 #_0AA553: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AA555: db $F3 ; [set2] wait for key and new line
 #_0AA556: db $F1 ; [set2] clear message box
@@ -6164,7 +6165,7 @@ Message_0AA553:
 
 ;===================================================================================================
 
-Message_0AA55F:
+Message_02_07_05:
 #_0AA55F: db $E8, $61 ; [set2] [COMMAND 48:61]
 #_0AA561: db $F3 ; [set2] wait for key and new line
 #_0AA562: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -6172,7 +6173,7 @@ Message_0AA55F:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA565:
+Message_02_07_06:
 #_0AA565: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AA567: db $EF, $07 ; [set2] YES/NO - go to message $07 if YES
 #_0AA569: db $D7, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
@@ -6182,13 +6183,13 @@ Message_0AA565:
 
 ;===================================================================================================
 
-Message_0AA571:
+Message_02_07_07:
 #_0AA571: db $D7, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
 #_0AA574: db $E9, $04 ; [set2] go to message $04
 
 ;===================================================================================================
 
-Message_0AA576:
+Message_02_07_08:
 #_0AA576: db $E8, $61 ; [set2] [COMMAND 48:61]
 #_0AA578: db $F3 ; [set2] wait for key and new line
 #_0AA579: db $F1 ; [set2] clear message box
@@ -6198,14 +6199,14 @@ Message_0AA576:
 
 ;===================================================================================================
 
-Message_0AA57F:
+Message_02_07_09:
 #_0AA57F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]は いかく している»
 ; «どうしますか?»
-Message_0AA582:
+Message_02_07_0A:
 #_0AA582: db $E8, $5D ; [set2] [COMMAND 48:5D]
 #_0AA584: db $F3 ; [set2] wait for key and new line
 #_0AA585: db $F1 ; [set2] clear message box
@@ -6219,13 +6220,13 @@ Message_0AA582:
 
 ;===================================================================================================
 
-Message_0AA592:
+Message_02_07_0B:
 #_0AA592: db $F9, $00, $0C ; [set2] [COMMAND 59] go to message 0C if something 00 TODO
 #_0AA595: db $E9, $09 ; [set2] go to message $09
 
 ;===================================================================================================
 
-Message_0AA597:
+Message_02_07_0C:
 #_0AA597: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA599: db $F3 ; [set2] wait for key and new line
 #_0AA59A: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -6234,7 +6235,7 @@ Message_0AA597:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AA59C:
+Message_02_08_00:
 #_0AA59C: db $FC, $E9, $07 ; [set2] test progress bit $E9 for message $07
 #_0AA59F: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AA5A2: db $E8, $51 ; [set2] [COMMAND 48:51]
@@ -6250,20 +6251,20 @@ Message_0AA59C:
 
 ;===================================================================================================
 
-Message_0AA5B2:
+Message_02_08_01:
 #_0AA5B2: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AA5B4: db $EF, $02 ; [set2] YES/NO - go to message $02 if YES
 #_0AA5B6: db $E9, $09 ; [set2] go to message $09
 
 ;===================================================================================================
 
-Message_0AA5B8:
+Message_02_08_02:
 #_0AA5B8: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA5BA: db $F7, $25, $80 ; [set2] [COMMAND 57] $25 $80 TODO
 
 ;===================================================================================================
 
-Message_0AA5BD:
+Message_02_08_03:
 #_0AA5BD: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA5C0: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AA5C2: db $EF, $05 ; [set2] YES/NO - go to message $05 if YES
@@ -6278,7 +6279,7 @@ Message_0AA5BD:
 
 ;===================================================================================================
 
-Message_0AA5D1:
+Message_02_08_04:
 #_0AA5D1: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AA5D3: db $F3 ; [set2] wait for key and new line
 #_0AA5D4: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -6286,7 +6287,7 @@ Message_0AA5D1:
 
 ;===================================================================================================
 
-Message_0AA5D9:
+Message_02_08_05:
 #_0AA5D9: db $D8, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AA5DC: db $E9, $01 ; [set2] go to message $01
 
@@ -6295,7 +6296,7 @@ Message_0AA5D9:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AA5DE:
+Message_02_08_06:
 #_0AA5DE: db $E8, $55 ; [set2] [COMMAND 48:55]
 #_0AA5E0: db $F3 ; [set2] wait for key and new line
 #_0AA5E1: db $F1 ; [set2] clear message box
@@ -6311,7 +6312,7 @@ Message_0AA5DE:
 
 ; >[DEMONX]が たずねています
 ; «どうしますか?»
-Message_0AA5EC:
+Message_02_08_07:
 #_0AA5EC: db $E0 ; [set2] [COMMAND 40]
 #_0AA5ED: db $E8, $4A ; [set2] [COMMAND 48:4A]
 #_0AA5EF: db $EF, $0A ; [set2] YES/NO - go to message $0A if YES
@@ -6331,7 +6332,7 @@ Message_0AA5EC:
 
 ;===================================================================================================
 
-Message_0AA60A:
+Message_02_08_08:
 #_0AA60A: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AA60C: db $F3 ; [set2] wait for key and new line
 #_0AA60D: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -6340,14 +6341,14 @@ Message_0AA60A:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA612:
+Message_02_08_09:
 #_0AA612: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA614: db $F3 ; [set2] wait for key and new line
 #_0AA615: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0AA617:
+Message_02_08_0A:
 #_0AA617: db $E5, $04 ; [set2] [COMMAND 45:04]
 #_0AA619: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress bit EA if 01 is nonzero; otherwise reset
 #_0AA61C: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
@@ -6357,7 +6358,7 @@ Message_0AA617:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AA622:
+Message_02_09_00:
 #_0AA622: db $D4, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
 #_0AA625: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA627: db $F3 ; [set2] wait for key and new line
@@ -6372,25 +6373,25 @@ Message_0AA622:
 
 ;===================================================================================================
 
-Message_0AA635:
+Message_02_09_01:
 #_0AA635: db $F7, $27, $80 ; [set2] [COMMAND 57] $27 $80 TODO
 
 ;===================================================================================================
 
-Message_0AA638:
+Message_02_09_02:
 #_0AA638: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AA63A: db $EF, $03 ; [set2] YES/NO - go to message $03 if YES
 #_0AA63C: db $E9, $05 ; [set2] go to message $05
 
 ;===================================================================================================
 
-Message_0AA63E:
+Message_02_09_03:
 #_0AA63E: db $D8, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
 #_0AA641: db $E9, $0F ; [set2] go to message $0F
 
 ;===================================================================================================
 
-Message_0AA643:
+Message_02_09_04:
 #_0AA643: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AA645: db $F3 ; [set2] wait for key and new line
 #_0AA646: db $F1 ; [set2] clear message box
@@ -6400,7 +6401,7 @@ Message_0AA643:
 
 ;===================================================================================================
 
-Message_0AA64C:
+Message_02_09_05:
 #_0AA64C: db $D7, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
 #_0AA64F: db $E9, $0E ; [set2] go to message $0E
 
@@ -6408,7 +6409,7 @@ Message_0AA64C:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AA651:
+Message_02_09_06:
 #_0AA651: db $E8, $5A ; [set2] [COMMAND 48:5A]
 #_0AA653: db $F3 ; [set2] wait for key and new line
 #_0AA654: db $F1 ; [set2] clear message box
@@ -6422,7 +6423,7 @@ Message_0AA651:
 
 ;===================================================================================================
 
-Message_0AA661:
+Message_02_09_07:
 #_0AA661: db $D5, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
 #_0AA664: db $E8, $5B ; [set2] [COMMAND 48:5B]
 #_0AA666: db $F3 ; [set2] wait for key and new line
@@ -6433,7 +6434,7 @@ Message_0AA661:
 
 ; «>[DEMONX]は くちぶえを ふいた»
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AA66C:
+Message_02_09_08:
 #_0AA66C: db $DA, $01, $04 ; [set2] ext command 01: go to message 04 if MC INT = 0
 #_0AA66F: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AA671: db $F3 ; [set2] wait for key and new line
@@ -6449,7 +6450,7 @@ Message_0AA66C:
 
 ; «>[DEMONX]は いかく している»
 ; «どうしますか?»
-Message_0AA67C:
+Message_02_09_09:
 #_0AA67C: db $E8, $5D ; [set2] [COMMAND 48:5D]
 #_0AA67E: db $F3 ; [set2] wait for key and new line
 #_0AA67F: db $F1 ; [set2] clear message box
@@ -6463,12 +6464,12 @@ Message_0AA67C:
 
 ;===================================================================================================
 
-Message_0AA68C:
+Message_02_09_0A:
 #_0AA68C: db $F7, $28, $80 ; [set2] [COMMAND 57] $28 $80 TODO
 
 ;===================================================================================================
 
-Message_0AA68F:
+Message_02_09_0B:
 #_0AA68F: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AA691: db $EF, $0D ; [set2] YES/NO - go to message $0D if YES
 #_0AA693: db $E8, $5F ; [set2] [COMMAND 48:5F]
@@ -6478,28 +6479,28 @@ Message_0AA68F:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AA699:
+Message_02_09_0C:
 #_0AA699: db $EB, $E6 ; [set2] prewritten text E6
 #_0AA69B: db $F3 ; [set2] wait for key and new line
 #_0AA69C: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
 ;===================================================================================================
 
-Message_0AA69E:
+Message_02_09_0D:
 #_0AA69E: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AA6A0: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA6A2:
+Message_02_09_0E:
 #_0AA6A2: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA6A4: db $F3 ; [set2] wait for key and new line
 #_0AA6A5: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0AA6A7:
+Message_02_09_0F:
 #_0AA6A7: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AA6A9: db $F3 ; [set2] wait for key and new line
 #_0AA6AA: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -6508,7 +6509,7 @@ Message_0AA6A7:
 
 ;===================================================================================================
 
-Message_0AA6B2:
+Message_02_0A_00:
 #_0AA6B2: db $F1 ; [set2] clear message box
 #_0AA6B3: db $D5, $00, $4A ; [set2] go to message 4A if RNG, 00 TODO
 #_0AA6B6: db $E7, $01, $13, $32, $46 ; [set2] randomly pick from messages 01, 13, 32, 46
@@ -6517,7 +6518,7 @@ Message_0AA6B2:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AA6BB:
+Message_02_0A_01:
 #_0AA6BB: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AA6BD: db $F3 ; [set2] wait for key and new line
 #_0AA6BE: db $F1 ; [set2] clear message box
@@ -6531,18 +6532,18 @@ Message_0AA6BB:
 
 ;===================================================================================================
 
-Message_0AA6CB:
+Message_02_0A_02:
 #_0AA6CB: db $E7, $03, $04, $04, $0A ; [set2] randomly pick from messages 03, 04, 04, 0A
 
 ;===================================================================================================
 
-Message_0AA6D0:
+Message_02_0A_03:
 #_0AA6D0: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AA6D3:
+Message_02_0A_04:
 #_0AA6D3: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA6D5: db $F3 ; [set2] wait for key and new line
 #_0AA6D6: db $F1 ; [set2] clear message box
@@ -6553,12 +6554,12 @@ Message_0AA6D3:
 
 ;===================================================================================================
 
-Message_0AA6DF:
+Message_02_0A_05:
 #_0AA6DF: db $E9, $1B ; [set2] go to message $1B
 
 ;===================================================================================================
 
-Message_0AA6E1:
+Message_02_0A_06:
 #_0AA6E1: db $D6, $00, $03 ; [set2] go to message 03 if RNG, 00 TODO
 #_0AA6E4: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AA6E6: db $D4, $01, $07 ; [set2] go to message 07 if RNG, 01 TODO
@@ -6569,7 +6570,7 @@ Message_0AA6E1:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AA6EF:
+Message_02_0A_07:
 #_0AA6EF: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AA6F1: db $F3 ; [set2] wait for key and new line
 #_0AA6F2: db $F1 ; [set2] clear message box
@@ -6580,12 +6581,12 @@ Message_0AA6EF:
 
 ;===================================================================================================
 
-Message_0AA6FB:
+Message_02_0A_08:
 #_0AA6FB: db $F7, $0E, $80 ; [set2] [COMMAND 57] $0E $80 TODO
 
 ;===================================================================================================
 
-Message_0AA6FE:
+Message_02_0A_09:
 #_0AA6FE: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA700: db $F3 ; [set2] wait for key and new line
 #_0AA701: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -6595,7 +6596,7 @@ Message_0AA6FE:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AA709:
+Message_02_0A_0A:
 #_0AA709: db $DA, $01, $03 ; [set2] ext command 01: go to message 03 if MC INT = 0
 #_0AA70C: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AA70E: db $F3 ; [set2] wait for key and new line
@@ -6606,12 +6607,12 @@ Message_0AA709:
 
 ;===================================================================================================
 
-Message_0AA715:
+Message_02_0A_0B:
 #_0AA715: db $E7, $0C, $0C, $0D, $11 ; [set2] randomly pick from messages 0C, 0C, 0D, 11
 
 ;===================================================================================================
 
-Message_0AA71A:
+Message_02_0A_0C:
 #_0AA71A: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AA71C: db $F3 ; [set2] wait for key and new line
 #_0AA71D: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -6619,13 +6620,13 @@ Message_0AA71A:
 
 ;===================================================================================================
 
-Message_0AA722:
+Message_02_0A_0D:
 #_0AA722: db $D5, $02, $03 ; [set2] go to message 03 if RNG, 02 TODO
 #_0AA725: db $E7, $0E, $0E, $0F, $10 ; [set2] randomly pick from messages 0E, 0E, 0F, 10
 
 ;===================================================================================================
 
-Message_0AA72A:
+Message_02_0A_0E:
 #_0AA72A: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AA72C: db $F3 ; [set2] wait for key and new line
 #_0AA72D: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -6634,7 +6635,7 @@ Message_0AA72A:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AA732:
+Message_02_0A_0F:
 #_0AA732: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA734: db $F3 ; [set2] wait for key and new line
 #_0AA735: db $F1 ; [set2] clear message box
@@ -6647,7 +6648,7 @@ Message_0AA732:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AA73B:
+Message_02_0A_10:
 #_0AA73B: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA73D: db $F3 ; [set2] wait for key and new line
 #_0AA73E: db $F1 ; [set2] clear message box
@@ -6662,7 +6663,7 @@ Message_0AA73B:
 ;===================================================================================================
 
 ; «>[DEMONX]は なんたいかにげだした»
-Message_0AA749:
+Message_02_0A_11:
 #_0AA749: db $D7, $00, $12 ; [set2] go to message 12 if RNG, 00 TODO
 #_0AA74C: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
 #_0AA74F: db $E8, $05 ; [set2] [COMMAND 48:05]
@@ -6674,7 +6675,7 @@ Message_0AA749:
 
 ;===================================================================================================
 
-Message_0AA758:
+Message_02_0A_12:
 #_0AA758: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA75A: db $F3 ; [set2] wait for key and new line
 #_0AA75B: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -6683,7 +6684,7 @@ Message_0AA758:
 
 ; «>[DEMONX]は わらっている»
 ; «どうしますか?»
-Message_0AA75D:
+Message_02_0A_13:
 #_0AA75D: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA75F: db $F3 ; [set2] wait for key and new line
 #_0AA760: db $F1 ; [set2] clear message box
@@ -6698,7 +6699,7 @@ Message_0AA75D:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AA76D:
+Message_02_0A_14:
 #_0AA76D: db $D8, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
 #_0AA770: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA772: db $F3 ; [set2] wait for key and new line
@@ -6712,7 +6713,7 @@ Message_0AA76D:
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AA77C:
+Message_02_0A_15:
 #_0AA77C: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA77E: db $F3 ; [set2] wait for key and new line
 #_0AA77F: db $F1 ; [set2] clear message box
@@ -6726,13 +6727,13 @@ Message_0AA77C:
 
 ;===================================================================================================
 
-Message_0AA78C:
+Message_02_0A_16:
 #_0AA78C: db $E7, $03, $17, $17, $3D ; [set2] randomly pick from messages 03, 17, 17, 3D
 
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AA791:
+Message_02_0A_17:
 #_0AA791: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA793: db $F3 ; [set2] wait for key and new line
 #_0AA794: db $F1 ; [set2] clear message box
@@ -6743,19 +6744,19 @@ Message_0AA791:
 
 ;===================================================================================================
 
-Message_0AA79D:
+Message_02_0A_18:
 #_0AA79D: db $E9, $06 ; [set2] go to message $06
 
 ;===================================================================================================
 
-Message_0AA79F:
+Message_02_0A_19:
 #_0AA79F: db $E7, $1A, $25, $25, $2B ; [set2] randomly pick from messages 1A, 25, 25, 2B
 
 ;===================================================================================================
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0AA7A4:
+Message_02_0A_1A:
 #_0AA7A4: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AA7A6: db $F3 ; [set2] wait for key and new line
 #_0AA7A7: db $F1 ; [set2] clear message box
@@ -6770,7 +6771,7 @@ Message_0AA7A4:
 ;===================================================================================================
 
 ; «>[DEMONX]を ナカマにしますか?»
-Message_0AA7B4:
+Message_02_0A_1B:
 #_0AA7B4: db $D6, $00, $1E ; [set2] go to message 1E if RNG, 00 TODO
 #_0AA7B7: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA7B9: db $D4, $01, $1D ; [set2] go to message 1D if RNG, 01 TODO
@@ -6783,7 +6784,7 @@ Message_0AA7B4:
 
 ;===================================================================================================
 
-Message_0AA7C6:
+Message_02_0A_1C:
 #_0AA7C6: db $D8, $01, $1D ; [set2] go to message 1D if RNG, 01 TODO
 #_0AA7C9: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA7CB: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
@@ -6791,14 +6792,14 @@ Message_0AA7C6:
 
 ;===================================================================================================
 
-Message_0AA7D1:
+Message_02_0A_1D:
 #_0AA7D1: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AA7D3: db $F3 ; [set2] wait for key and new line
 #_0AA7D4: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AA7D6:
+Message_02_0A_1E:
 #_0AA7D6: db $D4, $01, $1F ; [set2] go to message 1F if RNG, 01 TODO
 #_0AA7D9: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AA7DB: db $F3 ; [set2] wait for key and new line
@@ -6806,7 +6807,7 @@ Message_0AA7D6:
 
 ;===================================================================================================
 
-Message_0AA7DE:
+Message_02_0A_1F:
 #_0AA7DE: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0AA7E0: db $F3 ; [set2] wait for key and new line
 #_0AA7E1: db $D7, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
@@ -6814,7 +6815,7 @@ Message_0AA7DE:
 
 ;===================================================================================================
 
-Message_0AA7E7:
+Message_02_0A_20:
 #_0AA7E7: db $F1 ; [set2] clear message box
 #_0AA7E8: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA7EA: db $F3 ; [set2] wait for key and new line
@@ -6822,7 +6823,7 @@ Message_0AA7E7:
 
 ;===================================================================================================
 
-Message_0AA7ED:
+Message_02_0A_21:
 #_0AA7ED: db $D6, $01, $22 ; [set2] go to message 22 if RNG, 01 TODO
 #_0AA7F0: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA7F2: db $F3 ; [set2] wait for key and new line
@@ -6832,7 +6833,7 @@ Message_0AA7ED:
 
 ; «>[DEMONX]は いいきに なっています»
 ; «どうしますか?»
-Message_0AA7F6:
+Message_02_0A_22:
 #_0AA7F6: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AA7F8: db $F3 ; [set2] wait for key and new line
 #_0AA7F9: db $F1 ; [set2] clear message box
@@ -6847,7 +6848,7 @@ Message_0AA7F6:
 ;===================================================================================================
 
 ; «>[DEMONX]は なんたいかにげだした»
-Message_0AA806:
+Message_02_0A_23:
 #_0AA806: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
 #_0AA809: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA80B: db $F3 ; [set2] wait for key and new line
@@ -6858,7 +6859,7 @@ Message_0AA806:
 
 ;===================================================================================================
 
-Message_0AA812:
+Message_02_0A_24:
 #_0AA812: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA814: db $F3 ; [set2] wait for key and new line
 #_0AA815: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress bit EA if 01 is nonzero; otherwise reset
@@ -6868,7 +6869,7 @@ Message_0AA812:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AA81B:
+Message_02_0A_25:
 #_0AA81B: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AA81D: db $F3 ; [set2] wait for key and new line
 #_0AA81E: db $F1 ; [set2] clear message box
@@ -6882,7 +6883,7 @@ Message_0AA81B:
 
 ;===================================================================================================
 
-Message_0AA82B:
+Message_02_0A_26:
 #_0AA82B: db $D8, $01, $27 ; [set2] go to message 27 if RNG, 01 TODO
 #_0AA82E: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA830: db $F3 ; [set2] wait for key and new line
@@ -6892,7 +6893,7 @@ Message_0AA82B:
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
-Message_0AA836:
+Message_02_0A_27:
 #_0AA836: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA838: db $F3 ; [set2] wait for key and new line
 #_0AA839: db $F1 ; [set2] clear message box
@@ -6906,7 +6907,7 @@ Message_0AA836:
 ; «>[CHASE]の うたは»
 ; «[CLASSX] [DEMONX]を とりこにした»
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AA841:
+Message_02_0A_28:
 #_0AA841: db $D8, $02, $29 ; [set2] go to message 29 if RNG, 02 TODO
 #_0AA844: db $EB, $E7 ; [set2] prewritten text E7
 #_0AA846: db $F3 ; [set2] wait for key and new line
@@ -6919,7 +6920,7 @@ Message_0AA841:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AA850:
+Message_02_0A_29:
 #_0AA850: db $DB, $00, $2A ; [set2] [COMMAND 3B] go to message 2A if something 00 TODO
 #_0AA853: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA855: db $F3 ; [set2] wait for key and new line
@@ -6932,7 +6933,7 @@ Message_0AA850:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA85F:
+Message_02_0A_2A:
 #_0AA85F: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA861: db $F3 ; [set2] wait for key and new line
 #_0AA862: db $F1 ; [set2] clear message box
@@ -6945,7 +6946,7 @@ Message_0AA85F:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0AA86A:
+Message_02_0A_2B:
 #_0AA86A: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA86C: db $F3 ; [set2] wait for key and new line
 #_0AA86D: db $F1 ; [set2] clear message box
@@ -6959,7 +6960,7 @@ Message_0AA86A:
 
 ;===================================================================================================
 
-Message_0AA87A:
+Message_02_0A_2C:
 #_0AA87A: db $D4, $01, $2E ; [set2] go to message 2E if RNG, 01 TODO
 #_0AA87D: db $D7, $00, $2D ; [set2] go to message 2D if RNG, 00 TODO
 #_0AA880: db $E8, $06 ; [set2] [COMMAND 48:06]
@@ -6970,7 +6971,7 @@ Message_0AA87A:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA888:
+Message_02_0A_2D:
 #_0AA888: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA88A: db $F3 ; [set2] wait for key and new line
 #_0AA88B: db $F1 ; [set2] clear message box
@@ -6981,7 +6982,7 @@ Message_0AA888:
 ;===================================================================================================
 
 ; «>[DEMONX]は なんたいかにげだした»
-Message_0AA891:
+Message_02_0A_2E:
 #_0AA891: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
 #_0AA894: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA896: db $F3 ; [set2] wait for key and new line
@@ -6993,7 +6994,7 @@ Message_0AA891:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA89D:
+Message_02_0A_2F:
 #_0AA89D: db $D4, $02, $31 ; [set2] go to message 31 if RNG, 02 TODO
 #_0AA8A0: db $D4, $01, $30 ; [set2] go to message 30 if RNG, 01 TODO
 #_0AA8A3: db $E8, $0D ; [set2] [COMMAND 48:0D]
@@ -7006,7 +7007,7 @@ Message_0AA89D:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AA8AC:
+Message_02_0A_30:
 #_0AA8AC: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AA8AE: db $F3 ; [set2] wait for key and new line
 #_0AA8AF: db $F1 ; [set2] clear message box
@@ -7022,7 +7023,7 @@ Message_0AA8AC:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AA8B8:
+Message_02_0A_31:
 #_0AA8B8: db $DD ; [set2] [COMMAND 3D]
 #_0AA8B9: db $EB, $D8 ; [set2] prewritten text D8
 #_0AA8BB: db $F3 ; [set2] wait for key and new line
@@ -7037,7 +7038,7 @@ Message_0AA8B8:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AA8C6:
+Message_02_0A_32:
 #_0AA8C6: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0AA8C9: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA8CB: db $F3 ; [set2] wait for key and new line
@@ -7050,7 +7051,7 @@ Message_0AA8C6:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AA8D5:
+Message_02_0A_33:
 #_0AA8D5: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA8D8: db $D4, $00, $35 ; [set2] go to message 35 if RNG, 00 TODO
 #_0AA8DB: db $D7, $00, $34 ; [set2] go to message 34 if RNG, 00 TODO
@@ -7064,7 +7065,7 @@ Message_0AA8D5:
 
 ;===================================================================================================
 
-Message_0AA8EA:
+Message_02_0A_34:
 #_0AA8EA: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA8EC: db $F3 ; [set2] wait for key and new line
 #_0AA8ED: db $F1 ; [set2] clear message box
@@ -7076,7 +7077,7 @@ Message_0AA8EA:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AA8F3:
+Message_02_0A_35:
 #_0AA8F3: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA8F5: db $F3 ; [set2] wait for key and new line
 #_0AA8F6: db $F1 ; [set2] clear message box
@@ -7090,7 +7091,7 @@ Message_0AA8F3:
 
 ;===================================================================================================
 
-Message_0AA903:
+Message_02_0A_36:
 #_0AA903: db $DB, $01, $34 ; [set2] [COMMAND 3B] go to message 34 if something 01 TODO
 #_0AA906: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0AA908: db $F3 ; [set2] wait for key and new line
@@ -7099,7 +7100,7 @@ Message_0AA903:
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
-Message_0AA90C:
+Message_02_0A_37:
 #_0AA90C: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AA90E: db $F3 ; [set2] wait for key and new line
 #_0AA90F: db $F1 ; [set2] clear message box
@@ -7112,7 +7113,7 @@ Message_0AA90C:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA919:
+Message_02_0A_38:
 #_0AA919: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA91B: db $F3 ; [set2] wait for key and new line
 #_0AA91C: db $F1 ; [set2] clear message box
@@ -7122,7 +7123,7 @@ Message_0AA919:
 
 ;===================================================================================================
 
-Message_0AA922:
+Message_02_0A_39:
 #_0AA922: db $D8, $01, $43 ; [set2] go to message 43 if RNG, 01 TODO
 #_0AA925: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA927: db $D4, $00, $3A ; [set2] go to message 3A if RNG, 00 TODO
@@ -7134,7 +7135,7 @@ Message_0AA922:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AA930:
+Message_02_0A_3A:
 #_0AA930: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AA932: db $F3 ; [set2] wait for key and new line
 #_0AA933: db $F1 ; [set2] clear message box
@@ -7148,7 +7149,7 @@ Message_0AA930:
 
 ;===================================================================================================
 
-Message_0AA940:
+Message_02_0A_3B:
 #_0AA940: db $D5, $01, $40 ; [set2] go to message 40 if RNG, 01 TODO
 #_0AA943: db $D4, $00, $3C ; [set2] go to message 3C if RNG, 00 TODO
 #_0AA946: db $E8, $2F ; [set2] [COMMAND 48:2F]
@@ -7158,7 +7159,7 @@ Message_0AA940:
 
 ;===================================================================================================
 
-Message_0AA94E:
+Message_02_0A_3C:
 #_0AA94E: db $D4, $00, $3D ; [set2] go to message 3D if RNG, 00 TODO
 #_0AA951: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AA953: db $F3 ; [set2] wait for key and new line
@@ -7168,7 +7169,7 @@ Message_0AA94E:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA959:
+Message_02_0A_3D:
 #_0AA959: db $E8, $11 ; [set2] [COMMAND 48:11]
 #_0AA95B: db $EF, $3E ; [set2] YES/NO - go to message $3E if YES
 #_0AA95D: db $E8, $2E ; [set2] [COMMAND 48:2E]
@@ -7181,7 +7182,7 @@ Message_0AA959:
 ;===================================================================================================
 
 ; «>[CHASE]は みごとに いわをくだいた»
-Message_0AA966:
+Message_02_0A_3E:
 #_0AA966: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AA968: db $D9, $3F ; [set2] [COMMAND 39] go to message 3F if RNG TODO
 #_0AA96A: db $EB, $DE ; [set2] prewritten text DE
@@ -7196,7 +7197,7 @@ Message_0AA966:
 
 ; «>[CHASE]には いわを くだけなかった»
 ; «>[DEMONX]は さっていった»
-Message_0AA976:
+Message_02_0A_3F:
 #_0AA976: db $EB, $DF ; [set2] prewritten text DF
 #_0AA978: db $F3 ; [set2] wait for key and new line
 #_0AA979: db $F1 ; [set2] clear message box
@@ -7210,7 +7211,7 @@ Message_0AA976:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA983:
+Message_02_0A_40:
 #_0AA983: db $D7, $01, $41 ; [set2] go to message 41 if RNG, 01 TODO
 #_0AA986: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AA988: db $F3 ; [set2] wait for key and new line
@@ -7221,7 +7222,7 @@ Message_0AA983:
 
 ;===================================================================================================
 
-Message_0AA98F:
+Message_02_0A_41:
 #_0AA98F: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AA991: db $F3 ; [set2] wait for key and new line
 #_0AA992: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -7229,7 +7230,7 @@ Message_0AA98F:
 
 ;===================================================================================================
 
-Message_0AA997:
+Message_02_0A_42:
 #_0AA997: db $D7, $01, $25 ; [set2] go to message 25 if RNG, 01 TODO
 #_0AA99A: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA99C: db $F3 ; [set2] wait for key and new line
@@ -7240,7 +7241,7 @@ Message_0AA997:
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AA9A2:
+Message_02_0A_43:
 #_0AA9A2: db $D4, $01, $44 ; [set2] go to message 44 if RNG, 01 TODO
 #_0AA9A5: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA9A7: db $F3 ; [set2] wait for key and new line
@@ -7256,7 +7257,7 @@ Message_0AA9A2:
 ;===================================================================================================
 
 ; >[DEMONX]は あきれてなんたいかさった
-Message_0AA9B5:
+Message_02_0A_44:
 #_0AA9B5: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA9B7: db $F3 ; [set2] wait for key and new line
 #_0AA9B8: db $F1 ; [set2] clear message box
@@ -7271,14 +7272,14 @@ Message_0AA9B5:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AA9CF:
+Message_02_0A_45:
 #_0AA9CF: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA9D1: db $F3 ; [set2] wait for key and new line
 #_0AA9D2: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0AA9D4:
+Message_02_0A_46:
 #_0AA9D4: db $D2, $00 ; [set2] something to message 00 TODO
 #_0AA9D6: db $E8, $22 ; [set2] [COMMAND 48:22]
 #_0AA9D8: db $EF, $48 ; [set2] YES/NO - go to message $48 if YES
@@ -7289,14 +7290,14 @@ Message_0AA9D4:
 
 ;===================================================================================================
 
-Message_0AA9E3:
+Message_02_0A_47:
 #_0AA9E3: db $E8, $26 ; [set2] [COMMAND 48:26]
 #_0AA9E5: db $F1 ; [set2] clear message box
 #_0AA9E6: db $F7, $16, $80 ; [set2] [COMMAND 57] $16 $80 TODO
 
 ;===================================================================================================
 
-Message_0AA9E9:
+Message_02_0A_48:
 #_0AA9E9: db $D4, $00, $49 ; [set2] go to message 49 if RNG, 00 TODO
 #_0AA9EC: db $E8, $23 ; [set2] [COMMAND 48:23]
 #_0AA9EE: db $F1 ; [set2] clear message box
@@ -7304,21 +7305,21 @@ Message_0AA9E9:
 
 ;===================================================================================================
 
-Message_0AA9F2:
+Message_02_0A_49:
 #_0AA9F2: db $E8, $24 ; [set2] [COMMAND 48:24]
 #_0AA9F4: db $F1 ; [set2] clear message box
 #_0AA9F5: db $F7, $16, $80 ; [set2] [COMMAND 57] $16 $80 TODO
 
 ;===================================================================================================
 
-Message_0AA9F8:
+Message_02_0A_4A:
 #_0AA9F8: db $E7, $4B, $4B, $58, $5C ; [set2] randomly pick from messages 4B, 4B, 58, 5C
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AA9FD:
+Message_02_0A_4B:
 #_0AA9FD: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA9FF: db $F3 ; [set2] wait for key and new line
 #_0AAA00: db $F1 ; [set2] clear message box
@@ -7334,7 +7335,7 @@ Message_0AA9FD:
 
 ; >[DEMONX]は ちょうしにのっている
 ; «どうしますか?»
-Message_0AAA0D:
+Message_02_0A_4C:
 #_0AAA0D: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAA0F: db $D6, $00, $51 ; [set2] go to message 51 if RNG, 00 TODO
 #_0AAA12: db $E6, $FC ; [set2] [COMMAND 46:FC]
@@ -7355,7 +7356,7 @@ Message_0AAA0D:
 
 ;===================================================================================================
 
-Message_0AAA33:
+Message_02_0A_4D:
 #_0AAA33: db $D6, $01, $4E ; [set2] go to message 4E if RNG, 01 TODO
 #_0AAA36: db $E8, $29 ; [set2] [COMMAND 48:29]
 #_0AAA38: db $F3 ; [set2] wait for key and new line
@@ -7366,7 +7367,7 @@ Message_0AAA33:
 ;===================================================================================================
 
 ; «>[DEMONX]は おだてに おこった»
-Message_0AAA41:
+Message_02_0A_4E:
 #_0AAA41: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AAA43: db $F3 ; [set2] wait for key and new line
 #_0AAA44: db $F1 ; [set2] clear message box
@@ -7377,7 +7378,7 @@ Message_0AAA41:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AAA4A:
+Message_02_0A_4F:
 #_0AAA4A: db $F9, $00, $50 ; [set2] [COMMAND 59] go to message 50 if something 00 TODO
 #_0AAA4D: db $EB, $E6 ; [set2] prewritten text E6
 #_0AAA4F: db $F3 ; [set2] wait for key and new line
@@ -7385,7 +7386,7 @@ Message_0AAA4A:
 
 ;===================================================================================================
 
-Message_0AAA52:
+Message_02_0A_50:
 #_0AAA52: db $E8, $2B ; [set2] [COMMAND 48:2B]
 #_0AAA54: db $F3 ; [set2] wait for key and new line
 #_0AAA55: db $FE, $00 ; [set2] [COMMAND 5E:00]
@@ -7394,7 +7395,7 @@ Message_0AAA52:
 
 ; >[DEMONX]は おだてに おこった
 ; «どうしますか?»
-Message_0AAA57:
+Message_02_0A_51:
 #_0AAA57: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AAA59: db $F3 ; [set2] wait for key and new line
 #_0AAA5A: db $F1 ; [set2] clear message box
@@ -7414,7 +7415,7 @@ Message_0AAA57:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AAA72:
+Message_02_0A_52:
 #_0AAA72: db $E6, $80 ; [set2] [COMMAND 46:80]
 #_0AAA74: db $D8, $01, $53 ; [set2] go to message 53 if RNG, 01 TODO
 #_0AAA77: db $E8, $2D ; [set2] [COMMAND 48:2D]
@@ -7430,25 +7431,25 @@ Message_0AAA72:
 
 ;===================================================================================================
 
-Message_0AAA85:
+Message_02_0A_53:
 #_0AAA85: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AAA87: db $F3 ; [set2] wait for key and new line
 #_0AAA88: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AAA8B:
+Message_02_0A_54:
 #_0AAA8B: db $D7, $01, $55 ; [set2] go to message 55 if RNG, 01 TODO
 #_0AAA8E: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
-Message_0AAA90:
+Message_02_0A_55:
 #_0AAA90: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AAA93:
+Message_02_0A_56:
 #_0AAA93: db $D7, $01, $57 ; [set2] go to message 57 if RNG, 01 TODO
 #_0AAA96: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AAA98: db $F3 ; [set2] wait for key and new line
@@ -7457,7 +7458,7 @@ Message_0AAA93:
 
 ;===================================================================================================
 
-Message_0AAA9E:
+Message_02_0A_57:
 #_0AAA9E: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAAA0: db $F3 ; [set2] wait for key and new line
 #_0AAAA1: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -7466,7 +7467,7 @@ Message_0AAA9E:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AAAA4:
+Message_02_0A_58:
 #_0AAAA4: db $EB, $E8 ; [set2] prewritten text E8
 #_0AAAA6: db $F3 ; [set2] wait for key and new line
 #_0AAAA7: db $F1 ; [set2] clear message box
@@ -7477,7 +7478,7 @@ Message_0AAAA4:
 
 ;===================================================================================================
 
-Message_0AAAB0:
+Message_02_0A_59:
 #_0AAAB0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AAAB3: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
 #_0AAAB6: db $E8, $09 ; [set2] [COMMAND 48:09]
@@ -7488,7 +7489,7 @@ Message_0AAAB0:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AAABE:
+Message_02_0A_5A:
 #_0AAABE: db $D7, $00, $5B ; [set2] go to message 5B if RNG, 00 TODO
 #_0AAAC1: db $EB, $E6 ; [set2] prewritten text E6
 #_0AAAC3: db $F3 ; [set2] wait for key and new line
@@ -7497,7 +7498,7 @@ Message_0AAABE:
 ;===================================================================================================
 
 ; «だめだ にげられない!!»
-Message_0AAAC6:
+Message_02_0A_5B:
 #_0AAAC6: db $EB, $E5 ; [set2] prewritten text E5
 #_0AAAC8: db $F3 ; [set2] wait for key and new line
 #_0AAAC9: db $F1 ; [set2] clear message box
@@ -7507,7 +7508,7 @@ Message_0AAAC6:
 
 ; «>[DEMONX]は わらっている»
 ; «どうしますか?»
-Message_0AAACC:
+Message_02_0A_5C:
 #_0AAACC: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAACE: db $F3 ; [set2] wait for key and new line
 #_0AAACF: db $F1 ; [set2] clear message box
@@ -7524,7 +7525,7 @@ Message_0AAACC:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AAADC:
+Message_02_0A_5D:
 #_0AAADC: db $D4, $00, $5F ; [set2] go to message 5F if RNG, 00 TODO
 #_0AAADF: db $D7, $01, $5E ; [set2] go to message 5E if RNG, 01 TODO
 #_0AAAE2: db $E8, $2D ; [set2] [COMMAND 48:2D]
@@ -7541,7 +7542,7 @@ Message_0AAADC:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAAF0:
+Message_02_0A_5E:
 #_0AAAF0: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AAAF2: db $F3 ; [set2] wait for key and new line
 #_0AAAF3: db $F1 ; [set2] clear message box
@@ -7552,7 +7553,7 @@ Message_0AAAF0:
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
-Message_0AAAF9:
+Message_02_0A_5F:
 #_0AAAF9: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AAAFB: db $F3 ; [set2] wait for key and new line
 #_0AAAFC: db $F1 ; [set2] clear message box
@@ -7566,7 +7567,7 @@ Message_0AAAF9:
 ; «>[DEMONX]に すきが できた»
 ; «こうげき しますか?»
 ; «どうしますか?»
-Message_0AAB05:
+Message_02_0A_60:
 #_0AAB05: db $EB, $EA ; [set2] prewritten text EA
 #_0AAB07: db $F3 ; [set2] wait for key and new line
 #_0AAB08: db $F1 ; [set2] clear message box
@@ -7577,20 +7578,20 @@ Message_0AAB05:
 
 ;===================================================================================================
 
-Message_0AAB11:
+Message_02_0A_61:
 #_0AAB11: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AAB13:
+Message_02_0A_62:
 #_0AAB13: db $EB, $E6 ; [set2] prewritten text E6
 #_0AAB15: db $F3 ; [set2] wait for key and new line
 #_0AAB16: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
 ;===================================================================================================
 
-Message_0AAB18:
+Message_02_0A_63:
 #_0AAB18: db $D8, $01, $64 ; [set2] go to message 64 if RNG, 01 TODO
 #_0AAB1B: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AAB1D: db $F3 ; [set2] wait for key and new line
@@ -7600,7 +7601,7 @@ Message_0AAB18:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAB23:
+Message_02_0A_64:
 #_0AAB23: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AAB25: db $F3 ; [set2] wait for key and new line
 #_0AAB26: db $F1 ; [set2] clear message box
@@ -7611,12 +7612,12 @@ Message_0AAB23:
 
 ;===================================================================================================
 
-Message_0AAB2F:
+Message_02_0A_65:
 #_0AAB2F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AAB32:
+Message_02_0B_00:
 #_0AAB32: db $F1 ; [set2] clear message box
 #_0AAB33: db $D5, $00, $35 ; [set2] go to message 35 if RNG, 00 TODO
 #_0AAB36: db $E7, $01, $10, $1E, $29 ; [set2] randomly pick from messages 01, 10, 1E, 29
@@ -7625,7 +7626,7 @@ Message_0AAB32:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AAB3B:
+Message_02_0B_01:
 #_0AAB3B: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAB3D: db $F3 ; [set2] wait for key and new line
 #_0AAB3E: db $F1 ; [set2] clear message box
@@ -7639,7 +7640,7 @@ Message_0AAB3B:
 
 ;===================================================================================================
 
-Message_0AAB4B:
+Message_02_0B_02:
 #_0AAB4B: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0AAB4D: db $D5, $02, $04 ; [set2] go to message 04 if RNG, 02 TODO
 #_0AAB50: db $D4, $00, $03 ; [set2] go to message 03 if RNG, 00 TODO
@@ -7650,7 +7651,7 @@ Message_0AAB4B:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AAB59:
+Message_02_0B_03:
 #_0AAB59: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AAB5B: db $F3 ; [set2] wait for key and new line
 #_0AAB5C: db $F1 ; [set2] clear message box
@@ -7660,12 +7661,12 @@ Message_0AAB59:
 
 ;===================================================================================================
 
-Message_0AAB62:
+Message_02_0B_04:
 #_0AAB62: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AAB65:
+Message_02_0B_05:
 #_0AAB65: db $D7, $01, $0E ; [set2] go to message 0E if RNG, 01 TODO
 #_0AAB68: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0AAB6A: db $D4, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
@@ -7677,7 +7678,7 @@ Message_0AAB65:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0AAB73:
+Message_02_0B_06:
 #_0AAB73: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AAB75: db $F3 ; [set2] wait for key and new line
 #_0AAB76: db $F1 ; [set2] clear message box
@@ -7691,7 +7692,7 @@ Message_0AAB73:
 
 ;===================================================================================================
 
-Message_0AAB83:
+Message_02_0B_07:
 #_0AAB83: db $D5, $02, $08 ; [set2] go to message 08 if RNG, 02 TODO
 #_0AAB86: db $D4, $00, $03 ; [set2] go to message 03 if RNG, 00 TODO
 #_0AAB89: db $E9, $12 ; [set2] go to message $12
@@ -7700,7 +7701,7 @@ Message_0AAB83:
 
 ; >[DEMONX]は あまりこたえていない
 ; «どうしますか?»
-Message_0AAB8B:
+Message_02_0B_08:
 #_0AAB8B: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0AAB8D: db $F3 ; [set2] wait for key and new line
 #_0AAB8E: db $F1 ; [set2] clear message box
@@ -7718,7 +7719,7 @@ Message_0AAB8B:
 ;===================================================================================================
 
 ; >[DEMONX]は したてにでた
-Message_0AABA7:
+Message_02_0B_09:
 #_0AABA7: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AABAA: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AABAC: db $F3 ; [set2] wait for key and new line
@@ -7731,14 +7732,14 @@ Message_0AABA7:
 
 ;===================================================================================================
 
-Message_0AABBC:
+Message_02_0B_0A:
 #_0AABBC: db $D6, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
 #_0AABBF: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AABC1: db $F7, $0B, $80 ; [set2] [COMMAND 57] $0B $80 TODO
 
 ;===================================================================================================
 
-Message_0AABC4:
+Message_02_0B_0B:
 #_0AABC4: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0AABC6: db $F3 ; [set2] wait for key and new line
 #_0AABC7: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -7748,7 +7749,7 @@ Message_0AABC4:
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
 ; >[DEMONX]は おびえている
-Message_0AABCA:
+Message_02_0B_0C:
 #_0AABCA: db $D8, $02, $0D ; [set2] go to message 0D if RNG, 02 TODO
 #_0AABCD: db $EB, $48 ; [set2] prewritten text 48
 #_0AABCF: db $F3 ; [set2] wait for key and new line
@@ -7766,7 +7767,7 @@ Message_0AABCA:
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
-Message_0AABE5:
+Message_02_0B_0D:
 #_0AABE5: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AABE7: db $F3 ; [set2] wait for key and new line
 #_0AABE8: db $F1 ; [set2] clear message box
@@ -7777,7 +7778,7 @@ Message_0AABE5:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AABEE:
+Message_02_0B_0E:
 #_0AABEE: db $D5, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AABF1: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AABF3: db $F3 ; [set2] wait for key and new line
@@ -7788,7 +7789,7 @@ Message_0AABEE:
 
 ;===================================================================================================
 
-Message_0AABFA:
+Message_02_0B_0F:
 #_0AABFA: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AABFC: db $F3 ; [set2] wait for key and new line
 #_0AABFD: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -7797,7 +7798,7 @@ Message_0AABFA:
 
 ; «>[DEMONX]は あばれだした!»
 ; «どうしますか?»
-Message_0AABFF:
+Message_02_0B_10:
 #_0AABFF: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0AAC01: db $F3 ; [set2] wait for key and new line
 #_0AAC02: db $F1 ; [set2] clear message box
@@ -7813,7 +7814,7 @@ Message_0AABFF:
 
 ; >[DEMONX]は おとなしくなった
 ; «どうしますか?»
-Message_0AAC0F:
+Message_02_0B_11:
 #_0AAC0F: db $D5, $02, $04 ; [set2] go to message 04 if RNG, 02 TODO
 #_0AAC12: db $E8, $36 ; [set2] [COMMAND 48:36]
 #_0AAC14: db $F3 ; [set2] wait for key and new line
@@ -7832,7 +7833,7 @@ Message_0AAC0F:
 
 ;===================================================================================================
 
-Message_0AAC2E:
+Message_02_0B_12:
 #_0AAC2E: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AAC30: db $F3 ; [set2] wait for key and new line
 #_0AAC31: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -7840,7 +7841,7 @@ Message_0AAC2E:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAC34:
+Message_02_0B_13:
 #_0AAC34: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAC36: db $F3 ; [set2] wait for key and new line
 #_0AAC37: db $F1 ; [set2] clear message box
@@ -7850,7 +7851,7 @@ Message_0AAC34:
 
 ;===================================================================================================
 
-Message_0AAC3D:
+Message_02_0B_14:
 #_0AAC3D: db $D8, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
 #_0AAC40: db $D4, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
 #_0AAC43: db $E6, $03 ; [set2] [COMMAND 46:03]
@@ -7861,7 +7862,7 @@ Message_0AAC3D:
 
 ;===================================================================================================
 
-Message_0AAC4E:
+Message_02_0B_15:
 #_0AAC4E: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AAC50: db $F3 ; [set2] wait for key and new line
 #_0AAC51: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -7870,7 +7871,7 @@ Message_0AAC4E:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AAC54:
+Message_02_0B_16:
 #_0AAC54: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAC56: db $F3 ; [set2] wait for key and new line
 #_0AAC57: db $F1 ; [set2] clear message box
@@ -7884,13 +7885,13 @@ Message_0AAC54:
 
 ;===================================================================================================
 
-Message_0AAC64:
+Message_02_0B_17:
 #_0AAC64: db $D4, $01, $18 ; [set2] go to message 18 if RNG, 01 TODO
 #_0AAC67: db $E9, $15 ; [set2] go to message $15
 
 ;===================================================================================================
 
-Message_0AAC69:
+Message_02_0B_18:
 #_0AAC69: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AAC6B: db $F3 ; [set2] wait for key and new line
 #_0AAC6C: db $E6, $03 ; [set2] [COMMAND 46:03]
@@ -7898,14 +7899,14 @@ Message_0AAC69:
 
 ;===================================================================================================
 
-Message_0AAC71:
+Message_02_0B_19:
 #_0AAC71: db $F7, $0B, $80 ; [set2] [COMMAND 57] $0B $80 TODO
 
 ;===================================================================================================
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AAC74:
+Message_02_0B_1A:
 #_0AAC74: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AAC76: db $F3 ; [set2] wait for key and new line
 #_0AAC77: db $F1 ; [set2] clear message box
@@ -7919,7 +7920,7 @@ Message_0AAC74:
 
 ;===================================================================================================
 
-Message_0AAC84:
+Message_02_0B_1B:
 #_0AAC84: db $DC, $00, $1C ; [set2] [COMMAND 3C] go to message 1C if something 00 TODO
 #_0AAC87: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AAC89: db $F3 ; [set2] wait for key and new line
@@ -7929,7 +7930,7 @@ Message_0AAC84:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AAC8F:
+Message_02_0B_1C:
 #_0AAC8F: db $DA, $01, $04 ; [set2] ext command 01: go to message 04 if MC INT = 0
 #_0AAC92: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AAC94: db $F3 ; [set2] wait for key and new line
@@ -7942,7 +7943,7 @@ Message_0AAC8F:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AAC9D:
+Message_02_0B_1D:
 #_0AAC9D: db $D6, $02, $15 ; [set2] go to message 15 if RNG, 02 TODO
 #_0AACA0: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AACA2: db $F3 ; [set2] wait for key and new line
@@ -7955,7 +7956,7 @@ Message_0AAC9D:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AACAC:
+Message_02_0B_1E:
 #_0AACAC: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AACAE: db $F3 ; [set2] wait for key and new line
 #_0AACAF: db $F1 ; [set2] clear message box
@@ -7966,7 +7967,7 @@ Message_0AACAC:
 
 ;===================================================================================================
 
-Message_0AACB8:
+Message_02_0B_1F:
 #_0AACB8: db $D5, $02, $21 ; [set2] go to message 21 if RNG, 02 TODO
 #_0AACBB: db $D7, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
 #_0AACBE: db $E9, $12 ; [set2] go to message $12
@@ -7976,7 +7977,7 @@ Message_0AACB8:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AACC0:
+Message_02_0B_20:
 #_0AACC0: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AACC2: db $F3 ; [set2] wait for key and new line
 #_0AACC3: db $F1 ; [set2] clear message box
@@ -7992,7 +7993,7 @@ Message_0AACC0:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AACCE:
+Message_02_0B_21:
 #_0AACCE: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AACD0: db $F3 ; [set2] wait for key and new line
 #_0AACD1: db $F1 ; [set2] clear message box
@@ -8006,13 +8007,13 @@ Message_0AACCE:
 
 ;===================================================================================================
 
-Message_0AACDE:
+Message_02_0B_22:
 #_0AACDE: db $DC, $01, $23 ; [set2] [COMMAND 3C] go to message 23 if something 01 TODO
 #_0AACE1: db $E9, $12 ; [set2] go to message $12
 
 ;===================================================================================================
 
-Message_0AACE3:
+Message_02_0B_23:
 #_0AACE3: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AACE5: db $F3 ; [set2] wait for key and new line
 #_0AACE6: db $F1 ; [set2] clear message box
@@ -8024,7 +8025,7 @@ Message_0AACE3:
 
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
-Message_0AACEC:
+Message_02_0B_24:
 #_0AACEC: db $D8, $02, $0D ; [set2] go to message 0D if RNG, 02 TODO
 #_0AACEF: db $EB, $48 ; [set2] prewritten text 48
 #_0AACF1: db $F3 ; [set2] wait for key and new line
@@ -8038,7 +8039,7 @@ Message_0AACEC:
 
 ; «>[DEMONX]を ナカマにしますか?»
 ; «>[DEMONX]は さっていった»
-Message_0AACFB:
+Message_02_0B_25:
 #_0AACFB: db $D5, $01, $26 ; [set2] go to message 26 if RNG, 01 TODO
 #_0AACFE: db $D4, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AAD01: db $E8, $1E ; [set2] [COMMAND 48:1E]
@@ -8059,7 +8060,7 @@ Message_0AACFB:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AAD18:
+Message_02_0B_26:
 #_0AAD18: db $D4, $00, $15 ; [set2] go to message 15 if RNG, 00 TODO
 #_0AAD1B: db $DA, $01, $00 ; [set2] ext command 01: go to message 00 if MC INT = 0
 #_0AAD1E: db $E8, $21 ; [set2] [COMMAND 48:21]
@@ -8072,7 +8073,7 @@ Message_0AAD18:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AAD27:
+Message_02_0B_27:
 #_0AAD27: db $D4, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
 #_0AAD2A: db $E8, $1F ; [set2] [COMMAND 48:1F]
 #_0AAD2C: db $F3 ; [set2] wait for key and new line
@@ -8083,7 +8084,7 @@ Message_0AAD27:
 
 ;===================================================================================================
 
-Message_0AAD33:
+Message_02_0B_28:
 #_0AAD33: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AAD36: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
@@ -8091,7 +8092,7 @@ Message_0AAD33:
 
 ; «>[DEMONX]は にげようと している»
 ; «どうしますか?»
-Message_0AAD39:
+Message_02_0B_29:
 #_0AAD39: db $EB, $F0 ; [set2] prewritten text F0
 #_0AAD3B: db $F3 ; [set2] wait for key and new line
 #_0AAD3C: db $F1 ; [set2] clear message box
@@ -8102,7 +8103,7 @@ Message_0AAD39:
 
 ;===================================================================================================
 
-Message_0AAD45:
+Message_02_0B_2A:
 #_0AAD45: db $D6, $00, $32 ; [set2] go to message 32 if RNG, 00 TODO
 #_0AAD48: db $E7, $2B, $2B, $30, $31 ; [set2] randomly pick from messages 2B, 2B, 30, 31
 
@@ -8110,7 +8111,7 @@ Message_0AAD45:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AAD4D:
+Message_02_0B_2B:
 #_0AAD4D: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AAD4F: db $F3 ; [set2] wait for key and new line
 #_0AAD50: db $F1 ; [set2] clear message box
@@ -8124,7 +8125,7 @@ Message_0AAD4D:
 
 ;===================================================================================================
 
-Message_0AAD5D:
+Message_02_0B_2C:
 #_0AAD5D: db $D5, $01, $2D ; [set2] go to message 2D if RNG, 01 TODO
 #_0AAD60: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AAD62: db $F3 ; [set2] wait for key and new line
@@ -8134,7 +8135,7 @@ Message_0AAD5D:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAD68:
+Message_02_0B_2D:
 #_0AAD68: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AAD6A: db $F3 ; [set2] wait for key and new line
 #_0AAD6B: db $F1 ; [set2] clear message box
@@ -8145,7 +8146,7 @@ Message_0AAD68:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAD71:
+Message_02_0B_2E:
 #_0AAD71: db $D4, $00, $2F ; [set2] go to message 2F if RNG, 00 TODO
 #_0AAD74: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AAD76: db $F3 ; [set2] wait for key and new line
@@ -8156,25 +8157,25 @@ Message_0AAD71:
 
 ;===================================================================================================
 
-Message_0AAD7D:
+Message_02_0B_2F:
 #_0AAD7D: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAD7F: db $F3 ; [set2] wait for key and new line
 #_0AAD80: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AAD83:
+Message_02_0B_30:
 #_0AAD83: db $E9, $01 ; [set2] go to message $01
 
 ;===================================================================================================
 
-Message_0AAD85:
+Message_02_0B_31:
 #_0AAD85: db $E9, $10 ; [set2] go to message $10
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAD87:
+Message_02_0B_32:
 #_0AAD87: db $D4, $00, $33 ; [set2] go to message 33 if RNG, 00 TODO
 #_0AAD8A: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAD8C: db $F3 ; [set2] wait for key and new line
@@ -8186,7 +8187,7 @@ Message_0AAD87:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAD93:
+Message_02_0B_33:
 #_0AAD93: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAD95: db $F3 ; [set2] wait for key and new line
 #_0AAD96: db $F1 ; [set2] clear message box
@@ -8197,21 +8198,21 @@ Message_0AAD93:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AAD9C:
+Message_02_0B_34:
 #_0AAD9C: db $EB, $E2 ; [set2] prewritten text E2
 #_0AAD9E: db $F3 ; [set2] wait for key and new line
 #_0AAD9F: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-Message_0AADA1:
+Message_02_0B_35:
 #_0AADA1: db $E7, $36, $36, $42, $49 ; [set2] randomly pick from messages 36, 36, 42, 49
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AADA6:
+Message_02_0B_36:
 #_0AADA6: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AADA8: db $F3 ; [set2] wait for key and new line
 #_0AADA9: db $F1 ; [set2] clear message box
@@ -8227,7 +8228,7 @@ Message_0AADA6:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AADB6:
+Message_02_0B_37:
 #_0AADB6: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AADB9: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AADBB: db $D4, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
@@ -8244,7 +8245,7 @@ Message_0AADB6:
 
 ;===================================================================================================
 
-Message_0AADCE:
+Message_02_0B_38:
 #_0AADCE: db $D8, $01, $39 ; [set2] go to message 39 if RNG, 01 TODO
 #_0AADD1: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AADD3: db $F3 ; [set2] wait for key and new line
@@ -8254,7 +8255,7 @@ Message_0AADCE:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AADD9:
+Message_02_0B_39:
 #_0AADD9: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AADDB: db $F3 ; [set2] wait for key and new line
 #_0AADDC: db $F1 ; [set2] clear message box
@@ -8264,7 +8265,7 @@ Message_0AADD9:
 
 ;===================================================================================================
 
-Message_0AADE2:
+Message_02_0B_3A:
 #_0AADE2: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AADE4: db $F3 ; [set2] wait for key and new line
 #_0AADE5: db $F1 ; [set2] clear message box
@@ -8274,7 +8275,7 @@ Message_0AADE2:
 
 ; «>[DEMONX]は わらっている»
 ; «どうしますか?»
-Message_0AADE8:
+Message_02_0B_3B:
 #_0AADE8: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AADEA: db $F3 ; [set2] wait for key and new line
 #_0AADEB: db $F1 ; [set2] clear message box
@@ -8289,7 +8290,7 @@ Message_0AADE8:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AADF8:
+Message_02_0B_3C:
 #_0AADF8: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AADFA: db $F9, $00, $3D ; [set2] [COMMAND 59] go to message 3D if something 00 TODO
 #_0AADFD: db $EB, $E6 ; [set2] prewritten text E6
@@ -8299,7 +8300,7 @@ Message_0AADF8:
 ;===================================================================================================
 
 ; «だめだ にげられない!!»
-Message_0AAE02:
+Message_02_0B_3D:
 #_0AAE02: db $EB, $E5 ; [set2] prewritten text E5
 #_0AAE04: db $F3 ; [set2] wait for key and new line
 #_0AAE05: db $F1 ; [set2] clear message box
@@ -8311,7 +8312,7 @@ Message_0AAE02:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AAE0C:
+Message_02_0B_3E:
 #_0AAE0C: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AAE0E: db $D7, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
 #_0AAE11: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -8325,7 +8326,7 @@ Message_0AAE0C:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AAE1B:
+Message_02_0B_3F:
 #_0AAE1B: db $D8, $01, $0D ; [set2] go to message 0D if RNG, 01 TODO
 #_0AAE1E: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AAE20: db $E8, $03 ; [set2] [COMMAND 48:03]
@@ -8341,13 +8342,13 @@ Message_0AAE1B:
 
 ;===================================================================================================
 
-Message_0AAE30:
+Message_02_0B_40:
 #_0AAE30: db $E9, $04 ; [set2] go to message $04
 
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AAE32:
+Message_02_0B_41:
 #_0AAE32: db $D7, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
 #_0AAE35: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAE37: db $F3 ; [set2] wait for key and new line
@@ -8360,7 +8361,7 @@ Message_0AAE32:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AAE3F:
+Message_02_0B_42:
 #_0AAE3F: db $EB, $E8 ; [set2] prewritten text E8
 #_0AAE41: db $F3 ; [set2] wait for key and new line
 #_0AAE42: db $F1 ; [set2] clear message box
@@ -8373,7 +8374,7 @@ Message_0AAE3F:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AAE4B:
+Message_02_0B_43:
 #_0AAE4B: db $D7, $01, $46 ; [set2] go to message 46 if RNG, 01 TODO
 #_0AAE4E: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AAE50: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -8389,7 +8390,7 @@ Message_0AAE4B:
 
 ;===================================================================================================
 
-Message_0AAE60:
+Message_02_0B_44:
 #_0AAE60: db $DC, $01, $15 ; [set2] [COMMAND 3C] go to message 15 if something 01 TODO
 #_0AAE63: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AAE65: db $E8, $09 ; [set2] [COMMAND 48:09]
@@ -8398,13 +8399,13 @@ Message_0AAE60:
 
 ;===================================================================================================
 
-Message_0AAE6B:
+Message_02_0B_45:
 #_0AAE6B: db $F9, $00, $04 ; [set2] [COMMAND 59] go to message 04 if something 00 TODO
 #_0AAE6E: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
-Message_0AAE70:
+Message_02_0B_46:
 #_0AAE70: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AAE72: db $F3 ; [set2] wait for key and new line
 #_0AAE73: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -8412,7 +8413,7 @@ Message_0AAE70:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AAE76:
+Message_02_0B_47:
 #_0AAE76: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AAE78: db $D7, $00, $48 ; [set2] go to message 48 if RNG, 00 TODO
 #_0AAE7B: db $EB, $E6 ; [set2] prewritten text E6
@@ -8422,7 +8423,7 @@ Message_0AAE76:
 ;===================================================================================================
 
 ; «だめだ にげられない!!»
-Message_0AAE80:
+Message_02_0B_48:
 #_0AAE80: db $EB, $E5 ; [set2] prewritten text E5
 #_0AAE82: db $F3 ; [set2] wait for key and new line
 #_0AAE83: db $E9, $00 ; [set2] go to message $00
@@ -8431,7 +8432,7 @@ Message_0AAE80:
 
 ; «>[DEMONX]は わらっている»
 ; «どうしますか?»
-Message_0AAE85:
+Message_02_0B_49:
 #_0AAE85: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAE87: db $F3 ; [set2] wait for key and new line
 #_0AAE88: db $F1 ; [set2] clear message box
@@ -8447,7 +8448,7 @@ Message_0AAE85:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AAE95:
+Message_02_0B_4A:
 #_0AAE95: db $D4, $00, $51 ; [set2] go to message 51 if RNG, 00 TODO
 #_0AAE98: db $D7, $01, $4F ; [set2] go to message 4F if RNG, 01 TODO
 #_0AAE9B: db $E6, $01 ; [set2] [COMMAND 46:01]
@@ -8465,7 +8466,7 @@ Message_0AAE95:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AAEAD:
+Message_02_0B_4B:
 #_0AAEAD: db $D8, $01, $4C ; [set2] go to message 4C if RNG, 01 TODO
 #_0AAEB0: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAEB2: db $F3 ; [set2] wait for key and new line
@@ -8478,7 +8479,7 @@ Message_0AAEAD:
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
-Message_0AAEBC:
+Message_02_0B_4C:
 #_0AAEBC: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AAEBE: db $F3 ; [set2] wait for key and new line
 #_0AAEBF: db $F1 ; [set2] clear message box
@@ -8488,13 +8489,13 @@ Message_0AAEBC:
 
 ;===================================================================================================
 
-Message_0AAEC5:
+Message_02_0B_4D:
 #_0AAEC5: db $D4, $02, $4E ; [set2] go to message 4E if RNG, 02 TODO
 #_0AAEC8: db $E9, $04 ; [set2] go to message $04
 
 ;===================================================================================================
 
-Message_0AAECA:
+Message_02_0B_4E:
 #_0AAECA: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AAECC: db $F3 ; [set2] wait for key and new line
 #_0AAECD: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -8504,7 +8505,7 @@ Message_0AAECA:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AAED2:
+Message_02_0B_4F:
 #_0AAED2: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAED4: db $F3 ; [set2] wait for key and new line
 #_0AAED5: db $F1 ; [set2] clear message box
@@ -8518,7 +8519,7 @@ Message_0AAED2:
 
 ;===================================================================================================
 
-Message_0AAEE2:
+Message_02_0B_50:
 #_0AAEE2: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AAEE4: db $F3 ; [set2] wait for key and new line
 #_0AAEE5: db $F1 ; [set2] clear message box
@@ -8530,7 +8531,7 @@ Message_0AAEE2:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AAEEB:
+Message_02_0B_51:
 #_0AAEEB: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AAEED: db $F3 ; [set2] wait for key and new line
 #_0AAEEE: db $F1 ; [set2] clear message box
@@ -8544,13 +8545,13 @@ Message_0AAEEB:
 
 ;===================================================================================================
 
-Message_0AAEFB:
+Message_02_0B_52:
 #_0AAEFB: db $D7, $01, $53 ; [set2] go to message 53 if RNG, 01 TODO
 #_0AAEFE: db $E9, $4E ; [set2] go to message $4E
 
 ;===================================================================================================
 
-Message_0AAF00:
+Message_02_0B_53:
 #_0AAF00: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAF02: db $F3 ; [set2] wait for key and new line
 #_0AAF03: db $F1 ; [set2] clear message box
@@ -8560,14 +8561,14 @@ Message_0AAF00:
 
 ;===================================================================================================
 
-Message_0AAF09:
+Message_02_0B_54:
 #_0AAF09: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AAF0B: db $F3 ; [set2] wait for key and new line
 #_0AAF0C: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AAF0F:
+Message_02_0B_55:
 #_0AAF0F: db $D4, $00, $57 ; [set2] go to message 57 if RNG, 00 TODO
 #_0AAF12: db $D4, $01, $56 ; [set2] go to message 56 if RNG, 01 TODO
 #_0AAF15: db $E8, $30 ; [set2] [COMMAND 48:30]
@@ -8576,7 +8577,7 @@ Message_0AAF0F:
 
 ;===================================================================================================
 
-Message_0AAF1B:
+Message_02_0B_56:
 #_0AAF1B: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AAF1D: db $F3 ; [set2] wait for key and new line
 #_0AAF1E: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -8585,7 +8586,7 @@ Message_0AAF1B:
 ;===================================================================================================
 
 ; «>[DEMONX]は わらっている»
-Message_0AAF23:
+Message_02_0B_57:
 #_0AAF23: db $D4, $00, $58 ; [set2] go to message 58 if RNG, 00 TODO
 #_0AAF26: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAF28: db $F3 ; [set2] wait for key and new line
@@ -8596,7 +8597,7 @@ Message_0AAF23:
 
 ;===================================================================================================
 
-Message_0AAF2F:
+Message_02_0B_58:
 #_0AAF2F: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AAF31: db $F3 ; [set2] wait for key and new line
 #_0AAF32: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -8604,7 +8605,7 @@ Message_0AAF2F:
 
 ;===================================================================================================
 
-Message_0AAF37:
+Message_02_0C_00:
 #_0AAF37: db $F1 ; [set2] clear message box
 #_0AAF38: db $D5, $00, $44 ; [set2] go to message 44 if RNG, 00 TODO
 #_0AAF3B: db $E7, $01, $19, $2A, $40 ; [set2] randomly pick from messages 01, 19, 2A, 40
@@ -8613,7 +8614,7 @@ Message_0AAF37:
 
 ; «>[DEMONX]に からかわれています»
 ; «どうしますか?»
-Message_0AAF40:
+Message_02_0C_01:
 #_0AAF40: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAF42: db $F3 ; [set2] wait for key and new line
 #_0AAF43: db $F1 ; [set2] clear message box
@@ -8627,13 +8628,13 @@ Message_0AAF40:
 
 ;===================================================================================================
 
-Message_0AAF50:
+Message_02_0C_02:
 #_0AAF50: db $D8, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0AAF53: db $E9, $03 ; [set2] go to message $03
 
 ;===================================================================================================
 
-Message_0AAF55:
+Message_02_0C_03:
 #_0AAF55: db $E8, $11 ; [set2] [COMMAND 48:11]
 #_0AAF57: db $EF, $0B ; [set2] YES/NO - go to message $0B if YES
 #_0AAF59: db $D6, $01, $0A ; [set2] go to message 0A if RNG, 01 TODO
@@ -8642,7 +8643,7 @@ Message_0AAF55:
 
 ;===================================================================================================
 
-Message_0AAF63:
+Message_02_0C_04:
 #_0AAF63: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AAF65: db $F3 ; [set2] wait for key and new line
 #_0AAF66: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -8652,7 +8653,7 @@ Message_0AAF63:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AAF6B:
+Message_02_0C_05:
 #_0AAF6B: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAF6D: db $F3 ; [set2] wait for key and new line
 #_0AAF6E: db $F1 ; [set2] clear message box
@@ -8666,7 +8667,7 @@ Message_0AAF6B:
 
 ;===================================================================================================
 
-Message_0AAF7B:
+Message_02_0C_06:
 #_0AAF7B: db $D8, $01, $07 ; [set2] go to message 07 if RNG, 01 TODO
 #_0AAF7E: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAF80: db $D4, $00, $52 ; [set2] go to message 52 if RNG, 00 TODO
@@ -8676,7 +8677,7 @@ Message_0AAF7B:
 
 ;===================================================================================================
 
-Message_0AAF89:
+Message_02_0C_07:
 #_0AAF89: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0AAF8B: db $F3 ; [set2] wait for key and new line
 #_0AAF8C: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -8685,7 +8686,7 @@ Message_0AAF89:
 
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
-Message_0AAF8F:
+Message_02_0C_08:
 #_0AAF8F: db $D8, $02, $09 ; [set2] go to message 09 if RNG, 02 TODO
 #_0AAF92: db $EB, $EF ; [set2] prewritten text EF
 #_0AAF94: db $F3 ; [set2] wait for key and new line
@@ -8697,7 +8698,7 @@ Message_0AAF8F:
 
 ;===================================================================================================
 
-Message_0AAF9E:
+Message_02_0C_09:
 #_0AAF9E: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AAFA0: db $F3 ; [set2] wait for key and new line
 #_0AAFA1: db $E9, $00 ; [set2] go to message $00
@@ -8705,7 +8706,7 @@ Message_0AAF9E:
 ;===================================================================================================
 
 ; «>だいぶ きまずく なってきた»
-Message_0AAFA3:
+Message_02_0C_0A:
 #_0AAFA3: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AAFA5: db $F3 ; [set2] wait for key and new line
 #_0AAFA6: db $E5, $FE ; [set2] [COMMAND 45:FE]
@@ -8716,7 +8717,7 @@ Message_0AAFA3:
 
 ;===================================================================================================
 
-Message_0AAFAE:
+Message_02_0C_0B:
 #_0AAFAE: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAFB0: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
 #_0AAFB3: db $D4, $00, $52 ; [set2] go to message 52 if RNG, 00 TODO
@@ -8724,7 +8725,7 @@ Message_0AAFAE:
 
 ;===================================================================================================
 
-Message_0AAFBB:
+Message_02_0C_0C:
 #_0AAFBB: db $E8, $48 ; [set2] [COMMAND 48:48]
 #_0AAFBD: db $F3 ; [set2] wait for key and new line
 #_0AAFBE: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -8732,7 +8733,7 @@ Message_0AAFBB:
 ;===================================================================================================
 
 ; «>[DEMONX]を ナカマにしますか?»
-Message_0AAFC1:
+Message_02_0C_0D:
 #_0AAFC1: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAFC3: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AAFC5: db $F3 ; [set2] wait for key and new line
@@ -8743,7 +8744,7 @@ Message_0AAFC1:
 
 ;===================================================================================================
 
-Message_0AAFCD:
+Message_02_0C_0E:
 #_0AAFCD: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AAFD0: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
@@ -8751,7 +8752,7 @@ Message_0AAFCD:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0AAFD3:
+Message_02_0C_0F:
 #_0AAFD3: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AAFD5: db $F3 ; [set2] wait for key and new line
 #_0AAFD6: db $F1 ; [set2] clear message box
@@ -8765,14 +8766,14 @@ Message_0AAFD3:
 
 ;===================================================================================================
 
-Message_0AAFE3:
+Message_02_0C_10:
 #_0AAFE3: db $D4, $00, $11 ; [set2] go to message 11 if RNG, 00 TODO
 #_0AAFE6: db $E9, $3E ; [set2] go to message $3E
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAFE8:
+Message_02_0C_11:
 #_0AAFE8: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAFEA: db $F3 ; [set2] wait for key and new line
 #_0AAFEB: db $F1 ; [set2] clear message box
@@ -8783,7 +8784,7 @@ Message_0AAFE8:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AAFF1:
+Message_02_0C_12:
 #_0AAFF1: db $D4, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AAFF4: db $EB, $E1 ; [set2] prewritten text E1
 #_0AAFF6: db $F3 ; [set2] wait for key and new line
@@ -8791,14 +8792,14 @@ Message_0AAFF1:
 
 ;===================================================================================================
 
-Message_0AAFF9:
+Message_02_0C_13:
 #_0AAFF9: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0AAFFB: db $F3 ; [set2] wait for key and new line
 #_0AAFFC: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AAFFE:
+Message_02_0C_14:
 #_0AAFFE: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AB000: db $F3 ; [set2] wait for key and new line
 #_0AB001: db $E9, $00 ; [set2] go to message $00
@@ -8807,7 +8808,7 @@ Message_0AAFFE:
 
 ; «>[DEMONX]は いいきに なっています»
 ; «どうしますか?»
-Message_0AB003:
+Message_02_0C_15:
 #_0AB003: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB005: db $F3 ; [set2] wait for key and new line
 #_0AB006: db $F1 ; [set2] clear message box
@@ -8831,7 +8832,7 @@ Message_0AB003:
 ; «>[DEMONX]は [￥GIVEME] を»
 ; «おとしていった»
 ; «>[DEMONX]は さっていった»
-Message_0AB01F:
+Message_02_0C_16:
 #_0AB01F: db $D6, $01, $18 ; [set2] go to message 18 if RNG, 01 TODO
 #_0AB022: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB024: db $F3 ; [set2] wait for key and new line
@@ -8851,7 +8852,7 @@ Message_0AB01F:
 
 ;===================================================================================================
 
-Message_0AB038:
+Message_02_0C_17:
 #_0AB038: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB03A: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AB03D: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
@@ -8859,7 +8860,7 @@ Message_0AB038:
 ;===================================================================================================
 
 ; «>せっとくは しっぱいした»
-Message_0AB040:
+Message_02_0C_18:
 #_0AB040: db $E8, $19 ; [set2] [COMMAND 48:19]
 #_0AB042: db $F3 ; [set2] wait for key and new line
 #_0AB043: db $F1 ; [set2] clear message box
@@ -8871,7 +8872,7 @@ Message_0AB040:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB049:
+Message_02_0C_19:
 #_0AB049: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB04B: db $F3 ; [set2] wait for key and new line
 #_0AB04C: db $F1 ; [set2] clear message box
@@ -8884,7 +8885,7 @@ Message_0AB049:
 
 ; «>[DEMONX]は いいきに なっています»
 ; «どうしますか?»
-Message_0AB055:
+Message_02_0C_1A:
 #_0AB055: db $D6, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
 #_0AB058: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AB05A: db $F3 ; [set2] wait for key and new line
@@ -8899,25 +8900,25 @@ Message_0AB055:
 
 ;===================================================================================================
 
-Message_0AB068:
+Message_02_0C_1B:
 #_0AB068: db $D6, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
 #_0AB06B: db $E7, $1C, $1D, $1E, $1E ; [set2] randomly pick from messages 1C, 1D, 1E, 1E
 
 ;===================================================================================================
 
-Message_0AB070:
+Message_02_0C_1C:
 #_0AB070: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB072: db $E9, $03 ; [set2] go to message $03
 
 ;===================================================================================================
 
-Message_0AB074:
+Message_02_0C_1D:
 #_0AB074: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB076: db $E9, $52 ; [set2] go to message $52
 
 ;===================================================================================================
 
-Message_0AB078:
+Message_02_0C_1E:
 #_0AB078: db $E8, $29 ; [set2] [COMMAND 48:29]
 #_0AB07A: db $F3 ; [set2] wait for key and new line
 #_0AB07B: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -8925,26 +8926,26 @@ Message_0AB078:
 
 ;===================================================================================================
 
-Message_0AB080:
+Message_02_0C_1F:
 #_0AB080: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB082: db $E9, $16 ; [set2] go to message $16
 
 ;===================================================================================================
 
-Message_0AB084:
+Message_02_0C_20:
 #_0AB084: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AB086: db $F3 ; [set2] wait for key and new line
 #_0AB087: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AB08A:
+Message_02_0C_21:
 #_0AB08A: db $D5, $02, $26 ; [set2] go to message 26 if RNG, 02 TODO
 #_0AB08D: db $E7, $22, $23, $24, $25 ; [set2] randomly pick from messages 22, 23, 24, 25
 
 ;===================================================================================================
 
-Message_0AB092:
+Message_02_0C_22:
 #_0AB092: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AB094: db $F3 ; [set2] wait for key and new line
 #_0AB095: db $E5, $05 ; [set2] [COMMAND 45:05]
@@ -8952,7 +8953,7 @@ Message_0AB092:
 
 ;===================================================================================================
 
-Message_0AB09A:
+Message_02_0C_23:
 #_0AB09A: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB09C: db $F3 ; [set2] wait for key and new line
 #_0AB09D: db $E5, $03 ; [set2] [COMMAND 45:03]
@@ -8960,7 +8961,7 @@ Message_0AB09A:
 
 ;===================================================================================================
 
-Message_0AB0A2:
+Message_02_0C_24:
 #_0AB0A2: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AB0A4: db $F3 ; [set2] wait for key and new line
 #_0AB0A5: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -8968,7 +8969,7 @@ Message_0AB0A2:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AB0A8:
+Message_02_0C_25:
 #_0AB0A8: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB0AA: db $F3 ; [set2] wait for key and new line
 #_0AB0AB: db $F1 ; [set2] clear message box
@@ -8978,14 +8979,14 @@ Message_0AB0A8:
 
 ;===================================================================================================
 
-Message_0AB0B1:
+Message_02_0C_26:
 #_0AB0B1: db $D5, $01, $29 ; [set2] go to message 29 if RNG, 01 TODO
 #_0AB0B4: db $D4, $00, $28 ; [set2] go to message 28 if RNG, 00 TODO
 #_0AB0B7: db $E9, $27 ; [set2] go to message $27
 
 ;===================================================================================================
 
-Message_0AB0B9:
+Message_02_0C_27:
 #_0AB0B9: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AB0BB: db $F3 ; [set2] wait for key and new line
 #_0AB0BC: db $E5, $03 ; [set2] [COMMAND 45:03]
@@ -8993,7 +8994,7 @@ Message_0AB0B9:
 
 ;===================================================================================================
 
-Message_0AB0C1:
+Message_02_0C_28:
 #_0AB0C1: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB0C3: db $F3 ; [set2] wait for key and new line
 #_0AB0C4: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -9002,7 +9003,7 @@ Message_0AB0C1:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB0C9:
+Message_02_0C_29:
 #_0AB0C9: db $D4, $02, $28 ; [set2] go to message 28 if RNG, 02 TODO
 #_0AB0CC: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB0CE: db $F3 ; [set2] wait for key and new line
@@ -9015,7 +9016,7 @@ Message_0AB0C9:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AB0D5:
+Message_02_0C_2A:
 #_0AB0D5: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0AB0D8: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AB0DA: db $F3 ; [set2] wait for key and new line
@@ -9030,7 +9031,7 @@ Message_0AB0D5:
 
 ;===================================================================================================
 
-Message_0AB0E8:
+Message_02_0C_2B:
 #_0AB0E8: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AB0EB: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB0ED: db $D4, $00, $2D ; [set2] go to message 2D if RNG, 00 TODO
@@ -9042,7 +9043,7 @@ Message_0AB0E8:
 
 ;===================================================================================================
 
-Message_0AB0FB:
+Message_02_0C_2C:
 #_0AB0FB: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AB0FD: db $F3 ; [set2] wait for key and new line
 #_0AB0FE: db $F1 ; [set2] clear message box
@@ -9054,7 +9055,7 @@ Message_0AB0FB:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AB104:
+Message_02_0C_2D:
 #_0AB104: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB106: db $F3 ; [set2] wait for key and new line
 #_0AB107: db $F1 ; [set2] clear message box
@@ -9068,7 +9069,7 @@ Message_0AB104:
 
 ;===================================================================================================
 
-Message_0AB114:
+Message_02_0C_2E:
 #_0AB114: db $DB, $01, $2F ; [set2] [COMMAND 3B] go to message 2F if something 01 TODO
 #_0AB117: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0AB119: db $F3 ; [set2] wait for key and new line
@@ -9076,7 +9077,7 @@ Message_0AB114:
 
 ;===================================================================================================
 
-Message_0AB11D:
+Message_02_0C_2F:
 #_0AB11D: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AB11F: db $F3 ; [set2] wait for key and new line
 #_0AB120: db $F1 ; [set2] clear message box
@@ -9086,7 +9087,7 @@ Message_0AB11D:
 
 ;===================================================================================================
 
-Message_0AB126:
+Message_02_0C_30:
 #_0AB126: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AB128: db $F3 ; [set2] wait for key and new line
 #_0AB129: db $F1 ; [set2] clear message box
@@ -9095,14 +9096,14 @@ Message_0AB126:
 
 ;===================================================================================================
 
-Message_0AB12F:
+Message_02_0C_31:
 #_0AB12F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]に からかわれています»
 ; «どうしますか?»
-Message_0AB132:
+Message_02_0C_32:
 #_0AB132: db $D8, $00, $3E ; [set2] go to message 3E if RNG, 00 TODO
 #_0AB135: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB137: db $D4, $01, $3D ; [set2] go to message 3D if RNG, 01 TODO
@@ -9121,7 +9122,7 @@ Message_0AB132:
 
 ; «>[DEMONX]は ちかづいてきた»
 ; «どうしますか?»
-Message_0AB14A:
+Message_02_0C_33:
 #_0AB14A: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
 #_0AB14D: db $E8, $15 ; [set2] [COMMAND 48:15]
 #_0AB14F: db $F3 ; [set2] wait for key and new line
@@ -9136,7 +9137,7 @@ Message_0AB14A:
 
 ;===================================================================================================
 
-Message_0AB15D:
+Message_02_0C_34:
 #_0AB15D: db $DB, $01, $36 ; [set2] [COMMAND 3B] go to message 36 if something 01 TODO
 #_0AB160: db $D4, $00, $35 ; [set2] go to message 35 if RNG, 00 TODO
 #_0AB163: db $E8, $1C ; [set2] [COMMAND 48:1C]
@@ -9145,7 +9146,7 @@ Message_0AB15D:
 
 ;===================================================================================================
 
-Message_0AB169:
+Message_02_0C_35:
 #_0AB169: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB16B: db $F3 ; [set2] wait for key and new line
 #_0AB16C: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -9153,7 +9154,7 @@ Message_0AB169:
 
 ;===================================================================================================
 
-Message_0AB171:
+Message_02_0C_36:
 #_0AB171: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AB173: db $F3 ; [set2] wait for key and new line
 #_0AB174: db $F1 ; [set2] clear message box
@@ -9164,7 +9165,7 @@ Message_0AB171:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB17A:
+Message_02_0C_37:
 #_0AB17A: db $D5, $01, $3A ; [set2] go to message 3A if RNG, 01 TODO
 #_0AB17D: db $E8, $1E ; [set2] [COMMAND 48:1E]
 #_0AB17F: db $EF, $39 ; [set2] YES/NO - go to message $39 if YES
@@ -9180,7 +9181,7 @@ Message_0AB17A:
 
 ;===================================================================================================
 
-Message_0AB190:
+Message_02_0C_38:
 #_0AB190: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AB192: db $F3 ; [set2] wait for key and new line
 #_0AB193: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
@@ -9190,7 +9191,7 @@ Message_0AB190:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AB196:
+Message_02_0C_39:
 #_0AB196: db $D4, $00, $25 ; [set2] go to message 25 if RNG, 00 TODO
 #_0AB199: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AB19B: db $F3 ; [set2] wait for key and new line
@@ -9207,7 +9208,7 @@ Message_0AB196:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0AB1A7:
+Message_02_0C_3A:
 #_0AB1A7: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB1A9: db $F3 ; [set2] wait for key and new line
 #_0AB1AA: db $F1 ; [set2] clear message box
@@ -9221,20 +9222,20 @@ Message_0AB1A7:
 
 ;===================================================================================================
 
-Message_0AB1B7:
+Message_02_0C_3B:
 #_0AB1B7: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AB1BA: db $E9, $52 ; [set2] go to message $52
 
 ;===================================================================================================
 
-Message_0AB1BC:
+Message_02_0C_3C:
 #_0AB1BC: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]は いいきに なっています»
 ; «どうしますか?»
-Message_0AB1BF:
+Message_02_0C_3D:
 #_0AB1BF: db $E8, $2B ; [set2] [COMMAND 48:2B]
 #_0AB1C1: db $F3 ; [set2] wait for key and new line
 #_0AB1C2: db $F1 ; [set2] clear message box
@@ -9250,7 +9251,7 @@ Message_0AB1BF:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AB1CF:
+Message_02_0C_3E:
 #_0AB1CF: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB1D1: db $F3 ; [set2] wait for key and new line
 #_0AB1D2: db $F1 ; [set2] clear message box
@@ -9264,7 +9265,7 @@ Message_0AB1CF:
 
 ;===================================================================================================
 
-Message_0AB1DF:
+Message_02_0C_3F:
 #_0AB1DF: db $DB, $01, $2F ; [set2] [COMMAND 3B] go to message 2F if something 01 TODO
 #_0AB1E2: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB1E4: db $F3 ; [set2] wait for key and new line
@@ -9273,7 +9274,7 @@ Message_0AB1DF:
 
 ;===================================================================================================
 
-Message_0AB1EA:
+Message_02_0C_40:
 #_0AB1EA: db $D2, $00 ; [set2] something to message 00 TODO
 #_0AB1EC: db $E8, $22 ; [set2] [COMMAND 48:22]
 #_0AB1EE: db $EF, $42 ; [set2] YES/NO - go to message $42 if YES
@@ -9284,14 +9285,14 @@ Message_0AB1EA:
 
 ;===================================================================================================
 
-Message_0AB1F9:
+Message_02_0C_41:
 #_0AB1F9: db $E8, $26 ; [set2] [COMMAND 48:26]
 #_0AB1FB: db $F1 ; [set2] clear message box
 #_0AB1FC: db $F7, $16, $80 ; [set2] [COMMAND 57] $16 $80 TODO
 
 ;===================================================================================================
 
-Message_0AB1FF:
+Message_02_0C_42:
 #_0AB1FF: db $D4, $00, $43 ; [set2] go to message 43 if RNG, 00 TODO
 #_0AB202: db $E8, $23 ; [set2] [COMMAND 48:23]
 #_0AB204: db $F1 ; [set2] clear message box
@@ -9299,21 +9300,21 @@ Message_0AB1FF:
 
 ;===================================================================================================
 
-Message_0AB208:
+Message_02_0C_43:
 #_0AB208: db $E8, $24 ; [set2] [COMMAND 48:24]
 #_0AB20A: db $F1 ; [set2] clear message box
 #_0AB20B: db $F7, $16, $80 ; [set2] [COMMAND 57] $16 $80 TODO
 
 ;===================================================================================================
 
-Message_0AB20E:
+Message_02_0C_44:
 #_0AB20E: db $E7, $45, $45, $59, $71 ; [set2] randomly pick from messages 45, 45, 59, 71
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AB213:
+Message_02_0C_45:
 #_0AB213: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AB215: db $F3 ; [set2] wait for key and new line
 #_0AB216: db $F1 ; [set2] clear message box
@@ -9327,14 +9328,14 @@ Message_0AB213:
 
 ;===================================================================================================
 
-Message_0AB223:
+Message_02_0C_46:
 #_0AB223: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB225: db $D6, $01, $52 ; [set2] go to message 52 if RNG, 01 TODO
 #_0AB228: db $E7, $47, $48, $49, $49 ; [set2] randomly pick from messages 47, 48, 49, 49
 
 ;===================================================================================================
 
-Message_0AB22D:
+Message_02_0C_47:
 #_0AB22D: db $E8, $29 ; [set2] [COMMAND 48:29]
 #_0AB22F: db $F3 ; [set2] wait for key and new line
 #_0AB230: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -9342,7 +9343,7 @@ Message_0AB22D:
 
 ;===================================================================================================
 
-Message_0AB235:
+Message_02_0C_48:
 #_0AB235: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AB237: db $F3 ; [set2] wait for key and new line
 #_0AB238: db $FE, $00 ; [set2] [COMMAND 5E:00]
@@ -9350,7 +9351,7 @@ Message_0AB235:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AB23A:
+Message_02_0C_49:
 #_0AB23A: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0AB23C: db $F3 ; [set2] wait for key and new line
 #_0AB23D: db $F1 ; [set2] clear message box
@@ -9361,7 +9362,7 @@ Message_0AB23A:
 
 ;===================================================================================================
 
-Message_0AB246:
+Message_02_0C_4A:
 #_0AB246: db $D8, $01, $4C ; [set2] go to message 4C if RNG, 01 TODO
 #_0AB249: db $D4, $00, $4B ; [set2] go to message 4B if RNG, 00 TODO
 #_0AB24C: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -9374,7 +9375,7 @@ Message_0AB246:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AB254:
+Message_02_0C_4B:
 #_0AB254: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB256: db $F3 ; [set2] wait for key and new line
 #_0AB257: db $F1 ; [set2] clear message box
@@ -9388,14 +9389,14 @@ Message_0AB254:
 
 ;===================================================================================================
 
-Message_0AB262:
+Message_02_0C_4C:
 #_0AB262: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AB264: db $F3 ; [set2] wait for key and new line
 #_0AB265: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AB267:
+Message_02_0C_4D:
 #_0AB267: db $D8, $01, $4C ; [set2] go to message 4C if RNG, 01 TODO
 #_0AB26A: db $D4, $02, $4E ; [set2] go to message 4E if RNG, 02 TODO
 #_0AB26D: db $D4, $01, $50 ; [set2] go to message 50 if RNG, 01 TODO
@@ -9408,7 +9409,7 @@ Message_0AB267:
 
 ; «>[DEMONX]も つられて おどりだした!»
 ; «このまま おどりますか?»
-Message_0AB278:
+Message_02_0C_4E:
 #_0AB278: db $EB, $EB ; [set2] prewritten text EB
 #_0AB27A: db $EF, $4F ; [set2] YES/NO - go to message $4F if YES
 #_0AB27C: db $E9, $11 ; [set2] go to message $11
@@ -9417,7 +9418,7 @@ Message_0AB278:
 
 ; «>[CHASE]と [DEMONX]は»
 ; «ひとばんじゅう おどりあかした!»
-Message_0AB27E:
+Message_02_0C_4F:
 #_0AB27E: db $EB, $EC ; [set2] prewritten text EC
 #_0AB280: db $F3 ; [set2] wait for key and new line
 #_0AB281: db $F1 ; [set2] clear message box
@@ -9430,7 +9431,7 @@ Message_0AB27E:
 
 ; «>[DEMONX]に すきが できた»
 ; «こうげき しますか?»
-Message_0AB28A:
+Message_02_0C_50:
 #_0AB28A: db $EB, $EA ; [set2] prewritten text EA
 #_0AB28C: db $EF, $51 ; [set2] YES/NO - go to message $51 if YES
 #_0AB28E: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -9440,14 +9441,14 @@ Message_0AB28A:
 
 ;===================================================================================================
 
-Message_0AB296:
+Message_02_0C_51:
 #_0AB296: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
 ; «>[DEMONX]に すきが できた»
 ; «こうげき しますか?»
-Message_0AB298:
+Message_02_0C_52:
 #_0AB298: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AB29A: db $EF, $54 ; [set2] YES/NO - go to message $54 if YES
 #_0AB29C: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
@@ -9457,12 +9458,12 @@ Message_0AB298:
 
 ;===================================================================================================
 
-Message_0AB2A5:
+Message_02_0C_53:
 #_0AB2A5: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
-Message_0AB2A7:
+Message_02_0C_54:
 #_0AB2A7: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AB2A9: db $F3 ; [set2] wait for key and new line
 #_0AB2AA: db $D7, $01, $56 ; [set2] go to message 56 if RNG, 01 TODO
@@ -9472,7 +9473,7 @@ Message_0AB2A7:
 ;===================================================================================================
 
 ; «なにが おのぞみ?»
-Message_0AB2B3:
+Message_02_0C_55:
 #_0AB2B3: db $EB, $93 ; [set2] prewritten text 93
 #_0AB2B5: db $F3 ; [set2] wait for key and new line
 #_0AB2B6: db $E5, $05 ; [set2] [COMMAND 45:05]
@@ -9483,7 +9484,7 @@ Message_0AB2B3:
 
 ; «>[CHASE]は»
 ; «[DEMONX]に みいられた»
-Message_0AB2BE:
+Message_02_0C_56:
 #_0AB2BE: db $F1 ; [set2] clear message box
 #_0AB2BF: db $EB, $F5 ; [set2] prewritten text F5
 #_0AB2C1: db $F3 ; [set2] wait for key and new line
@@ -9495,7 +9496,7 @@ Message_0AB2BE:
 
 ;===================================================================================================
 
-Message_0AB2CA:
+Message_02_0C_57:
 #_0AB2CA: db $D8, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
 #_0AB2CD: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB2CF: db $D4, $01, $58 ; [set2] go to message 58 if RNG, 01 TODO
@@ -9503,7 +9504,7 @@ Message_0AB2CA:
 
 ;===================================================================================================
 
-Message_0AB2D4:
+Message_02_0C_58:
 #_0AB2D4: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB2D6: db $F3 ; [set2] wait for key and new line
 #_0AB2D7: db $FE, $00 ; [set2] [COMMAND 5E:00]
@@ -9512,7 +9513,7 @@ Message_0AB2D4:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB2D9:
+Message_02_0C_59:
 #_0AB2D9: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0AB2DC: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB2DE: db $F3 ; [set2] wait for key and new line
@@ -9527,7 +9528,7 @@ Message_0AB2D9:
 ; «>[DEMONX]に ばかにされた»
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB2E8:
+Message_02_0C_5A:
 #_0AB2E8: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AB2EA: db $F3 ; [set2] wait for key and new line
 #_0AB2EB: db $F1 ; [set2] clear message box
@@ -9547,19 +9548,19 @@ Message_0AB2E8:
 
 ;===================================================================================================
 
-Message_0AB304:
+Message_02_0C_5B:
 #_0AB304: db $E7, $5C, $5D, $5E, $5F ; [set2] randomly pick from messages 5C, 5D, 5E, 5F
 
 ;===================================================================================================
 
-Message_0AB309:
+Message_02_0C_5C:
 #_0AB309: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AB30B: db $F3 ; [set2] wait for key and new line
 #_0AB30C: db $FE, $02 ; [set2] [COMMAND 5E:02]
 
 ;===================================================================================================
 
-Message_0AB30E:
+Message_02_0C_5D:
 #_0AB30E: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AB310: db $F3 ; [set2] wait for key and new line
 #_0AB311: db $E5, $03 ; [set2] [COMMAND 45:03]
@@ -9568,7 +9569,7 @@ Message_0AB30E:
 ;===================================================================================================
 
 ; «・・・・・・・・・・・・・ ・ ・ ・»
-Message_0AB316:
+Message_02_0C_5E:
 #_0AB316: db $EB, $EE ; [set2] prewritten text EE
 #_0AB318: db $F3 ; [set2] wait for key and new line
 #_0AB319: db $E9, $00 ; [set2] go to message $00
@@ -9576,14 +9577,14 @@ Message_0AB316:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB31B:
+Message_02_0C_5F:
 #_0AB31B: db $EB, $E1 ; [set2] prewritten text E1
 #_0AB31D: db $F3 ; [set2] wait for key and new line
 #_0AB31E: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0AB320:
+Message_02_0C_60:
 #_0AB320: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB322: db $D6, $01, $61 ; [set2] go to message 61 if RNG, 01 TODO
 #_0AB325: db $D4, $00, $0D ; [set2] go to message 0D if RNG, 00 TODO
@@ -9591,14 +9592,14 @@ Message_0AB320:
 
 ;===================================================================================================
 
-Message_0AB32A:
+Message_02_0C_61:
 #_0AB32A: db $D4, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
 #_0AB32D: db $E9, $63 ; [set2] go to message $63
 
 ;===================================================================================================
 
 ; «>[DEMONX]は なんたいかにげだした»
-Message_0AB32F:
+Message_02_0C_62:
 #_0AB32F: db $DA, $02, $11 ; [set2] ext command 02: add 17 to STAT_11C if progress bit FB
 #_0AB332: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB334: db $F3 ; [set2] wait for key and new line
@@ -9611,7 +9612,7 @@ Message_0AB32F:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB33B:
+Message_02_0C_63:
 #_0AB33B: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB33D: db $F3 ; [set2] wait for key and new line
 #_0AB33E: db $F1 ; [set2] clear message box
@@ -9625,14 +9626,14 @@ Message_0AB33B:
 
 ;===================================================================================================
 
-Message_0AB34B:
+Message_02_0C_64:
 #_0AB34B: db $E7, $65, $69, $0F, $6A ; [set2] randomly pick from messages 65, 69, 0F, 6A
 
 ;===================================================================================================
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AB350:
+Message_02_0C_65:
 #_0AB350: db $EB, $ED ; [set2] prewritten text ED
 #_0AB352: db $F3 ; [set2] wait for key and new line
 #_0AB353: db $F1 ; [set2] clear message box
@@ -9643,7 +9644,7 @@ Message_0AB350:
 
 ;===================================================================================================
 
-Message_0AB35C:
+Message_02_0C_66:
 #_0AB35C: db $DB, $01, $07 ; [set2] [COMMAND 3B] go to message 07 if something 01 TODO
 #_0AB35F: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AB361: db $F3 ; [set2] wait for key and new line
@@ -9652,13 +9653,13 @@ Message_0AB35C:
 
 ;===================================================================================================
 
-Message_0AB367:
+Message_02_0C_67:
 #_0AB367: db $D4, $00, $68 ; [set2] go to message 68 if RNG, 00 TODO
 #_0AB36A: db $E9, $0F ; [set2] go to message $0F
 
 ;===================================================================================================
 
-Message_0AB36C:
+Message_02_0C_68:
 #_0AB36C: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB36E: db $F3 ; [set2] wait for key and new line
 #_0AB36F: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -9667,7 +9668,7 @@ Message_0AB36C:
 
 ; «>アクマは むし している»
 ; «・・・・・・・・・・・・・ ・ ・ ・»
-Message_0AB372:
+Message_02_0C_69:
 #_0AB372: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB374: db $F3 ; [set2] wait for key and new line
 #_0AB375: db $F1 ; [set2] clear message box
@@ -9677,7 +9678,7 @@ Message_0AB372:
 
 ;===================================================================================================
 
-Message_0AB37B:
+Message_02_0C_6A:
 #_0AB37B: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB37D: db $F3 ; [set2] wait for key and new line
 #_0AB37E: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -9685,7 +9686,7 @@ Message_0AB37B:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AB381:
+Message_02_0C_6B:
 #_0AB381: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB383: db $F2, $01 ; [set2] option list with 2 options
 #_0AB385: db $0F, $6C ; option 1 [6C]: message 0F
@@ -9693,7 +9694,7 @@ Message_0AB381:
 
 ;===================================================================================================
 
-Message_0AB389:
+Message_02_0C_6C:
 #_0AB389: db $D7, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AB38C: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB38E: db $F3 ; [set2] wait for key and new line
@@ -9702,12 +9703,12 @@ Message_0AB389:
 
 ;===================================================================================================
 
-Message_0AB394:
+Message_02_0C_6D:
 #_0AB394: db $E7, $6E, $6F, $70, $0F ; [set2] randomly pick from messages 6E, 6F, 70, 0F
 
 ;===================================================================================================
 
-Message_0AB399:
+Message_02_0C_6E:
 #_0AB399: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AB39B: db $F3 ; [set2] wait for key and new line
 #_0AB39C: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -9715,7 +9716,7 @@ Message_0AB399:
 
 ;===================================================================================================
 
-Message_0AB3A1:
+Message_02_0C_6F:
 #_0AB3A1: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB3A3: db $F3 ; [set2] wait for key and new line
 #_0AB3A4: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -9724,7 +9725,7 @@ Message_0AB3A1:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB3A9:
+Message_02_0C_70:
 #_0AB3A9: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB3AB: db $F3 ; [set2] wait for key and new line
 #_0AB3AC: db $F1 ; [set2] clear message box
@@ -9736,7 +9737,7 @@ Message_0AB3A9:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0AB3B2:
+Message_02_0C_71:
 #_0AB3B2: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0AB3B5: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB3B7: db $F3 ; [set2] wait for key and new line
@@ -9754,7 +9755,7 @@ Message_0AB3B2:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AB3C5:
+Message_02_0C_72:
 #_0AB3C5: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0AB3C8: db $D7, $01, $73 ; [set2] go to message 73 if RNG, 01 TODO
 #_0AB3CB: db $E8, $2D ; [set2] [COMMAND 48:2D]
@@ -9771,7 +9772,7 @@ Message_0AB3C5:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB3D9:
+Message_02_0C_73:
 #_0AB3D9: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AB3DB: db $F3 ; [set2] wait for key and new line
 #_0AB3DC: db $F1 ; [set2] clear message box
@@ -9781,14 +9782,14 @@ Message_0AB3D9:
 
 ;===================================================================================================
 
-Message_0AB3E2:
+Message_02_0C_74:
 #_0AB3E2: db $E7, $71, $75, $63, $77 ; [set2] randomly pick from messages 71, 75, 63, 77
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ちかづいてきた»
 ; «どうしますか?»
-Message_0AB3E7:
+Message_02_0C_75:
 #_0AB3E7: db $EB, $E9 ; [set2] prewritten text E9
 #_0AB3E9: db $F3 ; [set2] wait for key and new line
 #_0AB3EA: db $F1 ; [set2] clear message box
@@ -9799,14 +9800,14 @@ Message_0AB3E7:
 
 ;===================================================================================================
 
-Message_0AB3F3:
+Message_02_0C_76:
 #_0AB3F3: db $D4, $00, $3C ; [set2] go to message 3C if RNG, 00 TODO
 #_0AB3F6: db $E9, $77 ; [set2] go to message $77
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AB3F8:
+Message_02_0C_77:
 #_0AB3F8: db $DA, $01, $78 ; [set2] ext command 01: go to message 78 if MC INT = 0
 #_0AB3FB: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB3FD: db $F3 ; [set2] wait for key and new line
@@ -9817,14 +9818,14 @@ Message_0AB3F8:
 
 ;===================================================================================================
 
-Message_0AB404:
+Message_02_0C_78:
 #_0AB404: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB406: db $F3 ; [set2] wait for key and new line
 #_0AB407: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AB40A:
+Message_02_0D_00:
 #_0AB40A: db $F1 ; [set2] clear message box
 #_0AB40B: db $D5, $00, $4A ; [set2] go to message 4A if RNG, 00 TODO
 #_0AB40E: db $E7, $01, $16, $46, $49 ; [set2] randomly pick from messages 01, 16, 46, 49
@@ -9833,7 +9834,7 @@ Message_0AB40A:
 
 ; «>[DEMONX]に からかわれています»
 ; «どうしますか?»
-Message_0AB413:
+Message_02_0D_01:
 #_0AB413: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AB415: db $F3 ; [set2] wait for key and new line
 #_0AB416: db $F1 ; [set2] clear message box
@@ -9847,13 +9848,13 @@ Message_0AB413:
 
 ;===================================================================================================
 
-Message_0AB423:
+Message_02_0D_02:
 #_0AB423: db $D5, $02, $06 ; [set2] go to message 06 if RNG, 02 TODO
 #_0AB426: db $E7, $03, $04, $05, $05 ; [set2] randomly pick from messages 03, 04, 05, 05
 
 ;===================================================================================================
 
-Message_0AB42B:
+Message_02_0D_03:
 #_0AB42B: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AB42D: db $F3 ; [set2] wait for key and new line
 #_0AB42E: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -9863,7 +9864,7 @@ Message_0AB42B:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AB431:
+Message_02_0D_04:
 #_0AB431: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AB433: db $F3 ; [set2] wait for key and new line
 #_0AB434: db $F1 ; [set2] clear message box
@@ -9878,7 +9879,7 @@ Message_0AB431:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AB43F:
+Message_02_0D_05:
 #_0AB43F: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB441: db $F3 ; [set2] wait for key and new line
 #_0AB442: db $F1 ; [set2] clear message box
@@ -9888,7 +9889,7 @@ Message_0AB43F:
 
 ;===================================================================================================
 
-Message_0AB448:
+Message_02_0D_06:
 #_0AB448: db $D5, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AB44B: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0AB44D: db $E7, $07, $08, $0C, $0C ; [set2] randomly pick from messages 07, 08, 0C, 0C
@@ -9897,7 +9898,7 @@ Message_0AB448:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB452:
+Message_02_0D_07:
 #_0AB452: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB454: db $F3 ; [set2] wait for key and new line
 #_0AB455: db $F1 ; [set2] clear message box
@@ -9913,7 +9914,7 @@ Message_0AB452:
 
 ; >[DEMONX]は わかいを もとめてきた
 ; «どうしますか?»
-Message_0AB462:
+Message_02_0D_08:
 #_0AB462: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AB464: db $F3 ; [set2] wait for key and new line
 #_0AB465: db $F1 ; [set2] clear message box
@@ -9930,38 +9931,38 @@ Message_0AB462:
 
 ;===================================================================================================
 
-Message_0AB47F:
+Message_02_0D_09:
 #_0AB47F: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AB481: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
 ;===================================================================================================
 
-Message_0AB484:
+Message_02_0D_0A:
 #_0AB484: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AB486: db $D8, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
 #_0AB489: db $E9, $18 ; [set2] go to message $18
 
 ;===================================================================================================
 
-Message_0AB48B:
+Message_02_0D_0B:
 #_0AB48B: db $D4, $00, $0D ; [set2] go to message 0D if RNG, 00 TODO
 #_0AB48E: db $E9, $05 ; [set2] go to message $05
 
 ;===================================================================================================
 
-Message_0AB490:
+Message_02_0D_0C:
 #_0AB490: db $E8, $1E ; [set2] [COMMAND 48:1E]
 #_0AB492: db $EF, $0D ; [set2] YES/NO - go to message $0D if YES
 #_0AB494: db $E9, $46 ; [set2] go to message $46
 
 ;===================================================================================================
 
-Message_0AB496:
+Message_02_0D_0D:
 #_0AB496: db $E7, $05, $04, $0E, $0E ; [set2] randomly pick from messages 05, 04, 0E, 0E
 
 ;===================================================================================================
 
-Message_0AB49B:
+Message_02_0D_0E:
 #_0AB49B: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AB49D: db $F3 ; [set2] wait for key and new line
 #_0AB49E: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -9969,12 +9970,12 @@ Message_0AB49B:
 
 ;===================================================================================================
 
-Message_0AB4A3:
+Message_02_0D_0F:
 #_0AB4A3: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AB4A6:
+Message_02_0D_10:
 #_0AB4A6: db $D7, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
 #_0AB4A9: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AB4AB: db $D4, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
@@ -9986,7 +9987,7 @@ Message_0AB4A6:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0AB4B4:
+Message_02_0D_11:
 #_0AB4B4: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB4B6: db $F3 ; [set2] wait for key and new line
 #_0AB4B7: db $F1 ; [set2] clear message box
@@ -10002,7 +10003,7 @@ Message_0AB4B4:
 
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
-Message_0AB4C4:
+Message_02_0D_12:
 #_0AB4C4: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
 #_0AB4C7: db $E8, $33 ; [set2] [COMMAND 48:33]
 #_0AB4C9: db $F3 ; [set2] wait for key and new line
@@ -10014,20 +10015,20 @@ Message_0AB4C4:
 
 ;===================================================================================================
 
-Message_0AB4D3:
+Message_02_0D_13:
 #_0AB4D3: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AB4D5: db $F3 ; [set2] wait for key and new line
 #_0AB4D6: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AB4D9:
+Message_02_0D_14:
 #_0AB4D9: db $D5, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
 #_0AB4DC: db $E9, $05 ; [set2] go to message $05
 
 ;===================================================================================================
 
-Message_0AB4DE:
+Message_02_0D_15:
 #_0AB4DE: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AB4E0: db $F3 ; [set2] wait for key and new line
 #_0AB4E1: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -10036,7 +10037,7 @@ Message_0AB4DE:
 
 ; [DEMONX]が あまえてきた
 ; «どうしますか?»
-Message_0AB4E3:
+Message_02_0D_16:
 #_0AB4E3: db $E8, $0B ; [set2] [COMMAND 48:0B]
 #_0AB4E5: db $F3 ; [set2] wait for key and new line
 #_0AB4E6: db $F1 ; [set2] clear message box
@@ -10051,14 +10052,14 @@ Message_0AB4E3:
 
 ;===================================================================================================
 
-Message_0AB4FA:
+Message_02_0D_17:
 #_0AB4FA: db $D5, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AB4FD: db $D8, $01, $2D ; [set2] go to message 2D if RNG, 01 TODO
 #_0AB500: db $E7, $18, $19, $19, $2C ; [set2] randomly pick from messages 18, 19, 19, 2C
 
 ;===================================================================================================
 
-Message_0AB505:
+Message_02_0D_18:
 #_0AB505: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0AB507: db $F3 ; [set2] wait for key and new line
 #_0AB508: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -10067,7 +10068,7 @@ Message_0AB505:
 
 ; >[DEMONX]は なきだした
 ; «どうしますか?»
-Message_0AB50B:
+Message_02_0D_19:
 #_0AB50B: db $E8, $1F ; [set2] [COMMAND 48:1F]
 #_0AB50D: db $F3 ; [set2] wait for key and new line
 #_0AB50E: db $F1 ; [set2] clear message box
@@ -10083,12 +10084,12 @@ Message_0AB50B:
 
 ;===================================================================================================
 
-Message_0AB522:
+Message_02_0D_1A:
 #_0AB522: db $E7, $1B, $1C, $1D, $26 ; [set2] randomly pick from messages 1B, 1C, 1D, 26
 
 ;===================================================================================================
 
-Message_0AB527:
+Message_02_0D_1B:
 #_0AB527: db $E8, $28 ; [set2] [COMMAND 48:28]
 #_0AB529: db $F3 ; [set2] wait for key and new line
 #_0AB52A: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -10097,7 +10098,7 @@ Message_0AB527:
 
 ;===================================================================================================
 
-Message_0AB532:
+Message_02_0D_1C:
 #_0AB532: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0AB534: db $F3 ; [set2] wait for key and new line
 #_0AB535: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -10105,7 +10106,7 @@ Message_0AB532:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AB538:
+Message_02_0D_1D:
 #_0AB538: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0AB53A: db $F3 ; [set2] wait for key and new line
 #_0AB53B: db $F1 ; [set2] clear message box
@@ -10116,7 +10117,7 @@ Message_0AB538:
 
 ;===================================================================================================
 
-Message_0AB544:
+Message_02_0D_1E:
 #_0AB544: db $D8, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
 #_0AB547: db $D4, $00, $1F ; [set2] go to message 1F if RNG, 00 TODO
 #_0AB54A: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -10129,7 +10130,7 @@ Message_0AB544:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AB552:
+Message_02_0D_1F:
 #_0AB552: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB554: db $F3 ; [set2] wait for key and new line
 #_0AB555: db $F1 ; [set2] clear message box
@@ -10143,14 +10144,14 @@ Message_0AB552:
 
 ;===================================================================================================
 
-Message_0AB560:
+Message_02_0D_20:
 #_0AB560: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AB562: db $F3 ; [set2] wait for key and new line
 #_0AB563: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AB565:
+Message_02_0D_21:
 #_0AB565: db $D8, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
 #_0AB568: db $D4, $02, $24 ; [set2] go to message 24 if RNG, 02 TODO
 #_0AB56B: db $D4, $01, $22 ; [set2] go to message 22 if RNG, 01 TODO
@@ -10163,7 +10164,7 @@ Message_0AB565:
 
 ; «>[DEMONX]に すきが できた»
 ; «こうげき しますか?»
-Message_0AB576:
+Message_02_0D_22:
 #_0AB576: db $EB, $EA ; [set2] prewritten text EA
 #_0AB578: db $EF, $23 ; [set2] YES/NO - go to message $23 if YES
 #_0AB57A: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -10173,7 +10174,7 @@ Message_0AB576:
 
 ;===================================================================================================
 
-Message_0AB582:
+Message_02_0D_23:
 #_0AB582: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
@@ -10181,7 +10182,7 @@ Message_0AB582:
 ; «>[DEMONX]も つられて おどりだした!»
 ; «このまま おどりますか?»
 ; «>[DEMONX]は さっていった»
-Message_0AB584:
+Message_02_0D_24:
 #_0AB584: db $EB, $EB ; [set2] prewritten text EB
 #_0AB586: db $EF, $25 ; [set2] YES/NO - go to message $25 if YES
 #_0AB588: db $E8, $0D ; [set2] [COMMAND 48:0D]
@@ -10195,7 +10196,7 @@ Message_0AB584:
 
 ; «>[CHASE]と [DEMONX]は»
 ; «ひとばんじゅう おどりあかした!»
-Message_0AB591:
+Message_02_0D_25:
 #_0AB591: db $EB, $EC ; [set2] prewritten text EC
 #_0AB593: db $F3 ; [set2] wait for key and new line
 #_0AB594: db $F1 ; [set2] clear message box
@@ -10207,7 +10208,7 @@ Message_0AB591:
 ;===================================================================================================
 
 ; >めを とじますか?
-Message_0AB59D:
+Message_02_0D_26:
 #_0AB59D: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0AB59F: db $F3 ; [set2] wait for key and new line
 #_0AB5A0: db $F1 ; [set2] clear message box
@@ -10218,14 +10219,14 @@ Message_0AB59D:
 
 ;===================================================================================================
 
-Message_0AB5AF:
+Message_02_0D_27:
 #_0AB5AF: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AB5B1: db $F3 ; [set2] wait for key and new line
 #_0AB5B2: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AB5B4:
+Message_02_0D_28:
 #_0AB5B4: db $D7, $01, $2A ; [set2] go to message 2A if RNG, 01 TODO
 #_0AB5B7: db $D7, $02, $29 ; [set2] go to message 29 if RNG, 02 TODO
 #_0AB5BA: db $E9, $18 ; [set2] go to message $18
@@ -10235,7 +10236,7 @@ Message_0AB5B4:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AB5BC:
+Message_02_0D_29:
 #_0AB5BC: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AB5BE: db $F3 ; [set2] wait for key and new line
 #_0AB5BF: db $F1 ; [set2] clear message box
@@ -10251,7 +10252,7 @@ Message_0AB5BC:
 
 ; «>[CHASE]は もうれつな すいまに»
 ; «とらわれ ねむりに おちていった・・・»
-Message_0AB5CA:
+Message_02_0D_2A:
 #_0AB5CA: db $EB, $F4 ; [set2] prewritten text F4
 #_0AB5CC: db $F3 ; [set2] wait for key and new line
 #_0AB5CD: db $F1 ; [set2] clear message box
@@ -10265,12 +10266,12 @@ Message_0AB5CA:
 
 ;===================================================================================================
 
-Message_0AB5D9:
+Message_02_0D_2B:
 #_0AB5D9: db $E7, $2D, $2F, $0E, $0E ; [set2] randomly pick from messages 2D, 2F, 0E, 0E
 
 ;===================================================================================================
 
-Message_0AB5DE:
+Message_02_0D_2C:
 #_0AB5DE: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AB5E0: db $F3 ; [set2] wait for key and new line
 #_0AB5E1: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -10280,7 +10281,7 @@ Message_0AB5DE:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0AB5E6:
+Message_02_0D_2D:
 #_0AB5E6: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB5E8: db $F3 ; [set2] wait for key and new line
 #_0AB5E9: db $F1 ; [set2] clear message box
@@ -10294,7 +10295,7 @@ Message_0AB5E6:
 
 ;===================================================================================================
 
-Message_0AB5F6:
+Message_02_0D_2E:
 #_0AB5F6: db $D4, $00, $2F ; [set2] go to message 2F if RNG, 00 TODO
 #_0AB5F9: db $E9, $0F ; [set2] go to message $0F
 
@@ -10302,7 +10303,7 @@ Message_0AB5F6:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0AB5FB:
+Message_02_0D_2F:
 #_0AB5FB: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AB5FD: db $F3 ; [set2] wait for key and new line
 #_0AB5FE: db $F1 ; [set2] clear message box
@@ -10316,7 +10317,7 @@ Message_0AB5FB:
 
 ;===================================================================================================
 
-Message_0AB60B:
+Message_02_0D_30:
 #_0AB60B: db $D4, $01, $32 ; [set2] go to message 32 if RNG, 01 TODO
 #_0AB60E: db $E9, $31 ; [set2] go to message $31
 
@@ -10324,7 +10325,7 @@ Message_0AB60B:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AB610:
+Message_02_0D_31:
 #_0AB610: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB612: db $F3 ; [set2] wait for key and new line
 #_0AB613: db $F1 ; [set2] clear message box
@@ -10339,7 +10340,7 @@ Message_0AB610:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB620:
+Message_02_0D_32:
 #_0AB620: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB622: db $F3 ; [set2] wait for key and new line
 #_0AB623: db $F1 ; [set2] clear message box
@@ -10349,7 +10350,7 @@ Message_0AB620:
 
 ;===================================================================================================
 
-Message_0AB629:
+Message_02_0D_33:
 #_0AB629: db $DC, $01, $34 ; [set2] [COMMAND 3C] go to message 34 if something 01 TODO
 #_0AB62C: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB62E: db $F3 ; [set2] wait for key and new line
@@ -10358,7 +10359,7 @@ Message_0AB629:
 
 ;===================================================================================================
 
-Message_0AB634:
+Message_02_0D_34:
 #_0AB634: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AB636: db $F3 ; [set2] wait for key and new line
 #_0AB637: db $F1 ; [set2] clear message box
@@ -10368,7 +10369,7 @@ Message_0AB634:
 
 ;===================================================================================================
 
-Message_0AB63D:
+Message_02_0D_35:
 #_0AB63D: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AB63F: db $F3 ; [set2] wait for key and new line
 #_0AB640: db $F1 ; [set2] clear message box
@@ -10377,13 +10378,13 @@ Message_0AB63D:
 
 ;===================================================================================================
 
-Message_0AB646:
+Message_02_0D_36:
 #_0AB646: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB649:
+Message_02_0D_37:
 #_0AB649: db $D4, $01, $38 ; [set2] go to message 38 if RNG, 01 TODO
 #_0AB64C: db $EB, $E1 ; [set2] prewritten text E1
 #_0AB64E: db $F3 ; [set2] wait for key and new line
@@ -10391,7 +10392,7 @@ Message_0AB649:
 
 ;===================================================================================================
 
-Message_0AB651:
+Message_02_0D_38:
 #_0AB651: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AB653: db $F3 ; [set2] wait for key and new line
 #_0AB654: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -10400,7 +10401,7 @@ Message_0AB651:
 ;===================================================================================================
 
 ; «>[DEMONX]を ナカマにしますか?»
-Message_0AB659:
+Message_02_0D_39:
 #_0AB659: db $D6, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
 #_0AB65C: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB65E: db $F3 ; [set2] wait for key and new line
@@ -10411,7 +10412,7 @@ Message_0AB659:
 
 ;===================================================================================================
 
-Message_0AB666:
+Message_02_0D_3A:
 #_0AB666: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AB668: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AB66B: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
@@ -10419,7 +10420,7 @@ Message_0AB666:
 ;===================================================================================================
 
 ; «>せっとくは しっぱいした»
-Message_0AB66E:
+Message_02_0D_3B:
 #_0AB66E: db $E8, $19 ; [set2] [COMMAND 48:19]
 #_0AB670: db $F3 ; [set2] wait for key and new line
 #_0AB671: db $F1 ; [set2] clear message box
@@ -10429,20 +10430,20 @@ Message_0AB66E:
 
 ;===================================================================================================
 
-Message_0AB677:
+Message_02_0D_3C:
 #_0AB677: db $D4, $00, $3D ; [set2] go to message 3D if RNG, 00 TODO
 #_0AB67A: db $E9, $0F ; [set2] go to message $0F
 
 ;===================================================================================================
 
-Message_0AB67C:
+Message_02_0D_3D:
 #_0AB67C: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB67E: db $F3 ; [set2] wait for key and new line
 #_0AB67F: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AB681:
+Message_02_0D_3E:
 #_0AB681: db $D4, $00, $3F ; [set2] go to message 3F if RNG, 00 TODO
 #_0AB684: db $E9, $2D ; [set2] go to message $2D
 
@@ -10450,7 +10451,7 @@ Message_0AB681:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AB686:
+Message_02_0D_3F:
 #_0AB686: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AB688: db $F3 ; [set2] wait for key and new line
 #_0AB689: db $F1 ; [set2] clear message box
@@ -10464,13 +10465,13 @@ Message_0AB686:
 
 ;===================================================================================================
 
-Message_0AB696:
+Message_02_0D_40:
 #_0AB696: db $D5, $02, $43 ; [set2] go to message 43 if RNG, 02 TODO
 #_0AB699: db $E7, $41, $42, $03, $05 ; [set2] randomly pick from messages 41, 42, 03, 05
 
 ;===================================================================================================
 
-Message_0AB69E:
+Message_02_0D_41:
 #_0AB69E: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AB6A0: db $F3 ; [set2] wait for key and new line
 #_0AB6A1: db $E6, $05 ; [set2] [COMMAND 46:05]
@@ -10478,7 +10479,7 @@ Message_0AB69E:
 
 ;===================================================================================================
 
-Message_0AB6A6:
+Message_02_0D_42:
 #_0AB6A6: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB6A8: db $F3 ; [set2] wait for key and new line
 #_0AB6A9: db $E6, $03 ; [set2] [COMMAND 46:03]
@@ -10486,7 +10487,7 @@ Message_0AB6A6:
 
 ;===================================================================================================
 
-Message_0AB6AE:
+Message_02_0D_43:
 #_0AB6AE: db $D5, $01, $45 ; [set2] go to message 45 if RNG, 01 TODO
 #_0AB6B1: db $D4, $00, $44 ; [set2] go to message 44 if RNG, 00 TODO
 #_0AB6B4: db $E8, $39 ; [set2] [COMMAND 48:39]
@@ -10496,7 +10497,7 @@ Message_0AB6AE:
 
 ;===================================================================================================
 
-Message_0AB6BC:
+Message_02_0D_44:
 #_0AB6BC: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB6BE: db $F3 ; [set2] wait for key and new line
 #_0AB6BF: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -10505,7 +10506,7 @@ Message_0AB6BC:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB6C4:
+Message_02_0D_45:
 #_0AB6C4: db $D4, $02, $44 ; [set2] go to message 44 if RNG, 02 TODO
 #_0AB6C7: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB6C9: db $F3 ; [set2] wait for key and new line
@@ -10518,7 +10519,7 @@ Message_0AB6C4:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AB6D0:
+Message_02_0D_46:
 #_0AB6D0: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AB6D2: db $F3 ; [set2] wait for key and new line
 #_0AB6D3: db $F1 ; [set2] clear message box
@@ -10534,7 +10535,7 @@ Message_0AB6D0:
 
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
-Message_0AB6E0:
+Message_02_0D_47:
 #_0AB6E0: db $D8, $02, $48 ; [set2] go to message 48 if RNG, 02 TODO
 #_0AB6E3: db $EB, $EF ; [set2] prewritten text EF
 #_0AB6E5: db $F3 ; [set2] wait for key and new line
@@ -10546,7 +10547,7 @@ Message_0AB6E0:
 
 ;===================================================================================================
 
-Message_0AB6EF:
+Message_02_0D_48:
 #_0AB6EF: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
 #_0AB6F2: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AB6F5: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -10556,7 +10557,7 @@ Message_0AB6EF:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB6F9:
+Message_02_0D_49:
 #_0AB6F9: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB6FB: db $F3 ; [set2] wait for key and new line
 #_0AB6FC: db $F1 ; [set2] clear message box
@@ -10567,14 +10568,14 @@ Message_0AB6F9:
 
 ;===================================================================================================
 
-Message_0AB705:
+Message_02_0D_4A:
 #_0AB705: db $E7, $4B, $4B, $5A, $60 ; [set2] randomly pick from messages 4B, 4B, 5A, 60
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AB70A:
+Message_02_0D_4B:
 #_0AB70A: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AB70C: db $F3 ; [set2] wait for key and new line
 #_0AB70D: db $F1 ; [set2] clear message box
@@ -10588,7 +10589,7 @@ Message_0AB70A:
 
 ;===================================================================================================
 
-Message_0AB71A:
+Message_02_0D_4C:
 #_0AB71A: db $D7, $01, $4E ; [set2] go to message 4E if RNG, 01 TODO
 #_0AB71D: db $D4, $00, $4D ; [set2] go to message 4D if RNG, 00 TODO
 #_0AB720: db $E8, $09 ; [set2] [COMMAND 48:09]
@@ -10599,7 +10600,7 @@ Message_0AB71A:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB728:
+Message_02_0D_4D:
 #_0AB728: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AB72A: db $F3 ; [set2] wait for key and new line
 #_0AB72B: db $F1 ; [set2] clear message box
@@ -10611,7 +10612,7 @@ Message_0AB728:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB731:
+Message_02_0D_4E:
 #_0AB731: db $D4, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AB734: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB736: db $F3 ; [set2] wait for key and new line
@@ -10626,13 +10627,13 @@ Message_0AB731:
 
 ;===================================================================================================
 
-Message_0AB744:
+Message_02_0D_4F:
 #_0AB744: db $D4, $00, $51 ; [set2] go to message 51 if RNG, 00 TODO
 #_0AB747: db $E9, $50 ; [set2] go to message $50
 
 ;===================================================================================================
 
-Message_0AB749:
+Message_02_0D_50:
 #_0AB749: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB74B: db $F3 ; [set2] wait for key and new line
 #_0AB74C: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -10642,7 +10643,7 @@ Message_0AB749:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB751:
+Message_02_0D_51:
 #_0AB751: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB753: db $F3 ; [set2] wait for key and new line
 #_0AB754: db $F1 ; [set2] clear message box
@@ -10657,7 +10658,7 @@ Message_0AB751:
 ;===================================================================================================
 
 ; «>だいぶ きまずく なってきた»
-Message_0AB761:
+Message_02_0D_52:
 #_0AB761: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AB763: db $F3 ; [set2] wait for key and new line
 #_0AB764: db $F1 ; [set2] clear message box
@@ -10668,19 +10669,19 @@ Message_0AB761:
 
 ;===================================================================================================
 
-Message_0AB76C:
+Message_02_0D_53:
 #_0AB76C: db $D4, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
 #_0AB76F: db $E9, $0F ; [set2] go to message $0F
 
 ;===================================================================================================
 
-Message_0AB771:
+Message_02_0D_54:
 #_0AB771: db $E7, $55, $55, $56, $51 ; [set2] randomly pick from messages 55, 55, 56, 51
 
 ;===================================================================================================
 
 ; «>[DEMONX]を ナカマにしますか?»
-Message_0AB776:
+Message_02_0D_55:
 #_0AB776: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB778: db $F3 ; [set2] wait for key and new line
 #_0AB779: db $F1 ; [set2] clear message box
@@ -10690,20 +10691,20 @@ Message_0AB776:
 
 ;===================================================================================================
 
-Message_0AB780:
+Message_02_0D_56:
 #_0AB780: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB782: db $EF, $57 ; [set2] YES/NO - go to message $57 if YES
 #_0AB784: db $E9, $27 ; [set2] go to message $27
 
 ;===================================================================================================
 
-Message_0AB786:
+Message_02_0D_57:
 #_0AB786: db $D7, $01, $59 ; [set2] go to message 59 if RNG, 01 TODO
 #_0AB789: db $E9, $58 ; [set2] go to message $58
 
 ;===================================================================================================
 
-Message_0AB78B:
+Message_02_0D_58:
 #_0AB78B: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB78D: db $F3 ; [set2] wait for key and new line
 #_0AB78E: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -10711,7 +10712,7 @@ Message_0AB78B:
 
 ;===================================================================================================
 
-Message_0AB793:
+Message_02_0D_59:
 #_0AB793: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB795: db $F3 ; [set2] wait for key and new line
 #_0AB796: db $F1 ; [set2] clear message box
@@ -10723,7 +10724,7 @@ Message_0AB793:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB79C:
+Message_02_0D_5A:
 #_0AB79C: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB79E: db $F3 ; [set2] wait for key and new line
 #_0AB79F: db $F1 ; [set2] clear message box
@@ -10734,17 +10735,17 @@ Message_0AB79C:
 
 ;===================================================================================================
 
-Message_0AB7A8:
+Message_02_0D_5B:
 #_0AB7A8: db $E7, $3D, $51, $4D, $0F ; [set2] randomly pick from messages 3D, 51, 4D, 0F
 
 ;===================================================================================================
 
-Message_0AB7AD:
+Message_02_0D_5C:
 #_0AB7AD: db $E7, $5D, $5E, $2F, $5F ; [set2] randomly pick from messages 5D, 5E, 2F, 5F
 
 ;===================================================================================================
 
-Message_0AB7B2:
+Message_02_0D_5D:
 #_0AB7B2: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB7B4: db $F3 ; [set2] wait for key and new line
 #_0AB7B5: db $E6, $01 ; [set2] [COMMAND 46:01]
@@ -10753,7 +10754,7 @@ Message_0AB7B2:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB7BA:
+Message_02_0D_5E:
 #_0AB7BA: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB7BC: db $F3 ; [set2] wait for key and new line
 #_0AB7BD: db $F1 ; [set2] clear message box
@@ -10763,7 +10764,7 @@ Message_0AB7BA:
 
 ;===================================================================================================
 
-Message_0AB7C3:
+Message_02_0D_5F:
 #_0AB7C3: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AB7C5: db $F3 ; [set2] wait for key and new line
 #_0AB7C6: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -10773,7 +10774,7 @@ Message_0AB7C3:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0AB7CB:
+Message_02_0D_60:
 #_0AB7CB: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB7CD: db $F3 ; [set2] wait for key and new line
 #_0AB7CE: db $F1 ; [set2] clear message box
@@ -10787,25 +10788,25 @@ Message_0AB7CB:
 
 ;===================================================================================================
 
-Message_0AB7DB:
+Message_02_0D_61:
 #_0AB7DB: db $D8, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
 #_0AB7DE: db $E7, $1D, $1D, $60, $55 ; [set2] randomly pick from messages 1D, 1D, 60, 55
 
 ;===================================================================================================
 
-Message_0AB7E3:
+Message_02_0D_62:
 #_0AB7E3: db $E7, $60, $60, $63, $64 ; [set2] randomly pick from messages 60, 60, 63, 64
 
 ;===================================================================================================
 
-Message_0AB7E8:
+Message_02_0D_63:
 #_0AB7E8: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AB7EA: db $F3 ; [set2] wait for key and new line
 #_0AB7EB: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AB7ED:
+Message_02_0D_64:
 #_0AB7ED: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB7EF: db $F3 ; [set2] wait for key and new line
 #_0AB7F0: db $F1 ; [set2] clear message box
@@ -10817,7 +10818,7 @@ Message_0AB7ED:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB7F6:
+Message_02_0D_65:
 #_0AB7F6: db $D6, $00, $6C ; [set2] go to message 6C if RNG, 00 TODO
 #_0AB7F9: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB7FB: db $F3 ; [set2] wait for key and new line
@@ -10832,13 +10833,13 @@ Message_0AB7F6:
 
 ;===================================================================================================
 
-Message_0AB809:
+Message_02_0D_66:
 #_0AB809: db $E7, $0F, $67, $67, $50 ; [set2] randomly pick from messages 0F, 67, 67, 50
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AB80E:
+Message_02_0D_67:
 #_0AB80E: db $DA, $01, $68 ; [set2] ext command 01: go to message 68 if MC INT = 0
 #_0AB811: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB813: db $F3 ; [set2] wait for key and new line
@@ -10849,19 +10850,19 @@ Message_0AB80E:
 
 ;===================================================================================================
 
-Message_0AB81A:
+Message_02_0D_68:
 #_0AB81A: db $F7, $11, $80 ; [set2] [COMMAND 57] $11 $80 TODO
 
 ;===================================================================================================
 
-Message_0AB81D:
+Message_02_0D_69:
 #_0AB81D: db $E7, $60, $6A, $6A, $1D ; [set2] randomly pick from messages 60, 6A, 6A, 1D
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ちかづいてきた»
 ; «どうしますか?»
-Message_0AB822:
+Message_02_0D_6A:
 #_0AB822: db $EB, $E9 ; [set2] prewritten text E9
 #_0AB824: db $F3 ; [set2] wait for key and new line
 #_0AB825: db $F1 ; [set2] clear message box
@@ -10872,7 +10873,7 @@ Message_0AB822:
 
 ;===================================================================================================
 
-Message_0AB82E:
+Message_02_0D_6B:
 #_0AB82E: db $D7, $01, $64 ; [set2] go to message 64 if RNG, 01 TODO
 #_0AB831: db $E9, $58 ; [set2] go to message $58
 
@@ -10880,7 +10881,7 @@ Message_0AB82E:
 
 ; «>[DEMONX]に すきが できた»
 ; «こうげき しますか?»
-Message_0AB833:
+Message_02_0D_6C:
 #_0AB833: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AB835: db $EF, $6D ; [set2] YES/NO - go to message $6D if YES
 #_0AB837: db $D6, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
@@ -10890,7 +10891,7 @@ Message_0AB833:
 
 ;===================================================================================================
 
-Message_0AB840:
+Message_02_0D_6D:
 #_0AB840: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AB842: db $F3 ; [set2] wait for key and new line
 #_0AB843: db $F1 ; [set2] clear message box
@@ -10900,7 +10901,7 @@ Message_0AB840:
 
 ;===================================================================================================
 
-Message_0AB84D:
+Message_02_0D_6E:
 #_0AB84D: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AB84F: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress bit EA if 01 is nonzero; otherwise reset
 #_0AB852: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -10909,7 +10910,7 @@ Message_0AB84D:
 
 ; «>[CHASE]は»
 ; «[DEMONX]に みいられた»
-Message_0AB855:
+Message_02_0D_6F:
 #_0AB855: db $EB, $F5 ; [set2] prewritten text F5
 #_0AB857: db $F3 ; [set2] wait for key and new line
 #_0AB858: db $F1 ; [set2] clear message box
@@ -10920,7 +10921,7 @@ Message_0AB855:
 
 ;===================================================================================================
 
-Message_0AB860:
+Message_02_0E_00:
 #_0AB860: db $F1 ; [set2] clear message box
 #_0AB861: db $D5, $00, $53 ; [set2] go to message 53 if RNG, 00 TODO
 #_0AB864: db $E7, $01, $23, $41, $4B ; [set2] randomly pick from messages 01, 23, 41, 4B
@@ -10929,7 +10930,7 @@ Message_0AB860:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB869:
+Message_02_0E_01:
 #_0AB869: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB86B: db $F3 ; [set2] wait for key and new line
 #_0AB86C: db $F1 ; [set2] clear message box
@@ -10943,18 +10944,18 @@ Message_0AB869:
 
 ;===================================================================================================
 
-Message_0AB879:
+Message_02_0E_02:
 #_0AB879: db $E7, $03, $04, $04, $1C ; [set2] randomly pick from messages 03, 04, 04, 1C
 
 ;===================================================================================================
 
-Message_0AB87E:
+Message_02_0E_03:
 #_0AB87E: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0AB881:
+Message_02_0E_04:
 #_0AB881: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AB883: db $F3 ; [set2] wait for key and new line
 #_0AB884: db $F1 ; [set2] clear message box
@@ -10965,13 +10966,13 @@ Message_0AB881:
 
 ;===================================================================================================
 
-Message_0AB88D:
+Message_02_0E_05:
 #_0AB88D: db $D5, $02, $03 ; [set2] go to message 03 if RNG, 02 TODO
 #_0AB890: db $E7, $06, $07, $08, $09 ; [set2] randomly pick from messages 06, 07, 08, 09
 
 ;===================================================================================================
 
-Message_0AB895:
+Message_02_0E_06:
 #_0AB895: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AB897: db $F3 ; [set2] wait for key and new line
 #_0AB898: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -10982,7 +10983,7 @@ Message_0AB895:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AB89D:
+Message_02_0E_07:
 #_0AB89D: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AB89F: db $F3 ; [set2] wait for key and new line
 #_0AB8A0: db $F1 ; [set2] clear message box
@@ -10996,7 +10997,7 @@ Message_0AB89D:
 
 ;===================================================================================================
 
-Message_0AB8AB:
+Message_02_0E_08:
 #_0AB8AB: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AB8AD: db $F3 ; [set2] wait for key and new line
 #_0AB8AE: db $E9, $84 ; [set2] go to message $84
@@ -11004,7 +11005,7 @@ Message_0AB8AB:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AB8B0:
+Message_02_0E_09:
 #_0AB8B0: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB8B2: db $F3 ; [set2] wait for key and new line
 #_0AB8B3: db $F1 ; [set2] clear message box
@@ -11014,14 +11015,14 @@ Message_0AB8B0:
 
 ;===================================================================================================
 
-Message_0AB8B9:
+Message_02_0E_0A:
 #_0AB8B9: db $D6, $00, $1B ; [set2] go to message 1B if RNG, 00 TODO
 #_0AB8BC: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB8BE: db $E7, $0B, $0C, $12, $12 ; [set2] randomly pick from messages 0B, 0C, 12, 12
 
 ;===================================================================================================
 
-Message_0AB8C3:
+Message_02_0E_0B:
 #_0AB8C3: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AB8C5: db $F3 ; [set2] wait for key and new line
 #_0AB8C6: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
@@ -11030,7 +11031,7 @@ Message_0AB8C3:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AB8C9:
+Message_02_0E_0C:
 #_0AB8C9: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0AB8CB: db $F3 ; [set2] wait for key and new line
 #_0AB8CC: db $F1 ; [set2] clear message box
@@ -11044,7 +11045,7 @@ Message_0AB8C9:
 
 ;===================================================================================================
 
-Message_0AB8D9:
+Message_02_0E_0D:
 #_0AB8D9: db $D6, $01, $0E ; [set2] go to message 0E if RNG, 01 TODO
 #_0AB8DC: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB8DE: db $E8, $29 ; [set2] [COMMAND 48:29]
@@ -11053,7 +11054,7 @@ Message_0AB8D9:
 
 ;===================================================================================================
 
-Message_0AB8E4:
+Message_02_0E_0E:
 #_0AB8E4: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AB8E6: db $F3 ; [set2] wait for key and new line
 #_0AB8E7: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -11062,7 +11063,7 @@ Message_0AB8E4:
 
 ; «>[CHASE]の うたは»
 ; «[CLASSX] [DEMONX]を とりこにした»
-Message_0AB8EA:
+Message_02_0E_0F:
 #_0AB8EA: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0AB8ED: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB8EF: db $D4, $00, $10 ; [set2] go to message 10 if RNG, 00 TODO
@@ -11076,7 +11077,7 @@ Message_0AB8EA:
 
 ;===================================================================================================
 
-Message_0AB8FE:
+Message_02_0E_10:
 #_0AB8FE: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB900: db $F3 ; [set2] wait for key and new line
 #_0AB901: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -11084,7 +11085,7 @@ Message_0AB8FE:
 
 ;===================================================================================================
 
-Message_0AB906:
+Message_02_0E_11:
 #_0AB906: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AB908: db $F3 ; [set2] wait for key and new line
 #_0AB909: db $E9, $00 ; [set2] go to message $00
@@ -11093,7 +11094,7 @@ Message_0AB906:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AB90B:
+Message_02_0E_12:
 #_0AB90B: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB90D: db $F3 ; [set2] wait for key and new line
 #_0AB90E: db $F1 ; [set2] clear message box
@@ -11107,13 +11108,13 @@ Message_0AB90B:
 
 ;===================================================================================================
 
-Message_0AB91B:
+Message_02_0E_13:
 #_0AB91B: db $D5, $01, $17 ; [set2] go to message 17 if RNG, 01 TODO
 #_0AB91E: db $E7, $14, $14, $15, $16 ; [set2] randomly pick from messages 14, 14, 15, 16
 
 ;===================================================================================================
 
-Message_0AB923:
+Message_02_0E_14:
 #_0AB923: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AB925: db $F3 ; [set2] wait for key and new line
 #_0AB926: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -11121,7 +11122,7 @@ Message_0AB923:
 
 ;===================================================================================================
 
-Message_0AB92B:
+Message_02_0E_15:
 #_0AB92B: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AB92D: db $F3 ; [set2] wait for key and new line
 #_0AB92E: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -11130,7 +11131,7 @@ Message_0AB92B:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AB933:
+Message_02_0E_16:
 #_0AB933: db $DA, $01, $23 ; [set2] ext command 01: go to message 23 if MC INT = 0
 #_0AB936: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB938: db $F3 ; [set2] wait for key and new line
@@ -11142,20 +11143,14 @@ Message_0AB933:
 
 ;===================================================================================================
 
-Message_0AB941:
-#_0AB941: db $D4, $02, $14 ; [set2] go to message 14 if RNG, 02 TODO
-#_0AB944: db $E9, $18 ; [set2] go to message $18
-
-;===================================================================================================
-
-Message_0AB941:
+Message_02_0E_17:
 #_0AB941: db $D4, $02, $14 ; [set2] go to message 14 if RNG, 02 TODO
 #_0AB944: db $E9, $18 ; [set2] go to message $18
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AB946:
+Message_02_0E_18:
 #_0AB946: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB948: db $F3 ; [set2] wait for key and new line
 #_0AB949: db $F1 ; [set2] clear message box
@@ -11166,7 +11161,7 @@ Message_0AB946:
 ;===================================================================================================
 
 ; «>だいぶ きまずく なってきた»
-Message_0AB94F:
+Message_02_0E_19:
 #_0AB94F: db $D4, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
 #_0AB952: db $D7, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
 #_0AB955: db $E8, $12 ; [set2] [COMMAND 48:12]
@@ -11178,7 +11173,7 @@ Message_0AB94F:
 
 ;===================================================================================================
 
-Message_0AB95E:
+Message_02_0E_1A:
 #_0AB95E: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AB960: db $F3 ; [set2] wait for key and new line
 #_0AB961: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -11186,7 +11181,7 @@ Message_0AB95E:
 
 ;===================================================================================================
 
-Message_0AB966:
+Message_02_0E_1B:
 #_0AB966: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB968: db $F3 ; [set2] wait for key and new line
 #_0AB969: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -11194,7 +11189,7 @@ Message_0AB966:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AB96C:
+Message_02_0E_1C:
 #_0AB96C: db $DA, $01, $03 ; [set2] ext command 01: go to message 03 if MC INT = 0
 #_0AB96F: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB971: db $F3 ; [set2] wait for key and new line
@@ -11205,12 +11200,12 @@ Message_0AB96C:
 
 ;===================================================================================================
 
-Message_0AB978:
+Message_02_0E_1D:
 #_0AB978: db $E7, $1E, $1E, $1F, $21 ; [set2] randomly pick from messages 1E, 1E, 1F, 21
 
 ;===================================================================================================
 
-Message_0AB97D:
+Message_02_0E_1E:
 #_0AB97D: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB97F: db $F3 ; [set2] wait for key and new line
 #_0AB980: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -11218,13 +11213,13 @@ Message_0AB97D:
 
 ;===================================================================================================
 
-Message_0AB985:
+Message_02_0E_1F:
 #_0AB985: db $D5, $02, $20 ; [set2] go to message 20 if RNG, 02 TODO
 #_0AB988: db $E7, $06, $06, $09, $07 ; [set2] randomly pick from messages 06, 06, 09, 07
 
 ;===================================================================================================
 
-Message_0AB98D:
+Message_02_0E_20:
 #_0AB98D: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB98F: db $F3 ; [set2] wait for key and new line
 #_0AB990: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -11232,7 +11227,7 @@ Message_0AB98D:
 ;===================================================================================================
 
 ; «>[DEMONX]は なんたいかにげだした»
-Message_0AB993:
+Message_02_0E_21:
 #_0AB993: db $D7, $00, $22 ; [set2] go to message 22 if RNG, 00 TODO
 #_0AB996: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB998: db $F3 ; [set2] wait for key and new line
@@ -11244,7 +11239,7 @@ Message_0AB993:
 
 ;===================================================================================================
 
-Message_0AB9A2:
+Message_02_0E_22:
 #_0AB9A2: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AB9A4: db $F3 ; [set2] wait for key and new line
 #_0AB9A5: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -11253,7 +11248,7 @@ Message_0AB9A2:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB9A7:
+Message_02_0E_23:
 #_0AB9A7: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0AB9AA: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB9AC: db $F3 ; [set2] wait for key and new line
@@ -11267,7 +11262,7 @@ Message_0AB9A7:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AB9B6:
+Message_02_0E_24:
 #_0AB9B6: db $D8, $01, $30 ; [set2] go to message 30 if RNG, 01 TODO
 #_0AB9B9: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB9BB: db $D4, $01, $2C ; [set2] go to message 2C if RNG, 01 TODO
@@ -11281,12 +11276,12 @@ Message_0AB9B6:
 
 ;===================================================================================================
 
-Message_0AB9CA:
+Message_02_0E_25:
 #_0AB9CA: db $E7, $26, $27, $3A, $3A ; [set2] randomly pick from messages 26, 27, 3A, 3A
 
 ;===================================================================================================
 
-Message_0AB9CF:
+Message_02_0E_26:
 #_0AB9CF: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AB9D1: db $F3 ; [set2] wait for key and new line
 #_0AB9D2: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -11295,7 +11290,7 @@ Message_0AB9CF:
 
 ; «>[DEMONX]は ちかづいてきた»
 ; «どうしますか?»
-Message_0AB9D4:
+Message_02_0E_27:
 #_0AB9D4: db $EB, $E9 ; [set2] prewritten text E9
 #_0AB9D6: db $F3 ; [set2] wait for key and new line
 #_0AB9D7: db $F1 ; [set2] clear message box
@@ -11306,7 +11301,7 @@ Message_0AB9D4:
 
 ;===================================================================================================
 
-Message_0AB9E0:
+Message_02_0E_28:
 #_0AB9E0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AB9E3: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AB9E6: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
@@ -11314,7 +11309,7 @@ Message_0AB9E0:
 
 ;===================================================================================================
 
-Message_0AB9EB:
+Message_02_0E_29:
 #_0AB9EB: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB9ED: db $D6, $01, $2A ; [set2] go to message 2A if RNG, 01 TODO
 #_0AB9F0: db $D4, $00, $2C ; [set2] go to message 2C if RNG, 00 TODO
@@ -11322,14 +11317,14 @@ Message_0AB9EB:
 
 ;===================================================================================================
 
-Message_0AB9F5:
+Message_02_0E_2A:
 #_0AB9F5: db $D4, $00, $2B ; [set2] go to message 2B if RNG, 00 TODO
 #_0AB9F8: db $E9, $12 ; [set2] go to message $12
 
 ;===================================================================================================
 
 ; «>[DEMONX]は なんたいかにげだした»
-Message_0AB9FA:
+Message_02_0E_2B:
 #_0AB9FA: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB9FC: db $F3 ; [set2] wait for key and new line
 #_0AB9FD: db $F1 ; [set2] clear message box
@@ -11342,7 +11337,7 @@ Message_0AB9FA:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0ABA06:
+Message_02_0E_2C:
 #_0ABA06: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0ABA08: db $EF, $2F ; [set2] YES/NO - go to message $2F if YES
 #_0ABA0A: db $E8, $16 ; [set2] [COMMAND 48:16]
@@ -11354,18 +11349,18 @@ Message_0ABA06:
 #_0ABA12: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABA14: db $F2, $01 ; [set2] option list with 2 options
 #_0ABA16: db $0A, $2D ; option 1 [2D]: message 0A
-#_0ABA18: db $0B, $3A ; option 2 [3A]: message 0BEB,$C0,$F2,$01
+#_0ABA18: db $0B, $3A ; option 2 [3A]: message 0B
 
 ;===================================================================================================
 
-Message_0ABA1A:
+Message_02_0E_2D:
 #_0ABA1A: db $D4, $01, $2E ; [set2] go to message 2E if RNG, 01 TODO
 #_0ABA1D: db $E9, $0B ; [set2] go to message $0B
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABA1F:
+Message_02_0E_2E:
 #_0ABA1F: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0ABA21: db $F3 ; [set2] wait for key and new line
 #_0ABA22: db $F1 ; [set2] clear message box
@@ -11375,7 +11370,7 @@ Message_0ABA1F:
 
 ;===================================================================================================
 
-Message_0ABA28:
+Message_02_0E_2F:
 #_0ABA28: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0ABA2B: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
@@ -11383,7 +11378,7 @@ Message_0ABA28:
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0ABA2E:
+Message_02_0E_30:
 #_0ABA2E: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0ABA30: db $F3 ; [set2] wait for key and new line
 #_0ABA31: db $F1 ; [set2] clear message box
@@ -11399,7 +11394,7 @@ Message_0ABA2E:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0ABA3E:
+Message_02_0E_31:
 #_0ABA3E: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0ABA41: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0ABA43: db $F3 ; [set2] wait for key and new line
@@ -11414,7 +11409,7 @@ Message_0ABA3E:
 
 ;===================================================================================================
 
-Message_0ABA51:
+Message_02_0E_32:
 #_0ABA51: db $D6, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
 #_0ABA54: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0ABA56: db $E8, $06 ; [set2] [COMMAND 48:06]
@@ -11423,7 +11418,7 @@ Message_0ABA51:
 
 ;===================================================================================================
 
-Message_0ABA5C:
+Message_02_0E_33:
 #_0ABA5C: db $D5, $02, $20 ; [set2] go to message 20 if RNG, 02 TODO
 #_0ABA5F: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0ABA61: db $F3 ; [set2] wait for key and new line
@@ -11434,7 +11429,7 @@ Message_0ABA5C:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0ABA67:
+Message_02_0E_34:
 #_0ABA67: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0ABA69: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0ABA6C: db $D7, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
@@ -11451,19 +11446,19 @@ Message_0ABA67:
 
 ;===================================================================================================
 
-Message_0ABA7F:
+Message_02_0E_35:
 #_0ABA7F: db $E7, $36, $37, $37, $38 ; [set2] randomly pick from messages 36, 37, 37, 38
 
 ;===================================================================================================
 
-Message_0ABA84:
+Message_02_0E_36:
 #_0ABA84: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0ABA86: db $F3 ; [set2] wait for key and new line
 #_0ABA87: db $E9, $84 ; [set2] go to message $84
 
 ;===================================================================================================
 
-Message_0ABA89:
+Message_02_0E_37:
 #_0ABA89: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0ABA8B: db $F3 ; [set2] wait for key and new line
 #_0ABA8C: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -11471,7 +11466,7 @@ Message_0ABA89:
 
 ;===================================================================================================
 
-Message_0ABA91:
+Message_02_0E_38:
 #_0ABA91: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0ABA93: db $F3 ; [set2] wait for key and new line
 #_0ABA94: db $F1 ; [set2] clear message box
@@ -11481,7 +11476,7 @@ Message_0ABA91:
 
 ;===================================================================================================
 
-Message_0ABA9A:
+Message_02_0E_39:
 #_0ABA9A: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0ABA9C: db $F3 ; [set2] wait for key and new line
 #_0ABA9D: db $F1 ; [set2] clear message box
@@ -11491,14 +11486,14 @@ Message_0ABA9A:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABAA3:
+Message_02_0E_3A:
 #_0ABAA3: db $EB, $E1 ; [set2] prewritten text E1
 #_0ABAA5: db $F3 ; [set2] wait for key and new line
 #_0ABAA6: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-Message_0ABAA8:
+Message_02_0E_3B:
 #_0ABAA8: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0ABAAA: db $F3 ; [set2] wait for key and new line
 #_0ABAAB: db $F1 ; [set2] clear message box
@@ -11508,13 +11503,13 @@ Message_0ABAA8:
 
 ;===================================================================================================
 
-Message_0ABAB1:
+Message_02_0E_3C:
 #_0ABAB1: db $D5, $02, $3F ; [set2] go to message 3F if RNG, 02 TODO
 #_0ABAB4: db $E7, $3D, $3E, $08, $09 ; [set2] randomly pick from messages 3D, 3E, 08, 09
 
 ;===================================================================================================
 
-Message_0ABAB9:
+Message_02_0E_3D:
 #_0ABAB9: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0ABABB: db $F3 ; [set2] wait for key and new line
 #_0ABABC: db $E5, $05 ; [set2] [COMMAND 45:05]
@@ -11522,7 +11517,7 @@ Message_0ABAB9:
 
 ;===================================================================================================
 
-Message_0ABAC1:
+Message_02_0E_3E:
 #_0ABAC1: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0ABAC3: db $F3 ; [set2] wait for key and new line
 #_0ABAC4: db $E5, $03 ; [set2] [COMMAND 45:03]
@@ -11530,7 +11525,7 @@ Message_0ABAC1:
 
 ;===================================================================================================
 
-Message_0ABAC9:
+Message_02_0E_3F:
 #_0ABAC9: db $D5, $01, $40 ; [set2] go to message 40 if RNG, 01 TODO
 #_0ABACC: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0ABACF: db $E8, $39 ; [set2] [COMMAND 48:39]
@@ -11540,14 +11535,14 @@ Message_0ABAC9:
 
 ;===================================================================================================
 
-Message_0ABAD7:
+Message_02_0E_40:
 #_0ABAD7: db $D4, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
 #_0ABADA: db $E9, $18 ; [set2] go to message $18
 
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0ABADC:
+Message_02_0E_41:
 #_0ABADC: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0ABADF: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0ABAE1: db $F3 ; [set2] wait for key and new line
@@ -11559,7 +11554,7 @@ Message_0ABADC:
 
 ;===================================================================================================
 
-Message_0ABAEB:
+Message_02_0E_42:
 #_0ABAEB: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0ABAEE: db $D4, $00, $43 ; [set2] go to message 43 if RNG, 00 TODO
 #_0ABAF1: db $D7, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
@@ -11572,7 +11567,7 @@ Message_0ABAEB:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0ABAFC:
+Message_02_0E_43:
 #_0ABAFC: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0ABAFE: db $F3 ; [set2] wait for key and new line
 #_0ABAFF: db $F1 ; [set2] clear message box
@@ -11586,13 +11581,13 @@ Message_0ABAFC:
 
 ;===================================================================================================
 
-Message_0ABB0C:
+Message_02_0E_44:
 #_0ABB0C: db $DB, $01, $38 ; [set2] [COMMAND 3B] go to message 38 if something 01 TODO
 #_0ABB0F: db $E9, $36 ; [set2] go to message $36
 
 ;===================================================================================================
 
-Message_0ABB11:
+Message_02_0E_45:
 #_0ABB11: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0ABB13: db $F3 ; [set2] wait for key and new line
 #_0ABB14: db $D4, $01, $47 ; [set2] go to message 47 if RNG, 01 TODO
@@ -11601,7 +11596,7 @@ Message_0ABB11:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0ABB19:
+Message_02_0E_46:
 #_0ABB19: db $F1 ; [set2] clear message box
 #_0ABB1A: db $EB, $E2 ; [set2] prewritten text E2
 #_0ABB1C: db $F3 ; [set2] wait for key and new line
@@ -11610,7 +11605,7 @@ Message_0ABB19:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABB1F:
+Message_02_0E_47:
 #_0ABB1F: db $F1 ; [set2] clear message box
 #_0ABB20: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0ABB22: db $F3 ; [set2] wait for key and new line
@@ -11622,7 +11617,7 @@ Message_0ABB1F:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABB29:
+Message_02_0E_48:
 #_0ABB29: db $D5, $01, $4A ; [set2] go to message 4A if RNG, 01 TODO
 #_0ABB2C: db $D4, $01, $09 ; [set2] go to message 09 if RNG, 01 TODO
 #_0ABB2F: db $E8, $1E ; [set2] [COMMAND 48:1E]
@@ -11641,7 +11636,7 @@ Message_0ABB29:
 
 ; >[DEMONX]は きょうふのあまり
 ; にげだした
-Message_0ABB42:
+Message_02_0E_49:
 #_0ABB42: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0ABB45: db $97 ; >
 #_0ABB46: db $ED ; [set2] write demon name indexed from $0526
@@ -11655,7 +11650,7 @@ Message_0ABB42:
 ;===================================================================================================
 
 ; «>[DEMONX]は あばれだした!»
-Message_0ABB5A:
+Message_02_0E_4A:
 #_0ABB5A: db $D4, $00, $1C ; [set2] go to message 1C if RNG, 00 TODO
 #_0ABB5D: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0ABB5F: db $F3 ; [set2] wait for key and new line
@@ -11666,7 +11661,7 @@ Message_0ABB5A:
 
 ;===================================================================================================
 
-Message_0ABB67:
+Message_02_0E_4B:
 #_0ABB67: db $D2, $00 ; [set2] something to message 00 TODO
 #_0ABB69: db $E8, $22 ; [set2] [COMMAND 48:22]
 #_0ABB6B: db $EF, $4D ; [set2] YES/NO - go to message $4D if YES
@@ -11677,14 +11672,14 @@ Message_0ABB67:
 
 ;===================================================================================================
 
-Message_0ABB75:
+Message_02_0E_4C:
 #_0ABB75: db $E8, $26 ; [set2] [COMMAND 48:26]
 #_0ABB77: db $F1 ; [set2] clear message box
 #_0ABB78: db $E9, $4F ; [set2] go to message $4F
 
 ;===================================================================================================
 
-Message_0ABB7A:
+Message_02_0E_4D:
 #_0ABB7A: db $D4, $00, $4E ; [set2] go to message 4E if RNG, 00 TODO
 #_0ABB7D: db $E8, $23 ; [set2] [COMMAND 48:23]
 #_0ABB7F: db $F1 ; [set2] clear message box
@@ -11692,14 +11687,14 @@ Message_0ABB7A:
 
 ;===================================================================================================
 
-Message_0ABB82:
+Message_02_0E_4E:
 #_0ABB82: db $E8, $24 ; [set2] [COMMAND 48:24]
 #_0ABB84: db $F1 ; [set2] clear message box
 #_0ABB85: db $E9, $4F ; [set2] go to message $4F
 
 ;===================================================================================================
 
-Message_0ABB87:
+Message_02_0E_4F:
 #_0ABB87: db $FC, $E7, $50 ; [set2] test progress bit $E7 for message $50
 #_0ABB8A: db $FC, $E8, $51 ; [set2] test progress bit $E8 for message $51
 #_0ABB8D: db $FC, $E3, $52 ; [set2] test progress bit $E3 for message $52
@@ -11707,7 +11702,7 @@ Message_0ABB87:
 
 ;===================================================================================================
 
-Message_0ABB91:
+Message_02_0E_50:
 #_0ABB91: db $FB, $00, $E7 ; [set2] [COMMAND 5B] set progress bit E7 if 00 is nonzero; otherwise reset
 #_0ABB94: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
@@ -11716,7 +11711,7 @@ Message_0ABB91:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0ABB97:
+Message_02_0E_51:
 #_0ABB97: db $F1 ; [set2] clear message box
 #_0ABB98: db $DD ; [set2] [COMMAND 3D]
 #_0ABB99: db $EB, $C2 ; [set2] prewritten text C2
@@ -11729,19 +11724,19 @@ Message_0ABB97:
 
 ;===================================================================================================
 
-Message_0ABBA5:
+Message_02_0E_52:
 #_0ABBA5: db $F7, $1C, $80 ; [set2] [COMMAND 57] $1C $80 TODO
 
 ;===================================================================================================
 
-Message_0ABBA8:
+Message_02_0E_53:
 #_0ABBA8: db $E7, $54, $54, $66, $7C ; [set2] randomly pick from messages 54, 54, 66, 7C
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0ABBAD:
+Message_02_0E_54:
 #_0ABBAD: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0ABBAF: db $F3 ; [set2] wait for key and new line
 #_0ABBB0: db $F1 ; [set2] clear message box
@@ -11755,7 +11750,7 @@ Message_0ABBAD:
 
 ;===================================================================================================
 
-Message_0ABBBD:
+Message_02_0E_55:
 #_0ABBBD: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0ABBBF: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0ABBC1: db $D6, $01, $60 ; [set2] go to message 60 if RNG, 01 TODO
@@ -11763,7 +11758,7 @@ Message_0ABBBD:
 
 ;===================================================================================================
 
-Message_0ABBC9:
+Message_02_0E_56:
 #_0ABBC9: db $E8, $29 ; [set2] [COMMAND 48:29]
 #_0ABBCB: db $F3 ; [set2] wait for key and new line
 #_0ABBCC: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -11772,7 +11767,7 @@ Message_0ABBC9:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABBD1:
+Message_02_0E_57:
 #_0ABBD1: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0ABBD3: db $F3 ; [set2] wait for key and new line
 #_0ABBD4: db $F1 ; [set2] clear message box
@@ -11784,7 +11779,7 @@ Message_0ABBD1:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0ABBDA:
+Message_02_0E_58:
 #_0ABBDA: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0ABBDC: db $F3 ; [set2] wait for key and new line
 #_0ABBDD: db $F1 ; [set2] clear message box
@@ -11798,7 +11793,7 @@ Message_0ABBDA:
 
 ;===================================================================================================
 
-Message_0ABBEA:
+Message_02_0E_59:
 #_0ABBEA: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0ABBED: db $D4, $00, $5A ; [set2] go to message 5A if RNG, 00 TODO
 #_0ABBF0: db $E9, $10 ; [set2] go to message $10
@@ -11808,7 +11803,7 @@ Message_0ABBEA:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0ABBF2:
+Message_02_0E_5A:
 #_0ABBF2: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0ABBF4: db $F0 ; [set2] new line
 #_0ABBF5: db $E8, $45 ; [set2] [COMMAND 48:45]
@@ -11824,7 +11819,7 @@ Message_0ABBF2:
 
 ;===================================================================================================
 
-Message_0ABC03:
+Message_02_0E_5B:
 #_0ABC03: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0ABC06: db $D4, $02, $5E ; [set2] go to message 5E if RNG, 02 TODO
 #_0ABC09: db $D4, $01, $5C ; [set2] go to message 5C if RNG, 01 TODO
@@ -11837,7 +11832,7 @@ Message_0ABC03:
 
 ; «>[DEMONX]に すきが できた»
 ; «こうげき しますか?»
-Message_0ABC14:
+Message_02_0E_5C:
 #_0ABC14: db $EB, $EA ; [set2] prewritten text EA
 #_0ABC16: db $EF, $5D ; [set2] YES/NO - go to message $5D if YES
 #_0ABC18: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -11848,14 +11843,14 @@ Message_0ABC14:
 
 ;===================================================================================================
 
-Message_0ABC21:
+Message_02_0E_5D:
 #_0ABC21: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
 ; «>[DEMONX]も つられて おどりだした!»
 ; «このまま おどりますか?»
-Message_0ABC23:
+Message_02_0E_5E:
 #_0ABC23: db $EB, $EB ; [set2] prewritten text EB
 #_0ABC25: db $EF, $5F ; [set2] YES/NO - go to message $5F if YES
 #_0ABC27: db $E9, $2E ; [set2] go to message $2E
@@ -11864,7 +11859,7 @@ Message_0ABC23:
 
 ; «>[CHASE]と [DEMONX]は»
 ; «ひとばんじゅう おどりあかした!»
-Message_0ABC29:
+Message_02_0E_5F:
 #_0ABC29: db $EB, $EC ; [set2] prewritten text EC
 #_0ABC2B: db $F3 ; [set2] wait for key and new line
 #_0ABC2C: db $F1 ; [set2] clear message box
@@ -11877,7 +11872,7 @@ Message_0ABC29:
 
 ; «>[DEMONX]は おだてに おこった»
 ; «どうしますか?»
-Message_0ABC34:
+Message_02_0E_60:
 #_0ABC34: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0ABC36: db $F3 ; [set2] wait for key and new line
 #_0ABC37: db $F1 ; [set2] clear message box
@@ -11891,33 +11886,33 @@ Message_0ABC34:
 
 ;===================================================================================================
 
-Message_0ABC44:
+Message_02_0E_61:
 #_0ABC44: db $E6, $80 ; [set2] [COMMAND 46:80]
 #_0ABC46: db $D8, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
 #_0ABC49: db $E9, $7E ; [set2] go to message $7E
 
 ;===================================================================================================
 
-Message_0ABC4B:
+Message_02_0E_62:
 #_0ABC4B: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0ABC4D: db $F3 ; [set2] wait for key and new line
 #_0ABC4E: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0ABC51:
+Message_02_0E_63:
 #_0ABC51: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0ABC54: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
-Message_0ABC56:
+Message_02_0E_64:
 #_0ABC56: db $D7, $01, $65 ; [set2] go to message 65 if RNG, 01 TODO
 #_0ABC59: db $E9, $1E ; [set2] go to message $1E
 
 ;===================================================================================================
 
-Message_0ABC5B:
+Message_02_0E_65:
 #_0ABC5B: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0ABC5D: db $F3 ; [set2] wait for key and new line
 #_0ABC5E: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -11926,7 +11921,7 @@ Message_0ABC5B:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0ABC61:
+Message_02_0E_66:
 #_0ABC61: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0ABC64: db $EB, $E8 ; [set2] prewritten text E8
 #_0ABC66: db $F3 ; [set2] wait for key and new line
@@ -11940,7 +11935,7 @@ Message_0ABC61:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0ABC70:
+Message_02_0E_67:
 #_0ABC70: db $D8, $01, $75 ; [set2] go to message 75 if RNG, 01 TODO
 #_0ABC73: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0ABC75: db $D4, $01, $6A ; [set2] go to message 6A if RNG, 01 TODO
@@ -11954,13 +11949,13 @@ Message_0ABC70:
 
 ;===================================================================================================
 
-Message_0ABC84:
+Message_02_0E_68:
 #_0ABC84: db $E7, $26, $81, $69, $3A ; [set2] randomly pick from messages 26, 81, 69, 3A
 
 ;===================================================================================================
 
 ; «・・・・・・・・・・・・・ ・ ・ ・»
-Message_0ABC89:
+Message_02_0E_69:
 #_0ABC89: db $EB, $EE ; [set2] prewritten text EE
 #_0ABC8B: db $F3 ; [set2] wait for key and new line
 #_0ABC8C: db $E9, $00 ; [set2] go to message $00
@@ -11969,7 +11964,7 @@ Message_0ABC89:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0ABC8E:
+Message_02_0E_6A:
 #_0ABC8E: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0ABC90: db $F3 ; [set2] wait for key and new line
 #_0ABC91: db $F1 ; [set2] clear message box
@@ -11983,14 +11978,14 @@ Message_0ABC8E:
 
 ;===================================================================================================
 
-Message_0ABC9E:
+Message_02_0E_6B:
 #_0ABC9E: db $E7, $6C, $71, $72, $73 ; [set2] randomly pick from messages 6C, 71, 72, 73
 
 ;===================================================================================================
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0ABCA3:
+Message_02_0E_6C:
 #_0ABCA3: db $EB, $ED ; [set2] prewritten text ED
 #_0ABCA5: db $F3 ; [set2] wait for key and new line
 #_0ABCA6: db $F1 ; [set2] clear message box
@@ -12001,7 +11996,7 @@ Message_0ABCA3:
 
 ;===================================================================================================
 
-Message_0ABCAF:
+Message_02_0E_6D:
 #_0ABCAF: db $DB, $01, $62 ; [set2] [COMMAND 3B] go to message 62 if something 01 TODO
 #_0ABCB2: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0ABCB4: db $F3 ; [set2] wait for key and new line
@@ -12012,7 +12007,7 @@ Message_0ABCAF:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0ABCBA:
+Message_02_0E_6E:
 #_0ABCBA: db $D4, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
 #_0ABCBD: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABCBF: db $F3 ; [set2] wait for key and new line
@@ -12027,13 +12022,13 @@ Message_0ABCBA:
 
 ;===================================================================================================
 
-Message_0ABCCD:
+Message_02_0E_6F:
 #_0ABCCD: db $D4, $00, $70 ; [set2] go to message 70 if RNG, 00 TODO
 #_0ABCD0: db $E9, $2E ; [set2] go to message $2E
 
 ;===================================================================================================
 
-Message_0ABCD2:
+Message_02_0E_70:
 #_0ABCD2: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0ABCD4: db $F3 ; [set2] wait for key and new line
 #_0ABCD5: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -12043,7 +12038,7 @@ Message_0ABCD2:
 
 ; «・・・・・・・・・・・・・ ・ ・ ・»
 ; «>アクマは むし している»
-Message_0ABCDA:
+Message_02_0E_71:
 #_0ABCDA: db $EB, $EE ; [set2] prewritten text EE
 #_0ABCDC: db $F3 ; [set2] wait for key and new line
 #_0ABCDD: db $F1 ; [set2] clear message box
@@ -12055,7 +12050,7 @@ Message_0ABCDA:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0ABCE3:
+Message_02_0E_72:
 #_0ABCE3: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABCE5: db $F3 ; [set2] wait for key and new line
 #_0ABCE6: db $F1 ; [set2] clear message box
@@ -12069,14 +12064,14 @@ Message_0ABCE3:
 
 ;===================================================================================================
 
-Message_0ABCF3:
+Message_02_0E_73:
 #_0ABCF3: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0ABCF5: db $F3 ; [set2] wait for key and new line
 #_0ABCF6: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0ABCF9:
+Message_02_0E_74:
 #_0ABCF9: db $D4, $00, $0B ; [set2] go to message 0B if RNG, 00 TODO
 #_0ABCFC: db $E9, $2E ; [set2] go to message $2E
 
@@ -12084,7 +12079,7 @@ Message_0ABCF9:
 
 ; «>[DEMONX]に からかわれています»
 ; «どうしますか?»
-Message_0ABCFE:
+Message_02_0E_75:
 #_0ABCFE: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0ABD00: db $F3 ; [set2] wait for key and new line
 #_0ABD01: db $F1 ; [set2] clear message box
@@ -12098,7 +12093,7 @@ Message_0ABCFE:
 
 ;===================================================================================================
 
-Message_0ABD0E:
+Message_02_0E_76:
 #_0ABD0E: db $D7, $01, $65 ; [set2] go to message 65 if RNG, 01 TODO
 #_0ABD11: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0ABD13: db $F3 ; [set2] wait for key and new line
@@ -12107,12 +12102,12 @@ Message_0ABD0E:
 
 ;===================================================================================================
 
-Message_0ABD19:
+Message_02_0E_77:
 #_0ABD19: db $E7, $78, $79, $18, $7A ; [set2] randomly pick from messages 78, 79, 18, 7A
 
 ;===================================================================================================
 
-Message_0ABD1E:
+Message_02_0E_78:
 #_0ABD1E: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0ABD20: db $F3 ; [set2] wait for key and new line
 #_0ABD21: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -12120,7 +12115,7 @@ Message_0ABD1E:
 
 ;===================================================================================================
 
-Message_0ABD26:
+Message_02_0E_79:
 #_0ABD26: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0ABD28: db $F3 ; [set2] wait for key and new line
 #_0ABD29: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -12130,7 +12125,7 @@ Message_0ABD26:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0ABD2E:
+Message_02_0E_7A:
 #_0ABD2E: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABD30: db $F3 ; [set2] wait for key and new line
 #_0ABD31: db $F1 ; [set2] clear message box
@@ -12144,7 +12139,7 @@ Message_0ABD2E:
 
 ;===================================================================================================
 
-Message_0ABD3E:
+Message_02_0E_7B:
 #_0ABD3E: db $D4, $00, $2E ; [set2] go to message 2E if RNG, 00 TODO
 #_0ABD41: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0ABD43: db $F3 ; [set2] wait for key and new line
@@ -12155,7 +12150,7 @@ Message_0ABD3E:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0ABD49:
+Message_02_0E_7C:
 #_0ABD49: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
 #_0ABD4C: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0ABD4E: db $F3 ; [set2] wait for key and new line
@@ -12170,7 +12165,7 @@ Message_0ABD49:
 
 ;===================================================================================================
 
-Message_0ABD5C:
+Message_02_0E_7D:
 #_0ABD5C: db $D4, $00, $7F ; [set2] go to message 7F if RNG, 00 TODO
 #_0ABD5F: db $D7, $01, $57 ; [set2] go to message 57 if RNG, 01 TODO
 #_0ABD62: db $E9, $7E ; [set2] go to message $7E
@@ -12180,7 +12175,7 @@ Message_0ABD5C:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0ABD64:
+Message_02_0E_7E:
 #_0ABD64: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0ABD66: db $F3 ; [set2] wait for key and new line
 #_0ABD67: db $F1 ; [set2] clear message box
@@ -12194,21 +12189,21 @@ Message_0ABD64:
 
 ;===================================================================================================
 
-Message_0ABD72:
+Message_02_0E_7F:
 #_0ABD72: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0ABD74: db $F3 ; [set2] wait for key and new line
 #_0ABD75: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
 
-Message_0ABD77:
+Message_02_0E_80:
 #_0ABD77: db $E7, $7C, $81, $6A, $1C ; [set2] randomly pick from messages 7C, 81, 6A, 1C
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ちかづいてきた»
 ; «どうしますか?»
-Message_0ABD7C:
+Message_02_0E_81:
 #_0ABD7C: db $EB, $E9 ; [set2] prewritten text E9
 #_0ABD7E: db $F3 ; [set2] wait for key and new line
 #_0ABD7F: db $F1 ; [set2] clear message box
@@ -12219,13 +12214,13 @@ Message_0ABD7C:
 
 ;===================================================================================================
 
-Message_0ABD88:
+Message_02_0E_82:
 #_0ABD88: db $D4, $00, $54 ; [set2] go to message 54 if RNG, 00 TODO
 #_0ABD8B: db $E9, $03 ; [set2] go to message $03
 
 ;===================================================================================================
 
-Message_0ABD8D:
+Message_02_0E_83:
 #_0ABD8D: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0ABD90: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0ABD92: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
@@ -12236,7 +12231,7 @@ Message_0ABD8D:
 
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0ABD9A:
+Message_02_0E_84:
 #_0ABD9A: db $F1 ; [set2] clear message box
 #_0ABD9B: db $D2, $85 ; [set2] something to message 85 TODO
 #_0ABD9D: db $EB, $E0 ; [set2] prewritten text E0
@@ -12248,7 +12243,7 @@ Message_0ABD9A:
 ; >[DEMONX]は ナカマに なろうとしたが
 ; すでに ナカマが いっぱいだった
 ; «>[DEMONX]は さっていった»
-Message_0ABDA2:
+Message_02_0E_85:
 #_0ABDA2: db $97 ; >
 #_0ABDA3: db $ED ; [set2] write demon name indexed from $0526
 #_0ABDA4: db $3E, $CF, $71, $62, $7B, $3A, $CF, $39 ; は⎵ナカマに⎵な
@@ -12264,7 +12259,7 @@ Message_0ABDA2:
 
 ;===================================================================================================
 
-Message_0ABDCA:
+Message_02_0F_00:
 #_0ABDCA: db $F1 ; [set2] clear message box
 #_0ABDCB: db $D5, $00, $45 ; [set2] go to message 45 if RNG, 00 TODO
 #_0ABDCE: db $E7, $01, $13, $35, $3F ; [set2] randomly pick from messages 01, 13, 35, 3F
@@ -12273,7 +12268,7 @@ Message_0ABDCA:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0ABDD3:
+Message_02_0F_01:
 #_0ABDD3: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0ABDD5: db $F3 ; [set2] wait for key and new line
 #_0ABDD6: db $F1 ; [set2] clear message box
@@ -12287,7 +12282,7 @@ Message_0ABDD3:
 
 ;===================================================================================================
 
-Message_0ABDE3:
+Message_02_0F_02:
 #_0ABDE3: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0ABDE5: db $D5, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
 #_0ABDE8: db $D4, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
@@ -12295,22 +12290,22 @@ Message_0ABDE3:
 
 ;===================================================================================================
 
-Message_0ABDED:
+Message_02_0F_03:
 #_0ABDED: db $F7, $14, $80 ; [set2] [COMMAND 57] $14 $80 TODO
 
 ;===================================================================================================
 
-Message_0ABDF0:
+Message_02_0F_04:
 #_0ABDF0: db $F7, $15, $80 ; [set2] [COMMAND 57] $15 $80 TODO
 
 ;===================================================================================================
 
-Message_0ABDF3:
+Message_02_0F_05:
 #_0ABDF3: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0ABDF6:
+Message_02_0F_06:
 #_0ABDF6: db $D7, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0ABDF9: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0ABDFB: db $D4, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
@@ -12318,7 +12313,7 @@ Message_0ABDF6:
 
 ;===================================================================================================
 
-Message_0ABE00:
+Message_02_0F_07:
 #_0ABE00: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0ABE02: db $F3 ; [set2] wait for key and new line
 #_0ABE03: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -12327,7 +12322,7 @@ Message_0ABE00:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0ABE06:
+Message_02_0F_08:
 #_0ABE06: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0ABE08: db $F3 ; [set2] wait for key and new line
 #_0ABE09: db $F1 ; [set2] clear message box
@@ -12341,7 +12336,7 @@ Message_0ABE06:
 
 ;===================================================================================================
 
-Message_0ABE16:
+Message_02_0F_09:
 #_0ABE16: db $D5, $02, $0A ; [set2] go to message 0A if RNG, 02 TODO
 #_0ABE19: db $D4, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
 #_0ABE1C: db $E9, $03 ; [set2] go to message $03
@@ -12350,7 +12345,7 @@ Message_0ABE16:
 
 ; >おどしはきかなかった
 ; «どうしますか?»
-Message_0ABE1E:
+Message_02_0F_0A:
 #_0ABE1E: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0ABE20: db $F3 ; [set2] wait for key and new line
 #_0ABE21: db $F1 ; [set2] clear message box
@@ -12365,27 +12360,27 @@ Message_0ABE1E:
 
 ;===================================================================================================
 
-Message_0ABE37:
+Message_02_0F_0B:
 #_0ABE37: db $D5, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
 #_0ABE3A: db $E9, $07 ; [set2] go to message $07
 
 ;===================================================================================================
 
-Message_0ABE3C:
+Message_02_0F_0C:
 #_0ABE3C: db $D6, $01, $0D ; [set2] go to message 0D if RNG, 01 TODO
 #_0ABE3F: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0ABE41: db $F7, $13, $80 ; [set2] [COMMAND 57] $13 $80 TODO
 
 ;===================================================================================================
 
-Message_0ABE44:
+Message_02_0F_0D:
 #_0ABE44: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0ABE46: db $F3 ; [set2] wait for key and new line
 #_0ABE47: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0ABE4A:
+Message_02_0F_0E:
 #_0ABE4A: db $D8, $02, $10 ; [set2] go to message 10 if RNG, 02 TODO
 #_0ABE4D: db $E9, $0F ; [set2] go to message $0F
 
@@ -12393,7 +12388,7 @@ Message_0ABE4A:
 
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
-Message_0ABE4F:
+Message_02_0F_0F:
 #_0ABE4F: db $EB, $48 ; [set2] prewritten text 48
 #_0ABE51: db $F3 ; [set2] wait for key and new line
 #_0ABE52: db $F1 ; [set2] clear message box
@@ -12404,20 +12399,20 @@ Message_0ABE4F:
 
 ;===================================================================================================
 
-Message_0ABE5B:
+Message_02_0F_10:
 #_0ABE5B: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0ABE5D: db $F3 ; [set2] wait for key and new line
 #_0ABE5E: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0ABE60:
+Message_02_0F_11:
 #_0ABE60: db $D5, $01, $12 ; [set2] go to message 12 if RNG, 01 TODO
 #_0ABE63: db $E9, $04 ; [set2] go to message $04
 
 ;===================================================================================================
 
-Message_0ABE65:
+Message_02_0F_12:
 #_0ABE65: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0ABE67: db $F3 ; [set2] wait for key and new line
 #_0ABE68: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -12426,7 +12421,7 @@ Message_0ABE65:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0ABE6A:
+Message_02_0F_13:
 #_0ABE6A: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0ABE6C: db $F3 ; [set2] wait for key and new line
 #_0ABE6D: db $F1 ; [set2] clear message box
@@ -12440,13 +12435,13 @@ Message_0ABE6A:
 
 ;===================================================================================================
 
-Message_0ABE7A:
+Message_02_0F_14:
 #_0ABE7A: db $D5, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
 #_0ABE7D: db $E7, $15, $16, $17, $18 ; [set2] randomly pick from messages 15, 16, 17, 18
 
 ;===================================================================================================
 
-Message_0ABE82:
+Message_02_0F_15:
 #_0ABE82: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0ABE84: db $F3 ; [set2] wait for key and new line
 #_0ABE85: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -12454,7 +12449,7 @@ Message_0ABE82:
 
 ;===================================================================================================
 
-Message_0ABE8A:
+Message_02_0F_16:
 #_0ABE8A: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0ABE8C: db $F3 ; [set2] wait for key and new line
 #_0ABE8D: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -12463,7 +12458,7 @@ Message_0ABE8A:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABE92:
+Message_02_0F_17:
 #_0ABE92: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0ABE94: db $F3 ; [set2] wait for key and new line
 #_0ABE95: db $F1 ; [set2] clear message box
@@ -12473,13 +12468,13 @@ Message_0ABE92:
 
 ;===================================================================================================
 
-Message_0ABE9B:
+Message_02_0F_18:
 #_0ABE9B: db $DA, $01, $17 ; [set2] ext command 01: go to message 17 if MC INT = 0
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0ABE9E:
+Message_02_0F_19:
 #_0ABE9E: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0ABEA0: db $F3 ; [set2] wait for key and new line
 #_0ABEA1: db $F1 ; [set2] clear message box
@@ -12490,13 +12485,13 @@ Message_0ABE9E:
 
 ;===================================================================================================
 
-Message_0ABEA9:
+Message_02_0F_1A:
 #_0ABEA9: db $D4, $02, $15 ; [set2] go to message 15 if RNG, 02 TODO
 #_0ABEAC: db $E9, $17 ; [set2] go to message $17
 
 ;===================================================================================================
 
-Message_0ABEAE:
+Message_02_0F_1B:
 #_0ABEAE: db $DC, $00, $2C ; [set2] [COMMAND 3C] go to message 2C if something 00 TODO
 #_0ABEB1: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0ABEB3: db $E7, $13, $1C, $24, $24 ; [set2] randomly pick from messages 13, 1C, 24, 24
@@ -12505,7 +12500,7 @@ Message_0ABEAE:
 
 ; «>[DEMONX]は たちさろうとしている»
 ; «どうしますか?»
-Message_0ABEB8:
+Message_02_0F_1C:
 #_0ABEB8: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABEBA: db $F3 ; [set2] wait for key and new line
 #_0ABEBB: db $F1 ; [set2] clear message box
@@ -12521,7 +12516,7 @@ Message_0ABEB8:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0ABEC8:
+Message_02_0F_1D:
 #_0ABEC8: db $D4, $00, $21 ; [set2] go to message 21 if RNG, 00 TODO
 #_0ABECB: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0ABECD: db $F3 ; [set2] wait for key and new line
@@ -12536,7 +12531,7 @@ Message_0ABEC8:
 
 ;===================================================================================================
 
-Message_0ABEDB:
+Message_02_0F_1E:
 #_0ABEDB: db $D7, $01, $1F ; [set2] go to message 1F if RNG, 01 TODO
 #_0ABEDE: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0ABEE0: db $F3 ; [set2] wait for key and new line
@@ -12544,7 +12539,7 @@ Message_0ABEDB:
 
 ;===================================================================================================
 
-Message_0ABEE4:
+Message_02_0F_1F:
 #_0ABEE4: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0ABEE6: db $F3 ; [set2] wait for key and new line
 #_0ABEE7: db $F1 ; [set2] clear message box
@@ -12552,7 +12547,7 @@ Message_0ABEE4:
 
 ;===================================================================================================
 
-Message_0ABEEA:
+Message_02_0F_20:
 #_0ABEEA: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0ABEEC: db $F3 ; [set2] wait for key and new line
 #_0ABEED: db $E6, $FF ; [set2] [COMMAND 46:FF]
@@ -12561,7 +12556,7 @@ Message_0ABEEA:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0ABEF1:
+Message_02_0F_21:
 #_0ABEF1: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0ABEF3: db $F3 ; [set2] wait for key and new line
 #_0ABEF4: db $F1 ; [set2] clear message box
@@ -12572,7 +12567,7 @@ Message_0ABEF1:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0ABEFA:
+Message_02_0F_22:
 #_0ABEFA: db $D4, $02, $23 ; [set2] go to message 23 if RNG, 02 TODO
 #_0ABEFD: db $EB, $E1 ; [set2] prewritten text E1
 #_0ABEFF: db $F3 ; [set2] wait for key and new line
@@ -12580,7 +12575,7 @@ Message_0ABEFA:
 
 ;===================================================================================================
 
-Message_0ABF02:
+Message_02_0F_23:
 #_0ABF02: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0ABF04: db $F3 ; [set2] wait for key and new line
 #_0ABF05: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -12590,7 +12585,7 @@ Message_0ABF02:
 
 ; «>[DEMONX]は おこっている»
 ; «どうしますか?»
-Message_0ABF0A:
+Message_02_0F_24:
 #_0ABF0A: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0ABF0C: db $F3 ; [set2] wait for key and new line
 #_0ABF0D: db $F1 ; [set2] clear message box
@@ -12604,7 +12599,7 @@ Message_0ABF0A:
 
 ;===================================================================================================
 
-Message_0ABF1A:
+Message_02_0F_25:
 #_0ABF1A: db $D8, $01, $01 ; [set2] go to message 01 if RNG, 01 TODO
 #_0ABF1D: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0ABF1F: db $F3 ; [set2] wait for key and new line
@@ -12613,13 +12608,13 @@ Message_0ABF1A:
 
 ;===================================================================================================
 
-Message_0ABF25:
+Message_02_0F_26:
 #_0ABF25: db $D5, $01, $29 ; [set2] go to message 29 if RNG, 01 TODO
 #_0ABF28: db $E7, $27, $27, $28, $04 ; [set2] randomly pick from messages 27, 27, 28, 04
 
 ;===================================================================================================
 
-Message_0ABF2D:
+Message_02_0F_27:
 #_0ABF2D: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0ABF2F: db $F3 ; [set2] wait for key and new line
 #_0ABF30: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -12627,7 +12622,7 @@ Message_0ABF2D:
 
 ;===================================================================================================
 
-Message_0ABF35:
+Message_02_0F_28:
 #_0ABF35: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0ABF37: db $F3 ; [set2] wait for key and new line
 #_0ABF38: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -12635,19 +12630,19 @@ Message_0ABF35:
 
 ;===================================================================================================
 
-Message_0ABF3D:
+Message_02_0F_29:
 #_0ABF3D: db $E7, $01, $2A, $2A, $2B ; [set2] randomly pick from messages 01, 2A, 2A, 2B
 
 ;===================================================================================================
 
-Message_0ABF42:
+Message_02_0F_2A:
 #_0ABF42: db $E8, $0B ; [set2] [COMMAND 48:0B]
 #_0ABF44: db $F3 ; [set2] wait for key and new line
 #_0ABF45: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0ABF48:
+Message_02_0F_2B:
 #_0ABF48: db $DA, $01, $33 ; [set2] ext command 01: go to message 33 if MC INT = 0
 #_0ABF4B: db $E9, $19 ; [set2] go to message $19
 
@@ -12655,7 +12650,7 @@ Message_0ABF48:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0ABF4D:
+Message_02_0F_2C:
 #_0ABF4D: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0ABF4F: db $F3 ; [set2] wait for key and new line
 #_0ABF50: db $F1 ; [set2] clear message box
@@ -12669,20 +12664,20 @@ Message_0ABF4D:
 
 ;===================================================================================================
 
-Message_0ABF5D:
+Message_02_0F_2D:
 #_0ABF5D: db $D4, $01, $0D ; [set2] go to message 0D if RNG, 01 TODO
 #_0ABF60: db $E9, $14 ; [set2] go to message $14
 
 ;===================================================================================================
 
-Message_0ABF62:
+Message_02_0F_2E:
 #_0ABF62: db $D5, $02, $32 ; [set2] go to message 32 if RNG, 02 TODO
 #_0ABF65: db $D4, $00, $2F ; [set2] go to message 2F if RNG, 00 TODO
 #_0ABF68: db $E9, $13 ; [set2] go to message $13
 
 ;===================================================================================================
 
-Message_0ABF6A:
+Message_02_0F_2F:
 #_0ABF6A: db $E8, $1E ; [set2] [COMMAND 48:1E]
 #_0ABF6C: db $EF, $30 ; [set2] YES/NO - go to message $30 if YES
 #_0ABF6E: db $D4, $00, $21 ; [set2] go to message 21 if RNG, 00 TODO
@@ -12693,7 +12688,7 @@ Message_0ABF6A:
 
 ;===================================================================================================
 
-Message_0ABF79:
+Message_02_0F_30:
 #_0ABF79: db $E7, $03, $31, $31, $04 ; [set2] randomly pick from messages 03, 31, 31, 04
 
 ;===================================================================================================
@@ -12701,7 +12696,7 @@ Message_0ABF79:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0ABF7E:
+Message_02_0F_31:
 #_0ABF7E: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0ABF80: db $F3 ; [set2] wait for key and new line
 #_0ABF81: db $F1 ; [set2] clear message box
@@ -12715,7 +12710,7 @@ Message_0ABF7E:
 
 ;===================================================================================================
 
-Message_0ABF8C:
+Message_02_0F_32:
 #_0ABF8C: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
 #_0ABF8F: db $D4, $00, $05 ; [set2] go to message 05 if RNG, 00 TODO
 #_0ABF92: db $DA, $01, $33 ; [set2] ext command 01: go to message 33 if MC INT = 0
@@ -12723,14 +12718,14 @@ Message_0ABF8C:
 
 ;===================================================================================================
 
-Message_0ABF97:
+Message_02_0F_33:
 #_0ABF97: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0ABF99: db $F3 ; [set2] wait for key and new line
 #_0ABF9A: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-Message_0ABF9C:
+Message_02_0F_34:
 #_0ABF9C: db $E8, $0B ; [set2] [COMMAND 48:0B]
 #_0ABF9E: db $F3 ; [set2] wait for key and new line
 #_0ABF9F: db $F1 ; [set2] clear message box
@@ -12741,7 +12736,7 @@ Message_0ABF9C:
 ;===================================================================================================
 
 ; «どうしますか?»
-Message_0ABFA5:
+Message_02_0F_35:
 #_0ABFA5: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0ABFA7: db $F3 ; [set2] wait for key and new line
 #_0ABFA8: db $F1 ; [set2] clear message box
@@ -12754,7 +12749,7 @@ Message_0ABFA5:
 
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
-Message_0ABFB1:
+Message_02_0F_36:
 #_0ABFB1: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
 #_0ABFB4: db $EB, $48 ; [set2] prewritten text 48
 #_0ABFB6: db $F3 ; [set2] wait for key and new line
@@ -12768,7 +12763,7 @@ Message_0ABFB1:
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0ABFC0:
+Message_02_0F_37:
 #_0ABFC0: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0ABFC2: db $F3 ; [set2] wait for key and new line
 #_0ABFC3: db $F1 ; [set2] clear message box
@@ -12782,7 +12777,7 @@ Message_0ABFC0:
 
 ;===================================================================================================
 
-Message_0ABFD0:
+Message_02_0F_38:
 #_0ABFD0: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0ABFD3: db $D4, $01, $3A ; [set2] go to message 3A if RNG, 01 TODO
 #_0ABFD6: db $E8, $20 ; [set2] [COMMAND 48:20]
@@ -12791,7 +12786,7 @@ Message_0ABFD0:
 
 ;===================================================================================================
 
-Message_0ABFDC:
+Message_02_0F_39:
 #_0ABFDC: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0ABFDE: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0ABFE1: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
@@ -12800,7 +12795,7 @@ Message_0ABFDC:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0ABFE4:
+Message_02_0F_3A:
 #_0ABFE4: db $EB, $E8 ; [set2] prewritten text E8
 #_0ABFE6: db $F3 ; [set2] wait for key and new line
 #_0ABFE7: db $F1 ; [set2] clear message box
@@ -12812,20 +12807,20 @@ Message_0ABFE4:
 
 ;===================================================================================================
 
-Message_0ABFF2:
+Message_02_0F_3B:
 #_0ABFF2: db $D8, $02, $10 ; [set2] go to message 10 if RNG, 02 TODO
 #_0ABFF5: db $E9, $0F ; [set2] go to message $0F
 
 ;===================================================================================================
 
-Message_0ABFF7:
+Message_02_0F_3C:
 #_0ABFF7: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0ABFF9: db $EF, $3D ; [set2] YES/NO - go to message $3D if YES
 #_0ABFFB: db $E9, $2A ; [set2] go to message $2A
 
 ;===================================================================================================
 
-Message_0ABFFD:
+Message_02_0F_3D:
 #_0ABFFD: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0ABFFF: db $F3 ; [set2] wait for key and new line
 #_0AC000: db $D7, $01, $3E ; [set2] go to message 3E if RNG, 01 TODO
@@ -12833,7 +12828,7 @@ Message_0ABFFD:
 
 ;===================================================================================================
 
-Message_0AC006:
+Message_02_0F_3E:
 #_0AC006: db $F1 ; [set2] clear message box
 #_0AC007: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC009: db $F3 ; [set2] wait for key and new line
@@ -12843,7 +12838,7 @@ Message_0AC006:
 
 ; «>[DEMONX]は にげようと している»
 ; «どうしますか?»
-Message_0AC00C:
+Message_02_0F_3F:
 #_0AC00C: db $EB, $F0 ; [set2] prewritten text F0
 #_0AC00E: db $F3 ; [set2] wait for key and new line
 #_0AC00F: db $F1 ; [set2] clear message box
@@ -12854,28 +12849,28 @@ Message_0AC00C:
 
 ;===================================================================================================
 
-Message_0AC018:
+Message_02_0F_40:
 #_0AC018: db $D6, $01, $42 ; [set2] go to message 42 if RNG, 01 TODO
 #_0AC01B: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0AC01D: db $E7, $13, $41, $41, $2E ; [set2] randomly pick from messages 13, 41, 41, 2E
 
 ;===================================================================================================
 
-Message_0AC022:
+Message_02_0F_41:
 #_0AC022: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AC024: db $F3 ; [set2] wait for key and new line
 #_0AC025: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
 ;===================================================================================================
 
-Message_0AC028:
+Message_02_0F_42:
 #_0AC028: db $D4, $00, $43 ; [set2] go to message 43 if RNG, 00 TODO
 #_0AC02B: db $E9, $21 ; [set2] go to message $21
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC02D:
+Message_02_0F_43:
 #_0AC02D: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC02F: db $F3 ; [set2] wait for key and new line
 #_0AC030: db $F1 ; [set2] clear message box
@@ -12886,21 +12881,21 @@ Message_0AC02D:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AC036:
+Message_02_0F_44:
 #_0AC036: db $EB, $E2 ; [set2] prewritten text E2
 #_0AC038: db $F3 ; [set2] wait for key and new line
 #_0AC039: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-Message_0AC03B:
+Message_02_0F_45:
 #_0AC03B: db $E7, $46, $46, $50, $60 ; [set2] randomly pick from messages 46, 46, 50, 60
 
 ;===================================================================================================
 
 ; «>[DEMONX]に ばかにされた»
 ; «どうしますか?»
-Message_0AC040:
+Message_02_0F_46:
 #_0AC040: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AC042: db $F3 ; [set2] wait for key and new line
 #_0AC043: db $F1 ; [set2] clear message box
@@ -12916,7 +12911,7 @@ Message_0AC040:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AC050:
+Message_02_0F_47:
 #_0AC050: db $D7, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
 #_0AC053: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC055: db $D4, $01, $49 ; [set2] go to message 49 if RNG, 01 TODO
@@ -12933,7 +12928,7 @@ Message_0AC050:
 
 ;===================================================================================================
 
-Message_0AC068:
+Message_02_0F_48:
 #_0AC068: db $D8, $01, $17 ; [set2] go to message 17 if RNG, 01 TODO
 #_0AC06B: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AC06D: db $F3 ; [set2] wait for key and new line
@@ -12944,7 +12939,7 @@ Message_0AC068:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0AC073:
+Message_02_0F_49:
 #_0AC073: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC075: db $F3 ; [set2] wait for key and new line
 #_0AC076: db $F1 ; [set2] clear message box
@@ -12959,7 +12954,7 @@ Message_0AC073:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AC083:
+Message_02_0F_4A:
 #_0AC083: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AC085: db $F9, $00, $4B ; [set2] [COMMAND 59] go to message 4B if something 00 TODO
 #_0AC088: db $EB, $E6 ; [set2] prewritten text E6
@@ -12969,14 +12964,14 @@ Message_0AC083:
 ;===================================================================================================
 
 ; «だめだ にげられない!!»
-Message_0AC08D:
+Message_02_0F_4B:
 #_0AC08D: db $EB, $E5 ; [set2] prewritten text E5
 #_0AC08F: db $F3 ; [set2] wait for key and new line
 #_0AC090: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AC092:
+Message_02_0F_4C:
 #_0AC092: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC094: db $D7, $01, $4D ; [set2] go to message 4D if RNG, 01 TODO
 #_0AC097: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -12985,7 +12980,7 @@ Message_0AC092:
 
 ;===================================================================================================
 
-Message_0AC09D:
+Message_02_0F_4D:
 #_0AC09D: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AC09F: db $F3 ; [set2] wait for key and new line
 #_0AC0A0: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -12994,7 +12989,7 @@ Message_0AC09D:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AC0A3:
+Message_02_0F_4E:
 #_0AC0A3: db $D8, $01, $10 ; [set2] go to message 10 if RNG, 01 TODO
 #_0AC0A6: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AC0A8: db $E8, $03 ; [set2] [COMMAND 48:03]
@@ -13010,7 +13005,7 @@ Message_0AC0A3:
 
 ;===================================================================================================
 
-Message_0AC0B8:
+Message_02_0F_4F:
 #_0AC0B8: db $D7, $01, $4D ; [set2] go to message 4D if RNG, 01 TODO
 #_0AC0BB: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC0BD: db $F3 ; [set2] wait for key and new line
@@ -13020,7 +13015,7 @@ Message_0AC0B8:
 
 ; «>アクマは むし している»
 ; «どうしますか?»
-Message_0AC0C1:
+Message_02_0F_50:
 #_0AC0C1: db $EB, $E8 ; [set2] prewritten text E8
 #_0AC0C3: db $F3 ; [set2] wait for key and new line
 #_0AC0C4: db $F1 ; [set2] clear message box
@@ -13033,7 +13028,7 @@ Message_0AC0C1:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AC0CD:
+Message_02_0F_51:
 #_0AC0CD: db $D7, $01, $5D ; [set2] go to message 5D if RNG, 01 TODO
 #_0AC0D0: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC0D2: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -13049,7 +13044,7 @@ Message_0AC0CD:
 
 ;===================================================================================================
 
-Message_0AC0E2:
+Message_02_0F_52:
 #_0AC0E2: db $DC, $01, $53 ; [set2] [COMMAND 3C] go to message 53 if something 01 TODO
 #_0AC0E5: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC0E7: db $E8, $09 ; [set2] [COMMAND 48:09]
@@ -13060,7 +13055,7 @@ Message_0AC0E2:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AC0ED:
+Message_02_0F_53:
 #_0AC0ED: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AC0EF: db $F3 ; [set2] wait for key and new line
 #_0AC0F0: db $F1 ; [set2] clear message box
@@ -13075,7 +13070,7 @@ Message_0AC0ED:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC0FD:
+Message_02_0F_54:
 #_0AC0FD: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AC100: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AC102: db $EF, $55 ; [set2] YES/NO - go to message $55 if YES
@@ -13089,20 +13084,20 @@ Message_0AC0FD:
 
 ;===================================================================================================
 
-Message_0AC10E:
+Message_02_0F_55:
 #_0AC10E: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC110: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AC113: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
 ;===================================================================================================
 
-Message_0AC116:
+Message_02_0F_56:
 #_0AC116: db $F9, $00, $05 ; [set2] [COMMAND 59] go to message 05 if something 00 TODO
 #_0AC119: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
-Message_0AC11B:
+Message_02_0F_57:
 #_0AC11B: db $D4, $01, $58 ; [set2] go to message 58 if RNG, 01 TODO
 #_0AC11E: db $E9, $2A ; [set2] go to message $2A
 
@@ -13110,7 +13105,7 @@ Message_0AC11B:
 
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
-Message_0AC120:
+Message_02_0F_58:
 #_0AC120: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AC122: db $F3 ; [set2] wait for key and new line
 #_0AC123: db $F1 ; [set2] clear message box
@@ -13124,7 +13119,7 @@ Message_0AC120:
 
 ;===================================================================================================
 
-Message_0AC130:
+Message_02_0F_59:
 #_0AC130: db $D6, $01, $4D ; [set2] go to message 4D if RNG, 01 TODO
 #_0AC133: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC135: db $F3 ; [set2] wait for key and new line
@@ -13133,7 +13128,7 @@ Message_0AC130:
 
 ;===================================================================================================
 
-Message_0AC13B:
+Message_02_0F_5A:
 #_0AC13B: db $D8, $01, $5C ; [set2] go to message 5C if RNG, 01 TODO
 #_0AC13E: db $D4, $00, $5B ; [set2] go to message 5B if RNG, 00 TODO
 #_0AC141: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -13146,7 +13141,7 @@ Message_0AC13B:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC149:
+Message_02_0F_5B:
 #_0AC149: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC14B: db $F3 ; [set2] wait for key and new line
 #_0AC14C: db $F1 ; [set2] clear message box
@@ -13160,14 +13155,14 @@ Message_0AC149:
 
 ;===================================================================================================
 
-Message_0AC157:
+Message_02_0F_5C:
 #_0AC157: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AC159: db $F3 ; [set2] wait for key and new line
 #_0AC15A: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AC15C:
+Message_02_0F_5D:
 #_0AC15C: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AC15E: db $F3 ; [set2] wait for key and new line
 #_0AC15F: db $F1 ; [set2] clear message box
@@ -13178,7 +13173,7 @@ Message_0AC15C:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AC165:
+Message_02_0F_5E:
 #_0AC165: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AC167: db $D7, $00, $5F ; [set2] go to message 5F if RNG, 00 TODO
 #_0AC16A: db $EB, $E6 ; [set2] prewritten text E6
@@ -13188,7 +13183,7 @@ Message_0AC165:
 ;===================================================================================================
 
 ; «だめだ にげられない!!»
-Message_0AC16F:
+Message_02_0F_5F:
 #_0AC16F: db $EB, $E5 ; [set2] prewritten text E5
 #_0AC171: db $F3 ; [set2] wait for key and new line
 #_0AC172: db $E9, $00 ; [set2] go to message $00
@@ -13197,7 +13192,7 @@ Message_0AC16F:
 
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
-Message_0AC174:
+Message_02_0F_60:
 #_0AC174: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC176: db $F3 ; [set2] wait for key and new line
 #_0AC177: db $F1 ; [set2] clear message box
@@ -13213,7 +13208,7 @@ Message_0AC174:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AC184:
+Message_02_0F_61:
 #_0AC184: db $D4, $00, $68 ; [set2] go to message 68 if RNG, 00 TODO
 #_0AC187: db $D7, $01, $66 ; [set2] go to message 66 if RNG, 01 TODO
 #_0AC18A: db $E6, $01 ; [set2] [COMMAND 46:01]
@@ -13230,7 +13225,7 @@ Message_0AC184:
 
 ;===================================================================================================
 
-Message_0AC19C:
+Message_02_0F_62:
 #_0AC19C: db $D8, $01, $63 ; [set2] go to message 63 if RNG, 01 TODO
 #_0AC19F: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC1A1: db $F3 ; [set2] wait for key and new line
@@ -13239,20 +13234,20 @@ Message_0AC19C:
 
 ;===================================================================================================
 
-Message_0AC1A7:
+Message_02_0F_63:
 #_0AC1A7: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AC1A9: db $F3 ; [set2] wait for key and new line
 #_0AC1AA: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AC1AC:
+Message_02_0F_64:
 #_0AC1AC: db $D4, $02, $65 ; [set2] go to message 65 if RNG, 02 TODO
 #_0AC1AF: db $E9, $05 ; [set2] go to message $05
 
 ;===================================================================================================
 
-Message_0AC1B1:
+Message_02_0F_65:
 #_0AC1B1: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AC1B3: db $F3 ; [set2] wait for key and new line
 #_0AC1B4: db $E6, $03 ; [set2] [COMMAND 46:03]
@@ -13262,7 +13257,7 @@ Message_0AC1B1:
 
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
-Message_0AC1B9:
+Message_02_0F_66:
 #_0AC1B9: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC1BB: db $F3 ; [set2] wait for key and new line
 #_0AC1BC: db $F1 ; [set2] clear message box
@@ -13276,7 +13271,7 @@ Message_0AC1B9:
 
 ;===================================================================================================
 
-Message_0AC1C9:
+Message_02_0F_67:
 #_0AC1C9: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AC1CB: db $F3 ; [set2] wait for key and new line
 #_0AC1CC: db $F1 ; [set2] clear message box
@@ -13288,7 +13283,7 @@ Message_0AC1C9:
 
 ; «>[DEMONX]が よんでいる»
 ; «どうしますか?»
-Message_0AC1D2:
+Message_02_0F_68:
 #_0AC1D2: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AC1D4: db $F3 ; [set2] wait for key and new line
 #_0AC1D5: db $F1 ; [set2] clear message box
@@ -13302,7 +13297,7 @@ Message_0AC1D2:
 
 ;===================================================================================================
 
-Message_0AC1E2:
+Message_02_0F_69:
 #_0AC1E2: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
 #_0AC1E5: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AC1E7: db $F3 ; [set2] wait for key and new line
@@ -13311,21 +13306,21 @@ Message_0AC1E2:
 
 ;===================================================================================================
 
-Message_0AC1ED:
+Message_02_0F_6A:
 #_0AC1ED: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AC1EF: db $F3 ; [set2] wait for key and new line
 #_0AC1F0: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AC1F3:
+Message_02_0F_6B:
 #_0AC1F3: db $D4, $00, $6C ; [set2] go to message 6C if RNG, 00 TODO
 #_0AC1F6: db $D4, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
 #_0AC1F9: db $E9, $17 ; [set2] go to message $17
 
 ;===================================================================================================
 
-Message_0AC1FB:
+Message_02_0F_6C:
 #_0AC1FB: db $D4, $00, $15 ; [set2] go to message 15 if RNG, 00 TODO
 #_0AC1FE: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC200: db $F3 ; [set2] wait for key and new line
@@ -13334,7 +13329,7 @@ Message_0AC1FB:
 ;===================================================================================================
 
 ; «>なにを ようきゅうしますか?»
-Message_0AC204:
+Message_02_10_00:
 #_0AC204: db $F1 ; [set2] clear message box
 #_0AC205: db $EB, $D7 ; [set2] prewritten text D7
 #_0AC207: db $F2, $03 ; [set2] option list with 4 options
@@ -13345,13 +13340,13 @@ Message_0AC204:
 
 ;===================================================================================================
 
-Message_0AC211:
+Message_02_10_01:
 #_0AC211: db $F1 ; [set2] clear message box
 #_0AC212: db $D2, $17 ; [set2] something to message 17 TODO
 
 ;===================================================================================================
 
-Message_0AC214:
+Message_02_10_02:
 #_0AC214: db $E0 ; [set2] [COMMAND 40]
 #_0AC215: db $E8, $3A ; [set2] [COMMAND 48:3A]
 #_0AC217: db $F3 ; [set2] wait for key and new line
@@ -13359,7 +13354,7 @@ Message_0AC214:
 
 ;===================================================================================================
 
-Message_0AC21A:
+Message_02_10_03:
 #_0AC21A: db $D2, $17 ; [set2] something to message 17 TODO
 #_0AC21C: db $E0 ; [set2] [COMMAND 40]
 #_0AC21D: db $E8, $3B ; [set2] [COMMAND 48:3B]
@@ -13368,7 +13363,7 @@ Message_0AC21A:
 
 ;===================================================================================================
 
-Message_0AC222:
+Message_02_10_04:
 #_0AC222: db $E0 ; [set2] [COMMAND 40]
 #_0AC223: db $E8, $3C ; [set2] [COMMAND 48:3C]
 #_0AC225: db $F3 ; [set2] wait for key and new line
@@ -13377,7 +13372,7 @@ Message_0AC222:
 ;===================================================================================================
 
 ; «>[￥GIVEME] を あたえますか?»
-Message_0AC228:
+Message_02_10_05:
 #_0AC228: db $F1 ; [set2] clear message box
 #_0AC229: db $EB, $D6 ; [set2] prewritten text D6
 #_0AC22B: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
@@ -13391,7 +13386,7 @@ Message_0AC228:
 
 ;===================================================================================================
 
-Message_0AC23C:
+Message_02_10_06:
 #_0AC23C: db $E8, $40 ; [set2] [COMMAND 48:40]
 #_0AC23E: db $F3 ; [set2] wait for key and new line
 #_0AC23F: db $F1 ; [set2] clear message box
@@ -13400,7 +13395,7 @@ Message_0AC23C:
 
 ;===================================================================================================
 
-Message_0AC245:
+Message_02_10_07:
 #_0AC245: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0AC247: db $F3 ; [set2] wait for key and new line
 #_0AC248: db $E9, $23 ; [set2] go to message $23
@@ -13409,7 +13404,7 @@ Message_0AC245:
 
 ; «>[DEMONX]は あばれだした!»
 ; «どうしますか?»
-Message_0AC24A:
+Message_02_10_08:
 #_0AC24A: db $EB, $49 ; [set2] prewritten text 49
 #_0AC24C: db $F3 ; [set2] wait for key and new line
 #_0AC24D: db $F1 ; [set2] clear message box
@@ -13420,7 +13415,7 @@ Message_0AC24A:
 
 ;===================================================================================================
 
-Message_0AC256:
+Message_02_10_09:
 #_0AC256: db $D4, $02, $0C ; [set2] go to message 0C if RNG, 02 TODO
 #_0AC259: db $DB, $01, $0B ; [set2] [COMMAND 3B] go to message 0B if something 01 TODO
 #_0AC25C: db $E9, $0A ; [set2] go to message $0A
@@ -13428,7 +13423,7 @@ Message_0AC256:
 ;===================================================================================================
 
 ; >[DEMONX]は おとなしくなった
-Message_0AC25E:
+Message_02_10_0A:
 #_0AC25E: db $97 ; >
 #_0AC25F: db $ED ; [set2] write demon name indexed from $0526
 #_0AC260: db $3E, $CF, $29, $38, $39, $30, $2C, $39 ; は⎵おとなしくな
@@ -13440,20 +13435,20 @@ Message_0AC25E:
 
 ;===================================================================================================
 
-Message_0AC272:
+Message_02_10_0B:
 #_0AC272: db $D6, $02, $0C ; [set2] go to message 0C if RNG, 02 TODO
 #_0AC275: db $E9, $0A ; [set2] go to message $0A
 
 ;===================================================================================================
 
-Message_0AC277:
+Message_02_10_0C:
 #_0AC277: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0AC279: db $F3 ; [set2] wait for key and new line
 #_0AC27A: db $E9, $23 ; [set2] go to message $23
 
 ;===================================================================================================
 
-Message_0AC27C:
+Message_02_10_0D:
 #_0AC27C: db $DB, $01, $0E ; [set2] [COMMAND 3B] go to message 0E if something 01 TODO
 #_0AC27F: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AC281: db $F3 ; [set2] wait for key and new line
@@ -13463,14 +13458,14 @@ Message_0AC27C:
 
 ;===================================================================================================
 
-Message_0AC289:
+Message_02_10_0E:
 #_0AC289: db $E9, $23 ; [set2] go to message $23
 
 ;===================================================================================================
 
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0AC28B:
+Message_02_10_0F:
 #_0AC28B: db $D2, $10 ; [set2] something to message 10 TODO
 #_0AC28D: db $FD, $16 ; [set2] [COMMAND 5D] something and go to message 16 TODO
 #_0AC28F: db $FC, $E4, $18 ; [set2] test progress bit $E4 for message $18
@@ -13484,18 +13479,18 @@ Message_0AC28B:
 
 ;===================================================================================================
 
-Message_0AC29E:
+Message_02_10_10:
 #_0AC29E: db $F7, $18, $80 ; [set2] [COMMAND 57] $18 $80 TODO
 
 ;===================================================================================================
 
-Message_0AC2A1:
+Message_02_10_11:
 #_0AC2A1: db $DB, $00, $13 ; [set2] [COMMAND 3B] go to message 13 if something 00 TODO
 #_0AC2A4: db $E9, $12 ; [set2] go to message $12
 
 ;===================================================================================================
 
-Message_0AC2A6:
+Message_02_10_12:
 #_0AC2A6: db $E8, $3D ; [set2] [COMMAND 48:3D]
 #_0AC2A8: db $F3 ; [set2] wait for key and new line
 #_0AC2A9: db $F1 ; [set2] clear message box
@@ -13503,13 +13498,13 @@ Message_0AC2A6:
 
 ;===================================================================================================
 
-Message_0AC2AC:
+Message_02_10_13:
 #_0AC2AC: db $D7, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
 #_0AC2AF: db $E9, $12 ; [set2] go to message $12
 
 ;===================================================================================================
 
-Message_0AC2B1:
+Message_02_10_14:
 #_0AC2B1: db $D4, $02, $15 ; [set2] go to message 15 if RNG, 02 TODO
 #_0AC2B4: db $E8, $3F ; [set2] [COMMAND 48:3F]
 #_0AC2B6: db $F3 ; [set2] wait for key and new line
@@ -13518,7 +13513,7 @@ Message_0AC2B1:
 
 ;===================================================================================================
 
-Message_0AC2BA:
+Message_02_10_15:
 #_0AC2BA: db $E8, $41 ; [set2] [COMMAND 48:41]
 #_0AC2BC: db $F3 ; [set2] wait for key and new line
 #_0AC2BD: db $E9, $23 ; [set2] go to message $23
@@ -13527,7 +13522,7 @@ Message_0AC2BA:
 
 ; «>[CHASE]は [DEMONX]が»
 ; «ようきゅうしたぶんを もっていなかった»
-Message_0AC2BF:
+Message_02_10_16:
 #_0AC2BF: db $EB, $B4 ; [set2] prewritten text B4
 #_0AC2C1: db $F3 ; [set2] wait for key and new line
 #_0AC2C2: db $F1 ; [set2] clear message box
@@ -13537,7 +13532,7 @@ Message_0AC2BF:
 
 ; «>[DEMONX]は [CHASE]の»
 ; «ナカマが いっぱいなので さっていった»
-Message_0AC2C5:
+Message_02_10_17:
 #_0AC2C5: db $F1 ; [set2] clear message box
 #_0AC2C6: db $FC, $E4, $02 ; [set2] test progress bit $E4 for message $02
 #_0AC2C9: db $EB, $F6 ; [set2] prewritten text F6
@@ -13548,7 +13543,7 @@ Message_0AC2C5:
 
 ; «>[DEMONX]は [CHASE]の»
 ; «[￥GIVEME] を うけとると さっていった»
-Message_0AC2CE:
+Message_02_10_18:
 #_0AC2CE: db $FB, $00, $E4 ; [set2] [COMMAND 5B] set progress bit E4 if 00 is nonzero; otherwise reset
 #_0AC2D1: db $EB, $F7 ; [set2] prewritten text F7
 #_0AC2D3: db $F3 ; [set2] wait for key and new line
@@ -13559,7 +13554,7 @@ Message_0AC2CE:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC2D6:
+Message_02_10_19:
 #_0AC2D6: db $DB, $01, $1A ; [set2] [COMMAND 3B] go to message 1A if something 01 TODO
 #_0AC2D9: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC2DB: db $F3 ; [set2] wait for key and new line
@@ -13577,7 +13572,7 @@ Message_0AC2D6:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC2E8:
+Message_02_10_1A:
 #_0AC2E8: db $DB, $00, $1B ; [set2] [COMMAND 3B] go to message 1B if something 00 TODO
 #_0AC2EB: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC2ED: db $F3 ; [set2] wait for key and new line
@@ -13592,20 +13587,20 @@ Message_0AC2E8:
 
 ;===================================================================================================
 
-Message_0AC2FA:
+Message_02_10_1B:
 #_0AC2FA: db $D4, $01, $1D ; [set2] go to message 1D if RNG, 01 TODO
 #_0AC2FD: db $E9, $1C ; [set2] go to message $1C
 
 ;===================================================================================================
 
-Message_0AC2FF:
+Message_02_10_1C:
 #_0AC2FF: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC301: db $F3 ; [set2] wait for key and new line
 #_0AC302: db $E9, $00 ; [set2] go to message $00
 
 ;===================================================================================================
 
-Message_0AC304:
+Message_02_10_1D:
 #_0AC304: db $E8, $43 ; [set2] [COMMAND 48:43]
 #_0AC306: db $F3 ; [set2] wait for key and new line
 #_0AC307: db $F1 ; [set2] clear message box
@@ -13616,7 +13611,7 @@ Message_0AC304:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC30A:
+Message_02_10_1E:
 #_0AC30A: db $DB, $01, $1F ; [set2] [COMMAND 3B] go to message 1F if something 01 TODO
 #_0AC30D: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC30F: db $F3 ; [set2] wait for key and new line
@@ -13634,7 +13629,7 @@ Message_0AC30A:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC31C:
+Message_02_10_1F:
 #_0AC31C: db $DB, $00, $20 ; [set2] [COMMAND 3B] go to message 20 if something 00 TODO
 #_0AC31F: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC321: db $F3 ; [set2] wait for key and new line
@@ -13649,13 +13644,13 @@ Message_0AC31C:
 
 ;===================================================================================================
 
-Message_0AC32E:
+Message_02_10_20:
 #_0AC32E: db $D4, $01, $21 ; [set2] go to message 21 if RNG, 01 TODO
 #_0AC331: db $E9, $1C ; [set2] go to message $1C
 
 ;===================================================================================================
 
-Message_0AC333:
+Message_02_10_21:
 #_0AC333: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AC335: db $F3 ; [set2] wait for key and new line
 #_0AC336: db $F1 ; [set2] clear message box
@@ -13664,7 +13659,7 @@ Message_0AC333:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC339:
+Message_02_10_22:
 #_0AC339: db $DB, $00, $1C ; [set2] [COMMAND 3B] go to message 1C if something 00 TODO
 #_0AC33C: db $E8, $47 ; [set2] [COMMAND 48:47]
 #_0AC33E: db $F3 ; [set2] wait for key and new line
@@ -13675,7 +13670,7 @@ Message_0AC339:
 
 ;===================================================================================================
 
-Message_0AC345:
+Message_02_10_23:
 #_0AC345: db $F1 ; [set2] clear message box
 #_0AC346: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC348: db $F3 ; [set2] wait for key and new line
@@ -13684,13 +13679,13 @@ Message_0AC345:
 
 ;===================================================================================================
 
-Message_0AC34E:
+Message_02_10_24:
 #_0AC34E: db $FE, $02 ; [set2] [COMMAND 5E:02]
 
 ;===================================================================================================
 
 ; «>なにを ようきゅうしますか?»
-Message_0AC350:
+Message_02_11_00:
 #_0AC350: db $F1 ; [set2] clear message box
 #_0AC351: db $EB, $D7 ; [set2] prewritten text D7
 #_0AC353: db $F2, $03 ; [set2] option list with 4 options
@@ -13701,13 +13696,13 @@ Message_0AC350:
 
 ;===================================================================================================
 
-Message_0AC35D:
+Message_02_11_01:
 #_0AC35D: db $D2, $09 ; [set2] something to message 09 TODO
 #_0AC35F: db $E9, $02 ; [set2] go to message $02
 
 ;===================================================================================================
 
-Message_0AC361:
+Message_02_11_02:
 #_0AC361: db $F1 ; [set2] clear message box
 #_0AC362: db $E0 ; [set2] [COMMAND 40]
 #_0AC363: db $E8, $3A ; [set2] [COMMAND 48:3A]
@@ -13717,7 +13712,7 @@ Message_0AC361:
 ;===================================================================================================
 
 ; «>[￥GIVEME] を あたえますか?»
-Message_0AC368:
+Message_02_11_03:
 #_0AC368: db $F1 ; [set2] clear message box
 #_0AC369: db $EB, $D6 ; [set2] prewritten text D6
 #_0AC36B: db $EF, $06 ; [set2] YES/NO - go to message $06 if YES
@@ -13734,18 +13729,18 @@ Message_0AC368:
 
 ; «>[CHASE]は [DEMONX]が»
 ; «ようきゅうしたぶんを もっていなかった»
-Message_0AC37A:
+Message_02_11_04:
 #_0AC37A: db $EB, $B4 ; [set2] prewritten text B4
 #_0AC37C: db $F3 ; [set2] wait for key and new line
 
 ;===================================================================================================
 
-Message_0AC37D:
+Message_02_11_05:
 #_0AC37D: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AC380:
+Message_02_11_06:
 #_0AC380: db $FD, $04 ; [set2] [COMMAND 5D] something and go to message 04 TODO
 #_0AC382: db $FC, $E4, $0A ; [set2] test progress bit $E4 for message $0A
 
@@ -13753,7 +13748,7 @@ Message_0AC380:
 
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0AC385:
+Message_02_11_07:
 #_0AC385: db $D2, $0B ; [set2] something to message 0B TODO
 #_0AC387: db $DC, $02, $08 ; [set2] [COMMAND 3C] go to message 08 if something 02 TODO
 #_0AC38A: db $E8, $48 ; [set2] [COMMAND 48:48]
@@ -13765,7 +13760,7 @@ Message_0AC385:
 
 ;===================================================================================================
 
-Message_0AC393:
+Message_02_11_08:
 #_0AC393: db $E8, $3D ; [set2] [COMMAND 48:3D]
 #_0AC395: db $F3 ; [set2] wait for key and new line
 #_0AC396: db $F1 ; [set2] clear message box
@@ -13778,7 +13773,7 @@ Message_0AC393:
 
 ; «>[DEMONX]は [CHASE]の»
 ; «ナカマが いっぱいなので さっていった»
-Message_0AC39D:
+Message_02_11_09:
 #_0AC39D: db $F1 ; [set2] clear message box
 #_0AC39E: db $EB, $F6 ; [set2] prewritten text F6
 #_0AC3A0: db $F3 ; [set2] wait for key and new line
@@ -13786,14 +13781,14 @@ Message_0AC39D:
 
 ;===================================================================================================
 
-Message_0AC3A3:
+Message_02_11_0A:
 #_0AC3A3: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]は [CHASE]の»
 ; «[￥GIVEME] を うけとると さっていった»
-Message_0AC3A6:
+Message_02_11_0B:
 #_0AC3A6: db $EB, $F7 ; [set2] prewritten text F7
 #_0AC3A8: db $F3 ; [set2] wait for key and new line
 #_0AC3A9: db $FE, $06 ; [set2] [COMMAND 5E:06]
@@ -13803,7 +13798,7 @@ Message_0AC3A6:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC3AB:
+Message_02_11_0C:
 #_0AC3AB: db $DC, $01, $0D ; [set2] [COMMAND 3C] go to message 0D if something 01 TODO
 #_0AC3AE: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3B0: db $F3 ; [set2] wait for key and new line
@@ -13821,7 +13816,7 @@ Message_0AC3AB:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC3BD:
+Message_02_11_0D:
 #_0AC3BD: db $DC, $00, $0E ; [set2] [COMMAND 3C] go to message 0E if something 00 TODO
 #_0AC3C0: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3C2: db $F3 ; [set2] wait for key and new line
@@ -13836,7 +13831,7 @@ Message_0AC3BD:
 
 ;===================================================================================================
 
-Message_0AC3CF:
+Message_02_11_0E:
 #_0AC3CF: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC3D1: db $F3 ; [set2] wait for key and new line
 #_0AC3D2: db $E9, $00 ; [set2] go to message $00
@@ -13846,7 +13841,7 @@ Message_0AC3CF:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC3D4:
+Message_02_11_0F:
 #_0AC3D4: db $DC, $01, $10 ; [set2] [COMMAND 3C] go to message 10 if something 01 TODO
 #_0AC3D7: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3D9: db $F3 ; [set2] wait for key and new line
@@ -13864,7 +13859,7 @@ Message_0AC3D4:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC3E6:
+Message_02_11_10:
 #_0AC3E6: db $DC, $00, $0E ; [set2] [COMMAND 3C] go to message 0E if something 00 TODO
 #_0AC3E9: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3EB: db $F3 ; [set2] wait for key and new line
@@ -13880,7 +13875,7 @@ Message_0AC3E6:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC3F8:
+Message_02_11_11:
 #_0AC3F8: db $E8, $47 ; [set2] [COMMAND 48:47]
 #_0AC3FA: db $F3 ; [set2] wait for key and new line
 #_0AC3FB: db $F1 ; [set2] clear message box
@@ -13892,7 +13887,7 @@ Message_0AC3F8:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AC401:
+Message_02_12_00:
 #_0AC401: db $FC, $E9, $07 ; [set2] test progress bit $E9 for message $07
 #_0AC404: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AC407: db $E8, $51 ; [set2] [COMMAND 48:51]
@@ -13909,7 +13904,7 @@ Message_0AC401:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC417:
+Message_02_12_01:
 #_0AC417: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AC419: db $EF, $02 ; [set2] YES/NO - go to message $02 if YES
 #_0AC41B: db $EB, $E1 ; [set2] prewritten text E1
@@ -13918,13 +13913,13 @@ Message_0AC417:
 
 ;===================================================================================================
 
-Message_0AC420:
+Message_02_12_02:
 #_0AC420: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AC422: db $E9, $08 ; [set2] go to message $08
 
 ;===================================================================================================
 
-Message_0AC424:
+Message_02_12_03:
 #_0AC424: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AC427: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AC429: db $EF, $05 ; [set2] YES/NO - go to message $05 if YES
@@ -13936,7 +13931,7 @@ Message_0AC424:
 
 ;===================================================================================================
 
-Message_0AC435:
+Message_02_12_04:
 #_0AC435: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AC437: db $F3 ; [set2] wait for key and new line
 #_0AC438: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -13944,7 +13939,7 @@ Message_0AC435:
 
 ;===================================================================================================
 
-Message_0AC43C:
+Message_02_12_05:
 #_0AC43C: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AC43F: db $D8, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
 #_0AC442: db $E8, $54 ; [set2] [COMMAND 48:54]
@@ -13956,7 +13951,7 @@ Message_0AC43C:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC448:
+Message_02_12_06:
 #_0AC448: db $E8, $55 ; [set2] [COMMAND 48:55]
 #_0AC44A: db $F3 ; [set2] wait for key and new line
 #_0AC44B: db $F1 ; [set2] clear message box
@@ -13970,7 +13965,7 @@ Message_0AC448:
 
 ;===================================================================================================
 
-Message_0AC456:
+Message_02_12_07:
 #_0AC456: db $E8, $57 ; [set2] [COMMAND 48:57]
 #_0AC458: db $EF, $04 ; [set2] YES/NO - go to message $04 if YES
 #_0AC45A: db $E8, $59 ; [set2] [COMMAND 48:59]
@@ -13981,7 +13976,7 @@ Message_0AC456:
 
 ;===================================================================================================
 
-Message_0AC464:
+Message_02_12_08:
 #_0AC464: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AC467: db $FB, $01, $E4 ; [set2] [COMMAND 5B] set progress bit E4 if 01 is nonzero; otherwise reset
 #_0AC46A: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
@@ -13990,7 +13985,7 @@ Message_0AC464:
 
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
-Message_0AC46D:
+Message_02_13_00:
 #_0AC46D: db $D4, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
 #_0AC470: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AC472: db $F3 ; [set2] wait for key and new line
@@ -14007,7 +14002,7 @@ Message_0AC46D:
 
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
-Message_0AC480:
+Message_02_13_01:
 #_0AC480: db $E8, $5A ; [set2] [COMMAND 48:5A]
 #_0AC482: db $F3 ; [set2] wait for key and new line
 #_0AC483: db $F1 ; [set2] clear message box
@@ -14021,7 +14016,7 @@ Message_0AC480:
 
 ;===================================================================================================
 
-Message_0AC490:
+Message_02_13_02:
 #_0AC490: db $D5, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AC493: db $E8, $5B ; [set2] [COMMAND 48:5B]
 #_0AC495: db $F3 ; [set2] wait for key and new line
@@ -14032,7 +14027,7 @@ Message_0AC490:
 
 ; «>[DEMONX]は くちぶえを ふいた»
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AC49B:
+Message_02_13_03:
 #_0AC49B: db $DA, $01, $04 ; [set2] ext command 01: go to message 04 if MC INT = 0
 #_0AC49E: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AC4A0: db $F3 ; [set2] wait for key and new line
@@ -14046,12 +14041,12 @@ Message_0AC49B:
 
 ;===================================================================================================
 
-Message_0AC4AB:
+Message_02_13_04:
 #_0AC4AB: db $F7, $0A, $80 ; [set2] [COMMAND 57] $0A $80 TODO
 
 ;===================================================================================================
 
-Message_0AC4AE:
+Message_02_13_05:
 #_0AC4AE: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AC4B0: db $F3 ; [set2] wait for key and new line
 #_0AC4B1: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -14059,7 +14054,7 @@ Message_0AC4AE:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC4B4:
+Message_02_13_06:
 #_0AC4B4: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AC4B6: db $EF, $07 ; [set2] YES/NO - go to message $07 if YES
 #_0AC4B8: db $E8, $52 ; [set2] [COMMAND 48:52]
@@ -14071,7 +14066,7 @@ Message_0AC4B4:
 
 ;===================================================================================================
 
-Message_0AC4C4:
+Message_02_13_07:
 #_0AC4C4: db $D8, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
 #_0AC4C7: db $E8, $54 ; [set2] [COMMAND 48:54]
 #_0AC4C9: db $F3 ; [set2] wait for key and new line
@@ -14079,14 +14074,14 @@ Message_0AC4C4:
 
 ;===================================================================================================
 
-Message_0AC4CD:
+Message_02_13_08:
 #_0AC4CD: db $F7, $24, $80 ; [set2] [COMMAND 57] $24 $80 TODO
 
 ;===================================================================================================
 
 ; «>[DEMONX]は いかく している»
 ; «どうしますか?»
-Message_0AC4D0:
+Message_02_13_09:
 #_0AC4D0: db $E8, $5D ; [set2] [COMMAND 48:5D]
 #_0AC4D2: db $F3 ; [set2] wait for key and new line
 #_0AC4D3: db $F1 ; [set2] clear message box
@@ -14100,20 +14095,20 @@ Message_0AC4D0:
 
 ;===================================================================================================
 
-Message_0AC4E0:
+Message_02_13_0A:
 #_0AC4E0: db $D7, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
 #_0AC4E3: db $E9, $01 ; [set2] go to message $01
 
 ;===================================================================================================
 
-Message_0AC4E5:
+Message_02_13_0B:
 #_0AC4E5: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AC4E7: db $F3 ; [set2] wait for key and new line
 #_0AC4E8: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AC4EB:
+Message_02_13_0C:
 #_0AC4EB: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AC4ED: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
 #_0AC4EF: db $E8, $57 ; [set2] [COMMAND 48:57]
@@ -14122,7 +14117,7 @@ Message_0AC4EB:
 
 ;===================================================================================================
 
-Message_0AC4F5:
+Message_02_13_0D:
 #_0AC4F5: db $E8, $5F ; [set2] [COMMAND 48:5F]
 #_0AC4F7: db $EF, $0E ; [set2] YES/NO - go to message $0E if YES
 #_0AC4F9: db $E8, $56 ; [set2] [COMMAND 48:56]
@@ -14135,14 +14130,14 @@ Message_0AC4F5:
 ;===================================================================================================
 
 ; «>[CHASE]たちは にげだした»
-Message_0AC502:
+Message_02_13_0E:
 #_0AC502: db $EB, $E6 ; [set2] prewritten text E6
 #_0AC504: db $F3 ; [set2] wait for key and new line
 #_0AC505: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
 ;===================================================================================================
 
-Message_0AC507:
+Message_02_13_0F:
 #_0AC507: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AC509: db $F3 ; [set2] wait for key and new line
 #_0AC50A: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -14152,7 +14147,7 @@ Message_0AC507:
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AC512:
+Message_02_14_00:
 #_0AC512: db $D5, $02, $01 ; [set2] go to message 01 if RNG, 02 TODO
 #_0AC515: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC517: db $F3 ; [set2] wait for key and new line
@@ -14163,27 +14158,27 @@ Message_0AC512:
 
 ;===================================================================================================
 
-Message_0AC51E:
+Message_02_14_01:
 #_0AC51E: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AC520: db $F3 ; [set2] wait for key and new line
 #_0AC521: db $FE, $01 ; [set2] [COMMAND 5E:01]
 
 ;===================================================================================================
 
-Message_0AC523:
+Message_02_14_02:
 #_0AC523: db $D5, $02, $08 ; [set2] go to message 08 if RNG, 02 TODO
 #_0AC526: db $D4, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
 
 ;===================================================================================================
 
-Message_0AC529:
+Message_02_14_03:
 #_0AC529: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC52B: db $F3 ; [set2] wait for key and new line
 
 ;===================================================================================================
 
 ; «>[DEMONX]は にげていった!»
-Message_0AC52C:
+Message_02_14_04:
 #_0AC52C: db $F1 ; [set2] clear message box
 #_0AC52D: db $EB, $E2 ; [set2] prewritten text E2
 #_0AC52F: db $F3 ; [set2] wait for key and new line
@@ -14191,14 +14186,14 @@ Message_0AC52C:
 
 ;===================================================================================================
 
-Message_0AC532:
+Message_02_14_05:
 #_0AC532: db $D4, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AC535: db $E9, $03 ; [set2] go to message $03
 
 ;===================================================================================================
 
 ; やくざ«を ころして へいきなの?»
-Message_0AC537:
+Message_02_14_06:
 #_0AC537: db $48, $2C, $A1 ; やくざ
 #_0AC53A: db $EB, $BA ; [set2] prewritten text BA
 #_0AC53C: db $F3 ; [set2] wait for key and new line
@@ -14206,7 +14201,7 @@ Message_0AC537:
 
 ;===================================================================================================
 
-Message_0AC53F:
+Message_02_14_07:
 #_0AC53F: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AC541: db $F3 ; [set2] wait for key and new line
 #_0AC542: db $FE, $01 ; [set2] [COMMAND 5E:01]
@@ -14216,7 +14211,7 @@ Message_0AC53F:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
-Message_0AC544:
+Message_02_14_08:
 #_0AC544: db $D5, $01, $07 ; [set2] go to message 07 if RNG, 01 TODO
 #_0AC547: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC549: db $F3 ; [set2] wait for key and new line
@@ -14231,13 +14226,13 @@ Message_0AC544:
 
 ;===================================================================================================
 
-Message_0AC555:
+Message_02_14_09:
 #_0AC555: db $E7, $0A, $0C, $0C, $0B ; [set2] randomly pick from messages 0A, 0C, 0C, 0B
 
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AC55A:
+Message_02_14_0A:
 #_0AC55A: db $DA, $01, $09 ; [set2] ext command 01: go to message 09 if MC INT = 0
 #_0AC55D: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AC55F: db $F3 ; [set2] wait for key and new line
@@ -14248,19 +14243,19 @@ Message_0AC55A:
 
 ;===================================================================================================
 
-Message_0AC566:
+Message_02_14_0B:
 #_0AC566: db $FE, $02 ; [set2] [COMMAND 5E:02]
 
 ;===================================================================================================
 
-Message_0AC568:
+Message_02_14_0C:
 #_0AC568: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AC56A: db $F3 ; [set2] wait for key and new line
 #_0AC56B: db $FE, $01 ; [set2] [COMMAND 5E:01]
 
 ;===================================================================================================
 
-Message_0AC56D:
+Message_02_14_0D:
 #_0AC56D: db $D5, $01, $0E ; [set2] go to message 0E if RNG, 01 TODO
 #_0AC570: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AC572: db $F3 ; [set2] wait for key and new line
@@ -14268,7 +14263,7 @@ Message_0AC56D:
 
 ;===================================================================================================
 
-Message_0AC575:
+Message_02_14_0E:
 #_0AC575: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AC577: db $F3 ; [set2] wait for key and new line
 #_0AC578: db $FE, $01 ; [set2] [COMMAND 5E:01]
@@ -14276,7 +14271,7 @@ Message_0AC575:
 ;===================================================================================================
 
 ; «>[DEMONX]は ナカマをよんだ!!»
-Message_0AC57A:
+Message_02_14_0F:
 #_0AC57A: db $D5, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0AC57D: db $DA, $01, $10 ; [set2] ext command 01: go to message 10 if MC INT = 0
 #_0AC580: db $D4, $00, $10 ; [set2] go to message 10 if RNG, 00 TODO
@@ -14289,20 +14284,20 @@ Message_0AC57A:
 
 ;===================================================================================================
 
-Message_0AC58C:
+Message_02_14_10:
 #_0AC58C: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AC58E: db $F3 ; [set2] wait for key and new line
 #_0AC58F: db $FE, $01 ; [set2] [COMMAND 5E:01]
 
 ;===================================================================================================
 
-Message_0AC591:
+Message_02_14_11:
 #_0AC591: db $FE, $02 ; [set2] [COMMAND 5E:02]
 
 ;===================================================================================================
 
 ; なにを ようきゅうしますか
-Message_0AC593:
+Message_02_15_00:
 #_0AC593: db $F1 ; [set2] clear message box
 #_0AC594: db $39, $3A, $51, $CF, $4A, $27, $2B, $56 ; なにを⎵ようきゅ
 #_0AC59C: db $27, $30, $43, $31, $2A ; うしますか
@@ -14314,7 +14309,7 @@ Message_0AC593:
 
 ;===================================================================================================
 
-Message_0AC5AB:
+Message_02_15_01:
 #_0AC5AB: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0AC5AD: db $F3 ; [set2] wait for key and new line
 #_0AC5AE: db $F9, $01, $02 ; [set2] [COMMAND 59] go to message 02 if something 01 TODO
@@ -14322,7 +14317,7 @@ Message_0AC5AB:
 
 ;===================================================================================================
 
-Message_0AC5B4:
+Message_02_15_02:
 #_0AC5B4: db $F1 ; [set2] clear message box
 #_0AC5B5: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC5B7: db $F3 ; [set2] wait for key and new line
@@ -14330,7 +14325,7 @@ Message_0AC5B4:
 
 ;===================================================================================================
 
-Message_0AC5BA:
+Message_02_15_03:
 #_0AC5BA: db $D5, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
 #_0AC5BD: db $D5, $03, $05 ; [set2] go to message 05 if RNG, 03 TODO
 #_0AC5C0: db $E8, $45 ; [set2] [COMMAND 48:45]
@@ -14344,7 +14339,7 @@ Message_0AC5BA:
 ; «>[CHASE]は [￥GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
-Message_0AC5C8:
+Message_02_15_04:
 #_0AC5C8: db $EB, $C2 ; [set2] prewritten text C2
 #_0AC5CA: db $F3 ; [set2] wait for key and new line
 #_0AC5CB: db $F1 ; [set2] clear message box
@@ -14354,20 +14349,20 @@ Message_0AC5C8:
 
 ;===================================================================================================
 
-Message_0AC5D1:
+Message_02_15_05:
 #_0AC5D1: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AC5D4: db $E9, $06 ; [set2] go to message $06
 
 ;===================================================================================================
 
-Message_0AC5D6:
+Message_02_15_06:
 #_0AC5D6: db $E8, $43 ; [set2] [COMMAND 48:43]
 #_0AC5D8: db $F3 ; [set2] wait for key and new line
 #_0AC5D9: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
 
-Message_0AC5DC:
+Message_02_15_07:
 #_0AC5DC: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC5DE: db $F3 ; [set2] wait for key and new line
 #_0AC5DF: db $F1 ; [set2] clear message box
@@ -14375,7 +14370,7 @@ Message_0AC5DC:
 
 ;===================================================================================================
 
-Message_0AC5E2:
+Message_02_15_08:
 #_0AC5E2: db $D5, $01, $09 ; [set2] go to message 09 if RNG, 01 TODO
 #_0AC5E5: db $D5, $04, $09 ; [set2] go to message 09 if RNG, 04 TODO
 #_0AC5E8: db $E8, $45 ; [set2] [COMMAND 48:45]
@@ -14386,7 +14381,7 @@ Message_0AC5E2:
 
 ;===================================================================================================
 
-Message_0AC5F0:
+Message_02_15_09:
 #_0AC5F0: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AC5F3: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC5F5: db $F3 ; [set2] wait for key and new line
@@ -14395,7 +14390,7 @@ Message_0AC5F0:
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
-Message_0AC5F9:
+Message_02_15_0A:
 #_0AC5F9: db $D5, $00, $0B ; [set2] go to message 0B if RNG, 00 TODO
 #_0AC5FC: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AC5FE: db $F3 ; [set2] wait for key and new line
@@ -14406,7 +14401,7 @@ Message_0AC5F9:
 
 ;===================================================================================================
 
-Message_0AC605:
+Message_02_15_0B:
 #_0AC605: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC607: db $F3 ; [set2] wait for key and new line
 #_0AC608: db $F1 ; [set2] clear message box
@@ -14431,7 +14426,7 @@ Message_0AC60E:
 ; きさま!« わがはいを だれだと おもっておる!»
 ; «[CLASSX] [DEMONX]さまだぞ!»
 ; きやすく こえを かけるでない!
-Message_0AC62B:
+Message_02_16_00:
 #_0AC62B: db $2B, $2F, $43, $94 ; きさま!
 #_0AC62F: db $EB, $1A ; [set2] prewritten text 1A
 #_0AC631: db $F0 ; [set2] new line
@@ -14445,7 +14440,7 @@ Message_0AC62B:
 
 ; オマエら まとめて じごくいき!
 ; «ひゃーははは!»
-Message_0AC646:
+Message_02_16_01:
 #_0AC646: db $61, $7B, $60, $4B, $CF, $43, $38, $46 ; オマエら⎵まとめ
 #_0AC64E: db $37, $CF, $A2, $A0, $2C, $26, $2B, $94 ; て⎵じごくいき!
 #_0AC656: db $F0 ; [set2] new line
@@ -14456,7 +14451,7 @@ Message_0AC646:
 
 ; «オレは きょう ちに うえてるんだ!»
 ; かくごは できてんだろーなあ!?
-Message_0AC65A:
+Message_02_16_02:
 #_0AC65A: db $EB, $02 ; [set2] prewritten text 02
 #_0AC65C: db $F0 ; [set2] new line
 #_0AC65D: db $2A, $2C, $A0, $3E, $CF, $A9, $2B, $37 ; かくごは⎵できて
@@ -14466,35 +14461,35 @@ Message_0AC65A:
 ;===================================================================================================
 
 ; クッテヤルゾ!
-Message_0AC66E:
+Message_02_16_03:
 #_0AC66E: db $64, $92, $6F, $80, $85, $BE, $94 ; クッテヤルゾ!
 #_0AC675: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おもいしれ!
-Message_0AC676:
+Message_02_16_04:
 #_0AC676: db $29, $47, $26, $30, $4E, $94 ; おもいしれ!
 #_0AC67C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いけえ!
-Message_0AC67D:
+Message_02_16_05:
 #_0AC67D: db $26, $2D, $28, $94 ; いけえ!
 #_0AC681: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «いますぐ あのよに おくってやるぜー!!»
-Message_0AC682:
+Message_02_16_06:
 #_0AC682: db $EB, $2E ; [set2] prewritten text 2E
 #_0AC684: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AC685:
+Message_02_16_07:
 #_0AC685: db $EB, $0F ; [set2] prewritten text 0F
 #_0AC687: db $FF ; end of message
 
@@ -14502,7 +14497,7 @@ Message_0AC685:
 
 ; ほほお わがはいに ちょうせんするか?
 ; こうかいするぞ!
-Message_0AC688:
+Message_02_16_08:
 #_0AC688: db $42, $42, $29, $CF, $50, $9C, $3E, $26 ; ほほお⎵わがはい
 #_0AC690: db $3A, $CF, $35, $57, $27, $32, $52, $31 ; に⎵ちょうせんす
 #_0AC698: db $4D, $2A, $95 ; るか?
@@ -14514,7 +14509,7 @@ Message_0AC688:
 
 ; ひゃひゃ! やるき あんのオ?
 ; いきがって みたって むだ むだ!
-Message_0AC6A5:
+Message_02_16_09:
 #_0AC6A5: db $3F, $55, $3F, $55, $94, $CF, $48, $4D ; ひゃひゃ!⎵やる
 #_0AC6AD: db $2B, $CF, $25, $52, $3D, $61, $95 ; き⎵あんのオ?
 #_0AC6B4: db $F0 ; [set2] new line
@@ -14527,7 +14522,7 @@ Message_0AC6A5:
 
 ; やるきかよ? さあ こい!
 ; せいぜい たのしませて もらうぜ!
-Message_0AC6C7:
+Message_02_16_0A:
 #_0AC6C7: db $48, $4D, $2B, $2A, $4A, $95, $CF, $2F ; やるきかよ?⎵さ
 #_0AC6CF: db $25, $CF, $2E, $26, $94 ; あ⎵こい!
 #_0AC6D4: db $F0 ; [set2] new line
@@ -14539,7 +14534,7 @@ Message_0AC6C7:
 ;===================================================================================================
 
 ; >[DEMONX]は ちょうはつてきな たいどだ
-Message_0AC6E7:
+Message_02_16_0B:
 #_0AC6E7: db $97 ; >
 #_0AC6E8: db $ED ; [set2] write demon name indexed from $0526
 #_0AC6E9: db $3E, $CF, $35, $57, $27, $3E, $36, $37 ; は⎵ちょうはつて
@@ -14550,7 +14545,7 @@ Message_0AC6E7:
 
 ; うげげ! まってくれ! ほんきじゃ ないんです
 ; どうか おゆるしを! «なんでも いたしま»す
-Message_0AC6F9:
+Message_02_16_0C:
 #_0AC6F9: db $27, $9F, $9F, $94, $CF, $43, $58, $37 ; うげげ!⎵まって
 #_0AC701: db $2C, $4E, $94, $CF, $42, $52, $2B, $A2 ; くれ!⎵ほんきじ
 #_0AC709: db $55, $CF, $39, $26, $52, $A9, $31 ; ゃ⎵ないんです
@@ -14567,7 +14562,7 @@ Message_0AC6F9:
 ; オ・オイラは そんな つもりじゃあ・・・
 ; か・かるい ジョークなんです!
 ; みんなを あいしてます おゆるしください!
-Message_0AC720:
+Message_02_16_0D:
 #_0AC720: db $3F, $2B, $55, $58, $94 ; ひきゃっ!
 #_0AC725: db $EB, $04 ; [set2] prewritten text 04
 #_0AC727: db $F0 ; [set2] new line
@@ -14588,7 +14583,7 @@ Message_0AC720:
 
 ; わあ いまのは なし! おれが わるかった!
 ; な・«なんでも いたしま»す!
-Message_0AC764:
+Message_02_16_0E:
 #_0AC764: db $50, $25, $CF, $26, $43, $3D, $3E, $CF ; わあ⎵いまのは⎵
 #_0AC76C: db $39, $30, $94, $CF, $29, $4E, $9C, $CF ; なし!⎵おれが⎵
 #_0AC774: db $50, $4D, $2A, $58, $34, $94 ; わるかった!
@@ -14602,7 +14597,7 @@ Message_0AC764:
 
 ; >[DEMONX]は しかたなく こうべをたれ
 ; «[CHASE]の あしもとに ひざまづいた»
-Message_0AC782:
+Message_02_16_0F:
 #_0AC782: db $97 ; >
 #_0AC783: db $ED ; [set2] write demon name indexed from $0526
 #_0AC784: db $3E, $CF, $30, $2A, $34, $39, $2C, $CF ; は⎵しかたなく⎵
@@ -14614,7 +14609,7 @@ Message_0AC782:
 ;===================================================================================================
 
 ; わたあ! や・やめてくれー!
-Message_0AC796:
+Message_02_16_10:
 #_0AC796: db $50, $34, $25, $94, $CF, $48, $93, $48 ; わたあ!⎵や・や
 #_0AC79E: db $46, $37, $2C, $4E, $5A, $94 ; めてくれー!
 #_0AC7A4: db $FF ; end of message
@@ -14622,7 +14617,7 @@ Message_0AC796:
 ;===================================================================================================
 
 ; こんかいは みのがしてやらー! ひゃひゃ!
-Message_0AC7A5:
+Message_02_16_11:
 #_0AC7A5: db $2E, $52, $2A, $26, $3E, $CF, $44, $3D ; こんかいは⎵みの
 #_0AC7AD: db $9C, $30, $37, $48, $4B, $5A, $94, $CF ; がしてやらー!⎵
 #_0AC7B5: db $3F, $55, $3F, $55, $94 ; ひゃひゃ!
@@ -14631,7 +14626,7 @@ Message_0AC7A5:
 ;===================================================================================================
 
 ; おぼえてやがれー!
-Message_0AC7BB:
+Message_02_16_12:
 #_0AC7BB: db $29, $AF, $28, $37, $48, $9C, $4E, $5A ; おぼえてやがれー
 #_0AC7C3: db $94 ; !
 #_0AC7C4: db $FF ; end of message
@@ -14640,7 +14635,7 @@ Message_0AC7BB:
 
 ; «グオオオーン! [DEMONX]は くやしそうに»
 ; «ひとこえ ほえた»
-Message_0AC7C5:
+Message_02_16_13:
 #_0AC7C5: db $EB, $47 ; [set2] prewritten text 47
 #_0AC7C7: db $FF ; end of message
 
@@ -14650,7 +14645,7 @@ Message_0AC7C5:
 ; で?
 ; «ようを いってみろ»
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AC7C8:
+Message_02_16_14:
 #_0AC7C8: db $48, $58, $38, $CF, $50, $9C, $3E, $26 ; やっと⎵わがはい
 #_0AC7D0: db $3D, $CF, $26, $A6, $26, $2F, $9C, $CF ; の⎵いだいさが⎵
 #_0AC7D8: db $50, $2A, $58, $34, $2A, $95 ; わかったか?
@@ -14668,7 +14663,7 @@ Message_0AC7C8:
 ; ヒョエー! ニンゲンが オイラに ようかよ!
 ; よかよか ようかよー!
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AC7E9:
+Message_02_16_15:
 #_0AC7E9: db $77, $91, $60, $5A, $94, $CF, $72, $8A ; ヒョエー!⎵ニン
 #_0AC7F1: db $B8, $8A, $9C, $CF, $61, $5E, $83, $3A ; ゲンが⎵オイラに
 #_0AC7F9: db $CF, $4A, $27, $2A, $4A, $94 ; ⎵ようかよ!
@@ -14684,7 +14679,7 @@ Message_0AC7E9:
 
 ; «ようを いってみろ»
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AC810:
+Message_02_16_16:
 #_0AC810: db $EB, $06 ; [set2] prewritten text 06
 #_0AC812: db $F3 ; [set2] wait for key and new line
 #_0AC813: db $F1 ; [set2] clear message box
@@ -14694,14 +14689,14 @@ Message_0AC810:
 ;===================================================================================================
 
 ; «>[DEMONX]は きくたいせいに はいった»
-Message_0AC817:
+Message_02_16_17:
 #_0AC817: db $EB, $1C ; [set2] prewritten text 1C
 #_0AC819: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はーはっはっ ひざまづけえ!
-Message_0AC81A:
+Message_02_16_18:
 #_0AC81A: db $3E, $5A, $3E, $58, $3E, $58, $CF, $3F ; はーはっはっ⎵ひ
 #_0AC822: db $A1, $43, $A8, $2D, $28, $94 ; ざまづけえ!
 #_0AC828: db $FF ; end of message
@@ -14711,7 +14706,7 @@ Message_0AC81A:
 ; ヒャーハハハ!
 ; «ぶっとばしてやる»! «ぶっとばしてやる»!
 ; どこまでも «ぶっとばしてやる»ー!
-Message_0AC829:
+Message_02_16_19:
 #_0AC829: db $77, $8F, $5A, $76, $76, $76, $94 ; ヒャーハハハ!
 #_0AC830: db $F0 ; [set2] new line
 #_0AC831: db $EB, $07 ; [set2] prewritten text 07
@@ -14728,7 +14723,7 @@ Message_0AC829:
 
 ; オラオラー はやく オレの きげんを とらねえと
 ; バクハツ すっぞおー!
-Message_0AC844:
+Message_02_16_1A:
 #_0AC844: db $61, $83, $61, $83, $5A, $CF, $3E, $48 ; オラオラー⎵はや
 #_0AC84C: db $2C, $CF, $61, $86, $3D, $CF, $2B, $9F ; く⎵オレの⎵きげ
 #_0AC854: db $52, $51, $CF, $38, $4B, $3C, $28, $38 ; んを⎵とらねえと
@@ -14741,7 +14736,7 @@ Message_0AC844:
 
 ; グオアアアア!
 ; >[DEMONX]は ずにのって さわぎだした
-Message_0AC869:
+Message_02_16_1B:
 #_0AC869: db $B7, $61, $5D, $5D, $5D, $5D, $94 ; グオアアアア!
 #_0AC870: db $F3 ; [set2] wait for key and new line
 #_0AC871: db $F1 ; [set2] clear message box
@@ -14754,7 +14749,7 @@ Message_0AC869:
 ;===================================================================================================
 
 ; この [DEMONX]さまに たてつくか!
-Message_0AC883:
+Message_02_16_1C:
 #_0AC883: db $2E, $3D, $CF ; この⎵
 #_0AC886: db $ED ; [set2] write demon name indexed from $0526
 #_0AC887: db $2F, $43, $3A, $CF, $34, $37, $36, $2C ; さまに⎵たてつく
@@ -14764,7 +14759,7 @@ Message_0AC883:
 ;===================================================================================================
 
 ; ぎょえー! おそろしかあ!
-Message_0AC892:
+Message_02_16_1D:
 #_0AC892: db $9D, $57, $28, $5A, $94, $CF, $29, $33 ; ぎょえー!⎵おそ
 #_0AC89A: db $4F, $30, $2A, $25, $94 ; ろしかあ!
 #_0AC89F: db $FF ; end of message
@@ -14772,7 +14767,7 @@ Message_0AC892:
 ;===================================================================================================
 
 ; アクマを なめんじゃ ねーぞ!
-Message_0AC8A0:
+Message_02_16_1E:
 #_0AC8A0: db $5D, $64, $7B, $51, $CF, $39, $46, $52 ; アクマを⎵なめん
 #_0AC8A8: db $A2, $55, $CF, $3C, $5A, $A5, $94 ; じゃ⎵ねーぞ!
 #_0AC8AF: db $FF ; end of message
@@ -14780,7 +14775,7 @@ Message_0AC8A0:
 ;===================================================================================================
 
 ; >[DEMONX]は すこし ひるんだ
-Message_0AC8B0:
+Message_02_16_1F:
 #_0AC8B0: db $97 ; >
 #_0AC8B1: db $ED ; [set2] write demon name indexed from $0526
 #_0AC8B2: db $3E, $CF, $31, $2E, $30, $CF, $3F, $4D ; は⎵すこし⎵ひる
@@ -14791,7 +14786,7 @@ Message_0AC8B0:
 
 ; «みかけによらず どきょうが あるな!»
 ; «ようを いってみろ»
-Message_0AC8BD:
+Message_02_16_20:
 #_0AC8BD: db $EB, $09 ; [set2] prewritten text 09
 #_0AC8BF: db $F0 ; [set2] new line
 #_0AC8C0: db $EB, $06 ; [set2] prewritten text 06
@@ -14800,7 +14795,7 @@ Message_0AC8BD:
 ;===================================================================================================
 
 ; «みかけによらず どきょうが あるな!»
-Message_0AC8C3:
+Message_02_16_21:
 #_0AC8C3: db $EB, $09 ; [set2] prewritten text 09
 #_0AC8C5: db $FF ; end of message
 
@@ -14808,7 +14803,7 @@ Message_0AC8C3:
 
 ; けっ! ニンゲンが いきがってんじゃ ねーぜ
 ; おれに たのみごとが あんだろ!
-Message_0AC8C6:
+Message_02_16_22:
 #_0AC8C6: db $2D, $58, $94, $CF, $72, $8A, $B8, $8A ; けっ!⎵ニンゲン
 #_0AC8CE: db $9C, $CF, $26, $2B, $9C, $58, $37, $52 ; が⎵いきがってん
 #_0AC8D6: db $A2, $55, $CF, $3C, $5A, $A4 ; じゃ⎵ねーぜ
@@ -14820,7 +14815,7 @@ Message_0AC8C6:
 ;===================================================================================================
 
 ; [DEMONX]は ニヤリと わらった
-Message_0AC8EE:
+Message_02_16_23:
 #_0AC8EE: db $ED ; [set2] write demon name indexed from $0526
 #_0AC8EF: db $3E, $CF, $72, $80, $84, $38, $CF, $50 ; は⎵ニヤリと⎵わ
 #_0AC8F7: db $4B, $58, $34 ; らった
@@ -14829,7 +14824,7 @@ Message_0AC8EE:
 ;===================================================================================================
 
 ; ここは はなしあいで な?
-Message_0AC8FB:
+Message_02_16_24:
 #_0AC8FB: db $2E, $2E, $3E, $CF, $3E, $39, $30, $25 ; ここは⎵はなしあ
 #_0AC903: db $26, $A9, $CF, $39, $95 ; いで⎵な?
 #_0AC908: db $FF ; end of message
@@ -14838,7 +14833,7 @@ Message_0AC8FB:
 
 ; «ア・アンタ なにもんだよ ホントに ニンゲン?»
 ; «はなせば わかるよ・・・ナ?»
-Message_0AC909:
+Message_02_16_25:
 #_0AC909: db $EB, $0B ; [set2] prewritten text 0B
 #_0AC90B: db $F0 ; [set2] new line
 #_0AC90C: db $EB, $0C ; [set2] prewritten text 0C
@@ -14849,7 +14844,7 @@ Message_0AC909:
 ; げげっ «アンタは もしや!»
 ; «お・おれは そんな つもりじゃあ・・・»
 ; え? なにか おはなしでも?
-Message_0AC90F:
+Message_02_16_26:
 #_0AC90F: db $9F, $9F, $58, $CF ; げげっ⎵
 #_0AC913: db $EB, $04 ; [set2] prewritten text 04
 #_0AC915: db $F0 ; [set2] new line
@@ -14862,35 +14857,35 @@ Message_0AC90F:
 ;===================================================================================================
 
 ; «[DEMONX]は ひるんでいる»
-Message_0AC928:
+Message_02_16_27:
 #_0AC928: db $EB, $D3 ; [set2] prewritten text D3
 #_0AC92A: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AC92B:
+Message_02_16_28:
 #_0AC92B: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AC92C:
+Message_02_16_29:
 #_0AC92C: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AC92D:
+Message_02_16_2A:
 #_0AC92D: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AC92E:
+Message_02_16_2B:
 #_0AC92E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; く・くそお キサマ なにもんだ?
 ; これで みのがして くれよ
-Message_0AC92F:
+Message_02_16_2C:
 #_0AC92F: db $2C, $93, $2C, $33, $29, $CF, $63, $67 ; く・くそお⎵キサ
 #_0AC937: db $7B, $CF, $39, $3A, $47, $52, $A6, $95 ; マ⎵なにもんだ?
 #_0AC93F: db $F0 ; [set2] new line
@@ -14902,7 +14897,7 @@ Message_0AC92F:
 
 ; «ア・アンタ なにもんだよ ホントに ニンゲン?»
 ; これ やるから ほっといて ちょーだい!
-Message_0AC94E:
+Message_02_16_2D:
 #_0AC94E: db $EB, $0B ; [set2] prewritten text 0B
 #_0AC950: db $F0 ; [set2] new line
 #_0AC951: db $2E, $4E, $CF, $48, $4D, $2A, $4B, $CF ; これ⎵やるから⎵
@@ -14915,7 +14910,7 @@ Message_0AC94E:
 ; うげっ «アンタは もしや!»
 ; こ・これを どうぞ・・・
 ; そんじゃ わたしは しつれいして・・・・
-Message_0AC966:
+Message_02_16_2E:
 #_0AC966: db $27, $9F, $58, $CF ; うげっ⎵
 #_0AC96A: db $EB, $04 ; [set2] prewritten text 04
 #_0AC96C: db $F0 ; [set2] new line
@@ -14931,7 +14926,7 @@ Message_0AC966:
 
 ; >[DEMONX]は うわめづかいに
 ; «なにか さしだした»
-Message_0AC98F:
+Message_02_16_2F:
 #_0AC98F: db $97 ; >
 #_0AC990: db $ED ; [set2] write demon name indexed from $0526
 #_0AC991: db $3E, $CF, $27, $50, $46, $A8, $2A, $26 ; は⎵うわめづかい
@@ -14943,56 +14938,56 @@ Message_0AC98F:
 ;===================================================================================================
 
 ; «つぎにあうまで いのちを だいじに するんだな»
-Message_0AC99E:
+Message_02_16_30:
 #_0AC99E: db $EB, $24 ; [set2] prewritten text 24
 #_0AC9A0: db $FF ; end of message
 
 ;===================================================================================================
 
 ; バッハッハーイ!
-Message_0AC9A1:
+Message_02_16_31:
 #_0AC9A1: db $C4, $92, $76, $92, $76, $5A, $5E, $94 ; バッハッハーイ!
 #_0AC9A9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; あばよ!
-Message_0AC9AA:
+Message_02_16_32:
 #_0AC9AA: db $25, $AB, $4A, $94 ; あばよ!
 #_0AC9AE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AC9AF:
+Message_02_16_33:
 #_0AC9AF: db $EB, $0F ; [set2] prewritten text 0F
 #_0AC9B1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はーはははは!»
-Message_0AC9B2:
+Message_02_16_34:
 #_0AC9B2: db $EB, $61 ; [set2] prewritten text 61
 #_0AC9B4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ひゃっひゃっひゃ!»
-Message_0AC9B5:
+Message_02_16_35:
 #_0AC9B5: db $EB, $22 ; [set2] prewritten text 22
 #_0AC9B7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぎゃはははは!»
-Message_0AC9B8:
+Message_02_16_36:
 #_0AC9B8: db $EB, $20 ; [set2] prewritten text 20
 #_0AC9BA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぐッ・ぐッ・ぐッ・ぐッ»
-Message_0AC9BB:
+Message_02_16_37:
 #_0AC9BB: db $EB, $12 ; [set2] prewritten text 12
 #_0AC9BD: db $FF ; end of message
 
@@ -15000,7 +14995,7 @@ Message_0AC9BB:
 
 ; キサマ!« わがはいを だれだと おもっておる!»
 ; «[CLASSX] [DEMONX]さまだぞ!»
-Message_0AC9BE:
+Message_02_16_38:
 #_0AC9BE: db $63, $67, $7B, $94 ; キサマ!
 #_0AC9C2: db $EB, $1A ; [set2] prewritten text 1A
 #_0AC9C4: db $F0 ; [set2] new line
@@ -15011,7 +15006,7 @@ Message_0AC9BE:
 
 ; こいつ ちょーナマだぜい!
 ; «ぶっとばしてやる» ぜったい «ぶっとばしてやる»ー!
-Message_0AC9C8:
+Message_02_16_39:
 #_0AC9C8: db $2E, $26, $36, $CF, $35, $57, $5A, $71 ; こいつ⎵ちょーナ
 #_0AC9D0: db $7B, $A6, $A4, $26, $94 ; マだぜい!
 #_0AC9D5: db $F0 ; [set2] new line
@@ -15024,7 +15019,7 @@ Message_0AC9C8:
 ;===================================================================================================
 
 ; コノヤロー かくごは できてるだろーなあ!?
-Message_0AC9E3:
+Message_02_16_3A:
 #_0AC9E3: db $66, $75, $80, $87, $5A, $CF, $2A, $2C ; コノヤロー⎵かく
 #_0AC9EB: db $A0, $3E, $CF, $A9, $2B, $37, $4D, $A6 ; ごは⎵できてるだ
 #_0AC9F3: db $4F, $5A, $39, $25, $94, $95 ; ろーなあ!?
@@ -15034,7 +15029,7 @@ Message_0AC9E3:
 
 ; «グオオオオー!»
 ; >[DEMONX]は いきり たっている
-Message_0AC9FA:
+Message_02_16_3B:
 #_0AC9FA: db $EB, $0F ; [set2] prewritten text 0F
 #_0AC9FC: db $F3 ; [set2] wait for key and new line
 #_0AC9FD: db $F1 ; [set2] clear message box
@@ -15049,7 +15044,7 @@ Message_0AC9FA:
 ; はっはっはっ おもしろいやつ!
 ; «わがはいは [CLASSX] [DEMONX]!»
 ; なにようだ?
-Message_0ACA0C:
+Message_02_16_3C:
 #_0ACA0C: db $3E, $58, $3E, $58, $3E, $58, $CF, $29 ; はっはっはっ⎵お
 #_0ACA14: db $47, $30, $4F, $26, $48, $36, $94 ; もしろいやつ!
 #_0ACA1B: db $F0 ; [set2] new line
@@ -15062,7 +15057,7 @@ Message_0ACA0C:
 
 ; うひゃひゃひゃ! おもしろい ニンゲンだぜい
 ; オイラと あいしあいたいのかい?
-Message_0ACA26:
+Message_02_16_3D:
 #_0ACA26: db $27, $3F, $55, $3F, $55, $3F, $55, $94 ; うひゃひゃひゃ!
 #_0ACA2E: db $CF, $29, $47, $30, $4F, $26, $CF, $72 ; ⎵おもしろい⎵ニ
 #_0ACA36: db $8A, $B8, $8A, $A6, $A4, $26 ; ンゲンだぜい
@@ -15076,7 +15071,7 @@ Message_0ACA26:
 ; ヒーホー! «きにいった»ぜ!
 ; オレは [CLASSX] [DEMONX]!
 ; なんか ようか?
-Message_0ACA4E:
+Message_02_16_3E:
 #_0ACA4E: db $77, $5A, $7A, $5A, $94, $CF ; ヒーホー!⎵
 #_0ACA54: db $EB, $25 ; [set2] prewritten text 25
 #_0ACA56: db $A4, $94 ; ぜ!
@@ -15094,7 +15089,7 @@ Message_0ACA4E:
 
 ; «ぐッ・ぐッ・ぐッ・ぐッ»
 ; ナンノ ヨウダ?
-Message_0ACA6B:
+Message_02_16_3F:
 #_0ACA6B: db $EB, $12 ; [set2] prewritten text 12
 #_0ACA6D: db $F0 ; [set2] new line
 #_0ACA6E: db $71, $8A, $75, $CF, $82, $5F, $BF, $95 ; ナンノ⎵ヨウダ?
@@ -15108,7 +15103,7 @@ Message_0ACA6B:
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
-Message_0ACA77:
+Message_02_16_40:
 #_0ACA77: db $63, $67, $7B, $3D, $CF, $35, $2A, $4B ; キサマの⎵ちから
 #_0ACA7F: db $51, $CF, $44, $32, $37, $CF, $47, $4B ; を⎵みせて⎵もら
 #_0ACA87: db $29, $27, $2A, $95 ; おうか?
@@ -15131,7 +15126,7 @@ Message_0ACA77:
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
-Message_0ACA99:
+Message_02_16_41:
 #_0ACA99: db $EB, $1F ; [set2] prewritten text 1F
 #_0ACA9B: db $F3 ; [set2] wait for key and new line
 #_0ACA9C: db $F1 ; [set2] clear message box
@@ -15149,7 +15144,7 @@ Message_0ACA99:
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
-Message_0ACAA4:
+Message_02_16_42:
 #_0ACAA4: db $EB, $1F ; [set2] prewritten text 1F
 #_0ACAA6: db $F3 ; [set2] wait for key and new line
 #_0ACAA7: db $F1 ; [set2] clear message box
@@ -15165,7 +15160,7 @@ Message_0ACAA4:
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
-Message_0ACAAF:
+Message_02_16_43:
 #_0ACAAF: db $EB, $1D ; [set2] prewritten text 1D
 #_0ACAB1: db $F3 ; [set2] wait for key and new line
 #_0ACAB2: db $F1 ; [set2] clear message box
@@ -15175,55 +15170,55 @@ Message_0ACAAF:
 ;===================================================================================================
 
 ; «き・きさまあ・・・・・»
-Message_0ACAB6:
+Message_02_16_44:
 #_0ACAB6: db $EB, $15 ; [set2] prewritten text 15
 #_0ACAB8: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «やなやつ!»
-Message_0ACAB9:
+Message_02_16_45:
 #_0ACAB9: db $EB, $17 ; [set2] prewritten text 17
 #_0ACABB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «じょうとう じゃねえか!»
-Message_0ACABC:
+Message_02_16_46:
 #_0ACABC: db $EB, $18 ; [set2] prewritten text 18
 #_0ACABE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぐるるるるる・・・・»
-Message_0ACABF:
+Message_02_16_47:
 #_0ACABF: db $EB, $19 ; [set2] prewritten text 19
 #_0ACAC1: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAC2:
+Message_02_16_48:
 #_0ACAC2: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAC3:
+Message_02_16_49:
 #_0ACAC3: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAC4:
+Message_02_16_4A:
 #_0ACAC4: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAC5:
+Message_02_16_4B:
 #_0ACAC5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; まぬけづらが なに ニタニタしてんだ?
-Message_0ACAC6:
+Message_02_16_4C:
 #_0ACAC6: db $43, $3B, $2D, $A8, $4B, $9C, $CF, $39 ; まぬけづらが⎵な
 #_0ACACE: db $3A, $CF, $72, $6C, $72, $6C, $30, $37 ; に⎵ニタニタして
 #_0ACAD6: db $52, $A6, $95 ; んだ?
@@ -15233,7 +15228,7 @@ Message_0ACAC6:
 
 ; «ひゃーははは!»
 ; えに かいたような ばか!
-Message_0ACADA:
+Message_02_16_4D:
 #_0ACADA: db $EB, $01 ; [set2] prewritten text 01
 #_0ACADC: db $F0 ; [set2] new line
 #_0ACADD: db $28, $3A, $CF, $2A, $26, $34, $4A, $27 ; えに⎵かいたよう
@@ -15243,41 +15238,41 @@ Message_0ACADA:
 ;===================================================================================================
 
 ; «ケッ・・・きもちわるい ヤツ!»
-Message_0ACAEB:
+Message_02_16_4E:
 #_0ACAEB: db $EB, $1B ; [set2] prewritten text 1B
 #_0ACAED: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ニヤリ・・・
-Message_0ACAEE:
+Message_02_16_4F:
 #_0ACAEE: db $72, $80, $84, $93, $93, $93 ; ニヤリ・・・
 #_0ACAF4: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAF5:
+Message_02_16_50:
 #_0ACAF5: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAF6:
+Message_02_16_51:
 #_0ACAF6: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAF7:
+Message_02_16_52:
 #_0ACAF7: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACAF8:
+Message_02_16_53:
 #_0ACAF8: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ようが ないなら はなしかけるな!
-Message_0ACAF9:
+Message_02_16_54:
 #_0ACAF9: db $4A, $27, $9C, $CF, $39, $26, $39, $4B ; ようが⎵ないなら
 #_0ACB01: db $CF, $3E, $39, $30, $2A, $2D, $4D, $39 ; ⎵はなしかけるな
 #_0ACB09: db $94 ; !
@@ -15286,7 +15281,7 @@ Message_0ACAF9:
 ;===================================================================================================
 
 ; じゃあナ! こんかいは みのがして やるぜえ!
-Message_0ACB0B:
+Message_02_16_55:
 #_0ACB0B: db $A2, $55, $25, $71, $94, $CF, $2E, $52 ; じゃあナ!⎵こん
 #_0ACB13: db $2A, $26, $3E, $CF, $44, $3D, $9C, $30 ; かいは⎵みのがし
 #_0ACB1B: db $37, $CF, $48, $4D, $A4, $28, $94 ; て⎵やるぜえ!
@@ -15295,7 +15290,7 @@ Message_0ACB0B:
 ;===================================================================================================
 
 ; フン! おもしろくねえ オレは もう いくぜ!
-Message_0ACB23:
+Message_02_16_56:
 #_0ACB23: db $78, $8A, $94, $CF, $29, $47, $30, $4F ; フン!⎵おもしろ
 #_0ACB2B: db $2C, $3C, $28, $CF, $61, $86, $3E, $CF ; くねえ⎵オレは⎵
 #_0ACB33: db $47, $27, $CF, $26, $2C, $A4, $94 ; もう⎵いくぜ!
@@ -15304,28 +15299,28 @@ Message_0ACB23:
 ;===================================================================================================
 
 ; «[DEMONX]は きびすを かえした»
-Message_0ACB3B:
+Message_02_16_57:
 #_0ACB3B: db $EB, $3E ; [set2] prewritten text 3E
 #_0ACB3D: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB3E:
+Message_02_16_58:
 #_0ACB3E: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB3F:
+Message_02_16_59:
 #_0ACB3F: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB40:
+Message_02_16_5A:
 #_0ACB40: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB41:
+Message_02_16_5B:
 #_0ACB41: db $FF ; end of message
 
 ;===================================================================================================
@@ -15333,7 +15328,7 @@ Message_0ACB41:
 ; なにものだ? わがはいが [DEMONX]と
 ; しっての ことか?
 ; «>[DEMONX]は けいかい している»
-Message_0ACB42:
+Message_02_16_5C:
 #_0ACB42: db $39, $3A, $47, $3D, $A6, $95, $CF, $50 ; なにものだ?⎵わ
 #_0ACB4A: db $9C, $3E, $26, $9C, $CF ; がはいが⎵
 #_0ACB4F: db $ED ; [set2] write demon name indexed from $0526
@@ -15351,7 +15346,7 @@ Message_0ACB42:
 ; «ひゃっひゃっひゃ!»
 ; やれるもんなら やってみな!
 ; «>[DEMONX]は けいかい している»
-Message_0ACB60:
+Message_02_16_5D:
 #_0ACB60: db $EB, $22 ; [set2] prewritten text 22
 #_0ACB62: db $F0 ; [set2] new line
 #_0ACB63: db $48, $4E, $4D, $47, $52, $39, $4B, $CF ; やれるもんなら⎵
@@ -15366,7 +15361,7 @@ Message_0ACB60:
 ; オマエ デビル・バスターか?
 ; ならば ようしゃ しないぜ!
 ; «>[DEMONX]は けいかい している»
-Message_0ACB76:
+Message_02_16_5E:
 #_0ACB76: db $61, $7B, $60, $CF, $C2, $C5, $85, $93 ; オマエ⎵デビル・
 #_0ACB7E: db $C4, $69, $6C, $5A, $2A, $95 ; バスターか?
 #_0ACB84: db $F0 ; [set2] new line
@@ -15380,34 +15375,34 @@ Message_0ACB76:
 ;===================================================================================================
 
 ; «>[DEMONX]は けいかい している»
-Message_0ACB98:
+Message_02_16_5F:
 #_0ACB98: db $EB, $81 ; [set2] prewritten text 81
 #_0ACB9A: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB9B:
+Message_02_16_60:
 #_0ACB9B: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB9C:
+Message_02_16_61:
 #_0ACB9C: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB9D:
+Message_02_16_62:
 #_0ACB9D: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ACB9E:
+Message_02_16_63:
 #_0ACB9E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はーはははは!» あまい! あまいぞお!
-Message_0ACB9F:
+Message_02_16_64:
 #_0ACB9F: db $EB, $61 ; [set2] prewritten text 61
 #_0ACBA1: db $CF, $25, $43, $26, $94, $CF, $25, $43 ; ⎵あまい!⎵あま
 #_0ACBA9: db $26, $A5, $29, $94 ; いぞお!
@@ -15417,7 +15412,7 @@ Message_0ACB9F:
 
 ; «ひゃーははは!»
 ; これで こわいもん なし!
-Message_0ACBAE:
+Message_02_16_65:
 #_0ACBAE: db $EB, $01 ; [set2] prewritten text 01
 #_0ACBB0: db $F0 ; [set2] new line
 #_0ACBB1: db $2E, $4E, $A9, $CF, $2E, $50, $26, $47 ; これで⎵こわいも
@@ -15428,7 +15423,7 @@ Message_0ACBAE:
 
 ; «ぎゃはははは!»
 ; マヌケな やつめ!
-Message_0ACBBF:
+Message_02_16_66:
 #_0ACBBF: db $EB, $20 ; [set2] prewritten text 20
 #_0ACBC1: db $F0 ; [set2] new line
 #_0ACBC2: db $7B, $73, $65, $39, $CF, $48, $36, $46 ; マヌケな⎵やつめ
@@ -15438,7 +15433,7 @@ Message_0ACBBF:
 ;===================================================================================================
 
 ; ジャクニク キョウショク!
-Message_0ACBCC:
+Message_02_16_67:
 #_0ACBCC: db $BB, $8F, $64, $72, $64, $CF, $63, $91 ; ジャクニク⎵キョ
 #_0ACBD4: db $5F, $68, $91, $64, $94 ; ウショク!
 #_0ACBD9: db $FF ; end of message
@@ -15446,7 +15441,7 @@ Message_0ACBCC:
 ;===================================================================================================
 
 ; はなしが あるなら こっちに こい
-Message_0ACBDA:
+Message_02_16_68:
 #_0ACBDA: db $3E, $39, $30, $9C, $CF, $25, $4D, $39 ; はなしが⎵あるな
 #_0ACBE2: db $4B, $CF, $2E, $58, $35, $3A, $CF, $2E ; ら⎵こっちに⎵こ
 #_0ACBEA: db $26 ; い
@@ -15456,7 +15451,7 @@ Message_0ACBDA:
 
 ; どきょうが あるねえ!
 ; そんなら こっちにも これるかなあ?
-Message_0ACBEC:
+Message_02_16_69:
 #_0ACBEC: db $AA, $2B, $57, $27, $9C, $CF, $25, $4D ; どきょうが⎵ある
 #_0ACBF4: db $3C, $28, $94 ; ねえ!
 #_0ACBF7: db $F0 ; [set2] new line
@@ -15468,7 +15463,7 @@ Message_0ACBEC:
 ;===================================================================================================
 
 ; なんにも しないからよ ちょっと こっちこい
-Message_0ACC0B:
+Message_02_16_6A:
 #_0ACC0B: db $39, $52, $3A, $47, $CF, $30, $39, $26 ; なんにも⎵しない
 #_0ACC13: db $2A, $4B, $4A, $CF, $35, $57, $58, $38 ; からよ⎵ちょっと
 #_0ACC1B: db $CF, $2E, $58, $35, $2E, $26 ; ⎵こっちこい
@@ -15477,7 +15472,7 @@ Message_0ACC0B:
 ;===================================================================================================
 
 ; [DEMONX]は てまねき している
-Message_0ACC22:
+Message_02_16_6B:
 #_0ACC22: db $ED ; [set2] write demon name indexed from $0526
 #_0ACC23: db $3E, $CF, $37, $43, $3C, $2B, $CF, $30 ; は⎵てまねき⎵し
 #_0ACC2B: db $37, $26, $4D ; ている
@@ -15487,7 +15482,7 @@ Message_0ACC22:
 
 ; きさまの« ような ニンゲンは はじめてだ!»
 ; わがはいは «きにいった»ぞ
-Message_0ACC2F:
+Message_02_16_6C:
 #_0ACC2F: db $2B, $2F, $43, $3D ; きさまの
 #_0ACC33: db $EB, $21 ; [set2] prewritten text 21
 #_0ACC35: db $F0 ; [set2] new line
@@ -15500,7 +15495,7 @@ Message_0ACC2F:
 
 ; ヒーホー! なんて クレイジーな やつだい
 ; オイラ あいしちゃうぜ!
-Message_0ACC40:
+Message_02_16_6D:
 #_0ACC40: db $77, $5A, $7A, $5A, $94, $CF, $39, $52 ; ヒーホー!⎵なん
 #_0ACC48: db $37, $CF, $64, $86, $5E, $BB, $5A, $39 ; て⎵クレイジーな
 #_0ACC50: db $CF, $48, $36, $A6, $26 ; ⎵やつだい
@@ -15513,7 +15508,7 @@ Message_0ACC40:
 
 ; アンタの« ような ニンゲンは はじめてだ!»
 ; オレは いま もうれつに かんどうしている・・・
-Message_0ACC63:
+Message_02_16_6E:
 #_0ACC63: db $5D, $8A, $6C, $3D ; アンタの
 #_0ACC67: db $EB, $21 ; [set2] prewritten text 21
 #_0ACC69: db $F0 ; [set2] new line
@@ -15526,7 +15521,7 @@ Message_0ACC63:
 
 ; [DEMONX]は こうべを たれ
 ; «[CHASE]の あしもとに ひざまづいた»
-Message_0ACC83:
+Message_02_16_6F:
 #_0ACC83: db $ED ; [set2] write demon name indexed from $0526
 #_0ACC84: db $3E, $CF, $2E, $27, $AE, $51, $CF, $34 ; は⎵こうべを⎵た
 #_0ACC8C: db $4E ; れ
@@ -15537,7 +15532,7 @@ Message_0ACC83:
 ;===================================================================================================
 
 ; «おくびょうものに ようは ないわ!»
-Message_0ACC91:
+Message_02_16_70:
 #_0ACC91: db $EB, $56 ; [set2] prewritten text 56
 #_0ACC93: db $FF ; end of message
 
@@ -15545,7 +15540,7 @@ Message_0ACC91:
 
 ; «ひゃっひゃっひゃ!»
 ; そんな ゆうき あるわけ ないもんな
-Message_0ACC94:
+Message_02_16_71:
 #_0ACC94: db $EB, $22 ; [set2] prewritten text 22
 #_0ACC96: db $F0 ; [set2] new line
 #_0ACC97: db $33, $52, $39, $CF, $49, $27, $2B, $CF ; そんな⎵ゆうき⎵
@@ -15556,7 +15551,7 @@ Message_0ACC94:
 ;===================================================================================================
 
 ; «おじけづいたな!»
-Message_0ACCAA:
+Message_02_16_72:
 #_0ACCAA: db $EB, $57 ; [set2] prewritten text 57
 #_0ACCAC: db $FF ; end of message
 
@@ -15564,7 +15559,7 @@ Message_0ACCAA:
 
 ; フン!
 ; >[DEMONX]は はなで わらった
-Message_0ACCAD:
+Message_02_16_73:
 #_0ACCAD: db $78, $8A, $94 ; フン!
 #_0ACCB0: db $F3 ; [set2] wait for key and new line
 #_0ACCB1: db $F1 ; [set2] clear message box
@@ -15578,7 +15573,7 @@ Message_0ACCAD:
 
 ; わがはいを たおして
 ; なを あげようと いうのか?
-Message_0ACCBF:
+Message_02_16_74:
 #_0ACCBF: db $50, $9C, $3E, $26, $51, $CF, $34, $29 ; わがはいを⎵たお
 #_0ACCC7: db $30, $37 ; して
 #_0ACCC9: db $F0 ; [set2] new line
@@ -15590,7 +15585,7 @@ Message_0ACCBF:
 
 ; ひっ! やややや・やめろよ
 ; マジで オイラを ころそうってのか?
-Message_0ACCD9:
+Message_02_16_75:
 #_0ACCD9: db $3F, $58, $94, $CF, $48, $48, $48, $48 ; ひっ!⎵やややや
 #_0ACCE1: db $93, $48, $46, $4F, $4A ; ・やめろよ
 #_0ACCE6: db $F0 ; [set2] new line
@@ -15602,7 +15597,7 @@ Message_0ACCD9:
 ;===================================================================================================
 
 ; オレの いのちが ねらいなのか?
-Message_0ACCFA:
+Message_02_16_76:
 #_0ACCFA: db $61, $86, $3D, $CF, $26, $3D, $35, $9C ; オレの⎵いのちが
 #_0ACD02: db $CF, $3C, $4B, $26, $39, $3D, $2A, $95 ; ⎵ねらいなのか?
 #_0ACD0A: db $FF ; end of message
@@ -15610,7 +15605,7 @@ Message_0ACCFA:
 ;===================================================================================================
 
 ; アクマヲ コロシテ ヘイキナノカ?
-Message_0ACD0B:
+Message_02_16_77:
 #_0ACD0B: db $5D, $64, $7B, $89, $CF, $66, $87, $68 ; アクマヲ⎵コロシ
 #_0ACD13: db $6F, $CF, $79, $5E, $63, $71, $75, $62 ; テ⎵ヘイキナノカ
 #_0ACD1B: db $95 ; ?
@@ -15619,7 +15614,7 @@ Message_0ACD0B:
 ;===================================================================================================
 
 ; ひー! ルシファーさま おたすけー!
-Message_0ACD1D:
+Message_02_16_78:
 #_0ACD1D: db $3F, $5A, $94, $CF, $85, $68, $78, $8B ; ひー!⎵ルシファ
 #_0ACD25: db $5A, $2F, $43, $CF, $29, $34, $31, $2D ; ーさま⎵おたすけ
 #_0ACD2D: db $5A, $94 ; ー!
@@ -15629,7 +15624,7 @@ Message_0ACD1D:
 
 ; ひええー!
 ; おに! アクマ! ひとごろしいー!
-Message_0ACD30:
+Message_02_16_79:
 #_0ACD30: db $3F, $28, $28, $5A, $94 ; ひええー!
 #_0ACD35: db $F0 ; [set2] new line
 #_0ACD36: db $29, $3A, $94, $CF, $5D, $64, $7B, $94 ; おに!⎵アクマ!
@@ -15640,21 +15635,21 @@ Message_0ACD30:
 ;===================================================================================================
 
 ; だあー!
-Message_0ACD48:
+Message_02_16_7A:
 #_0ACD48: db $A6, $25, $5A, $94 ; だあー!
 #_0ACD4C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; オオーン!
-Message_0ACD4D:
+Message_02_16_7B:
 #_0ACD4D: db $61, $61, $5A, $8A, $94 ; オオーン!
 #_0ACD52: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わがはいに ナカマに なって ほしいのか?
-Message_0ACD53:
+Message_02_16_7C:
 #_0ACD53: db $50, $9C, $3E, $26, $3A, $CF, $71, $62 ; わがはいに⎵ナカ
 #_0ACD5B: db $7B, $3A, $CF, $39, $58, $37, $CF, $42 ; マに⎵なって⎵ほ
 #_0ACD63: db $30, $26, $3D, $2A, $95 ; しいのか?
@@ -15663,7 +15658,7 @@ Message_0ACD53:
 ;===================================================================================================
 
 ; オイラに ナカマに なれってか?
-Message_0ACD69:
+Message_02_16_7D:
 #_0ACD69: db $61, $5E, $83, $3A, $CF, $71, $62, $7B ; オイラに⎵ナカマ
 #_0ACD71: db $3A, $CF, $39, $4E, $58, $37, $2A, $95 ; に⎵なれってか?
 #_0ACD79: db $FF ; end of message
@@ -15671,7 +15666,7 @@ Message_0ACD69:
 ;===================================================================================================
 
 ; «ニンゲンの ナカマに なれだと?»
-Message_0ACD7A:
+Message_02_16_7E:
 #_0ACD7A: db $EB, $23 ; [set2] prewritten text 23
 #_0ACD7C: db $FF ; end of message
 
@@ -15679,7 +15674,7 @@ Message_0ACD7A:
 
 ; >[DEMONX]は [CHASE]の
 ; なかまに なろうかと なやんでいる
-Message_0ACD7D:
+Message_02_16_7F:
 #_0ACD7D: db $97 ; >
 #_0ACD7E: db $ED ; [set2] write demon name indexed from $0526
 #_0ACD7F: db $3E, $CF ; は⎵
@@ -15694,7 +15689,7 @@ Message_0ACD7D:
 ;===================================================================================================
 
 ; わがはいには みかたが おおぜい いるんだぞ
-Message_0ACD96:
+Message_02_16_80:
 #_0ACD96: db $50, $9C, $3E, $26, $3A, $3E, $CF, $44 ; わがはいには⎵み
 #_0ACD9E: db $2A, $34, $9C, $CF, $29, $29, $A4, $26 ; かたが⎵おおぜい
 #_0ACDA6: db $CF, $26, $4D, $52, $A6, $A5 ; ⎵いるんだぞ
@@ -15703,7 +15698,7 @@ Message_0ACD96:
 ;===================================================================================================
 
 ; オイラの ダチを しょうかいするぜ!
-Message_0ACDAD:
+Message_02_16_81:
 #_0ACDAD: db $61, $5E, $83, $3D, $CF, $BF, $6D, $51 ; オイラの⎵ダチを
 #_0ACDB5: db $CF, $30, $57, $27, $2A, $26, $31, $4D ; ⎵しょうかいする
 #_0ACDBD: db $A4, $94 ; ぜ!
@@ -15712,14 +15707,14 @@ Message_0ACDAD:
 ;===================================================================================================
 
 ; «>[DEMONX]は くちぶえを ふいた»
-Message_0ACDC0:
+Message_02_16_82:
 #_0ACDC0: db $EB, $AF ; [set2] prewritten text AF
 #_0ACDC2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0ACDC3:
+Message_02_16_83:
 #_0ACDC3: db $EB, $0F ; [set2] prewritten text 0F
 #_0ACDC5: db $FF ; end of message
 
@@ -15727,7 +15722,7 @@ Message_0ACDC3:
 
 ; «わがはいは [CLASSX] [DEMONX]!»
 ; わがはいの めいせいを きいて やってきたのか?
-Message_0ACDC6:
+Message_02_16_84:
 #_0ACDC6: db $EB, $11 ; [set2] prewritten text 11
 #_0ACDC8: db $F0 ; [set2] new line
 #_0ACDC9: db $50, $9C, $3E, $26, $3D, $CF, $46, $26 ; わがはいの⎵めい
@@ -15740,7 +15735,7 @@ Message_0ACDC6:
 ; オイラ じぶんには あきあきしてんだ・・・
 ; ナカマに なるからサ
 ; かわいいコと がったい させてくれるか?
-Message_0ACDE2:
+Message_02_16_85:
 #_0ACDE2: db $61, $5E, $83, $CF, $A2, $AD, $52, $3A ; オイラ⎵じぶんに
 #_0ACDEA: db $3E, $CF, $25, $2B, $25, $2B, $30, $37 ; は⎵あきあきして
 #_0ACDF2: db $52, $A6, $93, $93, $93 ; んだ・・・
@@ -15757,7 +15752,7 @@ Message_0ACDE2:
 
 ; おまえら ニンゲンは すくいが ねえんだ
 ; そうだろ すくわれ ねえんだよ・・・・
-Message_0ACE18:
+Message_02_16_86:
 #_0ACE18: db $29, $43, $28, $4B, $CF, $72, $8A, $B8 ; おまえら⎵ニンゲ
 #_0ACE20: db $8A, $3E, $CF, $31, $2C, $26, $9C, $CF ; ンは⎵すくいが⎵
 #_0ACE28: db $3C, $28, $52, $A6 ; ねえんだ
@@ -15770,7 +15765,7 @@ Message_0ACE18:
 ;===================================================================================================
 
 ; オレガ スキカ?
-Message_0ACE41:
+Message_02_16_87:
 #_0ACE41: db $61, $86, $B5, $CF, $69, $63, $62, $95 ; オレガ⎵スキカ?
 #_0ACE49: db $FF ; end of message
 
@@ -15778,7 +15773,7 @@ Message_0ACE41:
 
 ; そうかそうか かんしんな やつめ
 ; «はなしを きいてやろう»
-Message_0ACE4A:
+Message_02_16_88:
 #_0ACE4A: db $33, $27, $2A, $33, $27, $2A, $CF, $2A ; そうかそうか⎵か
 #_0ACE52: db $52, $30, $52, $39, $CF, $48, $36, $46 ; んしんな⎵やつめ
 #_0ACE5A: db $F0 ; [set2] new line
@@ -15792,7 +15787,7 @@ Message_0ACE4A:
 
 ; そんなら アンタの まごころを
 ; みせて もらいたいナ
-Message_0ACE65:
+Message_02_16_89:
 #_0ACE65: db $33, $52, $39, $4B, $CF, $5D, $8A, $6C ; そんなら⎵アンタ
 #_0ACE6D: db $3D, $CF, $43, $A0, $2E, $4F, $51 ; の⎵まごころを
 #_0ACE74: db $F0 ; [set2] new line
@@ -15806,7 +15801,7 @@ Message_0ACE65:
 ;===================================================================================================
 
 ; そうだろ だから はやいとこ しんじまいな!
-Message_0ACE87:
+Message_02_16_8A:
 #_0ACE87: db $33, $27, $A6, $4F, $CF, $A6, $2A, $4B ; そうだろ⎵だから
 #_0ACE8F: db $CF, $3E, $48, $26, $38, $2E, $CF, $30 ; ⎵はやいとこ⎵し
 #_0ACE97: db $52, $A2, $43, $26, $39, $94 ; んじまいな!
@@ -15816,7 +15811,7 @@ Message_0ACE87:
 ;===================================================================================================
 
 ; ナラ ナニカ クレ・・・
-Message_0ACEA1:
+Message_02_16_8B:
 #_0ACEA1: db $71, $83, $CF, $71, $72, $62, $CF, $64 ; ナラ⎵ナニカ⎵ク
 #_0ACEA9: db $86, $93, $93, $93 ; レ・・・
 #_0ACEAD: db $F3 ; [set2] wait for key and new line
@@ -15827,7 +15822,7 @@ Message_0ACEA1:
 ;===================================================================================================
 
 ; よしよし きさまらには これを やろう
-Message_0ACEB5:
+Message_02_16_8C:
 #_0ACEB5: db $4A, $30, $4A, $30, $CF, $2B, $2F, $43 ; よしよし⎵きさま
 #_0ACEBD: db $4B, $3A, $3E, $CF, $2E, $4E, $51, $CF ; らには⎵これを⎵
 #_0ACEC5: db $48, $4F, $27 ; やろう
@@ -15838,7 +15833,7 @@ Message_0ACEB5:
 ;===================================================================================================
 
 ; やっぱ しんよう できないぜ
-Message_0ACECE:
+Message_02_16_8D:
 #_0ACECE: db $48, $58, $B0, $CF, $30, $52, $4A, $27 ; やっぱ⎵しんよう
 #_0ACED6: db $CF, $A9, $2B, $39, $26, $A4 ; ⎵できないぜ
 #_0ACEDC: db $F3 ; [set2] wait for key and new line
@@ -15850,7 +15845,7 @@ Message_0ACECE:
 ; だから オレが すくって やるって
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0ACEE1:
+Message_02_16_8E:
 #_0ACEE1: db $A6, $2A, $4B, $CF, $61, $86, $9C, $CF ; だから⎵オレが⎵
 #_0ACEE9: db $31, $2C, $58, $37, $CF, $48, $4D, $58 ; すくって⎵やるっ
 #_0ACEF1: db $37 ; て
@@ -15863,7 +15858,7 @@ Message_0ACEE1:
 ;===================================================================================================
 
 ; オレ キライダ!
-Message_0ACEF9:
+Message_02_16_8F:
 #_0ACEF9: db $61, $86, $CF, $63, $83, $5E, $BF, $94 ; オレ⎵キライダ!
 #_0ACF01: db $F3 ; [set2] wait for key and new line
 #_0ACF02: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -15872,7 +15867,7 @@ Message_0ACEF9:
 ;===================================================================================================
 
 ; きさま さては いなかものだな!
-Message_0ACF06:
+Message_02_16_90:
 #_0ACF06: db $2B, $2F, $43, $CF, $2F, $37, $3E, $CF ; きさま⎵さては⎵
 #_0ACF0E: db $26, $39, $2A, $47, $3D, $A6, $39, $94 ; いなかものだな!
 #_0ACF16: db $F3 ; [set2] wait for key and new line
@@ -15881,7 +15876,7 @@ Message_0ACF06:
 ;===================================================================================================
 
 ; オイラは しぬまで ヤル だけさ!
-Message_0ACF19:
+Message_02_16_91:
 #_0ACF19: db $61, $5E, $83, $3E, $CF, $30, $3B, $43 ; オイラは⎵しぬま
 #_0ACF21: db $A9, $CF, $80, $85, $CF, $A6, $2D, $2F ; で⎵ヤル⎵だけさ
 #_0ACF29: db $94 ; !
@@ -15891,7 +15886,7 @@ Message_0ACF19:
 ;===================================================================================================
 
 ; すくわれるか どうか おれが みてやるぜ
-Message_0ACF2E:
+Message_02_16_92:
 #_0ACF2E: db $31, $2C, $50, $4E, $4D, $2A, $CF, $AA ; すくわれるか⎵ど
 #_0ACF36: db $27, $2A, $CF, $29, $4E, $9C, $CF, $44 ; うか⎵おれが⎵み
 #_0ACF3E: db $37, $48, $4D, $A4 ; てやるぜ
@@ -15901,7 +15896,7 @@ Message_0ACF2E:
 ;===================================================================================================
 
 ; イケズ・・・
-Message_0ACF46:
+Message_02_16_93:
 #_0ACF46: db $5E, $65, $BC, $93, $93, $93 ; イケズ・・・
 #_0ACF4C: db $F3 ; [set2] wait for key and new line
 #_0ACF4D: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -15911,7 +15906,7 @@ Message_0ACF46:
 
 ; とっとと かえれ このタコ!
 ; «>[DEMONX]は さっていった»
-Message_0ACF51:
+Message_02_16_94:
 #_0ACF51: db $38, $58, $38, $38, $CF, $2A, $28, $4E ; とっとと⎵かえれ
 #_0ACF59: db $CF, $2E, $3D, $6C, $66, $94 ; ⎵このタコ!
 #_0ACF5F: db $F3 ; [set2] wait for key and new line
@@ -15923,7 +15918,7 @@ Message_0ACF51:
 ;===================================================================================================
 
 ; オイラ もてねえしなあ・・・
-Message_0ACF66:
+Message_02_16_95:
 #_0ACF66: db $61, $5E, $83, $CF, $47, $37, $3C, $28 ; オイラ⎵もてねえ
 #_0ACF6E: db $30, $39, $25, $93, $93, $93 ; しなあ・・・
 #_0ACF74: db $F3 ; [set2] wait for key and new line
@@ -15932,7 +15927,7 @@ Message_0ACF66:
 ;===================================================================================================
 
 ; メシアだろうと ニンゲンは みんな くずだぜ!
-Message_0ACF77:
+Message_02_16_96:
 #_0ACF77: db $7E, $68, $5D, $A6, $4F, $27, $38, $CF ; メシアだろうと⎵
 #_0ACF7F: db $72, $8A, $B8, $8A, $3E, $CF, $44, $52 ; ニンゲンは⎵みん
 #_0ACF87: db $39, $CF, $2C, $A3, $A6, $A4, $94 ; な⎵くずだぜ!
@@ -15943,7 +15938,7 @@ Message_0ACF77:
 
 ; ダガ オレハ スキダ・・・
 ; クッチマイタイ ホド!
-Message_0ACF91:
+Message_02_16_97:
 #_0ACF91: db $BF, $B5, $CF, $61, $86, $76, $CF, $69 ; ダガ⎵オレハ⎵ス
 #_0ACF99: db $63, $BF, $93, $93, $93 ; キダ・・・
 #_0ACF9E: db $F0 ; [set2] new line
@@ -15956,7 +15951,7 @@ Message_0ACF91:
 
 ; わがはいに であうとは
 ; キサマも うんが なかったな
-Message_0ACFAE:
+Message_02_16_98:
 #_0ACFAE: db $50, $9C, $3E, $26, $3A, $CF, $A9, $25 ; わがはいに⎵であ
 #_0ACFB6: db $27, $38, $3E ; うとは
 #_0ACFB9: db $F0 ; [set2] new line
@@ -15968,7 +15963,7 @@ Message_0ACFAE:
 
 ; おうちに かえって ママに かわいがって
 ; もらいな! «ひゃーははは!»
-Message_0ACFC9:
+Message_02_16_99:
 #_0ACFC9: db $29, $27, $35, $3A, $CF, $2A, $28, $58 ; おうちに⎵かえっ
 #_0ACFD1: db $37, $CF, $7B, $7B, $3A, $CF, $2A, $50 ; て⎵ママに⎵かわ
 #_0ACFD9: db $26, $9C, $58, $37 ; いがって
@@ -15980,7 +15975,7 @@ Message_0ACFC9:
 ;===================================================================================================
 
 ; ガキが かっこつけて アクマたいじか?
-Message_0ACFE7:
+Message_02_16_9A:
 #_0ACFE7: db $B5, $63, $9C, $CF, $2A, $58, $2E, $36 ; ガキが⎵かっこつ
 #_0ACFEF: db $2D, $37, $CF, $5D, $64, $7B, $34, $26 ; けて⎵アクマたい
 #_0ACFF7: db $A2, $2A, $95 ; じか?
@@ -15989,7 +15984,7 @@ Message_0ACFE7:
 ;===================================================================================================
 
 ; オマエハ ニクダ・・・
-Message_0ACFFB:
+Message_02_16_9B:
 #_0ACFFB: db $61, $7B, $60, $76, $CF, $72, $64, $BF ; オマエハ⎵ニクダ
 #_0AD003: db $93, $93, $93 ; ・・・
 #_0AD006: db $FF ; end of message
@@ -15998,7 +15993,7 @@ Message_0ACFFB:
 
 ; そのとおり! わがはいは さいこうに
 ; すばらしいのだ!! はっはっはっ!
-Message_0AD007:
+Message_02_16_9C:
 #_0AD007: db $33, $3D, $38, $29, $4C, $94, $CF, $50 ; そのとおり!⎵わ
 #_0AD00F: db $9C, $3E, $26, $3E, $CF, $2F, $26, $2E ; がはいは⎵さいこ
 #_0AD017: db $27, $3A ; うに
@@ -16012,7 +16007,7 @@ Message_0AD007:
 
 ; «ひゃっひゃっひゃ!»
 ; おだてても なんにも でないぜ!
-Message_0AD02C:
+Message_02_16_9D:
 #_0AD02C: db $EB, $22 ; [set2] prewritten text 22
 #_0AD02E: db $F0 ; [set2] new line
 #_0AD02F: db $29, $A6, $37, $37, $47, $CF, $39, $52 ; おだてても⎵なん
@@ -16022,7 +16017,7 @@ Message_0AD02C:
 ;===================================================================================================
 
 ; くちが うまい やつだぜ・・・へへっ
-Message_0AD040:
+Message_02_16_9E:
 #_0AD040: db $2C, $35, $9C, $CF, $27, $43, $26, $CF ; くちが⎵うまい⎵
 #_0AD048: db $48, $36, $A6, $A4, $93, $93, $93, $41 ; やつだぜ・・・へ
 #_0AD050: db $41, $58 ; へっ
@@ -16031,7 +16026,7 @@ Message_0AD040:
 ;===================================================================================================
 
 ; >[DEMONX]は ニヤニヤしている
-Message_0AD053:
+Message_02_16_9F:
 #_0AD053: db $97 ; >
 #_0AD054: db $ED ; [set2] write demon name indexed from $0526
 #_0AD055: db $3E, $CF, $72, $80, $72, $80, $30, $37 ; は⎵ニヤニヤして
@@ -16042,7 +16037,7 @@ Message_0AD053:
 
 ; ふはははは じつに きぶんがよい!
 ; なんなりと いってみろ
-Message_0AD060:
+Message_02_16_A0:
 #_0AD060: db $40, $3E, $3E, $3E, $3E, $CF, $A2, $36 ; ふはははは⎵じつ
 #_0AD068: db $3A, $CF, $2B, $AD, $52, $9C, $4A, $26 ; に⎵きぶんがよい
 #_0AD070: db $94 ; !
@@ -16055,7 +16050,7 @@ Message_0AD060:
 
 ; «ひゃっひゃっひゃ!»
 ; コリャ おいしすぎるぜ! なにが ねらいだ?
-Message_0AD07E:
+Message_02_16_A1:
 #_0AD07E: db $EB, $22 ; [set2] prewritten text 22
 #_0AD080: db $F0 ; [set2] new line
 #_0AD081: db $66, $84, $8F, $CF, $29, $26, $30, $31 ; コリャ⎵おいしす
@@ -16067,7 +16062,7 @@ Message_0AD07E:
 
 ; びてきセンスの いいやつだな
 ; «はなしを きいてやろう»
-Message_0AD098:
+Message_02_16_A2:
 #_0AD098: db $AC, $37, $2B, $6A, $8A, $69, $3D, $CF ; びてきセンスの⎵
 #_0AD0A0: db $26, $26, $48, $36, $A6, $39 ; いいやつだな
 #_0AD0A6: db $F0 ; [set2] new line
@@ -16078,7 +16073,7 @@ Message_0AD098:
 
 ; オマエ イイヤツ・・・
 ; ナニガ ホシイ?
-Message_0AD0AA:
+Message_02_16_A3:
 #_0AD0AA: db $61, $7B, $60, $CF, $5E, $5E, $80, $6E ; オマエ⎵イイヤツ
 #_0AD0B2: db $93, $93, $93 ; ・・・
 #_0AD0B5: db $F0 ; [set2] new line
@@ -16089,7 +16084,7 @@ Message_0AD0AA:
 
 ; しらじらしい ことを!
 ; ふざけるな!!
-Message_0AD0BF:
+Message_02_16_A4:
 #_0AD0BF: db $30, $4B, $A2, $4B, $30, $26, $CF, $2E ; しらじらしい⎵こ
 #_0AD0C7: db $38, $51, $94 ; とを!
 #_0AD0CA: db $F0 ; [set2] new line
@@ -16100,7 +16095,7 @@ Message_0AD0BF:
 
 ; «ひゃっひゃっひゃ!»
 ; その セリフ はがういて ぬけちまうぜ!
-Message_0AD0D3:
+Message_02_16_A5:
 #_0AD0D3: db $EB, $22 ; [set2] prewritten text 22
 #_0AD0D5: db $F0 ; [set2] new line
 #_0AD0D6: db $33, $3D, $CF, $6A, $84, $78, $CF, $3E ; その⎵セリフ⎵は
@@ -16112,7 +16107,7 @@ Message_0AD0D3:
 
 ; ほんとは みにくい アクマだと おもってんだろ!
 ; «ばかに し»やがって!!
-Message_0AD0EB:
+Message_02_16_A6:
 #_0AD0EB: db $42, $52, $38, $3E, $CF, $44, $3A, $2C ; ほんとは⎵みにく
 #_0AD0F3: db $26, $CF, $5D, $64, $7B, $A6, $38, $CF ; い⎵アクマだと⎵
 #_0AD0FB: db $29, $47, $58, $37, $52, $A6, $4F, $94 ; おもってんだろ!
@@ -16124,7 +16119,7 @@ Message_0AD0EB:
 ;===================================================================================================
 
 ; オマエ ウソツキ!
-Message_0AD10D:
+Message_02_16_A7:
 #_0AD10D: db $61, $7B, $60, $CF, $5F, $6B, $6E, $63 ; オマエ⎵ウソツキ
 #_0AD115: db $94 ; !
 #_0AD116: db $FF ; end of message
@@ -16133,7 +16128,7 @@ Message_0AD10D:
 
 ; まあ まて
 ; もっと いいことは ないのか?
-Message_0AD117:
+Message_02_16_A8:
 #_0AD117: db $43, $25, $CF, $43, $37 ; まあ⎵まて
 #_0AD11C: db $F0 ; [set2] new line
 #_0AD11D: db $47, $58, $38, $CF, $26, $26, $2E, $38 ; もっと⎵いいこと
@@ -16144,7 +16139,7 @@ Message_0AD117:
 
 ; «ひゃっひゃっひゃ!»
 ; にげるなよ はなしは まだだろ
-Message_0AD12D:
+Message_02_16_A9:
 #_0AD12D: db $EB, $22 ; [set2] prewritten text 22
 #_0AD12F: db $F0 ; [set2] new line
 #_0AD130: db $3A, $9F, $4D, $39, $4A, $CF, $3E, $39 ; にげるなよ⎵はな
@@ -16155,7 +16150,7 @@ Message_0AD12D:
 
 ; そう いそぐなよ
 ; もうすこし はなしてけ
-Message_0AD140:
+Message_02_16_AA:
 #_0AD140: db $33, $27, $CF, $26, $33, $9E, $39, $4A ; そう⎵いそぐなよ
 #_0AD148: db $F0 ; [set2] new line
 #_0AD149: db $47, $27, $31, $2E, $30, $CF, $3E, $39 ; もうすこし⎵はな
@@ -16166,35 +16161,35 @@ Message_0AD140:
 
 ; «[DEMONX]が [CHASE]の»
 ; «ふくを かんで ひきとめた»
-Message_0AD155:
+Message_02_16_AB:
 #_0AD155: db $EB, $3F ; [set2] prewritten text 3F
 #_0AD157: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD158:
+Message_02_16_AC:
 #_0AD158: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD159:
+Message_02_16_AD:
 #_0AD159: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD15A:
+Message_02_16_AE:
 #_0AD15A: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD15B:
+Message_02_16_AF:
 #_0AD15B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ふん・・・きさまには あきた
 ; «これでも もって とっとと うせろ!»
-Message_0AD15C:
+Message_02_16_B0:
 #_0AD15C: db $40, $52, $93, $93, $93, $2B, $2F, $43 ; ふん・・・きさま
 #_0AD164: db $3A, $3E, $CF, $25, $2B, $34 ; には⎵あきた
 #_0AD16A: db $F0 ; [set2] new line
@@ -16205,7 +16200,7 @@ Message_0AD15C:
 
 ; «ひゃっひゃっひゃ!»
 ; なさけないヤツ・・・もお サイコーだぜ
-Message_0AD16E:
+Message_02_16_B1:
 #_0AD16E: db $EB, $22 ; [set2] prewritten text 22
 #_0AD170: db $F0 ; [set2] new line
 #_0AD171: db $39, $2F, $2D, $39, $26, $80, $6E, $93 ; なさけないヤツ・
@@ -16217,7 +16212,7 @@ Message_0AD16E:
 
 ; くだらねえ
 ; «これでも もって とっとと うせろ!»
-Message_0AD185:
+Message_02_16_B2:
 #_0AD185: db $2C, $A6, $4B, $3C, $28 ; くだらねえ
 #_0AD18A: db $F0 ; [set2] new line
 #_0AD18B: db $EB, $2B ; [set2] prewritten text 2B
@@ -16226,7 +16221,7 @@ Message_0AD185:
 ;===================================================================================================
 
 ; >[DEMONX]は あきれて なにか くれた
-Message_0AD18E:
+Message_02_16_B3:
 #_0AD18E: db $97 ; >
 #_0AD18F: db $ED ; [set2] write demon name indexed from $0526
 #_0AD190: db $3E, $CF, $25, $2B, $4E, $37, $CF, $39 ; は⎵あきれて⎵な
@@ -16237,7 +16232,7 @@ Message_0AD18E:
 
 ; «くだらんものと はなす ひまは ない»
 ; «さらば・・・»
-Message_0AD19F:
+Message_02_16_B4:
 #_0AD19F: db $EB, $5B ; [set2] prewritten text 5B
 #_0AD1A1: db $FF ; end of message
 
@@ -16245,7 +16240,7 @@ Message_0AD19F:
 
 ; «ひゃっひゃっひゃ!» はやく かえって
 ; ママの おっぱいでも しゃぶりな
-Message_0AD1A2:
+Message_02_16_B5:
 #_0AD1A2: db $EB, $22 ; [set2] prewritten text 22
 #_0AD1A4: db $CF, $3E, $48, $2C, $CF, $2A, $28, $58 ; ⎵はやく⎵かえっ
 #_0AD1AC: db $37 ; て
@@ -16257,7 +16252,7 @@ Message_0AD1A2:
 ;===================================================================================================
 
 ; «ケッ・・・きもちわるい ヤツ!»
-Message_0AD1BF:
+Message_02_16_B6:
 #_0AD1BF: db $EB, $1B ; [set2] prewritten text 1B
 #_0AD1C1: db $FF ; end of message
 
@@ -16265,7 +16260,7 @@ Message_0AD1BF:
 
 ; ニヤリ・・・
 ; >[DEMONX]は あきれたわらいをうかべた
-Message_0AD1C2:
+Message_02_16_B7:
 #_0AD1C2: db $72, $80, $84, $93, $93, $93 ; ニヤリ・・・
 #_0AD1C8: db $F3 ; [set2] wait for key and new line
 #_0AD1C9: db $F1 ; [set2] clear message box
@@ -16279,7 +16274,7 @@ Message_0AD1C2:
 
 ; «わがはいは [CLASSX] [DEMONX]!»
 ; いったい なんの ようだ?
-Message_0AD1DB:
+Message_02_16_B8:
 #_0AD1DB: db $EB, $11 ; [set2] prewritten text 11
 #_0AD1DD: db $F0 ; [set2] new line
 #_0AD1DE: db $26, $58, $34, $26, $CF, $39, $52, $3D ; いったい⎵なんの
@@ -16290,7 +16285,7 @@ Message_0AD1DB:
 
 ; オイラは [DEMONX]だ
 ; ようが あるんだろ? きいてやるぜ
-Message_0AD1EC:
+Message_02_16_B9:
 #_0AD1EC: db $61, $5E, $83, $3E, $CF ; オイラは⎵
 #_0AD1F1: db $ED ; [set2] write demon name indexed from $0526
 #_0AD1F2: db $A6 ; だ
@@ -16304,7 +16299,7 @@ Message_0AD1EC:
 
 ; ふん・・・きどりやがって まっ・・
 ; «はなしを きいてやろう»
-Message_0AD206:
+Message_02_16_BA:
 #_0AD206: db $40, $52, $93, $93, $93, $2B, $AA, $4C ; ふん・・・きどり
 #_0AD20E: db $48, $9C, $58, $37, $CF, $43, $58, $93 ; やがって⎵まっ・
 #_0AD216: db $93 ; ・
@@ -16316,7 +16311,7 @@ Message_0AD206:
 
 ; «グオオオオー!»
 ; >[DEMONX]は なのりに こたえた
-Message_0AD21B:
+Message_02_16_BB:
 #_0AD21B: db $EB, $0F ; [set2] prewritten text 0F
 #_0AD21D: db $F3 ; [set2] wait for key and new line
 #_0AD21E: db $F1 ; [set2] clear message box
@@ -16329,14 +16324,14 @@ Message_0AD21B:
 ;===================================================================================================
 
 ; «きいたこと ないぞ»
-Message_0AD22D:
+Message_02_16_BC:
 #_0AD22D: db $EB, $2C ; [set2] prewritten text 2C
 #_0AD22F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はあ? だれだってえ?
-Message_0AD230:
+Message_02_16_BD:
 #_0AD230: db $3E, $25, $95, $CF, $A6, $4E, $A6, $58 ; はあ?⎵だれだっ
 #_0AD238: db $37, $28, $95 ; てえ?
 #_0AD23B: db $FF ; end of message
@@ -16344,21 +16339,21 @@ Message_0AD230:
 ;===================================================================================================
 
 ; しらねえなあ!
-Message_0AD23C:
+Message_02_16_BE:
 #_0AD23C: db $30, $4B, $3C, $28, $39, $25, $94 ; しらねえなあ!
 #_0AD243: db $FF ; end of message
 
 ;===================================================================================================
 
 ; シラヌ・・・
-Message_0AD244:
+Message_02_16_BF:
 #_0AD244: db $68, $83, $73, $93, $93, $93 ; シラヌ・・・
 #_0AD24A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ナカマを よろしく»おねがいします
-Message_0AD24B:
+Message_02_16_C0:
 #_0AD24B: db $EB, $B6 ; [set2] prewritten text B6
 #_0AD24D: db $29, $3C, $9C, $26, $30, $43, $31 ; おねがいします
 #_0AD254: db $FF ; end of message
@@ -16367,7 +16362,7 @@ Message_0AD24B:
 
 ; ヒーホー!
 ; オイラの ダチと «なかよくして»ちょーだい
-Message_0AD255:
+Message_02_16_C1:
 #_0AD255: db $77, $5A, $7A, $5A, $94 ; ヒーホー!
 #_0AD25A: db $F0 ; [set2] new line
 #_0AD25B: db $61, $5E, $83, $3D, $CF, $BF, $6D, $38 ; オイラの⎵ダチと
@@ -16379,7 +16374,7 @@ Message_0AD255:
 ;===================================================================================================
 
 ; «ナカマを »たのむぜ!
-Message_0AD26C:
+Message_02_16_C2:
 #_0AD26C: db $EB, $B5 ; [set2] prewritten text B5
 #_0AD26E: db $34, $3D, $45, $A4, $94 ; たのむぜ!
 #_0AD273: db $FF ; end of message
@@ -16387,21 +16382,21 @@ Message_0AD26C:
 ;===================================================================================================
 
 ; «ナカマヲ タノム»
-Message_0AD274:
+Message_02_16_C3:
 #_0AD274: db $EB, $B9 ; [set2] prewritten text B9
 #_0AD276: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おそいわあ!»
-Message_0AD277:
+Message_02_17_00:
 #_0AD277: db $EB, $2D ; [set2] prewritten text 2D
 #_0AD279: db $FF ; end of message
 
 ;===================================================================================================
 
 ; こうかい さきに たたずってね
-Message_0AD27A:
+Message_02_17_01:
 #_0AD27A: db $2E, $27, $2A, $26, $CF, $2F, $2B, $3A ; こうかい⎵さきに
 #_0AD282: db $CF, $34, $34, $A3, $58, $37, $3C ; ⎵たたずってね
 #_0AD289: db $FF ; end of message
@@ -16409,7 +16404,7 @@ Message_0AD27A:
 ;===================================================================================================
 
 ; いまさら ておくれだぜ!
-Message_0AD28A:
+Message_02_17_02:
 #_0AD28A: db $26, $43, $2F, $4B, $CF, $37, $29, $2C ; いまさら⎵ておく
 #_0AD292: db $4E, $A6, $A4, $94 ; れだぜ!
 #_0AD296: db $FF ; end of message
@@ -16417,21 +16412,21 @@ Message_0AD28A:
 ;===================================================================================================
 
 ; イマサラ・・・
-Message_0AD297:
+Message_02_17_03:
 #_0AD297: db $5E, $7B, $67, $83, $93, $93, $93 ; イマサラ・・・
 #_0AD29E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «は! な・なんの ごようで しょうか?»
-Message_0AD29F:
+Message_02_17_04:
 #_0AD29F: db $EB, $5E ; [set2] prewritten text 5E
 #_0AD2A1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はい? なんでしょうか?
-Message_0AD2A2:
+Message_02_17_05:
 #_0AD2A2: db $3E, $26, $95, $CF, $39, $52, $A9, $30 ; はい?⎵なんでし
 #_0AD2AA: db $57, $27, $2A, $95 ; ょうか?
 #_0AD2AE: db $FF ; end of message
@@ -16439,7 +16434,7 @@ Message_0AD2A2:
 ;===================================================================================================
 
 ; ご・ごようは なんなりと・・・
-Message_0AD2AF:
+Message_02_17_06:
 #_0AD2AF: db $A0, $93, $A0, $4A, $27, $3E, $CF, $39 ; ご・ごようは⎵な
 #_0AD2B7: db $52, $39, $4C, $38, $93, $93, $93 ; んなりと・・・
 #_0AD2BE: db $FF ; end of message
@@ -16447,14 +16442,14 @@ Message_0AD2AF:
 ;===================================================================================================
 
 ; «[DEMONX]は ひるんでいる»
-Message_0AD2BF:
+Message_02_17_07:
 #_0AD2BF: db $EB, $D3 ; [set2] prewritten text D3
 #_0AD2C1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ばかづらを しかめて なにかの げいか?
-Message_0AD2C2:
+Message_02_17_08:
 #_0AD2C2: db $AB, $2A, $A8, $4B, $51, $CF, $30, $2A ; ばかづらを⎵しか
 #_0AD2CA: db $46, $37, $CF, $39, $3A, $2A, $3D, $CF ; めて⎵なにかの⎵
 #_0AD2D2: db $9F, $26, $2A, $95 ; げいか?
@@ -16463,7 +16458,7 @@ Message_0AD2C2:
 ;===================================================================================================
 
 ; そんなに みつめちゃ いやん!
-Message_0AD2D7:
+Message_02_17_09:
 #_0AD2D7: db $33, $52, $39, $3A, $CF, $44, $36, $46 ; そんなに⎵みつめ
 #_0AD2DF: db $35, $55, $CF, $26, $48, $52, $94 ; ちゃ⎵いやん!
 #_0AD2E6: db $FF ; end of message
@@ -16471,14 +16466,14 @@ Message_0AD2D7:
 ;===================================================================================================
 
 ; «なに やってんだ?»
-Message_0AD2E7:
+Message_02_17_0A:
 #_0AD2E7: db $EB, $60 ; [set2] prewritten text 60
 #_0AD2E9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[DEMONX]も にらみかえした
-Message_0AD2EA:
+Message_02_17_0B:
 #_0AD2EA: db $97 ; >
 #_0AD2EB: db $ED ; [set2] write demon name indexed from $0526
 #_0AD2EC: db $47, $CF, $3A, $4B, $44, $2A, $28, $30 ; も⎵にらみかえし
@@ -16488,7 +16483,7 @@ Message_0AD2EA:
 ;===================================================================================================
 
 ; おれさまの ちからを おもいしれ!
-Message_0AD2F6:
+Message_02_17_0C:
 #_0AD2F6: db $29, $4E, $2F, $43, $3D, $CF, $35, $2A ; おれさまの⎵ちか
 #_0AD2FE: db $4B, $51, $CF, $29, $47, $26, $30, $4E ; らを⎵おもいしれ
 #_0AD306: db $94 ; !
@@ -16498,7 +16493,7 @@ Message_0AD2F6:
 
 ; «ひゃーははは!»
 ; しね! しね! しねー!
-Message_0AD308:
+Message_02_17_0D:
 #_0AD308: db $EB, $01 ; [set2] prewritten text 01
 #_0AD30A: db $F0 ; [set2] new line
 #_0AD30B: db $30, $3C, $94, $CF, $30, $3C, $94, $CF ; しね!⎵しね!⎵
@@ -16509,7 +16504,7 @@ Message_0AD308:
 
 ; «オレは きょう ちに うえてるんだ!»
 ; «いますぐ あのよに おくってやるぜー!!»
-Message_0AD318:
+Message_02_17_0E:
 #_0AD318: db $EB, $02 ; [set2] prewritten text 02
 #_0AD31A: db $F0 ; [set2] new line
 #_0AD31B: db $EB, $2E ; [set2] prewritten text 2E
@@ -16518,21 +16513,21 @@ Message_0AD318:
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AD31E:
+Message_02_17_0F:
 #_0AD31E: db $EB, $0F ; [set2] prewritten text 0F
 #_0AD320: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «もう 1ど チャンスを やろう»
-Message_0AD321:
+Message_02_17_10:
 #_0AD321: db $EB, $2F ; [set2] prewritten text 2F
 #_0AD323: db $FF ; end of message
 
 ;===================================================================================================
 
 ; どうにでも しろい!
-Message_0AD324:
+Message_02_17_11:
 #_0AD324: db $AA, $27, $3A, $A9, $47, $CF, $30, $4F ; どうにでも⎵しろ
 #_0AD32C: db $26, $94 ; い!
 #_0AD32E: db $FF ; end of message
@@ -16540,14 +16535,14 @@ Message_0AD324:
 ;===================================================================================================
 
 ; «もう 1ど チャンスを やろう»
-Message_0AD32F:
+Message_02_17_12:
 #_0AD32F: db $EB, $2F ; [set2] prewritten text 2F
 #_0AD331: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ウルルル・・・・
-Message_0AD332:
+Message_02_17_13:
 #_0AD332: db $5F, $85, $85, $85, $93, $93, $93, $93 ; ウルルル・・・・
 #_0AD33A: db $FF ; end of message
 
@@ -16555,7 +16550,7 @@ Message_0AD332:
 
 ; き・きさま ただものでは ないな?
 ; «はなしを きこうじゃないか»
-Message_0AD33B:
+Message_02_17_14:
 #_0AD33B: db $2B, $93, $2B, $2F, $43, $CF, $34, $A6 ; き・きさま⎵ただ
 #_0AD343: db $47, $3D, $A9, $3E, $CF, $39, $26, $39 ; ものでは⎵ないな
 #_0AD34B: db $95 ; ?
@@ -16567,7 +16562,7 @@ Message_0AD33B:
 
 ; «ひゃーははは!»
 ; まいったね! はなしに ノルよ
-Message_0AD350:
+Message_02_17_15:
 #_0AD350: db $EB, $01 ; [set2] prewritten text 01
 #_0AD352: db $F0 ; [set2] new line
 #_0AD353: db $43, $26, $58, $34, $3C, $94, $CF, $3E ; まいったね!⎵は
@@ -16578,7 +16573,7 @@ Message_0AD350:
 
 ; «アンタは もしや!»
 ; な・なんの ようだ?
-Message_0AD363:
+Message_02_17_16:
 #_0AD363: db $EB, $04 ; [set2] prewritten text 04
 #_0AD365: db $F0 ; [set2] new line
 #_0AD366: db $39, $93, $39, $52, $3D, $CF, $4A, $27 ; な・なんの⎵よう
@@ -16588,28 +16583,28 @@ Message_0AD363:
 ;===================================================================================================
 
 ; デキルナ・・・
-Message_0AD371:
+Message_02_17_17:
 #_0AD371: db $C2, $63, $85, $71, $93, $93, $93 ; デキルナ・・・
 #_0AD378: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ようが あるなら なを なのれ»
-Message_0AD379:
+Message_02_17_18:
 #_0AD379: db $EB, $64 ; [set2] prewritten text 64
 #_0AD37B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; アンタ だれさ?
-Message_0AD37C:
+Message_02_17_19:
 #_0AD37C: db $5D, $8A, $6C, $CF, $A6, $4E, $2F, $95 ; アンタ⎵だれさ?
 #_0AD384: db $FF ; end of message
 
 ;===================================================================================================
 
 ; オマエ なにもんだ?
-Message_0AD385:
+Message_02_17_1A:
 #_0AD385: db $61, $7B, $60, $CF, $39, $3A, $47, $52 ; オマエ⎵なにもん
 #_0AD38D: db $A6, $95 ; だ?
 #_0AD38F: db $FF ; end of message
@@ -16617,7 +16612,7 @@ Message_0AD385:
 ;===================================================================================================
 
 ; ナニモノダ?
-Message_0AD390:
+Message_02_17_1B:
 #_0AD390: db $71, $72, $7F, $75, $BF, $95 ; ナニモノダ?
 #_0AD396: db $FF ; end of message
 
@@ -16625,7 +16620,7 @@ Message_0AD390:
 
 ; «キサマが・・・・»
 ; «はなしを きこうじゃないか»
-Message_0AD397:
+Message_02_17_1C:
 #_0AD397: db $EB, $65 ; [set2] prewritten text 65
 #_0AD399: db $F0 ; [set2] new line
 #_0AD39A: db $EB, $30 ; [set2] prewritten text 30
@@ -16635,7 +16630,7 @@ Message_0AD397:
 
 ; へー アンタがねえ・・・
 ; その [CHASE]さまが なんの ごようで?
-Message_0AD39D:
+Message_02_17_1D:
 #_0AD39D: db $41, $5A, $CF, $5D, $8A, $6C, $9C, $3C ; へー⎵アンタがね
 #_0AD3A5: db $28, $93, $93, $93 ; え・・・
 #_0AD3A9: db $F0 ; [set2] new line
@@ -16649,7 +16644,7 @@ Message_0AD39D:
 
 ; «ようを いってみろ»
 ; «はなしを きこうじゃないか»
-Message_0AD3BC:
+Message_02_17_1E:
 #_0AD3BC: db $EB, $31 ; [set2] prewritten text 31
 #_0AD3BE: db $F0 ; [set2] new line
 #_0AD3BF: db $EB, $30 ; [set2] prewritten text 30
@@ -16658,7 +16653,7 @@ Message_0AD3BC:
 ;===================================================================================================
 
 ; オマエガ ソウカ・・・・
-Message_0AD3C2:
+Message_02_17_1F:
 #_0AD3C2: db $61, $7B, $60, $B5, $CF, $6B, $5F, $62 ; オマエガ⎵ソウカ
 #_0AD3CA: db $93, $93, $93, $93 ; ・・・・
 #_0AD3CE: db $FF ; end of message
@@ -16667,7 +16662,7 @@ Message_0AD3C2:
 
 ; «おれさまは [￥GIVEME] いただきたい»
 ; «これで ナカマに なろう»
-Message_0AD3CF:
+Message_02_17_20:
 #_0AD3CF: db $EB, $40 ; [set2] prewritten text 40
 #_0AD3D1: db $FF ; end of message
 
@@ -16675,7 +16670,7 @@ Message_0AD3CF:
 
 ; オイラは [￥GIVEME] が ほしいな
 ; そしたら ナカマに なってやるよ
-Message_0AD3D2:
+Message_02_17_21:
 #_0AD3D2: db $61, $5E, $83, $3E, $CF ; オイラは⎵
 #_0AD3D7: db $F6 ; [set2] ask for currency or item
 #_0AD3D8: db $CF, $9C, $CF, $42, $30, $26, $39 ; ⎵が⎵ほしいな
@@ -16688,7 +16683,7 @@ Message_0AD3D2:
 
 ; [￥GIVEME] よこせ
 ; そしたら かんがえなくも ない
-Message_0AD3F1:
+Message_02_17_22:
 #_0AD3F1: db $F6 ; [set2] ask for currency or item
 #_0AD3F2: db $CF, $4A, $2E, $32 ; ⎵よこせ
 #_0AD3F6: db $F0 ; [set2] new line
@@ -16700,7 +16695,7 @@ Message_0AD3F1:
 
 ; «[DEMONX]は [￥GIVEME] を»
 ; «ほしがっている»
-Message_0AD407:
+Message_02_17_23:
 #_0AD407: db $EB, $33 ; [set2] prewritten text 33
 #_0AD409: db $F0 ; [set2] new line
 #_0AD40A: db $EB, $32 ; [set2] prewritten text 32
@@ -16710,7 +16705,7 @@ Message_0AD407:
 
 ; «さらに [￥GIVEME] いただきたい»
 ; «これで きめよう»
-Message_0AD40D:
+Message_02_17_24:
 #_0AD40D: db $EB, $6A ; [set2] prewritten text 6A
 #_0AD40F: db $FF ; end of message
 
@@ -16718,7 +16713,7 @@ Message_0AD40D:
 
 ; あと [￥GIVEME] ほしいな
 ; いいだろ?
-Message_0AD410:
+Message_02_17_25:
 #_0AD410: db $25, $38, $CF ; あと⎵
 #_0AD413: db $F6 ; [set2] ask for currency or item
 #_0AD414: db $CF, $42, $30, $26, $39 ; ⎵ほしいな
@@ -16730,7 +16725,7 @@ Message_0AD410:
 
 ; さらに [￥GIVEME] だ
 ; もってんだろ?
-Message_0AD420:
+Message_02_17_26:
 #_0AD420: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AD424: db $F6 ; [set2] ask for currency or item
 #_0AD425: db $CF, $A6 ; ⎵だ
@@ -16742,7 +16737,7 @@ Message_0AD420:
 
 ; «[DEMONX]は さらに [￥GIVEME]» を
 ; «ほしがっている»
-Message_0AD430:
+Message_02_17_27:
 #_0AD430: db $EB, $43 ; [set2] prewritten text 43
 #_0AD432: db $CF, $51 ; ⎵を
 #_0AD434: db $F0 ; [set2] new line
@@ -16753,14 +16748,14 @@ Message_0AD430:
 
 ; «ならば [￥GIVEME] いただきたい»
 ; «これで きめよう»
-Message_0AD438:
+Message_02_17_28:
 #_0AD438: db $EB, $6D ; [set2] prewritten text 6D
 #_0AD43A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; じゃあ [￥GIVEME] なら いいだろ?
-Message_0AD43B:
+Message_02_17_29:
 #_0AD43B: db $A2, $55, $25, $CF ; じゃあ⎵
 #_0AD43F: db $F6 ; [set2] ask for currency or item
 #_0AD440: db $CF, $39, $4B, $CF, $26, $26, $A6, $4F ; ⎵なら⎵いいだろ
@@ -16771,7 +16766,7 @@ Message_0AD43B:
 
 ; では [￥GIVEME] だ
 ; もってんだろ?
-Message_0AD44A:
+Message_02_17_2A:
 #_0AD44A: db $A9, $3E, $CF ; では⎵
 #_0AD44D: db $F6 ; [set2] ask for currency or item
 #_0AD44E: db $CF, $A6 ; ⎵だ
@@ -16783,7 +16778,7 @@ Message_0AD44A:
 
 ; «[DEMONX]は [￥GIVEME] を»
 ; «ほしがっている»
-Message_0AD459:
+Message_02_17_2B:
 #_0AD459: db $EB, $33 ; [set2] prewritten text 33
 #_0AD45B: db $F0 ; [set2] new line
 #_0AD45C: db $EB, $32 ; [set2] prewritten text 32
@@ -16792,7 +16787,7 @@ Message_0AD459:
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
-Message_0AD45F:
+Message_02_17_2C:
 #_0AD45F: db $EB, $35 ; [set2] prewritten text 35
 #_0AD461: db $FF ; end of message
 
@@ -16800,7 +16795,7 @@ Message_0AD45F:
 
 ; へっへっへっ
 ; まだ もってんだろ!
-Message_0AD462:
+Message_02_17_2D:
 #_0AD462: db $41, $58, $41, $58, $41, $58 ; へっへっへっ
 #_0AD468: db $F0 ; [set2] new line
 #_0AD469: db $43, $A6, $CF, $47, $58, $37, $52, $A6 ; まだ⎵もってんだ
@@ -16810,7 +16805,7 @@ Message_0AD462:
 ;===================================================================================================
 
 ; やっぱ ものたりねえな
-Message_0AD474:
+Message_02_17_2E:
 #_0AD474: db $48, $58, $B0, $CF, $47, $3D, $34, $4C ; やっぱ⎵ものたり
 #_0AD47C: db $3C, $28, $39 ; ねえな
 #_0AD47F: db $FF ; end of message
@@ -16818,42 +16813,42 @@ Message_0AD474:
 ;===================================================================================================
 
 ; モットクレ!
-Message_0AD480:
+Message_02_17_2F:
 #_0AD480: db $7F, $92, $70, $64, $86, $94 ; モットクレ!
 #_0AD486: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AD487:
+Message_02_17_30:
 #_0AD487: db $EB, $36 ; [set2] prewritten text 36
 #_0AD489: db $FF ; end of message
 
 ;===================================================================================================
 
 ; そうかよ!
-Message_0AD48A:
+Message_02_17_31:
 #_0AD48A: db $33, $27, $2A, $4A, $94 ; そうかよ!
 #_0AD48F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AD490:
+Message_02_17_32:
 #_0AD490: db $EB, $36 ; [set2] prewritten text 36
 #_0AD492: db $FF ; end of message
 
 ;===================================================================================================
 
 ; グルルル・・・・
-Message_0AD493:
+Message_02_17_33:
 #_0AD493: db $B7, $85, $85, $85, $93, $93, $93, $93 ; グルルル・・・・
 #_0AD49B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; うーん ものたりんぞお!
-Message_0AD49C:
+Message_02_17_34:
 #_0AD49C: db $27, $5A, $52, $CF, $47, $3D, $34, $4C ; うーん⎵ものたり
 #_0AD4A4: db $52, $A5, $29, $94 ; んぞお!
 #_0AD4A8: db $FF ; end of message
@@ -16861,7 +16856,7 @@ Message_0AD49C:
 ;===================================================================================================
 
 ; やっぱ やめたー!
-Message_0AD4A9:
+Message_02_17_35:
 #_0AD4A9: db $48, $58, $B0, $CF, $48, $46, $34, $5A ; やっぱ⎵やめたー
 #_0AD4B1: db $94 ; !
 #_0AD4B2: db $FF ; end of message
@@ -16869,7 +16864,7 @@ Message_0AD4A9:
 ;===================================================================================================
 
 ; オレは なんで こんなコト してるんだー!
-Message_0AD4B3:
+Message_02_17_36:
 #_0AD4B3: db $61, $86, $3E, $CF, $39, $52, $A9, $CF ; オレは⎵なんで⎵
 #_0AD4BB: db $2E, $52, $39, $66, $70, $CF, $30, $37 ; こんなコト⎵して
 #_0AD4C3: db $4D, $52, $A6, $5A, $94 ; るんだー!
@@ -16878,14 +16873,14 @@ Message_0AD4B3:
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AD4C9:
+Message_02_17_37:
 #_0AD4C9: db $EB, $0F ; [set2] prewritten text 0F
 #_0AD4CB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なにい!? ゆ・ゆるさん!
-Message_0AD4CC:
+Message_02_17_38:
 #_0AD4CC: db $39, $3A, $26, $94, $95, $CF, $49, $93 ; なにい!?⎵ゆ・
 #_0AD4D4: db $49, $4D, $2F, $52, $94 ; ゆるさん!
 #_0AD4D9: db $FF ; end of message
@@ -16893,7 +16888,7 @@ Message_0AD4CC:
 ;===================================================================================================
 
 ; [￥GIVEME] じゃなきゃ やだー!
-Message_0AD4DA:
+Message_02_17_39:
 #_0AD4DA: db $F6 ; [set2] ask for currency or item
 #_0AD4DB: db $CF, $A2, $55, $39, $2B, $55, $CF, $48 ; ⎵じゃなきゃ⎵や
 #_0AD4E3: db $A6, $5A, $94 ; だー!
@@ -16902,7 +16897,7 @@ Message_0AD4DA:
 ;===================================================================================================
 
 ; なにい!? ふざけるんじゃ ないぞ!
-Message_0AD4E7:
+Message_02_17_3A:
 #_0AD4E7: db $39, $3A, $26, $94, $95, $CF, $40, $A1 ; なにい!?⎵ふざ
 #_0AD4EF: db $2D, $4D, $52, $A2, $55, $CF, $39, $26 ; けるんじゃ⎵ない
 #_0AD4F7: db $A5, $94 ; ぞ!
@@ -16911,7 +16906,7 @@ Message_0AD4E7:
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AD4FA:
+Message_02_17_3B:
 #_0AD4FA: db $EB, $0F ; [set2] prewritten text 0F
 #_0AD4FC: db $FF ; end of message
 
@@ -16919,7 +16914,7 @@ Message_0AD4FA:
 
 ; «うーむ まだ ものたりんな»
 ; «キサマの いのちを いただこう!»
-Message_0AD4FD:
+Message_02_17_3C:
 #_0AD4FD: db $EB, $35 ; [set2] prewritten text 35
 #_0AD4FF: db $F0 ; [set2] new line
 #_0AD500: db $EB, $70 ; [set2] prewritten text 70
@@ -16928,7 +16923,7 @@ Message_0AD4FD:
 ;===================================================================================================
 
 ; ついでに« アンタの いのちが ほしいナ!»
-Message_0AD503:
+Message_02_17_3D:
 #_0AD503: db $36, $26, $A9, $3A ; ついでに
 #_0AD507: db $EB, $37 ; [set2] prewritten text 37
 #_0AD509: db $FF ; end of message
@@ -16937,7 +16932,7 @@ Message_0AD503:
 
 ; ものたりん!
 ; «オマエの いのちも よこせ!»
-Message_0AD50A:
+Message_02_17_3E:
 #_0AD50A: db $47, $3D, $34, $4C, $52, $94 ; ものたりん!
 #_0AD510: db $F0 ; [set2] new line
 #_0AD511: db $EB, $71 ; [set2] prewritten text 71
@@ -16946,7 +16941,7 @@ Message_0AD50A:
 ;===================================================================================================
 
 ; オマエガ ホシイ!
-Message_0AD514:
+Message_02_17_3F:
 #_0AD514: db $61, $7B, $60, $B5, $CF, $7A, $68, $5E ; オマエガ⎵ホシイ
 #_0AD51C: db $94 ; !
 #_0AD51D: db $FF ; end of message
@@ -16954,7 +16949,7 @@ Message_0AD514:
 ;===================================================================================================
 
 ; ならば キサマの いのちを いただきたい
-Message_0AD51E:
+Message_02_17_40:
 #_0AD51E: db $39, $4B, $AB, $CF, $63, $67, $7B, $3D ; ならば⎵キサマの
 #_0AD526: db $CF, $26, $3D, $35, $51, $CF, $26, $34 ; ⎵いのちを⎵いた
 #_0AD52E: db $A6, $2B, $34, $26 ; だきたい
@@ -16963,7 +16958,7 @@ Message_0AD51E:
 ;===================================================================================================
 
 ; じゃあ« アンタの いのちが ほしいナ!»
-Message_0AD533:
+Message_02_17_41:
 #_0AD533: db $A2, $55, $25 ; じゃあ
 #_0AD536: db $EB, $37 ; [set2] prewritten text 37
 #_0AD538: db $FF ; end of message
@@ -16971,21 +16966,21 @@ Message_0AD533:
 ;===================================================================================================
 
 ; «そんなら オマエの いのちを よこせ!»
-Message_0AD539:
+Message_02_17_42:
 #_0AD539: db $EB, $38 ; [set2] prewritten text 38
 #_0AD53B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ナラバ チ・ダ!
-Message_0AD53C:
+Message_02_17_43:
 #_0AD53C: db $71, $83, $C4, $CF, $6D, $93, $BF, $94 ; ナラバ⎵チ・ダ!
 #_0AD544: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きさま «やっぱり かねが ねらいか!»
-Message_0AD545:
+Message_02_17_44:
 #_0AD545: db $2B, $2F, $43, $CF ; きさま⎵
 #_0AD549: db $EB, $39 ; [set2] prewritten text 39
 #_0AD54B: db $FF ; end of message
@@ -16993,56 +16988,56 @@ Message_0AD545:
 ;===================================================================================================
 
 ; «かねだってえ!? かねだってえ!?»
-Message_0AD54C:
+Message_02_17_45:
 #_0AD54C: db $EB, $75 ; [set2] prewritten text 75
 #_0AD54E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «やっぱり かねが ねらいか!»
-Message_0AD54F:
+Message_02_17_46:
 #_0AD54F: db $EB, $39 ; [set2] prewritten text 39
 #_0AD551: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AD552:
+Message_02_17_47:
 #_0AD552: db $EB, $0F ; [set2] prewritten text 0F
 #_0AD554: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AD555:
+Message_02_17_48:
 #_0AD555: db $EB, $36 ; [set2] prewritten text 36
 #_0AD557: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぜったい やだー!»
-Message_0AD558:
+Message_02_17_49:
 #_0AD558: db $EB, $3A ; [set2] prewritten text 3A
 #_0AD55A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AD55B:
+Message_02_17_4A:
 #_0AD55B: db $EB, $36 ; [set2] prewritten text 36
 #_0AD55D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
-Message_0AD55E:
+Message_02_17_4B:
 #_0AD55E: db $EB, $0F ; [set2] prewritten text 0F
 #_0AD560: db $FF ; end of message
 
 ;===================================================================================================
 
 ; では さしあげよう!
-Message_0AD561:
+Message_02_17_4C:
 #_0AD561: db $A9, $3E, $CF, $2F, $30, $25, $9F, $4A ; では⎵さしあげよ
 #_0AD569: db $27, $94 ; う!
 #_0AD56B: db $FF ; end of message
@@ -17050,21 +17045,21 @@ Message_0AD561:
 ;===================================================================================================
 
 ; «こいつを もって とっとと きえな!»
-Message_0AD56C:
+Message_02_17_4D:
 #_0AD56C: db $EB, $77 ; [set2] prewritten text 77
 #_0AD56E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «これで いいか?»
-Message_0AD56F:
+Message_02_17_4E:
 #_0AD56F: db $EB, $3B ; [set2] prewritten text 3B
 #_0AD571: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[DEMONX]は なにか さしだした
-Message_0AD572:
+Message_02_17_4F:
 #_0AD572: db $97 ; >
 #_0AD573: db $ED ; [set2] write demon name indexed from $0526
 #_0AD574: db $3E, $CF, $39, $3A, $2A, $CF, $2F, $30 ; は⎵なにか⎵さし
@@ -17074,28 +17069,28 @@ Message_0AD572:
 ;===================================================================================================
 
 ; «いやだね»
-Message_0AD580:
+Message_02_17_50:
 #_0AD580: db $EB, $3C ; [set2] prewritten text 3C
 #_0AD582: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やだよ!
-Message_0AD583:
+Message_02_17_51:
 #_0AD583: db $48, $A6, $4A, $94 ; やだよ!
 #_0AD587: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «いやだね»
-Message_0AD588:
+Message_02_17_52:
 #_0AD588: db $EB, $3C ; [set2] prewritten text 3C
 #_0AD58A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >[DEMONX]は くびを よこに ふった
-Message_0AD58B:
+Message_02_17_53:
 #_0AD58B: db $97 ; >
 #_0AD58C: db $ED ; [set2] write demon name indexed from $0526
 #_0AD58D: db $3E, $CF, $2C, $AC, $51, $CF, $4A, $2E ; は⎵くびを⎵よこ
@@ -17105,28 +17100,28 @@ Message_0AD58B:
 ;===================================================================================================
 
 ; あい わかった
-Message_0AD59B:
+Message_02_17_54:
 #_0AD59B: db $25, $26, $CF, $50, $2A, $58, $34 ; あい⎵わかった
 #_0AD5A2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなことか!»
-Message_0AD5A3:
+Message_02_17_55:
 #_0AD5A3: db $EB, $3D ; [set2] prewritten text 3D
 #_0AD5A5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなことか!»
-Message_0AD5A6:
+Message_02_17_56:
 #_0AD5A6: db $EB, $3D ; [set2] prewritten text 3D
 #_0AD5A8: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «[DEMONX]は きびすを かえした»
-Message_0AD5A9:
+Message_02_17_57:
 #_0AD5A9: db $EB, $3E ; [set2] prewritten text 3E
 #_0AD5AB: db $FF ; end of message
 
@@ -17136,7 +17131,7 @@ Message_0AD5A9:
 ; «この[CLASSX] [DEMONX]»
 ; «きょうより あなたの しもべ»
 ; «なんなりと おもうしつけ ください»
-Message_0AD5AC:
+Message_02_17_58:
 #_0AD5AC: db $EB, $79 ; [set2] prewritten text 79
 #_0AD5AE: db $FF ; end of message
 
@@ -17144,7 +17139,7 @@ Message_0AD5AC:
 
 ; ヒーホー!
 ; これで オイラは アンタの ナカマさ!
-Message_0AD5AF:
+Message_02_17_59:
 #_0AD5AF: db $77, $5A, $7A, $5A, $94 ; ヒーホー!
 #_0AD5B4: db $F0 ; [set2] new line
 #_0AD5B5: db $2E, $4E, $A9, $CF, $61, $5E, $83, $3E ; これで⎵オイラは
@@ -17153,22 +17148,23 @@ Message_0AD5AF:
 #_0AD5C8: db $FF ; end of message
 
 ;===================================================================================================
+
 ; «これで けいやく せいりつだ!»
-Message_0AD5C9:
+Message_02_17_5A:
 #_0AD5C9: db $EB, $7A ; [set2] prewritten text 7A
 #_0AD5CB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; マンゾク・・・・
-Message_0AD5CC:
+Message_02_17_5B:
 #_0AD5CC: db $7B, $8A, $BE, $64, $93, $93, $93, $93 ; マンゾク・・・・
 #_0AD5D4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ま・まて もう 1ど チャンスを くれ
-Message_0AD5D5:
+Message_02_17_5C:
 #_0AD5D5: db $43, $93, $43, $37, $CF, $47, $27, $CF ; ま・まて⎵もう⎵
 #_0AD5DD: db $02, $AA, $CF, $6D, $8F, $8A, $69, $51 ; 1ど⎵チャンスを
 #_0AD5E5: db $CF, $2C, $4E ; ⎵くれ
@@ -17177,14 +17173,14 @@ Message_0AD5D5:
 ;===================================================================================================
 
 ; そう いうなよ!
-Message_0AD5E9:
+Message_02_17_5D:
 #_0AD5E9: db $33, $27, $CF, $26, $27, $39, $4A, $94 ; そう⎵いうなよ!
 #_0AD5F1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ちょっと まてよ そんな すぐに あきらめんな
-Message_0AD5F2:
+Message_02_17_5E:
 #_0AD5F2: db $35, $57, $58, $38, $CF, $43, $37, $4A ; ちょっと⎵まてよ
 #_0AD5FA: db $CF, $33, $52, $39, $CF, $31, $9E, $3A ; ⎵そんな⎵すぐに
 #_0AD602: db $CF, $25, $2B, $4B, $46, $52, $39 ; ⎵あきらめんな
@@ -17194,7 +17190,7 @@ Message_0AD5F2:
 
 ; «[DEMONX]が [CHASE]の»
 ; «ふくを かんで ひきとめた»
-Message_0AD60A:
+Message_02_17_5F:
 #_0AD60A: db $EB, $3F ; [set2] prewritten text 3F
 #_0AD60C: db $FF ; end of message
 
@@ -17203,7 +17199,7 @@ Message_0AD60A:
 ; «われは こうきなる [CLASSX]の»
 ; «いちぞくの もの»
 ; わが ちからを みたいのか!
-Message_0AD60D:
+Message_02_18_00:
 #_0AD60D: db $EB, $5C ; [set2] prewritten text 5C
 #_0AD60F: db $F0 ; [set2] new line
 #_0AD610: db $50, $9C, $CF, $35, $2A, $4B, $51, $CF ; わが⎵ちからを⎵
@@ -17213,7 +17209,7 @@ Message_0AD60D:
 ;===================================================================================================
 
 ; ワシに かかわらんのが みのためだぞ!
-Message_0AD61F:
+Message_02_18_01:
 #_0AD61F: db $88, $68, $3A, $CF, $2A, $2A, $50, $4B ; ワシに⎵かかわら
 #_0AD627: db $52, $3D, $9C, $CF, $44, $3D, $34, $46 ; んのが⎵みのため
 #_0AD62F: db $A6, $A5, $94 ; だぞ!
@@ -17222,7 +17218,7 @@ Message_0AD61F:
 ;===================================================================================================
 
 ; わたしはいま くうふくで きげんがわるいのだ!
-Message_0AD633:
+Message_02_18_02:
 #_0AD633: db $50, $34, $30, $3E, $26, $43, $CF, $2C ; わたしはいま⎵く
 #_0AD63B: db $27, $40, $2C, $A9, $CF, $2B, $9F, $52 ; うふくで⎵きげん
 #_0AD643: db $9C, $50, $4D, $26, $3D, $A6, $94 ; がわるいのだ!
@@ -17231,28 +17227,28 @@ Message_0AD633:
 ;===================================================================================================
 
 ; ゆくぞ!
-Message_0AD64B:
+Message_02_18_03:
 #_0AD64B: db $49, $2C, $A5, $94 ; ゆくぞ!
 #_0AD64F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; かくごしろ!
-Message_0AD650:
+Message_02_18_04:
 #_0AD650: db $2A, $2C, $A0, $30, $4F, $94 ; かくごしろ!
 #_0AD656: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ウリャー!
-Message_0AD657:
+Message_02_18_05:
 #_0AD657: db $5F, $84, $8F, $5A, $94 ; ウリャー!
 #_0AD65C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きさまの ちから みせて もらいたい ものだな
-Message_0AD65D:
+Message_02_18_06:
 #_0AD65D: db $2B, $2F, $43, $3D, $CF, $35, $2A, $4B ; きさまの⎵ちから
 #_0AD665: db $CF, $44, $32, $37, $CF, $47, $4B, $26 ; ⎵みせて⎵もらい
 #_0AD66D: db $34, $26, $CF, $47, $3D, $A6, $39 ; たい⎵ものだな
@@ -17261,7 +17257,7 @@ Message_0AD65D:
 ;===================================================================================================
 
 ; やれるものなら やるがいい
-Message_0AD675:
+Message_02_18_07:
 #_0AD675: db $48, $4E, $4D, $47, $3D, $39, $4B, $CF ; やれるものなら⎵
 #_0AD67D: db $48, $4D, $9C, $26, $26 ; やるがいい
 #_0AD682: db $FF ; end of message
@@ -17270,7 +17266,7 @@ Message_0AD675:
 
 ; いきのいい ゆうめし じゃないか
 ; すこしは はごたえが ないとな!
-Message_0AD683:
+Message_02_18_08:
 #_0AD683: db $26, $2B, $3D, $26, $26, $CF, $49, $27 ; いきのいい⎵ゆう
 #_0AD68B: db $46, $30, $CF, $A2, $55, $39, $26, $2A ; めし⎵じゃないか
 #_0AD693: db $F0 ; [set2] new line
@@ -17282,7 +17278,7 @@ Message_0AD683:
 
 ; どうか いままでの ぶれいを ゆるし
 ; われを おんみの しんかに くわえたまえ
-Message_0AD6A5:
+Message_02_18_09:
 #_0AD6A5: db $AA, $27, $2A, $CF, $26, $43, $43, $A9 ; どうか⎵いままで
 #_0AD6AD: db $3D, $CF, $AD, $4E, $26, $51, $CF, $49 ; の⎵ぶれいを⎵ゆ
 #_0AD6B5: db $4D, $30 ; るし
@@ -17296,7 +17292,7 @@ Message_0AD6A5:
 
 ; ワシの まけじゃ
 ; おまえの いうとおりしよう
-Message_0AD6CD:
+Message_02_18_0A:
 #_0AD6CD: db $88, $68, $3D, $CF, $43, $2D, $A2, $55 ; ワシの⎵まけじゃ
 #_0AD6D5: db $F0 ; [set2] new line
 #_0AD6D6: db $29, $43, $28, $3D, $CF, $26, $27, $38 ; おまえの⎵いうと
@@ -17307,7 +17303,7 @@ Message_0AD6CD:
 
 ; わたしの まけだ・・・
 ; なんなりと のぞみを きこう
-Message_0AD6E4:
+Message_02_18_0B:
 #_0AD6E4: db $50, $34, $30, $3D, $CF, $43, $2D, $A6 ; わたしの⎵まけだ
 #_0AD6EC: db $93, $93, $93 ; ・・・
 #_0AD6EF: db $F0 ; [set2] new line
@@ -17318,21 +17314,21 @@ Message_0AD6E4:
 ;===================================================================================================
 
 ; さらばだ!
-Message_0AD6FF:
+Message_02_18_0C:
 #_0AD6FF: db $2F, $4B, $AB, $A6, $94 ; さらばだ!
 #_0AD704: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おぼえてろ!»
-Message_0AD705:
+Message_02_18_0D:
 #_0AD705: db $EB, $4B ; [set2] prewritten text 4B
 #_0AD707: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おぼえてろ!»
-Message_0AD708:
+Message_02_18_0E:
 #_0AD708: db $EB, $4B ; [set2] prewritten text 4B
 #_0AD70A: db $FF ; end of message
 
@@ -17340,7 +17336,7 @@ Message_0AD708:
 
 ; ニンゲンが この わたしに
 ; いったい なんの ようかな?
-Message_0AD70B:
+Message_02_18_0F:
 #_0AD70B: db $72, $8A, $B8, $8A, $9C, $CF, $2E, $3D ; ニンゲンが⎵この
 #_0AD713: db $CF, $50, $34, $30, $3A ; ⎵わたしに
 #_0AD718: db $F0 ; [set2] new line
@@ -17351,7 +17347,7 @@ Message_0AD70B:
 ;===================================================================================================
 
 ; なんじゃい ようを ゆうてみい
-Message_0AD728:
+Message_02_18_10:
 #_0AD728: db $39, $52, $A2, $55, $26, $CF, $4A, $27 ; なんじゃい⎵よう
 #_0AD730: db $51, $CF, $49, $27, $37, $44, $26 ; を⎵ゆうてみい
 #_0AD737: db $FF ; end of message
@@ -17359,7 +17355,7 @@ Message_0AD728:
 ;===================================================================================================
 
 ; わたしに なにようだ? ニンゲンよ
-Message_0AD738:
+Message_02_18_11:
 #_0AD738: db $50, $34, $30, $3A, $CF, $39, $3A, $4A ; わたしに⎵なによ
 #_0AD740: db $27, $A6, $95, $CF, $72, $8A, $B8, $8A ; うだ?⎵ニンゲン
 #_0AD748: db $4A ; よ
@@ -17367,30 +17363,30 @@ Message_0AD738:
 
 ;===================================================================================================
 
-Message_0AD74A:
+Message_02_18_12:
 #_0AD74A: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD74B:
+Message_02_18_13:
 #_0AD74B: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD74C:
+Message_02_18_14:
 #_0AD74C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «この わたしが ニンゲンを おそれるか»
-Message_0AD74D:
+Message_02_18_15:
 #_0AD74D: db $EB, $4C ; [set2] prewritten text 4C
 #_0AD74F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わしを おこらせたいのか?
-Message_0AD750:
+Message_02_18_16:
 #_0AD750: db $50, $30, $51, $CF, $29, $2E, $4B, $32 ; わしを⎵おこらせ
 #_0AD758: db $34, $26, $3D, $2A, $95 ; たいのか?
 #_0AD75D: db $FF ; end of message
@@ -17398,7 +17394,7 @@ Message_0AD750:
 ;===================================================================================================
 
 ; «この わたしが ニンゲンを おそれるか»
-Message_0AD75E:
+Message_02_18_17:
 #_0AD75E: db $EB, $4C ; [set2] prewritten text 4C
 #_0AD760: db $FF ; end of message
 
@@ -17406,7 +17402,7 @@ Message_0AD75E:
 
 ; «その どきょうに めんじて»
 ; «はなしを きいてやろう»
-Message_0AD761:
+Message_02_18_18:
 #_0AD761: db $EB, $4D ; [set2] prewritten text 4D
 #_0AD763: db $FF ; end of message
 
@@ -17414,7 +17410,7 @@ Message_0AD761:
 
 ; はっはっは! いいどきょうだ
 ; ようを いってみろ
-Message_0AD764:
+Message_02_18_19:
 #_0AD764: db $3E, $58, $3E, $58, $3E, $94, $CF, $26 ; はっはっは!⎵い
 #_0AD76C: db $26, $AA, $2B, $57, $27, $A6 ; いどきょうだ
 #_0AD772: db $F0 ; [set2] new line
@@ -17426,7 +17422,7 @@ Message_0AD764:
 
 ; «その どきょうに めんじて»
 ; «はなしを きいてやろう»
-Message_0AD77D:
+Message_02_18_1A:
 #_0AD77D: db $EB, $4D ; [set2] prewritten text 4D
 #_0AD77F: db $FF ; end of message
 
@@ -17434,7 +17430,7 @@ Message_0AD77D:
 
 ; «はなしあいも わるくは ないな»
 ; «そうだろ?»
-Message_0AD780:
+Message_02_18_1B:
 #_0AD780: db $EB, $4E ; [set2] prewritten text 4E
 #_0AD782: db $FF ; end of message
 
@@ -17442,7 +17438,7 @@ Message_0AD780:
 
 ; ワシは ぼうりょくは すかん
 ; はなしあいで いこうな
-Message_0AD783:
+Message_02_18_1C:
 #_0AD783: db $88, $68, $3E, $CF, $AF, $27, $4C, $57 ; ワシは⎵ぼうりょ
 #_0AD78B: db $2C, $3E, $CF, $31, $2A, $52 ; くは⎵すかん
 #_0AD791: db $F0 ; [set2] new line
@@ -17454,14 +17450,14 @@ Message_0AD783:
 
 ; «はなしあいも わるくは ないな»
 ; «そうだろ?»
-Message_0AD79E:
+Message_02_18_1D:
 #_0AD79E: db $EB, $4E ; [set2] prewritten text 4E
 #_0AD7A0: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わが ちから みせてやろう!
-Message_0AD7A1:
+Message_02_18_1E:
 #_0AD7A1: db $50, $9C, $CF, $35, $2A, $4B, $CF, $44 ; わが⎵ちから⎵み
 #_0AD7A9: db $32, $37, $48, $4F, $27, $94 ; せてやろう!
 #_0AD7AF: db $FF ; end of message
@@ -17469,7 +17465,7 @@ Message_0AD7A1:
 ;===================================================================================================
 
 ; ワシが あのよに おくってやろう!
-Message_0AD7B0:
+Message_02_18_1F:
 #_0AD7B0: db $88, $68, $9C, $CF, $25, $3D, $4A, $3A ; ワシが⎵あのよに
 #_0AD7B8: db $CF, $29, $2C, $58, $37, $48, $4F, $27 ; ⎵おくってやろう
 #_0AD7C0: db $94 ; !
@@ -17478,7 +17474,7 @@ Message_0AD7B0:
 ;===================================================================================================
 
 ; おまえの すべてを いただく!
-Message_0AD7C2:
+Message_02_18_20:
 #_0AD7C2: db $29, $43, $28, $3D, $CF, $31, $AE, $37 ; おまえの⎵すべて
 #_0AD7CA: db $51, $CF, $26, $34, $A6, $2C, $94 ; を⎵いただく!
 #_0AD7D1: db $FF ; end of message
@@ -17487,7 +17483,7 @@ Message_0AD7C2:
 
 ; これを とっておけ
 ; これいじょう かかわりたくない!
-Message_0AD7D2:
+Message_02_18_21:
 #_0AD7D2: db $2E, $4E, $51, $CF, $38, $58, $37, $29 ; これを⎵とってお
 #_0AD7DA: db $2D ; け
 #_0AD7DB: db $F0 ; [set2] new line
@@ -17499,7 +17495,7 @@ Message_0AD7D2:
 
 ; なんてやつだ!
 ; «これを やるから ほっといてくれ!»
-Message_0AD7ED:
+Message_02_18_22:
 #_0AD7ED: db $39, $52, $37, $48, $36, $A6, $94 ; なんてやつだ!
 #_0AD7F4: db $F0 ; [set2] new line
 #_0AD7F5: db $EB, $4F ; [set2] prewritten text 4F
@@ -17508,7 +17504,7 @@ Message_0AD7ED:
 ;===================================================================================================
 
 ; «これを やるから ほっといてくれ!»
-Message_0AD7F8:
+Message_02_18_23:
 #_0AD7F8: db $EB, $4F ; [set2] prewritten text 4F
 #_0AD7FA: db $FF ; end of message
 
@@ -17516,7 +17512,7 @@ Message_0AD7F8:
 
 ; さらばだ! おろかしくも いさましい
 ; ひとのこの せんしよ!
-Message_0AD7FB:
+Message_02_18_24:
 #_0AD7FB: db $2F, $4B, $AB, $A6, $94, $CF, $29, $4F ; さらばだ!⎵おろ
 #_0AD803: db $2A, $30, $2C, $47, $CF, $26, $2F, $43 ; かしくも⎵いさま
 #_0AD80B: db $30, $26 ; しい
@@ -17528,35 +17524,35 @@ Message_0AD7FB:
 ;===================================================================================================
 
 ; ワシャ かえるよ
-Message_0AD81A:
+Message_02_18_25:
 #_0AD81A: db $88, $68, $8F, $CF, $2A, $28, $4D, $4A ; ワシャ⎵かえるよ
 #_0AD822: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «つぎにあうまで いのちを だいじに するんだな»
-Message_0AD823:
+Message_02_18_26:
 #_0AD823: db $EB, $24 ; [set2] prewritten text 24
 #_0AD825: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はっはっはっはっはっ!»
-Message_0AD826:
+Message_02_18_27:
 #_0AD826: db $EB, $50 ; [set2] prewritten text 50
 #_0AD828: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «フォッフォッフォッ!»
-Message_0AD829:
+Message_02_18_28:
 #_0AD829: db $EB, $0A ; [set2] prewritten text 0A
 #_0AD82B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グフフフフフ・・・・»
-Message_0AD82C:
+Message_02_18_29:
 #_0AD82C: db $EB, $51 ; [set2] prewritten text 51
 #_0AD82E: db $FF ; end of message
 
@@ -17564,14 +17560,14 @@ Message_0AD82C:
 
 ; «この [CLASSX] [DEMONX]を»
 ; «ほんきで おこらせた ようだな・・・»
-Message_0AD82F:
+Message_02_18_2A:
 #_0AD82F: db $EB, $85 ; [set2] prewritten text 85
 #_0AD831: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ワシを ほんきで おこらせたな!
-Message_0AD832:
+Message_02_18_2B:
 #_0AD832: db $88, $68, $51, $CF, $42, $52, $2B, $A9 ; ワシを⎵ほんきで
 #_0AD83A: db $CF, $29, $2E, $4B, $32, $34, $39, $94 ; ⎵おこらせたな!
 #_0AD842: db $FF ; end of message
@@ -17579,7 +17575,7 @@ Message_0AD832:
 ;===================================================================================================
 
 ; わが いかりを うけてみよ!
-Message_0AD843:
+Message_02_18_2C:
 #_0AD843: db $50, $9C, $CF, $26, $2A, $4C, $51, $CF ; わが⎵いかりを⎵
 #_0AD84B: db $27, $2D, $37, $44, $4A, $94 ; うけてみよ!
 #_0AD851: db $FF ; end of message
@@ -17591,7 +17587,7 @@ Message_0AD843:
 ; おもしろい ニンゲンだ
 ; わがなは [DEMONX]!
 ; のぞみを きこう!
-Message_0AD852:
+Message_02_18_2D:
 #_0AD852: db $EB, $50 ; [set2] prewritten text 50
 #_0AD854: db $F0 ; [set2] new line
 #_0AD855: db $2B, $3A, $26, $58, $34, $94, $CF, $39 ; きにいった!⎵な
@@ -17614,7 +17610,7 @@ Message_0AD852:
 
 ; «フォッフォッフォッ!»
 ; おもしろい やつじゃい «はなしを きこうぞ»
-Message_0AD888:
+Message_02_18_2E:
 #_0AD888: db $EB, $0A ; [set2] prewritten text 0A
 #_0AD88A: db $F0 ; [set2] new line
 #_0AD88B: db $29, $47, $30, $4F, $26, $CF, $48, $36 ; おもしろい⎵やつ
@@ -17627,7 +17623,7 @@ Message_0AD888:
 ; «グフフフフフ・・・・»
 ; わたしの はらに おさめるには おしいやつ
 ; なにが のぞみだ
-Message_0AD89A:
+Message_02_18_2F:
 #_0AD89A: db $EB, $51 ; [set2] prewritten text 51
 #_0AD89C: db $F0 ; [set2] new line
 #_0AD89D: db $50, $34, $30, $3D, $CF, $3E, $4B, $3A ; わたしの⎵はらに
@@ -17639,58 +17635,58 @@ Message_0AD89A:
 
 ;===================================================================================================
 
-Message_0AD8BC:
+Message_02_18_30:
 #_0AD8BC: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD8BD:
+Message_02_18_31:
 #_0AD8BD: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD8BE:
+Message_02_18_32:
 #_0AD8BE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くずめ・・・»
-Message_0AD8BF:
+Message_02_18_33:
 #_0AD8BF: db $EB, $B1 ; [set2] prewritten text B1
 #_0AD8C1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おろかもんが»
-Message_0AD8C2:
+Message_02_18_34:
 #_0AD8C2: db $EB, $B2 ; [set2] prewritten text B2
 #_0AD8C4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くわせものが»
-Message_0AD8C5:
+Message_02_18_35:
 #_0AD8C5: db $EB, $B3 ; [set2] prewritten text B3
 #_0AD8C7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くずめ・・・»
-Message_0AD8C8:
+Message_02_18_36:
 #_0AD8C8: db $EB, $B1 ; [set2] prewritten text B1
 #_0AD8CA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おろかもんが»
-Message_0AD8CB:
+Message_02_18_37:
 #_0AD8CB: db $EB, $B2 ; [set2] prewritten text B2
 #_0AD8CD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くわせものが»
-Message_0AD8CE:
+Message_02_18_38:
 #_0AD8CE: db $EB, $B3 ; [set2] prewritten text B3
 #_0AD8D0: db $FF ; end of message
 
@@ -17698,7 +17694,7 @@ Message_0AD8CE:
 
 ; あまいぞ [CHASE]・・・
 ; きさまの ばかづらは みあきた
-Message_0AD8D1:
+Message_02_18_39:
 #_0AD8D1: db $25, $43, $26, $A5, $CF ; あまいぞ⎵
 #_0AD8D6: db $F8 ; [set2] write player name
 #_0AD8D7: db $93, $93, $93 ; ・・・
@@ -17710,42 +17706,37 @@ Message_0AD8D1:
 ;===================================================================================================
 
 ; なんだ そりゃ?
-Message_0AD8EB:
+Message_02_18_3A:
 #_0AD8EB: db $39, $52, $A6, $CF, $33, $4C, $55, $95 ; なんだ⎵そりゃ?
 #_0AD8F3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; くだらん ちゃばんは よせ
-Message_0AD8F4:
+Message_02_18_3B:
 #_0AD8F4: db $2C, $A6, $4B, $52, $CF, $35, $55, $AB ; くだらん⎵ちゃば
 #_0AD8FC: db $52, $3E, $CF, $4A, $32 ; んは⎵よせ
 #_0AD901: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD902:
+Message_02_18_3C:
 #_0AD902: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD903:
+Message_02_18_3D:
 #_0AD903: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD904:
-#_0AD904: db $FF ; end of message
-
-;===================================================================================================
-
-Message_0AD904:
+Message_02_18_3E:
 #_0AD904: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きさまには あきた かえるぞ!
-Message_0AD905:
+Message_02_18_3F:
 #_0AD905: db $2B, $2F, $43, $3A, $3E, $CF, $25, $2B ; きさまには⎵あき
 #_0AD90D: db $34, $CF, $2A, $28, $4D, $A5, $94 ; た⎵かえるぞ!
 #_0AD914: db $FF ; end of message
@@ -17753,7 +17744,7 @@ Message_0AD905:
 ;===================================================================================================
 
 ; ワシャ もう かえるぞ
-Message_0AD915:
+Message_02_18_40:
 #_0AD915: db $88, $68, $8F, $CF, $47, $27, $CF, $2A ; ワシャ⎵もう⎵か
 #_0AD91D: db $28, $4D, $A5 ; えるぞ
 #_0AD920: db $FF ; end of message
@@ -17761,7 +17752,7 @@ Message_0AD915:
 ;===================================================================================================
 
 ; こんかいは みのがして やるとするか
-Message_0AD921:
+Message_02_18_41:
 #_0AD921: db $2E, $52, $2A, $26, $3E, $CF, $44, $3D ; こんかいは⎵みの
 #_0AD929: db $9C, $30, $37, $CF, $48, $4D, $38, $31 ; がして⎵やるとす
 #_0AD931: db $4D, $2A ; るか
@@ -17770,14 +17761,14 @@ Message_0AD921:
 ;===================================================================================================
 
 ; «もういい やめろ!»
-Message_0AD934:
+Message_02_18_42:
 #_0AD934: db $EB, $88 ; [set2] prewritten text 88
 #_0AD936: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «やめんか! あたまが おかしくなりそう»じゃ!
-Message_0AD937:
+Message_02_18_43:
 #_0AD937: db $EB, $53 ; [set2] prewritten text 53
 #_0AD939: db $A2, $55, $94 ; じゃ!
 #_0AD93C: db $FF ; end of message
@@ -17785,7 +17776,7 @@ Message_0AD937:
 ;===================================================================================================
 
 ; «やめんか! あたまが おかしくなりそう»だ!
-Message_0AD93D:
+Message_02_18_44:
 #_0AD93D: db $EB, $53 ; [set2] prewritten text 53
 #_0AD93F: db $A6, $94 ; だ!
 #_0AD941: db $FF ; end of message
@@ -17795,7 +17786,7 @@ Message_0AD93D:
 ; ニンゲン ごときが なんなのだ?
 ; この キは・・・?
 ; «>[DEMONX]は けいかい している»
-Message_0AD942:
+Message_02_18_45:
 #_0AD942: db $72, $8A, $B8, $8A, $CF, $A0, $38, $2B ; ニンゲン⎵ごとき
 #_0AD94A: db $9C, $CF, $39, $52, $39, $3D, $A6, $95 ; が⎵なんなのだ?
 #_0AD952: db $F0 ; [set2] new line
@@ -17810,7 +17801,7 @@ Message_0AD942:
 
 ; おまえ« デビルバスター»だな?
 ; «>[DEMONX]は けいかい している»
-Message_0AD961:
+Message_02_18_46:
 #_0AD961: db $29, $43, $28 ; おまえ
 #_0AD964: db $EB, $89 ; [set2] prewritten text 89
 #_0AD966: db $A6, $39, $95 ; だな?
@@ -17822,30 +17813,30 @@ Message_0AD961:
 ;===================================================================================================
 
 ; «>[DEMONX]は けいかい している»
-Message_0AD96E:
+Message_02_18_47:
 #_0AD96E: db $EB, $81 ; [set2] prewritten text 81
 #_0AD970: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD971:
+Message_02_18_48:
 #_0AD971: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD972:
+Message_02_18_49:
 #_0AD972: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AD973:
+Message_02_18_4A:
 #_0AD973: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はっはっはっはっはっ!»
 ; あまいわあ!
-Message_0AD974:
+Message_02_18_4B:
 #_0AD974: db $EB, $50 ; [set2] prewritten text 50
 #_0AD976: db $F0 ; [set2] new line
 #_0AD977: db $25, $43, $26, $50, $25, $94 ; あまいわあ!
@@ -17854,7 +17845,7 @@ Message_0AD974:
 ;===================================================================================================
 
 ; ぼけつを ほったな!
-Message_0AD97E:
+Message_02_18_4C:
 #_0AD97E: db $AF, $2D, $36, $51, $CF, $42, $58, $34 ; ぼけつを⎵ほった
 #_0AD986: db $39, $94 ; な!
 #_0AD988: db $FF ; end of message
@@ -17863,7 +17854,7 @@ Message_0AD97E:
 
 ; «グフフフフフ・・・・»
 ; おのれを かしん しすぎだ!
-Message_0AD989:
+Message_02_18_4D:
 #_0AD989: db $EB, $51 ; [set2] prewritten text 51
 #_0AD98B: db $F0 ; [set2] new line
 #_0AD98C: db $29, $3D, $4E, $51, $CF, $2A, $30, $52 ; おのれを⎵かしん
@@ -17873,14 +17864,14 @@ Message_0AD989:
 ;===================================================================================================
 
 ; «はなしが あるなら こちらに くるのだ!»
-Message_0AD99B:
+Message_02_18_4E:
 #_0AD99B: db $EB, $55 ; [set2] prewritten text 55
 #_0AD99D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きも すわってるな・・・こっち こいや»
-Message_0AD99E:
+Message_02_18_4F:
 #_0AD99E: db $EB, $54 ; [set2] prewritten text 54
 #_0AD9A0: db $FF ; end of message
 
@@ -17888,7 +17879,7 @@ Message_0AD99E:
 
 ; とって くおうとは いわん
 ; «はなしが あるなら こちらに くるのだ!»
-Message_0AD9A1:
+Message_02_18_50:
 #_0AD9A1: db $38, $58, $37, $CF, $2C, $29, $27, $38 ; とって⎵くおうと
 #_0AD9A9: db $3E, $CF, $26, $50, $52 ; は⎵いわん
 #_0AD9AE: db $F0 ; [set2] new line
@@ -17899,7 +17890,7 @@ Message_0AD9A1:
 
 ; あなたの ような ニンゲンは はじめてだ
 ; どうか おナカマに
-Message_0AD9B2:
+Message_02_18_51:
 #_0AD9B2: db $25, $39, $34, $3D, $CF, $4A, $27, $39 ; あなたの⎵ような
 #_0AD9BA: db $CF, $72, $8A, $B8, $8A, $3E, $CF, $3E ; ⎵ニンゲンは⎵は
 #_0AD9C2: db $A2, $46, $37, $A6 ; じめてだ
@@ -17912,7 +17903,7 @@ Message_0AD9B2:
 
 ; ワシャ きにいった!
 ; ナカマにでも なんでも なるぞ
-Message_0AD9D1:
+Message_02_18_52:
 #_0AD9D1: db $88, $68, $8F, $CF, $2B, $3A, $26, $58 ; ワシャ⎵きにいっ
 #_0AD9D9: db $34, $94 ; た!
 #_0AD9DB: db $F0 ; [set2] new line
@@ -17925,7 +17916,7 @@ Message_0AD9D1:
 ; あなたを しょくせば かなり ながいき できます
 ; ざんねんです いまは あきらめて ナカマにでも
 ; なんでも なりましょう
-Message_0AD9EC:
+Message_02_18_53:
 #_0AD9EC: db $25, $39, $34, $51, $CF, $30, $57, $2C ; あなたを⎵しょく
 #_0AD9F4: db $32, $AB, $CF, $2A, $39, $4C, $CF, $39 ; せば⎵かなり⎵な
 #_0AD9FC: db $9C, $26, $2B, $CF, $A9, $2B, $43, $31 ; がいき⎵できます
@@ -17941,28 +17932,28 @@ Message_0AD9EC:
 ;===================================================================================================
 
 ; «おくびょうものに ようは ないわ!»
-Message_0ADA29:
+Message_02_18_54:
 #_0ADA29: db $EB, $56 ; [set2] prewritten text 56
 #_0ADA2B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いくじなしめが
-Message_0ADA2C:
+Message_02_18_55:
 #_0ADA2C: db $26, $2C, $A2, $39, $30, $46, $9C ; いくじなしめが
 #_0ADA33: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おじけづいたな!»
-Message_0ADA34:
+Message_02_18_56:
 #_0ADA34: db $EB, $57 ; [set2] prewritten text 57
 #_0ADA36: db $FF ; end of message
 
 ;===================================================================================================
 
 ; この[DEMONX]を ころそうと いうのか?
-Message_0ADA37:
+Message_02_18_57:
 #_0ADA37: db $2E, $3D ; この
 #_0ADA39: db $ED ; [set2] write demon name indexed from $0526
 #_0ADA3A: db $51, $CF, $2E, $4F, $33, $27, $38, $CF ; を⎵ころそうと⎵
@@ -17972,7 +17963,7 @@ Message_0ADA37:
 ;===================================================================================================
 
 ; ワシの いのちが ねらいか?
-Message_0ADA48:
+Message_02_18_58:
 #_0ADA48: db $88, $68, $3D, $CF, $26, $3D, $35, $9C ; ワシの⎵いのちが
 #_0ADA50: db $CF, $3C, $4B, $26, $2A, $95 ; ⎵ねらいか?
 #_0ADA56: db $FF ; end of message
@@ -17980,30 +17971,30 @@ Message_0ADA48:
 ;===================================================================================================
 
 ; わたしを ころすきか?
-Message_0ADA57:
+Message_02_18_59:
 #_0ADA57: db $50, $34, $30, $51, $CF, $2E, $4F, $31 ; わたしを⎵ころす
 #_0ADA5F: db $2B, $2A, $95 ; きか?
 #_0ADA62: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADA63:
+Message_02_18_5A:
 #_0ADA63: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADA64:
+Message_02_18_5B:
 #_0ADA64: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADA65:
+Message_02_18_5C:
 #_0ADA65: db $FF ; end of message
 
 ;===================================================================================================
 
 ; この[DEMONX]に ナカマに なれと?
-Message_0ADA66:
+Message_02_18_5D:
 #_0ADA66: db $2E, $3D ; この
 #_0ADA68: db $ED ; [set2] write demon name indexed from $0526
 #_0ADA69: db $3A, $CF, $71, $62, $7B, $3A, $CF, $39 ; に⎵ナカマに⎵な
@@ -18013,14 +18004,14 @@ Message_0ADA66:
 ;===================================================================================================
 
 ; «ニンゲンの ナカマに なれだと?»
-Message_0ADA75:
+Message_02_18_5E:
 #_0ADA75: db $EB, $23 ; [set2] prewritten text 23
 #_0ADA77: db $FF ; end of message
 
 ;===================================================================================================
 
 ; この わたしに ナカマに なれというか?
-Message_0ADA78:
+Message_02_18_5F:
 #_0ADA78: db $2E, $3D, $CF, $50, $34, $30, $3A, $CF ; この⎵わたしに⎵
 #_0ADA80: db $71, $62, $7B, $3A, $CF, $39, $4E, $38 ; ナカマに⎵なれと
 #_0ADA88: db $26, $27, $2A, $95 ; いうか?
@@ -18029,14 +18020,14 @@ Message_0ADA78:
 ;===================================================================================================
 
 ; «きたれ わがいちぞくの ちにうえたる ものよ!»
-Message_0ADA8D:
+Message_02_18_60:
 #_0ADA8D: db $EB, $8D ; [set2] prewritten text 8D
 #_0ADA8F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; オーイ! きょうだいよ ちょっと こいや
-Message_0ADA90:
+Message_02_18_61:
 #_0ADA90: db $61, $5A, $5E, $94, $CF, $2B, $57, $27 ; オーイ!⎵きょう
 #_0ADA98: db $A6, $26, $4A, $CF, $35, $57, $58, $38 ; だいよ⎵ちょっと
 #_0ADAA0: db $CF, $2E, $26, $48 ; ⎵こいや
@@ -18045,7 +18036,7 @@ Message_0ADA90:
 ;===================================================================================================
 
 ; ほかの ナカマにも あじあわせて やるか・・・
-Message_0ADAA5:
+Message_02_18_62:
 #_0ADAA5: db $42, $2A, $3D, $CF, $71, $62, $7B, $3A ; ほかの⎵ナカマに
 #_0ADAAD: db $47, $CF, $25, $A2, $25, $50, $32, $37 ; も⎵あじあわせて
 #_0ADAB5: db $CF, $48, $4D, $2A, $93, $93, $93 ; ⎵やるか・・・
@@ -18056,7 +18047,7 @@ Message_0ADAA5:
 ; ひとのこよ・・・ぬしらが いくら あらがおうと
 ; かみが ひとたび たてば このよを はかいする
 ; せんなきとは おもわぬか?
-Message_0ADABD:
+Message_02_18_63:
 #_0ADABD: db $3F, $38, $3D, $2E, $4A, $93, $93, $93 ; ひとのこよ・・・
 #_0ADAC5: db $3B, $30, $4B, $9C, $CF, $26, $2C, $4B ; ぬしらが⎵いくら
 #_0ADACD: db $CF, $25, $4B, $9C, $29, $27, $38 ; ⎵あらがおうと
@@ -18072,7 +18063,7 @@ Message_0ADABD:
 ;===================================================================================================
 
 ; おい おぬし さけを もってないか?
-Message_0ADAFB:
+Message_02_18_64:
 #_0ADAFB: db $29, $26, $CF, $29, $3B, $30, $CF, $2F ; おい⎵おぬし⎵さ
 #_0ADB03: db $2D, $51, $CF, $47, $58, $37, $39, $26 ; けを⎵もってない
 #_0ADB0B: db $2A, $95 ; か?
@@ -18084,7 +18075,7 @@ Message_0ADAFB:
 ; ありしもの・・・
 ; なれば ふたたび そのざを もとめて なにが
 ; わるいのか? そうは おもわぬか?
-Message_0ADB0E:
+Message_02_18_65:
 #_0ADB0E: db $50, $4E, $4B, $CF, $7B, $CF, $39, $4D ; われら⎵マ⎵なる
 #_0ADB16: db $47, $3D, $3E, $CF, $2A, $36, $37, $CF ; ものは⎵かつて⎵
 #_0ADB1E: db $2A, $44, $3D, $CF, $A1, $3A ; かみの⎵ざに
@@ -18105,7 +18096,7 @@ Message_0ADB0E:
 
 ; あきらめの いいやつめ
 ; ふびんなれば わが ほどこしを うけよ
-Message_0ADB58:
+Message_02_18_66:
 #_0ADB58: db $25, $2B, $4B, $46, $3D, $CF, $26, $26 ; あきらめの⎵いい
 #_0ADB60: db $48, $36, $46 ; やつめ
 #_0ADB63: db $F0 ; [set2] new line
@@ -18121,7 +18112,7 @@ Message_0ADB58:
 ; [CHASE]は うんよく さけをもっていた
 ; おお かたじけない!
 ; うーむ・・・こたえられん «はなしを きこうぞ»
-Message_0ADB7D:
+Message_02_18_67:
 #_0ADB7D: db $F8 ; [set2] write player name
 #_0ADB7E: db $3E, $CF, $27, $52, $4A, $2C, $CF, $2F ; は⎵うんよく⎵さ
 #_0ADB86: db $2D, $51, $47, $58, $37, $26, $34 ; けをもっていた
@@ -18144,7 +18135,7 @@ Message_0ADB7D:
 ; ならば たがいに ちからを あわせよう!
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0ADBB1:
+Message_02_18_68:
 #_0ADBB1: db $33, $27, $29, $47, $27, $2A, $95 ; そうおもうか?
 #_0ADBB8: db $F0 ; [set2] new line
 #_0ADBB9: db $39, $4B, $AB, $CF, $34, $9C, $26, $3A ; ならば⎵たがいに
@@ -18161,7 +18152,7 @@ Message_0ADBB1:
 ; せんなきゆえ あきらめよ!
 ; «はっはっはっはっはっ!»
 ; «>[DEMONX]は さっていった»
-Message_0ADBD4:
+Message_02_18_69:
 #_0ADBD4: db $32, $52, $39, $2B, $49, $28, $CF, $25 ; せんなきゆえ⎵あ
 #_0ADBDC: db $2B, $4B, $46, $4A, $94 ; きらめよ!
 #_0ADBE1: db $F0 ; [set2] new line
@@ -18178,7 +18169,7 @@ Message_0ADBD4:
 ; ウソつきめ!
 ; «ワシャ かえるよ»
 ; «>[DEMONX]は さっていった»
-Message_0ADBEB:
+Message_02_18_6A:
 #_0ADBEB: db $F8 ; [set2] write player name
 #_0ADBEC: db $3E, $CF, $2F, $2D, $39, $AA, $CF, $47 ; は⎵さけなど⎵も
 #_0ADBF4: db $58, $37, $39, $2A, $58, $34, $94 ; ってなかった!
@@ -18196,7 +18187,7 @@ Message_0ADBEB:
 ;===================================================================================================
 
 ; そうおもうなら こうどうで しめしてもらおう
-Message_0ADC0D:
+Message_02_18_6B:
 #_0ADC0D: db $33, $27, $29, $47, $27, $39, $4B, $CF ; そうおもうなら⎵
 #_0ADC15: db $2E, $27, $AA, $27, $A9, $CF, $30, $46 ; こうどうで⎵しめ
 #_0ADC1D: db $30, $37, $47, $4B, $29, $27 ; してもらおう
@@ -18210,7 +18201,7 @@ Message_0ADC0D:
 
 ; あきらめの わるいやつめ
 ; よが その カルマを たちきって やろうぞ!
-Message_0ADC2E:
+Message_02_18_6C:
 #_0ADC2E: db $25, $2B, $4B, $46, $3D, $CF, $50, $4D ; あきらめの⎵わる
 #_0ADC36: db $26, $48, $36, $46 ; いやつめ
 #_0ADC3A: db $F0 ; [set2] new line
@@ -18223,7 +18214,7 @@ Message_0ADC2E:
 ;===================================================================================================
 
 ; もってないなら しかたない
-Message_0ADC55:
+Message_02_18_6D:
 #_0ADC55: db $47, $58, $37, $39, $26, $39, $4B, $CF ; もってないなら⎵
 #_0ADC5D: db $30, $2A, $34, $39, $26 ; しかたない
 #_0ADC62: db $F3 ; [set2] wait for key and new line
@@ -18232,7 +18223,7 @@ Message_0ADC55:
 ;===================================================================================================
 
 ; そうかんがえる ものは いかしては おけん!
-Message_0ADC65:
+Message_02_18_6E:
 #_0ADC65: db $33, $27, $2A, $52, $9C, $28, $4D, $CF ; そうかんがえる⎵
 #_0ADC6D: db $47, $3D, $3E, $CF, $26, $2A, $30, $37 ; ものは⎵いかして
 #_0ADC75: db $3E, $CF, $29, $2D, $52, $94 ; は⎵おけん!
@@ -18247,7 +18238,7 @@ Message_0ADC65:
 ; かさんと おもう・・・
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0ADC7F:
+Message_02_18_6F:
 #_0ADC7F: db $32, $52, $39, $2B, $38, $3E, $CF, $29 ; せんなきとは⎵お
 #_0ADC87: db $47, $26, $36, $36, $CF, $25, $4B, $9C ; もいつつ⎵あらが
 #_0ADC8F: db $27, $3D, $9C, $CF, $26, $3D, $35 ; うのが⎵いのち
@@ -18272,7 +18263,7 @@ Message_0ADC7F:
 ;===================================================================================================
 
 ; きのきかん やつめ! こうして くれる!
-Message_0ADCD5:
+Message_02_18_70:
 #_0ADCD5: db $2B, $3D, $2B, $2A, $52, $CF, $48, $36 ; きのきかん⎵やつ
 #_0ADCDD: db $46, $94, $CF, $2E, $27, $30, $37, $CF ; め!⎵こうして⎵
 #_0ADCE5: db $2C, $4E, $4D, $94 ; くれる!
@@ -18283,7 +18274,7 @@ Message_0ADCD5:
 
 ; かんがえが かわったら また あおう
 ; «>[DEMONX]は さっていった»
-Message_0ADCED:
+Message_02_18_71:
 #_0ADCED: db $2A, $52, $9C, $28, $9C, $CF, $2A, $50 ; かんがえが⎵かわ
 #_0ADCF5: db $58, $34, $4B, $CF, $43, $34, $CF, $25 ; ったら⎵また⎵あ
 #_0ADCFD: db $29, $27 ; おう
@@ -18296,14 +18287,14 @@ Message_0ADCED:
 ;===================================================================================================
 
 ; «ひとのこの ぶんざいで みのほど しらずよ»
-Message_0ADD06:
+Message_02_18_72:
 #_0ADD06: db $EB, $8F ; [set2] prewritten text 8F
 #_0ADD08: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やめとけ この ひよっこが!
-Message_0ADD09:
+Message_02_18_73:
 #_0ADD09: db $48, $46, $38, $2D, $CF, $2E, $3D, $CF ; やめとけ⎵この⎵
 #_0ADD11: db $3F, $4A, $58, $2E, $9C, $94 ; ひよっこが!
 #_0ADD17: db $FF ; end of message
@@ -18312,7 +18303,7 @@ Message_0ADD09:
 
 ; フッ フッ・・・コドモは もっと
 ; あんぜんな ところで あそんだら どうだ
-Message_0ADD18:
+Message_02_18_74:
 #_0ADD18: db $78, $92, $CF, $78, $92, $93, $93, $93 ; フッ⎵フッ・・・
 #_0ADD20: db $66, $C3, $7F, $3E, $CF, $47, $58, $38 ; コドモは⎵もっと
 #_0ADD28: db $F0 ; [set2] new line
@@ -18323,24 +18314,24 @@ Message_0ADD18:
 
 ;===================================================================================================
 
-Message_0ADD3E:
+Message_02_18_75:
 #_0ADD3E: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADD3F:
+Message_02_18_76:
 #_0ADD3F: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADD40:
+Message_02_18_77:
 #_0ADD40: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はははは たいした ちょうちんもちめ
 ; «なにが めあてだ?»
-Message_0ADD41:
+Message_02_18_78:
 #_0ADD41: db $3E, $3E, $3E, $3E, $CF, $34, $26, $30 ; はははは⎵たいし
 #_0ADD49: db $34, $CF, $35, $57, $27, $35, $52, $47 ; た⎵ちょうちんも
 #_0ADD51: db $35, $46 ; ちめ
@@ -18352,7 +18343,7 @@ Message_0ADD41:
 
 ; «フォッフォッフォッ!» 
 ; なにが のぞみだ いえ!
-Message_0ADD57:
+Message_02_18_79:
 #_0ADD57: db $EB, $0A ; [set2] prewritten text 0A
 #_0ADD59: db $CF ; ⎵
 #_0ADD5A: db $F0 ; [set2] new line
@@ -18364,7 +18355,7 @@ Message_0ADD57:
 
 ; «グフフフフフ・・・・» くちの うまいやつめ
 ; «なにが めあてだ?»
-Message_0ADD68:
+Message_02_18_7A:
 #_0ADD68: db $EB, $51 ; [set2] prewritten text 51
 #_0ADD6A: db $CF, $2C, $35, $3D, $CF, $27, $43, $26 ; ⎵くちの⎵うまい
 #_0ADD72: db $48, $36, $46 ; やつめ
@@ -18375,14 +18366,14 @@ Message_0ADD68:
 ;===================================================================================================
 
 ; «この くちさきだけの けがらわしい げろうめ»
-Message_0ADD79:
+Message_02_18_7B:
 #_0ADD79: db $EB, $90 ; [set2] prewritten text 90
 #_0ADD7B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «こころにも ないことを!»
-Message_0ADD7C:
+Message_02_18_7C:
 #_0ADD7C: db $EB, $91 ; [set2] prewritten text 91
 #_0ADD7E: db $FF ; end of message
 
@@ -18390,7 +18381,7 @@ Message_0ADD7C:
 
 ; «グフフフフフ・・・・» そうした いつわりは
 ; しご おまえの したを やくぞ・・・・
-Message_0ADD7F:
+Message_02_18_7D:
 #_0ADD7F: db $EB, $51 ; [set2] prewritten text 51
 #_0ADD81: db $CF, $33, $27, $30, $34, $CF, $26, $36 ; ⎵そうした⎵いつ
 #_0ADD89: db $50, $4C, $3E ; わりは
@@ -18402,38 +18393,38 @@ Message_0ADD7F:
 
 ;===================================================================================================
 
-Message_0ADDA1:
+Message_02_18_7E:
 #_0ADDA1: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADDA2:
+Message_02_18_7F:
 #_0ADDA2: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADDA3:
+Message_02_18_80:
 #_0ADDA3: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADDA4:
+Message_02_18_81:
 #_0ADDA4: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADDA5:
+Message_02_18_82:
 #_0ADDA5: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0ADDA6:
+Message_02_18_83:
 #_0ADDA6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わが じひを うけよ
-Message_0ADDA7:
+Message_02_18_84:
 #_0ADDA7: db $50, $9C, $CF, $A2, $3F, $51, $CF, $27 ; わが⎵じひを⎵う
 #_0ADDAF: db $2D, $4A ; けよ
 #_0ADDB1: db $FF ; end of message
@@ -18442,14 +18433,14 @@ Message_0ADDA7:
 
 ; «コレを やる»
 ; «いちから でなおせ おろかものが»
-Message_0ADDB2:
+Message_02_18_85:
 #_0ADDB2: db $EB, $5A ; [set2] prewritten text 5A
 #_0ADDB4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; これでも やるから うせろ!
-Message_0ADDB5:
+Message_02_18_86:
 #_0ADDB5: db $2E, $4E, $A9, $47, $CF, $48, $4D, $2A ; これでも⎵やるか
 #_0ADDBD: db $4B, $CF, $27, $32, $4F, $94 ; ら⎵うせろ!
 #_0ADDC3: db $FF ; end of message
@@ -18458,7 +18449,7 @@ Message_0ADDB5:
 
 ; «くだらんものと はなす ひまは ない»
 ; «さらば・・・»
-Message_0ADDC4:
+Message_02_18_87:
 #_0ADDC4: db $EB, $5B ; [set2] prewritten text 5B
 #_0ADDC6: db $FF ; end of message
 
@@ -18466,7 +18457,7 @@ Message_0ADDC4:
 
 ; やるきの うせること
 ; «ワシャ かえるよ»
-Message_0ADDC7:
+Message_02_18_88:
 #_0ADDC7: db $48, $4D, $2B, $3D, $CF, $27, $32, $4D ; やるきの⎵うせる
 #_0ADDCF: db $2E, $38 ; こと
 #_0ADDD1: db $F0 ; [set2] new line
@@ -18477,7 +18468,7 @@ Message_0ADDC7:
 
 ; こんなやつを くっても マグネタイトの しつが
 ; わるくなるわ!
-Message_0ADDD5:
+Message_02_18_89:
 #_0ADDD5: db $2E, $52, $39, $48, $36, $51, $CF, $2C ; こんなやつを⎵く
 #_0ADDDD: db $58, $37, $47, $CF, $7B, $B7, $74, $6C ; っても⎵マグネタ
 #_0ADDE5: db $5E, $70, $3D, $CF, $30, $36, $9C ; イトの⎵しつが
@@ -18490,7 +18481,7 @@ Message_0ADDD5:
 ; «われは こうきなる [CLASSX]の»
 ; «いちぞくの もの» [DEMONX]なり
 ; «はなしを きこうぞ»
-Message_0ADDF5:
+Message_02_18_8A:
 #_0ADDF5: db $EB, $5C ; [set2] prewritten text 5C
 #_0ADDF7: db $CF ; ⎵
 #_0ADDF8: db $ED ; [set2] write demon name indexed from $0526
@@ -18503,7 +18494,7 @@ Message_0ADDF5:
 
 ; «ワシは [CLASSX] [DEMONX]だ»
 ; «ようを いってみろ»
-Message_0ADDFF:
+Message_02_18_8B:
 #_0ADDFF: db $EB, $5D ; [set2] prewritten text 5D
 #_0ADE01: db $FF ; end of message
 
@@ -18511,7 +18502,7 @@ Message_0ADDFF:
 
 ; わたしは [CLASSX] [DEMONX]
 ; «はなしを きいてやろう»
-Message_0ADE02:
+Message_02_18_8C:
 #_0ADE02: db $50, $34, $30, $3E, $CF ; わたしは⎵
 #_0ADE07: db $EE ; [set2] write class name indexed from $0526
 #_0ADE08: db $CF ; ⎵
@@ -18523,7 +18514,7 @@ Message_0ADE02:
 ;===================================================================================================
 
 ; «しらぬわ»
-Message_0ADE0E:
+Message_02_18_8D:
 #_0ADE0E: db $EB, $94 ; [set2] prewritten text 94
 #_0ADE10: db $FF ; end of message
 
@@ -18531,7 +18522,7 @@ Message_0ADE0E:
 
 ; «フォッフォッフォッ!»
 ; きいたことも ない
-Message_0ADE11:
+Message_02_18_8E:
 #_0ADE11: db $EB, $0A ; [set2] prewritten text 0A
 #_0ADE13: db $F0 ; [set2] new line
 #_0ADE14: db $2B, $26, $34, $2E, $38, $47, $CF, $39 ; きいたことも⎵な
@@ -18541,7 +18532,7 @@ Message_0ADE11:
 ;===================================================================================================
 
 ; おぼえといて やるよ
-Message_0ADE1E:
+Message_02_18_8F:
 #_0ADE1E: db $29, $AF, $28, $38, $26, $37, $CF, $48 ; おぼえといて⎵や
 #_0ADE26: db $4D, $4A ; るよ
 #_0ADE28: db $FF ; end of message
@@ -18549,7 +18540,7 @@ Message_0ADE1E:
 ;===================================================================================================
 
 ; «ナカマを よろしく»たのみますぞ!
-Message_0ADE29:
+Message_02_18_90:
 #_0ADE29: db $EB, $B6 ; [set2] prewritten text B6
 #_0ADE2B: db $34, $3D, $44, $43, $31, $A5, $94 ; たのみますぞ!
 #_0ADE32: db $FF ; end of message
@@ -18557,7 +18548,7 @@ Message_0ADE29:
 ;===================================================================================================
 
 ; わしの ナカマと «なかよくして»くれや
-Message_0ADE33:
+Message_02_18_91:
 #_0ADE33: db $50, $30, $3D, $CF, $71, $62, $7B, $38 ; わしの⎵ナカマと
 #_0ADE3B: db $CF ; ⎵
 #_0ADE3C: db $EB, $B7 ; [set2] prewritten text B7
@@ -18567,7 +18558,7 @@ Message_0ADE33:
 ;===================================================================================================
 
 ; «ナカマを よろしく»たのんだぞ!
-Message_0ADE42:
+Message_02_18_92:
 #_0ADE42: db $EB, $B6 ; [set2] prewritten text B6
 #_0ADE44: db $34, $3D, $52, $A6, $A5, $94 ; たのんだぞ!
 #_0ADE4A: db $FF ; end of message
@@ -18575,63 +18566,63 @@ Message_0ADE42:
 ;===================================================================================================
 
 ; «おそいわあ!»
-Message_0ADE4B:
+Message_02_18_93:
 #_0ADE4B: db $EB, $2D ; [set2] prewritten text 2D
 #_0ADE4D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おそいわあ!»
-Message_0ADE4E:
+Message_02_18_94:
 #_0ADE4E: db $EB, $2D ; [set2] prewritten text 2D
 #_0ADE50: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «むだだ!»
-Message_0ADE51:
+Message_02_18_95:
 #_0ADE51: db $EB, $D1 ; [set2] prewritten text D1
 #_0ADE53: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «は! な・なんの ごようで しょうか?»
-Message_0ADE54:
+Message_02_18_96:
 #_0ADE54: db $EB, $5E ; [set2] prewritten text 5E
 #_0ADE56: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ワシに な・に・か・・・?»
-Message_0ADE57:
+Message_02_18_97:
 #_0ADE57: db $EB, $5F ; [set2] prewritten text 5F
 #_0ADE59: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «は! な・なんの ごようで しょうか?»
-Message_0ADE5A:
+Message_02_18_98:
 #_0ADE5A: db $EB, $5E ; [set2] prewritten text 5E
 #_0ADE5C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なんの まねだ?
-Message_0ADE5D:
+Message_02_18_99:
 #_0ADE5D: db $39, $52, $3D, $CF, $43, $3C, $A6, $95 ; なんの⎵まねだ?
 #_0ADE65: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «むなくそわるい!»
-Message_0ADE66:
+Message_02_18_9A:
 #_0ADE66: db $EB, $95 ; [set2] prewritten text 95
 #_0ADE68: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なに やってんだ?»
-Message_0ADE69:
+Message_02_18_9B:
 #_0ADE69: db $EB, $60 ; [set2] prewritten text 60
 #_0ADE6B: db $FF ; end of message
 
@@ -18639,7 +18630,7 @@ Message_0ADE69:
 
 ; てんよ! ちよ! われとともに たけり くるえ!
 ; «はーはははは!»
-Message_0ADE6C:
+Message_02_18_9C:
 #_0ADE6C: db $37, $52, $4A, $94, $CF, $35, $4A, $94 ; てんよ!⎵ちよ!
 #_0ADE74: db $CF, $50, $4E, $38, $38, $47, $3A, $CF ; ⎵われとともに⎵
 #_0ADE7C: db $34, $2D, $4C, $CF, $2C, $4D, $28, $94 ; たけり⎵くるえ!
@@ -18650,7 +18641,7 @@ Message_0ADE6C:
 ;===================================================================================================
 
 ; « みんな こわしてやる!»
-Message_0ADE88:
+Message_02_18_9D:
 #_0ADE88: db $EB, $62 ; [set2] prewritten text 62
 #_0ADE8A: db $FF ; end of message
 
@@ -18659,7 +18650,7 @@ Message_0ADE88:
 ; «はーはははは!»
 ; ちだ! ちだ! わが こころ しずめるのに
 ; ちを ささげよ!
-Message_0ADE8B:
+Message_02_18_9E:
 #_0ADE8B: db $EB, $61 ; [set2] prewritten text 61
 #_0ADE8D: db $F0 ; [set2] new line
 #_0ADE8E: db $35, $A6, $94, $CF, $35, $A6, $94, $CF ; ちだ!⎵ちだ!⎵
@@ -18672,7 +18663,7 @@ Message_0ADE8B:
 ;===================================================================================================
 
 ; きさま まだ いたのか?
-Message_0ADEAD:
+Message_02_18_9F:
 #_0ADEAD: db $2B, $2F, $43, $CF, $43, $A6, $CF, $26 ; きさま⎵まだ⎵い
 #_0ADEB5: db $34, $3D, $2A, $95 ; たのか?
 #_0ADEB9: db $FF ; end of message
@@ -18680,14 +18671,14 @@ Message_0ADEAD:
 ;===================================================================================================
 
 ; じゃまするのか?
-Message_0ADEBA:
+Message_02_18_A0:
 #_0ADEBA: db $A2, $55, $43, $31, $4D, $3D, $2A, $95 ; じゃまするのか?
 #_0ADEC2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ささげものは どうしたのだ?
-Message_0ADEC3:
+Message_02_18_A1:
 #_0ADEC3: db $2F, $2F, $9F, $47, $3D, $3E, $CF, $AA ; ささげものは⎵ど
 #_0ADECB: db $27, $30, $34, $3D, $A6, $95 ; うしたのだ?
 #_0ADED1: db $FF ; end of message
@@ -18696,7 +18687,7 @@ Message_0ADEC3:
 
 ; このキ・・・ただものでは ないな?
 ; «はなしを きこうぞ»
-Message_0ADED2:
+Message_02_18_A2:
 #_0ADED2: db $2E, $3D, $63, $93, $93, $93, $34, $A6 ; このキ・・・ただ
 #_0ADEDA: db $47, $3D, $A9, $3E, $CF, $39, $26, $39 ; ものでは⎵ないな
 #_0ADEE2: db $95 ; ?
@@ -18708,7 +18699,7 @@ Message_0ADED2:
 
 ; «できるな・・・・»
 ; «ようを いってみろ»
-Message_0ADEE7:
+Message_02_18_A3:
 #_0ADEE7: db $EB, $63 ; [set2] prewritten text 63
 #_0ADEE9: db $FF ; end of message
 
@@ -18716,14 +18707,14 @@ Message_0ADEE7:
 
 ; «できるな・・・・»
 ; «ようを いってみろ»
-Message_0ADEEA:
+Message_02_18_A4:
 #_0ADEEA: db $EB, $63 ; [set2] prewritten text 63
 #_0ADEEC: db $FF ; end of message
 
 ;===================================================================================================
 
 ; キサマ なを なんという?
-Message_0ADEED:
+Message_02_18_A5:
 #_0ADEED: db $63, $67, $7B, $CF, $39, $51, $CF, $39 ; キサマ⎵なを⎵な
 #_0ADEF5: db $52, $38, $26, $27, $95 ; んという?
 #_0ADEFA: db $FF ; end of message
@@ -18731,14 +18722,14 @@ Message_0ADEED:
 ;===================================================================================================
 
 ; «なにものだ? なを なのれ!»
-Message_0ADEFB:
+Message_02_18_A6:
 #_0ADEFB: db $EB, $AD ; [set2] prewritten text AD
 #_0ADEFD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ようが あるなら なを なのれ»
-Message_0ADEFE:
+Message_02_18_A7:
 #_0ADEFE: db $EB, $64 ; [set2] prewritten text 64
 #_0ADF00: db $FF ; end of message
 
@@ -18746,7 +18737,7 @@ Message_0ADEFE:
 
 ; «キサマが・・・・»
 ; «おもしろい »«はなしを きこうぞ»
-Message_0ADF01:
+Message_02_18_A8:
 #_0ADF01: db $EB, $65 ; [set2] prewritten text 65
 #_0ADF03: db $F0 ; [set2] new line
 #_0ADF04: db $EB, $67 ; [set2] prewritten text 67
@@ -18757,7 +18748,7 @@ Message_0ADF01:
 
 ; «なにい? オマエが・・・»
 ; «ようを いってみろ»
-Message_0ADF09:
+Message_02_18_A9:
 #_0ADF09: db $EB, $66 ; [set2] prewritten text 66
 #_0ADF0B: db $F0 ; [set2] new line
 #_0ADF0C: db $EB, $31 ; [set2] prewritten text 31
@@ -18767,7 +18758,7 @@ Message_0ADF09:
 
 ; しっているぞ・・・
 ; «おもしろい »«ようを いってみろ»
-Message_0ADF0F:
+Message_02_18_AA:
 #_0ADF0F: db $30, $58, $37, $26, $4D, $A5, $93, $93 ; しっているぞ・・
 #_0ADF17: db $93 ; ・
 #_0ADF18: db $F0 ; [set2] new line
@@ -18779,14 +18770,14 @@ Message_0ADF0F:
 
 ; «[￥GIVEME] いただきたい»
 ; «だせるかな?»
-Message_0ADF1E:
+Message_02_18_AB:
 #_0ADF1E: db $EB, $69 ; [set2] prewritten text 69
 #_0ADF20: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ワシに [￥GIVEME] くれや»
-Message_0ADF21:
+Message_02_18_AC:
 #_0ADF21: db $EB, $68 ; [set2] prewritten text 68
 #_0ADF23: db $FF ; end of message
 
@@ -18794,7 +18785,7 @@ Message_0ADF21:
 
 ; «[￥GIVEME] いただきたい»
 ; «だせるかな?»
-Message_0ADF24:
+Message_02_18_AD:
 #_0ADF24: db $EB, $69 ; [set2] prewritten text 69
 #_0ADF26: db $FF ; end of message
 
@@ -18802,7 +18793,7 @@ Message_0ADF24:
 
 ; «さらに [￥GIVEME] いただきたい»
 ; «これで きめよう»
-Message_0ADF27:
+Message_02_18_AE:
 #_0ADF27: db $EB, $6A ; [set2] prewritten text 6A
 #_0ADF29: db $FF ; end of message
 
@@ -18810,7 +18801,7 @@ Message_0ADF27:
 
 ; «ついでに [￥GIVEME] だな»
 ; «いやとは いわんな?»
-Message_0ADF2A:
+Message_02_18_AF:
 #_0ADF2A: db $EB, $6B ; [set2] prewritten text 6B
 #_0ADF2C: db $FF ; end of message
 
@@ -18818,7 +18809,7 @@ Message_0ADF2A:
 
 ; «さらに [￥GIVEME] いただきたい»
 ; «これで きめよう»
-Message_0ADF2D:
+Message_02_18_B0:
 #_0ADF2D: db $EB, $6A ; [set2] prewritten text 6A
 #_0ADF2F: db $FF ; end of message
 
@@ -18826,7 +18817,7 @@ Message_0ADF2D:
 
 ; «ならば [￥GIVEME] いただきたい»
 ; «これで きめよう»
-Message_0ADF30:
+Message_02_18_B1:
 #_0ADF30: db $EB, $6D ; [set2] prewritten text 6D
 #_0ADF32: db $FF ; end of message
 
@@ -18834,21 +18825,21 @@ Message_0ADF30:
 
 ; «そんなら [￥GIVEME] だな»
 ; «いやとは いわんな?»
-Message_0ADF33:
+Message_02_18_B2:
 #_0ADF33: db $EB, $6C ; [set2] prewritten text 6C
 #_0ADF35: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ならば [￥GIVEME] だ!»
-Message_0ADF36:
+Message_02_18_B3:
 #_0ADF36: db $EB, $A4 ; [set2] prewritten text A4
 #_0ADF38: db $FF ; end of message
 
 ;===================================================================================================
 
 ; まだ まんぞくとは いえぬ・・・
-Message_0ADF39:
+Message_02_18_B4:
 #_0ADF39: db $43, $A6, $CF, $43, $52, $A5, $2C, $38 ; まだ⎵まんぞくと
 #_0ADF41: db $3E, $CF, $26, $28, $3B, $93, $93, $93 ; は⎵いえぬ・・・
 #_0ADF49: db $FF ; end of message
@@ -18856,42 +18847,42 @@ Message_0ADF39:
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
-Message_0ADF4A:
+Message_02_18_B5:
 #_0ADF4A: db $EB, $35 ; [set2] prewritten text 35
 #_0ADF4C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
-Message_0ADF4D:
+Message_02_18_B6:
 #_0ADF4D: db $EB, $35 ; [set2] prewritten text 35
 #_0ADF4F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ほかに ほしいものか・・・»
-Message_0ADF50:
+Message_02_18_B7:
 #_0ADF50: db $EB, $73 ; [set2] prewritten text 73
 #_0ADF52: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0ADF53:
+Message_02_18_B8:
 #_0ADF53: db $EB, $36 ; [set2] prewritten text 36
 #_0ADF55: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0ADF56:
+Message_02_18_B9:
 #_0ADF56: db $EB, $36 ; [set2] prewritten text 36
 #_0ADF58: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やはり ひつようなのは ちだ!
-Message_0ADF59:
+Message_02_18_BA:
 #_0ADF59: db $48, $3E, $4C, $CF, $3F, $36, $4A, $27 ; やはり⎵ひつよう
 #_0ADF61: db $39, $3D, $3E, $CF, $35, $A6, $94 ; なのは⎵ちだ!
 #_0ADF68: db $FF ; end of message
@@ -18899,14 +18890,14 @@ Message_0ADF59:
 ;===================================================================================================
 
 ; «むむむむ・・・ワシは こんな やすく ない!»
-Message_0ADF69:
+Message_02_18_BB:
 #_0ADF69: db $EB, $6E ; [set2] prewritten text 6E
 #_0ADF6B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; うーむ こんな ちゃばんは もうやめだ!
-Message_0ADF6C:
+Message_02_18_BC:
 #_0ADF6C: db $27, $5A, $45, $CF, $2E, $52, $39, $CF ; うーむ⎵こんな⎵
 #_0ADF74: db $35, $55, $AB, $52, $3E, $CF, $47, $27 ; ちゃばんは⎵もう
 #_0ADF7C: db $48, $46, $A6, $94 ; やめだ!
@@ -18916,7 +18907,7 @@ Message_0ADF6C:
 
 ; わたしも なめられた ものだな
 ; こうかいさせて やろう!
-Message_0ADF81:
+Message_02_18_BD:
 #_0ADF81: db $50, $34, $30, $47, $CF, $39, $46, $4B ; わたしも⎵なめら
 #_0ADF89: db $4E, $34, $CF, $47, $3D, $A6, $39 ; れた⎵ものだな
 #_0ADF90: db $F0 ; [set2] new line
@@ -18927,14 +18918,14 @@ Message_0ADF81:
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0ADF9E:
+Message_02_18_BE:
 #_0ADF9E: db $EB, $36 ; [set2] prewritten text 36
 #_0ADFA0: db $FF ; end of message
 
 ;===================================================================================================
 
 ; アクマとの とりひきを なめとるな!
-Message_0ADFA1:
+Message_02_18_BF:
 #_0ADFA1: db $5D, $64, $7B, $38, $3D, $CF, $38, $4C ; アクマとの⎵とり
 #_0ADFA9: db $3F, $2B, $51, $CF, $39, $46, $38, $4D ; ひきを⎵なめとる
 #_0ADFB1: db $39, $94 ; な!
@@ -18944,7 +18935,7 @@ Message_0ADFA1:
 
 ; «まだ まんぞくとは いえぬ・・・»
 ; «キサマの いのちを いただこう!»
-Message_0ADFB4:
+Message_02_18_C0:
 #_0ADFB4: db $EB, $6F ; [set2] prewritten text 6F
 #_0ADFB6: db $F0 ; [set2] new line
 #_0ADFB7: db $EB, $70 ; [set2] prewritten text 70
@@ -18954,7 +18945,7 @@ Message_0ADFB4:
 
 ; «うーむ まだ ものたりんな»
 ; «オマエの いのちも よこせ!»
-Message_0ADFBA:
+Message_02_18_C1:
 #_0ADFBA: db $EB, $35 ; [set2] prewritten text 35
 #_0ADFBC: db $F0 ; [set2] new line
 #_0ADFBD: db $EB, $71 ; [set2] prewritten text 71
@@ -18964,7 +18955,7 @@ Message_0ADFBA:
 
 ; «なにか たりん!»
 ; そうだ!・・・・ちだ!
-Message_0ADFC0:
+Message_02_18_C2:
 #_0ADFC0: db $EB, $72 ; [set2] prewritten text 72
 #_0ADFC2: db $F0 ; [set2] new line
 #_0ADFC3: db $33, $27, $A6, $94, $93, $93, $93, $93 ; そうだ!・・・・
@@ -18974,7 +18965,7 @@ Message_0ADFC0:
 ;===================================================================================================
 
 ; では «キサマの いのちを いただこう!»
-Message_0ADFCF:
+Message_02_18_C3:
 #_0ADFCF: db $A9, $3E, $CF ; では⎵
 #_0ADFD2: db $EB, $70 ; [set2] prewritten text 70
 #_0ADFD4: db $FF ; end of message
@@ -18982,14 +18973,14 @@ Message_0ADFCF:
 ;===================================================================================================
 
 ; «そうか では ちまつりに してやろう!»
-Message_0ADFD5:
+Message_02_18_C4:
 #_0ADFD5: db $EB, $9C ; [set2] prewritten text 9C
 #_0ADFD7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ならば キサマの いのちを いただきたい»
-Message_0ADFD8:
+Message_02_18_C5:
 #_0ADFD8: db $EB, $74 ; [set2] prewritten text 74
 #_0ADFDA: db $FF ; end of message
 
@@ -18997,21 +18988,21 @@ Message_0ADFD8:
 
 ; «この げろうが!»
 ; «やっぱり かねが ねらいか!»
-Message_0ADFDB:
+Message_02_18_C6:
 #_0ADFDB: db $EB, $9E ; [set2] prewritten text 9E
 #_0ADFDD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «かねだってえ!? かねだってえ!?»
-Message_0ADFDE:
+Message_02_18_C7:
 #_0ADFDE: db $EB, $75 ; [set2] prewritten text 75
 #_0ADFE0: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おろかな! なぜ かねなのだ!
-Message_0ADFE1:
+Message_02_18_C8:
 #_0ADFE1: db $29, $4F, $2A, $39, $94, $CF, $39, $A4 ; おろかな!⎵なぜ
 #_0ADFE9: db $CF, $2A, $3C, $39, $3D, $A6, $94 ; ⎵かねなのだ!
 #_0ADFF0: db $FF ; end of message
@@ -19019,35 +19010,35 @@ Message_0ADFE1:
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0ADFF1:
+Message_02_18_C9:
 #_0ADFF1: db $EB, $36 ; [set2] prewritten text 36
 #_0ADFF3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0ADFF4:
+Message_02_18_CA:
 #_0ADFF4: db $EB, $36 ; [set2] prewritten text 36
 #_0ADFF6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0ADFF7:
+Message_02_18_CB:
 #_0ADFF7: db $EB, $36 ; [set2] prewritten text 36
 #_0ADFF9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «では うけとるが いい!»
-Message_0ADFFA:
+Message_02_18_CC:
 #_0ADFFA: db $EB, $76 ; [set2] prewritten text 76
 #_0ADFFC: db $FF ; end of message
 
 ;===================================================================================================
 
 ; んがあ コレ やる
-Message_0ADFFD:
+Message_02_18_CD:
 #_0ADFFD: db $52, $9C, $25, $CF, $66, $86, $CF, $48 ; んがあ⎵コレ⎵や
 #_0AE005: db $4D ; る
 #_0AE006: db $FF ; end of message
@@ -19056,7 +19047,7 @@ Message_0ADFFD:
 
 ; «では うけとるが いい!»
 ; «こいつを もって とっとと きえな!»
-Message_0AE007:
+Message_02_18_CE:
 #_0AE007: db $EB, $76 ; [set2] prewritten text 76
 #_0AE009: db $F0 ; [set2] new line
 #_0AE00A: db $EB, $77 ; [set2] prewritten text 77
@@ -19065,42 +19056,42 @@ Message_0AE007:
 ;===================================================================================================
 
 ; «きょひする»
-Message_0AE00D:
+Message_02_18_CF:
 #_0AE00D: db $EB, $A7 ; [set2] prewritten text A7
 #_0AE00F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いやなこった!
-Message_0AE010:
+Message_02_18_D0:
 #_0AE010: db $26, $48, $39, $2E, $58, $34, $94 ; いやなこった!
 #_0AE017: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おことわりだ!»
-Message_0AE018:
+Message_02_18_D1:
 #_0AE018: db $EB, $A8 ; [set2] prewritten text A8
 #_0AE01A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «しょうちした»
-Message_0AE01B:
+Message_02_18_D2:
 #_0AE01B: db $EB, $A1 ; [set2] prewritten text A1
 #_0AE01D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか わかった»
-Message_0AE01E:
+Message_02_18_D3:
 #_0AE01E: db $EB, $78 ; [set2] prewritten text 78
 #_0AE020: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなことか!»
-Message_0AE021:
+Message_02_18_D4:
 #_0AE021: db $EB, $3D ; [set2] prewritten text 3D
 #_0AE023: db $FF ; end of message
 
@@ -19110,7 +19101,7 @@ Message_0AE021:
 ; «この[CLASSX] [DEMONX]»
 ; «きょうより あなたの しもべ»
 ; «なんなりと おもうしつけ ください»
-Message_0AE024:
+Message_02_18_D5:
 #_0AE024: db $EB, $79 ; [set2] prewritten text 79
 #_0AE026: db $FF ; end of message
 
@@ -19118,7 +19109,7 @@ Message_0AE024:
 
 ; ワシは [DEMONX]
 ; こんごとも よろしく!
-Message_0AE027:
+Message_02_18_D6:
 #_0AE027: db $88, $68, $3E, $CF ; ワシは⎵
 #_0AE02B: db $ED ; [set2] write demon name indexed from $0526
 #_0AE02C: db $F0 ; [set2] new line
@@ -19129,7 +19120,7 @@ Message_0AE027:
 ;===================================================================================================
 
 ; «これで けいやく せいりつだ!»
-Message_0AE039:
+Message_02_18_D7:
 #_0AE039: db $EB, $7A ; [set2] prewritten text 7A
 #_0AE03B: db $FF ; end of message
 
@@ -19137,7 +19128,7 @@ Message_0AE039:
 
 ; まあ まて そう いそぐな
 ; «まだ なにも はなしていないぞ»
-Message_0AE03C:
+Message_02_18_D8:
 #_0AE03C: db $43, $25, $CF, $43, $37, $CF, $33, $27 ; まあ⎵まて⎵そう
 #_0AE044: db $CF, $26, $33, $9E, $39 ; ⎵いそぐな
 #_0AE049: db $F0 ; [set2] new line
@@ -19148,7 +19139,7 @@ Message_0AE03C:
 
 ; ちょっと またんか!
 ; «まだ なにも はなしていないぞ»
-Message_0AE04D:
+Message_02_18_D9:
 #_0AE04D: db $35, $57, $58, $38, $CF, $43, $34, $52 ; ちょっと⎵またん
 #_0AE055: db $2A, $94 ; か!
 #_0AE057: db $F0 ; [set2] new line
@@ -19159,7 +19150,7 @@ Message_0AE04D:
 
 ; まあ まて そう いそぐな
 ; «まだ なにも はなしていないぞ»
-Message_0AE05B:
+Message_02_18_DA:
 #_0AE05B: db $43, $25, $CF, $43, $37, $CF, $33, $27 ; まあ⎵まて⎵そう
 #_0AE063: db $CF, $26, $33, $9E, $39 ; ⎵いそぐな
 #_0AE068: db $F0 ; [set2] new line
@@ -19180,14 +19171,14 @@ Message_0AE06C:
 ;===================================================================================================
 
 ; «こうかい するでないぞ!»
-Message_0AE087:
+Message_02_19_00:
 #_0AE087: db $EB, $98 ; [set2] prewritten text 98
 #_0AE089: db $FF ; end of message
 
 ;===================================================================================================
 
 ; あたしと やるきなの?
-Message_0AE08A:
+Message_02_19_01:
 #_0AE08A: db $25, $34, $30, $38, $CF, $48, $4D, $2B ; あたしと⎵やるき
 #_0AE092: db $39, $3D, $95 ; なの?
 #_0AE095: db $FF ; end of message
@@ -19195,28 +19186,28 @@ Message_0AE08A:
 ;===================================================================================================
 
 ; なにさ!
-Message_0AE096:
+Message_02_19_02:
 #_0AE096: db $39, $3A, $2F, $94 ; なにさ!
 #_0AE09A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; かくご!
-Message_0AE09B:
+Message_02_19_03:
 #_0AE09B: db $2A, $2C, $A0, $94 ; かくご!
 #_0AE09F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いくわよ!
-Message_0AE0A0:
+Message_02_19_04:
 #_0AE0A0: db $26, $2C, $50, $4A, $94 ; いくわよ!
 #_0AE0A5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; でやー!
-Message_0AE0A6:
+Message_02_19_05:
 #_0AE0A6: db $A9, $48, $5A, $94 ; でやー!
 #_0AE0AA: db $FF ; end of message
 
@@ -19225,14 +19216,14 @@ Message_0AE0A6:
 ; «おまえの いのちを おくれ・・・»
 ; «しこうの かいらくを あたえようぞ!»
 ; «ほっほっほっほっ»
-Message_0AE0AB:
+Message_02_19_06:
 #_0AE0AB: db $EB, $99 ; [set2] prewritten text 99
 #_0AE0AD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ぼうや かわいがって あげるわ
-Message_0AE0AE:
+Message_02_19_07:
 #_0AE0AE: db $AF, $27, $48, $CF, $2A, $50, $26, $9C ; ぼうや⎵かわいが
 #_0AE0B6: db $58, $37, $CF, $25, $9F, $4D, $50 ; って⎵あげるわ
 #_0AE0BD: db $FF ; end of message
@@ -19240,7 +19231,7 @@ Message_0AE0AE:
 ;===================================================================================================
 
 ; ちょっとなら あそんで あげるわよ!
-Message_0AE0BE:
+Message_02_19_08:
 #_0AE0BE: db $35, $57, $58, $38, $39, $4B, $CF, $25 ; ちょっとなら⎵あ
 #_0AE0C6: db $33, $52, $A9, $CF, $25, $9F, $4D, $50 ; そんで⎵あげるわ
 #_0AE0CE: db $4A, $94 ; よ!
@@ -19250,7 +19241,7 @@ Message_0AE0BE:
 
 ; ゆるして たもれ
 ; «きょうより おんみは わらわの しゅじん・・・»
-Message_0AE0D1:
+Message_02_19_09:
 #_0AE0D1: db $49, $4D, $30, $37, $CF, $34, $47, $4E ; ゆるして⎵たもれ
 #_0AE0D9: db $F0 ; [set2] new line
 #_0AE0DA: db $EB, $A2 ; [set2] prewritten text A2
@@ -19260,7 +19251,7 @@ Message_0AE0D1:
 
 ; ああ! もうだめ!
 ; «なんでも おのぞみ どおり するわ»
-Message_0AE0DD:
+Message_02_19_0A:
 #_0AE0DD: db $25, $25, $94, $CF, $47, $27, $A6, $46 ; ああ!⎵もうだめ
 #_0AE0E5: db $94 ; !
 #_0AE0E6: db $F0 ; [set2] new line
@@ -19271,7 +19262,7 @@ Message_0AE0DD:
 
 ; つよい ひとって すてきよ!
 ; もう どうにでも して!
-Message_0AE0EA:
+Message_02_19_0B:
 #_0AE0EA: db $36, $4A, $26, $CF, $3F, $38, $58, $37 ; つよい⎵ひとって
 #_0AE0F2: db $CF, $31, $37, $2B, $4A, $94 ; ⎵すてきよ!
 #_0AE0F8: db $F0 ; [set2] new line
@@ -19282,14 +19273,14 @@ Message_0AE0EA:
 ;===================================================================================================
 
 ; ひいー!
-Message_0AE106:
+Message_02_19_0C:
 #_0AE106: db $3F, $26, $5A, $94 ; ひいー!
 #_0AE10A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いやー! ひどいわ!
-Message_0AE10B:
+Message_02_19_0D:
 #_0AE10B: db $26, $48, $5A, $94, $CF, $3F, $AA, $26 ; いやー!⎵ひどい
 #_0AE113: db $50, $94 ; わ!
 #_0AE115: db $FF ; end of message
@@ -19298,7 +19289,7 @@ Message_0AE10B:
 
 ; たすけてー!
 ; «きゃーはははは!»
-Message_0AE116:
+Message_02_19_0E:
 #_0AE116: db $34, $31, $2D, $37, $5A, $94 ; たすけてー!
 #_0AE11C: db $F0 ; [set2] new line
 #_0AE11D: db $EB, $83 ; [set2] prewritten text 83
@@ -19307,21 +19298,21 @@ Message_0AE116:
 ;===================================================================================================
 
 ; «わらわに なにか ようか?»
-Message_0AE120:
+Message_02_19_0F:
 #_0AE120: db $EB, $92 ; [set2] prewritten text 92
 #_0AE122: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なにが おのぞみ?»
-Message_0AE123:
+Message_02_19_10:
 #_0AE123: db $EB, $93 ; [set2] prewritten text 93
 #_0AE125: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はなし きいたげる»わ!
-Message_0AE126:
+Message_02_19_11:
 #_0AE126: db $EB, $84 ; [set2] prewritten text 84
 #_0AE128: db $50, $94 ; わ!
 #_0AE12A: db $FF ; end of message
@@ -19329,7 +19320,7 @@ Message_0AE126:
 ;===================================================================================================
 
 ; わらわに いのちを ささげるのじゃ
-Message_0AE12B:
+Message_02_19_12:
 #_0AE12B: db $50, $4B, $50, $3A, $CF, $26, $3D, $35 ; わらわに⎵いのち
 #_0AE133: db $51, $CF, $2F, $2F, $9F, $4D, $3D, $A2 ; を⎵ささげるのじ
 #_0AE13B: db $55 ; ゃ
@@ -19338,7 +19329,7 @@ Message_0AE12B:
 ;===================================================================================================
 
 ; きょうから あなたは わたしの どれい
-Message_0AE13D:
+Message_02_19_13:
 #_0AE13D: db $2B, $57, $27, $2A, $4B, $CF, $25, $39 ; きょうから⎵あな
 #_0AE145: db $34, $3E, $CF, $50, $34, $30, $3D, $CF ; たは⎵わたしの⎵
 #_0AE14D: db $AA, $4E, $26 ; どれい
@@ -19347,7 +19338,7 @@ Message_0AE13D:
 ;===================================================================================================
 
 ; じゃ なんでも ゆうこと きいてね
-Message_0AE151:
+Message_02_19_14:
 #_0AE151: db $A2, $55, $CF, $39, $52, $A9, $47, $CF ; じゃ⎵なんでも⎵
 #_0AE159: db $49, $27, $2E, $38, $CF, $2B, $26, $37 ; ゆうこと⎵きいて
 #_0AE161: db $3C ; ね
@@ -19356,7 +19347,7 @@ Message_0AE151:
 ;===================================================================================================
 
 ; わらわは おろかものは すかぬ
-Message_0AE163:
+Message_02_19_15:
 #_0AE163: db $50, $4B, $50, $3E, $CF, $29, $4F, $2A ; わらわは⎵おろか
 #_0AE16B: db $47, $3D, $3E, $CF, $31, $2A, $3B ; ものは⎵すかぬ
 #_0AE172: db $FF ; end of message
@@ -19364,7 +19355,7 @@ Message_0AE163:
 ;===================================================================================================
 
 ; でも あなた いまいち なのよね
-Message_0AE173:
+Message_02_19_16:
 #_0AE173: db $A9, $47, $CF, $25, $39, $34, $CF, $26 ; でも⎵あなた⎵い
 #_0AE17B: db $43, $26, $35, $CF, $39, $3D, $4A, $3C ; まいち⎵なのよね
 #_0AE183: db $FF ; end of message
@@ -19374,7 +19365,7 @@ Message_0AE173:
 ; あたしはねえ・・・
 ; キライ!
 ; «きゃーはははは!»
-Message_0AE184:
+Message_02_19_17:
 #_0AE184: db $25, $34, $30, $3E, $3C, $28, $93, $93 ; あたしはねえ・・
 #_0AE18C: db $93 ; ・
 #_0AE18D: db $F0 ; [set2] new line
@@ -19387,7 +19378,7 @@ Message_0AE184:
 
 ; «ほっほっほっほっ» りりしき おのこじゃ
 ; その きがいにめんじて はなし うけたまわろう
-Message_0AE196:
+Message_02_19_18:
 #_0AE196: db $EB, $82 ; [set2] prewritten text 82
 #_0AE198: db $CF, $4C, $4C, $30, $2B, $CF, $29, $3D ; ⎵りりしき⎵おの
 #_0AE1A0: db $2E, $A2, $55 ; こじゃ
@@ -19401,7 +19392,7 @@ Message_0AE196:
 
 ; フッ いいどきょうね
 ; きいたげるわ その はなし・・・
-Message_0AE1BC:
+Message_02_19_19:
 #_0AE1BC: db $78, $92, $CF, $26, $26, $AA, $2B, $57 ; フッ⎵いいどきょ
 #_0AE1C4: db $27, $3C ; うね
 #_0AE1C6: db $F0 ; [set2] new line
@@ -19413,7 +19404,7 @@ Message_0AE1BC:
 
 ; いいわあ!
 ; «はなし きいたげる»ー!
-Message_0AE1D8:
+Message_02_19_1A:
 #_0AE1D8: db $26, $26, $50, $25, $94 ; いいわあ!
 #_0AE1DD: db $F0 ; [set2] new line
 #_0AE1DE: db $EB, $84 ; [set2] prewritten text 84
@@ -19423,7 +19414,7 @@ Message_0AE1D8:
 ;===================================================================================================
 
 ; な・なにが のぞみじゃ・・・
-Message_0AE1E3:
+Message_02_19_1B:
 #_0AE1E3: db $39, $93, $39, $3A, $9C, $CF, $3D, $A5 ; な・なにが⎵のぞ
 #_0AE1EB: db $44, $A2, $55, $93, $93, $93 ; みじゃ・・・
 #_0AE1F1: db $FF ; end of message
@@ -19432,7 +19423,7 @@ Message_0AE1E3:
 
 ; なにすんのよ やめてよね
 ; なに したいのよ?
-Message_0AE1F2:
+Message_02_19_1C:
 #_0AE1F2: db $39, $3A, $31, $52, $3D, $4A, $CF, $48 ; なにすんのよ⎵や
 #_0AE1FA: db $46, $37, $4A, $3C ; めてよね
 #_0AE1FE: db $F0 ; [set2] new line
@@ -19444,7 +19435,7 @@ Message_0AE1F2:
 
 ; いや! そんな こわい かお しないでえ
 ; なにが ほしいの?
-Message_0AE209:
+Message_02_19_1D:
 #_0AE209: db $26, $48, $94, $CF, $33, $52, $39, $CF ; いや!⎵そんな⎵
 #_0AE211: db $2E, $50, $26, $CF, $2A, $29, $CF, $30 ; こわい⎵かお⎵し
 #_0AE219: db $39, $26, $A9, $28 ; ないでえ
@@ -19457,7 +19448,7 @@ Message_0AE209:
 
 ; ああ なにを されるのじゃ
 ; やさしく してたもれ
-Message_0AE228:
+Message_02_19_1E:
 #_0AE228: db $25, $25, $CF, $39, $3A, $51, $CF, $2F ; ああ⎵なにを⎵さ
 #_0AE230: db $4E, $4D, $3D, $A2, $55 ; れるのじゃ
 #_0AE235: db $F0 ; [set2] new line
@@ -19469,7 +19460,7 @@ Message_0AE228:
 
 ; ねえ そんな こわいかお しないで
 ; いいこと しましょ!
-Message_0AE241:
+Message_02_19_1F:
 #_0AE241: db $3C, $28, $CF, $33, $52, $39, $CF, $2E ; ねえ⎵そんな⎵こ
 #_0AE249: db $50, $26, $2A, $29, $CF, $30, $39, $26 ; わいかお⎵しない
 #_0AE251: db $A9 ; で
@@ -19481,7 +19472,7 @@ Message_0AE241:
 ;===================================================================================================
 
 ; あーん! いぢめて いぢめて!
-Message_0AE25E:
+Message_02_19_20:
 #_0AE25E: db $25, $5A, $52, $94, $CF, $26, $A7, $46 ; あーん!⎵いぢめ
 #_0AE266: db $37, $CF, $26, $A7, $46, $37, $94 ; て⎵いぢめて!
 #_0AE26D: db $FF ; end of message
@@ -19489,7 +19480,7 @@ Message_0AE25E:
 ;===================================================================================================
 
 ; これを とらせるゆえ やめてたもれ
-Message_0AE26E:
+Message_02_19_21:
 #_0AE26E: db $2E, $4E, $51, $CF, $38, $4B, $32, $4D ; これを⎵とらせる
 #_0AE276: db $49, $28, $CF, $48, $46, $37, $34, $47 ; ゆえ⎵やめてたも
 #_0AE27E: db $4E ; れ
@@ -19498,7 +19489,7 @@ Message_0AE26E:
 ;===================================================================================================
 
 ; きゃー これあげるから ゆるしてえ!
-Message_0AE280:
+Message_02_19_22:
 #_0AE280: db $2B, $55, $5A, $CF, $2E, $4E, $25, $9F ; きゃー⎵これあげ
 #_0AE288: db $4D, $2A, $4B, $CF, $49, $4D, $30, $37 ; るから⎵ゆるして
 #_0AE290: db $28, $94 ; え!
@@ -19507,7 +19498,7 @@ Message_0AE280:
 ;===================================================================================================
 
 ; これあげる! もう いぢめないで!
-Message_0AE293:
+Message_02_19_23:
 #_0AE293: db $2E, $4E, $25, $9F, $4D, $94, $CF, $47 ; これあげる!⎵も
 #_0AE29B: db $27, $CF, $26, $A7, $46, $39, $26, $A9 ; う⎵いぢめないで
 #_0AE2A3: db $94 ; !
@@ -19516,42 +19507,42 @@ Message_0AE293:
 ;===================================================================================================
 
 ; さらばじゃ
-Message_0AE2A5:
+Message_02_19_24:
 #_0AE2A5: db $2F, $4B, $AB, $A2, $55 ; さらばじゃ
 #_0AE2AA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; さよならー!
-Message_0AE2AB:
+Message_02_19_25:
 #_0AE2AB: db $2F, $4A, $39, $4B, $5A, $94 ; さよならー!
 #_0AE2B1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; バーイ!
-Message_0AE2B2:
+Message_02_19_26:
 #_0AE2B2: db $C4, $5A, $5E, $94 ; バーイ!
 #_0AE2B6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ほっほっほっほっ»
-Message_0AE2B7:
+Message_02_19_27:
 #_0AE2B7: db $EB, $82 ; [set2] prewritten text 82
 #_0AE2B9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うふふふふ・・・»
-Message_0AE2BA:
+Message_02_19_28:
 #_0AE2BA: db $EB, $86 ; [set2] prewritten text 86
 #_0AE2BC: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きゃーはははは!»
-Message_0AE2BD:
+Message_02_19_29:
 #_0AE2BD: db $EB, $83 ; [set2] prewritten text 83
 #_0AE2BF: db $FF ; end of message
 
@@ -19559,14 +19550,14 @@ Message_0AE2BD:
 
 ; «この [CLASSX] [DEMONX]を»
 ; «ほんきで おこらせた ようだな・・・»
-Message_0AE2C0:
+Message_02_19_2A:
 #_0AE2C0: db $EB, $85 ; [set2] prewritten text 85
 #_0AE2C2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; もう ゆるさないわ!
-Message_0AE2C3:
+Message_02_19_2B:
 #_0AE2C3: db $47, $27, $CF, $49, $4D, $2F, $39, $26 ; もう⎵ゆるさない
 #_0AE2CB: db $50, $94 ; わ!
 #_0AE2CD: db $FF ; end of message
@@ -19574,7 +19565,7 @@ Message_0AE2C3:
 ;===================================================================================================
 
 ; きい! くやしい!
-Message_0AE2CE:
+Message_02_19_2C:
 #_0AE2CE: db $2B, $26, $94, $CF, $2C, $48, $30, $26 ; きい!⎵くやしい
 #_0AE2D6: db $94 ; !
 #_0AE2D7: db $FF ; end of message
@@ -19583,7 +19574,7 @@ Message_0AE2CE:
 
 ; «ほっほっほっほっ»
 ; おもしろい のぞみを もうせ
-Message_0AE2D8:
+Message_02_19_2D:
 #_0AE2D8: db $EB, $82 ; [set2] prewritten text 82
 #_0AE2DA: db $F0 ; [set2] new line
 #_0AE2DB: db $29, $47, $30, $4F, $26, $CF, $3D, $A5 ; おもしろい⎵のぞ
@@ -19594,7 +19585,7 @@ Message_0AE2D8:
 
 ; «うふふふふ・・・»
 ; いいわ はなして ごらんなさい
-Message_0AE2EA:
+Message_02_19_2E:
 #_0AE2EA: db $EB, $86 ; [set2] prewritten text 86
 #_0AE2EC: db $F0 ; [set2] new line
 #_0AE2ED: db $26, $26, $50, $CF, $3E, $39, $30, $37 ; いいわ⎵はなして
@@ -19605,7 +19596,7 @@ Message_0AE2EA:
 
 ; ウフ! たのしいひと!
 ; もっと おもしろいこと してくれるの?
-Message_0AE2FD:
+Message_02_19_2F:
 #_0AE2FD: db $5F, $78, $94, $CF, $34, $3D, $30, $26 ; ウフ!⎵たのしい
 #_0AE305: db $3F, $38, $94 ; ひと!
 #_0AE308: db $F0 ; [set2] new line
@@ -19617,7 +19608,7 @@ Message_0AE2FD:
 ;===================================================================================================
 
 ; わらわの ちょうあいを うけたいのか?
-Message_0AE31D:
+Message_02_19_30:
 #_0AE31D: db $50, $4B, $50, $3D, $CF, $35, $57, $27 ; わらわの⎵ちょう
 #_0AE325: db $25, $26, $51, $CF, $27, $2D, $34, $26 ; あいを⎵うけたい
 #_0AE32D: db $3D, $2A, $95 ; のか?
@@ -19626,42 +19617,42 @@ Message_0AE31D:
 ;===================================================================================================
 
 ; «ねえ あたしのこと すき?»
-Message_0AE331:
+Message_02_19_31:
 #_0AE331: db $EB, $87 ; [set2] prewritten text 87
 #_0AE333: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ねえ あたしのこと すき?»
-Message_0AE334:
+Message_02_19_32:
 #_0AE334: db $EB, $87 ; [set2] prewritten text 87
 #_0AE336: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ぶれいな・・・
-Message_0AE337:
+Message_02_19_33:
 #_0AE337: db $AD, $4E, $26, $39, $93, $93, $93 ; ぶれいな・・・
 #_0AE33E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ふん!
-Message_0AE33F:
+Message_02_19_34:
 #_0AE33F: db $40, $52, $94 ; ふん!
 #_0AE342: db $FF ; end of message
 
 ;===================================================================================================
 
 ; もう しらない!
-Message_0AE343:
+Message_02_19_35:
 #_0AE343: db $47, $27, $CF, $30, $4B, $39, $26, $94 ; もう⎵しらない!
 #_0AE34B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わらわを たのしませよ
-Message_0AE34C:
+Message_02_19_36:
 #_0AE34C: db $50, $4B, $50, $51, $CF, $34, $3D, $30 ; わらわを⎵たのし
 #_0AE354: db $43, $32, $4A ; ませよ
 #_0AE357: db $FF ; end of message
@@ -19669,7 +19660,7 @@ Message_0AE34C:
 ;===================================================================================================
 
 ; なんか つまんないわ
-Message_0AE358:
+Message_02_19_37:
 #_0AE358: db $39, $52, $2A, $CF, $36, $43, $52, $39 ; なんか⎵つまんな
 #_0AE360: db $26, $50 ; いわ
 #_0AE362: db $FF ; end of message
@@ -19677,7 +19668,7 @@ Message_0AE358:
 ;===================================================================================================
 
 ; なんか おもしろいこと やって!
-Message_0AE363:
+Message_02_19_38:
 #_0AE363: db $39, $52, $2A, $CF, $29, $47, $30, $4F ; なんか⎵おもしろ
 #_0AE36B: db $26, $2E, $38, $CF, $48, $58, $37, $94 ; いこと⎵やって!
 #_0AE373: db $FF ; end of message
@@ -19685,7 +19676,7 @@ Message_0AE363:
 ;===================================================================================================
 
 ; なに にやけておる?
-Message_0AE374:
+Message_02_19_39:
 #_0AE374: db $39, $3A, $CF, $3A, $48, $2D, $37, $29 ; なに⎵にやけてお
 #_0AE37C: db $4D, $95 ; る?
 #_0AE37E: db $FF ; end of message
@@ -19693,7 +19684,7 @@ Message_0AE374:
 ;===================================================================================================
 
 ; はなのした のばすんじゃ ないわよ
-Message_0AE37F:
+Message_02_19_3A:
 #_0AE37F: db $3E, $39, $3D, $30, $34, $CF, $3D, $AB ; はなのした⎵のば
 #_0AE387: db $31, $52, $A2, $55, $CF, $39, $26, $50 ; すんじゃ⎵ないわ
 #_0AE38F: db $4A ; よ
@@ -19702,28 +19693,28 @@ Message_0AE37F:
 ;===================================================================================================
 
 ; へんなかおー
-Message_0AE391:
+Message_02_19_3B:
 #_0AE391: db $41, $52, $39, $2A, $29, $5A ; へんなかおー
 #_0AE397: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いざ まいらん
-Message_0AE398:
+Message_02_19_3C:
 #_0AE398: db $26, $A1, $CF, $43, $26, $4B, $52 ; いざ⎵まいらん
 #_0AE39F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いったげるわよ
-Message_0AE3A0:
+Message_02_19_3D:
 #_0AE3A0: db $26, $58, $34, $9F, $4D, $50, $4A ; いったげるわよ
 #_0AE3A7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なになになーに?
-Message_0AE3A8:
+Message_02_19_3E:
 #_0AE3A8: db $39, $3A, $39, $3A, $39, $5A, $3A, $95 ; なになになーに?
 #_0AE3B0: db $FF ; end of message
 
@@ -19731,7 +19722,7 @@ Message_0AE3A8:
 
 ; あきた
 ; かえるぞよ
-Message_0AE3B1:
+Message_02_19_3F:
 #_0AE3B1: db $25, $2B, $34 ; あきた
 #_0AE3B4: db $F0 ; [set2] new line
 #_0AE3B5: db $2A, $28, $4D, $A5, $4A ; かえるぞよ
@@ -19740,28 +19731,28 @@ Message_0AE3B1:
 ;===================================================================================================
 
 ; つまんないわ
-Message_0AE3BB:
+Message_02_19_40:
 #_0AE3BB: db $36, $43, $52, $39, $26, $50 ; つまんないわ
 #_0AE3C1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; あたし かえる!
-Message_0AE3C2:
+Message_02_19_41:
 #_0AE3C2: db $25, $34, $30, $CF, $2A, $28, $4D, $94 ; あたし⎵かえる!
 #_0AE3CA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «もういい やめろ!»
-Message_0AE3CB:
+Message_02_19_42:
 #_0AE3CB: db $EB, $88 ; [set2] prewritten text 88
 #_0AE3CD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やめて! もう しにそう!
-Message_0AE3CE:
+Message_02_19_43:
 #_0AE3CE: db $48, $46, $37, $94, $CF, $47, $27, $CF ; やめて!⎵もう⎵
 #_0AE3D6: db $30, $3A, $33, $27, $94 ; しにそう!
 #_0AE3DB: db $FF ; end of message
@@ -19770,7 +19761,7 @@ Message_0AE3CE:
 
 ; ひー! や・やめてえ!
 ; «きゃーはははは!»
-Message_0AE3DC:
+Message_02_19_44:
 #_0AE3DC: db $3F, $5A, $94, $CF, $48, $93, $48, $46 ; ひー!⎵や・やめ
 #_0AE3E4: db $37, $28, $94 ; てえ!
 #_0AE3E7: db $F0 ; [set2] new line
@@ -19781,7 +19772,7 @@ Message_0AE3DC:
 
 ; ヒトのこ ごときが なんじゃ?
 ; この キは・・・?
-Message_0AE3EB:
+Message_02_19_45:
 #_0AE3EB: db $77, $70, $3D, $2E, $CF, $A0, $38, $2B ; ヒトのこ⎵ごとき
 #_0AE3F3: db $9C, $CF, $39, $52, $A2, $55, $95 ; が⎵なんじゃ?
 #_0AE3FA: db $F0 ; [set2] new line
@@ -19792,7 +19783,7 @@ Message_0AE3EB:
 ;===================================================================================================
 
 ; あなた« デビルバスター»ね?
-Message_0AE405:
+Message_02_19_46:
 #_0AE405: db $25, $39, $34 ; あなた
 #_0AE408: db $EB, $89 ; [set2] prewritten text 89
 #_0AE40A: db $3C, $95 ; ね?
@@ -19801,21 +19792,21 @@ Message_0AE405:
 ;===================================================================================================
 
 ; こわいわ・・・
-Message_0AE40D:
+Message_02_19_47:
 #_0AE40D: db $2E, $50, $26, $50, $93, $93, $93 ; こわいわ・・・
 #_0AE414: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おろかな・・・
-Message_0AE415:
+Message_02_19_48:
 #_0AE415: db $29, $4F, $2A, $39, $93, $93, $93 ; おろかな・・・
 #_0AE41C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なに いってんの?
-Message_0AE41D:
+Message_02_19_49:
 #_0AE41D: db $39, $3A, $CF, $26, $58, $37, $52, $3D ; なに⎵いってんの
 #_0AE425: db $95 ; ?
 #_0AE426: db $FF ; end of message
@@ -19823,7 +19814,7 @@ Message_0AE41D:
 ;===================================================================================================
 
 ; よく わかんない
-Message_0AE427:
+Message_02_19_4A:
 #_0AE427: db $4A, $2C, $CF, $50, $2A, $52, $39, $26 ; よく⎵わかんない
 #_0AE42F: db $FF ; end of message
 
@@ -19831,7 +19822,7 @@ Message_0AE427:
 
 ; «ほっほっほっほっ»
 ; あまいわあ!
-Message_0AE430:
+Message_02_19_4B:
 #_0AE430: db $EB, $82 ; [set2] prewritten text 82
 #_0AE432: db $F0 ; [set2] new line
 #_0AE433: db $25, $43, $26, $50, $25, $94 ; あまいわあ!
@@ -19841,7 +19832,7 @@ Message_0AE430:
 
 ; おばかさんね!
 ; «うふふふふ・・・»
-Message_0AE43A:
+Message_02_19_4C:
 #_0AE43A: db $29, $AB, $2A, $2F, $52, $3C, $94 ; おばかさんね!
 #_0AE441: db $F0 ; [set2] new line
 #_0AE442: db $EB, $86 ; [set2] prewritten text 86
@@ -19851,7 +19842,7 @@ Message_0AE43A:
 
 ; ばかな やつー!
 ; «きゃーはははは!»
-Message_0AE445:
+Message_02_19_4D:
 #_0AE445: db $AB, $2A, $39, $CF, $48, $36, $5A, $94 ; ばかな⎵やつー!
 #_0AE44D: db $F0 ; [set2] new line
 #_0AE44E: db $EB, $83 ; [set2] prewritten text 83
@@ -19860,7 +19851,7 @@ Message_0AE445:
 ;===================================================================================================
 
 ; いざ わらわの もとに こよ!
-Message_0AE451:
+Message_02_19_4E:
 #_0AE451: db $26, $A1, $CF, $50, $4B, $50, $3D, $CF ; いざ⎵わらわの⎵
 #_0AE459: db $47, $38, $3A, $CF, $2E, $4A, $94 ; もとに⎵こよ!
 #_0AE460: db $FF ; end of message
@@ -19868,7 +19859,7 @@ Message_0AE451:
 ;===================================================================================================
 
 ; さあ ぼうや こっちへ いらっしゃい
-Message_0AE461:
+Message_02_19_4F:
 #_0AE461: db $2F, $25, $CF, $AF, $27, $48, $CF, $2E ; さあ⎵ぼうや⎵こ
 #_0AE469: db $58, $35, $41, $CF, $26, $4B, $58, $30 ; っちへ⎵いらっし
 #_0AE471: db $55, $26 ; ゃい
@@ -19877,7 +19868,7 @@ Message_0AE461:
 ;===================================================================================================
 
 ; うーん! こっち きてえーン!
-Message_0AE474:
+Message_02_19_50:
 #_0AE474: db $27, $5A, $52, $94, $CF, $2E, $58, $35 ; うーん!⎵こっち
 #_0AE47C: db $CF, $2B, $37, $28, $5A, $8A, $94 ; ⎵きてえーン!
 #_0AE483: db $FF ; end of message
@@ -19886,7 +19877,7 @@ Message_0AE474:
 
 ; わらわは こころ うたれました
 ; どうか おそばに
-Message_0AE484:
+Message_02_19_51:
 #_0AE484: db $50, $4B, $50, $3E, $CF, $2E, $2E, $4F ; わらわは⎵こころ
 #_0AE48C: db $CF, $27, $34, $4E, $43, $30, $34 ; ⎵うたれました
 #_0AE493: db $F0 ; [set2] new line
@@ -19897,7 +19888,7 @@ Message_0AE484:
 
 ; «あなたの ような ひと はじめてよ!»
 ; «なんでも おのぞみ どおり するわ»
-Message_0AE49D:
+Message_02_19_52:
 #_0AE49D: db $EB, $8B ; [set2] prewritten text 8B
 #_0AE49F: db $F0 ; [set2] new line
 #_0AE4A0: db $EB, $8A ; [set2] prewritten text 8A
@@ -19907,7 +19898,7 @@ Message_0AE49D:
 
 ; «あなたの ような ひと はじめてよ!»
 ; もう あたしを すきにして!
-Message_0AE4A3:
+Message_02_19_53:
 #_0AE4A3: db $EB, $8B ; [set2] prewritten text 8B
 #_0AE4A5: db $F0 ; [set2] new line
 #_0AE4A6: db $47, $27, $CF, $25, $34, $30, $51, $CF ; もう⎵あたしを⎵
@@ -19917,7 +19908,7 @@ Message_0AE4A3:
 ;===================================================================================================
 
 ; «おくびょうものに ようは ないわ!»
-Message_0AE4B5:
+Message_02_19_54:
 #_0AE4B5: db $EB, $56 ; [set2] prewritten text 56
 #_0AE4B7: db $FF ; end of message
 
@@ -19925,7 +19916,7 @@ Message_0AE4B5:
 
 ; «うふふふふ・・・»
 ; あたしが こわいの?
-Message_0AE4B8:
+Message_02_19_55:
 #_0AE4B8: db $EB, $86 ; [set2] prewritten text 86
 #_0AE4BA: db $F0 ; [set2] new line
 #_0AE4BB: db $25, $34, $30, $9C, $CF, $2E, $50, $26 ; あたしが⎵こわい
@@ -19935,7 +19926,7 @@ Message_0AE4B8:
 ;===================================================================================================
 
 ; ううーん! いくじなし!
-Message_0AE4C6:
+Message_02_19_56:
 #_0AE4C6: db $27, $27, $5A, $52, $94, $CF, $26, $2C ; ううーん!⎵いく
 #_0AE4CE: db $A2, $39, $30, $94 ; じなし!
 #_0AE4D2: db $FF ; end of message
@@ -19943,7 +19934,7 @@ Message_0AE4C6:
 ;===================================================================================================
 
 ; わらわを あやめるか?
-Message_0AE4D3:
+Message_02_19_57:
 #_0AE4D3: db $50, $4B, $50, $51, $CF, $25, $48, $46 ; わらわを⎵あやめ
 #_0AE4DB: db $4D, $2A, $95 ; るか?
 #_0AE4DE: db $FF ; end of message
@@ -19951,7 +19942,7 @@ Message_0AE4D3:
 ;===================================================================================================
 
 ; まさか あたしを ころす つもりなの?
-Message_0AE4DF:
+Message_02_19_58:
 #_0AE4DF: db $43, $2F, $2A, $CF, $25, $34, $30, $51 ; まさか⎵あたしを
 #_0AE4E7: db $CF, $2E, $4F, $31, $CF, $36, $47, $4C ; ⎵ころす⎵つもり
 #_0AE4EF: db $39, $3D, $95 ; なの?
@@ -19960,7 +19951,7 @@ Message_0AE4DF:
 ;===================================================================================================
 
 ; アクマ«を ころして へいきなの?»
-Message_0AE4F3:
+Message_02_19_59:
 #_0AE4F3: db $5D, $64, $7B ; アクマ
 #_0AE4F6: db $EB, $BA ; [set2] prewritten text BA
 #_0AE4F8: db $FF ; end of message
@@ -19968,7 +19959,7 @@ Message_0AE4F3:
 ;===================================================================================================
 
 ; むごい しうちよ・・・・
-Message_0AE4F9:
+Message_02_19_5A:
 #_0AE4F9: db $45, $A0, $26, $CF, $30, $27, $35, $4A ; むごい⎵しうちよ
 #_0AE501: db $93, $93, $93, $93 ; ・・・・
 #_0AE505: db $FF ; end of message
@@ -19977,7 +19968,7 @@ Message_0AE4F9:
 
 ; ひどいわ!
 ; うっ・うっ・・・
-Message_0AE506:
+Message_02_19_5B:
 #_0AE506: db $3F, $AA, $26, $50, $94 ; ひどいわ!
 #_0AE50B: db $F0 ; [set2] new line
 #_0AE50C: db $27, $58, $93, $27, $58, $93, $93, $93 ; うっ・うっ・・・
@@ -19986,7 +19977,7 @@ Message_0AE506:
 ;===================================================================================================
 
 ; エーン! いじわるう!
-Message_0AE515:
+Message_02_19_5C:
 #_0AE515: db $60, $5A, $8A, $94, $CF, $26, $A2, $50 ; エーン!⎵いじわ
 #_0AE51D: db $4D, $27, $94 ; るう!
 #_0AE520: db $FF ; end of message
@@ -19994,7 +19985,7 @@ Message_0AE515:
 ;===================================================================================================
 
 ; ヒトのこの ナカマに なれと?
-Message_0AE521:
+Message_02_19_5D:
 #_0AE521: db $77, $70, $3D, $2E, $3D, $CF, $71, $62 ; ヒトのこの⎵ナカ
 #_0AE529: db $7B, $3A, $CF, $39, $4E, $38, $95 ; マに⎵なれと?
 #_0AE530: db $FF ; end of message
@@ -20003,7 +19994,7 @@ Message_0AE521:
 
 ; «おんなは プレゼントに よわいのよ»
 ; «わかる?»
-Message_0AE531:
+Message_02_19_5E:
 #_0AE531: db $EB, $8C ; [set2] prewritten text 8C
 #_0AE533: db $FF ; end of message
 
@@ -20011,35 +20002,35 @@ Message_0AE531:
 
 ; «おんなは プレゼントに よわいのよ»
 ; «わかる?»
-Message_0AE534:
+Message_02_19_5F:
 #_0AE534: db $EB, $8C ; [set2] prewritten text 8C
 #_0AE536: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きたれ わがいちぞくの ちにうえたる ものよ!»
-Message_0AE537:
+Message_02_19_60:
 #_0AE537: db $EB, $8D ; [set2] prewritten text 8D
 #_0AE539: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きたれ わがいちぞくの ちにうえたる ものよ!»
-Message_0AE53A:
+Message_02_19_61:
 #_0AE53A: db $EB, $8D ; [set2] prewritten text 8D
 #_0AE53C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ねえ きてー!
-Message_0AE53D:
+Message_02_19_62:
 #_0AE53D: db $3C, $28, $CF, $2B, $37, $5A, $94 ; ねえ⎵きてー!
 #_0AE544: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おんみが このよを すくうと いうのか?
-Message_0AE545:
+Message_02_19_63:
 #_0AE545: db $29, $52, $44, $9C, $CF, $2E, $3D, $4A ; おんみが⎵このよ
 #_0AE54D: db $51, $CF, $31, $2C, $27, $38, $CF, $26 ; を⎵すくうと⎵い
 #_0AE555: db $27, $3D, $2A, $95 ; うのか?
@@ -20048,7 +20039,7 @@ Message_0AE545:
 ;===================================================================================================
 
 ; ねえ あたしって イイセン いってるかしら?
-Message_0AE55A:
+Message_02_19_64:
 #_0AE55A: db $3C, $28, $CF, $25, $34, $30, $58, $37 ; ねえ⎵あたしって
 #_0AE562: db $CF, $5E, $5E, $6A, $8A, $CF, $26, $58 ; ⎵イイセン⎵いっ
 #_0AE56A: db $37, $4D, $2A, $30, $4B, $95 ; てるかしら?
@@ -20057,7 +20048,7 @@ Message_0AE55A:
 ;===================================================================================================
 
 ; アクマでも あいして くれる?
-Message_0AE571:
+Message_02_19_65:
 #_0AE571: db $5D, $64, $7B, $A9, $47, $CF, $25, $26 ; アクマでも⎵あい
 #_0AE579: db $30, $37, $CF, $2C, $4E, $4D, $95 ; して⎵くれる?
 #_0AE580: db $FF ; end of message
@@ -20067,7 +20058,7 @@ Message_0AE571:
 ; ならば ちからを かさんや
 ; «>[CLASSX] [DEMONX]は»
 ; «ナカマに なった»
-Message_0AE581:
+Message_02_19_66:
 #_0AE581: db $39, $4B, $AB, $CF, $35, $2A, $4B, $51 ; ならば⎵ちからを
 #_0AE589: db $CF, $2A, $2F, $52, $48 ; ⎵かさんや
 #_0AE58E: db $F3 ; [set2] wait for key and new line
@@ -20080,7 +20071,7 @@ Message_0AE581:
 
 ; «うそでも うれしい!»
 ; «はなし きいたげるわ!»
-Message_0AE595:
+Message_02_19_67:
 #_0AE595: db $EB, $8E ; [set2] prewritten text 8E
 #_0AE597: db $F3 ; [set2] wait for key and new line
 #_0AE598: db $E5, $03 ; [set2] [COMMAND 45:03]
@@ -20091,7 +20082,7 @@ Message_0AE595:
 
 ; «うそでも うれしい!»
 ; «はなし きいたげるわ!»
-Message_0AE59F:
+Message_02_19_68:
 #_0AE59F: db $EB, $8E ; [set2] prewritten text 8E
 #_0AE5A1: db $F3 ; [set2] wait for key and new line
 #_0AE5A2: db $E5, $03 ; [set2] [COMMAND 45:03]
@@ -20101,7 +20092,7 @@ Message_0AE59F:
 ;===================================================================================================
 
 ; みのほど しらずが!
-Message_0AE5A9:
+Message_02_19_69:
 #_0AE5A9: db $44, $3D, $42, $AA, $CF, $30, $4B, $A3 ; みのほど⎵しらず
 #_0AE5B1: db $9C, $94 ; が!
 #_0AE5B3: db $F3 ; [set2] wait for key and new line
@@ -20115,7 +20106,7 @@ Message_0AE5A9:
 ; じしんが でてきたわ!
 ; ありがとー!
 ; «>[DEMONX]は さっていった»
-Message_0AE5BA:
+Message_02_19_6A:
 #_0AE5BA: db $A2, $30, $52, $9C, $CF, $A9, $37, $2B ; じしんが⎵でてき
 #_0AE5C2: db $34, $50, $94 ; たわ!
 #_0AE5C5: db $F0 ; [set2] new line
@@ -20129,7 +20120,7 @@ Message_0AE5BA:
 ;===================================================================================================
 
 ; あなたの まごころが ほしいの!
-Message_0AE5D3:
+Message_02_19_6B:
 #_0AE5D3: db $25, $39, $34, $3D, $CF, $43, $A0, $2E ; あなたの⎵まごこ
 #_0AE5DB: db $4F, $9C, $CF, $42, $30, $26, $3D, $94 ; ろが⎵ほしいの!
 #_0AE5E3: db $F3 ; [set2] wait for key and new line
@@ -20142,7 +20133,7 @@ Message_0AE5D3:
 
 ; ふがいない・・・
 ; これを なにかの たしにせよ
-Message_0AE5EE:
+Message_02_19_6C:
 #_0AE5EE: db $40, $9C, $26, $39, $26, $93, $93, $93 ; ふがいない・・・
 #_0AE5F6: db $F0 ; [set2] new line
 #_0AE5F7: db $2E, $4E, $51, $CF, $39, $3A, $2A, $3D ; これを⎵なにかの
@@ -20155,7 +20146,7 @@ Message_0AE5EE:
 
 ; あっそう
 ; «>[DEMONX]は さっていった»
-Message_0AE60B:
+Message_02_19_6D:
 #_0AE60B: db $25, $58, $33, $27 ; あっそう
 #_0AE60F: db $F3 ; [set2] wait for key and new line
 #_0AE610: db $F1 ; [set2] clear message box
@@ -20167,7 +20158,7 @@ Message_0AE60B:
 
 ; エーン!
 ; «>[DEMONX]は さっていった»
-Message_0AE616:
+Message_02_19_6E:
 #_0AE616: db $60, $5A, $8A, $94 ; エーン!
 #_0AE61A: db $F3 ; [set2] wait for key and new line
 #_0AE61B: db $F1 ; [set2] clear message box
@@ -20179,7 +20170,7 @@ Message_0AE616:
 
 ; ふがいない・・・
 ; しょうねを いれかえよ
-Message_0AE621:
+Message_02_19_6F:
 #_0AE621: db $40, $9C, $26, $39, $26, $93, $93, $93 ; ふがいない・・・
 #_0AE629: db $F0 ; [set2] new line
 #_0AE62A: db $30, $57, $27, $3C, $51, $CF, $26, $4E ; しょうねを⎵いれ
@@ -20190,7 +20181,7 @@ Message_0AE621:
 ;===================================================================================================
 
 ; キー!
-Message_0AE639:
+Message_02_19_70:
 #_0AE639: db $63, $5A, $94 ; キー!
 #_0AE63C: db $F3 ; [set2] wait for key and new line
 #_0AE63D: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -20198,7 +20189,7 @@ Message_0AE639:
 ;===================================================================================================
 
 ; キライ!
-Message_0AE640:
+Message_02_19_71:
 #_0AE640: db $63, $83, $5E, $94 ; キライ!
 #_0AE644: db $F3 ; [set2] wait for key and new line
 #_0AE645: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -20206,14 +20197,14 @@ Message_0AE640:
 ;===================================================================================================
 
 ; «ひとのこの ぶんざいで みのほど しらずよ»
-Message_0AE648:
+Message_02_19_72:
 #_0AE648: db $EB, $8F ; [set2] prewritten text 8F
 #_0AE64A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; あんた およびじゃ ないわよ
-Message_0AE64B:
+Message_02_19_73:
 #_0AE64B: db $25, $52, $34, $CF, $29, $4A, $AC, $A2 ; あんた⎵およびじ
 #_0AE653: db $55, $CF, $39, $26, $50, $4A ; ゃ⎵ないわよ
 #_0AE659: db $FF ; end of message
@@ -20221,7 +20212,7 @@ Message_0AE64B:
 ;===================================================================================================
 
 ; じゃまだから どいてよね
-Message_0AE65A:
+Message_02_19_74:
 #_0AE65A: db $A2, $55, $43, $A6, $2A, $4B, $CF, $AA ; じゃまだから⎵ど
 #_0AE662: db $26, $37, $4A, $3C ; いてよね
 #_0AE666: db $FF ; end of message
@@ -20229,7 +20220,7 @@ Message_0AE65A:
 ;===================================================================================================
 
 ; たくさん くれるか?
-Message_0AE667:
+Message_02_19_75:
 #_0AE667: db $34, $2C, $2F, $52, $CF, $2C, $4E, $4D ; たくさん⎵くれる
 #_0AE66F: db $2A, $95 ; か?
 #_0AE671: db $FF ; end of message
@@ -20237,7 +20228,7 @@ Message_0AE667:
 ;===================================================================================================
 
 ; いっぱい くんなきゃ いやよ
-Message_0AE672:
+Message_02_19_76:
 #_0AE672: db $26, $58, $B0, $26, $CF, $2C, $52, $39 ; いっぱい⎵くんな
 #_0AE67A: db $2B, $55, $CF, $26, $48, $4A ; きゃ⎵いやよ
 #_0AE680: db $FF ; end of message
@@ -20245,7 +20236,7 @@ Message_0AE672:
 ;===================================================================================================
 
 ; じゃあ いいモン ちょうだい!
-Message_0AE681:
+Message_02_19_77:
 #_0AE681: db $A2, $55, $25, $CF, $26, $26, $7F, $8A ; じゃあ⎵いいモン
 #_0AE689: db $CF, $35, $57, $27, $A6, $26, $94 ; ⎵ちょうだい!
 #_0AE690: db $FF ; end of message
@@ -20255,7 +20246,7 @@ Message_0AE681:
 ; «ほっほっほっほっ»
 ; よいぞ よいぞ
 ; なにが のぞみじゃ?
-Message_0AE691:
+Message_02_19_78:
 #_0AE691: db $EB, $82 ; [set2] prewritten text 82
 #_0AE693: db $F0 ; [set2] new line
 #_0AE694: db $4A, $26, $A5, $CF, $4A, $26, $A5 ; よいぞ⎵よいぞ
@@ -20269,7 +20260,7 @@ Message_0AE691:
 ; «うふふふふ・・・»
 ; やーね! もう!
 ; めあては なに?
-Message_0AE6A7:
+Message_02_19_79:
 #_0AE6A7: db $EB, $86 ; [set2] prewritten text 86
 #_0AE6A9: db $F0 ; [set2] new line
 #_0AE6AA: db $48, $5A, $3C, $94, $CF, $47, $27, $94 ; やーね!⎵もう!
@@ -20281,7 +20272,7 @@ Message_0AE6A7:
 
 ; «きゃーはははは!»
 ; おいしいじゃん!
-Message_0AE6BC:
+Message_02_19_7A:
 #_0AE6BC: db $EB, $83 ; [set2] prewritten text 83
 #_0AE6BE: db $F0 ; [set2] new line
 #_0AE6BF: db $29, $26, $30, $26, $A2, $55, $52, $94 ; おいしいじゃん!
@@ -20290,7 +20281,7 @@ Message_0AE6BC:
 ;===================================================================================================
 
 ; «この くちさきだけの けがらわしい げろうめ»
-Message_0AE6C8:
+Message_02_19_7B:
 #_0AE6C8: db $EB, $90 ; [set2] prewritten text 90
 #_0AE6CA: db $FF ; end of message
 
@@ -20298,7 +20289,7 @@ Message_0AE6C8:
 
 ; «こころにも ないことを!»
 ; サイテー!
-Message_0AE6CB:
+Message_02_19_7C:
 #_0AE6CB: db $EB, $91 ; [set2] prewritten text 91
 #_0AE6CD: db $F0 ; [set2] new line
 #_0AE6CE: db $67, $5E, $6F, $5A, $94 ; サイテー!
@@ -20307,7 +20298,7 @@ Message_0AE6CB:
 ;===================================================================================================
 
 ; うそつき!
-Message_0AE6D4:
+Message_02_19_7D:
 #_0AE6D4: db $27, $33, $36, $2B, $94 ; うそつき!
 #_0AE6D9: db $FF ; end of message
 
@@ -20315,7 +20306,7 @@ Message_0AE6D4:
 
 ; «ほっほっほっほっ»
 ; おそるるで ないぞよ
-Message_0AE6DA:
+Message_02_19_7E:
 #_0AE6DA: db $EB, $82 ; [set2] prewritten text 82
 #_0AE6DC: db $F0 ; [set2] new line
 #_0AE6DD: db $29, $33, $4D, $4D, $A9, $CF, $39, $26 ; おそるるで⎵ない
@@ -20327,7 +20318,7 @@ Message_0AE6DA:
 ; «うふふふふ・・・»
 ; かわいいのね ぼうや あなたが
 ; ほしくなってきたわ
-Message_0AE6E8:
+Message_02_19_7F:
 #_0AE6E8: db $EB, $86 ; [set2] prewritten text 86
 #_0AE6EA: db $F0 ; [set2] new line
 #_0AE6EB: db $2A, $50, $26, $26, $3D, $3C, $CF, $AF ; かわいいのね⎵ぼ
@@ -20341,7 +20332,7 @@ Message_0AE6E8:
 
 ; かわいー!
 ; «きゃーはははは!»
-Message_0AE705:
+Message_02_19_80:
 #_0AE705: db $2A, $50, $26, $5A, $94 ; かわいー!
 #_0AE70A: db $F0 ; [set2] new line
 #_0AE70B: db $EB, $83 ; [set2] prewritten text 83
@@ -20350,7 +20341,7 @@ Message_0AE705:
 ;===================================================================================================
 
 ; あな うれしや!
-Message_0AE70E:
+Message_02_19_81:
 #_0AE70E: db $25, $39, $CF, $27, $4E, $30, $48, $94 ; あな⎵うれしや!
 #_0AE716: db $FF ; end of message
 
@@ -20358,7 +20349,7 @@ Message_0AE70E:
 
 ; «うふふふふ・・・»
 ; うれしいわ
-Message_0AE717:
+Message_02_19_82:
 #_0AE717: db $EB, $86 ; [set2] prewritten text 86
 #_0AE719: db $F0 ; [set2] new line
 #_0AE71A: db $27, $4E, $30, $26, $50 ; うれしいわ
@@ -20367,7 +20358,7 @@ Message_0AE717:
 ;===================================================================================================
 
 ; きゃー うれしー!
-Message_0AE720:
+Message_02_19_83:
 #_0AE720: db $2B, $55, $5A, $CF, $27, $4E, $30, $5A ; きゃー⎵うれしー
 #_0AE728: db $94 ; !
 #_0AE729: db $FF ; end of message
@@ -20376,7 +20367,7 @@ Message_0AE720:
 
 ; あわれな
 ; わらわの じひじゃ
-Message_0AE72A:
+Message_02_19_84:
 #_0AE72A: db $25, $50, $4E, $39 ; あわれな
 #_0AE72E: db $F0 ; [set2] new line
 #_0AE72F: db $50, $4B, $50, $3D, $CF, $A2, $3F, $A2 ; わらわの⎵じひじ
@@ -20387,7 +20378,7 @@ Message_0AE72A:
 
 ; サイテー!
 ; これ あげるから きえな!
-Message_0AE739:
+Message_02_19_85:
 #_0AE739: db $67, $5E, $6F, $5A, $94 ; サイテー!
 #_0AE73E: db $F0 ; [set2] new line
 #_0AE73F: db $2E, $4E, $CF, $25, $9F, $4D, $2A, $4B ; これ⎵あげるから
@@ -20398,7 +20389,7 @@ Message_0AE739:
 
 ; «きゃーはははは!»
 ; これでも とっとけー!
-Message_0AE74D:
+Message_02_19_86:
 #_0AE74D: db $EB, $83 ; [set2] prewritten text 83
 #_0AE74F: db $F0 ; [set2] new line
 #_0AE750: db $2E, $4E, $A9, $47, $CF, $38, $58, $38 ; これでも⎵とっと
@@ -20409,7 +20400,7 @@ Message_0AE74D:
 
 ; «くだらんものと はなす ひまは ない»
 ; «さらば・・・»
-Message_0AE75C:
+Message_02_19_87:
 #_0AE75C: db $EB, $5B ; [set2] prewritten text 5B
 #_0AE75E: db $FF ; end of message
 
@@ -20417,7 +20408,7 @@ Message_0AE75C:
 
 ; やるきが うせるわ
 ; じゃあね
-Message_0AE75F:
+Message_02_19_88:
 #_0AE75F: db $48, $4D, $2B, $9C, $CF, $27, $32, $4D ; やるきが⎵うせる
 #_0AE767: db $50 ; わ
 #_0AE768: db $F0 ; [set2] new line
@@ -20428,7 +20419,7 @@ Message_0AE75F:
 
 ; ばかじゃん!
 ; あそんで あげない!
-Message_0AE76E:
+Message_02_19_89:
 #_0AE76E: db $AB, $2A, $A2, $55, $52, $94 ; ばかじゃん!
 #_0AE774: db $F0 ; [set2] new line
 #_0AE775: db $25, $33, $52, $A9, $CF, $25, $9F, $39 ; あそんで⎵あげな
@@ -20439,7 +20430,7 @@ Message_0AE76E:
 
 ; わらわは [CLASSX] [DEMONX]なり
 ; «わらわに なにか ようか?»
-Message_0AE780:
+Message_02_19_8A:
 #_0AE780: db $50, $4B, $50, $3E, $CF ; わらわは⎵
 #_0AE785: db $EE ; [set2] write class name indexed from $0526
 #_0AE786: db $CF ; ⎵
@@ -20454,7 +20445,7 @@ Message_0AE780:
 
 ; あたしは [DEMONX]よ
 ; «なにが おのぞみ?»
-Message_0AE78F:
+Message_02_19_8B:
 #_0AE78F: db $25, $34, $30, $3E, $CF ; あたしは⎵
 #_0AE794: db $ED ; [set2] write demon name indexed from $0526
 #_0AE795: db $4A ; よ
@@ -20466,7 +20457,7 @@ Message_0AE78F:
 
 ; あたし [DEMONX]!
 ; «はなし きいたげる»わ!
-Message_0AE79A:
+Message_02_19_8C:
 #_0AE79A: db $25, $34, $30, $CF ; あたし⎵
 #_0AE79E: db $ED ; [set2] write demon name indexed from $0526
 #_0AE79F: db $94 ; !
@@ -20478,28 +20469,28 @@ Message_0AE79A:
 ;===================================================================================================
 
 ; «しらぬわ»
-Message_0AE7A6:
+Message_02_19_8D:
 #_0AE7A6: db $EB, $94 ; [set2] prewritten text 94
 #_0AE7A8: db $FF ; end of message
 
 ;===================================================================================================
 
 ; だれ?それ
-Message_0AE7A9:
+Message_02_19_8E:
 #_0AE7A9: db $A6, $4E, $95, $33, $4E ; だれ?それ
 #_0AE7AE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; へえー しんない
-Message_0AE7AF:
+Message_02_19_8F:
 #_0AE7AF: db $41, $28, $5A, $CF, $30, $52, $39, $26 ; へえー⎵しんない
 #_0AE7B7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わらわの«ナカマを よろしく»たのむぞよ
-Message_0AE7B8:
+Message_02_19_90:
 #_0AE7B8: db $50, $4B, $50, $3D ; わらわの
 #_0AE7BC: db $EB, $B6 ; [set2] prewritten text B6
 #_0AE7BE: db $34, $3D, $45, $A5, $4A ; たのむぞよ
@@ -20508,7 +20499,7 @@ Message_0AE7B8:
 ;===================================================================================================
 
 ; «あたしの ともだち»を かわいがってね!
-Message_0AE7C4:
+Message_02_19_91:
 #_0AE7C4: db $EB, $B8 ; [set2] prewritten text B8
 #_0AE7C6: db $51, $CF, $2A, $50, $26, $9C, $58, $37 ; を⎵かわいがって
 #_0AE7CE: db $3C, $94 ; ね!
@@ -20518,7 +20509,7 @@ Message_0AE7C4:
 
 ; «きゃーはははは!»
 ; «あたしの ともだち»と «なかよくして»えーン!
-Message_0AE7D1:
+Message_02_19_92:
 #_0AE7D1: db $EB, $83 ; [set2] prewritten text 83
 #_0AE7D3: db $F0 ; [set2] new line
 #_0AE7D4: db $EB, $B8 ; [set2] prewritten text B8
@@ -20530,14 +20521,14 @@ Message_0AE7D1:
 ;===================================================================================================
 
 ; «おそいわあ!»
-Message_0AE7DF:
+Message_02_19_93:
 #_0AE7DF: db $EB, $2D ; [set2] prewritten text 2D
 #_0AE7E1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いまさら!
-Message_0AE7E2:
+Message_02_19_94:
 #_0AE7E2: db $26, $43, $2F, $4B, $94 ; いまさら!
 #_0AE7E7: db $FF ; end of message
 
@@ -20545,7 +20536,7 @@ Message_0AE7E2:
 
 ; «きゃーはははは!»
 ; むだむだむだよーむだなのよー!
-Message_0AE7E8:
+Message_02_19_95:
 #_0AE7E8: db $EB, $83 ; [set2] prewritten text 83
 #_0AE7EA: db $F0 ; [set2] new line
 #_0AE7EB: db $45, $A6, $45, $A6, $45, $A6, $4A, $5A ; むだむだむだよー
@@ -20555,7 +20546,7 @@ Message_0AE7E8:
 ;===================================================================================================
 
 ; なんなりと・・・・どうぞ・・・
-Message_0AE7FB:
+Message_02_19_96:
 #_0AE7FB: db $39, $52, $39, $4C, $38, $93, $93, $93 ; なんなりと・・・
 #_0AE803: db $93, $AA, $27, $A5, $93, $93, $93 ; ・どうぞ・・・
 #_0AE80A: db $FF ; end of message
@@ -20563,7 +20554,7 @@ Message_0AE7FB:
 ;===================================================================================================
 
 ; あたしを どうぞ おすきに・・・・
-Message_0AE80B:
+Message_02_19_97:
 #_0AE80B: db $25, $34, $30, $51, $CF, $AA, $27, $A5 ; あたしを⎵どうぞ
 #_0AE813: db $CF, $29, $31, $2B, $3A, $93, $93, $93 ; ⎵おすきに・・・
 #_0AE81B: db $93 ; ・
@@ -20573,7 +20564,7 @@ Message_0AE80B:
 
 ; あたし とりこに なってるわ!
 ; «きゃーはははは!»
-Message_0AE81D:
+Message_02_19_98:
 #_0AE81D: db $25, $34, $30, $CF, $38, $4C, $2E, $3A ; あたし⎵とりこに
 #_0AE825: db $CF, $39, $58, $37, $4D, $50, $94 ; ⎵なってるわ!
 #_0AE82C: db $F0 ; [set2] new line
@@ -20583,21 +20574,21 @@ Message_0AE81D:
 ;===================================================================================================
 
 ; «むなくそわるい!»
-Message_0AE830:
+Message_02_19_99:
 #_0AE830: db $EB, $95 ; [set2] prewritten text 95
 #_0AE832: db $FF ; end of message
 
 ;===================================================================================================
 
 ; みにくいわよ
-Message_0AE833:
+Message_02_19_9A:
 #_0AE833: db $44, $3A, $2C, $26, $50, $4A ; みにくいわよ
 #_0AE839: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ばかじゃん!
-Message_0AE83A:
+Message_02_19_9B:
 #_0AE83A: db $AB, $2A, $A2, $55, $52, $94 ; ばかじゃん!
 #_0AE840: db $FF ; end of message
 
@@ -20605,7 +20596,7 @@ Message_0AE83A:
 
 ; ひとみを とじるのじゃ
 ; なんじを しふくが つつまん
-Message_0AE841:
+Message_02_19_9C:
 #_0AE841: db $3F, $38, $44, $51, $CF, $38, $A2, $4D ; ひとみを⎵とじる
 #_0AE849: db $3D, $A2, $55 ; のじゃ
 #_0AE84C: db $F0 ; [set2] new line
@@ -20617,7 +20608,7 @@ Message_0AE841:
 
 ; «ねえ めを とじて!»
 ; «いいこと したげるわ»
-Message_0AE85C:
+Message_02_19_9D:
 #_0AE85C: db $EB, $96 ; [set2] prewritten text 96
 #_0AE85E: db $FF ; end of message
 
@@ -20625,14 +20616,14 @@ Message_0AE85C:
 
 ; «ねえ めを とじて!»
 ; «いいこと したげるわ»
-Message_0AE85F:
+Message_02_19_9E:
 #_0AE85F: db $EB, $96 ; [set2] prewritten text 96
 #_0AE861: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きさま まだ いたのか?
-Message_0AE862:
+Message_02_19_9F:
 #_0AE862: db $2B, $2F, $43, $CF, $43, $A6, $CF, $26 ; きさま⎵まだ⎵い
 #_0AE86A: db $34, $3D, $2A, $95 ; たのか?
 #_0AE86E: db $FF ; end of message
@@ -20640,7 +20631,7 @@ Message_0AE862:
 ;===================================================================================================
 
 ; じゃまするのか?
-Message_0AE86F:
+Message_02_19_A0:
 #_0AE86F: db $A2, $55, $43, $31, $4D, $3D, $2A, $95 ; じゃまするのか?
 #_0AE877: db $FF ; end of message
 
@@ -20648,7 +20639,7 @@ Message_0AE86F:
 
 ; チュッ!
 ; どこまでも いっしょよ!
-Message_0AE878:
+Message_02_19_A1:
 #_0AE878: db $6D, $90, $92, $94 ; チュッ!
 #_0AE87C: db $F0 ; [set2] new line
 #_0AE87D: db $AA, $2E, $43, $A9, $47, $CF, $26, $58 ; どこまでも⎵いっ
@@ -20658,7 +20649,7 @@ Message_0AE878:
 ;===================================================================================================
 
 ; わらわの きもちじゃ
-Message_0AE88A:
+Message_02_19_A2:
 #_0AE88A: db $50, $4B, $50, $3D, $CF, $2B, $47, $35 ; わらわの⎵きもち
 #_0AE892: db $A2, $55 ; じゃ
 #_0AE894: db $FF ; end of message
@@ -20666,7 +20657,7 @@ Message_0AE88A:
 ;===================================================================================================
 
 ; つぎに あうときには バイがえしね!
-Message_0AE895:
+Message_02_19_A3:
 #_0AE895: db $36, $9D, $3A, $CF, $25, $27, $38, $2B ; つぎに⎵あうとき
 #_0AE89D: db $3A, $3E, $CF, $C4, $5E, $9C, $28, $30 ; には⎵バイがえし
 #_0AE8A5: db $3C, $94 ; ね!
@@ -20675,7 +20666,7 @@ Message_0AE895:
 ;===================================================================================================
 
 ; これ あーげるっ!
-Message_0AE8A8:
+Message_02_19_A4:
 #_0AE8A8: db $2E, $4E, $CF, $25, $5A, $9F, $4D, $58 ; これ⎵あーげるっ
 #_0AE8B0: db $94 ; !
 #_0AE8B1: db $FF ; end of message
@@ -20683,7 +20674,7 @@ Message_0AE8A8:
 ;===================================================================================================
 
 ; なにものじゃ なを なのれ!
-Message_0AE8B2:
+Message_02_19_A5:
 #_0AE8B2: db $39, $3A, $47, $3D, $A2, $55, $CF, $39 ; なにものじゃ⎵な
 #_0AE8BA: db $51, $CF, $39, $3D, $4E, $94 ; を⎵なのれ!
 #_0AE8C0: db $FF ; end of message
@@ -20691,7 +20682,7 @@ Message_0AE8B2:
 ;===================================================================================================
 
 ; あんた なにもの なのよ?
-Message_0AE8C1:
+Message_02_19_A6:
 #_0AE8C1: db $25, $52, $34, $CF, $39, $3A, $47, $3D ; あんた⎵なにもの
 #_0AE8C9: db $CF, $39, $3D, $4A, $95 ; ⎵なのよ?
 #_0AE8CE: db $FF ; end of message
@@ -20699,7 +20690,7 @@ Message_0AE8C1:
 ;===================================================================================================
 
 ; あなたって だれなの?
-Message_0AE8CF:
+Message_02_19_A7:
 #_0AE8CF: db $25, $39, $34, $58, $37, $CF, $A6, $4E ; あなたって⎵だれ
 #_0AE8D7: db $39, $3D, $95 ; なの?
 #_0AE8DA: db $FF ; end of message
@@ -20707,7 +20698,7 @@ Message_0AE8CF:
 ;===================================================================================================
 
 ; おぬしが・・・おもしろい
-Message_0AE8DB:
+Message_02_19_A8:
 #_0AE8DB: db $29, $3B, $30, $9C, $93, $93, $93, $29 ; おぬしが・・・お
 #_0AE8E3: db $47, $30, $4F, $26 ; もしろい
 #_0AE8E7: db $FF ; end of message
@@ -20716,7 +20707,7 @@ Message_0AE8DB:
 
 ; へえ あなたがねえ・・・
 ; きょうみ あるわ
-Message_0AE8E8:
+Message_02_19_A9:
 #_0AE8E8: db $41, $28, $CF, $25, $39, $34, $9C, $3C ; へえ⎵あなたがね
 #_0AE8F0: db $28, $93, $93, $93 ; え・・・
 #_0AE8F4: db $F0 ; [set2] new line
@@ -20727,7 +20718,7 @@ Message_0AE8E8:
 
 ; しってるう!
 ; なんなのー?
-Message_0AE8FE:
+Message_02_19_AA:
 #_0AE8FE: db $30, $58, $37, $4D, $27, $94 ; しってるう!
 #_0AE904: db $F0 ; [set2] new line
 #_0AE905: db $39, $52, $39, $3D, $5A, $95 ; なんなのー?
@@ -20736,7 +20727,7 @@ Message_0AE8FE:
 ;===================================================================================================
 
 ; [￥GIVEME] を ささげよ
-Message_0AE90C:
+Message_02_19_AB:
 #_0AE90C: db $F6 ; [set2] ask for currency or item
 #_0AE90D: db $CF, $51, $CF, $2F, $2F, $9F, $4A ; ⎵を⎵ささげよ
 #_0AE914: db $FF ; end of message
@@ -20745,7 +20736,7 @@ Message_0AE90C:
 
 ; «[￥GIVEME] ちょうだい»
 ; かんがえて あげるわ
-Message_0AE915:
+Message_02_19_AC:
 #_0AE915: db $EB, $97 ; [set2] prewritten text 97
 #_0AE917: db $F0 ; [set2] new line
 #_0AE918: db $2A, $52, $9C, $28, $37, $CF, $25, $9F ; かんがえて⎵あげ
@@ -20755,7 +20746,7 @@ Message_0AE915:
 ;===================================================================================================
 
 ; «[￥GIVEME] ちょうだい»!
-Message_0AE923:
+Message_02_19_AD:
 #_0AE923: db $EB, $97 ; [set2] prewritten text 97
 #_0AE925: db $94 ; !
 #_0AE926: db $FF ; end of message
@@ -20763,7 +20754,7 @@ Message_0AE923:
 ;===================================================================================================
 
 ; さらに [￥GIVEME] を ささげよ
-Message_0AE927:
+Message_02_19_AE:
 #_0AE927: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AE92B: db $F6 ; [set2] ask for currency or item
 #_0AE92C: db $CF, $51, $CF, $2F, $2F, $9F, $4A ; ⎵を⎵ささげよ
@@ -20773,7 +20764,7 @@ Message_0AE927:
 
 ; あと [￥GIVEME]
 ; おねがい!
-Message_0AE934:
+Message_02_19_AF:
 #_0AE934: db $25, $38, $CF ; あと⎵
 #_0AE937: db $F6 ; [set2] ask for currency or item
 #_0AE938: db $F0 ; [set2] new line
@@ -20784,7 +20775,7 @@ Message_0AE934:
 
 ; もっと! もっと!
 ; «[￥GIVEME] ちょうだい»
-Message_0AE93F:
+Message_02_19_B0:
 #_0AE93F: db $47, $58, $38, $94, $CF, $47, $58, $38 ; もっと!⎵もっと
 #_0AE947: db $94 ; !
 #_0AE948: db $F0 ; [set2] new line
@@ -20794,7 +20785,7 @@ Message_0AE93F:
 ;===================================================================================================
 
 ; ならば [￥GIVEME] を ささげよ
-Message_0AE94C:
+Message_02_19_B1:
 #_0AE94C: db $39, $4B, $AB, $CF ; ならば⎵
 #_0AE950: db $F6 ; [set2] ask for currency or item
 #_0AE951: db $CF, $51, $CF, $2F, $2F, $9F, $4A ; ⎵を⎵ささげよ
@@ -20804,7 +20795,7 @@ Message_0AE94C:
 
 ; じゃあ [￥GIVEME] ね
 ; いいでしょ?
-Message_0AE959:
+Message_02_19_B2:
 #_0AE959: db $A2, $55, $25, $CF ; じゃあ⎵
 #_0AE95D: db $F6 ; [set2] ask for currency or item
 #_0AE95E: db $CF, $3C ; ⎵ね
@@ -20817,7 +20808,7 @@ Message_0AE959:
 ; んーとね
 ; «[￥GIVEME] ちょうだい»
 ; だめ?
-Message_0AE968:
+Message_02_19_B3:
 #_0AE968: db $52, $5A, $38, $3C ; んーとね
 #_0AE96C: db $F0 ; [set2] new line
 #_0AE96D: db $EB, $97 ; [set2] prewritten text 97
@@ -20828,14 +20819,14 @@ Message_0AE968:
 ;===================================================================================================
 
 ; «まだ まんぞくとは いえぬ・・・»
-Message_0AE974:
+Message_02_19_B4:
 #_0AE974: db $EB, $6F ; [set2] prewritten text 6F
 #_0AE976: db $FF ; end of message
 
 ;===================================================================================================
 
 ; まだよ! あせっちゃだめ・・・
-Message_0AE977:
+Message_02_19_B5:
 #_0AE977: db $43, $A6, $4A, $94, $CF, $25, $32, $58 ; まだよ!⎵あせっ
 #_0AE97F: db $35, $55, $A6, $46, $93, $93, $93 ; ちゃだめ・・・
 #_0AE986: db $FF ; end of message
@@ -20843,7 +20834,7 @@ Message_0AE977:
 ;===================================================================================================
 
 ; もっとよ! もっと!
-Message_0AE987:
+Message_02_19_B6:
 #_0AE987: db $47, $58, $38, $4A, $94, $CF, $47, $58 ; もっとよ!⎵もっ
 #_0AE98F: db $38, $94 ; と!
 #_0AE991: db $FF ; end of message
@@ -20851,28 +20842,28 @@ Message_0AE987:
 ;===================================================================================================
 
 ; なぜじゃ
-Message_0AE992:
+Message_02_19_B7:
 #_0AE992: db $39, $A4, $A2, $55 ; なぜじゃ
 #_0AE996: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なんでよ・・・
-Message_0AE997:
+Message_02_19_B8:
 #_0AE997: db $39, $52, $A9, $4A, $93, $93, $93 ; なんでよ・・・
 #_0AE99E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «えー? じゃあね・・・»
-Message_0AE99F:
+Message_02_19_B9:
 #_0AE99F: db $EB, $9D ; [set2] prewritten text 9D
 #_0AE9A1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やはり その わかき いのちが いいのお
-Message_0AE9A2:
+Message_02_19_BA:
 #_0AE9A2: db $48, $3E, $4C, $CF, $33, $3D, $CF, $50 ; やはり⎵その⎵わ
 #_0AE9AA: db $2A, $2B, $CF, $26, $3D, $35, $9C, $CF ; かき⎵いのちが⎵
 #_0AE9B2: db $26, $26, $3D, $29 ; いいのお
@@ -20881,28 +20872,28 @@ Message_0AE9A2:
 ;===================================================================================================
 
 ; «だめだめ! ぜんぜん だめよ!»
-Message_0AE9B7:
+Message_02_19_BB:
 #_0AE9B7: db $EB, $9A ; [set2] prewritten text 9A
 #_0AE9B9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; やーめたっ!
-Message_0AE9BA:
+Message_02_19_BC:
 #_0AE9BA: db $48, $5A, $46, $34, $58, $94 ; やーめたっ!
 #_0AE9C0: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «こうかい するでないぞ!»
-Message_0AE9C1:
+Message_02_19_BD:
 #_0AE9C1: db $EB, $98 ; [set2] prewritten text 98
 #_0AE9C3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なめるんじゃ ないわ!
-Message_0AE9C4:
+Message_02_19_BE:
 #_0AE9C4: db $39, $46, $4D, $52, $A2, $55, $CF, $39 ; なめるんじゃ⎵な
 #_0AE9CC: db $26, $50, $94 ; いわ!
 #_0AE9CF: db $FF ; end of message
@@ -20910,7 +20901,7 @@ Message_0AE9C4:
 ;===================================================================================================
 
 ; だー! どケチー!
-Message_0AE9D0:
+Message_02_19_BF:
 #_0AE9D0: db $A6, $5A, $94, $CF, $AA, $65, $6D, $5A ; だー!⎵どケチー
 #_0AE9D8: db $94 ; !
 #_0AE9D9: db $FF ; end of message
@@ -20921,7 +20912,7 @@ Message_0AE9D0:
 ; «おまえの いのちを おくれ・・・»
 ; «しこうの かいらくを あたえようぞ!»
 ; «ほっほっほっほっ»
-Message_0AE9DA:
+Message_02_19_C0:
 #_0AE9DA: db $EB, $6F ; [set2] prewritten text 6F
 #_0AE9DC: db $F3 ; [set2] wait for key and new line
 #_0AE9DD: db $F1 ; [set2] clear message box
@@ -20932,7 +20923,7 @@ Message_0AE9DA:
 
 ; «だめだめ! ぜんぜん だめよ!»
 ; «あたしは あなたのすべてが ほしいの!»
-Message_0AE9E1:
+Message_02_19_C1:
 #_0AE9E1: db $EB, $9A ; [set2] prewritten text 9A
 #_0AE9E3: db $F0 ; [set2] new line
 #_0AE9E4: db $EB, $9B ; [set2] prewritten text 9B
@@ -20942,7 +20933,7 @@ Message_0AE9E1:
 
 ; «だめだめ! ぜんぜん だめよ!»
 ; «あたしは あなたのすべてが ほしいの!»
-Message_0AE9E7:
+Message_02_19_C2:
 #_0AE9E7: db $EB, $9A ; [set2] prewritten text 9A
 #_0AE9E9: db $F0 ; [set2] new line
 #_0AE9EA: db $EB, $9B ; [set2] prewritten text 9B
@@ -20952,7 +20943,7 @@ Message_0AE9E7:
 
 ; «ほっほっほっほっ»
 ; «そうか では ちまつりに してやろう!»
-Message_0AE9ED:
+Message_02_19_C3:
 #_0AE9ED: db $EB, $82 ; [set2] prewritten text 82
 #_0AE9EF: db $F0 ; [set2] new line
 #_0AE9F0: db $EB, $9C ; [set2] prewritten text 9C
@@ -20961,7 +20952,7 @@ Message_0AE9ED:
 ;===================================================================================================
 
 ; «あたしは あなたのすべてが ほしいの!»
-Message_0AE9F3:
+Message_02_19_C4:
 #_0AE9F3: db $EB, $9B ; [set2] prewritten text 9B
 #_0AE9F5: db $FF ; end of message
 
@@ -20969,7 +20960,7 @@ Message_0AE9F3:
 
 ; «えー? じゃあね・・・»
 ; «あたしは あなたのすべてが ほしいの!»
-Message_0AE9F6:
+Message_02_19_C5:
 #_0AE9F6: db $EB, $9D ; [set2] prewritten text 9D
 #_0AE9F8: db $F0 ; [set2] new line
 #_0AE9F9: db $EB, $9B ; [set2] prewritten text 9B
@@ -20979,14 +20970,14 @@ Message_0AE9F6:
 
 ; «この げろうが!»
 ; «やっぱり かねが ねらいか!»
-Message_0AE9FC:
+Message_02_19_C6:
 #_0AE9FC: db $EB, $9E ; [set2] prewritten text 9E
 #_0AE9FE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; かねの かわりに きょうふを うけとりな!
-Message_0AE9FF:
+Message_02_19_C7:
 #_0AE9FF: db $2A, $3C, $3D, $CF, $2A, $50, $4C, $3A ; かねの⎵かわりに
 #_0AEA07: db $CF, $2B, $57, $27, $40, $51, $CF, $27 ; ⎵きょうふを⎵う
 #_0AEA0F: db $2D, $38, $4C, $39, $94 ; けとりな!
@@ -20995,91 +20986,91 @@ Message_0AE9FF:
 ;===================================================================================================
 
 ; やな やつ!
-Message_0AEA15:
+Message_02_19_C8:
 #_0AEA15: db $48, $39, $CF, $48, $36, $94 ; やな⎵やつ!
 #_0AEA1B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; つまらぬ!
-Message_0AEA1C:
+Message_02_19_C9:
 #_0AEA1C: db $36, $43, $4B, $3B, $94 ; つまらぬ!
 #_0AEA21: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «つまんない!»
-Message_0AEA22:
+Message_02_19_CA:
 #_0AEA22: db $EB, $9F ; [set2] prewritten text 9F
 #_0AEA24: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «つまんない!»
-Message_0AEA25:
+Message_02_19_CB:
 #_0AEA25: db $EB, $9F ; [set2] prewritten text 9F
 #_0AEA27: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «では うけとるが いい!»
-Message_0AEA28:
+Message_02_19_CC:
 #_0AEA28: db $EB, $76 ; [set2] prewritten text 76
 #_0AEA2A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はい わたしたわよ!»
-Message_0AEA2B:
+Message_02_19_CD:
 #_0AEA2B: db $EB, $A0 ; [set2] prewritten text A0
 #_0AEA2D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はい わたしたわよ!»
-Message_0AEA2E:
+Message_02_19_CE:
 #_0AEA2E: db $EB, $A0 ; [set2] prewritten text A0
 #_0AEA30: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いやじゃ
-Message_0AEA31:
+Message_02_19_CF:
 #_0AEA31: db $26, $48, $A2, $55 ; いやじゃ
 #_0AEA35: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いやよ!
-Message_0AEA36:
+Message_02_19_D0:
 #_0AEA36: db $26, $48, $4A, $94 ; いやよ!
 #_0AEA3A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; べーだ!
-Message_0AEA3B:
+Message_02_19_D1:
 #_0AEA3B: db $AE, $5A, $A6, $94 ; べーだ!
 #_0AEA3F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «しょうちした»
-Message_0AEA40:
+Message_02_19_D2:
 #_0AEA40: db $EB, $A1 ; [set2] prewritten text A1
 #_0AEA42: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わかったわ
-Message_0AEA43:
+Message_02_19_D3:
 #_0AEA43: db $50, $2A, $58, $34, $50 ; わかったわ
 #_0AEA48: db $FF ; end of message
 
 ;===================================================================================================
 
 ; はーい
-Message_0AEA49:
+Message_02_19_D4:
 #_0AEA49: db $3E, $5A, $26 ; はーい
 #_0AEA4C: db $FF ; end of message
 
@@ -21088,7 +21079,7 @@ Message_0AEA49:
 ; みちたりた・・・
 ; «きょうより おんみは わらわの しゅじん・・・»
 ; なんなりと おもうしつけ ください
-Message_0AEA4D:
+Message_02_19_D5:
 #_0AEA4D: db $44, $35, $34, $4C, $34, $93, $93, $93 ; みちたりた・・・
 #_0AEA55: db $F3 ; [set2] wait for key and new line
 #_0AEA56: db $F1 ; [set2] clear message box
@@ -21103,7 +21094,7 @@ Message_0AEA4D:
 
 ; まんぞくよ さあ
 ; «なんでも おのぞみ どおり するわ»
-Message_0AEA6C:
+Message_02_19_D6:
 #_0AEA6C: db $43, $52, $A5, $2C, $4A, $CF, $2F, $25 ; まんぞくよ⎵さあ
 #_0AEA74: db $F0 ; [set2] new line
 #_0AEA75: db $EB, $8A ; [set2] prewritten text 8A
@@ -21113,7 +21104,7 @@ Message_0AEA6C:
 
 ; これで いいわ・・・
 ; こんごとも やさしく してね!
-Message_0AEA78:
+Message_02_19_D7:
 #_0AEA78: db $2E, $4E, $A9, $CF, $26, $26, $50, $93 ; これで⎵いいわ・
 #_0AEA80: db $93, $93 ; ・・
 #_0AEA82: db $F0 ; [set2] new line
@@ -21125,7 +21116,7 @@ Message_0AEA78:
 
 ; そう いそぐでない
 ; «はなしを きこうぞ»
-Message_0AEA93:
+Message_02_19_D8:
 #_0AEA93: db $33, $27, $CF, $26, $33, $9E, $A9, $39 ; そう⎵いそぐでな
 #_0AEA9B: db $26 ; い
 #_0AEA9C: db $F0 ; [set2] new line
@@ -21136,7 +21127,7 @@ Message_0AEA93:
 
 ; せっかちねえ!
 ; おたのしみは これからよ
-Message_0AEAA0:
+Message_02_19_D9:
 #_0AEAA0: db $32, $58, $2A, $35, $3C, $28, $94 ; せっかちねえ!
 #_0AEAA7: db $F0 ; [set2] new line
 #_0AEAA8: db $29, $34, $3D, $30, $44, $3E, $CF, $2E ; おたのしみは⎵こ
@@ -21147,7 +21138,7 @@ Message_0AEAA0:
 
 ; まだ いっちゃだめ
 ; ちゃんと «はなし きいたげる»わ!
-Message_0AEAB5:
+Message_02_19_DA:
 #_0AEAB5: db $43, $A6, $CF, $26, $58, $35, $55, $A6 ; まだ⎵いっちゃだ
 #_0AEABD: db $46 ; め
 #_0AEABE: db $F0 ; [set2] new line
@@ -21158,25 +21149,25 @@ Message_0AEAB5:
 
 ;===================================================================================================
 
-Message_0AEAC9:
+Message_02_1A_00:
 #_0AEAC9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; しぬがいい!
-Message_0AEACA:
+Message_02_1A_01:
 #_0AEACA: db $30, $3B, $9C, $26, $26, $94 ; しぬがいい!
 #_0AEAD0: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEAD1:
+Message_02_1A_02:
 #_0AEAD1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; わが どうほうを よろしく!
-Message_0AEAD2:
+Message_02_1A_30:
 #_0AEAD2: db $50, $9C, $CF, $AA, $27, $42, $27, $51 ; わが⎵どうほうを
 #_0AEADA: db $CF, $4A, $4F, $30, $2C, $94 ; ⎵よろしく!
 #_0AEAE0: db $FF ; end of message
@@ -21184,26 +21175,26 @@ Message_0AEAD2:
 ;===================================================================================================
 
 ; «むだだ!»
-Message_0AEAE1:
+Message_02_1A_31:
 #_0AEAE1: db $EB, $D1 ; [set2] prewritten text D1
 #_0AEAE3: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEAE4:
+Message_02_1A_32:
 #_0AEAE4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «[￥GIVEME] いただきたい»
-Message_0AEAE5:
+Message_02_1A_39:
 #_0AEAE5: db $EB, $A3 ; [set2] prewritten text A3
 #_0AEAE7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; さらに «[￥GIVEME] いただきたい»
-Message_0AEAE8:
+Message_02_1A_3A:
 #_0AEAE8: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AEAEC: db $EB, $A3 ; [set2] prewritten text A3
 #_0AEAEE: db $FF ; end of message
@@ -21211,7 +21202,7 @@ Message_0AEAE8:
 ;===================================================================================================
 
 ; ならば «[￥GIVEME] いただきたい»
-Message_0AEAEF:
+Message_02_1A_3B:
 #_0AEAEF: db $39, $4B, $AB, $CF ; ならば⎵
 #_0AEAF3: db $EB, $A3 ; [set2] prewritten text A3
 #_0AEAF5: db $FF ; end of message
@@ -21219,7 +21210,7 @@ Message_0AEAEF:
 ;===================================================================================================
 
 ; まだ たりませんねー
-Message_0AEAF6:
+Message_02_1A_3C:
 #_0AEAF6: db $43, $A6, $CF, $34, $4C, $43, $32, $52 ; まだ⎵たりません
 #_0AEAFE: db $3C, $5A ; ねー
 #_0AEB00: db $FF ; end of message
@@ -21227,7 +21218,7 @@ Message_0AEAF6:
 ;===================================================================================================
 
 ; そうですか・・・・・・
-Message_0AEB01:
+Message_02_1A_3D:
 #_0AEB01: db $33, $27, $A9, $31, $2A, $93, $93, $93 ; そうですか・・・
 #_0AEB09: db $93, $93, $93 ; ・・・
 #_0AEB0C: db $FF ; end of message
@@ -21235,21 +21226,21 @@ Message_0AEB01:
 ;===================================================================================================
 
 ; «この [￥GIVEME] は けがれている!»
-Message_0AEB0D:
+Message_02_1A_3E:
 #_0AEB0D: db $EB, $A5 ; [set2] prewritten text A5
 #_0AEB0F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なんだって!!
-Message_0AEB10:
+Message_02_1A_3F:
 #_0AEB10: db $39, $52, $A6, $58, $37, $94, $94 ; なんだって!!
 #_0AEB17: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «この [￥GIVEME] は けがれている!»
-Message_0AEB18:
+Message_02_1A_40:
 #_0AEB18: db $EB, $A5 ; [set2] prewritten text A5
 #_0AEB1A: db $FF ; end of message
 
@@ -21257,14 +21248,14 @@ Message_0AEB18:
 
 ; «かみに そむく はいしんしゃめ!»
 ; «こうかいさせて やろう!»
-Message_0AEB1B:
+Message_02_1A_41:
 #_0AEB1B: db $EB, $A6 ; [set2] prewritten text A6
 #_0AEB1D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; かねを よこせだと!
-Message_0AEB1E:
+Message_02_1A_42:
 #_0AEB1E: db $2A, $3C, $51, $CF, $4A, $2E, $32, $A6 ; かねを⎵よこせだ
 #_0AEB26: db $38, $94 ; と!
 #_0AEB28: db $FF ; end of message
@@ -21272,7 +21263,7 @@ Message_0AEB1E:
 ;===================================================================================================
 
 ; そんなものは ない!
-Message_0AEB29:
+Message_02_1A_43:
 #_0AEB29: db $33, $52, $39, $47, $3D, $3E, $CF, $39 ; そんなものは⎵な
 #_0AEB31: db $26, $94 ; い!
 #_0AEB33: db $FF ; end of message
@@ -21280,7 +21271,7 @@ Message_0AEB29:
 ;===================================================================================================
 
 ; では もっていきたまえ
-Message_0AEB34:
+Message_02_1A_44:
 #_0AEB34: db $A9, $3E, $CF, $47, $58, $37, $26, $2B ; では⎵もっていき
 #_0AEB3C: db $34, $43, $28 ; たまえ
 #_0AEB3F: db $FF ; end of message
@@ -21288,21 +21279,21 @@ Message_0AEB34:
 ;===================================================================================================
 
 ; «きょひする»
-Message_0AEB40:
+Message_02_1A_45:
 #_0AEB40: db $EB, $A7 ; [set2] prewritten text A7
 #_0AEB42: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか わかった»
-Message_0AEB43:
+Message_02_1A_46:
 #_0AEB43: db $EB, $78 ; [set2] prewritten text 78
 #_0AEB45: db $FF ; end of message
 
 ;===================================================================================================
 
 ; いいでしょう これで わたしたちは ナカマです
-Message_0AEB46:
+Message_02_1A_47:
 #_0AEB46: db $26, $26, $A9, $30, $57, $27, $CF, $2E ; いいでしょう⎵こ
 #_0AEB4E: db $4E, $A9, $CF, $50, $34, $30, $34, $35 ; れで⎵わたしたち
 #_0AEB56: db $3E, $CF, $71, $62, $7B, $A9, $31 ; は⎵ナカマです
@@ -21311,7 +21302,7 @@ Message_0AEB46:
 ;===================================================================================================
 
 ; まあ ちょっと まちなさい
-Message_0AEB5E:
+Message_02_1A_48:
 #_0AEB5E: db $43, $25, $CF, $35, $57, $58, $38, $CF ; まあ⎵ちょっと⎵
 #_0AEB66: db $43, $35, $39, $2F, $26 ; まちなさい
 #_0AEB6B: db $FF ; end of message
@@ -21320,7 +21311,7 @@ Message_0AEB5E:
 
 ; «[￥GIVEME] いただきたい»
 ; どうだろうか?
-Message_0AEB6C:
+Message_02_1A_49:
 #_0AEB6C: db $EB, $A3 ; [set2] prewritten text A3
 #_0AEB6E: db $F0 ; [set2] new line
 #_0AEB6F: db $AA, $27, $A6, $4F, $27, $2A, $95 ; どうだろうか?
@@ -21329,41 +21320,41 @@ Message_0AEB6C:
 ;===================================================================================================
 
 ; «さらに [￥GIVEME] を いただけんかな»
-Message_0AEB77:
+Message_02_1A_4A:
 #_0AEB77: db $EB, $AA ; [set2] prewritten text AA
 #_0AEB79: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ならば [￥GIVEME] で どうか?»
-Message_0AEB7A:
+Message_02_1A_4B:
 #_0AEB7A: db $EB, $80 ; [set2] prewritten text 80
 #_0AEB7C: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEB7D:
+Message_02_1A_4C:
 #_0AEB7D: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEB7E:
+Message_02_1A_4D:
 #_0AEB7E: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEB7F:
+Message_02_1A_4E:
 #_0AEB7F: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEB80:
+Message_02_1A_4F:
 #_0AEB80: db $FF ; end of message
 
 ;===================================================================================================
 
 ; あやしい やつめ!
-Message_0AEB81:
+Message_02_1A_50:
 #_0AEB81: db $25, $48, $30, $26, $CF, $48, $36, $46 ; あやしい⎵やつめ
 #_0AEB89: db $94 ; !
 #_0AEB8A: db $FF ; end of message
@@ -21371,7 +21362,7 @@ Message_0AEB81:
 ;===================================================================================================
 
 ; ナカマに なって ほしいのですか?
-Message_0AEB8B:
+Message_02_1A_51:
 #_0AEB8B: db $71, $62, $7B, $3A, $CF, $39, $58, $37 ; ナカマに⎵なって
 #_0AEB93: db $CF, $42, $30, $26, $3D, $A9, $31, $2A ; ⎵ほしいのですか
 #_0AEB9B: db $95 ; ?
@@ -21380,7 +21371,7 @@ Message_0AEB8B:
 ;===================================================================================================
 
 ; あなたは メシアきょうと ですか?
-Message_0AEB9D:
+Message_02_1A_52:
 #_0AEB9D: db $25, $39, $34, $3E, $CF, $7E, $68, $5D ; あなたは⎵メシア
 #_0AEBA5: db $2B, $57, $27, $38, $CF, $A9, $31, $2A ; きょうと⎵ですか
 #_0AEBAD: db $95 ; ?
@@ -21390,7 +21381,7 @@ Message_0AEB9D:
 
 ; «そうですか! では »
 ; ぜひ おナカマに!
-Message_0AEBAF:
+Message_02_1A_53:
 #_0AEBAF: db $EB, $AB ; [set2] prewritten text AB
 #_0AEBB1: db $F0 ; [set2] new line
 #_0AEBB2: db $A4, $3F, $CF, $29, $71, $62, $7B, $3A ; ぜひ⎵おナカマに
@@ -21401,7 +21392,7 @@ Message_0AEBAF:
 
 ; «そうですか! では »すくないですが
 ; これを やくだてて ください
-Message_0AEBBC:
+Message_02_1A_54:
 #_0AEBBC: db $EB, $AB ; [set2] prewritten text AB
 #_0AEBBE: db $31, $2C, $39, $26, $A9, $31, $9C ; すくないですが
 #_0AEBC5: db $F0 ; [set2] new line
@@ -21412,7 +21403,7 @@ Message_0AEBBC:
 ;===================================================================================================
 
 ; さては ガイアきょうの てさきか!?
-Message_0AEBD5:
+Message_02_1A_55:
 #_0AEBD5: db $2F, $37, $3E, $CF, $B5, $5E, $5D, $2B ; さては⎵ガイアき
 #_0AEBDD: db $57, $27, $3D, $CF, $37, $2F, $2B, $2A ; ょうの⎵てさきか
 #_0AEBE5: db $94, $95 ; !?
@@ -21422,7 +21413,7 @@ Message_0AEBD5:
 
 ; あなたも メシアきょうに はいりませんか?
 ; かならず すくいの みてが あらわれます!
-Message_0AEBE8:
+Message_02_1A_56:
 #_0AEBE8: db $25, $39, $34, $47, $CF, $7E, $68, $5D ; あなたも⎵メシア
 #_0AEBF0: db $2B, $57, $27, $3A, $CF, $3E, $26, $4C ; きょうに⎵はいり
 #_0AEBF8: db $43, $32, $52, $2A, $95 ; ませんか?
@@ -21435,7 +21426,7 @@ Message_0AEBE8:
 ;===================================================================================================
 
 ; では きょうだんに きしんを なさい
-Message_0AEC14:
+Message_02_1A_57:
 #_0AEC14: db $A9, $3E, $CF, $2B, $57, $27, $A6, $52 ; では⎵きょうだん
 #_0AEC1C: db $3A, $CF, $2B, $30, $52, $51, $CF, $39 ; に⎵きしんを⎵な
 #_0AEC24: db $2F, $26 ; さい
@@ -21446,7 +21437,7 @@ Message_0AEC14:
 ; われらは かみに えらばれし ものに
 ; なるのですよ!
 ; さあ ともに たたかいましょう!
-Message_0AEC27:
+Message_02_1A_58:
 #_0AEC27: db $50, $4E, $4B, $3E, $CF, $2A, $44, $3A ; われらは⎵かみに
 #_0AEC2F: db $CF, $28, $4B, $AB, $4E, $30, $CF, $47 ; ⎵えらばれし⎵も
 #_0AEC37: db $3D, $3A ; のに
@@ -21460,7 +21451,7 @@ Message_0AEC27:
 ;===================================================================================================
 
 ; おまえは だれだ!?
-Message_0AEC53:
+Message_02_1A_59:
 #_0AEC53: db $29, $43, $28, $3E, $CF, $A6, $4E, $A6 ; おまえは⎵だれだ
 #_0AEC5B: db $94, $95 ; !?
 #_0AEC5D: db $FF ; end of message
@@ -21469,7 +21460,7 @@ Message_0AEC53:
 
 ; きいたことあるな・・・
 ; で なんの ようだ?
-Message_0AEC5E:
+Message_02_1A_5A:
 #_0AEC5E: db $2B, $26, $34, $2E, $38, $25, $4D, $39 ; きいたことあるな
 #_0AEC66: db $93, $93, $93 ; ・・・
 #_0AEC69: db $F0 ; [set2] new line
@@ -21480,7 +21471,7 @@ Message_0AEC5E:
 ;===================================================================================================
 
 ; «あやしい やつめ!»
-Message_0AEC75:
+Message_02_1A_5B:
 #_0AEC75: db $EB, $AE ; [set2] prewritten text AE
 #_0AEC77: db $FF ; end of message
 
@@ -21488,7 +21479,7 @@ Message_0AEC75:
 
 ; それいじょう ちかづくと
 ; いのちの ほしょうは ないぞ!
-Message_0AEC78:
+Message_02_1A_5C:
 #_0AEC78: db $33, $4E, $26, $A2, $57, $27, $CF, $35 ; それいじょう⎵ち
 #_0AEC80: db $2A, $A8, $2C, $38 ; かづくと
 #_0AEC84: db $F0 ; [set2] new line
@@ -21499,51 +21490,51 @@ Message_0AEC78:
 ;===================================================================================================
 
 ; «なにしに きた!?»
-Message_0AEC95:
+Message_02_1A_5D:
 #_0AEC95: db $EB, $B0 ; [set2] prewritten text B0
 #_0AEC97: db $FF ; end of message
 
 ;===================================================================================================
 
 ; そっこく たちされ!
-Message_0AEC98:
+Message_02_1A_5E:
 #_0AEC98: db $33, $58, $2E, $2C, $CF, $34, $35, $2F ; そっこく⎵たちさ
 #_0AECA0: db $4E, $94 ; れ!
 #_0AECA2: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AECA3:
+Message_02_1A_5F:
 #_0AECA3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «あやしい やつめ!»
-Message_0AECA4:
+Message_02_1A_60:
 #_0AECA4: db $EB, $AE ; [set2] prewritten text AE
 #_0AECA6: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AECA7:
+Message_02_1B_00:
 #_0AECA7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; しねえ!
-Message_0AECA8:
+Message_02_1B_01:
 #_0AECA8: db $30, $3C, $28, $94 ; しねえ!
 #_0AECAC: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AECAD:
+Message_02_1B_02:
 #_0AECAD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おれたちの ナカマを たのんだぜ!
-Message_0AECAE:
+Message_02_1B_30:
 #_0AECAE: db $29, $4E, $34, $35, $3D, $CF, $71, $62 ; おれたちの⎵ナカ
 #_0AECB6: db $7B, $51, $CF, $34, $3D, $52, $A6, $A4 ; マを⎵たのんだぜ
 #_0AECBE: db $94 ; !
@@ -21552,26 +21543,26 @@ Message_0AECAE:
 ;===================================================================================================
 
 ; «いまさら ておくれだぜ!»
-Message_0AECC0:
+Message_02_1B_31:
 #_0AECC0: db $EB, $D2 ; [set2] prewritten text D2
 #_0AECC2: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AECC3:
+Message_02_1B_32:
 #_0AECC3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «[￥GIVEME] よこしな»
-Message_0AECC4:
+Message_02_1B_39:
 #_0AECC4: db $EB, $A9 ; [set2] prewritten text A9
 #_0AECC6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; さらに [￥GIVEME] だしな
-Message_0AECC7:
+Message_02_1B_3A:
 #_0AECC7: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AECCB: db $F6 ; [set2] ask for currency or item
 #_0AECCC: db $CF, $A6, $30, $39 ; ⎵だしな
@@ -21580,28 +21571,28 @@ Message_0AECC7:
 ;===================================================================================================
 
 ; «ならば [￥GIVEME] だ!»
-Message_0AECD1:
+Message_02_1B_3B:
 #_0AECD1: db $EB, $A4 ; [set2] prewritten text A4
 #_0AECD3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
-Message_0AECD4:
+Message_02_1B_3C:
 #_0AECD4: db $EB, $35 ; [set2] prewritten text 35
 #_0AECD6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AECD7:
+Message_02_1B_3D:
 #_0AECD7: db $EB, $36 ; [set2] prewritten text 36
 #_0AECD9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; なんか いやに なってきたぜ
-Message_0AECDA:
+Message_02_1B_3E:
 #_0AECDA: db $39, $52, $2A, $CF, $26, $48, $3A, $CF ; なんか⎵いやに⎵
 #_0AECE2: db $39, $58, $37, $2B, $34, $A4 ; なってきたぜ
 #_0AECE8: db $FF ; end of message
@@ -21609,7 +21600,7 @@ Message_0AECDA:
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AECE9:
+Message_02_1B_3F:
 #_0AECE9: db $EB, $36 ; [set2] prewritten text 36
 #_0AECEB: db $FF ; end of message
 
@@ -21618,7 +21609,7 @@ Message_0AECE9:
 ; けっこう もってんじゃねえか
 ; きが かわった
 ; ぜんぶ いただくことに したぜ
-Message_0AECEC:
+Message_02_1B_40:
 #_0AECEC: db $2D, $58, $2E, $27, $CF, $47, $58, $37 ; けっこう⎵もって
 #_0AECF4: db $52, $A2, $55, $3C, $28, $2A ; んじゃねえか
 #_0AECFA: db $F0 ; [set2] new line
@@ -21631,28 +21622,28 @@ Message_0AECEC:
 ;===================================================================================================
 
 ; ふざけるな!!
-Message_0AED13:
+Message_02_1B_41:
 #_0AED13: db $40, $A1, $2D, $4D, $39, $94, $94 ; ふざけるな!!
 #_0AED1A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AED1B:
+Message_02_1B_42:
 #_0AED1B: db $EB, $36 ; [set2] prewritten text 36
 #_0AED1D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
-Message_0AED1E:
+Message_02_1B_43:
 #_0AED1E: db $EB, $36 ; [set2] prewritten text 36
 #_0AED20: db $FF ; end of message
 
 ;===================================================================================================
 
 ; こいつを もって とっとと きえな!
-Message_0AED21:
+Message_02_1B_44:
 #_0AED21: db $2E, $26, $36, $51, $CF, $47, $58, $37 ; こいつを⎵もって
 #_0AED29: db $CF, $38, $58, $38, $38, $CF, $2B, $28 ; ⎵とっとと⎵きえ
 #_0AED31: db $39, $94 ; な!
@@ -21661,14 +21652,14 @@ Message_0AED21:
 ;===================================================================================================
 
 ; «おことわりだ!»
-Message_0AED34:
+Message_02_1B_45:
 #_0AED34: db $EB, $A8 ; [set2] prewritten text A8
 #_0AED36: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか わかった»
-Message_0AED37:
+Message_02_1B_46:
 #_0AED37: db $EB, $78 ; [set2] prewritten text 78
 #_0AED39: db $FF ; end of message
 
@@ -21676,7 +21667,7 @@ Message_0AED37:
 
 ; よし!
 ; これで おれたち ナカマだぜ
-Message_0AED3A:
+Message_02_1B_47:
 #_0AED3A: db $4A, $30, $94 ; よし!
 #_0AED3D: db $F0 ; [set2] new line
 #_0AED3E: db $2E, $4E, $A9, $CF, $29, $4E, $34, $35 ; これで⎵おれたち
@@ -21686,14 +21677,14 @@ Message_0AED3A:
 ;===================================================================================================
 
 ; «まだ なにも はなしていないぞ»
-Message_0AED4D:
+Message_02_1B_48:
 #_0AED4D: db $EB, $7B ; [set2] prewritten text 7B
 #_0AED4F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «[￥GIVEME] よこしな»
-Message_0AED50:
+Message_02_1B_49:
 #_0AED50: db $EB, $A9 ; [set2] prewritten text A9
 #_0AED52: db $FF ; end of message
 
@@ -21701,41 +21692,41 @@ Message_0AED50:
 
 ; «ついでに [￥GIVEME] だな»
 ; «そんだけで いいから・・・»
-Message_0AED53:
+Message_02_1B_4A:
 #_0AED53: db $EB, $7F ; [set2] prewritten text 7F
 #_0AED55: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなら [￥GIVEME] だな»
-Message_0AED56:
+Message_02_1B_4B:
 #_0AED56: db $EB, $44 ; [set2] prewritten text 44
 #_0AED58: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AED59:
+Message_02_1B_4C:
 #_0AED59: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AED5A:
+Message_02_1B_4D:
 #_0AED5A: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AED5B:
+Message_02_1B_4E:
 #_0AED5B: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AED5C:
+Message_02_1B_4F:
 #_0AED5C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; かわいがって やるぜ!
-Message_0AED5D:
+Message_02_1B_50:
 #_0AED5D: db $2A, $50, $26, $9C, $58, $37, $CF, $48 ; かわいがって⎵や
 #_0AED65: db $4D, $A4, $94 ; るぜ!
 #_0AED68: db $FF ; end of message
@@ -21743,7 +21734,7 @@ Message_0AED5D:
 ;===================================================================================================
 
 ; ナカマが ほしいのかよ?
-Message_0AED69:
+Message_02_1B_51:
 #_0AED69: db $71, $62, $7B, $9C, $CF, $42, $30, $26 ; ナカマが⎵ほしい
 #_0AED71: db $3D, $2A, $4A, $95 ; のかよ?
 #_0AED75: db $FF ; end of message
@@ -21751,7 +21742,7 @@ Message_0AED69:
 ;===================================================================================================
 
 ; おまえ ガイアの ものか?
-Message_0AED76:
+Message_02_1B_52:
 #_0AED76: db $29, $43, $28, $CF, $B5, $5E, $5D, $3D ; おまえ⎵ガイアの
 #_0AED7E: db $CF, $47, $3D, $2A, $95 ; ⎵ものか?
 #_0AED83: db $FF ; end of message
@@ -21760,7 +21751,7 @@ Message_0AED76:
 
 ; そうか がんばれよ!
 ; これを もってきな・・・
-Message_0AED84:
+Message_02_1B_53:
 #_0AED84: db $33, $27, $2A, $CF, $9C, $52, $AB, $4E ; そうか⎵がんばれ
 #_0AED8C: db $4A, $94 ; よ!
 #_0AED8E: db $F0 ; [set2] new line
@@ -21771,7 +21762,7 @@ Message_0AED84:
 ;===================================================================================================
 
 ; きさま メシアきょうとだな!
-Message_0AED9C:
+Message_02_1B_55:
 #_0AED9C: db $2B, $2F, $43, $CF, $7E, $68, $5D, $2B ; きさま⎵メシアき
 #_0AEDA4: db $57, $27, $38, $A6, $39, $94 ; ょうとだな!
 #_0AEDAA: db $FF ; end of message
@@ -21780,7 +21771,7 @@ Message_0AED9C:
 
 ; おまえも ガイアきょうに はいれよ!
 ; つよいやつは だいかんげいだ!
-Message_0AEDAB:
+Message_02_1B_56:
 #_0AEDAB: db $29, $43, $28, $47, $CF, $B5, $5E, $5D ; おまえも⎵ガイア
 #_0AEDB3: db $2B, $57, $27, $3A, $CF, $3E, $26, $4E ; きょうに⎵はいれ
 #_0AEDBB: db $4A, $94 ; よ!
@@ -21792,20 +21783,20 @@ Message_0AEDAB:
 ;===================================================================================================
 
 ; じゃあ «だすもん だして もらおうか・・・»
-Message_0AEDCE:
+Message_02_1B_57:
 #_0AEDCE: db $A2, $55, $25, $CF ; じゃあ⎵
 #_0AEDD2: db $EB, $AC ; [set2] prewritten text AC
 #_0AEDD4: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEDD5:
+Message_02_1B_58:
 #_0AEDD5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なにものだ? なを なのれ!»
-Message_0AEDD6:
+Message_02_1B_59:
 #_0AEDD6: db $EB, $AD ; [set2] prewritten text AD
 #_0AEDD8: db $FF ; end of message
 
@@ -21813,7 +21804,7 @@ Message_0AEDD6:
 
 ; «なにい? オマエが・・・»
 ; «ようを いってみろ»
-Message_0AEDD9:
+Message_02_1B_5A:
 #_0AEDD9: db $EB, $66 ; [set2] prewritten text 66
 #_0AEDDB: db $F0 ; [set2] new line
 #_0AEDDC: db $EB, $31 ; [set2] prewritten text 31
@@ -21822,14 +21813,14 @@ Message_0AEDD9:
 ;===================================================================================================
 
 ; «あやしい やつめ!»
-Message_0AEDDF:
+Message_02_1B_5B:
 #_0AEDDF: db $EB, $AE ; [set2] prewritten text AE
 #_0AEDE1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; きさま いのちが おしくねえのか!
-Message_0AEDE2:
+Message_02_1B_5C:
 #_0AEDE2: db $2B, $2F, $43, $CF, $26, $3D, $35, $9C ; きさま⎵いのちが
 #_0AEDEA: db $CF, $29, $30, $2C, $3C, $28, $3D, $2A ; ⎵おしくねえのか
 #_0AEDF2: db $94 ; !
@@ -21838,14 +21829,14 @@ Message_0AEDE2:
 ;===================================================================================================
 
 ; «なにしに きた!?»
-Message_0AEDF4:
+Message_02_1B_5D:
 #_0AEDF4: db $EB, $B0 ; [set2] prewritten text B0
 #_0AEDF6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; とっとと かえれ!
-Message_0AEDF7:
+Message_02_1B_5E:
 #_0AEDF7: db $38, $58, $38, $38, $CF, $2A, $28, $4E ; とっとと⎵かえれ
 #_0AEDFF: db $94 ; !
 #_0AEE00: db $FF ; end of message
@@ -21854,7 +21845,7 @@ Message_0AEDF7:
 
 ; いのちまで とろうたあ いわねえ・・・
 ; おとなしく «だすもん だして もらおうか・・・»
-Message_0AEE01:
+Message_02_1B_5F:
 #_0AEE01: db $26, $3D, $35, $43, $A9, $CF, $38, $4F ; いのちまで⎵とろ
 #_0AEE09: db $27, $34, $25, $CF, $26, $50, $3C, $28 ; うたあ⎵いわねえ
 #_0AEE11: db $93, $93, $93 ; ・・・
@@ -21866,7 +21857,7 @@ Message_0AEE01:
 ;===================================================================================================
 
 ; «あやしい やつめ!»
-Message_0AEE1E:
+Message_02_1B_60:
 #_0AEE1E: db $EB, $AE ; [set2] prewritten text AE
 #_0AEE20: db $FF ; end of message
 
@@ -21874,7 +21865,7 @@ Message_0AEE1E:
 
 ; この がきゃあ
 ; ぶっころしたる!
-Message_0AEE21:
+Message_02_1C_00:
 #_0AEE21: db $2E, $3D, $CF, $9C, $2B, $55, $25 ; この⎵がきゃあ
 #_0AEE28: db $F0 ; [set2] new line
 #_0AEE29: db $AD, $58, $2E, $4F, $30, $34, $4D, $94 ; ぶっころしたる!
@@ -21883,7 +21874,7 @@ Message_0AEE21:
 ;===================================================================================================
 
 ; «おぼえてろ!»
-Message_0AEE32:
+Message_02_1C_01:
 #_0AEE32: db $EB, $4B ; [set2] prewritten text 4B
 #_0AEE34: db $FF ; end of message
 
@@ -21891,7 +21882,7 @@ Message_0AEE32:
 
 ; おみそれしやした!
 ; どうか これで みのがして くだせえ!
-Message_0AEE35:
+Message_02_1C_02:
 #_0AEE35: db $29, $44, $33, $4E, $30, $48, $30, $34 ; おみそれしやした
 #_0AEE3D: db $94 ; !
 #_0AEE3E: db $F0 ; [set2] new line
@@ -21903,7 +21894,7 @@ Message_0AEE35:
 ;===================================================================================================
 
 ; あらたな [DEMONX]の けはいがする
-Message_0AEE53:
+Message_02_1C_03:
 #_0AEE53: db $25, $4B, $34, $39, $CF ; あらたな⎵
 #_0AEE58: db $ED ; [set2] write demon name indexed from $0526
 #_0AEE59: db $3D, $CF, $2D, $3E, $26, $9C, $31, $4D ; の⎵けはいがする
@@ -21912,7 +21903,7 @@ Message_0AEE53:
 ;===================================================================================================
 
 ; はなしかけても こうかなかった
-Message_0AEE62:
+Message_02_1C_04:
 #_0AEE62: db $3E, $39, $30, $2A, $2D, $37, $47, $CF ; はなしかけても⎵
 #_0AEE6A: db $2E, $27, $2A, $39, $2A, $58, $34 ; こうかなかった
 #_0AEE71: db $FF ; end of message
@@ -21920,7 +21911,7 @@ Message_0AEE62:
 ;===================================================================================================
 
 ; [DEMONX]は じっと みている
-Message_0AEE72:
+Message_02_1C_05:
 #_0AEE72: db $ED ; [set2] write demon name indexed from $0526
 #_0AEE73: db $3E, $CF, $A2, $58, $38, $CF, $44, $37 ; は⎵じっと⎵みて
 #_0AEE7B: db $26, $4D ; いる
@@ -21929,7 +21920,7 @@ Message_0AEE72:
 ;===================================================================================================
 
 ; [DEMONX]は しんごうを おくっている
-Message_0AEE7E:
+Message_02_1C_06:
 #_0AEE7E: db $ED ; [set2] write demon name indexed from $0526
 #_0AEE7F: db $3E, $CF, $30, $52, $A0, $27, $51, $CF ; は⎵しんごうを⎵
 #_0AEE87: db $29, $2C, $58, $37, $26, $4D ; おくっている
@@ -21937,19 +21928,19 @@ Message_0AEE7E:
 
 ;===================================================================================================
 
-Message_0AEE8E:
+Message_02_1C_07:
 #_0AEE8E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ナカマヲ タノム»
-Message_0AEE8F:
+Message_02_1C_30:
 #_0AEE8F: db $EB, $B9 ; [set2] prewritten text B9
 #_0AEE91: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEE92:
+Message_02_1D_00:
 #_0AEE92: db $D5, $50 ; send $50 to APU
 #_0AEE94: db $D7, $85, $1D ; load scenes 85 and 1D
 #_0AEE97: db $D6, $00, $3A, $70, $28 ; place sprite 3A in slot 00 at XY:{70,28}
@@ -21958,7 +21949,7 @@ Message_0AEE92:
 
 ;===================================================================================================
 
-Message_0AEE9F:
+Message_02_1D_01:
 #_0AEE9F: db $D5, $50 ; send $50 to APU
 #_0AEEA1: db $D2, $2F, $1D ; test progress bit $2F for message $1D
 #_0AEEA4: db $D7, $85, $1D ; load scenes 85 and 1D
@@ -21968,7 +21959,7 @@ Message_0AEE9F:
 
 ;===================================================================================================
 
-Message_0AEEAF:
+Message_02_1D_02:
 #_0AEEAF: db $D5, $50 ; send $50 to APU
 #_0AEEB1: db $D7, $85, $1B ; load scenes 85 and 1B
 #_0AEEB4: db $D6, $00, $3C, $70, $28 ; place sprite 3C in slot 00 at XY:{70,28}
@@ -21977,7 +21968,7 @@ Message_0AEEAF:
 
 ;===================================================================================================
 
-Message_0AEEBC:
+Message_02_1D_03:
 #_0AEEBC: db $D5, $50 ; send $50 to APU
 #_0AEEBE: db $D2, $2F, $26 ; test progress bit $2F for message $26
 #_0AEEC1: db $D7, $85, $1B ; load scenes 85 and 1B
@@ -21987,7 +21978,7 @@ Message_0AEEBC:
 
 ;===================================================================================================
 
-Message_0AEECC:
+Message_02_1D_04:
 #_0AEECC: db $D5, $50 ; send $50 to APU
 #_0AEECE: db $D7, $85, $1C ; load scenes 85 and 1C
 #_0AEED1: db $D6, $00, $39, $70, $28 ; place sprite 39 in slot 00 at XY:{70,28}
@@ -21996,7 +21987,7 @@ Message_0AEECC:
 
 ;===================================================================================================
 
-Message_0AEED9:
+Message_02_1D_05:
 #_0AEED9: db $D5, $50 ; send $50 to APU
 #_0AEEDB: db $D2, $2F, $14 ; test progress bit $2F for message $14
 #_0AEEDE: db $D7, $85, $1C ; load scenes 85 and 1C
@@ -22006,13 +21997,13 @@ Message_0AEED9:
 
 ;===================================================================================================
 
-Message_0AEEE9:
+Message_02_1D_06:
 #_0AEEE9: db $FE, $4F, $00 ; ext command 4F: 00 TODO
 #_0AEEEC: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEEED:
+Message_02_1D_07:
 #_0AEEED: db $D5, $50 ; send $50 to APU
 #_0AEEEF: db $D2, $2F, $0D ; test progress bit $2F for message $0D
 #_0AEEF2: db $D7, $85, $19 ; load scenes 85 and 19
@@ -22022,7 +22013,7 @@ Message_0AEEED:
 
 ;===================================================================================================
 
-Message_0AEEFE:
+Message_02_1D_08:
 #_0AEEFE: db $D5, $50 ; send $50 to APU
 #_0AEF00: db $D2, $2F, $0E ; test progress bit $2F for message $0E
 #_0AEF03: db $D7, $85, $19 ; load scenes 85 and 19
@@ -22032,7 +22023,7 @@ Message_0AEEFE:
 
 ;===================================================================================================
 
-Message_0AEF0F:
+Message_02_1D_09:
 #_0AEF0F: db $D5, $50 ; send $50 to APU
 #_0AEF11: db $D2, $2F, $0F ; test progress bit $2F for message $0F
 #_0AEF14: db $D7, $85, $19 ; load scenes 85 and 19
@@ -22042,26 +22033,26 @@ Message_0AEF0F:
 
 ;===================================================================================================
 
-Message_0AEF20:
+Message_02_1D_0A:
 #_0AEF20: db $D5, $50 ; send $50 to APU
 #_0AEF22: db $D2, $2F, $10 ; test progress bit $2F for message $10
 
 ;===================================================================================================
 
-Message_0AEF25:
+Message_02_1D_0B:
 #_0AEF25: db $D7, $85, $19 ; load scenes 85 and 19
 #_0AEF28: db $D6, $00, $3E, $70, $28 ; place sprite 3E in slot 00 at XY:{70,28}
 
 ;===================================================================================================
 
-Message_0AEF2D:
+Message_02_1D_0C:
 #_0AEF2D: db $FE, $4F, $04 ; ext command 4F: 04 TODO
 #_0AEF30: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0AEF32: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AEF33:
+Message_02_1D_0D:
 #_0AEF33: db $D7, $A4, $19 ; load scenes A4 and 19
 #_0AEF36: db $D6, $00, $AF, $70, $26 ; place sprite AF in slot 00 at XY:{70,26}
 #_0AEF3B: db $FE, $4F, $05 ; ext command 4F: 05 TODO
@@ -22069,7 +22060,7 @@ Message_0AEF33:
 
 ;===================================================================================================
 
-Message_0AEF3F:
+Message_02_1D_0E:
 #_0AEF3F: db $D7, $A4, $19 ; load scenes A4 and 19
 #_0AEF42: db $D6, $00, $AF, $70, $26 ; place sprite AF in slot 00 at XY:{70,26}
 #_0AEF47: db $FE, $4F, $06 ; ext command 4F: 06 TODO
@@ -22077,7 +22068,7 @@ Message_0AEF3F:
 
 ;===================================================================================================
 
-Message_0AEF4B:
+Message_02_1D_0F:
 #_0AEF4B: db $D7, $A4, $19 ; load scenes A4 and 19
 #_0AEF4E: db $D6, $00, $AF, $70, $26 ; place sprite AF in slot 00 at XY:{70,26}
 #_0AEF53: db $FE, $4F, $07 ; ext command 4F: 07 TODO
@@ -22085,7 +22076,7 @@ Message_0AEF4B:
 
 ;===================================================================================================
 
-Message_0AEF57:
+Message_02_1D_10:
 #_0AEF57: db $D7, $A4, $19 ; load scenes A4 and 19
 #_0AEF5A: db $D6, $00, $AF, $70, $26 ; place sprite AF in slot 00 at XY:{70,26}
 #_0AEF5F: db $FE, $4F, $08 ; ext command 4F: 08 TODO
@@ -22093,7 +22084,7 @@ Message_0AEF57:
 
 ;===================================================================================================
 
-Message_0AEF63:
+Message_02_1D_11:
 #_0AEF63: db $D5, $50 ; send $50 to APU
 #_0AEF65: db $D2, $58, $13 ; test progress bit $58 for message $13
 #_0AEF68: db $D2, $56, $12 ; test progress bit $56 for message $12
@@ -22101,7 +22092,7 @@ Message_0AEF63:
 
 ;===================================================================================================
 
-Message_0AEF6D:
+Message_02_1D_12:
 #_0AEF6D: db $D7, $05 ; load scene 05
 #_0AEF6F: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
 #_0AEF74: db $E4, $00 ; load demon $00
@@ -22109,7 +22100,7 @@ Message_0AEF6D:
 
 ;===================================================================================================
 
-Message_0AEF78:
+Message_02_1D_13:
 #_0AEF78: db $D7, $A4, $19 ; load scenes A4 and 19
 #_0AEF7B: db $D6, $00, $AF, $70, $26 ; place sprite AF in slot 00 at XY:{70,26}
 #_0AEF80: db $FE, $4F, $09 ; ext command 4F: 09 TODO
@@ -22117,7 +22108,7 @@ Message_0AEF78:
 
 ;===================================================================================================
 
-Message_0AEF84:
+Message_02_1D_14:
 #_0AEF84: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEF87: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
 #_0AEF8C: db $EA, $0B ; [COMMAND 1A:0B]
@@ -22127,7 +22118,7 @@ Message_0AEF84:
 ;===================================================================================================
 
 ; >«だれもいない»
-Message_0AEF91:
+Message_02_1D_15:
 #_0AEF91: db $D5, $50 ; send $50 to APU
 #_0AEF93: db $D2, $58, $16 ; test progress bit $58 for message $16
 #_0AEF96: db $D7, $85, $1C ; load scenes 85 and 1C
@@ -22138,7 +22129,7 @@ Message_0AEF91:
 
 ;===================================================================================================
 
-Message_0AEF9E:
+Message_02_1D_16:
 #_0AEF9E: db $D7, $05 ; load scene 05
 #_0AEFA0: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AEFA5: db $D6, $04, $8E, $58, $38 ; place sprite 8E in slot 04 at XY:{58,38}
@@ -22147,7 +22138,7 @@ Message_0AEF9E:
 
 ;===================================================================================================
 
-Message_0AEFAD:
+Message_02_1D_17:
 #_0AEFAD: db $D5, $50 ; send $50 to APU
 #_0AEFAF: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFB2: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
@@ -22156,7 +22147,7 @@ Message_0AEFAD:
 
 ;===================================================================================================
 
-Message_0AEFBA:
+Message_02_1D_18:
 #_0AEFBA: db $D5, $50 ; send $50 to APU
 #_0AEFBC: db $D7, $24 ; load scene 24
 #_0AEFBE: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
@@ -22166,7 +22157,7 @@ Message_0AEFBA:
 
 ;===================================================================================================
 
-Message_0AEFCB:
+Message_02_1D_19:
 #_0AEFCB: db $D5, $50 ; send $50 to APU
 #_0AEFCD: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFD0: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
@@ -22175,7 +22166,7 @@ Message_0AEFCB:
 
 ;===================================================================================================
 
-Message_0AEFD8:
+Message_02_1D_1A:
 #_0AEFD8: db $D5, $50 ; send $50 to APU
 #_0AEFDA: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFDD: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
@@ -22184,7 +22175,7 @@ Message_0AEFD8:
 
 ;===================================================================================================
 
-Message_0AEFE5:
+Message_02_1D_1B:
 #_0AEFE5: db $D5, $50 ; send $50 to APU
 #_0AEFE7: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFEA: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
@@ -22193,7 +22184,7 @@ Message_0AEFE5:
 
 ;===================================================================================================
 
-Message_0AEFF2:
+Message_02_1D_1C:
 #_0AEFF2: db $D5, $50 ; send $50 to APU
 #_0AEFF4: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AEFF9: db $D6, $04, $8E, $50, $38 ; place sprite 8E in slot 04 at XY:{50,38}
@@ -22202,7 +22193,7 @@ Message_0AEFF2:
 
 ;===================================================================================================
 
-Message_0AF001:
+Message_02_1D_1D:
 #_0AF001: db $D5, $50 ; send $50 to APU
 #_0AF003: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF006: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
@@ -22212,7 +22203,7 @@ Message_0AF001:
 ;===================================================================================================
 
 ; >«だれもいない»
-Message_0AF00E:
+Message_02_1D_1E:
 #_0AF00E: db $D5, $50 ; send $50 to APU
 #_0AF010: db $D2, $58, $1F ; test progress bit $58 for message $1F
 #_0AF013: db $D7, $85, $1D ; load scenes 85 and 1D
@@ -22223,7 +22214,7 @@ Message_0AF00E:
 
 ;===================================================================================================
 
-Message_0AF01B:
+Message_02_1D_1F:
 #_0AF01B: db $D7, $05 ; load scene 05
 #_0AF01D: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF022: db $D6, $04, $8D, $50, $28 ; place sprite 8D in slot 04 at XY:{50,28}
@@ -22232,7 +22223,7 @@ Message_0AF01B:
 
 ;===================================================================================================
 
-Message_0AF02A:
+Message_02_1D_20:
 #_0AF02A: db $D5, $50 ; send $50 to APU
 #_0AF02C: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF02F: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
@@ -22241,7 +22232,7 @@ Message_0AF02A:
 
 ;===================================================================================================
 
-Message_0AF037:
+Message_02_1D_21:
 #_0AF037: db $D5, $50 ; send $50 to APU
 #_0AF039: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF03C: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
@@ -22250,7 +22241,7 @@ Message_0AF037:
 
 ;===================================================================================================
 
-Message_0AF044:
+Message_02_1D_22:
 #_0AF044: db $D5, $50 ; send $50 to APU
 #_0AF046: db $D7, $24 ; load scene 24
 #_0AF048: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
@@ -22260,7 +22251,7 @@ Message_0AF044:
 
 ;===================================================================================================
 
-Message_0AF055:
+Message_02_1D_23:
 #_0AF055: db $D5, $50 ; send $50 to APU
 #_0AF057: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF05A: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
@@ -22269,7 +22260,7 @@ Message_0AF055:
 
 ;===================================================================================================
 
-Message_0AF062:
+Message_02_1D_24:
 #_0AF062: db $D5, $50 ; send $50 to APU
 #_0AF064: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF067: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
@@ -22278,7 +22269,7 @@ Message_0AF062:
 
 ;===================================================================================================
 
-Message_0AF06F:
+Message_02_1D_25:
 #_0AF06F: db $D5, $50 ; send $50 to APU
 #_0AF071: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF076: db $D6, $04, $8D, $50, $28 ; place sprite 8D in slot 04 at XY:{50,28}
@@ -22287,7 +22278,7 @@ Message_0AF06F:
 
 ;===================================================================================================
 
-Message_0AF07E:
+Message_02_1D_26:
 #_0AF07E: db $D5, $50 ; send $50 to APU
 #_0AF080: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF083: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
@@ -22296,7 +22287,7 @@ Message_0AF07E:
 
 ;===================================================================================================
 
-Message_0AF08B:
+Message_02_1D_27:
 #_0AF08B: db $D5, $50 ; send $50 to APU
 #_0AF08D: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF090: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
@@ -22306,7 +22297,7 @@ Message_0AF08B:
 ;===================================================================================================
 
 ; >«だれもいない»
-Message_0AF098:
+Message_02_1D_28:
 #_0AF098: db $D5, $50 ; send $50 to APU
 #_0AF09A: db $D2, $58, $29 ; test progress bit $58 for message $29
 #_0AF09D: db $D7, $85, $1B ; load scenes 85 and 1B
@@ -22317,7 +22308,7 @@ Message_0AF098:
 
 ;===================================================================================================
 
-Message_0AF0A5:
+Message_02_1D_29:
 #_0AF0A5: db $D7, $05 ; load scene 05
 #_0AF0A7: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF0AC: db $D6, $01, $90, $50, $48 ; place sprite 90 in slot 01 at XY:{50,48}
@@ -22326,7 +22317,7 @@ Message_0AF0A5:
 
 ;===================================================================================================
 
-Message_0AF0B4:
+Message_02_1D_2A:
 #_0AF0B4: db $D5, $50 ; send $50 to APU
 #_0AF0B6: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0B9: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
@@ -22335,7 +22326,7 @@ Message_0AF0B4:
 
 ;===================================================================================================
 
-Message_0AF0C1:
+Message_02_1D_2B:
 #_0AF0C1: db $D5, $50 ; send $50 to APU
 #_0AF0C3: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0C6: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
@@ -22344,7 +22335,7 @@ Message_0AF0C1:
 
 ;===================================================================================================
 
-Message_0AF0CE:
+Message_02_1D_2C:
 #_0AF0CE: db $D5, $50 ; send $50 to APU
 #_0AF0D0: db $D7, $24 ; load scene 24
 #_0AF0D2: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
@@ -22354,7 +22345,7 @@ Message_0AF0CE:
 
 ;===================================================================================================
 
-Message_0AF0DF:
+Message_02_1D_2D:
 #_0AF0DF: db $D5, $50 ; send $50 to APU
 #_0AF0E1: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0E4: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
@@ -22363,7 +22354,7 @@ Message_0AF0DF:
 
 ;===================================================================================================
 
-Message_0AF0EC:
+Message_02_1D_2E:
 #_0AF0EC: db $D5, $50 ; send $50 to APU
 #_0AF0EE: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0F1: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
@@ -22372,7 +22363,7 @@ Message_0AF0EC:
 
 ;===================================================================================================
 
-Message_0AF0F9:
+Message_02_1D_2F:
 #_0AF0F9: db $D5, $50 ; send $50 to APU
 #_0AF0FB: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF100: db $D6, $01, $90, $50, $48 ; place sprite 90 in slot 01 at XY:{50,48}
@@ -22383,7 +22374,7 @@ Message_0AF0F9:
 
 ; >ここを とおらんとするは なにものぞ!
 ; なのらぬものを とおすわけには いかん
-Message_0AF108:
+Message_02_1E_00:
 #_0AF108: db $D0, $FF ; set progress bit $FF
 #_0AF10A: db $D0, $FE ; set progress bit $FE
 #_0AF10C: db $FE, $38 ; ext command 38: open scary face door
@@ -22408,7 +22399,7 @@ Message_0AF108:
 
 ; なんじの なを なのれ
 ; なんじは [CHASE]と いうのか?
-Message_0AF154:
+Message_02_1E_01:
 #_0AF154: db $D4, $02 ; set text box size to 2
 #_0AF156: db $39, $52, $A2, $3D, $CF, $39, $51, $CF ; なんじの⎵なを⎵
 #_0AF15E: db $39, $3D, $4E ; なのれ
@@ -22427,7 +22418,7 @@ Message_0AF154:
 ; あるはず
 ; «>パラメーターに 18ポイントを»
 ; «ふりわけてください»
-Message_0AF177:
+Message_02_1E_02:
 #_0AF177: db $D4, $03 ; set text box size to 3
 #_0AF179: db $F0 ; write player name
 #_0AF17A: db $39, $4B, $AB, $CF, $3F, $46, $4B, $4E ; ならば⎵ひめられ
@@ -22450,7 +22441,7 @@ Message_0AF177:
 ; あいあらそう こんとんか
 ; なんじの てんびんに ふたつをのせ
 ; こぼれ おとさぬよう あゆむがよい
-Message_0AF194:
+Message_02_1E_03:
 #_0AF194: db $FA ; clear message box
 #_0AF195: db $F0 ; write player name
 #_0AF196: db $4A ; よ
@@ -22496,7 +22487,7 @@ Message_0AF194:
 ; かみのつかい:
 ; これは かみにささげられし たましい
 ; あなたが なまえをよべば めをさますでしょう
-Message_0AF220:
+Message_02_1E_04:
 #_0AF220: db $D6, $01, $11, $78, $3C ; place sprite 11 in slot 01 at XY:{78,3C}
 #_0AF225: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_0AF228: db $D6, $01, $12, $78, $38 ; place sprite 12 in slot 01 at XY:{78,38}
@@ -22532,7 +22523,7 @@ Message_0AF220:
 
 ; かれの なまえを よんであげてください
 ; かれを [JIMMY]と よびましたね?
-Message_0AF29F:
+Message_02_1E_05:
 #_0AF29F: db $D4, $02 ; set text box size to 2
 #_0AF2A1: db $2A, $4E, $3D, $CF, $39, $43, $28, $51 ; かれの⎵なまえを
 #_0AF2A9: db $CF, $4A, $52, $A9, $25, $9F, $37, $2C ; ⎵よんであげてく
@@ -22552,7 +22543,7 @@ Message_0AF29F:
 ; かれには ひめられし ちからが あります
 ; «>パラメーターに 18ポイントを»
 ; «ふりわけてください»
-Message_0AF2CB:
+Message_02_1E_06:
 #_0AF2CB: db $D4, $03 ; set text box size to 3
 #_0AF2CD: db $2A, $4E, $3A, $3E, $CF, $3F, $46, $4B ; かれには⎵ひめら
 #_0AF2D5: db $4E, $30, $CF, $35, $2A, $4B, $9C, $CF ; れし⎵ちからが⎵
@@ -22572,7 +22563,7 @@ Message_0AF2CB:
 ; きみといれば こたえが みつかるかも«・・・»
 ; いっしょに つれていってください
 ; >[JIMMY]が «ナカマに くわわった»
-Message_0AF2E9:
+Message_02_1E_07:
 #_0AF2E9: db $D4, $03 ; set text box size to 3
 #_0AF2EB: db $D6, $00, $00 ; delete sprite in slot 00
 #_0AF2EE: db $D6, $01, $00 ; delete sprite in slot 01
@@ -22618,7 +22609,7 @@ Message_0AF2E9:
 ; これは ちからをもとめる かわいた たましい
 ; きさまが なまえをよべば
 ; こいつは めをさますであろう
-Message_0AF369:
+Message_02_1E_08:
 #_0AF369: db $D6, $01, $98, $50, $30 ; place sprite 98 in slot 01 at XY:{50,30}
 #_0AF36E: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
 #_0AF371: db $D6, $01, $18, $60, $58 ; place sprite 18 in slot 01 at XY:{60,58}
@@ -22646,7 +22637,7 @@ Message_0AF369:
 
 ; さあ なまえを よぶのだ
 ; こいつを [HIM]と よんだな?
-Message_0AF3C6:
+Message_02_1E_09:
 #_0AF3C6: db $D4, $02 ; set text box size to 2
 #_0AF3C8: db $2F, $25, $CF, $39, $43, $28, $51, $CF ; さあ⎵なまえを⎵
 #_0AF3D0: db $4A, $AD, $3D, $A6 ; よぶのだ
@@ -22664,7 +22655,7 @@ Message_0AF3C6:
 ; こいつには まだまだ ちからがある
 ; «>パラメーターに 18ポイントを»
 ; «ふりわけてください»
-Message_0AF3EA:
+Message_02_1E_0A:
 #_0AF3EA: db $D4, $03 ; set text box size to 3
 #_0AF3EC: db $2E, $26, $36, $3A, $3E, $CF, $43, $A6 ; こいつには⎵まだ
 #_0AF3F4: db $43, $A6, $CF, $35, $2A, $4B, $9C, $25 ; まだ⎵ちからがあ
@@ -22683,7 +22674,7 @@ Message_0AF3EA:
 ; クソッ
 ; とにかく ここから つれだしてもらうぜ
 ; >[HIM]が «ナカマに くわわった»
-Message_0AF405:
+Message_02_1E_0B:
 #_0AF405: db $D4, $03 ; set text box size to 3
 #_0AF407: db $D6, $00, $00 ; delete sprite in slot 00
 #_0AF40A: db $D6, $01, $00 ; delete sprite in slot 01
@@ -22726,7 +22717,7 @@ Message_0AF405:
 ; わたしの なは ゆりこ
 ; あなたのこと ずっと まっていたのよ«・・・»
 ; えいえんの パートナーとしてね«・・・»
-Message_0AF461:
+Message_02_1E_0C:
 #_0AF461: db $D1, $FE ; clear progress bit $FE
 #_0AF463: db $D7, $12 ; load scene 12
 #_0AF465: db $D6, $00, $31, $78, $68 ; place sprite 31 in slot 00 at XY:{78,68}
@@ -22775,7 +22766,7 @@ Message_0AF461:
 ; またあえて うれしいわ [CHASE]
 ; わたしは ずっと あなたの そばに いるのよ
 ; わすれないでね«・・・»
-Message_0AF4EC:
+Message_02_1E_0D:
 #_0AF4EC: db $D6, $00, $2C, $70, $28 ; place sprite 2C in slot 00 at XY:{70,28}
 #_0AF4F1: db $49, $4C, $2E, $9A ; ゆりこ:
 #_0AF4F5: db $F9 ; new line
@@ -22802,14 +22793,14 @@ Message_0AF4EC:
 ; «[CHASE] いつまで ねてるの?»
 ; «やすみだからって ねぼうは ダメよ»
 ; «はやく おきてらっしゃい»
-Message_0AF52F:
+Message_02_1E_0E:
 #_0AF52F: db $D5, $FD ; send $FD to APU
 #_0AF531: db $F2, $82 ; prewritten text 82
 #_0AF533: db $D3, $1D ; go to message $1D
 
 ;===================================================================================================
 
-Message_0AF535:
+Message_02_1E_0F:
 #_0AF535: db $FE, $1C, $00 ; ext command 1C: $00 TODO
 #_0AF538: db $FF ; end of message
 
@@ -22820,7 +22811,7 @@ Message_0AF535:
 ; [HIM]:
 ; よお [CHASE]
 ; また へんな ゆめ みちまったな
-Message_0AF539:
+Message_02_1E_10:
 #_0AF539: db $FA ; clear message box
 #_0AF53A: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
 #_0AF53F: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
@@ -22852,13 +22843,13 @@ Message_0AF539:
 
 ;===================================================================================================
 
-Message_0AF587:
+Message_02_1E_11:
 #_0AF587: db $D2, $2F, $12 ; test progress bit $2F for message $12
 #_0AF58A: db $D3, $13 ; go to message $13
 
 ;===================================================================================================
 
-Message_0AF58C:
+Message_02_1E_12:
 #_0AF58C: db $D5, $46 ; send $46 to APU
 
 ;===================================================================================================
@@ -22868,7 +22859,7 @@ Message_0AF58C:
 ; なんだ? この きみわるい ぎしきは?
 ; [JIMMY]:
 ; アクマを よびだそうと するんでしょうか?
-Message_0AF58E:
+Message_02_1E_13:
 #_0AF58E: db $D1, $FE ; clear progress bit $FE
 #_0AF590: db $D7, $13 ; load scene 13
 #_0AF592: db $FE, $30, $02 ; ext command 30: 02 TODO
@@ -22912,7 +22903,7 @@ Message_0AF58E:
 ; いけにえの «しょうじょ»を たすけますか?
 ; [JIMMY]:
 ; あのこを みごろしにするんですか!
-Message_0AF5FF:
+Message_02_1E_14:
 #_0AF5FF: db $FA ; clear message box
 #_0AF600: db $30, $2F, $26, $9A ; しさい:
 #_0AF604: db $F9 ; new line
@@ -22956,7 +22947,7 @@ Message_0AF5FF:
 ; [HIM]:
 ; おい うしろの やつは けん もってるぜ
 ; こっちは まるごしだ むちゃだぜ!
-Message_0AF681:
+Message_02_1E_15:
 #_0AF681: db $D4, $03 ; set text box size to 3
 #_0AF683: db $EF ; write chaos hero name
 #_0AF684: db $9A ; :
@@ -22977,7 +22968,7 @@ Message_0AF681:
 ; なにものだ! わが ぎしきを じゃまするのは!
 ; «しょうじょ»:
 ; [CHASE]さん! たすけにきてくれたのね
-Message_0AF6B0:
+Message_02_1E_16:
 #_0AF6B0: db $FA ; clear message box
 #_0AF6B1: db $30, $2F, $26, $9A ; しさい:
 #_0AF6B5: db $F9 ; new line
@@ -23000,7 +22991,7 @@ Message_0AF6B0:
 ; しさい:
 ; なにっ! この «しょうじょ»の なまえは
 ; [MOMO]なのか?
-Message_0AF6E4:
+Message_02_1E_17:
 #_0AF6E4: db $FA ; clear message box
 #_0AF6E5: db $D4, $02 ; set text box size to 2
 #_0AF6E7: db $3E, $48, $2C, $CF, $50, $34, $30, $3D ; はやく⎵わたしの
@@ -23024,7 +23015,7 @@ Message_0AF6E4:
 
 ; そっ その なまえは«・・・»«・・・»
 ; «・・・»グ グワーッ!
-Message_0AF71C:
+Message_02_1E_18:
 #_0AF71C: db $D4, $03 ; set text box size to 3
 #_0AF71E: db $33, $58, $CF, $33, $3D, $CF, $39, $43 ; そっ⎵その⎵なま
 #_0AF726: db $28, $3E ; えは
@@ -23049,7 +23040,7 @@ Message_0AF71C:
 
 ;===================================================================================================
 
-Message_0AF758:
+Message_02_1E_19:
 #_0AF758: db $D5, $47 ; send $47 to APU
 
 ;===================================================================================================
@@ -23062,7 +23053,7 @@ Message_0AF758:
 ; よびだされて いたことでしょう«・・・»
 ; ああ わたしの うしなわれていた ちからが
 ; もどってきました
-Message_0AF75A:
+Message_02_1E_1A:
 #_0AF75A: db $FE, $30, $02 ; ext command 30: 02 TODO
 #_0AF75D: db $2A, $0A ; PARAMS FOR EXT30
 #_0AF75F: db $2B, $0A ; PARAMS FOR EXT30
@@ -23105,7 +23096,7 @@ Message_0AF75A:
 
 ; «>パラメーターに 18ポイントを»
 ; «ふりわけてください»
-Message_0AF7DE:
+Message_02_1E_1B:
 #_0AF7DE: db $D4, $03 ; set text box size to 3
 #_0AF7E0: db $F2, $26 ; prewritten text 26
 #_0AF7E2: db $FC ; wait for key and new line
@@ -23121,7 +23112,7 @@ Message_0AF7DE:
 ; あなたに あえるのは まださきのこと
 ; そして いちどは わかれるさだめ«・・・»
 ; いつか わたしに あいにきて«・・・»«・・・»
-Message_0AF7EE:
+Message_02_1E_1C:
 #_0AF7EE: db $D4, $03 ; set text box size to 3
 #_0AF7F0: db $ED ; write female protag name
 #_0AF7F1: db $9A ; :
@@ -23148,7 +23139,7 @@ Message_0AF7EE:
 
 ;===================================================================================================
 
-Message_0AF839:
+Message_02_1E_1D:
 #_0AF839: db $FA ; clear message box
 #_0AF83A: db $FE, $1C, $01 ; ext command 1C: $01 TODO
 #_0AF83D: db $FE, $27, $02 ; ext command 27: something 02 TODO
@@ -23158,7 +23149,7 @@ Message_0AF839:
 
 ;===================================================================================================
 
-Message_0AF84F:
+Message_02_1E_1E:
 #_0AF84F: db $FF ; end of message
 
 ;===================================================================================================
@@ -23170,7 +23161,7 @@ Message_0AF84F:
 ; [CHASE]が たすけにきてくれることは
 ; ずっと まえから わかっていたの
 ; なぜか わかっていたの«・・・»
-Message_0AF850:
+Message_02_1E_1F:
 #_0AF850: db $FA ; clear message box
 #_0AF851: db $F2, $00 ; prewritten text 00
 #_0AF853: db $3D, $26, $30, $2B, $9A ; のいしき:
@@ -23210,7 +23201,7 @@ Message_0AF850:
 ; «・・・»とめても むだなのは わかってるの
 ; でも あなたが いなくなったら
 ; わたしは どうすればいいの«・・・»
-Message_0AF8B3:
+Message_02_1E_20:
 #_0AF8B3: db $D2, $20, $22 ; test progress bit $20 for message $22
 #_0AF8B6: db $D2, $06, $21 ; test progress bit $06 for message $21
 #_0AF8B9: db $D6, $00, $4D, $78, $28 ; place sprite 4D in slot 00 at XY:{78,28}
@@ -23246,7 +23237,7 @@ Message_0AF8B3:
 ; このさきに いくのね
 ; あなたのつよさだったら なにがでてきても
 ; だいじょうぶよ
-Message_0AF91F:
+Message_02_1E_21:
 #_0AF91F: db $D2, $1A, $22 ; test progress bit $1A for message $22
 #_0AF922: db $D6, $00, $2C, $70, $28 ; place sprite 2C in slot 00 at XY:{70,28}
 #_0AF927: db $49, $4C, $2E, $9A ; ゆりこ:
@@ -23265,7 +23256,7 @@ Message_0AF91F:
 ;===================================================================================================
 
 ; >«だれもいない»
-Message_0AF955:
+Message_02_1E_22:
 #_0AF955: db $97 ; >
 #_0AF956: db $F2, $2C ; prewritten text 2C
 #_0AF958: db $FC ; wait for key and new line
@@ -23282,7 +23273,7 @@ Message_0AF955:
 ; ここに あしを ふみいれたのだ
 ; ぎしきを みたからには
 ; «おまえたち»を いかしては かえさんぞ
-Message_0AF95A:
+Message_02_1E_23:
 #_0AF95A: db $D1, $FE ; clear progress bit $FE
 #_0AF95C: db $D2, $1C, $32 ; test progress bit $1C for message $32
 #_0AF95F: db $D7, $04 ; load scene 04
@@ -23336,7 +23327,7 @@ Message_0AF95A:
 ; マカイより どうほうを むかえるばしょを
 ; «おまえたち»の ちで よごすわけには いかん
 ; そとへ でろ!
-Message_0AFA05:
+Message_02_1E_24:
 #_0AFA05: db $2E, $4C, $47, $32, $A3, $3A, $CF, $43 ; こりもせずに⎵ま
 #_0AFA0D: db $34, $CF, $48, $58, $37, $2B, $34, $2A ; た⎵やってきたか
 #_0AFA15: db $FC ; wait for key and new line
@@ -23361,7 +23352,7 @@ Message_0AFA05:
 
 ;===================================================================================================
 
-Message_0AFA60:
+Message_02_1E_25:
 #_0AFA60: db $D6, $03, $00 ; delete sprite in slot 03
 #_0AFA63: db $D6, $02, $00 ; delete sprite in slot 02
 #_0AFA66: db $D6, $01, $00 ; delete sprite in slot 01
@@ -23375,7 +23366,7 @@ Message_0AFA60:
 ; しょうかんし:
 ; こんどは にがさんぞ!
 ; わたしの じゃまはゆるさん!
-Message_0AFA78:
+Message_02_1E_26:
 #_0AFA78: db $D4, $03 ; set text box size to 3
 #_0AFA7A: db $30, $57, $27, $2A, $52, $30, $9A ; しょうかんし:
 #_0AFA81: db $F9 ; new line
@@ -23389,7 +23380,7 @@ Message_0AFA78:
 
 ;===================================================================================================
 
-Message_0AFA9E:
+Message_02_1E_27:
 #_0AFA9E: db $DE, $01, $00, $02, $01 ; [COMMAND DE:01,00,02,01]
 #_0AFAA3: db $FE, $46, $09 ; ext command 46: 09 TODO
 #_0AFAA6: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
@@ -23403,25 +23394,25 @@ Message_0AFA9E:
 
 ;===================================================================================================
 
-Message_0AFABD:
+Message_02_1E_28:
 #_0AFABD: db $E5, $01, $2A ; [COMMAND E5:01,2A]
 
 ;===================================================================================================
 
-Message_0AFAC0:
+Message_02_1E_29:
 #_0AFAC0: db $E5, $00, $2A ; [COMMAND E5:00,2A]
 #_0AFAC3: db $D3, $29 ; go to message $29
 
 ;===================================================================================================
 
-Message_0AFAC5:
+Message_02_1E_2A:
 #_0AFAC5: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0AFAC7: db $D0, $1A ; set progress bit $1A
 #_0AFAC9: db $FF ; end of message
 
 ;===================================================================================================
 
-Message_0AFACA:
+Message_02_1E_2B:
 #_0AFACA: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0AFACC: db $FE, $1C, $01 ; ext command 1C: $01 TODO
 #_0AFACF: db $D5, $FD ; send $FD to APU
@@ -23439,7 +23430,7 @@ Message_0AFACA:
 ;===================================================================================================
 
 ; >ようとふめいの きかいが おいてある
-Message_0AFAF1:
+Message_02_1E_2C:
 #_0AFAF1: db $97, $4A, $27, $38, $40, $46, $26, $3D ; >ようとふめいの
 #_0AFAF9: db $CF, $2B, $2A, $26, $9C, $CF, $29, $26 ; ⎵きかいが⎵おい
 #_0AFB01: db $37, $25, $4D ; てある
@@ -23448,7 +23439,7 @@ Message_0AFAF1:
 
 ;===================================================================================================
 
-Message_0AFB08:
+Message_02_1E_2D:
 #_0AFB08: db $FF ; end of message
 
 ;===================================================================================================
@@ -23456,7 +23447,7 @@ Message_0AFB08:
 ; «イヌの パスカル»:
 ; «・・・»ウウウ «バウ!ワウ!»
 ; >«イヌの パスカル»が きかいに ほえている
-Message_0AFB09:
+Message_02_1E_2E:
 #_0AFB09: db $FA ; clear message box
 #_0AFB0A: db $D2, $1B, $2F ; test progress bit $1B for message $2F
 #_0AFB0D: db $DE, $01, $00, $34, $01 ; [COMMAND DE:01,00,34,01]
@@ -23482,7 +23473,7 @@ Message_0AFB09:
 ; ガルルルル«・・・»
 ; >[DEMON1]が きかいに むかい うなっている
 ; きかいに とびかかった!
-Message_0AFB34:
+Message_02_1E_2F:
 #_0AFB34: db $FE, $40, $2D ; ext command 40: R0F9D30 2D TODO
 #_0AFB37: db $DE, $00, $00, $8B, $01 ; [COMMAND DE:00,00,8B,01]
 #_0AFB3C: db $E4, $00 ; load demon $00
@@ -23507,7 +23498,7 @@ Message_0AFB34:
 ;===================================================================================================
 
 ; そして きえてしまった«・・・»
-Message_0AFB6E:
+Message_02_1E_30:
 #_0AFB6E: db $F2, $7C ; prewritten text 7C
 #_0AFB70: db $F2, $7D ; prewritten text 7D
 #_0AFB72: db $D6, $00, $9E, $78, $28 ; place sprite 9E in slot 00 at XY:{78,28}
@@ -23524,17 +23515,17 @@ Message_0AFB6E:
 
 ;===================================================================================================
 
-Message_0AFB93:
+Message_02_1E_31:
 #_0AFB93: db $FE, $27, $04 ; ext command 27: something 04 TODO
 
 ;===================================================================================================
 
-Message_0AFB96:
+Message_02_1E_32:
 #_0AFB96: db $FE, $1D, $27, $03 ; ext command 1D: $27 $03 TODO
 
 ;===================================================================================================
 
-Message_0AFB9A:
+Message_02_1F_00:
 #_0AFB9A: db $D5, $45 ; send $45 to APU
 #_0AFB9C: db $D7, $01 ; load scene 01
 #_0AFB9E: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
@@ -23546,7 +23537,7 @@ Message_0AFB9A:
 ; «メシアきょう» しんぷ:
 ; しんじるものは みな すくわれる
 ; まよえる こひつじよ いのりなさい
-Message_0AFBAA:
+Message_02_1F_01:
 #_0AFBAA: db $FA ; clear message box
 #_0AFBAB: db $F2, $33 ; prewritten text 33
 #_0AFBAD: db $CF, $30, $52, $B2, $9A ; ⎵しんぷ:
@@ -23562,7 +23553,7 @@ Message_0AFBAA:
 ;===================================================================================================
 
 ; メシアきょうかいに なんのごようかな?
-Message_0AFBD6:
+Message_02_1F_02:
 #_0AFBD6: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_0AFBDB: db $FA ; clear message box
 #_0AFBDC: db $7E, $68, $5D, $2B, $57, $27, $2A, $26 ; メシアきょうかい
@@ -23579,7 +23570,7 @@ Message_0AFBD6:
 ;===================================================================================================
 
 ; かみの ごかごのあらんことを«・・・»
-Message_0AFBFD:
+Message_02_1F_03:
 #_0AFBFD: db $FA ; clear message box
 #_0AFBFE: db $2A, $44, $3D, $CF, $A0, $2A, $A0, $3D ; かみの⎵ごかごの
 #_0AFC06: db $25, $4B, $52, $2E, $38, $51 ; あらんことを
@@ -23589,7 +23580,7 @@ Message_0AFBFD:
 
 ;===================================================================================================
 
-Message_0AFC10:
+Message_02_1F_04:
 #_0AFC10: db $FE, $16, $05 ; ext command 16: something message 05 TODO
 #_0AFC13: db $FA ; clear message box
 #_0AFC14: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
@@ -23598,7 +23589,7 @@ Message_0AFC10:
 ;===================================================================================================
 
 ; «みな げんきなようだな»
-Message_0AFC18:
+Message_02_1F_05:
 #_0AFC18: db $FA ; clear message box
 #_0AFC19: db $F2, $48 ; prewritten text 48
 #_0AFC1B: db $FC ; wait for key and new line
@@ -23607,7 +23598,7 @@ Message_0AFC18:
 ;===================================================================================================
 
 ; ちりょうがひつようなもの«は おらぬようだな»
-Message_0AFC1E:
+Message_02_1F_06:
 #_0AFC1E: db $FE, $15, $10, $07 ; ext command 15: something message 07, 10
 #_0AFC22: db $FA ; clear message box
 #_0AFC23: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
@@ -23618,7 +23609,7 @@ Message_0AFC1E:
 
 ;===================================================================================================
 
-Message_0AFC34:
+Message_02_1F_07:
 #_0AFC34: db $FA ; clear message box
 #_0AFC35: db $FE, $10, $01 ; ext command 10: set $0BA3 to $01 then something TODO
 #_0AFC37: db $D3, $02 ; go to message $02
@@ -23626,7 +23617,7 @@ Message_0AFC34:
 ;===================================================================================================
 
 ; «みな いきているようだな»
-Message_0AFC39:
+Message_02_1F_08:
 #_0AFC39: db $FE, $15, $12, $09 ; ext command 15: something message 09, 12
 #_0AFC3D: db $FA ; clear message box
 #_0AFC3E: db $F2, $49 ; prewritten text 49
@@ -23635,7 +23626,7 @@ Message_0AFC39:
 
 ;===================================================================================================
 
-Message_0AFC43:
+Message_02_1F_09:
 #_0AFC43: db $FA ; clear message box
 #_0AFC44: db $FE, $11, $03 ; ext command 11: set $0BA3 to $03 then something TODO
 #_0AFC46: db $D3, $02 ; go to message $02
@@ -23643,7 +23634,7 @@ Message_0AFC43:
 ;===================================================================================================
 
 ; だれも のろわれて«は おらぬようだな»
-Message_0AFC48:
+Message_02_1F_0A:
 #_0AFC48: db $FE, $15, $11, $0B ; ext command 15: something message 0B, 11
 #_0AFC4C: db $FA ; clear message box
 #_0AFC4D: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
@@ -23654,7 +23645,7 @@ Message_0AFC48:
 
 ;===================================================================================================
 
-Message_0AFC5B:
+Message_02_1F_0B:
 #_0AFC5B: db $FA ; clear message box
 #_0AFC5C: db $FE, $12, $02 ; ext command 12: set $0BA3 to $02 then something TODO
 #_0AFC5E: db $D3, $02 ; go to message $02
@@ -23663,7 +23654,7 @@ Message_0AFC5B:
 
 ; なんじ くろきちからに みちあふれしもの
 ; «メシアきょう»かいに たちいること まかりならん!
-Message_0AFC60:
+Message_02_1F_0C:
 #_0AFC60: db $FA ; clear message box
 #_0AFC61: db $39, $52, $A2, $CF, $2C, $4F, $2B, $35 ; なんじ⎵くろきち
 #_0AFC69: db $2A, $4B, $3A, $CF, $44, $35, $25, $40 ; からに⎵みちあふ
@@ -23678,7 +23669,7 @@ Message_0AFC60:
 
 ;===================================================================================================
 
-Message_0AFC8C:
+Message_02_1F_0D:
 #_0AFC8C: db $FA ; clear message box
 #_0AFC8D: db $D2, $57, $0F ; test progress bit $57 for message $0F
 #_0AFC90: db $D2, $55, $0F ; test progress bit $55 for message $0F
@@ -23688,20 +23679,20 @@ Message_0AFC8C:
 
 ;===================================================================================================
 
-Message_0AFC9A:
+Message_02_1F_0E:
 #_0AFC9A: db $EA, $24 ; [COMMAND 1A:24]
 #_0AFC9C: db $D3, $02 ; go to message $02
 
 ;===================================================================================================
 
-Message_0AFC9E:
+Message_02_1F_0F:
 #_0AFC9E: db $EA, $27 ; [COMMAND 1A:27]
 #_0AFCA0: db $D3, $02 ; go to message $02
 
 ;===================================================================================================
 
 ; «ガイアきょう» しさい:
-Message_0AFCA2:
+Message_02_1F_10:
 #_0AFCA2: db $D5, $46 ; send $46 to APU
 #_0AFCA4: db $D7, $02 ; load scene 02
 #_0AFCA6: db $D6, $00, $35, $70, $28 ; place sprite 35 in slot 00 at XY:{70,28}
@@ -23714,7 +23705,7 @@ Message_0AFCA2:
 
 ;===================================================================================================
 
-Message_0AFCBC:
+Message_02_1F_11:
 #_0AFCBC: db $D9, $E8, $03, $00, $18 ; go to message $18 if money < 1000
 #_0AFCC1: db $DA, $18, $FC, $FF ; take 1000 money
 
@@ -23723,7 +23714,7 @@ Message_0AFCBC:
 ; いきるものは いつか しぬ
 ; かたちあるものは いつかこわれる
 ; このよに カオスをもたらさんとするものよ
-Message_0AFCC5:
+Message_02_1F_12:
 #_0AFCC5: db $26, $2B, $4D, $47, $3D, $3E, $CF, $26 ; いきるものは⎵い
 #_0AFCCD: db $36, $2A, $CF, $30, $3B ; つか⎵しぬ
 #_0AFCD2: db $F9 ; new line
@@ -23739,7 +23730,7 @@ Message_0AFCC5:
 ;===================================================================================================
 
 ; ガイアしんでんに なんのようかな?
-Message_0AFCFA:
+Message_02_1F_13:
 #_0AFCFA: db $D6, $00, $35, $70, $28 ; place sprite 35 in slot 00 at XY:{70,28}
 #_0AFCFF: db $FA ; clear message box
 #_0AFD00: db $B5, $5E, $5D, $30, $52, $A9, $52, $3A ; ガイアしんでんに
@@ -23756,7 +23747,7 @@ Message_0AFCFA:
 ;===================================================================================================
 
 ; このよに カオスをもたらさん«・・・»
-Message_0AFD1F:
+Message_02_1F_14:
 #_0AFD1F: db $FA ; clear message box
 #_0AFD20: db $2E, $3D, $4A, $3A, $CF, $62, $61, $69 ; このよに⎵カオス
 #_0AFD28: db $51, $47, $34, $4B, $2F, $52 ; をもたらさん
@@ -23771,7 +23762,7 @@ Message_0AFD1F:
 ; «・・・»といいたい ところだが
 ; それなりのものを おさめれば
 ; いれてやらんこともないぞ
-Message_0AFD32:
+Message_02_1F_15:
 #_0AFD32: db $30, $4F, $2B, $35, $2A, $4B, $51, $CF ; しろきちからを⎵
 #_0AFD3A: db $47, $36, $47, $3D, $4A ; もつものよ
 #_0AFD3F: db $FC ; wait for key and new line
@@ -23795,7 +23786,7 @@ Message_0AFD32:
 
 ; ガイア しんでんに に
 ; ￥1000 をおさめますか?
-Message_0AFD84:
+Message_02_1F_16:
 #_0AFD84: db $FA ; clear message box
 #_0AFD85: db $B5, $5E, $5D, $CF, $30, $52, $A9, $52 ; ガイア⎵しんでん
 #_0AFD8D: db $3A, $CF, $3A ; に⎵に
@@ -23808,7 +23799,7 @@ Message_0AFD84:
 ;===================================================================================================
 
 ; 1000 をおさめますか?
-Message_0AFD95:
+Message_02_1F_17:
 #_0AFD95: db $02, $01, $01, $01, $CF, $51, $29, $2F ; 1000⎵をおさ
 #_0AFD9D: db $46, $43, $31, $2A, $95 ; めますか?
 #_0AFDA2: db $F8, $11 ; YES/NO - go to message $11 if YES
@@ -23817,7 +23808,7 @@ Message_0AFD95:
 
 ; おさめるきが なければ
 ; そうそうに たちされい!
-Message_0AFDA4:
+Message_02_1F_18:
 #_0AFDA4: db $FA ; clear message box
 #_0AFDA5: db $29, $2F, $46, $4D, $2B, $9C, $CF, $39 ; おさめるきが⎵な
 #_0AFDAD: db $2D, $4E, $AB ; ければ
@@ -23830,13 +23821,13 @@ Message_0AFDA4:
 ;===================================================================================================
 
 ; ℏ
-Message_0AFDBF:
+Message_02_1F_19:
 #_0AFDBF: db $5C ; ℏ
 #_0AFDC0: db $D3, $17 ; go to message $17
 
 ;===================================================================================================
 
-Message_0AFDC2:
+Message_02_1F_1A:
 #_0AFDC2: db $FE, $16, $1B ; ext command 16: something message 1B TODO
 #_0AFDC5: db $FA ; clear message box
 #_0AFDC6: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
@@ -23845,7 +23836,7 @@ Message_0AFDC2:
 ;===================================================================================================
 
 ; «みな げんきなようだな»
-Message_0AFDCA:
+Message_02_1F_1B:
 #_0AFDCA: db $FA ; clear message box
 #_0AFDCB: db $F2, $48 ; prewritten text 48
 #_0AFDCD: db $FC ; wait for key and new line
@@ -23854,7 +23845,7 @@ Message_0AFDCA:
 ;===================================================================================================
 
 ; ちりょうがひつようなもの«は おらぬようだな»
-Message_0AFDD0:
+Message_02_1F_1C:
 #_0AFDD0: db $FE, $15, $10, $1D ; ext command 15: something message 1D, 10
 #_0AFDD4: db $FA ; clear message box
 #_0AFDD5: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
@@ -23865,7 +23856,7 @@ Message_0AFDD0:
 
 ;===================================================================================================
 
-Message_0AFDE6:
+Message_02_1F_1D:
 #_0AFDE6: db $FA ; clear message box
 #_0AFDE7: db $FE, $10, $01 ; ext command 10: set $0BA3 to $01 then something TODO
 #_0AFDE9: db $D3, $13 ; go to message $13
@@ -23873,7 +23864,7 @@ Message_0AFDE6:
 ;===================================================================================================
 
 ; «みな いきているようだな»
-Message_0AFDEB:
+Message_02_1F_1E:
 #_0AFDEB: db $FE, $15, $12, $1F ; ext command 15: something message 1F, 12
 #_0AFDEF: db $FA ; clear message box
 #_0AFDF0: db $F2, $49 ; prewritten text 49
@@ -23882,7 +23873,7 @@ Message_0AFDEB:
 
 ;===================================================================================================
 
-Message_0AFDF5:
+Message_02_1F_1F:
 #_0AFDF5: db $FA ; clear message box
 #_0AFDF6: db $FE, $11, $03 ; ext command 11: set $0BA3 to $03 then something TODO
 #_0AFDF8: db $D3, $13 ; go to message $13
@@ -23890,7 +23881,7 @@ Message_0AFDF5:
 ;===================================================================================================
 
 ; だれも のろわれて«は おらぬようだな»
-Message_0AFDFA:
+Message_02_1F_20:
 #_0AFDFA: db $FE, $15, $11, $21 ; ext command 15: something message 21, 11
 #_0AFDFE: db $FA ; clear message box
 #_0AFDFF: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
@@ -23901,21 +23892,21 @@ Message_0AFDFA:
 
 ;===================================================================================================
 
-Message_0AFE0D:
+Message_02_1F_21:
 #_0AFE0D: db $FA ; clear message box
 #_0AFE0E: db $FE, $12, $02 ; ext command 12: set $0BA3 to $02 then something TODO
 #_0AFE10: db $D3, $13 ; go to message $13
 
 ;===================================================================================================
 
-Message_0AFE12:
+Message_02_1F_22:
 #_0AFE12: db $D2, $2F, $23 ; test progress bit $2F for message $23
 #_0AFE15: db $EA, $09 ; [COMMAND 1A:09]
 #_0AFE17: db $D3, $13 ; go to message $13
 
 ;===================================================================================================
 
-Message_0AFE19:
+Message_02_1F_23:
 #_0AFE19: db $EA, $25 ; [COMMAND 1A:25]
 #_0AFE1B: db $D3, $13 ; go to message $13
 
@@ -23924,7 +23915,7 @@ Message_0AFE19:
 ; かいふくし:
 ; すべての きずつき くるしむものに
 ; すくいのてを さしのべようぞ
-Message_0AFE1D:
+Message_02_1F_24:
 #_0AFE1D: db $D5, $47 ; send $47 to APU
 #_0AFE1F: db $D7, $03 ; load scene 03
 #_0AFE21: db $D6, $00, $58, $70, $38 ; place sprite 58 in slot 00 at XY:{70,38}
@@ -23943,7 +23934,7 @@ Message_0AFE1D:
 ;===================================================================================================
 
 ; かいふく どうじょうに なんのようだ?
-Message_0AFE52:
+Message_02_1F_25:
 #_0AFE52: db $D6, $00, $58, $70, $38 ; place sprite 58 in slot 00 at XY:{70,38}
 #_0AFE57: db $FA ; clear message box
 #_0AFE58: db $2A, $26, $40, $2C, $CF, $AA, $27, $A2 ; かいふく⎵どうじ
@@ -23960,7 +23951,7 @@ Message_0AFE52:
 ;===================================================================================================
 
 ; では またあおう
-Message_0AFE79:
+Message_02_1F_26:
 #_0AFE79: db $FA ; clear message box
 #_0AFE7A: db $A9, $3E, $CF, $43, $34, $25, $29, $27 ; では⎵またあおう
 #_0AFE82: db $FC ; wait for key and new line
@@ -23968,7 +23959,7 @@ Message_0AFE79:
 
 ;===================================================================================================
 
-Message_0AFE84:
+Message_02_1F_27:
 #_0AFE84: db $FE, $16, $28 ; ext command 16: something message 28 TODO
 #_0AFE87: db $FA ; clear message box
 #_0AFE88: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
@@ -23977,7 +23968,7 @@ Message_0AFE84:
 ;===================================================================================================
 
 ; «みな げんきなようだな»
-Message_0AFE8C:
+Message_02_1F_28:
 #_0AFE8C: db $FA ; clear message box
 #_0AFE8D: db $F2, $48 ; prewritten text 48
 #_0AFE8F: db $FC ; wait for key and new line
@@ -23986,7 +23977,7 @@ Message_0AFE8C:
 ;===================================================================================================
 
 ; ちりょうがひつようなもの«は おらぬようだな»
-Message_0AFE92:
+Message_02_1F_29:
 #_0AFE92: db $FE, $15, $10, $2A ; ext command 15: something message 2A, 10
 #_0AFE96: db $FA ; clear message box
 #_0AFE97: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
@@ -23997,7 +23988,7 @@ Message_0AFE92:
 
 ;===================================================================================================
 
-Message_0AFEA8:
+Message_02_1F_2A:
 #_0AFEA8: db $FA ; clear message box
 #_0AFEA9: db $FE, $10, $01 ; ext command 10: set $0BA3 to $01 then something TODO
 #_0AFEAB: db $D3, $25 ; go to message $25
@@ -24005,7 +23996,7 @@ Message_0AFEA8:
 ;===================================================================================================
 
 ; «みな いきているようだな»
-Message_0AFEAD:
+Message_02_1F_2B:
 #_0AFEAD: db $FE, $15, $12, $2C ; ext command 15: something message 2C, 12
 #_0AFEB1: db $FA ; clear message box
 #_0AFEB2: db $F2, $49 ; prewritten text 49
@@ -24014,7 +24005,7 @@ Message_0AFEAD:
 
 ;===================================================================================================
 
-Message_0AFEB7:
+Message_02_1F_2C:
 #_0AFEB7: db $FA ; clear message box
 #_0AFEB8: db $FE, $11, $03 ; ext command 11: set $0BA3 to $03 then something TODO
 #_0AFEBA: db $D3, $25 ; go to message $25
@@ -24022,7 +24013,7 @@ Message_0AFEB7:
 ;===================================================================================================
 
 ; だれも のろわれて«は おらぬようだな»
-Message_0AFEBC:
+Message_02_1F_2D:
 #_0AFEBC: db $FE, $15, $11, $2E ; ext command 15: something message 2E, 11
 #_0AFEC0: db $FA ; clear message box
 #_0AFEC1: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
@@ -24033,27 +24024,27 @@ Message_0AFEBC:
 
 ;===================================================================================================
 
-Message_0AFECF:
+Message_02_1F_2E:
 #_0AFECF: db $FA ; clear message box
 #_0AFED0: db $FE, $12, $02 ; ext command 12: set $0BA3 to $02 then something TODO
 #_0AFED2: db $D3, $25 ; go to message $25
 
 ;===================================================================================================
 
-Message_0AFED4:
+Message_02_1F_2F:
 #_0AFED4: db $D2, $2F, $30 ; test progress bit $2F for message $30
 #_0AFED7: db $EA, $0A ; [COMMAND 1A:0A]
 #_0AFED9: db $D3, $25 ; go to message $25
 
 ;===================================================================================================
 
-Message_0AFEDB:
+Message_02_1F_30:
 #_0AFEDB: db $EA, $26 ; [COMMAND 1A:26]
 #_0AFEDD: db $D3, $25 ; go to message $25
 
 ;===================================================================================================
 
-Message_0AFEDF:
+Message_02_1F_31:
 #_0AFEDF: db $FA ; clear message box
 #_0AFEE0: db $D2, $A2, $32 ; test progress bit $A2 for message $32
 #_0AFEE3: db $D2, $A6, $33 ; test progress bit $A6 for message $33
@@ -24066,7 +24057,7 @@ Message_0AFEDF:
 ; [ITEM]を つかった
 ; カメ:
 ; すいじょういどうは わたしにおまかせを
-Message_0AFEE9:
+Message_02_1F_32:
 #_0AFEE9: db $E1, $F6 ; set $0A50 to $F6
 #_0AFEEB: db $F1 ; write specific name
 #_0AFEEC: db $3E ; は

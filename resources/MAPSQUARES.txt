@@ -1,0 +1,30 @@
+edit 04AE5E/04AE5F
+
+dcxx vvvv nnee ssww
+
+  d - dark room
+  c - has a chest
+  v - events
+      0000 (0) - TURN
+      0001 (1) - 
+      0010 (2) - 
+      0011 (3) - 
+      0100 (4) - 
+      0101 (5) - FREEHOLE
+      0110 (6) - WARP
+      0111 (7) - EXIT
+      1000 (8) - UP STAIR
+      1001 (9) - DW STAIR
+      1010 (A) - SIGN A
+      1011 (B) - MESENGER [sic]
+      1100 (C) - ELEVATOR
+      1101 (D) - EVENT
+      1110 (E) - EVENT
+      1111 (F) - EVENT
+  n, e, s, w - wall type
+               00 - nothing
+               01 - wall
+               10 - fake wall
+               11 - door
+
+00d1cd break point for successful event found

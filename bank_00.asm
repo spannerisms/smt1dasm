@@ -4268,6 +4268,8 @@ routine0098C7:
 #_00993F: REP #$30
 #_009941: RTS
 
+;===================================================================================================
+
 ; TODO label these pointers
 routine009942:
 #_009942: ASL A
@@ -9790,7 +9792,7 @@ routine00C197:
 #_00C1D8: LDA.w $0710
 #_00C1DB: ASL A
 #_00C1DC: TAX
-#_00C1DD: LDA.l data00DAE8,X
+#_00C1DD: LDA.l DungeonThemes+0,X
 #_00C1E1: CLC
 #_00C1E2: ADC.b #$04
 #_00C1E4: JSL SomeOtherDMAsFromE80
@@ -9835,7 +9837,7 @@ routine00C197:
 #_00C24F: LDA.w $0710
 #_00C252: ASL A
 #_00C253: TAX
-#_00C254: LDA.l data00DAE9,X
+#_00C254: LDA.l DungeonThemes+1,X
 #_00C258: CLC
 #_00C259: ADC.b #$20
 #_00C25B: JSL routine00BBF4
@@ -9944,7 +9946,7 @@ routine00C197:
 #_00C34D: JSL routine00C51A
 
 #_00C351: REP #$20
-#_00C353: JSL routine00D3B7
+#_00C353: JSL Dungeon_UpdateAutoMapper
 #_00C357: LDA.w $070C
 #_00C35A: STA.w $070E
 #_00C35D: JSL UpdateVisitedSquares
@@ -9983,7 +9985,7 @@ routine00C197:
 #_00C3A2: BMI .branch00C3C3
 
 #_00C3A4: JSR routine00C805
-#_00C3A7: JSL routine00D3B7
+#_00C3A7: JSL Dungeon_UpdateAutoMapper
 #_00C3AB: BRA .branch00C367
 
 .branch00C3AD
@@ -10027,6 +10029,8 @@ routine00C197:
 
 .branch00C406
 #_00C406: JMP .branch00C367
+
+;===================================================================================================
 
 PPUSettings_00C409:
 #_00C409: PHP
@@ -10316,7 +10320,7 @@ routine00C57F:
 #_00C625: JSL routine00A840
 #_00C629: LDX.b #$1D
 #_00C62B: STX.w $0F75
-#_00C62E: JSL routine00D3B7
+#_00C62E: JSL Dungeon_UpdateAutoMapper
 #_00C632: PLP
 #_00C633: RTS
 
@@ -10508,7 +10512,7 @@ routine00C76F:
 
 routine00C7A1:
 #_00C7A1: JSL routine00A0AE
-#_00C7A5: JSL routine00D3B7
+#_00C7A5: JSL Dungeon_UpdateAutoMapper
 #_00C7A9: RTL
 
 ;===================================================================================================
@@ -10561,7 +10565,7 @@ routine00C805:
 #_00C80D: LDA.w $0710
 #_00C810: ASL A
 #_00C811: TAX
-#_00C812: LDA.l data00DAE8,X
+#_00C812: LDA.l DungeonThemes+0,X
 #_00C816: CLC
 #_00C817: ADC.b #$04
 #_00C819: JSL SomeOtherDMAsFromE80
@@ -10599,13 +10603,15 @@ routine00C805:
 #_00C85C: LDA.w $0710
 #_00C85F: ASL A
 #_00C860: TAX
-#_00C861: LDA.l data00DAE9,X
+#_00C861: LDA.l DungeonThemes+1,X
 #_00C865: CLC
 #_00C866: ADC.b #$20
 #_00C868: JSL routine00BBF4
 #_00C86C: JSL AddSelfAsVectorAndMakeSpace
 #_00C870: PLP
 #_00C871: RTS
+
+;===================================================================================================
 
 Check_Directional_and_Shoulder_Presses:
 #_00C872: PHP ; checks for dpad and shoulder buttons
@@ -10627,7 +10633,7 @@ Check_Directional_and_Shoulder_Presses:
 #_00C88A: JSL routine009BDE ; If no directions pressed
 #_00C88E: BCC .branch00C896
 
-#_00C890: JSR routine00C91A
+#_00C890: JSR Dungeon_BonkWall
 #_00C893: PLP
 #_00C894: CLC
 #_00C895: RTS
@@ -10654,7 +10660,7 @@ Check_Directional_and_Shoulder_Presses:
 #_00C8BA: SEP #$20
 
 .branch00C8BC
-#_00C8BC: JSR DungeonMovement
+#_00C8BC: JSR Dungeon_Movement
 #_00C8BF: LDA.w $0450
 #_00C8C2: BEQ .branch00C8DC
 
@@ -10664,11 +10670,11 @@ Check_Directional_and_Shoulder_Presses:
 #_00C8C8: CMP.b #$02
 #_00C8CA: BEQ .branch00C8D1
 
-#_00C8CC: JSR routine00C9C9
+#_00C8CC: JSR Dungeon_AdjustPOVTurningRight
 #_00C8CF: BRA .branch00C902
 
 .branch00C8D1
-#_00C8D1: JSR routine00CA49
+#_00C8D1: JSR Dungeon_AdjustPOVTurningLeft
 #_00C8D4: BRA .branch00C902
 
 .branch00C8D6
@@ -10699,10 +10705,10 @@ Check_Directional_and_Shoulder_Presses:
 
 .branch00C8FC
 #_00C8FC: JSR routine00CC71
-#_00C8FF: JSR routine00CC7B
+#_00C8FF: JSR Dungeon_StatusAndMovementDrain
 
 .branch00C902
-#_00C902: JSL routine00D3B7
+#_00C902: JSL Dungeon_UpdateAutoMapper
 #_00C906: JSR routine00CC64
 #_00C909: JSR routine00CDCB
 #_00C90C: BCS .EXIT_SEC_00C917
@@ -10720,7 +10726,7 @@ Check_Directional_and_Shoulder_Presses:
 
 ;===================================================================================================
 
-routine00C91A:
+Dungeon_BonkWall:
 #_00C91A: JSL routine00983C
 #_00C91E: LDA.b #!SFX_0A
 #_00C920: JSL Write_to_APU_transferrable
@@ -10729,11 +10735,15 @@ routine00C91A:
 #_00C926: LDA.w #$0008
 #_00C929: JSL Do19XXVectorsATimes
 #_00C92D: JSL routine009853
+
 #_00C931: RTS
 
-DungeonMovement:
+;===================================================================================================
+
+Dungeon_Movement:
 #_00C932: LDX.w $040D
 #_00C935: STX.w $040E
+
 #_00C938: LDA.w $0450
 #_00C93B: LSR A
 #_00C93C: BCS .right_turn
@@ -10744,50 +10754,51 @@ DungeonMovement:
 #_00C941: LSR A
 #_00C942: BCS .turn_around
 
-.move_forward:
+.move_forward
 #_00C944: JSR UpdateUWCoordinates
 #_00C947: JSL UpdateVisitedSquares
 #_00C94B: LDX.b #$80
 #_00C94D: LDY.b #$90
 #_00C94F: LDA.b #$29
-#_00C951: JSR SomeDungeonCheck
+
+#_00C951: JSR SomeDungeon_Check
 #_00C954: LDX.b #$00
 #_00C956: BRA .update_last_move
 
-.right_turn:
+.right_turn
 #_00C958: LDX.b #$90
 #_00C95A: LDY.b #$A0
 #_00C95C: LDA.b #$2A
-#_00C95E: JSR SomeDungeonCheck
+#_00C95E: JSR SomeDungeon_Check
 #_00C961: LDX.b #$01
 #_00C963: LDA.w $040D
 #_00C966: INC A
 #_00C967: BRA .update_current_dir
 
-.left_turn:
+.left_turn
 #_00C969: LDX.b #$80
 #_00C96B: LDY.b #$A0
 #_00C96D: LDA.b #$2A
-#_00C96F: JSR SomeDungeonCheck
+#_00C96F: JSR SomeDungeon_Check
 #_00C972: LDX.b #$02
 #_00C974: LDA.w $040D
 #_00C977: DEC A
 #_00C978: BRA .update_current_dir
 
-.turn_around:
+.turn_around
 #_00C97A: LDX.b #$90
 #_00C97C: LDY.b #$A0
 #_00C97E: LDA.b #$2A
-#_00C980: JSR SomeDungeonCheck
+#_00C980: JSR SomeDungeon_Check
 #_00C983: LDX.b #$03
 #_00C985: LDA.w $040D
 #_00C988: INC A
 
-.update_current_dir:
+.update_current_dir
 #_00C989: AND.b #$03
 #_00C98B: STA.w $040D
 
-.update_last_move:
+.update_last_move
 #_00C98E: STX.w $0450
 #_00C991: CPX.b #$00
 #_00C993: BEQ .branch00C99D
@@ -10805,18 +10816,23 @@ DungeonMovement:
 .EXIT_00C9A6
 #_00C9A6: RTS
 
+;===================================================================================================
+
 UpdateUWCoordinates:
 #_00C9A7: LDA.w $040D
 #_00C9AA: ASL A
 #_00C9AB: TAY
+
 #_00C9AC: LDA.w data00C9C1,Y
 #_00C9AF: CLC
 #_00C9B0: ADC.w $070C
 #_00C9B3: STA.w $070C
+
 #_00C9B6: LDA.w data00C9C2,Y
 #_00C9B9: CLC
 #_00C9BA: ADC.w $070D
 #_00C9BD: STA.w $070D
+
 #_00C9C0: RTS
 
 ; TODO merge these into 2 byte entry table
@@ -10826,12 +10842,14 @@ data00C9C1:
 data00C9C2:
 #_00C9C2: db $FF,$01,$00,$00,$01,$FF,$00
 
-routine00C9C9:
+;===================================================================================================
+
+Dungeon_AdjustPOVTurningRight:
 #_00C9C9: STZ.w $0E00
 
 .loop
-
 #_00C9CC: SEP #$20
+
 #_00C9CE: LDA.b #$0C
 #_00C9D0: JSR routine00CAF4
 #_00C9D3: INC.w $0E00
@@ -10841,7 +10859,9 @@ routine00C9C9:
 #_00C9DB: CLC
 #_00C9DC: ADC.w #$0004
 #_00C9DF: STA.w $0F51
+
 #_00C9E2: JSL AddSelfAsVector
+
 #_00C9E6: LDA.w $0F51
 #_00C9E9: CMP.w #$0010
 #_00C9EC: BCC .loop
@@ -10891,7 +10911,7 @@ routine00C9C9:
 
 ;===================================================================================================
 
-routine00CA49:
+Dungeon_AdjustPOVTurningLeft:
 #_00CA49: STZ.w $0E00
 
 #_00CA4C: REP #$20
@@ -10965,8 +10985,8 @@ routine00CA49:
 routine00CAD3:
 #_00CAD3: PHP
 #_00CAD4: SEP #$30
-#_00CAD6: JSR routine00C9C9
-#_00CAD9: JSL routine00D3B7
+#_00CAD6: JSR Dungeon_AdjustPOVTurningRight
+#_00CAD9: JSL Dungeon_UpdateAutoMapper
 #_00CADD: LDA.w $040D
 #_00CAE0: INC A
 #_00CAE1: AND.b #$03
@@ -10974,8 +10994,8 @@ routine00CAD3:
 #_00CAE6: LDX.b #$90
 #_00CAE8: LDY.b #$A0
 #_00CAEA: LDA.b #$2A
-#_00CAEC: JSR SomeDungeonCheck
-#_00CAEF: JSR routine00C9C9
+#_00CAEC: JSR SomeDungeon_Check
+#_00CAEF: JSR Dungeon_AdjustPOVTurningRight
 #_00CAF2: PLP
 #_00CAF3: RTL
 
@@ -10991,7 +11011,7 @@ routine00CAF4:
 #_00CAFC: TAX
 #_00CAFD: TYA
 #_00CAFE: CLC
-#_00CAFF: ADC.l data00DAE8,X
+#_00CAFF: ADC.l DungeonThemes+0,X
 #_00CB03: JSL SomeOtherDMAsFromE80
 #_00CB07: LDA.w $0E00
 #_00CB0A: ASL A
@@ -11060,7 +11080,7 @@ routine00CB52:
 #_00CB64: REP #$30
 #_00CB66: LDA.w #data07A9BA
 #_00CB69: LDX.w #$0003
-#_00CB6C: JSR routine00D1A6
+#_00CB6C: JSR Dungeon_FindAssociatedEvent_Moving
 #_00CB6F: BCS .branch00CB90
 
 #_00CB71: TXA
@@ -11085,7 +11105,7 @@ routine00CB52:
 #_00CB9A: STA.w $0712
 #_00CB9D: JSL routine00C7AA
 #_00CBA1: JSL routine00A840
-#_00CBA5: JSL routine00D3B7
+#_00CBA5: JSL Dungeon_UpdateAutoMapper
 
 #_00CBA9: SEP #$30
 #_00CBAB: PLA
@@ -11105,9 +11125,10 @@ routine00CB52:
 
 routine00CBBF:
 #_00CBBF: REP #$30
-#_00CBC1: LDA.w #data07A40D
+
+#_00CBC1: LDA.w #DungeonRoomNPCLocations
 #_00CBC4: LDX.w #$0004
-#_00CBC7: JSR routine00D1A6
+#_00CBC7: JSR Dungeon_FindAssociatedEvent_Moving
 #_00CBCA: BCS .branch00CC1A
 
 #_00CBCC: STX.w $0A12
@@ -11124,6 +11145,7 @@ routine00CBBF:
 
 .branch00CBE0
 #_00CBE0: JSL routine00D3DA
+
 #_00CBE4: LDA.b #$03
 #_00CBE6: JSL routine00B99C
 #_00CBEA: JSL routine00A056
@@ -11220,16 +11242,17 @@ routine00CC71:
 
 ;===================================================================================================
 
-routine00CC7B:
+Dungeon_StatusAndMovementDrain:
 #_00CC7B: PHP
 #_00CC7C: REP #$30
+
 #_00CC7E: INC.w $0724
 #_00CC81: LDY.w #$0000
 
-.branch00CC84
+.next_party_member
 #_00CC84: STY.w $0720
 #_00CC87: LDX.w $0700,Y
-#_00CC8A: BMI .branch00CCCA
+#_00CC8A: BMI .done_statuses
 
 #_00CC8C: STX.w $0715
 #_00CC8F: LDA.w $1002,X
@@ -11261,95 +11284,111 @@ routine00CC7B:
 
 .branch00CCBA
 #_00CCBA: LDA.w #$0001
-#_00CCBD: JSR SomethingWithHP
+#_00CCBD: JSR RemoveSomeHP
 
 .branch00CCC0
 #_00CCC0: LDY.w $0720
 #_00CCC3: INY
 #_00CCC4: INY
 #_00CCC5: CPY.w #$000C
-#_00CCC8: BCC .branch00CC84
+#_00CCC8: BCC .next_party_member
 
-.branch00CCCA
-#_00CCCA: JSL routine00CCE5
-#_00CCCE: BCC .branch00CCDF
+;---------------------------------------------------------------------------------------------------
+
+.done_statuses
+#_00CCCA: JSL RunMovementDrain
+#_00CCCE: BCC .still_have_mag_left
 
 #_00CCD0: JSL routine00C76F
+
 #_00CCD4: LDA.w #$0047
 #_00CCD7: JSL routine00C752
 #_00CCDB: JSL routine00C7A1
 
-.branch00CCDF
+.still_have_mag_left
 #_00CCDF: JSL routine00CD8C
 #_00CCE3: PLP
 #_00CCE4: RTS
 
 ;===================================================================================================
 
-routine00CCE5:
+RunMovementDrain:
 #_00CCE5: PHP
 #_00CCE6: REP #$30
+
 #_00CCE8: LDA.w $0409
 #_00CCEB: ORA.w $040B
-#_00CCEE: BNE .branch00CD16
+#_00CCEE: BNE .nonzero_mag
 
 #_00CCF0: LDY.w #$0000
 
-.branch00CCF3
+.next_demon_hp
 #_00CCF3: STY.w $0720
+
 #_00CCF6: LDX.w $0700,Y
-#_00CCF9: BMI .clc_exit
+#_00CCF9: BMI .done_taking_hp
 
 #_00CCFB: CPX.w #$0180
-#_00CCFE: BCC .branch00CD09
+#_00CCFE: BCC .not_demon_hp
 
 #_00CD00: STX.w $0715
-#_00CD03: LDA.w #$0001
-#_00CD06: JSR SomethingWithHP
 
-.branch00CD09
+#_00CD03: LDA.w #$0001
+#_00CD06: JSR RemoveSomeHP
+
+.not_demon_hp
 #_00CD09: LDY.w $0720
 #_00CD0C: INY
 #_00CD0D: INY
 #_00CD0E: CPY.w #$000C
-#_00CD11: BCC .branch00CCF3
+#_00CD11: BCC .next_demon_hp
 
-.clc_exit
+.done_taking_hp
 #_00CD13: PLP
 #_00CD14: CLC
+
 #_00CD15: RTL
 
-.branch00CD16
+;---------------------------------------------------------------------------------------------------
+
+.nonzero_mag
 #_00CD16: LDY.w #$0000
 
-.branch00CD19
+.next_demon_mag
 #_00CD19: STY.w $0720
+
 #_00CD1C: LDX.w $0700,Y
-#_00CD1F: BMI .branch00CD3A
+#_00CD1F: BMI .end_of_list
 
 #_00CD21: CPX.w #$0180
-#_00CD24: BCC .branch00CD30
+#_00CD24: BCC .not_demon_mag
 
 #_00CD26: LDA.w $104A,X
 #_00CD29: CLC
 #_00CD2A: ADC.w $045C
 #_00CD2D: STA.w $045C
 
-.branch00CD30
+.not_demon_mag
 #_00CD30: LDY.w $0720
 #_00CD33: INY
 #_00CD34: INY
 #_00CD35: CPY.w #$000C
-#_00CD38: BCC .branch00CD19
+#_00CD38: BCC .next_demon_mag
 
-.branch00CD3A
+;---------------------------------------------------------------------------------------------------
+
+.end_of_list
 #_00CD3A: SEP #$20
+
 #_00CD3C: LDA.w $045C
 #_00CD3F: STA.w CPUDIVIDENDL
+
 #_00CD42: LDA.w $045D
 #_00CD45: STA.w CPUDIVIDENDH
+
 #_00CD48: LDA.b #$0A
 #_00CD4A: STA.w CPUDIVISOR
+
 #_00CD4D: NOP
 #_00CD4E: NOP
 #_00CD4F: NOP
@@ -11360,33 +11399,40 @@ routine00CCE5:
 #_00CD54: NOP
 
 #_00CD55: REP #$20
+
 #_00CD57: LDA.w CPUQUOTIENTL
 #_00CD5A: STA.w $0E00
+
 #_00CD5D: LDA.w CPUREMAINDERL
 #_00CD60: STA.w $045C
+
 #_00CD63: LDA.w $0409
 #_00CD66: SEC
 #_00CD67: SBC.w $0E00
 #_00CD6A: STA.w $0409
+
 #_00CD6D: LDA.w $040B
 #_00CD70: SBC.w #$0000
 #_00CD73: STA.w $040B
-#_00CD76: BCC .branch00CD7D
+#_00CD76: BCC .no_more_mag
 
 #_00CD78: ORA.w $0409
-#_00CD7B: BNE .EXIT_CLC_00CD89
+#_00CD7B: BNE .nonzero_mag_left
 
-.branch00CD7D
+.no_more_mag
 #_00CD7D: STZ.w $0409
 #_00CD80: STZ.w $040B
 #_00CD83: STZ.w $045C
+
 #_00CD86: PLP
 #_00CD87: SEC
+
 #_00CD88: RTL
 
-.EXIT_CLC_00CD89
+.nonzero_mag_left
 #_00CD89: PLP
 #_00CD8A: CLC
+
 #_00CD8B: RTL
 
 ;===================================================================================================
@@ -11439,45 +11485,60 @@ routine00CD8C:
 
 routine00CDCB:
 #_00CDCB: PHP
-#_00CDCC: JSR routine00D598
+
+#_00CDCC: JSR RoomEvent_LookForChest
+
 #_00CDCF: LDA.w $0711
 #_00CDD2: AND.b #$0F
-#_00CDD4: BEQ EXIT_CLC_00CE55
+#_00CDD4: BEQ RoomEvent_00_Nothing
 
+; Elevator
 #_00CDD6: CMP.b #$0C
-#_00CDD8: BCS EXIT_CLC_00CE55
+#_00CDD8: BCS RoomEvent_00_Nothing
 
+; Sign A
 #_00CDDA: CMP.b #$0A
 #_00CDDC: BCS .branch00CDE3
 
 #_00CDDE: BIT.w $0719
-#_00CDE1: BPL EXIT_CLC_00CE55
+#_00CDE1: BPL RoomEvent_00_Nothing
 
 .branch00CDE3
 #_00CDE3: DEC A
 #_00CDE4: ASL A
 #_00CDE5: TAX
-#_00CDE6: LDA.l data00CE58+0,X
+
+#_00CDE6: LDA.l RoomEventVectors+0,X
 #_00CDEA: STA.w $00E0
-#_00CDED: LDA.l data00CE58+1,X
+
+#_00CDED: LDA.l RoomEventVectors+1,X
 #_00CDF1: STA.w $00E1
+
 #_00CDF4: LDA.w $0719
 #_00CDF7: AND.b #$7F
 #_00CDF9: STA.w $0719
+
 #_00CDFC: LDA.w $0712
 #_00CDFF: AND.b #$7F
 #_00CE01: STA.w $0712
+
 #_00CE04: JMP ($00E0)
 
-routine00CE07:
+;===================================================================================================
+
+RoomEvent_01_AutoTurn:
 #_00CE07: JSL AddSelfAsVector
+
 #_00CE0B: LDA.b #!SFX_0E
 #_00CE0D: JSL Write_to_APU_transferrable
+
 #_00CE11: LDX.w $040D
 #_00CE14: STX.w $040E
+
 #_00CE17: JSL GetRandomInt
 #_00CE1B: AND.b #$03
 #_00CE1D: STA.w $040D
+
 #_00CE20: SEC
 #_00CE21: SBC.w $040E
 #_00CE24: AND.b #$03
@@ -11486,7 +11547,7 @@ routine00CE07:
 #_00CE28: CMP.b #$03
 #_00CE2A: BNE .branch00CE31
 
-#_00CE2C: JSR routine00CA49
+#_00CE2C: JSR Dungeon_AdjustPOVTurningLeft
 #_00CE2F: BRA .branch00CE4D
 
 .branch00CE31
@@ -11497,52 +11558,63 @@ routine00CE07:
 #_00CE38: DEC A
 #_00CE39: AND.b #$03
 #_00CE3B: STA.w $040D
-#_00CE3E: JSR routine00C9C9
+
+#_00CE3E: JSR Dungeon_AdjustPOVTurningRight
+
 #_00CE41: LDA.w $040D
 #_00CE44: INC A
 #_00CE45: AND.b #$03
 #_00CE47: STA.w $040D
 
 .branch00CE4A
-#_00CE4A: JSR routine00C9C9
+#_00CE4A: JSR Dungeon_AdjustPOVTurningRight
 
 .branch00CE4D
 #_00CE4D: JSL UpdateDirTilemap
-#_00CE51: JSL routine00D3B7
+#_00CE51: JSL Dungeon_UpdateAutoMapper
 
-#EXIT_CLC_00CE55:
+;===================================================================================================
+
+RoomEvent_00_Nothing:
 #_00CE55: PLP
 #_00CE56: CLC
+
 #_00CE57: RTS
 
-data00CE58:
-#_00CE58: dw routine00CE07
-#_00CE5A: dw routine00CE6E
-#_00CE5C: dw routine00CE6E
-#_00CE5E: dw routine00CE6E
-#_00CE60: dw routine00CF4C
-#_00CE62: dw routine00CFA2
-#_00CE64: dw routine00CFF8
-#_00CE66: dw routine00D082
-#_00CE68: dw routine00D082
-#_00CE6A: dw routine00D126
+;===================================================================================================
+
+RoomEventVectors:
+#_00CE58: dw RoomEvent_01_AutoTurn
+#_00CE5A: dw RoomEvent_Trap
+#_00CE5C: dw RoomEvent_Trap
+#_00CE5E: dw RoomEvent_Trap
+#_00CE60: dw RoomEvent_05_Freehole
+#_00CE62: dw RoomEvent_06_Warp
+#_00CE64: dw RoomEvent_07_ExitToOverworld
+#_00CE66: dw RoomEvent_IntradungeonStairs
+#_00CE68: dw RoomEvent_IntradungeonStairs
+#_00CE6A: dw RoomEvent_0A_SignA
 #_00CE6C: dw routine00D15E
 
-routine00CE6E:
+;===================================================================================================
+
+RoomEvent_Trap:
 #_00CE6E: JSL AddSelfAsVector
 #_00CE72: LDA.b #$02
 #_00CE74: JSL routine00E817
 #_00CE78: LDA.w $0588
 #_00CE7B: BEQ .branch00CE80
 
-.EXIT_CLC_00CE7D
+.fail_a
 #_00CE7D: PLP
 #_00CE7E: CLC
 #_00CE7F: RTS
 
+;===================================================================================================
+
 .branch00CE80
 #_00CE80: LDA.w $0584
-#_00CE83: BNE .EXIT_CLC_00CE7D
+#_00CE83: BNE .fail_a
 
 #_00CE85: LDA.w $0711
 #_00CE88: AND.b #$0F
@@ -11600,7 +11672,7 @@ routine00CE6E:
 #_00CED6: JSL Write_to_APU_transferrable
 #_00CEDA: PLX
 #_00CEDB: PLA
-#_00CEDC: JSR SomethingWithHP
+#_00CEDC: JSR RemoveSomeHP
 #_00CEDF: BCS .branch00CEF2
 
 #_00CEE1: JSL routine00C76F
@@ -11663,11 +11735,11 @@ routine00CE6E:
 
 ;===================================================================================================
 
-routine00CF4C:
+RoomEvent_05_Freehole:
 #_00CF4C: REP #$30
-#_00CF4E: LDA.w #data079EFD
+#_00CF4E: LDA.w #DungeonFreeholeLocations
 #_00CF51: LDX.w #$0006
-#_00CF54: JSR routine00D1A6
+#_00CF54: JSR Dungeon_FindAssociatedEvent_Moving
 #_00CF57: BCS .EXIT_CLC_00CF9F
 
 #_00CF59: STX.w $070C
@@ -11700,7 +11772,7 @@ routine00CF4C:
 #_00CF90: STA.w $0711
 #_00CF93: JSL routine00A840
 #_00CF97: JSL UpdateDirTilemap
-#_00CF9B: JSL routine00D3B7
+#_00CF9B: JSL Dungeon_UpdateAutoMapper
 
 .EXIT_CLC_00CF9F
 #_00CF9F: PLP
@@ -11709,11 +11781,11 @@ routine00CF4C:
 
 ;===================================================================================================
 
-routine00CFA2:
+RoomEvent_06_Warp:
 #_00CFA2: REP #$30
 #_00CFA4: LDA.w #data0792E5
 #_00CFA7: LDX.w #$0006
-#_00CFAA: JSR routine00D1A6
+#_00CFAA: JSR Dungeon_FindAssociatedEvent_Moving
 #_00CFAD: BCS .EXIT_CLC_00CFF5
 
 #_00CFAF: STX.w $070C
@@ -11746,7 +11818,7 @@ routine00CFA2:
 #_00CFE6: STA.w $0711
 #_00CFE9: JSL routine00A840
 #_00CFED: JSL UpdateDirTilemap
-#_00CFF1: JSL routine00D3B7
+#_00CFF1: JSL Dungeon_UpdateAutoMapper
 
 .EXIT_CLC_00CFF5
 #_00CFF5: PLP
@@ -11755,11 +11827,12 @@ routine00CFA2:
 
 ;===================================================================================================
 
-routine00CFF8:
+; TODO exits?
+RoomEvent_07_ExitToOverworld:
 #_00CFF8: REP #$30
-#_00CFFA: LDA.w #data07A264
+#_00CFFA: LDA.w #DungeonExitLocations
 #_00CFFD: LDX.w #$0008
-#_00D000: JSR routine00D1A6
+#_00D000: JSR Dungeon_FindAssociatedEvent_Moving
 #_00D003: BCS EXIT_CLC_00D055
 
 #_00D005: PHA
@@ -11806,7 +11879,7 @@ routine00CFF8:
 #_00D045: JSL routine00C7AA
 #_00D049: JSL routine00A840
 #_00D04D: JSL UpdateDirTilemap
-#_00D051: JSL routine00D3B7
+#_00D051: JSL Dungeon_UpdateAutoMapper
 
 #EXIT_CLC_00D055:
 #_00D055: PLP
@@ -11836,11 +11909,11 @@ routine00CFF8:
 
 ;===================================================================================================
 
-routine00D082:
+RoomEvent_IntradungeonStairs:
 #_00D082: REP #$30
-#_00D084: LDA.w #data079478
+#_00D084: LDA.w #DungeonStairsLocations
 #_00D087: LDX.w #$0006
-#_00D08A: JSR routine00D1A6
+#_00D08A: JSR Dungeon_FindAssociatedEvent_Moving
 #_00D08D: BCS EXIT_CLC_00D055
 
 #_00D08F: PHA
@@ -11919,18 +11992,18 @@ routine00D082:
 #_00D113: JSL routine00C7AA
 #_00D117: JSL routine00A840
 #_00D11B: JSL UpdateDirTilemap
-#_00D11F: JSL routine00D3B7
+#_00D11F: JSL Dungeon_UpdateAutoMapper
 #_00D123: PLP
 #_00D124: CLC
 #_00D125: RTS
 
 ;===================================================================================================
 
-routine00D126:
+RoomEvent_0A_SignA:
 #_00D126: REP #$30
-#_00D128: LDA.w #data079AD6
+#_00D128: LDA.w #DungeonSignALocations
 #_00D12B: LDX.w #$0003
-#_00D12E: JSR routine00D1DE
+#_00D12E: JSR Dungeon_FindAssociatedEvent_Turning
 #_00D131: BCS .EXIT_CLC_00D13F
 
 #_00D133: STX.w $0717
@@ -11949,9 +12022,9 @@ routine00D126:
 routine00D142:
 #_00D142: PHP
 #_00D143: REP #$30
-#_00D145: LDA.w #data079AD6
+#_00D145: LDA.w #DungeonSignALocations
 #_00D148: LDX.w #$0003
-#_00D14B: JSR routine00D1DE
+#_00D14B: JSR Dungeon_FindAssociatedEvent_Turning
 #_00D14E: BCS .EXIT_00D15C
 
 #_00D150: STX.w $0717
@@ -11968,13 +12041,17 @@ routine00D142:
 
 routine00D15E:
 #_00D15E: REP #$30
-#_00D160: LDA.w #data0798E1
+
+#_00D160: LDA.w #DungeonTurnNPCLocations
+
 #_00D163: LDX.w #$0004
-#_00D166: JSR routine00D1DE
-#_00D169: BCS .EXIT_CLC_00D1A3
+#_00D166: JSR Dungeon_FindAssociatedEvent_Turning
+#_00D169: BCS .fail
 
 #_00D16B: STX.w $0A12
+
 #_00D16E: JSL routine00D3DA
+
 #_00D172: LDA.w #$0003
 #_00D175: JSL routine00B99C
 #_00D179: JSL routine00A056
@@ -11991,19 +12068,24 @@ routine00D15E:
 
 .branch00D196
 #_00D196: LDA.w $0EEF
-#_00D199: BEQ .EXIT_CLC_00D1A3
+#_00D199: BEQ .fail
 
 #_00D19B: JSL routine00CB2F
 #_00D19F: JSL routine009853
 
-.EXIT_CLC_00D1A3
+.fail
 #_00D1A3: PLP
 #_00D1A4: CLC
 #_00D1A5: RTS
 
 ;===================================================================================================
-
-routine00D1A6:
+; Enters with
+;   A - bank07 address start
+;   X - block size
+; Exits with:
+;   X - parameter 1
+;   A - parameter 2
+Dungeon_FindAssociatedEvent_Moving:
 #_00D1A6: STA.w $00E0
 #_00D1A9: LDA.w #$0007
 #_00D1AC: STA.w $00E2
@@ -12013,7 +12095,7 @@ routine00D1A6:
 #_00D1B2: LDA.b [$E0],Y
 #_00D1B4: AND.w #$00FF
 #_00D1B7: CMP.w #$00FF
-#_00D1BA: BEQ .branch00DAD9
+#_00D1BA: BEQ .complete_failure
 
 #_00D1BC: LDA.b [$E0],Y
 #_00D1BE: CMP.w $070C
@@ -12036,17 +12118,23 @@ routine00D1A6:
 #_00D1D6: CLC
 #_00D1D7: RTS
 
-#branch00DAD8:
+;===================================================================================================
+
+#RoomEvent_DisplayErrorMessage:
 #_00D1D8: PLB
 
-.branch00DAD9
+;---------------------------------------------------------------------------------------------------
+
+.complete_failure
 #_00D1D9: JSR routine00DA9F
+
 #_00D1DC: SEC
+
 #_00D1DD: RTS
 
 ;===================================================================================================
 
-routine00D1DE:
+Dungeon_FindAssociatedEvent_Turning:
 #_00D1DE: STA.w $00E0
 #_00D1E1: STZ.w $00E2
 #_00D1E4: PHB
@@ -12063,7 +12151,7 @@ routine00D1DE:
 #_00D1F0: LDA.b ($E0),Y
 #_00D1F2: AND.w #$00FF
 #_00D1F5: CMP.w #$00FF
-#_00D1F8: BEQ branch00DAD8
+#_00D1F8: BEQ RoomEvent_DisplayErrorMessage
 
 #_00D1FA: LDA.b ($E0),Y
 #_00D1FC: AND.w #$3FFF
@@ -12232,7 +12320,7 @@ routine00D304:
 #_00D30F: JSL CalcVisitComponent
 #_00D313: BCC .EXIT_00D339
 
-#_00D315: JSL routine01B144
+#_00D315: JSL TriggerEncounter_Dungeon
 #_00D319: BCC .EXIT_00D339
 
 #_00D31B: JSL routine00D3DA
@@ -12244,7 +12332,7 @@ routine00D304:
 #_00D32A: LDX.w $0710
 #_00D32D: LDA.l MusicTracksTable,X
 #_00D331: JSL Write_to_APU
-#_00D335: JSL routine00D3B7
+#_00D335: JSL Dungeon_UpdateAutoMapper
 
 .EXIT_00D339
 #_00D339: RTS
@@ -12318,7 +12406,7 @@ routine00D38A:
 
 ;===================================================================================================
 
-routine00D3B7:
+Dungeon_UpdateAutoMapper:
 #_00D3B7: PHP
 #_00D3B8: SEP #$30
 #_00D3BA: LDA.w $0400
@@ -12333,7 +12421,7 @@ routine00D3B7:
 #_00D3CF: LDA.b #$29
 #_00D3D1: LDY.b #$A0
 #_00D3D3: LDX.b #$80
-#_00D3D5: JSR SomeDungeonCheck
+#_00D3D5: JSR SomeDungeon_Check
 
 .EXIT_00D3D8
 #_00D3D8: PLP
@@ -12355,13 +12443,15 @@ routine00D3DA:
 #_00D3EE: JSL routine00AD90
 #_00D3F2: LDA.b #$00
 #_00D3F4: LDX.b #$80
-#_00D3F6: JSR SomeDungeonCheck
+#_00D3F6: JSR SomeDungeon_Check
 
 .EXIT_00D3F9
 #_00D3F9: PLP
 #_00D3FA: RTL
 
-SomeDungeonCheck:
+;===================================================================================================
+
+SomeDungeon_Check:
 #_00D3FB: PHP
 #_00D3FC: SEP #$20
 #_00D3FE: BIT.w $0400
@@ -12383,15 +12473,17 @@ SomeDungeonCheck:
 #_00D41D: PLP
 #_00D41E: RTS
 
-SomethingWithHP:
+;===================================================================================================
+
+RemoveSomeHP:
 #_00D41F: STA.w $0A54
 #_00D422: STZ.w $0A56
+
 #_00D425: SEC
 #_00D426: SBC.w $102E,X
 #_00D429: EOR.w #$FFFF
 #_00D42C: INC A
 #_00D42D: BEQ .branch00D440
-
 #_00D42F: BMI .branch00D440
 
 #_00D431: STA.w $102E,X
@@ -12482,16 +12574,16 @@ data00D4EA:
 #_00D58A: dw $0800,$0200,$0800,$0200
 #_00D592: dw $0800,$0800,$0800
 
-routine00D598:
+RoomEvent_LookForChest:
 #_00D598: PHP
 #_00D599: SEP #$30
 #_00D59B: BIT.w $0711
 #_00D59E: BVC .EXIT_00D5E2
 
 #_00D5A0: REP #$30
-#_00D5A2: LDA.w #data07AAC0
+#_00D5A2: LDA.w #DungeonChestLocations
 #_00D5A5: LDX.w #$0004
-#_00D5A8: JSR routine00D1DE
+#_00D5A8: JSR Dungeon_FindAssociatedEvent_Turning
 #_00D5AB: BCS .EXIT_00D5E2
 
 #_00D5AD: TXA
@@ -12791,9 +12883,9 @@ routine00D760:
 ;===================================================================================================
 
 routine00D7D6:
-#_00D7D6: LDA.w #$AAC0
+#_00D7D6: LDA.w #DungeonChestLocations
 #_00D7D9: LDX.w #$0004
-#_00D7DC: JSR routine00D1DE
+#_00D7DC: JSR Dungeon_FindAssociatedEvent_Turning
 #_00D7DF: TXA
 #_00D7E0: LSR A
 #_00D7E1: LSR A
@@ -12944,7 +13036,7 @@ routine00D8B4:
 #_00D8DA: LSR A
 #_00D8DB: BEQ .branch00D8FF
 
-#_00D8DD: JSR SomethingWithHP
+#_00D8DD: JSR RemoveSomeHP
 #_00D8E0: LDX.w $0715
 #_00D8E3: LDA.w $102E,X
 #_00D8E6: BEQ .branch00D8FF
@@ -13021,7 +13113,7 @@ routine00D90E:
 #_00D94D: INC A
 
 .branch00D94E
-#_00D94E: JSR SomethingWithHP
+#_00D94E: JSR RemoveSomeHP
 
 .branch00D951
 #_00D951: LDY.w $0720
@@ -13067,9 +13159,9 @@ routine00D95C:
 ;===================================================================================================
 
 routine00D982:
-#_00D982: LDA.w #$AAC0
+#_00D982: LDA.w #DungeonChestLocations
 #_00D985: LDX.w #$0004
-#_00D988: JSR routine00D1DE
+#_00D988: JSR Dungeon_FindAssociatedEvent_Turning
 #_00D98B: LDA.w $00E2
 #_00D98E: LSR A
 #_00D98F: LSR A
@@ -13195,17 +13287,40 @@ data00DADE:
 #_00DADE: dw $200F,$201C,$201C,$2019
 #_00DAE6: dw $201C
 
-data00DAE8:
-#_00DAE8: db $01
+;===================================================================================================
 
-data00DAE9:
-#_00DAE9: db $02,$01,$05,$01,$06,$01,$07,$01
-#_00DAF1: db $09,$02,$03,$00,$0A,$03,$08,$03
-#_00DAF9: db $01,$00,$00,$02,$04,$05,$0B,$05
-#_00DB01: db $0C,$00,$0D,$01,$0E,$05,$10,$00
-#_00DB09: db $0F,$03,$12,$05,$11,$04,$13,$04
-#_00DB11: db $14,$00,$15,$00,$16,$03,$17,$02
-#_00DB19: db $03,$02,$04,$01,$02,$00,$00
+; TODO DUNGEON THEMES
+DungeonThemes:
+#_00DAE8: dw $01, $02
+#_00DAEA: dw $01, $05
+#_00DAEC: dw $01, $06
+#_00DAEE: dw $01, $07
+#_00DAF0: dw $01, $09
+#_00DAF2: dw $02, $03
+#_00DAF4: dw $00, $0A
+#_00DAF6: dw $03, $08
+#_00DAF8: dw $03, $01
+#_00DAFA: dw $00, $00
+#_00DAFC: dw $02, $04
+#_00DAFE: dw $05, $0B
+#_00DB00: dw $05, $0C
+#_00DB02: dw $00, $0D
+#_00DB04: dw $01, $0E
+#_00DB06: dw $05, $10
+#_00DB08: dw $00, $0F
+#_00DB0A: dw $03, $12
+#_00DB0C: dw $05, $11
+#_00DB0E: dw $04, $13
+#_00DB10: dw $04, $14
+#_00DB12: dw $00, $15
+#_00DB14: dw $00, $16
+#_00DB16: dw $03, $17
+#_00DB18: dw $02, $03
+#_00DB1A: dw $02, $04
+#_00DB1C: dw $01, $02
+#_00DB1E: dw $00, $00
+
+;===================================================================================================
 
 MusicTracksTable:
 #_00DB20: db !SONG_4C_EMBASSY
@@ -13236,6 +13351,8 @@ MusicTracksTable:
 #_00DB39: db !SONG_4B_SHITENOU
 #_00DB3A: db !SONG_53_HOME
 #_00DB3B: db !SONG_4D_ARCADE
+
+;===================================================================================================
 
 routine00DB3C:
 #_00DB3C: PHP
@@ -13469,7 +13586,7 @@ routine00DC1B:
 #_00DCB0: SEP #$20
 #_00DCB2: RTS
 
-.data00DCB3:
+.data00DCB3
 #_00DCB3: dw -32, 32
 
 routine00DCB7:
@@ -14672,7 +14789,7 @@ routine00EC7E:
 #_00EC8B: LDA.w $0CF7
 #_00EC8E: AND.w #$003F
 #_00EC91: LDY.w #$0008
-#_00EC94: JSR routine00ED5C
+#_00EC94: JSR Shift16bitAleft_Ytimes
 #_00EC97: ORA.w $0CF9
 #_00EC9A: AND.w #$3FFE
 #_00EC9D: STA.w $0CF9
@@ -14681,7 +14798,7 @@ routine00EC7E:
 
 ;===================================================================================================
 
-routine00ECA2:
+GetRoomOffsetIntoData:
 #_00ECA2: REP #$30
 #_00ECA4: PHY
 #_00ECA5: LDA.w $0CF5
@@ -14690,7 +14807,7 @@ routine00ECA2:
 #_00ECAC: STA.w $0CF9
 #_00ECAF: LDA.w $0CF7
 #_00ECB2: LDY.w #$0004
-#_00ECB5: JSR routine00ED5C
+#_00ECB5: JSR Shift16bitAleft_Ytimes
 #_00ECB8: AND.w #$03C0
 #_00ECBB: ORA.w $0CF9
 #_00ECBE: STA.w $0CF9
@@ -14711,7 +14828,7 @@ routine00ECC3:
 #_00ECD0: STA.w $0CF9
 #_00ECD3: LDA.w $0CF7
 #_00ECD6: LDY.w #$0004
-#_00ECD9: JSR routine00ED5C
+#_00ECD9: JSR Shift16bitAleft_Ytimes
 #_00ECDC: AND.w #$03F0
 #_00ECDF: ORA.w $0CF9
 #_00ECE2: STA.w $0CF9
@@ -14753,20 +14870,28 @@ routine00ED02:
 
 routine00ED1D:
 #_00ED1D: REP #$10
+
 #_00ED1F: PHY
+
 #_00ED20: LDA.w $0CFB
 #_00ED23: ASL A
 #_00ED24: ASL A
 #_00ED25: AND.w #$007C
 #_00ED28: STA.w $0CF5
+
 #_00ED2B: LDA.w $0CFD
 #_00ED2E: ASL A
 #_00ED2F: ASL A
 #_00ED30: AND.w #$003C
 #_00ED33: STA.w $0CF7
+
 #_00ED36: PLY
+
 #_00ED37: RTS
 
+;===================================================================================================
+; TODO UNREACHABLE?
+routine00ED38:
 #_00ED38: REP #$30
 #_00ED3A: PHY
 #_00ED3B: LDA.w $0CFB
@@ -14776,7 +14901,7 @@ routine00ED1D:
 #_00ED45: LDA.w $0CF7
 #_00ED48: AND.w #$000F
 #_00ED4B: LDY.w #$0006
-#_00ED4E: JSR routine00ED5C
+#_00ED4E: JSR Shift16bitAleft_Ytimes
 #_00ED51: ORA.w $0CF9
 #_00ED54: AND.w #$03FE
 #_00ED57: STA.w $0CF9
@@ -14785,7 +14910,7 @@ routine00ED1D:
 
 ;===================================================================================================
 
-routine00ED5C:
+Shift16bitAleft_Ytimes:
 #_00ED5C: REP #$30
 
 .branch00ED5E
@@ -14797,7 +14922,7 @@ routine00ED5C:
 
 ;===================================================================================================
 
-routine00ED63:
+Shift16bitAright_Ytimes:
 #_00ED63: REP #$30
 
 .branch00ED65
@@ -14822,7 +14947,7 @@ routine00ED6A:
 #_00ED80: STA.w $0CF7
 
 #_00ED83: REP #$20
-#_00ED85: JSR routine00ECA2
+#_00ED85: JSR GetRoomOffsetIntoData
 #_00ED88: TAX
 #_00ED89: LDA.l UNREACH_04C000,X
 #_00ED8D: AND.w #$FF3F
@@ -15152,104 +15277,132 @@ routine00ED94:
 
 routine00EF63:
 #_00EF63: SEP #$30
+
 #_00EF65: LDA.w $040D
 #_00EF68: ASL A
 #_00EF69: TAX
 
 #_00EF6A: REP #$30
+
 #_00EF6C: CLC
-#_00EF6D: LDA.l data00EF83,X
+#_00EF6D: LDA.l .tile_offset_x,X
 #_00EF71: ADC.w $0CF5
 #_00EF74: STA.w $0CF5
+
 #_00EF77: CLC
-#_00EF78: LDA.l data00EF8B,X
+#_00EF78: LDA.l .tile_offset_y,X
 #_00EF7C: ADC.w $0CF7
 #_00EF7F: STA.w $0CF7
+
 #_00EF82: RTS
 
-data00EF83:
+.tile_offset_x
 #_00EF83: dw 0, 3, 3, 0
 
-data00EF8B:
+.tile_offset_y
 #_00EF8B: dw 0, 0, 3, 3
+
+;===================================================================================================
 
 routine00EF93:
 #_00EF93: REP #$30
+
 #_00EF95: JSR routine00ED1D
 #_00EF98: JSR routine00EF63
+
 #_00EF9B: LDA.w #$0000
 #_00EF9E: STA.w $0D09
 #_00EFA1: STA.w $0D0B
+
 #_00EFA4: LDA.w #$0018
 #_00EFA7: STA.w $0D13
 
 #_00EFAA: SEP #$20
+
 #_00EFAC: LDA.b #$01
 #_00EFAE: STA.w $0D15
 
 #_00EFB1: SEP #$30
+
 #_00EFB3: LDA.w $040D
-#_00EFB6: BEQ .branch00EFC9
+#_00EFB6: BEQ DrawAutoMapFacingNorth
 
 #_00EFB8: CMP.b #$01
-#_00EFBA: BNE .branch00EFBF
+#_00EFBA: BNE .not_facing_east
 
-#_00EFBC: JMP .branch00F03D
+#_00EFBC: JMP DrawAutoMapFacingEast
 
-.branch00EFBF
+.not_facing_east
 #_00EFBF: CMP.b #$02
-#_00EFC1: BNE .branch00EFC6
+#_00EFC1: BNE .not_facing_south
 
-#_00EFC3: JMP .branch00F0B1
+#_00EFC3: JMP DrawAutoMapFacingSouth
 
-.branch00EFC6
-#_00EFC6: JMP .branch00F125
+.not_facing_south
+#_00EFC6: JMP DrawAutoMapFacingWest
 
-.branch00EFC9
+;===================================================================================================
+
+DrawAutoMapFacingNorth:
 #_00EFC9: REP #$30
+
 #_00EFCB: JSR routine00F199
+
 #_00EFCE: LDY.w #$0018
 
-.branch00EFD1
+.next_row
 #_00EFD1: PHY
+
 #_00EFD2: LDA.w $0D03
 #_00EFD5: STA.w $0D01
+
 #_00EFD8: LDA.w $0CFF
 #_00EFDB: STA.w $0CF5
+
 #_00EFDE: LDA.w #$0000
 #_00EFE1: STA.w $0D07
+
 #_00EFE4: LDY.w #$0018
 
-.branch00EFE7
-#_00EFE7: JSR routine00F1B7
+.next_room
+#_00EFE7: JSR DrawSingleAutoMapRoom
+
 #_00EFEA: INC.w $0CF5
+
 #_00EFED: LDA.w $0CF5
 #_00EFF0: AND.w #$007F
 #_00EFF3: STA.w $0CF5
+
 #_00EFF6: INC.w $0D01
 #_00EFF9: INC.w $0D01
 #_00EFFC: INC.w $0D07
+
 #_00EFFF: DEY
-#_00F000: BNE .branch00EFE7
+#_00F000: BNE .next_room
 
 #_00F002: INC.w $0CF7
+
 #_00F005: LDA.w $0CF7
 #_00F008: AND.w #$003F
 #_00F00B: STA.w $0CF7
 
 #_00F00E: SEP #$20
+
 #_00F010: LDA.w $0D15
 #_00F013: BNE .branch00F024
 
 #_00F015: REP #$20
+
 #_00F017: CLC
 #_00F018: LDA.w $0D03
 #_00F01B: ADC.w #$0040
 #_00F01E: STA.w $0D03
+
 #_00F021: INC.w $0D0B
 
 .branch00F024
 #_00F024: SEP #$20
+
 #_00F026: LDA.w $070D
 #_00F029: CMP.w $0CF7
 #_00F02C: BNE .branch00F036
@@ -15260,18 +15413,21 @@ routine00EF93:
 
 .branch00F036
 #_00F036: REP #$20
+
 #_00F038: PLY
 #_00F039: DEY
-#_00F03A: BNE .branch00EFD1
+#_00F03A: BNE .next_row
 
 #_00F03C: RTS
 
-.branch00F03D
+;---------------------------------------------------------------------------------------------------
+
+DrawAutoMapFacingEast:
 #_00F03D: REP #$30
 #_00F03F: JSR routine00F1A8
 #_00F042: LDY.w #$0018
 
-.branch00F045
+.next_row
 #_00F045: PHY
 #_00F046: LDA.w $0D03
 #_00F049: STA.w $0D01
@@ -15281,8 +15437,8 @@ routine00EF93:
 #_00F055: STA.w $0D07
 #_00F058: LDY.w #$0018
 
-.branch00F05B
-#_00F05B: JSR routine00F1B7
+.next_room
+#_00F05B: JSR DrawSingleAutoMapRoom
 #_00F05E: INC.w $0CF7
 #_00F061: LDA.w $0CF7
 #_00F064: AND.w #$003F
@@ -15291,7 +15447,7 @@ routine00EF93:
 #_00F06D: INC.w $0D01
 #_00F070: INC.w $0D07
 #_00F073: DEY
-#_00F074: BNE .branch00F05B
+#_00F074: BNE .next_room
 
 #_00F076: DEC.w $0CF5
 #_00F079: LDA.w $0CF5
@@ -15323,16 +15479,18 @@ routine00EF93:
 #_00F0AA: REP #$20
 #_00F0AC: PLY
 #_00F0AD: DEY
-#_00F0AE: BNE .branch00F045
+#_00F0AE: BNE .next_row
 
 #_00F0B0: RTS
 
-.branch00F0B1
+;===================================================================================================
+
+DrawAutoMapFacingSouth:
 #_00F0B1: REP #$30
 #_00F0B3: JSR routine00F199
 #_00F0B6: LDY.w #$0018
 
-.branch00F0B9
+.next_row
 #_00F0B9: PHY
 #_00F0BA: LDA.w $0D03
 #_00F0BD: STA.w $0D01
@@ -15342,8 +15500,8 @@ routine00EF93:
 #_00F0C9: STA.w $0D07
 #_00F0CC: LDY.w #$0018
 
-.branch00F0CF
-#_00F0CF: JSR routine00F1B7
+.next_room
+#_00F0CF: JSR DrawSingleAutoMapRoom
 #_00F0D2: DEC.w $0CF5
 #_00F0D5: LDA.w $0CF5
 #_00F0D8: AND.w #$007F
@@ -15352,7 +15510,7 @@ routine00EF93:
 #_00F0E1: INC.w $0D01
 #_00F0E4: INC.w $0D07
 #_00F0E7: DEY
-#_00F0E8: BNE .branch00F0CF
+#_00F0E8: BNE .next_room
 
 #_00F0EA: DEC.w $0CF7
 #_00F0ED: LDA.w $0CF7
@@ -15384,16 +15542,18 @@ routine00EF93:
 #_00F11E: REP #$20
 #_00F120: PLY
 #_00F121: DEY
-#_00F122: BNE .branch00F0B9
+#_00F122: BNE .next_row
 
 #_00F124: RTS
 
-.branch00F125
+;===================================================================================================
+
+DrawAutoMapFacingWest:
 #_00F125: REP #$30
 #_00F127: JSR routine00F1A8
 #_00F12A: LDY.w #$0018
 
-.branch00F12D
+.next_row
 #_00F12D: PHY
 #_00F12E: LDA.w $0D03
 #_00F131: STA.w $0D01
@@ -15403,8 +15563,8 @@ routine00EF93:
 #_00F13D: STA.w $0D07
 #_00F140: LDY.w #$0018
 
-.branch00F143
-#_00F143: JSR routine00F1B7
+.next_room
+#_00F143: JSR DrawSingleAutoMapRoom
 #_00F146: DEC.w $0CF7
 #_00F149: LDA.w $0CF7
 #_00F14C: AND.w #$003F
@@ -15413,7 +15573,7 @@ routine00EF93:
 #_00F155: INC.w $0D01
 #_00F158: INC.w $0D07
 #_00F15B: DEY
-#_00F15C: BNE .branch00F143
+#_00F15C: BNE .next_room
 
 #_00F15E: INC.w $0CF5
 #_00F161: LDA.w $0CF5
@@ -15445,7 +15605,7 @@ routine00EF93:
 #_00F192: REP #$20
 #_00F194: PLY
 #_00F195: DEY
-#_00F196: BNE .branch00F12D
+#_00F196: BNE .next_row
 
 #_00F198: RTS
 
@@ -15471,15 +15631,16 @@ routine00F1A8:
 
 ;===================================================================================================
 
-routine00F1B7:
+DrawSingleAutoMapRoom:
 #_00F1B7: PHY
-#_00F1B8: JSR routine00F220
+
+#_00F1B8: JSR CheckIfRoomInHiddenArea
 #_00F1BB: LDA.w $0CF9
-#_00F1BE: BNE .EXIT_00F1F8
+#_00F1BE: BNE .exit
 
 #_00F1C0: JSR routine00F1FA
 #_00F1C3: LDA.w $0CF9
-#_00F1C6: BEQ .EXIT_00F1F8
+#_00F1C6: BEQ .exit
 
 #_00F1C8: JSR routine00F234
 
@@ -15502,13 +15663,14 @@ routine00F1B7:
 #_00F1E9: SEC
 #_00F1EA: LDA.w $0D13
 #_00F1ED: SBC.w $0D07
-#_00F1F0: BCC .EXIT_00F1F8
+#_00F1F0: BCC .exit
 
 #_00F1F2: LDA.w $0D07
 #_00F1F5: STA.w $0D13
 
-.EXIT_00F1F8
+.exit
 #_00F1F8: PLY
+
 #_00F1F9: RTS
 
 ;===================================================================================================
@@ -15539,9 +15701,9 @@ routine00F1FA:
 
 ;===================================================================================================
 
-routine00F220:
+CheckIfRoomInHiddenArea:
 #_00F220: REP #$30
-#_00F222: JSR routine00ECA2
+#_00F222: JSR GetRoomOffsetIntoData
 #_00F225: TAX
 #_00F226: LDA.l UNREACH_04C000,X
 #_00F22A: AND.w #$FF3F
@@ -15553,82 +15715,109 @@ routine00F220:
 
 routine00F234:
 #_00F234: REP #$30
+
 #_00F236: JSR routine00EC7E
 #_00F239: TAX
+
 #_00F23A: LDA.l UNREACH_048000,X
 #_00F23E: STA.w $0CF9
 #_00F241: STA.w $0D05
 
 #_00F244: REP #$30
-#_00F246: JSR routine00F2C5
+#_00F246: JSR MaskOutRoomTileHighByte
 
 #_00F249: SEP #$20
 #_00F24B: LDA.w $040D
 
 #_00F24E: REP #$30
+
 #_00F250: AND.w #$0003
-#_00F253: BEQ branch00F2CF
+#_00F253: BEQ AddAutoMapRoomToTilemapBuffer
 
 #_00F255: CMP.w #$0001
-#_00F258: BEQ .branch00F281
+#_00F258: BEQ .facing_east
 
 #_00F25A: CMP.w #$0002
-#_00F25D: BEQ .branch00F2A3
+#_00F25D: BEQ .facing_south
 
+;---------------------------------------------------------------------------------------------------
+
+.facing_west
 #_00F25F: LDA.w $0CF9
 #_00F262: PHA
+
 #_00F263: AND.w #$0003
 #_00F266: LDY.w #$0006
-#_00F269: JSR routine00ED5C
+#_00F269: JSR Shift16bitAleft_Ytimes
 #_00F26C: STA.w $0CF9
+
 #_00F26F: PLA
 #_00F270: AND.w #$00FC
 #_00F273: LDY.w #$0002
-#_00F276: JSR routine00ED63
+#_00F276: JSR Shift16bitAright_Ytimes
 #_00F279: ORA.w $0CF9
 #_00F27C: STA.w $0CF9
-#_00F27F: BRA branch00F2CF
 
-.branch00F281
+#_00F27F: BRA AddAutoMapRoomToTilemapBuffer
+
+;---------------------------------------------------------------------------------------------------
+
+.facing_east
 #_00F281: LDA.w $0CF9
 #_00F284: PHA
+
 #_00F285: AND.w #$00C0
 #_00F288: LDY.w #$0006
-#_00F28B: JSR routine00ED63
+#_00F28B: JSR Shift16bitAright_Ytimes
 #_00F28E: STA.w $0CF9
+
 #_00F291: PLA
 #_00F292: AND.w #$003F
 #_00F295: LDY.w #$0002
-#_00F298: JSR routine00ED5C
+
+#_00F298: JSR Shift16bitAleft_Ytimes
 #_00F29B: ORA.w $0CF9
 #_00F29E: STA.w $0CF9
-#_00F2A1: BRA branch00F2CF
 
-.branch00F2A3
+#_00F2A1: BRA AddAutoMapRoomToTilemapBuffer
+
+;---------------------------------------------------------------------------------------------------
+
+.facing_south
 #_00F2A3: LDA.w $0CF9
 #_00F2A6: PHA
+
 #_00F2A7: AND.w #$00F0
 #_00F2AA: LDY.w #$0004
-#_00F2AD: JSR routine00ED63
+#_00F2AD: JSR Shift16bitAright_Ytimes
 #_00F2B0: STA.w $0CF9
+
 #_00F2B3: PLA
 #_00F2B4: AND.w #$000F
 #_00F2B7: LDY.w #$0004
-#_00F2BA: JSR routine00ED5C
+#_00F2BA: JSR Shift16bitAleft_Ytimes
 #_00F2BD: ORA.w $0CF9
 #_00F2C0: STA.w $0CF9
-#_00F2C3: BRA branch00F2CF
 
-routine00F2C5:
+#_00F2C3: BRA AddAutoMapRoomToTilemapBuffer
+
+;===================================================================================================
+
+MaskOutRoomTileHighByte:
 #_00F2C5: LDA.w $0CF9
 #_00F2C8: AND.w #$00FF
 #_00F2CB: STA.w $0CF9
+
 #_00F2CE: RTS
 
-#branch00F2CF:
+;===================================================================================================
+
+AddAutoMapRoomToTilemapBuffer:
 #_00F2CF: SEP #$20
+
 #_00F2D1: LDX.w $0CF9
-#_00F2D4: LDA.l data00F319,X
+
+#_00F2D4: LDA.l .room_tiles,X
 #_00F2D8: STA.w $0CF9
 
 #_00F2DB: REP #$30
@@ -15638,7 +15827,7 @@ routine00F2C5:
 #_00F2E6: STA.w $0CF9
 #_00F2E9: AND.w #$00C0
 #_00F2EC: LDY.w #$0008
-#_00F2EF: JSR routine00ED5C
+#_00F2EF: JSR Shift16bitAleft_Ytimes
 #_00F2F2: ORA.w $0CF9
 #_00F2F5: ORA.w #$1400
 #_00F2F8: AND.w #$D43F
@@ -15657,7 +15846,7 @@ routine00F2C5:
 #_00F316: REP #$20
 #_00F318: RTS
 
-data00F319:
+.room_tiles
 #_00F319: db $01,$1F,$01,$20,$9D,$96,$9D,$97
 #_00F321: db $01,$1F,$01,$20,$9E,$99,$9E,$98
 #_00F329: db $5F,$1A,$5F,$1B,$D6,$8A,$D6,$8B
@@ -15690,6 +15879,8 @@ data00F319:
 #_00F401: db $1E,$19,$1E,$18,$23,$14,$23,$15
 #_00F409: db $58,$4D,$58,$0F,$53,$86,$53,$87
 #_00F411: db $58,$4D,$58,$0F,$55,$24,$55,$03
+
+;===================================================================================================
 
 routine00F419:
 #_00F419: REP #$30
@@ -15827,7 +16018,7 @@ routine00F4C0:
 #_00F4D9: LDA.w $0CF9
 #_00F4DC: AND.w #$003F
 #_00F4DF: LDY.w #$0005
-#_00F4E2: JSR routine00ED5C
+#_00F4E2: JSR Shift16bitAleft_Ytimes
 #_00F4E5: TAX
 #_00F4E6: LDY.w #$0020
 #_00F4E9: LDA.w #$0000

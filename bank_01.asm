@@ -7187,14 +7187,16 @@ CleanEquipmentVTiles:
 #_01B13F: JSL AddSelfAsVector
 #_01B143: RTS
 
+;===================================================================================================
 ; TODO triggers encounters
 ; not sure what the first part does
 ; but it seems different dungeons do
 ; a different number of RNG rolls
-routine01B144:
+TriggerEncounter_Dungeon:
 #_01B144: PHP
 #_01B145: SEP #$30
 #_01B147: PHB
+
 #_01B148: LDA.b #$07
 #_01B14A: PHA
 #_01B14B: PLB
@@ -7202,30 +7204,37 @@ routine01B144:
 #_01B14C: LDA.w $045A
 #_01B14F: AND.b #$3F
 #_01B151: TAY
+
 #_01B152: LDA.w UNREACH_07C10F,Y
+
 #_01B155: LDX.w $0712
 #_01B158: CPX.b #$82
-#_01B15A: BCC .branch01B161
+#_01B15A: BCC .dont_add_50percent
 
 #_01B15C: LSR A
 #_01B15D: CLC
 #_01B15E: ADC.w UNREACH_07C10F,Y
 
-.branch01B161
+.dont_add_50percent
 #_01B161: TAX
 #_01B162: PLB
 
 #_01B163: LDA.w $0713
 #_01B166: AND.b #$7F
-#_01B168: BRA .branch01B172
+#_01B168: BRA .continue
 
-routine01B16A:
+;===================================================================================================
+
+#TriggerEncounter_Overworld:
 #_01B16A: PHP
 #_01B16B: SEP #$30
+
 #_01B16D: LDX.w $045B
 #_01B170: LDA.b #$01
 
-.branch01B172
+;---------------------------------------------------------------------------------------------------
+
+.continue
 #_01B172: CLC
 #_01B173: ADC.b #$03
 #_01B175: LSR A
@@ -8092,30 +8101,39 @@ routine01B6C2:
 routine01B6FA:
 #_01B6FA: PHP
 #_01B6FB: REP #$30
+
 #_01B6FD: LDX.w $0526
+
+; top nibble of 
 #_01B700: LDA.w $1044,X
 #_01B703: LSR A
 #_01B704: LSR A
 #_01B705: LSR A
 #_01B706: LSR A
 #_01B707: TAY
+
+; level * 4
 #_01B708: LDA.w $100A,X
 #_01B70B: ASL A
 #_01B70C: ASL A
-#_01B70D: JSR routine01B7A2
+
+#_01B70D: JSR SomeCoolMultiplyAxY
+
 #_01B710: STA.w $0620
+
+; get difference in level
 #_01B713: LDY.w $0715
 #_01B716: LDX.w $0526
 #_01B719: LDA.w $100A,Y
 #_01B71C: SEC
 #_01B71D: SBC.w $100A,X
-#_01B720: BPL .branch01B73B
+#_01B720: BPL .player_was_stronger
 
 #_01B722: EOR.w #$FFFF
 #_01B725: INC A
 #_01B726: LSR A
 #_01B727: LSR A
-#_01B728: BEQ .branch01B75A
+#_01B728: BEQ .difference_was_small
 
 #_01B72A: TAY
 #_01B72B: CPY.w #$0006
@@ -8128,12 +8146,12 @@ routine01B6FA:
 #_01B736: DEY
 #_01B737: BNE .branch01B733
 
-#_01B739: BRA .branch01B75A
+#_01B739: BRA .difference_was_small
 
-.branch01B73B
+.player_was_stronger
 #_01B73B: LSR A
 #_01B73C: LSR A
-#_01B73D: BEQ .branch01B75A
+#_01B73D: BEQ .difference_was_small
 
 #_01B73F: LDY.w $0620
 #_01B742: STY.w CPUDIVIDENDL
@@ -8153,7 +8171,7 @@ routine01B6FA:
 #_01B754: LDA.w CPUQUOTIENTL
 #_01B757: STA.w $0620
 
-.branch01B75A
+.difference_was_small
 #_01B75A: LDA.w $0620
 #_01B75D: BNE .branch01B760
 
@@ -8179,7 +8197,7 @@ routine01B762:
 #_01B773: ASL A
 #_01B774: ASL A
 #_01B775: ASL A
-#_01B776: JSR routine01B7A2
+#_01B776: JSR SomeCoolMultiplyAxY
 #_01B779: PLP
 #_01B77A: RTL
 
@@ -8200,7 +8218,7 @@ routine01B77B:
 #_01B793: LDA.w $100A,X
 #_01B796: ASL A
 #_01B797: ASL A
-#_01B798: JSR routine01B7A2
+#_01B798: JSR SomeCoolMultiplyAxY
 #_01B79B: PLP
 #_01B79C: RTL
 
@@ -8211,7 +8229,7 @@ routine01B77B:
 
 ;===================================================================================================
 
-routine01B7A2:
+SomeCoolMultiplyAxY:
 #_01B7A2: CPY.w #$0000
 #_01B7A5: BEQ .branch01B7E7
 
@@ -12658,6 +12676,7 @@ routine01D4D7:
 
 .branch01D4DA
 #_01D4DA: STY.w $0720
+
 #_01D4DD: LDX.w $0700,Y
 #_01D4E0: BMI .branch01D522
 
@@ -14032,7 +14051,7 @@ LoadDemonStats:
 #_01E0C5: LDA.w $0506,X
 #_01E0C8: STA.w $1006,Y
 
-#_01E0CB: LDY.w #$0000 ; 0 seems to mean monster level
+#_01E0CB: LDY.w #$0000 ; 0 seems to mean demon level
 #_01E0CE: LDA.w $050A,X
 
 #_01E0D1: JSR GetDemonStats

@@ -32,6 +32,7 @@ $052A[0x2] - seems to be battle mode flags?
 $0564[0x2] - something loading demons?
 $0578 - number of max stat points
 
+$05D6[0x02] - EXP gained in battle
 $0688 - inventory page
 $068A - inventory buffer position
 $0690 - used for jumps but also compared against things???

@@ -10,7 +10,7 @@ I can be found on the ALTTP Randomizer Discord as kan#7240 (you can ping me in t
 * In data tables, the number of entries per line is determined by how they should logically be grouped. In all other cases, they are grouped in sets of four or eight.
 * The MVN and MVP instructions are written with a macro so that writing them in the standard way assembles correctly.
 * The 4 player-named characters will use the names I played with throughout the disassembly. They are:
-** Protagonist: Chase
-** Female protagonist: Momo
-** Lawful hero: Jimmy
-** Chaotic hero: "him"
+  * Protagonist: Chase
+  * Female protagonist: Momo
+  * Lawful hero: Jimmy
+  * Chaotic hero: "him"

@@ -156,6 +156,7 @@ Module_Overworld:
 #_02812D: BEQ .branch02813C
 
 #_02812F: SEP #$20
+
 #_028131: LDA.w $0B14
 #_028134: BNE .branch02813C
 
@@ -165,9 +166,12 @@ Module_Overworld:
 .branch02813C
 #_02813C: JMP .loop
 
+;===================================================================================================
+
 routine02813F:
 #_02813F: PHP
 #_028140: SEP #$30
+
 #_028142: LDA.b #$2F
 #_028144: JSL TestGameProgressBit
 #_028148: BCS .branch02814E
@@ -392,11 +396,13 @@ routine02821F:
 #_0282B5: TAX
 
 #_0282B6: REP #$20
-#_0282B8: LDA.w data028310,X
+#_0282B8: LDA.w OverworldMovementVectors,X
 #_0282BB: STA.w $00E0
 #_0282BE: JMP ($00E0)
 
-routine0282C1:
+;===================================================================================================
+
+Overworld_DoNothingNothing:
 #_0282C1: RTS
 
 ;===================================================================================================
@@ -423,6 +429,7 @@ data0282F0:
 #_0282F8: dw  1,  1,  0, -1
 
 ;===================================================================================================
+
 OverworldMovement_DirectionIndices:
 #_028300: db $FF ; ....
 #_028301: db $02 ; ...r
@@ -444,23 +451,27 @@ OverworldMovement_DirectionIndices:
 #_02830E: db $FF ; udl.
 #_02830F: db $FF ; udlr
 
-data028310:
-#_028310: dw routine0282C1
-#_028312: dw routine0282C1
-#_028314: dw routine0282C1
-#_028316: dw routine0282C1
-#_028318: dw routine0282C1
-#_02831A: dw routine0282C1
-#_02831C: dw routine0282C1
-#_02831E: dw routine0282C1
-#_028320: dw routine02BF47
-#_028322: dw routine02B547
-#_028324: dw routine0282C1
-#_028326: dw routine0282C1
-#_028328: dw routine0282C1
-#_02832A: dw routine0282C1
-#_02832C: dw routine0282C1
-#_02832E: dw routine0282C1
+;---------------------------------------------------------------------------------------------------
+
+OverworldMovementVectors:
+#_028310: dw Overworld_DoNothingNothing
+#_028312: dw Overworld_DoNothingNothing
+#_028314: dw Overworld_DoNothingNothing
+#_028316: dw Overworld_DoNothingNothing
+#_028318: dw Overworld_DoNothingNothing
+#_02831A: dw Overworld_DoNothingNothing
+#_02831C: dw Overworld_DoNothingNothing
+#_02831E: dw Overworld_DoNothingNothing
+#_028320: dw Overworld_EnactInteraction
+#_028322: dw Overworld_EnactEntrance
+#_028324: dw Overworld_DoNothingNothing
+#_028326: dw Overworld_DoNothingNothing
+#_028328: dw Overworld_DoNothingNothing
+#_02832A: dw Overworld_DoNothingNothing
+#_02832C: dw Overworld_DoNothingNothing
+#_02832E: dw Overworld_DoNothingNothing
+
+;===================================================================================================
 
 routine028330:
 #_028330: SEP #$20
@@ -2475,7 +2486,7 @@ routine028FAF:
 #_028FBE: JSL TestGameProgressBit
 #_028FC2: BCS .branch028FE8
 
-#_028FC4: JSL routine01B16A
+#_028FC4: JSL TriggerEncounter_Overworld
 #_028FC8: BCC .branch028FE8
 
 #_028FCA: JSL routine028FEA
@@ -5844,40 +5855,45 @@ data02B4C7:
 #_02B537: db $22,$22,$33,$33,$32,$22,$22,$22
 #_02B53F: db $22,$22,$33,$33,$32,$22,$22,$22
 
-routine02B547:
+;===================================================================================================
+
+Overworld_EnactEntrance:
 #_02B547: SEP #$20
 #_02B549: REP #$10
 #_02B54B: LDX.w #$0000
 #_02B54E: LDY.w #$0000
 
-.branch02B551
-#_02B551: LDA.w data02B5C3,Y
+.next_entrance_check
+#_02B551: LDA.w DungeonEntranceData+0,Y
 #_02B554: CMP.b #$FF
-#_02B556: BEQ .branch02B56B
+#_02B556: BEQ .end_of_the_line
 
 #_02B558: CMP.w $07F5
-#_02B55B: BNE .branch02B565
+#_02B55B: BNE .not_this_entrance
 
-#_02B55D: LDA.w data02B5C4,Y
+#_02B55D: LDA.w DungeonEntranceData+1,Y
 #_02B560: CMP.w $07F6
 #_02B563: BEQ .branch02B56D
 
-.branch02B565
-#_02B565: INY
+.not_this_entrance
+#_02B565: INY ; why is this +4? Entrances are 8 bytes
 #_02B566: INY
 #_02B567: INY
 #_02B568: INY
-#_02B569: BRA .branch02B551
+#_02B569: BRA .next_entrance_check
 
-.branch02B56B
-#_02B56B: BRA .branch02B551
+; DUMB! infinite loop if no entrance found
+.end_of_the_line
+#_02B56B: BRA .next_entrance_check
 
 .branch02B56D
-#_02B56D: LDA.w data02B5C5,Y
-#_02B570: BMI .branch02B59E
+#_02B56D: LDA.w DungeonEntranceData+2,Y
+
+; this branch seems completely unused
+#_02B570: BMI .to_overworld_area
 
 #_02B572: STA.w $070C
-#_02B575: LDA.w data02B5C6,Y
+#_02B575: LDA.w DungeonEntranceData+3,Y
 #_02B578: PHA
 #_02B579: AND.b #$3F
 #_02B57B: STA.w $070D
@@ -5887,27 +5903,27 @@ routine02B547:
 #_02B581: ROL A
 #_02B582: AND.b #$03
 #_02B584: STA.w $040D
-#_02B587: LDA.w data02B5C7,Y
+#_02B587: LDA.w DungeonEntranceData+4,Y ; WTF!?
 #_02B58A: STA.w $0710
-#_02B58D: LDA.w data02B5C8,Y
-#_02B590: LDA.w data02B5C9,Y
-#_02B593: LDA.w data02B5CA,Y
+#_02B58D: LDA.w DungeonEntranceData+5,Y
+#_02B590: LDA.w DungeonEntranceData+6,Y
+#_02B593: LDA.w DungeonEntranceData+7,Y
 
 #_02B596: SEP #$20
 #_02B598: LDA.b #$01
 #_02B59A: STA.w $0C4F
 #_02B59D: RTS
 
-.branch02B59E
+.to_overworld_area
 #_02B59E: AND.b #$7F
 #_02B5A0: STA.w $07F5
-#_02B5A3: LDA.w data02B5C6,Y
+#_02B5A3: LDA.w DungeonEntranceData+3,Y
 #_02B5A6: STA.w $07F6
-#_02B5A9: LDA.w data02B5C7,Y
+#_02B5A9: LDA.w DungeonEntranceData+4,Y ; WTF again!?
 #_02B5AC: STA.w $045B
-#_02B5AF: LDA.w data02B5C8,Y
-#_02B5B2: LDA.w data02B5C9,Y
-#_02B5B5: LDA.w data02B5CA,Y
+#_02B5AF: LDA.w DungeonEntranceData+5,Y
+#_02B5B2: LDA.w DungeonEntranceData+6,Y
+#_02B5B5: LDA.w DungeonEntranceData+7,Y
 #_02B5B8: JSR routine028659
 
 #_02B5BB: SEP #$20
@@ -5915,80 +5931,66 @@ routine02B547:
 #_02B5BF: STZ.w $0C4F
 #_02B5C2: RTS
 
-; TODO uhhhh this seems useless... what?
-data02B5C3:
-#_02B5C3: db $31
+;===================================================================================================
+; TODO need to know what these are more
+DungeonEntranceData:
+; owx, owy, uwt, theme
+; top 2 bits of uwt determine direction faced
+#_02B5C3: db $31, $88 : dw $C102 : db $1A, $00, $00, $00 ; W - Home
+#_02B5CB: db $31, $89 : dw $C302 : db $1A, $00, $00, $00 ; W - Momo's house
+#_02B5D3: db $36, $8A : dw $4501 : db $07, $00, $00, $00 ; E - Kichijoji mall west
+#_02B5DB: db $39, $88 : dw $8107 : db $07, $00, $00, $00 ; S - Kichijoji mall north
+#_02B5E3: db $39, $8B : dw $0607 : db $07, $00, $00, $00 ; N - Kichijoji mall south
+#_02B5EB: db $38, $95 : dw $4309 : db $02, $00, $00, $00 ; E - Kichijoji park building
+#_02B5F3: db $3A, $8F : dw $0212 : db $00, $00, $00, $00 ; N - Kichijoji hospital
+#_02B5FB: db $3E, $8F : dw $061B : db $01, $00, $00, $00 ; N - Kichijoji underground mall
+#_02B603: db $5B, $A5 : dw $0E10 : db $04, $00, $00, $00 ; N - Sendagaya underground mall
+#_02B60B: db $70, $96 : dw $0F1F : db $09, $00, $00, $00 ; N - Yotsuya bunker
+#_02B613: db $6D, $88 : dw $022B : db $01, $00, $00, $00 ; N - Ichigaya long building
+#_02B61B: db $5A, $8E : dw $C156 : db $08, $00, $00, $00 ; W - Shinjuku TODO
+#_02B623: db $54, $8F : dw $4151 : db $08, $00, $00, $00 ; E - Shinjuku TODO
+#_02B62B: db $15, $2A : dw $C756 : db $0B, $00, $00, $00 ; W - Shinjuku TODO
+#_02B633: db $10, $2B : dw $4751 : db $0B, $00, $00, $00 ; E - Shinjuku TODO
+#_02B63B: db $4F, $94 : dw $CB26 : db $08, $00, $00, $00 ; W - Shinjuku TODO
+#_02B643: db $4F, $89 : dw $CF2A : db $02, $00, $00, $00 ; W - Shinjuku TODO
+#_02B64B: db $13, $4D : dw $0E54 : db $06, $00, $00, $00 ; N - Shibuya TODO
+#_02B653: db $31, $51 : dw $CB6E : db $08, $00, $00, $00 ; W - Roppongi south
+#_02B65B: db $25, $55 : dw $3250 : db $04, $00, $00, $00 ; N - Hiroo
+#_02B663: db $2E, $51 : dw $3253 : db $04, $00, $00, $00 ; N - Azabu
+#_02B66B: db $4D, $3F : dw $1606 : db $0C, $00, $00, $00 ; N - Kasumigaseki
+#_02B673: db $2C, $13 : dw $5809 : db $06, $00, $00, $00 ; E - Zoshigaya east
+#_02B67B: db $37, $49 : dw $F342 : db $06, $00, $00, $00 ; W - Roppongi north
+#_02B683: db $55, $3B : dw $D212 : db $08, $00, $00, $00 ; W - Ginza north west
+#_02B68B: db $57, $3B : dw $5315 : db $08, $00, $00, $00 ; E - Ginza north east
+#_02B693: db $55, $3E : dw $D612 : db $08, $00, $00, $00 ; W - Ginza south west
+#_02B69B: db $57, $3E : dw $1616 : db $08, $00, $00, $00 ; N - Ginza south east
+#_02B6A3: db $3C, $57 : dw $5E3D : db $06, $00, $00, $00 ; E - Shinagawa north
+#_02B6AB: db $3D, $5D : dw $1E49 : db $0E, $00, $00, $00 ; N - Shinagawa south
+#_02B6B3: db $25, $0C : dw $D466 : db $0F, $00, $00, $00 ; W - Ikebukoro nuked
+#_02B6BB: db $55, $13 : dw $5571 : db $10, $00, $00, $00 ; E - Ueno
+#_02B6C3: db $55, $22 : dw $1E74 : db $10, $00, $00, $00 ; N - Akihabara
+#_02B6CB: db $66, $41 : dw $2E08 : db $11, $00, $00, $00 ; N - T.D.L.
+#_02B6D3: db $48, $49 : dw $2E19 : db $0B, $00, $00, $00 ; N - Shiba - Tokyo Tower nuked
+#_02B6DB: db $48, $48 : dw $E81E : db $07, $00, $00, $00 ; W - Shiba - Tokyo Tower flooded
+#_02B6E3: db $56, $4C : dw $A92C : db $13, $00, $00, $00 ; S - Cathedral north
+#_02B6EB: db $57, $62 : dw $3E2B : db $13, $00, $00, $00 ; N - Cathedral south
+#_02B6F3: db $57, $52 : dw $B54A : db $13, $00, $00, $00 ; S - Cathedral center north
+#_02B6FB: db $5B, $56 : dw $FA4E : db $13, $00, $00, $00 ; W - Cathedral center east
+#_02B703: db $56, $5B : dw $3E49 : db $13, $00, $00, $00 ; N - Cathedral center south
+#_02B70B: db $52, $56 : dw $7945 : db $13, $00, $00, $00 ; E - Cathedral center west
+#_02B713: db $43, $0C : dw $F25D : db $02, $00, $00, $00 ; W - Tabata nuked - passage to Sugamo
+#_02B71B: db $36, $0C : dw $7156 : db $02, $00, $00, $00 ; E - Sugamo nuked - passage to Tabata
+#_02B723: db $60, $1A : dw $B541 : db $02, $00, $00, $00 ; S - Asakusa - Jikokuten passage to Kanda
+#_02B72B: db $63, $29 : dw $3A42 : db $02, $00, $00, $00 ; N - Kanda - Jikokuten passage to Asakusa
+#_02B733: db $31, $64 : dw $B148 : db $02, $00, $00, $00 ; S - Shinagawa - Komokuten building
+#_02B73B: db $0A, $3E : dw $F75E : db $02, $00, $00, $00 ; W - Yoyogi - Zochoten building
+#_02B743: db $0B, $2D : dw $363A : db $08, $00, $00, $00 ; N - Shinjuku flooded - government office
+#_02B74B: db $25, $0B : dw $3E3B : db $03, $00, $00, $00 ; N - Ikubukuro - dark building TODO
+#_02B753: db $49, $35 : dw $1E13 : db $12, $00, $00, $00 ; N - Kokyo Tokyo Imperial Palace
+#_02B75B: db $FF ; end of data
 
-data02B5C4:
-#_02B5C4: db $88
 
-data02B5C5:
-#_02B5C5: db $02
-
-data02B5C6:
-#_02B5C6: db $C1
-
-data02B5C7:
-#_02B5C7: db $1A
-
-data02B5C8:
-#_02B5C8: db $00
-
-data02B5C9:
-#_02B5C9: db $00
-
-data02B5CA:
-#_02B5CA: db $00,$31,$89,$02,$C3,$1A,$00,$00
-#_02B5D2: db $00,$36,$8A,$01,$45,$07,$00,$00
-#_02B5DA: db $00,$39,$88,$07,$81,$07,$00,$00
-#_02B5E2: db $00,$39,$8B,$07,$06,$07,$00,$00
-#_02B5EA: db $00,$38,$95,$09,$43,$02,$00,$00
-#_02B5F2: db $00,$3A,$8F,$12,$02,$00,$00,$00
-#_02B5FA: db $00,$3E,$8F,$1B,$06,$01,$00,$00
-#_02B602: db $00,$5B,$A5,$10,$0E,$04,$00,$00
-#_02B60A: db $00,$70,$96,$1F,$0F,$09,$00,$00
-#_02B612: db $00,$6D,$88,$2B,$02,$01,$00,$00
-#_02B61A: db $00,$5A,$8E,$56,$C1,$08,$00,$00
-#_02B622: db $00,$54,$8F,$51,$41,$08,$00,$00
-#_02B62A: db $00,$15,$2A,$56,$C7,$0B,$00,$00
-#_02B632: db $00,$10,$2B,$51,$47,$0B,$00,$00
-#_02B63A: db $00,$4F,$94,$26,$CB,$08,$00,$00
-#_02B642: db $00,$4F,$89,$2A,$CF,$02,$00,$00
-#_02B64A: db $00,$13,$4D,$54,$0E,$06,$00,$00
-#_02B652: db $00,$31,$51,$6E,$CB,$08,$00,$00
-#_02B65A: db $00,$25,$55,$50,$32,$04,$00,$00
-#_02B662: db $00,$2E,$51,$53,$32,$04,$00,$00
-#_02B66A: db $00,$4D,$3F,$06,$16,$0C,$00,$00
-#_02B672: db $00,$2C,$13,$09,$58,$06,$00,$00
-#_02B67A: db $00,$37,$49,$42,$F3,$06,$00,$00
-#_02B682: db $00,$55,$3B,$12,$D2,$08,$00,$00
-#_02B68A: db $00,$57,$3B,$15,$53,$08,$00,$00
-#_02B692: db $00,$55,$3E,$12,$D6,$08,$00,$00
-#_02B69A: db $00,$57,$3E,$16,$16,$08,$00,$00
-#_02B6A2: db $00,$3C,$57,$3D,$5E,$06,$00,$00
-#_02B6AA: db $00,$3D,$5D,$49,$1E,$0E,$00,$00
-#_02B6B2: db $00,$25,$0C,$66,$D4,$0F,$00,$00
-#_02B6BA: db $00,$55,$13,$71,$55,$10,$00,$00
-#_02B6C2: db $00,$55,$22,$74,$1E,$10,$00,$00
-#_02B6CA: db $00,$66,$41,$08,$2E,$11,$00,$00
-#_02B6D2: db $00,$48,$49,$19,$2E,$0B,$00,$00
-#_02B6DA: db $00,$48,$48,$1E,$E8,$07,$00,$00
-#_02B6E2: db $00,$56,$4C,$2C,$A9,$13,$00,$00
-#_02B6EA: db $00,$57,$62,$2B,$3E,$13,$00,$00
-#_02B6F2: db $00,$57,$52,$4A,$B5,$13,$00,$00
-#_02B6FA: db $00,$5B,$56,$4E,$FA,$13,$00,$00
-#_02B702: db $00,$56,$5B,$49,$3E,$13,$00,$00
-#_02B70A: db $00,$52,$56,$45,$79,$13,$00,$00
-#_02B712: db $00,$43,$0C,$5D,$F2,$02,$00,$00
-#_02B71A: db $00,$36,$0C,$56,$71,$02,$00,$00
-#_02B722: db $00,$60,$1A,$41,$B5,$02,$00,$00
-#_02B72A: db $00,$63,$29,$42,$3A,$02,$00,$00
-#_02B732: db $00,$31,$64,$48,$B1,$02,$00,$00
-#_02B73A: db $00,$0A,$3E,$5E,$F7,$02,$00,$00
-#_02B742: db $00,$0B,$2D,$3A,$36,$08,$00,$00
-#_02B74A: db $00,$25,$0B,$3B,$3E,$03,$00,$00
-#_02B752: db $00,$49,$35,$13,$1E,$12,$00,$00
-#_02B75A: db $00,$FF
+;===================================================================================================
 
 routine02B75C:
 #_02B75C: JSR routine02B8D8
@@ -7055,7 +7057,7 @@ routine02BEEB:
 
 ;===================================================================================================
 
-routine02BF47:
+Overworld_EnactInteraction:
 #_02BF47: REP #$30
 #_02BF49: JSL routine02BE47
 #_02BF4D: JSR routine02BE0C
