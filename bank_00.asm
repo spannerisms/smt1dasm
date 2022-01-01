@@ -70,23 +70,24 @@ ResetMemory:
 #_008062: LDX.w #$0001
 #_008065: TXY
 #_008066: INY
-#_008067: %MVN($00, $00)
+#_008067: MVN $00, $00
 
 #_00806A: LDA.w #$0000
 #_00806D: STA.l $7E2000
+
 #_008071: LDA.w #$CFFD
 #_008074: LDX.w #$2001
-
 #_008077: TXY
 #_008078: INY
-#_008079: %MVN($7E, $7E)
+#_008079: MVN $7E, $7E
+
 #_00807C: LDA.w #$0000
 #_00807F: STA.l $7F0000
 #_008083: LDA.w #$FFFC
 #_008086: LDX.w #$0001
 #_008089: TXY
 #_00808A: INY
-#_00808B: %MVN($7F, $7F)
+#_00808B: MVN $7F, $7F
 #_00808E: PLB
 #_00808F: LDA.l $7FFFFF
 #_008093: AND.w #$00FF
@@ -698,6 +699,8 @@ SomeSortOfWRAMDMA:
 #_0083C3: dw CGandVRAMDMAprep
 #_0083C5: dw WRAMDMAprep
 
+;===================================================================================================
+
 WRAMDMAprep:
 #_0083C7: LDA.w $0F0A
 #_0083CA: STA.w WMADDL
@@ -710,20 +713,29 @@ WRAMDMAprep:
 
 #_0083D9: BRA StartDMA_0083F5
 
+;===================================================================================================
+
 CGRAMDMAprep:
 #_0083DB: LDA.w $0F09
 #_0083DE: STA.w CGADD
 #_0083E1: BRA StartDMA_0083F5
 
+;===================================================================================================
+
 CGandVRAMDMAprep:
 #_0083E3: LDA.w $0F09
 #_0083E6: STA.w CGADD
 
+;===================================================================================================
+
 VRAMDMAprep:
 #_0083E9: LDA.w $0F07
 #_0083EC: STA.w VMADDL
+
 #_0083EF: LDA.w $0F08
 #_0083F2: STA.w VMADDH
+
+;===================================================================================================
 
 #StartDMA_0083F5:
 #_0083F5: LDA.w $0F06
@@ -733,6 +745,8 @@ VRAMDMAprep:
 #_0083FD: STA.w $0F06
 
 #_008400: RTS
+
+;===================================================================================================
 
 SetUpCachedHDMA:
 #_008401: LDX.b #$00
@@ -3768,6 +3782,8 @@ routine009602:
 #_009641: PLP
 #_009642: RTL
 
+;===================================================================================================
+
 GetRandomInt:
 #_009643: PHP
 #_009644: SEP #$20
@@ -4280,11 +4296,13 @@ routine009942:
 #_00994C: STA.w $008E
 
 #_00994F: REP #$30
-#_009951: LDA.w #$C400
+
+#_009951: LDA.w #data04C400
 #_009954: STA.w $008C
 #_009957: LDA.b [$8C],Y
 #_009959: STA.w $0086
-#_00995C: LDA.w #$C408
+
+#_00995C: LDA.w #data04C408
 #_00995F: STA.w $008C
 #_009962: LDA.b [$8C],Y
 #_009964: STA.w $0089
@@ -6698,11 +6716,11 @@ ReadDemonName_long:
 #_00AA61: PLP
 #_00AA62: RTL
 
-ReadEntityNameB_long:
+ReadClassName_long:
 #_00AA63: PHP
 #_00AA64: STX.w $0EF7
 #_00AA67: STY.w $0EF9
-#_00AA6A: LDX.w #$F429
+#_00AA6A: LDX.w #ClassNamePointers
 #_00AA6D: JSR ReadEntityName
 #_00AA70: PLP
 #_00AA71: RTL
@@ -7157,19 +7175,26 @@ routine00AD5E:
 #_00AD65: TAX
 
 #_00AD66: REP #$20
+
 #_00AD68: LDA.w #$0CE4
 #_00AD6B: STA.w $0106,X
+
 #_00AD6E: LDA.w #$4CE4
 #_00AD71: STA.w $011A,X
+
 #_00AD74: LDA.w #$8CE4
 #_00AD77: STA.w $0108,X
+
 #_00AD7A: LDA.w #$CCE4
 #_00AD7D: STA.w $011C,X
+
 #_00AD80: RTS
 
 data00AD81:
 #_00AD81: db $00,$04,$08,$0C,$10,$28,$2C,$30
 #_00AD89: db $34,$38,$50,$54,$58,$5C,$60
+
+;===================================================================================================
 
 routine00AD90:
 #_00AD90: PHP
@@ -8975,6 +9000,8 @@ PrepHDMAtypeFromA:
 #_00BB8C: PLP
 #_00BB8D: RTL
 
+;===================================================================================================
+
 SomeOtherDMAsFromE80:
 #_00BB8E: PHP
 #_00BB8F: REP #$30
@@ -9091,6 +9118,8 @@ routine00BBF4:
 routine00BC3C:
 #_00BC3C: STA.w $0E80
 #_00BC3F: STX.w $0E82
+
+; use slot to calculate VRAM buffer address
 #_00BC42: TXA
 #_00BC43: ASL A
 #_00BC44: ASL A
@@ -9098,15 +9127,19 @@ routine00BC3C:
 #_00BC46: XBA
 #_00BC47: AND.w #$3800
 #_00BC4A: STA.w $0093
+
 #_00BC4D: LDA.w #$007F
 #_00BC50: STA.w $0095
+
 #_00BC53: LDX.w #$0000
+
 #_00BC56: LDA.w $0E80,X
 
 .branch00BC59
 #_00BC59: ASL A
 #_00BC5A: ASL A
 #_00BC5B: ASL A
+
 #_00BC5C: PHA
 #_00BC5D: ASL A
 #_00BC5E: XBA
@@ -9194,7 +9227,7 @@ routine00BCDB:
 #_00BCEE: STA.w $0095
 
 #_00BCF1: SEP #$20
-#_00BCF3: LDA.b #$07
+#_00BCF3: LDA.b #Palettes>>16
 #_00BCF5: STA.w $0092
 
 #_00BCF8: REP #$20
@@ -9205,7 +9238,7 @@ routine00BCDB:
 #_00BD00: ASL A
 #_00BD01: ASL A
 #_00BD02: CLC
-#_00BD03: ADC.w #$8000
+#_00BD03: ADC.w #Palettes
 #_00BD06: STA.w $0090
 #_00BD09: LDX.w #$0000
 
@@ -9428,341 +9461,344 @@ data00BFD6:
 ; Some of these are in FastROM banks, despite not being FastROM
 ; I think some of these are HDMA
 DMA_DATA_00BFD7:
-.DMA_type_00 ; TODO is this unused? it makes no sense
-#_00BFD7: db $00, OAMDATA ; Transfer type, PPU Port
-#_00BFD9: dl $000800 ; A bus
+; TODO is this unused? it makes no sense
+.type_00
+#_00BFD7: db $00, OAMDATA ; transfer type, port
+#_00BFD9: dl $000800 ; A bus address
 #_00BFDC: dw $2002 ; size
-#_00BFDE: db $80 ; DMA channel
+#_00BFDE: db $80 ; channel
 
-.DMA_type_01
-#_00BFDF: db $01, VMDATA ; Transfer type, PPU Port
-#_00BFE1: dl $909000 ; A bus
-#_00BFE4: dw $200 ; size
-#_00BFE6: db $01 ; DMA channel
+.type_01
+#_00BFDF: db $01, VMDATA ; transfer type, port
+#_00BFE1: dl $109000 ; A bus address
+#_00BFE4: dw $0200 ; size
+#_00BFE6: db $01 ; channel
 
-.DMA_type_02
-#_00BFE7: db $01, VMDATA ; Transfer type, PPU Port
-#_00BFE9: dl $808000 ; A bus
+.type_02
+#_00BFE7: db $01, VMDATA ; transfer type, port
+#_00BFE9: dl $108000 ; A bus address
 #_00BFEC: dw $1000 ; size
-#_00BFEE: db $01 ; DMA channel
+#_00BFEE: db $01 ; channel
 
-.DMA_type_03
-#_00BFEF: db $01, VMDATA ; Transfer type, PPU Port
-#_00BFF1: dl $E0E000 ; A bus
+.type_03
+#_00BFEF: db $01, VMDATA ; transfer type, port
+#_00BFF1: dl $27E000 ; A bus address
 #_00BFF4: dw $1000 ; size
-#_00BFF6: db $01 ; DMA channel
+#_00BFF6: db $01 ; channel
 
-.DMA_type_04
-#_00BFF7: db $01, VMDATA ; Transfer type, PPU Port
-#_00BFF9: dl $808000 ; A bus
+.type_04
+#_00BFF7: db $01, VMDATA ; transfer type, port
+#_00BFF9: dl $118000 ; A bus address
 #_00BFFC: dw $8000 ; size
-#_00BFFE: db $01 ; DMA channel
+#_00BFFE: db $01 ; channel
 
-.DMA_type_05
-#_00BFFF: db $01, VMDATA ; Transfer type, PPU Port
-#_00C001: dl $808000 ; A bus
+.type_05
+#_00BFFF: db $01, VMDATA ; transfer type, port
+#_00C001: dl $128000 ; A bus address
 #_00C004: dw $8000 ; size
-#_00C006: db $01 ; DMA channel
+#_00C006: db $01 ; channel
 
-.DMA_type_06
-#_00C007: db $01, VMDATA ; Transfer type, PPU Port
-#_00C009: dl $808000 ; A bus
+.type_06
+#_00C007: db $01, VMDATA ; transfer type, port
+#_00C009: dl $138000 ; A bus address
 #_00C00C: dw $8000 ; size
-#_00C00E: db $01 ; DMA channel
+#_00C00E: db $01 ; channel
 
-.DMA_type_07
-#_00C00F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C011: dl $808000 ; A bus
+.type_07
+#_00C00F: db $01, VMDATA ; transfer type, port
+#_00C011: dl $148000 ; A bus address
 #_00C014: dw $8000 ; size
-#_00C016: db $01 ; DMA channel
+#_00C016: db $01 ; channel
 
-.DMA_type_08
-#_00C017: db $01, VMDATA ; Transfer type, PPU Port
-#_00C019: dl $808000 ; A bus
+.type_08
+#_00C017: db $01, VMDATA ; transfer type, port
+#_00C019: dl $158000 ; A bus address
 #_00C01C: dw $8000 ; size
-#_00C01E: db $01 ; DMA channel
+#_00C01E: db $01 ; channel
 
-.DMA_type_09
-#_00C01F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C021: dl $808000 ; A bus
+.type_09
+#_00C01F: db $01, VMDATA ; transfer type, port
+#_00C021: dl $168000 ; A bus address
 #_00C024: dw $8000 ; size
-#_00C026: db $01 ; DMA channel
+#_00C026: db $01 ; channel
 
-.DMA_type_0A
-#_00C027: db $01, VMDATA ; Transfer type, PPU Port
-#_00C029: dl $808000 ; A bus
+.type_0A
+#_00C027: db $01, VMDATA ; transfer type, port
+#_00C029: dl $118000 ; A bus address
 #_00C02C: dw $8000 ; size
-#_00C02E: db $01 ; DMA channel
+#_00C02E: db $01 ; channel
 
-.DMA_type_0B
-#_00C02F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C031: dl $808000 ; A bus
+.type_0B
+#_00C02F: db $01, VMDATA ; transfer type, port
+#_00C031: dl $128000 ; A bus address
 #_00C034: dw $8000 ; size
-#_00C036: db $01 ; DMA channel
+#_00C036: db $01 ; channel
 
-.DMA_type_0C
-#_00C037: db $01, VMDATA ; Transfer type, PPU Port
-#_00C039: dl $404000 ; A bus
+.type_0C
+#_00C037: db $01, VMDATA ; transfer type, port
+#_00C039: dl $174000 ; A bus address
 #_00C03C: dw $1000 ; size
-#_00C03E: db $01 ; DMA channel
+#_00C03E: db $01 ; channel
 
-.DMA_type_0D
-#_00C03F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C041: dl $808000 ; A bus
+.type_0D
+#_00C03F: db $01, VMDATA ; transfer type, port
+#_00C041: dl $178000 ; A bus address
 #_00C044: dw $1000 ; size
-#_00C046: db $01 ; DMA channel
+#_00C046: db $01 ; channel
 
-.DMA_type_0E
-#_00C047: db $01, VMDATA ; Transfer type, PPU Port
-#_00C049: dl $404000 ; A bus
+.type_0E
+#_00C047: db $01, VMDATA ; transfer type, port
+#_00C049: dl $184000 ; A bus address
 #_00C04C: dw $1000 ; size
-#_00C04E: db $01 ; DMA channel
+#_00C04E: db $01 ; channel
 
-.DMA_type_0F
-#_00C04F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C051: dl $808000 ; A bus
+.type_0F
+#_00C04F: db $01, VMDATA ; transfer type, port
+#_00C051: dl $188000 ; A bus address
 #_00C054: dw $1000 ; size
-#_00C056: db $01 ; DMA channel
+#_00C056: db $01 ; channel
 
-.DMA_type_10
-#_00C057: db $01, VMDATA ; Transfer type, PPU Port
-#_00C059: dl $404000 ; A bus
+.type_10
+#_00C057: db $01, VMDATA ; transfer type, port
+#_00C059: dl $194000 ; A bus address
 #_00C05C: dw $1000 ; size
-#_00C05E: db $01 ; DMA channel
+#_00C05E: db $01 ; channel
 
-.DMA_type_11
-#_00C05F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C061: dl $808000 ; A bus
+.type_11
+#_00C05F: db $01, VMDATA ; transfer type, port
+#_00C061: dl $198000 ; A bus address
 #_00C064: dw $1000 ; size
-#_00C066: db $01 ; DMA channel
+#_00C066: db $01 ; channel
 
-.DMA_type_12
-#_00C067: db $01, VMDATA ; Transfer type, PPU Port
-#_00C069: dl $404000 ; A bus
+.type_12
+#_00C067: db $01, VMDATA ; transfer type, port
+#_00C069: dl $174000 ; A bus address
 #_00C06C: dw $1000 ; size
-#_00C06E: db $01 ; DMA channel
+#_00C06E: db $01 ; channel
 
-.DMA_type_13
-#_00C06F: db $01, VMDATA ; Transfer type, PPU Port
-#_00C071: dl $808000 ; A bus
+.type_13
+#_00C06F: db $01, VMDATA ; transfer type, port
+#_00C071: dl $178000 ; A bus address
 #_00C074: dw $1000 ; size
-#_00C076: db $01 ; DMA channel
+#_00C076: db $01 ; channel
 
-.DMA_type_14
-#_00C077: db $00, CGDATA ; Transfer type, PPU Port
-#_00C079: dl $808000 ; A bus
-#_00C07C: dw $20 ; size
-#_00C07E: db $02 ; DMA channel
+.type_14
+#_00C077: db $00, CGDATA ; transfer type, port
+#_00C079: dl $078000 ; A bus address
+#_00C07C: dw $0020 ; size
+#_00C07E: db $02 ; channel
 
-.DMA_type_15
-#_00C07F: db $00, CGDATA ; Transfer type, PPU Port
-#_00C081: dl $808020 ; A bus
-#_00C084: dw $20 ; size
-#_00C086: db $02 ; DMA channel
+.type_15
+#_00C07F: db $00, CGDATA ; transfer type, port
+#_00C081: dl $078020 ; A bus address
+#_00C084: dw $0020 ; size
+#_00C086: db $02 ; channel
 
-.DMA_type_16
-#_00C087: db $00, CGDATA ; Transfer type, PPU Port
-#_00C089: dl $808040 ; A bus
-#_00C08C: dw $20 ; size
-#_00C08E: db $02 ; DMA channel
+.type_16
+#_00C087: db $00, CGDATA ; transfer type, port
+#_00C089: dl $078040 ; A bus address
+#_00C08C: dw $0020 ; size
+#_00C08E: db $02 ; channel
 
-.DMA_type_17
-#_00C08F: db $00, CGDATA ; Transfer type, PPU Port
-#_00C091: dl $808060 ; A bus
-#_00C094: dw $20 ; size
-#_00C096: db $02 ; DMA channel
+.type_17
+#_00C08F: db $00, CGDATA ; transfer type, port
+#_00C091: dl $078060 ; A bus address
+#_00C094: dw $0020 ; size
+#_00C096: db $02 ; channel
 
-.DMA_type_18
-#_00C097: db $00, CGDATA ; Transfer type, PPU Port
-#_00C099: dl $808080 ; A bus
-#_00C09C: dw $20 ; size
-#_00C09E: db $02 ; DMA channel
+.type_18
+#_00C097: db $00, CGDATA ; transfer type, port
+#_00C099: dl $078080 ; A bus address
+#_00C09C: dw $0020 ; size
+#_00C09E: db $02 ; channel
 
-.DMA_type_19
-#_00C09F: db $00, CGDATA ; Transfer type, PPU Port
-#_00C0A1: dl $8080A0 ; A bus
-#_00C0A4: dw $20 ; size
-#_00C0A6: db $02 ; DMA channel
+.type_19
+#_00C09F: db $00, CGDATA ; transfer type, port
+#_00C0A1: dl $0780A0 ; A bus address
+#_00C0A4: dw $0020 ; size
+#_00C0A6: db $02 ; channel
 
-.DMA_type_1A
-#_00C0A7: db $00, CGDATA ; Transfer type, PPU Port
-#_00C0A9: dl $8080C0 ; A bus
-#_00C0AC: dw $20 ; size
-#_00C0AE: db $02 ; DMA channel
+.type_1A
+#_00C0A7: db $00, CGDATA ; transfer type, port
+#_00C0A9: dl $0780C0 ; A bus address
+#_00C0AC: dw $0020 ; size
+#_00C0AE: db $02 ; channel
 
-.DMA_type_1B
-#_00C0AF: db $00, CGDATA ; Transfer type, PPU Port
-#_00C0B1: dl $8080E0 ; A bus
-#_00C0B4: dw $20 ; size
-#_00C0B6: db $02 ; DMA channel
+.type_1B
+#_00C0AF: db $00, CGDATA ; transfer type, port
+#_00C0B1: dl $0780E0 ; A bus address
+#_00C0B4: dw $0020 ; size
+#_00C0B6: db $02 ; channel
 
-.DMA_type_1C
-#_00C0B7: db $01, VMDATA ; Transfer type, PPU Port
-#_00C0B9: dl $A0A000 ; A bus
-#_00C0BC: dw $500 ; size
-#_00C0BE: db $01 ; DMA channel
+.type_1C
+#_00C0B7: db $01, VMDATA ; transfer type, port
+#_00C0B9: dl $10A000 ; A bus address
+#_00C0BC: dw $0500 ; size
+#_00C0BE: db $01 ; channel
 
-.DMA_type_1D
-#_00C0BF: db $01, VMDATA ; Transfer type, PPU Port
-#_00C0C1: dl $989800 ; A bus
-#_00C0C4: dw $800 ; size
-#_00C0C6: db $01 ; DMA channel
+.type_1D
+#_00C0BF: db $01, VMDATA ; transfer type, port
+#_00C0C1: dl $109800 ; A bus address
+#_00C0C4: dw $0800 ; size
+#_00C0C6: db $01 ; channel
 
-.DMA_type_1E
-#_00C0C7: db $00, CGDATA ; Transfer type, PPU Port
-#_00C0C9: dl $B0B040 ; A bus
-#_00C0CC: dw $100 ; size
-#_00C0CE: db $02 ; DMA channel
+.type_1E
+#_00C0C7: db $00, CGDATA ; transfer type, port
+#_00C0C9: dl $1CB040 ; A bus address
+#_00C0CC: dw $0100 ; size
+#_00C0CE: db $02 ; channel
 
-.DMA_type_1F
-#_00C0CF: db $00, CGDATA ; Transfer type, PPU Port
-#_00C0D1: dl $808000 ; A bus
-#_00C0D4: dw $100 ; size
-#_00C0D6: db $04 ; DMA channel
+.type_1F
+#_00C0CF: db $00, CGDATA ; transfer type, port
+#_00C0D1: dl $078000 ; A bus address
+#_00C0D4: dw $0100 ; size
+#_00C0D6: db $04 ; channel
 
-.DMA_type_20
-#_00C0D7: db $00, WMDATA ; Transfer type, PPU Port
-#_00C0D9: dl $818100 ; A bus
-#_00C0DC: dw $20 ; size
-#_00C0DE: db $04 ; DMA channel
+.type_20
+#_00C0D7: db $00, WMDATA ; transfer type, port
+#_00C0D9: dl $078100 ; A bus address
+#_00C0DC: dw $0020 ; size
+#_00C0DE: db $04 ; channel
 
-.DMA_type_21
-#_00C0DF: db $00, WMDATA ; Transfer type, PPU Port
-#_00C0E1: dl $818120 ; A bus
-#_00C0E4: dw $20 ; size
-#_00C0E6: db $04 ; DMA channel
+.type_21
+#_00C0DF: db $00, WMDATA ; transfer type, port
+#_00C0E1: dl $078120 ; A bus address
+#_00C0E4: dw $0020 ; size
+#_00C0E6: db $04 ; channel
 
-.DMA_type_22
-#_00C0E7: db $00, WMDATA ; Transfer type, PPU Port
-#_00C0E9: dl $818140 ; A bus
-#_00C0EC: dw $20 ; size
-#_00C0EE: db $04 ; DMA channel
+.type_22
+#_00C0E7: db $00, WMDATA ; transfer type, port
+#_00C0E9: dl $078140 ; A bus address
+#_00C0EC: dw $0020 ; size
+#_00C0EE: db $04 ; channel
 
-.DMA_type_23
-#_00C0EF: db $00, WMDATA ; Transfer type, PPU Port
-#_00C0F1: dl $818160 ; A bus
-#_00C0F4: dw $20 ; size
-#_00C0F6: db $04 ; DMA channel
+.type_23
+#_00C0EF: db $00, WMDATA ; transfer type, port
+#_00C0F1: dl $078160 ; A bus address
+#_00C0F4: dw $0020 ; size
+#_00C0F6: db $04 ; channel
 
-.DMA_type_24
-#_00C0F7: db $00, WMDATA ; Transfer type, PPU Port
-#_00C0F9: dl $818180 ; A bus
-#_00C0FC: dw $20 ; size
-#_00C0FE: db $04 ; DMA channel
+.type_24
+#_00C0F7: db $00, WMDATA ; transfer type, port
+#_00C0F9: dl $078180 ; A bus address
+#_00C0FC: dw $0020 ; size
+#_00C0FE: db $04 ; channel
 
-.DMA_type_25
-#_00C0FF: db $00, WMDATA ; Transfer type, PPU Port
-#_00C101: dl $8181A0 ; A bus
-#_00C104: dw $20 ; size
-#_00C106: db $04 ; DMA channel
+.type_25
+#_00C0FF: db $00, WMDATA ; transfer type, port
+#_00C101: dl $0781A0 ; A bus address
+#_00C104: dw $0020 ; size
+#_00C106: db $04 ; channel
 
-.DMA_type_26
-#_00C107: db $00, WMDATA ; Transfer type, PPU Port
-#_00C109: dl $8181C0 ; A bus
-#_00C10C: dw $20 ; size
-#_00C10E: db $04 ; DMA channel
+.type_26
+#_00C107: db $00, WMDATA ; transfer type, port
+#_00C109: dl $0781C0 ; A bus address
+#_00C10C: dw $0020 ; size
+#_00C10E: db $04 ; channel
 
-.DMA_type_27
-#_00C10F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C111: dl $8181E0 ; A bus
-#_00C114: dw $20 ; size
-#_00C116: db $04 ; DMA channel
+.type_27
+#_00C10F: db $00, WMDATA ; transfer type, port
+#_00C111: dl $0781E0 ; A bus address
+#_00C114: dw $0020 ; size
+#_00C116: db $04 ; channel
 
-.DMA_type_28
-#_00C117: db $00, WMDATA ; Transfer type, PPU Port
-#_00C119: dl $828200 ; A bus
-#_00C11C: dw $20 ; size
-#_00C11E: db $04 ; DMA channel
+.type_28
+#_00C117: db $00, WMDATA ; transfer type, port
+#_00C119: dl $078200 ; A bus address
+#_00C11C: dw $0020 ; size
+#_00C11E: db $04 ; channel
 
-.DMA_type_29
-#_00C11F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C121: dl $828220 ; A bus
-#_00C124: dw $20 ; size
-#_00C126: db $04 ; DMA channel
+.type_29
+#_00C11F: db $00, WMDATA ; transfer type, port
+#_00C121: dl $078220 ; A bus address
+#_00C124: dw $0020 ; size
+#_00C126: db $04 ; channel
 
-.DMA_type_2A
-#_00C127: db $00, WMDATA ; Transfer type, PPU Port
-#_00C129: dl $828240 ; A bus
-#_00C12C: dw $20 ; size
-#_00C12E: db $04 ; DMA channel
+.type_2A
+#_00C127: db $00, WMDATA ; transfer type, port
+#_00C129: dl $078240 ; A bus address
+#_00C12C: dw $0020 ; size
+#_00C12E: db $04 ; channel
 
-.DMA_type_2B
-#_00C12F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C131: dl $828260 ; A bus
-#_00C134: dw $20 ; size
-#_00C136: db $04 ; DMA channel
+.type_2B
+#_00C12F: db $00, WMDATA ; transfer type, port
+#_00C131: dl $078260 ; A bus address
+#_00C134: dw $0020 ; size
+#_00C136: db $04 ; channel
 
-.DMA_type_2C
-#_00C137: db $00, WMDATA ; Transfer type, PPU Port
-#_00C139: dl $828280 ; A bus
-#_00C13C: dw $20 ; size
-#_00C13E: db $04 ; DMA channel
+.type_2C
+#_00C137: db $00, WMDATA ; transfer type, port
+#_00C139: dl $078280 ; A bus address
+#_00C13C: dw $0020 ; size
+#_00C13E: db $04 ; channel
 
-.DMA_type_2D
-#_00C13F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C141: dl $8282A0 ; A bus
-#_00C144: dw $20 ; size
-#_00C146: db $04 ; DMA channel
+.type_2D
+#_00C13F: db $00, WMDATA ; transfer type, port
+#_00C141: dl $0782A0 ; A bus address
+#_00C144: dw $0020 ; size
+#_00C146: db $04 ; channel
 
-.DMA_type_2E
-#_00C147: db $00, WMDATA ; Transfer type, PPU Port
-#_00C149: dl $8282C0 ; A bus
-#_00C14C: dw $20 ; size
-#_00C14E: db $04 ; DMA channel
+.type_2E
+#_00C147: db $00, WMDATA ; transfer type, port
+#_00C149: dl $0782C0 ; A bus address
+#_00C14C: dw $0020 ; size
+#_00C14E: db $04 ; channel
 
-.DMA_type_2F
-#_00C14F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C151: dl $8282E0 ; A bus
-#_00C154: dw $20 ; size
-#_00C156: db $04 ; DMA channel
+.type_2F
+#_00C14F: db $00, WMDATA ; transfer type, port
+#_00C151: dl $0782E0 ; A bus address
+#_00C154: dw $0020 ; size
+#_00C156: db $04 ; channel
 
-.DMA_type_30
-#_00C157: db $00, WMDATA ; Transfer type, PPU Port
-#_00C159: dl $838300 ; A bus
-#_00C15C: dw $20 ; size
-#_00C15E: db $04 ; DMA channel
+.type_30
+#_00C157: db $00, WMDATA ; transfer type, port
+#_00C159: dl $078300 ; A bus address
+#_00C15C: dw $0020 ; size
+#_00C15E: db $04 ; channel
 
-.DMA_type_31
-#_00C15F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C161: dl $838320 ; A bus
-#_00C164: dw $20 ; size
-#_00C166: db $04 ; DMA channel
+.type_31
+#_00C15F: db $00, WMDATA ; transfer type, port
+#_00C161: dl $078320 ; A bus address
+#_00C164: dw $0020 ; size
+#_00C166: db $04 ; channel
 
-.DMA_type_32
-#_00C167: db $00, WMDATA ; Transfer type, PPU Port
-#_00C169: dl $838340 ; A bus
-#_00C16C: dw $20 ; size
-#_00C16E: db $04 ; DMA channel
+.type_32
+#_00C167: db $00, WMDATA ; transfer type, port
+#_00C169: dl $078340 ; A bus address
+#_00C16C: dw $0020 ; size
+#_00C16E: db $04 ; channel
 
-.DMA_type_33
-#_00C16F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C171: dl $838360 ; A bus
-#_00C174: dw $20 ; size
-#_00C176: db $04 ; DMA channel
+.type_33
+#_00C16F: db $00, WMDATA ; transfer type, port
+#_00C171: dl $078360 ; A bus address
+#_00C174: dw $0020 ; size
+#_00C176: db $04 ; channel
 
-.DMA_type_34
-#_00C177: db $00, WMDATA ; Transfer type, PPU Port
-#_00C179: dl $838380 ; A bus
-#_00C17C: dw $20 ; size
-#_00C17E: db $04 ; DMA channel
+.type_34
+#_00C177: db $00, WMDATA ; transfer type, port
+#_00C179: dl $078380 ; A bus address
+#_00C17C: dw $0020 ; size
+#_00C17E: db $04 ; channel
 
-.DMA_type_35
-#_00C17F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C181: dl $8383A0 ; A bus
-#_00C184: dw $20 ; size
-#_00C186: db $04 ; DMA channel
+.type_35
+#_00C17F: db $00, WMDATA ; transfer type, port
+#_00C181: dl $0783A0 ; A bus address
+#_00C184: dw $0020 ; size
+#_00C186: db $04 ; channel
 
-.DMA_type_36
-#_00C187: db $00, WMDATA ; Transfer type, PPU Port
-#_00C189: dl $8383C0 ; A bus
-#_00C18C: dw $20 ; size
-#_00C18E: db $04 ; DMA channel
+.type_36
+#_00C187: db $00, WMDATA ; transfer type, port
+#_00C189: dl $0783C0 ; A bus address
+#_00C18C: dw $0020 ; size
+#_00C18E: db $04 ; channel
 
-.DMA_type_37
-#_00C18F: db $00, WMDATA ; Transfer type, PPU Port
-#_00C191: dl $8383E0 ; A bus
-#_00C194: dw $20 ; size
-#_00C196: db $04 ; DMA channel
+.type_37
+#_00C18F: db $00, WMDATA ; transfer type, port
+#_00C191: dl $0783E0 ; A bus address
+#_00C194: dw $0020 ; size
+#_00C196: db $04 ; channel
+
+;===================================================================================================
 
 routine00C197:
 #_00C197: SEP #$30
@@ -14020,7 +14056,7 @@ routine00E522:
 #_00E5E8: LDA.w #$001F
 #_00E5EB: LDX.w #$2540
 #_00E5EE: LDY.w #$2560
-#_00E5F1: %MVN($7E, $7E)
+#_00E5F1: MVN $7E, $7E
 #_00E5F4: PLB
 
 #_00E5F5: SEP #$30
@@ -14210,7 +14246,7 @@ routine00E719:
 #_00E724: LDA.w #$001F
 #_00E727: LDX.w $064A
 #_00E72A: LDY.w #$2300
-#_00E72D: %MVN($7E, $7E)
+#_00E72D: MVN $7E, $7E
 #_00E730: BRA .branch00E73E
 
 .branch00E732
@@ -14290,7 +14326,7 @@ routine00E817:
 #_00E831: LDA.w #$001F
 #_00E834: LDX.w #$2540
 #_00E837: LDY.w #$2560
-#_00E83A: %MVN($7E, $7E)
+#_00E83A: MVN $7E, $7E
 #_00E83D: PLB
 
 #_00E83E: SEP #$30
@@ -14382,7 +14418,7 @@ routine00E8A0:
 #_00E8EA: LDA.w #$001F
 #_00E8ED: LDX.w #$2340
 #_00E8F0: LDY.w #$2560
-#_00E8F3: %MVN($7E, $7E)
+#_00E8F3: MVN $7E, $7E
 #_00E8F6: PLB
 
 #_00E8F7: SEP #$30

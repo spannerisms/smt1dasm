@@ -3,7 +3,7 @@ org $0B8000
 
 ;===================================================================================================
 
-TextSets03:
+Message_03_Pointers:
 #_0B8000: dw Message_03_00_Pointers
 #_0B8002: dw Message_03_01_Pointers
 #_0B8004: dw Message_03_02_Pointers
@@ -2030,7 +2030,7 @@ Message_03_02_62:
 #_0B92A6: db $FE, $09, $63 ; ext command 09: something to message 63 TODO
 #_0B92A9: db $D4, $03 ; set text box size to 3
 #_0B92AB: db $97 ; >
-#_0B92AC: db $F6 ; write class name from $506
+#_0B92AC: db $F6 ; write class name from $0506
 #_0B92AD: db $CF ; ⎵
 #_0B92AE: db $F5 ; write demon name from $050A
 #_0B92AF: db $9C ; が
@@ -2196,7 +2196,7 @@ Message_03_02_6D:
 #_0B93E2: db $FC ; wait for key and new line
 #_0B93E3: db $D4, $03 ; set text box size to 3
 #_0B93E5: db $97 ; >
-#_0B93E6: db $F6 ; write class name from $506
+#_0B93E6: db $F6 ; write class name from $0506
 #_0B93E7: db $CF ; ⎵
 #_0B93E8: db $F5 ; write demon name from $050A
 #_0B93E9: db $9C ; が
@@ -2368,7 +2368,7 @@ Message_03_02_78:
 #_0B9528: db $FC ; wait for key and new line
 #_0B9529: db $D4, $03 ; set text box size to 3
 #_0B952B: db $97 ; >
-#_0B952C: db $F6 ; write class name from $506
+#_0B952C: db $F6 ; write class name from $0506
 #_0B952D: db $CF ; ⎵
 #_0B952E: db $F5 ; write demon name from $050A
 #_0B952F: db $9C ; が
@@ -2982,7 +2982,7 @@ Message_03_02_91:
 #_0B9AF0: db $FA ; clear message box
 #_0B9AF1: db $D2, $87, $8B ; test progress bit $87 for message $8B
 #_0B9AF4: db $D6, $00, $59, $70, $38 ; place sprite 59 in slot 00 at XY:{70,38}
-#_0B9AF9: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0B9AF9: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0B9AFD: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_0B9B00: db $D6, $00, $59, $70, $38 ; place sprite 59 in slot 00 at XY:{70,38}
 #_0B9B05: db $4F, $27, $A2, $52, $9A ; ろうじん:
@@ -3692,7 +3692,7 @@ Message_03_02_BD:
 #_0BA09C: db $F9 ; new line
 #_0BA09D: db $DE, $00, $00, $BD, $01 ; [COMMAND DE:00,00,BD,01]
 #_0BA0A2: db $72, $68, $3D, $CF, $30, $43, $3A, $CF ; ニシの⎵しまに⎵
-#_0BA0AA: db $F6 ; write class name from $506
+#_0BA0AA: db $F6 ; write class name from $0506
 #_0BA0AB: db $CF ; ⎵
 #_0BA0AC: db $F5 ; write demon name from $050A
 #_0BA0AD: db $9C, $CF, $2B, $37, $26, $4D ; が⎵きている
@@ -3803,7 +3803,7 @@ Message_03_02_C4:
 #_0BA1AF: db $9D, $A6, $94, $94 ; ぎだ!!
 #_0BA1B3: db $FC ; wait for key and new line
 #_0BA1B4: db $D0, $B2 ; set progress bit $B2
-#_0BA1B6: db $FE, $45, $01 ; ext command 45: something 01, 01 TODO
+#_0BA1B6: db $FE, $45, $01, $01 ; ext command 45: something 01, 01 TODO
 #_0BA1BA: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_0BA1BD: db $D6, $01, $00 ; delete sprite in slot 01
 #_0BA1C0: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
@@ -4223,7 +4223,7 @@ Message_03_02_D9:
 #_0BA52E: db $FA ; clear message box
 #_0BA52F: db $D2, $87, $DA ; test progress bit $87 for message $DA
 #_0BA532: db $D6, $00, $59, $70, $38 ; place sprite 59 in slot 00 at XY:{70,38}
-#_0BA537: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0BA537: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0BA53B: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_0BA53E: db $D6, $00, $59, $70, $38 ; place sprite 59 in slot 00 at XY:{70,38}
 #_0BA543: db $4F, $27, $A2, $52, $9A ; ろうじん:
@@ -4465,7 +4465,7 @@ Message_03_02_E3:
 #_0BA732: db $4A ; よ
 #_0BA733: db $F9 ; new line
 #_0BA734: db $50, $34, $30, $9C, $CF ; わたしが⎵
-#_0BA739: db $F6 ; write class name from $506
+#_0BA739: db $F6 ; write class name from $0506
 #_0BA73A: db $CF ; ⎵
 #_0BA73B: db $F5 ; write demon name from $050A
 #_0BA73C: db $F9 ; new line
@@ -6842,7 +6842,7 @@ Message_03_05_03:
 #_0BBAC4: db $4D, $CF, $72, $8A, $B8, $8A, $4A ; る⎵ニンゲンよ
 #_0BBACB: db $F9 ; new line
 #_0BBACC: db $2E, $3D, $CF ; この⎵
-#_0BBACF: db $F6 ; write class name from $506
+#_0BBACF: db $F6 ; write class name from $0506
 #_0BBAD0: db $CF ; ⎵
 #_0BBAD1: db $F5 ; write demon name from $050A
 #_0BBAD2: db $F9 ; new line
@@ -7062,7 +7062,7 @@ Message_03_05_12:
 #_0BBC81: db $4D, $29, $2A, $34, $3A, $CF, $46, $26 ; るおかたに⎵めい
 #_0BBC89: db $A2, $4B, $4E, $37, $26, $4D ; じられている
 #_0BBC8F: db $F9 ; new line
-#_0BBC90: db $F6 ; write class name from $506
+#_0BBC90: db $F6 ; write class name from $0506
 #_0BBC91: db $CF ; ⎵
 #_0BBC92: db $F5 ; write demon name from $050A
 #_0BBC93: db $3E ; は
@@ -7290,7 +7290,7 @@ Message_03_05_21:
 #_0BBE40: db $2B, $51, $CF, $45, $2A, $28, $34 ; きを⎵むかえた
 #_0BBE47: db $F9 ; new line
 #_0BBE48: db $50, $4E, $CF ; われ⎵
-#_0BBE4B: db $F6 ; write class name from $506
+#_0BBE4B: db $F6 ; write class name from $0506
 #_0BBE4C: db $CF ; ⎵
 #_0BBE4D: db $F5 ; write demon name from $050A
 #_0BBE4E: db $F9 ; new line
@@ -7618,7 +7618,7 @@ Message_03_05_37:
 #_0BC0C2: db $7B, $CF, $7B, $67, $62, $C3, $2E, $27 ; マ⎵マサカドこう
 #_0BC0CA: db $4A ; よ
 #_0BC0CB: db $F9 ; new line
-#_0BC0CC: db $F6 ; write class name from $506
+#_0BC0CC: db $F6 ; write class name from $0506
 #_0BC0CD: db $CF ; ⎵
 #_0BC0CE: db $F5 ; write demon name from $050A
 #_0BC0CF: db $F9 ; new line
@@ -7661,7 +7661,7 @@ Message_03_05_39:
 #_0BC124: db $30, $34 ; した
 #_0BC126: db $FC ; wait for key and new line
 #_0BC127: db $FA ; clear message box
-#_0BC128: db $F6 ; write class name from $506
+#_0BC128: db $F6 ; write class name from $0506
 #_0BC129: db $CF ; ⎵
 #_0BC12A: db $F5 ; write demon name from $050A
 #_0BC12B: db $CF, $2E, $4E, $2A, $4B, $3E ; ⎵これからは
@@ -8339,7 +8339,7 @@ Message_03_06_12:
 #_0BC65D: db $D2, $F2, $13 ; test progress bit $F2 for message $13
 #_0BC660: db $D5, $45 ; send $45 to APU
 #_0BC662: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_0BC667: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0BC667: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0BC66B: db $EE ; write lawful hero name
 #_0BC66C: db $9A ; :
 #_0BC66D: db $F9 ; new line
@@ -8535,7 +8535,7 @@ Message_03_07_00:
 #_0BC869: db $DE, $00, $00, $8B, $01 ; [COMMAND DE:00,00,8B,01]
 #_0BC86E: db $E4, $00 ; load demon $00
 #_0BC870: db $97 ; >
-#_0BC871: db $F6 ; write class name from $506
+#_0BC871: db $F6 ; write class name from $0506
 #_0BC872: db $CF ; ⎵
 #_0BC873: db $F5 ; write demon name from $050A
 #_0BC874: db $CF, $9C, $CF, $26, $4D ; ⎵が⎵いる
@@ -10118,7 +10118,7 @@ Message_03_07_4F:
 #_0BD6CE: db $5D, $64, $7B, $9A ; アクマ:
 #_0BD6D2: db $F9 ; new line
 #_0BD6D3: db $50, $34, $30, $3E, $CF ; わたしは⎵
-#_0BD6D8: db $F6 ; write class name from $506
+#_0BD6D8: db $F6 ; write class name from $0506
 #_0BD6D9: db $CF ; ⎵
 #_0BD6DA: db $F5 ; write demon name from $050A
 #_0BD6DB: db $F9 ; new line
@@ -15208,7 +15208,7 @@ Message_03_01_00:
 ; [CLASS] [DEMON1]が でた!
 Message_03_01_01:
 #_0BFC66: db $FA ; clear message box
-#_0BFC67: db $F6 ; write class name from $506
+#_0BFC67: db $F6 ; write class name from $0506
 #_0BFC68: db $CF ; ⎵
 #_0BFC69: db $F5 ; write demon name from $050A
 #_0BFC6A: db $9C, $CF, $A9, $34, $94 ; が⎵でた!
@@ -15541,7 +15541,7 @@ Message_03_01_1C:
 
 ; [CLASS] [DEMON1]を たおした
 Message_03_01_1D:
-#_0BFE28: db $F6 ; write class name from $506
+#_0BFE28: db $F6 ; write class name from $0506
 #_0BFE29: db $CF ; ⎵
 #_0BFE2A: db $F5 ; write demon name from $050A
 #_0BFE2B: db $51, $CF, $34, $29, $30, $34 ; を⎵たおした

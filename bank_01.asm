@@ -532,6 +532,8 @@ routine018344:
 #_0183DF: STA.w $0E9A
 #_0183E2: JMP .branch018347
 
+;===================================================================================================
+
 routine0183E5:
 #_0183E5: PHP
 #_0183E6: SEP #$20
@@ -542,7 +544,7 @@ routine0183E5:
 
 .branch0183F1
 #_0183F1: REP #$30
-#_0183F3: JSR routine0191E0
+#_0183F3: JSR CopyFontIntoWRAM
 
 #_0183F6: SEP #$30
 #_0183F8: LDA.b #$00
@@ -781,7 +783,7 @@ routine0185D8:
 #_018618: LDA.w $1006,X
 #_01861B: LDX.w #$0022
 #_01861E: LDY.w #$0000
-#_018621: JSL ReadEntityNameB_long
+#_018621: JSL ReadClassName_long
 #_018625: LDA.w #$009A
 #_018628: STA.w $0112
 #_01862B: LDA.w #$0000
@@ -2432,19 +2434,25 @@ routine0191C9:
 
 ;===================================================================================================
 
-routine0191E0:
+CopyFontIntoWRAM:
 #_0191E0: PHP
 #_0191E1: REP #$30
+
 #_0191E3: LDA.w #$8000
 #_0191E6: STA.w $0090
+
 #_0191E9: LDA.w #$0010
 #_0191EC: STA.w $0092
+
 #_0191EF: LDA.w #$C000
 #_0191F2: STA.w $0094
+
 #_0191F5: LDA.w #$007F
 #_0191F8: STA.w $0096
+
 #_0191FB: LDA.w #$00D0
 #_0191FE: STA.w $0476
+
 #_019201: JSL routine009602
 
 #_019205: SEP #$30
@@ -3754,7 +3762,7 @@ routine0199B3:
 #_019A14: LDX.w #$0000
 
 .branch019A17
-#_019A17: CMP.l data03E74C,X
+#_019A17: CMP.l ClassCutoffs,X
 #_019A1B: BCC .branch019A23
 
 #_019A1D: INX
@@ -4144,7 +4152,7 @@ routine019C06:
 #_019CB6: LDA.w $1006,X
 #_019CB9: LDX.w #$0022
 #_019CBC: LDY.w #$0000
-#_019CBF: JSL ReadEntityNameB_long
+#_019CBF: JSL ReadClassName_long
 #_019CC3: LDA.w #$209A
 #_019CC6: STA.w $0112
 #_019CC9: LDA.w #$20CF
@@ -4980,7 +4988,7 @@ routine01A2A5:
 
 .branch01A2B1
 #_01A2B1: PLP
-#_01A2B2: JSR routine0191E0
+#_01A2B2: JSR CopyFontIntoWRAM
 
 #_01A2B5: SEP #$30
 #_01A2B7: LDA.b #$00
@@ -7400,8 +7408,10 @@ routine01B221:
 
 routine01B263:
 #_01B263: PHP
+
 #_01B264: SEP #$30
 #_01B266: PHB
+
 #_01B267: LDA.b #$07
 #_01B269: PHA
 #_01B26A: PLB
@@ -7410,7 +7420,8 @@ routine01B263:
 #_01B26D: SEP #$10
 #_01B26F: LDX.w $0455
 #_01B272: LDY.b #$04
-#_01B274: LDA.w #$BD09
+#_01B274: LDA.w #data07BD09
+
 #_01B277: JSR routine01B497
 #_01B27A: STX.w $0504
 #_01B27D: STZ.w $0505
@@ -9599,7 +9610,7 @@ routine01C0D0:
 #_01C0EB: AND.w #$001F
 #_01C0EE: TAX
 #_01C0EF: LDY.w #$0004
-#_01C0F2: LDA.w #$CB96
+#_01C0F2: LDA.w #data07CB96
 #_01C0F5: JSR routine01B497
 #_01C0F8: DEX
 #_01C0F9: BMI .branch01C144
@@ -11404,7 +11415,7 @@ routine01CC25:
 
 #_01CCC2: TAX
 #_01CCC3: LDY.w #$0009
-#_01CCC6: LDA.w #$CB0F
+#_01CCC6: LDA.w #data07CB96
 #_01CCC9: JSR routine01B497
 #_01CCCC: STX.w $054A
 #_01CCCF: RTS
@@ -13944,7 +13955,7 @@ routine01DFB8:
 #_01E026: LDX.w #$0000
 
 .branch01E029
-#_01E029: CMP.l data03E74C,X
+#_01E029: CMP.l ClassCutoffs,X
 #_01E02D: BCC .branch01E035
 
 #_01E02F: INX
@@ -14397,6 +14408,8 @@ LoadDemonEverything:
 #_01E341: LDA.b #$07
 #_01E343: PHA
 #_01E344: PLB
+
+; 28 being the first bank of demon sprites
 #_01E345: LDA.b #$28
 #_01E347: STA.w $0EFD
 
@@ -14411,19 +14424,24 @@ LoadDemonEverything:
 ; get demon's idea
 #_01E357: LDA.w $050A,X
 
-; multiply by 8 (for name?)
+; multiply by 8 for data
 #_01E35A: ASL A
 #_01E35B: ASL A
 #_01E35C: ASL A
+
 #_01E35D: PHA
+
 #_01E35E: TAY
+
+; next slot?
 #_01E35F: LDA.w $0564
 #_01E362: CLC
 #_01E363: ADC.w #$0004
 #_01E366: AND.w #$0007
 #_01E369: TAX
+
 #_01E36A: LDA.w UNREACH_07C14F,Y
-#_01E36D: BPL .branch01E38F
+#_01E36D: BPL .not_animated
 
 #_01E36F: AND.w #$7FFF
 #_01E372: PHA
@@ -14443,8 +14461,10 @@ LoadDemonEverything:
 #_01E38D: PLX
 #_01E38E: PLA
 
-.branch01E38F
+;---------------------------------------------------------------------------------------------------
+.not_animated
 #_01E38F: JSL routine00BC3C
+
 #_01E393: PLY
 #_01E394: PHY
 #_01E395: LDA.w $0564
@@ -14454,7 +14474,7 @@ LoadDemonEverything:
 #_01E39D: AND.w #$0003
 #_01E3A0: ORA.w #$0008
 #_01E3A3: TAX
-#_01E3A4: LDA.w UNREACH_07C151,Y
+#_01E3A4: LDA.w UNREACH_07C14F+2,Y
 #_01E3A7: CLC
 #_01E3A8: ADC.w #$2828
 #_01E3AB: JSL routine00BCDB
@@ -14472,7 +14492,7 @@ LoadDemonEverything:
 #_01E3BE: PHA
 #_01E3BF: ASL A
 #_01E3C0: TAX
-#_01E3C1: LDA.w UNREACH_07C153,Y
+#_01E3C1: LDA.w UNREACH_07C14F+4,Y
 #_01E3C4: AND.w #$7FFF
 #_01E3C7: CLC
 #_01E3C8: ADC.w #$00B0
@@ -14481,7 +14501,7 @@ LoadDemonEverything:
 #_01E3D1: STA.w $1A60,X
 #_01E3D4: LDA.w $0622
 #_01E3D7: STA.w $1AA0,X
-#_01E3DA: LDA.w UNREACH_07C153,Y
+#_01E3DA: LDA.w UNREACH_07C14F+4,Y
 #_01E3DD: AND.w #$8000
 #_01E3E0: BEQ .branch01E3E5
 
@@ -14500,7 +14520,7 @@ LoadDemonEverything:
 #_01E3F2: ADC.w #$0004
 #_01E3F5: ASL A
 #_01E3F6: TAX
-#_01E3F7: LDA.w UNREACH_07C155,Y
+#_01E3F7: LDA.w UNREACH_07C14F+6,Y
 #_01E3FA: AND.w #$7FFF
 #_01E3FD: BNE .branch01E402
 
@@ -14514,7 +14534,7 @@ LoadDemonEverything:
 #_01E40C: STA.w $1A60,X
 #_01E40F: LDA.w $0622
 #_01E412: STA.w $1AA0,X
-#_01E415: LDA.w UNREACH_07C155,Y
+#_01E415: LDA.w UNREACH_07C14F+6,Y
 #_01E418: AND.w #$8000
 #_01E41B: BEQ .branch01E420
 
@@ -14694,12 +14714,12 @@ routine01E4EF:
 #_01E54E: ASL A
 #_01E54F: ASL A
 #_01E550: TAY
-#_01E551: LDA.w UNREACH_07C153,Y
+#_01E551: LDA.w UNREACH_07C14F+4,Y
 #_01E554: AND.w #$7FFF
 #_01E557: CLC
 #_01E558: ADC.w #$00B0
 #_01E55B: STA.w $0000,X
-#_01E55E: LDA.w UNREACH_07C153,Y
+#_01E55E: LDA.w UNREACH_07C14F+4,Y
 #_01E561: AND.w #$8000
 #_01E564: BEQ .branch01E569
 
@@ -14715,7 +14735,7 @@ routine01E4EF:
 #_01E579: CLC
 #_01E57A: ADC.w #$0008
 #_01E57D: TAX
-#_01E57E: LDA.w UNREACH_07C155,Y
+#_01E57E: LDA.w UNREACH_07C14F+6,Y
 #_01E581: AND.w #$7FFF
 #_01E584: BNE .branch01E589
 
@@ -14725,7 +14745,7 @@ routine01E4EF:
 #_01E589: CLC
 #_01E58A: ADC.w #$00B0
 #_01E58D: STA.w $0000,X
-#_01E590: LDA.w UNREACH_07C155,Y
+#_01E590: LDA.w UNREACH_07C14F+6,Y
 #_01E593: AND.w #$8000
 #_01E596: BEQ .branch01E59B
 
@@ -15067,13 +15087,18 @@ routine01E76D:
 #_01E7F4: CLC
 #_01E7F5: ADC.w #$6200
 #_01E7F8: STA.w $0094
+
 #_01E7FB: LDA.w #$007F
 #_01E7FE: STA.w $0096
-#_01E801: LDA.w #$FE4D
+
+#_01E801: LDA.w #data07FE4D
 #_01E804: STA.w $0090
+
 #_01E807: LDA.w #$0007
 #_01E80A: STA.w $0092
+
 #_01E80D: JSR routine01E89E
+
 #_01E810: INC.w $0478
 #_01E813: LDA.w $0478
 #_01E816: CMP.w #$0010
@@ -15114,7 +15139,7 @@ routine01E76D:
 #_01E849: STA.w $0094
 #_01E84C: LDA.w #$007F
 #_01E84F: STA.w $0096
-#_01E852: LDA.w #$FA4D
+#_01E852: LDA.w #data07FA4D
 #_01E855: STA.w $0090
 #_01E858: LDA.w #$0007
 #_01E85B: STA.w $0092

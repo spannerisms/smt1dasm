@@ -1535,7 +1535,7 @@ routine0F8B94:
 
 ; TODO label for this
 #_0F8C2B: REP #$20
-#_0F8C2D: LDA.w #$FF9B
+#_0F8C2D: LDA.w #data08FF9B
 #_0F8C30: STA.w $00C3
 #_0F8C33: JSL WriteTextIndexW0A39_long
 

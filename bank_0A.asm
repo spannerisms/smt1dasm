@@ -2,7 +2,7 @@ org $0A8000
 
 ;===================================================================================================
 
-TextSets02:
+Message_02_Pointers:
 #_0A8000: dw Message_02_00_Pointers
 #_0A8002: dw Message_02_01_Pointers
 #_0A8004: dw Message_02_02_Pointers
@@ -5415,7 +5415,7 @@ Message_02_04_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_04_01:
 #_0AA266: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -6516,7 +6516,7 @@ Message_02_0A_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0A_01:
 #_0AA6BB: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -7869,7 +7869,7 @@ Message_02_0B_15:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_16:
 #_0AAC54: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -7991,7 +7991,7 @@ Message_02_0B_20:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_21:
 #_0AACCE: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -8372,7 +8372,7 @@ Message_02_0B_42:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_43:
 #_0AAE4B: db $D7, $01, $46 ; [set2] go to message 46 if RNG, 01 TODO
@@ -8651,7 +8651,7 @@ Message_02_0C_04:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0C_05:
 #_0AAF6B: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -10610,7 +10610,7 @@ Message_02_0D_4D:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0D_4E:
 #_0AB731: db $D4, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
@@ -10816,7 +10816,7 @@ Message_02_0D_64:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0D_65:
 #_0AB7F6: db $D6, $00, $6C ; [set2] go to message 6C if RNG, 00 TODO
@@ -10928,7 +10928,7 @@ Message_02_0E_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0E_01:
 #_0AB869: db $E8, $01 ; [set2] [COMMAND 48:01]
@@ -11392,7 +11392,7 @@ Message_02_0E_30:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0E_31:
 #_0ABA3E: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
@@ -13026,7 +13026,7 @@ Message_02_0F_50:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0F_51:
 #_0AC0CD: db $D7, $01, $5D ; [set2] go to message 5D if RNG, 01 TODO
@@ -22384,7 +22384,7 @@ Message_02_1E_00:
 #_0AF11B: db $FE, $46, $0B ; ext command 46: 0B TODO
 #_0AF11E: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_0AF121: db $D6, $00, $55, $70, $18 ; place sprite 55 in slot 00 at XY:{70,18}
-#_0AF126: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF126: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF12A: db $FA ; clear message box
 #_0AF12B: db $97, $2E, $2E, $51, $CF, $38, $29, $4B ; >ここを⎵とおら
 #_0AF133: db $52, $38, $31, $4D, $3E, $CF, $39, $3A ; んとするは⎵なに
@@ -22504,7 +22504,7 @@ Message_02_1E_04:
 #_0AF255: db $FE, $46, $09 ; ext command 46: 09 TODO
 #_0AF258: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_0AF25B: db $D6, $00, $16, $68, $18 ; place sprite 16 in slot 00 at XY:{68,18}
-#_0AF260: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF260: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF264: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
 #_0AF267: db $D6, $02, $17, $A0, $38 ; place sprite 17 in slot 02 at XY:{A0,38}
 #_0AF26C: db $2A, $44, $3D, $36, $2A, $26, $9A ; かみのつかい:
@@ -22569,7 +22569,7 @@ Message_02_1E_07:
 #_0AF2EE: db $D6, $01, $00 ; delete sprite in slot 01
 #_0AF2F1: db $D6, $02, $00 ; delete sprite in slot 02
 #_0AF2F4: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_0AF2F9: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF2F9: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF2FD: db $EE ; write lawful hero name
 #_0AF2FE: db $9A ; :
 #_0AF2FF: db $F9 ; new line
@@ -22616,7 +22616,7 @@ Message_02_1E_08:
 #_0AF376: db $FE, $46, $09 ; ext command 46: 09 TODO
 #_0AF379: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_0AF37C: db $D6, $01, $18, $60, $58 ; place sprite 18 in slot 01 at XY:{60,58}
-#_0AF381: db $FE, $45, $01 ; ext command 45: something 01, 01 TODO
+#_0AF381: db $FE, $45, $01, $01 ; ext command 45: something 01, 01 TODO
 #_0AF385: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
 #_0AF388: db $D6, $00, $19, $70, $38 ; place sprite 19 in slot 00 at XY:{70,38}
 #_0AF38D: db $5D, $64, $7B, $9A ; アクマ:
@@ -22679,7 +22679,7 @@ Message_02_1E_0B:
 #_0AF407: db $D6, $00, $00 ; delete sprite in slot 00
 #_0AF40A: db $D6, $01, $00 ; delete sprite in slot 01
 #_0AF40D: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_0AF412: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF412: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF416: db $EF ; write chaos hero name
 #_0AF417: db $9A ; :
 #_0AF418: db $F9 ; new line
@@ -22814,7 +22814,7 @@ Message_02_1E_0F:
 Message_02_1E_10:
 #_0AF539: db $FA ; clear message box
 #_0AF53A: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_0AF53F: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF53F: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF543: db $EE ; write lawful hero name
 #_0AF544: db $9A ; :
 #_0AF545: db $F9 ; new line
@@ -22828,7 +22828,7 @@ Message_02_1E_10:
 #_0AF55B: db $FE, $26, $02 ; ext command 26: something 02 TODO
 #_0AF55E: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_0AF561: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_0AF566: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF566: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF56A: db $EF ; write chaos hero name
 #_0AF56B: db $9A ; :
 #_0AF56C: db $F9 ; new line
@@ -22867,7 +22867,7 @@ Message_02_1E_13:
 #_0AF597: db $2B, $0A ; PARAMS FOR EXT30
 #_0AF599: db $FF ; END PARAMS FOR EXT30
 #_0AF59A: db $D6, $00, $1D, $60, $10 ; place sprite 1D in slot 00 at XY:{60,10}
-#_0AF59F: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF59F: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF5A3: db $D6, $01, $1A, $70, $28 ; place sprite 1A in slot 01 at XY:{70,28}
 #_0AF5A8: db $D6, $02, $1B, $48, $28 ; place sprite 1B in slot 02 at XY:{48,28}
 #_0AF5AD: db $D6, $13, $1B, $98, $28 ; place sprite 1B in slot 13 at XY:{98,28}
@@ -23059,7 +23059,7 @@ Message_02_1E_1A:
 #_0AF75F: db $2B, $0A ; PARAMS FOR EXT30
 #_0AF761: db $FF ; END PARAMS FOR EXT30
 #_0AF762: db $D6, $00, $1E, $78, $28 ; place sprite 1E in slot 00 at XY:{78,28}
-#_0AF767: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF767: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF76B: db $D2, $2F, $1F ; test progress bit $2F for message $1F
 #_0AF76E: db $ED ; write female protag name
 #_0AF76F: db $9A ; :
@@ -23205,7 +23205,7 @@ Message_02_1E_20:
 #_0AF8B3: db $D2, $20, $22 ; test progress bit $20 for message $22
 #_0AF8B6: db $D2, $06, $21 ; test progress bit $06 for message $21
 #_0AF8B9: db $D6, $00, $4D, $78, $28 ; place sprite 4D in slot 00 at XY:{78,28}
-#_0AF8BE: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_0AF8BE: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF8C2: db $3E, $3E, $29, $48, $9A ; ははおや:
 #_0AF8C7: db $F9 ; new line
 #_0AF8C8: db $BF, $7E, $4A, $94, $CF ; ダメよ!⎵

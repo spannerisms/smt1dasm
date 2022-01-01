@@ -211,7 +211,7 @@ routine038176:
 #_03819C: TYA
 #_03819D: AND.w #$00FF
 #_0381A0: STA.w $0A39
-#_0381A3: LDA.w #$FF9B
+#_0381A3: LDA.w #data08FF9B
 #_0381A6: STA.w $00C3
 #_0381A9: JSR WriteTextIndexW0A39
 #_0381AC: JSR routine0384F9
@@ -248,7 +248,7 @@ routine0381DC:
 #_0381E1: AND.w #$00FF
 #_0381E4: STA.w $0A39
 
-#_0381E7: LDA.w #$FF9B
+#_0381E7: LDA.w #data08FF9B
 #_0381EA: STA.w $00C3
 
 #_0381ED: LDA.w #$0008
@@ -484,16 +484,16 @@ RelocateTextPointer:
 #_03833F: RTS
 
 TextDataBanks:
-#_038340: db TextSets00>>16
-#_038341: db TextSets01>>16
-#_038342: db TextSets02>>16
-#_038343: db TextSets03>>16
+#_038340: db Message_00_Pointers>>16
+#_038341: db Message_01_Pointers>>16
+#_038342: db Message_02_Pointers>>16
+#_038343: db Message_03_Pointers>>16
 
 TextDataBankStarts:
-#_038344: dw TextSets00
-#_038346: dw TextSets01
-#_038348: dw TextSets02
-#_03834A: dw TextSets03
+#_038344: dw Message_00_Pointers
+#_038346: dw Message_01_Pointers
+#_038348: dw Message_02_Pointers
+#_03834A: dw Message_03_Pointers
 
 routine03834C:
 #_03834C: PHP
@@ -1413,8 +1413,8 @@ routine0388AD:
 #_0388D4: RTS
 
 data0388D5:
-#_0388D5: dw data09FD7C
-#_0388D7: dw data09FEF1
+#_0388D5: dw MessageSelectionPointers
+#_0388D7: dw BattleSelectionPointers
 
 ;===================================================================================================
 ; Read a 24 bit number
@@ -6228,7 +6228,7 @@ TextExtCMD_32:
 #_03B3C1: PHY
 
 #_03B3C2: REP #$20
-#_03B3C4: LDA.w #$FFC1
+#_03B3C4: LDA.w #data08FFC1
 #_03B3C7: STA.w $00C3
 
 #_03B3CA: SEP #$20
@@ -13725,7 +13725,7 @@ SetBF3BF9fromBFDpA:
 #_03E71B: SEP #$20
 
 .branch03E71D
-#_03E71D: CMP.w data03E74C,X
+#_03E71D: CMP.w ClassCutoffs,X
 #_03E720: BCC .branch03E728
 
 #_03E722: INX
@@ -13758,12 +13758,18 @@ SetBF3BF9fromBFDpA:
 #_03E748: SEP #$20
 #_03E74A: BRA .branch03E729
 
-data03E74C:
+;===================================================================================================
+
+; It seems that classes are in order
+; So class 00 is from 0 to 5, etc
+ClassCutoffs:
 #_03E74C: db $06,$0B,$13,$1F,$23,$2A,$30,$35
 #_03E754: db $39,$3E,$46,$4E,$59,$62,$72,$80
 #_03E75C: db $86,$8A,$94,$9A,$A1,$AC,$AF,$B3
 #_03E764: db $B9,$BD,$C2,$C9,$CD,$D3,$DC,$E5
 #_03E76C: db $EC,$F3,$F9,$FF
+
+;===================================================================================================
 
 data03E770:
 #_03E770: db $0F,$1E,$25,$25,$00,$25,$25,$03

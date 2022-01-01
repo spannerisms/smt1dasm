@@ -2,7 +2,7 @@ org $098000
 
 ;===================================================================================================
 
-TextSets01:
+Message_01_Pointers:
 #_098000: dw Message_01_00_Pointers
 #_098002: dw Message_01_01_Pointers
 #_098004: dw Message_01_02_Pointers
@@ -1483,7 +1483,7 @@ boss_23_name:
 #_098697: db $C2, $5E, $C5, $92, $70, $FF
 
 ; ペイルライダー | PEIRURAIDAー
-; 
+; Pale rider
 boss_24_name:
 #_09869D: db $CC, $5E, $85, $83, $5E, $BF, $5A, $FF
 
@@ -2430,7 +2430,7 @@ item_05_name:
 #_098A8A: db $45, $46, $26, $3D, $2A, $34, $39, $FF
 
 ; せいりゅうとう | SEIRIyuUTOU | Seiryu-to
-; 
+; Rectifier
 item_06_name:
 #_098A92: db $32, $26, $4C, $56, $27, $38, $27, $FF
 
@@ -2444,8 +2444,8 @@ item_07_name:
 item_08_name:
 #_098AA0: db $C4, $70, $85, $76, $8A, $7B, $5A, $FF
 
-; さんせつこん | SANSETUKON | 
-; San-setsu-kon
+; さんせつこん | SANSETUKON | San-setsu-kon
+; Three-section staff
 item_09_name:
 #_098AA8: db $2F, $52, $32, $36, $2E, $52, $FF
 
@@ -2460,7 +2460,7 @@ item_0B_name:
 #_098AB8: db $6D, $8D, $5A, $8A, $6B, $5A, $FF
 
 ; アセイミナイフ | ASEIMINAIHU | 
-; Athame knife
+; Swiss Army Knife
 item_0C_name:
 #_098ABF: db $5D, $6A, $5E, $7C, $71, $5E, $78, $FF
 
@@ -2476,6 +2476,7 @@ item_0E_name:
 
 ; ともえのなぎなた | TOMOENONAGINATA | 
 ; Tomoe's Naginata
+; Corkscrew?
 item_0F_name:
 #_098AD6: db $38, $47, $28, $3D, $39, $9D, $39, $34, $FF
 
@@ -2499,8 +2500,7 @@ item_12_name:
 item_13_name:
 #_098AF7: db $9E, $4E, $52, $3D, $7D, $6D, $FF
 
-; びぜんおさふね | BIZENOSAHUNE | 
-; Bizen-Osafune
+; びぜんおさふね | BIZENOSAHUNE | Bizen-Osafune
 item_14_name:
 #_098AFE: db $AC, $A4, $52, $29, $2F, $40, $3C, $FF
 
@@ -2535,7 +2535,7 @@ item_1A_name:
 #_098B30: db $C6, $84, $90, $5A, $71, $64, $FF
 
 ; とっこしょ | TOtsuKOSIyo | Tokkosho
-; Tokkosho
+; Vajra
 item_1B_name:
 #_098B37: db $38, $58, $2E, $30, $57, $FF
 
@@ -2555,12 +2555,12 @@ item_1E_name:
 #_098B4C: db $6B, $72, $92, $64, $C6, $86, $5A, $C3, $FF
 
 ; クラウソナス | KURAUSONASU | 
-; Cliamh Solais
+; Clioamh Solais
 item_1F_name:
 #_098B55: db $64, $83, $5F, $6B, $71, $69, $FF
 
-; しちせいけん | SITISEIKEN | 
-; Shichiseiken
+; しちせいけん | SITISEIKEN | Shichiseiken
+; Seven-Star Sword
 item_20_name:
 #_098B5C: db $30, $35, $32, $26, $2D, $52, $FF
 
@@ -2795,7 +2795,7 @@ item_4D_name:
 #_098CB8: db $86, $5A, $85, $B5, $8A, $FF
 
 ; メギドファイア | MEGIDOHUaIA | 
-; Megido fire
+; Megiddo Fire
 item_4E_name:
 #_098CBE: db $7E, $B6, $C3, $78, $8B, $5E, $5D, $FF
 
@@ -3658,17 +3658,17 @@ item_F8_name:
 #_0991AE: db $69, $85, $70, $3D, $36, $46, $FF
 
 ; アスタロトのはね | ASUTAROTONOHANE | 
-; Astaroth splash TODO
+; Astaroth feather
 item_F9_name:
 #_0991B5: db $5D, $69, $6C, $87, $70, $3D, $3E, $3C, $FF
 
 ; アリオクのきば | ARIOKUNOKIBA | 
-; Ariok's fang TODO
+; Ariok's fang
 item_FA_name:
 #_0991BE: db $5D, $84, $61, $64, $3D, $2B, $AB, $FF
 
 ; デビルリング | DEBIRURINGU | 
-; Devil ring TODO 
+; Devil ring
 item_FB_name:
 #_0991C6: db $C2, $C5, $85, $84, $8A, $B7, $FF
 
@@ -3684,7 +3684,8 @@ item_FD_name:
 #_0991D5: db $30, $47, $52, $3D, $9D, $57, $2C, $FF
 
 ; ￥のたば | ￥NOTABA | 
-; Cigarette TODO
+; Cigarette money?
+; "bundle of yen"?
 item_FE_name:
 #_0991DD: db $5B, $3D, $34, $AB, $FF
 
@@ -7276,7 +7277,7 @@ Message_01_03_2B:
 #_09B299: db $FE, $07, $20 ; ext command 07: draw buffered text then wait 31 frames
 #_09B29C: db $D5, $45 ; send $45 to APU
 #_09B29E: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_09B2A3: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B2A3: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B2A7: db $EE ; write lawful hero name
 #_09B2A8: db $9A ; :
 #_09B2A9: db $F9 ; new line
@@ -7341,7 +7342,7 @@ Message_01_03_2D:
 #_09B332: db $FE, $07, $60 ; ext command 07: draw buffered text then wait 95 frames
 #_09B335: db $D6, $00, $00 ; delete sprite in slot 00
 #_09B338: db $D6, $00, $17, $70, $38 ; place sprite 17 in slot 00 at XY:{70,38}
-#_09B33D: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B33D: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B341: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_09B344: db $D6, $00, $00 ; delete sprite in slot 00
 #_09B347: db $D6, $00, $17, $70, $38 ; place sprite 17 in slot 00 at XY:{70,38}
@@ -7372,7 +7373,7 @@ Message_01_03_2D:
 #_09B39D: db $26, $A1, $39, $26, $43, $30, $57, $27 ; いざないましょう
 #_09B3A5: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_09B3A8: db $FC ; wait for key and new line
-#_09B3A9: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B3A9: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B3AD: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_09B3B0: db $D6, $00, $00 ; delete sprite in slot 00
 #_09B3B3: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
@@ -7582,25 +7583,25 @@ Message_01_03_34:
 #_09B540: db $CF, $2A, $4B, $A6, $9C, $53, $53, $53 ; ⎵からだがぁぁぁ
 #_09B548: db $F2, $0B ; prewritten text 0B
 #_09B54A: db $FC ; wait for key and new line
-#_09B54B: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B54B: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B54F: db $FE, $07, $20 ; ext command 07: draw buffered text then wait 31 frames
 #_09B552: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
 #_09B557: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
-#_09B55A: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B55A: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B55E: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
 #_09B561: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
 #_09B566: db $FE, $07, $08 ; ext command 07: draw buffered text then wait 7 frames
-#_09B569: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B569: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B56D: db $FE, $07, $08 ; ext command 07: draw buffered text then wait 7 frames
 #_09B570: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
 #_09B575: db $FE, $07, $02 ; ext command 07: draw buffered text then wait 1 frames
-#_09B578: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B578: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B57C: db $FE, $07, $02 ; ext command 07: draw buffered text then wait 1 frames
 #_09B57F: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
 #_09B584: db $FE, $07, $02 ; ext command 07: draw buffered text then wait 1 frames
-#_09B587: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B587: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B58B: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
-#_09B590: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09B590: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B594: db $FA ; clear message box
 #_09B595: db $25, $4C, $9C, $38, $27, $CF, $2E, $4E ; ありがとう⎵これ
 #_09B59D: db $A9, $CF, $48, $58, $38, $CF, $30, $3C ; で⎵やっと⎵しね
@@ -8186,7 +8187,7 @@ Message_01_03_5A:
 Message_01_03_5B:
 #_09BA34: db $D2, $57, $5C ; test progress bit $57 for message $5C
 #_09BA37: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_09BA3C: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09BA3C: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BA40: db $29, $38, $2E, $9A ; おとこ:
 #_09BA44: db $F9 ; new line
 #_09BA45: db $2B, $26, $37, $2C, $4E, $CF, $29, $4E ; きいてくれ⎵おれ
@@ -8246,7 +8247,7 @@ Message_01_03_5C:
 Message_01_03_5D:
 #_09BAD0: db $D2, $57, $5E ; test progress bit $57 for message $5E
 #_09BAD3: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_09BAD8: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09BAD8: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BADC: db $29, $38, $2E, $9A ; おとこ:
 #_09BAE0: db $F9 ; new line
 #_09BAE1: db $F2, $51 ; prewritten text 51
@@ -8311,7 +8312,7 @@ Message_01_03_5E:
 Message_01_03_5F:
 #_09BB74: db $D2, $57, $60 ; test progress bit $57 for message $60
 #_09BB77: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_09BB7C: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09BB7C: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BB80: db $EE ; write lawful hero name
 #_09BB81: db $9A ; :
 #_09BB82: db $F9 ; new line
@@ -10293,7 +10294,7 @@ Message_01_05_11:
 #_09CC3E: db $4A ; よ
 #_09CC3F: db $F9 ; new line
 #_09CC40: db $2E, $3D ; この
-#_09CC42: db $F6 ; write class name from $506
+#_09CC42: db $F6 ; write class name from $0506
 #_09CC43: db $CF ; ⎵
 #_09CC44: db $F5 ; write demon name from $050A
 #_09CC45: db $CF, $44, $A3, $2A, $4B ; ⎵みずから
@@ -12154,7 +12155,7 @@ Message_01_00_1E:
 Message_01_00_1F:
 #_09DCE8: db $D5, $47 ; send $47 to APU
 #_09DCEA: db $D6, $00, $1E, $78, $28 ; place sprite 1E in slot 00 at XY:{78,28}
-#_09DCEF: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_09DCEF: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09DCF3: db $F2, $00 ; prewritten text 00
 #_09DCF5: db $3D, $26, $30, $2B, $9A ; のいしき:
 #_09DCFA: db $F9 ; new line
@@ -12838,7 +12839,7 @@ Message_01_06_0B:
 #_09E2D0: db $4A, $2C, $48, $58, $37, $2C, $4E, $34 ; よくやってくれた
 #_09E2D8: db $F9 ; new line
 #_09E2D9: db $2E, $3D, $CF ; この⎵
-#_09E2DC: db $F6 ; write class name from $506
+#_09E2DC: db $F6 ; write class name from $0506
 #_09E2DD: db $CF ; ⎵
 #_09E2DE: db $F5 ; write demon name from $050A
 #_09E2DF: db $9C ; が
@@ -12969,7 +12970,7 @@ Message_01_06_0E:
 #_09E424: db $3D, $CF, $26, $3D, $35 ; の⎵いのち
 #_09E429: db $F9 ; new line
 #_09E42A: db $2E, $3D, $CF ; この⎵
-#_09E42D: db $F6 ; write class name from $506
+#_09E42D: db $F6 ; write class name from $0506
 #_09E42E: db $CF ; ⎵
 #_09E42F: db $F5 ; write demon name from $050A
 #_09E430: db $9C ; が
@@ -13511,7 +13512,7 @@ Message_01_07_0B:
 #_09E93B: db $DE, $00, $00, $10, $00 ; [COMMAND DE:00,00,10,00]
 #_09E940: db $28, $52, $43, $A6, $26, $29, $27, $CF ; えんまだいおう⎵
 #_09E948: db $2E, $38, $CF ; こと⎵
-#_09E94B: db $F6 ; write class name from $506
+#_09E94B: db $F6 ; write class name from $0506
 #_09E94C: db $CF ; ⎵
 #_09E94D: db $F5 ; write demon name from $050A
 #_09E94E: db $9C ; が
@@ -14216,7 +14217,7 @@ Message_01_08_11:
 ; こんごとも よろしく・・・
 Message_01_08_12:
 #_09EF8D: db $50, $34, $30, $3E, $CF ; わたしは⎵
-#_09EF92: db $F6 ; write class name from $506
+#_09EF92: db $F6 ; write class name from $0506
 #_09EF93: db $CF ; ⎵
 #_09EF94: db $F5 ; write demon name from $050A
 #_09EF95: db $FC ; wait for key and new line
@@ -16217,7 +16218,8 @@ thingA_25_name:
 
 ;===================================================================================================
 
-data09FD7C:
+; TODO are these options maybe?
+MessageSelectionPointers:
 #_09FD7C: dw thingA_00_name
 #_09FD7E: dw thingA_01_name
 #_09FD80: dw thingA_02_name
@@ -16320,7 +16322,7 @@ thingB_0A_name:
 thingB_0B_name:
 #_09FE0B: db $42, $58, $38, $2C, $FF
 
-; ぶきを⎵おさめる | BUKIWO OSAMERU
+; ぶきを おさめる | BUKIWO OSAMERU
 ; 
 thingB_0C_name:
 #_09FE10: db $AD, $2B, $51, $CF, $29, $2F, $46, $4D, $FF
@@ -16452,7 +16454,7 @@ thingB_24_name:
 thingB_25_name:
 #_09FE9F: db $25, $2C, $30, $56, $FF
 
-; べつに⎵ようはな | BETUNI YOUHANA
+; べつに ようはな | BETUNI YOUHANA
 ; 
 thingB_26_name:
 #_09FEA4: db $AE, $36, $3A, $CF, $4A, $27, $3E, $39
@@ -16468,7 +16470,7 @@ thingB_27_name:
 thingB_28_name:
 #_09FEB4: db $25, $2B, $4B, $46, $4D, $FF
 
-; わらうのを⎵やめさせる | WARAUNOWO YAMESASERU
+; わらうのを やめさせる | WARAUNOWO YAMESASERU
 ; 
 thingB_29_name:
 #_09FEBA: db $50, $4B, $27, $3D, $51, $CF, $48, $46
@@ -16511,7 +16513,7 @@ thingB_30_name:
 
 ;===================================================================================================
 
-data09FEF1:
+BattleSelectionPointers:
 #_09FEF1: dw thingB_00_name
 #_09FEF3: dw thingB_01_name
 #_09FEF5: dw thingB_02_name

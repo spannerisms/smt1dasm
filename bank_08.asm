@@ -2,7 +2,7 @@ org $088000
 
 ;===================================================================================================
 
-TextSets03:
+Message_00_Pointers:
 #_088000: dw Message_00_00_Pointers
 #_088002: dw Message_00_01_Pointers
 #_088004: dw Message_00_02_Pointers
@@ -3039,13 +3039,18 @@ Message_00_02_CB:
 
 ; ジャンクや:
 ; «どうぐー どうぐー べんりな どうぐー»
-; かってやって ください
 Message_00_02_CC:
 #_08914F: db $BB, $8F, $8A, $64, $48, $9A ; ジャンクや:
 #_089155: db $F9 ; new line
 #_089156: db $F2, $73 ; prewritten text 73
 #_089158: db $F9 ; new line
 #_089159: db $FF ; end of message
+
+;===================================================================================================
+
+; Separate, unused message?
+; かってやって ください
+Message_08915A:
 #_08915A: db $2A, $58, $37, $48, $58, $37, $CF, $2C ; かってやって⎵く
 #_089162: db $A6, $2F, $26 ; ださい
 #_089165: db $F9 ; new line
@@ -4251,6 +4256,11 @@ Message_00_03_C3:
 #_089521: db $48, $4F, $27 ; やろう
 #_089524: db $F9 ; new line
 #_089525: db $FF ; end of message
+
+;===================================================================================================
+
+; Separate, unused message?
+Message_089526:
 #_089526: db $FE, $1D, $02, $01 ; ext command 1D: $02 $01 TODO
 
 ;===================================================================================================
@@ -6360,7 +6370,7 @@ Message_00_06_01:
 #_08A457: db $FE, $37 ; ext command 37: call 3 routines
 #_08A459: db $FE, $1C, $00 ; ext command 1C: $00 TODO
 #_08A45C: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_08A461: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08A461: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08A465: db $EE ; write lawful hero name
 #_08A466: db $9A ; :
 #_08A467: db $F9 ; new line
@@ -6373,7 +6383,7 @@ Message_00_06_01:
 #_08A47E: db $D6, $00, $00 ; delete sprite in slot 00
 #_08A481: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A484: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
-#_08A489: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08A489: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08A48D: db $EF ; write chaos hero name
 #_08A48E: db $9A ; :
 #_08A48F: db $F9 ; new line
@@ -6739,7 +6749,7 @@ Message_00_06_13:
 #_08A7A1: db $28, $28, $28, $58, $CF, $9E, $28, $28 ; えええっ⎵ぐええ
 #_08A7A9: db $28, $58 ; えっ
 #_08A7AB: db $FC ; wait for key and new line
-#_08A7AC: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08A7AC: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08A7B0: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A7B3: db $D6, $00, $00 ; delete sprite in slot 00
 #_08A7B6: db $DE, $00, $00, $E4, $01 ; [COMMAND DE:00,00,E4,01]
@@ -6748,7 +6758,7 @@ Message_00_06_13:
 #_08A7BF: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_08A7C2: db $D5, $3C ; send $3C to APU
 #_08A7C4: db $D4, $02 ; set text box size to 2
-#_08A7C6: db $F6 ; write class name from $506
+#_08A7C6: db $F6 ; write class name from $0506
 #_08A7C7: db $CF ; ⎵
 #_08A7C8: db $F5 ; write demon name from $050A
 #_08A7C9: db $9C, $CF, $A9, $34, $94 ; が⎵でた!
@@ -10012,7 +10022,7 @@ Message_00_09_3B:
 #_08C4A5: db $2A, $58, $34, $4B ; かったら
 #_08C4A9: db $F9 ; new line
 #_08C4AA: db $DE, $01, $00, $09, $01 ; [COMMAND DE:01,00,09,01]
-#_08C4AF: db $F6 ; write class name from $506
+#_08C4AF: db $F6 ; write class name from $0506
 #_08C4B0: db $CF ; ⎵
 #_08C4B1: db $F5 ; write demon name from $050A
 #_08C4B2: db $A9, $2F, $28, $CF, $40, $27, $26, $52 ; でさえ⎵ふういん
@@ -10136,7 +10146,7 @@ Message_00_09_3D:
 #_08C601: db $D2, $49, $41 ; test progress bit $49 for message $41
 #_08C604: db $D4, $02 ; set text box size to 2
 #_08C606: db $D5, $3C ; send $3C to APU
-#_08C608: db $F6 ; write class name from $506
+#_08C608: db $F6 ; write class name from $0506
 #_08C609: db $CF ; ⎵
 #_08C60A: db $F5 ; write demon name from $050A
 #_08C60B: db $9C, $CF, $A9, $34, $94 ; が⎵でた!
@@ -15068,7 +15078,7 @@ Message_00_0C_46:
 ; そして ぞくせいは いしにしたがう
 Message_00_0C_47:
 #_08F06C: db $D6, $00, $83, $70, $28 ; place sprite 83 in slot 00 at XY:{70,28}
-#_08F071: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F071: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F075: db $F2, $37 ; prewritten text 37
 #_08F077: db $9A ; :
 #_08F078: db $F9 ; new line
@@ -15097,7 +15107,7 @@ Message_00_0C_47:
 ; ころしたアクマに きをつけろ
 Message_00_0C_48:
 #_08F0C0: db $D6, $00, $83, $70, $28 ; place sprite 83 in slot 00 at XY:{70,28}
-#_08F0C5: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F0C5: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F0C9: db $F2, $37 ; prewritten text 37
 #_08F0CB: db $9A ; :
 #_08F0CC: db $F9 ; new line
@@ -15122,7 +15132,7 @@ Message_00_0C_48:
 ; ぞくせいは アクマのえいきょうを うける
 Message_00_0C_49:
 #_08F103: db $D6, $00, $83, $70, $28 ; place sprite 83 in slot 00 at XY:{70,28}
-#_08F108: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F108: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F10C: db $F2, $37 ; prewritten text 37
 #_08F10E: db $9A ; :
 #_08F10F: db $F9 ; new line
@@ -15145,7 +15155,7 @@ Message_00_0C_49:
 ; [MOMO]:
 Message_00_0C_4A:
 #_08F14C: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
-#_08F151: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F151: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F155: db $ED ; write female protag name
 #_08F156: db $9A ; :
 #_08F157: db $F9 ; new line
@@ -15156,7 +15166,7 @@ Message_00_0C_4A:
 ; おんな:
 Message_00_0C_4B:
 #_08F15C: db $D6, $00, $49, $78, $28 ; place sprite 49 in slot 00 at XY:{78,28}
-#_08F161: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F161: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F165: db $29, $52, $39, $9A ; おんな:
 #_08F169: db $F9 ; new line
 #_08F16A: db $FE, $1D, $02, $03 ; ext command 1D: $02 $03 TODO
@@ -15166,7 +15176,7 @@ Message_00_0C_4B:
 ; おとこ:
 Message_00_0C_4C:
 #_08F16E: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
-#_08F173: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F173: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F177: db $29, $38, $2E, $9A ; おとこ:
 #_08F17B: db $F9 ; new line
 #_08F17C: db $FE, $1D, $04, $03 ; ext command 1D: $04 $03 TODO
@@ -15175,14 +15185,14 @@ Message_00_0C_4C:
 
 Message_00_0C_4D:
 #_08F180: db $D6, $00, $4D, $78, $28 ; place sprite 4D in slot 00 at XY:{78,28}
-#_08F185: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F185: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F189: db $FE, $1D, $E3, $02 ; ext command 1D: $E3 $02 TODO
 
 ;===================================================================================================
 
 Message_00_0C_4E:
 #_08F18D: db $D6, $00, $4C, $78, $28 ; place sprite 4C in slot 00 at XY:{78,28}
-#_08F192: db $FE, $45, $00 ; ext command 45: something 00, 01 TODO
+#_08F192: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_08F196: db $D3, $74 ; go to message $74
 
 ;===================================================================================================
@@ -17215,37 +17225,37 @@ data08FF89:
 ;===================================================================================================
 
 data08FF9B:
-#_08FF9B: dw data08F4FE
-#_08FF9D: dw data08F504
-#_08FF9F: dw data08F50C
-#_08FFA1: dw data08F512
-#_08FFA3: dw data08F518
-#_08FFA5: dw data08F51C
-#_08FFA7: dw data08F521
-#_08FFA9: dw data08F525
-#_08FFAB: dw data08F52E
+#_08FF9B: dw Message_08F4FE
+#_08FF9D: dw Message_08F504
+#_08FF9F: dw Message_08F50C
+#_08FFA1: dw Message_08F512
+#_08FFA3: dw Message_08F518
+#_08FFA5: dw Message_08F51C
+#_08FFA7: dw Message_08F521
+#_08FFA9: dw Message_08F525
+#_08FFAB: dw Message_08F52E
 #_08FFAD: dw Message_08F536
-#_08FFAF: dw data08F53C
-#_08FFB1: dw data08F543
-#_08FFB3: dw data08F547
-#_08FFB5: dw data08F550
-#_08FFB7: dw data08F555
-#_08FFB9: dw data08F559
-#_08FFBB: dw data08F562
-#_08FFBD: dw data08F568
-#_08FFBF: dw data08F570
+#_08FFAF: dw Message_08F53C
+#_08FFB1: dw Message_08F543
+#_08FFB3: dw Message_08F547
+#_08FFB5: dw Message_08F550
+#_08FFB7: dw Message_08F555
+#_08FFB9: dw Message_08F559
+#_08FFBB: dw Message_08F562
+#_08FFBD: dw Message_08F568
+#_08FFBF: dw Message_08F570
 
 ;===================================================================================================
 
 data08FFC1:
-#_08FFC1: dw data08F576
-#_08FFC3: dw data08F57A
-#_08FFC5: dw data08F57E
-#_08FFC7: dw data08F586
-#_08FFC9: dw data08F591
-#_08FFCB: dw data08F599
-#_08FFCD: dw data08F5A1
-#_08FFCF: dw data08F5AB
+#_08FFC1: dw Message_08F576
+#_08FFC3: dw Message_08F57A
+#_08FFC5: dw Message_08F57E
+#_08FFC7: dw Message_08F586
+#_08FFC9: dw Message_08F591
+#_08FFCB: dw Message_08F599
+#_08FFCD: dw Message_08F5A1
+#_08FFCF: dw Message_08F5AB
 
 ; TODO ????
 #_08FFD1: db $F5,$59,$F5,$60,$F5,$64,$F5,$6D
