@@ -98,7 +98,7 @@ $02:C92F - edit and exit menu for testing sfx/music
 0x5F - "Ending"
 0x60 - Null pointer crash
 0x61 - level up again?
-0x62+ invalid pointers
+0x62+  invalid pointers
 
 what's at $7000?
 

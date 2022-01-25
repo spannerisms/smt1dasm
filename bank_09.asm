@@ -1772,626 +1772,626 @@ class_26_name:
 ;===================================================================================================
 ; Spell names
 ;===================================================================================================
-SpellNames:
+SkillNames:
 
 ; アギ | AGI
 ; 
-spell_00_name:
+skill_00_name:
 #_0987D2: db $5D, $B6, $FF
 
 ; アギラオ | AGIRAO
 ; 
-spell_01_name:
+skill_01_name:
 #_0987D5: db $5D, $B6, $83, $61, $FF
 
 ; マハラギ | MAHARAGI
 ; 
-spell_02_name:
+skill_02_name:
 #_0987DA: db $7B, $76, $83, $B6, $FF
 
 ; マハラギオン | MAHARAGION
 ; 
-spell_03_name:
+skill_03_name:
 #_0987DF: db $7B, $76, $83, $B6, $61, $8A, $FF
 
 ; ブフ | BUHU
 ; 
-spell_04_name:
+skill_04_name:
 #_0987E6: db $C6, $78, $FF
 
 ; ブフーラ | BUHUーRA
 ; 
-spell_05_name:
+skill_05_name:
 #_0987E9: db $C6, $78, $5A, $83, $FF
 
 ; マハーブフ | MAHAーBUHU
 ; 
-spell_06_name:
+skill_06_name:
 #_0987EE: db $7B, $76, $5A, $C6, $78, $FF
 
 ; マハブフーラ | MAHABUHUーRA
 ; 
-spell_07_name:
+skill_07_name:
 #_0987F4: db $7B, $76, $C6, $78, $5A, $83, $FF
 
 ; ジオ | ZIO
 ; 
-spell_08_name:
+skill_08_name:
 #_0987FB: db $BB, $61, $FF
 
 ; ジオンガ | ZIONGA
 ; 
-spell_09_name:
+skill_09_name:
 #_0987FE: db $BB, $61, $8A, $B5, $FF
 
 ; マハジオ | MAHAZIO
 ; 
-spell_0A_name:
+skill_0A_name:
 #_098803: db $7B, $76, $BB, $61, $FF
 
 ; マハジオンガ | MAHAZIONGA
 ; 
-spell_0B_name:
+skill_0B_name:
 #_098808: db $7B, $76, $BB, $61, $8A, $B5, $FF
 
 ; ザン | ZAN
 ; 
-spell_0C_name:
+skill_0C_name:
 #_09880F: db $BA, $8A, $FF
 
 ; ザンマ | ZANMA
 ; 
-spell_0D_name:
+skill_0D_name:
 #_098812: db $BA, $8A, $7B, $FF
 
 ; マハザン | MAHAZAN
 ; 
-spell_0E_name:
+skill_0E_name:
 #_098816: db $7B, $76, $BA, $8A, $FF
 
 ; マハザンマ | MAHAZANMA
 ; 
-spell_0F_name:
+skill_0F_name:
 #_09881B: db $7B, $76, $BA, $8A, $7B, $FF
 
 ; テンタラフー | TENTARAHUー
 ; 
-spell_10_name:
+skill_10_name:
 #_098821: db $6F, $8A, $6C, $83, $78, $5A, $FF
 
 ; リムドーラ | RIMUDOーRA
 ; 
-spell_11_name:
+skill_11_name:
 #_098828: db $84, $7D, $C3, $5A, $83, $FF
 
 ; メギド | MEGIDO
 ; 
-spell_12_name:
+skill_12_name:
 #_09882E: db $7E, $B6, $C3, $FF
 
 ; メギドラオン | MEGIDORAON
 ; 
-spell_13_name:
+skill_13_name:
 #_098832: db $7E, $B6, $C3, $83, $61, $8A, $FF
 
 ; マトラポー | MATORAPOー
 ; 
-spell_14_name:
+skill_14_name:
 #_098839: db $7B, $70, $83, $CD, $5A, $FF
 
 ; ハンマ | HANMA
 ; 
-spell_15_name:
+skill_15_name:
 #_09883F: db $76, $8A, $7B, $FF
 
 ; マハンマ | MAHANMA
 ; 
-spell_16_name:
+skill_16_name:
 #_098843: db $7B, $76, $8A, $7B, $FF
 
 ; ムド | MUDO
 ; 
-spell_17_name:
+skill_17_name:
 #_098848: db $7D, $C3, $FF
 
 ; ムドオン | MUDOON
 ; 
-spell_18_name:
+skill_18_name:
 #_09884B: db $7D, $C3, $61, $8A, $FF
 
 ; ドルミナー | DORUMINAー
 ; 
-spell_19_name:
+skill_19_name:
 #_098850: db $C3, $85, $7C, $71, $5A, $FF
 
 ; シバブー | SIBABUー
 ; 
-spell_1A_name:
+skill_1A_name:
 #_098856: db $68, $C4, $C6, $5A, $FF
 
 ; プリンパ | PURINPA
 ; 
-spell_1B_name:
+skill_1B_name:
 #_09885B: db $CB, $84, $8A, $C9, $FF
 
 ; ハピルマ | HAPIRUMA
 ; 
-spell_1C_name:
+skill_1C_name:
 #_098860: db $76, $CA, $85, $7B, $FF
 
 ; マリンカリン | MARINKARIN
 ; 
-spell_1D_name:
+skill_1D_name:
 #_098865: db $7B, $84, $8A, $62, $84, $8A, $FF
 
 ; マカジャマ | MAKAZIyaMA
 ; 
-spell_1E_name:
+skill_1E_name:
 #_09886C: db $7B, $62, $BB, $8F, $7B, $FF
 
 ; マカトランダ | MAKATORANDA
 ; 
-spell_1F_name:
+skill_1F_name:
 #_098872: db $7B, $62, $70, $83, $8A, $BF, $FF
 
 ; タルンダ | TARUNDA
 ; 
-spell_20_name:
+skill_20_name:
 #_098879: db $6C, $85, $8A, $BF, $FF
 
 ; ラクンダ | RAKUNDA
 ; 
-spell_21_name:
+skill_21_name:
 #_09887E: db $83, $64, $8A, $BF, $FF
 
 ; スクンダ | SUKUNDA
 ; 
-spell_22_name:
+skill_22_name:
 #_098883: db $69, $64, $8A, $BF, $FF
 
 ; タルカジャ | TARUKAZIya
 ; 
-spell_23_name:
+skill_23_name:
 #_098888: db $6C, $85, $62, $BB, $8F, $FF
 
 ; ラクカジャ | RAKUKAZIya
 ; 
-spell_24_name:
+skill_24_name:
 #_09888E: db $83, $64, $62, $BB, $8F, $FF
 
 ; スクカジャ | SUKUKAZIya
 ; 
-spell_25_name:
+skill_25_name:
 #_098894: db $69, $64, $62, $BB, $8F, $FF
 
 ; マカカジャ | MAKAKAZIya
 ; 
-spell_26_name:
+skill_26_name:
 #_09889A: db $7B, $62, $62, $BB, $8F, $FF
 
 ; テトラジャ | TETORAZIya
 ; 
-spell_27_name:
+skill_27_name:
 #_0988A0: db $6F, $70, $83, $BB, $8F, $FF
 
 ; マカラカーン | MAKARAKAーN
 ; 
-spell_28_name:
+skill_28_name:
 #_0988A6: db $7B, $62, $83, $62, $5A, $8A, $FF
 
 ; テトラカーン | TETORAKAーN
 ; 
-spell_29_name:
+skill_29_name:
 #_0988AD: db $6F, $70, $83, $62, $5A, $8A, $FF
 
 ; ディア | DEiA
 ; 
-spell_2A_name:
+skill_2A_name:
 #_0988B4: db $C2, $8C, $5D, $FF
 
 ; ディアラマ | DEiARAMA
 ; 
-spell_2B_name:
+skill_2B_name:
 #_0988B8: db $C2, $8C, $5D, $83, $7B, $FF
 
 ; ディアラハン | DEiARAHAN
 ; 
-spell_2C_name:
+skill_2C_name:
 #_0988BE: db $C2, $8C, $5D, $83, $76, $8A, $FF
 
 ; メディア | MEDEiA
 ; 
-spell_2D_name:
+skill_2D_name:
 #_0988C5: db $7E, $C2, $8C, $5D, $FF
 
 ; メディアラハン | MEDEiARAHAN
 ; 
-spell_2E_name:
+skill_2E_name:
 #_0988CA: db $7E, $C2, $8C, $5D, $83, $76, $8A, $FF
 
 ; パトラ | PATORA
 ; 
-spell_2F_name:
+skill_2F_name:
 #_0988D2: db $C9, $70, $83, $FF
 
 ; ペンパトラ | PENPATORA
 ; 
-spell_30_name:
+skill_30_name:
 #_0988D6: db $CC, $8A, $C9, $70, $83, $FF
 
 ; ポズムディ | POZUMUDEi
 ; 
-spell_31_name:
+skill_31_name:
 #_0988DC: db $CD, $BC, $7D, $C2, $8C, $FF
 
 ; パララディ | PARARADEi
 ; 
-spell_32_name:
+skill_32_name:
 #_0988E2: db $C9, $83, $83, $C2, $8C, $FF
 
 ; ペトラディ | PETORADEi
 ; 
-spell_33_name:
+skill_33_name:
 #_0988E8: db $CC, $70, $83, $C2, $8C, $FF
 
 ; リカーム | RIKAーMU
 ; 
-spell_34_name:
+skill_34_name:
 #_0988EE: db $84, $62, $5A, $7D, $FF
 
 ; サマリカーム | SAMARIKAーMU
 ; 
-spell_35_name:
+skill_35_name:
 #_0988F3: db $67, $7B, $84, $62, $5A, $7D, $FF
 
 ; リカームドラ | RIKAーMUDORA
 ; 
-spell_36_name:
+skill_36_name:
 #_0988FA: db $84, $62, $5A, $7D, $C3, $83, $FF
 
 ; マカトラ | MAKATORA
 ; 
-spell_37_name:
+skill_37_name:
 #_098901: db $7B, $62, $70, $83, $FF
 
 ; マッパー | MAtsuPAー
 ; 
-spell_38_name:
+skill_38_name:
 #_098906: db $7B, $92, $C9, $5A, $FF
 
 ; トラエスト | TORAESUTO
 ; 
-spell_39_name:
+skill_39_name:
 #_09890B: db $70, $83, $60, $69, $70, $FF
 
 ; トラポート | TORAPOーTO
 ; 
-spell_3A_name:
+skill_3A_name:
 #_098911: db $70, $83, $CD, $5A, $70, $FF
 
 ; トラフーリ | TORAHUーRI
 ; 
-spell_3B_name:
+skill_3B_name:
 #_098917: db $70, $83, $78, $5A, $84, $FF
 
 ; エストマ | ESUTOMA
 ; 
-spell_3C_name:
+skill_3C_name:
 #_09891D: db $60, $69, $70, $7B, $FF
 
 ; サバトマ | SABATOMA
 ; 
-spell_3D_name:
+skill_3D_name:
 #_098922: db $67, $C4, $70, $7B, $FF
 
 ; サバトマオン | SABATOMAON
 ; 
-spell_3E_name:
+skill_3E_name:
 #_098927: db $67, $C4, $70, $7B, $61, $8A, $FF
 
 ; null
-spell_3F_name:
+skill_3F_name:
 #_09892E: db $FF
 
 ; パララアイ | PARARAAI
 ; 
-spell_40_name:
+skill_40_name:
 #_09892F: db $C9, $83, $83, $5D, $5E, $FF
 
 ; ペトラアイ | PETORAAI
 ; 
-spell_41_name:
+skill_41_name:
 #_098935: db $CC, $70, $83, $5D, $5E, $FF
 
 ; しへのみち | SIHENOMITI
 ; 
-spell_42_name:
+skill_42_name:
 #_09893B: db $30, $41, $3D, $44, $35, $FF
 
 ; ブラッドスチール | BURAtsuDOSUTIーRU
 ; 
-spell_43_name:
+skill_43_name:
 #_098941: db $C6, $83, $92, $C3, $69, $6D, $5A, $85, $FF
 
 ; バエルののろい | BAERUNONOROI
 ; 
-spell_44_name:
+skill_44_name:
 #_09894A: db $C4, $60, $85, $3D, $3D, $4F, $26, $FF
 
 ; セクシーダンス | SEKUSIーDANSU
 ; 
-spell_45_name:
+skill_45_name:
 #_098952: db $6A, $64, $68, $5A, $BF, $8A, $69, $FF
 
 ; ハッピーステップ | HAtsuPIーSUTEtsuPU
 ; 
-spell_46_name:
+skill_46_name:
 #_09895A: db $76, $92, $CA, $5A, $69, $6F, $92, $CB, $FF
 
 ; しあわせのうた | SIAWASENOUTA
 ; 
-spell_47_name:
+skill_47_name:
 #_098963: db $30, $25, $50, $32, $3D, $27, $34, $FF
 
 ; こもりうた | KOMORIUTA
 ; 
-spell_48_name:
+skill_48_name:
 #_09896B: db $2E, $47, $4C, $27, $34, $FF
 
 ; パニックボイス | PANItsuKUBOISU
 ; 
-spell_49_name:
+skill_49_name:
 #_098971: db $C9, $72, $92, $64, $C8, $5E, $69, $FF
 
 ; バインドボイス | BAINDOBOISU
 ; 
-spell_4A_name:
+skill_4A_name:
 #_098979: db $C4, $5E, $8A, $C3, $C8, $5E, $69, $FF
 
 ; あくまのキス | AKUMANOKISU
 ; 
-spell_4B_name:
+skill_4B_name:
 #_098981: db $25, $2C, $43, $3D, $63, $69, $FF
 
 ; あくまのキス | AKUMANOKISU
 ; 
-spell_4C_name:
+skill_4C_name:
 #_098988: db $25, $2C, $43, $3D, $63, $69, $FF
 
 ; デビルスマイル | DEBIRUSUMAIRU
 ; 
-spell_4D_name:
+skill_4D_name:
 #_09898F: db $C2, $C5, $85, $69, $7B, $5E, $85, $FF
 
 ; ファイアブレス | HUaIABURESU
 ; 
-spell_4E_name:
+skill_4E_name:
 #_098997: db $78, $8B, $5E, $5D, $C6, $86, $69, $FF
 
 ; アイスブレス | AISUBURESU
 ; 
-spell_4F_name:
+skill_4F_name:
 #_09899F: db $5D, $5E, $69, $C6, $86, $69, $FF
 
 ; どくガスブレス | DOKUGASUBURESU
 ; 
-spell_50_name:
+skill_50_name:
 #_0989A6: db $AA, $2C, $B5, $69, $C6, $86, $69, $FF
 
 ; フォッグブレス | HUotsuGUBURESU
 ; 
-spell_51_name:
+skill_51_name:
 #_0989AE: db $78, $8E, $92, $B7, $C6, $86, $69, $FF
 
 ; ファイアボール | HUaIABOーRU
 ; 
-spell_52_name:
+skill_52_name:
 #_0989B6: db $78, $8B, $5E, $5D, $C8, $5A, $85, $FF
 
 ; でんげき | DENGEKI
 ; 
-spell_53_name:
+skill_53_name:
 #_0989BE: db $A9, $52, $9F, $2B, $FF
 
 ; デスタッチ | DESUTAtsuTI
 ; 
-spell_54_name:
+skill_54_name:
 #_0989C3: db $C2, $69, $6C, $92, $6D, $FF
 
 ; みずのかべ | MIZUNOKABE
 ; 
-spell_55_name:
+skill_55_name:
 #_0989C9: db $44, $A3, $3D, $2A, $AE, $FF
 
 ; ほのおのかべ | HONOONOKABE
 ; 
-spell_56_name:
+skill_56_name:
 #_0989CF: db $42, $3D, $29, $3D, $2A, $AE, $FF
 
 ; かみつき | KAMITUKI
 ; 
-spell_57_name:
+skill_57_name:
 #_0989D6: db $2A, $44, $36, $2B, $FF
 
 ; どくかみつき | DOKUKAMITUKI
 ; 
-spell_58_name:
+skill_58_name:
 #_0989DB: db $AA, $2C, $2A, $44, $36, $2B, $FF
 
 ; まひかみつき | MAHIKAMITUKI
 ; 
-spell_59_name:
+skill_59_name:
 #_0989E2: db $43, $3F, $2A, $44, $36, $2B, $FF
 
 ; せきかかみつき | SEKIKAKAMITUKI
 ; 
-spell_5A_name:
+skill_5A_name:
 #_0989E9: db $32, $2B, $2A, $2A, $44, $36, $2B, $FF
 
 ; みわくかみつき | MIWAKUKAMITUKI
 ; 
-spell_5B_name:
+skill_5B_name:
 #_0989F1: db $44, $50, $2C, $2A, $44, $36, $2B, $FF
 
 ; ひっかき | HItsuKAKI
 ; 
-spell_5C_name:
+skill_5C_name:
 #_0989F9: db $3F, $58, $2A, $2B, $FF
 
 ; どくひっかき | DOKUHItsuKAKI
 ; 
-spell_5D_name:
+skill_5D_name:
 #_0989FE: db $AA, $2C, $3F, $58, $2A, $2B, $FF
 
 ; まひひっかき | MAHIHItsuKAKI
 ; 
-spell_5E_name:
+skill_5E_name:
 #_098A05: db $43, $3F, $3F, $58, $2A, $2B, $FF
 
 ; どくばり | DOKUBARI
 ; 
-spell_5F_name:
+skill_5F_name:
 #_098A0C: db $AA, $2C, $AB, $4C, $FF
 
 ; まひばり | MAHIBARI
 ; 
-spell_60_name:
+skill_60_name:
 #_098A11: db $43, $3F, $AB, $4C, $FF
 
 ; はばたき | HABATAKI
 ; 
-spell_61_name:
+skill_61_name:
 #_098A16: db $3E, $AB, $34, $2B, $FF
 
 ; つくもばり | TUKUMOBARI
 ; 
-spell_62_name:
+skill_62_name:
 #_098A1B: db $36, $2C, $47, $AB, $4C, $FF
 
 ; たいあたり | TAIATARI
 ; 
-spell_63_name:
+skill_63_name:
 #_098A21: db $34, $26, $25, $34, $4C, $FF
 
 ; まきつき | MAKITUKI
 ; 
-spell_64_name:
+skill_64_name:
 #_098A27: db $43, $2B, $36, $2B, $FF
 
 ; あばれまわり | ABAREMAWARI
 ; 
-spell_65_name:
+skill_65_name:
 #_098A2C: db $25, $AB, $4E, $43, $50, $4C, $FF
 
 ; おしつぶし | OSITUBUSI
 ; 
-spell_66_name:
+skill_66_name:
 #_098A33: db $29, $30, $36, $AD, $30, $FF
 
 ; ひっさつ | HItsuSATU
 ; 
-spell_67_name:
+skill_67_name:
 #_098A39: db $3F, $58, $2F, $36, $FF
 
 ; テール | TEーRU
 ; 
-spell_68_name:
+skill_68_name:
 #_098A3E: db $6F, $5A, $85, $FF
 
 ; かいしん | KAISIN
 ; 
-spell_69_name:
+skill_69_name:
 #_098A42: db $2A, $26, $30, $52, $FF
 
 ; null
-spell_6A_name:
+skill_6A_name:
 #_098A47: db $FF
 
 ; null
-spell_6B_name:
+skill_6B_name:
 #_098A48: db $FF
 
 ; null
-spell_6C_name:
+skill_6C_name:
 #_098A49: db $FF
 
 ; null
-spell_6D_name:
+skill_6D_name:
 #_098A4A: db $FF
 
 ; null
-spell_6E_name:
+skill_6E_name:
 #_098A4B: db $FF
 
 ; null
-spell_6F_name:
+skill_6F_name:
 #_098A4C: db $FF
 
 ; null
-spell_70_name:
+skill_70_name:
 #_098A4D: db $FF
 
 ; null
-spell_71_name:
+skill_71_name:
 #_098A4E: db $FF
 
 ; null
-spell_72_name:
+skill_72_name:
 #_098A4F: db $FF
 
 ; まもる | MAMORU
 ; 
-spell_73_name:
+skill_73_name:
 #_098A50: db $43, $47, $4D, $FF
 
 ; にける | NIKERU
 ; 
-spell_74_name:
+skill_74_name:
 #_098A54: db $3A, $2D, $4D, $FF
 
 ; なかまよび | NAKAMAYOBI
 ; 
-spell_75_name:
+skill_75_name:
 #_098A58: db $39, $2A, $43, $4A, $AC, $FF
 
 ; null
-spell_76_name:
+skill_76_name:
 #_098A5E: db $FF
 
 ; null
-spell_77_name:
+skill_77_name:
 #_098A5F: db $FF
 
 ; null
-spell_78_name:
+skill_78_name:
 #_098A60: db $FF
 
 ; null
-spell_79_name:
+skill_79_name:
 #_098A61: db $FF
 
 ; null
-spell_7A_name:
+skill_7A_name:
 #_098A62: db $FF
 
 ; null
-spell_7B_name:
+skill_7B_name:
 #_098A63: db $FF
 
 ; null
-spell_7C_name:
+skill_7C_name:
 #_098A64: db $FF
 
 ; null
-spell_7D_name:
+skill_7D_name:
 #_098A65: db $FF
 
 ; null
-spell_7E_name:
+skill_7E_name:
 #_098A66: db $FF
 
 ; null
-spell_7F_name:
+skill_7F_name:
 #_098A67: db $FF
 
 ;===================================================================================================
@@ -3752,9 +3752,9 @@ drink_08_name:
 ; «・・・»さあ くるんだ
 Message_01_01_00:
 #_099224: db $FE, $2A ; ext command 2A: call routine 02E87C TODO
-#_099226: db $D2, $6D, $01 ; test progress bit $6D for message $01
-#_099229: db $D5, $46 ; send $46 to APU
-#_09922B: db $DE, $01, $00, $1C, $01 ; [COMMAND DE:01,00,1C,01]
+#_099226: db $D2, $6D, $01 ; test progress bit 6D for message 01
+#_099229: db $D5, $46 ; send 46 to APU
+#_09922B: db $DE, $01, $00, $1C, $01 ; load 1x demon 011C
 #_099230: db $E4, $00 ; load demon $00
 #_099232: db $EF ; write chaos hero name
 #_099233: db $9A ; :
@@ -3786,9 +3786,9 @@ Message_01_01_00:
 #_099287: db $FE, $1C, $01 ; ext command 1C: $01 TODO
 #_09928A: db $FA ; clear message box
 #_09928B: db $FE, $1B, $6D, $96, $0F, $00, $08, $1F ; ext command 1B: 6D,96,0F,00,08,1F
-#_099293: db $FE, $37 ; ext command 37: call 3 routines
+#_099293: db $FE, $37 ; ext command 37: reload dungeon view
 #_099295: db $FE, $1C, $00 ; ext command 1C: $00 TODO
-#_099298: db $D3, $02 ; go to message $02
+#_099298: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -3833,7 +3833,7 @@ Message_01_01_01:
 ; つまり おまえの さいばんが はじまるんだ
 ; くれぐれも ヤマさまに しつれいのないようにな
 Message_01_01_02:
-#_0992F7: db $D2, $6D, $03 ; test progress bit $6D for message $03
+#_0992F7: db $D2, $6D, $03 ; test progress bit 6D for message 03
 #_0992FA: db $EF ; write chaos hero name
 #_0992FB: db $9A ; :
 #_0992FC: db $F9 ; new line
@@ -3862,7 +3862,7 @@ Message_01_01_02:
 #_099354: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_099356: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
 #_09935B: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
-#_09935E: db $D3, $05 ; go to message $05
+#_09935E: db $D3, $05 ; go to message 05
 
 ;===================================================================================================
 
@@ -3873,10 +3873,10 @@ Message_01_01_03:
 #_099365: db $97, $80, $7B, $3D, $CF, $2F, $AB, $2B ; >ヤマの⎵さばき
 #_09936D: db $3D, $CF, $43 ; の⎵ま
 #_099370: db $F9 ; new line
-#_099371: db $D2, $6F, $04 ; test progress bit $6F for message $04
-#_099374: db $D2, $6E, $04 ; test progress bit $6E for message $04
+#_099371: db $D2, $6F, $04 ; test progress bit 6F for message 04
+#_099374: db $D2, $6E, $04 ; test progress bit 6E for message 04
 #_099377: db $F2, $68 ; prewritten text 68
-#_099379: db $F8, $05 ; YES/NO - go to message $05 if YES
+#_099379: db $F8, $05 ; YES/NO - go to message 05 if YES
 #_09937B: db $FF ; end of message
 
 ;===================================================================================================
@@ -3894,7 +3894,7 @@ Message_01_01_05:
 #_099385: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_099388: db $D6, $00, $00 ; delete sprite in slot 00
 #_09938B: db $FE, $1A, $6D, $97, $0F, $00, $08, $1F ; ext command 1A: 6D,97,0F,00,08,1F
-#_099393: db $D3, $09 ; go to message $09
+#_099393: db $D3, $09 ; go to message 09
 
 ;===================================================================================================
 
@@ -3907,14 +3907,14 @@ Message_01_01_06:
 #_099398: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09939A: db $D4, $03 ; set text box size to 3
 #_09939C: db $FE, $1A, $6D, $16, $0F, $00, $08, $1F ; ext command 1A: 6D,16,0F,00,08,1F
-#_0993A4: db $FE, $37 ; ext command 37: call 3 routines
+#_0993A4: db $FE, $37 ; ext command 37: reload dungeon view
 #_0993A6: db $FE, $1C, $00 ; ext command 1C: $00 TODO
-#_0993A9: db $DE, $01, $00, $1C, $01 ; [COMMAND DE:01,00,1C,01]
+#_0993A9: db $DE, $01, $00, $1C, $01 ; load 1x demon 011C
 #_0993AE: db $E4, $00 ; load demon $00
 #_0993B0: db $EF ; write chaos hero name
 #_0993B1: db $9A ; :
 #_0993B2: db $F9 ; new line
-#_0993B3: db $D2, $6E, $07 ; test progress bit $6E for message $07
+#_0993B3: db $D2, $6E, $07 ; test progress bit 6E for message 07
 #_0993B6: db $4A, $2A, $58, $34, $39, $CF, $45, $A1 ; よかったな⎵むざ
 #_0993BE: db $26, $A9 ; いで
 #_0993C0: db $F2, $0B ; prewritten text 0B
@@ -3929,7 +3929,7 @@ Message_01_01_06:
 #_0993E2: db $43, $34, $25, $29, $27, $A4 ; またあおうぜ
 #_0993E8: db $FC ; wait for key and new line
 #_0993E9: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_0993EB: db $D3, $08 ; go to message $08
+#_0993EB: db $D3, $08 ; go to message 08
 
 ;===================================================================================================
 
@@ -3984,14 +3984,14 @@ Message_01_01_08:
 ; さばきを おこなう
 Message_01_01_09:
 #_09945E: db $D4, $03 ; set text box size to 3
-#_099460: db $D5, $46 ; send $46 to APU
+#_099460: db $D5, $46 ; send 46 to APU
 #_099462: db $D7, $2C ; load scene 2C
-#_099464: db $DE, $01, $00, $0E, $01 ; [COMMAND DE:01,00,0E,01]
+#_099464: db $DE, $01, $00, $0E, $01 ; load 1x demon 010E
 #_099469: db $E4, $00 ; load demon $00
 #_09946B: db $F5 ; write demon name from $050A
 #_09946C: db $9A ; :
 #_09946D: db $F9 ; new line
-#_09946E: db $D2, $72, $14 ; test progress bit $72 for message $14
+#_09946E: db $D2, $72, $14 ; test progress bit 72 for message 14
 #_099471: db $2E, $4E, $4A, $4C, $CF, $5D, $64, $7B ; これより⎵アクマ
 #_099479: db $36, $2A, $26, $CF ; つかい⎵
 #_09947D: db $F0 ; write player name
@@ -4000,7 +4000,7 @@ Message_01_01_09:
 #_099480: db $2F, $AB, $2B, $51, $CF, $29, $2E, $39 ; さばきを⎵おこな
 #_099488: db $27 ; う
 #_099489: db $FC ; wait for key and new line
-#_09948A: db $E9, $04, $18 ; go to message $18 maybe TODO
+#_09948A: db $E9, $04, $18 ; go to message 18 maybe TODO
 
 ;===================================================================================================
 
@@ -4043,25 +4043,25 @@ Message_01_01_0A:
 #_099503: db $30, $2E, $38, $CF, $39, $9C, $2B, $3A ; しこと⎵ながきに
 #_09950B: db $CF, $50, $34, $58, $37, $29, $4D ; ⎵わたっておる
 #_099512: db $FC ; wait for key and new line
-#_099513: db $D0, $6D ; set progress bit $6D
-#_099515: db $D2, $83, $0B ; test progress bit $83 for message $0B
-#_099518: db $D3, $0C ; go to message $0C
+#_099513: db $D0, $6D ; set progress bit 6D
+#_099515: db $D2, $83, $0B ; test progress bit 83 for message 0B
+#_099518: db $D3, $0C ; go to message 0C
 
 ;===================================================================================================
 
 Message_01_01_0B:
-#_09951A: db $D0, $8E ; set progress bit $8E
+#_09951A: db $D0, $8E ; set progress bit 8E
 
 ;===================================================================================================
 
 Message_01_01_0C:
-#_09951C: db $D2, $78, $0D ; test progress bit $78 for message $0D
-#_09951F: db $D3, $0E ; go to message $0E
+#_09951C: db $D2, $78, $0D ; test progress bit 78 for message 0D
+#_09951F: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
 Message_01_01_0D:
-#_099521: db $D0, $8F ; set progress bit $8F
+#_099521: db $D0, $8F ; set progress bit 8F
 
 ;===================================================================================================
 
@@ -4111,7 +4111,7 @@ Message_01_01_0E:
 #_0995AB: db $F9 ; new line
 #_0995AC: db $50, $9C, $CF, $34, $3D, $44, $CF, $2B ; わが⎵たのみ⎵き
 #_0995B4: db $2B, $26, $4E, $4D, $2A, $95 ; きいれるか?
-#_0995BA: db $F8, $0F ; YES/NO - go to message $0F if YES
+#_0995BA: db $F8, $0F ; YES/NO - go to message 0F if YES
 #_0995BC: db $D4, $04 ; set text box size to 4
 #_0995BE: db $39, $52, $38, $94, $CF, $2E, $AB, $45 ; なんと!⎵こばむ
 #_0995C6: db $38, $CF, $47, $27, $31, $2A, $94 ; と⎵もうすか!
@@ -4125,7 +4125,7 @@ Message_01_01_0E:
 #_0995F5: db $34, $46, $4A, $94 ; ためよ!
 #_0995F9: db $F9 ; new line
 #_0995FA: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
-#_0995FD: db $D3, $11 ; go to message $11
+#_0995FD: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
 
@@ -4153,7 +4153,7 @@ Message_01_01_0F:
 #_09963D: db $4A, $26, $39 ; よいな
 #_099640: db $FC ; wait for key and new line
 #_099641: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
-#_099644: db $D3, $17 ; go to message $17
+#_099644: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
 
@@ -4161,7 +4161,7 @@ Message_01_01_0F:
 ; よって しざいを もうしつける
 ; しょけいは みょうちょう とりおこなう
 Message_01_01_10:
-#_099646: db $D0, $70 ; set progress bit $70
+#_099646: db $D0, $70 ; set progress bit 70
 #_099648: db $FE, $02, $FB ; ext command 02: add 251 to STAT_11C if progress bit FB
 #_09964B: db $FA ; clear message box
 #_09964C: db $43, $2E, $38, $3A, $CF, $47, $58, $37 ; まことに⎵もって
@@ -4190,7 +4190,7 @@ Message_01_01_11:
 
 Message_01_01_12:
 #_099692: db $FE, $1B, $6A, $5F, $0F, $00, $08, $1F ; ext command 1B: 6A,5F,0F,00,08,1F
-#_09969A: db $D3, $19 ; go to message $19
+#_09969A: db $D3, $19 ; go to message 19
 
 ;===================================================================================================
 
@@ -4215,7 +4215,7 @@ Message_01_01_13:
 #_0996CD: db $26, $58, $2F, $26, $CF, $38, $9C, $46 ; いっさい⎵とがめ
 #_0996D5: db $39, $2B, $2E, $38, $38, $CF, $31, $4D ; なきことと⎵する
 #_0996DD: db $FC ; wait for key and new line
-#_0996DE: db $D3, $17 ; go to message $17
+#_0996DE: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
 
@@ -4234,28 +4234,28 @@ Message_01_01_14:
 #_09970B: db $26, $30, $37, $2C, $4E, $4D, $94 ; いしてくれる!
 #_099712: db $FC ; wait for key and new line
 #_099713: db $E5, $01, $16 ; [COMMAND E5:01,16]
-#_099716: db $D3, $15 ; go to message $15
+#_099716: db $D3, $15 ; go to message 15
 
 ;===================================================================================================
 
 Message_01_01_15:
 #_099718: db $E5, $00, $16 ; [COMMAND E5:00,16]
-#_09971B: db $D3, $15 ; go to message $15
+#_09971B: db $D3, $15 ; go to message 15
 
 ;===================================================================================================
 
 Message_01_01_16:
 #_09971D: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09971F: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
-#_099722: db $D0, $6E ; set progress bit $6E
-#_099724: db $D3, $06 ; go to message $06
+#_099722: db $D0, $6E ; set progress bit 6E
+#_099724: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
 Message_01_01_17:
-#_099726: db $D0, $6F ; set progress bit $6F
+#_099726: db $D0, $6F ; set progress bit 6F
 #_099728: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
-#_09972B: db $D3, $06 ; go to message $06
+#_09972B: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -4273,16 +4273,16 @@ Message_01_01_18:
 #_099752: db $FE, $25, $FF ; ext command 25: something FF TODO
 #_099755: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_099758: db $FE, $24, $FF ; ext command 24: something FF TODO
-#_09975B: db $D3, $0A ; go to message $0A
+#_09975B: db $D3, $0A ; go to message 0A
 
 ;===================================================================================================
 
 ; «ガイアきょう»と:
 ; ここに はいっていろ
 Message_01_01_19:
-#_09975D: db $D0, $0C ; set progress bit $0C
+#_09975D: db $D0, $0C ; set progress bit 0C
 #_09975F: db $D4, $03 ; set text box size to 3
-#_099761: db $FE, $37 ; ext command 37: call 3 routines
+#_099761: db $FE, $37 ; ext command 37: reload dungeon view
 #_099763: db $D7, $33 ; load scene 33
 #_099765: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
 #_09976A: db $FE, $1C, $00 ; ext command 1C: $00 TODO
@@ -4292,8 +4292,8 @@ Message_01_01_19:
 #_099772: db $2E, $2E, $3A, $CF, $3E, $26, $58, $37 ; ここに⎵はいって
 #_09977A: db $26, $4F ; いろ
 #_09977C: db $FC ; wait for key and new line
-#_09977D: db $D2, $70, $1A ; test progress bit $70 for message $1A
-#_099780: db $D3, $1B ; go to message $1B
+#_09977D: db $D2, $70, $1A ; test progress bit 70 for message 1A
+#_099780: db $D3, $1B ; go to message 1B
 
 ;===================================================================================================
 
@@ -4315,10 +4315,10 @@ Message_01_01_1B:
 
 ; «>てつごうしは ビクともしない»
 Message_01_01_1C:
-#_09979C: db $FE, $37 ; ext command 37: call 3 routines
-#_09979E: db $D2, $72, $1E ; test progress bit $72 for message $1E
+#_09979C: db $FE, $37 ; ext command 37: reload dungeon view
+#_09979E: db $D2, $72, $1E ; test progress bit 72 for message 1E
 #_0997A1: db $D7, $33 ; load scene 33
-#_0997A3: db $D2, $76, $1D ; test progress bit $76 for message $1D
+#_0997A3: db $D2, $76, $1D ; test progress bit 76 for message 1D
 #_0997A6: db $F2, $84 ; prewritten text 84
 #_0997A8: db $FF ; end of message
 
@@ -4333,7 +4333,7 @@ Message_01_01_1C:
 Message_01_01_1D:
 #_0997A9: db $FE, $62 ; ext command 62: Call routine 0FA371 TODO
 #_0997AB: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
-#_0997AE: db $DE, $01, $00, $1C, $01 ; [COMMAND DE:01,00,1C,01]
+#_0997AE: db $DE, $01, $00, $1C, $01 ; load 1x demon 011C
 #_0997B3: db $E4, $00 ; load demon $00
 #_0997B5: db $EF ; write chaos hero name
 #_0997B6: db $9A ; :
@@ -4353,17 +4353,17 @@ Message_01_01_1D:
 #_0997EF: db $47, $27, $39, $4A ; もうなよ
 #_0997F3: db $FC ; wait for key and new line
 #_0997F4: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_0997F6: db $D0, $72 ; set progress bit $72
+#_0997F6: db $D0, $72 ; set progress bit 72
 #_0997F8: db $FE, $1A, $6B, $5F, $0F, $00, $08, $1F ; ext command 1A: 6B,5F,0F,00,08,1F
 #_099800: db $FA ; clear message box
 #_099801: db $97, $33, $38, $3A, $CF, $A9, $4B, $4E ; >そとに⎵でられ
 #_099809: db $34 ; た
 #_09980A: db $FC ; wait for key and new line
-#_09980B: db $D0, $0C ; set progress bit $0C
-#_09980D: db $D1, $73 ; clear progress bit $73
-#_09980F: db $D1, $74 ; clear progress bit $74
-#_099811: db $D1, $75 ; clear progress bit $75
-#_099813: db $D1, $76 ; clear progress bit $76
+#_09980B: db $D0, $0C ; set progress bit 0C
+#_09980D: db $D1, $73 ; clear progress bit 73
+#_09980F: db $D1, $74 ; clear progress bit 74
+#_099811: db $D1, $75 ; clear progress bit 75
+#_099813: db $D1, $76 ; clear progress bit 76
 #_099815: db $FF ; end of message
 
 ;===================================================================================================
@@ -4385,23 +4385,23 @@ Message_01_01_1F:
 #_099822: db $ED ; write female protag name
 #_099823: db $9A ; :
 #_099824: db $F9 ; new line
-#_099825: db $D2, $73, $20 ; test progress bit $73 for message $20
+#_099825: db $D2, $73, $20 ; test progress bit 73 for message 20
 #_099828: db $3E, $48, $2C, $CF, $2E, $2E, $2A, $4B ; はやく⎵ここから
 #_099830: db $CF, $3A, $9F, $39, $2B, $55 ; ⎵にげなきゃ
 #_099836: db $FC ; wait for key and new line
-#_099837: db $D0, $73 ; set progress bit $73
+#_099837: db $D0, $73 ; set progress bit 73
 #_099839: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ああっ どうしたら いいのよ«・・・»
 Message_01_01_20:
-#_09983A: db $D2, $74, $21 ; test progress bit $74 for message $21
+#_09983A: db $D2, $74, $21 ; test progress bit 74 for message 21
 #_09983D: db $25, $25, $58, $CF, $AA, $27, $30, $34 ; ああっ⎵どうした
 #_099845: db $4B, $CF, $26, $26, $3D, $4A ; ら⎵いいのよ
 #_09984B: db $F2, $0B ; prewritten text 0B
 #_09984D: db $FC ; wait for key and new line
-#_09984E: db $D0, $74 ; set progress bit $74
+#_09984E: db $D0, $74 ; set progress bit 74
 #_099850: db $FF ; end of message
 
 ;===================================================================================================
@@ -4409,14 +4409,14 @@ Message_01_01_20:
 ; ねえ ウロウロしてないで
 ; あなたも かんがえてよ
 Message_01_01_21:
-#_099851: db $D2, $75, $22 ; test progress bit $75 for message $22
+#_099851: db $D2, $75, $22 ; test progress bit 75 for message 22
 #_099854: db $3C, $28, $CF, $5F, $87, $5F, $87, $30 ; ねえ⎵ウロウロし
 #_09985C: db $37, $39, $26, $A9 ; てないで
 #_099860: db $F9 ; new line
 #_099861: db $25, $39, $34, $47, $CF, $2A, $52, $9C ; あなたも⎵かんが
 #_099869: db $28, $37, $4A ; えてよ
 #_09986C: db $FC ; wait for key and new line
-#_09986D: db $D0, $75 ; set progress bit $75
+#_09986D: db $D0, $75 ; set progress bit 75
 #_09986F: db $FF ; end of message
 
 ;===================================================================================================
@@ -4425,7 +4425,7 @@ Message_01_01_21:
 Message_01_01_22:
 #_099870: db $A6, $4E, $2A, $CF, $2B, $34, $50, $4A ; だれか⎵きたわよ
 #_099878: db $FC ; wait for key and new line
-#_099879: db $D0, $76 ; set progress bit $76
+#_099879: db $D0, $76 ; set progress bit 76
 #_09987B: db $FF ; end of message
 
 ;===================================================================================================
@@ -4433,18 +4433,18 @@ Message_01_01_22:
 ; [DEMON1]:
 ; わたしが スガモ・プリズンを まもっているのだ
 Message_01_01_23:
-#_09987C: db $DE, $01, $00, $0F, $01 ; [COMMAND DE:01,00,0F,01]
-#_099881: db $D2, $77, $28 ; test progress bit $77 for message $28
+#_09987C: db $DE, $01, $00, $0F, $01 ; load 1x demon 010F
+#_099881: db $D2, $77, $28 ; test progress bit 77 for message 28
 #_099884: db $E4, $00 ; load demon $00
 #_099886: db $F5 ; write demon name from $050A
 #_099887: db $9A ; :
 #_099888: db $F9 ; new line
-#_099889: db $D2, $72, $25 ; test progress bit $72 for message $25
+#_099889: db $D2, $72, $25 ; test progress bit 72 for message 25
 #_09988C: db $50, $34, $30, $9C, $CF, $69, $B5, $7F ; わたしが⎵スガモ
 #_099894: db $93, $CB, $84, $BC, $8A, $51, $CF, $43 ; ・プリズンを⎵ま
 #_09989C: db $47, $58, $37, $26, $4D, $3D, $A6 ; もっているのだ
 #_0998A3: db $FC ; wait for key and new line
-#_0998A4: db $D2, $6F, $24 ; test progress bit $6F for message $24
+#_0998A4: db $D2, $6F, $24 ; test progress bit 6F for message 24
 #_0998A7: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0998A9: db $FF ; end of message
 
@@ -4477,7 +4477,7 @@ Message_01_01_25:
 
 Message_01_01_26:
 #_0998DF: db $E5, $00, $27 ; [COMMAND E5:00,27]
-#_0998E2: db $D3, $26 ; go to message $26
+#_0998E2: db $D3, $26 ; go to message 26
 
 ;===================================================================================================
 
@@ -4485,14 +4485,14 @@ Message_01_01_27:
 #_0998E4: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0998E6: db $FA ; clear message box
 #_0998E7: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
-#_0998EA: db $D0, $77 ; set progress bit $77
+#_0998EA: db $D0, $77 ; set progress bit 77
 
 ;===================================================================================================
 
 Message_01_01_28:
 #_0998EC: db $D6, $00, $6C, $60, $28 ; place sprite 6C in slot 00 at XY:{60,28}
-#_0998F1: db $D2, $0C, $29 ; test progress bit $0C for message $29
-#_0998F4: db $D3, $2A ; go to message $2A
+#_0998F1: db $D2, $0C, $29 ; test progress bit 0C for message 29
+#_0998F4: db $D3, $2A ; go to message 2A
 
 ;===================================================================================================
 
@@ -4500,7 +4500,7 @@ Message_01_01_28:
 Message_01_01_29:
 #_0998F6: db $97, $CB, $84, $BC, $8A, $3D, $CF ; >プリズンの⎵
 #_0998FD: db $F2, $89 ; prewritten text 89
-#_0998FF: db $F8, $2B ; YES/NO - go to message $2B if YES
+#_0998FF: db $F8, $2B ; YES/NO - go to message 2B if YES
 #_099901: db $FF ; end of message
 
 ;===================================================================================================
@@ -4509,7 +4509,7 @@ Message_01_01_29:
 Message_01_01_2A:
 #_099902: db $97, $CB, $84, $BC, $8A, $3D, $CF ; >プリズンの⎵
 #_099909: db $F2, $68 ; prewritten text 68
-#_09990B: db $F8, $2C ; YES/NO - go to message $2C if YES
+#_09990B: db $F8, $2C ; YES/NO - go to message 2C if YES
 #_09990D: db $FF ; end of message
 
 ;===================================================================================================
@@ -4519,7 +4519,7 @@ Message_01_01_2B:
 #_099913: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_099916: db $D6, $00, $00 ; delete sprite in slot 00
 #_099919: db $FE, $1A, $64, $1D, $0F, $00, $08, $1F ; ext command 1A: 64,1D,0F,00,08,1F
-#_099921: db $D1, $0C ; clear progress bit $0C
+#_099921: db $D1, $0C ; clear progress bit 0C
 #_099923: db $FF ; end of message
 
 ;===================================================================================================
@@ -4529,7 +4529,7 @@ Message_01_01_2C:
 #_099929: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09992C: db $D6, $00, $00 ; delete sprite in slot 00
 #_09992F: db $FE, $1A, $64, $9F, $0F, $00, $08, $1F ; ext command 1A: 64,9F,0F,00,08,1F
-#_099937: db $D0, $0C ; set progress bit $0C
+#_099937: db $D0, $0C ; set progress bit 0C
 #_099939: db $FF ; end of message
 
 ;===================================================================================================
@@ -4858,18 +4858,18 @@ Message_01_01_3A:
 ; その きじゅんは あくまで カオスよりなのだ
 Message_01_01_3B:
 #_099C58: db $D7, $A4, $33 ; load scenes A4 and 33
-#_099C5B: db $D2, $77, $41 ; test progress bit $77 for message $41
-#_099C5E: db $D5, $47 ; send $47 to APU
+#_099C5B: db $D2, $77, $41 ; test progress bit 77 for message 41
+#_099C5E: db $D5, $47 ; send 47 to APU
 #_099C60: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
 #_099C65: db $F2, $83 ; prewritten text 83
 #_099C67: db $9A ; :
 #_099C68: db $F9 ; new line
-#_099C69: db $D2, $69, $3C ; test progress bit $69 for message $3C
+#_099C69: db $D2, $69, $3C ; test progress bit 69 for message 3C
 #_099C6C: db $43, $34, $CF, $25, $58, $34, $39, $CF ; また⎵あったな⎵
 #_099C74: db $F0 ; write player name
 #_099C75: db $2C, $52 ; くん
 #_099C77: db $FC ; wait for key and new line
-#_099C78: db $D0, $69 ; set progress bit $69
+#_099C78: db $D0, $69 ; set progress bit 69
 #_099C7A: db $FA ; clear message box
 #_099C7B: db $2E, $2E, $3D, $CF, $3B, $30, $CF, $80 ; ここの⎵ぬし⎵ヤ
 #_099C83: db $7B, $3E ; マは
@@ -4884,7 +4884,7 @@ Message_01_01_3B:
 #_099CB0: db $CF, $25, $2C, $43, $A9, $CF, $62, $61 ; ⎵あくまで⎵カオ
 #_099CB8: db $69, $4A, $4C, $39, $3D, $A6 ; スよりなのだ
 #_099CBE: db $FC ; wait for key and new line
-#_099CBF: db $D3, $3D ; go to message $3D
+#_099CBF: db $D3, $3D ; go to message 3D
 
 ;===================================================================================================
 
@@ -4916,29 +4916,29 @@ Message_01_01_3E:
 #_099CEF: db $3C, $52, $3D, $34, $46, $CF, $2E, $2E ; ねんのため⎵ここ
 #_099CF7: db $A9, $CF, $2B, $4F, $2C, $31, $4D, $2A ; で⎵きろくするか
 #_099CFF: db $3C, $95 ; ね?
-#_099D01: db $F8, $3F ; YES/NO - go to message $3F if YES
-#_099D03: db $D3, $40 ; go to message $40
+#_099D01: db $F8, $3F ; YES/NO - go to message 3F if YES
+#_099D03: db $D3, $40 ; go to message 40
 
 ;===================================================================================================
 
 ; «セーブ かんりょう しました»
 ; «ゲームを つづけますか?»
 Message_01_01_3F:
-#_099D05: db $FE, $42 ; ext command 42: go to file select TODO
+#_099D05: db $FE, $42 ; ext command 42: go to file select
 #_099D07: db $FE, $22, $40 ; ext command 22: go to message 40 if $0A58 flags failure
 #_099D0A: db $FA ; clear message box
 #_099D0B: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
 #_099D10: db $F2, $5A ; prewritten text 5A
 #_099D12: db $FA ; clear message box
 #_099D13: db $F2, $5B ; prewritten text 5B
-#_099D15: db $F8, $40 ; YES/NO - go to message $40 if YES
-#_099D17: db $FE, $1D, $24, $03 ; ext command 1D: $24 $03 TODO
+#_099D15: db $F8, $40 ; YES/NO - go to message 40 if YES
+#_099D17: db $FE, $1D, $24, $03 ; ext command 1D: load classy message 0324
 
 ;===================================================================================================
 
 ; ニオウを たおせば そとへ でられるはずだ
 Message_01_01_40:
-#_099D1B: db $D5, $47 ; send $47 to APU
+#_099D1B: db $D5, $47 ; send 47 to APU
 #_099D1D: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
 #_099D22: db $D4, $03 ; set text box size to 3
 #_099D24: db $72, $61, $5F, $51, $CF, $34, $29, $32 ; ニオウを⎵たおせ
@@ -4965,7 +4965,7 @@ Message_01_01_41:
 ; うわさは わたしの みみにも とどいておるぞ
 ; はでに あちこち あらしまわっているそうだな
 Message_01_02_00:
-#_099D40: db $D5, $46 ; send $46 to APU
+#_099D40: db $D5, $46 ; send 46 to APU
 #_099D42: db $D7, $2E ; load scene 2E
 #_099D44: db $FE, $3A, $02, $03 ; ext command 3A: 02 03 TODO
 #_099D48: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
@@ -4973,9 +4973,9 @@ Message_01_02_00:
 #_099D50: db $F2, $34 ; prewritten text 34
 #_099D52: db $CF, $2B, $57, $27, $33, $9A ; ⎵きょうそ:
 #_099D58: db $F9 ; new line
-#_099D59: db $D2, $7D, $08 ; test progress bit $7D for message $08
-#_099D5C: db $D2, $79, $06 ; test progress bit $79 for message $06
-#_099D5F: db $D2, $78, $01 ; test progress bit $78 for message $01
+#_099D59: db $D2, $7D, $08 ; test progress bit 7D for message 08
+#_099D5C: db $D2, $79, $06 ; test progress bit 79 for message 06
+#_099D5F: db $D2, $78, $01 ; test progress bit 78 for message 01
 #_099D62: db $2E, $2E, $3E, $CF, $50, $9C, $CF ; ここは⎵わが⎵
 #_099D69: db $F2, $34 ; prewritten text 34
 #_099D6B: db $3D, $CF, $33, $27, $42, $52, $A1, $52 ; の⎵そうほんざん
@@ -4996,8 +4996,8 @@ Message_01_02_00:
 #_099DA6: db $CF, $25, $4B, $30, $43, $50, $58, $37 ; ⎵あらしまわって
 #_099DAE: db $26, $4D, $33, $27, $A6, $39 ; いるそうだな
 #_099DB4: db $FC ; wait for key and new line
-#_099DB5: db $D0, $78 ; set progress bit $78
-#_099DB7: db $D3, $02 ; go to message $02
+#_099DB5: db $D0, $78 ; set progress bit 78
+#_099DB7: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -5032,7 +5032,7 @@ Message_01_02_02:
 #_099DF1: db $F2, $0B ; prewritten text 0B
 #_099DF3: db $FC ; wait for key and new line
 #_099DF4: db $FE, $05, $EF, $FF, $03 ; ext command 05: go to message 03 if 11C >= -17
-#_099DF9: db $D3, $04 ; go to message $04
+#_099DF9: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -5086,7 +5086,7 @@ Message_01_02_04:
 #_099E72: db $F2, $34 ; prewritten text 34
 #_099E74: db $3D, $CF, $32, $52, $4E, $26, $51, $CF ; の⎵せんれいを⎵
 #_099E7C: db $27, $2D, $43, $31, $2A, $95 ; うけますか?
-#_099E82: db $F8, $05 ; YES/NO - go to message $05 if YES
+#_099E82: db $F8, $05 ; YES/NO - go to message 05 if YES
 #_099E84: db $D4, $03 ; set text box size to 3
 #_099E86: db $39, $52, $38, $CF, $2E, $38, $50, $4D ; なんと⎵ことわる
 #_099E8E: db $38, $CF, $47, $27, $31, $2A ; と⎵もうすか
@@ -5141,8 +5141,8 @@ Message_01_02_05:
 #_099F1E: db $D6, $00, $35, $70, $28 ; place sprite 35 in slot 00 at XY:{70,28}
 #_099F23: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_099F26: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
-#_099F29: db $D0, $79 ; set progress bit $79
-#_099F2B: db $D0, $FB ; set progress bit $FB
+#_099F29: db $D0, $79 ; set progress bit 79
+#_099F2B: db $D0, $FB ; set progress bit FB
 #_099F2D: db $D6, $00, $00 ; delete sprite in slot 00
 #_099F30: db $D6, $02, $00 ; delete sprite in slot 02
 #_099F33: db $D6, $03, $00 ; delete sprite in slot 03
@@ -5151,7 +5151,7 @@ Message_01_02_05:
 #_099F3E: db $F2, $34 ; prewritten text 34
 #_099F40: db $2B, $57, $27, $33, $9A ; きょうそ:
 #_099F45: db $F9 ; new line
-#_099F46: db $D3, $07 ; go to message $07
+#_099F46: db $D3, $07 ; go to message 07
 
 ;===================================================================================================
 
@@ -5168,7 +5168,7 @@ Message_01_02_06:
 #_099F67: db $3E, $2E, $52, $A9, $2C, $4E, $34 ; はこんでくれた
 #_099F6E: db $FC ; wait for key and new line
 #_099F6F: db $FE, $06, $41, $07 ; ext command 06: go to message 07 if MC level < 65
-#_099F73: db $D3, $09 ; go to message $09
+#_099F73: db $D3, $09 ; go to message 09
 
 ;===================================================================================================
 
@@ -5215,7 +5215,7 @@ Message_01_02_08:
 ; とざされた とびらを あけておいた
 ; おくに おいてある もってゆくが よい
 Message_01_02_09:
-#_099FDC: db $D2, $7F, $07 ; test progress bit $7F for message $07
+#_099FDC: db $D2, $7F, $07 ; test progress bit 7F for message 07
 #_099FDF: db $FA ; clear message box
 #_099FE0: db $2B, $57, $27, $3E, $CF, $50, $9C, $CF ; きょうは⎵わが⎵
 #_099FE8: db $2B, $57, $27, $A6, $26, $3A, $CF, $40 ; きょうだいに⎵ふ
@@ -5233,15 +5233,15 @@ Message_01_02_09:
 #_09A01B: db $4D, $CF, $47, $58, $37, $49, $2C, $9C ; る⎵もってゆくが
 #_09A023: db $CF, $4A, $26 ; ⎵よい
 #_09A026: db $FC ; wait for key and new line
-#_09A027: db $D0, $7F ; set progress bit $7F
-#_09A029: db $D3, $07 ; go to message $07
+#_09A027: db $D0, $7F ; set progress bit 7F
+#_09A029: db $D3, $07 ; go to message 07
 
 ;===================================================================================================
 
 Message_01_02_0A:
-#_09A02B: db $D2, $7A, $0C ; test progress bit $7A for message $0C
-#_09A02E: db $D5, $39 ; send $39 to APU
-#_09A030: db $DE, $01, $00, $10, $01 ; [COMMAND DE:01,00,10,01]
+#_09A02B: db $D2, $7A, $0C ; test progress bit 7A for message 0C
+#_09A02E: db $D5, $39 ; send 39 to APU
+#_09A030: db $DE, $01, $00, $10, $01 ; load 1x demon 0110
 #_09A035: db $E4, $00 ; load demon $00
 #_09A037: db $E5, $01, $0C ; [COMMAND E5:01,0C]
 
@@ -5249,53 +5249,54 @@ Message_01_02_0A:
 
 Message_01_02_0B:
 #_09A03A: db $E5, $00, $0C ; [COMMAND E5:00,0C]
-#_09A03D: db $D3, $0B ; go to message $0B
+#_09A03D: db $D3, $0B ; go to message 0B
 
 ;===================================================================================================
 
 Message_01_02_0C:
 #_09A03F: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09A041: db $FA ; clear message box
-#_09A042: db $D0, $7A ; set progress bit $7A
-#_09A044: db $D2, $83, $0D ; test progress bit $83 for message $0D
-#_09A047: db $D3, $0E ; go to message $0E
+#_09A042: db $D0, $7A ; set progress bit 7A
+#_09A044: db $D2, $83, $0D ; test progress bit 83 for message 0D
+#_09A047: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
 Message_01_02_0D:
-#_09A049: db $D0, $90 ; set progress bit $90
+#_09A049: db $D0, $90 ; set progress bit 90
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
-; «あけますか?»«[NAME]は»
+; «あけますか?»
+; «[LEADER]は»
 ; «たからばこを あきらめた»
 Message_01_02_0E:
 #_09A04B: db $F2, $74 ; prewritten text 74
-#_09A04D: db $F8, $0F ; YES/NO - go to message $0F if YES
+#_09A04D: db $F8, $0F ; YES/NO - go to message 0F if YES
 #_09A04F: db $F2, $75 ; prewritten text 75
 #_09A051: db $FC ; wait for key and new line
 #_09A052: db $FF ; end of message
 
 ;===================================================================================================
 
-; [NAME]は [ITEM]を
+; [LEADER]は [ITEM]を
 ; «てにいれた»
 Message_01_02_0F:
 #_09A053: db $D6, $00, $B7, $70, $48 ; place sprite B7 in slot 00 at XY:{70,48}
-#_09A058: db $D2, $7B, $10 ; test progress bit $7B for message $10
+#_09A058: db $D2, $7B, $10 ; test progress bit 7B for message 10
 #_09A05B: db $D4, $03 ; set text box size to 3
-#_09A05D: db $E1, $F4 ; set $0A50 to $F4
-#_09A05F: db $F1 ; write specific name
+#_09A05D: db $E1, $F4 ; set $0A50 to item F4
+#_09A05F: db $F1 ; write leader's name for team
 #_09A060: db $3E, $CF ; は⎵
 #_09A062: db $F3 ; write item name from $0A50
 #_09A063: db $51 ; を
 #_09A064: db $F9 ; new line
-#_09A065: db $FE, $3C, $11 ; ext command 3C: 11 TODO
+#_09A065: db $FE, $3C, $11 ; ext command 3C: go to message 11 if no space for item
 #_09A068: db $F2, $2D ; prewritten text 2D
 #_09A06A: db $FC ; wait for key and new line
 #_09A06B: db $FE, $28 ; ext command 28: add item to inventory from $0A50
-#_09A06D: db $D0, $7B ; set progress bit $7B
+#_09A06D: db $D0, $7B ; set progress bit 7B
 #_09A06F: db $FF ; end of message
 
 ;===================================================================================================
@@ -5484,14 +5485,14 @@ Message_01_02_18:
 #_09A1E2: db $F2, $62 ; prewritten text 62
 #_09A1E4: db $58, $37, $CF, $30, $58, $37, $4D, $2A ; って⎵しってるか
 #_09A1EC: db $26, $95 ; い?
-#_09A1EE: db $F8, $1A ; YES/NO - go to message $1A if YES
+#_09A1EE: db $F8, $1A ; YES/NO - go to message 1A if YES
 #_09A1F0: db $FA ; clear message box
 #_09A1F1: db $30, $4B, $39, $26, $3D, $2A, $26, $95 ; しらないのかい?
 #_09A1F9: db $F9 ; new line
 #_09A1FA: db $A2, $55, $CF, $29, $30, $28, $37, $48 ; じゃ⎵おしえてや
 #_09A202: db $4D, $4A, $CF, $5C, $02, $01, $01, $A6 ; るよ⎵ℏ100だ
 #_09A20A: db $30, $39 ; しな
-#_09A20C: db $F8, $1B ; YES/NO - go to message $1B if YES
+#_09A20C: db $F8, $1B ; YES/NO - go to message 1B if YES
 #_09A20E: db $D4, $03 ; set text box size to 3
 #_09A210: db $30, $44, $58, $34, $4E ; しみったれ
 #_09A215: db $F9 ; new line
@@ -5531,7 +5532,7 @@ Message_01_02_1A:
 ; どうも あいつは しょうきを うしなってる
 ; みたいなんだ
 Message_01_02_1B:
-#_09A237: db $D9, $64, $00, $00, $19 ; go to message $19 if money < 100
+#_09A237: db $D9, $64, $00, $00, $19 ; go to message 19 if money < 100
 #_09A23C: db $DA, $9C, $FF, $FF ; take 100 money
 #_09A240: db $D4, $03 ; set text box size to 3
 #_09A242: db $2E, $2E, $2A, $4B, $CF, $7C, $71, $7C ; ここから⎵ミナミ
@@ -5598,7 +5599,7 @@ Message_01_02_1D:
 #_09A30A: db $D6, $00, $89, $70, $28 ; place sprite 89 in slot 00 at XY:{70,28}
 #_09A30F: db $4F, $27, $A2, $52, $9A ; ろうじん:
 #_09A314: db $F9 ; new line
-#_09A315: db $D2, $7A, $1E ; test progress bit $7A for message $1E
+#_09A315: db $D2, $7A, $1E ; test progress bit 7A for message 1E
 #_09A318: db $5F, $60, $75, $3D, $CF, $35, $2A, $70 ; ウエノの⎵ちかト
 #_09A320: db $8A, $74, $85, $3D, $CF, $29, $2C, $3A ; ンネルの⎵おくに
 #_09A328: db $3E ; は
@@ -5661,7 +5662,7 @@ Message_01_02_1E:
 ; あなたの いのち わたしの このてで
 ; うばってやる!
 Message_01_02_1F:
-#_09A381: db $D2, $D1, $22 ; test progress bit $D1 for message $22
+#_09A381: db $D2, $D1, $22 ; test progress bit D1 for message 22
 #_09A384: db $D6, $00, $2F, $70, $28 ; place sprite 2F in slot 00 at XY:{70,28}
 #_09A389: db $39, $A5, $3D, $29, $38, $2E, $9A ; なぞのおとこ:
 #_09A390: db $F9 ; new line
@@ -5677,7 +5678,7 @@ Message_01_02_1F:
 #_09A3A6: db $85, $5E, $38, $CF, $4A, $52, $A9, $2C ; ルイと⎵よんでく
 #_09A3AE: db $4E, $34, $43, $28 ; れたまえ
 #_09A3B2: db $FC ; wait for key and new line
-#_09A3B3: db $E9, $00, $21 ; go to message $21 maybe TODO
+#_09A3B3: db $E9, $00, $21 ; go to message 21 maybe TODO
 #_09A3B6: db $FA ; clear message box
 #_09A3B7: db $2B, $57, $27, $3E, $CF, $2B, $44, $3A ; きょうは⎵きみに
 #_09A3BF: db $CF, $A4, $3F, $CF, $25, $26, $34, $26 ; ⎵ぜひ⎵あいたい
@@ -5751,7 +5752,7 @@ Message_01_02_1F:
 #_09A4BB: db $D6, $00, $9D, $78, $38 ; place sprite 9D in slot 00 at XY:{78,38}
 #_09A4C0: db $FE, $07, $19 ; ext command 07: draw buffered text then wait 24 frames
 #_09A4C3: db $D6, $00, $00 ; delete sprite in slot 00
-#_09A4C6: db $DE, $01, $00, $1D, $01 ; [COMMAND DE:01,00,1D,01]
+#_09A4C6: db $DE, $01, $00, $1D, $01 ; load 1x demon 011D
 #_09A4CB: db $D4, $03 ; set text box size to 3
 #_09A4CD: db $E4, $00 ; load demon $00
 #_09A4CF: db $84, $84, $69, $9A ; リリス:
@@ -5761,9 +5762,9 @@ Message_01_02_1F:
 #_09A4E4: db $37, $A9 ; てで
 #_09A4E6: db $F9 ; new line
 #_09A4E7: db $27, $AB, $58, $37, $48, $4D, $94 ; うばってやる!
-#_09A4EE: db $D5, $11 ; send $11 to APU
+#_09A4EE: db $D5, $11 ; send 11 to APU
 #_09A4F0: db $FE, $1C, $03 ; ext command 1C: $03 TODO
-#_09A4F3: db $D5, $2D ; send $2D to APU
+#_09A4F3: db $D5, $2D ; send 2D to APU
 #_09A4F5: db $FE, $0B, $00, $19 ; ext command 0B: something 19, 00
 #_09A4F9: db $FC ; wait for key and new line
 
@@ -5819,7 +5820,7 @@ Message_01_02_20:
 #_09A577: db $A9, $CF, $2C, $4E, $34, $43, $28 ; で⎵くれたまえ
 #_09A57E: db $FC ; wait for key and new line
 #_09A57F: db $D6, $00, $00 ; delete sprite in slot 00
-#_09A582: db $D0, $D1 ; set progress bit $D1
+#_09A582: db $D0, $D1 ; set progress bit D1
 #_09A584: db $FF ; end of message
 
 ;===================================================================================================
@@ -5869,7 +5870,7 @@ Message_01_02_23:
 #_09A5EA: db $F2, $6D ; prewritten text 6D
 #_09A5EC: db $9A ; :
 #_09A5ED: db $F9 ; new line
-#_09A5EE: db $D2, $35, $2D ; test progress bit $35 for message $2D
+#_09A5EE: db $D2, $35, $2D ; test progress bit 35 for message 2D
 #_09A5F1: db $71, $8A, $BF, $CF, $61, $7B, $60, $94 ; ナンダ⎵オマエ!
 #_09A5F9: db $95 ; ?
 #_09A5FA: db $F9 ; new line
@@ -5879,8 +5880,8 @@ Message_01_02_23:
 #_09A60C: db $FC ; wait for key and new line
 #_09A60D: db $D6, $00, $00 ; delete sprite in slot 00
 #_09A610: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09A613: db $DE, $00, $00, $EC, $08 ; [COMMAND DE:00,00,EC,08]
-#_09A618: db $D5, $39 ; send $39 to APU
+#_09A613: db $DE, $00, $00, $EC, $08 ; load 8x demon 00EC
+#_09A618: db $D5, $39 ; send 39 to APU
 #_09A61A: db $E4, $00 ; load demon $00
 #_09A61C: db $E5, $01, $25 ; [COMMAND E5:01,25]
 
@@ -5888,14 +5889,14 @@ Message_01_02_23:
 
 Message_01_02_24:
 #_09A61F: db $E5, $00, $25 ; [COMMAND E5:00,25]
-#_09A622: db $D3, $24 ; go to message $24
+#_09A622: db $D3, $24 ; go to message 24
 
 ;===================================================================================================
 
 Message_01_02_25:
 #_09A624: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_09A626: db $DE, $00, $00, $E6, $08 ; [COMMAND DE:00,00,E6,08]
-#_09A62B: db $D5, $39 ; send $39 to APU
+#_09A626: db $DE, $00, $00, $E6, $08 ; load 8x demon 00E6
+#_09A62B: db $D5, $39 ; send 39 to APU
 #_09A62D: db $E4, $00 ; load demon $00
 #_09A62F: db $E5, $01, $27 ; [COMMAND E5:01,27]
 
@@ -5903,15 +5904,15 @@ Message_01_02_25:
 
 Message_01_02_26:
 #_09A632: db $E5, $00, $27 ; [COMMAND E5:00,27]
-#_09A635: db $D3, $26 ; go to message $26
+#_09A635: db $D3, $26 ; go to message 26
 
 ;===================================================================================================
 
 Message_01_02_27:
 #_09A637: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_09A639: db $DE, $00, $00, $E5, $04 ; [COMMAND DE:00,00,E5,04]
-#_09A63E: db $EB, $00, $00, $DE, $04 ; [COMMAND EB:00,00,DE,04]
-#_09A643: db $D5, $39 ; send $39 to APU
+#_09A639: db $DE, $00, $00, $E5, $04 ; load 4x demon 00E5
+#_09A63E: db $EB, $00, $00, $DE, $04 ; load 4x demon 00DE
+#_09A643: db $D5, $39 ; send 39 to APU
 #_09A645: db $E4, $00 ; load demon $00
 #_09A647: db $E4, $01 ; load demon $01
 #_09A649: db $E5, $81, $29 ; [COMMAND E5:81,29]
@@ -5920,7 +5921,7 @@ Message_01_02_27:
 
 Message_01_02_28:
 #_09A64C: db $E5, $80, $29 ; [COMMAND E5:80,29]
-#_09A64F: db $D3, $28 ; go to message $28
+#_09A64F: db $D3, $28 ; go to message 28
 
 ;===================================================================================================
 
@@ -5940,42 +5941,42 @@ Message_01_02_29:
 #_09A66E: db $66, $86, $CF, $80, $85, $CF, $6C, $69 ; コレ⎵ヤル⎵タス
 #_09A676: db $65, $6F, $64, $86 ; ケテクレ
 #_09A67A: db $FC ; wait for key and new line
-#_09A67B: db $D0, $35 ; set progress bit $35
+#_09A67B: db $D0, $35 ; set progress bit 35
 #_09A67D: db $FA ; clear message box
 #_09A67E: db $97 ; >
 #_09A67F: db $F2, $6D ; prewritten text 6D
 #_09A681: db $3E ; は
 #_09A682: db $F9 ; new line
-#_09A683: db $E1, $F5 ; set $0A50 to $F5
+#_09A683: db $E1, $F5 ; set $0A50 to item F5
 #_09A685: db $F3 ; write item name from $0A50
 #_09A686: db $51, $CF, $2F, $30, $A6, $30, $34 ; を⎵さしだした
 #_09A68D: db $FC ; wait for key and new line
 #_09A68E: db $FA ; clear message box
-#_09A68F: db $D3, $2B ; go to message $2B
+#_09A68F: db $D3, $2B ; go to message 2B
 
 ;===================================================================================================
 
-; >[NAME]
+; >[LEADER]
 Message_01_02_2A:
 #_09A691: db $FA ; clear message box
 #_09A692: db $97 ; >
-#_09A693: db $F1 ; write specific name
+#_09A693: db $F1 ; write leader's name for team
 
 ;===================================================================================================
 
-; [NAME]は [ITEM]を
+; [LEADER]は [ITEM]を
 ; «てにいれた»
 Message_01_02_2B:
-#_09A693: db $F1 ; write specific name
+#_09A693: db $F1 ; write leader's name for team
 #_09A694: db $3E, $CF ; は⎵
 #_09A696: db $F3 ; write item name from $0A50
 #_09A697: db $51 ; を
 #_09A698: db $F9 ; new line
-#_09A699: db $FE, $3C, $2C ; ext command 3C: 2C TODO
+#_09A699: db $FE, $3C, $2C ; ext command 3C: go to message 2C if no space for item
 #_09A69C: db $F2, $2D ; prewritten text 2D
 #_09A69E: db $FC ; wait for key and new line
 #_09A69F: db $FE, $28 ; ext command 28: add item to inventory from $0A50
-#_09A6A1: db $D0, $1F ; set progress bit $1F
+#_09A6A1: db $D0, $1F ; set progress bit 1F
 #_09A6A3: db $FF ; end of message
 
 ;===================================================================================================
@@ -5990,14 +5991,14 @@ Message_01_02_2C:
 
 ; [ITEM] ソコニ アル モッテイケ
 Message_01_02_2D:
-#_09A6A8: db $E1, $F5 ; set $0A50 to $F5
-#_09A6AA: db $D2, $1F, $2E ; test progress bit $1F for message $2E
+#_09A6A8: db $E1, $F5 ; set $0A50 to item F5
+#_09A6AA: db $D2, $1F, $2E ; test progress bit 1F for message 2E
 #_09A6AD: db $F3 ; write item name from $0A50
 #_09A6AE: db $CF, $6B, $66, $72, $CF, $5D, $85, $CF ; ⎵ソコニ⎵アル⎵
 #_09A6B6: db $7F, $92, $6F, $5E, $65 ; モッテイケ
 #_09A6BB: db $FC ; wait for key and new line
 #_09A6BC: db $D6, $00, $00 ; delete sprite in slot 00
-#_09A6BF: db $D3, $2A ; go to message $2A
+#_09A6BF: db $D3, $2A ; go to message 2A
 
 ;===================================================================================================
 
@@ -6016,9 +6017,9 @@ Message_01_02_2E:
 
 Message_01_02_2F:
 #_09A6D4: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
-#_09A6D9: db $D2, $0C, $31 ; test progress bit $0C for message $31
-#_09A6DC: db $D2, $7F, $30 ; test progress bit $7F for message $30
-#_09A6DF: db $D3, $34 ; go to message $34
+#_09A6D9: db $D2, $0C, $31 ; test progress bit 0C for message 31
+#_09A6DC: db $D2, $7F, $30 ; test progress bit 7F for message 30
+#_09A6DF: db $D3, $34 ; go to message 34
 
 ;===================================================================================================
 
@@ -6026,7 +6027,7 @@ Message_01_02_2F:
 Message_01_02_30:
 #_09A6E1: db $97 ; >
 #_09A6E2: db $F2, $68 ; prewritten text 68
-#_09A6E4: db $F8, $32 ; YES/NO - go to message $32 if YES
+#_09A6E4: db $F8, $32 ; YES/NO - go to message 32 if YES
 #_09A6E6: db $FF ; end of message
 
 ;===================================================================================================
@@ -6035,7 +6036,7 @@ Message_01_02_30:
 Message_01_02_31:
 #_09A6E7: db $97 ; >
 #_09A6E8: db $F2, $89 ; prewritten text 89
-#_09A6EA: db $F8, $32 ; YES/NO - go to message $32 if YES
+#_09A6EA: db $F8, $32 ; YES/NO - go to message 32 if YES
 #_09A6EC: db $FF ; end of message
 
 ;===================================================================================================
@@ -6044,16 +6045,16 @@ Message_01_02_32:
 #_09A6ED: db $D6, $00, $74, $60, $28 ; place sprite 74 in slot 00 at XY:{60,28}
 #_09A6F2: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09A6F5: db $D6, $00, $00 ; delete sprite in slot 00
-#_09A6F8: db $D2, $0C, $33 ; test progress bit $0C for message $33
+#_09A6F8: db $D2, $0C, $33 ; test progress bit 0C for message 33
 #_09A6FB: db $FE, $1A, $7C, $14, $10, $00, $00, $00 ; ext command 1A: 7C,14,10,00,00,00
-#_09A703: db $D0, $0C ; set progress bit $0C
+#_09A703: db $D0, $0C ; set progress bit 0C
 #_09A705: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_02_33:
 #_09A706: db $FE, $1A, $7C, $96, $10, $00, $00, $00 ; ext command 1A: 7C,96,10,00,00,00
-#_09A70E: db $D1, $0C ; clear progress bit $0C
+#_09A70E: db $D1, $0C ; clear progress bit 0C
 #_09A710: db $FF ; end of message
 
 ;===================================================================================================
@@ -6075,10 +6076,10 @@ Message_01_02_34:
 ; アリス:
 ; やーん ヘンな おにいちゃん おこったー!
 Message_01_03_00:
-#_09A716: db $D2, $5A, $05 ; test progress bit $5A for message $05
-#_09A719: db $D5, $54 ; send $54 to APU
+#_09A716: db $D2, $5A, $05 ; test progress bit 5A for message 05
+#_09A719: db $D5, $54 ; send 54 to APU
 #_09A71B: db $D6, $00, $BC, $78, $38 ; place sprite BC in slot 00 at XY:{78,38}
-#_09A720: db $D2, $59, $04 ; test progress bit $59 for message $04
+#_09A720: db $D2, $59, $04 ; test progress bit 59 for message 04
 #_09A723: db $29, $52, $39, $3D, $2E, $9A ; おんなのこ:
 #_09A729: db $F9 ; new line
 #_09A72A: db $50, $34, $30, $CF, $5D, $84, $69 ; わたし⎵アリス
@@ -6087,8 +6088,8 @@ Message_01_03_00:
 #_09A73A: db $26, $35, $55, $52, $34, $35, $CF, $AA ; いちゃんたち⎵ど
 #_09A742: db $2E, $2A, $4B, $2B, $34, $3D, $95 ; こからきたの?
 #_09A749: db $FC ; wait for key and new line
-#_09A74A: db $D2, $47, $02 ; test progress bit $47 for message $02
-#_09A74D: db $E9, $03, $01 ; go to message $01 maybe TODO
+#_09A74A: db $D2, $47, $02 ; test progress bit 47 for message 02
+#_09A74D: db $E9, $03, $01 ; go to message 01 maybe TODO
 #_09A750: db $FA ; clear message box
 #_09A751: db $EF ; write chaos hero name
 #_09A752: db $9A ; :
@@ -6104,7 +6105,7 @@ Message_01_03_00:
 #_09A775: db $29, $3A, $26, $35, $55, $52, $CF, $29 ; おにいちゃん⎵お
 #_09A77D: db $2E, $58, $34, $5A, $94 ; こったー!
 #_09A782: db $FC ; wait for key and new line
-#_09A783: db $D3, $06 ; go to message $06
+#_09A783: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -6120,13 +6121,13 @@ Message_01_03_01:
 #_09A7A3: db $37, $25, $9F, $39, $26, $38, $CF, $34 ; てあげないと⎵た
 #_09A7AB: db $26, $41, $52, $A6, $4A, $5A ; いへんだよー
 #_09A7B1: db $FC ; wait for key and new line
-#_09A7B2: db $D3, $06 ; go to message $06
+#_09A7B2: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
 Message_01_03_02:
-#_09A7B4: db $D2, $52, $03 ; test progress bit $52 for message $03
-#_09A7B7: db $D3, $06 ; go to message $06
+#_09A7B4: db $D2, $52, $03 ; test progress bit 52 for message 03
+#_09A7B7: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -6182,8 +6183,8 @@ Message_01_03_03:
 #_09A840: db $50, $34, $30, $9C, $CF, $34, $3D, $52 ; わたしが⎵たのん
 #_09A848: db $A9, $25, $9F, $4D, $5A ; であげるー
 #_09A84D: db $FC ; wait for key and new line
-#_09A84E: db $D0, $59 ; set progress bit $59
-#_09A850: db $D3, $06 ; go to message $06
+#_09A84E: db $D0, $59 ; set progress bit 59
+#_09A850: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -6202,7 +6203,7 @@ Message_01_03_04:
 #_09A86F: db $35, $30, $2A, $CF, $25, $28, $39, $26 ; ちしか⎵あえない
 #_09A877: db $52, $A6, $4A, $5A ; んだよー
 #_09A87B: db $FC ; wait for key and new line
-#_09A87C: db $D3, $06 ; go to message $06
+#_09A87C: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -6225,16 +6226,16 @@ Message_01_03_06:
 
 ; ひしょ:
 Message_01_03_07:
-#_09A894: db $D2, $57, $13 ; test progress bit $57 for message $13
-#_09A897: db $D2, $56, $0E ; test progress bit $56 for message $0E
+#_09A894: db $D2, $57, $13 ; test progress bit 57 for message 13
+#_09A897: db $D2, $56, $0E ; test progress bit 56 for message 0E
 #_09A89A: db $D6, $00, $67, $70, $28 ; place sprite 67 in slot 00 at XY:{70,28}
 #_09A89F: db $3F, $30, $57, $9A ; ひしょ:
 #_09A8A3: db $F9 ; new line
-#_09A8A4: db $D2, $0C, $0C ; test progress bit $0C for message $0C
-#_09A8A7: db $E9, $02, $08 ; go to message $08 maybe TODO
-#_09A8AA: db $D2, $2C, $0A ; test progress bit $2C for message $0A
-#_09A8AD: db $D2, $59, $09 ; test progress bit $59 for message $09
-#_09A8B0: db $D3, $08 ; go to message $08
+#_09A8A4: db $D2, $0C, $0C ; test progress bit 0C for message 0C
+#_09A8A7: db $E9, $02, $08 ; go to message 08 maybe TODO
+#_09A8AA: db $D2, $2C, $0A ; test progress bit 2C for message 0A
+#_09A8AD: db $D2, $59, $09 ; test progress bit 59 for message 09
+#_09A8B0: db $D3, $08 ; go to message 08
 
 ;===================================================================================================
 
@@ -6346,8 +6347,8 @@ Message_01_03_09:
 #_09A9D9: db $5A ; ー
 #_09A9DA: db $FC ; wait for key and new line
 #_09A9DB: db $D6, $00, $00 ; delete sprite in slot 00
-#_09A9DE: db $D0, $2C ; set progress bit $2C
-#_09A9E0: db $D3, $0B ; go to message $0B
+#_09A9DE: db $D0, $2C ; set progress bit 2C
+#_09A9E0: db $D3, $0B ; go to message 0B
 
 ;===================================================================================================
 
@@ -6360,7 +6361,7 @@ Message_01_03_0A:
 ;===================================================================================================
 
 Message_01_03_0B:
-#_09A9EF: db $D0, $0C ; set progress bit $0C
+#_09A9EF: db $D0, $0C ; set progress bit 0C
 #_09A9F1: db $FE, $1A, $6A, $05, $04, $00, $07, $13 ; ext command 1A: 6A,05,04,00,07,13
 #_09A9F9: db $FF ; end of message
 
@@ -6374,51 +6375,51 @@ Message_01_03_0C:
 ;===================================================================================================
 
 Message_01_03_0D:
-#_09AA02: db $D1, $0C ; clear progress bit $0C
+#_09AA02: db $D1, $0C ; clear progress bit 0C
 #_09AA04: db $FE, $1A, $6A, $87, $04, $00, $07, $13 ; ext command 1A: 6A,87,04,00,07,13
 #_09AA0C: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_03_0E:
-#_09AA0D: db $D2, $5C, $0F ; test progress bit $5C for message $0F
-#_09AA10: db $D3, $12 ; go to message $12
+#_09AA0D: db $D2, $5C, $0F ; test progress bit 5C for message 0F
+#_09AA10: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
 Message_01_03_0F:
-#_09AA12: db $D2, $0C, $10 ; test progress bit $0C for message $10
-#_09AA15: db $D3, $11 ; go to message $11
+#_09AA12: db $D2, $0C, $10 ; test progress bit 0C for message 10
+#_09AA15: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
 
-; >[NAME]は «あかはくしゃく»の
+; >[LEADER]は «あかはくしゃく»の
 ; へやから でた
 Message_01_03_10:
 #_09AA17: db $97 ; >
-#_09AA18: db $F1 ; write specific name
+#_09AA18: db $F1 ; write leader's name for team
 #_09AA19: db $3E, $CF ; は⎵
 #_09AA1B: db $F2, $50 ; prewritten text 50
 #_09AA1D: db $3D ; の
 #_09AA1E: db $F9 ; new line
 #_09AA1F: db $41, $48, $2A, $4B, $CF, $A9, $34 ; へやから⎵でた
 #_09AA26: db $FC ; wait for key and new line
-#_09AA27: db $D3, $0D ; go to message $0D
+#_09AA27: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
-; >[NAME]は «あかはくしゃく»の
+; >[LEADER]は «あかはくしゃく»の
 ; へやに はいった
 Message_01_03_11:
 #_09AA29: db $97 ; >
-#_09AA2A: db $F1 ; write specific name
+#_09AA2A: db $F1 ; write leader's name for team
 #_09AA2B: db $3E, $CF ; は⎵
 #_09AA2D: db $F2, $50 ; prewritten text 50
 #_09AA2F: db $3D ; の
 #_09AA30: db $F9 ; new line
 #_09AA31: db $41, $48, $3A, $CF, $3E, $26, $58, $34 ; へやに⎵はいった
 #_09AA39: db $FC ; wait for key and new line
-#_09AA3A: db $D3, $0B ; go to message $0B
+#_09AA3A: db $D3, $0B ; go to message 0B
 
 ;===================================================================================================
 
@@ -6446,7 +6447,7 @@ Message_01_03_11:
 ; ちっ ひとりだけですか まあ いいでしょう
 ; [JIMMY]のたましいは いただきましたよ
 Message_01_03_12:
-#_09AA3C: db $D5, $46 ; send $46 to APU
+#_09AA3C: db $D5, $46 ; send 46 to APU
 #_09AA3E: db $D6, $00, $BE, $70, $18 ; place sprite BE in slot 00 at XY:{70,18}
 #_09AA43: db $F2, $51 ; prewritten text 51
 #_09AA45: db $9A ; :
@@ -6511,7 +6512,7 @@ Message_01_03_12:
 #_09AB28: db $F2, $0B ; prewritten text 0B
 #_09AB2A: db $FC ; wait for key and new line
 #_09AB2B: db $FA ; clear message box
-#_09AB2C: db $D5, $3C ; send $3C to APU
+#_09AB2C: db $D5, $3C ; send 3C to APU
 #_09AB2E: db $F2, $03 ; prewritten text 03
 #_09AB30: db $3A, $47, $CF, $2F, $30, $25, $9F, $43 ; にも⎵さしあげま
 #_09AB38: db $30, $57, $27, $94 ; しょう!
@@ -6549,10 +6550,10 @@ Message_01_03_12:
 #_09ABA4: db $D6, $00, $00 ; delete sprite in slot 00
 #_09ABA7: db $D6, $01, $00 ; delete sprite in slot 01
 #_09ABAA: db $FE, $27, $02 ; ext command 27: something 02 TODO
-#_09ABAD: db $D0, $5C ; set progress bit $5C
-#_09ABAF: db $D1, $FF ; clear progress bit $FF
+#_09ABAD: db $D0, $5C ; set progress bit 5C
+#_09ABAF: db $D1, $FF ; clear progress bit FF
 #_09ABB1: db $FA ; clear message box
-#_09ABB2: db $D3, $10 ; go to message $10
+#_09ABB2: db $D3, $10 ; go to message 10
 
 ;===================================================================================================
 
@@ -6586,7 +6587,7 @@ Message_01_03_13:
 #_09ABF6: db $2F, $58, $2F, $38, $CF, $2A, $28, $52 ; さっさと⎵かえん
 #_09ABFE: db $39 ; な
 #_09ABFF: db $FC ; wait for key and new line
-#_09AC00: db $D3, $0D ; go to message $0D
+#_09AC00: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
@@ -6605,12 +6606,12 @@ Message_01_03_13:
 ; このまちを つくったひとだから
 ; とっても えらいんだよ
 Message_01_03_14:
-#_09AC02: db $E1, $B5 ; set $0A50 to $B5
+#_09AC02: db $E1, $B5 ; set $0A50 to item B5
 #_09AC04: db $D7, $29 ; load scene 29
-#_09AC06: db $D2, $56, $27 ; test progress bit $56 for message $27
-#_09AC09: db $D2, $68, $19 ; test progress bit $68 for message $19
-#_09AC0C: db $D5, $54 ; send $54 to APU
-#_09AC0E: db $D2, $5A, $1A ; test progress bit $5A for message $1A
+#_09AC06: db $D2, $56, $27 ; test progress bit 56 for message 27
+#_09AC09: db $D2, $68, $19 ; test progress bit 68 for message 19
+#_09AC0C: db $D5, $54 ; send 54 to APU
+#_09AC0E: db $D2, $5A, $1A ; test progress bit 5A for message 1A
 #_09AC11: db $D6, $00, $C5, $70, $28 ; place sprite C5 in slot 00 at XY:{70,28}
 #_09AC16: db $F2, $50 ; prewritten text 50
 #_09AC18: db $9A ; :
@@ -6690,7 +6691,7 @@ Message_01_03_16:
 #_09AD0C: db $3C, $5A, $3C, $5A, $CF ; ねーねー⎵
 #_09AD11: db $F3 ; write item name from $0A50
 #_09AD12: db $2A, $58, $37 ; かって
-#_09AD15: db $F8, $17 ; YES/NO - go to message $17 if YES
+#_09AD15: db $F8, $17 ; YES/NO - go to message 17 if YES
 #_09AD17: db $D4, $03 ; set text box size to 3
 #_09AD19: db $2A, $58, $37, $2C, $4E, $39, $26, $38 ; かってくれないと
 #_09AD21: db $CF ; ⎵
@@ -6701,7 +6702,7 @@ Message_01_03_16:
 #_09AD2E: db $5A ; ー
 #_09AD2F: db $FC ; wait for key and new line
 #_09AD30: db $FA ; clear message box
-#_09AD31: db $DD, $B5, $16 ; go to message $16 if item $B5
+#_09AD31: db $DD, $B5, $16 ; go to message 16 if missing item B5
 #_09AD34: db $25, $58, $CF, $47, $58, $37, $4D, $3D ; あっ⎵もってるの
 #_09AD3C: db $5A ; ー
 #_09AD3D: db $F9 ; new line
@@ -6709,7 +6710,7 @@ Message_01_03_16:
 #_09AD46: db $27, $A6, $26 ; うだい
 #_09AD49: db $FC ; wait for key and new line
 #_09AD4A: db $FA ; clear message box
-#_09AD4B: db $D3, $1B ; go to message $1B
+#_09AD4B: db $D3, $1B ; go to message 1B
 
 ;===================================================================================================
 
@@ -6727,7 +6728,7 @@ Message_01_03_18:
 #_09AD5B: db $3E, $48, $2C, $CF, $2A, $58, $37, $2B ; はやく⎵かってき
 #_09AD63: db $37, $3C, $5A ; てねー
 #_09AD66: db $FC ; wait for key and new line
-#_09AD67: db $D0, $5A ; set progress bit $5A
+#_09AD67: db $D0, $5A ; set progress bit 5A
 #_09AD69: db $FF ; end of message
 
 ;===================================================================================================
@@ -6736,7 +6737,7 @@ Message_01_03_18:
 Message_01_03_19:
 #_09AD6A: db $5D, $84, $69, $9A ; アリス:
 #_09AD6E: db $F9 ; new line
-#_09AD6F: db $D3, $1D ; go to message $1D
+#_09AD6F: db $D3, $1D ; go to message 1D
 
 ;===================================================================================================
 
@@ -6749,7 +6750,7 @@ Message_01_03_1A:
 #_09AD7B: db $3C, $28, $3C, $28, $CF, $2A, $58, $37 ; ねえねえ⎵かって
 #_09AD83: db $2B, $37, $2C, $4E, $34, $5A, $95 ; きてくれたー?
 #_09AD8A: db $FC ; wait for key and new line
-#_09AD8B: db $DD, $B5, $18 ; go to message $18 if item $B5
+#_09AD8B: db $DD, $B5, $18 ; go to message 18 if missing item B5
 
 ;===================================================================================================
 
@@ -6770,7 +6771,7 @@ Message_01_03_1B:
 #_09ADB3: db $25, $3D, $3C, $5A ; あのねー
 #_09ADB7: db $F2, $0B ; prewritten text 0B
 #_09ADB9: db $30, $52, $A9, $2C, $4E, $4D, $95 ; しんでくれる?
-#_09ADC0: db $F8, $26 ; YES/NO - go to message $26 if YES
+#_09ADC0: db $F8, $26 ; YES/NO - go to message 26 if YES
 
 ;===================================================================================================
 
@@ -6855,13 +6856,13 @@ Message_01_03_1D:
 #_09AE9F: db $CF, $2A, $39, $28, $37, $25, $9F, $4A ; ⎵かなえてあげよ
 #_09AEA7: db $27 ; う
 #_09AEA8: db $FC ; wait for key and new line
-#_09AEA9: db $DE, $01, $00, $09, $01 ; [COMMAND DE:01,00,09,01]
+#_09AEA9: db $DE, $01, $00, $09, $01 ; load 1x demon 0109
 #_09AEAE: db $F2, $7C ; prewritten text 7C
 #_09AEB0: db $D6, $07, $00 ; delete sprite in slot 07
-#_09AEB3: db $D5, $39 ; send $39 to APU
+#_09AEB3: db $D5, $39 ; send 39 to APU
 #_09AEB5: db $E4, $00 ; load demon $00
-#_09AEB7: db $DD, $E1, $1E ; go to message $1E if item $E1
-#_09AEBA: db $D3, $22 ; go to message $22
+#_09AEB7: db $DD, $E1, $1E ; go to message 1E if missing item E1
+#_09AEBA: db $D3, $22 ; go to message 22
 
 ;===================================================================================================
 
@@ -6875,7 +6876,7 @@ Message_01_03_1E:
 ; [DEMON1]は ダメージを うけてませんよ!
 Message_01_03_1F:
 #_09AEC2: db $FA ; clear message box
-#_09AEC3: db $E9, $02, $20 ; go to message $20 maybe TODO
+#_09AEC3: db $E9, $02, $20 ; go to message 20 maybe TODO
 #_09AEC6: db $EE ; write lawful hero name
 #_09AEC7: db $9A ; :
 #_09AEC8: db $F9 ; new line
@@ -6891,7 +6892,7 @@ Message_01_03_1F:
 Message_01_03_20:
 #_09AEDB: db $E5, $04, $21 ; [COMMAND E5:04,21]
 #_09AEDE: db $FA ; clear message box
-#_09AEDF: db $E9, $01, $21 ; go to message $21 maybe TODO
+#_09AEDF: db $E9, $01, $21 ; go to message 21 maybe TODO
 #_09AEE2: db $ED ; write female protag name
 #_09AEE3: db $9A ; :
 #_09AEE4: db $F9 ; new line
@@ -6902,16 +6903,16 @@ Message_01_03_20:
 
 ;===================================================================================================
 
-; >[NAME]は にげだした«・・・»«・・・»
+; >[LEADER]は にげだした«・・・»«・・・»
 Message_01_03_21:
 #_09AEFD: db $D4, $03 ; set text box size to 3
 #_09AEFF: db $97 ; >
-#_09AF00: db $F1 ; write specific name
+#_09AF00: db $F1 ; write leader's name for team
 #_09AF01: db $3E, $CF, $3A, $9F, $A6, $30, $34 ; は⎵にげだした
 #_09AF08: db $F2, $0B ; prewritten text 0B
 #_09AF0A: db $F2, $0B ; prewritten text 0B
 #_09AF0C: db $FC ; wait for key and new line
-#_09AF0D: db $D0, $68 ; set progress bit $68
+#_09AF0D: db $D0, $68 ; set progress bit 68
 #_09AF0F: db $FF ; end of message
 
 ;===================================================================================================
@@ -6927,7 +6928,7 @@ Message_01_03_21:
 ; «ウフフフフ»なかなか やるじゃない
 Message_01_03_22:
 #_09AF10: db $D4, $03 ; set text box size to 3
-#_09AF12: db $E1, $E1 ; set $0A50 to $E1
+#_09AF12: db $E1, $E1 ; set $0A50 to item E1
 #_09AF14: db $F5 ; write demon name from $050A
 #_09AF15: db $9A ; :
 #_09AF16: db $F9 ; new line
@@ -6940,7 +6941,7 @@ Message_01_03_22:
 #_09AF2C: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09AF2E: db $D6, $00, $9E, $78, $28 ; place sprite 9E in slot 00 at XY:{78,28}
 #_09AF33: db $FE, $07, $09 ; ext command 07: draw buffered text then wait 8 frames
-#_09AF36: db $D5, $FD ; send $FD to APU
+#_09AF36: db $D5, $FD ; send FD to APU
 #_09AF38: db $FA ; clear message box
 #_09AF39: db $97 ; >
 #_09AF3A: db $F5 ; write demon name from $050A
@@ -6965,9 +6966,9 @@ Message_01_03_22:
 #_09AF72: db $97, $29, $52, $39, $3D, $2E, $3E, $CF ; >おんなのこは⎵
 #_09AF7A: db $2B, $28, $2F, $58, $34 ; きえさった
 #_09AF7F: db $FC ; wait for key and new line
-#_09AF80: db $D0, $56 ; set progress bit $56
+#_09AF80: db $D0, $56 ; set progress bit 56
 #_09AF82: db $FE, $29 ; ext command 29: take item from $0A51 TODO
-#_09AF84: db $E1, $FC ; set $0A50 to $FC
+#_09AF84: db $E1, $FC ; set $0A50 to item FC
 #_09AF86: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_09AF88: db $FA ; clear message box
 #_09AF89: db $D6, $00, $98, $50, $18 ; place sprite 98 in slot 00 at XY:{50,18}
@@ -6982,7 +6983,7 @@ Message_01_03_22:
 #_09AFA8: db $39, $2A, $39, $2A, $CF, $48, $4D, $A2 ; なかなか⎵やるじ
 #_09AFB0: db $55, $39, $26 ; ゃない
 #_09AFB3: db $F9 ; new line
-#_09AFB4: db $E9, $0A, $25 ; go to message $25 maybe TODO
+#_09AFB4: db $E9, $0A, $25 ; go to message 25 maybe TODO
 
 ;===================================================================================================
 
@@ -7017,12 +7018,12 @@ Message_01_03_23:
 #_09B006: db $30, $39, $2F, $26 ; しなさい
 #_09B00A: db $FC ; wait for key and new line
 #_09B00B: db $FA ; clear message box
-#_09B00C: db $E1, $FC ; set $0A50 to $FC
+#_09B00C: db $E1, $FC ; set $0A50 to item FC
 #_09B00E: db $97 ; >
 #_09B00F: db $F3 ; write item name from $0A50
 #_09B010: db $51, $CF, $50, $34, $30, $43, $31, $2A ; を⎵わたしますか
 #_09B018: db $95 ; ?
-#_09B019: db $F8, $24 ; YES/NO - go to message $24 if YES
+#_09B019: db $F8, $24 ; YES/NO - go to message 24 if YES
 #_09B01B: db $D4, $03 ; set text box size to 3
 #_09B01D: db $49, $4C, $2E, $9A ; ゆりこ:
 #_09B021: db $F9 ; new line
@@ -7033,7 +7034,7 @@ Message_01_03_23:
 #_09B02F: db $97, $49, $4C, $2E, $3E, $CF, $68, $C4 ; >ゆりこは⎵シバ
 #_09B037: db $C6, $5A, $51, $CF, $38, $39, $28, $34 ; ブーを⎵となえた
 #_09B03F: db $FE, $1C, $03 ; ext command 1C: $03 TODO
-#_09B042: db $D5, $2D ; send $2D to APU
+#_09B042: db $D5, $2D ; send 2D to APU
 #_09B044: db $FE, $0D, $FF, $0A ; ext command 0D: something 0A, FF
 #_09B048: db $FC ; wait for key and new line
 
@@ -7071,7 +7072,7 @@ Message_01_03_24:
 #_09B08D: db $49, $4C, $2E, $3E, $CF, $2F, $58, $37 ; ゆりこは⎵さって
 #_09B095: db $26, $58, $34 ; いった
 #_09B098: db $FC ; wait for key and new line
-#_09B099: db $D0, $5D ; set progress bit $5D
+#_09B099: db $D0, $5D ; set progress bit 5D
 #_09B09B: db $FF ; end of message
 
 ;===================================================================================================
@@ -7088,7 +7089,7 @@ Message_01_03_25:
 #_09B0B6: db $2E, $4E, $A9, $CF, $A6, $26, $A2, $57 ; これで⎵だいじょ
 #_09B0BE: db $27, $AD, $3C ; うぶね
 #_09B0C1: db $F9 ; new line
-#_09B0C2: db $D3, $23 ; go to message $23
+#_09B0C2: db $D3, $23 ; go to message 23
 
 ;===================================================================================================
 
@@ -7118,7 +7119,7 @@ Message_01_03_26:
 #_09B10B: db $3C, $28, $CF, $30, $52, $A9, $2C, $4E ; ねえ⎵しんでくれ
 #_09B113: db $39, $26, $3D, $5A, $95 ; ないのー?
 #_09B118: db $FC ; wait for key and new line
-#_09B119: db $D3, $1C ; go to message $1C
+#_09B119: db $D3, $1C ; go to message 1C
 #_09B11B: db $FF ; end of message
 
 ;===================================================================================================
@@ -7142,13 +7143,13 @@ Message_01_03_27:
 ; ほかのひとたちにも よろこんでもらっています
 Message_01_03_28:
 #_09B121: db $D7, $29 ; load scene 29
-#_09B123: db $D2, $57, $2E ; test progress bit $57 for message $2E
-#_09B126: db $D5, $54 ; send $54 to APU
+#_09B123: db $D2, $57, $2E ; test progress bit 57 for message 2E
+#_09B126: db $D5, $54 ; send 54 to APU
 #_09B128: db $D6, $00, $BE, $70, $18 ; place sprite BE in slot 00 at XY:{70,18}
 #_09B12D: db $F2, $51 ; prewritten text 51
 #_09B12F: db $9A ; :
 #_09B130: db $F9 ; new line
-#_09B131: db $D2, $56, $29 ; test progress bit $56 for message $29
+#_09B131: db $D2, $56, $29 ; test progress bit 56 for message 29
 #_09B134: db $AA, $27, $A9, $31, $CF, $2E, $2E, $CF ; どうです⎵ここ⎵
 #_09B13C: db $F2, $4C ; prewritten text 4C
 #_09B13E: db $3D, $CF, $26, $A0, $A0, $35, $3E, $95 ; の⎵いごごちは?
@@ -7205,10 +7206,10 @@ Message_01_03_29:
 #_09B1FE: db $92, $7A ; ッホ
 #_09B200: db $F2, $0B ; prewritten text 0B
 #_09B202: db $FC ; wait for key and new line
-#_09B203: db $DE, $01, $00, $0A, $01 ; [COMMAND DE:01,00,0A,01]
+#_09B203: db $DE, $01, $00, $0A, $01 ; load 1x demon 010A
 #_09B208: db $FE, $46, $09 ; ext command 46: 09 TODO
 #_09B20B: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
-#_09B20E: db $D5, $39 ; send $39 to APU
+#_09B20E: db $D5, $39 ; send 39 to APU
 #_09B210: db $D6, $00, $9D, $78, $38 ; place sprite 9D in slot 00 at XY:{78,38}
 #_09B215: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_09B218: db $E4, $00 ; load demon $00
@@ -7218,7 +7219,7 @@ Message_01_03_29:
 
 Message_01_03_2A:
 #_09B21D: db $E5, $00, $2B ; [COMMAND E5:00,2B]
-#_09B220: db $D3, $2A ; go to message $2A
+#_09B220: db $D3, $2A ; go to message 2A
 
 ;===================================================================================================
 
@@ -7271,11 +7272,11 @@ Message_01_03_2B:
 #_09B28F: db $A6 ; だ
 #_09B290: db $F2, $0B ; prewritten text 0B
 #_09B292: db $FC ; wait for key and new line
-#_09B293: db $D0, $57 ; set progress bit $57
+#_09B293: db $D0, $57 ; set progress bit 57
 #_09B295: db $D4, $03 ; set text box size to 3
 #_09B297: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09B299: db $FE, $07, $20 ; ext command 07: draw buffered text then wait 31 frames
-#_09B29C: db $D5, $45 ; send $45 to APU
+#_09B29C: db $D5, $45 ; send 45 to APU
 #_09B29E: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
 #_09B2A3: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B2A7: db $EE ; write lawful hero name
@@ -7297,8 +7298,8 @@ Message_01_03_2B:
 #_09B2DE: db $2A, $26, $41, $CF, $26, $2D, $43, $31 ; かいへ⎵いけます
 #_09B2E6: db $F2, $0B ; prewritten text 0B
 #_09B2E8: db $FC ; wait for key and new line
-#_09B2E9: db $D2, $8C, $2C ; test progress bit $8C for message $2C
-#_09B2EC: db $D3, $2D ; go to message $2D
+#_09B2E9: db $D2, $8C, $2C ; test progress bit 8C for message 2C
+#_09B2EC: db $D3, $2D ; go to message 2D
 
 ;===================================================================================================
 
@@ -7306,8 +7307,8 @@ Message_01_03_2B:
 ; [MOMO]を たすけられなかったのが
 ; ざんねんです
 Message_01_03_2C:
-#_09B2EE: db $D2, $8B, $2D ; test progress bit $8B for message $2D
-#_09B2F1: db $DE, $00, $00, $EE, $01 ; [COMMAND DE:00,00,EE,01]
+#_09B2EE: db $D2, $8B, $2D ; test progress bit 8B for message 2D
+#_09B2F1: db $DE, $00, $00, $EE, $01 ; load 1x demon 00EE
 #_09B2F6: db $FA ; clear message box
 #_09B2F7: db $34, $A6, $CF ; ただ⎵
 #_09B2FA: db $F5 ; write demon name from $050A
@@ -7403,17 +7404,17 @@ Message_01_03_2E:
 ; [MOMO]!
 Message_01_03_2F:
 #_09B3BC: db $D7, $A4, $33 ; load scenes A4 and 33
-#_09B3BF: db $D2, $8B, $36 ; test progress bit $8B for message $36
-#_09B3C2: db $D5, $45 ; send $45 to APU
+#_09B3BF: db $D2, $8B, $36 ; test progress bit 8B for message 36
+#_09B3C2: db $D5, $45 ; send 45 to APU
 #_09B3C4: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
-#_09B3C9: db $DE, $00, $00, $EE, $01 ; [COMMAND DE:00,00,EE,01]
+#_09B3C9: db $DE, $00, $00, $EE, $01 ; load 1x demon 00EE
 #_09B3CE: db $97 ; >
 #_09B3CF: db $F2, $00 ; prewritten text 00
 #_09B3D1: db $9C, $CF, $38, $A2, $2E, $46, $4B, $4E ; が⎵とじこめられ
 #_09B3D9: db $37, $26, $4D ; ている
 #_09B3DC: db $FC ; wait for key and new line
-#_09B3DD: db $D2, $8C, $30 ; test progress bit $8C for message $30
-#_09B3E0: db $E9, $02, $30 ; go to message $30 maybe TODO
+#_09B3DD: db $D2, $8C, $30 ; test progress bit 8C for message 30
+#_09B3E0: db $E9, $02, $30 ; go to message 30 maybe TODO
 #_09B3E3: db $FA ; clear message box
 #_09B3E4: db $EE ; write lawful hero name
 #_09B3E5: db $9A ; :
@@ -7474,7 +7475,7 @@ Message_01_03_30:
 #_09B43D: db $ED ; write female protag name
 #_09B43E: db $9A ; :
 #_09B43F: db $F9 ; new line
-#_09B440: db $D2, $58, $31 ; test progress bit $58 for message $31
+#_09B440: db $D2, $58, $31 ; test progress bit 58 for message 31
 #_09B443: db $2E, $39, $26, $A9, $94 ; こないで!
 #_09B448: db $FC ; wait for key and new line
 #_09B449: db $44, $2A, $2D, $3E, $CF, $2A, $50, $4B ; みかけは⎵かわら
@@ -7523,7 +7524,7 @@ Message_01_03_30:
 ; あたしは すくわれる
 ; おねがい あたしを らくにして«・・・»
 Message_01_03_31:
-#_09B4E6: db $E1, $BB ; set $0A50 to $BB
+#_09B4E6: db $E1, $BB ; set $0A50 to item BB
 #_09B4E8: db $F3 ; write item name from $0A50
 #_09B4E9: db $F2, $0B ; prewritten text 0B
 #_09B4EB: db $FE, $07, $24 ; ext command 07: draw buffered text then wait 35 frames
@@ -7538,9 +7539,9 @@ Message_01_03_31:
 #_09B50B: db $51, $CF, $4B, $2C, $3A, $30, $37 ; を⎵らくにして
 #_09B512: db $F2, $0B ; prewritten text 0B
 #_09B514: db $FC ; wait for key and new line
-#_09B515: db $D0, $8C ; set progress bit $8C
-#_09B517: db $DD, $BB, $32 ; go to message $32 if item $BB
-#_09B51A: db $D3, $33 ; go to message $33
+#_09B515: db $D0, $8C ; set progress bit 8C
+#_09B517: db $DD, $BB, $32 ; go to message 32 if missing item BB
+#_09B51A: db $D3, $33 ; go to message 33
 
 ;===================================================================================================
 
@@ -7560,7 +7561,7 @@ Message_01_03_33:
 #_09B523: db $3A ; に
 #_09B524: db $F9 ; new line
 #_09B525: db $36, $2A, $26, $43, $31, $2A, $95 ; つかいますか?
-#_09B52C: db $F8, $34 ; YES/NO - go to message $34 if YES
+#_09B52C: db $F8, $34 ; YES/NO - go to message 34 if YES
 #_09B52E: db $FF ; end of message
 
 ;===================================================================================================
@@ -7573,7 +7574,7 @@ Message_01_03_33:
 ; [JIMMY]:
 ; [MOMO]«・・・»また あえたのに«・・・»
 Message_01_03_34:
-#_09B52F: db $E1, $BB ; set $0A50 to $BB
+#_09B52F: db $E1, $BB ; set $0A50 to item BB
 #_09B531: db $FE, $29 ; ext command 29: take item from $0A51 TODO
 #_09B533: db $D4, $03 ; set text box size to 3
 #_09B535: db $ED ; write female protag name
@@ -7617,9 +7618,9 @@ Message_01_03_34:
 #_09B5C3: db $F2, $0B ; prewritten text 0B
 #_09B5C5: db $FC ; wait for key and new line
 #_09B5C6: db $D6, $00, $00 ; delete sprite in slot 00
-#_09B5C9: db $D0, $8B ; set progress bit $8B
+#_09B5C9: db $D0, $8B ; set progress bit 8B
 #_09B5CB: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
-#_09B5CE: db $E9, $02, $35 ; go to message $35 maybe TODO
+#_09B5CE: db $E9, $02, $35 ; go to message 35 maybe TODO
 #_09B5D1: db $FA ; clear message box
 #_09B5D2: db $EE ; write lawful hero name
 #_09B5D3: db $9A ; :
@@ -7650,7 +7651,7 @@ Message_01_03_36:
 ; このまちは へいわでいいなあ
 ; アクマにも おそわれない
 Message_01_03_37:
-#_09B5E9: db $D2, $56, $38 ; test progress bit $56 for message $38
+#_09B5E9: db $D2, $56, $38 ; test progress bit 56 for message 38
 #_09B5EC: db $D6, $00, $37, $70, $28 ; place sprite 37 in slot 00 at XY:{70,28}
 #_09B5F1: db $29, $38, $2E, $9A ; おとこ:
 #_09B5F5: db $F9 ; new line
@@ -7672,7 +7673,7 @@ Message_01_03_38:
 #_09B613: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09B618: db $29, $38, $2E, $9A ; おとこ:
 #_09B61C: db $F9 ; new line
-#_09B61D: db $D2, $58, $39 ; test progress bit $58 for message $39
+#_09B61D: db $D2, $58, $39 ; test progress bit 58 for message 39
 #_09B620: db $39, $52, $A6, $4A, $CF ; なんだよ⎵
 #_09B625: db $F2, $4C ; prewritten text 4C
 #_09B627: db $3E ; は
@@ -7702,15 +7703,15 @@ Message_01_03_39:
 ;===================================================================================================
 
 Message_01_03_3A:
-#_09B66F: db $D2, $58, $3D ; test progress bit $58 for message $3D
-#_09B672: db $D2, $56, $3B ; test progress bit $56 for message $3B
+#_09B66F: db $D2, $58, $3D ; test progress bit 58 for message 3D
+#_09B672: db $D2, $56, $3B ; test progress bit 56 for message 3B
 #_09B675: db $D6, $00, $45, $78, $28 ; place sprite 45 in slot 00 at XY:{78,28}
-#_09B67A: db $D3, $3C ; go to message $3C
+#_09B67A: db $D3, $3C ; go to message 3C
 
 ;===================================================================================================
 
 Message_01_03_3B:
-#_09B67C: db $DE, $00, $00, $F1, $01 ; [COMMAND DE:00,00,F1,01]
+#_09B67C: db $DE, $00, $00, $F1, $01 ; load 1x demon 00F1
 #_09B681: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -7767,15 +7768,15 @@ Message_01_03_3D:
 ;===================================================================================================
 
 Message_01_03_3E:
-#_09B6F7: db $D2, $58, $41 ; test progress bit $58 for message $41
-#_09B6FA: db $D2, $56, $3F ; test progress bit $56 for message $3F
+#_09B6F7: db $D2, $58, $41 ; test progress bit 58 for message 41
+#_09B6FA: db $D2, $56, $3F ; test progress bit 56 for message 3F
 #_09B6FD: db $D6, $00, $29, $70, $28 ; place sprite 29 in slot 00 at XY:{70,28}
-#_09B702: db $D3, $40 ; go to message $40
+#_09B702: db $D3, $40 ; go to message 40
 
 ;===================================================================================================
 
 Message_01_03_3F:
-#_09B704: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
+#_09B704: db $DE, $00, $00, $F2, $01 ; load 1x demon 00F2
 #_09B709: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -7825,15 +7826,15 @@ Message_01_03_41:
 ;===================================================================================================
 
 Message_01_03_42:
-#_09B77F: db $D2, $58, $45 ; test progress bit $58 for message $45
-#_09B782: db $D2, $56, $43 ; test progress bit $56 for message $43
+#_09B77F: db $D2, $58, $45 ; test progress bit 58 for message 45
+#_09B782: db $D2, $56, $43 ; test progress bit 56 for message 43
 #_09B785: db $D6, $00, $4A, $78, $28 ; place sprite 4A in slot 00 at XY:{78,28}
-#_09B78A: db $D3, $44 ; go to message $44
+#_09B78A: db $D3, $44 ; go to message 44
 
 ;===================================================================================================
 
 Message_01_03_43:
-#_09B78C: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
+#_09B78C: db $DE, $00, $00, $F2, $01 ; load 1x demon 00F2
 #_09B791: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -7892,15 +7893,15 @@ Message_01_03_45:
 ;===================================================================================================
 
 Message_01_03_46:
-#_09B808: db $D2, $58, $49 ; test progress bit $58 for message $49
-#_09B80B: db $D2, $56, $47 ; test progress bit $56 for message $47
+#_09B808: db $D2, $58, $49 ; test progress bit 58 for message 49
+#_09B80B: db $D2, $56, $47 ; test progress bit 56 for message 47
 #_09B80E: db $D6, $00, $44, $78, $28 ; place sprite 44 in slot 00 at XY:{78,28}
-#_09B813: db $D3, $48 ; go to message $48
+#_09B813: db $D3, $48 ; go to message 48
 
 ;===================================================================================================
 
 Message_01_03_47:
-#_09B815: db $DE, $00, $00, $F1, $01 ; [COMMAND DE:00,00,F1,01]
+#_09B815: db $DE, $00, $00, $F1, $01 ; load 1x demon 00F1
 #_09B81A: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -7964,8 +7965,8 @@ Message_01_03_49:
 ;===================================================================================================
 
 Message_01_03_4A:
-#_09B8B2: db $D2, $58, $4E ; test progress bit $58 for message $4E
-#_09B8B5: db $D2, $56, $4C ; test progress bit $56 for message $4C
+#_09B8B2: db $D2, $58, $4E ; test progress bit 58 for message 4E
+#_09B8B5: db $D2, $56, $4C ; test progress bit 56 for message 4C
 #_09B8B8: db $D6, $00, $6A, $70, $28 ; place sprite 6A in slot 00 at XY:{70,28}
 
 ;===================================================================================================
@@ -7991,7 +7992,7 @@ Message_01_03_4B:
 ; [CHASE]くん
 ; ひさしぶりだね げんきかい?
 Message_01_03_4C:
-#_09B8DD: db $D2, $57, $4D ; test progress bit $57 for message $4D
+#_09B8DD: db $D2, $57, $4D ; test progress bit 57 for message 4D
 #_09B8E0: db $D6, $00, $2E, $70, $28 ; place sprite 2E in slot 00 at XY:{70,28}
 #_09B8E5: db $FE, $07, $48 ; ext command 07: draw buffered text then wait 71 frames
 #_09B8E8: db $EE ; write lawful hero name
@@ -8008,9 +8009,9 @@ Message_01_03_4C:
 ;===================================================================================================
 
 Message_01_03_4D:
-#_09B8FF: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
+#_09B8FF: db $DE, $00, $00, $F2, $01 ; load 1x demon 00F2
 #_09B904: db $E4, $00 ; load demon $00
-#_09B906: db $D3, $4B ; go to message $4B
+#_09B906: db $D3, $4B ; go to message 4B
 
 ;===================================================================================================
 
@@ -8047,15 +8048,15 @@ Message_01_03_4E:
 ;===================================================================================================
 
 Message_01_03_4F:
-#_09B95F: db $D2, $58, $52 ; test progress bit $58 for message $52
-#_09B962: db $D2, $56, $50 ; test progress bit $56 for message $50
+#_09B95F: db $D2, $58, $52 ; test progress bit 58 for message 52
+#_09B962: db $D2, $56, $50 ; test progress bit 56 for message 50
 #_09B965: db $D6, $00, $46, $78, $28 ; place sprite 46 in slot 00 at XY:{78,28}
-#_09B96A: db $D3, $51 ; go to message $51
+#_09B96A: db $D3, $51 ; go to message 51
 
 ;===================================================================================================
 
 Message_01_03_50:
-#_09B96C: db $DE, $00, $00, $F1, $01 ; [COMMAND DE:00,00,F1,01]
+#_09B96C: db $DE, $00, $00, $F1, $01 ; load 1x demon 00F1
 #_09B971: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -8098,16 +8099,16 @@ Message_01_03_52:
 ;===================================================================================================
 
 Message_01_03_53:
-#_09B9C0: db $D2, $58, $56 ; test progress bit $58 for message $56
+#_09B9C0: db $D2, $58, $56 ; test progress bit 58 for message 56
 #_09B9C3: db $D7, $15 ; load scene 15
-#_09B9C5: db $D2, $56, $54 ; test progress bit $56 for message $54
+#_09B9C5: db $D2, $56, $54 ; test progress bit 56 for message 54
 #_09B9C8: db $D6, $00, $64, $70, $28 ; place sprite 64 in slot 00 at XY:{70,28}
-#_09B9CD: db $D3, $55 ; go to message $55
+#_09B9CD: db $D3, $55 ; go to message 55
 
 ;===================================================================================================
 
 Message_01_03_54:
-#_09B9CF: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
+#_09B9CF: db $DE, $00, $00, $F2, $01 ; load 1x demon 00F2
 #_09B9D4: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -8119,7 +8120,7 @@ Message_01_03_55:
 #_09B9DB: db $F9 ; new line
 #_09B9DC: db $F2, $32 ; prewritten text 32
 #_09B9DE: db $FC ; wait for key and new line
-#_09B9DF: db $D0, $0C ; set progress bit $0C
+#_09B9DF: db $D0, $0C ; set progress bit 0C
 #_09B9E1: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09B9E3: db $FF ; end of message
 
@@ -8139,16 +8140,16 @@ Message_01_03_56:
 ;===================================================================================================
 
 Message_01_03_57:
-#_09B9FE: db $D2, $58, $5A ; test progress bit $58 for message $5A
+#_09B9FE: db $D2, $58, $5A ; test progress bit 58 for message 5A
 #_09BA01: db $D7, $15 ; load scene 15
-#_09BA03: db $D2, $56, $58 ; test progress bit $56 for message $58
+#_09BA03: db $D2, $56, $58 ; test progress bit 56 for message 58
 #_09BA06: db $D6, $00, $64, $70, $28 ; place sprite 64 in slot 00 at XY:{70,28}
-#_09BA0B: db $D3, $59 ; go to message $59
+#_09BA0B: db $D3, $59 ; go to message 59
 
 ;===================================================================================================
 
 Message_01_03_58:
-#_09BA0D: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
+#_09BA0D: db $DE, $00, $00, $F2, $01 ; load 1x demon 00F2
 #_09BA12: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -8160,7 +8161,7 @@ Message_01_03_59:
 #_09BA19: db $F9 ; new line
 #_09BA1A: db $F2, $31 ; prewritten text 31
 #_09BA1C: db $FC ; wait for key and new line
-#_09BA1D: db $D1, $0C ; clear progress bit $0C
+#_09BA1D: db $D1, $0C ; clear progress bit 0C
 #_09BA1F: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09BA21: db $FF ; end of message
 
@@ -8185,7 +8186,7 @@ Message_01_03_5A:
 ; かえているんだ おれも もうすぐ かえられる!
 ; たすけてくれ!
 Message_01_03_5B:
-#_09BA34: db $D2, $57, $5C ; test progress bit $57 for message $5C
+#_09BA34: db $D2, $57, $5C ; test progress bit 57 for message 5C
 #_09BA37: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
 #_09BA3C: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BA40: db $29, $38, $2E, $9A ; おとこ:
@@ -8245,7 +8246,7 @@ Message_01_03_5C:
 ; いまでは あつめた«エネルギー»を
 ; すべて そのこのために つかっている
 Message_01_03_5D:
-#_09BAD0: db $D2, $57, $5E ; test progress bit $57 for message $5E
+#_09BAD0: db $D2, $57, $5E ; test progress bit 57 for message 5E
 #_09BAD3: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
 #_09BAD8: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BADC: db $29, $38, $2E, $9A ; おとこ:
@@ -8310,7 +8311,7 @@ Message_01_03_5E:
 ; «くろだんしゃく»を たおさなければ
 ; ここに とじこめられた ままでしょう«・・・»
 Message_01_03_5F:
-#_09BB74: db $D2, $57, $60 ; test progress bit $57 for message $60
+#_09BB74: db $D2, $57, $60 ; test progress bit 57 for message 60
 #_09BB77: db $D6, $00, $1F, $70, $28 ; place sprite 1F in slot 00 at XY:{70,28}
 #_09BB7C: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BB80: db $EE ; write lawful hero name
@@ -8359,8 +8360,8 @@ Message_01_03_60:
 ; >つよい まりょくで «とびらは とざされている»
 Message_01_03_61:
 #_09BBEE: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
-#_09BBF3: db $D2, $0C, $64 ; test progress bit $0C for message $64
-#_09BBF6: db $D2, $56, $62 ; test progress bit $56 for message $62
+#_09BBF3: db $D2, $0C, $64 ; test progress bit 0C for message 64
+#_09BBF6: db $D2, $56, $62 ; test progress bit 56 for message 62
 #_09BBF9: db $97, $36, $4A, $26, $CF, $43, $4C, $57 ; >つよい⎵まりょ
 #_09BC01: db $2C, $A9, $CF ; くで⎵
 #_09BC04: db $F2, $69 ; prewritten text 69
@@ -8373,7 +8374,7 @@ Message_01_03_61:
 Message_01_03_62:
 #_09BC08: db $97 ; >
 #_09BC09: db $F2, $68 ; prewritten text 68
-#_09BC0B: db $F8, $63 ; YES/NO - go to message $63 if YES
+#_09BC0B: db $F8, $63 ; YES/NO - go to message 63 if YES
 #_09BC0D: db $FF ; end of message
 
 ;===================================================================================================
@@ -8383,7 +8384,7 @@ Message_01_03_63:
 #_09BC13: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09BC16: db $D6, $00, $00 ; delete sprite in slot 00
 #_09BC19: db $FE, $1A, $63, $04, $04, $00, $07, $13 ; ext command 1A: 63,04,04,00,07,13
-#_09BC21: db $D0, $0C ; set progress bit $0C
+#_09BC21: db $D0, $0C ; set progress bit 0C
 #_09BC23: db $FF ; end of message
 
 ;===================================================================================================
@@ -8392,28 +8393,28 @@ Message_01_03_63:
 Message_01_03_64:
 #_09BC24: db $97, $41, $48, $3D, $CF, $33, $38, $3A ; >へやの⎵そとに
 #_09BC2C: db $CF, $A9, $43, $31, $2A, $95 ; ⎵でますか?
-#_09BC32: db $F8, $65 ; YES/NO - go to message $65 if YES
+#_09BC32: db $F8, $65 ; YES/NO - go to message 65 if YES
 #_09BC34: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_03_65:
 #_09BC35: db $FE, $1A, $63, $86, $04, $00, $07, $13 ; ext command 1A: 63,86,04,00,07,13
-#_09BC3D: db $D1, $0C ; clear progress bit $0C
+#_09BC3D: db $D1, $0C ; clear progress bit 0C
 #_09BC3F: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_03_66:
-#_09BC40: db $D2, $56, $68 ; test progress bit $56 for message $68
-#_09BC43: db $D0, $FF ; set progress bit $FF
+#_09BC40: db $D2, $56, $68 ; test progress bit 56 for message 68
+#_09BC43: db $D0, $FF ; set progress bit FF
 #_09BC45: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_03_67:
-#_09BC46: db $D2, $56, $68 ; test progress bit $56 for message $68
-#_09BC49: db $D1, $FF ; clear progress bit $FF
+#_09BC46: db $D2, $56, $68 ; test progress bit 56 for message 68
+#_09BC49: db $D1, $FF ; clear progress bit FF
 
 ;===================================================================================================
 
@@ -8424,14 +8425,14 @@ Message_01_03_68:
 
 ; ろうじん:
 Message_01_04_00:
-#_09BC4C: db $D5, $47 ; send $47 to APU
+#_09BC4C: db $D5, $47 ; send 47 to APU
 #_09BC4E: db $D6, $00, $59, $70, $38 ; place sprite 59 in slot 00 at XY:{70,38}
 #_09BC53: db $4F, $27, $A2, $52, $9A ; ろうじん:
 #_09BC58: db $F9 ; new line
-#_09BC59: db $D2, $65, $0C ; test progress bit $65 for message $0C
-#_09BC5C: db $D2, $66, $0D ; test progress bit $66 for message $0D
-#_09BC5F: db $D2, $67, $09 ; test progress bit $67 for message $09
-#_09BC62: db $D2, $63, $06 ; test progress bit $63 for message $06
+#_09BC59: db $D2, $65, $0C ; test progress bit 65 for message 0C
+#_09BC5C: db $D2, $66, $0D ; test progress bit 66 for message 0D
+#_09BC5F: db $D2, $67, $09 ; test progress bit 67 for message 09
+#_09BC62: db $D2, $63, $06 ; test progress bit 63 for message 06
 
 ;===================================================================================================
 
@@ -8441,7 +8442,7 @@ Message_01_04_00:
 ; 30ねん すぎたが«・・・»
 ; はかいごの せかいには なれたか?
 Message_01_04_01:
-#_09BC65: db $D2, $61, $02 ; test progress bit $61 for message $02
+#_09BC65: db $D2, $61, $02 ; test progress bit 61 for message 02
 #_09BC68: db $3F, $2F, $30, $AD, $4C, $A2, $55, $3D ; ひさしぶりじゃの
 #_09BC70: db $27, $CF, $34, $58, $30, $55, $A9, $CF ; う⎵たっしゃで⎵
 #_09BC78: db $29, $58, $34, $2A, $95 ; おったか?
@@ -8473,7 +8474,7 @@ Message_01_04_02:
 #_09BCBF: db $36, $48, $2C, $3E, $CF, $2B, $26, $37 ; つやくは⎵きいて
 #_09BCC7: db $29, $4D, $A5 ; おるぞ
 #_09BCCA: db $FC ; wait for key and new line
-#_09BCCB: db $D0, $61 ; set progress bit $61
+#_09BCCB: db $D0, $61 ; set progress bit 61
 #_09BCCD: db $FE, $04, $03, $04 ; ext command 04: message 03 if 11C >= 112; 04 if >= 144
 #_09BCD1: db $FA ; clear message box
 #_09BCD2: db $27, $5A, $45, $CF, $39, $2A, $39, $2A ; うーむ⎵なかなか
@@ -8484,7 +8485,7 @@ Message_01_04_02:
 #_09BCF1: db $2D, $51, $CF, $50, $31, $4E, $3B, $4A ; けを⎵わすれぬよ
 #_09BCF9: db $27, $3A, $39 ; うにな
 #_09BCFC: db $FC ; wait for key and new line
-#_09BCFD: db $D3, $05 ; go to message $05
+#_09BCFD: db $D3, $05 ; go to message 05
 
 ;===================================================================================================
 
@@ -8503,7 +8504,7 @@ Message_01_04_03:
 #_09BD24: db $2A, $CF, $50, $2A, $58, $37, $29, $4D ; か⎵わかっておる
 #_09BD2C: db $3D, $2A, $95 ; のか?
 #_09BD2F: db $FC ; wait for key and new line
-#_09BD30: db $D3, $05 ; go to message $05
+#_09BD30: db $D3, $05 ; go to message 05
 
 ;===================================================================================================
 
@@ -8541,8 +8542,8 @@ Message_01_04_05:
 ;===================================================================================================
 
 Message_01_04_06:
-#_09BD8E: db $D2, $64, $07 ; test progress bit $64 for message $07
-#_09BD91: db $D3, $01 ; go to message $01
+#_09BD8E: db $D2, $64, $07 ; test progress bit 64 for message 07
+#_09BD91: db $D3, $01 ; go to message 01
 
 ;===================================================================================================
 
@@ -8597,14 +8598,14 @@ Message_01_04_07:
 #_09BE2C: db $CF, $4A, $26 ; ⎵よい
 #_09BE2F: db $FC ; wait for key and new line
 #_09BE30: db $FE, $03, $00 ; ext command 03: add 0 to STAT_11C if progress bit FB
-#_09BE33: db $D0, $67 ; set progress bit $67
-#_09BE35: db $D0, $FB ; set progress bit $FB
+#_09BE33: db $D0, $67 ; set progress bit 67
+#_09BE35: db $D0, $FB ; set progress bit FB
 
 ;===================================================================================================
 
 ; きを つけてな
 Message_01_04_08:
-#_09BE37: db $D0, $0C ; set progress bit $0C
+#_09BE37: db $D0, $0C ; set progress bit 0C
 #_09BE39: db $FE, $1B, $1D, $52, $0D, $00, $07, $18 ; ext command 1B: 1D,52,0D,00,07,18
 #_09BE41: db $D4, $03 ; set text box size to 3
 #_09BE43: db $2B, $51, $CF, $36, $2D, $37, $39 ; きを⎵つけてな
@@ -8616,11 +8617,11 @@ Message_01_04_08:
 ; «カテドラル»へ いくのか?
 ; そうか あせっては おらぬな
 Message_01_04_09:
-#_09BE4C: db $D2, $9E, $0F ; test progress bit $9E for message $0F
-#_09BE4F: db $D2, $0C, $0B ; test progress bit $0C for message $0B
+#_09BE4C: db $D2, $9E, $0F ; test progress bit 9E for message 0F
+#_09BE4F: db $D2, $0C, $0B ; test progress bit 0C for message 0B
 #_09BE52: db $F2, $5C ; prewritten text 5C
 #_09BE54: db $41, $CF, $26, $2C, $3D, $2A, $95 ; へ⎵いくのか?
-#_09BE5B: db $F8, $08 ; YES/NO - go to message $08 if YES
+#_09BE5B: db $F8, $08 ; YES/NO - go to message 08 if YES
 #_09BE5D: db $D4, $03 ; set text box size to 3
 #_09BE5F: db $33, $27, $2A, $CF, $25, $32, $58, $37 ; そうか⎵あせって
 #_09BE67: db $3E, $CF, $29, $4B, $3B, $39 ; は⎵おらぬな
@@ -8630,7 +8631,7 @@ Message_01_04_09:
 
 Message_01_04_0A:
 #_09BE6E: db $FE, $1B, $1B, $D2, $0D, $00, $07, $18 ; ext command 1B: 1B,D2,0D,00,07,18
-#_09BE76: db $D1, $0C ; clear progress bit $0C
+#_09BE76: db $D1, $0C ; clear progress bit 0C
 #_09BE78: db $FF ; end of message
 
 ;===================================================================================================
@@ -8639,8 +8640,8 @@ Message_01_04_0A:
 Message_01_04_0B:
 #_09BE79: db $B6, $8A, $BA, $41, $CF, $26, $2C, $3D ; ギンザへ⎵いくの
 #_09BE81: db $2A, $95 ; か?
-#_09BE83: db $F8, $0A ; YES/NO - go to message $0A if YES
-#_09BE85: db $D3, $08 ; go to message $08
+#_09BE83: db $F8, $0A ; YES/NO - go to message 0A if YES
+#_09BE85: db $D3, $08 ; go to message 08
 
 ;===================================================================================================
 
@@ -8653,7 +8654,7 @@ Message_01_04_0C:
 #_09BE9A: db $F9 ; new line
 #_09BE9B: db $2B, $26, $34, $3D, $A6, $39 ; きいたのだな
 #_09BEA1: db $FC ; wait for key and new line
-#_09BEA2: db $D3, $0E ; go to message $0E
+#_09BEA2: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
@@ -8665,7 +8666,7 @@ Message_01_04_0D:
 #_09BEB3: db $F9 ; new line
 #_09BEB4: db $2B, $26, $34, $3D, $A6, $39 ; きいたのだな
 #_09BEBA: db $FC ; wait for key and new line
-#_09BEBB: db $D3, $0E ; go to message $0E
+#_09BEBB: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
@@ -8700,7 +8701,7 @@ Message_01_04_0F:
 ; よくきたねェ
 ; ここが GINZAじゅわいおくちゅーる・ラグ
 Message_01_04_10:
-#_09BEF6: db $D5, $50 ; send $50 to APU
+#_09BEF6: db $D5, $50 ; send 50 to APU
 #_09BEF8: db $D7, $A4, $25 ; load scenes A4 and 25
 #_09BEFB: db $D6, $00, $AC, $70, $28 ; place sprite AC in slot 00 at XY:{70,28}
 #_09BF00: db $83, $B7, $9A ; ラグ:
@@ -8712,7 +8713,7 @@ Message_01_04_10:
 #_09BF1B: db $56, $5A, $4D, $93, $83, $B7 ; ゅーる・ラグ
 #_09BF21: db $FC ; wait for key and new line
 #_09BF22: db $FE, $58, $01, $11 ; ext command 58: 01 11 TODO
-#_09BF26: db $D3, $12 ; go to message $12
+#_09BF26: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8734,7 +8735,7 @@ Message_01_04_11:
 #_09BF41: db $F9 ; new line
 #_09BF42: db $2B, $35, $55, $BF, $7E, $A6, $4A, $5A ; きちゃダメだよー
 #_09BF4A: db $FC ; wait for key and new line
-#_09BF4B: db $D3, $1F ; go to message $1F
+#_09BF4B: db $D3, $1F ; go to message 1F
 
 ;===================================================================================================
 
@@ -8744,11 +8745,11 @@ Message_01_04_12:
 #_09BF4E: db $4A, $27, $3E, $CF, $39, $3A, $2A, $39 ; ようは⎵なにかな
 #_09BF56: db $95 ; ?
 #_09BF57: db $D8, $03 ; option list with 4 options
-#_09BF59: db $17, $13 ; option 1 [13]: message 17
-#_09BF5B: db $18, $16 ; option 2 [16]: message 18
-#_09BF5D: db $22, $1E ; option 3 [1E]: message 22
-#_09BF5F: db $12, $1F ; option 4 [1F]: message 12
-#_09BF61: db $D3, $1F ; go to message $1F
+#_09BF59: db $17, $13 ; option 1 [17]: go to message 13
+#_09BF5B: db $18, $16 ; option 2 [18]: go to message 16
+#_09BF5D: db $22, $1E ; option 3 [22]: go to message 1E
+#_09BF5F: db $12, $1F ; option 4 [12]: go to message 1F
+#_09BF61: db $D3, $1F ; go to message 1F
 
 ;===================================================================================================
 
@@ -8766,26 +8767,26 @@ Message_01_04_13:
 #_09BF75: db $F9 ; new line
 #_09BF76: db $38, $CF, $2E, $27, $2A, $52, $A6, $3C ; と⎵こうかんだね
 #_09BF7E: db $CF, $26, $26, $95 ; ⎵いい?
-#_09BF82: db $F8, $14 ; YES/NO - go to message $14 if YES
-#_09BF84: db $D3, $12 ; go to message $12
+#_09BF82: db $F8, $14 ; YES/NO - go to message 14 if YES
+#_09BF84: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
-; >[NAME]は [ITEM]を
+; >[LEADER]は [ITEM]を
 ; «てにいれた»
 Message_01_04_14:
 #_09BF86: db $FA ; clear message box
-#_09BF87: db $FE, $3C, $15 ; ext command 3C: 15 TODO
+#_09BF87: db $FE, $3C, $15 ; ext command 3C: go to message 15 if no space for item
 #_09BF8A: db $FE, $59 ; ext command 59: take item? TODO
 #_09BF8C: db $97 ; >
-#_09BF8D: db $F1 ; write specific name
+#_09BF8D: db $F1 ; write leader's name for team
 #_09BF8E: db $3E, $CF ; は⎵
 #_09BF90: db $F3 ; write item name from $0A50
 #_09BF91: db $51 ; を
 #_09BF92: db $F9 ; new line
 #_09BF93: db $F2, $2D ; prewritten text 2D
 #_09BF95: db $FC ; wait for key and new line
-#_09BF96: db $D3, $12 ; go to message $12
+#_09BF96: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8797,7 +8798,7 @@ Message_01_04_15:
 #_09BFA5: db $F9 ; new line
 #_09BFA6: db $41, $4B, $30, $38, $26, $A9 ; へらしといで
 #_09BFAC: db $FC ; wait for key and new line
-#_09BFAD: db $D3, $12 ; go to message $12
+#_09BFAD: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8819,20 +8820,20 @@ Message_01_04_17:
 #_09BFCB: db $F5 ; write demon name from $050A
 #_09BFCC: db $38, $CF, $2E, $27, $2A, $52, $A6, $4A ; と⎵こうかんだよ
 #_09BFD4: db $CF, $26, $26, $95 ; ⎵いい?
-#_09BFD8: db $F8, $18 ; YES/NO - go to message $18 if YES
-#_09BFDA: db $D3, $17 ; go to message $17
+#_09BFD8: db $F8, $18 ; YES/NO - go to message 18 if YES
+#_09BFDA: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
 
 Message_01_04_18:
 #_09BFDC: db $FE, $08, $04, $19 ; ext command 08: something with levels to message 19, 04 TODO
-#_09BFE0: db $D3, $1B ; go to message $1B
+#_09BFE0: db $D3, $1B ; go to message 1B
 
 ;===================================================================================================
 
 ; >[DEMON1]が «ナカマに くわわった»
 Message_01_04_19:
-#_09BFE2: db $FE, $09, $1C ; ext command 09: something to message 1C TODO
+#_09BFE2: db $FE, $09, $1C ; ext command 09: demon joins party or message 1C if full
 #_09BFE5: db $FE, $5A ; ext command 5A: TODO
 #_09BFE7: db $FE, $26, $04 ; ext command 26: something 04 TODO
 #_09BFEA: db $97 ; >
@@ -8840,7 +8841,7 @@ Message_01_04_19:
 #_09BFEC: db $9C, $CF ; が⎵
 #_09BFEE: db $F2, $2F ; prewritten text 2F
 #_09BFF0: db $FC ; wait for key and new line
-#_09BFF1: db $D3, $12 ; go to message $12
+#_09BFF1: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8851,7 +8852,7 @@ Message_01_04_1A:
 #_09BFFC: db $5E, $3E, $CF, $2E, $27, $2A, $52, $A9 ; イは⎵こうかんで
 #_09C004: db $2B, $39, $26, $3C ; きないね
 #_09C008: db $FC ; wait for key and new line
-#_09C009: db $D3, $12 ; go to message $12
+#_09C009: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8862,7 +8863,7 @@ Message_01_04_1B:
 #_09C014: db $A2, $71, $62, $7B, $9C, $CF, $26, $4D ; じナカマが⎵いる
 #_09C01C: db $39, $8B ; なァ
 #_09C01E: db $FC ; wait for key and new line
-#_09C01F: db $D3, $17 ; go to message $17
+#_09C01F: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
 
@@ -8873,7 +8874,7 @@ Message_01_04_1C:
 #_09C02A: db $7B, $9C, $CF, $26, $58, $B0, $26, $A6 ; マが⎵いっぱいだ
 #_09C032: db $8B ; ァ
 #_09C033: db $FC ; wait for key and new line
-#_09C034: db $D3, $12 ; go to message $12
+#_09C034: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8888,7 +8889,7 @@ Message_01_04_1D:
 #_09C04B: db $56, $4D, $26, $CF, $47, $58, $37, $2B ; ゅるい⎵もってき
 #_09C053: db $39, $4A ; なよ
 #_09C055: db $FC ; wait for key and new line
-#_09C056: db $D3, $12 ; go to message $12
+#_09C056: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -8944,77 +8945,77 @@ Message_01_04_1E:
 #_09C08E: db $5E, $6F, $7D, $3E ; イテムは
 #_09C092: db $F2, $0B ; prewritten text 0B
 #_09C094: db $FC ; wait for key and new line
-#_09C095: db $E1, $E4 ; set $0A50 to $E4
+#_09C095: db $E1, $E4 ; set $0A50 to item E4
 #_09C097: db $F3 ; write item name from $0A50
 #_09C098: db $3E, $CF, $CF ; は⎵⎵
-#_09C09B: db $E1, $CB ; set $0A50 to $CB
+#_09C09B: db $E1, $CB ; set $0A50 to item CB
 #_09C09D: db $F3 ; write item name from $0A50
 #_09C09E: db $F9 ; new line
-#_09C09F: db $E1, $E5 ; set $0A50 to $E5
+#_09C09F: db $E1, $E5 ; set $0A50 to item E5
 #_09C0A1: db $F3 ; write item name from $0A50
 #_09C0A2: db $3E, $CF, $CF ; は⎵⎵
-#_09C0A5: db $E1, $DF ; set $0A50 to $DF
+#_09C0A5: db $E1, $DF ; set $0A50 to item DF
 #_09C0A7: db $F3 ; write item name from $0A50
 #_09C0A8: db $F9 ; new line
-#_09C0A9: db $E1, $E6 ; set $0A50 to $E6
+#_09C0A9: db $E1, $E6 ; set $0A50 to item E6
 #_09C0AB: db $F3 ; write item name from $0A50
 #_09C0AC: db $3E, $CF ; は⎵
-#_09C0AE: db $E1, $D4 ; set $0A50 to $D4
+#_09C0AE: db $E1, $D4 ; set $0A50 to item D4
 #_09C0B0: db $F3 ; write item name from $0A50
 #_09C0B1: db $F9 ; new line
-#_09C0B2: db $E1, $E7 ; set $0A50 to $E7
+#_09C0B2: db $E1, $E7 ; set $0A50 to item E7
 #_09C0B4: db $F3 ; write item name from $0A50
 #_09C0B5: db $3E, $CF ; は⎵
-#_09C0B7: db $E1, $BB ; set $0A50 to $BB
+#_09C0B7: db $E1, $BB ; set $0A50 to item BB
 #_09C0B9: db $F3 ; write item name from $0A50
 #_09C0BA: db $F9 ; new line
-#_09C0BB: db $E1, $E8 ; set $0A50 to $E8
+#_09C0BB: db $E1, $E8 ; set $0A50 to item E8
 #_09C0BD: db $F3 ; write item name from $0A50
 #_09C0BE: db $3E, $CF, $CF ; は⎵⎵
-#_09C0C1: db $E1, $E0 ; set $0A50 to $E0
+#_09C0C1: db $E1, $E0 ; set $0A50 to item E0
 #_09C0C3: db $F3 ; write item name from $0A50
 #_09C0C4: db $F9 ; new line
-#_09C0C5: db $E1, $E9 ; set $0A50 to $E9
+#_09C0C5: db $E1, $E9 ; set $0A50 to item E9
 #_09C0C7: db $F3 ; write item name from $0A50
 #_09C0C8: db $3E, $CF, $CF, $CF, $CF ; は⎵⎵⎵⎵
-#_09C0CD: db $E1, $B9 ; set $0A50 to $B9
+#_09C0CD: db $E1, $B9 ; set $0A50 to item B9
 #_09C0CF: db $F3 ; write item name from $0A50
 #_09C0D0: db $FC ; wait for key and new line
 #_09C0D1: db $FA ; clear message box
-#_09C0D2: db $E1, $EA ; set $0A50 to $EA
+#_09C0D2: db $E1, $EA ; set $0A50 to item EA
 #_09C0D4: db $F3 ; write item name from $0A50
 #_09C0D5: db $3E, $CF, $CF, $CF ; は⎵⎵⎵
-#_09C0D9: db $E1, $E1 ; set $0A50 to $E1
+#_09C0D9: db $E1, $E1 ; set $0A50 to item E1
 #_09C0DB: db $F3 ; write item name from $0A50
 #_09C0DC: db $F9 ; new line
-#_09C0DD: db $E1, $EB ; set $0A50 to $EB
+#_09C0DD: db $E1, $EB ; set $0A50 to item EB
 #_09C0DF: db $F3 ; write item name from $0A50
 #_09C0E0: db $3E, $CF, $CF ; は⎵⎵
-#_09C0E3: db $E1, $C9 ; set $0A50 to $C9
+#_09C0E3: db $E1, $C9 ; set $0A50 to item C9
 #_09C0E5: db $F3 ; write item name from $0A50
 #_09C0E6: db $F9 ; new line
-#_09C0E7: db $E1, $EC ; set $0A50 to $EC
+#_09C0E7: db $E1, $EC ; set $0A50 to item EC
 #_09C0E9: db $F3 ; write item name from $0A50
 #_09C0EA: db $3E, $CF ; は⎵
-#_09C0EC: db $E1, $D6 ; set $0A50 to $D6
+#_09C0EC: db $E1, $D6 ; set $0A50 to item D6
 #_09C0EE: db $F3 ; write item name from $0A50
 #_09C0EF: db $F9 ; new line
-#_09C0F0: db $E1, $ED ; set $0A50 to $ED
+#_09C0F0: db $E1, $ED ; set $0A50 to item ED
 #_09C0F2: db $F3 ; write item name from $0A50
 #_09C0F3: db $3E, $CF, $CF ; は⎵⎵
-#_09C0F6: db $E1, $DE ; set $0A50 to $DE
+#_09C0F6: db $E1, $DE ; set $0A50 to item DE
 #_09C0F8: db $F3 ; write item name from $0A50
 #_09C0F9: db $F9 ; new line
-#_09C0FA: db $E1, $EE ; set $0A50 to $EE
+#_09C0FA: db $E1, $EE ; set $0A50 to item EE
 #_09C0FC: db $F3 ; write item name from $0A50
 #_09C0FD: db $3E, $CF, $CF ; は⎵⎵
-#_09C100: db $E1, $D5 ; set $0A50 to $D5
+#_09C100: db $E1, $D5 ; set $0A50 to item D5
 #_09C102: db $F3 ; write item name from $0A50
 #_09C103: db $F9 ; new line
-#_09C104: db $E1, $EF ; set $0A50 to $EF
+#_09C104: db $E1, $EF ; set $0A50 to item EF
 #_09C106: db $F3 ; write item name from $0A50
 #_09C107: db $3E, $CF ; は⎵
-#_09C109: db $E1, $BC ; set $0A50 to $BC
+#_09C109: db $E1, $BC ; set $0A50 to item BC
 #_09C10B: db $F3 ; write item name from $0A50
 #_09C10C: db $F9 ; new line
 #_09C10D: db $58, $37, $39, $CF, $2C, $44, $25, $50 ; ってな⎵くみあわ
@@ -9029,124 +9030,124 @@ Message_01_04_1E:
 #_09C139: db $CF, $2E, $27, $2A, $52, $A6, $4A ; ⎵こうかんだよ
 #_09C140: db $FC ; wait for key and new line
 #_09C141: db $FA ; clear message box
-#_09C142: db $E1, $E5 ; set $0A50 to $E5
+#_09C142: db $E1, $E5 ; set $0A50 to item E5
 #_09C144: db $F3 ; write item name from $0A50
 #_09C145: db $CF ; ⎵
-#_09C146: db $E1, $EB ; set $0A50 to $EB
+#_09C146: db $E1, $EB ; set $0A50 to item EB
 #_09C148: db $F3 ; write item name from $0A50
 #_09C149: db $CF ; ⎵
-#_09C14A: db $E1, $ED ; set $0A50 to $ED
+#_09C14A: db $E1, $ED ; set $0A50 to item ED
 #_09C14C: db $F3 ; write item name from $0A50
 #_09C14D: db $A9 ; で
 #_09C14E: db $F9 ; new line
-#_09C14F: db $DE, $00, $00, $45, $01 ; [COMMAND DE:00,00,45,01]
+#_09C14F: db $DE, $00, $00, $45, $01 ; load 1x demon 0045
 #_09C154: db $F2, $8D ; prewritten text 8D
 #_09C156: db $F5 ; write demon name from $050A
 #_09C157: db $F9 ; new line
-#_09C158: db $E1, $ED ; set $0A50 to $ED
+#_09C158: db $E1, $ED ; set $0A50 to item ED
 #_09C15A: db $F3 ; write item name from $0A50
 #_09C15B: db $CF ; ⎵
-#_09C15C: db $E1, $EE ; set $0A50 to $EE
+#_09C15C: db $E1, $EE ; set $0A50 to item EE
 #_09C15E: db $F3 ; write item name from $0A50
 #_09C15F: db $CF ; ⎵
-#_09C160: db $E1, $EF ; set $0A50 to $EF
+#_09C160: db $E1, $EF ; set $0A50 to item EF
 #_09C162: db $F3 ; write item name from $0A50
 #_09C163: db $A9 ; で
 #_09C164: db $F9 ; new line
-#_09C165: db $DE, $00, $00, $44, $01 ; [COMMAND DE:00,00,44,01]
+#_09C165: db $DE, $00, $00, $44, $01 ; load 1x demon 0044
 #_09C16A: db $F2, $8D ; prewritten text 8D
 #_09C16C: db $F5 ; write demon name from $050A
 #_09C16D: db $F9 ; new line
-#_09C16E: db $E1, $E6 ; set $0A50 to $E6
+#_09C16E: db $E1, $E6 ; set $0A50 to item E6
 #_09C170: db $F3 ; write item name from $0A50
 #_09C171: db $CF ; ⎵
-#_09C172: db $E1, $E9 ; set $0A50 to $E9
+#_09C172: db $E1, $E9 ; set $0A50 to item E9
 #_09C174: db $F3 ; write item name from $0A50
 #_09C175: db $CF ; ⎵
-#_09C176: db $E1, $EF ; set $0A50 to $EF
+#_09C176: db $E1, $EF ; set $0A50 to item EF
 #_09C178: db $F3 ; write item name from $0A50
 #_09C179: db $A9 ; で
 #_09C17A: db $F9 ; new line
-#_09C17B: db $DE, $00, $00, $43, $01 ; [COMMAND DE:00,00,43,01]
+#_09C17B: db $DE, $00, $00, $43, $01 ; load 1x demon 0043
 #_09C180: db $F2, $8D ; prewritten text 8D
 #_09C182: db $F5 ; write demon name from $050A
 #_09C183: db $FC ; wait for key and new line
 #_09C184: db $FA ; clear message box
-#_09C185: db $E1, $E4 ; set $0A50 to $E4
+#_09C185: db $E1, $E4 ; set $0A50 to item E4
 #_09C187: db $F3 ; write item name from $0A50
 #_09C188: db $CF ; ⎵
-#_09C189: db $E1, $E5 ; set $0A50 to $E5
+#_09C189: db $E1, $E5 ; set $0A50 to item E5
 #_09C18B: db $F3 ; write item name from $0A50
 #_09C18C: db $CF ; ⎵
-#_09C18D: db $E1, $E9 ; set $0A50 to $E9
+#_09C18D: db $E1, $E9 ; set $0A50 to item E9
 #_09C18F: db $F3 ; write item name from $0A50
 #_09C190: db $A9 ; で
 #_09C191: db $F9 ; new line
-#_09C192: db $DE, $00, $00, $42, $01 ; [COMMAND DE:00,00,42,01]
+#_09C192: db $DE, $00, $00, $42, $01 ; load 1x demon 0042
 #_09C197: db $F2, $8D ; prewritten text 8D
 #_09C199: db $F5 ; write demon name from $050A
 #_09C19A: db $F9 ; new line
-#_09C19B: db $E1, $E8 ; set $0A50 to $E8
+#_09C19B: db $E1, $E8 ; set $0A50 to item E8
 #_09C19D: db $F3 ; write item name from $0A50
 #_09C19E: db $CF ; ⎵
-#_09C19F: db $E1, $EB ; set $0A50 to $EB
+#_09C19F: db $E1, $EB ; set $0A50 to item EB
 #_09C1A1: db $F3 ; write item name from $0A50
 #_09C1A2: db $CF ; ⎵
-#_09C1A3: db $E1, $EE ; set $0A50 to $EE
+#_09C1A3: db $E1, $EE ; set $0A50 to item EE
 #_09C1A5: db $F3 ; write item name from $0A50
 #_09C1A6: db $A9 ; で
 #_09C1A7: db $F9 ; new line
-#_09C1A8: db $DE, $00, $00, $41, $01 ; [COMMAND DE:00,00,41,01]
+#_09C1A8: db $DE, $00, $00, $41, $01 ; load 1x demon 0041
 #_09C1AD: db $F2, $8D ; prewritten text 8D
 #_09C1AF: db $F5 ; write demon name from $050A
 #_09C1B0: db $F9 ; new line
-#_09C1B1: db $E1, $EC ; set $0A50 to $EC
+#_09C1B1: db $E1, $EC ; set $0A50 to item EC
 #_09C1B3: db $F3 ; write item name from $0A50
 #_09C1B4: db $CF ; ⎵
-#_09C1B5: db $E1, $ED ; set $0A50 to $ED
+#_09C1B5: db $E1, $ED ; set $0A50 to item ED
 #_09C1B7: db $F3 ; write item name from $0A50
 #_09C1B8: db $CF ; ⎵
-#_09C1B9: db $E1, $EF ; set $0A50 to $EF
+#_09C1B9: db $E1, $EF ; set $0A50 to item EF
 #_09C1BB: db $F3 ; write item name from $0A50
 #_09C1BC: db $A9 ; で
 #_09C1BD: db $F9 ; new line
-#_09C1BE: db $DE, $00, $00, $40, $01 ; [COMMAND DE:00,00,40,01]
+#_09C1BE: db $DE, $00, $00, $40, $01 ; load 1x demon 0040
 #_09C1C3: db $F2, $8D ; prewritten text 8D
 #_09C1C5: db $F5 ; write demon name from $050A
 #_09C1C6: db $FC ; wait for key and new line
 #_09C1C7: db $FA ; clear message box
-#_09C1C8: db $E1, $E6 ; set $0A50 to $E6
+#_09C1C8: db $E1, $E6 ; set $0A50 to item E6
 #_09C1CA: db $F3 ; write item name from $0A50
 #_09C1CB: db $CF ; ⎵
-#_09C1CC: db $E1, $E8 ; set $0A50 to $E8
+#_09C1CC: db $E1, $E8 ; set $0A50 to item E8
 #_09C1CE: db $F3 ; write item name from $0A50
 #_09C1CF: db $CF ; ⎵
-#_09C1D0: db $E1, $E9 ; set $0A50 to $E9
+#_09C1D0: db $E1, $E9 ; set $0A50 to item E9
 #_09C1D2: db $F3 ; write item name from $0A50
 #_09C1D3: db $A9 ; で
 #_09C1D4: db $F9 ; new line
-#_09C1D5: db $DE, $00, $00, $3F, $01 ; [COMMAND DE:00,00,3F,01]
+#_09C1D5: db $DE, $00, $00, $3F, $01 ; load 1x demon 003F
 #_09C1DA: db $F2, $8D ; prewritten text 8D
 #_09C1DC: db $F5 ; write demon name from $050A
 #_09C1DD: db $F9 ; new line
-#_09C1DE: db $E1, $E4 ; set $0A50 to $E4
+#_09C1DE: db $E1, $E4 ; set $0A50 to item E4
 #_09C1E0: db $F3 ; write item name from $0A50
 #_09C1E1: db $CF ; ⎵
-#_09C1E2: db $E1, $E7 ; set $0A50 to $E7
+#_09C1E2: db $E1, $E7 ; set $0A50 to item E7
 #_09C1E4: db $F3 ; write item name from $0A50
 #_09C1E5: db $CF ; ⎵
-#_09C1E6: db $E1, $EA ; set $0A50 to $EA
+#_09C1E6: db $E1, $EA ; set $0A50 to item EA
 #_09C1E8: db $F3 ; write item name from $0A50
 #_09C1E9: db $A9 ; で
 #_09C1EA: db $F9 ; new line
-#_09C1EB: db $DE, $00, $00, $3E, $01 ; [COMMAND DE:00,00,3E,01]
+#_09C1EB: db $DE, $00, $00, $3E, $01 ; load 1x demon 003E
 #_09C1F0: db $F2, $8D ; prewritten text 8D
 #_09C1F2: db $F5 ; write demon name from $050A
 #_09C1F3: db $FC ; wait for key and new line
 #_09C1F4: db $2C, $44, $25, $50, $32, $3E, $CF, $26 ; くみあわせは⎵い
 #_09C1FC: db $A2, $57, $27, $3D, $CF, $38, $29, $4C ; じょうの⎵とおり
 #_09C204: db $FC ; wait for key and new line
-#_09C205: db $D3, $12 ; go to message $12
+#_09C205: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -9175,14 +9176,14 @@ Message_01_04_1F:
 ; [ITEM]を とりつければ
 ; ナカマの かずを ふやせるんだがなあ
 Message_01_04_20:
-#_09C222: db $E1, $F5 ; set $0A50 to $F5
-#_09C224: db $D2, $EF, $2A ; test progress bit $EF for message $2A
-#_09C227: db $D5, $47 ; send $47 to APU
+#_09C222: db $E1, $F5 ; set $0A50 to item F5
+#_09C224: db $D2, $EF, $2A ; test progress bit EF for message 2A
+#_09C227: db $D5, $47 ; send 47 to APU
 #_09C229: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
 #_09C22E: db $F2, $83 ; prewritten text 83
 #_09C230: db $9A ; :
 #_09C231: db $F9 ; new line
-#_09C232: db $D2, $60, $22 ; test progress bit $60 for message $22
+#_09C232: db $D2, $60, $22 ; test progress bit 60 for message 22
 #_09C235: db $43, $34, $CF, $25, $58, $34, $39, $CF ; また⎵あったな⎵
 #_09C23D: db $F0 ; write player name
 #_09C23E: db $2C, $52 ; くん
@@ -9220,9 +9221,9 @@ Message_01_04_20:
 #_09C2C5: db $CF, $40, $48, $32, $4D, $52, $A6, $9C ; ⎵ふやせるんだが
 #_09C2CD: db $39, $25 ; なあ
 #_09C2CF: db $FC ; wait for key and new line
-#_09C2D0: db $D0, $60 ; set progress bit $60
-#_09C2D2: db $DD, $F5, $21 ; go to message $21 if item $F5
-#_09C2D5: db $D3, $26 ; go to message $26
+#_09C2D0: db $D0, $60 ; set progress bit 60
+#_09C2D2: db $DD, $F5, $21 ; go to message 21 if missing item F5
+#_09C2D5: db $D3, $26 ; go to message 26
 
 ;===================================================================================================
 
@@ -9236,7 +9237,7 @@ Message_01_04_22:
 #_09C2D8: db $9F, $52, $2B, $3A, $CF, $48, $58, $37 ; げんきに⎵やって
 #_09C2E0: db $26, $4D, $2A, $3C ; いるかね
 #_09C2E4: db $F9 ; new line
-#_09C2E5: db $D2, $EE, $25 ; test progress bit $EE for message $25
+#_09C2E5: db $D2, $EE, $25 ; test progress bit EE for message 25
 
 ;===================================================================================================
 
@@ -9246,8 +9247,8 @@ Message_01_04_23:
 #_09C2E9: db $3E, $CF, $44, $36, $2A, $58, $34, $2A ; は⎵みつかったか
 #_09C2F1: db $39, $95 ; な?
 #_09C2F3: db $FC ; wait for key and new line
-#_09C2F4: db $DD, $F5, $24 ; go to message $24 if item $F5
-#_09C2F7: db $D3, $26 ; go to message $26
+#_09C2F4: db $DD, $F5, $24 ; go to message 24 if missing item F5
+#_09C2F7: db $D3, $26 ; go to message 26
 
 ;===================================================================================================
 
@@ -9270,7 +9271,7 @@ Message_01_04_25:
 #_09C320: db $F9 ; new line
 #_09C321: db $A2, $56, $27, $AD, $52, $2A, $3C ; じゅうぶんかね
 #_09C328: db $F9 ; new line
-#_09C329: db $D3, $23 ; go to message $23
+#_09C329: db $D3, $23 ; go to message 23
 
 ;===================================================================================================
 
@@ -9285,7 +9286,7 @@ Message_01_04_25:
 ; より «つかいこなせる»わけだ
 ; もう 1まい もっているのか
 Message_01_04_26:
-#_09C32B: db $D2, $EE, $28 ; test progress bit $EE for message $28
+#_09C32B: db $D2, $EE, $28 ; test progress bit EE for message 28
 #_09C32E: db $FA ; clear message box
 #_09C32F: db $29, $29, $CF, $33, $4E, $3E, $CF, $43 ; おお⎵それは⎵ま
 #_09C337: db $2F, $30, $2C, $CF ; さしく⎵
@@ -9310,14 +9311,14 @@ Message_01_04_26:
 #_09C369: db $F2, $55 ; prewritten text 55
 #_09C36B: db $50, $2D, $A6 ; わけだ
 #_09C36E: db $FC ; wait for key and new line
-#_09C36F: db $D0, $EE ; set progress bit $EE
+#_09C36F: db $D0, $EE ; set progress bit EE
 #_09C371: db $FE, $29 ; ext command 29: take item from $0A51 TODO
-#_09C373: db $DD, $F5, $27 ; go to message $27 if item $F5
+#_09C373: db $DD, $F5, $27 ; go to message 27 if missing item F5
 #_09C376: db $FA ; clear message box
 #_09C377: db $47, $27, $CF, $02, $43, $26, $CF, $47 ; もう⎵1まい⎵も
 #_09C37F: db $58, $37, $26, $4D, $3D, $2A ; っているのか
 #_09C385: db $F9 ; new line
-#_09C386: db $D3, $29 ; go to message $29
+#_09C386: db $D3, $29 ; go to message 29
 
 ;===================================================================================================
 
@@ -9353,7 +9354,7 @@ Message_01_04_29:
 #_09C3AF: db $F2, $55 ; prewritten text 55
 #_09C3B1: db $A6, $4F, $27 ; だろう
 #_09C3B4: db $FC ; wait for key and new line
-#_09C3B5: db $D0, $EF ; set progress bit $EF
+#_09C3B5: db $D0, $EF ; set progress bit EF
 #_09C3B7: db $FE, $29 ; ext command 29: take item from $0A51 TODO
 #_09C3B9: db $FF ; end of message
 
@@ -9498,7 +9499,7 @@ Message_01_04_2F:
 #_09C50D: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09C512: db $29, $38, $2E, $9A ; おとこ:
 #_09C516: db $F9 ; new line
-#_09C517: db $E1, $19 ; set $0A50 to $19
+#_09C517: db $E1, $19 ; set $0A50 to item 19
 #_09C519: db $68, $71, $B5, $88, $3D, $CF, $AA, $2E ; シナガワの⎵どこ
 #_09C521: db $2A, $3A, $CF, $25, $4D, $4B, $30, $26 ; かに⎵あるらしい
 #_09C529: db $F9 ; new line
@@ -9664,7 +9665,7 @@ Message_01_04_35:
 #_09C6B5: db $F2, $6D ; prewritten text 6D
 #_09C6B7: db $9A ; :
 #_09C6B8: db $F9 ; new line
-#_09C6B9: db $D2, $34, $41 ; test progress bit $34 for message $41
+#_09C6B9: db $D2, $34, $41 ; test progress bit 34 for message 41
 #_09C6BC: db $39, $52, $A6, $CF, $2E, $2E, $51, $CF ; なんだ⎵ここを⎵
 #_09C6C4: db $38, $29, $4C, $34, $26, $3D, $2A, $95 ; とおりたいのか?
 #_09C6CC: db $F9 ; new line
@@ -9673,19 +9674,19 @@ Message_01_04_35:
 #_09C6D8: db $F9 ; new line
 #_09C6D9: db $A6, $58, $34, $4B, $CF, $5C, $02, $01 ; だったら⎵ℏ10
 #_09C6E1: db $01, $01, $01, $CF, $4A, $2E, $30, $39 ; 000⎵よこしな
-#_09C6E9: db $F8, $3F ; YES/NO - go to message $3F if YES
+#_09C6E9: db $F8, $3F ; YES/NO - go to message 3F if YES
 #_09C6EB: db $D4, $03 ; set text box size to 3
 #_09C6ED: db $34, $A6, $A9, $CF, $38, $29, $4F, $27 ; ただで⎵とおろう
 #_09C6F5: db $58, $37, $3D, $2A, $95 ; ってのか?
-#_09C6FA: db $F8, $36 ; YES/NO - go to message $36 if YES
-#_09C6FC: db $D3, $40 ; go to message $40
+#_09C6FA: db $F8, $36 ; YES/NO - go to message 36 if YES
+#_09C6FC: db $D3, $40 ; go to message 40
 
 ;===================================================================================================
 
 ; じゃあ いたいめに あってもらおうか
 ; [DEMON1]よ いけ!
 Message_01_04_36:
-#_09C6FE: db $DE, $00, $00, $E8, $08 ; [COMMAND DE:00,00,E8,08]
+#_09C6FE: db $DE, $00, $00, $E8, $08 ; load 8x demon 00E8
 #_09C703: db $D4, $03 ; set text box size to 3
 #_09C705: db $A2, $55, $25, $CF, $26, $34, $26, $46 ; じゃあ⎵いたいめ
 #_09C70D: db $3A, $CF, $25, $58, $37, $47, $4B, $29 ; に⎵あってもらお
@@ -9696,7 +9697,7 @@ Message_01_04_36:
 #_09C71E: db $FC ; wait for key and new line
 #_09C71F: db $D6, $00, $00 ; delete sprite in slot 00
 #_09C722: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
-#_09C725: db $D5, $39 ; send $39 to APU
+#_09C725: db $D5, $39 ; send 39 to APU
 #_09C727: db $E4, $00 ; load demon $00
 #_09C729: db $E5, $01, $38 ; [COMMAND E5:01,38]
 
@@ -9704,7 +9705,7 @@ Message_01_04_36:
 
 Message_01_04_37:
 #_09C72C: db $E5, $00, $38 ; [COMMAND E5:00,38]
-#_09C72F: db $D3, $37 ; go to message $37
+#_09C72F: db $D3, $37 ; go to message 37
 
 ;===================================================================================================
 
@@ -9714,7 +9715,7 @@ Message_01_04_38:
 #_09C731: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09C733: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09C736: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
-#_09C73B: db $DE, $00, $00, $E0, $08 ; [COMMAND DE:00,00,E0,08]
+#_09C73B: db $DE, $00, $00, $E0, $08 ; load 8x demon 00E0
 #_09C740: db $F2, $6D ; prewritten text 6D
 #_09C742: db $9A ; :
 #_09C743: db $F9 ; new line
@@ -9724,7 +9725,7 @@ Message_01_04_38:
 #_09C751: db $FC ; wait for key and new line
 #_09C752: db $D6, $00, $00 ; delete sprite in slot 00
 #_09C755: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09C758: db $D5, $39 ; send $39 to APU
+#_09C758: db $D5, $39 ; send 39 to APU
 #_09C75A: db $E4, $00 ; load demon $00
 #_09C75C: db $E5, $01, $3A ; [COMMAND E5:01,3A]
 
@@ -9732,7 +9733,7 @@ Message_01_04_38:
 
 Message_01_04_39:
 #_09C75F: db $E5, $00, $3A ; [COMMAND E5:00,3A]
-#_09C762: db $D3, $39 ; go to message $39
+#_09C762: db $D3, $39 ; go to message 39
 
 ;===================================================================================================
 
@@ -9742,7 +9743,7 @@ Message_01_04_3A:
 #_09C764: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09C766: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09C769: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
-#_09C76E: db $DE, $00, $00, $D7, $08 ; [COMMAND DE:00,00,D7,08]
+#_09C76E: db $DE, $00, $00, $D7, $08 ; load 8x demon 00D7
 #_09C773: db $F2, $6D ; prewritten text 6D
 #_09C775: db $9A ; :
 #_09C776: db $F9 ; new line
@@ -9752,7 +9753,7 @@ Message_01_04_3A:
 #_09C782: db $FC ; wait for key and new line
 #_09C783: db $D6, $00, $00 ; delete sprite in slot 00
 #_09C786: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09C789: db $D5, $39 ; send $39 to APU
+#_09C789: db $D5, $39 ; send 39 to APU
 #_09C78B: db $E4, $00 ; load demon $00
 #_09C78D: db $E5, $01, $3C ; [COMMAND E5:01,3C]
 
@@ -9760,7 +9761,7 @@ Message_01_04_3A:
 
 Message_01_04_3B:
 #_09C790: db $E5, $00, $3C ; [COMMAND E5:00,3C]
-#_09C793: db $D3, $3B ; go to message $3B
+#_09C793: db $D3, $3B ; go to message 3B
 
 ;===================================================================================================
 
@@ -9772,7 +9773,7 @@ Message_01_04_3B:
 Message_01_04_3C:
 #_09C795: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09C797: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09C79A: db $D0, $34 ; set progress bit $34
+#_09C79A: db $D0, $34 ; set progress bit 34
 #_09C79C: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
 #_09C7A1: db $F2, $6D ; prewritten text 6D
 #_09C7A3: db $9A ; :
@@ -9801,7 +9802,7 @@ Message_01_04_3D:
 #_09C7E6: db $25, $CF, $5D, $72, $63, $CF, $2E, $2E ; あ⎵アニキ⎵ここ
 #_09C7EE: db $51, $CF, $38, $29, $4C, $34, $26, $52 ; を⎵とおりたいん
 #_09C7F6: db $A9, $31, $2A, $26, $95 ; ですかい?
-#_09C7FB: db $F8, $3E ; YES/NO - go to message $3E if YES
+#_09C7FB: db $F8, $3E ; YES/NO - go to message 3E if YES
 #_09C7FD: db $FF ; end of message
 
 ;===================================================================================================
@@ -9813,7 +9814,7 @@ Message_01_04_3E:
 #_09C808: db $38, $29, $58, $37, $2C, $A6, $2F, $26 ; とおってください
 #_09C810: db $4A ; よ
 #_09C811: db $FC ; wait for key and new line
-#_09C812: db $D2, $38, $42 ; test progress bit $38 for message $42
+#_09C812: db $D2, $38, $42 ; test progress bit 38 for message 42
 #_09C815: db $FE, $1A, $39, $9C, $0B, $00, $07, $18 ; ext command 1A: 39,9C,0B,00,07,18
 #_09C81D: db $FF ; end of message
 
@@ -9821,7 +9822,7 @@ Message_01_04_3E:
 
 ; ばかめ かねは いただいとくぜ
 Message_01_04_3F:
-#_09C81E: db $D9, $10, $27, $00, $40 ; go to message $40 if money < 10000
+#_09C81E: db $D9, $10, $27, $00, $40 ; go to message 40 if money < 10000
 #_09C823: db $DA, $F0, $D8, $FF ; take 10000 money
 #_09C827: db $D4, $03 ; set text box size to 3
 #_09C829: db $AB, $2A, $46, $CF, $2A, $3C, $3E, $CF ; ばかめ⎵かねは⎵
@@ -9847,58 +9848,58 @@ Message_01_04_41:
 #_09C850: db $F0 ; write player name
 #_09C851: db $3D, $5D, $72, $63 ; のアニキ
 #_09C855: db $FC ; wait for key and new line
-#_09C856: db $D2, $38, $3E ; test progress bit $38 for message $3E
-#_09C859: db $D3, $3D ; go to message $3D
+#_09C856: db $D2, $38, $3E ; test progress bit 38 for message 3E
+#_09C859: db $D3, $3D ; go to message 3D
 
 ;===================================================================================================
 
 Message_01_04_42:
 #_09C85B: db $FE, $1A, $39, $1B, $0B, $00, $07, $18 ; ext command 1A: 39,1B,0B,00,07,18
-#_09C863: db $D1, $38 ; clear progress bit $38
+#_09C863: db $D1, $38 ; clear progress bit 38
 #_09C865: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_04_43:
-#_09C866: db $D0, $38 ; set progress bit $38
+#_09C866: db $D0, $38 ; set progress bit 38
 #_09C868: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_04_44:
-#_09C869: db $D1, $38 ; clear progress bit $38
+#_09C869: db $D1, $38 ; clear progress bit 38
 #_09C86B: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_00:
-#_09C86C: db $D5, $45 ; send $45 to APU
+#_09C86C: db $D5, $45 ; send 45 to APU
 #_09C86E: db $D7, $2D ; load scene 2D
 #_09C870: db $FE, $3A, $02, $03 ; ext command 3A: 02 03 TODO
 #_09C874: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
-#_09C877: db $DE, $01, $00, $0D, $01 ; [COMMAND DE:01,00,0D,01]
-#_09C87C: db $D2, $64, $15 ; test progress bit $64 for message $15
-#_09C87F: db $D2, $65, $16 ; test progress bit $65 for message $16
-#_09C882: db $DE, $01, $00, $1B, $01 ; [COMMAND DE:01,00,1B,01]
+#_09C877: db $DE, $01, $00, $0D, $01 ; load 1x demon 010D
+#_09C87C: db $D2, $64, $15 ; test progress bit 64 for message 15
+#_09C87F: db $D2, $65, $16 ; test progress bit 65 for message 16
+#_09C882: db $DE, $01, $00, $1B, $01 ; load 1x demon 011B
 #_09C887: db $E4, $00 ; load demon $00
-#_09C889: db $D2, $6D, $01 ; test progress bit $6D for message $01
-#_09C88C: db $D3, $02 ; go to message $02
+#_09C889: db $D2, $6D, $01 ; test progress bit 6D for message 01
+#_09C88C: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 Message_01_05_01:
-#_09C88E: db $D0, $8E ; set progress bit $8E
+#_09C88E: db $D0, $8E ; set progress bit 8E
 
 ;===================================================================================================
 
 Message_01_05_02:
-#_09C890: db $D2, $7A, $03 ; test progress bit $7A for message $03
-#_09C893: db $D3, $04 ; go to message $04
+#_09C890: db $D2, $7A, $03 ; test progress bit 7A for message 03
+#_09C893: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
 Message_01_05_03:
-#_09C895: db $D0, $90 ; set progress bit $90
+#_09C895: db $D0, $90 ; set progress bit 90
 
 ;===================================================================================================
 
@@ -9922,9 +9923,9 @@ Message_01_05_04:
 #_09C897: db $EE ; write lawful hero name
 #_09C898: db $9A ; :
 #_09C899: db $F9 ; new line
-#_09C89A: db $D2, $84, $0F ; test progress bit $84 for message $0F
-#_09C89D: db $D2, $85, $08 ; test progress bit $85 for message $08
-#_09C8A0: db $D2, $83, $05 ; test progress bit $83 for message $05
+#_09C89A: db $D2, $84, $0F ; test progress bit 84 for message 0F
+#_09C89D: db $D2, $85, $08 ; test progress bit 85 for message 08
+#_09C8A0: db $D2, $83, $05 ; test progress bit 83 for message 05
 #_09C8A3: db $F0 ; write player name
 #_09C8A4: db $2C, $52, $CF, $3F, $2F, $30, $AD, $4C ; くん⎵ひさしぶり
 #_09C8AC: db $A9, $31 ; です
@@ -9960,8 +9961,8 @@ Message_01_05_04:
 #_09C922: db $38, $51 ; とを
 #_09C924: db $FC ; wait for key and new line
 #_09C925: db $FA ; clear message box
-#_09C926: db $D0, $83 ; set progress bit $83
-#_09C928: db $D2, $63, $09 ; test progress bit $63 for message $09
+#_09C926: db $D0, $83 ; set progress bit 83
+#_09C928: db $D2, $63, $09 ; test progress bit 63 for message 09
 #_09C92B: db $FE, $05, $00, $BF, $10 ; ext command 05: go to message 10 if 11C >= -16640
 #_09C930: db $FA ; clear message box
 #_09C931: db $F2, $0B ; prewritten text 0B
@@ -9987,9 +9988,10 @@ Message_01_05_04:
 ;===================================================================================================
 
 ; «トウキョウ»の ヒガシに すみついた
-; ジャリュウ エキドナを たおしてくれませんか?
+; ジャリュウ エキドナを たおして
+; くれませんか?
 Message_01_05_05:
-#_09C97D: db $D2, $63, $09 ; test progress bit $63 for message $09
+#_09C97D: db $D2, $63, $09 ; test progress bit 63 for message 09
 #_09C980: db $F2, $1C ; prewritten text 1C
 #_09C982: db $3D, $CF, $77, $B5, $68, $3A, $CF, $31 ; の⎵ヒガシに⎵す
 #_09C98A: db $44, $36, $26, $34 ; みついた
@@ -9998,7 +10000,7 @@ Message_01_05_05:
 #_09C997: db $C3, $71, $51, $CF, $34, $29, $30, $37 ; ドナを⎵たおして
 #_09C99F: db $FE, $05, $40, $FF, $07 ; ext command 05: go to message 07 if 11C >= -192
 #_09C9A4: db $2C, $4E, $43, $32, $52, $2A, $95 ; くれませんか?
-#_09C9AB: db $D2, $82, $0D ; test progress bit $82 for message $0D
+#_09C9AB: db $D2, $82, $0D ; test progress bit 82 for message 0D
 #_09C9AE: db $FC ; wait for key and new line
 
 ;===================================================================================================
@@ -10046,8 +10048,8 @@ Message_01_05_06:
 Message_01_05_07:
 #_09CA27: db $2C, $A6, $2F, $26 ; ください
 #_09CA2B: db $FC ; wait for key and new line
-#_09CA2C: db $D0, $85 ; set progress bit $85
-#_09CA2E: db $D3, $06 ; go to message $06
+#_09CA2C: db $D0, $85 ; set progress bit 85
+#_09CA2E: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -10055,7 +10057,7 @@ Message_01_05_07:
 ; «カテドラル»が はかいされたら
 ; とりかえしの つかないことに なります
 Message_01_05_08:
-#_09CA30: db $D2, $63, $09 ; test progress bit $63 for message $09
+#_09CA30: db $D2, $63, $09 ; test progress bit 63 for message 09
 #_09CA33: db $3E, $48, $2C, $CF, $60, $63, $C3, $71 ; はやく⎵エキドナ
 #_09CA3B: db $51, $CF, $34, $29, $30, $37, $2C, $A6 ; を⎵たおしてくだ
 #_09CA43: db $2F, $26 ; さい
@@ -10081,7 +10083,7 @@ Message_01_05_08:
 ; これからも かみのため «せんねんおうこく»のため
 ; ちからを つくしてくれ よいな?
 Message_01_05_09:
-#_09CA69: db $DE, $01, $00, $0D, $01 ; [COMMAND DE:01,00,0D,01]
+#_09CA69: db $DE, $01, $00, $0D, $01 ; load 1x demon 010D
 #_09CA6E: db $F2, $0B ; prewritten text 0B
 #_09CA70: db $60, $63, $C3, $71, $51, $CF, $34, $29 ; エキドナを⎵たお
 #_09CA78: db $30, $34, $3D, $A9, $31, $3C ; したのですね
@@ -10115,7 +10117,7 @@ Message_01_05_09:
 #_09CABC: db $35, $2A, $4B, $51, $CF, $36, $2C, $30 ; ちからを⎵つくし
 #_09CAC4: db $37, $2C, $4E, $CF, $4A, $26, $39, $95 ; てくれ⎵よいな?
 #_09CACC: db $FE, $05, $40, $FF, $0B ; ext command 05: go to message 0B if 11C >= -192
-#_09CAD1: db $F8, $0C ; YES/NO - go to message $0C if YES
+#_09CAD1: db $F8, $0C ; YES/NO - go to message 0C if YES
 
 ;===================================================================================================
 
@@ -10123,7 +10125,7 @@ Message_01_05_09:
 ; そのような ことが ゆるされると
 ; おもっているのか!
 Message_01_05_0A:
-#_09CAD3: db $D5, $39 ; send $39 to APU
+#_09CAD3: db $D5, $39 ; send 39 to APU
 #_09CAD5: db $D4, $03 ; set text box size to 3
 #_09CAD7: db $2A, $44, $3D, $CF, $34, $46, $3A, $CF ; かみの⎵ために⎵
 #_09CADF: db $34, $34, $2A, $27, $2E, $38, $51, $CF ; たたかうことを⎵
@@ -10135,7 +10137,7 @@ Message_01_05_0A:
 #_09CAFF: db $29, $47, $58, $37, $26, $4D, $3D, $2A ; おもっているのか
 #_09CB07: db $94 ; !
 #_09CB08: db $FC ; wait for key and new line
-#_09CB09: db $D3, $12 ; go to message $12
+#_09CB09: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
@@ -10159,11 +10161,11 @@ Message_01_05_0C:
 #_09CB23: db $4F, $27 ; ろう
 #_09CB25: db $FC ; wait for key and new line
 #_09CB26: db $FE, $02, $B0 ; ext command 02: add 176 to STAT_11C if progress bit FB
-#_09CB29: db $D0, $FB ; set progress bit $FB
+#_09CB29: db $D0, $FB ; set progress bit FB
 #_09CB2B: db $FA ; clear message box
 #_09CB2C: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CB2E: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09CB31: db $DE, $01, $00, $1B, $01 ; [COMMAND DE:01,00,1B,01]
+#_09CB31: db $DE, $01, $00, $1B, $01 ; load 1x demon 011B
 #_09CB36: db $E4, $00 ; load demon $00
 #_09CB38: db $EE ; write lawful hero name
 #_09CB39: db $9A ; :
@@ -10175,15 +10177,15 @@ Message_01_05_0C:
 #_09CB53: db $A9, $3E, $CF, $43, $34, $25, $26, $43 ; では⎵またあいま
 #_09CB5B: db $30, $57, $27 ; しょう
 #_09CB5E: db $FC ; wait for key and new line
-#_09CB5F: db $D0, $65 ; set progress bit $65
+#_09CB5F: db $D0, $65 ; set progress bit 65
 #_09CB61: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CB63: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_0D:
-#_09CB64: db $F8, $0E ; YES/NO - go to message $0E if YES
-#_09CB66: db $D3, $11 ; go to message $11
+#_09CB64: db $F8, $0E ; YES/NO - go to message 0E if YES
+#_09CB66: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
 
@@ -10206,7 +10208,7 @@ Message_01_05_0E:
 #_09CB92: db $27, $4C, $50, $34, $30, $37, $CF, $39 ; うりわたして⎵な
 #_09CB9A: db $2A, $58, $34, $52, $A9, $31, $3C ; かったんですね
 #_09CBA1: db $FC ; wait for key and new line
-#_09CBA2: db $D0, $85 ; set progress bit $85
+#_09CBA2: db $D0, $85 ; set progress bit 85
 #_09CBA4: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CBA6: db $FF ; end of message
 
@@ -10224,7 +10226,7 @@ Message_01_05_0F:
 #_09CBBC: db $2B, $26, $37, $30, $43, $58, $34, $CF ; きいてしまった⎵
 #_09CBC4: db $4A, $27, $A9, $31, $3C ; ようですね
 #_09CBC9: db $FC ; wait for key and new line
-#_09CBCA: db $D3, $11 ; go to message $11
+#_09CBCA: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
 
@@ -10278,8 +10280,8 @@ Message_01_05_11:
 #_09CC1A: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_09CC1D: db $F2, $7C ; prewritten text 7C
 #_09CC1F: db $F2, $7D ; prewritten text 7D
-#_09CC21: db $DE, $01, $00, $0D, $01 ; [COMMAND DE:01,00,0D,01]
-#_09CC26: db $D5, $39 ; send $39 to APU
+#_09CC21: db $DE, $01, $00, $0D, $01 ; load 1x demon 010D
+#_09CC26: db $D5, $39 ; send 39 to APU
 #_09CC28: db $E4, $00 ; load demon $00
 #_09CC2A: db $FA ; clear message box
 #_09CC2B: db $F5 ; write demon name from $050A
@@ -10312,7 +10314,7 @@ Message_01_05_12:
 
 Message_01_05_13:
 #_09CC5C: db $E5, $00, $14 ; [COMMAND E5:00,14]
-#_09CC5F: db $D3, $13 ; go to message $13
+#_09CC5F: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
@@ -10324,7 +10326,7 @@ Message_01_05_13:
 Message_01_05_14:
 #_09CC61: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CC63: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09CC66: db $DE, $01, $00, $1B, $01 ; [COMMAND DE:01,00,1B,01]
+#_09CC66: db $DE, $01, $00, $1B, $01 ; load 1x demon 011B
 #_09CC6B: db $E4, $00 ; load demon $00
 #_09CC6D: db $FE, $02, $20 ; ext command 02: add 32 to STAT_11C if progress bit FB
 #_09CC70: db $EE ; write lawful hero name
@@ -10349,7 +10351,7 @@ Message_01_05_14:
 #_09CCBD: db $F2, $0B ; prewritten text 0B
 #_09CCBF: db $FC ; wait for key and new line
 #_09CCC0: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_09CCC2: db $D0, $64 ; set progress bit $64
+#_09CCC2: db $D0, $64 ; set progress bit 64
 #_09CCC4: db $FF ; end of message
 
 ;===================================================================================================
@@ -10372,16 +10374,16 @@ Message_01_05_16:
 #_09CCD8: db $F2, $33 ; prewritten text 33
 #_09CCDA: db $CF, $2B, $57, $27, $33, $9A ; ⎵きょうそ:
 #_09CCE0: db $F9 ; new line
-#_09CCE1: db $D2, $7D, $1B ; test progress bit $7D for message $1B
-#_09CCE4: db $D2, $7C, $17 ; test progress bit $7C for message $17
+#_09CCE1: db $D2, $7D, $1B ; test progress bit 7D for message 1B
+#_09CCE4: db $D2, $7C, $17 ; test progress bit 7C for message 17
 #_09CCE7: db $7E, $68, $5D, $A6, $26, $2B, $57, $27 ; メシアだいきょう
 #_09CCEF: db $2A, $26, $41 ; かいへ
 #_09CCF2: db $F9 ; new line
 #_09CCF3: db $4A, $27, $2E, $33, $CF, $26, $4B, $58 ; ようこそ⎵いらっ
 #_09CCFB: db $30, $55, $26, $43, $30, $34 ; しゃいました
 #_09CD01: db $FC ; wait for key and new line
-#_09CD02: db $D0, $7C ; set progress bit $7C
-#_09CD04: db $D3, $18 ; go to message $18
+#_09CD02: db $D0, $7C ; set progress bit 7C
+#_09CD04: db $D3, $18 ; go to message 18
 
 ;===================================================================================================
 
@@ -10400,7 +10402,7 @@ Message_01_05_17:
 #_09CD25: db $F9 ; new line
 #_09CD26: db $30, $34, $50, $4E, $37, $26, $43, $31 ; したわれています
 #_09CD2E: db $FC ; wait for key and new line
-#_09CD2F: db $D3, $18 ; go to message $18
+#_09CD2F: db $D3, $18 ; go to message 18
 
 ;===================================================================================================
 
@@ -10484,7 +10486,7 @@ Message_01_05_19:
 #_09CDEE: db $F2, $33 ; prewritten text 33
 #_09CDF0: db $3D, $CF, $32, $52, $4E, $26, $51, $CF ; の⎵せんれいを⎵
 #_09CDF8: db $27, $2D, $43, $31, $2A, $95 ; うけますか?
-#_09CDFE: db $F8, $1A ; YES/NO - go to message $1A if YES
+#_09CDFE: db $F8, $1A ; YES/NO - go to message 1A if YES
 #_09CE00: db $D4, $03 ; set text box size to 3
 #_09CE02: db $33, $27, $A9, $31, $2A, $CF, $2E, $38 ; そうですか⎵こと
 #_09CE0A: db $50, $4D, $38, $CF, $26, $27, $3D, $A9 ; わると⎵いうので
@@ -10551,7 +10553,7 @@ Message_01_05_1A:
 #_09CEC7: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_09CECC: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_09CECF: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
-#_09CED2: db $D0, $7D ; set progress bit $7D
+#_09CED2: db $D0, $7D ; set progress bit 7D
 #_09CED4: db $D6, $00, $00 ; delete sprite in slot 00
 #_09CED7: db $D6, $01, $00 ; delete sprite in slot 01
 #_09CEDA: db $D6, $02, $00 ; delete sprite in slot 02
@@ -10561,7 +10563,7 @@ Message_01_05_1A:
 #_09CEE6: db $F2, $33 ; prewritten text 33
 #_09CEE8: db $CF, $2B, $57, $27, $33, $9A ; ⎵きょうそ:
 #_09CEEE: db $F9 ; new line
-#_09CEEF: db $D3, $1C ; go to message $1C
+#_09CEEF: db $D3, $1C ; go to message 1C
 
 ;===================================================================================================
 
@@ -10577,7 +10579,7 @@ Message_01_05_1B:
 #_09CF09: db $26, $43, $30, $34 ; いました
 #_09CF0D: db $FC ; wait for key and new line
 #_09CF0E: db $FE, $06, $41, $1C ; ext command 06: go to message 1C if MC level < 65
-#_09CF12: db $D3, $1D ; go to message $1D
+#_09CF12: db $D3, $1D ; go to message 1D
 
 ;===================================================================================================
 
@@ -10610,7 +10612,7 @@ Message_01_05_1C:
 ; あなたが いけば ひらきます
 ; おくの はこのなかに あります
 Message_01_05_1D:
-#_09CF4E: db $D2, $7E, $1C ; test progress bit $7E for message $1C
+#_09CF4E: db $D2, $7E, $1C ; test progress bit 7E for message 1C
 #_09CF51: db $FA ; clear message box
 #_09CF52: db $25, $39, $34, $3A, $CF, $40, $2F, $50 ; あなたに⎵ふさわ
 #_09CF5A: db $30, $26 ; しい
@@ -10633,8 +10635,8 @@ Message_01_05_1D:
 #_09CFA3: db $29, $2C, $3D, $CF, $3E, $2E, $3D, $39 ; おくの⎵はこのな
 #_09CFAB: db $2A, $3A, $CF, $25, $4C, $43, $31 ; かに⎵あります
 #_09CFB2: db $FC ; wait for key and new line
-#_09CFB3: db $D0, $7E ; set progress bit $7E
-#_09CFB5: db $D3, $1C ; go to message $1C
+#_09CFB3: db $D0, $7E ; set progress bit 7E
+#_09CFB5: db $D3, $1C ; go to message 1C
 
 ;===================================================================================================
 
@@ -10644,7 +10646,7 @@ Message_01_05_1D:
 ; ひつようと しています
 ; «>まだ せっきょうを ききますか?»
 Message_01_05_1E:
-#_09CFB7: db $D5, $45 ; send $45 to APU
+#_09CFB7: db $D5, $45 ; send 45 to APU
 #_09CFB9: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_09CFBE: db $F2, $33 ; prewritten text 33
 #_09CFC0: db $30, $52, $B2, $9A ; しんぷ:
@@ -10662,7 +10664,7 @@ Message_01_05_1E:
 #_09CFF8: db $FC ; wait for key and new line
 #_09CFF9: db $FA ; clear message box
 #_09CFFA: db $F2, $7B ; prewritten text 7B
-#_09CFFC: db $F8, $1F ; YES/NO - go to message $1F if YES
+#_09CFFC: db $F8, $1F ; YES/NO - go to message 1F if YES
 #_09CFFE: db $FF ; end of message
 
 ;===================================================================================================
@@ -10691,7 +10693,7 @@ Message_01_05_1F:
 #_09D03E: db $FC ; wait for key and new line
 #_09D03F: db $FA ; clear message box
 #_09D040: db $F2, $7B ; prewritten text 7B
-#_09D042: db $F8, $20 ; YES/NO - go to message $20 if YES
+#_09D042: db $F8, $20 ; YES/NO - go to message 20 if YES
 #_09D044: db $FF ; end of message
 
 ;===================================================================================================
@@ -10732,7 +10734,7 @@ Message_01_05_20:
 #_09D0A3: db $FC ; wait for key and new line
 #_09D0A4: db $FA ; clear message box
 #_09D0A5: db $F2, $7B ; prewritten text 7B
-#_09D0A7: db $F8, $21 ; YES/NO - go to message $21 if YES
+#_09D0A7: db $F8, $21 ; YES/NO - go to message 21 if YES
 #_09D0A9: db $FF ; end of message
 
 ;===================================================================================================
@@ -10765,9 +10767,9 @@ Message_01_05_21:
 ; ねえ [CHASE] このぞう
 ; [JIMMY]に そっくりじゃない?
 Message_01_05_22:
-#_09D0D8: db $D5, $45 ; send $45 to APU
+#_09D0D8: db $D5, $45 ; send 45 to APU
 #_09D0DA: db $D6, $00, $C8, $70, $08 ; place sprite C8 in slot 00 at XY:{70,08}
-#_09D0DF: db $D2, $45, $24 ; test progress bit $45 for message $24
+#_09D0DF: db $D2, $45, $24 ; test progress bit 45 for message 24
 #_09D0E2: db $97, $7E, $68, $5D, $A5, $27, $9C, $CF ; >メシアぞうが⎵
 #_09D0EA: db $25, $4D ; ある
 #_09D0EC: db $F9 ; new line
@@ -10778,7 +10780,7 @@ Message_01_05_22:
 #_09D0FC: db $51, $CF, $2A, $34, $AA, $58, $37, $26 ; を⎵かたどってい
 #_09D104: db $34 ; た
 #_09D105: db $FC ; wait for key and new line
-#_09D106: db $E9, $01, $23 ; go to message $23 maybe TODO
+#_09D106: db $E9, $01, $23 ; go to message 23 maybe TODO
 #_09D109: db $FA ; clear message box
 #_09D10A: db $ED ; write female protag name
 #_09D10B: db $9A ; :
@@ -10795,7 +10797,7 @@ Message_01_05_22:
 ;===================================================================================================
 
 Message_01_05_23:
-#_09D124: db $D0, $45 ; set progress bit $45
+#_09D124: db $D0, $45 ; set progress bit 45
 #_09D126: db $FF ; end of message
 
 ;===================================================================================================
@@ -10829,7 +10831,7 @@ Message_01_05_25:
 #_09D141: db $F2, $33 ; prewritten text 33
 #_09D143: db $38, $9A ; と:
 #_09D145: db $F9 ; new line
-#_09D146: db $D2, $83, $26 ; test progress bit $83 for message $26
+#_09D146: db $D2, $83, $26 ; test progress bit 83 for message 26
 #_09D149: db $2E, $2E, $CF, $68, $71, $B5, $88, $3A ; ここ⎵シナガワに
 #_09D151: db $3E ; は
 #_09D152: db $F9 ; new line
@@ -10922,7 +10924,7 @@ Message_01_05_28:
 #_09D229: db $F2, $33 ; prewritten text 33
 #_09D22B: db $38, $9A ; と:
 #_09D22D: db $F9 ; new line
-#_09D22E: db $E1, $F4 ; set $0A50 to $F4
+#_09D22E: db $E1, $F4 ; set $0A50 to item F4
 #_09D230: db $F3 ; write item name from $0A50
 #_09D231: db $9C, $CF, $25, $4D, $38 ; が⎵あると
 #_09D236: db $F9 ; new line
@@ -10969,7 +10971,7 @@ Message_01_05_29:
 #_09D2BB: db $31 ; す
 #_09D2BC: db $FC ; wait for key and new line
 #_09D2BD: db $FA ; clear message box
-#_09D2BE: db $E1, $E0 ; set $0A50 to $E0
+#_09D2BE: db $E1, $E0 ; set $0A50 to item E0
 #_09D2C0: db $F3 ; write item name from $0A50
 #_09D2C1: db $9C, $CF, $25, $4E, $AB, $CF, $4B, $2C ; が⎵あれば⎵らく
 #_09D2C9: db $3A, $39, $4D, $3D, $A9, $31, $9C ; になるのですが
@@ -11065,7 +11067,7 @@ Message_01_05_2C:
 ; いちばん つよいからです
 ; さあ [DEMON1]さん でてらっしゃい
 Message_01_05_2D:
-#_09D3A6: db $D2, $36, $36 ; test progress bit $36 for message $36
+#_09D3A6: db $D2, $36, $36 ; test progress bit 36 for message 36
 #_09D3A9: db $D6, $00, $A5, $70, $28 ; place sprite A5 in slot 00 at XY:{70,28}
 #_09D3AE: db $F2, $6D ; prewritten text 6D
 #_09D3B0: db $9A ; :
@@ -11090,7 +11092,7 @@ Message_01_05_2D:
 #_09D3FB: db $26, $35, $AB, $52, $CF, $36, $4A, $26 ; いちばん⎵つよい
 #_09D403: db $2A, $4B, $A9, $31 ; からです
 #_09D407: db $FC ; wait for key and new line
-#_09D408: db $DE, $00, $00, $D2, $08 ; [COMMAND DE:00,00,D2,08]
+#_09D408: db $DE, $00, $00, $D2, $08 ; load 8x demon 00D2
 #_09D40D: db $FA ; clear message box
 #_09D40E: db $2F, $25, $CF ; さあ⎵
 #_09D411: db $F5 ; write demon name from $050A
@@ -11099,7 +11101,7 @@ Message_01_05_2D:
 #_09D41C: db $FC ; wait for key and new line
 #_09D41D: db $D6, $00, $00 ; delete sprite in slot 00
 #_09D420: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09D423: db $D5, $39 ; send $39 to APU
+#_09D423: db $D5, $39 ; send 39 to APU
 #_09D425: db $E4, $00 ; load demon $00
 #_09D427: db $E5, $01, $2F ; [COMMAND E5:01,2F]
 
@@ -11107,7 +11109,7 @@ Message_01_05_2D:
 
 Message_01_05_2E:
 #_09D42A: db $E5, $00, $2F ; [COMMAND E5:00,2F]
-#_09D42D: db $D3, $2E ; go to message $2E
+#_09D42D: db $D3, $2E ; go to message 2E
 
 ;===================================================================================================
 
@@ -11130,7 +11132,7 @@ Message_01_05_2F:
 #_09D458: db $3C ; ね
 #_09D459: db $FC ; wait for key and new line
 #_09D45A: db $FA ; clear message box
-#_09D45B: db $DE, $00, $00, $DF, $08 ; [COMMAND DE:00,00,DF,08]
+#_09D45B: db $DE, $00, $00, $DF, $08 ; load 8x demon 00DF
 #_09D460: db $A9, $3E, $CF ; では⎵
 #_09D463: db $F5 ; write demon name from $050A
 #_09D464: db $2F, $52, $3D, $CF, $A9, $AB, $52, $A9 ; さんの⎵でばんで
@@ -11138,7 +11140,7 @@ Message_01_05_2F:
 #_09D46D: db $FC ; wait for key and new line
 #_09D46E: db $D6, $00, $00 ; delete sprite in slot 00
 #_09D471: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09D474: db $D5, $39 ; send $39 to APU
+#_09D474: db $D5, $39 ; send 39 to APU
 #_09D476: db $E4, $00 ; load demon $00
 #_09D478: db $E5, $01, $31 ; [COMMAND E5:01,31]
 
@@ -11146,7 +11148,7 @@ Message_01_05_2F:
 
 Message_01_05_30:
 #_09D47B: db $E5, $00, $31 ; [COMMAND E5:00,31]
-#_09D47E: db $D3, $30 ; go to message $30
+#_09D47E: db $D3, $30 ; go to message 30
 
 ;===================================================================================================
 
@@ -11169,9 +11171,9 @@ Message_01_05_31:
 #_09D4A9: db $FC ; wait for key and new line
 #_09D4AA: db $FA ; clear message box
 #_09D4AB: db $D6, $00, $00 ; delete sprite in slot 00
-#_09D4AE: db $DE, $00, $00, $D6, $08 ; [COMMAND DE:00,00,D6,08]
+#_09D4AE: db $DE, $00, $00, $D6, $08 ; load 8x demon 00D6
 #_09D4B3: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09D4B6: db $D5, $39 ; send $39 to APU
+#_09D4B6: db $D5, $39 ; send 39 to APU
 #_09D4B8: db $E4, $00 ; load demon $00
 #_09D4BA: db $E5, $01, $33 ; [COMMAND E5:01,33]
 
@@ -11179,7 +11181,7 @@ Message_01_05_31:
 
 Message_01_05_32:
 #_09D4BD: db $E5, $00, $33 ; [COMMAND E5:00,33]
-#_09D4C0: db $D3, $32 ; go to message $32
+#_09D4C0: db $D3, $32 ; go to message 32
 
 ;===================================================================================================
 
@@ -11203,23 +11205,23 @@ Message_01_05_33:
 #_09D4EB: db $F2, $0B ; prewritten text 0B
 #_09D4ED: db $FC ; wait for key and new line
 #_09D4EE: db $D6, $00, $00 ; delete sprite in slot 00
-#_09D4F1: db $D0, $36 ; set progress bit $36
+#_09D4F1: db $D0, $36 ; set progress bit 36
 #_09D4F3: db $D4, $03 ; set text box size to 3
 #_09D4F5: db $97 ; >
-#_09D4F6: db $E1, $FD ; set $0A50 to $FD
+#_09D4F6: db $E1, $FD ; set $0A50 to item FD
 
 ;===================================================================================================
 
-; [NAME]は [ITEM]を
+; [LEADER]は [ITEM]を
 ; «てにいれた»
 Message_01_05_34:
-#_09D4F6: db $E1, $FD ; set $0A50 to $FD
-#_09D4F8: db $F1 ; write specific name
+#_09D4F6: db $E1, $FD ; set $0A50 to item FD
+#_09D4F8: db $F1 ; write leader's name for team
 #_09D4F9: db $3E, $CF ; は⎵
 #_09D4FB: db $F3 ; write item name from $0A50
 #_09D4FC: db $51 ; を
 #_09D4FD: db $F9 ; new line
-#_09D4FE: db $FE, $3C, $35 ; ext command 3C: 35 TODO
+#_09D4FE: db $FE, $3C, $35 ; ext command 3C: go to message 35 if no space for item
 #_09D501: db $F2, $2D ; prewritten text 2D
 #_09D503: db $FC ; wait for key and new line
 #_09D504: db $FE, $28 ; ext command 28: add item to inventory from $0A50
@@ -11245,16 +11247,16 @@ Message_01_05_36:
 #_09D521: db $97 ; >
 #_09D522: db $F2, $2C ; prewritten text 2C
 #_09D524: db $FC ; wait for key and new line
-#_09D525: db $DD, $FD, $34 ; go to message $34 if item $FD
+#_09D525: db $DD, $FD, $34 ; go to message 34 if missing item FD
 #_09D528: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_37:
 #_09D529: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
-#_09D52E: db $D2, $0C, $39 ; test progress bit $0C for message $39
-#_09D531: db $D2, $7E, $38 ; test progress bit $7E for message $38
-#_09D534: db $D3, $4B ; go to message $4B
+#_09D52E: db $D2, $0C, $39 ; test progress bit 0C for message 39
+#_09D531: db $D2, $7E, $38 ; test progress bit 7E for message 38
+#_09D534: db $D3, $4B ; go to message 4B
 
 ;===================================================================================================
 
@@ -11262,7 +11264,7 @@ Message_01_05_37:
 Message_01_05_38:
 #_09D536: db $97 ; >
 #_09D537: db $F2, $68 ; prewritten text 68
-#_09D539: db $F8, $3A ; YES/NO - go to message $3A if YES
+#_09D539: db $F8, $3A ; YES/NO - go to message 3A if YES
 #_09D53B: db $FF ; end of message
 
 ;===================================================================================================
@@ -11271,7 +11273,7 @@ Message_01_05_38:
 Message_01_05_39:
 #_09D53C: db $97 ; >
 #_09D53D: db $F2, $89 ; prewritten text 89
-#_09D53F: db $F8, $3A ; YES/NO - go to message $3A if YES
+#_09D53F: db $F8, $3A ; YES/NO - go to message 3A if YES
 #_09D541: db $FF ; end of message
 
 ;===================================================================================================
@@ -11280,25 +11282,25 @@ Message_01_05_3A:
 #_09D542: db $D6, $00, $74, $60, $28 ; place sprite 74 in slot 00 at XY:{60,28}
 #_09D547: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09D54A: db $D6, $00, $00 ; delete sprite in slot 00
-#_09D54D: db $D2, $0C, $3B ; test progress bit $0C for message $3B
+#_09D54D: db $D2, $0C, $3B ; test progress bit 0C for message 3B
 #_09D550: db $FE, $1A, $52, $5A, $0E, $00, $00, $00 ; ext command 1A: 52,5A,0E,00,00,00
-#_09D558: db $D0, $0C ; set progress bit $0C
+#_09D558: db $D0, $0C ; set progress bit 0C
 #_09D55A: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_3B:
 #_09D55B: db $FE, $1A, $50, $DA, $0E, $00, $00, $00 ; ext command 1A: 50,DA,0E,00,00,00
-#_09D563: db $D1, $0C ; clear progress bit $0C
+#_09D563: db $D1, $0C ; clear progress bit 0C
 #_09D565: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_3C:
 #_09D566: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
-#_09D56B: db $D2, $0C, $3E ; test progress bit $0C for message $3E
-#_09D56E: db $D2, $7E, $3D ; test progress bit $7E for message $3D
-#_09D571: db $D3, $4B ; go to message $4B
+#_09D56B: db $D2, $0C, $3E ; test progress bit 0C for message 3E
+#_09D56E: db $D2, $7E, $3D ; test progress bit 7E for message 3D
+#_09D571: db $D3, $4B ; go to message 4B
 
 ;===================================================================================================
 
@@ -11306,7 +11308,7 @@ Message_01_05_3C:
 Message_01_05_3D:
 #_09D573: db $97 ; >
 #_09D574: db $F2, $68 ; prewritten text 68
-#_09D576: db $F8, $3F ; YES/NO - go to message $3F if YES
+#_09D576: db $F8, $3F ; YES/NO - go to message 3F if YES
 #_09D578: db $FF ; end of message
 
 ;===================================================================================================
@@ -11315,7 +11317,7 @@ Message_01_05_3D:
 Message_01_05_3E:
 #_09D579: db $97 ; >
 #_09D57A: db $F2, $89 ; prewritten text 89
-#_09D57C: db $F8, $3F ; YES/NO - go to message $3F if YES
+#_09D57C: db $F8, $3F ; YES/NO - go to message 3F if YES
 #_09D57E: db $FF ; end of message
 
 ;===================================================================================================
@@ -11324,25 +11326,25 @@ Message_01_05_3F:
 #_09D57F: db $D6, $00, $74, $60, $28 ; place sprite 74 in slot 00 at XY:{60,28}
 #_09D584: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09D587: db $D6, $00, $00 ; delete sprite in slot 00
-#_09D58A: db $D2, $0C, $40 ; test progress bit $0C for message $40
+#_09D58A: db $D2, $0C, $40 ; test progress bit 0C for message 40
 #_09D58D: db $FE, $1A, $55, $9B, $0E, $00, $00, $00 ; ext command 1A: 55,9B,0E,00,00,00
-#_09D595: db $D0, $0C ; set progress bit $0C
+#_09D595: db $D0, $0C ; set progress bit 0C
 #_09D597: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_40:
 #_09D598: db $FE, $1A, $55, $19, $0E, $00, $00, $00 ; ext command 1A: 55,19,0E,00,00,00
-#_09D5A0: db $D1, $0C ; clear progress bit $0C
+#_09D5A0: db $D1, $0C ; clear progress bit 0C
 #_09D5A2: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_41:
 #_09D5A3: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
-#_09D5A8: db $D2, $0C, $43 ; test progress bit $0C for message $43
-#_09D5AB: db $D2, $7E, $42 ; test progress bit $7E for message $42
-#_09D5AE: db $D3, $4B ; go to message $4B
+#_09D5A8: db $D2, $0C, $43 ; test progress bit 0C for message 43
+#_09D5AB: db $D2, $7E, $42 ; test progress bit 7E for message 42
+#_09D5AE: db $D3, $4B ; go to message 4B
 
 ;===================================================================================================
 
@@ -11350,7 +11352,7 @@ Message_01_05_41:
 Message_01_05_42:
 #_09D5B0: db $97 ; >
 #_09D5B1: db $F2, $68 ; prewritten text 68
-#_09D5B3: db $F8, $44 ; YES/NO - go to message $44 if YES
+#_09D5B3: db $F8, $44 ; YES/NO - go to message 44 if YES
 #_09D5B5: db $FF ; end of message
 
 ;===================================================================================================
@@ -11359,7 +11361,7 @@ Message_01_05_42:
 Message_01_05_43:
 #_09D5B6: db $97 ; >
 #_09D5B7: db $F2, $89 ; prewritten text 89
-#_09D5B9: db $F8, $44 ; YES/NO - go to message $44 if YES
+#_09D5B9: db $F8, $44 ; YES/NO - go to message 44 if YES
 #_09D5BB: db $FF ; end of message
 
 ;===================================================================================================
@@ -11368,25 +11370,25 @@ Message_01_05_44:
 #_09D5BC: db $D6, $00, $74, $60, $28 ; place sprite 74 in slot 00 at XY:{60,28}
 #_09D5C1: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09D5C4: db $D6, $00, $00 ; delete sprite in slot 00
-#_09D5C7: db $D2, $0C, $45 ; test progress bit $0C for message $45
+#_09D5C7: db $D2, $0C, $45 ; test progress bit 0C for message 45
 #_09D5CA: db $FE, $1A, $54, $DE, $0E, $00, $00, $00 ; ext command 1A: 54,DE,0E,00,00,00
-#_09D5D2: db $D0, $0C ; set progress bit $0C
+#_09D5D2: db $D0, $0C ; set progress bit 0C
 #_09D5D4: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_45:
 #_09D5D5: db $FE, $1A, $56, $5E, $0E, $00, $00, $00 ; ext command 1A: 56,5E,0E,00,00,00
-#_09D5DD: db $D1, $0C ; clear progress bit $0C
+#_09D5DD: db $D1, $0C ; clear progress bit 0C
 #_09D5DF: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_46:
 #_09D5E0: db $D6, $00, $6B, $60, $28 ; place sprite 6B in slot 00 at XY:{60,28}
-#_09D5E5: db $D2, $0C, $48 ; test progress bit $0C for message $48
-#_09D5E8: db $D2, $7E, $47 ; test progress bit $7E for message $47
-#_09D5EB: db $D3, $4B ; go to message $4B
+#_09D5E5: db $D2, $0C, $48 ; test progress bit 0C for message 48
+#_09D5E8: db $D2, $7E, $47 ; test progress bit 7E for message 47
+#_09D5EB: db $D3, $4B ; go to message 4B
 
 ;===================================================================================================
 
@@ -11394,7 +11396,7 @@ Message_01_05_46:
 Message_01_05_47:
 #_09D5ED: db $97 ; >
 #_09D5EE: db $F2, $68 ; prewritten text 68
-#_09D5F0: db $F8, $49 ; YES/NO - go to message $49 if YES
+#_09D5F0: db $F8, $49 ; YES/NO - go to message 49 if YES
 #_09D5F2: db $FF ; end of message
 
 ;===================================================================================================
@@ -11403,7 +11405,7 @@ Message_01_05_47:
 Message_01_05_48:
 #_09D5F3: db $97 ; >
 #_09D5F4: db $F2, $89 ; prewritten text 89
-#_09D5F6: db $F8, $49 ; YES/NO - go to message $49 if YES
+#_09D5F6: db $F8, $49 ; YES/NO - go to message 49 if YES
 #_09D5F8: db $FF ; end of message
 
 ;===================================================================================================
@@ -11412,16 +11414,16 @@ Message_01_05_49:
 #_09D5F9: db $D6, $00, $74, $60, $28 ; place sprite 74 in slot 00 at XY:{60,28}
 #_09D5FE: db $FE, $07, $03 ; ext command 07: draw buffered text then wait 2 frames
 #_09D601: db $D6, $00, $00 ; delete sprite in slot 00
-#_09D604: db $D2, $0C, $4A ; test progress bit $0C for message $4A
+#_09D604: db $D2, $0C, $4A ; test progress bit 0C for message 4A
 #_09D607: db $FE, $1A, $51, $1D, $0E, $00, $00, $00 ; ext command 1A: 51,1D,0E,00,00,00
-#_09D60F: db $D0, $0C ; set progress bit $0C
+#_09D60F: db $D0, $0C ; set progress bit 0C
 #_09D611: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_05_4A:
 #_09D612: db $FE, $1A, $51, $9F, $0E, $00, $00, $00 ; ext command 1A: 51,9F,0E,00,00,00
-#_09D61A: db $D1, $0C ; clear progress bit $0C
+#_09D61A: db $D1, $0C ; clear progress bit 0C
 #_09D61C: db $FF ; end of message
 
 ;===================================================================================================
@@ -11438,7 +11440,7 @@ Message_01_05_4B:
 Message_01_00_00:
 #_09D622: db $D7, $B2, $33 ; load scenes B2 and 33
 #_09D625: db $FE, $1C, $00 ; ext command 1C: $00 TODO
-#_09D628: db $D2, $0C, $02 ; test progress bit $0C for message $02
+#_09D628: db $D2, $0C, $02 ; test progress bit 0C for message 02
 
 ;===================================================================================================
 
@@ -11454,17 +11456,17 @@ Message_01_00_01:
 ; «>[CHASE]の いしきのなかに»
 ; «おんなのこえが ひびいた・・・»
 Message_01_00_02:
-#_09D62E: db $D2, $52, $07 ; test progress bit $52 for message $07
-#_09D631: db $D5, $46 ; send $46 to APU
+#_09D62E: db $D2, $52, $07 ; test progress bit 52 for message 07
+#_09D631: db $D5, $46 ; send 46 to APU
 #_09D633: db $D6, $00, $AB, $68, $18 ; place sprite AB in slot 00 at XY:{68,18}
-#_09D638: db $D2, $50, $04 ; test progress bit $50 for message $04
-#_09D63B: db $D0, $4F ; set progress bit $4F
+#_09D638: db $D2, $50, $04 ; test progress bit 50 for message 04
+#_09D63B: db $D0, $4F ; set progress bit 4F
 #_09D63D: db $97 ; >
 #_09D63E: db $F2, $00 ; prewritten text 00
 #_09D640: db $9C, $CF, $30, $AB, $4B, $4E, $37, $26 ; が⎵しばられてい
 #_09D648: db $4D ; る
 #_09D649: db $FC ; wait for key and new line
-#_09D64A: db $E9, $00, $03 ; go to message $03 maybe TODO
+#_09D64A: db $E9, $00, $03 ; go to message 03 maybe TODO
 #_09D64D: db $FA ; clear message box
 #_09D64E: db $F2, $45 ; prewritten text 45
 
@@ -11489,8 +11491,8 @@ Message_01_00_04:
 #_09D656: db $F2, $46 ; prewritten text 46
 #_09D658: db $9A ; :
 #_09D659: db $F9 ; new line
-#_09D65A: db $D2, $0C, $06 ; test progress bit $0C for message $06
-#_09D65D: db $D2, $53, $05 ; test progress bit $53 for message $05
+#_09D65A: db $D2, $0C, $06 ; test progress bit 0C for message 06
+#_09D65D: db $D2, $53, $05 ; test progress bit 53 for message 05
 #_09D660: db $2E, $3D, $CF, $29, $52, $39, $3D, $2E ; この⎵おんなのこ
 #_09D668: db $9C, $CF ; が⎵
 #_09D66A: db $F0 ; write player name
@@ -11539,7 +11541,7 @@ Message_01_00_05:
 #_09D6E8: db $D6, $00, $00 ; delete sprite in slot 00
 #_09D6EB: db $D7, $FF ; load scene FF
 #_09D6ED: db $FE, $1B, $7F, $84, $18, $00, $07, $11 ; ext command 1B: 7F,84,18,00,07,11
-#_09D6F5: db $D3, $15 ; go to message $15
+#_09D6F5: db $D3, $15 ; go to message 15
 
 ;===================================================================================================
 
@@ -11573,8 +11575,8 @@ Message_01_00_06:
 #_09D74C: db $4B, $4E, $37, $30, $43, $27, $2A, $4B ; られてしまうから
 #_09D754: db $39 ; な
 #_09D755: db $FC ; wait for key and new line
-#_09D756: db $D1, $0C ; clear progress bit $0C
-#_09D758: db $D3, $08 ; go to message $08
+#_09D756: db $D1, $0C ; clear progress bit 0C
+#_09D758: db $D3, $08 ; go to message 08
 
 ;===================================================================================================
 
@@ -11594,8 +11596,8 @@ Message_01_00_06:
 ; どこまでも いくわ いっしょに
 ; >[MOMO]が «ナカマに くわわった»
 Message_01_00_07:
-#_09D75A: db $D2, $54, $09 ; test progress bit $54 for message $09
-#_09D75D: db $D5, $47 ; send $47 to APU
+#_09D75A: db $D2, $54, $09 ; test progress bit 54 for message 09
+#_09D75D: db $D5, $47 ; send 47 to APU
 #_09D75F: db $D6, $01, $B1, $90, $38 ; place sprite B1 in slot 01 at XY:{90,38}
 #_09D764: db $D6, $00, $A9, $70, $28 ; place sprite A9 in slot 00 at XY:{70,28}
 #_09D769: db $FE, $62 ; ext command 62: Call routine 0FA371 TODO
@@ -11661,8 +11663,8 @@ Message_01_00_07:
 #_09D835: db $9C, $CF ; が⎵
 #_09D837: db $F2, $2F ; prewritten text 2F
 #_09D839: db $FC ; wait for key and new line
-#_09D83A: db $D0, $54 ; set progress bit $54
-#_09D83C: db $D1, $0C ; clear progress bit $0C
+#_09D83A: db $D0, $54 ; set progress bit 54
+#_09D83C: db $D1, $0C ; clear progress bit 0C
 
 ;===================================================================================================
 
@@ -11684,14 +11686,14 @@ Message_01_00_09:
 ; «メシアきょう»しんぷ:
 ; せっかく おこしいただいたのに
 Message_01_00_0A:
-#_09D84C: db $D2, $55, $12 ; test progress bit $55 for message $12
-#_09D84F: db $D5, $45 ; send $45 to APU
+#_09D84C: db $D2, $55, $12 ; test progress bit 55 for message 12
+#_09D84F: db $D5, $45 ; send 45 to APU
 #_09D851: db $D7, $81, $2B ; load scenes 81 and 2B
 #_09D854: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_09D859: db $F2, $33 ; prewritten text 33
 #_09D85B: db $30, $52, $B2, $9A ; しんぷ:
 #_09D85F: db $F9 ; new line
-#_09D860: db $D2, $51, $0B ; test progress bit $51 for message $0B
+#_09D860: db $D2, $51, $0B ; test progress bit 51 for message 0B
 #_09D863: db $32, $58, $2A, $2C, $CF, $29, $2E, $30 ; せっかく⎵おこし
 #_09D86B: db $26, $34, $A6, $26, $34, $3D, $3A ; いただいたのに
 #_09D872: db $F9 ; new line
@@ -11704,12 +11706,13 @@ Message_01_00_0A:
 ; きふが あつまらなく なってしまったのです
 ; どうか かみのため
 ; かみに すくいをもとめる ひとびとのため
-; ℏ1000ほど きふを «おねがいします»«・・・»そうですか
+; ℏ1000ほど きふを «おねがいします»
+; «・・・»そうですか
 Message_01_00_0B:
 #_09D873: db $50, $9C, $CF ; わが⎵
 #_09D876: db $F2, $33 ; prewritten text 33
 #_09D878: db $2A, $26, $3E ; かいは
-#_09D87B: db $D2, $51, $0D ; test progress bit $51 for message $0D
+#_09D87B: db $D2, $51, $0D ; test progress bit 51 for message 0D
 #_09D87E: db $CF, $A9, $2B, $37, $29, $4C, $43, $32 ; ⎵できておりませ
 #_09D886: db $52 ; ん
 #_09D887: db $FC ; wait for key and new line
@@ -11737,11 +11740,11 @@ Message_01_00_0B:
 #_09D8EB: db $5C, $02, $01, $01, $01, $42, $AA, $CF ; ℏ1000ほど⎵
 #_09D8F3: db $2B, $40, $51, $CF ; きふを⎵
 #_09D8F7: db $F2, $4A ; prewritten text 4A
-#_09D8F9: db $F8, $0E ; YES/NO - go to message $0E if YES
+#_09D8F9: db $F8, $0E ; YES/NO - go to message 0E if YES
 #_09D8FB: db $F2, $0B ; prewritten text 0B
 #_09D8FD: db $33, $27, $A9, $31, $2A ; そうですか
 #_09D902: db $F9 ; new line
-#_09D903: db $D3, $11 ; go to message $11
+#_09D903: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
 
@@ -11796,7 +11799,7 @@ Message_01_00_0E:
 #_09D980: db $FC ; wait for key and new line
 #_09D981: db $FE, $48, $10 ; ext command 48: take 1000 money or go to message 10 if not enough
 #_09D984: db $FE, $49, $0F ; ext command 49: go to message 0F if $07E0 >= 10
-#_09D987: db $D3, $0C ; go to message $0C
+#_09D987: db $D3, $0C ; go to message 0C
 
 ;===================================================================================================
 
@@ -11827,9 +11830,9 @@ Message_01_00_0F:
 #_09D9D0: db $2A, $26, $9C, $CF, $A9, $2B, $25, $9C ; かいが⎵できあが
 #_09D9D8: db $4C, $43, $31 ; ります
 #_09D9DB: db $FC ; wait for key and new line
-#_09D9DC: db $D0, $51 ; set progress bit $51
+#_09D9DC: db $D0, $51 ; set progress bit 51
 #_09D9DE: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
-#_09D9E1: db $D3, $0C ; go to message $0C
+#_09D9E1: db $D3, $0C ; go to message 0C
 
 ;===================================================================================================
 
@@ -11854,7 +11857,7 @@ Message_01_00_11:
 ;===================================================================================================
 
 Message_01_00_12:
-#_09DA09: db $FE, $1D, $63, $80 ; ext command 1D: $63 $80 TODO
+#_09DA09: db $FE, $1D, $63, $80 ; ext command 1D: load classy message 8063
 
 ;===================================================================================================
 
@@ -11870,7 +11873,7 @@ Message_01_00_13:
 #_09DA12: db $F2, $33 ; prewritten text 33
 #_09DA14: db $38, $9A ; と:
 #_09DA16: db $F9 ; new line
-#_09DA17: db $D2, $52, $14 ; test progress bit $52 for message $14
+#_09DA17: db $D2, $52, $14 ; test progress bit 52 for message 14
 #_09DA1A: db $25, $25, $CF, $39, $52, $A9, $CF, $2E ; ああ⎵なんで⎵こ
 #_09DA22: db $52, $39, $2E, $38, $3A ; んなことに
 #_09DA27: db $F2, $0B ; prewritten text 0B
@@ -11917,7 +11920,7 @@ Message_01_00_14:
 ;===================================================================================================
 
 Message_01_00_15:
-#_09DA9E: db $FE, $37 ; ext command 37: call 3 routines
+#_09DA9E: db $FE, $37 ; ext command 37: reload dungeon view
 #_09DAA0: db $FE, $1C, $00 ; ext command 1C: $00 TODO
 
 ;===================================================================================================
@@ -11931,17 +11934,17 @@ Message_01_00_15:
 ; こわいんだ!
 ; わるいが きみたちだけで いってくれ
 Message_01_00_16:
-#_09DAA3: db $D5, $47 ; send $47 to APU
+#_09DAA3: db $D5, $47 ; send 47 to APU
 #_09DAA5: db $D6, $00, $B1, $70, $38 ; place sprite B1 in slot 00 at XY:{70,38}
 #_09DAAA: db $F2, $46 ; prewritten text 46
 #_09DAAC: db $9A ; :
 #_09DAAD: db $F9 ; new line
-#_09DAAE: db $D2, $52, $1A ; test progress bit $52 for message $1A
-#_09DAB1: db $D2, $0C, $18 ; test progress bit $0C for message $18
+#_09DAAE: db $D2, $52, $1A ; test progress bit 52 for message 1A
+#_09DAB1: db $D2, $0C, $18 ; test progress bit 0C for message 18
 #_09DAB4: db $F2, $71 ; prewritten text 71
 #_09DAB6: db $3A, $CF, $3E, $26, $58, $34, $A5 ; に⎵はいったぞ
 #_09DABD: db $FC ; wait for key and new line
-#_09DABE: db $D2, $53, $17 ; test progress bit $53 for message $17
+#_09DABE: db $D2, $53, $17 ; test progress bit 53 for message 17
 #_09DAC1: db $FA ; clear message box
 #_09DAC2: db $F2, $0B ; prewritten text 0B
 #_09DAC4: db $29, $2C, $2A, $4B, $CF, $34, $A6, $4A ; おくから⎵ただよ
@@ -11964,7 +11967,7 @@ Message_01_00_16:
 #_09DB06: db $35, $A6, $2D, $A9, $CF, $26, $58, $37 ; ちだけで⎵いって
 #_09DB0E: db $2C, $4E ; くれ
 #_09DB10: db $FC ; wait for key and new line
-#_09DB11: db $D0, $53 ; set progress bit $53
+#_09DB11: db $D0, $53 ; set progress bit 53
 
 ;===================================================================================================
 
@@ -11982,7 +11985,7 @@ Message_01_00_17:
 #_09DB33: db $F9 ; new line
 #_09DB34: db $47, $AA, $58, $37, $2B, $37, $2C, $4E ; もどってきてくれ
 #_09DB3C: db $FC ; wait for key and new line
-#_09DB3D: db $D0, $0C ; set progress bit $0C
+#_09DB3D: db $D0, $0C ; set progress bit 0C
 #_09DB3F: db $FE, $1A, $7F, $85, $18, $00, $07, $11 ; ext command 1A: 7F,85,18,00,07,11
 #_09DB47: db $FF ; end of message
 
@@ -12000,7 +12003,7 @@ Message_01_00_18:
 #_09DB53: db $9F, $52, $A2, $36, $3D, $32, $2A, $26 ; げんじつのせかい
 #_09DB5B: db $41, $CF, $2A, $28, $4C, $34, $26, $3D ; へ⎵かえりたいの
 #_09DB63: db $2A, $95 ; か?
-#_09DB65: db $F8, $19 ; YES/NO - go to message $19 if YES
+#_09DB65: db $F8, $19 ; YES/NO - go to message 19 if YES
 #_09DB67: db $D4, $03 ; set text box size to 3
 #_09DB69: db $33, $27, $2A, $CF, $29, $2C, $41, $CF ; そうか⎵おくへ⎵
 #_09DB71: db $26, $2C, $3D, $2A ; いくのか
@@ -12025,11 +12028,11 @@ Message_01_00_19:
 #_09DBA7: db $27 ; う
 #_09DBA8: db $FC ; wait for key and new line
 #_09DBA9: db $FA ; clear message box
-#_09DBAA: db $D1, $FF ; clear progress bit $FF
+#_09DBAA: db $D1, $FF ; clear progress bit FF
 #_09DBAC: db $FE, $1C, $01 ; ext command 1C: $01 TODO
 #_09DBAF: db $D6, $00, $00 ; delete sprite in slot 00
 #_09DBB2: db $FE, $1B, $58, $0E, $06, $00, $07, $11 ; ext command 1B: 58,0E,06,00,07,11
-#_09DBBA: db $D3, $00 ; go to message $00
+#_09DBBA: db $D3, $00 ; go to message 00
 
 ;===================================================================================================
 
@@ -12044,7 +12047,7 @@ Message_01_00_1A:
 #_09DBD7: db $26, $3D, $27, $A3, $3E, $CF, $2B, $28 ; いのうずは⎵きえ
 #_09DBDF: db $34 ; た
 #_09DBE0: db $FC ; wait for key and new line
-#_09DBE1: db $D3, $19 ; go to message $19
+#_09DBE1: db $D3, $19 ; go to message 19
 
 ;===================================================================================================
 
@@ -12059,7 +12062,7 @@ Message_01_00_1A:
 ; あなたの さだめなのです«・・・»
 Message_01_00_1B:
 #_09DBE3: db $D7, $01 ; load scene 01
-#_09DBE5: db $D5, $45 ; send $45 to APU
+#_09DBE5: db $D5, $45 ; send 45 to APU
 #_09DBE7: db $D6, $00, $23, $80, $28 ; place sprite 23 in slot 00 at XY:{80,28}
 #_09DBEC: db $D6, $01, $1C, $68, $38 ; place sprite 1C in slot 01 at XY:{68,38}
 #_09DBF1: db $68, $69, $6C, $5A, $9A ; シスター:
@@ -12106,9 +12109,9 @@ Message_01_00_1B:
 ; じゃまは させないよ!
 Message_01_00_1C:
 #_09DC76: db $D7, $37 ; load scene 37
-#_09DC78: db $D2, $52, $1F ; test progress bit $52 for message $1F
-#_09DC7B: db $D5, $46 ; send $46 to APU
-#_09DC7D: db $DE, $01, $00, $08, $01 ; [COMMAND DE:01,00,08,01]
+#_09DC78: db $D2, $52, $1F ; test progress bit 52 for message 1F
+#_09DC7B: db $D5, $46 ; send 46 to APU
+#_09DC7D: db $DE, $01, $00, $08, $01 ; load 1x demon 0108
 #_09DC82: db $E4, $00 ; load demon $00
 #_09DC84: db $F5 ; write demon name from $050A
 #_09DC85: db $9A ; :
@@ -12131,14 +12134,14 @@ Message_01_00_1C:
 #_09DCCD: db $A2, $55, $43, $3E, $CF, $2F, $32, $39 ; じゃまは⎵させな
 #_09DCD5: db $26, $4A, $94 ; いよ!
 #_09DCD8: db $FC ; wait for key and new line
-#_09DCD9: db $D5, $39 ; send $39 to APU
+#_09DCD9: db $D5, $39 ; send 39 to APU
 #_09DCDB: db $E5, $01, $1E ; [COMMAND E5:01,1E]
 
 ;===================================================================================================
 
 Message_01_00_1D:
 #_09DCDE: db $E5, $00, $1E ; [COMMAND E5:00,1E]
-#_09DCE1: db $D3, $1D ; go to message $1D
+#_09DCE1: db $D3, $1D ; go to message 1D
 
 ;===================================================================================================
 
@@ -12153,7 +12156,7 @@ Message_01_00_1E:
 ; «・・・»ありがとう
 ; はやく もどってきて
 Message_01_00_1F:
-#_09DCE8: db $D5, $47 ; send $47 to APU
+#_09DCE8: db $D5, $47 ; send 47 to APU
 #_09DCEA: db $D6, $00, $1E, $78, $28 ; place sprite 1E in slot 00 at XY:{78,28}
 #_09DCEF: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09DCF3: db $F2, $00 ; prewritten text 00
@@ -12169,10 +12172,10 @@ Message_01_00_1F:
 #_09DD12: db $3E, $48, $2C, $CF, $47, $AA, $58, $37 ; はやく⎵もどって
 #_09DD1A: db $2B, $37 ; きて
 #_09DD1C: db $FC ; wait for key and new line
-#_09DD1D: db $D1, $4B ; clear progress bit $4B
-#_09DD1F: db $D1, $4F ; clear progress bit $4F
-#_09DD21: db $D0, $52 ; set progress bit $52
-#_09DD23: db $D0, $FF ; set progress bit $FF
+#_09DD1D: db $D1, $4B ; clear progress bit 4B
+#_09DD1F: db $D1, $4F ; clear progress bit 4F
+#_09DD21: db $D0, $52 ; set progress bit 52
+#_09DD23: db $D0, $FF ; set progress bit FF
 #_09DD25: db $FF ; end of message
 
 ;===================================================================================================
@@ -12215,7 +12218,7 @@ Message_01_00_20:
 #_09DD7D: db $3D, $AB, $30, $57, $95 ; のばしょ?
 #_09DD82: db $FC ; wait for key and new line
 #_09DD83: db $FE, $04, $22, $21 ; ext command 04: message 22 if 11C >= 112; 21 if >= 144
-#_09DD87: db $D3, $21 ; go to message $21
+#_09DD87: db $D3, $21 ; go to message 21
 
 ;===================================================================================================
 
@@ -12312,7 +12315,7 @@ Message_01_00_25:
 #_09DE5D: db $9C ; が
 #_09DE5E: db $F2, $0B ; prewritten text 0B
 #_09DE60: db $F9 ; new line
-#_09DE61: db $D2, $57, $26 ; test progress bit $57 for message $26
+#_09DE61: db $D2, $57, $26 ; test progress bit 57 for message 26
 #_09DE64: db $F2, $4C ; prewritten text 4C
 #_09DE66: db $3A, $CF, $2D, $58, $2A, $26, $9C, $CF ; に⎵けっかいが⎵
 #_09DE6E: db $3E, $4B, $4E, $37, $26, $4D, $34, $46 ; はられているため
@@ -12347,7 +12350,7 @@ Message_01_00_27:
 #_09DE9A: db $D6, $00, $89, $70, $28 ; place sprite 89 in slot 00 at XY:{70,28}
 #_09DE9F: db $4F, $27, $A2, $52, $9A ; ろうじん:
 #_09DEA4: db $F9 ; new line
-#_09DEA5: db $D2, $52, $28 ; test progress bit $52 for message $28
+#_09DEA5: db $D2, $52, $28 ; test progress bit 52 for message 28
 #_09DEA8: db $F2, $18 ; prewritten text 18
 #_09DEAA: db $3A, $CF, $32, $26, $30, $52, $3D, $39 ; に⎵せいしんのな
 #_09DEB2: db $2A, $3A ; かに
@@ -12358,7 +12361,7 @@ Message_01_00_27:
 #_09DEC4: db $2B, $26, $34, $2E, $38, $9C, $25, $4D ; きいたことがある
 #_09DECC: db $FC ; wait for key and new line
 #_09DECD: db $FA ; clear message box
-#_09DECE: db $D2, $52, $28 ; test progress bit $52 for message $28
+#_09DECE: db $D2, $52, $28 ; test progress bit 52 for message 28
 #_09DED1: db $33, $3D, $3F, $38, $39, $4B, $CF, $7E ; そのひとなら⎵メ
 #_09DED9: db $68, $5D, $2F, $43, $3A, $CF, $38, $4C ; シアさまに⎵とり
 #_09DEE1: db $36, $26, $34, $CF, $5D, $64, $7B, $51 ; ついた⎵アクマを
@@ -12407,154 +12410,154 @@ Message_01_00_29:
 ;===================================================================================================
 
 Message_01_00_2A:
-#_09DF5A: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DF5D: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DF60: db $F7, $06, $2B ; go to message $2B if RNG <= $06
-#_09DF63: db $DE, $00, $00, $AB, $01 ; [COMMAND DE:00,00,AB,01]
-#_09DF68: db $D3, $3E ; go to message $3E
+#_09DF5A: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DF5D: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DF60: db $F7, $06, $2B ; go to message 2B if RNG <= $06
+#_09DF63: db $DE, $00, $00, $AB, $01 ; load 1x demon 00AB
+#_09DF68: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_2B:
-#_09DF6A: db $DE, $00, $00, $FD, $01 ; [COMMAND DE:00,00,FD,01]
-#_09DF6F: db $D3, $3E ; go to message $3E
+#_09DF6A: db $DE, $00, $00, $FD, $01 ; load 1x demon 00FD
+#_09DF6F: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_2C:
-#_09DF71: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DF74: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DF77: db $F7, $10, $2D ; go to message $2D if RNG <= $10
-#_09DF7A: db $DE, $00, $00, $70, $01 ; [COMMAND DE:00,00,70,01]
-#_09DF7F: db $D3, $3E ; go to message $3E
+#_09DF71: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DF74: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DF77: db $F7, $10, $2D ; go to message 2D if RNG <= $10
+#_09DF7A: db $DE, $00, $00, $70, $01 ; load 1x demon 0070
+#_09DF7F: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_2D:
-#_09DF81: db $DE, $00, $00, $60, $01 ; [COMMAND DE:00,00,60,01]
-#_09DF86: db $D3, $3E ; go to message $3E
+#_09DF81: db $DE, $00, $00, $60, $01 ; load 1x demon 0060
+#_09DF86: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_2E:
-#_09DF88: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DF8B: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DF8E: db $F7, $08, $2F ; go to message $2F if RNG <= $08
-#_09DF91: db $DE, $00, $00, $91, $01 ; [COMMAND DE:00,00,91,01]
-#_09DF96: db $D3, $3E ; go to message $3E
+#_09DF88: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DF8B: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DF8E: db $F7, $08, $2F ; go to message 2F if RNG <= $08
+#_09DF91: db $DE, $00, $00, $91, $01 ; load 1x demon 0091
+#_09DF96: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_2F:
-#_09DF98: db $DE, $00, $00, $98, $01 ; [COMMAND DE:00,00,98,01]
-#_09DF9D: db $D3, $3E ; go to message $3E
+#_09DF98: db $DE, $00, $00, $98, $01 ; load 1x demon 0098
+#_09DF9D: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_30:
-#_09DF9F: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DFA2: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DFA5: db $F7, $06, $31 ; go to message $31 if RNG <= $06
-#_09DFA8: db $DE, $00, $00, $6B, $01 ; [COMMAND DE:00,00,6B,01]
-#_09DFAD: db $D3, $3E ; go to message $3E
+#_09DF9F: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DFA2: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DFA5: db $F7, $06, $31 ; go to message 31 if RNG <= $06
+#_09DFA8: db $DE, $00, $00, $6B, $01 ; load 1x demon 006B
+#_09DFAD: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_31:
-#_09DFAF: db $DE, $00, $00, $28, $01 ; [COMMAND DE:00,00,28,01]
-#_09DFB4: db $D3, $3E ; go to message $3E
+#_09DFAF: db $DE, $00, $00, $28, $01 ; load 1x demon 0028
+#_09DFB4: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_32:
-#_09DFB6: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DFB9: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DFBC: db $F7, $08, $33 ; go to message $33 if RNG <= $08
-#_09DFBF: db $DE, $00, $00, $EC, $01 ; [COMMAND DE:00,00,EC,01]
-#_09DFC4: db $D3, $3E ; go to message $3E
+#_09DFB6: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DFB9: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DFBC: db $F7, $08, $33 ; go to message 33 if RNG <= $08
+#_09DFBF: db $DE, $00, $00, $EC, $01 ; load 1x demon 00EC
+#_09DFC4: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_33:
-#_09DFC6: db $DE, $00, $00, $A4, $01 ; [COMMAND DE:00,00,A4,01]
-#_09DFCB: db $D3, $3E ; go to message $3E
+#_09DFC6: db $DE, $00, $00, $A4, $01 ; load 1x demon 00A4
+#_09DFCB: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_34:
-#_09DFCD: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DFD0: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DFD3: db $F7, $10, $35 ; go to message $35 if RNG <= $10
-#_09DFD6: db $DE, $00, $00, $68, $01 ; [COMMAND DE:00,00,68,01]
-#_09DFDB: db $D3, $3E ; go to message $3E
+#_09DFCD: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DFD0: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DFD3: db $F7, $10, $35 ; go to message 35 if RNG <= $10
+#_09DFD6: db $DE, $00, $00, $68, $01 ; load 1x demon 0068
+#_09DFDB: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_35:
-#_09DFDD: db $DE, $00, $00, $F3, $01 ; [COMMAND DE:00,00,F3,01]
-#_09DFE2: db $D3, $3E ; go to message $3E
+#_09DFDD: db $DE, $00, $00, $F3, $01 ; load 1x demon 00F3
+#_09DFE2: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_36:
-#_09DFE4: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DFE7: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09DFEA: db $F7, $04, $37 ; go to message $37 if RNG <= $04
-#_09DFED: db $DE, $00, $00, $5C, $01 ; [COMMAND DE:00,00,5C,01]
-#_09DFF2: db $D3, $3E ; go to message $3E
+#_09DFE4: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DFE7: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09DFEA: db $F7, $04, $37 ; go to message 37 if RNG <= $04
+#_09DFED: db $DE, $00, $00, $5C, $01 ; load 1x demon 005C
+#_09DFF2: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_37:
-#_09DFF4: db $DE, $00, $00, $BC, $01 ; [COMMAND DE:00,00,BC,01]
-#_09DFF9: db $D3, $3E ; go to message $3E
+#_09DFF4: db $DE, $00, $00, $BC, $01 ; load 1x demon 00BC
+#_09DFF9: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_38:
-#_09DFFB: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09DFFE: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09E001: db $F7, $04, $39 ; go to message $39 if RNG <= $04
-#_09E004: db $DE, $00, $00, $4B, $01 ; [COMMAND DE:00,00,4B,01]
-#_09E009: db $D3, $3E ; go to message $3E
+#_09DFFB: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09DFFE: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09E001: db $F7, $04, $39 ; go to message 39 if RNG <= $04
+#_09E004: db $DE, $00, $00, $4B, $01 ; load 1x demon 004B
+#_09E009: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_39:
-#_09E00B: db $DE, $00, $00, $BA, $01 ; [COMMAND DE:00,00,BA,01]
-#_09E010: db $D3, $3E ; go to message $3E
+#_09E00B: db $DE, $00, $00, $BA, $01 ; load 1x demon 00BA
+#_09E010: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_3A:
-#_09E012: db $D2, $F4, $42 ; test progress bit $F4 for message $42
-#_09E015: db $F7, $00, $3B ; go to message $3B if RNG <= $00
-#_09E018: db $DE, $00, $00, $84, $01 ; [COMMAND DE:00,00,84,01]
-#_09E01D: db $D3, $3E ; go to message $3E
+#_09E012: db $D2, $F4, $42 ; test progress bit F4 for message 42
+#_09E015: db $F7, $00, $3B ; go to message 3B if RNG <= $00
+#_09E018: db $DE, $00, $00, $84, $01 ; load 1x demon 0084
+#_09E01D: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_3B:
-#_09E01F: db $F7, $55, $3C ; go to message $3C if RNG <= $55
-#_09E022: db $DE, $01, $00, $23, $01 ; [COMMAND DE:01,00,23,01]
-#_09E027: db $D3, $3E ; go to message $3E
+#_09E01F: db $F7, $55, $3C ; go to message 3C if RNG <= $55
+#_09E022: db $DE, $01, $00, $23, $01 ; load 1x demon 0123
+#_09E027: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_3C:
-#_09E029: db $F7, $AA, $3D ; go to message $3D if RNG <= $AA
-#_09E02C: db $DE, $01, $00, $24, $01 ; [COMMAND DE:01,00,24,01]
-#_09E031: db $D3, $3E ; go to message $3E
+#_09E029: db $F7, $AA, $3D ; go to message 3D if RNG <= $AA
+#_09E02C: db $DE, $01, $00, $24, $01 ; load 1x demon 0124
+#_09E031: db $D3, $3E ; go to message 3E
 
 ;===================================================================================================
 
 Message_01_00_3D:
-#_09E033: db $DE, $01, $00, $25, $01 ; [COMMAND DE:01,00,25,01]
+#_09E033: db $DE, $01, $00, $25, $01 ; load 1x demon 0125
 
 ;===================================================================================================
 
 Message_01_00_3E:
-#_09E038: db $D5, $39 ; send $39 to APU
+#_09E038: db $D5, $39 ; send 39 to APU
 #_09E03A: db $E4, $00 ; load demon $00
 
 ;===================================================================================================
@@ -12566,14 +12569,14 @@ Message_01_00_3F:
 
 Message_01_00_40:
 #_09E03F: db $E5, $00, $41 ; [COMMAND E5:00,41]
-#_09E042: db $D3, $40 ; go to message $40
+#_09E042: db $D3, $40 ; go to message 40
 
 ;===================================================================================================
 
 Message_01_00_41:
 #_09E044: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09E046: db $FA ; clear message box
-#_09E047: db $D0, $F4 ; set progress bit $F4
+#_09E047: db $D0, $F4 ; set progress bit F4
 #_09E049: db $FF ; end of message
 
 ;===================================================================================================
@@ -12590,10 +12593,10 @@ Message_01_00_42:
 ; >«なかに はいりますか?»
 Message_01_06_00:
 #_09E04F: db $D6, $00, $6D, $60, $28 ; place sprite 6D in slot 00 at XY:{60,28}
-#_09E054: db $D2, $E6, $01 ; test progress bit $E6 for message $01
+#_09E054: db $D2, $E6, $01 ; test progress bit E6 for message 01
 #_09E057: db $97 ; >
 #_09E058: db $F2, $68 ; prewritten text 68
-#_09E05A: db $F8, $02 ; YES/NO - go to message $02 if YES
+#_09E05A: db $F8, $02 ; YES/NO - go to message 02 if YES
 #_09E05C: db $FF ; end of message
 
 ;===================================================================================================
@@ -12622,12 +12625,12 @@ Message_01_06_02:
 ; アナタガタノ ウワサ キイテマス
 ; ダイカンゲイデス!
 Message_01_06_03:
-#_09E075: db $D5, $45 ; send $45 to APU
+#_09E075: db $D5, $45 ; send 45 to APU
 #_09E077: db $D7, $10 ; load scene 10
 #_09E079: db $D4, $03 ; set text box size to 3
-#_09E07B: db $D2, $2F, $13 ; test progress bit $2F for message $13
+#_09E07B: db $D2, $2F, $13 ; test progress bit 2F for message 13
 #_09E07E: db $D6, $07, $4E, $70, $28 ; place sprite 4E in slot 07 at XY:{70,28}
-#_09E083: db $D2, $2D, $05 ; test progress bit $2D for message $05
+#_09E083: db $D2, $2D, $05 ; test progress bit 2D for message 05
 #_09E086: db $F2, $1B ; prewritten text 1B
 #_09E088: db $34, $26, $30, $9A ; たいし:
 #_09E08C: db $F9 ; new line
@@ -12706,7 +12709,7 @@ Message_01_06_04:
 #_09E17C: db $70, $5F, $89, $CF, $6C, $61, $68, $6F ; トウヲ⎵タオシテ
 #_09E184: db $64, $BF, $67, $5E ; クダサイ
 #_09E188: db $FC ; wait for key and new line
-#_09E189: db $D0, $2D ; set progress bit $2D
+#_09E189: db $D0, $2D ; set progress bit 2D
 #_09E18B: db $FA ; clear message box
 #_09E18C: db $5D, $71, $6C, $B5, $CF, $6C, $69, $65 ; アナタガ⎵タスケ
 #_09E194: db $6F, $64, $86, $86, $C4 ; テクレレバ
@@ -12720,8 +12723,8 @@ Message_01_06_04:
 #_09E1B8: db $91, $5F ; ョウ
 #_09E1BA: db $FC ; wait for key and new line
 #_09E1BB: db $FA ; clear message box
-#_09E1BC: db $D2, $29, $06 ; test progress bit $29 for message $06
-#_09E1BF: db $D3, $07 ; go to message $07
+#_09E1BC: db $D2, $29, $06 ; test progress bit 29 for message 06
+#_09E1BF: db $D3, $07 ; go to message 07
 
 ;===================================================================================================
 
@@ -12731,9 +12734,9 @@ Message_01_06_05:
 #_09E1C3: db $70, $5A, $85, $7B, $8A, $34, $26, $30 ; トールマンたいし
 #_09E1CB: db $9A ; :
 #_09E1CC: db $F9 ; new line
-#_09E1CD: db $D2, $2B, $0A ; test progress bit $2B for message $0A
-#_09E1D0: db $D2, $2E, $08 ; test progress bit $2E for message $08
-#_09E1D3: db $D2, $2A, $0D ; test progress bit $2A for message $0D
+#_09E1CD: db $D2, $2B, $0A ; test progress bit 2B for message 0A
+#_09E1D0: db $D2, $2E, $08 ; test progress bit 2E for message 08
+#_09E1D3: db $D2, $2A, $0D ; test progress bit 2A for message 0D
 
 ;===================================================================================================
 
@@ -12746,8 +12749,8 @@ Message_01_06_06:
 #_09E1E6: db $88, $6C, $68, $75, $CF, $76, $71, $68 ; ワタシノ⎵ハナシ
 #_09E1EE: db $89, $CF, $7F, $5F, $02, $62, $5E, $CF ; ヲ⎵モウ1カイ⎵
 #_09E1F6: db $63, $63, $7B, $69, $62, $95 ; キキマスカ?
-#_09E1FC: db $F8, $04 ; YES/NO - go to message $04 if YES
-#_09E1FE: db $D2, $29, $09 ; test progress bit $29 for message $09
+#_09E1FC: db $F8, $04 ; YES/NO - go to message 04 if YES
+#_09E1FE: db $D2, $29, $09 ; test progress bit 29 for message 09
 
 ;===================================================================================================
 
@@ -12763,7 +12766,7 @@ Message_01_06_07:
 #_09E21F: db $64, $86, $85, $70, $CF, $68, $8A, $BB ; クレルト⎵シンジ
 #_09E227: db $6F, $7B, $69 ; テマス
 #_09E22A: db $FC ; wait for key and new line
-#_09E22B: db $D3, $14 ; go to message $14
+#_09E22B: db $D3, $14 ; go to message 14
 
 ;===================================================================================================
 
@@ -12777,7 +12780,7 @@ Message_01_06_08:
 #_09E240: db $5E, $6B, $5E, $C2, $CF, $64, $BF, $67 ; イソイデ⎵クダサ
 #_09E248: db $5E ; イ
 #_09E249: db $FC ; wait for key and new line
-#_09E24A: db $D3, $14 ; go to message $14
+#_09E24A: db $D3, $14 ; go to message 14
 
 ;===================================================================================================
 
@@ -12793,7 +12796,7 @@ Message_01_06_09:
 #_09E259: db $88, $6C, $68, $75, $CF, $6C, $75, $7C ; ワタシノ⎵タノミ
 #_09E261: db $CF, $63, $5E, $6F, $64, $86, $7B, $69 ; ⎵キイテクレマス
 #_09E269: db $62, $95 ; カ?
-#_09E26B: db $F8, $12 ; YES/NO - go to message $12 if YES
+#_09E26B: db $F8, $12 ; YES/NO - go to message 12 if YES
 #_09E26D: db $FA ; clear message box
 #_09E26E: db $F2, $0B ; prewritten text 0B
 #_09E270: db $6B, $5F, $C2, $69, $62, $CF, $C2, $76 ; ソウデスカ⎵デハ
@@ -12802,8 +12805,8 @@ Message_01_06_09:
 #_09E27E: db $66, $75, $7B, $7B, $72, $CF, $68, $6F ; コノママニ⎵シテ
 #_09E286: db $61, $5E, $6F, $7F, $CF, $82, $5E, $75 ; オイテモ⎵ヨイノ
 #_09E28E: db $C2, $69, $62, $95 ; デスカ?
-#_09E292: db $F8, $0D ; YES/NO - go to message $0D if YES
-#_09E294: db $D3, $07 ; go to message $07
+#_09E292: db $F8, $0D ; YES/NO - go to message 0D if YES
+#_09E294: db $D3, $07 ; go to message 07
 
 ;===================================================================================================
 
@@ -12826,12 +12829,12 @@ Message_01_06_0A:
 ; かみにかわって ほめて つかわそう
 ; これからも かみのために はたらいてくれるか?
 Message_01_06_0B:
-#_09E2B3: db $DE, $01, $00, $04, $01 ; [COMMAND DE:01,00,04,01]
+#_09E2B3: db $DE, $01, $00, $04, $01 ; load 1x demon 0104
 #_09E2B8: db $F2, $7C ; prewritten text 7C
 #_09E2BA: db $D6, $07, $00 ; delete sprite in slot 07
 #_09E2BD: db $F2, $7D ; prewritten text 7D
 #_09E2BF: db $E4, $00 ; load demon $00
-#_09E2C1: db $D2, $6A, $0E ; test progress bit $6A for message $0E
+#_09E2C1: db $D2, $6A, $0E ; test progress bit 6A for message 0E
 #_09E2C4: db $F2, $0B ; prewritten text 0B
 #_09E2C6: db $A0, $2C, $4F, $27, $A6, $58, $34, $39 ; ごくろうだったな
 #_09E2CE: db $FC ; wait for key and new line
@@ -12852,8 +12855,8 @@ Message_01_06_0B:
 #_09E2F4: db $2E, $4E, $2A, $4B, $47, $CF, $2A, $44 ; これからも⎵かみ
 #_09E2FC: db $3D, $34, $46, $3A, $CF, $3E, $34, $4B ; のために⎵はたら
 #_09E304: db $26, $37, $2C, $4E, $4D, $2A, $95 ; いてくれるか?
-#_09E30B: db $F8, $0C ; YES/NO - go to message $0C if YES
-#_09E30D: db $D3, $0E ; go to message $0E
+#_09E30B: db $F8, $0C ; YES/NO - go to message 0C if YES
+#_09E30D: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
@@ -12933,20 +12936,20 @@ Message_01_06_0C:
 #_09E3D9: db $A9, $3E, $CF, $2F, $4B, $AB, $A6 ; では⎵さらばだ
 #_09E3E0: db $F2, $0B ; prewritten text 0B
 #_09E3E2: db $FC ; wait for key and new line
-#_09E3E3: db $D3, $11 ; go to message $11
+#_09E3E3: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
 
 ; «・・・»ソウデスカ ワタシノ イウコトガ«・・・»
 Message_01_06_0D:
 #_09E3E5: db $D4, $03 ; set text box size to 3
-#_09E3E7: db $D0, $6A ; set progress bit $6A
+#_09E3E7: db $D0, $6A ; set progress bit 6A
 #_09E3E9: db $F2, $0B ; prewritten text 0B
 #_09E3EB: db $6B, $5F, $C2, $69, $62, $CF, $88, $6C ; ソウデスカ⎵ワタ
 #_09E3F3: db $68, $75, $CF, $5E, $5F, $66, $70, $B5 ; シノ⎵イウコトガ
 #_09E3FB: db $F2, $0B ; prewritten text 0B
 #_09E3FD: db $FC ; wait for key and new line
-#_09E3FE: db $D3, $0B ; go to message $0B
+#_09E3FE: db $D3, $0B ; go to message 0B
 
 ;===================================================================================================
 
@@ -12977,14 +12980,14 @@ Message_01_06_0E:
 #_09E431: db $F9 ; new line
 #_09E432: db $26, $34, $A6, $2E, $27, $94 ; いただこう!
 #_09E438: db $FC ; wait for key and new line
-#_09E439: db $D5, $39 ; send $39 to APU
+#_09E439: db $D5, $39 ; send 39 to APU
 #_09E43B: db $E5, $01, $10 ; [COMMAND E5:01,10]
 
 ;===================================================================================================
 
 Message_01_06_0F:
 #_09E43E: db $E5, $00, $10 ; [COMMAND E5:00,10]
-#_09E441: db $D3, $0F ; go to message $0F
+#_09E441: db $D3, $0F ; go to message 0F
 
 ;===================================================================================================
 
@@ -13037,14 +13040,14 @@ Message_01_06_10:
 
 Message_01_06_11:
 #_09E4B0: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_09E4B2: db $D1, $34 ; clear progress bit $34
-#_09E4B4: db $D1, $35 ; clear progress bit $35
-#_09E4B6: db $D1, $36 ; clear progress bit $36
-#_09E4B8: db $D1, $0C ; clear progress bit $0C
-#_09E4BA: db $D1, $0B ; clear progress bit $0B
+#_09E4B2: db $D1, $34 ; clear progress bit 34
+#_09E4B4: db $D1, $35 ; clear progress bit 35
+#_09E4B6: db $D1, $36 ; clear progress bit 36
+#_09E4B8: db $D1, $0C ; clear progress bit 0C
+#_09E4BA: db $D1, $0B ; clear progress bit 0B
 #_09E4BC: db $FA ; clear message box
 #_09E4BD: db $FE, $3B ; ext command 3B: begin nuke countdown
-#_09E4BF: db $D3, $14 ; go to message $14
+#_09E4BF: db $D3, $14 ; go to message 14
 
 ;===================================================================================================
 
@@ -13064,8 +13067,8 @@ Message_01_06_12:
 #_09E4E8: db $11, $19, $19, $0E, $CF, $16, $1F, $0D ; GOOD⎵LUC
 #_09E4F0: db $15, $94 ; K!
 #_09E4F2: db $FC ; wait for key and new line
-#_09E4F3: db $D0, $2E ; set progress bit $2E
-#_09E4F5: db $D3, $14 ; go to message $14
+#_09E4F3: db $D0, $2E ; set progress bit 2E
+#_09E4F5: db $D3, $14 ; go to message 14
 
 ;===================================================================================================
 
@@ -13109,9 +13112,9 @@ Message_01_06_16:
 #_09E530: db $F2, $1B ; prewritten text 1B
 #_09E532: db $41, $26, $9A ; へい:
 #_09E535: db $F9 ; new line
-#_09E536: db $D2, $E6, $1A ; test progress bit $E6 for message $1A
-#_09E539: db $D2, $0C, $18 ; test progress bit $0C for message $18
-#_09E53C: db $D2, $0D, $17 ; test progress bit $0D for message $17
+#_09E536: db $D2, $E6, $1A ; test progress bit E6 for message 1A
+#_09E539: db $D2, $0C, $18 ; test progress bit 0C for message 18
+#_09E53C: db $D2, $0D, $17 ; test progress bit 0D for message 17
 #_09E53F: db $70, $7B, $86, $94, $CF, $70, $7B, $86 ; トマレ!⎵トマレ
 #_09E547: db $71, $67, $5A, $5E, $94 ; ナサーイ!
 #_09E54C: db $FC ; wait for key and new line
@@ -13119,15 +13122,15 @@ Message_01_06_16:
 #_09E54E: db $66, $62, $83, $67, $63, $CF, $6C, $6D ; コカラサキ⎵タチ
 #_09E556: db $84, $63, $8A, $68, $CF, $C2, $5A, $69 ; リキンシ⎵デース
 #_09E55E: db $FC ; wait for key and new line
-#_09E55F: db $DD, $F2, $19 ; go to message $19 if item $F2
+#_09E55F: db $DD, $F2, $19 ; go to message 19 if missing item F2
 #_09E562: db $FA ; clear message box
-#_09E563: db $E1, $F0 ; set $0A50 to $F0
+#_09E563: db $E1, $F0 ; set $0A50 to item F0
 #_09E565: db $F2, $0B ; prewritten text 0B
 #_09E567: db $61, $5F, $CF ; オウ⎵
 #_09E56A: db $F3 ; write item name from $0A50
 #_09E56B: db $CF, $7F, $6F, $7B, $69, $74 ; ⎵モテマスネ
 #_09E571: db $F9 ; new line
-#_09E572: db $D0, $0D ; set progress bit $0D
+#_09E572: db $D0, $0D ; set progress bit 0D
 
 ;===================================================================================================
 
@@ -13136,7 +13139,7 @@ Message_01_06_17:
 #_09E574: db $C3, $BE, $CF, $61, $70, $84, $64, $BF ; ドゾ⎵オトリクダ
 #_09E57C: db $67, $5E ; サイ
 #_09E57E: db $FC ; wait for key and new line
-#_09E57F: db $D0, $0C ; set progress bit $0C
+#_09E57F: db $D0, $0C ; set progress bit 0C
 #_09E581: db $FE, $1B, $16, $CD, $09, $00, $00, $00 ; ext command 1B: 16,CD,09,00,00,00
 #_09E589: db $FF ; end of message
 
@@ -13151,7 +13154,7 @@ Message_01_06_18:
 ;===================================================================================================
 
 Message_01_06_19:
-#_09E598: db $D1, $0C ; clear progress bit $0C
+#_09E598: db $D1, $0C ; clear progress bit 0C
 #_09E59A: db $FE, $1A, $18, $4D, $09, $00, $00, $00 ; ext command 1A: 18,4D,09,00,00,00
 #_09E5A2: db $FF ; end of message
 
@@ -13161,16 +13164,16 @@ Message_01_06_19:
 Message_01_06_1A:
 #_09E5A3: db $71, $72, $CF, $5D, $88, $6F, $6F, $7B ; ナニ⎵アワテテマ
 #_09E5AB: db $69, $62, $95 ; スカ?
-#_09E5AE: db $D3, $19 ; go to message $19
+#_09E5AE: db $D3, $19 ; go to message 19
 
 ;===================================================================================================
 
 Message_01_07_00:
-#_09E5B0: db $D5, $45 ; send $45 to APU
+#_09E5B0: db $D5, $45 ; send 45 to APU
 #_09E5B2: db $D7, $23 ; load scene 23
 #_09E5B4: db $FE, $3A, $02, $00 ; ext command 3A: 02 00 TODO
 #_09E5B8: db $FE, $07, $FF ; ext command 07: draw buffered text then wait 254 frames
-#_09E5BB: db $D2, $62, $15 ; test progress bit $62 for message $15
+#_09E5BB: db $D2, $62, $15 ; test progress bit 62 for message 15
 
 ;===================================================================================================
 
@@ -13180,9 +13183,9 @@ Message_01_07_00:
 Message_01_07_01:
 #_09E5BE: db $D6, $01, $C3, $60, $20 ; place sprite C3 in slot 01 at XY:{60,20}
 #_09E5C3: db $D6, $00, $C4, $60, $20 ; place sprite C4 in slot 00 at XY:{60,20}
-#_09E5C8: db $D2, $47, $03 ; test progress bit $47 for message $03
-#_09E5CB: db $D2, $43, $02 ; test progress bit $43 for message $02
-#_09E5CE: db $E9, $03, $02 ; go to message $02 maybe TODO
+#_09E5C8: db $D2, $47, $03 ; test progress bit 47 for message 03
+#_09E5CB: db $D2, $43, $02 ; test progress bit 43 for message 02
+#_09E5CE: db $E9, $03, $02 ; go to message 02 maybe TODO
 #_09E5D1: db $EF ; write chaos hero name
 #_09E5D2: db $9A ; :
 #_09E5D3: db $F9 ; new line
@@ -13247,9 +13250,9 @@ Message_01_07_03:
 #_09E653: db $41, $CF, $26, $2D, $4D, $3D, $A9, $31 ; へ⎵いけるのです
 #_09E65B: db $FC ; wait for key and new line
 #_09E65C: db $FA ; clear message box
-#_09E65D: db $D2, $47, $07 ; test progress bit $47 for message $07
-#_09E660: db $D2, $43, $05 ; test progress bit $43 for message $05
-#_09E663: db $E9, $03, $04 ; go to message $04 maybe TODO
+#_09E65D: db $D2, $47, $07 ; test progress bit 47 for message 07
+#_09E660: db $D2, $43, $05 ; test progress bit 43 for message 05
+#_09E663: db $E9, $03, $04 ; go to message 04 maybe TODO
 #_09E666: db $EF ; write chaos hero name
 #_09E667: db $9A ; :
 #_09E668: db $F9 ; new line
@@ -13267,7 +13270,7 @@ Message_01_07_03:
 ; なにか じょうほうが えられるかもしれません
 ; きいていきましょう
 Message_01_07_04:
-#_09E682: db $E9, $02, $05 ; go to message $05 maybe TODO
+#_09E682: db $E9, $02, $05 ; go to message 05 maybe TODO
 #_09E685: db $EE ; write lawful hero name
 #_09E686: db $9A ; :
 #_09E687: db $F9 ; new line
@@ -13310,8 +13313,8 @@ Message_01_07_05:
 #_09E6E9: db $F9 ; new line
 #_09E6EA: db $44, $43, $50, $4E, $43, $30, $34 ; みまわれました
 #_09E6F1: db $FC ; wait for key and new line
-#_09E6F2: db $D2, $43, $06 ; test progress bit $43 for message $06
-#_09E6F5: db $E9, $09, $06 ; go to message $06 maybe TODO
+#_09E6F2: db $D2, $43, $06 ; test progress bit 43 for message 06
+#_09E6F5: db $E9, $09, $06 ; go to message 06 maybe TODO
 #_09E6F8: db $FA ; clear message box
 #_09E6F9: db $EE ; write lawful hero name
 #_09E6FA: db $9A ; :
@@ -13385,7 +13388,7 @@ Message_01_07_07:
 #_09E7C5: db $97, $32, $58, $2B, $57, $27, $3E, $CF ; >せっきょうは⎵
 #_09E7CD: db $36, $A8, $26, $37, $26, $4D ; つづいている
 #_09E7D3: db $FC ; wait for key and new line
-#_09E7D4: db $D0, $43 ; set progress bit $43
+#_09E7D4: db $D0, $43 ; set progress bit 43
 #_09E7D6: db $FF ; end of message
 
 ;===================================================================================================
@@ -13394,8 +13397,8 @@ Message_01_07_07:
 ; «メシアきょう»と:
 Message_01_07_08:
 #_09E7D7: db $D7, $36 ; load scene 36
-#_09E7D9: db $D5, $45 ; send $45 to APU
-#_09E7DB: db $D2, $62, $15 ; test progress bit $62 for message $15
+#_09E7D9: db $D5, $45 ; send 45 to APU
+#_09E7DB: db $D2, $62, $15 ; test progress bit 62 for message 15
 #_09E7DE: db $D6, $00, $C7, $60, $20 ; place sprite C7 in slot 00 at XY:{60,20}
 #_09E7E3: db $D6, $01, $C7, $70, $20 ; place sprite C7 in slot 01 at XY:{70,20}
 #_09E7E8: db $D6, $02, $C7, $80, $20 ; place sprite C7 in slot 02 at XY:{80,20}
@@ -13407,15 +13410,15 @@ Message_01_07_08:
 #_09E7FE: db $F2, $33 ; prewritten text 33
 #_09E800: db $38, $9A ; と:
 #_09E802: db $F9 ; new line
-#_09E803: db $D2, $79, $13 ; test progress bit $79 for message $13
-#_09E806: db $D2, $64, $10 ; test progress bit $64 for message $10
-#_09E809: db $D2, $7D, $12 ; test progress bit $7D for message $12
-#_09E80C: db $D2, $63, $0F ; test progress bit $63 for message $0F
-#_09E80F: db $D2, $45, $0E ; test progress bit $45 for message $0E
-#_09E812: db $D2, $6E, $0B ; test progress bit $6E for message $0B
-#_09E815: db $D2, $55, $0A ; test progress bit $55 for message $0A
-#_09E818: db $D2, $47, $09 ; test progress bit $47 for message $09
-#_09E81B: db $D3, $07 ; go to message $07
+#_09E803: db $D2, $79, $13 ; test progress bit 79 for message 13
+#_09E806: db $D2, $64, $10 ; test progress bit 64 for message 10
+#_09E809: db $D2, $7D, $12 ; test progress bit 7D for message 12
+#_09E80C: db $D2, $63, $0F ; test progress bit 63 for message 0F
+#_09E80F: db $D2, $45, $0E ; test progress bit 45 for message 0E
+#_09E812: db $D2, $6E, $0B ; test progress bit 6E for message 0B
+#_09E815: db $D2, $55, $0A ; test progress bit 55 for message 0A
+#_09E818: db $D2, $47, $09 ; test progress bit 47 for message 09
+#_09E81B: db $D3, $07 ; go to message 07
 
 ;===================================================================================================
 
@@ -13509,7 +13512,7 @@ Message_01_07_0B:
 #_09E92A: db $43, $28, $37, $3E, $CF, $2A, $58, $37 ; まえては⎵かって
 #_09E932: db $3A, $CF, $2F, $AB, $26, $37, $26, $34 ; に⎵さばいていた
 #_09E93A: db $F9 ; new line
-#_09E93B: db $DE, $00, $00, $10, $00 ; [COMMAND DE:00,00,10,00]
+#_09E93B: db $DE, $00, $00, $10, $00 ; load 0x demon 0010
 #_09E940: db $28, $52, $43, $A6, $26, $29, $27, $CF ; えんまだいおう⎵
 #_09E948: db $2E, $38, $CF ; こと⎵
 #_09E94B: db $F6 ; write class name from $0506
@@ -13591,12 +13594,7 @@ Message_01_07_0F:
 #_09E9F0: db $60, $63, $C3, $71, $9C, $CF, $34, $26 ; エキドナが⎵たい
 #_09E9F8: db $A2, $2F, $4E, $43, $30, $34 ; じされました
 #_09E9FE: db $FC ; wait for key and new line
-
-;===================================================================================================
-
-Message_09E9FE:
-#_09E9FE: db $FC ; wait for key and new line
-#_09E9FF: db $D3, $0C ; go to message $0C
+#_09E9FF: db $D3, $0C ; go to message 0C
 
 ;===================================================================================================
 
@@ -13678,7 +13676,7 @@ Message_01_07_12:
 #_09EAC4: db $87, $5F, $3D, $CF, $32, $52, $30, $38 ; ロウの⎵せんしと
 #_09EACC: db $CF, $39, $58, $34, $3D, $A9, $31 ; ⎵なったのです
 #_09EAD3: db $FC ; wait for key and new line
-#_09EAD4: db $D3, $0D ; go to message $0D
+#_09EAD4: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
@@ -13739,8 +13737,8 @@ Message_01_07_16:
 #_09EB3B: db $D6, $05, $C7, $88, $08 ; place sprite C7 in slot 05 at XY:{88,08}
 #_09EB40: db $D6, $06, $C7, $98, $08 ; place sprite C7 in slot 06 at XY:{98,08}
 #_09EB45: db $D6, $07, $C7, $A8, $08 ; place sprite C7 in slot 07 at XY:{A8,08}
-#_09EB4A: db $D2, $62, $17 ; test progress bit $62 for message $17
-#_09EB4D: db $D5, $45 ; send $45 to APU
+#_09EB4A: db $D2, $62, $17 ; test progress bit 62 for message 17
+#_09EB4D: db $D5, $45 ; send 45 to APU
 #_09EB4F: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
 #_09EB54: db $F2, $33 ; prewritten text 33
 #_09EB56: db $38, $9A ; と:
@@ -13786,13 +13784,13 @@ Message_01_07_17:
 ; かみのおしえを つたえることができるわ
 Message_01_07_18:
 #_09EB99: db $D7, $30 ; load scene 30
-#_09EB9B: db $D2, $62, $23 ; test progress bit $62 for message $23
-#_09EB9E: db $D5, $45 ; send $45 to APU
+#_09EB9B: db $D2, $62, $23 ; test progress bit 62 for message 23
+#_09EB9E: db $D5, $45 ; send 45 to APU
 #_09EBA0: db $D6, $00, $49, $78, $28 ; place sprite 49 in slot 00 at XY:{78,28}
 #_09EBA5: db $F2, $33 ; prewritten text 33
 #_09EBA7: db $38, $9A ; と:
 #_09EBA9: db $F9 ; new line
-#_09EBAA: db $E9, $00, $1D ; go to message $1D maybe TODO
+#_09EBAA: db $E9, $00, $1D ; go to message 1D maybe TODO
 #_09EBAD: db $25, $39, $34, $9C, $CF ; あなたが⎵
 #_09EBB2: db $F0 ; write player name
 #_09EBB3: db $2F, $52 ; さん
@@ -13831,13 +13829,13 @@ Message_01_07_18:
 #_09EC4C: db $2B, $4D, $50 ; きるわ
 #_09EC4F: db $FC ; wait for key and new line
 #_09EC50: db $FE, $04, $1A, $1B ; ext command 04: message 1A if 11C >= 112; 1B if >= 144
-#_09EC54: db $D2, $82, $19 ; test progress bit $82 for message $19
+#_09EC54: db $D2, $82, $19 ; test progress bit 82 for message 19
 #_09EC57: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_07_19:
-#_09EC58: db $D2, $83, $1E ; test progress bit $83 for message $1E
+#_09EC58: db $D2, $83, $1E ; test progress bit 83 for message 1E
 #_09EC5B: db $FF ; end of message
 
 ;===================================================================================================
@@ -13882,13 +13880,13 @@ Message_01_07_1B:
 #_09ECD2: db $F9 ; new line
 #_09ECD3: db $3F, $2B, $57, $27, $4A, $94 ; ひきょうよ!
 #_09ECD9: db $FC ; wait for key and new line
-#_09ECDA: db $D2, $82, $1C ; test progress bit $82 for message $1C
+#_09ECDA: db $D2, $82, $1C ; test progress bit 82 for message 1C
 #_09ECDD: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_01_07_1C:
-#_09ECDE: db $D2, $83, $1F ; test progress bit $83 for message $1F
+#_09ECDE: db $D2, $83, $1F ; test progress bit 83 for message 1F
 #_09ECE1: db $FF ; end of message
 
 ;===================================================================================================
@@ -13926,7 +13924,7 @@ Message_01_07_1E:
 #_09ED29: db $F9 ; new line
 #_09ED2A: db $3F, $36, $4A, $27, $A6, $38, $CF, $29 ; ひつようだと⎵お
 #_09ED32: db $47, $27, $A9, $30, $57, $27, $95 ; もうでしょう?
-#_09ED39: db $F8, $22 ; YES/NO - go to message $22 if YES
+#_09ED39: db $F8, $22 ; YES/NO - go to message 22 if YES
 #_09ED3B: db $D4, $03 ; set text box size to 3
 #_09ED3D: db $33, $27 ; そう
 #_09ED3F: db $F2, $0B ; prewritten text 0B
@@ -13955,12 +13953,12 @@ Message_01_07_1F:
 #_09ED7F: db $3C ; ね
 #_09ED80: db $F2, $0B ; prewritten text 0B
 #_09ED82: db $FC ; wait for key and new line
-#_09ED83: db $D5, $39 ; send $39 to APU
+#_09ED83: db $D5, $39 ; send 39 to APU
 #_09ED85: db $FE, $46, $09 ; ext command 46: 09 TODO
 #_09ED88: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
 #_09ED8B: db $D6, $00, $9D, $78, $38 ; place sprite 9D in slot 00 at XY:{78,38}
 #_09ED90: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
-#_09ED93: db $DE, $01, $00, $0C, $01 ; [COMMAND DE:01,00,0C,01]
+#_09ED93: db $DE, $01, $00, $0C, $01 ; load 1x demon 010C
 #_09ED98: db $E4, $00 ; load demon $00
 #_09ED9A: db $FA ; clear message box
 #_09ED9B: db $F5 ; write demon name from $050A
@@ -13978,12 +13976,12 @@ Message_01_07_1F:
 
 Message_01_07_20:
 #_09EDC0: db $E5, $00, $21 ; [COMMAND E5:00,21]
-#_09EDC3: db $D3, $20 ; go to message $20
+#_09EDC3: db $D3, $20 ; go to message 20
 
 ;===================================================================================================
 
 Message_01_07_21:
-#_09EDC5: db $D0, $62 ; set progress bit $62
+#_09EDC5: db $D0, $62 ; set progress bit 62
 #_09EDC7: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
 #_09EDCA: db $FF ; end of message
 
@@ -14004,7 +14002,7 @@ Message_01_07_22:
 #_09EDF4: db $9C, $52, $AB, $58, $37, $CF, $2C, $A6 ; がんばって⎵くだ
 #_09EDFC: db $2F, $26 ; さい
 #_09EDFE: db $FC ; wait for key and new line
-#_09EDFF: db $D0, $62 ; set progress bit $62
+#_09EDFF: db $D0, $62 ; set progress bit 62
 #_09EE01: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
 #_09EE04: db $FF ; end of message
 
@@ -14020,9 +14018,9 @@ Message_01_07_23:
 ;===================================================================================================
 
 Message_01_08_00:
-#_09EE0A: db $D5, $44 ; send $44 to APU
+#_09EE0A: db $D5, $44 ; send 44 to APU
 #_09EE0C: db $D7, $00 ; load scene 00
-#_09EE0E: db $D2, $E2, $03 ; test progress bit $E2 for message $03
+#_09EE0E: db $D2, $E2, $03 ; test progress bit E2 for message 03
 
 ;===================================================================================================
 
@@ -14045,7 +14043,7 @@ Message_01_08_02:
 #_09EE37: db $F9 ; new line
 #_09EE38: db $4A, $27, $2E, $33 ; ようこそ
 #_09EE3C: db $FC ; wait for key and new line
-#_09EE3D: db $D3, $05 ; go to message $05
+#_09EE3D: db $D3, $05 ; go to message 05
 
 ;===================================================================================================
 
@@ -14058,12 +14056,12 @@ Message_01_08_02:
 ; おれは ついにちからを てにいれた!
 ; もうだれにもまけない!!
 Message_01_08_03:
-#_09EE3F: db $D2, $49, $01 ; test progress bit $49 for message $01
-#_09EE42: db $E9, $03, $01 ; go to message $01 maybe TODO
+#_09EE3F: db $D2, $49, $01 ; test progress bit 49 for message 01
+#_09EE42: db $E9, $03, $01 ; go to message 01 maybe TODO
 #_09EE45: db $FE, $6B, $01 ; ext command 6B: R0F9D65, maybe go to message 01 TODO
-#_09EE48: db $DE, $01, $00, $35, $01 ; [COMMAND DE:01,00,35,01]
+#_09EE48: db $DE, $01, $00, $35, $01 ; load 1x demon 0135
 #_09EE4D: db $E4, $00 ; load demon $00
-#_09EE4F: db $D0, $49 ; set progress bit $49
+#_09EE4F: db $D0, $49 ; set progress bit 49
 #_09EE51: db $EF ; write chaos hero name
 #_09EE52: db $9A ; :
 #_09EE53: db $F9 ; new line
@@ -14111,10 +14109,10 @@ Message_01_08_04:
 #_09EEE1: db $39, $52, $3D, $4A, $27, $2A, $39, $95 ; なんのようかな?
 #_09EEE9: db $FE, $67, $07 ; ext command 67: R0F907A, maybe go to message 07 TODO
 #_09EEEC: db $D8, $03 ; option list with 4 options
-#_09EEEE: db $07, $08 ; option 1 [08]: message 07
-#_09EEF0: db $08, $09 ; option 2 [09]: message 08
-#_09EEF2: db $09, $0B ; option 3 [0B]: message 09
-#_09EEF4: db $19, $06 ; option 4 [06]: message 19
+#_09EEEE: db $07, $08 ; option 1 [07]: go to message 08
+#_09EEF0: db $08, $09 ; option 2 [08]: go to message 09
+#_09EEF2: db $09, $0B ; option 3 [09]: go to message 0B
+#_09EEF4: db $19, $06 ; option 4 [19]: go to message 06
 
 ;===================================================================================================
 
@@ -14131,12 +14129,12 @@ Message_01_08_06:
 
 Message_01_08_07:
 #_09EF0B: db $D8, $04 ; option list with 5 options
-#_09EF0D: db $07, $08 ; option 1 [08]: message 07
-#_09EF0F: db $08, $09 ; option 2 [09]: message 08
-#_09EF11: db $1B, $17 ; option 3 [17]: message 1B
-#_09EF13: db $09, $0B ; option 4 [0B]: message 09
-#_09EF15: db $19, $06 ; option 5 [06]: message 19
-#_09EF17: db $D3, $06 ; go to message $06
+#_09EF0D: db $07, $08 ; option 1 [07]: go to message 08
+#_09EF0F: db $08, $09 ; option 2 [08]: go to message 09
+#_09EF11: db $1B, $17 ; option 3 [1B]: go to message 17
+#_09EF13: db $09, $0B ; option 4 [09]: go to message 0B
+#_09EF15: db $19, $06 ; option 5 [19]: go to message 06
+#_09EF17: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
 
@@ -14144,7 +14142,7 @@ Message_01_08_08:
 #_09EF19: db $FD, $02 ; write $02 to $0A3B
 #_09EF1B: db $FE, $1E, $0A ; ext command 1E: $0A TODO
 #_09EF1E: db $FE, $22, $04 ; ext command 22: go to message 04 if $0A58 flags failure
-#_09EF21: db $D3, $0D ; go to message $0D
+#_09EF21: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
@@ -14152,7 +14150,7 @@ Message_01_08_09:
 #_09EF23: db $FD, $03 ; write $03 to $0A3B
 #_09EF25: db $FE, $1E, $0A ; ext command 1E: $0A TODO
 #_09EF28: db $FE, $22, $04 ; ext command 22: go to message 04 if $0A58 flags failure
-#_09EF2B: db $D3, $0D ; go to message $0D
+#_09EF2B: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
@@ -14163,13 +14161,13 @@ Message_01_08_0A:
 #_09EF36: db $62, $7B, $9C, $CF, $29, $4B, $52, $4A ; カマが⎵おらんよ
 #_09EF3E: db $27, $A6, $39 ; うだな
 #_09EF41: db $FC ; wait for key and new line
-#_09EF42: db $D3, $04 ; go to message $04
+#_09EF42: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
 Message_01_08_0B:
-#_09EF44: db $FE, $72, $00 ; ext command 72: R0F916F [00] TODO
-#_09EF47: db $D3, $04 ; go to message $04
+#_09EF44: db $FE, $72, $00 ; ext command 72: 00 - check status roster
+#_09EF47: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14191,8 +14189,8 @@ Message_01_08_0E:
 #_09EF68: db $FA ; clear message box
 #_09EF69: db $2E, $4E, $A9, $4A, $26, $3D, $A6, $39 ; これでよいのだな
 #_09EF71: db $95 ; ?
-#_09EF72: db $F8, $10 ; YES/NO - go to message $10 if YES
-#_09EF74: db $D3, $04 ; go to message $04
+#_09EF72: db $F8, $10 ; YES/NO - go to message 10 if YES
+#_09EF74: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14248,7 +14246,7 @@ Message_01_08_12:
 #_09EFB1: db $FC ; wait for key and new line
 #_09EFB2: db $FE, $50 ; ext command 50: Call routine 0F98BA and routine 0F9BB1 TODO
 #_09EFB4: db $FE, $60 ; ext command 60: Call routine 029FCC TODO
-#_09EFB6: db $D3, $04 ; go to message $04
+#_09EFB6: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14263,7 +14261,7 @@ Message_01_08_13:
 #_09EFCD: db $37, $3A, $CF, $29, $28, $39, $26, $4A ; てに⎵おえないよ
 #_09EFD5: db $27, $A6, $39, $93, $93, $93 ; うだな・・・
 #_09EFDB: db $FC ; wait for key and new line
-#_09EFDC: db $D3, $04 ; go to message $04
+#_09EFDC: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14278,8 +14276,8 @@ Message_01_08_14:
 #_09EFF2: db $4A, $AC, $A6, $32, $39, $26, $9C, $CF ; よびだせないが⎵
 #_09EFFA: db $33, $4E, $A9, $47, $CF, $4A, $26, $2A ; それでも⎵よいか
 #_09F002: db $95 ; ?
-#_09F003: db $F8, $11 ; YES/NO - go to message $11 if YES
-#_09F005: db $D3, $04 ; go to message $04
+#_09F003: db $F8, $11 ; YES/NO - go to message 11 if YES
+#_09F005: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14289,7 +14287,7 @@ Message_01_08_15:
 #_09F008: db $29, $39, $A2, $CF, $39, $2A, $43, $9C ; おなじ⎵なかまが
 #_09F010: db $CF, $26, $4D, $4A, $27, $A6, $39 ; ⎵いるようだな
 #_09F017: db $FC ; wait for key and new line
-#_09F018: db $D3, $04 ; go to message $04
+#_09F018: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14311,8 +14309,8 @@ Message_01_08_17:
 #_09F035: db $FE, $22, $04 ; ext command 22: go to message 04 if $0A58 flags failure
 #_09F038: db $FA ; clear message box
 #_09F039: db $4A, $26, $3D, $A6, $39, $95 ; よいのだな?
-#_09F03F: db $F8, $18 ; YES/NO - go to message $18 if YES
-#_09F041: db $D3, $04 ; go to message $04
+#_09F03F: db $F8, $18 ; YES/NO - go to message 18 if YES
+#_09F041: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14330,7 +14328,7 @@ Message_01_08_18:
 #_09F05E: db $FC ; wait for key and new line
 #_09F05F: db $FE, $60 ; ext command 60: Call routine 029FCC TODO
 #_09F061: db $D6, $00, $34, $70, $28 ; place sprite 34 in slot 00 at XY:{70,28}
-#_09F066: db $D3, $04 ; go to message $04
+#_09F066: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
@@ -14342,20 +14340,20 @@ Message_01_08_19:
 #_09F076: db $26, $A9, $CF, $47, $35, $2B, $4E, $3B ; いで⎵もちきれぬ
 #_09F07E: db $4A, $27, $A6, $39 ; ようだな
 #_09F082: db $FC ; wait for key and new line
-#_09F083: db $D3, $04 ; go to message $04
+#_09F083: db $D3, $04 ; go to message 04
 
 ;===================================================================================================
 
 ; こっとうひんや:
 ; «・・・»«・・・»«・・・»«・・・»
 Message_01_09_00:
-#_09F085: db $D5, $50 ; send $50 to APU
+#_09F085: db $D5, $50 ; send 50 to APU
 #_09F087: db $D7, $85, $1A ; load scenes 85 and 1A
 #_09F08A: db $DA, $00, $00, $00 ; give 0 money
 #_09F08E: db $D6, $00, $3B, $70, $28 ; place sprite 3B in slot 00 at XY:{70,28}
 #_09F093: db $2E, $58, $38, $27, $3F, $52, $48, $9A ; こっとうひんや:
 #_09F09B: db $F9 ; new line
-#_09F09C: db $D2, $06, $06 ; test progress bit $06 for message $06
+#_09F09C: db $D2, $06, $06 ; test progress bit 06 for message 06
 #_09F09F: db $F2, $0B ; prewritten text 0B
 #_09F0A1: db $F2, $0B ; prewritten text 0B
 #_09F0A3: db $F2, $0B ; prewritten text 0B
@@ -14369,10 +14367,10 @@ Message_01_09_00:
 Message_01_09_01:
 #_09F0A9: db $39, $3A, $2A, $CF, $4A, $27, $2A, $95 ; なにか⎵ようか?
 #_09F0B1: db $D8, $02 ; option list with 3 options
-#_09F0B3: db $04, $02 ; option 1 [02]: message 04
-#_09F0B5: db $11, $04 ; option 2 [04]: message 11
-#_09F0B7: db $12, $07 ; option 3 [07]: message 12
-#_09F0B9: db $D3, $07 ; go to message $07
+#_09F0B3: db $04, $02 ; option 1 [04]: go to message 02
+#_09F0B5: db $11, $04 ; option 2 [11]: go to message 04
+#_09F0B7: db $12, $07 ; option 3 [12]: go to message 07
+#_09F0B9: db $D3, $07 ; go to message 07
 
 ;===================================================================================================
 
@@ -14382,11 +14380,11 @@ Message_01_09_02:
 #_09F0BC: db $39, $3A, $2A, $CF, $2A, $27, $3D, $2A ; なにか⎵かうのか
 #_09F0C4: db $95 ; ?
 #_09F0C5: db $D8, $03 ; option list with 4 options
-#_09F0C7: db $13, $03 ; option 1 [03]: message 13
-#_09F0C9: db $14, $03 ; option 2 [03]: message 14
-#_09F0CB: db $15, $03 ; option 3 [03]: message 15
-#_09F0CD: db $16, $03 ; option 4 [03]: message 16
-#_09F0CF: db $D3, $01 ; go to message $01
+#_09F0C7: db $13, $03 ; option 1 [13]: go to message 03
+#_09F0C9: db $14, $03 ; option 2 [14]: go to message 03
+#_09F0CB: db $15, $03 ; option 3 [15]: go to message 03
+#_09F0CD: db $16, $03 ; option 4 [16]: go to message 03
+#_09F0CF: db $D3, $01 ; go to message 01
 
 ;===================================================================================================
 
@@ -14397,7 +14395,7 @@ Message_01_09_03:
 #_09F0DA: db $CF, $39, $26, $48, $36, $3A, $3E, $CF ; ⎵ないやつには⎵
 #_09F0E2: db $27, $4E, $52, $39 ; うれんな
 #_09F0E6: db $FC ; wait for key and new line
-#_09F0E7: db $D3, $05 ; go to message $05
+#_09F0E7: db $D3, $05 ; go to message 05
 
 ;===================================================================================================
 
@@ -14414,7 +14412,7 @@ Message_01_09_04:
 Message_01_09_05:
 #_09F0F7: db $FA ; clear message box
 #_09F0F8: db $43, $A6, $CF ; まだ⎵
-#_09F0FB: db $D3, $01 ; go to message $01
+#_09F0FB: db $D3, $01 ; go to message 01
 
 ;===================================================================================================
 
@@ -14424,7 +14422,7 @@ Message_01_09_06:
 #_09F105: db $3D, $42, $27, $9C, $CF, $26, $4C, $4A ; のほうが⎵いりよ
 #_09F10D: db $27, $4B, $30, $26, $39 ; うらしいな
 #_09F112: db $FC ; wait for key and new line
-#_09F113: db $EA, $06 ; [COMMAND 1A:06]
+#_09F113: db $EA, $06 ; set up shop 06
 
 ;===================================================================================================
 
@@ -14436,139 +14434,139 @@ Message_01_09_07:
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_00:
-#_09F116: db $E1, $E4 ; set $0A50 to $E4
+#_09F116: db $E1, $E4 ; set $0A50 to item E4
 #_09F118: db $F2, $74 ; prewritten text 74
-#_09F11A: db $DD, $E4, $11 ; go to message $11 if item $E4
-#_09F11D: db $D3, $0D ; go to message $0D
+#_09F11A: db $DD, $E4, $11 ; go to message 11 if missing item E4
+#_09F11D: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_01:
-#_09F11F: db $E1, $E5 ; set $0A50 to $E5
+#_09F11F: db $E1, $E5 ; set $0A50 to item E5
 #_09F121: db $F2, $74 ; prewritten text 74
-#_09F123: db $DD, $E5, $11 ; go to message $11 if item $E5
-#_09F126: db $D3, $0D ; go to message $0D
+#_09F123: db $DD, $E5, $11 ; go to message 11 if missing item E5
+#_09F126: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_02:
-#_09F128: db $E1, $E6 ; set $0A50 to $E6
+#_09F128: db $E1, $E6 ; set $0A50 to item E6
 #_09F12A: db $F2, $74 ; prewritten text 74
-#_09F12C: db $DD, $E6, $11 ; go to message $11 if item $E6
-#_09F12F: db $D3, $0D ; go to message $0D
+#_09F12C: db $DD, $E6, $11 ; go to message 11 if missing item E6
+#_09F12F: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_03:
-#_09F131: db $E1, $E7 ; set $0A50 to $E7
+#_09F131: db $E1, $E7 ; set $0A50 to item E7
 #_09F133: db $F2, $74 ; prewritten text 74
-#_09F135: db $DD, $E7, $11 ; go to message $11 if item $E7
-#_09F138: db $D3, $0D ; go to message $0D
+#_09F135: db $DD, $E7, $11 ; go to message 11 if missing item E7
+#_09F138: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_04:
-#_09F13A: db $E1, $E8 ; set $0A50 to $E8
+#_09F13A: db $E1, $E8 ; set $0A50 to item E8
 #_09F13C: db $F2, $74 ; prewritten text 74
-#_09F13E: db $DD, $E8, $11 ; go to message $11 if item $E8
-#_09F141: db $D3, $0D ; go to message $0D
+#_09F13E: db $DD, $E8, $11 ; go to message 11 if missing item E8
+#_09F141: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_05:
-#_09F143: db $E1, $E9 ; set $0A50 to $E9
+#_09F143: db $E1, $E9 ; set $0A50 to item E9
 #_09F145: db $F2, $74 ; prewritten text 74
-#_09F147: db $DD, $E9, $11 ; go to message $11 if item $E9
-#_09F14A: db $D3, $0D ; go to message $0D
+#_09F147: db $DD, $E9, $11 ; go to message 11 if missing item E9
+#_09F14A: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_06:
-#_09F14C: db $E1, $EA ; set $0A50 to $EA
+#_09F14C: db $E1, $EA ; set $0A50 to item EA
 #_09F14E: db $F2, $74 ; prewritten text 74
-#_09F150: db $DD, $EA, $11 ; go to message $11 if item $EA
-#_09F153: db $D3, $0D ; go to message $0D
+#_09F150: db $DD, $EA, $11 ; go to message 11 if missing item EA
+#_09F153: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_07:
-#_09F155: db $E1, $EB ; set $0A50 to $EB
+#_09F155: db $E1, $EB ; set $0A50 to item EB
 #_09F157: db $F2, $74 ; prewritten text 74
-#_09F159: db $DD, $EB, $11 ; go to message $11 if item $EB
-#_09F15C: db $D3, $0D ; go to message $0D
+#_09F159: db $DD, $EB, $11 ; go to message 11 if missing item EB
+#_09F15C: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_08:
-#_09F15E: db $E1, $EC ; set $0A50 to $EC
+#_09F15E: db $E1, $EC ; set $0A50 to item EC
 #_09F160: db $F2, $74 ; prewritten text 74
-#_09F162: db $DD, $EC, $11 ; go to message $11 if item $EC
-#_09F165: db $D3, $0D ; go to message $0D
+#_09F162: db $DD, $EC, $11 ; go to message 11 if missing item EC
+#_09F165: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_09:
-#_09F167: db $E1, $ED ; set $0A50 to $ED
+#_09F167: db $E1, $ED ; set $0A50 to item ED
 #_09F169: db $F2, $74 ; prewritten text 74
-#_09F16B: db $DD, $ED, $11 ; go to message $11 if item $ED
-#_09F16E: db $D3, $0D ; go to message $0D
+#_09F16B: db $DD, $ED, $11 ; go to message 11 if missing item ED
+#_09F16E: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_0A:
-#_09F170: db $E1, $EE ; set $0A50 to $EE
+#_09F170: db $E1, $EE ; set $0A50 to item EE
 #_09F172: db $F2, $74 ; prewritten text 74
-#_09F174: db $DD, $EE, $11 ; go to message $11 if item $EE
-#_09F177: db $D3, $0D ; go to message $0D
+#_09F174: db $DD, $EE, $11 ; go to message 11 if missing item EE
+#_09F177: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_0B:
-#_09F179: db $E1, $EF ; set $0A50 to $EF
+#_09F179: db $E1, $EF ; set $0A50 to item EF
 #_09F17B: db $F2, $74 ; prewritten text 74
-#_09F17D: db $DD, $EF, $11 ; go to message $11 if item $EF
-#_09F180: db $D3, $0D ; go to message $0D
+#_09F17D: db $DD, $EF, $11 ; go to message 11 if missing item EF
+#_09F180: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_0C:
-#_09F182: db $D2, $56, $13 ; test progress bit $56 for message $13
-#_09F185: db $E1, $E1 ; set $0A50 to $E1
+#_09F182: db $D2, $56, $13 ; test progress bit 56 for message 13
+#_09F185: db $E1, $E1 ; set $0A50 to item E1
 #_09F187: db $F2, $74 ; prewritten text 74
-#_09F189: db $DD, $E1, $11 ; go to message $11 if item $E1
+#_09F189: db $DD, $E1, $11 ; go to message 11 if missing item E1
 
 ;===================================================================================================
 
 Message_01_0A_0D:
-#_09F18C: db $F8, $0F ; YES/NO - go to message $0F if YES
+#_09F18C: db $F8, $0F ; YES/NO - go to message 0F if YES
 
 ;===================================================================================================
 
-; «[NAME]は»
+; «[LEADER]は»
 ; «たからばこを あきらめた»
 Message_01_0A_0E:
 #_09F18E: db $F2, $75 ; prewritten text 75
@@ -14595,22 +14593,22 @@ Message_01_0A_10:
 ;===================================================================================================
 
 Message_01_0A_11:
-#_09F19F: db $F8, $12 ; YES/NO - go to message $12 if YES
-#_09F1A1: db $D3, $0E ; go to message $0E
+#_09F19F: db $F8, $12 ; YES/NO - go to message 12 if YES
+#_09F1A1: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
-; [NAME]は [ITEM]を
+; [LEADER]は [ITEM]を
 ; «てにいれた»
 Message_01_0A_12:
 #_09F1A3: db $D6, $00, $B7, $70, $48 ; place sprite B7 in slot 00 at XY:{70,48}
 #_09F1A8: db $D4, $03 ; set text box size to 3
-#_09F1AA: db $F1 ; write specific name
+#_09F1AA: db $F1 ; write leader's name for team
 #_09F1AB: db $3E, $CF ; は⎵
 #_09F1AD: db $F3 ; write item name from $0A50
 #_09F1AE: db $51 ; を
 #_09F1AF: db $F9 ; new line
-#_09F1B0: db $FE, $3C, $10 ; ext command 3C: 10 TODO
+#_09F1B0: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
 #_09F1B3: db $F2, $2D ; prewritten text 2D
 #_09F1B5: db $FC ; wait for key and new line
 #_09F1B6: db $FE, $28 ; ext command 28: add item to inventory from $0A50
@@ -14622,7 +14620,7 @@ Message_01_0A_12:
 ; «あけますか?»
 Message_01_0A_13:
 #_09F1B9: db $F2, $74 ; prewritten text 74
-#_09F1BB: db $D3, $0D ; go to message $0D
+#_09F1BB: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
@@ -14988,135 +14986,135 @@ ClassNamePointers:
 
 ;===================================================================================================
 
-SpellNamePointers:
-#_09F477: dw spell_00_name
-#_09F479: dw spell_01_name
-#_09F47B: dw spell_02_name
-#_09F47D: dw spell_03_name
-#_09F47F: dw spell_04_name
-#_09F481: dw spell_05_name
-#_09F483: dw spell_06_name
-#_09F485: dw spell_07_name
-#_09F487: dw spell_08_name
-#_09F489: dw spell_09_name
-#_09F48B: dw spell_0A_name
-#_09F48D: dw spell_0B_name
-#_09F48F: dw spell_0C_name
-#_09F491: dw spell_0D_name
-#_09F493: dw spell_0E_name
-#_09F495: dw spell_0F_name
-#_09F497: dw spell_10_name
-#_09F499: dw spell_11_name
-#_09F49B: dw spell_12_name
-#_09F49D: dw spell_13_name
-#_09F49F: dw spell_14_name
-#_09F4A1: dw spell_15_name
-#_09F4A3: dw spell_16_name
-#_09F4A5: dw spell_17_name
-#_09F4A7: dw spell_18_name
-#_09F4A9: dw spell_19_name
-#_09F4AB: dw spell_1A_name
-#_09F4AD: dw spell_1B_name
-#_09F4AF: dw spell_1C_name
-#_09F4B1: dw spell_1D_name
-#_09F4B3: dw spell_1E_name
-#_09F4B5: dw spell_1F_name
-#_09F4B7: dw spell_20_name
-#_09F4B9: dw spell_21_name
-#_09F4BB: dw spell_22_name
-#_09F4BD: dw spell_23_name
-#_09F4BF: dw spell_24_name
-#_09F4C1: dw spell_25_name
-#_09F4C3: dw spell_26_name
-#_09F4C5: dw spell_27_name
-#_09F4C7: dw spell_28_name
-#_09F4C9: dw spell_29_name
-#_09F4CB: dw spell_2A_name
-#_09F4CD: dw spell_2B_name
-#_09F4CF: dw spell_2C_name
-#_09F4D1: dw spell_2D_name
-#_09F4D3: dw spell_2E_name
-#_09F4D5: dw spell_2F_name
-#_09F4D7: dw spell_30_name
-#_09F4D9: dw spell_31_name
-#_09F4DB: dw spell_32_name
-#_09F4DD: dw spell_33_name
-#_09F4DF: dw spell_34_name
-#_09F4E1: dw spell_35_name
-#_09F4E3: dw spell_36_name
-#_09F4E5: dw spell_37_name
-#_09F4E7: dw spell_38_name
-#_09F4E9: dw spell_39_name
-#_09F4EB: dw spell_3A_name
-#_09F4ED: dw spell_3B_name
-#_09F4EF: dw spell_3C_name
-#_09F4F1: dw spell_3D_name
-#_09F4F3: dw spell_3E_name
-#_09F4F5: dw spell_3F_name
-#_09F4F7: dw spell_40_name
-#_09F4F9: dw spell_41_name
-#_09F4FB: dw spell_42_name
-#_09F4FD: dw spell_43_name
-#_09F4FF: dw spell_44_name
-#_09F501: dw spell_45_name
-#_09F503: dw spell_46_name
-#_09F505: dw spell_47_name
-#_09F507: dw spell_48_name
-#_09F509: dw spell_49_name
-#_09F50B: dw spell_4A_name
-#_09F50D: dw spell_4B_name
-#_09F50F: dw spell_4C_name
-#_09F511: dw spell_4D_name
-#_09F513: dw spell_4E_name
-#_09F515: dw spell_4F_name
-#_09F517: dw spell_50_name
-#_09F519: dw spell_51_name
-#_09F51B: dw spell_52_name
-#_09F51D: dw spell_53_name
-#_09F51F: dw spell_54_name
-#_09F521: dw spell_55_name
-#_09F523: dw spell_56_name
-#_09F525: dw spell_57_name
-#_09F527: dw spell_58_name
-#_09F529: dw spell_59_name
-#_09F52B: dw spell_5A_name
-#_09F52D: dw spell_5B_name
-#_09F52F: dw spell_5C_name
-#_09F531: dw spell_5D_name
-#_09F533: dw spell_5E_name
-#_09F535: dw spell_5F_name
-#_09F537: dw spell_60_name
-#_09F539: dw spell_61_name
-#_09F53B: dw spell_62_name
-#_09F53D: dw spell_63_name
-#_09F53F: dw spell_64_name
-#_09F541: dw spell_65_name
-#_09F543: dw spell_66_name
-#_09F545: dw spell_67_name
-#_09F547: dw spell_68_name
-#_09F549: dw spell_69_name
-#_09F54B: dw spell_6A_name
-#_09F54D: dw spell_6B_name
-#_09F54F: dw spell_6C_name
-#_09F551: dw spell_6D_name
-#_09F553: dw spell_6E_name
-#_09F555: dw spell_6F_name
-#_09F557: dw spell_70_name
-#_09F559: dw spell_71_name
-#_09F55B: dw spell_72_name
-#_09F55D: dw spell_73_name
-#_09F55F: dw spell_74_name
-#_09F561: dw spell_75_name
-#_09F563: dw spell_76_name
-#_09F565: dw spell_77_name
-#_09F567: dw spell_78_name
-#_09F569: dw spell_79_name
-#_09F56B: dw spell_7A_name
-#_09F56D: dw spell_7B_name
-#_09F56F: dw spell_7C_name
-#_09F571: dw spell_7D_name
-#_09F573: dw spell_7E_name
-#_09F575: dw spell_7F_name
+SkillNamePointers:
+#_09F477: dw skill_00_name
+#_09F479: dw skill_01_name
+#_09F47B: dw skill_02_name
+#_09F47D: dw skill_03_name
+#_09F47F: dw skill_04_name
+#_09F481: dw skill_05_name
+#_09F483: dw skill_06_name
+#_09F485: dw skill_07_name
+#_09F487: dw skill_08_name
+#_09F489: dw skill_09_name
+#_09F48B: dw skill_0A_name
+#_09F48D: dw skill_0B_name
+#_09F48F: dw skill_0C_name
+#_09F491: dw skill_0D_name
+#_09F493: dw skill_0E_name
+#_09F495: dw skill_0F_name
+#_09F497: dw skill_10_name
+#_09F499: dw skill_11_name
+#_09F49B: dw skill_12_name
+#_09F49D: dw skill_13_name
+#_09F49F: dw skill_14_name
+#_09F4A1: dw skill_15_name
+#_09F4A3: dw skill_16_name
+#_09F4A5: dw skill_17_name
+#_09F4A7: dw skill_18_name
+#_09F4A9: dw skill_19_name
+#_09F4AB: dw skill_1A_name
+#_09F4AD: dw skill_1B_name
+#_09F4AF: dw skill_1C_name
+#_09F4B1: dw skill_1D_name
+#_09F4B3: dw skill_1E_name
+#_09F4B5: dw skill_1F_name
+#_09F4B7: dw skill_20_name
+#_09F4B9: dw skill_21_name
+#_09F4BB: dw skill_22_name
+#_09F4BD: dw skill_23_name
+#_09F4BF: dw skill_24_name
+#_09F4C1: dw skill_25_name
+#_09F4C3: dw skill_26_name
+#_09F4C5: dw skill_27_name
+#_09F4C7: dw skill_28_name
+#_09F4C9: dw skill_29_name
+#_09F4CB: dw skill_2A_name
+#_09F4CD: dw skill_2B_name
+#_09F4CF: dw skill_2C_name
+#_09F4D1: dw skill_2D_name
+#_09F4D3: dw skill_2E_name
+#_09F4D5: dw skill_2F_name
+#_09F4D7: dw skill_30_name
+#_09F4D9: dw skill_31_name
+#_09F4DB: dw skill_32_name
+#_09F4DD: dw skill_33_name
+#_09F4DF: dw skill_34_name
+#_09F4E1: dw skill_35_name
+#_09F4E3: dw skill_36_name
+#_09F4E5: dw skill_37_name
+#_09F4E7: dw skill_38_name
+#_09F4E9: dw skill_39_name
+#_09F4EB: dw skill_3A_name
+#_09F4ED: dw skill_3B_name
+#_09F4EF: dw skill_3C_name
+#_09F4F1: dw skill_3D_name
+#_09F4F3: dw skill_3E_name
+#_09F4F5: dw skill_3F_name
+#_09F4F7: dw skill_40_name
+#_09F4F9: dw skill_41_name
+#_09F4FB: dw skill_42_name
+#_09F4FD: dw skill_43_name
+#_09F4FF: dw skill_44_name
+#_09F501: dw skill_45_name
+#_09F503: dw skill_46_name
+#_09F505: dw skill_47_name
+#_09F507: dw skill_48_name
+#_09F509: dw skill_49_name
+#_09F50B: dw skill_4A_name
+#_09F50D: dw skill_4B_name
+#_09F50F: dw skill_4C_name
+#_09F511: dw skill_4D_name
+#_09F513: dw skill_4E_name
+#_09F515: dw skill_4F_name
+#_09F517: dw skill_50_name
+#_09F519: dw skill_51_name
+#_09F51B: dw skill_52_name
+#_09F51D: dw skill_53_name
+#_09F51F: dw skill_54_name
+#_09F521: dw skill_55_name
+#_09F523: dw skill_56_name
+#_09F525: dw skill_57_name
+#_09F527: dw skill_58_name
+#_09F529: dw skill_59_name
+#_09F52B: dw skill_5A_name
+#_09F52D: dw skill_5B_name
+#_09F52F: dw skill_5C_name
+#_09F531: dw skill_5D_name
+#_09F533: dw skill_5E_name
+#_09F535: dw skill_5F_name
+#_09F537: dw skill_60_name
+#_09F539: dw skill_61_name
+#_09F53B: dw skill_62_name
+#_09F53D: dw skill_63_name
+#_09F53F: dw skill_64_name
+#_09F541: dw skill_65_name
+#_09F543: dw skill_66_name
+#_09F545: dw skill_67_name
+#_09F547: dw skill_68_name
+#_09F549: dw skill_69_name
+#_09F54B: dw skill_6A_name
+#_09F54D: dw skill_6B_name
+#_09F54F: dw skill_6C_name
+#_09F551: dw skill_6D_name
+#_09F553: dw skill_6E_name
+#_09F555: dw skill_6F_name
+#_09F557: dw skill_70_name
+#_09F559: dw skill_71_name
+#_09F55B: dw skill_72_name
+#_09F55D: dw skill_73_name
+#_09F55F: dw skill_74_name
+#_09F561: dw skill_75_name
+#_09F563: dw skill_76_name
+#_09F565: dw skill_77_name
+#_09F567: dw skill_78_name
+#_09F569: dw skill_79_name
+#_09F56B: dw skill_7A_name
+#_09F56D: dw skill_7B_name
+#_09F56F: dw skill_7C_name
+#_09F571: dw skill_7D_name
+#_09F573: dw skill_7E_name
+#_09F575: dw skill_7F_name
 
 ;===================================================================================================
 

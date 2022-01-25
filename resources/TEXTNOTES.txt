@@ -1,0 +1,524 @@
+;===================================================================================================
+; Sprites
+;===================================================================================================
+00 - Delete
+01 - Hanging Heroine sacrifice
+02 - ??? - unused
+03 - ??? - unused
+04 - ??? - unused
+05 - Sacrificial stake
+06 - Chaos Hero in pain
+07 - Chaos Hero in pain dithered ghost
+08 - Chaos Hero in pain
+09 - ??? - unused
+0A - BDSM Gaian
+0B - ??? - unused
+0C - Short psychodiver
+0D - ??? - unused
+0E - Mesian boy
+0F - Loli
+10 - Gotou loincloth
+11 - Crucifix distance 4
+12 - Crucifix distance 3
+13 - Crucifix distance 2
+14 - Crucifix distance 1
+15 - Crucifix distance 0
+16 - Crucified naked ghost Law Hero
+17 - Messenger of God
+18 - Prone naked ghost Chaos Hero
+19 - Squatting goblin
+1A - Dream sacrifice leader
+1B - Dream sacrifice grunt
+1C - Heroine in chair (aka Chairoine)
+1D - Floating supine naked ghost Heroine
+1E - Naked ghost Heroine crossing chest
+1F - Naked ghost man
+20 - Paper note
+21 - ??? - unused
+22 - Dark red arrow - unused
+23 - Nun who lectures chair Heroine
+24 - Blinking red arrow - unused
+25 - Mad scientist
+26 - Ozawa in leather
+27 - Ozawa fat hoodie friend
+28 - Ozawa tall friend
+29 - Black jacket punk
+2A - Beat up Chaos Hero
+2B - Fetal position Law Hero
+2C - Yuriko
+2D - Steven
+2E - Law Hero
+2F - Louis Cypher stiff
+30 - Yuriko kidnapping girl
+31 - Water ripples
+32 - Naked Yuriko back
+33 - Naked Yuriko side
+34 - Jakyou man
+35 - Cross armed Gaian
+36 - Flat hair open shirt man
+37 - Green jacket man
+38 - Hospital doctor
+
+39 - 8 ball shirt clerk   TODO check the shops these guys below run
+3A - Fat bearded clerk
+3B - Antique salesman
+3C - Pharmacist
+3D - Mustachio'd glasses butler
+3E - Open shirt clerk
+
+3F - Messian at Messia
+40 - Neighbor doctor
+41 - Hostess orange
+42 - Hostess blue
+43 - Man in yellowish beige
+44 - Woman in red
+45 - Woman posed leftward
+46 - Girl in dark blue
+47 - Woman in orange
+48 - JK with briefcase
+49 - Messian woman
+4A - Flat top X shirt man
+4B - Woman in plaid skirt
+4C - Resistance Heroine
+4D - Mother
+4E - Louis Cypher shrug
+4F - Terminal nerd
+50 - Terminal nerd typing
+51 - Terminal broom lady
+52 - Torii
+53 - Hospital employee
+54 - ??? - unused
+55 - The Big Giant Head
+56 - Bar table 4 legs
+57 - Bar table 1 leg
+58 - Kaifuku shaman
+59 - Old man from the park
+5A - Soldier with gun up
+5B - Soldier with hands behind back
+5C - Soldier with hands behind back and no helmet
+5D - Soldier with radio - unused
+5E - American soldier with hands behind back
+5F - White barricade
+60 - Police officer with riot shield
+61 - Police captain
+62 - Police officer with hands on hips
+63 - Traffic cone barricade
+64 - Will Smith from Men In Black
+65 - Bald Gaian
+66 - Taijorokun
+67 - Business man shrug
+68 - Dr. Phil
+69 - Man in plaid blazer
+6A - Man in white hoodie
+6B - Steel doors closed
+6C - Steel gate closed
+6D - Beige doors closed
+6E - Glass doors closed - unused
+6F - Bamboo doors closed
+70 - Church doors closed - unused
+71 - Wooden doors closed - unused
+72 - Dojo doors closed - unused
+73 - Quake doors closed - unused
+74 - Steel doors half open
+75 - Steel gate half open
+76 - Beige doors half open
+77 - Glass doors half open - unused
+78 - Bamboo doors half open
+79 - Church doors half open - unused
+7A - Wooden doors half open - unused
+7B - Dojo doors half open - unused
+7C - Quake doors half open - unused
+7D - ??? - unused
+7E - ??? - unused
+7F - Dead Law Hero pope
+80 - Chaos Hero in pain
+81 - Ocean ripples
+82 - Inigo Montoya
+83 - En no Ozuno
+84 - Fat bald Gaian leader
+85 - JK Simmons Messian
+86 - ??? - unused
+87 - Green robed man
+88 - Yellow robed woman
+89 - Orange robed old man
+8A - Tall-collar bald Gaian woman
+8B - Bearded old Messian man
+8C - Mat with artefacts - unused
+8D - Clothes rack
+8E - Swords rack
+8F - Empty? - unused
+90 - 3 NUOUN boxes
+91 - Baptismal Gaian raising the roof
+92 - Baptismal Gaian sitting
+93 - Baptismal Messian pointing
+94 - Baptismal Messian standing
+95 - Cardboard chest - unused (not unused? just not used via text?)
+96 - Wooden chest - unused
+97 - Open cardboard chest - unused
+98 - White ball magic inwards
+99 - Gotou on TV
+9A - ??? - unused
+9B - Thing flying away - unused
+9C - Thing flying far away - unused
+9D - White ball magic pulsating
+9E - White ball magic disappear
+9F - Lightning strike
+A0 - White ball magic blip - unused
+A1 - Blue doors closed
+A2 - Blue doors half open
+A3 - Mohawk summoner man
+A4 - Flat top summoner woman
+A5 - Fat demon summoner
+A6 - Disco cop
+A7 - ??? - unused
+A8 - Ozawa old man
+A9 - Law Heroine cool
+AA - ??? - unused
+AB - Law Heroine chained up
+AC - Rag
+AD - Messian clerk? TODO
+AE - ZZ Top clerk
+AF - Junks clerk
+B0 - Short man in robes
+B1 - Orange rice hat psychodiver
+B2 - Orange robed boy
+B3 - Rie
+B4 - Beige robes sitting man
+B5 - Wooden chest - unused??
+B6 - Fancy chest
+B7 - Fancy chest open
+B8 - Trap animation - unused
+B9 - ??? - unused
+BA - Mickey Mouse - unused
+BB - Donald Duck - unused
+BC - Alice
+BD - Alice crying
+BE - Black Baron
+BF - ??? - unused
+C0 - Black Baron grabbing
+C1 - Black Baron holding Law Hero
+C2 - Unconscious dropping Law Hero
+C3 - Messian woman on TV
+C4 - TV scanlines
+C5 - Red Count
+C6 - ??? - unused
+C7 - 3 small TVs
+C8 - Statue of Law Hero
+
+C9..FF is garbage
+
+;===================================================================================================
+; Scenes
+;===================================================================================================
+00 - Jakyou
+01 - Messia
+02 - Gaia
+03 - Kaifuku
+04 - Terminal
+05 - Home
+06 - Neighbor doctor
+07 - Your room
+08 - Broken lab - unused
+09 - Broken lab - unused
+0A - Hospital lab
+0B - Black blue TV? - unused
+0C - Elevator - unused in text at least
+0D - Elevator walls - unused in text at least
+0E - Steel door to building
+0F - Gotou's dojo
+10 - Embassy office
+11 - Cave garbage - unused
+12 - Pond
+13 - Dream sacrificial altar
+14 - Garbage - unused
+15 - Groovy entry
+16 - Restaurant entry
+17 - Fancy entry - unused
+18 - Fancy bar
+19 - Groovy bar
+1A - Antiques counter
+1B - Drugs counter
+1C - Knives counter
+1D - Armors counter
+1E - Glitchy TV - unused
+1F - Glitchy TV - unused
+20 - TV tower
+21 - Sacrifice plaza from afar
+22 - Sacrifice plaza on stage
+23 - TV tower ruins
+24 - Concrete cell
+25 - Rag's counters
+26 - Sword racks
+27 - Armors racks
+28 - Junks counters?
+29 - White regal
+2A - White building? TODO
+2B - Curtains
+2C - Gaian throne
+2D - Heart of the Cathedral
+2E - Chaos dojo
+2F - Law something TODO
+30 - TV stage
+31 - Broadcast room
+32 - Concrete cell with 2 bars
+33 - Jail cell bar
+34 - Robot lab
+35 - Glitchy square - unused? possibly Jakyou related?
+36 - 12 TVs
+37 - Spider webs
+38 - Ocean for turtle?
+39 - Ocean for octupus?
+3A - Cathedral TODO
+3B - Gaian temple
+
+3C..7F is garbage
+80..BB is & 0x7F for scene and use second parameter for overlay scene
+BC..FE is more garbage, but with a second parameter
+
+FF - Blackout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

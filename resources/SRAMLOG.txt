@@ -1,6 +1,17 @@
 SRAM at 70:0000
 Game 2 SRAM 70:1000
 
+
+(X & 0xFC) >> 1
+X        Y
+abcdefgh ijklmnop
+
+E0 = .abcdefg
+Y = mnop....
+E1 = kl
+
+Y + E0 + 9
+
 SRAM	WRAM		SIZE
 ------------------------------------------------------------
 $x000	$7E:0700	0x100
@@ -8,7 +19,7 @@ $x000	$7E:0700	0x100
 $x000	$7E:0700	0x0C	Slots for characters
 $x00C	$7E:070C	2		Underworld coordinates
 $x00E	$7E:070E	2		IDK coordinates of some kind?
-$x011	$7E:0711	1		
+$x011	$7E:0711	1		Event of square
 $x012	$7E:0712	1		Flags something
 							bit 7 = moving?
 							0x03 = event?

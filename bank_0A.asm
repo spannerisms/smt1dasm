@@ -2921,7 +2921,7 @@ Message_02_00_32:
 
 ;===================================================================================================
 
-; [DEMONX]は [￥GIVEME] を
+; [DEMONX]は [GIVEME] を
 Message_02_00_33:
 #_0A9515: db $ED ; [set2] write demon name indexed from $0526
 #_0A9516: db $3E, $CF ; は⎵
@@ -3031,7 +3031,7 @@ Message_02_00_3F:
 
 ;===================================================================================================
 
-; おれさまは «[￥GIVEME] いただきたい»
+; おれさまは «[GIVEME] いただきたい»
 ; これで ナカマに なろう
 Message_02_00_40:
 #_0A95B1: db $29, $4E, $2F, $43, $3E, $CF ; おれさまは⎵
@@ -3051,7 +3051,7 @@ Message_02_00_41:
 
 ;===================================================================================================
 
-; ついでに [￥GIVEME] だな
+; ついでに [GIVEME] だな
 Message_02_00_42:
 #_0A95D5: db $36, $26, $A9, $3A, $CF ; ついでに⎵
 #_0A95DA: db $F6 ; [set2] ask for currency or item
@@ -3060,7 +3060,7 @@ Message_02_00_42:
 
 ;===================================================================================================
 
-; [DEMONX]は さらに [￥GIVEME]
+; [DEMONX]は さらに [GIVEME]
 Message_02_00_43:
 #_0A95DF: db $ED ; [set2] write demon name indexed from $0526
 #_0A95E0: db $3E, $CF, $2F, $4B, $3A, $CF ; は⎵さらに⎵
@@ -3069,7 +3069,7 @@ Message_02_00_43:
 
 ;===================================================================================================
 
-; そんなら [￥GIVEME] だな
+; そんなら [GIVEME] だな
 Message_02_00_44:
 #_0A95E8: db $33, $52, $39, $4B, $CF ; そんなら⎵
 #_0A95ED: db $F6 ; [set2] ask for currency or item
@@ -3398,7 +3398,7 @@ Message_02_00_67:
 
 ;===================================================================================================
 
-; ワシに [￥GIVEME] くれや
+; ワシに [GIVEME] くれや
 ; そんなら ナカマに なる
 Message_02_00_68:
 #_0A9808: db $88, $68, $3A, $CF ; ワシに⎵
@@ -3411,7 +3411,7 @@ Message_02_00_68:
 
 ;===================================================================================================
 
-; «[￥GIVEME] いただきたい»
+; «[GIVEME] いただきたい»
 ; だせるかな?
 Message_02_00_69:
 #_0A981F: db $EB, $A3 ; [set2] prewritten text A3
@@ -3421,7 +3421,7 @@ Message_02_00_69:
 
 ;===================================================================================================
 
-; さらに «[￥GIVEME] いただきたい»
+; さらに «[GIVEME] いただきたい»
 ; これで きめよう
 Message_02_00_6A:
 #_0A9829: db $2F, $4B, $3A, $CF ; さらに⎵
@@ -3432,7 +3432,7 @@ Message_02_00_6A:
 
 ;===================================================================================================
 
-; «ついでに [￥GIVEME] だな»
+; «ついでに [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_00_6B:
 #_0A9839: db $EB, $42 ; [set2] prewritten text 42
@@ -3442,7 +3442,7 @@ Message_02_00_6B:
 
 ;===================================================================================================
 
-; «そんなら [￥GIVEME] だな»
+; «そんなら [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_00_6C:
 #_0A983F: db $EB, $44 ; [set2] prewritten text 44
@@ -3452,7 +3452,7 @@ Message_02_00_6C:
 
 ;===================================================================================================
 
-; ならば «[￥GIVEME] いただきたい»
+; ならば «[GIVEME] いただきたい»
 ; これで きめよう
 Message_02_00_6D:
 #_0A9845: db $39, $4B, $AB, $CF ; ならば⎵
@@ -3593,7 +3593,7 @@ Message_02_00_7B:
 
 ;===================================================================================================
 
-; ワシに [￥GIVEME] くれや
+; ワシに [GIVEME] くれや
 ; «そんだけで いいから・・・»
 Message_02_00_7C:
 #_0A9956: db $88, $68, $3A, $CF ; ワシに⎵
@@ -3605,7 +3605,7 @@ Message_02_00_7C:
 
 ;===================================================================================================
 
-; «[￥GIVEME] いただきたい»
+; «[GIVEME] いただきたい»
 ; どうだろうか?
 Message_02_00_7D:
 #_0A9963: db $EB, $A3 ; [set2] prewritten text A3
@@ -3615,7 +3615,7 @@ Message_02_00_7D:
 
 ;===================================================================================================
 
-; «さらに [￥GIVEME] を いただけんかな»
+; «さらに [GIVEME] を いただけんかな»
 ; これで きめよう
 Message_02_00_7E:
 #_0A996E: db $EB, $AA ; [set2] prewritten text AA
@@ -3625,7 +3625,7 @@ Message_02_00_7E:
 
 ;===================================================================================================
 
-; «ついでに [￥GIVEME] だな»
+; «ついでに [GIVEME] だな»
 ; «そんだけで いいから・・・»
 Message_02_00_7F:
 #_0A997A: db $EB, $42 ; [set2] prewritten text 42
@@ -3635,7 +3635,7 @@ Message_02_00_7F:
 
 ;===================================================================================================
 
-; ならば [￥GIVEME] で どうか?
+; ならば [GIVEME] で どうか?
 Message_02_00_80:
 #_0A9980: db $39, $4B, $AB, $CF ; ならば⎵
 #_0A9984: db $F6 ; [set2] ask for currency or item
@@ -3841,7 +3841,7 @@ Message_02_00_96:
 
 ;===================================================================================================
 
-; [￥GIVEME] ちょうだい
+; [GIVEME] ちょうだい
 Message_02_00_97:
 #_0A9AD6: db $F6 ; [set2] ask for currency or item
 #_0A9AD7: db $CF, $35, $57, $27, $A6, $26 ; ⎵ちょうだい
@@ -3948,7 +3948,7 @@ Message_02_00_A2:
 
 ;===================================================================================================
 
-; [￥GIVEME] いただきたい
+; [GIVEME] いただきたい
 Message_02_00_A3:
 #_0A9B93: db $F6 ; [set2] ask for currency or item
 #_0A9B94: db $CF, $26, $34, $A6, $2B, $34, $26 ; ⎵いただきたい
@@ -3956,7 +3956,7 @@ Message_02_00_A3:
 
 ;===================================================================================================
 
-; ならば [￥GIVEME] だ!
+; ならば [GIVEME] だ!
 Message_02_00_A4:
 #_0A9B9C: db $39, $4B, $AB, $CF ; ならば⎵
 #_0A9BA0: db $F6 ; [set2] ask for currency or item
@@ -3965,7 +3965,7 @@ Message_02_00_A4:
 
 ;===================================================================================================
 
-; この [￥GIVEME] は けがれている!
+; この [GIVEME] は けがれている!
 Message_02_00_A5:
 #_0A9BA5: db $2E, $3D, $CF ; この⎵
 #_0A9BA8: db $F6 ; [set2] ask for currency or item
@@ -4001,7 +4001,7 @@ Message_02_00_A8:
 
 ;===================================================================================================
 
-; [￥GIVEME] よこしな
+; [GIVEME] よこしな
 Message_02_00_A9:
 #_0A9BE0: db $F6 ; [set2] ask for currency or item
 #_0A9BE1: db $CF, $4A, $2E, $30, $39 ; ⎵よこしな
@@ -4009,7 +4009,7 @@ Message_02_00_A9:
 
 ;===================================================================================================
 
-; さらに [￥GIVEME] を いただけんかな
+; さらに [GIVEME] を いただけんかな
 Message_02_00_AA:
 #_0A9BE7: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0A9BEB: db $F6 ; [set2] ask for currency or item
@@ -4174,7 +4174,7 @@ Message_02_00_C1:
 
 ;===================================================================================================
 
-; >[CHASE]は [￥GIVEME] を
+; >[CHASE]は [GIVEME] を
 ; てにいれた
 Message_02_00_C2:
 #_0A9CC2: db $97 ; >
@@ -4368,7 +4368,7 @@ Message_02_00_D5:
 
 ;===================================================================================================
 
-; >[￥GIVEME] を あたえますか?
+; >[GIVEME] を あたえますか?
 Message_02_00_D6:
 #_0A9DBF: db $97 ; >
 #_0A9DC0: db $F6 ; [set2] ask for currency or item
@@ -4386,7 +4386,7 @@ Message_02_00_D7:
 
 ;===================================================================================================
 
-; >[DEMONX]は [￥GIVEME] を
+; >[DEMONX]は [GIVEME] を
 ; おとしていった
 Message_02_00_D8:
 #_0A9DDC: db $97 ; >
@@ -4663,7 +4663,7 @@ Message_02_00_F6:
 ;===================================================================================================
 
 ; >[DEMONX]は [CHASE]の
-; [￥GIVEME] を うけとると さっていった
+; [GIVEME] を うけとると さっていった
 Message_02_00_F7:
 #_0A9F6E: db $97 ; >
 #_0A9F6F: db $ED ; [set2] write demon name indexed from $0526
@@ -4687,14 +4687,14 @@ Message_02_00_F8:
 Message_02_01_00:
 #_0A9F86: db $F1 ; [set2] clear message box
 #_0A9F87: db $FB, $00, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 00 is nonzero; otherwise reset
-#_0A9F8A: db $D0, $03 ; [set2] maybe go to message $03
-#_0A9F8C: db $D1, $04, $05 ; [set2] maybe go to message $04 TODO
+#_0A9F8A: db $D0, $03 ; [set2] maybe go to message 03
+#_0A9F8C: db $D1, $04, $05 ; [set2] maybe go to message 04 TODO
 #_0A9F8F: db $AA, $52, $39, $CF, $34, $26, $AA, $A9 ; どんな⎵たいどで
 #_0A9F97: db $32, $58, $30, $43, $31, $2A, $95 ; せっしますか?
 #_0A9F9E: db $F0 ; [set2] new line
 #_0A9F9F: db $F2, $01 ; [set2] option list with 2 options
-#_0A9FA1: db $2F, $01 ; option 1 [01]: message 2F
-#_0A9FA3: db $30, $02 ; option 2 [02]: message 30
+#_0A9FA1: db $2F, $01 ; option 1 [2F]: go to message 01
+#_0A9FA3: db $30, $02 ; option 2 [30]: go to message 02
 #_0A9FA5: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -4742,8 +4742,8 @@ Message_02_01_05:
 ;===================================================================================================
 
 ; >[DEMONX]は [CHASE]に
-; [￥GIVEME] を てわたした
-; «>[CHASE]は [￥GIVEME] を»
+; [GIVEME] を てわたした
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_01_06:
@@ -4784,12 +4784,12 @@ Message_02_02_01:
 #_0AA005: db $F1 ; [set2] clear message box
 #_0AA006: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA008: db $F2, $01 ; [set2] option list with 2 options
-#_0AA00A: db $08, $02 ; option 1 [02]: message 08
-#_0AA00C: db $23, $07 ; option 2 [07]: message 23
+#_0AA00A: db $08, $02 ; option 1 [08]: go to message 02
+#_0AA00C: db $23, $07 ; option 2 [23]: go to message 07
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_02_02:
@@ -4810,15 +4810,15 @@ Message_02_02_02:
 
 Message_02_02_03:
 #_0AA022: db $E8, $35 ; [set2] [COMMAND 48:35]
-#_0AA024: db $EF, $05 ; [set2] YES/NO - go to message $05 if YES
-#_0AA026: db $E9, $04 ; [set2] go to message $04
+#_0AA024: db $EF, $05 ; [set2] YES/NO - go to message 05 if YES
+#_0AA026: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
 Message_02_02_04:
 #_0AA028: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AA02A: db $F3 ; [set2] wait for key and new line
-#_0AA02B: db $E9, $00 ; [set2] go to message $00
+#_0AA02B: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -4860,16 +4860,16 @@ Message_02_02_07:
 #_0AA050: db $F1 ; [set2] clear message box
 #_0AA051: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA053: db $F2, $01 ; [set2] option list with 2 options
-#_0AA055: db $0E, $08 ; option 1 [08]: message 0E
-#_0AA057: db $24, $0B ; option 2 [0B]: message 24
+#_0AA055: db $0E, $08 ; option 1 [0E]: go to message 08
+#_0AA057: db $24, $0B ; option 2 [24]: go to message 0B
 
 ;===================================================================================================
 
 Message_02_02_08:
 #_0AA059: db $D6, $01, $0A ; [set2] go to message 0A if RNG, 01 TODO
 #_0AA05C: db $E8, $07 ; [set2] [COMMAND 48:07]
-#_0AA05E: db $EF, $09 ; [set2] YES/NO - go to message $09 if YES
-#_0AA060: db $E9, $04 ; [set2] go to message $04
+#_0AA05E: db $EF, $09 ; [set2] YES/NO - go to message 09 if YES
+#_0AA060: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -4927,8 +4927,8 @@ Message_02_02_0D:
 #_0AA090: db $F1 ; [set2] clear message box
 #_0AA091: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA093: db $F2, $01 ; [set2] option list with 2 options
-#_0AA095: db $03, $0E ; option 1 [0E]: message 03
-#_0AA097: db $1B, $13 ; option 2 [13]: message 1B
+#_0AA095: db $03, $0E ; option 1 [03]: go to message 0E
+#_0AA097: db $1B, $13 ; option 2 [1B]: go to message 13
 
 ;===================================================================================================
 
@@ -4959,8 +4959,8 @@ Message_02_02_10:
 #_0AA0B2: db $F1 ; [set2] clear message box
 #_0AA0B3: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA0B5: db $F2, $01 ; [set2] option list with 2 options
-#_0AA0B7: db $0D, $11 ; option 1 [11]: message 0D
-#_0AA0B9: db $06, $12 ; option 2 [12]: message 06
+#_0AA0B7: db $0D, $11 ; option 1 [0D]: go to message 11
+#_0AA0B9: db $06, $12 ; option 2 [06]: go to message 12
 
 ;===================================================================================================
 
@@ -4986,7 +4986,7 @@ Message_02_02_13:
 #_0AA0CD: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0AA0D0: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA0D2: db $F3 ; [set2] wait for key and new line
-#_0AA0D3: db $E9, $00 ; [set2] go to message $00
+#_0AA0D3: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -5005,7 +5005,7 @@ Message_02_02_14:
 Message_02_02_15:
 #_0AA0E1: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AA0E3: db $F3 ; [set2] wait for key and new line
-#_0AA0E4: db $E9, $00 ; [set2] go to message $00
+#_0AA0E4: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -5017,8 +5017,8 @@ Message_02_02_16:
 #_0AA0E9: db $F1 ; [set2] clear message box
 #_0AA0EA: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA0EC: db $F2, $01 ; [set2] option list with 2 options
-#_0AA0EE: db $0E, $08 ; option 1 [08]: message 0E
-#_0AA0F0: db $14, $17 ; option 2 [17]: message 14
+#_0AA0EE: db $0E, $08 ; option 1 [0E]: go to message 08
+#_0AA0F0: db $14, $17 ; option 2 [14]: go to message 17
 
 ;===================================================================================================
 
@@ -5076,18 +5076,18 @@ Message_02_03_01:
 #_0AA11F: db $F1 ; [set2] clear message box
 #_0AA120: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA122: db $F2, $01 ; [set2] option list with 2 options
-#_0AA124: db $0D, $02 ; option 1 [02]: message 0D
-#_0AA126: db $15, $07 ; option 2 [07]: message 15
+#_0AA124: db $0D, $02 ; option 1 [0D]: go to message 02
+#_0AA126: db $15, $07 ; option 2 [15]: go to message 07
 
 ;===================================================================================================
 
 Message_02_03_02:
 #_0AA128: db $D5, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
-#_0AA12B: db $E9, $03 ; [set2] go to message $03
+#_0AA12B: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_03_03:
@@ -5119,7 +5119,7 @@ Message_02_03_04:
 Message_02_03_05:
 #_0AA147: db $D5, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AA14A: db $E8, $1E ; [set2] [COMMAND 48:1E]
-#_0AA14C: db $EF, $03 ; [set2] YES/NO - go to message $03 if YES
+#_0AA14C: db $EF, $03 ; [set2] YES/NO - go to message 03 if YES
 #_0AA14E: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA150: db $F3 ; [set2] wait for key and new line
 #_0AA151: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
@@ -5162,8 +5162,8 @@ Message_02_03_09:
 #_0AA170: db $F1 ; [set2] clear message box
 #_0AA171: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA173: db $F2, $01 ; [set2] option list with 2 options
-#_0AA175: db $05, $0A ; option 1 [0A]: message 05
-#_0AA177: db $29, $14 ; option 2 [14]: message 29
+#_0AA175: db $05, $0A ; option 1 [05]: go to message 0A
+#_0AA177: db $29, $14 ; option 2 [29]: go to message 14
 
 ;===================================================================================================
 
@@ -5184,7 +5184,7 @@ Message_02_03_0B:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_03_0C:
@@ -5208,7 +5208,7 @@ Message_02_03_0D:
 #_0AA19A: db $F3 ; [set2] wait for key and new line
 #_0AA19B: db $F1 ; [set2] clear message box
 #_0AA19C: db $EB, $CD ; [set2] prewritten text CD
-#_0AA19E: db $EF, $0E ; [set2] YES/NO - go to message $0E if YES
+#_0AA19E: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
 #_0AA1A0: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA1A2: db $F3 ; [set2] wait for key and new line
 #_0AA1A3: db $F1 ; [set2] clear message box
@@ -5246,7 +5246,7 @@ Message_02_03_10:
 
 Message_02_03_11:
 #_0AA1C0: db $E8, $1B ; [set2] [COMMAND 48:1B]
-#_0AA1C2: db $EF, $12 ; [set2] YES/NO - go to message $12 if YES
+#_0AA1C2: db $EF, $12 ; [set2] YES/NO - go to message 12 if YES
 #_0AA1C4: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AA1C6: db $F3 ; [set2] wait for key and new line
 #_0AA1C7: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -5284,10 +5284,10 @@ Message_02_03_14:
 
 Message_02_03_15:
 #_0AA1E6: db $E8, $35 ; [set2] [COMMAND 48:35]
-#_0AA1E8: db $EF, $16 ; [set2] YES/NO - go to message $16 if YES
+#_0AA1E8: db $EF, $16 ; [set2] YES/NO - go to message 16 if YES
 #_0AA1EA: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AA1EC: db $F3 ; [set2] wait for key and new line
-#_0AA1ED: db $E9, $00 ; [set2] go to message $00
+#_0AA1ED: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -5343,8 +5343,8 @@ Message_02_03_1A:
 #_0AA221: db $F1 ; [set2] clear message box
 #_0AA222: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA224: db $F2, $01 ; [set2] option list with 2 options
-#_0AA226: db $0F, $1B ; option 1 [1B]: message 0F
-#_0AA228: db $06, $1E ; option 2 [1E]: message 06
+#_0AA226: db $0F, $1B ; option 1 [0F]: go to message 1B
+#_0AA228: db $06, $1E ; option 2 [06]: go to message 1E
 
 ;===================================================================================================
 
@@ -5383,8 +5383,8 @@ Message_02_03_1E:
 #_0AA248: db $F1 ; [set2] clear message box
 #_0AA249: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA24B: db $F2, $01 ; [set2] option list with 2 options
-#_0AA24D: db $14, $1F ; option 1 [1F]: message 14
-#_0AA24F: db $21, $20 ; option 2 [20]: message 21
+#_0AA24D: db $14, $1F ; option 1 [14]: go to message 1F
+#_0AA24F: db $21, $20 ; option 2 [21]: go to message 20
 
 ;===================================================================================================
 
@@ -5406,7 +5406,7 @@ Message_02_03_20:
 Message_02_03_21:
 #_0AA25C: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AA25E: db $F3 ; [set2] wait for key and new line
-#_0AA25F: db $E9, $00 ; [set2] go to message $00
+#_0AA25F: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -5426,19 +5426,19 @@ Message_02_04_01:
 #_0AA26D: db $F1 ; [set2] clear message box
 #_0AA26E: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA270: db $F2, $01 ; [set2] option list with 2 options
-#_0AA272: db $00, $02 ; option 1 [02]: message 00
-#_0AA274: db $01, $06 ; option 2 [06]: message 01
+#_0AA272: db $00, $02 ; option 1 [00]: go to message 02
+#_0AA274: db $01, $06 ; option 2 [01]: go to message 06
 
 ;===================================================================================================
 
 Message_02_04_02:
 #_0AA276: db $D5, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
 #_0AA279: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
-#_0AA27C: db $E9, $03 ; [set2] go to message $03
+#_0AA27C: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_04_03:
@@ -5473,7 +5473,7 @@ Message_02_04_05:
 
 Message_02_04_06:
 #_0AA298: db $D5, $02, $07 ; [set2] go to message 07 if RNG, 02 TODO
-#_0AA29B: db $E9, $03 ; [set2] go to message $03
+#_0AA29B: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -5488,7 +5488,7 @@ Message_02_04_07:
 #_0AA2A4: db $F1 ; [set2] clear message box
 #_0AA2A5: db $97, $35, $2A, $A8, $2B, $43, $31, $2A ; >ちかづきますか
 #_0AA2AD: db $95 ; ?
-#_0AA2AE: db $EF, $08 ; [set2] YES/NO - go to message $08 if YES
+#_0AA2AE: db $EF, $08 ; [set2] YES/NO - go to message 08 if YES
 #_0AA2B0: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AA2B2: db $F3 ; [set2] wait for key and new line
 #_0AA2B3: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -5498,7 +5498,7 @@ Message_02_04_07:
 Message_02_04_08:
 #_0AA2B6: db $D7, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AA2B9: db $D4, $00, $0A ; [set2] go to message 0A if RNG, 00 TODO
-#_0AA2BC: db $E9, $09 ; [set2] go to message $09
+#_0AA2BC: db $E9, $09 ; [set2] go to message 09
 
 ;===================================================================================================
 
@@ -5516,12 +5516,12 @@ Message_02_04_09:
 ; «どうしますか?»
 Message_02_04_0A:
 #_0AA2C4: db $EB, $EA ; [set2] prewritten text EA
-#_0AA2C6: db $EF, $0E ; [set2] YES/NO - go to message $0E if YES
+#_0AA2C6: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
 #_0AA2C8: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AA2CA: db $F3 ; [set2] wait for key and new line
 #_0AA2CB: db $F1 ; [set2] clear message box
 #_0AA2CC: db $EB, $CD ; [set2] prewritten text CD
-#_0AA2CE: db $EF, $0D ; [set2] YES/NO - go to message $0D if YES
+#_0AA2CE: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
 #_0AA2D0: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA2D2: db $F3 ; [set2] wait for key and new line
 #_0AA2D3: db $F1 ; [set2] clear message box
@@ -5530,8 +5530,8 @@ Message_02_04_0A:
 #_0AA2D7: db $F1 ; [set2] clear message box
 #_0AA2D8: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA2DA: db $F2, $01 ; [set2] option list with 2 options
-#_0AA2DC: db $0A, $0B ; option 1 [0B]: message 0A
-#_0AA2DE: db $0B, $0C ; option 2 [0C]: message 0B
+#_0AA2DC: db $0A, $0B ; option 1 [0A]: go to message 0B
+#_0AA2DE: db $0B, $0C ; option 2 [0B]: go to message 0C
 
 ;===================================================================================================
 
@@ -5582,17 +5582,17 @@ Message_02_04_10:
 #_0AA302: db $F1 ; [set2] clear message box
 #_0AA303: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA305: db $F2, $01 ; [set2] option list with 2 options
-#_0AA307: db $0C, $11 ; option 1 [11]: message 0C
-#_0AA309: db $08, $15 ; option 2 [15]: message 08
+#_0AA307: db $0C, $11 ; option 1 [0C]: go to message 11
+#_0AA309: db $08, $15 ; option 2 [08]: go to message 15
 
 ;===================================================================================================
 
 Message_02_04_11:
-#_0AA30B: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0AA30B: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AA30E: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA311: db $D4, $00, $13 ; [set2] go to message 13 if RNG, 00 TODO
 #_0AA314: db $D7, $01, $12 ; [set2] go to message 12 if RNG, 01 TODO
-#_0AA317: db $E9, $09 ; [set2] go to message $09
+#_0AA317: db $E9, $09 ; [set2] go to message 09
 
 ;===================================================================================================
 
@@ -5617,8 +5617,8 @@ Message_02_04_13:
 #_0AA329: db $F1 ; [set2] clear message box
 #_0AA32A: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA32C: db $F2, $01 ; [set2] option list with 2 options
-#_0AA32E: db $0D, $0F ; option 1 [0F]: message 0D
-#_0AA330: db $06, $14 ; option 2 [14]: message 06
+#_0AA32E: db $0D, $0F ; option 1 [0D]: go to message 0F
+#_0AA330: db $06, $14 ; option 2 [06]: go to message 14
 
 ;===================================================================================================
 
@@ -5634,7 +5634,7 @@ Message_02_04_14:
 
 ; [DEMONX]は しょうじょに
 ; なにか ささやいて おくりものを わたした
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_04_15:
@@ -5663,7 +5663,7 @@ Message_02_04_16:
 #_0AA36F: db $F3 ; [set2] wait for key and new line
 #_0AA370: db $F1 ; [set2] clear message box
 #_0AA371: db $D4, $00, $01 ; [set2] go to message 01 if RNG, 00 TODO
-#_0AA374: db $E9, $17 ; [set2] go to message $17
+#_0AA374: db $E9, $17 ; [set2] go to message 17
 
 ;===================================================================================================
 
@@ -5678,18 +5678,18 @@ Message_02_04_17:
 #_0AA37D: db $F1 ; [set2] clear message box
 #_0AA37E: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA380: db $F2, $01 ; [set2] option list with 2 options
-#_0AA382: db $13, $18 ; option 1 [18]: message 13
-#_0AA384: db $06, $1B ; option 2 [1B]: message 06
+#_0AA382: db $13, $18 ; option 1 [13]: go to message 18
+#_0AA384: db $06, $1B ; option 2 [06]: go to message 1B
 
 ;===================================================================================================
 
 Message_02_04_18:
 #_0AA386: db $D5, $00, $19 ; [set2] go to message 19 if RNG, 00 TODO
-#_0AA389: db $E9, $16 ; [set2] go to message $16
+#_0AA389: db $E9, $16 ; [set2] go to message 16
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_04_19:
@@ -5734,8 +5734,8 @@ Message_02_04_1C:
 #_0AA3B1: db $F1 ; [set2] clear message box
 #_0AA3B2: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA3B4: db $F2, $01 ; [set2] option list with 2 options
-#_0AA3B6: db $1B, $1D ; option 1 [1D]: message 1B
-#_0AA3B8: db $01, $06 ; option 2 [06]: message 01
+#_0AA3B6: db $1B, $1D ; option 1 [1B]: go to message 1D
+#_0AA3B8: db $01, $06 ; option 2 [01]: go to message 06
 
 ;===================================================================================================
 
@@ -5771,14 +5771,14 @@ Message_02_05_01:
 #_0AA3D6: db $F1 ; [set2] clear message box
 #_0AA3D7: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA3D9: db $F2, $01 ; [set2] option list with 2 options
-#_0AA3DB: db $02, $02 ; option 1 [02]: message 02
-#_0AA3DD: db $04, $08 ; option 2 [08]: message 04
+#_0AA3DB: db $02, $02 ; option 1 [02]: go to message 02
+#_0AA3DD: db $04, $08 ; option 2 [04]: go to message 08
 
 ;===================================================================================================
 
 Message_02_05_02:
 #_0AA3DF: db $D5, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
-#_0AA3E2: db $E9, $03 ; [set2] go to message $03
+#_0AA3E2: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -5819,8 +5819,8 @@ Message_02_05_05:
 #_0AA412: db $F1 ; [set2] clear message box
 #_0AA413: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA415: db $F2, $01 ; [set2] option list with 2 options
-#_0AA417: db $04, $03 ; option 1 [03]: message 04
-#_0AA419: db $1B, $06 ; option 2 [06]: message 1B
+#_0AA417: db $04, $03 ; option 1 [04]: go to message 03
+#_0AA419: db $1B, $06 ; option 2 [1B]: go to message 06
 
 ;===================================================================================================
 
@@ -5847,8 +5847,8 @@ Message_02_05_08:
 #_0AA42B: db $F1 ; [set2] clear message box
 #_0AA42C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA42E: db $F2, $01 ; [set2] option list with 2 options
-#_0AA430: db $0F, $07 ; option 1 [07]: message 0F
-#_0AA432: db $14, $09 ; option 2 [09]: message 14
+#_0AA430: db $0F, $07 ; option 1 [0F]: go to message 07
+#_0AA432: db $14, $09 ; option 2 [14]: go to message 09
 
 ;===================================================================================================
 
@@ -5900,14 +5900,14 @@ Message_02_05_0E:
 #_0AA45B: db $F1 ; [set2] clear message box
 #_0AA45C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA45E: db $F2, $01 ; [set2] option list with 2 options
-#_0AA460: db $0D, $0F ; option 1 [0F]: message 0D
-#_0AA462: db $10, $16 ; option 2 [16]: message 10
+#_0AA460: db $0D, $0F ; option 1 [0D]: go to message 0F
+#_0AA462: db $10, $16 ; option 2 [10]: go to message 16
 
 ;===================================================================================================
 
 Message_02_05_0F:
 #_0AA464: db $D7, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
-#_0AA467: db $E9, $10 ; [set2] go to message $10
+#_0AA467: db $E9, $10 ; [set2] go to message 10
 
 ;===================================================================================================
 
@@ -5922,8 +5922,8 @@ Message_02_05_10:
 #_0AA470: db $F1 ; [set2] clear message box
 #_0AA471: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA473: db $F2, $01 ; [set2] option list with 2 options
-#_0AA475: db $04, $02 ; option 1 [02]: message 04
-#_0AA477: db $15, $11 ; option 2 [11]: message 15
+#_0AA475: db $04, $02 ; option 1 [04]: go to message 02
+#_0AA477: db $15, $11 ; option 2 [15]: go to message 11
 
 ;===================================================================================================
 
@@ -5943,13 +5943,13 @@ Message_02_05_11:
 Message_02_05_12:
 #_0AA485: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AA487: db $F3 ; [set2] wait for key and new line
-#_0AA488: db $E9, $00 ; [set2] go to message $00
+#_0AA488: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_05_13:
 #_0AA48A: db $D5, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
-#_0AA48D: db $E9, $04 ; [set2] go to message $04
+#_0AA48D: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -5998,8 +5998,8 @@ Message_02_05_18:
 #_0AA4B4: db $F1 ; [set2] clear message box
 #_0AA4B5: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA4B7: db $F2, $01 ; [set2] option list with 2 options
-#_0AA4B9: db $14, $09 ; option 1 [09]: message 14
-#_0AA4BB: db $06, $19 ; option 2 [19]: message 06
+#_0AA4B9: db $14, $09 ; option 1 [14]: go to message 09
+#_0AA4BB: db $06, $19 ; option 2 [06]: go to message 19
 
 ;===================================================================================================
 
@@ -6014,14 +6014,14 @@ Message_02_05_19:
 #_0AA4C4: db $F1 ; [set2] clear message box
 #_0AA4C5: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA4C7: db $F2, $01 ; [set2] option list with 2 options
-#_0AA4C9: db $04, $05 ; option 1 [05]: message 04
-#_0AA4CB: db $0B, $1A ; option 2 [1A]: message 0B
+#_0AA4C9: db $04, $05 ; option 1 [04]: go to message 05
+#_0AA4CB: db $0B, $1A ; option 2 [0B]: go to message 1A
 
 ;===================================================================================================
 
 Message_02_05_1A:
 #_0AA4CD: db $D4, $01, $1B ; [set2] go to message 1B if RNG, 01 TODO
-#_0AA4D0: db $E9, $10 ; [set2] go to message $10
+#_0AA4D0: db $E9, $10 ; [set2] go to message 10
 
 ;===================================================================================================
 
@@ -6039,7 +6039,7 @@ Message_02_05_1B:
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
 Message_02_06_00:
-#_0AA4DB: db $FC, $E9, $06 ; [set2] test progress bit $E9 for message $06
+#_0AA4DB: db $FC, $E9, $06 ; [set2] test progress bit E9 for message 06
 #_0AA4DE: db $D4, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
 #_0AA4E1: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA4E3: db $F3 ; [set2] wait for key and new line
@@ -6049,8 +6049,8 @@ Message_02_06_00:
 #_0AA4E8: db $F1 ; [set2] clear message box
 #_0AA4E9: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA4EB: db $F2, $01 ; [set2] option list with 2 options
-#_0AA4ED: db $08, $01 ; option 1 [01]: message 08
-#_0AA4EF: db $0C, $04 ; option 2 [04]: message 0C
+#_0AA4ED: db $08, $01 ; option 1 [08]: go to message 01
+#_0AA4EF: db $0C, $04 ; option 2 [0C]: go to message 04
 
 ;===================================================================================================
 
@@ -6119,8 +6119,8 @@ Message_02_07_00:
 #_0AA52F: db $F1 ; [set2] clear message box
 #_0AA530: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA532: db $F2, $01 ; [set2] option list with 2 options
-#_0AA534: db $04, $01 ; option 1 [01]: message 04
-#_0AA536: db $0D, $06 ; option 2 [06]: message 0D
+#_0AA534: db $04, $01 ; option 1 [04]: go to message 01
+#_0AA536: db $0D, $06 ; option 2 [0D]: go to message 06
 
 ;===================================================================================================
 
@@ -6135,14 +6135,14 @@ Message_02_07_01:
 #_0AA53F: db $F1 ; [set2] clear message box
 #_0AA540: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA542: db $F2, $01 ; [set2] option list with 2 options
-#_0AA544: db $14, $02 ; option 1 [02]: message 14
-#_0AA546: db $06, $05 ; option 2 [05]: message 06
+#_0AA544: db $14, $02 ; option 1 [14]: go to message 02
+#_0AA546: db $06, $05 ; option 2 [06]: go to message 05
 
 ;===================================================================================================
 
 Message_02_07_02:
 #_0AA548: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
-#_0AA54B: db $E9, $03 ; [set2] go to message $03
+#_0AA54B: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -6175,7 +6175,7 @@ Message_02_07_05:
 ; «>[DEMONX]は さっていった»
 Message_02_07_06:
 #_0AA565: db $E8, $52 ; [set2] [COMMAND 48:52]
-#_0AA567: db $EF, $07 ; [set2] YES/NO - go to message $07 if YES
+#_0AA567: db $EF, $07 ; [set2] YES/NO - go to message 07 if YES
 #_0AA569: db $D7, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
 #_0AA56C: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA56E: db $F3 ; [set2] wait for key and new line
@@ -6185,7 +6185,7 @@ Message_02_07_06:
 
 Message_02_07_07:
 #_0AA571: db $D7, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
-#_0AA574: db $E9, $04 ; [set2] go to message $04
+#_0AA574: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -6215,14 +6215,14 @@ Message_02_07_0A:
 #_0AA589: db $F1 ; [set2] clear message box
 #_0AA58A: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA58C: db $F2, $01 ; [set2] option list with 2 options
-#_0AA58E: db $00, $03 ; option 1 [03]: message 00
-#_0AA590: db $0D, $0B ; option 2 [0B]: message 0D
+#_0AA58E: db $00, $03 ; option 1 [00]: go to message 03
+#_0AA590: db $0D, $0B ; option 2 [0D]: go to message 0B
 
 ;===================================================================================================
 
 Message_02_07_0B:
 #_0AA592: db $F9, $00, $0C ; [set2] [COMMAND 59] go to message 0C if something 00 TODO
-#_0AA595: db $E9, $09 ; [set2] go to message $09
+#_0AA595: db $E9, $09 ; [set2] go to message 09
 
 ;===================================================================================================
 
@@ -6236,7 +6236,7 @@ Message_02_07_0C:
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
 Message_02_08_00:
-#_0AA59C: db $FC, $E9, $07 ; [set2] test progress bit $E9 for message $07
+#_0AA59C: db $FC, $E9, $07 ; [set2] test progress bit E9 for message 07
 #_0AA59F: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AA5A2: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA5A4: db $F3 ; [set2] wait for key and new line
@@ -6246,15 +6246,15 @@ Message_02_08_00:
 #_0AA5A9: db $F1 ; [set2] clear message box
 #_0AA5AA: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA5AC: db $F2, $01 ; [set2] option list with 2 options
-#_0AA5AE: db $08, $01 ; option 1 [01]: message 08
-#_0AA5B0: db $0C, $03 ; option 2 [03]: message 0C
+#_0AA5AE: db $08, $01 ; option 1 [08]: go to message 01
+#_0AA5B0: db $0C, $03 ; option 2 [0C]: go to message 03
 
 ;===================================================================================================
 
 Message_02_08_01:
 #_0AA5B2: db $E8, $52 ; [set2] [COMMAND 48:52]
-#_0AA5B4: db $EF, $02 ; [set2] YES/NO - go to message $02 if YES
-#_0AA5B6: db $E9, $09 ; [set2] go to message $09
+#_0AA5B4: db $EF, $02 ; [set2] YES/NO - go to message 02 if YES
+#_0AA5B6: db $E9, $09 ; [set2] go to message 09
 
 ;===================================================================================================
 
@@ -6267,9 +6267,9 @@ Message_02_08_02:
 Message_02_08_03:
 #_0AA5BD: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA5C0: db $E8, $53 ; [set2] [COMMAND 48:53]
-#_0AA5C2: db $EF, $05 ; [set2] YES/NO - go to message $05 if YES
+#_0AA5C2: db $EF, $05 ; [set2] YES/NO - go to message 05 if YES
 #_0AA5C4: db $E8, $57 ; [set2] [COMMAND 48:57]
-#_0AA5C6: db $EF, $04 ; [set2] YES/NO - go to message $04 if YES
+#_0AA5C6: db $EF, $04 ; [set2] YES/NO - go to message 04 if YES
 #_0AA5C8: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AA5CA: db $F3 ; [set2] wait for key and new line
 #_0AA5CB: db $F1 ; [set2] clear message box
@@ -6289,11 +6289,11 @@ Message_02_08_04:
 
 Message_02_08_05:
 #_0AA5D9: db $D8, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
-#_0AA5DC: db $E9, $01 ; [set2] go to message $01
+#_0AA5DC: db $E9, $01 ; [set2] go to message 01
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_08_06:
@@ -6315,7 +6315,7 @@ Message_02_08_06:
 Message_02_08_07:
 #_0AA5EC: db $E0 ; [set2] [COMMAND 40]
 #_0AA5ED: db $E8, $4A ; [set2] [COMMAND 48:4A]
-#_0AA5EF: db $EF, $0A ; [set2] YES/NO - go to message $0A if YES
+#_0AA5EF: db $EF, $0A ; [set2] YES/NO - go to message 0A if YES
 #_0AA5F1: db $E8, $5E ; [set2] [COMMAND 48:5E]
 #_0AA5F3: db $F3 ; [set2] wait for key and new line
 #_0AA5F4: db $F1 ; [set2] clear message box
@@ -6327,8 +6327,8 @@ Message_02_08_07:
 #_0AA601: db $F1 ; [set2] clear message box
 #_0AA602: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA604: db $F2, $01 ; [set2] option list with 2 options
-#_0AA606: db $19, $08 ; option 1 [08]: message 19
-#_0AA608: db $26, $09 ; option 2 [09]: message 26
+#_0AA606: db $19, $08 ; option 1 [19]: go to message 08
+#_0AA608: db $26, $09 ; option 2 [26]: go to message 09
 
 ;===================================================================================================
 
@@ -6368,8 +6368,8 @@ Message_02_09_00:
 #_0AA62C: db $F1 ; [set2] clear message box
 #_0AA62D: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA62F: db $F2, $01 ; [set2] option list with 2 options
-#_0AA631: db $04, $01 ; option 1 [01]: message 04
-#_0AA633: db $0D, $02 ; option 2 [02]: message 0D
+#_0AA631: db $04, $01 ; option 1 [04]: go to message 01
+#_0AA633: db $0D, $02 ; option 2 [0D]: go to message 02
 
 ;===================================================================================================
 
@@ -6380,14 +6380,14 @@ Message_02_09_01:
 
 Message_02_09_02:
 #_0AA638: db $E8, $52 ; [set2] [COMMAND 48:52]
-#_0AA63A: db $EF, $03 ; [set2] YES/NO - go to message $03 if YES
-#_0AA63C: db $E9, $05 ; [set2] go to message $05
+#_0AA63A: db $EF, $03 ; [set2] YES/NO - go to message 03 if YES
+#_0AA63C: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
 Message_02_09_03:
 #_0AA63E: db $D8, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
-#_0AA641: db $E9, $0F ; [set2] go to message $0F
+#_0AA641: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -6403,7 +6403,7 @@ Message_02_09_04:
 
 Message_02_09_05:
 #_0AA64C: db $D7, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
-#_0AA64F: db $E9, $0E ; [set2] go to message $0E
+#_0AA64F: db $E9, $0E ; [set2] go to message 0E
 
 ;===================================================================================================
 
@@ -6418,8 +6418,8 @@ Message_02_09_06:
 #_0AA658: db $F1 ; [set2] clear message box
 #_0AA659: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA65B: db $F2, $01 ; [set2] option list with 2 options
-#_0AA65D: db $14, $07 ; option 1 [07]: message 14
-#_0AA65F: db $06, $08 ; option 2 [08]: message 06
+#_0AA65D: db $14, $07 ; option 1 [14]: go to message 07
+#_0AA65F: db $06, $08 ; option 2 [06]: go to message 08
 
 ;===================================================================================================
 
@@ -6459,8 +6459,8 @@ Message_02_09_09:
 #_0AA683: db $F1 ; [set2] clear message box
 #_0AA684: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA686: db $F2, $01 ; [set2] option list with 2 options
-#_0AA688: db $00, $0A ; option 1 [0A]: message 00
-#_0AA68A: db $27, $0B ; option 2 [0B]: message 27
+#_0AA688: db $00, $0A ; option 1 [00]: go to message 0A
+#_0AA68A: db $27, $0B ; option 2 [27]: go to message 0B
 
 ;===================================================================================================
 
@@ -6471,10 +6471,10 @@ Message_02_09_0A:
 
 Message_02_09_0B:
 #_0AA68F: db $E8, $53 ; [set2] [COMMAND 48:53]
-#_0AA691: db $EF, $0D ; [set2] YES/NO - go to message $0D if YES
+#_0AA691: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
 #_0AA693: db $E8, $5F ; [set2] [COMMAND 48:5F]
-#_0AA695: db $EF, $0C ; [set2] YES/NO - go to message $0C if YES
-#_0AA697: db $E9, $04 ; [set2] go to message $04
+#_0AA695: db $EF, $0C ; [set2] YES/NO - go to message 0C if YES
+#_0AA697: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -6488,7 +6488,7 @@ Message_02_09_0C:
 
 Message_02_09_0D:
 #_0AA69E: db $E8, $52 ; [set2] [COMMAND 48:52]
-#_0AA6A0: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
+#_0AA6A0: db $EF, $0F ; [set2] YES/NO - go to message 0F if YES
 
 ;===================================================================================================
 
@@ -6527,8 +6527,8 @@ Message_02_0A_01:
 #_0AA6C2: db $F1 ; [set2] clear message box
 #_0AA6C3: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA6C5: db $F2, $01 ; [set2] option list with 2 options
-#_0AA6C7: db $00, $02 ; option 1 [02]: message 00
-#_0AA6C9: db $01, $0B ; option 2 [0B]: message 01
+#_0AA6C7: db $00, $02 ; option 1 [00]: go to message 02
+#_0AA6C9: db $01, $0B ; option 2 [01]: go to message 0B
 
 ;===================================================================================================
 
@@ -6549,13 +6549,13 @@ Message_02_0A_04:
 #_0AA6D6: db $F1 ; [set2] clear message box
 #_0AA6D7: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA6D9: db $F2, $01 ; [set2] option list with 2 options
-#_0AA6DB: db $20, $05 ; option 1 [05]: message 20
-#_0AA6DD: db $03, $06 ; option 2 [06]: message 03
+#_0AA6DB: db $20, $05 ; option 1 [20]: go to message 05
+#_0AA6DD: db $03, $06 ; option 2 [03]: go to message 06
 
 ;===================================================================================================
 
 Message_02_0A_05:
-#_0AA6DF: db $E9, $1B ; [set2] go to message $1B
+#_0AA6DF: db $E9, $1B ; [set2] go to message 1B
 
 ;===================================================================================================
 
@@ -6576,8 +6576,8 @@ Message_02_0A_07:
 #_0AA6F2: db $F1 ; [set2] clear message box
 #_0AA6F3: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA6F5: db $F2, $01 ; [set2] option list with 2 options
-#_0AA6F7: db $04, $08 ; option 1 [08]: message 04
-#_0AA6F9: db $03, $09 ; option 2 [09]: message 03
+#_0AA6F7: db $04, $08 ; option 1 [04]: go to message 08
+#_0AA6F9: db $03, $09 ; option 2 [03]: go to message 09
 
 ;===================================================================================================
 
@@ -6645,7 +6645,7 @@ Message_02_0A_0F:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_0A_10:
@@ -6693,8 +6693,8 @@ Message_02_0A_13:
 #_0AA764: db $F1 ; [set2] clear message box
 #_0AA765: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA767: db $F2, $01 ; [set2] option list with 2 options
-#_0AA769: db $05, $14 ; option 1 [14]: message 05
-#_0AA76B: db $06, $19 ; option 2 [19]: message 06
+#_0AA769: db $05, $14 ; option 1 [05]: go to message 14
+#_0AA76B: db $06, $19 ; option 2 [06]: go to message 19
 
 ;===================================================================================================
 
@@ -6722,8 +6722,8 @@ Message_02_0A_15:
 #_0AA783: db $F1 ; [set2] clear message box
 #_0AA784: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA786: db $F2, $01 ; [set2] option list with 2 options
-#_0AA788: db $07, $16 ; option 1 [16]: message 07
-#_0AA78A: db $03, $18 ; option 2 [18]: message 03
+#_0AA788: db $07, $16 ; option 1 [07]: go to message 16
+#_0AA78A: db $03, $18 ; option 2 [03]: go to message 18
 
 ;===================================================================================================
 
@@ -6745,7 +6745,7 @@ Message_02_0A_17:
 ;===================================================================================================
 
 Message_02_0A_18:
-#_0AA79D: db $E9, $06 ; [set2] go to message $06
+#_0AA79D: db $E9, $06 ; [set2] go to message 06
 
 ;===================================================================================================
 
@@ -6765,8 +6765,8 @@ Message_02_0A_1A:
 #_0AA7AB: db $F1 ; [set2] clear message box
 #_0AA7AC: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA7AE: db $F2, $01 ; [set2] option list with 2 options
-#_0AA7B0: db $20, $1B ; option 1 [1B]: message 20
-#_0AA7B2: db $03, $21 ; option 2 [21]: message 03
+#_0AA7B0: db $20, $1B ; option 1 [20]: go to message 1B
+#_0AA7B2: db $03, $21 ; option 2 [03]: go to message 21
 
 ;===================================================================================================
 
@@ -6779,8 +6779,8 @@ Message_02_0A_1B:
 #_0AA7BE: db $F3 ; [set2] wait for key and new line
 #_0AA7BF: db $F1 ; [set2] clear message box
 #_0AA7C0: db $EB, $CD ; [set2] prewritten text CD
-#_0AA7C2: db $EF, $1C ; [set2] YES/NO - go to message $1C if YES
-#_0AA7C4: db $E9, $2B ; [set2] go to message $2B
+#_0AA7C2: db $EF, $1C ; [set2] YES/NO - go to message 1C if YES
+#_0AA7C4: db $E9, $2B ; [set2] go to message 2B
 
 ;===================================================================================================
 
@@ -6795,7 +6795,7 @@ Message_02_0A_1C:
 Message_02_0A_1D:
 #_0AA7D1: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AA7D3: db $F3 ; [set2] wait for key and new line
-#_0AA7D4: db $E9, $00 ; [set2] go to message $00
+#_0AA7D4: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -6803,7 +6803,7 @@ Message_02_0A_1E:
 #_0AA7D6: db $D4, $01, $1F ; [set2] go to message 1F if RNG, 01 TODO
 #_0AA7D9: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AA7DB: db $F3 ; [set2] wait for key and new line
-#_0AA7DC: db $E9, $00 ; [set2] go to message $00
+#_0AA7DC: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -6842,8 +6842,8 @@ Message_02_0A_22:
 #_0AA7FD: db $F1 ; [set2] clear message box
 #_0AA7FE: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA800: db $F2, $01 ; [set2] option list with 2 options
-#_0AA802: db $04, $23 ; option 1 [23]: message 04
-#_0AA804: db $03, $24 ; option 2 [24]: message 03
+#_0AA802: db $04, $23 ; option 1 [04]: go to message 23
+#_0AA804: db $03, $24 ; option 2 [03]: go to message 24
 
 ;===================================================================================================
 
@@ -6878,8 +6878,8 @@ Message_02_0A_25:
 #_0AA822: db $F1 ; [set2] clear message box
 #_0AA823: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA825: db $F2, $01 ; [set2] option list with 2 options
-#_0AA827: db $08, $26 ; option 1 [26]: message 08
-#_0AA829: db $21, $28 ; option 2 [28]: message 21
+#_0AA827: db $08, $26 ; option 1 [08]: go to message 26
+#_0AA829: db $21, $28 ; option 2 [21]: go to message 28
 
 ;===================================================================================================
 
@@ -6955,8 +6955,8 @@ Message_02_0A_2B:
 #_0AA871: db $F1 ; [set2] clear message box
 #_0AA872: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA874: db $F2, $01 ; [set2] option list with 2 options
-#_0AA876: db $0A, $2C ; option 1 [2C]: message 0A
-#_0AA878: db $0B, $2F ; option 2 [2F]: message 0B
+#_0AA876: db $0A, $2C ; option 1 [0A]: go to message 2C
+#_0AA878: db $0B, $2F ; option 2 [0B]: go to message 2F
 
 ;===================================================================================================
 
@@ -7018,9 +7018,9 @@ Message_02_0A_30:
 
 ;===================================================================================================
 
-; «>[DEMONX]は [￥GIVEME] を»
+; «>[DEMONX]は [GIVEME] を»
 ; «おとしていった»
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0A_31:
@@ -7039,14 +7039,14 @@ Message_02_0A_31:
 
 ; «どうしますか?»
 Message_02_0A_32:
-#_0AA8C6: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0AA8C6: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AA8C9: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA8CB: db $F3 ; [set2] wait for key and new line
 #_0AA8CC: db $F1 ; [set2] clear message box
 #_0AA8CD: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA8CF: db $F2, $01 ; [set2] option list with 2 options
-#_0AA8D1: db $0C, $33 ; option 1 [33]: message 0C
-#_0AA8D3: db $08, $39 ; option 2 [39]: message 08
+#_0AA8D1: db $0C, $33 ; option 1 [0C]: go to message 33
+#_0AA8D3: db $08, $39 ; option 2 [08]: go to message 39
 
 ;===================================================================================================
 
@@ -7086,8 +7086,8 @@ Message_02_0A_35:
 #_0AA8FA: db $F1 ; [set2] clear message box
 #_0AA8FB: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA8FD: db $F2, $01 ; [set2] option list with 2 options
-#_0AA8FF: db $0D, $36 ; option 1 [36]: message 0D
-#_0AA901: db $06, $37 ; option 2 [37]: message 06
+#_0AA8FF: db $0D, $36 ; option 1 [0D]: go to message 36
+#_0AA901: db $06, $37 ; option 2 [06]: go to message 37
 
 ;===================================================================================================
 
@@ -7144,8 +7144,8 @@ Message_02_0A_3A:
 #_0AA937: db $F1 ; [set2] clear message box
 #_0AA938: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA93A: db $F2, $01 ; [set2] option list with 2 options
-#_0AA93C: db $14, $3B ; option 1 [3B]: message 14
-#_0AA93E: db $08, $42 ; option 2 [42]: message 08
+#_0AA93C: db $14, $3B ; option 1 [14]: go to message 3B
+#_0AA93E: db $08, $42 ; option 2 [08]: go to message 42
 
 ;===================================================================================================
 
@@ -7171,7 +7171,7 @@ Message_02_0A_3C:
 ; «>[DEMONX]は さっていった»
 Message_02_0A_3D:
 #_0AA959: db $E8, $11 ; [set2] [COMMAND 48:11]
-#_0AA95B: db $EF, $3E ; [set2] YES/NO - go to message $3E if YES
+#_0AA95B: db $EF, $3E ; [set2] YES/NO - go to message 3E if YES
 #_0AA95D: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA95F: db $F3 ; [set2] wait for key and new line
 #_0AA960: db $F1 ; [set2] clear message box
@@ -7251,8 +7251,8 @@ Message_02_0A_43:
 #_0AA9AC: db $F1 ; [set2] clear message box
 #_0AA9AD: db $EB, $C0 ; [set2] prewritten text C0
 #_0AA9AF: db $F2, $01 ; [set2] option list with 2 options
-#_0AA9B1: db $20, $1B ; option 1 [1B]: message 20
-#_0AA9B3: db $21, $28 ; option 2 [28]: message 21
+#_0AA9B1: db $20, $1B ; option 1 [20]: go to message 1B
+#_0AA9B3: db $21, $28 ; option 2 [21]: go to message 28
 
 ;===================================================================================================
 
@@ -7282,7 +7282,7 @@ Message_02_0A_45:
 Message_02_0A_46:
 #_0AA9D4: db $D2, $00 ; [set2] something to message 00 TODO
 #_0AA9D6: db $E8, $22 ; [set2] [COMMAND 48:22]
-#_0AA9D8: db $EF, $48 ; [set2] YES/NO - go to message $48 if YES
+#_0AA9D8: db $EF, $48 ; [set2] YES/NO - go to message 48 if YES
 #_0AA9DA: db $D4, $00, $47 ; [set2] go to message 47 if RNG, 00 TODO
 #_0AA9DD: db $E8, $25 ; [set2] [COMMAND 48:25]
 #_0AA9DF: db $F1 ; [set2] clear message box
@@ -7328,8 +7328,8 @@ Message_02_0A_4B:
 #_0AAA04: db $F1 ; [set2] clear message box
 #_0AAA05: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAA07: db $F2, $01 ; [set2] option list with 2 options
-#_0AAA09: db $0E, $4C ; option 1 [4C]: message 0E
-#_0AAA0B: db $0F, $56 ; option 2 [56]: message 0F
+#_0AAA09: db $0E, $4C ; option 1 [0E]: go to message 4C
+#_0AAA0B: db $0F, $56 ; option 2 [0F]: go to message 56
 
 ;===================================================================================================
 
@@ -7351,8 +7351,8 @@ Message_02_0A_4C:
 #_0AAA2A: db $F1 ; [set2] clear message box
 #_0AAA2B: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAA2D: db $F2, $01 ; [set2] option list with 2 options
-#_0AAA2F: db $0E, $4D ; option 1 [4D]: message 0E
-#_0AAA31: db $10, $4F ; option 2 [4F]: message 10
+#_0AAA2F: db $0E, $4D ; option 1 [0E]: go to message 4D
+#_0AAA31: db $10, $4F ; option 2 [10]: go to message 4F
 
 ;===================================================================================================
 
@@ -7407,12 +7407,12 @@ Message_02_0A_51:
 #_0AAA69: db $F1 ; [set2] clear message box
 #_0AAA6A: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAA6C: db $F2, $01 ; [set2] option list with 2 options
-#_0AAA6E: db $11, $52 ; option 1 [52]: message 11
-#_0AAA70: db $12, $54 ; option 2 [54]: message 12
+#_0AAA6E: db $11, $52 ; option 1 [11]: go to message 52
+#_0AAA70: db $12, $54 ; option 2 [12]: go to message 54
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0A_52:
@@ -7473,8 +7473,8 @@ Message_02_0A_58:
 #_0AAAA7: db $F1 ; [set2] clear message box
 #_0AAAA8: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAAAA: db $F2, $01 ; [set2] option list with 2 options
-#_0AAAAC: db $0C, $59 ; option 1 [59]: message 0C
-#_0AAAAE: db $10, $5A ; option 2 [5A]: message 10
+#_0AAAAC: db $0C, $59 ; option 1 [0C]: go to message 59
+#_0AAAAE: db $10, $5A ; option 2 [10]: go to message 5A
 
 ;===================================================================================================
 
@@ -7502,7 +7502,7 @@ Message_02_0A_5B:
 #_0AAAC6: db $EB, $E5 ; [set2] prewritten text E5
 #_0AAAC8: db $F3 ; [set2] wait for key and new line
 #_0AAAC9: db $F1 ; [set2] clear message box
-#_0AAACA: db $E9, $5C ; [set2] go to message $5C
+#_0AAACA: db $E9, $5C ; [set2] go to message 5C
 
 ;===================================================================================================
 
@@ -7517,12 +7517,12 @@ Message_02_0A_5C:
 #_0AAAD3: db $F1 ; [set2] clear message box
 #_0AAAD4: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAAD6: db $F2, $01 ; [set2] option list with 2 options
-#_0AAAD8: db $13, $5D ; option 1 [5D]: message 13
-#_0AAADA: db $14, $63 ; option 2 [63]: message 14
+#_0AAAD8: db $13, $5D ; option 1 [13]: go to message 5D
+#_0AAADA: db $14, $63 ; option 2 [14]: go to message 63
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0A_5D:
@@ -7560,7 +7560,7 @@ Message_02_0A_5F:
 #_0AAAFD: db $D4, $00, $60 ; [set2] go to message 60 if RNG, 00 TODO
 #_0AAB00: db $EB, $C3 ; [set2] prewritten text C3
 #_0AAB02: db $F3 ; [set2] wait for key and new line
-#_0AAB03: db $E9, $00 ; [set2] go to message $00
+#_0AAB03: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -7573,8 +7573,8 @@ Message_02_0A_60:
 #_0AAB08: db $F1 ; [set2] clear message box
 #_0AAB09: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAB0B: db $F2, $01 ; [set2] option list with 2 options
-#_0AAB0D: db $12, $61 ; option 1 [61]: message 12
-#_0AAB0F: db $10, $62 ; option 2 [62]: message 10
+#_0AAB0D: db $12, $61 ; option 1 [12]: go to message 61
+#_0AAB0F: db $10, $62 ; option 2 [10]: go to message 62
 
 ;===================================================================================================
 
@@ -7635,8 +7635,8 @@ Message_02_0B_01:
 #_0AAB42: db $F1 ; [set2] clear message box
 #_0AAB43: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAB45: db $F2, $01 ; [set2] option list with 2 options
-#_0AAB47: db $02, $02 ; option 1 [02]: message 02
-#_0AAB49: db $0D, $05 ; option 2 [05]: message 0D
+#_0AAB47: db $02, $02 ; option 1 [02]: go to message 02
+#_0AAB49: db $0D, $05 ; option 2 [0D]: go to message 05
 
 ;===================================================================================================
 
@@ -7687,15 +7687,15 @@ Message_02_0B_06:
 #_0AAB7A: db $F1 ; [set2] clear message box
 #_0AAB7B: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAB7D: db $F2, $01 ; [set2] option list with 2 options
-#_0AAB7F: db $04, $07 ; option 1 [07]: message 04
-#_0AAB81: db $15, $0C ; option 2 [0C]: message 15
+#_0AAB7F: db $04, $07 ; option 1 [04]: go to message 07
+#_0AAB81: db $15, $0C ; option 2 [15]: go to message 0C
 
 ;===================================================================================================
 
 Message_02_0B_07:
 #_0AAB83: db $D5, $02, $08 ; [set2] go to message 08 if RNG, 02 TODO
 #_0AAB86: db $D4, $00, $03 ; [set2] go to message 03 if RNG, 00 TODO
-#_0AAB89: db $E9, $12 ; [set2] go to message $12
+#_0AAB89: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
@@ -7713,8 +7713,8 @@ Message_02_0B_08:
 #_0AAB9E: db $F1 ; [set2] clear message box
 #_0AAB9F: db $EB, $C0 ; [set2] prewritten text C0
 #_0AABA1: db $F2, $01 ; [set2] option list with 2 options
-#_0AABA3: db $16, $09 ; option 1 [09]: message 16
-#_0AABA5: db $03, $0A ; option 2 [0A]: message 03
+#_0AABA3: db $16, $09 ; option 1 [16]: go to message 09
+#_0AABA5: db $03, $0A ; option 2 [03]: go to message 0A
 
 ;===================================================================================================
 
@@ -7773,7 +7773,7 @@ Message_02_0B_0D:
 #_0AABE8: db $F1 ; [set2] clear message box
 #_0AABE9: db $EB, $C3 ; [set2] prewritten text C3
 #_0AABEB: db $F3 ; [set2] wait for key and new line
-#_0AABEC: db $E9, $00 ; [set2] go to message $00
+#_0AABEC: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -7807,8 +7807,8 @@ Message_02_0B_10:
 #_0AAC06: db $F1 ; [set2] clear message box
 #_0AAC07: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAC09: db $F2, $01 ; [set2] option list with 2 options
-#_0AAC0B: db $17, $11 ; option 1 [11]: message 17
-#_0AAC0D: db $18, $14 ; option 2 [14]: message 18
+#_0AAC0B: db $17, $11 ; option 1 [17]: go to message 11
+#_0AAC0D: db $18, $14 ; option 2 [18]: go to message 14
 
 ;===================================================================================================
 
@@ -7828,8 +7828,8 @@ Message_02_0B_11:
 #_0AAC24: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AAC26: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAC28: db $F2, $01 ; [set2] option list with 2 options
-#_0AAC2A: db $00, $12 ; option 1 [12]: message 00
-#_0AAC2C: db $1A, $13 ; option 2 [13]: message 1A
+#_0AAC2A: db $00, $12 ; option 1 [00]: go to message 12
+#_0AAC2C: db $1A, $13 ; option 2 [1A]: go to message 13
 
 ;===================================================================================================
 
@@ -7880,14 +7880,14 @@ Message_02_0B_16:
 #_0AAC5B: db $F1 ; [set2] clear message box
 #_0AAC5C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAC5E: db $F2, $01 ; [set2] option list with 2 options
-#_0AAC60: db $1B, $17 ; option 1 [17]: message 1B
-#_0AAC62: db $03, $19 ; option 2 [19]: message 03
+#_0AAC60: db $1B, $17 ; option 1 [1B]: go to message 17
+#_0AAC62: db $03, $19 ; option 2 [03]: go to message 19
 
 ;===================================================================================================
 
 Message_02_0B_17:
 #_0AAC64: db $D4, $01, $18 ; [set2] go to message 18 if RNG, 01 TODO
-#_0AAC67: db $E9, $15 ; [set2] go to message $15
+#_0AAC67: db $E9, $15 ; [set2] go to message 15
 
 ;===================================================================================================
 
@@ -7915,8 +7915,8 @@ Message_02_0B_1A:
 #_0AAC7B: db $F1 ; [set2] clear message box
 #_0AAC7C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAC7E: db $F2, $01 ; [set2] option list with 2 options
-#_0AAC80: db $03, $1B ; option 1 [1B]: message 03
-#_0AAC82: db $1C, $1D ; option 2 [1D]: message 1C
+#_0AAC80: db $03, $1B ; option 1 [03]: go to message 1B
+#_0AAC82: db $1C, $1D ; option 2 [1C]: go to message 1D
 
 ;===================================================================================================
 
@@ -7962,19 +7962,19 @@ Message_02_0B_1E:
 #_0AACAF: db $F1 ; [set2] clear message box
 #_0AACB0: db $EB, $C0 ; [set2] prewritten text C0
 #_0AACB2: db $F2, $01 ; [set2] option list with 2 options
-#_0AACB4: db $04, $1F ; option 1 [1F]: message 04
-#_0AACB6: db $0D, $25 ; option 2 [25]: message 0D
+#_0AACB4: db $04, $1F ; option 1 [04]: go to message 1F
+#_0AACB6: db $0D, $25 ; option 2 [0D]: go to message 25
 
 ;===================================================================================================
 
 Message_02_0B_1F:
 #_0AACB8: db $D5, $02, $21 ; [set2] go to message 21 if RNG, 02 TODO
 #_0AACBB: db $D7, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
-#_0AACBE: db $E9, $12 ; [set2] go to message $12
+#_0AACBE: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_0B_20:
@@ -8002,14 +8002,14 @@ Message_02_0B_21:
 #_0AACD5: db $F1 ; [set2] clear message box
 #_0AACD6: db $EB, $C0 ; [set2] prewritten text C0
 #_0AACD8: db $F2, $01 ; [set2] option list with 2 options
-#_0AACDA: db $0D, $22 ; option 1 [22]: message 0D
-#_0AACDC: db $15, $24 ; option 2 [24]: message 15
+#_0AACDA: db $0D, $22 ; option 1 [0D]: go to message 22
+#_0AACDC: db $15, $24 ; option 2 [15]: go to message 24
 
 ;===================================================================================================
 
 Message_02_0B_22:
 #_0AACDE: db $DC, $01, $23 ; [set2] [COMMAND 3C] go to message 23 if something 01 TODO
-#_0AACE1: db $E9, $12 ; [set2] go to message $12
+#_0AACE1: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
@@ -8043,13 +8043,13 @@ Message_02_0B_25:
 #_0AACFB: db $D5, $01, $26 ; [set2] go to message 26 if RNG, 01 TODO
 #_0AACFE: db $D4, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AAD01: db $E8, $1E ; [set2] [COMMAND 48:1E]
-#_0AAD03: db $EF, $27 ; [set2] YES/NO - go to message $27 if YES
+#_0AAD03: db $EF, $27 ; [set2] YES/NO - go to message 27 if YES
 #_0AAD05: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AAD07: db $F3 ; [set2] wait for key and new line
 #_0AAD08: db $F1 ; [set2] clear message box
 #_0AAD09: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AAD0B: db $EB, $CD ; [set2] prewritten text CD
-#_0AAD0D: db $EF, $28 ; [set2] YES/NO - go to message $28 if YES
+#_0AAD0D: db $EF, $28 ; [set2] YES/NO - go to message 28 if YES
 #_0AAD0F: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAD11: db $F3 ; [set2] wait for key and new line
 #_0AAD12: db $F1 ; [set2] clear message box
@@ -8098,8 +8098,8 @@ Message_02_0B_29:
 #_0AAD3C: db $F1 ; [set2] clear message box
 #_0AAD3D: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAD3F: db $F2, $01 ; [set2] option list with 2 options
-#_0AAD41: db $1D, $2A ; option 1 [2A]: message 1D
-#_0AAD43: db $0B, $34 ; option 2 [34]: message 0B
+#_0AAD41: db $1D, $2A ; option 1 [1D]: go to message 2A
+#_0AAD43: db $0B, $34 ; option 2 [0B]: go to message 34
 
 ;===================================================================================================
 
@@ -8120,8 +8120,8 @@ Message_02_0B_2B:
 #_0AAD54: db $F1 ; [set2] clear message box
 #_0AAD55: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAD57: db $F2, $01 ; [set2] option list with 2 options
-#_0AAD59: db $1E, $2C ; option 1 [2C]: message 1E
-#_0AAD5B: db $06, $2E ; option 2 [2E]: message 06
+#_0AAD59: db $1E, $2C ; option 1 [1E]: go to message 2C
+#_0AAD5B: db $06, $2E ; option 2 [06]: go to message 2E
 
 ;===================================================================================================
 
@@ -8165,12 +8165,12 @@ Message_02_0B_2F:
 ;===================================================================================================
 
 Message_02_0B_30:
-#_0AAD83: db $E9, $01 ; [set2] go to message $01
+#_0AAD83: db $E9, $01 ; [set2] go to message 01
 
 ;===================================================================================================
 
 Message_02_0B_31:
-#_0AAD85: db $E9, $10 ; [set2] go to message $10
+#_0AAD85: db $E9, $10 ; [set2] go to message 10
 
 ;===================================================================================================
 
@@ -8221,8 +8221,8 @@ Message_02_0B_36:
 #_0AADAD: db $F1 ; [set2] clear message box
 #_0AADAE: db $EB, $C0 ; [set2] prewritten text C0
 #_0AADB0: db $F2, $01 ; [set2] option list with 2 options
-#_0AADB2: db $17, $37 ; option 1 [37]: message 17
-#_0AADB4: db $15, $3F ; option 2 [3F]: message 15
+#_0AADB2: db $17, $37 ; option 1 [17]: go to message 37
+#_0AADB4: db $15, $3F ; option 2 [15]: go to message 3F
 
 ;===================================================================================================
 
@@ -8240,8 +8240,8 @@ Message_02_0B_37:
 #_0AADC5: db $F1 ; [set2] clear message box
 #_0AADC6: db $EB, $C0 ; [set2] prewritten text C0
 #_0AADC8: db $F2, $01 ; [set2] option list with 2 options
-#_0AADCA: db $1E, $38 ; option 1 [38]: message 1E
-#_0AADCC: db $06, $3A ; option 2 [3A]: message 06
+#_0AADCA: db $1E, $38 ; option 1 [1E]: go to message 38
+#_0AADCC: db $06, $3A ; option 2 [06]: go to message 3A
 
 ;===================================================================================================
 
@@ -8269,7 +8269,7 @@ Message_02_0B_3A:
 #_0AADE2: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AADE4: db $F3 ; [set2] wait for key and new line
 #_0AADE5: db $F1 ; [set2] clear message box
-#_0AADE6: db $E9, $04 ; [set2] go to message $04
+#_0AADE6: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -8284,8 +8284,8 @@ Message_02_0B_3B:
 #_0AADEF: db $F1 ; [set2] clear message box
 #_0AADF0: db $EB, $C0 ; [set2] prewritten text C0
 #_0AADF2: db $F2, $01 ; [set2] option list with 2 options
-#_0AADF4: db $10, $3C ; option 1 [3C]: message 10
-#_0AADF6: db $1B, $3E ; option 2 [3E]: message 1B
+#_0AADF4: db $10, $3C ; option 1 [10]: go to message 3C
+#_0AADF6: db $1B, $3E ; option 2 [1B]: go to message 3E
 
 ;===================================================================================================
 
@@ -8307,7 +8307,7 @@ Message_02_0B_3D:
 #_0AAE06: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AAE08: db $F3 ; [set2] wait for key and new line
 #_0AAE09: db $F1 ; [set2] clear message box
-#_0AAE0A: db $E9, $36 ; [set2] go to message $36
+#_0AAE0A: db $E9, $36 ; [set2] go to message 36
 
 ;===================================================================================================
 
@@ -8337,13 +8337,13 @@ Message_02_0B_3F:
 #_0AAE27: db $F1 ; [set2] clear message box
 #_0AAE28: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAE2A: db $F2, $01 ; [set2] option list with 2 options
-#_0AAE2C: db $02, $40 ; option 1 [40]: message 02
-#_0AAE2E: db $1B, $41 ; option 2 [41]: message 1B
+#_0AAE2C: db $02, $40 ; option 1 [02]: go to message 40
+#_0AAE2E: db $1B, $41 ; option 2 [1B]: go to message 41
 
 ;===================================================================================================
 
 Message_02_0B_40:
-#_0AAE30: db $E9, $04 ; [set2] go to message $04
+#_0AAE30: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -8367,8 +8367,8 @@ Message_02_0B_42:
 #_0AAE42: db $F1 ; [set2] clear message box
 #_0AAE43: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAE45: db $F2, $01 ; [set2] option list with 2 options
-#_0AAE47: db $0D, $43 ; option 1 [43]: message 0D
-#_0AAE49: db $10, $47 ; option 2 [47]: message 10
+#_0AAE47: db $0D, $43 ; option 1 [0D]: go to message 43
+#_0AAE49: db $10, $47 ; option 2 [10]: go to message 47
 
 ;===================================================================================================
 
@@ -8385,8 +8385,8 @@ Message_02_0B_43:
 #_0AAE57: db $F1 ; [set2] clear message box
 #_0AAE58: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAE5A: db $F2, $01 ; [set2] option list with 2 options
-#_0AAE5C: db $06, $44 ; option 1 [44]: message 06
-#_0AAE5E: db $12, $45 ; option 2 [45]: message 12
+#_0AAE5C: db $06, $44 ; option 1 [06]: go to message 44
+#_0AAE5E: db $12, $45 ; option 2 [12]: go to message 45
 
 ;===================================================================================================
 
@@ -8426,7 +8426,7 @@ Message_02_0B_47:
 Message_02_0B_48:
 #_0AAE80: db $EB, $E5 ; [set2] prewritten text E5
 #_0AAE82: db $F3 ; [set2] wait for key and new line
-#_0AAE83: db $E9, $00 ; [set2] go to message $00
+#_0AAE83: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -8441,8 +8441,8 @@ Message_02_0B_49:
 #_0AAE8C: db $F1 ; [set2] clear message box
 #_0AAE8D: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAE8F: db $F2, $01 ; [set2] option list with 2 options
-#_0AAE91: db $17, $4A ; option 1 [4A]: message 17
-#_0AAE93: db $14, $55 ; option 2 [55]: message 14
+#_0AAE91: db $17, $4A ; option 1 [17]: go to message 4A
+#_0AAE93: db $14, $55 ; option 2 [14]: go to message 55
 
 ;===================================================================================================
 
@@ -8460,8 +8460,8 @@ Message_02_0B_4A:
 #_0AAEA4: db $F1 ; [set2] clear message box
 #_0AAEA5: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAEA7: db $F2, $01 ; [set2] option list with 2 options
-#_0AAEA9: db $1B, $4B ; option 1 [4B]: message 1B
-#_0AAEAB: db $1F, $4D ; option 2 [4D]: message 1F
+#_0AAEA9: db $1B, $4B ; option 1 [1B]: go to message 4B
+#_0AAEAB: db $1F, $4D ; option 2 [1F]: go to message 4D
 
 ;===================================================================================================
 
@@ -8485,13 +8485,13 @@ Message_02_0B_4C:
 #_0AAEBF: db $F1 ; [set2] clear message box
 #_0AAEC0: db $EB, $C3 ; [set2] prewritten text C3
 #_0AAEC2: db $F3 ; [set2] wait for key and new line
-#_0AAEC3: db $E9, $00 ; [set2] go to message $00
+#_0AAEC3: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0B_4D:
 #_0AAEC5: db $D4, $02, $4E ; [set2] go to message 4E if RNG, 02 TODO
-#_0AAEC8: db $E9, $04 ; [set2] go to message $04
+#_0AAEC8: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -8514,8 +8514,8 @@ Message_02_0B_4F:
 #_0AAED9: db $F1 ; [set2] clear message box
 #_0AAEDA: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAEDC: db $F2, $01 ; [set2] option list with 2 options
-#_0AAEDE: db $1B, $50 ; option 1 [50]: message 1B
-#_0AAEE0: db $1F, $04 ; option 2 [04]: message 1F
+#_0AAEDE: db $1B, $50 ; option 1 [1B]: go to message 50
+#_0AAEE0: db $1F, $04 ; option 2 [1F]: go to message 04
 
 ;===================================================================================================
 
@@ -8540,14 +8540,14 @@ Message_02_0B_51:
 #_0AAEF2: db $F1 ; [set2] clear message box
 #_0AAEF3: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAEF5: db $F2, $01 ; [set2] option list with 2 options
-#_0AAEF7: db $0D, $52 ; option 1 [52]: message 0D
-#_0AAEF9: db $06, $54 ; option 2 [54]: message 06
+#_0AAEF7: db $0D, $52 ; option 1 [0D]: go to message 52
+#_0AAEF9: db $06, $54 ; option 2 [06]: go to message 54
 
 ;===================================================================================================
 
 Message_02_0B_52:
 #_0AAEFB: db $D7, $01, $53 ; [set2] go to message 53 if RNG, 01 TODO
-#_0AAEFE: db $E9, $4E ; [set2] go to message $4E
+#_0AAEFE: db $E9, $4E ; [set2] go to message 4E
 
 ;===================================================================================================
 
@@ -8593,7 +8593,7 @@ Message_02_0B_57:
 #_0AAF29: db $F1 ; [set2] clear message box
 #_0AAF2A: db $EB, $10 ; [set2] prewritten text 10
 #_0AAF2C: db $F3 ; [set2] wait for key and new line
-#_0AAF2D: db $E9, $00 ; [set2] go to message $00
+#_0AAF2D: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -8623,20 +8623,20 @@ Message_02_0C_01:
 #_0AAF47: db $F1 ; [set2] clear message box
 #_0AAF48: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAF4A: db $F2, $01 ; [set2] option list with 2 options
-#_0AAF4C: db $08, $02 ; option 1 [02]: message 08
-#_0AAF4E: db $23, $15 ; option 2 [15]: message 23
+#_0AAF4C: db $08, $02 ; option 1 [08]: go to message 02
+#_0AAF4E: db $23, $15 ; option 2 [23]: go to message 15
 
 ;===================================================================================================
 
 Message_02_0C_02:
 #_0AAF50: db $D8, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
-#_0AAF53: db $E9, $03 ; [set2] go to message $03
+#_0AAF53: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
 Message_02_0C_03:
 #_0AAF55: db $E8, $11 ; [set2] [COMMAND 48:11]
-#_0AAF57: db $EF, $0B ; [set2] YES/NO - go to message $0B if YES
+#_0AAF57: db $EF, $0B ; [set2] YES/NO - go to message 0B if YES
 #_0AAF59: db $D6, $01, $0A ; [set2] go to message 0A if RNG, 01 TODO
 #_0AAF5C: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAF5E: db $E7, $04, $05, $05, $0F ; [set2] randomly pick from messages 04, 05, 05, 0F
@@ -8662,8 +8662,8 @@ Message_02_0C_05:
 #_0AAF72: db $F1 ; [set2] clear message box
 #_0AAF73: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAF75: db $F2, $01 ; [set2] option list with 2 options
-#_0AAF77: db $03, $06 ; option 1 [06]: message 03
-#_0AAF79: db $24, $08 ; option 2 [08]: message 24
+#_0AAF77: db $03, $06 ; option 1 [03]: go to message 06
+#_0AAF79: db $24, $08 ; option 2 [24]: go to message 08
 
 ;===================================================================================================
 
@@ -8701,7 +8701,7 @@ Message_02_0C_08:
 Message_02_0C_09:
 #_0AAF9E: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AAFA0: db $F3 ; [set2] wait for key and new line
-#_0AAFA1: db $E9, $00 ; [set2] go to message $00
+#_0AAFA1: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -8713,7 +8713,7 @@ Message_02_0C_0A:
 #_0AAFA8: db $F1 ; [set2] clear message box
 #_0AAFA9: db $EB, $ED ; [set2] prewritten text ED
 #_0AAFAB: db $F3 ; [set2] wait for key and new line
-#_0AAFAC: db $E9, $00 ; [set2] go to message $00
+#_0AAFAC: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -8739,8 +8739,8 @@ Message_02_0C_0D:
 #_0AAFC5: db $F3 ; [set2] wait for key and new line
 #_0AAFC6: db $F1 ; [set2] clear message box
 #_0AAFC7: db $EB, $CD ; [set2] prewritten text CD
-#_0AAFC9: db $EF, $0E ; [set2] YES/NO - go to message $0E if YES
-#_0AAFCB: db $E9, $0F ; [set2] go to message $0F
+#_0AAFC9: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
+#_0AAFCB: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -8761,14 +8761,14 @@ Message_02_0C_0F:
 #_0AAFDA: db $F1 ; [set2] clear message box
 #_0AAFDB: db $EB, $C0 ; [set2] prewritten text C0
 #_0AAFDD: db $F2, $01 ; [set2] option list with 2 options
-#_0AAFDF: db $0A, $10 ; option 1 [10]: message 0A
-#_0AAFE1: db $0B, $12 ; option 2 [12]: message 0B
+#_0AAFDF: db $0A, $10 ; option 1 [0A]: go to message 10
+#_0AAFE1: db $0B, $12 ; option 2 [0B]: go to message 12
 
 ;===================================================================================================
 
 Message_02_0C_10:
 #_0AAFE3: db $D4, $00, $11 ; [set2] go to message 11 if RNG, 00 TODO
-#_0AAFE6: db $E9, $3E ; [set2] go to message $3E
+#_0AAFE6: db $E9, $3E ; [set2] go to message 3E
 
 ;===================================================================================================
 
@@ -8795,14 +8795,14 @@ Message_02_0C_12:
 Message_02_0C_13:
 #_0AAFF9: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0AAFFB: db $F3 ; [set2] wait for key and new line
-#_0AAFFC: db $E9, $00 ; [set2] go to message $00
+#_0AAFFC: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0C_14:
 #_0AAFFE: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AB000: db $F3 ; [set2] wait for key and new line
-#_0AB001: db $E9, $00 ; [set2] go to message $00
+#_0AB001: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -8823,13 +8823,13 @@ Message_02_0C_15:
 #_0AB016: db $F1 ; [set2] clear message box
 #_0AB017: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB019: db $F2, $01 ; [set2] option list with 2 options
-#_0AB01B: db $0E, $1A ; option 1 [1A]: message 0E
-#_0AB01D: db $20, $16 ; option 2 [16]: message 20
+#_0AB01B: db $0E, $1A ; option 1 [0E]: go to message 1A
+#_0AB01D: db $20, $16 ; option 2 [20]: go to message 16
 
 ;===================================================================================================
 
 ; «>[DEMONX]を ナカマにしますか?»
-; «>[DEMONX]は [￥GIVEME] を»
+; «>[DEMONX]は [GIVEME] を»
 ; «おとしていった»
 ; «>[DEMONX]は さっていった»
 Message_02_0C_16:
@@ -8838,7 +8838,7 @@ Message_02_0C_16:
 #_0AB024: db $F3 ; [set2] wait for key and new line
 #_0AB025: db $F1 ; [set2] clear message box
 #_0AB026: db $EB, $CD ; [set2] prewritten text CD
-#_0AB028: db $EF, $17 ; [set2] YES/NO - go to message $17 if YES
+#_0AB028: db $EF, $17 ; [set2] YES/NO - go to message 17 if YES
 #_0AB02A: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB02C: db $F3 ; [set2] wait for key and new line
 #_0AB02D: db $F1 ; [set2] clear message box
@@ -8866,7 +8866,7 @@ Message_02_0C_18:
 #_0AB043: db $F1 ; [set2] clear message box
 #_0AB044: db $EB, $D4 ; [set2] prewritten text D4
 #_0AB046: db $F3 ; [set2] wait for key and new line
-#_0AB047: db $E9, $00 ; [set2] go to message $00
+#_0AB047: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -8878,8 +8878,8 @@ Message_02_0C_19:
 #_0AB04C: db $F1 ; [set2] clear message box
 #_0AB04D: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB04F: db $F2, $01 ; [set2] option list with 2 options
-#_0AB051: db $0E, $1A ; option 1 [1A]: message 0E
-#_0AB053: db $14, $21 ; option 2 [21]: message 14
+#_0AB051: db $0E, $1A ; option 1 [0E]: go to message 1A
+#_0AB053: db $14, $21 ; option 2 [14]: go to message 21
 
 ;===================================================================================================
 
@@ -8895,8 +8895,8 @@ Message_02_0C_1A:
 #_0AB05F: db $F1 ; [set2] clear message box
 #_0AB060: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB062: db $F2, $01 ; [set2] option list with 2 options
-#_0AB064: db $0E, $1B ; option 1 [1B]: message 0E
-#_0AB066: db $20, $1F ; option 2 [1F]: message 20
+#_0AB064: db $0E, $1B ; option 1 [0E]: go to message 1B
+#_0AB066: db $20, $1F ; option 2 [20]: go to message 1F
 
 ;===================================================================================================
 
@@ -8908,13 +8908,13 @@ Message_02_0C_1B:
 
 Message_02_0C_1C:
 #_0AB070: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AB072: db $E9, $03 ; [set2] go to message $03
+#_0AB072: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
 Message_02_0C_1D:
 #_0AB074: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AB076: db $E9, $52 ; [set2] go to message $52
+#_0AB076: db $E9, $52 ; [set2] go to message 52
 
 ;===================================================================================================
 
@@ -8928,7 +8928,7 @@ Message_02_0C_1E:
 
 Message_02_0C_1F:
 #_0AB080: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AB082: db $E9, $16 ; [set2] go to message $16
+#_0AB082: db $E9, $16 ; [set2] go to message 16
 
 ;===================================================================================================
 
@@ -8982,7 +8982,7 @@ Message_02_0C_25:
 Message_02_0C_26:
 #_0AB0B1: db $D5, $01, $29 ; [set2] go to message 29 if RNG, 01 TODO
 #_0AB0B4: db $D4, $00, $28 ; [set2] go to message 28 if RNG, 00 TODO
-#_0AB0B7: db $E9, $27 ; [set2] go to message $27
+#_0AB0B7: db $E9, $27 ; [set2] go to message 27
 
 ;===================================================================================================
 
@@ -9017,7 +9017,7 @@ Message_02_0C_29:
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
 Message_02_0C_2A:
-#_0AB0D5: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0AB0D5: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AB0D8: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AB0DA: db $F3 ; [set2] wait for key and new line
 #_0AB0DB: db $F1 ; [set2] clear message box
@@ -9026,8 +9026,8 @@ Message_02_0C_2A:
 #_0AB0DF: db $F1 ; [set2] clear message box
 #_0AB0E0: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB0E2: db $F2, $01 ; [set2] option list with 2 options
-#_0AB0E4: db $0C, $2B ; option 1 [2B]: message 0C
-#_0AB0E6: db $08, $32 ; option 2 [32]: message 08
+#_0AB0E4: db $0C, $2B ; option 1 [0C]: go to message 2B
+#_0AB0E6: db $08, $32 ; option 2 [08]: go to message 32
 
 ;===================================================================================================
 
@@ -9064,8 +9064,8 @@ Message_02_0C_2D:
 #_0AB10B: db $F1 ; [set2] clear message box
 #_0AB10C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB10E: db $F2, $01 ; [set2] option list with 2 options
-#_0AB110: db $0D, $2E ; option 1 [2E]: message 0D
-#_0AB112: db $06, $30 ; option 2 [30]: message 06
+#_0AB110: db $0D, $2E ; option 1 [0D]: go to message 2E
+#_0AB112: db $06, $30 ; option 2 [06]: go to message 30
 
 ;===================================================================================================
 
@@ -9092,7 +9092,7 @@ Message_02_0C_30:
 #_0AB128: db $F3 ; [set2] wait for key and new line
 #_0AB129: db $F1 ; [set2] clear message box
 #_0AB12A: db $D4, $01, $31 ; [set2] go to message 31 if RNG, 01 TODO
-#_0AB12D: db $E9, $0F ; [set2] go to message $0F
+#_0AB12D: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -9115,8 +9115,8 @@ Message_02_0C_32:
 #_0AB141: db $F1 ; [set2] clear message box
 #_0AB142: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB144: db $F2, $01 ; [set2] option list with 2 options
-#_0AB146: db $20, $16 ; option 1 [16]: message 20
-#_0AB148: db $09, $33 ; option 2 [33]: message 09
+#_0AB146: db $20, $16 ; option 1 [20]: go to message 16
+#_0AB148: db $09, $33 ; option 2 [09]: go to message 33
 
 ;===================================================================================================
 
@@ -9132,8 +9132,8 @@ Message_02_0C_33:
 #_0AB154: db $F1 ; [set2] clear message box
 #_0AB155: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB157: db $F2, $01 ; [set2] option list with 2 options
-#_0AB159: db $24, $08 ; option 1 [08]: message 24
-#_0AB15B: db $25, $34 ; option 2 [34]: message 25
+#_0AB159: db $24, $08 ; option 1 [24]: go to message 08
+#_0AB15B: db $25, $34 ; option 2 [25]: go to message 34
 
 ;===================================================================================================
 
@@ -9168,10 +9168,10 @@ Message_02_0C_36:
 Message_02_0C_37:
 #_0AB17A: db $D5, $01, $3A ; [set2] go to message 3A if RNG, 01 TODO
 #_0AB17D: db $E8, $1E ; [set2] [COMMAND 48:1E]
-#_0AB17F: db $EF, $39 ; [set2] YES/NO - go to message $39 if YES
+#_0AB17F: db $EF, $39 ; [set2] YES/NO - go to message 39 if YES
 #_0AB181: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB183: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AB185: db $EF, $38 ; [set2] YES/NO - go to message $38 if YES
+#_0AB185: db $EF, $38 ; [set2] YES/NO - go to message 38 if YES
 #_0AB187: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AB189: db $F3 ; [set2] wait for key and new line
 #_0AB18A: db $F1 ; [set2] clear message box
@@ -9188,7 +9188,7 @@ Message_02_0C_38:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_0C_39:
@@ -9217,14 +9217,14 @@ Message_02_0C_3A:
 #_0AB1AE: db $F1 ; [set2] clear message box
 #_0AB1AF: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB1B1: db $F2, $01 ; [set2] option list with 2 options
-#_0AB1B3: db $03, $3B ; option 1 [3B]: message 03
-#_0AB1B5: db $0B, $3C ; option 2 [3C]: message 0B
+#_0AB1B3: db $03, $3B ; option 1 [03]: go to message 3B
+#_0AB1B5: db $0B, $3C ; option 2 [0B]: go to message 3C
 
 ;===================================================================================================
 
 Message_02_0C_3B:
 #_0AB1B7: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
-#_0AB1BA: db $E9, $52 ; [set2] go to message $52
+#_0AB1BA: db $E9, $52 ; [set2] go to message 52
 
 ;===================================================================================================
 
@@ -9244,8 +9244,8 @@ Message_02_0C_3D:
 #_0AB1C6: db $F1 ; [set2] clear message box
 #_0AB1C7: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB1C9: db $F2, $01 ; [set2] option list with 2 options
-#_0AB1CB: db $0E, $1A ; option 1 [1A]: message 0E
-#_0AB1CD: db $14, $21 ; option 2 [21]: message 14
+#_0AB1CB: db $0E, $1A ; option 1 [0E]: go to message 1A
+#_0AB1CD: db $14, $21 ; option 2 [14]: go to message 21
 
 ;===================================================================================================
 
@@ -9260,8 +9260,8 @@ Message_02_0C_3E:
 #_0AB1D6: db $F1 ; [set2] clear message box
 #_0AB1D7: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB1D9: db $F2, $01 ; [set2] option list with 2 options
-#_0AB1DB: db $0D, $3F ; option 1 [3F]: message 0D
-#_0AB1DD: db $06, $30 ; option 2 [30]: message 06
+#_0AB1DB: db $0D, $3F ; option 1 [0D]: go to message 3F
+#_0AB1DD: db $06, $30 ; option 2 [06]: go to message 30
 
 ;===================================================================================================
 
@@ -9277,7 +9277,7 @@ Message_02_0C_3F:
 Message_02_0C_40:
 #_0AB1EA: db $D2, $00 ; [set2] something to message 00 TODO
 #_0AB1EC: db $E8, $22 ; [set2] [COMMAND 48:22]
-#_0AB1EE: db $EF, $42 ; [set2] YES/NO - go to message $42 if YES
+#_0AB1EE: db $EF, $42 ; [set2] YES/NO - go to message 42 if YES
 #_0AB1F0: db $D4, $00, $41 ; [set2] go to message 41 if RNG, 00 TODO
 #_0AB1F3: db $E8, $25 ; [set2] [COMMAND 48:25]
 #_0AB1F5: db $F1 ; [set2] clear message box
@@ -9323,8 +9323,8 @@ Message_02_0C_45:
 #_0AB21A: db $F1 ; [set2] clear message box
 #_0AB21B: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB21D: db $F2, $01 ; [set2] option list with 2 options
-#_0AB21F: db $03, $46 ; option 1 [46]: message 03
-#_0AB221: db $1B, $57 ; option 2 [57]: message 1B
+#_0AB21F: db $03, $46 ; option 1 [03]: go to message 46
+#_0AB221: db $1B, $57 ; option 2 [1B]: go to message 57
 
 ;===================================================================================================
 
@@ -9357,8 +9357,8 @@ Message_02_0C_49:
 #_0AB23D: db $F1 ; [set2] clear message box
 #_0AB23E: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB240: db $F2, $01 ; [set2] option list with 2 options
-#_0AB242: db $21, $4A ; option 1 [4A]: message 21
-#_0AB244: db $22, $4D ; option 2 [4D]: message 22
+#_0AB242: db $21, $4A ; option 1 [21]: go to message 4A
+#_0AB244: db $22, $4D ; option 2 [22]: go to message 4D
 
 ;===================================================================================================
 
@@ -9372,7 +9372,7 @@ Message_02_0C_4A:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0C_4B:
@@ -9392,7 +9392,7 @@ Message_02_0C_4B:
 Message_02_0C_4C:
 #_0AB262: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AB264: db $F3 ; [set2] wait for key and new line
-#_0AB265: db $E9, $00 ; [set2] go to message $00
+#_0AB265: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -9411,8 +9411,8 @@ Message_02_0C_4D:
 ; «このまま おどりますか?»
 Message_02_0C_4E:
 #_0AB278: db $EB, $EB ; [set2] prewritten text EB
-#_0AB27A: db $EF, $4F ; [set2] YES/NO - go to message $4F if YES
-#_0AB27C: db $E9, $11 ; [set2] go to message $11
+#_0AB27A: db $EF, $4F ; [set2] YES/NO - go to message 4F if YES
+#_0AB27C: db $E9, $11 ; [set2] go to message 11
 
 ;===================================================================================================
 
@@ -9433,7 +9433,7 @@ Message_02_0C_4F:
 ; «こうげき しますか?»
 Message_02_0C_50:
 #_0AB28A: db $EB, $EA ; [set2] prewritten text EA
-#_0AB28C: db $EF, $51 ; [set2] YES/NO - go to message $51 if YES
+#_0AB28C: db $EF, $51 ; [set2] YES/NO - go to message 51 if YES
 #_0AB28E: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB290: db $F3 ; [set2] wait for key and new line
 #_0AB291: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -9450,11 +9450,11 @@ Message_02_0C_51:
 ; «こうげき しますか?»
 Message_02_0C_52:
 #_0AB298: db $E8, $07 ; [set2] [COMMAND 48:07]
-#_0AB29A: db $EF, $54 ; [set2] YES/NO - go to message $54 if YES
+#_0AB29A: db $EF, $54 ; [set2] YES/NO - go to message 54 if YES
 #_0AB29C: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AB29F: db $EB, $EA ; [set2] prewritten text EA
-#_0AB2A1: db $EF, $53 ; [set2] YES/NO - go to message $53 if YES
-#_0AB2A3: db $E9, $49 ; [set2] go to message $49
+#_0AB2A1: db $EF, $53 ; [set2] YES/NO - go to message 53 if YES
+#_0AB2A3: db $E9, $49 ; [set2] go to message 49
 
 ;===================================================================================================
 
@@ -9500,7 +9500,7 @@ Message_02_0C_57:
 #_0AB2CA: db $D8, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
 #_0AB2CD: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB2CF: db $D4, $01, $58 ; [set2] go to message 58 if RNG, 01 TODO
-#_0AB2D2: db $E9, $03 ; [set2] go to message $03
+#_0AB2D2: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -9514,14 +9514,14 @@ Message_02_0C_58:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0C_59:
-#_0AB2D9: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0AB2D9: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AB2DC: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB2DE: db $F3 ; [set2] wait for key and new line
 #_0AB2DF: db $F1 ; [set2] clear message box
 #_0AB2E0: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB2E2: db $F2, $01 ; [set2] option list with 2 options
-#_0AB2E4: db $08, $5A ; option 1 [5A]: message 08
-#_0AB2E6: db $14, $6D ; option 2 [6D]: message 14
+#_0AB2E4: db $08, $5A ; option 1 [08]: go to message 5A
+#_0AB2E6: db $14, $6D ; option 2 [14]: go to message 6D
 
 ;===================================================================================================
 
@@ -9543,8 +9543,8 @@ Message_02_0C_5A:
 #_0AB2FB: db $F1 ; [set2] clear message box
 #_0AB2FC: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB2FE: db $F2, $01 ; [set2] option list with 2 options
-#_0AB300: db $28, $5B ; option 1 [5B]: message 28
-#_0AB302: db $20, $60 ; option 2 [60]: message 20
+#_0AB300: db $28, $5B ; option 1 [28]: go to message 5B
+#_0AB302: db $20, $60 ; option 2 [20]: go to message 60
 
 ;===================================================================================================
 
@@ -9572,7 +9572,7 @@ Message_02_0C_5D:
 Message_02_0C_5E:
 #_0AB316: db $EB, $EE ; [set2] prewritten text EE
 #_0AB318: db $F3 ; [set2] wait for key and new line
-#_0AB319: db $E9, $00 ; [set2] go to message $00
+#_0AB319: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -9588,13 +9588,13 @@ Message_02_0C_60:
 #_0AB320: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB322: db $D6, $01, $61 ; [set2] go to message 61 if RNG, 01 TODO
 #_0AB325: db $D4, $00, $0D ; [set2] go to message 0D if RNG, 00 TODO
-#_0AB328: db $E9, $3E ; [set2] go to message $3E
+#_0AB328: db $E9, $3E ; [set2] go to message 3E
 
 ;===================================================================================================
 
 Message_02_0C_61:
 #_0AB32A: db $D4, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
-#_0AB32D: db $E9, $63 ; [set2] go to message $63
+#_0AB32D: db $E9, $63 ; [set2] go to message 63
 
 ;===================================================================================================
 
@@ -9621,8 +9621,8 @@ Message_02_0C_63:
 #_0AB342: db $F1 ; [set2] clear message box
 #_0AB343: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB345: db $F2, $01 ; [set2] option list with 2 options
-#_0AB347: db $14, $6D ; option 1 [6D]: message 14
-#_0AB349: db $06, $64 ; option 2 [64]: message 06
+#_0AB347: db $14, $6D ; option 1 [14]: go to message 6D
+#_0AB349: db $06, $64 ; option 2 [06]: go to message 64
 
 ;===================================================================================================
 
@@ -9639,8 +9639,8 @@ Message_02_0C_65:
 #_0AB353: db $F1 ; [set2] clear message box
 #_0AB354: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB356: db $F2, $01 ; [set2] option list with 2 options
-#_0AB358: db $03, $66 ; option 1 [66]: message 03
-#_0AB35A: db $0B, $67 ; option 2 [67]: message 0B
+#_0AB358: db $03, $66 ; option 1 [03]: go to message 66
+#_0AB35A: db $0B, $67 ; option 2 [0B]: go to message 67
 
 ;===================================================================================================
 
@@ -9655,7 +9655,7 @@ Message_02_0C_66:
 
 Message_02_0C_67:
 #_0AB367: db $D4, $00, $68 ; [set2] go to message 68 if RNG, 00 TODO
-#_0AB36A: db $E9, $0F ; [set2] go to message $0F
+#_0AB36A: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -9674,7 +9674,7 @@ Message_02_0C_69:
 #_0AB375: db $F1 ; [set2] clear message box
 #_0AB376: db $EB, $EE ; [set2] prewritten text EE
 #_0AB378: db $F3 ; [set2] wait for key and new line
-#_0AB379: db $E9, $00 ; [set2] go to message $00
+#_0AB379: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -9689,8 +9689,8 @@ Message_02_0C_6A:
 Message_02_0C_6B:
 #_0AB381: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB383: db $F2, $01 ; [set2] option list with 2 options
-#_0AB385: db $0F, $6C ; option 1 [6C]: message 0F
-#_0AB387: db $0C, $2B ; option 2 [2B]: message 0C
+#_0AB385: db $0F, $6C ; option 1 [0F]: go to message 6C
+#_0AB387: db $0C, $2B ; option 2 [0C]: go to message 2B
 
 ;===================================================================================================
 
@@ -9738,7 +9738,7 @@ Message_02_0C_70:
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
 Message_02_0C_71:
-#_0AB3B2: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0AB3B2: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AB3B5: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB3B7: db $F3 ; [set2] wait for key and new line
 #_0AB3B8: db $F1 ; [set2] clear message box
@@ -9747,12 +9747,12 @@ Message_02_0C_71:
 #_0AB3BC: db $F1 ; [set2] clear message box
 #_0AB3BD: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB3BF: db $F2, $01 ; [set2] option list with 2 options
-#_0AB3C1: db $13, $72 ; option 1 [72]: message 13
-#_0AB3C3: db $06, $74 ; option 2 [74]: message 06
+#_0AB3C1: db $13, $72 ; option 1 [13]: go to message 72
+#_0AB3C3: db $06, $74 ; option 2 [06]: go to message 74
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0C_72:
@@ -9795,14 +9795,14 @@ Message_02_0C_75:
 #_0AB3EA: db $F1 ; [set2] clear message box
 #_0AB3EB: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB3ED: db $F2, $01 ; [set2] option list with 2 options
-#_0AB3EF: db $00, $76 ; option 1 [76]: message 00
-#_0AB3F1: db $0C, $2B ; option 2 [2B]: message 0C
+#_0AB3EF: db $00, $76 ; option 1 [00]: go to message 76
+#_0AB3F1: db $0C, $2B ; option 2 [0C]: go to message 2B
 
 ;===================================================================================================
 
 Message_02_0C_76:
 #_0AB3F3: db $D4, $00, $3C ; [set2] go to message 3C if RNG, 00 TODO
-#_0AB3F6: db $E9, $77 ; [set2] go to message $77
+#_0AB3F6: db $E9, $77 ; [set2] go to message 77
 
 ;===================================================================================================
 
@@ -9843,8 +9843,8 @@ Message_02_0D_01:
 #_0AB41A: db $F1 ; [set2] clear message box
 #_0AB41B: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB41D: db $F2, $01 ; [set2] option list with 2 options
-#_0AB41F: db $04, $02 ; option 1 [02]: message 04
-#_0AB421: db $0D, $10 ; option 2 [10]: message 0D
+#_0AB41F: db $04, $02 ; option 1 [04]: go to message 02
+#_0AB421: db $0D, $10 ; option 2 [0D]: go to message 10
 
 ;===================================================================================================
 
@@ -9861,7 +9861,7 @@ Message_02_0D_03:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_0D_04:
@@ -9907,8 +9907,8 @@ Message_02_0D_07:
 #_0AB459: db $F1 ; [set2] clear message box
 #_0AB45A: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB45C: db $F2, $01 ; [set2] option list with 2 options
-#_0AB45E: db $14, $40 ; option 1 [40]: message 14
-#_0AB460: db $06, $2D ; option 2 [2D]: message 06
+#_0AB45E: db $14, $40 ; option 1 [14]: go to message 40
+#_0AB460: db $06, $2D ; option 2 [06]: go to message 2D
 
 ;===================================================================================================
 
@@ -9926,8 +9926,8 @@ Message_02_0D_08:
 #_0AB476: db $F1 ; [set2] clear message box
 #_0AB477: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB479: db $F2, $01 ; [set2] option list with 2 options
-#_0AB47B: db $2A, $09 ; option 1 [09]: message 2A
-#_0AB47D: db $16, $0A ; option 2 [0A]: message 16
+#_0AB47B: db $2A, $09 ; option 1 [2A]: go to message 09
+#_0AB47D: db $16, $0A ; option 2 [16]: go to message 0A
 
 ;===================================================================================================
 
@@ -9940,20 +9940,20 @@ Message_02_0D_09:
 Message_02_0D_0A:
 #_0AB484: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AB486: db $D8, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
-#_0AB489: db $E9, $18 ; [set2] go to message $18
+#_0AB489: db $E9, $18 ; [set2] go to message 18
 
 ;===================================================================================================
 
 Message_02_0D_0B:
 #_0AB48B: db $D4, $00, $0D ; [set2] go to message 0D if RNG, 00 TODO
-#_0AB48E: db $E9, $05 ; [set2] go to message $05
+#_0AB48E: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
 Message_02_0D_0C:
 #_0AB490: db $E8, $1E ; [set2] [COMMAND 48:1E]
-#_0AB492: db $EF, $0D ; [set2] YES/NO - go to message $0D if YES
-#_0AB494: db $E9, $46 ; [set2] go to message $46
+#_0AB492: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
+#_0AB494: db $E9, $46 ; [set2] go to message 46
 
 ;===================================================================================================
 
@@ -9996,8 +9996,8 @@ Message_02_0D_11:
 #_0AB4BB: db $F1 ; [set2] clear message box
 #_0AB4BC: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB4BE: db $F2, $01 ; [set2] option list with 2 options
-#_0AB4C0: db $04, $02 ; option 1 [02]: message 04
-#_0AB4C2: db $15, $12 ; option 2 [12]: message 15
+#_0AB4C0: db $04, $02 ; option 1 [04]: go to message 02
+#_0AB4C2: db $15, $12 ; option 2 [15]: go to message 12
 
 ;===================================================================================================
 
@@ -10024,7 +10024,7 @@ Message_02_0D_13:
 
 Message_02_0D_14:
 #_0AB4D9: db $D5, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
-#_0AB4DC: db $E9, $05 ; [set2] go to message $05
+#_0AB4DC: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
@@ -10047,8 +10047,8 @@ Message_02_0D_16:
 #_0AB4F1: db $F1 ; [set2] clear message box
 #_0AB4F2: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB4F4: db $F2, $01 ; [set2] option list with 2 options
-#_0AB4F6: db $0F, $17 ; option 1 [17]: message 0F
-#_0AB4F8: db $06, $3E ; option 2 [3E]: message 06
+#_0AB4F6: db $0F, $17 ; option 1 [0F]: go to message 17
+#_0AB4F8: db $06, $3E ; option 2 [06]: go to message 3E
 
 ;===================================================================================================
 
@@ -10079,8 +10079,8 @@ Message_02_0D_19:
 #_0AB519: db $F1 ; [set2] clear message box
 #_0AB51A: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB51C: db $F2, $01 ; [set2] option list with 2 options
-#_0AB51E: db $03, $1A ; option 1 [1A]: message 03
-#_0AB520: db $0B, $2B ; option 2 [2B]: message 0B
+#_0AB51E: db $03, $1A ; option 1 [03]: go to message 1A
+#_0AB520: db $0B, $2B ; option 2 [0B]: go to message 2B
 
 ;===================================================================================================
 
@@ -10112,8 +10112,8 @@ Message_02_0D_1D:
 #_0AB53B: db $F1 ; [set2] clear message box
 #_0AB53C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB53E: db $F2, $01 ; [set2] option list with 2 options
-#_0AB540: db $21, $1E ; option 1 [1E]: message 21
-#_0AB542: db $22, $21 ; option 2 [21]: message 22
+#_0AB540: db $21, $1E ; option 1 [21]: go to message 1E
+#_0AB542: db $22, $21 ; option 2 [22]: go to message 21
 
 ;===================================================================================================
 
@@ -10127,7 +10127,7 @@ Message_02_0D_1E:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0D_1F:
@@ -10147,7 +10147,7 @@ Message_02_0D_1F:
 Message_02_0D_20:
 #_0AB560: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AB562: db $F3 ; [set2] wait for key and new line
-#_0AB563: db $E9, $00 ; [set2] go to message $00
+#_0AB563: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -10166,7 +10166,7 @@ Message_02_0D_21:
 ; «こうげき しますか?»
 Message_02_0D_22:
 #_0AB576: db $EB, $EA ; [set2] prewritten text EA
-#_0AB578: db $EF, $23 ; [set2] YES/NO - go to message $23 if YES
+#_0AB578: db $EF, $23 ; [set2] YES/NO - go to message 23 if YES
 #_0AB57A: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB57C: db $F3 ; [set2] wait for key and new line
 #_0AB57D: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -10184,7 +10184,7 @@ Message_02_0D_23:
 ; «>[DEMONX]は さっていった»
 Message_02_0D_24:
 #_0AB584: db $EB, $EB ; [set2] prewritten text EB
-#_0AB586: db $EF, $25 ; [set2] YES/NO - go to message $25 if YES
+#_0AB586: db $EF, $25 ; [set2] YES/NO - go to message 25 if YES
 #_0AB588: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB58A: db $F3 ; [set2] wait for key and new line
 #_0AB58B: db $F1 ; [set2] clear message box
@@ -10214,26 +10214,26 @@ Message_02_0D_26:
 #_0AB5A0: db $F1 ; [set2] clear message box
 #_0AB5A1: db $97, $46, $51, $CF, $38, $A2, $43, $31 ; >めを⎵とじます
 #_0AB5A9: db $2A, $95 ; か?
-#_0AB5AB: db $EF, $28 ; [set2] YES/NO - go to message $28 if YES
-#_0AB5AD: db $E9, $27 ; [set2] go to message $27
+#_0AB5AB: db $EF, $28 ; [set2] YES/NO - go to message 28 if YES
+#_0AB5AD: db $E9, $27 ; [set2] go to message 27
 
 ;===================================================================================================
 
 Message_02_0D_27:
 #_0AB5AF: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AB5B1: db $F3 ; [set2] wait for key and new line
-#_0AB5B2: db $E9, $00 ; [set2] go to message $00
+#_0AB5B2: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0D_28:
 #_0AB5B4: db $D7, $01, $2A ; [set2] go to message 2A if RNG, 01 TODO
 #_0AB5B7: db $D7, $02, $29 ; [set2] go to message 29 if RNG, 02 TODO
-#_0AB5BA: db $E9, $18 ; [set2] go to message $18
+#_0AB5BA: db $E9, $18 ; [set2] go to message 18
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0D_29:
@@ -10290,14 +10290,14 @@ Message_02_0D_2D:
 #_0AB5ED: db $F1 ; [set2] clear message box
 #_0AB5EE: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB5F0: db $F2, $01 ; [set2] option list with 2 options
-#_0AB5F2: db $06, $2E ; option 1 [2E]: message 06
-#_0AB5F4: db $20, $39 ; option 2 [39]: message 20
+#_0AB5F2: db $06, $2E ; option 1 [06]: go to message 2E
+#_0AB5F4: db $20, $39 ; option 2 [20]: go to message 39
 
 ;===================================================================================================
 
 Message_02_0D_2E:
 #_0AB5F6: db $D4, $00, $2F ; [set2] go to message 2F if RNG, 00 TODO
-#_0AB5F9: db $E9, $0F ; [set2] go to message $0F
+#_0AB5F9: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -10312,14 +10312,14 @@ Message_02_0D_2F:
 #_0AB602: db $F1 ; [set2] clear message box
 #_0AB603: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB605: db $F2, $01 ; [set2] option list with 2 options
-#_0AB607: db $0A, $30 ; option 1 [30]: message 0A
-#_0AB609: db $0B, $37 ; option 2 [37]: message 0B
+#_0AB607: db $0A, $30 ; option 1 [0A]: go to message 30
+#_0AB609: db $0B, $37 ; option 2 [0B]: go to message 37
 
 ;===================================================================================================
 
 Message_02_0D_30:
 #_0AB60B: db $D4, $01, $32 ; [set2] go to message 32 if RNG, 01 TODO
-#_0AB60E: db $E9, $31 ; [set2] go to message $31
+#_0AB60E: db $E9, $31 ; [set2] go to message 31
 
 ;===================================================================================================
 
@@ -10334,8 +10334,8 @@ Message_02_0D_31:
 #_0AB617: db $F1 ; [set2] clear message box
 #_0AB618: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB61A: db $F2, $01 ; [set2] option list with 2 options
-#_0AB61C: db $0D, $33 ; option 1 [33]: message 0D
-#_0AB61E: db $06, $35 ; option 2 [35]: message 06
+#_0AB61C: db $0D, $33 ; option 1 [0D]: go to message 33
+#_0AB61E: db $06, $35 ; option 2 [06]: go to message 35
 
 ;===================================================================================================
 
@@ -10374,7 +10374,7 @@ Message_02_0D_35:
 #_0AB63F: db $F3 ; [set2] wait for key and new line
 #_0AB640: db $F1 ; [set2] clear message box
 #_0AB641: db $D4, $01, $36 ; [set2] go to message 36 if RNG, 01 TODO
-#_0AB644: db $E9, $32 ; [set2] go to message $32
+#_0AB644: db $E9, $32 ; [set2] go to message 32
 
 ;===================================================================================================
 
@@ -10407,8 +10407,8 @@ Message_02_0D_39:
 #_0AB65E: db $F3 ; [set2] wait for key and new line
 #_0AB65F: db $F1 ; [set2] clear message box
 #_0AB660: db $EB, $CD ; [set2] prewritten text CD
-#_0AB662: db $EF, $3A ; [set2] YES/NO - go to message $3A if YES
-#_0AB664: db $E9, $1D ; [set2] go to message $1D
+#_0AB662: db $EF, $3A ; [set2] YES/NO - go to message 3A if YES
+#_0AB664: db $E9, $1D ; [set2] go to message 1D
 
 ;===================================================================================================
 
@@ -10426,26 +10426,26 @@ Message_02_0D_3B:
 #_0AB671: db $F1 ; [set2] clear message box
 #_0AB672: db $EB, $D4 ; [set2] prewritten text D4
 #_0AB674: db $F3 ; [set2] wait for key and new line
-#_0AB675: db $E9, $00 ; [set2] go to message $00
+#_0AB675: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0D_3C:
 #_0AB677: db $D4, $00, $3D ; [set2] go to message 3D if RNG, 00 TODO
-#_0AB67A: db $E9, $0F ; [set2] go to message $0F
+#_0AB67A: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
 Message_02_0D_3D:
 #_0AB67C: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB67E: db $F3 ; [set2] wait for key and new line
-#_0AB67F: db $E9, $00 ; [set2] go to message $00
+#_0AB67F: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0D_3E:
 #_0AB681: db $D4, $00, $3F ; [set2] go to message 3F if RNG, 00 TODO
-#_0AB684: db $E9, $2D ; [set2] go to message $2D
+#_0AB684: db $E9, $2D ; [set2] go to message 2D
 
 ;===================================================================================================
 
@@ -10460,8 +10460,8 @@ Message_02_0D_3F:
 #_0AB68D: db $F1 ; [set2] clear message box
 #_0AB68E: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB690: db $F2, $01 ; [set2] option list with 2 options
-#_0AB692: db $14, $40 ; option 1 [40]: message 14
-#_0AB694: db $21, $1E ; option 2 [1E]: message 21
+#_0AB692: db $14, $40 ; option 1 [14]: go to message 40
+#_0AB694: db $21, $1E ; option 2 [21]: go to message 1E
 
 ;===================================================================================================
 
@@ -10528,8 +10528,8 @@ Message_02_0D_46:
 #_0AB6D7: db $F1 ; [set2] clear message box
 #_0AB6D8: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB6DA: db $F2, $01 ; [set2] option list with 2 options
-#_0AB6DC: db $0D, $33 ; option 1 [33]: message 0D
-#_0AB6DE: db $15, $47 ; option 2 [47]: message 15
+#_0AB6DC: db $0D, $33 ; option 1 [0D]: go to message 33
+#_0AB6DE: db $15, $47 ; option 2 [15]: go to message 47
 
 ;===================================================================================================
 
@@ -10551,7 +10551,7 @@ Message_02_0D_48:
 #_0AB6EF: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
 #_0AB6F2: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AB6F5: db $E6, $02 ; [set2] [COMMAND 46:02]
-#_0AB6F7: db $E9, $01 ; [set2] go to message $01
+#_0AB6F7: db $E9, $01 ; [set2] go to message 01
 
 ;===================================================================================================
 
@@ -10563,8 +10563,8 @@ Message_02_0D_49:
 #_0AB6FC: db $F1 ; [set2] clear message box
 #_0AB6FD: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB6FF: db $F2, $01 ; [set2] option list with 2 options
-#_0AB701: db $14, $40 ; option 1 [40]: message 14
-#_0AB703: db $15, $47 ; option 2 [47]: message 15
+#_0AB701: db $14, $40 ; option 1 [14]: go to message 40
+#_0AB703: db $15, $47 ; option 2 [15]: go to message 47
 
 ;===================================================================================================
 
@@ -10584,8 +10584,8 @@ Message_02_0D_4B:
 #_0AB711: db $F1 ; [set2] clear message box
 #_0AB712: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB714: db $F2, $01 ; [set2] option list with 2 options
-#_0AB716: db $0F, $4C ; option 1 [4C]: message 0F
-#_0AB718: db $06, $54 ; option 2 [54]: message 06
+#_0AB716: db $0F, $4C ; option 1 [0F]: go to message 4C
+#_0AB718: db $06, $54 ; option 2 [06]: go to message 54
 
 ;===================================================================================================
 
@@ -10622,14 +10622,14 @@ Message_02_0D_4E:
 #_0AB73B: db $F1 ; [set2] clear message box
 #_0AB73C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB73E: db $F2, $01 ; [set2] option list with 2 options
-#_0AB740: db $01, $4F ; option 1 [4F]: message 01
-#_0AB742: db $00, $53 ; option 2 [53]: message 00
+#_0AB740: db $01, $4F ; option 1 [01]: go to message 4F
+#_0AB742: db $00, $53 ; option 2 [00]: go to message 53
 
 ;===================================================================================================
 
 Message_02_0D_4F:
 #_0AB744: db $D4, $00, $51 ; [set2] go to message 51 if RNG, 00 TODO
-#_0AB747: db $E9, $50 ; [set2] go to message $50
+#_0AB747: db $E9, $50 ; [set2] go to message 50
 
 ;===================================================================================================
 
@@ -10652,8 +10652,8 @@ Message_02_0D_51:
 #_0AB758: db $F1 ; [set2] clear message box
 #_0AB759: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB75B: db $F2, $01 ; [set2] option list with 2 options
-#_0AB75D: db $14, $5C ; option 1 [5C]: message 14
-#_0AB75F: db $06, $52 ; option 2 [52]: message 06
+#_0AB75D: db $14, $5C ; option 1 [14]: go to message 5C
+#_0AB75F: db $06, $52 ; option 2 [06]: go to message 52
 
 ;===================================================================================================
 
@@ -10665,13 +10665,13 @@ Message_02_0D_52:
 #_0AB765: db $EB, $ED ; [set2] prewritten text ED
 #_0AB767: db $F3 ; [set2] wait for key and new line
 #_0AB768: db $E6, $FF ; [set2] [COMMAND 46:FF]
-#_0AB76A: db $E9, $00 ; [set2] go to message $00
+#_0AB76A: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0D_53:
 #_0AB76C: db $D4, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
-#_0AB76F: db $E9, $0F ; [set2] go to message $0F
+#_0AB76F: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -10686,21 +10686,21 @@ Message_02_0D_55:
 #_0AB778: db $F3 ; [set2] wait for key and new line
 #_0AB779: db $F1 ; [set2] clear message box
 #_0AB77A: db $EB, $CD ; [set2] prewritten text CD
-#_0AB77C: db $EF, $26 ; [set2] YES/NO - go to message $26 if YES
-#_0AB77E: db $E9, $2F ; [set2] go to message $2F
+#_0AB77C: db $EF, $26 ; [set2] YES/NO - go to message 26 if YES
+#_0AB77E: db $E9, $2F ; [set2] go to message 2F
 
 ;===================================================================================================
 
 Message_02_0D_56:
 #_0AB780: db $E8, $1B ; [set2] [COMMAND 48:1B]
-#_0AB782: db $EF, $57 ; [set2] YES/NO - go to message $57 if YES
-#_0AB784: db $E9, $27 ; [set2] go to message $27
+#_0AB782: db $EF, $57 ; [set2] YES/NO - go to message 57 if YES
+#_0AB784: db $E9, $27 ; [set2] go to message 27
 
 ;===================================================================================================
 
 Message_02_0D_57:
 #_0AB786: db $D7, $01, $59 ; [set2] go to message 59 if RNG, 01 TODO
-#_0AB789: db $E9, $58 ; [set2] go to message $58
+#_0AB789: db $E9, $58 ; [set2] go to message 58
 
 ;===================================================================================================
 
@@ -10730,8 +10730,8 @@ Message_02_0D_5A:
 #_0AB79F: db $F1 ; [set2] clear message box
 #_0AB7A0: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB7A2: db $F2, $01 ; [set2] option list with 2 options
-#_0AB7A4: db $04, $5B ; option 1 [5B]: message 04
-#_0AB7A6: db $14, $5C ; option 2 [5C]: message 14
+#_0AB7A4: db $04, $5B ; option 1 [04]: go to message 5B
+#_0AB7A6: db $14, $5C ; option 2 [14]: go to message 5C
 
 ;===================================================================================================
 
@@ -10783,8 +10783,8 @@ Message_02_0D_60:
 #_0AB7D2: db $F1 ; [set2] clear message box
 #_0AB7D3: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB7D5: db $F2, $01 ; [set2] option list with 2 options
-#_0AB7D7: db $05, $61 ; option 1 [61]: message 05
-#_0AB7D9: db $29, $65 ; option 2 [65]: message 29
+#_0AB7D7: db $05, $61 ; option 1 [05]: go to message 61
+#_0AB7D9: db $29, $65 ; option 2 [29]: go to message 65
 
 ;===================================================================================================
 
@@ -10802,7 +10802,7 @@ Message_02_0D_62:
 Message_02_0D_63:
 #_0AB7E8: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AB7EA: db $F3 ; [set2] wait for key and new line
-#_0AB7EB: db $E9, $00 ; [set2] go to message $00
+#_0AB7EB: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -10828,8 +10828,8 @@ Message_02_0D_65:
 #_0AB800: db $F1 ; [set2] clear message box
 #_0AB801: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB803: db $F2, $01 ; [set2] option list with 2 options
-#_0AB805: db $00, $66 ; option 1 [66]: message 00
-#_0AB807: db $01, $69 ; option 2 [69]: message 01
+#_0AB805: db $00, $66 ; option 1 [00]: go to message 66
+#_0AB807: db $01, $69 ; option 2 [01]: go to message 69
 
 ;===================================================================================================
 
@@ -10868,14 +10868,14 @@ Message_02_0D_6A:
 #_0AB825: db $F1 ; [set2] clear message box
 #_0AB826: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB828: db $F2, $01 ; [set2] option list with 2 options
-#_0AB82A: db $00, $0F ; option 1 [0F]: message 00
-#_0AB82C: db $01, $6B ; option 2 [6B]: message 01
+#_0AB82A: db $00, $0F ; option 1 [00]: go to message 0F
+#_0AB82C: db $01, $6B ; option 2 [01]: go to message 6B
 
 ;===================================================================================================
 
 Message_02_0D_6B:
 #_0AB82E: db $D7, $01, $64 ; [set2] go to message 64 if RNG, 01 TODO
-#_0AB831: db $E9, $58 ; [set2] go to message $58
+#_0AB831: db $E9, $58 ; [set2] go to message 58
 
 ;===================================================================================================
 
@@ -10883,11 +10883,11 @@ Message_02_0D_6B:
 ; «こうげき しますか?»
 Message_02_0D_6C:
 #_0AB833: db $E8, $07 ; [set2] [COMMAND 48:07]
-#_0AB835: db $EF, $6D ; [set2] YES/NO - go to message $6D if YES
+#_0AB835: db $EF, $6D ; [set2] YES/NO - go to message 6D if YES
 #_0AB837: db $D6, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AB83A: db $EB, $EA ; [set2] prewritten text EA
-#_0AB83C: db $EF, $23 ; [set2] YES/NO - go to message $23 if YES
-#_0AB83E: db $E9, $1D ; [set2] go to message $1D
+#_0AB83C: db $EF, $23 ; [set2] YES/NO - go to message 23 if YES
+#_0AB83E: db $E9, $1D ; [set2] go to message 1D
 
 ;===================================================================================================
 
@@ -10939,8 +10939,8 @@ Message_02_0E_01:
 #_0AB870: db $F1 ; [set2] clear message box
 #_0AB871: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB873: db $F2, $01 ; [set2] option list with 2 options
-#_0AB875: db $00, $02 ; option 1 [02]: message 00
-#_0AB877: db $01, $1D ; option 2 [1D]: message 01
+#_0AB875: db $00, $02 ; option 1 [00]: go to message 02
+#_0AB877: db $01, $1D ; option 2 [01]: go to message 1D
 
 ;===================================================================================================
 
@@ -10961,8 +10961,8 @@ Message_02_0E_04:
 #_0AB884: db $F1 ; [set2] clear message box
 #_0AB885: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB887: db $F2, $01 ; [set2] option list with 2 options
-#_0AB889: db $02, $05 ; option 1 [05]: message 02
-#_0AB88B: db $03, $0A ; option 2 [0A]: message 03
+#_0AB889: db $02, $05 ; option 1 [02]: go to message 05
+#_0AB88B: db $03, $0A ; option 2 [03]: go to message 0A
 
 ;===================================================================================================
 
@@ -10980,7 +10980,7 @@ Message_02_0E_06:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_0E_07:
@@ -11000,7 +11000,7 @@ Message_02_0E_07:
 Message_02_0E_08:
 #_0AB8AB: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AB8AD: db $F3 ; [set2] wait for key and new line
-#_0AB8AE: db $E9, $84 ; [set2] go to message $84
+#_0AB8AE: db $E9, $84 ; [set2] go to message 84
 
 ;===================================================================================================
 
@@ -11040,8 +11040,8 @@ Message_02_0E_0C:
 #_0AB8D0: db $F1 ; [set2] clear message box
 #_0AB8D1: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB8D3: db $F2, $01 ; [set2] option list with 2 options
-#_0AB8D5: db $0E, $0D ; option 1 [0D]: message 0E
-#_0AB8D7: db $21, $0F ; option 2 [0F]: message 21
+#_0AB8D5: db $0E, $0D ; option 1 [0E]: go to message 0D
+#_0AB8D7: db $21, $0F ; option 2 [21]: go to message 0F
 
 ;===================================================================================================
 
@@ -11088,7 +11088,7 @@ Message_02_0E_10:
 Message_02_0E_11:
 #_0AB906: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AB908: db $F3 ; [set2] wait for key and new line
-#_0AB909: db $E9, $00 ; [set2] go to message $00
+#_0AB909: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -11103,8 +11103,8 @@ Message_02_0E_12:
 #_0AB912: db $F1 ; [set2] clear message box
 #_0AB913: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB915: db $F2, $01 ; [set2] option list with 2 options
-#_0AB917: db $14, $13 ; option 1 [13]: message 14
-#_0AB919: db $06, $19 ; option 2 [19]: message 06
+#_0AB917: db $14, $13 ; option 1 [14]: go to message 13
+#_0AB919: db $06, $19 ; option 2 [06]: go to message 19
 
 ;===================================================================================================
 
@@ -11145,7 +11145,7 @@ Message_02_0E_16:
 
 Message_02_0E_17:
 #_0AB941: db $D4, $02, $14 ; [set2] go to message 14 if RNG, 02 TODO
-#_0AB944: db $E9, $18 ; [set2] go to message $18
+#_0AB944: db $E9, $18 ; [set2] go to message 18
 
 ;===================================================================================================
 
@@ -11169,7 +11169,7 @@ Message_02_0E_19:
 #_0AB958: db $F1 ; [set2] clear message box
 #_0AB959: db $EB, $ED ; [set2] prewritten text ED
 #_0AB95B: db $F3 ; [set2] wait for key and new line
-#_0AB95C: db $E9, $00 ; [set2] go to message $00
+#_0AB95C: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -11249,14 +11249,14 @@ Message_02_0E_22:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0E_23:
-#_0AB9A7: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0AB9A7: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AB9AA: db $EB, $E8 ; [set2] prewritten text E8
 #_0AB9AC: db $F3 ; [set2] wait for key and new line
 #_0AB9AD: db $F1 ; [set2] clear message box
 #_0AB9AE: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB9B0: db $F2, $01 ; [set2] option list with 2 options
-#_0AB9B2: db $08, $24 ; option 1 [24]: message 08
-#_0AB9B4: db $14, $3C ; option 2 [3C]: message 14
+#_0AB9B2: db $08, $24 ; option 1 [08]: go to message 24
+#_0AB9B4: db $14, $3C ; option 2 [14]: go to message 3C
 
 ;===================================================================================================
 
@@ -11271,8 +11271,8 @@ Message_02_0E_24:
 #_0AB9C1: db $F1 ; [set2] clear message box
 #_0AB9C2: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB9C4: db $F2, $01 ; [set2] option list with 2 options
-#_0AB9C6: db $28, $25 ; option 1 [25]: message 28
-#_0AB9C8: db $20, $29 ; option 2 [29]: message 20
+#_0AB9C6: db $28, $25 ; option 1 [28]: go to message 25
+#_0AB9C8: db $20, $29 ; option 2 [20]: go to message 29
 
 ;===================================================================================================
 
@@ -11296,8 +11296,8 @@ Message_02_0E_27:
 #_0AB9D7: db $F1 ; [set2] clear message box
 #_0AB9D8: db $EB, $C0 ; [set2] prewritten text C0
 #_0AB9DA: db $F2, $01 ; [set2] option list with 2 options
-#_0AB9DC: db $00, $03 ; option 1 [03]: message 00
-#_0AB9DE: db $0C, $28 ; option 2 [28]: message 0C
+#_0AB9DC: db $00, $03 ; option 1 [00]: go to message 03
+#_0AB9DE: db $0C, $28 ; option 2 [0C]: go to message 28
 
 ;===================================================================================================
 
@@ -11305,7 +11305,7 @@ Message_02_0E_28:
 #_0AB9E0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AB9E3: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AB9E6: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
-#_0AB9E9: db $E9, $36 ; [set2] go to message $36
+#_0AB9E9: db $E9, $36 ; [set2] go to message 36
 
 ;===================================================================================================
 
@@ -11313,13 +11313,13 @@ Message_02_0E_29:
 #_0AB9EB: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB9ED: db $D6, $01, $2A ; [set2] go to message 2A if RNG, 01 TODO
 #_0AB9F0: db $D4, $00, $2C ; [set2] go to message 2C if RNG, 00 TODO
-#_0AB9F3: db $E9, $0C ; [set2] go to message $0C
+#_0AB9F3: db $E9, $0C ; [set2] go to message 0C
 
 ;===================================================================================================
 
 Message_02_0E_2A:
 #_0AB9F5: db $D4, $00, $2B ; [set2] go to message 2B if RNG, 00 TODO
-#_0AB9F8: db $E9, $12 ; [set2] go to message $12
+#_0AB9F8: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
@@ -11339,7 +11339,7 @@ Message_02_0E_2B:
 ; «どうしますか?»
 Message_02_0E_2C:
 #_0ABA06: db $E8, $20 ; [set2] [COMMAND 48:20]
-#_0ABA08: db $EF, $2F ; [set2] YES/NO - go to message $2F if YES
+#_0ABA08: db $EF, $2F ; [set2] YES/NO - go to message 2F if YES
 #_0ABA0A: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABA0C: db $F3 ; [set2] wait for key and new line
 #_0ABA0D: db $F1 ; [set2] clear message box
@@ -11348,14 +11348,14 @@ Message_02_0E_2C:
 #_0ABA11: db $F1 ; [set2] clear message box
 #_0ABA12: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABA14: db $F2, $01 ; [set2] option list with 2 options
-#_0ABA16: db $0A, $2D ; option 1 [2D]: message 0A
-#_0ABA18: db $0B, $3A ; option 2 [3A]: message 0B
+#_0ABA16: db $0A, $2D ; option 1 [0A]: go to message 2D
+#_0ABA18: db $0B, $3A ; option 2 [0B]: go to message 3A
 
 ;===================================================================================================
 
 Message_02_0E_2D:
 #_0ABA1A: db $D4, $01, $2E ; [set2] go to message 2E if RNG, 01 TODO
-#_0ABA1D: db $E9, $0B ; [set2] go to message $0B
+#_0ABA1D: db $E9, $0B ; [set2] go to message 0B
 
 ;===================================================================================================
 
@@ -11387,8 +11387,8 @@ Message_02_0E_30:
 #_0ABA35: db $F1 ; [set2] clear message box
 #_0ABA36: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABA38: db $F2, $01 ; [set2] option list with 2 options
-#_0ABA3A: db $0F, $31 ; option 1 [31]: message 0F
-#_0ABA3C: db $0C, $34 ; option 2 [34]: message 0C
+#_0ABA3A: db $0F, $31 ; option 1 [0F]: go to message 31
+#_0ABA3C: db $0C, $34 ; option 2 [0C]: go to message 34
 
 ;===================================================================================================
 
@@ -11404,8 +11404,8 @@ Message_02_0E_31:
 #_0ABA48: db $F1 ; [set2] clear message box
 #_0ABA49: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABA4B: db $F2, $01 ; [set2] option list with 2 options
-#_0ABA4D: db $03, $32 ; option 1 [32]: message 03
-#_0ABA4F: db $1B, $33 ; option 2 [33]: message 1B
+#_0ABA4D: db $03, $32 ; option 1 [03]: go to message 32
+#_0ABA4F: db $1B, $33 ; option 2 [1B]: go to message 33
 
 ;===================================================================================================
 
@@ -11441,8 +11441,8 @@ Message_02_0E_34:
 #_0ABA76: db $F1 ; [set2] clear message box
 #_0ABA77: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABA79: db $F2, $01 ; [set2] option list with 2 options
-#_0ABA7B: db $0D, $35 ; option 1 [35]: message 0D
-#_0ABA7D: db $06, $39 ; option 2 [39]: message 06
+#_0ABA7B: db $0D, $35 ; option 1 [0D]: go to message 35
+#_0ABA7D: db $06, $39 ; option 2 [06]: go to message 39
 
 ;===================================================================================================
 
@@ -11454,7 +11454,7 @@ Message_02_0E_35:
 Message_02_0E_36:
 #_0ABA84: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0ABA86: db $F3 ; [set2] wait for key and new line
-#_0ABA87: db $E9, $84 ; [set2] go to message $84
+#_0ABA87: db $E9, $84 ; [set2] go to message 84
 
 ;===================================================================================================
 
@@ -11481,7 +11481,7 @@ Message_02_0E_39:
 #_0ABA9C: db $F3 ; [set2] wait for key and new line
 #_0ABA9D: db $F1 ; [set2] clear message box
 #_0ABA9E: db $D4, $00, $3A ; [set2] go to message 3A if RNG, 00 TODO
-#_0ABAA1: db $E9, $00 ; [set2] go to message $00
+#_0ABAA1: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -11537,20 +11537,20 @@ Message_02_0E_3F:
 
 Message_02_0E_40:
 #_0ABAD7: db $D4, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
-#_0ABADA: db $E9, $18 ; [set2] go to message $18
+#_0ABADA: db $E9, $18 ; [set2] go to message 18
 
 ;===================================================================================================
 
 ; «どうしますか?»
 Message_02_0E_41:
-#_0ABADC: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0ABADC: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0ABADF: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0ABAE1: db $F3 ; [set2] wait for key and new line
 #_0ABAE2: db $F1 ; [set2] clear message box
 #_0ABAE3: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABAE5: db $F2, $01 ; [set2] option list with 2 options
-#_0ABAE7: db $0C, $42 ; option 1 [42]: message 0C
-#_0ABAE9: db $0D, $48 ; option 2 [48]: message 0D
+#_0ABAE7: db $0C, $42 ; option 1 [0C]: go to message 42
+#_0ABAE9: db $0D, $48 ; option 2 [0D]: go to message 48
 
 ;===================================================================================================
 
@@ -11576,14 +11576,14 @@ Message_02_0E_43:
 #_0ABB03: db $F1 ; [set2] clear message box
 #_0ABB04: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABB06: db $F2, $01 ; [set2] option list with 2 options
-#_0ABB08: db $0D, $44 ; option 1 [44]: message 0D
-#_0ABB0A: db $06, $45 ; option 2 [45]: message 06
+#_0ABB08: db $0D, $44 ; option 1 [0D]: go to message 44
+#_0ABB0A: db $06, $45 ; option 2 [06]: go to message 45
 
 ;===================================================================================================
 
 Message_02_0E_44:
 #_0ABB0C: db $DB, $01, $38 ; [set2] [COMMAND 3B] go to message 38 if something 01 TODO
-#_0ABB0F: db $E9, $36 ; [set2] go to message $36
+#_0ABB0F: db $E9, $36 ; [set2] go to message 36
 
 ;===================================================================================================
 
@@ -11621,10 +11621,10 @@ Message_02_0E_48:
 #_0ABB29: db $D5, $01, $4A ; [set2] go to message 4A if RNG, 01 TODO
 #_0ABB2C: db $D4, $01, $09 ; [set2] go to message 09 if RNG, 01 TODO
 #_0ABB2F: db $E8, $1E ; [set2] [COMMAND 48:1E]
-#_0ABB31: db $EF, $49 ; [set2] YES/NO - go to message $49 if YES
+#_0ABB31: db $EF, $49 ; [set2] YES/NO - go to message 49 if YES
 #_0ABB33: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0ABB35: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0ABB37: db $EF, $2F ; [set2] YES/NO - go to message $2F if YES
+#_0ABB37: db $EF, $2F ; [set2] YES/NO - go to message 2F if YES
 #_0ABB39: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABB3B: db $F3 ; [set2] wait for key and new line
 #_0ABB3C: db $F1 ; [set2] clear message box
@@ -11664,18 +11664,18 @@ Message_02_0E_4A:
 Message_02_0E_4B:
 #_0ABB67: db $D2, $00 ; [set2] something to message 00 TODO
 #_0ABB69: db $E8, $22 ; [set2] [COMMAND 48:22]
-#_0ABB6B: db $EF, $4D ; [set2] YES/NO - go to message $4D if YES
+#_0ABB6B: db $EF, $4D ; [set2] YES/NO - go to message 4D if YES
 #_0ABB6D: db $D4, $00, $4C ; [set2] go to message 4C if RNG, 00 TODO
 #_0ABB70: db $E8, $25 ; [set2] [COMMAND 48:25]
 #_0ABB72: db $F1 ; [set2] clear message box
-#_0ABB73: db $E9, $4F ; [set2] go to message $4F
+#_0ABB73: db $E9, $4F ; [set2] go to message 4F
 
 ;===================================================================================================
 
 Message_02_0E_4C:
 #_0ABB75: db $E8, $26 ; [set2] [COMMAND 48:26]
 #_0ABB77: db $F1 ; [set2] clear message box
-#_0ABB78: db $E9, $4F ; [set2] go to message $4F
+#_0ABB78: db $E9, $4F ; [set2] go to message 4F
 
 ;===================================================================================================
 
@@ -11683,21 +11683,21 @@ Message_02_0E_4D:
 #_0ABB7A: db $D4, $00, $4E ; [set2] go to message 4E if RNG, 00 TODO
 #_0ABB7D: db $E8, $23 ; [set2] [COMMAND 48:23]
 #_0ABB7F: db $F1 ; [set2] clear message box
-#_0ABB80: db $E9, $4F ; [set2] go to message $4F
+#_0ABB80: db $E9, $4F ; [set2] go to message 4F
 
 ;===================================================================================================
 
 Message_02_0E_4E:
 #_0ABB82: db $E8, $24 ; [set2] [COMMAND 48:24]
 #_0ABB84: db $F1 ; [set2] clear message box
-#_0ABB85: db $E9, $4F ; [set2] go to message $4F
+#_0ABB85: db $E9, $4F ; [set2] go to message 4F
 
 ;===================================================================================================
 
 Message_02_0E_4F:
-#_0ABB87: db $FC, $E7, $50 ; [set2] test progress bit $E7 for message $50
-#_0ABB8A: db $FC, $E8, $51 ; [set2] test progress bit $E8 for message $51
-#_0ABB8D: db $FC, $E3, $52 ; [set2] test progress bit $E3 for message $52
+#_0ABB87: db $FC, $E7, $50 ; [set2] test progress bit E7 for message 50
+#_0ABB8A: db $FC, $E8, $51 ; [set2] test progress bit E8 for message 51
+#_0ABB8D: db $FC, $E3, $52 ; [set2] test progress bit E3 for message 52
 #_0ABB90: db $FF ; end of message
 
 ;===================================================================================================
@@ -11708,7 +11708,7 @@ Message_02_0E_50:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0E_51:
@@ -11745,8 +11745,8 @@ Message_02_0E_54:
 #_0ABBB4: db $F1 ; [set2] clear message box
 #_0ABBB5: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABBB7: db $F2, $01 ; [set2] option list with 2 options
-#_0ABBB9: db $0E, $55 ; option 1 [55]: message 0E
-#_0ABBBB: db $0F, $64 ; option 2 [64]: message 0F
+#_0ABBB9: db $0E, $55 ; option 1 [0E]: go to message 55
+#_0ABBBB: db $0F, $64 ; option 2 [0F]: go to message 64
 
 ;===================================================================================================
 
@@ -11788,19 +11788,19 @@ Message_02_0E_58:
 #_0ABBE1: db $F1 ; [set2] clear message box
 #_0ABBE2: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABBE4: db $F2, $01 ; [set2] option list with 2 options
-#_0ABBE6: db $21, $59 ; option 1 [59]: message 21
-#_0ABBE8: db $22, $5B ; option 2 [5B]: message 22
+#_0ABBE6: db $21, $59 ; option 1 [21]: go to message 59
+#_0ABBE8: db $22, $5B ; option 2 [22]: go to message 5B
 
 ;===================================================================================================
 
 Message_02_0E_59:
 #_0ABBEA: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0ABBED: db $D4, $00, $5A ; [set2] go to message 5A if RNG, 00 TODO
-#_0ABBF0: db $E9, $10 ; [set2] go to message $10
+#_0ABBF0: db $E9, $10 ; [set2] go to message 10
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0E_5A:
@@ -11834,7 +11834,7 @@ Message_02_0E_5B:
 ; «こうげき しますか?»
 Message_02_0E_5C:
 #_0ABC14: db $EB, $EA ; [set2] prewritten text EA
-#_0ABC16: db $EF, $5D ; [set2] YES/NO - go to message $5D if YES
+#_0ABC16: db $EF, $5D ; [set2] YES/NO - go to message 5D if YES
 #_0ABC18: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0ABC1A: db $F3 ; [set2] wait for key and new line
 #_0ABC1B: db $F1 ; [set2] clear message box
@@ -11852,8 +11852,8 @@ Message_02_0E_5D:
 ; «このまま おどりますか?»
 Message_02_0E_5E:
 #_0ABC23: db $EB, $EB ; [set2] prewritten text EB
-#_0ABC25: db $EF, $5F ; [set2] YES/NO - go to message $5F if YES
-#_0ABC27: db $E9, $2E ; [set2] go to message $2E
+#_0ABC25: db $EF, $5F ; [set2] YES/NO - go to message 5F if YES
+#_0ABC27: db $E9, $2E ; [set2] go to message 2E
 
 ;===================================================================================================
 
@@ -11866,7 +11866,7 @@ Message_02_0E_5F:
 #_0ABC2D: db $E1, $02 ; [set2] [COMMAND 41:02]
 #_0ABC2F: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0ABC31: db $F3 ; [set2] wait for key and new line
-#_0ABC32: db $E9, $84 ; [set2] go to message $84
+#_0ABC32: db $E9, $84 ; [set2] go to message 84
 
 ;===================================================================================================
 
@@ -11881,15 +11881,15 @@ Message_02_0E_60:
 #_0ABC3B: db $F1 ; [set2] clear message box
 #_0ABC3C: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABC3E: db $F2, $01 ; [set2] option list with 2 options
-#_0ABC40: db $11, $61 ; option 1 [61]: message 11
-#_0ABC42: db $12, $63 ; option 2 [63]: message 12
+#_0ABC40: db $11, $61 ; option 1 [11]: go to message 61
+#_0ABC42: db $12, $63 ; option 2 [12]: go to message 63
 
 ;===================================================================================================
 
 Message_02_0E_61:
 #_0ABC44: db $E6, $80 ; [set2] [COMMAND 46:80]
 #_0ABC46: db $D8, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
-#_0ABC49: db $E9, $7E ; [set2] go to message $7E
+#_0ABC49: db $E9, $7E ; [set2] go to message 7E
 
 ;===================================================================================================
 
@@ -11908,7 +11908,7 @@ Message_02_0E_63:
 
 Message_02_0E_64:
 #_0ABC56: db $D7, $01, $65 ; [set2] go to message 65 if RNG, 01 TODO
-#_0ABC59: db $E9, $1E ; [set2] go to message $1E
+#_0ABC59: db $E9, $1E ; [set2] go to message 1E
 
 ;===================================================================================================
 
@@ -11922,14 +11922,14 @@ Message_02_0E_65:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0E_66:
-#_0ABC61: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0ABC61: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0ABC64: db $EB, $E8 ; [set2] prewritten text E8
 #_0ABC66: db $F3 ; [set2] wait for key and new line
 #_0ABC67: db $F1 ; [set2] clear message box
 #_0ABC68: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABC6A: db $F2, $01 ; [set2] option list with 2 options
-#_0ABC6C: db $08, $67 ; option 1 [67]: message 08
-#_0ABC6E: db $14, $77 ; option 2 [77]: message 14
+#_0ABC6C: db $08, $67 ; option 1 [08]: go to message 67
+#_0ABC6E: db $14, $77 ; option 2 [14]: go to message 77
 
 ;===================================================================================================
 
@@ -11944,8 +11944,8 @@ Message_02_0E_67:
 #_0ABC7B: db $F1 ; [set2] clear message box
 #_0ABC7C: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABC7E: db $F2, $01 ; [set2] option list with 2 options
-#_0ABC80: db $28, $68 ; option 1 [68]: message 28
-#_0ABC82: db $20, $29 ; option 2 [29]: message 20
+#_0ABC80: db $28, $68 ; option 1 [28]: go to message 68
+#_0ABC82: db $20, $29 ; option 2 [20]: go to message 29
 
 ;===================================================================================================
 
@@ -11958,7 +11958,7 @@ Message_02_0E_68:
 Message_02_0E_69:
 #_0ABC89: db $EB, $EE ; [set2] prewritten text EE
 #_0ABC8B: db $F3 ; [set2] wait for key and new line
-#_0ABC8C: db $E9, $00 ; [set2] go to message $00
+#_0ABC8C: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -11973,8 +11973,8 @@ Message_02_0E_6A:
 #_0ABC95: db $F1 ; [set2] clear message box
 #_0ABC96: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABC98: db $F2, $01 ; [set2] option list with 2 options
-#_0ABC9A: db $14, $77 ; option 1 [77]: message 14
-#_0ABC9C: db $06, $6B ; option 2 [6B]: message 06
+#_0ABC9A: db $14, $77 ; option 1 [14]: go to message 77
+#_0ABC9C: db $06, $6B ; option 2 [06]: go to message 6B
 
 ;===================================================================================================
 
@@ -11991,8 +11991,8 @@ Message_02_0E_6C:
 #_0ABCA6: db $F1 ; [set2] clear message box
 #_0ABCA7: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABCA9: db $F2, $01 ; [set2] option list with 2 options
-#_0ABCAB: db $03, $6D ; option 1 [6D]: message 03
-#_0ABCAD: db $0B, $6E ; option 2 [6E]: message 0B
+#_0ABCAB: db $03, $6D ; option 1 [03]: go to message 6D
+#_0ABCAD: db $0B, $6E ; option 2 [0B]: go to message 6E
 
 ;===================================================================================================
 
@@ -12017,14 +12017,14 @@ Message_02_0E_6E:
 #_0ABCC4: db $F1 ; [set2] clear message box
 #_0ABCC5: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABCC7: db $F2, $01 ; [set2] option list with 2 options
-#_0ABCC9: db $1D, $6F ; option 1 [6F]: message 1D
-#_0ABCCB: db $28, $3A ; option 2 [3A]: message 28
+#_0ABCC9: db $1D, $6F ; option 1 [1D]: go to message 6F
+#_0ABCCB: db $28, $3A ; option 2 [28]: go to message 3A
 
 ;===================================================================================================
 
 Message_02_0E_6F:
 #_0ABCCD: db $D4, $00, $70 ; [set2] go to message 70 if RNG, 00 TODO
-#_0ABCD0: db $E9, $2E ; [set2] go to message $2E
+#_0ABCD0: db $E9, $2E ; [set2] go to message 2E
 
 ;===================================================================================================
 
@@ -12044,7 +12044,7 @@ Message_02_0E_71:
 #_0ABCDD: db $F1 ; [set2] clear message box
 #_0ABCDE: db $EB, $E8 ; [set2] prewritten text E8
 #_0ABCE0: db $F3 ; [set2] wait for key and new line
-#_0ABCE1: db $E9, $00 ; [set2] go to message $00
+#_0ABCE1: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -12059,8 +12059,8 @@ Message_02_0E_72:
 #_0ABCEA: db $F1 ; [set2] clear message box
 #_0ABCEB: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABCED: db $F2, $01 ; [set2] option list with 2 options
-#_0ABCEF: db $1D, $74 ; option 1 [74]: message 1D
-#_0ABCF1: db $28, $3A ; option 2 [3A]: message 28
+#_0ABCEF: db $1D, $74 ; option 1 [1D]: go to message 74
+#_0ABCF1: db $28, $3A ; option 2 [28]: go to message 3A
 
 ;===================================================================================================
 
@@ -12073,7 +12073,7 @@ Message_02_0E_73:
 
 Message_02_0E_74:
 #_0ABCF9: db $D4, $00, $0B ; [set2] go to message 0B if RNG, 00 TODO
-#_0ABCFC: db $E9, $2E ; [set2] go to message $2E
+#_0ABCFC: db $E9, $2E ; [set2] go to message 2E
 
 ;===================================================================================================
 
@@ -12088,8 +12088,8 @@ Message_02_0E_75:
 #_0ABD05: db $F1 ; [set2] clear message box
 #_0ABD06: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABD08: db $F2, $01 ; [set2] option list with 2 options
-#_0ABD0A: db $0F, $76 ; option 1 [76]: message 0F
-#_0ABD0C: db $0C, $34 ; option 2 [34]: message 0C
+#_0ABD0A: db $0F, $76 ; option 1 [0F]: go to message 76
+#_0ABD0C: db $0C, $34 ; option 2 [0C]: go to message 34
 
 ;===================================================================================================
 
@@ -12134,8 +12134,8 @@ Message_02_0E_7A:
 #_0ABD35: db $F1 ; [set2] clear message box
 #_0ABD36: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABD38: db $F2, $01 ; [set2] option list with 2 options
-#_0ABD3A: db $0A, $7B ; option 1 [7B]: message 0A
-#_0ABD3C: db $28, $3A ; option 2 [3A]: message 28
+#_0ABD3A: db $0A, $7B ; option 1 [0A]: go to message 7B
+#_0ABD3C: db $28, $3A ; option 2 [28]: go to message 3A
 
 ;===================================================================================================
 
@@ -12151,7 +12151,7 @@ Message_02_0E_7B:
 ; «>[DEMONX]に わらわれた»
 ; «どうしますか?»
 Message_02_0E_7C:
-#_0ABD49: db $FC, $E9, $00 ; [set2] test progress bit $E9 for message $00
+#_0ABD49: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0ABD4C: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0ABD4E: db $F3 ; [set2] wait for key and new line
 #_0ABD4F: db $F1 ; [set2] clear message box
@@ -12160,19 +12160,19 @@ Message_02_0E_7C:
 #_0ABD53: db $F1 ; [set2] clear message box
 #_0ABD54: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABD56: db $F2, $01 ; [set2] option list with 2 options
-#_0ABD58: db $13, $7D ; option 1 [7D]: message 13
-#_0ABD5A: db $06, $80 ; option 2 [80]: message 06
+#_0ABD58: db $13, $7D ; option 1 [13]: go to message 7D
+#_0ABD5A: db $06, $80 ; option 2 [06]: go to message 80
 
 ;===================================================================================================
 
 Message_02_0E_7D:
 #_0ABD5C: db $D4, $00, $7F ; [set2] go to message 7F if RNG, 00 TODO
 #_0ABD5F: db $D7, $01, $57 ; [set2] go to message 57 if RNG, 01 TODO
-#_0ABD62: db $E9, $7E ; [set2] go to message $7E
+#_0ABD62: db $E9, $7E ; [set2] go to message 7E
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0E_7E:
@@ -12209,14 +12209,14 @@ Message_02_0E_81:
 #_0ABD7F: db $F1 ; [set2] clear message box
 #_0ABD80: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABD82: db $F2, $01 ; [set2] option list with 2 options
-#_0ABD84: db $00, $82 ; option 1 [82]: message 00
-#_0ABD86: db $0C, $83 ; option 2 [83]: message 0C
+#_0ABD84: db $00, $82 ; option 1 [00]: go to message 82
+#_0ABD86: db $0C, $83 ; option 2 [0C]: go to message 83
 
 ;===================================================================================================
 
 Message_02_0E_82:
 #_0ABD88: db $D4, $00, $54 ; [set2] go to message 54 if RNG, 00 TODO
-#_0ABD8B: db $E9, $03 ; [set2] go to message $03
+#_0ABD8B: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -12225,7 +12225,7 @@ Message_02_0E_83:
 #_0ABD90: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0ABD92: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0ABD95: db $DB, $01, $37 ; [set2] [COMMAND 3B] go to message 37 if something 01 TODO
-#_0ABD98: db $E9, $36 ; [set2] go to message $36
+#_0ABD98: db $E9, $36 ; [set2] go to message 36
 
 ;===================================================================================================
 
@@ -12277,8 +12277,8 @@ Message_02_0F_01:
 #_0ABDDA: db $F1 ; [set2] clear message box
 #_0ABDDB: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABDDD: db $F2, $01 ; [set2] option list with 2 options
-#_0ABDDF: db $02, $02 ; option 1 [02]: message 02
-#_0ABDE1: db $0D, $06 ; option 2 [06]: message 0D
+#_0ABDDF: db $02, $02 ; option 1 [02]: go to message 02
+#_0ABDE1: db $0D, $06 ; option 2 [0D]: go to message 06
 
 ;===================================================================================================
 
@@ -12286,7 +12286,7 @@ Message_02_0F_02:
 #_0ABDE3: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0ABDE5: db $D5, $02, $05 ; [set2] go to message 05 if RNG, 02 TODO
 #_0ABDE8: db $D4, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
-#_0ABDEB: db $E9, $03 ; [set2] go to message $03
+#_0ABDEB: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -12309,7 +12309,7 @@ Message_02_0F_06:
 #_0ABDF6: db $D7, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0ABDF9: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0ABDFB: db $D4, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
-#_0ABDFE: db $E9, $07 ; [set2] go to message $07
+#_0ABDFE: db $E9, $07 ; [set2] go to message 07
 
 ;===================================================================================================
 
@@ -12331,15 +12331,15 @@ Message_02_0F_08:
 #_0ABE0D: db $F1 ; [set2] clear message box
 #_0ABE0E: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABE10: db $F2, $01 ; [set2] option list with 2 options
-#_0ABE12: db $04, $09 ; option 1 [09]: message 04
-#_0ABE14: db $15, $0E ; option 2 [0E]: message 15
+#_0ABE12: db $04, $09 ; option 1 [04]: go to message 09
+#_0ABE14: db $15, $0E ; option 2 [15]: go to message 0E
 
 ;===================================================================================================
 
 Message_02_0F_09:
 #_0ABE16: db $D5, $02, $0A ; [set2] go to message 0A if RNG, 02 TODO
 #_0ABE19: db $D4, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
-#_0ABE1C: db $E9, $03 ; [set2] go to message $03
+#_0ABE1C: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -12355,14 +12355,14 @@ Message_02_0F_0A:
 #_0ABE2E: db $F1 ; [set2] clear message box
 #_0ABE2F: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABE31: db $F2, $01 ; [set2] option list with 2 options
-#_0ABE33: db $16, $0B ; option 1 [0B]: message 16
-#_0ABE35: db $03, $0C ; option 2 [0C]: message 03
+#_0ABE33: db $16, $0B ; option 1 [16]: go to message 0B
+#_0ABE35: db $03, $0C ; option 2 [03]: go to message 0C
 
 ;===================================================================================================
 
 Message_02_0F_0B:
 #_0ABE37: db $D5, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
-#_0ABE3A: db $E9, $07 ; [set2] go to message $07
+#_0ABE3A: db $E9, $07 ; [set2] go to message 07
 
 ;===================================================================================================
 
@@ -12382,7 +12382,7 @@ Message_02_0F_0D:
 
 Message_02_0F_0E:
 #_0ABE4A: db $D8, $02, $10 ; [set2] go to message 10 if RNG, 02 TODO
-#_0ABE4D: db $E9, $0F ; [set2] go to message $0F
+#_0ABE4D: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
@@ -12402,13 +12402,13 @@ Message_02_0F_0F:
 Message_02_0F_10:
 #_0ABE5B: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0ABE5D: db $F3 ; [set2] wait for key and new line
-#_0ABE5E: db $E9, $00 ; [set2] go to message $00
+#_0ABE5E: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0F_11:
 #_0ABE60: db $D5, $01, $12 ; [set2] go to message 12 if RNG, 01 TODO
-#_0ABE63: db $E9, $04 ; [set2] go to message $04
+#_0ABE63: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -12430,8 +12430,8 @@ Message_02_0F_13:
 #_0ABE71: db $F1 ; [set2] clear message box
 #_0ABE72: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABE74: db $F2, $01 ; [set2] option list with 2 options
-#_0ABE76: db $14, $14 ; option 1 [14]: message 14
-#_0ABE78: db $06, $1B ; option 2 [1B]: message 06
+#_0ABE76: db $14, $14 ; option 1 [14]: go to message 14
+#_0ABE78: db $06, $1B ; option 2 [06]: go to message 1B
 
 ;===================================================================================================
 
@@ -12487,7 +12487,7 @@ Message_02_0F_19:
 
 Message_02_0F_1A:
 #_0ABEA9: db $D4, $02, $15 ; [set2] go to message 15 if RNG, 02 TODO
-#_0ABEAC: db $E9, $17 ; [set2] go to message $17
+#_0ABEAC: db $E9, $17 ; [set2] go to message 17
 
 ;===================================================================================================
 
@@ -12509,8 +12509,8 @@ Message_02_0F_1C:
 #_0ABEBF: db $F1 ; [set2] clear message box
 #_0ABEC0: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABEC2: db $F2, $01 ; [set2] option list with 2 options
-#_0ABEC4: db $1D, $1D ; option 1 [1D]: message 1D
-#_0ABEC6: db $28, $22 ; option 2 [22]: message 28
+#_0ABEC4: db $1D, $1D ; option 1 [1D]: go to message 1D
+#_0ABEC6: db $28, $22 ; option 2 [28]: go to message 22
 
 ;===================================================================================================
 
@@ -12526,8 +12526,8 @@ Message_02_0F_1D:
 #_0ABED2: db $F1 ; [set2] clear message box
 #_0ABED3: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABED5: db $F2, $01 ; [set2] option list with 2 options
-#_0ABED7: db $0D, $1E ; option 1 [1E]: message 0D
-#_0ABED9: db $06, $20 ; option 2 [20]: message 06
+#_0ABED7: db $0D, $1E ; option 1 [0D]: go to message 1E
+#_0ABED9: db $06, $20 ; option 2 [06]: go to message 20
 
 ;===================================================================================================
 
@@ -12543,7 +12543,7 @@ Message_02_0F_1F:
 #_0ABEE4: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0ABEE6: db $F3 ; [set2] wait for key and new line
 #_0ABEE7: db $F1 ; [set2] clear message box
-#_0ABEE8: db $E9, $12 ; [set2] go to message $12
+#_0ABEE8: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
@@ -12551,7 +12551,7 @@ Message_02_0F_20:
 #_0ABEEA: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0ABEEC: db $F3 ; [set2] wait for key and new line
 #_0ABEED: db $E6, $FF ; [set2] [COMMAND 46:FF]
-#_0ABEEF: db $E9, $00 ; [set2] go to message $00
+#_0ABEEF: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -12594,8 +12594,8 @@ Message_02_0F_24:
 #_0ABF11: db $F1 ; [set2] clear message box
 #_0ABF12: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABF14: db $F2, $01 ; [set2] option list with 2 options
-#_0ABF16: db $1B, $25 ; option 1 [25]: message 1B
-#_0ABF18: db $04, $26 ; option 2 [26]: message 04
+#_0ABF16: db $1B, $25 ; option 1 [1B]: go to message 25
+#_0ABF18: db $04, $26 ; option 2 [04]: go to message 26
 
 ;===================================================================================================
 
@@ -12644,7 +12644,7 @@ Message_02_0F_2A:
 
 Message_02_0F_2B:
 #_0ABF48: db $DA, $01, $33 ; [set2] ext command 01: go to message 33 if MC INT = 0
-#_0ABF4B: db $E9, $19 ; [set2] go to message $19
+#_0ABF4B: db $E9, $19 ; [set2] go to message 19
 
 ;===================================================================================================
 
@@ -12659,27 +12659,27 @@ Message_02_0F_2C:
 #_0ABF54: db $F1 ; [set2] clear message box
 #_0ABF55: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABF57: db $F2, $01 ; [set2] option list with 2 options
-#_0ABF59: db $14, $2D ; option 1 [2D]: message 14
-#_0ABF5B: db $0D, $2E ; option 2 [2E]: message 0D
+#_0ABF59: db $14, $2D ; option 1 [14]: go to message 2D
+#_0ABF5B: db $0D, $2E ; option 2 [0D]: go to message 2E
 
 ;===================================================================================================
 
 Message_02_0F_2D:
 #_0ABF5D: db $D4, $01, $0D ; [set2] go to message 0D if RNG, 01 TODO
-#_0ABF60: db $E9, $14 ; [set2] go to message $14
+#_0ABF60: db $E9, $14 ; [set2] go to message 14
 
 ;===================================================================================================
 
 Message_02_0F_2E:
 #_0ABF62: db $D5, $02, $32 ; [set2] go to message 32 if RNG, 02 TODO
 #_0ABF65: db $D4, $00, $2F ; [set2] go to message 2F if RNG, 00 TODO
-#_0ABF68: db $E9, $13 ; [set2] go to message $13
+#_0ABF68: db $E9, $13 ; [set2] go to message 13
 
 ;===================================================================================================
 
 Message_02_0F_2F:
 #_0ABF6A: db $E8, $1E ; [set2] [COMMAND 48:1E]
-#_0ABF6C: db $EF, $30 ; [set2] YES/NO - go to message $30 if YES
+#_0ABF6C: db $EF, $30 ; [set2] YES/NO - go to message 30 if YES
 #_0ABF6E: db $D4, $00, $21 ; [set2] go to message 21 if RNG, 00 TODO
 #_0ABF71: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0ABF73: db $F3 ; [set2] wait for key and new line
@@ -12693,7 +12693,7 @@ Message_02_0F_30:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_0F_31:
@@ -12714,7 +12714,7 @@ Message_02_0F_32:
 #_0ABF8C: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
 #_0ABF8F: db $D4, $00, $05 ; [set2] go to message 05 if RNG, 00 TODO
 #_0ABF92: db $DA, $01, $33 ; [set2] ext command 01: go to message 33 if MC INT = 0
-#_0ABF95: db $E9, $19 ; [set2] go to message $19
+#_0ABF95: db $E9, $19 ; [set2] go to message 19
 
 ;===================================================================================================
 
@@ -12742,8 +12742,8 @@ Message_02_0F_35:
 #_0ABFA8: db $F1 ; [set2] clear message box
 #_0ABFA9: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABFAB: db $F2, $01 ; [set2] option list with 2 options
-#_0ABFAD: db $04, $2E ; option 1 [2E]: message 04
-#_0ABFAF: db $15, $36 ; option 2 [36]: message 15
+#_0ABFAD: db $04, $2E ; option 1 [04]: go to message 2E
+#_0ABFAF: db $15, $36 ; option 2 [15]: go to message 36
 
 ;===================================================================================================
 
@@ -12772,8 +12772,8 @@ Message_02_0F_37:
 #_0ABFC7: db $F1 ; [set2] clear message box
 #_0ABFC8: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABFCA: db $F2, $01 ; [set2] option list with 2 options
-#_0ABFCC: db $0F, $2E ; option 1 [2E]: message 0F
-#_0ABFCE: db $20, $38 ; option 2 [38]: message 20
+#_0ABFCC: db $0F, $2E ; option 1 [0F]: go to message 2E
+#_0ABFCE: db $20, $38 ; option 2 [20]: go to message 38
 
 ;===================================================================================================
 
@@ -12781,8 +12781,8 @@ Message_02_0F_38:
 #_0ABFD0: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0ABFD3: db $D4, $01, $3A ; [set2] go to message 3A if RNG, 01 TODO
 #_0ABFD6: db $E8, $20 ; [set2] [COMMAND 48:20]
-#_0ABFD8: db $EF, $39 ; [set2] YES/NO - go to message $39 if YES
-#_0ABFDA: db $E9, $1C ; [set2] go to message $1C
+#_0ABFD8: db $EF, $39 ; [set2] YES/NO - go to message 39 if YES
+#_0ABFDA: db $E9, $1C ; [set2] go to message 1C
 
 ;===================================================================================================
 
@@ -12802,21 +12802,21 @@ Message_02_0F_3A:
 #_0ABFE8: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0ABFEA: db $EB, $C0 ; [set2] prewritten text C0
 #_0ABFEC: db $F2, $01 ; [set2] option list with 2 options
-#_0ABFEE: db $15, $3B ; option 1 [3B]: message 15
-#_0ABFF0: db $0F, $24 ; option 2 [24]: message 0F
+#_0ABFEE: db $15, $3B ; option 1 [15]: go to message 3B
+#_0ABFF0: db $0F, $24 ; option 2 [0F]: go to message 24
 
 ;===================================================================================================
 
 Message_02_0F_3B:
 #_0ABFF2: db $D8, $02, $10 ; [set2] go to message 10 if RNG, 02 TODO
-#_0ABFF5: db $E9, $0F ; [set2] go to message $0F
+#_0ABFF5: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
 Message_02_0F_3C:
 #_0ABFF7: db $E8, $20 ; [set2] [COMMAND 48:20]
-#_0ABFF9: db $EF, $3D ; [set2] YES/NO - go to message $3D if YES
-#_0ABFFB: db $E9, $2A ; [set2] go to message $2A
+#_0ABFF9: db $EF, $3D ; [set2] YES/NO - go to message 3D if YES
+#_0ABFFB: db $E9, $2A ; [set2] go to message 2A
 
 ;===================================================================================================
 
@@ -12844,8 +12844,8 @@ Message_02_0F_3F:
 #_0AC00F: db $F1 ; [set2] clear message box
 #_0AC010: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC012: db $F2, $01 ; [set2] option list with 2 options
-#_0AC014: db $0A, $40 ; option 1 [40]: message 0A
-#_0AC016: db $0B, $44 ; option 2 [44]: message 0B
+#_0AC014: db $0A, $40 ; option 1 [0A]: go to message 40
+#_0AC016: db $0B, $44 ; option 2 [0B]: go to message 44
 
 ;===================================================================================================
 
@@ -12865,7 +12865,7 @@ Message_02_0F_41:
 
 Message_02_0F_42:
 #_0AC028: db $D4, $00, $43 ; [set2] go to message 43 if RNG, 00 TODO
-#_0AC02B: db $E9, $21 ; [set2] go to message $21
+#_0AC02B: db $E9, $21 ; [set2] go to message 21
 
 ;===================================================================================================
 
@@ -12904,8 +12904,8 @@ Message_02_0F_46:
 #_0AC047: db $F1 ; [set2] clear message box
 #_0AC048: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC04A: db $F2, $01 ; [set2] option list with 2 options
-#_0AC04C: db $04, $47 ; option 1 [47]: message 04
-#_0AC04E: db $15, $4E ; option 2 [4E]: message 15
+#_0AC04C: db $04, $47 ; option 1 [04]: go to message 47
+#_0AC04E: db $15, $4E ; option 2 [15]: go to message 4E
 
 ;===================================================================================================
 
@@ -12923,8 +12923,8 @@ Message_02_0F_47:
 #_0AC05F: db $F1 ; [set2] clear message box
 #_0AC060: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC062: db $F2, $01 ; [set2] option list with 2 options
-#_0AC064: db $14, $48 ; option 1 [48]: message 14
-#_0AC066: db $06, $2A ; option 2 [2A]: message 06
+#_0AC064: db $14, $48 ; option 1 [14]: go to message 48
+#_0AC066: db $06, $2A ; option 2 [06]: go to message 2A
 
 ;===================================================================================================
 
@@ -12948,8 +12948,8 @@ Message_02_0F_49:
 #_0AC07A: db $F1 ; [set2] clear message box
 #_0AC07B: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC07D: db $F2, $01 ; [set2] option list with 2 options
-#_0AC07F: db $10, $4A ; option 1 [4A]: message 10
-#_0AC081: db $1B, $4C ; option 2 [4C]: message 1B
+#_0AC07F: db $10, $4A ; option 1 [10]: go to message 4A
+#_0AC081: db $1B, $4C ; option 2 [1B]: go to message 4C
 
 ;===================================================================================================
 
@@ -12967,7 +12967,7 @@ Message_02_0F_4A:
 Message_02_0F_4B:
 #_0AC08D: db $EB, $E5 ; [set2] prewritten text E5
 #_0AC08F: db $F3 ; [set2] wait for key and new line
-#_0AC090: db $E9, $00 ; [set2] go to message $00
+#_0AC090: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -13000,8 +13000,8 @@ Message_02_0F_4E:
 #_0AC0AF: db $F1 ; [set2] clear message box
 #_0AC0B0: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC0B2: db $F2, $01 ; [set2] option list with 2 options
-#_0AC0B4: db $02, $05 ; option 1 [05]: message 02
-#_0AC0B6: db $1B, $4F ; option 2 [4F]: message 1B
+#_0AC0B4: db $02, $05 ; option 1 [02]: go to message 05
+#_0AC0B6: db $1B, $4F ; option 2 [1B]: go to message 4F
 
 ;===================================================================================================
 
@@ -13021,8 +13021,8 @@ Message_02_0F_50:
 #_0AC0C4: db $F1 ; [set2] clear message box
 #_0AC0C5: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC0C7: db $F2, $01 ; [set2] option list with 2 options
-#_0AC0C9: db $0D, $51 ; option 1 [51]: message 0D
-#_0AC0CB: db $10, $5E ; option 2 [5E]: message 10
+#_0AC0C9: db $0D, $51 ; option 1 [0D]: go to message 51
+#_0AC0CB: db $10, $5E ; option 2 [10]: go to message 5E
 
 ;===================================================================================================
 
@@ -13039,8 +13039,8 @@ Message_02_0F_51:
 #_0AC0D9: db $F1 ; [set2] clear message box
 #_0AC0DA: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC0DC: db $F2, $01 ; [set2] option list with 2 options
-#_0AC0DE: db $06, $52 ; option 1 [52]: message 06
-#_0AC0E0: db $00, $57 ; option 2 [57]: message 00
+#_0AC0DE: db $06, $52 ; option 1 [06]: go to message 52
+#_0AC0E0: db $00, $57 ; option 2 [00]: go to message 57
 
 ;===================================================================================================
 
@@ -13064,8 +13064,8 @@ Message_02_0F_53:
 #_0AC0F4: db $F1 ; [set2] clear message box
 #_0AC0F5: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC0F7: db $F2, $01 ; [set2] option list with 2 options
-#_0AC0F9: db $20, $54 ; option 1 [54]: message 20
-#_0AC0FB: db $12, $56 ; option 2 [56]: message 12
+#_0AC0F9: db $20, $54 ; option 1 [20]: go to message 54
+#_0AC0FB: db $12, $56 ; option 2 [12]: go to message 56
 
 ;===================================================================================================
 
@@ -13073,7 +13073,7 @@ Message_02_0F_53:
 Message_02_0F_54:
 #_0AC0FD: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AC100: db $E8, $20 ; [set2] [COMMAND 48:20]
-#_0AC102: db $EF, $55 ; [set2] YES/NO - go to message $55 if YES
+#_0AC102: db $EF, $55 ; [set2] YES/NO - go to message 55 if YES
 #_0AC104: db $F1 ; [set2] clear message box
 #_0AC105: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AC107: db $F3 ; [set2] wait for key and new line
@@ -13099,7 +13099,7 @@ Message_02_0F_56:
 
 Message_02_0F_57:
 #_0AC11B: db $D4, $01, $58 ; [set2] go to message 58 if RNG, 01 TODO
-#_0AC11E: db $E9, $2A ; [set2] go to message $2A
+#_0AC11E: db $E9, $2A ; [set2] go to message 2A
 
 ;===================================================================================================
 
@@ -13114,8 +13114,8 @@ Message_02_0F_58:
 #_0AC127: db $F1 ; [set2] clear message box
 #_0AC128: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC12A: db $F2, $01 ; [set2] option list with 2 options
-#_0AC12C: db $1C, $59 ; option 1 [59]: message 1C
-#_0AC12E: db $21, $5A ; option 2 [5A]: message 21
+#_0AC12C: db $1C, $59 ; option 1 [1C]: go to message 59
+#_0AC12E: db $21, $5A ; option 2 [21]: go to message 5A
 
 ;===================================================================================================
 
@@ -13138,7 +13138,7 @@ Message_02_0F_5A:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_0F_5B:
@@ -13158,7 +13158,7 @@ Message_02_0F_5B:
 Message_02_0F_5C:
 #_0AC157: db $E8, $17 ; [set2] [COMMAND 48:17]
 #_0AC159: db $F3 ; [set2] wait for key and new line
-#_0AC15A: db $E9, $00 ; [set2] go to message $00
+#_0AC15A: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -13186,7 +13186,7 @@ Message_02_0F_5E:
 Message_02_0F_5F:
 #_0AC16F: db $EB, $E5 ; [set2] prewritten text E5
 #_0AC171: db $F3 ; [set2] wait for key and new line
-#_0AC172: db $E9, $00 ; [set2] go to message $00
+#_0AC172: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -13201,8 +13201,8 @@ Message_02_0F_60:
 #_0AC17B: db $F1 ; [set2] clear message box
 #_0AC17C: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC17E: db $F2, $01 ; [set2] option list with 2 options
-#_0AC180: db $04, $61 ; option 1 [61]: message 04
-#_0AC182: db $14, $6B ; option 2 [6B]: message 14
+#_0AC180: db $04, $61 ; option 1 [04]: go to message 61
+#_0AC182: db $14, $6B ; option 2 [14]: go to message 6B
 
 ;===================================================================================================
 
@@ -13220,8 +13220,8 @@ Message_02_0F_61:
 #_0AC193: db $F1 ; [set2] clear message box
 #_0AC194: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC196: db $F2, $01 ; [set2] option list with 2 options
-#_0AC198: db $05, $62 ; option 1 [62]: message 05
-#_0AC19A: db $02, $64 ; option 2 [64]: message 02
+#_0AC198: db $05, $62 ; option 1 [05]: go to message 62
+#_0AC19A: db $02, $64 ; option 2 [02]: go to message 64
 
 ;===================================================================================================
 
@@ -13237,13 +13237,13 @@ Message_02_0F_62:
 Message_02_0F_63:
 #_0AC1A7: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AC1A9: db $F3 ; [set2] wait for key and new line
-#_0AC1AA: db $E9, $00 ; [set2] go to message $00
+#_0AC1AA: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_0F_64:
 #_0AC1AC: db $D4, $02, $65 ; [set2] go to message 65 if RNG, 02 TODO
-#_0AC1AF: db $E9, $05 ; [set2] go to message $05
+#_0AC1AF: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
@@ -13266,8 +13266,8 @@ Message_02_0F_66:
 #_0AC1C0: db $F1 ; [set2] clear message box
 #_0AC1C1: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC1C3: db $F2, $01 ; [set2] option list with 2 options
-#_0AC1C5: db $05, $67 ; option 1 [67]: message 05
-#_0AC1C7: db $02, $05 ; option 2 [05]: message 02
+#_0AC1C5: db $05, $67 ; option 1 [05]: go to message 67
+#_0AC1C7: db $02, $05 ; option 2 [02]: go to message 05
 
 ;===================================================================================================
 
@@ -13292,8 +13292,8 @@ Message_02_0F_68:
 #_0AC1D9: db $F1 ; [set2] clear message box
 #_0AC1DA: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC1DC: db $F2, $01 ; [set2] option list with 2 options
-#_0AC1DE: db $0D, $69 ; option 1 [69]: message 0D
-#_0AC1E0: db $06, $6A ; option 2 [6A]: message 06
+#_0AC1DE: db $0D, $69 ; option 1 [0D]: go to message 69
+#_0AC1E0: db $06, $6A ; option 2 [06]: go to message 6A
 
 ;===================================================================================================
 
@@ -13316,7 +13316,7 @@ Message_02_0F_6A:
 Message_02_0F_6B:
 #_0AC1F3: db $D4, $00, $6C ; [set2] go to message 6C if RNG, 00 TODO
 #_0AC1F6: db $D4, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
-#_0AC1F9: db $E9, $17 ; [set2] go to message $17
+#_0AC1F9: db $E9, $17 ; [set2] go to message 17
 
 ;===================================================================================================
 
@@ -13333,10 +13333,10 @@ Message_02_10_00:
 #_0AC204: db $F1 ; [set2] clear message box
 #_0AC205: db $EB, $D7 ; [set2] prewritten text D7
 #_0AC207: db $F2, $03 ; [set2] option list with 4 options
-#_0AC209: db $2B, $01 ; option 1 [01]: message 2B
-#_0AC20B: db $2C, $19 ; option 2 [19]: message 2C
-#_0AC20D: db $2D, $1E ; option 3 [1E]: message 2D
-#_0AC20F: db $2E, $22 ; option 4 [22]: message 2E
+#_0AC209: db $2B, $01 ; option 1 [2B]: go to message 01
+#_0AC20B: db $2C, $19 ; option 2 [2C]: go to message 19
+#_0AC20D: db $2D, $1E ; option 3 [2D]: go to message 1E
+#_0AC20F: db $2E, $22 ; option 4 [2E]: go to message 22
 
 ;===================================================================================================
 
@@ -13350,7 +13350,7 @@ Message_02_10_02:
 #_0AC214: db $E0 ; [set2] [COMMAND 40]
 #_0AC215: db $E8, $3A ; [set2] [COMMAND 48:3A]
 #_0AC217: db $F3 ; [set2] wait for key and new line
-#_0AC218: db $E9, $05 ; [set2] go to message $05
+#_0AC218: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
@@ -13359,7 +13359,7 @@ Message_02_10_03:
 #_0AC21C: db $E0 ; [set2] [COMMAND 40]
 #_0AC21D: db $E8, $3B ; [set2] [COMMAND 48:3B]
 #_0AC21F: db $F3 ; [set2] wait for key and new line
-#_0AC220: db $E9, $05 ; [set2] go to message $05
+#_0AC220: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
@@ -13367,22 +13367,22 @@ Message_02_10_04:
 #_0AC222: db $E0 ; [set2] [COMMAND 40]
 #_0AC223: db $E8, $3C ; [set2] [COMMAND 48:3C]
 #_0AC225: db $F3 ; [set2] wait for key and new line
-#_0AC226: db $E9, $05 ; [set2] go to message $05
+#_0AC226: db $E9, $05 ; [set2] go to message 05
 
 ;===================================================================================================
 
-; «>[￥GIVEME] を あたえますか?»
+; «>[GIVEME] を あたえますか?»
 Message_02_10_05:
 #_0AC228: db $F1 ; [set2] clear message box
 #_0AC229: db $EB, $D6 ; [set2] prewritten text D6
-#_0AC22B: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
+#_0AC22B: db $EF, $0F ; [set2] YES/NO - go to message 0F if YES
 #_0AC22D: db $D5, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AC230: db $D6, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AC233: db $D4, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
 #_0AC236: db $E8, $3E ; [set2] [COMMAND 48:3E]
 #_0AC238: db $F3 ; [set2] wait for key and new line
 #_0AC239: db $F1 ; [set2] clear message box
-#_0AC23A: db $E9, $04 ; [set2] go to message $04
+#_0AC23A: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -13391,14 +13391,14 @@ Message_02_10_06:
 #_0AC23E: db $F3 ; [set2] wait for key and new line
 #_0AC23F: db $F1 ; [set2] clear message box
 #_0AC240: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
-#_0AC243: db $E9, $08 ; [set2] go to message $08
+#_0AC243: db $E9, $08 ; [set2] go to message 08
 
 ;===================================================================================================
 
 Message_02_10_07:
 #_0AC245: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0AC247: db $F3 ; [set2] wait for key and new line
-#_0AC248: db $E9, $23 ; [set2] go to message $23
+#_0AC248: db $E9, $23 ; [set2] go to message 23
 
 ;===================================================================================================
 
@@ -13410,15 +13410,15 @@ Message_02_10_08:
 #_0AC24D: db $F1 ; [set2] clear message box
 #_0AC24E: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC250: db $F2, $01 ; [set2] option list with 2 options
-#_0AC252: db $03, $09 ; option 1 [09]: message 03
-#_0AC254: db $28, $0D ; option 2 [0D]: message 28
+#_0AC252: db $03, $09 ; option 1 [03]: go to message 09
+#_0AC254: db $28, $0D ; option 2 [28]: go to message 0D
 
 ;===================================================================================================
 
 Message_02_10_09:
 #_0AC256: db $D4, $02, $0C ; [set2] go to message 0C if RNG, 02 TODO
 #_0AC259: db $DB, $01, $0B ; [set2] [COMMAND 3B] go to message 0B if something 01 TODO
-#_0AC25C: db $E9, $0A ; [set2] go to message $0A
+#_0AC25C: db $E9, $0A ; [set2] go to message 0A
 
 ;===================================================================================================
 
@@ -13430,21 +13430,21 @@ Message_02_10_0A:
 #_0AC268: db $58, $34 ; った
 #_0AC26A: db $F3 ; [set2] wait for key and new line
 #_0AC26B: db $E5, $01 ; [set2] [COMMAND 45:01]
-#_0AC26D: db $FC, $E3, $01 ; [set2] test progress bit $E3 for message $01
-#_0AC270: db $E9, $00 ; [set2] go to message $00
+#_0AC26D: db $FC, $E3, $01 ; [set2] test progress bit E3 for message 01
+#_0AC270: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_10_0B:
 #_0AC272: db $D6, $02, $0C ; [set2] go to message 0C if RNG, 02 TODO
-#_0AC275: db $E9, $0A ; [set2] go to message $0A
+#_0AC275: db $E9, $0A ; [set2] go to message 0A
 
 ;===================================================================================================
 
 Message_02_10_0C:
 #_0AC277: db $E8, $32 ; [set2] [COMMAND 48:32]
 #_0AC279: db $F3 ; [set2] wait for key and new line
-#_0AC27A: db $E9, $23 ; [set2] go to message $23
+#_0AC27A: db $E9, $23 ; [set2] go to message 23
 
 ;===================================================================================================
 
@@ -13453,13 +13453,13 @@ Message_02_10_0D:
 #_0AC27F: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AC281: db $F3 ; [set2] wait for key and new line
 #_0AC282: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AC284: db $FC, $E3, $01 ; [set2] test progress bit $E3 for message $01
-#_0AC287: db $E9, $00 ; [set2] go to message $00
+#_0AC284: db $FC, $E3, $01 ; [set2] test progress bit E3 for message 01
+#_0AC287: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
 Message_02_10_0E:
-#_0AC289: db $E9, $23 ; [set2] go to message $23
+#_0AC289: db $E9, $23 ; [set2] go to message 23
 
 ;===================================================================================================
 
@@ -13468,7 +13468,7 @@ Message_02_10_0E:
 Message_02_10_0F:
 #_0AC28B: db $D2, $10 ; [set2] something to message 10 TODO
 #_0AC28D: db $FD, $16 ; [set2] [COMMAND 5D] something and go to message 16 TODO
-#_0AC28F: db $FC, $E4, $18 ; [set2] test progress bit $E4 for message $18
+#_0AC28F: db $FC, $E4, $18 ; [set2] test progress bit E4 for message 18
 #_0AC292: db $DB, $02, $11 ; [set2] [COMMAND 3B] go to message 11 if something 02 TODO
 #_0AC295: db $E8, $48 ; [set2] [COMMAND 48:48]
 #_0AC297: db $F3 ; [set2] wait for key and new line
@@ -13486,7 +13486,7 @@ Message_02_10_10:
 
 Message_02_10_11:
 #_0AC2A1: db $DB, $00, $13 ; [set2] [COMMAND 3B] go to message 13 if something 00 TODO
-#_0AC2A4: db $E9, $12 ; [set2] go to message $12
+#_0AC2A4: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
@@ -13494,13 +13494,13 @@ Message_02_10_12:
 #_0AC2A6: db $E8, $3D ; [set2] [COMMAND 48:3D]
 #_0AC2A8: db $F3 ; [set2] wait for key and new line
 #_0AC2A9: db $F1 ; [set2] clear message box
-#_0AC2AA: db $E9, $03 ; [set2] go to message $03
+#_0AC2AA: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
 Message_02_10_13:
 #_0AC2AC: db $D7, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
-#_0AC2AF: db $E9, $12 ; [set2] go to message $12
+#_0AC2AF: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
 
@@ -13509,14 +13509,14 @@ Message_02_10_14:
 #_0AC2B4: db $E8, $3F ; [set2] [COMMAND 48:3F]
 #_0AC2B6: db $F3 ; [set2] wait for key and new line
 #_0AC2B7: db $F1 ; [set2] clear message box
-#_0AC2B8: db $E9, $08 ; [set2] go to message $08
+#_0AC2B8: db $E9, $08 ; [set2] go to message 08
 
 ;===================================================================================================
 
 Message_02_10_15:
 #_0AC2BA: db $E8, $41 ; [set2] [COMMAND 48:41]
 #_0AC2BC: db $F3 ; [set2] wait for key and new line
-#_0AC2BD: db $E9, $23 ; [set2] go to message $23
+#_0AC2BD: db $E9, $23 ; [set2] go to message 23
 
 ;===================================================================================================
 
@@ -13526,7 +13526,7 @@ Message_02_10_16:
 #_0AC2BF: db $EB, $B4 ; [set2] prewritten text B4
 #_0AC2C1: db $F3 ; [set2] wait for key and new line
 #_0AC2C2: db $F1 ; [set2] clear message box
-#_0AC2C3: db $E9, $06 ; [set2] go to message $06
+#_0AC2C3: db $E9, $06 ; [set2] go to message 06
 
 ;===================================================================================================
 
@@ -13534,7 +13534,7 @@ Message_02_10_16:
 ; «ナカマが いっぱいなので さっていった»
 Message_02_10_17:
 #_0AC2C5: db $F1 ; [set2] clear message box
-#_0AC2C6: db $FC, $E4, $02 ; [set2] test progress bit $E4 for message $02
+#_0AC2C6: db $FC, $E4, $02 ; [set2] test progress bit E4 for message 02
 #_0AC2C9: db $EB, $F6 ; [set2] prewritten text F6
 #_0AC2CB: db $F3 ; [set2] wait for key and new line
 #_0AC2CC: db $FE, $06 ; [set2] [COMMAND 5E:06]
@@ -13542,7 +13542,7 @@ Message_02_10_17:
 ;===================================================================================================
 
 ; «>[DEMONX]は [CHASE]の»
-; «[￥GIVEME] を うけとると さっていった»
+; «[GIVEME] を うけとると さっていった»
 Message_02_10_18:
 #_0AC2CE: db $FB, $00, $E4 ; [set2] [COMMAND 5B] set progress bit E4 if 00 is nonzero; otherwise reset
 #_0AC2D1: db $EB, $F7 ; [set2] prewritten text F7
@@ -13551,7 +13551,7 @@ Message_02_10_18:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_10_19:
@@ -13569,7 +13569,7 @@ Message_02_10_19:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_10_1A:
@@ -13589,14 +13589,14 @@ Message_02_10_1A:
 
 Message_02_10_1B:
 #_0AC2FA: db $D4, $01, $1D ; [set2] go to message 1D if RNG, 01 TODO
-#_0AC2FD: db $E9, $1C ; [set2] go to message $1C
+#_0AC2FD: db $E9, $1C ; [set2] go to message 1C
 
 ;===================================================================================================
 
 Message_02_10_1C:
 #_0AC2FF: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC301: db $F3 ; [set2] wait for key and new line
-#_0AC302: db $E9, $00 ; [set2] go to message $00
+#_0AC302: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -13604,11 +13604,11 @@ Message_02_10_1D:
 #_0AC304: db $E8, $43 ; [set2] [COMMAND 48:43]
 #_0AC306: db $F3 ; [set2] wait for key and new line
 #_0AC307: db $F1 ; [set2] clear message box
-#_0AC308: db $E9, $08 ; [set2] go to message $08
+#_0AC308: db $E9, $08 ; [set2] go to message 08
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_10_1E:
@@ -13626,7 +13626,7 @@ Message_02_10_1E:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_10_1F:
@@ -13646,7 +13646,7 @@ Message_02_10_1F:
 
 Message_02_10_20:
 #_0AC32E: db $D4, $01, $21 ; [set2] go to message 21 if RNG, 01 TODO
-#_0AC331: db $E9, $1C ; [set2] go to message $1C
+#_0AC331: db $E9, $1C ; [set2] go to message 1C
 
 ;===================================================================================================
 
@@ -13654,7 +13654,7 @@ Message_02_10_21:
 #_0AC333: db $E8, $44 ; [set2] [COMMAND 48:44]
 #_0AC335: db $F3 ; [set2] wait for key and new line
 #_0AC336: db $F1 ; [set2] clear message box
-#_0AC337: db $E9, $08 ; [set2] go to message $08
+#_0AC337: db $E9, $08 ; [set2] go to message 08
 
 ;===================================================================================================
 
@@ -13674,7 +13674,7 @@ Message_02_10_23:
 #_0AC345: db $F1 ; [set2] clear message box
 #_0AC346: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC348: db $F3 ; [set2] wait for key and new line
-#_0AC349: db $FC, $E9, $24 ; [set2] test progress bit $E9 for message $24
+#_0AC349: db $FC, $E9, $24 ; [set2] test progress bit E9 for message 24
 #_0AC34C: db $FE, $01 ; [set2] [COMMAND 5E:01]
 
 ;===================================================================================================
@@ -13689,16 +13689,16 @@ Message_02_11_00:
 #_0AC350: db $F1 ; [set2] clear message box
 #_0AC351: db $EB, $D7 ; [set2] prewritten text D7
 #_0AC353: db $F2, $03 ; [set2] option list with 4 options
-#_0AC355: db $2B, $01 ; option 1 [01]: message 2B
-#_0AC357: db $2C, $0C ; option 2 [0C]: message 2C
-#_0AC359: db $2D, $0F ; option 3 [0F]: message 2D
-#_0AC35B: db $2E, $11 ; option 4 [11]: message 2E
+#_0AC355: db $2B, $01 ; option 1 [2B]: go to message 01
+#_0AC357: db $2C, $0C ; option 2 [2C]: go to message 0C
+#_0AC359: db $2D, $0F ; option 3 [2D]: go to message 0F
+#_0AC35B: db $2E, $11 ; option 4 [2E]: go to message 11
 
 ;===================================================================================================
 
 Message_02_11_01:
 #_0AC35D: db $D2, $09 ; [set2] something to message 09 TODO
-#_0AC35F: db $E9, $02 ; [set2] go to message $02
+#_0AC35F: db $E9, $02 ; [set2] go to message 02
 
 ;===================================================================================================
 
@@ -13707,15 +13707,15 @@ Message_02_11_02:
 #_0AC362: db $E0 ; [set2] [COMMAND 40]
 #_0AC363: db $E8, $3A ; [set2] [COMMAND 48:3A]
 #_0AC365: db $F3 ; [set2] wait for key and new line
-#_0AC366: db $E9, $03 ; [set2] go to message $03
+#_0AC366: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
-; «>[￥GIVEME] を あたえますか?»
+; «>[GIVEME] を あたえますか?»
 Message_02_11_03:
 #_0AC368: db $F1 ; [set2] clear message box
 #_0AC369: db $EB, $D6 ; [set2] prewritten text D6
-#_0AC36B: db $EF, $06 ; [set2] YES/NO - go to message $06 if YES
+#_0AC36B: db $EF, $06 ; [set2] YES/NO - go to message 06 if YES
 #_0AC36D: db $E8, $3E ; [set2] [COMMAND 48:3E]
 #_0AC36F: db $F3 ; [set2] wait for key and new line
 #_0AC370: db $F1 ; [set2] clear message box
@@ -13723,7 +13723,7 @@ Message_02_11_03:
 #_0AC374: db $E0 ; [set2] [COMMAND 40]
 #_0AC375: db $E8, $3C ; [set2] [COMMAND 48:3C]
 #_0AC377: db $F3 ; [set2] wait for key and new line
-#_0AC378: db $E9, $03 ; [set2] go to message $03
+#_0AC378: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -13742,7 +13742,7 @@ Message_02_11_05:
 
 Message_02_11_06:
 #_0AC380: db $FD, $04 ; [set2] [COMMAND 5D] something and go to message 04 TODO
-#_0AC382: db $FC, $E4, $0A ; [set2] test progress bit $E4 for message $0A
+#_0AC382: db $FC, $E4, $0A ; [set2] test progress bit E4 for message 0A
 
 ;===================================================================================================
 
@@ -13767,7 +13767,7 @@ Message_02_11_08:
 #_0AC397: db $E0 ; [set2] [COMMAND 40]
 #_0AC398: db $E8, $3B ; [set2] [COMMAND 48:3B]
 #_0AC39A: db $F3 ; [set2] wait for key and new line
-#_0AC39B: db $E9, $03 ; [set2] go to message $03
+#_0AC39B: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -13787,7 +13787,7 @@ Message_02_11_0A:
 ;===================================================================================================
 
 ; «>[DEMONX]は [CHASE]の»
-; «[￥GIVEME] を うけとると さっていった»
+; «[GIVEME] を うけとると さっていった»
 Message_02_11_0B:
 #_0AC3A6: db $EB, $F7 ; [set2] prewritten text F7
 #_0AC3A8: db $F3 ; [set2] wait for key and new line
@@ -13795,7 +13795,7 @@ Message_02_11_0B:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_11_0C:
@@ -13813,7 +13813,7 @@ Message_02_11_0C:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_11_0D:
@@ -13834,11 +13834,11 @@ Message_02_11_0D:
 Message_02_11_0E:
 #_0AC3CF: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC3D1: db $F3 ; [set2] wait for key and new line
-#_0AC3D2: db $E9, $00 ; [set2] go to message $00
+#_0AC3D2: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_11_0F:
@@ -13856,7 +13856,7 @@ Message_02_11_0F:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_11_10:
@@ -13888,7 +13888,7 @@ Message_02_11_11:
 ; «>[DEMONX]は けいかいしている»
 ; «どうしますか?»
 Message_02_12_00:
-#_0AC401: db $FC, $E9, $07 ; [set2] test progress bit $E9 for message $07
+#_0AC401: db $FC, $E9, $07 ; [set2] test progress bit E9 for message 07
 #_0AC404: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AC407: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AC409: db $F3 ; [set2] wait for key and new line
@@ -13898,15 +13898,15 @@ Message_02_12_00:
 #_0AC40E: db $F1 ; [set2] clear message box
 #_0AC40F: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC411: db $F2, $01 ; [set2] option list with 2 options
-#_0AC413: db $08, $01 ; option 1 [01]: message 08
-#_0AC415: db $0C, $03 ; option 2 [03]: message 0C
+#_0AC413: db $08, $01 ; option 1 [08]: go to message 01
+#_0AC415: db $0C, $03 ; option 2 [0C]: go to message 03
 
 ;===================================================================================================
 
 ; «>[DEMONX]は さっていった»
 Message_02_12_01:
 #_0AC417: db $E8, $52 ; [set2] [COMMAND 48:52]
-#_0AC419: db $EF, $02 ; [set2] YES/NO - go to message $02 if YES
+#_0AC419: db $EF, $02 ; [set2] YES/NO - go to message 02 if YES
 #_0AC41B: db $EB, $E1 ; [set2] prewritten text E1
 #_0AC41D: db $F3 ; [set2] wait for key and new line
 #_0AC41E: db $FE, $06 ; [set2] [COMMAND 5E:06]
@@ -13915,16 +13915,16 @@ Message_02_12_01:
 
 Message_02_12_02:
 #_0AC420: db $E5, $03 ; [set2] [COMMAND 45:03]
-#_0AC422: db $E9, $08 ; [set2] go to message $08
+#_0AC422: db $E9, $08 ; [set2] go to message 08
 
 ;===================================================================================================
 
 Message_02_12_03:
 #_0AC424: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AC427: db $E8, $53 ; [set2] [COMMAND 48:53]
-#_0AC429: db $EF, $05 ; [set2] YES/NO - go to message $05 if YES
+#_0AC429: db $EF, $05 ; [set2] YES/NO - go to message 05 if YES
 #_0AC42B: db $E8, $57 ; [set2] [COMMAND 48:57]
-#_0AC42D: db $EF, $04 ; [set2] YES/NO - go to message $04 if YES
+#_0AC42D: db $EF, $04 ; [set2] YES/NO - go to message 04 if YES
 #_0AC42F: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AC431: db $F3 ; [set2] wait for key and new line
 #_0AC432: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -13935,7 +13935,7 @@ Message_02_12_04:
 #_0AC435: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AC437: db $F3 ; [set2] wait for key and new line
 #_0AC438: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0AC43A: db $E9, $08 ; [set2] go to message $08
+#_0AC43A: db $E9, $08 ; [set2] go to message 08
 
 ;===================================================================================================
 
@@ -13948,7 +13948,7 @@ Message_02_12_05:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_12_06:
@@ -13967,9 +13967,9 @@ Message_02_12_06:
 
 Message_02_12_07:
 #_0AC456: db $E8, $57 ; [set2] [COMMAND 48:57]
-#_0AC458: db $EF, $04 ; [set2] YES/NO - go to message $04 if YES
+#_0AC458: db $EF, $04 ; [set2] YES/NO - go to message 04 if YES
 #_0AC45A: db $E8, $59 ; [set2] [COMMAND 48:59]
-#_0AC45C: db $EF, $04 ; [set2] YES/NO - go to message $04 if YES
+#_0AC45C: db $EF, $04 ; [set2] YES/NO - go to message 04 if YES
 #_0AC45E: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AC460: db $F3 ; [set2] wait for key and new line
 #_0AC461: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
@@ -13995,8 +13995,8 @@ Message_02_13_00:
 #_0AC477: db $F1 ; [set2] clear message box
 #_0AC478: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC47A: db $F2, $01 ; [set2] option list with 2 options
-#_0AC47C: db $04, $01 ; option 1 [01]: message 04
-#_0AC47E: db $0D, $06 ; option 2 [06]: message 0D
+#_0AC47C: db $04, $01 ; option 1 [04]: go to message 01
+#_0AC47E: db $0D, $06 ; option 2 [0D]: go to message 06
 
 ;===================================================================================================
 
@@ -14011,8 +14011,8 @@ Message_02_13_01:
 #_0AC487: db $F1 ; [set2] clear message box
 #_0AC488: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC48A: db $F2, $01 ; [set2] option list with 2 options
-#_0AC48C: db $14, $02 ; option 1 [02]: message 14
-#_0AC48E: db $06, $05 ; option 2 [05]: message 06
+#_0AC48C: db $14, $02 ; option 1 [14]: go to message 02
+#_0AC48E: db $06, $05 ; option 2 [06]: go to message 05
 
 ;===================================================================================================
 
@@ -14056,9 +14056,9 @@ Message_02_13_05:
 ; «>[DEMONX]は さっていった»
 Message_02_13_06:
 #_0AC4B4: db $E8, $53 ; [set2] [COMMAND 48:53]
-#_0AC4B6: db $EF, $07 ; [set2] YES/NO - go to message $07 if YES
+#_0AC4B6: db $EF, $07 ; [set2] YES/NO - go to message 07 if YES
 #_0AC4B8: db $E8, $52 ; [set2] [COMMAND 48:52]
-#_0AC4BA: db $EF, $0D ; [set2] YES/NO - go to message $0D if YES
+#_0AC4BA: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
 #_0AC4BC: db $D8, $00, $0D ; [set2] go to message 0D if RNG, 00 TODO
 #_0AC4BF: db $EB, $E1 ; [set2] prewritten text E1
 #_0AC4C1: db $F3 ; [set2] wait for key and new line
@@ -14090,14 +14090,14 @@ Message_02_13_09:
 #_0AC4D7: db $F1 ; [set2] clear message box
 #_0AC4D8: db $EB, $C0 ; [set2] prewritten text C0
 #_0AC4DA: db $F2, $01 ; [set2] option list with 2 options
-#_0AC4DC: db $00, $0A ; option 1 [0A]: message 00
-#_0AC4DE: db $27, $0C ; option 2 [0C]: message 27
+#_0AC4DC: db $00, $0A ; option 1 [00]: go to message 0A
+#_0AC4DE: db $27, $0C ; option 2 [27]: go to message 0C
 
 ;===================================================================================================
 
 Message_02_13_0A:
 #_0AC4E0: db $D7, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
-#_0AC4E3: db $E9, $01 ; [set2] go to message $01
+#_0AC4E3: db $E9, $01 ; [set2] go to message 01
 
 ;===================================================================================================
 
@@ -14110,16 +14110,16 @@ Message_02_13_0B:
 
 Message_02_13_0C:
 #_0AC4EB: db $E8, $53 ; [set2] [COMMAND 48:53]
-#_0AC4ED: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
+#_0AC4ED: db $EF, $0F ; [set2] YES/NO - go to message 0F if YES
 #_0AC4EF: db $E8, $57 ; [set2] [COMMAND 48:57]
-#_0AC4F1: db $EF, $0F ; [set2] YES/NO - go to message $0F if YES
-#_0AC4F3: db $E9, $0D ; [set2] go to message $0D
+#_0AC4F1: db $EF, $0F ; [set2] YES/NO - go to message 0F if YES
+#_0AC4F3: db $E9, $0D ; [set2] go to message 0D
 
 ;===================================================================================================
 
 Message_02_13_0D:
 #_0AC4F5: db $E8, $5F ; [set2] [COMMAND 48:5F]
-#_0AC4F7: db $EF, $0E ; [set2] YES/NO - go to message $0E if YES
+#_0AC4F7: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
 #_0AC4F9: db $E8, $56 ; [set2] [COMMAND 48:56]
 #_0AC4FB: db $F3 ; [set2] wait for key and new line
 #_0AC4FC: db $F1 ; [set2] clear message box
@@ -14188,7 +14188,7 @@ Message_02_14_04:
 
 Message_02_14_05:
 #_0AC532: db $D4, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
-#_0AC535: db $E9, $03 ; [set2] go to message $03
+#_0AC535: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
 
@@ -14197,7 +14197,7 @@ Message_02_14_06:
 #_0AC537: db $48, $2C, $A1 ; やくざ
 #_0AC53A: db $EB, $BA ; [set2] prewritten text BA
 #_0AC53C: db $F3 ; [set2] wait for key and new line
-#_0AC53D: db $E9, $04 ; [set2] go to message $04
+#_0AC53D: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -14208,7 +14208,7 @@ Message_02_14_07:
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_14_08:
@@ -14302,10 +14302,10 @@ Message_02_15_00:
 #_0AC594: db $39, $3A, $51, $CF, $4A, $27, $2B, $56 ; なにを⎵ようきゅ
 #_0AC59C: db $27, $30, $43, $31, $2A ; うしますか
 #_0AC5A1: db $F2, $03 ; [set2] option list with 4 options
-#_0AC5A3: db $2B, $01 ; option 1 [01]: message 2B
-#_0AC5A5: db $2C, $03 ; option 2 [03]: message 2C
-#_0AC5A7: db $2D, $08 ; option 3 [08]: message 2D
-#_0AC5A9: db $2E, $0A ; option 4 [0A]: message 2E
+#_0AC5A3: db $2B, $01 ; option 1 [2B]: go to message 01
+#_0AC5A5: db $2C, $03 ; option 2 [2C]: go to message 03
+#_0AC5A7: db $2D, $08 ; option 3 [2D]: go to message 08
+#_0AC5A9: db $2E, $0A ; option 4 [2E]: go to message 0A
 
 ;===================================================================================================
 
@@ -14332,11 +14332,11 @@ Message_02_15_03:
 #_0AC5C2: db $F3 ; [set2] wait for key and new line
 #_0AC5C3: db $F1 ; [set2] clear message box
 #_0AC5C4: db $FA, $00 ; [set2] [COMMAND 5A:00]
-#_0AC5C6: db $E9, $04 ; [set2] go to message $04
+#_0AC5C6: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
-; «>[CHASE]は [￥GIVEME] を»
+; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_15_04:
@@ -14351,7 +14351,7 @@ Message_02_15_04:
 
 Message_02_15_05:
 #_0AC5D1: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
-#_0AC5D4: db $E9, $06 ; [set2] go to message $06
+#_0AC5D4: db $E9, $06 ; [set2] go to message 06
 
 ;===================================================================================================
 
@@ -14366,7 +14366,7 @@ Message_02_15_07:
 #_0AC5DC: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC5DE: db $F3 ; [set2] wait for key and new line
 #_0AC5DF: db $F1 ; [set2] clear message box
-#_0AC5E0: db $E9, $00 ; [set2] go to message $00
+#_0AC5E0: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -14377,7 +14377,7 @@ Message_02_15_08:
 #_0AC5EA: db $F3 ; [set2] wait for key and new line
 #_0AC5EB: db $F1 ; [set2] clear message box
 #_0AC5EC: db $FA, $01 ; [set2] [COMMAND 5A:01]
-#_0AC5EE: db $E9, $04 ; [set2] go to message $04
+#_0AC5EE: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
 
@@ -14407,7 +14407,7 @@ Message_02_15_0B:
 #_0AC608: db $F1 ; [set2] clear message box
 #_0AC609: db $E8, $46 ; [set2] [COMMAND 48:46]
 #_0AC60B: db $F3 ; [set2] wait for key and new line
-#_0AC60C: db $E9, $00 ; [set2] go to message $00
+#_0AC60C: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
@@ -16660,7 +16660,7 @@ Message_02_17_1F:
 
 ;===================================================================================================
 
-; «おれさまは [￥GIVEME] いただきたい»
+; «おれさまは [GIVEME] いただきたい»
 ; «これで ナカマに なろう»
 Message_02_17_20:
 #_0AD3CF: db $EB, $40 ; [set2] prewritten text 40
@@ -16668,7 +16668,7 @@ Message_02_17_20:
 
 ;===================================================================================================
 
-; オイラは [￥GIVEME] が ほしいな
+; オイラは [GIVEME] が ほしいな
 ; そしたら ナカマに なってやるよ
 Message_02_17_21:
 #_0AD3D2: db $61, $5E, $83, $3E, $CF ; オイラは⎵
@@ -16681,7 +16681,7 @@ Message_02_17_21:
 
 ;===================================================================================================
 
-; [￥GIVEME] よこせ
+; [GIVEME] よこせ
 ; そしたら かんがえなくも ない
 Message_02_17_22:
 #_0AD3F1: db $F6 ; [set2] ask for currency or item
@@ -16693,7 +16693,7 @@ Message_02_17_22:
 
 ;===================================================================================================
 
-; «[DEMONX]は [￥GIVEME] を»
+; «[DEMONX]は [GIVEME] を»
 ; «ほしがっている»
 Message_02_17_23:
 #_0AD407: db $EB, $33 ; [set2] prewritten text 33
@@ -16703,7 +16703,7 @@ Message_02_17_23:
 
 ;===================================================================================================
 
-; «さらに [￥GIVEME] いただきたい»
+; «さらに [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_17_24:
 #_0AD40D: db $EB, $6A ; [set2] prewritten text 6A
@@ -16711,7 +16711,7 @@ Message_02_17_24:
 
 ;===================================================================================================
 
-; あと [￥GIVEME] ほしいな
+; あと [GIVEME] ほしいな
 ; いいだろ?
 Message_02_17_25:
 #_0AD410: db $25, $38, $CF ; あと⎵
@@ -16723,7 +16723,7 @@ Message_02_17_25:
 
 ;===================================================================================================
 
-; さらに [￥GIVEME] だ
+; さらに [GIVEME] だ
 ; もってんだろ?
 Message_02_17_26:
 #_0AD420: db $2F, $4B, $3A, $CF ; さらに⎵
@@ -16735,7 +16735,7 @@ Message_02_17_26:
 
 ;===================================================================================================
 
-; «[DEMONX]は さらに [￥GIVEME]» を
+; «[DEMONX]は さらに [GIVEME]» を
 ; «ほしがっている»
 Message_02_17_27:
 #_0AD430: db $EB, $43 ; [set2] prewritten text 43
@@ -16746,7 +16746,7 @@ Message_02_17_27:
 
 ;===================================================================================================
 
-; «ならば [￥GIVEME] いただきたい»
+; «ならば [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_17_28:
 #_0AD438: db $EB, $6D ; [set2] prewritten text 6D
@@ -16754,7 +16754,7 @@ Message_02_17_28:
 
 ;===================================================================================================
 
-; じゃあ [￥GIVEME] なら いいだろ?
+; じゃあ [GIVEME] なら いいだろ?
 Message_02_17_29:
 #_0AD43B: db $A2, $55, $25, $CF ; じゃあ⎵
 #_0AD43F: db $F6 ; [set2] ask for currency or item
@@ -16764,7 +16764,7 @@ Message_02_17_29:
 
 ;===================================================================================================
 
-; では [￥GIVEME] だ
+; では [GIVEME] だ
 ; もってんだろ?
 Message_02_17_2A:
 #_0AD44A: db $A9, $3E, $CF ; では⎵
@@ -16776,7 +16776,7 @@ Message_02_17_2A:
 
 ;===================================================================================================
 
-; «[DEMONX]は [￥GIVEME] を»
+; «[DEMONX]は [GIVEME] を»
 ; «ほしがっている»
 Message_02_17_2B:
 #_0AD459: db $EB, $33 ; [set2] prewritten text 33
@@ -16887,7 +16887,7 @@ Message_02_17_38:
 
 ;===================================================================================================
 
-; [￥GIVEME] じゃなきゃ やだー!
+; [GIVEME] じゃなきゃ やだー!
 Message_02_17_39:
 #_0AD4DA: db $F6 ; [set2] ask for currency or item
 #_0AD4DB: db $CF, $A2, $55, $39, $2B, $55, $CF, $48 ; ⎵じゃなきゃ⎵や
@@ -18768,7 +18768,7 @@ Message_02_18_AA:
 
 ;===================================================================================================
 
-; «[￥GIVEME] いただきたい»
+; «[GIVEME] いただきたい»
 ; «だせるかな?»
 Message_02_18_AB:
 #_0ADF1E: db $EB, $69 ; [set2] prewritten text 69
@@ -18776,14 +18776,14 @@ Message_02_18_AB:
 
 ;===================================================================================================
 
-; «ワシに [￥GIVEME] くれや»
+; «ワシに [GIVEME] くれや»
 Message_02_18_AC:
 #_0ADF21: db $EB, $68 ; [set2] prewritten text 68
 #_0ADF23: db $FF ; end of message
 
 ;===================================================================================================
 
-; «[￥GIVEME] いただきたい»
+; «[GIVEME] いただきたい»
 ; «だせるかな?»
 Message_02_18_AD:
 #_0ADF24: db $EB, $69 ; [set2] prewritten text 69
@@ -18791,7 +18791,7 @@ Message_02_18_AD:
 
 ;===================================================================================================
 
-; «さらに [￥GIVEME] いただきたい»
+; «さらに [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_18_AE:
 #_0ADF27: db $EB, $6A ; [set2] prewritten text 6A
@@ -18799,7 +18799,7 @@ Message_02_18_AE:
 
 ;===================================================================================================
 
-; «ついでに [￥GIVEME] だな»
+; «ついでに [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_18_AF:
 #_0ADF2A: db $EB, $6B ; [set2] prewritten text 6B
@@ -18807,7 +18807,7 @@ Message_02_18_AF:
 
 ;===================================================================================================
 
-; «さらに [￥GIVEME] いただきたい»
+; «さらに [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_18_B0:
 #_0ADF2D: db $EB, $6A ; [set2] prewritten text 6A
@@ -18815,7 +18815,7 @@ Message_02_18_B0:
 
 ;===================================================================================================
 
-; «ならば [￥GIVEME] いただきたい»
+; «ならば [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_18_B1:
 #_0ADF30: db $EB, $6D ; [set2] prewritten text 6D
@@ -18823,7 +18823,7 @@ Message_02_18_B1:
 
 ;===================================================================================================
 
-; «そんなら [￥GIVEME] だな»
+; «そんなら [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_18_B2:
 #_0ADF33: db $EB, $6C ; [set2] prewritten text 6C
@@ -18831,7 +18831,7 @@ Message_02_18_B2:
 
 ;===================================================================================================
 
-; «ならば [￥GIVEME] だ!»
+; «ならば [GIVEME] だ!»
 Message_02_18_B3:
 #_0ADF36: db $EB, $A4 ; [set2] prewritten text A4
 #_0ADF38: db $FF ; end of message
@@ -20726,7 +20726,7 @@ Message_02_19_AA:
 
 ;===================================================================================================
 
-; [￥GIVEME] を ささげよ
+; [GIVEME] を ささげよ
 Message_02_19_AB:
 #_0AE90C: db $F6 ; [set2] ask for currency or item
 #_0AE90D: db $CF, $51, $CF, $2F, $2F, $9F, $4A ; ⎵を⎵ささげよ
@@ -20734,7 +20734,7 @@ Message_02_19_AB:
 
 ;===================================================================================================
 
-; «[￥GIVEME] ちょうだい»
+; «[GIVEME] ちょうだい»
 ; かんがえて あげるわ
 Message_02_19_AC:
 #_0AE915: db $EB, $97 ; [set2] prewritten text 97
@@ -20745,7 +20745,7 @@ Message_02_19_AC:
 
 ;===================================================================================================
 
-; «[￥GIVEME] ちょうだい»!
+; «[GIVEME] ちょうだい»!
 Message_02_19_AD:
 #_0AE923: db $EB, $97 ; [set2] prewritten text 97
 #_0AE925: db $94 ; !
@@ -20753,7 +20753,7 @@ Message_02_19_AD:
 
 ;===================================================================================================
 
-; さらに [￥GIVEME] を ささげよ
+; さらに [GIVEME] を ささげよ
 Message_02_19_AE:
 #_0AE927: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AE92B: db $F6 ; [set2] ask for currency or item
@@ -20762,7 +20762,7 @@ Message_02_19_AE:
 
 ;===================================================================================================
 
-; あと [￥GIVEME]
+; あと [GIVEME]
 ; おねがい!
 Message_02_19_AF:
 #_0AE934: db $25, $38, $CF ; あと⎵
@@ -20774,7 +20774,7 @@ Message_02_19_AF:
 ;===================================================================================================
 
 ; もっと! もっと!
-; «[￥GIVEME] ちょうだい»
+; «[GIVEME] ちょうだい»
 Message_02_19_B0:
 #_0AE93F: db $47, $58, $38, $94, $CF, $47, $58, $38 ; もっと!⎵もっと
 #_0AE947: db $94 ; !
@@ -20784,7 +20784,7 @@ Message_02_19_B0:
 
 ;===================================================================================================
 
-; ならば [￥GIVEME] を ささげよ
+; ならば [GIVEME] を ささげよ
 Message_02_19_B1:
 #_0AE94C: db $39, $4B, $AB, $CF ; ならば⎵
 #_0AE950: db $F6 ; [set2] ask for currency or item
@@ -20793,7 +20793,7 @@ Message_02_19_B1:
 
 ;===================================================================================================
 
-; じゃあ [￥GIVEME] ね
+; じゃあ [GIVEME] ね
 ; いいでしょ?
 Message_02_19_B2:
 #_0AE959: db $A2, $55, $25, $CF ; じゃあ⎵
@@ -20806,7 +20806,7 @@ Message_02_19_B2:
 ;===================================================================================================
 
 ; んーとね
-; «[￥GIVEME] ちょうだい»
+; «[GIVEME] ちょうだい»
 ; だめ?
 Message_02_19_B3:
 #_0AE968: db $52, $5A, $38, $3C ; んーとね
@@ -21186,14 +21186,14 @@ Message_02_1A_32:
 
 ;===================================================================================================
 
-; «[￥GIVEME] いただきたい»
+; «[GIVEME] いただきたい»
 Message_02_1A_39:
 #_0AEAE5: db $EB, $A3 ; [set2] prewritten text A3
 #_0AEAE7: db $FF ; end of message
 
 ;===================================================================================================
 
-; さらに «[￥GIVEME] いただきたい»
+; さらに «[GIVEME] いただきたい»
 Message_02_1A_3A:
 #_0AEAE8: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AEAEC: db $EB, $A3 ; [set2] prewritten text A3
@@ -21201,7 +21201,7 @@ Message_02_1A_3A:
 
 ;===================================================================================================
 
-; ならば «[￥GIVEME] いただきたい»
+; ならば «[GIVEME] いただきたい»
 Message_02_1A_3B:
 #_0AEAEF: db $39, $4B, $AB, $CF ; ならば⎵
 #_0AEAF3: db $EB, $A3 ; [set2] prewritten text A3
@@ -21225,7 +21225,7 @@ Message_02_1A_3D:
 
 ;===================================================================================================
 
-; «この [￥GIVEME] は けがれている!»
+; «この [GIVEME] は けがれている!»
 Message_02_1A_3E:
 #_0AEB0D: db $EB, $A5 ; [set2] prewritten text A5
 #_0AEB0F: db $FF ; end of message
@@ -21239,7 +21239,7 @@ Message_02_1A_3F:
 
 ;===================================================================================================
 
-; «この [￥GIVEME] は けがれている!»
+; «この [GIVEME] は けがれている!»
 Message_02_1A_40:
 #_0AEB18: db $EB, $A5 ; [set2] prewritten text A5
 #_0AEB1A: db $FF ; end of message
@@ -21309,7 +21309,7 @@ Message_02_1A_48:
 
 ;===================================================================================================
 
-; «[￥GIVEME] いただきたい»
+; «[GIVEME] いただきたい»
 ; どうだろうか?
 Message_02_1A_49:
 #_0AEB6C: db $EB, $A3 ; [set2] prewritten text A3
@@ -21319,14 +21319,14 @@ Message_02_1A_49:
 
 ;===================================================================================================
 
-; «さらに [￥GIVEME] を いただけんかな»
+; «さらに [GIVEME] を いただけんかな»
 Message_02_1A_4A:
 #_0AEB77: db $EB, $AA ; [set2] prewritten text AA
 #_0AEB79: db $FF ; end of message
 
 ;===================================================================================================
 
-; «ならば [￥GIVEME] で どうか?»
+; «ならば [GIVEME] で どうか?»
 Message_02_1A_4B:
 #_0AEB7A: db $EB, $80 ; [set2] prewritten text 80
 #_0AEB7C: db $FF ; end of message
@@ -21554,14 +21554,14 @@ Message_02_1B_32:
 
 ;===================================================================================================
 
-; «[￥GIVEME] よこしな»
+; «[GIVEME] よこしな»
 Message_02_1B_39:
 #_0AECC4: db $EB, $A9 ; [set2] prewritten text A9
 #_0AECC6: db $FF ; end of message
 
 ;===================================================================================================
 
-; さらに [￥GIVEME] だしな
+; さらに [GIVEME] だしな
 Message_02_1B_3A:
 #_0AECC7: db $2F, $4B, $3A, $CF ; さらに⎵
 #_0AECCB: db $F6 ; [set2] ask for currency or item
@@ -21570,7 +21570,7 @@ Message_02_1B_3A:
 
 ;===================================================================================================
 
-; «ならば [￥GIVEME] だ!»
+; «ならば [GIVEME] だ!»
 Message_02_1B_3B:
 #_0AECD1: db $EB, $A4 ; [set2] prewritten text A4
 #_0AECD3: db $FF ; end of message
@@ -21683,14 +21683,14 @@ Message_02_1B_48:
 
 ;===================================================================================================
 
-; «[￥GIVEME] よこしな»
+; «[GIVEME] よこしな»
 Message_02_1B_49:
 #_0AED50: db $EB, $A9 ; [set2] prewritten text A9
 #_0AED52: db $FF ; end of message
 
 ;===================================================================================================
 
-; «ついでに [￥GIVEME] だな»
+; «ついでに [GIVEME] だな»
 ; «そんだけで いいから・・・»
 Message_02_1B_4A:
 #_0AED53: db $EB, $7F ; [set2] prewritten text 7F
@@ -21698,7 +21698,7 @@ Message_02_1B_4A:
 
 ;===================================================================================================
 
-; «そんなら [￥GIVEME] だな»
+; «そんなら [GIVEME] だな»
 Message_02_1B_4B:
 #_0AED56: db $EB, $44 ; [set2] prewritten text 44
 #_0AED58: db $FF ; end of message
@@ -21941,58 +21941,58 @@ Message_02_1C_30:
 ;===================================================================================================
 
 Message_02_1D_00:
-#_0AEE92: db $D5, $50 ; send $50 to APU
+#_0AEE92: db $D5, $50 ; send 50 to APU
 #_0AEE94: db $D7, $85, $1D ; load scenes 85 and 1D
 #_0AEE97: db $D6, $00, $3A, $70, $28 ; place sprite 3A in slot 00 at XY:{70,28}
-#_0AEE9C: db $EA, $00 ; [COMMAND 1A:00]
+#_0AEE9C: db $EA, $00 ; set up shop 00
 #_0AEE9E: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_01:
-#_0AEE9F: db $D5, $50 ; send $50 to APU
-#_0AEEA1: db $D2, $2F, $1D ; test progress bit $2F for message $1D
+#_0AEE9F: db $D5, $50 ; send 50 to APU
+#_0AEEA1: db $D2, $2F, $1D ; test progress bit 2F for message 1D
 #_0AEEA4: db $D7, $85, $1D ; load scenes 85 and 1D
 #_0AEEA7: db $D6, $00, $3A, $70, $28 ; place sprite 3A in slot 00 at XY:{70,28}
-#_0AEEAC: db $EA, $01 ; [COMMAND 1A:01]
+#_0AEEAC: db $EA, $01 ; set up shop 01
 #_0AEEAE: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_02:
-#_0AEEAF: db $D5, $50 ; send $50 to APU
+#_0AEEAF: db $D5, $50 ; send 50 to APU
 #_0AEEB1: db $D7, $85, $1B ; load scenes 85 and 1B
 #_0AEEB4: db $D6, $00, $3C, $70, $28 ; place sprite 3C in slot 00 at XY:{70,28}
-#_0AEEB9: db $EA, $02 ; [COMMAND 1A:02]
+#_0AEEB9: db $EA, $02 ; set up shop 02
 #_0AEEBB: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_03:
-#_0AEEBC: db $D5, $50 ; send $50 to APU
-#_0AEEBE: db $D2, $2F, $26 ; test progress bit $2F for message $26
+#_0AEEBC: db $D5, $50 ; send 50 to APU
+#_0AEEBE: db $D2, $2F, $26 ; test progress bit 2F for message 26
 #_0AEEC1: db $D7, $85, $1B ; load scenes 85 and 1B
 #_0AEEC4: db $D6, $00, $3C, $70, $28 ; place sprite 3C in slot 00 at XY:{70,28}
-#_0AEEC9: db $EA, $03 ; [COMMAND 1A:03]
+#_0AEEC9: db $EA, $03 ; set up shop 03
 #_0AEECB: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_04:
-#_0AEECC: db $D5, $50 ; send $50 to APU
+#_0AEECC: db $D5, $50 ; send 50 to APU
 #_0AEECE: db $D7, $85, $1C ; load scenes 85 and 1C
 #_0AEED1: db $D6, $00, $39, $70, $28 ; place sprite 39 in slot 00 at XY:{70,28}
-#_0AEED6: db $EA, $04 ; [COMMAND 1A:04]
+#_0AEED6: db $EA, $04 ; set up shop 04
 #_0AEED8: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_05:
-#_0AEED9: db $D5, $50 ; send $50 to APU
-#_0AEEDB: db $D2, $2F, $14 ; test progress bit $2F for message $14
+#_0AEED9: db $D5, $50 ; send 50 to APU
+#_0AEEDB: db $D2, $2F, $14 ; test progress bit 2F for message 14
 #_0AEEDE: db $D7, $85, $1C ; load scenes 85 and 1C
 #_0AEEE1: db $D6, $00, $39, $70, $28 ; place sprite 39 in slot 00 at XY:{70,28}
-#_0AEEE6: db $EA, $05 ; [COMMAND 1A:05]
+#_0AEEE6: db $EA, $05 ; set up shop 05
 #_0AEEE8: db $FF ; end of message
 
 ;===================================================================================================
@@ -22004,8 +22004,8 @@ Message_02_1D_06:
 ;===================================================================================================
 
 Message_02_1D_07:
-#_0AEEED: db $D5, $50 ; send $50 to APU
-#_0AEEEF: db $D2, $2F, $0D ; test progress bit $2F for message $0D
+#_0AEEED: db $D5, $50 ; send 50 to APU
+#_0AEEEF: db $D2, $2F, $0D ; test progress bit 2F for message 0D
 #_0AEEF2: db $D7, $85, $19 ; load scenes 85 and 19
 #_0AEEF5: db $D6, $00, $3E, $70, $28 ; place sprite 3E in slot 00 at XY:{70,28}
 #_0AEEFA: db $FE, $4F, $01 ; ext command 4F: 01 TODO
@@ -22014,8 +22014,8 @@ Message_02_1D_07:
 ;===================================================================================================
 
 Message_02_1D_08:
-#_0AEEFE: db $D5, $50 ; send $50 to APU
-#_0AEF00: db $D2, $2F, $0E ; test progress bit $2F for message $0E
+#_0AEEFE: db $D5, $50 ; send 50 to APU
+#_0AEF00: db $D2, $2F, $0E ; test progress bit 2F for message 0E
 #_0AEF03: db $D7, $85, $19 ; load scenes 85 and 19
 #_0AEF06: db $D6, $00, $3E, $70, $28 ; place sprite 3E in slot 00 at XY:{70,28}
 #_0AEF0B: db $FE, $4F, $02 ; ext command 4F: 02 TODO
@@ -22024,8 +22024,8 @@ Message_02_1D_08:
 ;===================================================================================================
 
 Message_02_1D_09:
-#_0AEF0F: db $D5, $50 ; send $50 to APU
-#_0AEF11: db $D2, $2F, $0F ; test progress bit $2F for message $0F
+#_0AEF0F: db $D5, $50 ; send 50 to APU
+#_0AEF11: db $D2, $2F, $0F ; test progress bit 2F for message 0F
 #_0AEF14: db $D7, $85, $19 ; load scenes 85 and 19
 #_0AEF17: db $D6, $00, $3E, $70, $28 ; place sprite 3E in slot 00 at XY:{70,28}
 #_0AEF1C: db $FE, $4F, $03 ; ext command 4F: 03 TODO
@@ -22034,8 +22034,8 @@ Message_02_1D_09:
 ;===================================================================================================
 
 Message_02_1D_0A:
-#_0AEF20: db $D5, $50 ; send $50 to APU
-#_0AEF22: db $D2, $2F, $10 ; test progress bit $2F for message $10
+#_0AEF20: db $D5, $50 ; send 50 to APU
+#_0AEF22: db $D2, $2F, $10 ; test progress bit 2F for message 10
 
 ;===================================================================================================
 
@@ -22085,18 +22085,18 @@ Message_02_1D_10:
 ;===================================================================================================
 
 Message_02_1D_11:
-#_0AEF63: db $D5, $50 ; send $50 to APU
-#_0AEF65: db $D2, $58, $13 ; test progress bit $58 for message $13
-#_0AEF68: db $D2, $56, $12 ; test progress bit $56 for message $12
-#_0AEF6B: db $D3, $0B ; go to message $0B
+#_0AEF63: db $D5, $50 ; send 50 to APU
+#_0AEF65: db $D2, $58, $13 ; test progress bit 58 for message 13
+#_0AEF68: db $D2, $56, $12 ; test progress bit 56 for message 12
+#_0AEF6B: db $D3, $0B ; go to message 0B
 
 ;===================================================================================================
 
 Message_02_1D_12:
 #_0AEF6D: db $D7, $05 ; load scene 05
-#_0AEF6F: db $DE, $00, $00, $F2, $01 ; [COMMAND DE:00,00,F2,01]
+#_0AEF6F: db $DE, $00, $00, $F2, $01 ; load 1x demon 00F2
 #_0AEF74: db $E4, $00 ; load demon $00
-#_0AEF76: db $D3, $0C ; go to message $0C
+#_0AEF76: db $D3, $0C ; go to message 0C
 
 ;===================================================================================================
 
@@ -22111,7 +22111,7 @@ Message_02_1D_13:
 Message_02_1D_14:
 #_0AEF84: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEF87: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
-#_0AEF8C: db $EA, $0B ; [COMMAND 1A:0B]
+#_0AEF8C: db $EA, $0B ; set up shop 0B
 #_0AEF8E: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0AEF90: db $FF ; end of message
 
@@ -22119,8 +22119,8 @@ Message_02_1D_14:
 
 ; >«だれもいない»
 Message_02_1D_15:
-#_0AEF91: db $D5, $50 ; send $50 to APU
-#_0AEF93: db $D2, $58, $16 ; test progress bit $58 for message $16
+#_0AEF91: db $D5, $50 ; send 50 to APU
+#_0AEF93: db $D2, $58, $16 ; test progress bit 58 for message 16
 #_0AEF96: db $D7, $85, $1C ; load scenes 85 and 1C
 #_0AEF99: db $97 ; >
 #_0AEF9A: db $F2, $2C ; prewritten text 2C
@@ -22133,79 +22133,79 @@ Message_02_1D_16:
 #_0AEF9E: db $D7, $05 ; load scene 05
 #_0AEFA0: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AEFA5: db $D6, $04, $8E, $58, $38 ; place sprite 8E in slot 04 at XY:{58,38}
-#_0AEFAA: db $EA, $0F ; [COMMAND 1A:0F]
+#_0AEFAA: db $EA, $0F ; set up shop 0F
 #_0AEFAC: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_17:
-#_0AEFAD: db $D5, $50 ; send $50 to APU
+#_0AEFAD: db $D5, $50 ; send 50 to APU
 #_0AEFAF: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFB2: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
-#_0AEFB7: db $EA, $12 ; [COMMAND 1A:12]
+#_0AEFB7: db $EA, $12 ; set up shop 12
 #_0AEFB9: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_18:
-#_0AEFBA: db $D5, $50 ; send $50 to APU
+#_0AEFBA: db $D5, $50 ; send 50 to APU
 #_0AEFBC: db $D7, $24 ; load scene 24
 #_0AEFBE: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AEFC3: db $D6, $04, $8E, $50, $38 ; place sprite 8E in slot 04 at XY:{50,38}
-#_0AEFC8: db $EA, $17 ; [COMMAND 1A:17]
+#_0AEFC8: db $EA, $17 ; set up shop 17
 #_0AEFCA: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_19:
-#_0AEFCB: db $D5, $50 ; send $50 to APU
+#_0AEFCB: db $D5, $50 ; send 50 to APU
 #_0AEFCD: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFD0: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
-#_0AEFD5: db $EA, $1A ; [COMMAND 1A:1A]
+#_0AEFD5: db $EA, $1A ; set up shop 1A
 #_0AEFD7: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_1A:
-#_0AEFD8: db $D5, $50 ; send $50 to APU
+#_0AEFD8: db $D5, $50 ; send 50 to APU
 #_0AEFDA: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFDD: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
-#_0AEFE2: db $EA, $1D ; [COMMAND 1A:1D]
+#_0AEFE2: db $EA, $1D ; set up shop 1D
 #_0AEFE4: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_1B:
-#_0AEFE5: db $D5, $50 ; send $50 to APU
+#_0AEFE5: db $D5, $50 ; send 50 to APU
 #_0AEFE7: db $D7, $A4, $26 ; load scenes A4 and 26
 #_0AEFEA: db $D6, $00, $AD, $70, $28 ; place sprite AD in slot 00 at XY:{70,28}
-#_0AEFEF: db $EA, $1E ; [COMMAND 1A:1E]
+#_0AEFEF: db $EA, $1E ; set up shop 1E
 #_0AEFF1: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_1C:
-#_0AEFF2: db $D5, $50 ; send $50 to APU
+#_0AEFF2: db $D5, $50 ; send 50 to APU
 #_0AEFF4: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AEFF9: db $D6, $04, $8E, $50, $38 ; place sprite 8E in slot 04 at XY:{50,38}
-#_0AEFFE: db $EA, $1F ; [COMMAND 1A:1F]
+#_0AEFFE: db $EA, $1F ; set up shop 1F
 #_0AF000: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_1D:
-#_0AF001: db $D5, $50 ; send $50 to APU
+#_0AF001: db $D5, $50 ; send 50 to APU
 #_0AF003: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF006: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
-#_0AF00B: db $EA, $0C ; [COMMAND 1A:0C]
+#_0AF00B: db $EA, $0C ; set up shop 0C
 #_0AF00D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >«だれもいない»
 Message_02_1D_1E:
-#_0AF00E: db $D5, $50 ; send $50 to APU
-#_0AF010: db $D2, $58, $1F ; test progress bit $58 for message $1F
+#_0AF00E: db $D5, $50 ; send 50 to APU
+#_0AF010: db $D2, $58, $1F ; test progress bit 58 for message 1F
 #_0AF013: db $D7, $85, $1D ; load scenes 85 and 1D
 #_0AF016: db $97 ; >
 #_0AF017: db $F2, $2C ; prewritten text 2C
@@ -22218,88 +22218,88 @@ Message_02_1D_1F:
 #_0AF01B: db $D7, $05 ; load scene 05
 #_0AF01D: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF022: db $D6, $04, $8D, $50, $28 ; place sprite 8D in slot 04 at XY:{50,28}
-#_0AF027: db $EA, $10 ; [COMMAND 1A:10]
+#_0AF027: db $EA, $10 ; set up shop 10
 #_0AF029: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_20:
-#_0AF02A: db $D5, $50 ; send $50 to APU
+#_0AF02A: db $D5, $50 ; send 50 to APU
 #_0AF02C: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF02F: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
-#_0AF034: db $EA, $13 ; [COMMAND 1A:13]
+#_0AF034: db $EA, $13 ; set up shop 13
 #_0AF036: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_21:
-#_0AF037: db $D5, $50 ; send $50 to APU
+#_0AF037: db $D5, $50 ; send 50 to APU
 #_0AF039: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF03C: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
-#_0AF041: db $EA, $15 ; [COMMAND 1A:15]
+#_0AF041: db $EA, $15 ; set up shop 15
 #_0AF043: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_22:
-#_0AF044: db $D5, $50 ; send $50 to APU
+#_0AF044: db $D5, $50 ; send 50 to APU
 #_0AF046: db $D7, $24 ; load scene 24
 #_0AF048: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF04D: db $D6, $04, $8D, $50, $28 ; place sprite 8D in slot 04 at XY:{50,28}
-#_0AF052: db $EA, $18 ; [COMMAND 1A:18]
+#_0AF052: db $EA, $18 ; set up shop 18
 #_0AF054: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_23:
-#_0AF055: db $D5, $50 ; send $50 to APU
+#_0AF055: db $D5, $50 ; send 50 to APU
 #_0AF057: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF05A: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
-#_0AF05F: db $EA, $1B ; [COMMAND 1A:1B]
+#_0AF05F: db $EA, $1B ; set up shop 1B
 #_0AF061: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_24:
-#_0AF062: db $D5, $50 ; send $50 to APU
+#_0AF062: db $D5, $50 ; send 50 to APU
 #_0AF064: db $D7, $A4, $27 ; load scenes A4 and 27
 #_0AF067: db $D6, $00, $AE, $70, $28 ; place sprite AE in slot 00 at XY:{70,28}
-#_0AF06C: db $EA, $20 ; [COMMAND 1A:20]
+#_0AF06C: db $EA, $20 ; set up shop 20
 #_0AF06E: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_25:
-#_0AF06F: db $D5, $50 ; send $50 to APU
+#_0AF06F: db $D5, $50 ; send 50 to APU
 #_0AF071: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF076: db $D6, $04, $8D, $50, $28 ; place sprite 8D in slot 04 at XY:{50,28}
-#_0AF07B: db $EA, $21 ; [COMMAND 1A:21]
+#_0AF07B: db $EA, $21 ; set up shop 21
 #_0AF07D: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_26:
-#_0AF07E: db $D5, $50 ; send $50 to APU
+#_0AF07E: db $D5, $50 ; send 50 to APU
 #_0AF080: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF083: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
-#_0AF088: db $EA, $0D ; [COMMAND 1A:0D]
+#_0AF088: db $EA, $0D ; set up shop 0D
 #_0AF08A: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_27:
-#_0AF08B: db $D5, $50 ; send $50 to APU
+#_0AF08B: db $D5, $50 ; send 50 to APU
 #_0AF08D: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF090: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
-#_0AF095: db $EA, $0E ; [COMMAND 1A:0E]
+#_0AF095: db $EA, $0E ; set up shop 0E
 #_0AF097: db $FF ; end of message
 
 ;===================================================================================================
 
 ; >«だれもいない»
 Message_02_1D_28:
-#_0AF098: db $D5, $50 ; send $50 to APU
-#_0AF09A: db $D2, $58, $29 ; test progress bit $58 for message $29
+#_0AF098: db $D5, $50 ; send 50 to APU
+#_0AF09A: db $D2, $58, $29 ; test progress bit 58 for message 29
 #_0AF09D: db $D7, $85, $1B ; load scenes 85 and 1B
 #_0AF0A0: db $97 ; >
 #_0AF0A1: db $F2, $2C ; prewritten text 2C
@@ -22312,62 +22312,62 @@ Message_02_1D_29:
 #_0AF0A5: db $D7, $05 ; load scene 05
 #_0AF0A7: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF0AC: db $D6, $01, $90, $50, $48 ; place sprite 90 in slot 01 at XY:{50,48}
-#_0AF0B1: db $EA, $11 ; [COMMAND 1A:11]
+#_0AF0B1: db $EA, $11 ; set up shop 11
 #_0AF0B3: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_2A:
-#_0AF0B4: db $D5, $50 ; send $50 to APU
+#_0AF0B4: db $D5, $50 ; send 50 to APU
 #_0AF0B6: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0B9: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
-#_0AF0BE: db $EA, $14 ; [COMMAND 1A:14]
+#_0AF0BE: db $EA, $14 ; set up shop 14
 #_0AF0C0: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_2B:
-#_0AF0C1: db $D5, $50 ; send $50 to APU
+#_0AF0C1: db $D5, $50 ; send 50 to APU
 #_0AF0C3: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0C6: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
-#_0AF0CB: db $EA, $16 ; [COMMAND 1A:16]
+#_0AF0CB: db $EA, $16 ; set up shop 16
 #_0AF0CD: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_2C:
-#_0AF0CE: db $D5, $50 ; send $50 to APU
+#_0AF0CE: db $D5, $50 ; send 50 to APU
 #_0AF0D0: db $D7, $24 ; load scene 24
 #_0AF0D2: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF0D7: db $D6, $01, $90, $50, $48 ; place sprite 90 in slot 01 at XY:{50,48}
-#_0AF0DC: db $EA, $19 ; [COMMAND 1A:19]
+#_0AF0DC: db $EA, $19 ; set up shop 19
 #_0AF0DE: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_2D:
-#_0AF0DF: db $D5, $50 ; send $50 to APU
+#_0AF0DF: db $D5, $50 ; send 50 to APU
 #_0AF0E1: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0E4: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
-#_0AF0E9: db $EA, $1C ; [COMMAND 1A:1C]
+#_0AF0E9: db $EA, $1C ; set up shop 1C
 #_0AF0EB: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_2E:
-#_0AF0EC: db $D5, $50 ; send $50 to APU
+#_0AF0EC: db $D5, $50 ; send 50 to APU
 #_0AF0EE: db $D7, $A4, $28 ; load scenes A4 and 28
 #_0AF0F1: db $D6, $00, $AF, $70, $28 ; place sprite AF in slot 00 at XY:{70,28}
-#_0AF0F6: db $EA, $22 ; [COMMAND 1A:22]
+#_0AF0F6: db $EA, $22 ; set up shop 22
 #_0AF0F8: db $FF ; end of message
 
 ;===================================================================================================
 
 Message_02_1D_2F:
-#_0AF0F9: db $D5, $50 ; send $50 to APU
+#_0AF0F9: db $D5, $50 ; send 50 to APU
 #_0AF0FB: db $D6, $00, $B4, $70, $38 ; place sprite B4 in slot 00 at XY:{70,38}
 #_0AF100: db $D6, $01, $90, $50, $48 ; place sprite 90 in slot 01 at XY:{50,48}
-#_0AF105: db $EA, $23 ; [COMMAND 1A:23]
+#_0AF105: db $EA, $23 ; set up shop 23
 #_0AF107: db $FF ; end of message
 
 ;===================================================================================================
@@ -22375,8 +22375,8 @@ Message_02_1D_2F:
 ; >ここを とおらんとするは なにものぞ!
 ; なのらぬものを とおすわけには いかん
 Message_02_1E_00:
-#_0AF108: db $D0, $FF ; set progress bit $FF
-#_0AF10A: db $D0, $FE ; set progress bit $FE
+#_0AF108: db $D0, $FF ; set progress bit FF
+#_0AF10A: db $D0, $FE ; set progress bit FE
 #_0AF10C: db $FE, $38 ; ext command 38: open scary face door
 #_0AF10E: db $D6, $00, $98, $50, $00 ; place sprite 98 in slot 00 at XY:{50,00}
 #_0AF113: db $FE, $07, $10 ; ext command 07: draw buffered text then wait 15 frames
@@ -22409,8 +22409,8 @@ Message_02_1E_01:
 #_0AF166: db $39, $52, $A2, $3E, $CF ; なんじは⎵
 #_0AF16B: db $F0 ; write player name
 #_0AF16C: db $38, $CF, $26, $27, $3D, $2A, $95 ; と⎵いうのか?
-#_0AF173: db $F8, $02 ; YES/NO - go to message $02 if YES
-#_0AF175: db $D3, $01 ; go to message $01
+#_0AF173: db $F8, $02 ; YES/NO - go to message 02 if YES
+#_0AF175: db $D3, $01 ; go to message 01
 
 ;===================================================================================================
 
@@ -22535,8 +22535,8 @@ Message_02_1E_05:
 #_0AF2BD: db $EE ; write lawful hero name
 #_0AF2BE: db $38, $CF, $4A, $AC, $43, $30, $34, $3C ; と⎵よびましたね
 #_0AF2C6: db $95 ; ?
-#_0AF2C7: db $F8, $06 ; YES/NO - go to message $06 if YES
-#_0AF2C9: db $D3, $05 ; go to message $05
+#_0AF2C7: db $F8, $06 ; YES/NO - go to message 06 if YES
+#_0AF2C9: db $D3, $05 ; go to message 05
 
 ;===================================================================================================
 
@@ -22647,8 +22647,8 @@ Message_02_1E_09:
 #_0AF3D9: db $2E, $26, $36, $51, $CF ; こいつを⎵
 #_0AF3DE: db $EF ; write chaos hero name
 #_0AF3DF: db $38, $CF, $4A, $52, $A6, $39, $95 ; と⎵よんだな?
-#_0AF3E6: db $F8, $0A ; YES/NO - go to message $0A if YES
-#_0AF3E8: db $D3, $09 ; go to message $09
+#_0AF3E6: db $F8, $0A ; YES/NO - go to message 0A if YES
+#_0AF3E8: db $D3, $09 ; go to message 09
 
 ;===================================================================================================
 
@@ -22718,7 +22718,7 @@ Message_02_1E_0B:
 ; あなたのこと ずっと まっていたのよ«・・・»
 ; えいえんの パートナーとしてね«・・・»
 Message_02_1E_0C:
-#_0AF461: db $D1, $FE ; clear progress bit $FE
+#_0AF461: db $D1, $FE ; clear progress bit FE
 #_0AF463: db $D7, $12 ; load scene 12
 #_0AF465: db $D6, $00, $31, $78, $68 ; place sprite 31 in slot 00 at XY:{78,68}
 #_0AF46A: db $D6, $01, $32, $78, $48 ; place sprite 32 in slot 01 at XY:{78,48}
@@ -22757,7 +22757,7 @@ Message_02_1E_0C:
 #_0AF4E0: db $FE, $07, $1E ; ext command 07: draw buffered text then wait 29 frames
 #_0AF4E3: db $D6, $00, $00 ; delete sprite in slot 00
 #_0AF4E6: db $D6, $01, $00 ; delete sprite in slot 01
-#_0AF4E9: db $D0, $FE ; set progress bit $FE
+#_0AF4E9: db $D0, $FE ; set progress bit FE
 #_0AF4EB: db $FF ; end of message
 
 ;===================================================================================================
@@ -22784,7 +22784,7 @@ Message_02_1E_0D:
 #_0AF525: db $FC ; wait for key and new line
 #_0AF526: db $FE, $07, $30 ; ext command 07: draw buffered text then wait 47 frames
 #_0AF529: db $D6, $00, $00 ; delete sprite in slot 00
-#_0AF52C: db $D0, $FE ; set progress bit $FE
+#_0AF52C: db $D0, $FE ; set progress bit FE
 #_0AF52E: db $FF ; end of message
 
 ;===================================================================================================
@@ -22794,9 +22794,9 @@ Message_02_1E_0D:
 ; «やすみだからって ねぼうは ダメよ»
 ; «はやく おきてらっしゃい»
 Message_02_1E_0E:
-#_0AF52F: db $D5, $FD ; send $FD to APU
+#_0AF52F: db $D5, $FD ; send FD to APU
 #_0AF531: db $F2, $82 ; prewritten text 82
-#_0AF533: db $D3, $1D ; go to message $1D
+#_0AF533: db $D3, $1D ; go to message 1D
 
 ;===================================================================================================
 
@@ -22844,13 +22844,13 @@ Message_02_1E_10:
 ;===================================================================================================
 
 Message_02_1E_11:
-#_0AF587: db $D2, $2F, $12 ; test progress bit $2F for message $12
-#_0AF58A: db $D3, $13 ; go to message $13
+#_0AF587: db $D2, $2F, $12 ; test progress bit 2F for message 12
+#_0AF58A: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
 Message_02_1E_12:
-#_0AF58C: db $D5, $46 ; send $46 to APU
+#_0AF58C: db $D5, $46 ; send 46 to APU
 
 ;===================================================================================================
 
@@ -22860,7 +22860,7 @@ Message_02_1E_12:
 ; [JIMMY]:
 ; アクマを よびだそうと するんでしょうか?
 Message_02_1E_13:
-#_0AF58E: db $D1, $FE ; clear progress bit $FE
+#_0AF58E: db $D1, $FE ; clear progress bit FE
 #_0AF590: db $D7, $13 ; load scene 13
 #_0AF592: db $FE, $30, $02 ; ext command 30: 02 TODO
 #_0AF595: db $2A, $0A ; PARAMS FOR EXT30
@@ -22871,7 +22871,7 @@ Message_02_1E_13:
 #_0AF5A3: db $D6, $01, $1A, $70, $28 ; place sprite 1A in slot 01 at XY:{70,28}
 #_0AF5A8: db $D6, $02, $1B, $48, $28 ; place sprite 1B in slot 02 at XY:{48,28}
 #_0AF5AD: db $D6, $13, $1B, $98, $28 ; place sprite 1B in slot 13 at XY:{98,28}
-#_0AF5B2: db $D2, $2F, $14 ; test progress bit $2F for message $14
+#_0AF5B2: db $D2, $2F, $14 ; test progress bit 2F for message 14
 #_0AF5B5: db $97, $25, $48, $30, $26, $CF, $9D, $30 ; >あやしい⎵ぎし
 #_0AF5BD: db $2B, $9C, $CF, $29, $2E, $39, $50, $4E ; きが⎵おこなわれ
 #_0AF5C5: db $4A, $27, $38, $30, $37, $26, $4D ; ようとしている
@@ -22916,7 +22916,7 @@ Message_02_1E_14:
 #_0AF625: db $43, $30, $26, $51, $CF, $27, $2D, $38 ; ましいを⎵うけと
 #_0AF62D: db $4C, $34, $43, $28, $94 ; りたまえ!
 #_0AF632: db $FC ; wait for key and new line
-#_0AF633: db $D2, $2F, $18 ; test progress bit $2F for message $18
+#_0AF633: db $D2, $2F, $18 ; test progress bit 2F for message 18
 #_0AF636: db $FA ; clear message box
 #_0AF637: db $97, $3F, $38, $4C, $3D, $CF ; >ひとりの⎵
 #_0AF63D: db $F2, $00 ; prewritten text 00
@@ -22930,7 +22930,7 @@ Message_02_1E_14:
 #_0AF658: db $F2, $00 ; prewritten text 00
 #_0AF65A: db $51, $CF, $34, $31, $2D, $43, $31, $2A ; を⎵たすけますか
 #_0AF662: db $95 ; ?
-#_0AF663: db $F8, $15 ; YES/NO - go to message $15 if YES
+#_0AF663: db $F8, $15 ; YES/NO - go to message 15 if YES
 #_0AF665: db $D4, $03 ; set text box size to 3
 #_0AF667: db $EE ; write lawful hero name
 #_0AF668: db $9A ; :
@@ -22940,7 +22940,7 @@ Message_02_1E_14:
 #_0AF67A: db $94 ; !
 #_0AF67B: db $FC ; wait for key and new line
 #_0AF67C: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
-#_0AF67F: db $D3, $16 ; go to message $16
+#_0AF67F: db $D3, $16 ; go to message 16
 
 ;===================================================================================================
 
@@ -23008,8 +23008,8 @@ Message_02_1E_17:
 #_0AF712: db $F9 ; new line
 #_0AF713: db $ED ; write female protag name
 #_0AF714: db $39, $3D, $2A, $95 ; なのか?
-#_0AF718: db $F8, $18 ; YES/NO - go to message $18 if YES
-#_0AF71A: db $D3, $17 ; go to message $17
+#_0AF718: db $F8, $18 ; YES/NO - go to message 18 if YES
+#_0AF71A: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
 
@@ -23035,13 +23035,13 @@ Message_02_1E_18:
 #_0AF74A: db $D6, $02, $00 ; delete sprite in slot 02
 #_0AF74D: db $D6, $03, $00 ; delete sprite in slot 03
 #_0AF750: db $FE, $1C, $00 ; ext command 1C: $00 TODO
-#_0AF753: db $D2, $2F, $19 ; test progress bit $2F for message $19
-#_0AF756: db $D3, $1A ; go to message $1A
+#_0AF753: db $D2, $2F, $19 ; test progress bit 2F for message 19
+#_0AF756: db $D3, $1A ; go to message 1A
 
 ;===================================================================================================
 
 Message_02_1E_19:
-#_0AF758: db $D5, $47 ; send $47 to APU
+#_0AF758: db $D5, $47 ; send 47 to APU
 
 ;===================================================================================================
 
@@ -23060,7 +23060,7 @@ Message_02_1E_1A:
 #_0AF761: db $FF ; END PARAMS FOR EXT30
 #_0AF762: db $D6, $00, $1E, $78, $28 ; place sprite 1E in slot 00 at XY:{78,28}
 #_0AF767: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
-#_0AF76B: db $D2, $2F, $1F ; test progress bit $2F for message $1F
+#_0AF76B: db $D2, $2F, $1F ; test progress bit 2F for message 1F
 #_0AF76E: db $ED ; write female protag name
 #_0AF76F: db $9A ; :
 #_0AF770: db $F9 ; new line
@@ -23131,11 +23131,11 @@ Message_02_1E_1C:
 #_0AF828: db $F2, $0B ; prewritten text 0B
 #_0AF82A: db $F2, $0B ; prewritten text 0B
 #_0AF82C: db $FC ; wait for key and new line
-#_0AF82D: db $D2, $30, $1E ; test progress bit $30 for message $1E
+#_0AF82D: db $D2, $30, $1E ; test progress bit 30 for message 1E
 #_0AF830: db $D6, $00, $00 ; delete sprite in slot 00
-#_0AF833: db $D0, $05 ; set progress bit $05
-#_0AF835: db $D1, $FF ; clear progress bit $FF
-#_0AF837: db $D5, $FD ; send $FD to APU
+#_0AF833: db $D0, $05 ; set progress bit 05
+#_0AF835: db $D1, $FF ; clear progress bit FF
+#_0AF837: db $D5, $FD ; send FD to APU
 
 ;===================================================================================================
 
@@ -23145,7 +23145,7 @@ Message_02_1E_1D:
 #_0AF83D: db $FE, $27, $02 ; ext command 27: something 02 TODO
 #_0AF840: db $FE, $27, $03 ; ext command 27: something 03 TODO
 #_0AF843: db $FE, $1A, $00, $00, $1A, $00, $00, $00 ; ext command 1A: 00,00,1A,00,00,00
-#_0AF84B: db $FE, $1D, $E0, $02 ; ext command 1D: $E0 $02 TODO
+#_0AF84B: db $FE, $1D, $E0, $02 ; ext command 1D: load classy message 02E0
 
 ;===================================================================================================
 
@@ -23202,8 +23202,8 @@ Message_02_1E_1F:
 ; でも あなたが いなくなったら
 ; わたしは どうすればいいの«・・・»
 Message_02_1E_20:
-#_0AF8B3: db $D2, $20, $22 ; test progress bit $20 for message $22
-#_0AF8B6: db $D2, $06, $21 ; test progress bit $06 for message $21
+#_0AF8B3: db $D2, $20, $22 ; test progress bit 20 for message 22
+#_0AF8B6: db $D2, $06, $21 ; test progress bit 06 for message 21
 #_0AF8B9: db $D6, $00, $4D, $78, $28 ; place sprite 4D in slot 00 at XY:{78,28}
 #_0AF8BE: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_0AF8C2: db $3E, $3E, $29, $48, $9A ; ははおや:
@@ -23238,7 +23238,7 @@ Message_02_1E_20:
 ; あなたのつよさだったら なにがでてきても
 ; だいじょうぶよ
 Message_02_1E_21:
-#_0AF91F: db $D2, $1A, $22 ; test progress bit $1A for message $22
+#_0AF91F: db $D2, $1A, $22 ; test progress bit 1A for message 22
 #_0AF922: db $D6, $00, $2C, $70, $28 ; place sprite 2C in slot 00 at XY:{70,28}
 #_0AF927: db $49, $4C, $2E, $9A ; ゆりこ:
 #_0AF92B: db $F9 ; new line
@@ -23274,11 +23274,11 @@ Message_02_1E_22:
 ; ぎしきを みたからには
 ; «おまえたち»を いかしては かえさんぞ
 Message_02_1E_23:
-#_0AF95A: db $D1, $FE ; clear progress bit $FE
-#_0AF95C: db $D2, $1C, $32 ; test progress bit $1C for message $32
+#_0AF95A: db $D1, $FE ; clear progress bit FE
+#_0AF95C: db $D2, $1C, $32 ; test progress bit 1C for message 32
 #_0AF95F: db $D7, $04 ; load scene 04
-#_0AF961: db $D5, $46 ; send $46 to APU
-#_0AF963: db $D2, $1A, $2C ; test progress bit $1A for message $2C
+#_0AF961: db $D5, $46 ; send 46 to APU
+#_0AF963: db $D2, $1A, $2C ; test progress bit 1A for message 2C
 #_0AF966: db $D6, $03, $52, $50, $08 ; place sprite 52 in slot 03 at XY:{50,08}
 #_0AF96B: db $D6, $01, $51, $40, $38 ; place sprite 51 in slot 01 at XY:{40,38}
 #_0AF970: db $D6, $02, $51, $A0, $38 ; place sprite 51 in slot 02 at XY:{A0,38}
@@ -23302,7 +23302,7 @@ Message_02_1E_23:
 #_0AF9BD: db $FA ; clear message box
 #_0AF9BE: db $45, $45, $58, $CF ; むむっ⎵
 #_0AF9C2: db $D6, $00, $4F, $70, $28 ; place sprite 4F in slot 00 at XY:{70,28}
-#_0AF9C7: db $D2, $06, $24 ; test progress bit $06 for message $24
+#_0AF9C7: db $D2, $06, $24 ; test progress bit 06 for message 24
 #_0AF9CA: db $26, $58, $34, $26, $CF, $39, $52, $3D ; いったい⎵なんの
 #_0AF9D2: db $4A, $27, $A9 ; ようで
 #_0AF9D5: db $F9 ; new line
@@ -23317,7 +23317,7 @@ Message_02_1E_23:
 #_0AF9F5: db $51, $CF, $26, $2A, $30, $37, $3E, $CF ; を⎵いかしては⎵
 #_0AF9FD: db $2A, $28, $2F, $52, $A5 ; かえさんぞ
 #_0AFA02: db $FC ; wait for key and new line
-#_0AFA03: db $D3, $25 ; go to message $25
+#_0AFA03: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
@@ -23334,7 +23334,7 @@ Message_02_1E_24:
 #_0AFA16: db $FA ; clear message box
 #_0AFA17: db $97, $2E, $2E, $2A, $4B, $CF, $3A, $9F ; >ここから⎵にげ
 #_0AFA1F: db $43, $31, $2A, $95 ; ますか?
-#_0AFA23: db $F8, $25 ; YES/NO - go to message $25 if YES
+#_0AFA23: db $F8, $25 ; YES/NO - go to message 25 if YES
 #_0AFA25: db $D4, $03 ; set text box size to 3
 #_0AFA27: db $30, $57, $27, $2A, $52, $30, $9A ; しょうかんし:
 #_0AFA2E: db $F9 ; new line
@@ -23357,9 +23357,9 @@ Message_02_1E_25:
 #_0AFA63: db $D6, $02, $00 ; delete sprite in slot 02
 #_0AFA66: db $D6, $01, $00 ; delete sprite in slot 01
 #_0AFA69: db $FE, $1A, $17, $05, $00, $00, $00, $00 ; ext command 1A: 17,05,00,00,00,00
-#_0AFA71: db $FE, $37 ; ext command 37: call 3 routines
-#_0AFA73: db $D2, $06, $26 ; test progress bit $06 for message $26
-#_0AFA76: db $D3, $27 ; go to message $27
+#_0AFA71: db $FE, $37 ; ext command 37: reload dungeon view
+#_0AFA73: db $D2, $06, $26 ; test progress bit 06 for message 26
+#_0AFA76: db $D3, $27 ; go to message 27
 
 ;===================================================================================================
 
@@ -23381,16 +23381,16 @@ Message_02_1E_26:
 ;===================================================================================================
 
 Message_02_1E_27:
-#_0AFA9E: db $DE, $01, $00, $02, $01 ; [COMMAND DE:01,00,02,01]
+#_0AFA9E: db $DE, $01, $00, $02, $01 ; load 1x demon 0102
 #_0AFAA3: db $FE, $46, $09 ; ext command 46: 09 TODO
 #_0AFAA6: db $FE, $07, $06 ; ext command 07: draw buffered text then wait 5 frames
-#_0AFAA9: db $D5, $39 ; send $39 to APU
+#_0AFAA9: db $D5, $39 ; send 39 to APU
 #_0AFAAB: db $D6, $00, $9D, $78, $40 ; place sprite 9D in slot 00 at XY:{78,40}
 #_0AFAB0: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_0AFAB3: db $E4, $00 ; load demon $00
-#_0AFAB5: db $D2, $06, $28 ; test progress bit $06 for message $28
+#_0AFAB5: db $D2, $06, $28 ; test progress bit 06 for message 28
 #_0AFAB8: db $E5, $04, $2B ; [COMMAND E5:04,2B]
-#_0AFABB: db $D3, $2B ; go to message $2B
+#_0AFABB: db $D3, $2B ; go to message 2B
 
 ;===================================================================================================
 
@@ -23401,13 +23401,13 @@ Message_02_1E_28:
 
 Message_02_1E_29:
 #_0AFAC0: db $E5, $00, $2A ; [COMMAND E5:00,2A]
-#_0AFAC3: db $D3, $29 ; go to message $29
+#_0AFAC3: db $D3, $29 ; go to message 29
 
 ;===================================================================================================
 
 Message_02_1E_2A:
 #_0AFAC5: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_0AFAC7: db $D0, $1A ; set progress bit $1A
+#_0AFAC7: db $D0, $1A ; set progress bit 1A
 #_0AFAC9: db $FF ; end of message
 
 ;===================================================================================================
@@ -23415,17 +23415,17 @@ Message_02_1E_2A:
 Message_02_1E_2B:
 #_0AFACA: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0AFACC: db $FE, $1C, $01 ; ext command 1C: $01 TODO
-#_0AFACF: db $D5, $FD ; send $FD to APU
+#_0AFACF: db $D5, $FD ; send FD to APU
 #_0AFAD1: db $FA ; clear message box
-#_0AFAD2: db $D0, $06 ; set progress bit $06
-#_0AFAD4: db $D1, $FE ; clear progress bit $FE
+#_0AFAD2: db $D0, $06 ; set progress bit 06
+#_0AFAD4: db $D1, $FE ; clear progress bit FE
 #_0AFAD6: db $FE, $1A, $B4, $94, $00, $00, $03, $01 ; ext command 1A: B4,94,00,00,03,01
 #_0AFADE: db $FE, $25, $FF ; ext command 25: something FF TODO
 #_0AFAE1: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_0AFAE4: db $FE, $24, $FF ; ext command 24: something FF TODO
 #_0AFAE7: db $FE, $27, $02 ; ext command 27: something 02 TODO
 #_0AFAEA: db $FE, $27, $03 ; ext command 27: something 03 TODO
-#_0AFAED: db $FE, $1D, $C5, $02 ; ext command 1D: $C5 $02 TODO
+#_0AFAED: db $FE, $1D, $C5, $02 ; ext command 1D: load classy message 02C5
 
 ;===================================================================================================
 
@@ -23435,7 +23435,7 @@ Message_02_1E_2C:
 #_0AFAF9: db $CF, $2B, $2A, $26, $9C, $CF, $29, $26 ; ⎵きかいが⎵おい
 #_0AFB01: db $37, $25, $4D ; てある
 #_0AFB04: db $FC ; wait for key and new line
-#_0AFB05: db $D2, $19, $2E ; test progress bit $19 for message $2E
+#_0AFB05: db $D2, $19, $2E ; test progress bit 19 for message 2E
 
 ;===================================================================================================
 
@@ -23449,8 +23449,8 @@ Message_02_1E_2D:
 ; >«イヌの パスカル»が きかいに ほえている
 Message_02_1E_2E:
 #_0AFB09: db $FA ; clear message box
-#_0AFB0A: db $D2, $1B, $2F ; test progress bit $1B for message $2F
-#_0AFB0D: db $DE, $01, $00, $34, $01 ; [COMMAND DE:01,00,34,01]
+#_0AFB0A: db $D2, $1B, $2F ; test progress bit 1B for message 2F
+#_0AFB0D: db $DE, $01, $00, $34, $01 ; load 1x demon 0134
 #_0AFB12: db $E4, $00 ; load demon $00
 #_0AFB14: db $F2, $0A ; prewritten text 0A
 #_0AFB16: db $9A ; :
@@ -23465,7 +23465,7 @@ Message_02_1E_2E:
 #_0AFB25: db $9C, $CF, $2B, $2A, $26, $3A, $CF, $42 ; が⎵きかいに⎵ほ
 #_0AFB2D: db $28, $37, $26, $4D ; えている
 #_0AFB31: db $FC ; wait for key and new line
-#_0AFB32: db $D3, $30 ; go to message $30
+#_0AFB32: db $D3, $30 ; go to message 30
 
 ;===================================================================================================
 
@@ -23475,7 +23475,7 @@ Message_02_1E_2E:
 ; きかいに とびかかった!
 Message_02_1E_2F:
 #_0AFB34: db $FE, $40, $2D ; ext command 40: R0F9D30 2D TODO
-#_0AFB37: db $DE, $00, $00, $8B, $01 ; [COMMAND DE:00,00,8B,01]
+#_0AFB37: db $DE, $00, $00, $8B, $01 ; load 1x demon 008B
 #_0AFB3C: db $E4, $00 ; load demon $00
 #_0AFB3E: db $F5 ; write demon name from $050A
 #_0AFB3F: db $9A ; :
@@ -23509,9 +23509,9 @@ Message_02_1E_30:
 #_0AFB86: db $43, $58, $34 ; まった
 #_0AFB89: db $F2, $0B ; prewritten text 0B
 #_0AFB8B: db $FC ; wait for key and new line
-#_0AFB8C: db $D0, $1C ; set progress bit $1C
-#_0AFB8E: db $D2, $1B, $31 ; test progress bit $1B for message $31
-#_0AFB91: db $D3, $32 ; go to message $32
+#_0AFB8C: db $D0, $1C ; set progress bit 1C
+#_0AFB8E: db $D2, $1B, $31 ; test progress bit 1B for message 31
+#_0AFB91: db $D3, $32 ; go to message 32
 
 ;===================================================================================================
 
@@ -23521,12 +23521,12 @@ Message_02_1E_31:
 ;===================================================================================================
 
 Message_02_1E_32:
-#_0AFB96: db $FE, $1D, $27, $03 ; ext command 1D: $27 $03 TODO
+#_0AFB96: db $FE, $1D, $27, $03 ; ext command 1D: load classy message 0327
 
 ;===================================================================================================
 
 Message_02_1F_00:
-#_0AFB9A: db $D5, $45 ; send $45 to APU
+#_0AFB9A: db $D5, $45 ; send 45 to APU
 #_0AFB9C: db $D7, $01 ; load scene 01
 #_0AFB9E: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_0AFBA3: db $FE, $17, $00 ; ext command 17: set $0BE2 and $07E1 to $00 TODO
@@ -23560,12 +23560,12 @@ Message_02_1F_02:
 #_0AFBE4: db $3A, $CF, $39, $52, $3D, $A0, $4A, $27 ; に⎵なんのごよう
 #_0AFBEC: db $2A, $39, $95 ; かな?
 #_0AFBEF: db $D8, $05 ; option list with 6 options
-#_0AFBF1: db $00, $04 ; option 1 [04]: message 00
-#_0AFBF3: db $01, $06 ; option 2 [06]: message 01
-#_0AFBF5: db $02, $08 ; option 3 [08]: message 02
-#_0AFBF7: db $03, $0A ; option 4 [0A]: message 03
-#_0AFBF9: db $04, $0D ; option 5 [0D]: message 04
-#_0AFBFB: db $19, $03 ; option 6 [03]: message 19
+#_0AFBF1: db $00, $04 ; option 1 [00]: go to message 04
+#_0AFBF3: db $01, $06 ; option 2 [01]: go to message 06
+#_0AFBF5: db $02, $08 ; option 3 [02]: go to message 08
+#_0AFBF7: db $03, $0A ; option 4 [03]: go to message 0A
+#_0AFBF9: db $04, $0D ; option 5 [04]: go to message 0D
+#_0AFBFB: db $19, $03 ; option 6 [19]: go to message 03
 
 ;===================================================================================================
 
@@ -23584,7 +23584,7 @@ Message_02_1F_04:
 #_0AFC10: db $FE, $16, $05 ; ext command 16: something message 05 TODO
 #_0AFC13: db $FA ; clear message box
 #_0AFC14: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
-#_0AFC16: db $D3, $02 ; go to message $02
+#_0AFC16: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -23593,7 +23593,7 @@ Message_02_1F_05:
 #_0AFC18: db $FA ; clear message box
 #_0AFC19: db $F2, $48 ; prewritten text 48
 #_0AFC1B: db $FC ; wait for key and new line
-#_0AFC1C: db $D3, $02 ; go to message $02
+#_0AFC1C: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -23605,14 +23605,14 @@ Message_02_1F_06:
 #_0AFC2B: db $27, $39, $47, $3D ; うなもの
 #_0AFC2F: db $F2, $47 ; prewritten text 47
 #_0AFC31: db $FC ; wait for key and new line
-#_0AFC32: db $D3, $02 ; go to message $02
+#_0AFC32: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 Message_02_1F_07:
 #_0AFC34: db $FA ; clear message box
 #_0AFC35: db $FE, $10, $01 ; ext command 10: set $0BA3 to $01 then something TODO
-#_0AFC37: db $D3, $02 ; go to message $02
+#_0AFC37: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -23622,14 +23622,14 @@ Message_02_1F_08:
 #_0AFC3D: db $FA ; clear message box
 #_0AFC3E: db $F2, $49 ; prewritten text 49
 #_0AFC40: db $FC ; wait for key and new line
-#_0AFC41: db $D3, $02 ; go to message $02
+#_0AFC41: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 Message_02_1F_09:
 #_0AFC43: db $FA ; clear message box
 #_0AFC44: db $FE, $11, $03 ; ext command 11: set $0BA3 to $03 then something TODO
-#_0AFC46: db $D3, $02 ; go to message $02
+#_0AFC46: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -23641,14 +23641,14 @@ Message_02_1F_0A:
 #_0AFC55: db $37 ; て
 #_0AFC56: db $F2, $47 ; prewritten text 47
 #_0AFC58: db $FC ; wait for key and new line
-#_0AFC59: db $D3, $02 ; go to message $02
+#_0AFC59: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 Message_02_1F_0B:
 #_0AFC5B: db $FA ; clear message box
 #_0AFC5C: db $FE, $12, $02 ; ext command 12: set $0BA3 to $02 then something TODO
-#_0AFC5E: db $D3, $02 ; go to message $02
+#_0AFC5E: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
@@ -23671,29 +23671,29 @@ Message_02_1F_0C:
 
 Message_02_1F_0D:
 #_0AFC8C: db $FA ; clear message box
-#_0AFC8D: db $D2, $57, $0F ; test progress bit $57 for message $0F
-#_0AFC90: db $D2, $55, $0F ; test progress bit $55 for message $0F
-#_0AFC93: db $D2, $2F, $0E ; test progress bit $2F for message $0E
-#_0AFC96: db $EA, $07 ; [COMMAND 1A:07]
-#_0AFC98: db $D3, $02 ; go to message $02
+#_0AFC8D: db $D2, $57, $0F ; test progress bit 57 for message 0F
+#_0AFC90: db $D2, $55, $0F ; test progress bit 55 for message 0F
+#_0AFC93: db $D2, $2F, $0E ; test progress bit 2F for message 0E
+#_0AFC96: db $EA, $07 ; set up shop 07
+#_0AFC98: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 Message_02_1F_0E:
-#_0AFC9A: db $EA, $24 ; [COMMAND 1A:24]
-#_0AFC9C: db $D3, $02 ; go to message $02
+#_0AFC9A: db $EA, $24 ; set up shop 24
+#_0AFC9C: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 Message_02_1F_0F:
-#_0AFC9E: db $EA, $27 ; [COMMAND 1A:27]
-#_0AFCA0: db $D3, $02 ; go to message $02
+#_0AFC9E: db $EA, $27 ; set up shop 27
+#_0AFCA0: db $D3, $02 ; go to message 02
 
 ;===================================================================================================
 
 ; «ガイアきょう» しさい:
 Message_02_1F_10:
-#_0AFCA2: db $D5, $46 ; send $46 to APU
+#_0AFCA2: db $D5, $46 ; send 46 to APU
 #_0AFCA4: db $D7, $02 ; load scene 02
 #_0AFCA6: db $D6, $00, $35, $70, $28 ; place sprite 35 in slot 00 at XY:{70,28}
 #_0AFCAB: db $FE, $17, $01 ; ext command 17: set $0BE2 and $07E1 to $01 TODO
@@ -23701,12 +23701,12 @@ Message_02_1F_10:
 #_0AFCB0: db $CF, $30, $2F, $26, $9A ; ⎵しさい:
 #_0AFCB5: db $F9 ; new line
 #_0AFCB6: db $FE, $04, $15, $12 ; ext command 04: message 15 if 11C >= 112; 12 if >= 144
-#_0AFCBA: db $D3, $12 ; go to message $12
+#_0AFCBA: db $D3, $12 ; go to message 12
 
 ;===================================================================================================
 
 Message_02_1F_11:
-#_0AFCBC: db $D9, $E8, $03, $00, $18 ; go to message $18 if money < 1000
+#_0AFCBC: db $D9, $E8, $03, $00, $18 ; go to message 18 if money < 1000
 #_0AFCC1: db $DA, $18, $FC, $FF ; take 1000 money
 
 ;===================================================================================================
@@ -23737,12 +23737,12 @@ Message_02_1F_13:
 #_0AFD08: db $CF, $39, $52, $3D, $4A, $27, $2A, $39 ; ⎵なんのようかな
 #_0AFD10: db $95 ; ?
 #_0AFD11: db $D8, $05 ; option list with 6 options
-#_0AFD13: db $00, $1A ; option 1 [1A]: message 00
-#_0AFD15: db $01, $1C ; option 2 [1C]: message 01
-#_0AFD17: db $02, $1E ; option 3 [1E]: message 02
-#_0AFD19: db $03, $20 ; option 4 [20]: message 03
-#_0AFD1B: db $04, $22 ; option 5 [22]: message 04
-#_0AFD1D: db $19, $14 ; option 6 [14]: message 19
+#_0AFD13: db $00, $1A ; option 1 [00]: go to message 1A
+#_0AFD15: db $01, $1C ; option 2 [01]: go to message 1C
+#_0AFD17: db $02, $1E ; option 3 [02]: go to message 1E
+#_0AFD19: db $03, $20 ; option 4 [03]: go to message 20
+#_0AFD1B: db $04, $22 ; option 5 [04]: go to message 22
+#_0AFD1D: db $19, $14 ; option 6 [19]: go to message 14
 
 ;===================================================================================================
 
@@ -23791,10 +23791,10 @@ Message_02_1F_16:
 #_0AFD85: db $B5, $5E, $5D, $CF, $30, $52, $A9, $52 ; ガイア⎵しんでん
 #_0AFD8D: db $3A, $CF, $3A ; に⎵に
 #_0AFD90: db $F9 ; new line
-#_0AFD91: db $D2, $2F, $19 ; test progress bit $2F for message $19
+#_0AFD91: db $D2, $2F, $19 ; test progress bit 2F for message 19
 #_0AFD94: db $5B, $02, $01, $01, $01, $CF, $51, $29 ; ￥1000⎵をお
 #_0AFD9C: db $2F, $46, $43, $31, $2A, $95 ; さめますか?
-#_0AFDA2: db $F8, $11 ; YES/NO - go to message $11 if YES
+#_0AFDA2: db $F8, $11 ; YES/NO - go to message 11 if YES
 
 ;===================================================================================================
 
@@ -23802,7 +23802,7 @@ Message_02_1F_16:
 Message_02_1F_17:
 #_0AFD95: db $02, $01, $01, $01, $CF, $51, $29, $2F ; 1000⎵をおさ
 #_0AFD9D: db $46, $43, $31, $2A, $95 ; めますか?
-#_0AFDA2: db $F8, $11 ; YES/NO - go to message $11 if YES
+#_0AFDA2: db $F8, $11 ; YES/NO - go to message 11 if YES
 
 ;===================================================================================================
 
@@ -23823,7 +23823,7 @@ Message_02_1F_18:
 ; ℏ
 Message_02_1F_19:
 #_0AFDBF: db $5C ; ℏ
-#_0AFDC0: db $D3, $17 ; go to message $17
+#_0AFDC0: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
 
@@ -23831,7 +23831,7 @@ Message_02_1F_1A:
 #_0AFDC2: db $FE, $16, $1B ; ext command 16: something message 1B TODO
 #_0AFDC5: db $FA ; clear message box
 #_0AFDC6: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
-#_0AFDC8: db $D3, $13 ; go to message $13
+#_0AFDC8: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
@@ -23840,7 +23840,7 @@ Message_02_1F_1B:
 #_0AFDCA: db $FA ; clear message box
 #_0AFDCB: db $F2, $48 ; prewritten text 48
 #_0AFDCD: db $FC ; wait for key and new line
-#_0AFDCE: db $D3, $13 ; go to message $13
+#_0AFDCE: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
@@ -23852,14 +23852,14 @@ Message_02_1F_1C:
 #_0AFDDD: db $27, $39, $47, $3D ; うなもの
 #_0AFDE1: db $F2, $47 ; prewritten text 47
 #_0AFDE3: db $FC ; wait for key and new line
-#_0AFDE4: db $D3, $13 ; go to message $13
+#_0AFDE4: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
 Message_02_1F_1D:
 #_0AFDE6: db $FA ; clear message box
 #_0AFDE7: db $FE, $10, $01 ; ext command 10: set $0BA3 to $01 then something TODO
-#_0AFDE9: db $D3, $13 ; go to message $13
+#_0AFDE9: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
@@ -23869,14 +23869,14 @@ Message_02_1F_1E:
 #_0AFDEF: db $FA ; clear message box
 #_0AFDF0: db $F2, $49 ; prewritten text 49
 #_0AFDF2: db $FC ; wait for key and new line
-#_0AFDF3: db $D3, $13 ; go to message $13
+#_0AFDF3: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
 Message_02_1F_1F:
 #_0AFDF5: db $FA ; clear message box
 #_0AFDF6: db $FE, $11, $03 ; ext command 11: set $0BA3 to $03 then something TODO
-#_0AFDF8: db $D3, $13 ; go to message $13
+#_0AFDF8: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
@@ -23888,27 +23888,27 @@ Message_02_1F_20:
 #_0AFE07: db $37 ; て
 #_0AFE08: db $F2, $47 ; prewritten text 47
 #_0AFE0A: db $FC ; wait for key and new line
-#_0AFE0B: db $D3, $13 ; go to message $13
+#_0AFE0B: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
 Message_02_1F_21:
 #_0AFE0D: db $FA ; clear message box
 #_0AFE0E: db $FE, $12, $02 ; ext command 12: set $0BA3 to $02 then something TODO
-#_0AFE10: db $D3, $13 ; go to message $13
+#_0AFE10: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
 Message_02_1F_22:
-#_0AFE12: db $D2, $2F, $23 ; test progress bit $2F for message $23
-#_0AFE15: db $EA, $09 ; [COMMAND 1A:09]
-#_0AFE17: db $D3, $13 ; go to message $13
+#_0AFE12: db $D2, $2F, $23 ; test progress bit 2F for message 23
+#_0AFE15: db $EA, $09 ; set up shop 09
+#_0AFE17: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
 Message_02_1F_23:
-#_0AFE19: db $EA, $25 ; [COMMAND 1A:25]
-#_0AFE1B: db $D3, $13 ; go to message $13
+#_0AFE19: db $EA, $25 ; set up shop 25
+#_0AFE1B: db $D3, $13 ; go to message 13
 
 ;===================================================================================================
 
@@ -23916,7 +23916,7 @@ Message_02_1F_23:
 ; すべての きずつき くるしむものに
 ; すくいのてを さしのべようぞ
 Message_02_1F_24:
-#_0AFE1D: db $D5, $47 ; send $47 to APU
+#_0AFE1D: db $D5, $47 ; send 47 to APU
 #_0AFE1F: db $D7, $03 ; load scene 03
 #_0AFE21: db $D6, $00, $58, $70, $38 ; place sprite 58 in slot 00 at XY:{70,38}
 #_0AFE26: db $FE, $17, $02 ; ext command 17: set $0BE2 and $07E1 to $02 TODO
@@ -23941,12 +23941,12 @@ Message_02_1F_25:
 #_0AFE60: db $57, $27, $3A, $CF, $39, $52, $3D, $4A ; ょうに⎵なんのよ
 #_0AFE68: db $27, $A6, $95 ; うだ?
 #_0AFE6B: db $D8, $05 ; option list with 6 options
-#_0AFE6D: db $00, $27 ; option 1 [27]: message 00
-#_0AFE6F: db $01, $29 ; option 2 [29]: message 01
-#_0AFE71: db $02, $2B ; option 3 [2B]: message 02
-#_0AFE73: db $03, $2D ; option 4 [2D]: message 03
-#_0AFE75: db $04, $2F ; option 5 [2F]: message 04
-#_0AFE77: db $19, $26 ; option 6 [26]: message 19
+#_0AFE6D: db $00, $27 ; option 1 [00]: go to message 27
+#_0AFE6F: db $01, $29 ; option 2 [01]: go to message 29
+#_0AFE71: db $02, $2B ; option 3 [02]: go to message 2B
+#_0AFE73: db $03, $2D ; option 4 [03]: go to message 2D
+#_0AFE75: db $04, $2F ; option 5 [04]: go to message 2F
+#_0AFE77: db $19, $26 ; option 6 [19]: go to message 26
 
 ;===================================================================================================
 
@@ -23963,7 +23963,7 @@ Message_02_1F_27:
 #_0AFE84: db $FE, $16, $28 ; ext command 16: something message 28 TODO
 #_0AFE87: db $FA ; clear message box
 #_0AFE88: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
-#_0AFE8A: db $D3, $25 ; go to message $25
+#_0AFE8A: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
@@ -23972,7 +23972,7 @@ Message_02_1F_28:
 #_0AFE8C: db $FA ; clear message box
 #_0AFE8D: db $F2, $48 ; prewritten text 48
 #_0AFE8F: db $FC ; wait for key and new line
-#_0AFE90: db $D3, $25 ; go to message $25
+#_0AFE90: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
@@ -23984,14 +23984,14 @@ Message_02_1F_29:
 #_0AFE9F: db $27, $39, $47, $3D ; うなもの
 #_0AFEA3: db $F2, $47 ; prewritten text 47
 #_0AFEA5: db $FC ; wait for key and new line
-#_0AFEA6: db $D3, $25 ; go to message $25
+#_0AFEA6: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
 Message_02_1F_2A:
 #_0AFEA8: db $FA ; clear message box
 #_0AFEA9: db $FE, $10, $01 ; ext command 10: set $0BA3 to $01 then something TODO
-#_0AFEAB: db $D3, $25 ; go to message $25
+#_0AFEAB: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
@@ -24001,14 +24001,14 @@ Message_02_1F_2B:
 #_0AFEB1: db $FA ; clear message box
 #_0AFEB2: db $F2, $49 ; prewritten text 49
 #_0AFEB4: db $FC ; wait for key and new line
-#_0AFEB5: db $D3, $25 ; go to message $25
+#_0AFEB5: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
 Message_02_1F_2C:
 #_0AFEB7: db $FA ; clear message box
 #_0AFEB8: db $FE, $11, $03 ; ext command 11: set $0BA3 to $03 then something TODO
-#_0AFEBA: db $D3, $25 ; go to message $25
+#_0AFEBA: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
@@ -24020,52 +24020,52 @@ Message_02_1F_2D:
 #_0AFEC9: db $37 ; て
 #_0AFECA: db $F2, $47 ; prewritten text 47
 #_0AFECC: db $FC ; wait for key and new line
-#_0AFECD: db $D3, $25 ; go to message $25
+#_0AFECD: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
 Message_02_1F_2E:
 #_0AFECF: db $FA ; clear message box
 #_0AFED0: db $FE, $12, $02 ; ext command 12: set $0BA3 to $02 then something TODO
-#_0AFED2: db $D3, $25 ; go to message $25
+#_0AFED2: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
 Message_02_1F_2F:
-#_0AFED4: db $D2, $2F, $30 ; test progress bit $2F for message $30
-#_0AFED7: db $EA, $0A ; [COMMAND 1A:0A]
-#_0AFED9: db $D3, $25 ; go to message $25
+#_0AFED4: db $D2, $2F, $30 ; test progress bit 2F for message 30
+#_0AFED7: db $EA, $0A ; set up shop 0A
+#_0AFED9: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
 Message_02_1F_30:
-#_0AFEDB: db $EA, $26 ; [COMMAND 1A:26]
-#_0AFEDD: db $D3, $25 ; go to message $25
+#_0AFEDB: db $EA, $26 ; set up shop 26
+#_0AFEDD: db $D3, $25 ; go to message 25
 
 ;===================================================================================================
 
 Message_02_1F_31:
 #_0AFEDF: db $FA ; clear message box
-#_0AFEE0: db $D2, $A2, $32 ; test progress bit $A2 for message $32
-#_0AFEE3: db $D2, $A6, $33 ; test progress bit $A6 for message $33
+#_0AFEE0: db $D2, $A2, $32 ; test progress bit A2 for message 32
+#_0AFEE3: db $D2, $A6, $33 ; test progress bit A6 for message 33
 #_0AFEE6: db $FD, $00 ; write $00 to $0A3B
 #_0AFEE8: db $FF ; end of message
 
 ;===================================================================================================
 
-; [NAME]は
+; [LEADER]は
 ; [ITEM]を つかった
 ; カメ:
 ; すいじょういどうは わたしにおまかせを
 Message_02_1F_32:
-#_0AFEE9: db $E1, $F6 ; set $0A50 to $F6
-#_0AFEEB: db $F1 ; write specific name
+#_0AFEE9: db $E1, $F6 ; set $0A50 to item F6
+#_0AFEEB: db $F1 ; write leader's name for team
 #_0AFEEC: db $3E ; は
 #_0AFEED: db $F9 ; new line
 #_0AFEEE: db $F3 ; write item name from $0A50
 #_0AFEEF: db $51, $CF, $36, $2A, $58, $34 ; を⎵つかった
 #_0AFEF5: db $FC ; wait for key and new line
-#_0AFEF6: db $D0, $D2 ; set progress bit $D2
+#_0AFEF6: db $D0, $D2 ; set progress bit D2
 #_0AFEF8: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_0AFEFB: db $D6, $00, $81, $60, $58 ; place sprite 81 in slot 00 at XY:{60,58}
 #_0AFF00: db $DF, $DF, $DF ; delay 7 frames [x3]
@@ -24084,19 +24084,19 @@ Message_02_1F_32:
 
 ;===================================================================================================
 
-; [NAME]は
+; [LEADER]は
 ; [ITEM]を つかった
 ; タコ:
 ; うみのうえのこたぁ おれっちにまかせなぁ
 Message_0AFF28:
-#_0AFF28: db $E1, $F7 ; set $0A50 to $F7
-#_0AFF2A: db $F1 ; write specific name
+#_0AFF28: db $E1, $F7 ; set $0A50 to item F7
+#_0AFF2A: db $F1 ; write leader's name for team
 #_0AFF2B: db $3E ; は
 #_0AFF2C: db $F9 ; new line
 #_0AFF2D: db $F3 ; write item name from $0A50
 #_0AFF2E: db $51, $CF, $36, $2A, $58, $34 ; を⎵つかった
 #_0AFF34: db $FC ; wait for key and new line
-#_0AFF35: db $D0, $D2 ; set progress bit $D2
+#_0AFF35: db $D0, $D2 ; set progress bit D2
 #_0AFF37: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_0AFF3A: db $D6, $00, $81, $60, $58 ; place sprite 81 in slot 00 at XY:{60,58}
 #_0AFF3F: db $DF, $DF, $DF ; delay 7 frames [x3]
@@ -24134,19 +24134,19 @@ Message_0AFF6E:
 ;===================================================================================================
 
 ; TODO unused garbage?
-; [NAME]は
+; [LEADER]は
 ; [ITEM]を つかった
 ; タコ:
 ; うみのうえのこたぁ おれっちにまかせなぁ
 Message_0AFF70:
-#_0AFF70: db $E1, $F7 ; set $0A50 to $F7
-#_0AFF72: db $F1 ; write specific name
+#_0AFF70: db $E1, $F7 ; set $0A50 to item F7
+#_0AFF72: db $F1 ; write leader's name for team
 #_0AFF73: db $3E ; は
 #_0AFF74: db $F9 ; new line
 #_0AFF75: db $F3 ; write item name from $0A50
 #_0AFF76: db $51, $CF, $36, $2A, $58, $34 ; を⎵つかった
 #_0AFF7C: db $FC ; wait for key and new line
-#_0AFF7D: db $D0, $D2 ; set progress bit $D2
+#_0AFF7D: db $D0, $D2 ; set progress bit D2
 #_0AFF7F: db $DF, $DF, $DF ; delay 7 frames [x3]
 #_0AFF82: db $D6, $00, $81, $60, $58 ; place sprite 81 in slot 00 at XY:{60,58}
 #_0AFF87: db $DF, $DF, $DF ; delay 7 frames [x3]
@@ -24195,23 +24195,23 @@ Message_0AFFB8:
 
 ; TODO unused garbage?
 Message_0AFFBC:
-#_0AFFBC: db $F8, $12 ; YES/NO - go to message $12 if YES
-#_0AFFBE: db $D3, $0E ; go to message $0E
+#_0AFFBC: db $F8, $12 ; YES/NO - go to message 12 if YES
+#_0AFFBE: db $D3, $0E ; go to message 0E
 
 ;===================================================================================================
 
 ; TODO unused garbage?
-; [NAME]は [ITEM]を
+; [LEADER]は [ITEM]を
 ; «てにいれた»
 Message_0AFFC0:
 #_0AFFC0: db $D6, $00, $B7, $70, $48 ; place sprite B7 in slot 00 at XY:{70,48}
 #_0AFFC5: db $D4, $03 ; set text box size to 3
-#_0AFFC7: db $F1 ; write specific name
+#_0AFFC7: db $F1 ; write leader's name for team
 #_0AFFC8: db $3E, $CF ; は⎵
 #_0AFFCA: db $F3 ; write item name from $0A50
 #_0AFFCB: db $51 ; を
 #_0AFFCC: db $F9 ; new line
-#_0AFFCD: db $FE, $3C, $10 ; ext command 3C: 10 TODO
+#_0AFFCD: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
 #_0AFFD0: db $F2, $2D ; prewritten text 2D
 #_0AFFD2: db $FC ; wait for key and new line
 #_0AFFD3: db $FE, $28 ; ext command 28: add item to inventory from $0A50
@@ -24224,7 +24224,7 @@ Message_0AFFC0:
 ; «あけますか?»
 Message_0AFFD6:
 #_0AFFD6: db $F2, $74 ; prewritten text 74
-#_0AFFD8: db $D3, $0D ; go to message $0D
+#_0AFFD8: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
@@ -24234,7 +24234,7 @@ Message_0AFFD6:
 Message_0AFFDA:
 #_0AFFDA: db $51 ; を
 #_0AFFDB: db $F9 ; new line
-#_0AFFDC: db $FE, $3C, $10 ; ext command 3C: 10 TODO
+#_0AFFDC: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
 #_0AFFDF: db $F2, $2D ; prewritten text 2D
 #_0AFFE1: db $FC ; wait for key and new line
 #_0AFFE2: db $FE, $28 ; ext command 28: add item to inventory from $0A50
@@ -24247,21 +24247,21 @@ Message_0AFFDA:
 ; «あけますか?»
 Message_0AFFE5:
 #_0AFFE5: db $F2, $74 ; prewritten text 74
-#_0AFFE7: db $D3, $0D ; go to message $0D
+#_0AFFE7: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
 
 ; TODO unused garbage?
-; [NAME]は [ITEM]を
+; [LEADER]は [ITEM]を
 ; «てにいれた»
 Message_0AFFE9:
 #_0AFFE9: db $D4, $03 ; set text box size to 3
-#_0AFFEB: db $F1 ; write specific name
+#_0AFFEB: db $F1 ; write leader's name for team
 #_0AFFEC: db $3E, $CF ; は⎵
 #_0AFFEE: db $F3 ; write item name from $0A50
 #_0AFFEF: db $51 ; を
 #_0AFFF0: db $F9 ; new line
-#_0AFFF1: db $FE, $3C, $10 ; ext command 3C: 10 TODO
+#_0AFFF1: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
 #_0AFFF4: db $F2, $2D ; prewritten text 2D
 #_0AFFF6: db $FC ; wait for key and new line
 #_0AFFF7: db $FE, $28 ; ext command 28: add item to inventory from $0A50
@@ -24272,6 +24272,6 @@ Message_0AFFE9:
 ; TODO unused garbage?
 Message_0AFFFA:
 #_0AFFFA: db $F2, $74 ; prewritten text 74
-#_0AFFFC: db $D3, $0D ; go to message $0D
+#_0AFFFC: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================

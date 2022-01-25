@@ -1,5 +1,7 @@
 org $018000
 
+;===================================================================================================
+
 routine018000:
 #_018000: REP #$30
 #_018002: STZ.w $0C4F
@@ -142,16 +144,18 @@ routine018123:
 #_018123: PHA
 #_018124: LDA.w $0400
 #_018127: AND.w #$0040
-#_01812A: BEQ .branch018136
+#_01812A: BEQ .continue
 
 #_01812C: LDA.w $052A
 #_01812F: AND.w #$4000
-#_018132: BEQ .branch018136
+#_018132: BEQ .continue
 
 #_018134: PLA
 #_018135: RTL
 
-.branch018136
+;---------------------------------------------------------------------------------------------------
+
+.continue
 #_018136: LDA.w #$0000
 #_018139: STA.w $0A22
 #_01813C: LDA.w #$0001
@@ -213,6 +217,8 @@ routine0181AF:
 #_0181B2: LDA.w #$0005
 #_0181B5: BRA .branch0181BD
 
+;===================================================================================================
+
 routine0181B7:
 #_0181B7: PHP
 #_0181B8: REP #$30
@@ -234,6 +240,8 @@ data0181CF:
 #_0181D1: dw routine0182AF
 #_0181D3: dw routine0182C2
 #_0181D5: dw routine018344
+
+;===================================================================================================
 
 routine0181D7:
 #_0181D7: LDA.w #!SFX_05
@@ -259,6 +267,8 @@ routine0181D7:
 #_018204: TXA
 #_018205: JSL routine01808A
 #_018209: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01820A
 #_01820A: STZ.w $06E0
@@ -349,6 +359,8 @@ data0182A3:
 #_0182AB: dw routine019913
 #_0182AD: dw routine0199B3
 
+;===================================================================================================
+
 routine0182AF:
 #_0182AF: STZ.w $06E1
 
@@ -421,6 +433,8 @@ routine0182AF:
 #_018326: dw routine01A190
 #_018328: dw routine01A7EC
 
+;===================================================================================================
+
 routine01832A:
 #_01832A: PHP
 #_01832B: PHB
@@ -478,6 +492,8 @@ routine018344:
 
 #_018380: PLP
 #_018381: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch018382
 #_018382: STA.w $06E1
@@ -593,7 +609,7 @@ routine0183E5:
 #_018463: JSL Write_to_APU_transferrable
 #_018467: LDA.w #$0000
 #_01846A: JSL routine01E5CD
-#_01846E: JSL routine009E95
+#_01846E: JSL Write7066VRAM
 
 .branch018472
 #_018472: SEP #$30
@@ -614,11 +630,11 @@ routine0183E5:
 
 #_01849F: SEP #$20
 #_0184A1: LDA.w $0404
-#_0184A4: BEQ .branch0164AA
+#_0184A4: BEQ .exit
 
 #_0184A6: JSL routine02913E
 
-.branch0164AA
+.exit
 #_0184AA: REP #$30
 #_0184AC: PLP
 #_0184AD: RTL
@@ -687,6 +703,8 @@ routine0164AE:
 #_018546: STA.w $0E82
 #_018549: PLB
 
+;---------------------------------------------------------------------------------------------------
+
 .branch01854A
 #_01854A: LDY.w #$000E
 #_01854D: LDA.w #$010E
@@ -714,7 +732,7 @@ routine0164AE:
 #_018580: LDY.b #$00
 
 .branch018582
-#_018582: LDA.l UNREACH_07EFBD,X
+#_018582: LDA.l StatsScreenWords,X
 #_018586: STA.w $010E,Y
 #_018589: LDA.w $0EFC
 #_01858C: STA.w $010F,Y
@@ -756,6 +774,8 @@ routine0164AE:
 #_0185D5: BCC .branch0185CB
 
 #_0185D7: RTS
+
+;===================================================================================================
 
 ; TODO ITEMS
 routine0185D8:
@@ -829,7 +849,7 @@ routine0185D8:
 #_0186A2: LDY.b #$00
 
 .branch0186A4
-#_0186A4: LDA.l UNREACH_07EFBD,X
+#_0186A4: LDA.l StatsScreenWords,X
 #_0186A8: STA.w $010E,Y
 #_0186AB: LDA.w $0EFC
 #_0186AE: STA.w $010F,Y
@@ -866,7 +886,7 @@ routine0185D8:
 #_0186DB: LDY.b #$00
 
 .branch0186DD
-#_0186DD: LDA.l UNREACH_07EFBD,X
+#_0186DD: LDA.l StatsScreenWords,X
 #_0186E1: STA.w $0110,Y
 #_0186E4: LDA.w $0EFC
 #_0186E7: STA.w $0111,Y
@@ -974,6 +994,8 @@ routine018768:
 #_01879E: SEC
 #_01879F: RTL
 
+;---------------------------------------------------------------------------------------------------
+
 .branch0187A0
 #_0187A0: STZ.w $06E0
 
@@ -1055,6 +1077,8 @@ routine018768:
 
 #_01883E: JMP .branch0187A3
 
+;---------------------------------------------------------------------------------------------------
+
 .branch018841
 #_018841: STA.w $05B4
 #_018844: STY.w $05B6
@@ -1071,6 +1095,8 @@ routine018768:
 #_018852: SEC
 #_018853: RTL
 
+;---------------------------------------------------------------------------------------------------
+
 data018854:
 #_018854: dw routine0196F0
 #_018856: dw routine019239
@@ -1078,6 +1104,8 @@ data018854:
 
 data01885A:
 #_01885A: db $0D,$0A,$0F
+
+;===================================================================================================
 
 routine01885D:
 #_01885D: LDA.w $1058
@@ -1093,6 +1121,8 @@ routine01885D:
 data018875:
 #_018875: dw routine019842
 #_018877: dw routine01943D
+
+;===================================================================================================
 
 routine018879:
 #_018879: LDA.w #$0000
@@ -1206,13 +1236,13 @@ routine018967:
 #_01897A: STA.w $010E
 #_01897D: LDX.w #$0000
 
-.branch018980
+.next
 #_018980: LDA.w $0118,X
 #_018983: STA.w $0110,X
 #_018986: INX
 #_018987: INX
 #_018988: CPX.w #$000C
-#_01898B: BCC .branch018980
+#_01898B: BCC .next
 
 #_01898D: LDA.w #$0002
 #_018990: LDX.w #$0040
@@ -1238,8 +1268,8 @@ routine01899E:
 #_0189B2: SEP #$30
 #_0189B4: LDY.b #$00
 
-.branch0189B6
-#_0189B6: LDA.l UNREACH_07EFBD,X
+.next
+#_0189B6: LDA.l StatsScreenWords,X
 #_0189BA: STA.w $0122,Y
 #_0189BD: LDA.w $0EFC
 #_0189C0: STA.w $0123,Y
@@ -1247,7 +1277,7 @@ routine01899E:
 #_0189C4: INY
 #_0189C5: INY
 #_0189C6: CPY.b #$08
-#_0189C8: BCC .branch0189B6
+#_0189C8: BCC .next
 
 #_0189CA: REP #$30
 #_0189CC: LDA.w $071C
@@ -1263,7 +1293,7 @@ routine01899E:
 .branch0189DD
 #_0189DD: LDY.w #$0008
 #_0189E0: LDX.w #$0024
-#_0189E3: JSL ReadItemlName_long
+#_0189E3: JSL ReadItemNameLong
 #_0189E7: LDA.w $071C
 #_0189EA: ASL A
 #_0189EB: ASL A
@@ -1296,7 +1326,7 @@ routine0189FF:
 #_018A15: LDY.b #$00
 
 .branch018A17
-#_018A17: LDA.l UNREACH_07EFBD,X
+#_018A17: LDA.l StatsScreenWords,X
 #_018A1B: STA.w $010E,Y
 #_018A1E: LDA.w $0EFC
 #_018A21: STA.w $010F,Y
@@ -1351,6 +1381,8 @@ routine0189FF:
 #_018A84: JSL AddSelfAsVectorAndMakeSpace
 #_018A88: RTS
 
+;===================================================================================================
+
 DrawStatsTextMaybe018A89:
 #_018A89: ASL A
 #_018A8A: ASL A
@@ -1360,7 +1392,7 @@ DrawStatsTextMaybe018A89:
 #_018A8E: LDY.b #$00
 
 .nextchar
-#_018A90: LDA.l UNREACH_07EFBD,X
+#_018A90: LDA.l StatsScreenWords,X
 #_018A94: STA.w $0106,Y
 #_018A97: LDA.w $0EFC
 #_018A9A: STA.w $0107,Y
@@ -1372,6 +1404,8 @@ DrawStatsTextMaybe018A89:
 
 #_018AA4: REP #$30
 #_018AA6: RTS
+
+;===================================================================================================
 
 ; TODO organize and this is dma related
 routine018AA7:
@@ -1422,6 +1456,8 @@ data018AD6:
 #_018B26: dw $0001,$3E23,$3E03,$000B
 #_018B2E: dw $0002
 
+;===================================================================================================
+
 routine018B30:
 #_018B30: STA.w $071C
 #_018B33: CLC
@@ -1460,6 +1496,8 @@ routine018B30:
 #_018B7A: STZ.w $071E
 #_018B7D: LDA.w $1010,X
 #_018B80: BRA .branch018B8F
+
+;---------------------------------------------------------------------------------------------------
 
 .branch018B82
 #_018B82: LDA.w $1036,X
@@ -1556,6 +1594,8 @@ routine018B30:
 #_018BF9: LDA.w #$14C3
 #_018BFC: BRA .branch018BEF
 
+;---------------------------------------------------------------------------------------------------
+
 .branch018BFE
 #_018BFE: LDA.w $071C
 #_018C01: ASL A
@@ -1577,6 +1617,8 @@ routine018B30:
 #_018C21: STA.w $0104
 #_018C24: JSL AddSelfAsVectorAndMakeSpace
 #_018C28: RTS
+
+;===================================================================================================
 
 Module_DistributeStatPoints:
 #_018C29: LDA.w $0578
@@ -1824,10 +1866,14 @@ Module_DistributeStatPoints:
 .branch018DBC
 #_018DBC: JMP .next_frame
 
+;---------------------------------------------------------------------------------------------------
+
 .stat_updates_finished
 #_018DBF: LDA.w #!SFX_03
 #_018DC2: JSL Write_to_APU_transferrable
 #_018DC6: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .out_of_points
 #_018DC7: JSL Write7C46VRAM
@@ -1893,6 +1939,8 @@ Module_DistributeStatPoints:
 #_018E4C: JSR WriteStatPointsLeftMaybe018E52
 #_018E4F: JMP .configure_distribution
 
+;===================================================================================================
+
 WriteStatPointsLeftMaybe018E52:
 #_018E52: LDA.w #$002F ; probably the word "STATS" in japanese
 #_018E55: JSR DrawStatsTextMaybe018A89
@@ -1909,7 +1957,7 @@ WriteStatPointsLeftMaybe018E52:
 
 ; seems to be "LEFT" in japanese as in "18 left" or whatever
 .nextcharacter
-#_018E71: LDA.l UNREACH_07EFBD,X
+#_018E71: LDA.l StatsScreenWords,X
 #_018E75: STA.w $0114,Y
 #_018E78: LDA.w $0EFC
 #_018E7B: STA.w $0115,Y
@@ -2110,6 +2158,7 @@ routine018FBF:
 
 ;===================================================================================================
 
+; TODO demon costs
 routine018FD3:
 #_018FD3: PHA
 #_018FD4: JSL routine00A3EE
@@ -4044,6 +4093,8 @@ routine019A75:
 #_019C00: STZ.w $06E4
 #_019C03: JMP routine019A75
 
+;===================================================================================================
+
 routine019C06:
 #_019C06: PHP
 #_019C07: REP #$30
@@ -4265,7 +4316,7 @@ routine019C06:
 #_019DED: LDY.b #$00
 
 .branch019DEF
-#_019DEF: LDA.l UNREACH_07EFBD,X
+#_019DEF: LDA.l StatsScreenWords,X
 #_019DF3: STA.w $010E,Y
 #_019DF6: LDA.w $0EFC
 #_019DF9: STA.w $010F,Y
@@ -4302,7 +4353,7 @@ routine019C06:
 #_019E26: LDY.b #$00
 
 .branch019E28
-#_019E28: LDA.l UNREACH_07EFBD,X
+#_019E28: LDA.l StatsScreenWords,X
 #_019E2C: STA.w $0110,Y
 #_019E2F: LDA.w $0EFC
 #_019E32: STA.w $0111,Y
@@ -5042,6 +5093,8 @@ routine01A2A5:
 #_01A32F: PLP
 #_01A330: RTS
 
+;===================================================================================================
+; TODO seems more general handling the entire equip menu?
 AddEquipmentText:
 #_01A331: STZ.w $06E2
 
@@ -5222,47 +5275,49 @@ AddEquipmentText:
 #_01A459: STZ.w $0694
 #_01A45C: LDY.w #$0000
 
-.branch01A45F
+.next_item
 #_01A45F: PHY
 #_01A460: LDA.w $0780,Y
 #_01A463: TAX
 #_01A464: AND.w #$FF00
-#_01A467: BEQ .branch01A49B
+#_01A467: BEQ .to_next_item
 
 #_01A469: TXA
 #_01A46A: AND.w #$00FF
 #_01A46D: CMP.w #$00B0
-#_01A470: BCS .branch01A49B
+#_01A470: BCS .to_next_item
 
 #_01A472: LDY.w #$0000
 #_01A475: JSL GetEquipmentStat
 #_01A479: LDY.w $0715
 #_01A47C: BIT.w #$0080
-#_01A47F: BNE .branch01A486
+#_01A47F: BNE .is_male_equipment
 
 #_01A481: CPY.w #$0060
-#_01A484: BNE .branch01A49B
+#_01A484: BNE .to_next_item
 
-.branch01A486
+.is_male_equipment
 #_01A486: BIT.w #$0040
-#_01A489: BNE .branch01A490
+#_01A489: BNE .is_female_equipment
 
 #_01A48B: CPY.w #$0060
-#_01A48E: BEQ .branch01A49B
+#_01A48E: BEQ .to_next_item
 
-.branch01A490
+.is_female_equipment
 #_01A490: LDA.w $0694
 #_01A493: CMP.w $0690
 #_01A496: BEQ .branch01A4A6
 
 #_01A498: INC.w $0694
 
-.branch01A49B
+.to_next_item
 #_01A49B: PLY
 #_01A49C: INY
 #_01A49D: INY
 #_01A49E: CPY.w #$003C
-#_01A4A1: BCC .branch01A45F
+#_01A4A1: BCC .next_item
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01A4A3
 #_01A4A3: JMP .branch01A4A3
@@ -5278,7 +5333,7 @@ AddEquipmentText:
 #_01A4B5: LDX.w #$0000
 
 .branch01A4B8
-#_01A4B8: CMP.l data01A5CC,X
+#_01A4B8: CMP.l EquipmentSlotCutOffs,X
 #_01A4BC: BCC .branch01A4C7
 
 #_01A4BE: INX
@@ -5444,15 +5499,26 @@ AddEquipmentText:
 
 .branch01A5C5
 #_01A5C5: REP #$20
+
 #_01A5C7: JMP .branch01A334
 
 .branch01A5CA
 #_01A5CA: SEC
+
 #_01A5CB: RTS
 
-data01A5CC:
-#_01A5CC: dw $0040,$0050,$0060,$0078
-#_01A5D4: dw $0090,$00A0,$00B0
+;===================================================================================================
+
+EquipmentSlotCutOffs:
+#_01A5CC: dw $0040 ; sword
+#_01A5D4: dw $0050 ; gun
+#_01A5D4: dw $0060 ; bullet
+#_01A5D4: dw $0078 ; head
+#_01A5D4: dw $0090 ; body
+#_01A5D4: dw $00A0 ; leg
+#_01A5D4: dw $00B0 ; arm
+
+;===================================================================================================
 
 GetEquippableItems:
 #_01A5DA: JSL ClearEntityListBuffer
@@ -6191,7 +6257,7 @@ WriteItemNameAndAmt:
 #_01AA85: AND.w #$00FF
 #_01AA88: LDY.w #$0000
 #_01AA8B: LDX.w #$001A
-#_01AA8E: JSL ReadItemlName_long
+#_01AA8E: JSL ReadItemNameLong
 #_01AA92: PLA
 #_01AA93: XBA
 #_01AA94: AND.w #$00FF
@@ -6370,12 +6436,13 @@ routine01AB0B:
 #_01ABC4: AND.w #$7FFF
 #_01ABC7: ASL A
 #_01ABC8: TAX
-#_01ABC9: LDA.l SpellPointers,X
+#_01ABC9: LDA.l SkillLearnPointers,X
 #_01ABCD: STA.w $00E0
 
 #_01ABD0: PHB
 #_01ABD1: PHK
 #_01ABD2: PLB
+
 #_01ABD3: LDY.w #$0000
 
 .next_spell
@@ -6487,7 +6554,7 @@ routine01AB0B:
 #_01AC7E: STA.w $1058,X
 
 #_01AC81: LDY.w #$0003
-#_01AC84: JSL GetSpellProperty
+#_01AC84: JSL GetSkillProperty
 #_01AC88: AND.w #$00FF
 #_01AC8B: SEC
 #_01AC8C: SBC.w $1032,X
@@ -6503,7 +6570,7 @@ routine01AB0B:
 #_01AC9F: LDX.w $0715
 #_01ACA2: LDA.w $1058,X
 #_01ACA5: LDY.w #$0001
-#_01ACA8: JSL GetSpellProperty
+#_01ACA8: JSL GetSkillProperty
 #_01ACAC: AND.w #$FF00
 #_01ACAF: BPL .branch01ACCF
 
@@ -6554,7 +6621,7 @@ routine01ACF4:
 
 #_01ACFC: LDY.w #$0000
 #_01ACFF: TXA
-#_01AD00: JSL GetSpellProperty
+#_01AD00: JSL GetSkillProperty
 #_01AD04: AND.w #$0080
 #_01AD07: BEQ .branch01AD18
 
@@ -6565,7 +6632,7 @@ routine01ACF4:
 .branch01AD0B
 #_01AD0B: LDY.w #$0000
 #_01AD0E: TXA
-#_01AD0F: JSL GetSpellProperty
+#_01AD0F: JSL GetSkillProperty
 #_01AD13: AND.w #$0040
 #_01AD16: BNE .branch01AD09
 
@@ -6803,12 +6870,14 @@ routine01AD1A:
 #_01AE90: STZ.w $06E4
 #_01AE93: JMP routine01AD1A
 
+;===================================================================================================
+
 routine01AE96:
 #_01AE96: AND.w #$00FF
 #_01AE99: PHA
 #_01AE9A: LDY.w #$0000
 #_01AE9D: LDX.w #$001A
-#_01AEA0: JSL ReadSpellName_long
+#_01AEA0: JSL ReadSkillName_long
 #_01AEA4: LDY.w #$0006
 #_01AEA7: LDA.w #$00CF
 
@@ -6825,7 +6894,7 @@ routine01AE96:
 #_01AEBB: BCS .branch01AEDA
 
 #_01AEBD: LDY.w #$0003
-#_01AEC0: JSL GetSpellProperty
+#_01AEC0: JSL GetSkillProperty
 #_01AEC4: AND.w #$00FF
 #_01AEC7: STA.w $0E80
 #_01AECA: LDA.w #$0000
@@ -6837,27 +6906,31 @@ routine01AE96:
 .branch01AEDA
 #_01AEDA: RTS
 
-; TODO make sure these are indeed for the different characters
-SpellPointers:
-#_01AEDB: dw $0000
-#_01AEDD: dw .Momo
-#_01AEDF: db .Jimmy
-#_01AEE1: db .him
+;===================================================================================================
 
-; TODO put defines and maybe do 1 per line
-.Momo
+; TODO make sure these are indeed for the different characters
+SkillLearnPointers:
+#_01AEDB: dw $0000
+#_01AEDD: dw MomoLearnedSpells
+#_01AEDF: dw JimmyLearnedSpells
+#_01AEE1: dw himLearnedSpells
+
+; TODO 1 per line
+MomoLearnedSpells
 #_01AEE3: db $2B,$38,$19,$30,$0A,$31,$1E,$2D
 #_01AEEB: db $09,$1D,$2C,$3A,$16,$27,$0B,$39
 #_01AEF3: db $34,$11,$36,$12,$FF
 
-.Jimmy
+JimmyLearnedSpells
 #_01AEF8: db $2A,$0C,$38
 #_01AEFB: db $0E,$32,$0D,$2B,$1B,$3B,$37,$0F
 #_01AF03: db $35,$FF
 
-.him
+himLearnedSpells
 #_01AF05: db $00,$2F,$02,$31,$1A,$33
 #_01AF0B: db $01,$3C,$28,$03,$17,$FF
+
+;===================================================================================================
 
 routine01AF11:
 #_01AF11: JSL ClearEntityListBuffer
@@ -7036,7 +7109,7 @@ routine01B010:
 #_01B033: AND.w #$7FFF
 #_01B036: ASL A
 #_01B037: TAX
-#_01B038: LDA.l SpellPointers,X
+#_01B038: LDA.l SkillLearnPointers,X
 #_01B03C: STA.w $00E0
 #_01B03F: PHB
 #_01B040: PHK
@@ -7310,13 +7383,13 @@ routine01B1B7:
 #_01B1D3: ROL.w $00E1
 #_01B1D6: CLC
 #_01B1D7: ADC.w $00E0
-#_01B1DA: ADC.b #$09
+#_01B1DA: ADC.b #EncounterData>>0
 #_01B1DC: STA.w $00E0
 #_01B1DF: LDA.w $00E1
 #_01B1E2: AND.b #$03
-#_01B1E4: ADC.b #$B9
+#_01B1E4: ADC.b #EncounterData>>8
 #_01B1E6: STA.w $00E1
-#_01B1E9: LDA.b #$07
+#_01B1E9: LDA.b #EncounterData>>16
 #_01B1EB: STA.w $00E2
 #_01B1EE: LDY.b #$00
 #_01B1F0: LDA.b [$E0],Y
@@ -7373,7 +7446,7 @@ routine01B221:
 #_01B233: CLC
 #_01B234: ADC.w #data07BD49
 #_01B237: STA.w $00E0
-#_01B23A: LDA.w #$0007
+#_01B23A: LDA.w #data07BD49>>16
 #_01B23D: STA.w $00E2
 
 #_01B240: SEP #$30
@@ -7561,6 +7634,7 @@ routine01B369:
 
 routine01B398:
 #_01B398: PHA
+
 #_01B399: LDA.w $052A
 #_01B39C: AND.w #$4000
 #_01B39F: BEQ .branch01B3A3
@@ -7571,16 +7645,22 @@ routine01B398:
 .branch01B3A3
 #_01B3A3: LDA.w #$0002
 #_01B3A6: JSL routine00BAC0
+
 #_01B3AA: LDA.w #$0000
 #_01B3AD: STA.w $0A22
+
 #_01B3B0: LDA.w #$0001
 #_01B3B3: STA.w $0A24
+
 #_01B3B6: LDA.w #$3E04
 #_01B3B9: STA.w $0A1A
+
 #_01B3BC: JSL routine03837C
 #_01B3C0: JSL AddSelfAsVector
+
 #_01B3C4: PLA
 #_01B3C5: STA.w $0A22
+
 #_01B3C8: LDA.w #$3E04
 #_01B3CB: STA.w $0A1A
 #_01B3CE: JSL routine03837C
@@ -9359,7 +9439,7 @@ routine01BEF3:
 #_01BF5C: LDA.w $1058,X
 #_01BF5F: AND.w #$00FF
 #_01BF62: LDY.w #$0001
-#_01BF65: JSL GetSpellProperty
+#_01BF65: JSL GetSkillProperty
 #_01BF69: AND.w #$00FF
 #_01BF6C: BEQ .branch01BF9C
 #_01BF6E: BRA .branch01BF97
@@ -9640,7 +9720,7 @@ routine01C0D0:
 #_01C122: BCS .branch01C144
 
 #_01C124: LDY.w #$0001
-#_01C127: JSL GetSpellProperty
+#_01C127: JSL GetSkillProperty
 #_01C12B: AND.w #$FF00
 #_01C12E: BPL .branch01C13A
 
@@ -11339,7 +11419,7 @@ routine01CC25:
 
 .branch01CC48
 #_01CC48: LDY.w #$0002
-#_01CC4B: JSL GetSpellProperty
+#_01CC4B: JSL GetSkillProperty
 #_01CC4F: AND.w #$00FF
 #_01CC52: CMP.w #$0080
 #_01CC55: BCS .branch01CC9C
@@ -11407,6 +11487,8 @@ routine01CC25:
 #_01CCB5: BNE .branch01CC9C
 
 #_01CCB7: LDA.w $103A,X
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01CCBA
 #_01CCBA: AND.w #$000F
@@ -12111,6 +12193,7 @@ routine01D0C5:
 #_01D134: BEQ .branch01D143
 
 #_01D136: JSR routine01D784
+
 #_01D139: LDA.w $0562
 #_01D13C: BNE .branch01D146
 
@@ -12616,7 +12699,7 @@ routine01D408:
 #_01D476: ASL A
 #_01D477: ASL A
 #_01D478: TAX
-#_01D479: LDA.l UNREACH_07C14F,X
+#_01D479: LDA.l DemonLoadInfo,X
 #_01D47D: BMI .branch01D483
 
 #_01D47F: JSL routine01E4EF
@@ -13890,6 +13973,8 @@ data01DFAE:
 #_01DFAE: dw $200F,$201C,$201C,$2019
 #_01DFB6: dw $201C
 
+;===================================================================================================
+
 routine01DFB8:
 #_01DFB8: PHP
 #_01DFB9: REP #$20
@@ -14440,7 +14525,7 @@ LoadDemonEverything:
 #_01E366: AND.w #$0007
 #_01E369: TAX
 
-#_01E36A: LDA.w UNREACH_07C14F,Y
+#_01E36A: LDA.w DemonLoadInfo,Y
 #_01E36D: BPL .not_animated
 
 #_01E36F: AND.w #$7FFF
@@ -14474,7 +14559,7 @@ LoadDemonEverything:
 #_01E39D: AND.w #$0003
 #_01E3A0: ORA.w #$0008
 #_01E3A3: TAX
-#_01E3A4: LDA.w UNREACH_07C14F+2,Y
+#_01E3A4: LDA.w DemonLoadInfo+2,Y
 #_01E3A7: CLC
 #_01E3A8: ADC.w #$2828
 #_01E3AB: JSL routine00BCDB
@@ -14492,7 +14577,7 @@ LoadDemonEverything:
 #_01E3BE: PHA
 #_01E3BF: ASL A
 #_01E3C0: TAX
-#_01E3C1: LDA.w UNREACH_07C14F+4,Y
+#_01E3C1: LDA.w DemonLoadInfo+4,Y
 #_01E3C4: AND.w #$7FFF
 #_01E3C7: CLC
 #_01E3C8: ADC.w #$00B0
@@ -14501,7 +14586,7 @@ LoadDemonEverything:
 #_01E3D1: STA.w $1A60,X
 #_01E3D4: LDA.w $0622
 #_01E3D7: STA.w $1AA0,X
-#_01E3DA: LDA.w UNREACH_07C14F+4,Y
+#_01E3DA: LDA.w DemonLoadInfo+4,Y
 #_01E3DD: AND.w #$8000
 #_01E3E0: BEQ .branch01E3E5
 
@@ -14520,7 +14605,7 @@ LoadDemonEverything:
 #_01E3F2: ADC.w #$0004
 #_01E3F5: ASL A
 #_01E3F6: TAX
-#_01E3F7: LDA.w UNREACH_07C14F+6,Y
+#_01E3F7: LDA.w DemonLoadInfo+6,Y
 #_01E3FA: AND.w #$7FFF
 #_01E3FD: BNE .branch01E402
 
@@ -14534,7 +14619,7 @@ LoadDemonEverything:
 #_01E40C: STA.w $1A60,X
 #_01E40F: LDA.w $0622
 #_01E412: STA.w $1AA0,X
-#_01E415: LDA.w UNREACH_07C14F+6,Y
+#_01E415: LDA.w DemonLoadInfo+6,Y
 #_01E418: AND.w #$8000
 #_01E41B: BEQ .branch01E420
 
@@ -14714,12 +14799,12 @@ routine01E4EF:
 #_01E54E: ASL A
 #_01E54F: ASL A
 #_01E550: TAY
-#_01E551: LDA.w UNREACH_07C14F+4,Y
+#_01E551: LDA.w DemonLoadInfo+4,Y
 #_01E554: AND.w #$7FFF
 #_01E557: CLC
 #_01E558: ADC.w #$00B0
 #_01E55B: STA.w $0000,X
-#_01E55E: LDA.w UNREACH_07C14F+4,Y
+#_01E55E: LDA.w DemonLoadInfo+4,Y
 #_01E561: AND.w #$8000
 #_01E564: BEQ .branch01E569
 
@@ -14735,7 +14820,7 @@ routine01E4EF:
 #_01E579: CLC
 #_01E57A: ADC.w #$0008
 #_01E57D: TAX
-#_01E57E: LDA.w UNREACH_07C14F+6,Y
+#_01E57E: LDA.w DemonLoadInfo+6,Y
 #_01E581: AND.w #$7FFF
 #_01E584: BNE .branch01E589
 
@@ -14745,7 +14830,7 @@ routine01E4EF:
 #_01E589: CLC
 #_01E58A: ADC.w #$00B0
 #_01E58D: STA.w $0000,X
-#_01E590: LDA.w UNREACH_07C14F+6,Y
+#_01E590: LDA.w DemonLoadInfo+6,Y
 #_01E593: AND.w #$8000
 #_01E596: BEQ .branch01E59B
 
@@ -15348,7 +15433,7 @@ routine01E95F:
 
 .cast_now
 #_01E9CA: LDY.w #$0001
-#_01E9CD: JSL GetSpellProperty
+#_01E9CD: JSL GetSkillProperty
 #_01E9D1: AND.w #$00FF
 #_01E9D4: BNE .branch01E9DE
 
@@ -15439,10 +15524,12 @@ routine01EA3C:
 .exit
 #_01EA58: RTL
 
+;===================================================================================================
+
 ; TODO this must have to do with magic? maybe damage?
 routine01EA59:
 #_01EA59: LDY.w #$0001
-#_01EA5C: JSL GetSpellProperty
+#_01EA5C: JSL GetSkillProperty
 #_01EA60: AND.w #$00FF
 #_01EA63: LDY.w $0518
 #_01EA66: LDX.w $1012,Y
@@ -15519,7 +15606,7 @@ routine01EAC4:
 #_01EAD1: JSR routine01EB94
 #_01EAD4: LDA.w $0A52
 #_01EAD7: LDY.w #$0004
-#_01EADA: JSL GetSpellProperty
+#_01EADA: JSL GetSkillProperty
 #_01EADE: AND.w #$FFFF
 #_01EAE1: BEQ .branch01EAFA
 
@@ -15582,7 +15669,7 @@ routine01EAC4:
 .branch011B43
 #_01EB43: LDA.w $0A52
 #_01EB46: LDY.w #$0004
-#_01EB49: JSL GetSpellProperty
+#_01EB49: JSL GetSkillProperty
 #_01EB4D: AND.w #$FFFF
 #_01EB50: BEQ .branch01EB69
 
@@ -16279,7 +16366,7 @@ routine01F01D:
 #_01F025: STA.w $0A3E
 #_01F028: LDY.w #$0004
 #_01F02B: LDA.w $0A52
-#_01F02E: JSL GetSpellProperty
+#_01F02E: JSL GetSkillProperty
 #_01F032: JSR routine01F21F
 
 #_01F035: BCS .exit
@@ -17179,7 +17266,7 @@ routine01F5AA:
 ;===================================================================================================
 ; TODO possibly spell properties
 ;===================================================================================================
-GetSpellProperty:
+GetSkillProperty:
 #_01F5B8: PHP
 #_01F5B9: SEP #$20
 #_01F5BB: STA.w CPUMULTA
@@ -17203,7 +17290,7 @@ GetSpellProperty:
 #_01F5D3: CLC
 #_01F5D4: ADC.w CPUPRODUCTL
 #_01F5D7: TAY
-#_01F5D8: LDA.w UNREACH_07B645,Y
+#_01F5D8: LDA.w SkillData,Y
 #_01F5DB: PLB
 #_01F5DC: PLP
 #_01F5DD: RTL
@@ -17216,7 +17303,7 @@ AttemptSpellCast:
 #_01F5E1: BCS .is_demon
 
 #_01F5E3: LDY.w #$0003
-#_01F5E6: JSL GetSpellProperty
+#_01F5E6: JSL GetSkillProperty
 #_01F5EA: AND.w #$00FF
 #_01F5ED: SEC
 #_01F5EE: SBC.w $1032,X
@@ -17352,7 +17439,7 @@ routine01F672:
 
 .branch01F6E3
 #_01F6E3: LDY.w #$0001
-#_01F6E6: JSL GetSpellProperty
+#_01F6E6: JSL GetSkillProperty
 #_01F6EA: AND.w #$00FF
 #_01F6ED: BNE .branch01F6F7
 

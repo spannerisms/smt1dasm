@@ -1,5 +1,7 @@
 org $008000
 
+;===================================================================================================
+
 Vector_Reset:
 #_008000: SEI
 #_008001: CLC
@@ -415,11 +417,11 @@ PerformNewestVector:
 #_00825A: SEP #$10
 
 #_00825C: LDX.w $1925
-#_00825F: BEQ ..can_dec
+#_00825F: BEQ .can_dec
 
 #_008261: DEX
 
-..can_dec
+.can_dec
 #_008262: STX.w $191C
 
 #_008265: LDX.b #$00
@@ -1229,10 +1231,14 @@ EXIT_IRQ:
 #_008685: PLA
 #_008686: RTI
 
+;---------------------------------------------------------------------------------------------------
+
 IRQ_subs:
 #_008687: dw IRQ_868D
 #_008689: dw IRQ_86EB
 #_00868B: dw IRQ_8708
+
+;===================================================================================================
 
 IRQ_868D:
 #_00868D: LDA.w $0F81
@@ -1247,6 +1253,8 @@ IRQ_868D:
 .vectors
 #_00869E: dw IRQ_HandleSubScreen
 #_0086A0: dw IRQ_BGMODE0
+
+;===================================================================================================
 
 IRQ_HandleSubScreen:
 #_0086A2: SEP #$20
@@ -1267,6 +1275,8 @@ IRQ_HandleSubScreen:
 
 #_0086C1: INC.w $0F81
 #_0086C4: RTS
+
+;===================================================================================================
 
 IRQ_BGMODE0:
 #_0086C5: SEP #$20
@@ -1289,11 +1299,15 @@ IRQ_BGMODE0:
 #_0086E5: INC.w $0F81
 #_0086E8: RTS
 
+;===================================================================================================
+
 Data_IRQ_Timer6A:
 #_0086E9: db $6A
 
 Data_IRQ_Timer7F:
 #_0086EA: db $7F
+
+;===================================================================================================
 
 IRQ_86EB:
 #_0086EB: SEP #$20
@@ -1312,6 +1326,8 @@ IRQ_86EB:
 #_008704: STA.w $0F00
 #_008707: RTS
 
+;===================================================================================================
+
 IRQ_8708:
 #_008708: LDA.w $0F81
 #_00870B: ASL A
@@ -1325,6 +1341,8 @@ IRQ_8708:
 .vectors
 #_008719: dw IRQ_HandleMainScreen
 #_00871B: dw IRQ_BGMODE0_B
+
+;===================================================================================================
 
 IRQ_HandleMainScreen:
 #_00871D: SEP #$20
@@ -1342,6 +1360,8 @@ IRQ_HandleMainScreen:
 
 #_008735: INC.w $0F81
 #_008738: RTS
+
+;===================================================================================================
 
 IRQ_BGMODE0_B:
 #_008739: SEP #$20
@@ -1369,6 +1389,8 @@ IRQ_BGMODE0_B:
 #_008761: INC.w $0F81
 #_008764: RTS
 
+;===================================================================================================
+
 UnusedNMIThingMaybe:
 #_008765: PHP
 #_008766: BIT.w RDNMI
@@ -1380,6 +1402,8 @@ UnusedNMIThingMaybe:
 #_00876E: BIT.w RDNMI
 #_008771: PLP
 #_008772: RTL
+
+;===================================================================================================
 
 TableByCozy:
 #_008773: db "programming by cozy!"
@@ -1474,8 +1498,7 @@ Reset_OAMrelatedWRAM:
 #_008830: db $C0,$01,$D0,$01,$E0,$01,$E8,$01
 
 ;===================================================================================================
-; 
-;===================================================================================================
+
 routine008838:
 #_008838: PHP
 #_008839: SEP #$30
@@ -1939,6 +1962,8 @@ ThisMightDoArbOAM:
 
 #_008B47: JMP .branch008C23
 
+;---------------------------------------------------------------------------------------------------
+
 .branch008B4A
 #_008B4A: LDA.w $194E
 #_008B4D: CLC
@@ -2060,6 +2085,8 @@ ThisMightDoArbOAM:
 #_008C1D: STA.w $1957
 #_008C20: JMP routine008AE6
 
+;---------------------------------------------------------------------------------------------------
+
 .branch008C23
 #_008C23: LDX.w $1946
 #_008C26: LDA.w $195F
@@ -2098,18 +2125,20 @@ ThisMightDoArbOAM:
 #_008C54: STA.w $1A00,Y
 #_008C57: LDA.w $1A40,Y
 #_008C5A: AND.b #$08
-#_008C5C: BEQ .EXIT_008C66
+#_008C5C: BEQ .exit
 
 #_008C5E: LDA.w $1A40,Y
 #_008C61: ORA.b #$40
 #_008C63: STA.w $1A40,Y
 
-.EXIT_008C66
+.exit
 #_008C66: RTS
 
 data008C67:
 #_008C67: db $08,$10,$08,$20,$08,$40,$10,$20
 #_008C6F: db $10,$40,$20,$40
+
+;===================================================================================================
 
 routine008C73:
 #_008C73: LDX.b #$FF
@@ -2173,6 +2202,8 @@ routine008C73:
 #_008CCE: AND.b #$BF
 #_008CD0: STA.w $1A40,Y
 #_008CD3: RTS
+
+;===================================================================================================
 
 ; TODO i think this is in bank06?
 routine008CD4:
@@ -2242,6 +2273,8 @@ routine008D25:
 #_008D4C: STA.w $1C40,X
 #_008D4F: BRA .branch008D5D
 
+;---------------------------------------------------------------------------------------------------
+
 .branch008D51
 #_008D51: REP #$20
 #_008D53: LDA.w $1C40,X
@@ -2263,6 +2296,8 @@ routine008D25:
 #_008D6F: ADC.w $1C00,X
 #_008D72: STA.w $1C80,X
 #_008D75: BRA .branch008D83
+
+;---------------------------------------------------------------------------------------------------
 
 .branch008D77
 #_008D77: REP #$20
@@ -2324,6 +2359,8 @@ routine008D25:
 #_008DE9: CLC
 #_008DEA: ADC.w $7E2001,Y
 #_008DED: STA.w $7E2001,Y
+
+;---------------------------------------------------------------------------------------------------
 
 #_008DF0: REP #$20
 #_008DF2: TYA
@@ -2442,6 +2479,8 @@ RoundQuotient:
 #_008E85: LDX.w $0E82
 #_008E88: RTL
 
+;===================================================================================================
+
 WriteAmountHEXtoDEC:
 #_008E89: STA.w $0090
 #_008E8C: LDX.w #$000A
@@ -2465,14 +2504,14 @@ WriteAmountHEXtoDEC:
 #_008EAA: STA.b ($90),Y
 #_008EAC: DEY
 #_008EAD: DEY
-#_008EAE: BMI .EXIT_008ECF
+#_008EAE: BMI .exit
 
 #_008EB0: LDA.w $0E80
 #_008EB3: ORA.w $0E82
 #_008EB6: BNE .branch008E94
 
 #_008EB8: TYA
-#_008EB9: BMI .EXIT_008ECF
+#_008EB9: BMI .exit
 
 .branch008EBB
 #_008EBB: LDA.w #$0000
@@ -2488,8 +2527,10 @@ WriteAmountHEXtoDEC:
 #_008ECC: DEY
 #_008ECD: BPL .branch008EBB
 
-.EXIT_008ECF
+.exit
 #_008ECF: RTL
+
+;===================================================================================================
 
 ; TODO POSSIBLY UNUSED ROUTINE
 routine008ED0:
@@ -2549,37 +2590,43 @@ routine008F11:
 #_008F27: JSL AddSelfAsVector
 #_008F2B: RTL
 
+;===================================================================================================
+
 Update19xxVecUntilInputOrAPasses:
 #_008F2C: STA.w $0E8A
 
-.branch008F2F
+.wait
 #_008F2F: JSL AddSelfAsVector
 #_008F33: LDA.w $0F2B
 #_008F36: BNE .exit
 
 #_008F38: DEC.w $0E8A
-#_008F3B: BNE .branch008F2F
+#_008F3B: BNE .wait
 
 .exit
 #_008F3D: RTL
 
+;===================================================================================================
+
 Do19XXVectorsATimes:
 #_008F3E: STA.w $0E8A
 
-.branch008F41
+.wait
 #_008F41: JSL AddSelfAsVector
 #_008F45: DEC.w $0E8A
-#_008F48: BNE .branch008F41
+#_008F48: BNE .wait
 
 #_008F4A: RTL
+
+;===================================================================================================
 
 Update19XXUntilInput:
 #_008F4B: REP #$20
 
-.branch008F4D
+.wait
 #_008F4D: JSL AddSelfAsVector
 #_008F51: LDA.w $0F2B
-#_008F54: BEQ .branch008F4D
+#_008F54: BEQ .wait
 
 #_008F56: RTL
 
@@ -2612,6 +2659,8 @@ routine008F57:
 
 #_008F80: PLP
 #_008F81: RTL
+
+;===================================================================================================
 
 VRAM_From_7FXXXX:
 #_008F82: SEP #$30
@@ -2670,6 +2719,8 @@ data008FF3:
 #_009003: dw $6000,$0000,$0800,$1000
 #_00900B: dw $1800
 
+;===================================================================================================
+
 WaitForMenuChoice_A:
 #_00900D: STA.w $0E8C
 #_009010: STY.w $0EA8
@@ -2678,6 +2729,8 @@ WaitForMenuChoice_A:
 
 #_009019: LDA.w #$0000
 #_00901C: STA.w $0E9A
+
+;===================================================================================================
 
 WaitForMenuChoice_FirstPerson:
 #_00901F: REP #$30
@@ -2857,6 +2910,8 @@ PrepCursorMovementDMA:
 #_009132: PLB
 #_009133: RTL
 
+;===================================================================================================
+
 CacheCursorPositionAndReset:
 #_009134: STA.w $0E8C
 #_009137: STY.w $0EA8
@@ -2865,6 +2920,8 @@ CacheCursorPositionAndReset:
 #_009140: LDX.w #$0000
 #_009143: STX.w $0E9A
 #_009146: RTL
+
+;===================================================================================================
 
 GoToPreviousMenu:
 #_009147: LDA.w $0ED2
@@ -2893,6 +2950,8 @@ GoToPreviousMenu:
 .exit
 #_009170: RTL
 
+;===================================================================================================
+
 BrightenScreen:
 #_009171: PHP
 #_009172: SEP #$20
@@ -2912,6 +2971,8 @@ BrightenScreen:
 
 #_009188: PLP
 #_009189: RTL
+
+;===================================================================================================
 
 DarkenScreen:
 #_00918A: PHP
@@ -2963,7 +3024,7 @@ routine0091A1:
 #_0091C6: CMP.b #$10
 #_0091C8: BEQ .branch0091CE
 
-#_0091CA: BCS .EXIT_0091D4
+#_0091CA: BCS .exit
 
 #_0091CC: BCC .branch0091B1
 
@@ -2971,9 +3032,11 @@ routine0091A1:
 #_0091CE: JSL Cache_WRAM_CGWRAM_First8
 #_0091D2: BRA .branch0091B5
 
-.EXIT_0091D4
+.exit
 #_0091D4: PLP
 #_0091D5: RTL
+
+;===================================================================================================
 
 Cache_WRAM_CGWRAM_First8:
 #_0091D6: PHP
@@ -3014,6 +3077,8 @@ routine0091FD:
 #_009203: PLB
 #_009204: LDX.b #$00
 #_009206: STX.w $0EDB
+
+;===================================================================================================
 
 routine009209:
 #_009209: LDA.w $0EDC
@@ -3428,11 +3493,11 @@ routine009443:
 #_00945F: LDA.w $0EDA
 #_009462: DEC A
 #_009463: STA.w $0EDA
-#_009466: BMI .EXIT_00946B
+#_009466: BMI .exit
 
 #_009468: JMP .branch009454
 
-.EXIT_00946B
+.exit
 #_00946B: PLP
 #_00946C: RTL
 
@@ -3704,6 +3769,8 @@ routine009534:
 #_0095CD: PLB
 #_0095CE: RTL
 
+;===================================================================================================
+
 SetUpCGRAMDMA:
 #_0095CF: STA.w $0F09
 
@@ -3815,6 +3882,8 @@ GetRandomInt:
 
 #_00966F: PLP
 #_009670: RTL
+
+;===================================================================================================
 
 ZeroALOTofVRAM: ; TODO figure out how much and where
 #_009671: PHP
@@ -3935,7 +4004,9 @@ ZeroALOTofVRAM: ; TODO figure out how much and where
 #_009729: PLP
 #_00972A: RTL
 
-Emprt_First_4K_in_7F0000:
+;===================================================================================================
+
+Empty_First_4K_in_7F0000:
 #_00972B: PHP
 #_00972C: REP #$30
 
@@ -3952,11 +4023,15 @@ Emprt_First_4K_in_7F0000:
 #_00973D: PLP
 #_00973E: RTL
 
+;===================================================================================================
+
 RunOpenMenuDMA_X:
 #_00973F: PHK
 #_009740: JSR OpenMenuDMA
 #_009743: JSL AddSelfAsVector
 #_009747: RTL
+
+;===================================================================================================
 
 OpenMenuDMA:
 #_009748: REP #$10
@@ -4041,6 +4116,8 @@ OpenMenuDMA:
 #_0097B9: PLB
 #_0097BA: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine0097BB:
 #_0097BB: PHK ; use jsl stupid
@@ -4104,6 +4181,8 @@ routine0097C4:
 #_00980F: PLB
 #_009810: RTL
 
+;===================================================================================================
+
 Zero2KBinVRAM_setup:
 #_009811: PHP
 #_009812: SEP #$30
@@ -4162,7 +4241,7 @@ routine009853:
 #_009872: STZ.w $0FC0
 #_009875: STZ.w $0FC2
 
-branch009878:
+.branch009878
 #_009878: LDA.w $0FC4
 #_00987B: ASL A
 #_00987C: TAY
@@ -4180,14 +4259,14 @@ branch009878:
 #_009893: LSR A
 #_009894: LSR A
 #_009895: LSR A
-#_009896: BCC routine00989C
+#_009896: BCC .branch00989C
 
 #_009898: JSL AddSelfAsVector
 
-routine00989C:
+.branch00989C
 #_00989C: LDA.w $0FC4
 #_00989F: CMP.w #$0013
-#_0098A2: BCC branch009878
+#_0098A2: BCC .branch009878
 
 #_0098A4: LDA.w $0EF5
 #_0098A7: AND.w #$8000
@@ -4272,7 +4351,7 @@ routine0098C7:
 
 #_009931: LDX.w $0FC6
 #_009934: CPX.b #$04
-#_009936: BCC .EXIT_00993F
+#_009936: BCC .exit
 
 #_009938: STA.w $0FC6
 
@@ -4280,7 +4359,7 @@ routine0098C7:
 #_00993B: JSR routine009942
 #_00993E: SEC
 
-.EXIT_00993F
+.exit
 #_00993F: REP #$30
 #_009941: RTS
 
@@ -4435,6 +4514,8 @@ routine009942:
 .EXIT_009A36
 #_009A36: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch009A37
 #_009A37: LDX.w $0FC0
 #_009A3A: LDA.w data009B44,Y
@@ -4580,19 +4661,21 @@ data009B90:
 #_009B98: dw $0008,$000A,$000C,$000E
 #_009BA0: dw $000F,$0010
 
+;===================================================================================================
+
 Reset7F5xxxALOT:
 #_009BA4: PHP
 #_009BA5: REP #$30
 #_009BA7: LDX.w #$0000
 #_009BAA: LDA.w #$09B4
 
-.branch009BAD
+.next
 #_009BAD: STA.l $7F5000,X
 #_009BB1: STA.l $7F5800,X
 #_009BB5: INX
 #_009BB6: INX
 #_009BB7: CPX.w #$0380
-#_009BBA: BCC .branch009BAD
+#_009BBA: BCC .next
 
 #_009BBC: PLP
 #_009BBD: RTS
@@ -4627,6 +4710,8 @@ ReadPage_A_Bank04:
 
 .highbyte80
 #_009BDD: db $80
+
+;===================================================================================================
 
 ; TODO something with movement?
 routine009BDE:
@@ -4663,6 +4748,8 @@ routine009BDE:
 #_009C09: PLP
 #_009C0A: CLC
 #_009C0B: RTL
+
+;===================================================================================================
 
 ThisRoutineIsJustAnRTS:
 #_009C0C: RTS
@@ -4811,7 +4898,7 @@ routine009C9B:
 
 #_009D05: LDX.w $0FC6
 #_009D08: CPX.b #$03
-#_009D0A: BCC .EXIT_009D13
+#_009D0A: BCC .exit
 
 #_009D0C: STA.w $0FC6
 
@@ -4819,8 +4906,7 @@ routine009C9B:
 #_009D0F: JSR Prepare_UW_View_Tilemap_Update
 #_009D12: SEC
 
-.EXIT_009D13
-
+.exit
 #_009D13: REP #$30
 #_009D15: RTS
 
@@ -4998,16 +5084,22 @@ Prepare_UW_View_Tilemap_Update:
 .table_indices
 #_009E01: dw 0, 1, 2, 2, 1, 0
 
+;===================================================================================================
+
 RunOpenMenuDMA_Xplus6:
 #_009E0D: CLC
 #_009E0E: ADC.w #$0006
 #_009E11: JSL RunOpenMenuDMA_X
 #_009E15: RTL
 
+;===================================================================================================
+
 RunOpenMenuDMA_type0B:
 #_009E16: LDA.w #$000B
 #_009E19: JSL RunOpenMenuDMA_X
 #_009E1D: RTL
+
+;===================================================================================================
 
 BringUpAMenu:
 #_009E1E: PHP
@@ -5034,6 +5126,8 @@ BringUpAMenu:
 #_009E57: PLP
 #_009E58: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine009E59:
 #_009E59: PHP
@@ -5048,6 +5142,8 @@ routine009E59:
 #_009E71: JSL AddSelfAsVector
 #_009E75: PLP
 #_009E76: RTL
+
+;===================================================================================================
 
 UpdateMoonPhase:
 #_009E77: PHP
@@ -5069,10 +5165,8 @@ UpdateMoonPhase:
 
 ;===================================================================================================
 
-routine009E95:
-#_009E95: PHP
-
 Write7066VRAM:
+#_009E95: PHP
 #_009E96: REP #$30
 #_009E98: JSR Blank0106TextBuffer
 #_009E9B: LDA.w #VRAMaddr($7066)
@@ -5085,6 +5179,8 @@ Write7066VRAM:
 #_009EB1: PLP
 #_009EB2: RTL
 
+;===================================================================================================
+
 Write785CVRAM:
 #_009EB3: PHP
 #_009EB4: REP #$30
@@ -5092,7 +5188,7 @@ Write785CVRAM:
 #_009EB9: LDA.w #$000C
 #_009EBC: STA.w $0E00
 
-.branch009EBF
+.next
 #_009EBF: LDA.w $0E00
 #_009EC2: ASL A
 #_009EC3: ASL A
@@ -5108,10 +5204,12 @@ Write785CVRAM:
 #_009ED7: STA.w $0100
 #_009EDA: JSL AddSelfAsVector
 #_009EDE: DEC.w $0E00
-#_009EE1: BPL .branch009EBF
+#_009EE1: BPL .next
 
 #_009EE3: PLP
 #_009EE4: RTL
+
+;===================================================================================================
 
 Write7C46VRAM:
 #_009EE5: PHP
@@ -5127,18 +5225,22 @@ Write7C46VRAM:
 #_009F01: PLP
 #_009F02: RTL
 
+;===================================================================================================
+
 Blank0106TextBuffer:
 #_009F03: LDY.w #$0000
 #_009F06: LDA.w #$2000
 
-.branch009F09
+.next
 #_009F09: STA.w $0106,Y
 #_009F0C: INY
 #_009F0D: INY
 #_009F0E: CPY.w #$0120
-#_009F11: BCC .branch009F09
+#_009F11: BCC .next
 
 #_009F13: RTS
+
+;===================================================================================================
 
 ResetSomeTextMaybe:
 #_009F14: PHP
@@ -5398,6 +5500,8 @@ routine00A0AE:
 #_00A0FE: PLP
 #_00A0FF: RTL
 
+;===================================================================================================
+
 PrepareDMAofSomeSort:
 #_00A100: ASL A
 #_00A101: ASL A
@@ -5433,20 +5537,24 @@ PrepareDMAofSomeSort:
 #_00A13A: PLB
 #_00A13B: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .properties
-..DMA_typeA
+; A
 #_00A13C: db $01 ; DMA type
 #_00A13D: db VMDATA ; DMA port
 #_00A13E: dl $7F5000 ; A bus
 #_00A141: dw $0380 ; size
 #_00A143: db $01 ; channel bit
 
-..DMA_typeB
+; B
 #_00A144: db $01 ; DMA type
 #_00A145: db VMDATA ; DMA port
 #_00A146: dl $7F5800 ; A bus
 #_00A149: dw $0380 ; size
 #_00A14B: db $01 ; channel bit
+
+;===================================================================================================
 
 routine00A14C:
 #_00A14C: PHP
@@ -5478,6 +5586,8 @@ routine00A14C:
 
 #_00A17C: PLP
 #_00A17D: RTL
+
+;===================================================================================================
 
 ; TODO something with inventory?
 ; maybe updating it in vram?
@@ -5699,6 +5809,8 @@ routine00A232:
 
 #_00A31B: RTL
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00A31C
 #_00A31C: PHB
 
@@ -5799,6 +5911,8 @@ routine00A232:
 #_00A3A8: PLB
 #_00A3A9: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00A3AA:
 #_00A3AA: LDY.w $00EE
@@ -5806,9 +5920,11 @@ routine00A3AA:
 #_00A3B0: CMP.w #$FFFF
 #_00A3B3: LDX.w #$0070
 #_00A3B6: LDY.w #$0030
-#_00A3B9: JSL ReadSpellName_long
+#_00A3B9: JSL ReadSkillName_long
 #_00A3BD: PLB
 #_00A3BE: RTL
+
+;===================================================================================================
 
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00A3BF:
@@ -5829,6 +5945,8 @@ routine00A3BF:
 #_00A3D7: PLB
 #_00A3D8: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00A3D9:
 #_00A3D9: LDY.w $00EE
@@ -5836,7 +5954,7 @@ routine00A3D9:
 #_00A3DF: AND.w #$00FF
 #_00A3E2: LDX.w #$0070
 #_00A3E5: LDY.w #$0030
-#_00A3E8: JSL ReadItemlName_long
+#_00A3E8: JSL ReadItemNameLong
 #_00A3EC: PLB
 #_00A3ED: RTL
 
@@ -5942,7 +6060,7 @@ routine00A45E:
 #_00A4E2: JSL WriteAmountHEXtoDEC
 #_00A4E6: LDY.w $00EE
 #_00A4E9: LDA.w $1034,Y
-#_00A4EC: BNE .EXIT_00A4FD
+#_00A4EC: BNE .exit
 
 #_00A4EE: LDA.w #$0093
 #_00A4F1: ORA.w $0EFB
@@ -5950,7 +6068,7 @@ routine00A45E:
 #_00A4F7: STA.w $012A
 #_00A4FA: STA.w $012C
 
-.EXIT_00A4FD
+.exit
 #_00A4FD: RTL
 
 ;===================================================================================================
@@ -6043,6 +6161,8 @@ routine00A4FE:
 #_00A5B7: BCC .branch00A5AC
 
 #_00A5B9: RTL
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00A5BA
 #_00A5BA: PHB
@@ -6142,6 +6262,8 @@ routine00A5EB:
 
 #_00A65A: RTL
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00A65B
 #_00A65B: PHB
 
@@ -6184,7 +6306,7 @@ routine00A68C:
 #_00A68E: INC.w $040F
 #_00A691: LDA.w $040F
 #_00A694: AND.b #$0F
-#_00A696: BNE .EXIT_00A6C2
+#_00A696: BNE .exit
 
 #_00A698: LDA.w $040F
 #_00A69B: AND.b #$F0
@@ -6216,7 +6338,7 @@ routine00A68C:
 .branch00A6BE
 #_00A6BE: JSL routine00A63C
 
-.EXIT_00A6C2
+.exit
 #_00A6C2: RTL
 
 ;===================================================================================================
@@ -6343,6 +6465,8 @@ routine00A796:
 .exit
 #_00A7B1: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00A7B2:
 #_00A7B2: REP #$20
@@ -6364,6 +6488,8 @@ routine00A7B2:
 
 .exit
 #_00A7D6: RTS
+
+;===================================================================================================
 
 UpdateDirTilemap:
 #_00A7D7: PHP
@@ -6479,6 +6605,8 @@ routine00A840:
 #_00A8B1: PLP
 #_00A8B2: RTL
 
+;===================================================================================================
+
 ; TODO seems to somewhat determine RNG things
 ; 045A seems to be an RNG call thing
 routine00A8B3:
@@ -6583,6 +6711,8 @@ routine00A8F5:
 #_00A97A: STA.w $0EF1
 #_00A97D: RTL
 
+;===================================================================================================
+
 UpdateUWLabel:
 #_00A97E: PHP
 #_00A97F: REP #$30
@@ -6614,14 +6744,14 @@ routine00A9AD:
 #_00A9AD: PHP
 #_00A9AE: REP #$20
 #_00A9B0: BIT.w $0EF5
-#_00A9B3: BPL .branch00A9E0
+#_00A9B3: BPL .exit
 
 #_00A9B5: LDA.w $0100
-#_00A9B8: BEQ .branch00A9BE
+#_00A9B8: BEQ .no_vector
 
 #_00A9BA: JSL AddSelfAsVector
 
-.branch00A9BE
+.no_vector
 #_00A9BE: LDA.w #$0000
 #_00A9C1: STA.w $0106
 #_00A9C4: LDA.w $0EF1
@@ -6634,7 +6764,7 @@ routine00A9AD:
 #_00A9D9: STA.w $0EF5
 #_00A9DC: JSL AddSelfAsVector
 
-.branch00A9E0
+.exit
 #_00A9E0: PLP
 #_00A9E1: RTL
 
@@ -6694,7 +6824,7 @@ routine00AA04:
 #_00AA43: CPY.b #$08
 #_00AA45: BCC .branch00AA1D
 
-#_00AA47: BRA .EXIT_00AA52
+#_00AA47: BRA .exit
 
 .branch00AA49
 #_00AA49: JSR WriteTextTo0106
@@ -6703,9 +6833,11 @@ routine00AA04:
 #_00AA4E: CPY.b #$08
 #_00AA50: BCC .branch00AA16
 
-.EXIT_00AA52
+.exit
 #_00AA52: PLP
 #_00AA53: RTL
+
+;===================================================================================================
 
 ReadDemonName_long:
 #_00AA54: PHP
@@ -6716,6 +6848,8 @@ ReadDemonName_long:
 #_00AA61: PLP
 #_00AA62: RTL
 
+;===================================================================================================
+
 ReadClassName_long:
 #_00AA63: PHP
 #_00AA64: STX.w $0EF7
@@ -6725,16 +6859,20 @@ ReadClassName_long:
 #_00AA70: PLP
 #_00AA71: RTL
 
-ReadSpellName_long:
+;===================================================================================================
+
+ReadSkillName_long:
 #_00AA72: PHP
 #_00AA73: STX.w $0EF7
 #_00AA76: STY.w $0EF9
-#_00AA79: LDX.w #SpellNamePointers
+#_00AA79: LDX.w #SkillNamePointers
 #_00AA7C: JSR ReadEntityName
 #_00AA7F: PLP
 #_00AA80: RTL
 
-ReadItemlName_long:
+;===================================================================================================
+
+ReadItemNameLong:
 #_00AA81: PHP
 #_00AA82: STX.w $0EF7
 #_00AA85: STY.w $0EF9
@@ -6742,6 +6880,8 @@ ReadItemlName_long:
 #_00AA8B: JSR ReadEntityName
 #_00AA8E: PLP
 #_00AA8F: RTL
+
+;===================================================================================================
 
 ReadEntityName:
 #_00AA90: PHP
@@ -6790,6 +6930,8 @@ ReadEntityName:
 #_00AADF: PLP
 #_00AAE0: RTS
 
+;===================================================================================================
+
 WriteTextTo0106:
 #_00AAE1: PHX
 #_00AAE2: PHY
@@ -6823,7 +6965,7 @@ WriteTextTo0106:
 #_00AB0F: SBC.b #$9C
 #_00AB11: TAX
 #_00AB12: LDY.b #$9E
-#_00AB14: LDA.l data00AB42,X
+#_00AB14: LDA.l DakutenBaseLetters,X
 #_00AB18: BPL .branch00AB1D
 
 #_00AB1A: AND.b #$7F
@@ -6848,9 +6990,10 @@ WriteTextTo0106:
 #_00AB40: PLX
 #_00AB41: RTS
 
-; TODO find out what this type of kana is called
-; i think this is kana stuff?
-data00AB42:
+;===================================================================================================
+
+; and Handakuten
+DakutenBaseLetters:
 #_00AB42: db $2A,$2B,$2C,$2D,$2E,$2F,$30,$31
 #_00AB4A: db $32,$33,$34,$35,$36,$37,$38,$3E
 #_00AB52: db $3F,$40,$41,$42,$BE,$BF,$C0,$C1
@@ -6858,6 +7001,8 @@ data00AB42:
 #_00AB62: db $69,$6A,$6B,$6C,$6D,$6E,$6F,$70
 #_00AB6A: db $76,$77,$78,$79,$7A,$F6,$F7,$F8
 #_00AB72: db $F9,$FA
+
+;===================================================================================================
 
 routine00AB74:
 #_00AB74: PHP
@@ -6957,6 +7102,8 @@ routine00AB74:
 #_00AC10: PLP
 #_00AC11: RTL
 
+;===================================================================================================
+
 ; TODO handles stuff with dungeons 0FD0/0FD2
 routine00AC12:
 #_00AC12: PHP
@@ -7028,6 +7175,8 @@ routine00AC12:
 #_00AC8B: JSL AddSelfAsVector
 #_00AC8F: PLP
 #_00AC90: RTL
+
+;===================================================================================================
 
 ; TODO sets up some address
 routine00AC91:
@@ -7210,6 +7359,8 @@ routine00AD90:
 #_00ADAC: PLP
 #_00ADAD: RTL
 
+;===================================================================================================
+
 #branch00ADAE:
 #_00ADAE: LDA.w #$FFFF
 #_00ADB1: STA.l $7EFFFE
@@ -7291,6 +7442,8 @@ routine00ADB8:
 #_00AE43: JSR routine00AE49
 #_00AE46: JMP .branch00ADC6
 
+;===================================================================================================
+
 routine00AE49:
 #_00AE49: LDA.w $0460
 #_00AE4C: ASL A
@@ -7309,10 +7462,12 @@ routine00AE49:
 #_00AE64: dw routine00B079
 #_00AE66: dw routine00B0C3
 
+;===================================================================================================
+
 routine00AE68:
 #_00AE68: DEC.w $0462
 #_00AE6B: DEC.w $0462
-#_00AE6E: BPL .EXIT_00AEB4
+#_00AE6E: BPL .exit
 
 #_00AE70: LDY.w $0466
 #_00AE73: LDX.w #$0000
@@ -7349,14 +7504,14 @@ routine00AE68:
 #_00AEAE: LDA.b #$00
 #_00AEB0: JSL PrepHDMAtypeFromA
 
-.EXIT_00AEB4
+.exit
 #_00AEB4: RTS
 
 ;===================================================================================================
 
 routine00AEB5:
 #_00AEB5: DEC.w $0462
-#_00AEB8: BPL .EXIT_00AF18
+#_00AEB8: BPL .exit
 
 #_00AEBA: LDY.w $0466
 #_00AEBD: LDX.w #$0000
@@ -7404,14 +7559,14 @@ routine00AEB5:
 #_00AF12: LDA.b #$00
 #_00AF14: JSL PrepHDMAtypeFromA
 
-.EXIT_00AF18
+.exit
 #_00AF18: RTS
 
 ;===================================================================================================
 
 routine00AF19:
 #_00AF19: DEC.w $0462
-#_00AF1C: BPL .EXIT_00AF62
+#_00AF1C: BPL .exit
 
 #_00AF1E: LDY.w $0466
 #_00AF21: LDX.w #$0000
@@ -7448,7 +7603,7 @@ routine00AF19:
 #_00AF5C: LDA.b #$00
 #_00AF5E: JSL PrepHDMAtypeFromA
 
-.EXIT_00AF62
+.exit
 #_00AF62: RTS
 
 ;===================================================================================================
@@ -7457,7 +7612,7 @@ routine00AF19:
 routine00AF63:
 #_00AF63: DEC.w $0462
 #_00AF66: DEC.w $0462
-#_00AF69: BPL .EXIT_00AFBA
+#_00AF69: BPL .exit
 
 #_00AF6B: LDY.w $0466
 #_00AF6E: LDX.w #$0000
@@ -7498,7 +7653,7 @@ routine00AF63:
 #_00AFB4: LDA.b #$01
 #_00AFB6: JSL PrepHDMAtypeFromA
 
-.EXIT_00AFBA
+.exit
 #_00AFBA: RTS
 
 ;===================================================================================================
@@ -7570,7 +7725,7 @@ routine00AFBB:
 
 routine00B02F:
 #_00B02F: DEC.w $0462
-#_00B032: BPL .EXIT_00B078
+#_00B032: BPL .exit
 
 #_00B034: LDY.w $0466
 #_00B037: LDX.w #$0000
@@ -7607,14 +7762,14 @@ routine00B02F:
 #_00B072: LDA.b #$00
 #_00B074: JSL PrepHDMAtypeFromA
 
-.EXIT_00B078
+.exit
 #_00B078: RTS
 
 ;===================================================================================================
 
 routine00B079:
 #_00B079: DEC.w $0462
-#_00B07C: BPL .EXIT_00B0C2
+#_00B07C: BPL .exit
 
 #_00B07E: LDY.w $0466
 #_00B081: LDX.w #$0000
@@ -7651,7 +7806,7 @@ routine00B079:
 #_00B0BC: LDA.b #$01
 #_00B0BE: JSL PrepHDMAtypeFromA
 
-.EXIT_00B0C2
+.exit
 #_00B0C2: RTS
 
 ;===================================================================================================
@@ -7659,7 +7814,7 @@ routine00B079:
 routine00B0C3:
 #_00B0C3: DEC.w $0462
 #_00B0C6: DEC.w $0462
-#_00B0C9: BPL .EXIT_00B11A
+#_00B0C9: BPL .exit
 
 #_00B0CB: LDY.w $0466
 #_00B0CE: LDX.w #$0000
@@ -7700,8 +7855,10 @@ routine00B0C3:
 #_00B114: LDA.b #$01
 #_00B116: JSL PrepHDMAtypeFromA
 
-.EXIT_00B11A
+.exit
 #_00B11A: RTS
+
+;===================================================================================================
 
 ; TODO hdma tables? perhaps indirect stuff?
 data00B11B:
@@ -7770,6 +7927,8 @@ data00B21B:
 #_00B2CB: dw $0038,$0030,$0028,$0020
 #_00B2D3: dw $0018,$0010,$0008,$0000
 
+;===================================================================================================
+
 routine00B2DB:
 #_00B2DB: SEP #$20
 #_00B2DD: LDA.w $0CF3
@@ -7787,16 +7946,20 @@ routine00B2DB:
 #_00B2F5: JSL routine028000
 #_00B2F9: BRA .branch00B2E5
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00B2FB:
 #_00B2FB: REP #$20
 #_00B2FD: JSL AddSelfAsVector
 #_00B301: LDA.w $0F2B
 #_00B304: BIT.w #$3000
-#_00B307: BNE .branch00B309
+#_00B307: BNE .useless
 
-.branch00B309
+.useless
 #_00B309: JMP routine00B7C5
+
+;===================================================================================================
 
 ResetStatsMaybe:
 #_00B30C: REP #$30
@@ -7842,10 +8005,10 @@ ResetStatsMaybe:
 #_00B359: STA.w $101C,X
 #_00B35C: JSL UpdateMaxHP
 #_00B360: STA.w $102E,X
-#_00B363: JSL UpdateSwdPower
+#_00B363: JSL UpdateSwordPower
 #_00B367: JSL UpdateGunPower
-#_00B36B: JSL UpdateSwdAccur
-#_00B36F: JSL UpdateGunAccur
+#_00B36B: JSL UpdateSwordAccuracy
+#_00B36F: JSL UpdateGunAccuracy
 #_00B373: JSL UpdateDefense
 #_00B377: JSL UpdateEvade
 #_00B37B: CPX.w #$0060
@@ -7855,8 +8018,8 @@ ResetStatsMaybe:
 #_00B384: STA.w $1032,X
 
 .branch00B387
-#_00B387: JSL UpdateMPower
-#_00B38B: JSL UpdateMEffect
+#_00B387: JSL UpdateMagicPower
+#_00B38B: JSL UpdateMagicEffect
 #_00B38F: INC.w $0715
 #_00B392: TXA
 #_00B393: CLC
@@ -7866,6 +8029,8 @@ ResetStatsMaybe:
 #_00B39B: BCS .branch00B3A0
 
 #_00B39D: JMP .branch00B317
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00B3A0
 #_00B3A0: LDA.w #$FFFF
@@ -7919,6 +8084,8 @@ ResetStatsMaybe:
 #_00B401: STA.w $045F
 #_00B404: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 #_00B405: db $84,$90,$5F,$6A,$5E,$80,$87,$5F
 #_00B40D: db $12,$0F,$1C,$19,$13,$18,$0F,$CF
 #_00B415: db $87,$5F,$92,$CF,$77,$5A,$87,$5A
@@ -7931,6 +8098,8 @@ ResetStatsMaybe:
 #_00B44D: db $E4,$09,$E5,$09,$E6,$09,$E7,$09
 #_00B455: db $E8,$09,$E9,$09,$EA,$09,$EB,$09
 #_00B45D: db $EC,$09,$ED,$09,$EE,$09,$EF,$09
+
+;===================================================================================================
 
 routine00B465:
 #_00B465: PHP
@@ -7995,6 +8164,8 @@ data00B4D3:
 #_00B4D3: dw $0003,$0042,$0050,$0061
 #_00B4DB: dw $0079,$0091,$00A1
 
+;===================================================================================================
+
 UpdatePlayerStats:
 #_00B4E1: PHP
 #_00B4E2: REP #$30
@@ -8015,22 +8186,24 @@ UpdatePlayerStats:
 .branch00B4F7
 #_00B4F7: STY.w $0720
 #_00B4FA: JSL UpdateMaxHP
-#_00B4FE: JSL UpdateSwdPower
+#_00B4FE: JSL UpdateSwordPower
 #_00B502: JSL UpdateGunPower
-#_00B506: JSL UpdateSwdAccur
-#_00B50A: JSL UpdateGunAccur
+#_00B506: JSL UpdateSwordAccuracy
+#_00B50A: JSL UpdateGunAccuracy
 #_00B50E: JSL UpdateDefense
 #_00B512: JSL UpdateEvade
 #_00B516: CPX.w #$0060
-#_00B519: BCC .branch00B51F ; No MP for MC
+#_00B519: BCC .no_mp_for_mc
 
 #_00B51B: JSL UpdateMaxMP
 
-.branch00B51F
-#_00B51F: JSL UpdateMPower
-#_00B523: JSL UpdateMEffect
+.no_mp_for_mc
+#_00B51F: JSL UpdateMagicPower
+#_00B523: JSL UpdateMagicEffect
 #_00B527: PLP
 #_00B528: RTL
+
+;===================================================================================================
 
 UpdateMaxHP:
 #_00B529: PHP
@@ -8070,14 +8243,16 @@ UpdateMaxHP:
 .branch00B567
 #_00B567: STA.w $1030,X
 #_00B56A: CMP.w #$03E7
-#_00B56D: BCC .EXIT_00B575
+#_00B56D: BCC .exit
 
 #_00B56F: LDA.w #$03E7
 #_00B572: STA.w $1030,X
 
-.EXIT_00B575
+.exit
 #_00B575: PLP
 #_00B576: RTL
+
+;===================================================================================================
 
 UpdateMaxMP:
 #_00B577: PHP
@@ -8111,24 +8286,25 @@ UpdateMaxMP:
 #_00B5A3: ADC.w #$0004
 #_00B5A6: STA.w $1034,X
 #_00B5A9: CMP.w #$03E7
-#_00B5AC: BCC .EXIT_00B5B4
+#_00B5AC: BCC .exit
 
 #_00B5AE: LDA.w #$03E7
 #_00B5B1: STA.w $1034,X
 
-.EXIT_00B5B4
+.exit
 #_00B5B4: PLP
 #_00B5B5: RTL
 
-UpdateSwdPower:
+;===================================================================================================
+
+UpdateSwordPower:
 #_00B5B6: PHP
 
-#Native_BRK: ; this vector will work??? wtf
-
+#Native_BRK: ; this vector will sorta work??? wtf
 #_00B5B7: REP #$30
 #_00B5B9: STZ.w $101E,X
 #_00B5BC: LDA.w $1042,X ; Load equipped sword
-#_00B5BF: BMI .invalidsword
+#_00B5BF: BMI .exit
 
 #_00B5C1: LDY.w #$0001
 #_00B5C4: JSL GetEquipmentStat
@@ -8137,19 +8313,21 @@ UpdateSwdPower:
 #_00B5CC: ADC.w $1010,X ; Add in STR
 #_00B5CF: STA.w $101E,X
 
-.invalidsword
+.exit
 #_00B5D2: PLP
 #_00B5D3: RTL
+
+;===================================================================================================
 
 UpdateGunPower:
 #_00B5D4: PHP
 #_00B5D5: REP #$30
 #_00B5D7: STZ.w $1022,X
 #_00B5DA: LDA.w $1046,X ; if no bullets, exit
-#_00B5DD: BMI .invalidbullets
+#_00B5DD: BMI .exit
 
 #_00B5DF: LDA.w $1044,X ; get gun id
-#_00B5E2: BMI .invalidgun
+#_00B5E2: BMI .exit
 
 #_00B5E4: LDY.w #$0001
 #_00B5E7: JSL GetEquipmentStat
@@ -8163,17 +8341,18 @@ UpdateGunPower:
 #_00B5FF: ADC.w $1022,X
 #_00B602: STA.w $1022,X
 
-.invalidgun
-.invalidbullets
+.exit
 #_00B605: PLP
 #_00B606: RTL
 
-UpdateSwdAccur:
+;===================================================================================================
+
+UpdateSwordAccuracy:
 #_00B607: PHP
 #_00B608: REP #$30
 #_00B60A: STZ.w $1020,X
 #_00B60D: LDA.w $1042,X
-#_00B610: BMI .invalidsword
+#_00B610: BMI .exit
 
 #_00B612: LDY.w #$0002
 #_00B615: JSL GetEquipmentStat
@@ -8192,7 +8371,7 @@ UpdateSwdAccur:
 #_00B635: STA.w $1020,X
 #_00B638: LDY.w $0720
 #_00B63B: CPY.w #$0003
-#_00B63E: BCC .EXIT_00B650
+#_00B63E: BCC .exit
 
 #_00B640: LSR A
 #_00B641: LSR A
@@ -8203,20 +8382,21 @@ UpdateSwdAccur:
 #_00B64A: SBC.w $0E80
 #_00B64D: STA.w $1020,X
 
-.invalidsword
-.EXIT_00B650
+.exit
 #_00B650: PLP
 #_00B651: RTL
 
-UpdateGunAccur:
+;===================================================================================================
+
+UpdateGunAccuracy:
 #_00B652: PHP
 #_00B653: REP #$30
 #_00B655: STZ.w $1024,X
 #_00B658: LDA.w $1046,X
-#_00B65B: BMI .invalidbullets
+#_00B65B: BMI .exit
 
 #_00B65D: LDA.w $1044,X
-#_00B660: BMI .invalidgun
+#_00B660: BMI .exit
 
 #_00B662: LDY.w #$0002
 #_00B665: JSL GetEquipmentStat
@@ -8235,7 +8415,7 @@ UpdateGunAccur:
 #_00B685: STA.w $1024,X
 #_00B688: LDY.w $0720
 #_00B68B: CPY.w #$0003
-#_00B68E: BCC .EXIT_00B6A0
+#_00B68E: BCC .exit
 
 #_00B690: LSR A
 #_00B691: LSR A
@@ -8246,13 +8426,13 @@ UpdateGunAccur:
 #_00B69A: SBC.w $0E80
 #_00B69D: STA.w $1024,X
 
-.invalidgun
-.invalidbullets
-.EXIT_00B6A0
+.exit
 #_00B6A0: PLP
 #_00B6A1: RTL
 
-UpdateMPower:
+;===================================================================================================
+
+UpdateMagicPower:
 #_00B6A2: PHP
 #_00B6A3: REP #$30
 #_00B6A5: LDA.w $1012,X
@@ -8264,7 +8444,9 @@ UpdateMPower:
 #_00B6B1: PLP
 #_00B6B2: RTL
 
-UpdateMEffect:
+;===================================================================================================
+
+UpdateMagicEffect:
 #_00B6B3: PHP
 #_00B6B4: REP #$30
 #_00B6B6: LDA.w $1014,X
@@ -8275,6 +8457,8 @@ UpdateMEffect:
 #_00B6BF: STA.w $102C,X
 #_00B6C2: PLP
 #_00B6C3: RTL
+
+;===================================================================================================
 
 UpdateDefense:
 #_00B6C4: PHP
@@ -8325,6 +8509,8 @@ UpdateDefense:
 .exit
 #_00B717: PLP
 #_00B718: RTL
+
+;===================================================================================================
 
 UpdateEvade:
 #_00B719: PHP
@@ -8380,6 +8566,8 @@ UpdateEvade:
 #_00B777: PLP
 #_00B778: RTL
 
+;===================================================================================================
+
 GetEquipmentStat:
 #_00B779: PHP
 #_00B77A: SEP #$20
@@ -8400,7 +8588,7 @@ GetEquipmentStat:
 #_00B790: NOP
 
 #_00B791: REP #$30
-#_00B793: TYA ; Y = equipment type
+#_00B793: TYA ; Y = requested stat
 #_00B794: CLC
 #_00B795: ADC.w CPUPRODUCTL
 #_00B798: TAY
@@ -8408,6 +8596,8 @@ GetEquipmentStat:
 #_00B79C: PLB
 #_00B79D: PLP
 #_00B79E: RTL
+
+;===================================================================================================
 
 Index_07B505_AisItem_YisProperty:
 #_00B79F: PHP
@@ -8519,6 +8709,8 @@ routine00B7C5:
 #_00B84E: JSR routine00B857
 #_00B851: JSR routine00B8FE
 #_00B854: JMP .branch00B846
+
+;===================================================================================================
 
 routine00B857:
 #_00B857: SEP #$30
@@ -8800,6 +8992,8 @@ routine00B9AD:
 #_00BA2B: PLB
 #_00BA2C: RTS
 
+;===================================================================================================
+
 ; TODO figure out this HDMA table
 BG3_Interface_HDMA:
 #_00BA2D: db $81,$00,$00,$03,$00,$00,$08,$FC
@@ -8812,15 +9006,16 @@ BG3_Interface_HDMA:
 #_00BA65: db $00,$05,$08,$00,$09,$0A,$00,$05
 #_00BA6D: db $0A,$00,$00
 
+;===================================================================================================
+
 routine00BA70:
 #_00BA70: PHP
 #_00BA71: SEP #$30
 #_00BA73: DEC A
 #_00BA74: DEC A
 #_00BA75: CMP.w $0EED
-#_00BA78: BCC .EXIT_00BABE
-
-#_00BA7A: BEQ .EXIT_00BABE
+#_00BA78: BCC .exit
+#_00BA7A: BEQ .exit
 
 #_00BA7C: STA.w $0EEC
 
@@ -8863,7 +9058,7 @@ routine00BA70:
 #_00BAB9: CMP.w $0EEC
 #_00BABC: BCC .branch00BA7F
 
-.EXIT_00BABE
+.exit
 #_00BABE: PLP ; ooooooooo BABE!
 #_00BABF: RTL
 
@@ -8875,7 +9070,7 @@ routine00BAC0:
 #_00BAC3: DEC A
 #_00BAC4: DEC A
 #_00BAC5: CMP.w $0EED
-#_00BAC8: BCS .EXIT_00BB1A
+#_00BAC8: BCS .exit
 
 #_00BACA: STA.w $0EEC
 
@@ -8922,13 +9117,15 @@ routine00BAC0:
 
 #_00BB10: LDA.w $0EED
 #_00BB13: CMP.w $0EEC
-#_00BB16: BEQ .EXIT_00BB1A
+#_00BB16: BEQ .exit
 
 #_00BB18: BCS .branch00BACD
 
-.EXIT_00BB1A
+.exit
 #_00BB1A: PLP
 #_00BB1B: RTL
+
+;===================================================================================================
 
 PrepHDMAtypeFromA:
 #_00BB1C: PHP
@@ -9064,6 +9261,8 @@ SomeOtherDMAsFromE80:
 #_00BBF1: PLB
 #_00BBF2: PLP
 #_00BBF3: RTL
+
+;===================================================================================================
 
 ; TODO some manual DMA
 routine00BBF4:
@@ -9335,6 +9534,8 @@ routine00BD75:
 #_00BD90: PLP
 #_00BD91: RTL
 
+;===================================================================================================
+
 CalcVisitComponent:
 #_00BD92: PHP
 #_00BD93: SEP #$30
@@ -9458,7 +9659,8 @@ data00BDB5:
 data00BFD6:
 #_00BFD6: db $00
 
-; Some of these are in FastROM banks, despite not being FastROM
+;===================================================================================================
+
 ; I think some of these are HDMA
 DMA_DATA_00BFD7:
 ; TODO is this unused? it makes no sense
@@ -9812,7 +10014,7 @@ routine00C197:
 #_00C1AA: PLB
 #_00C1AB: JSL PPUSettings_00C409
 #_00C1AF: JSL ZeroALOTofVRAM
-#_00C1B3: JSL Emprt_First_4K_in_7F0000
+#_00C1B3: JSL Empty_First_4K_in_7F0000
 #_00C1B7: JSL routine008F57
 #_00C1BB: LDA.b #$00
 #_00C1BD: STA.w VMADDL
@@ -9931,7 +10133,7 @@ routine00C197:
 #_00C2D1: LDA.b #$03
 #_00C2D3: JSL PrepHDMAtypeFromA
 #_00C2D7: JSL routine00A14C
-#_00C2DB: JSL Emprt_First_4K_in_7F0000
+#_00C2DB: JSL Empty_First_4K_in_7F0000
 #_00C2DF: LDA.b #$F8
 #_00C2E1: STA.w $0F53
 #_00C2E4: STA.w BG2VOFS
@@ -10009,6 +10211,7 @@ routine00C197:
 .branch00C386
 #_00C386: JSL AddSelfAsVector
 #_00C38A: JSR routine00D484
+
 #_00C38D: LDA.w $0F2B
 #_00C390: BEQ .branch00C406
 
@@ -10035,6 +10238,8 @@ routine00C197:
 #_00C3BE: BCS .branch00C3C3
 
 #_00C3C0: JMP .branch00C367
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00C3C3
 #_00C3C3: LDA.w #!SONG_COMMAND_FD
@@ -10266,6 +10471,8 @@ routine00C55F:
 #_00C57D: PLP
 #_00C57E: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00C57F:
 #_00C57F: PHP
@@ -10404,6 +10611,8 @@ routine00C634:
 #_00C682: STA.w $0100
 #_00C685: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00C686:
 #_00C686: PHP
@@ -10493,12 +10702,16 @@ data00C72E:
 data00C739:
 #_00C739: db $07
 
+;===================================================================================================
+
 Disable_BG2_OnMainScreen:
 #_00C73A: LDA.w $0F74
 #_00C73D: AND.b #$FD
 #_00C73F: STA.w MAINDES
 #_00C742: STA.w $0F74
 #_00C745: RTS
+
+;===================================================================================================
 
 Enable_BG2_OnMainScreen:
 #_00C746: LDA.w $0F74
@@ -10674,6 +10887,8 @@ Check_Directional_and_Shoulder_Presses:
 #_00C894: CLC
 #_00C895: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00C896
 #_00C896: TXA
 #_00C897: ORA.b #$80
@@ -10841,15 +11056,15 @@ Dungeon_Movement:
 
 #_00C995: LDA.w $040D
 #_00C998: CMP.w $040E
-#_00C99B: BEQ .EXIT_00C9A6
+#_00C99B: BEQ .exit
 
 .branch00C99D
 #_00C99D: LDA.w $0EF2
-#_00C9A0: BPL .EXIT_00C9A6
+#_00C9A0: BPL .exit
 
 #_00C9A2: JSL UpdateUWLabel
 
-.EXIT_00C9A6
+.exit
 #_00C9A6: RTS
 
 ;===================================================================================================
@@ -11258,22 +11473,22 @@ routine00CBBF:
 routine00CC64:
 #_00CC64: LDA.w $040D
 #_00CC67: CMP.w $040E
-#_00CC6A: BEQ .EXIT_00CC70
+#_00CC6A: BEQ .exit
 
 #_00CC6C: JSL UpdateDirTilemap
 
-.EXIT_00CC70
+.exit
 #_00CC70: RTS
 
 ;===================================================================================================
 
 routine00CC71:
 #_00CC71: LDA.w $0450
-#_00CC74: BNE .EXIT_00CC7A
+#_00CC74: BNE .exit
 
 #_00CC76: JSL routine00A68C
 
-.EXIT_00CC7A
+.exit
 #_00CC7A: RTS
 
 ;===================================================================================================
@@ -11729,6 +11944,8 @@ RoomEvent_Trap:
 #_00CEFD: CLC
 #_00CEFE: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00CEFF
 #_00CEFF: REP #$30
 #_00CF01: LDY.w #$0000
@@ -11922,6 +12139,8 @@ RoomEvent_07_ExitToOverworld:
 #_00D056: CLC
 #_00D057: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00D058
 #_00D058: TXA
 #_00D059: AND.w #$FF7F
@@ -12061,7 +12280,7 @@ routine00D142:
 #_00D145: LDA.w #DungeonSignALocations
 #_00D148: LDX.w #$0003
 #_00D14B: JSR Dungeon_FindAssociatedEvent_Turning
-#_00D14E: BCS .EXIT_00D15C
+#_00D14E: BCS .exit
 
 #_00D150: STX.w $0717
 
@@ -12069,7 +12288,7 @@ routine00D142:
 #_00D155: LDA.w $0717
 #_00D158: JSL routine00A8F5
 
-.EXIT_00D15C
+.exit
 #_00D15C: PLP
 #_00D15D: RTL
 
@@ -12270,7 +12489,7 @@ routine00D24C:
 #_00D27B: STA.w $0A20
 #_00D27E: LDA.w #$0002
 #_00D281: STA.w $0A1C
-#_00D284: JSL routine0396C9
+#_00D284: JSL LoadClassyMessage
 #_00D288: JSL routine03837C
 #_00D28C: JSR routine00d29a
 #_00D28F: LDA.w $0400
@@ -12306,6 +12525,8 @@ routine00d29a:
 #_00D2C2: BCS .branch00D29E
 
 #_00D2C4: RTS
+
+;===================================================================================================
 
 r00D2C5_long:
 #_00D2C5: PHB
@@ -12346,18 +12567,20 @@ data00D2FC:
 data00D2FD:
 #_00D2FD: db $01,$FF,$00,$00,$FF,$01,$00
 
+;===================================================================================================
+
 ; TODO something encounters
 routine00D304:
 #_00D304: JSL AddSelfAsVector
 #_00D308: LDA.w $0712
-#_00D30B: BPL .EXIT_00D339
+#_00D30B: BPL .exit
 
 #_00D30D: LDA.b #$FF
 #_00D30F: JSL CalcVisitComponent
-#_00D313: BCC .EXIT_00D339
+#_00D313: BCC .exit
 
 #_00D315: JSL TriggerEncounter_Dungeon
-#_00D319: BCC .EXIT_00D339
+#_00D319: BCC .exit
 
 #_00D31B: JSL routine00D3DA
 #_00D31F: JSL routine01B263
@@ -12370,19 +12593,21 @@ routine00D304:
 #_00D331: JSL Write_to_APU
 #_00D335: JSL Dungeon_UpdateAutoMapper
 
-.EXIT_00D339
+.exit
 #_00D339: RTS
+
+;===================================================================================================
 
 UpdateVisitedSquares:
 #_00D33A: PHP
 #_00D33B: REP #$30
 #_00D33D: LDA.w #$00FE
 #_00D340: JSL CalcVisitComponent
-#_00D344: BCC .EXIT_00D380
+#_00D344: BCC .exit
 
 #_00D346: LDA.w #$0000
 #_00D349: JSL CalcVisitComponent
-#_00D34D: BCS .EXIT_00D380
+#_00D34D: BCS .exit
 
 #_00D34F: LDA.w $070C
 #_00D352: TAY
@@ -12412,12 +12637,14 @@ UpdateVisitedSquares:
 #_00D37B: STA.l $7E3000,X
 #_00D37F: PLB
 
-.EXIT_00D380
+.exit
 #_00D380: PLP
 #_00D381: RTL
 
 VisitedBits:
 #_00D382: db $80,$40,$20,$10,$08,$04,$02,$01
+
+;===================================================================================================
 
 routine00D38A:
 #_00D38A: LDA.w #$20DE
@@ -12447,7 +12674,7 @@ Dungeon_UpdateAutoMapper:
 #_00D3B8: SEP #$30
 #_00D3BA: LDA.w $0400
 #_00D3BD: AND.b #$80
-#_00D3BF: BEQ .EXIT_00D3D8
+#_00D3BF: BEQ .exit
 
 #_00D3C1: LDA.b #$1C
 #_00D3C3: STA.w $0F77
@@ -12459,7 +12686,7 @@ Dungeon_UpdateAutoMapper:
 #_00D3D3: LDX.b #$80
 #_00D3D5: JSR SomeDungeon_Check
 
-.EXIT_00D3D8
+.exit
 #_00D3D8: PLP
 #_00D3D9: RTL
 
@@ -12470,7 +12697,7 @@ routine00D3DA:
 #_00D3DB: SEP #$30
 #_00D3DD: LDA.w $0400
 #_00D3E0: AND.b #$80
-#_00D3E2: BEQ .EXIT_00D3F9
+#_00D3E2: BEQ .exit
 
 #_00D3E4: LDA.b #$10
 #_00D3E6: STA.w $0F77
@@ -12481,7 +12708,7 @@ routine00D3DA:
 #_00D3F4: LDX.b #$80
 #_00D3F6: JSR SomeDungeon_Check
 
-.EXIT_00D3F9
+.exit
 #_00D3F9: PLP
 #_00D3FA: RTL
 
@@ -12491,7 +12718,7 @@ SomeDungeon_Check:
 #_00D3FB: PHP
 #_00D3FC: SEP #$20
 #_00D3FE: BIT.w $0400
-#_00D401: BPL .EXIT_00D41D
+#_00D401: BPL .exit
 
 #_00D403: REP #$30
 #_00D405: AND.w #$00FF
@@ -12505,7 +12732,7 @@ SomeDungeon_Check:
 #_00D418: SEP #$10
 #_00D41A: STX.w $1A00
 
-.EXIT_00D41D
+.exit
 #_00D41D: PLP
 #_00D41E: RTS
 
@@ -12528,6 +12755,8 @@ RemoveSomeHP:
 #_00D43A: JSL routine00A17E
 #_00D43E: CLC
 #_00D43F: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00D440
 #_00D440: LDA.w $102E,X
@@ -12561,7 +12790,7 @@ RemoveSomeHP:
 routine00D484:
 #_00D484: LDA.w #$00FE
 #_00D487: JSL CalcVisitComponent
-#_00D48B: BCS .branch00D4A3
+#_00D48B: BCS .exit
 
 #_00D48D: LDA.w #$000C
 #_00D490: JSL Do19XXVectorsATimes
@@ -12572,7 +12801,7 @@ routine00D484:
 #_00D49D: INC.w $0722
 #_00D4A0: STA.w $0F2B
 
-.branch00D4A3
+.exit
 #_00D4A3: RTS
 
 data00D4A4:
@@ -12610,17 +12839,19 @@ data00D4EA:
 #_00D58A: dw $0800,$0200,$0800,$0200
 #_00D592: dw $0800,$0800,$0800
 
+;===================================================================================================
+
 RoomEvent_LookForChest:
 #_00D598: PHP
 #_00D599: SEP #$30
 #_00D59B: BIT.w $0711
-#_00D59E: BVC .EXIT_00D5E2
+#_00D59E: BVC .exit
 
 #_00D5A0: REP #$30
 #_00D5A2: LDA.w #DungeonChestLocations
 #_00D5A5: LDX.w #$0004
 #_00D5A8: JSR Dungeon_FindAssociatedEvent_Turning
-#_00D5AB: BCS .EXIT_00D5E2
+#_00D5AB: BCS .exit
 
 #_00D5AD: TXA
 #_00D5AE: PHA
@@ -12647,9 +12878,11 @@ RoomEvent_LookForChest:
 #_00D5DC: LDA.w #$0038
 #_00D5DF: JSR routine00D9AD
 
-.EXIT_00D5E2
+.exit
 #_00D5E2: PLP
 #_00D5E3: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00D5E4
 #_00D5E4: PLA
@@ -12730,6 +12963,8 @@ RoomEvent_LookForChest:
 #_00D67B: dw routine00D6E3
 #_00D67D: dw routine00D760
 #_00D67F: dw routine00D7D6
+
+;===================================================================================================
 
 routine00D681:
 #_00D681: LDY.w #$0000
@@ -12842,6 +13077,8 @@ routine00D6E3:
 #_00D733: JSR routine00D9AD
 #_00D736: PLP
 #_00D737: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00D738
 #_00D738: LDA.w $0620
@@ -12970,6 +13207,8 @@ routine00D7D6:
 #_00D843: dw routine00D8B4
 #_00D845: dw routine00D90E
 #_00D847: dw routine00D90E
+
+;===================================================================================================
 
 routine00D849:
 #_00D849: LDY.w #$0000
@@ -13110,11 +13349,11 @@ routine00D90E:
 .branch00D911
 #_00D911: STY.w $0720
 #_00D914: LDX.w $0700,Y
-#_00D917: BMI .EXIT_00D95B
+#_00D917: BMI .exit
 
 #_00D919: LDA.w $1002,X
 #_00D91C: AND.w #$C000
-#_00D91F: BNE .EXIT_00D95B
+#_00D91F: BNE .exit
 
 #_00D921: STX.w $0715
 #_00D924: LDY.w $101C,X
@@ -13158,7 +13397,7 @@ routine00D90E:
 #_00D956: CPY.w #$000C
 #_00D959: BCC .branch00D911
 
-.EXIT_00D95B
+.exit
 #_00D95B: RTS
 
 ;===================================================================================================
@@ -13289,6 +13528,8 @@ data00D9FF:
 #_00DA87: dw $200B,$201E,$2019,$201C
 #_00DA8F: dw $200F,$2020,$200F,$2018
 #_00DA97: dw $201E,$20CF,$20CF,$20CF
+
+;===================================================================================================
 
 routine00DA9F:
 #_00DA9F: JSL routine00C76F
@@ -13625,6 +13866,8 @@ routine00DC1B:
 .data00DCB3
 #_00DCB3: dw -32, 32
 
+;===================================================================================================
+
 routine00DCB7:
 #_00DCB7: SEP #$10
 
@@ -13639,6 +13882,8 @@ routine00DCB7:
 
 #_00DCCA: REP #$10
 #_00DCCC: RTS
+
+;===================================================================================================
 
 ; TODO what in the world is this?
 routine00DCCD:
@@ -13956,6 +14201,8 @@ data00E40A:
 #_00E512: db $00,$78,$18,$FF,$3B,$1A,$20,$60
 #_00E51A: db $38,$FF,$3C,$00,$00,$70,$60,$FF
 
+;===================================================================================================
+
 routine00E522:
 #_00E522: PHP
 #_00E523: REP #$30
@@ -14029,7 +14276,9 @@ routine00E522:
 #_00E5AC: STA.w $0040,Y
 #_00E5AF: JSR routine00E706
 #_00E5B2: JSL AddSelfAsVector
-#_00E5B6: JMP .EXIT_00E6AD
+#_00E5B6: JMP .exit
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00E5B9
 #_00E5B9: SEC
@@ -14161,7 +14410,7 @@ routine00E522:
 #_00E6A8: DEC.w $0650
 #_00E6AB: BNE .branch00E685
 
-.EXIT_00E6AD
+.exit
 #_00E6AD: PLB
 #_00E6AE: PLP
 #_00E6AF: RTL
@@ -14171,11 +14420,11 @@ routine00E522:
 routine00E6B0:
 #_00E6B0: REP #$20
 #_00E6B2: LDA.w data00E7EB,X
-#_00E6B5: BNE .branch00E6B8
+#_00E6B5: BNE .continue
 
 #_00E6B7: RTS
 
-.branch00E6B8
+.continue
 #_00E6B8: LDA.w $0652
 #_00E6BB: CLC
 #_00E6BC: ADC.w data00E7EB,X
@@ -14217,6 +14466,8 @@ routine00E6EF:
 #_00E6FD: ADC.w #$0025
 #_00E700: STA.w $0040,X
 #_00E703: STA.w $0040,Y
+
+;---------------------------------------------------------------------------------------------------
 
 routine00E706:
 #_00E706: SEP #$30
@@ -14305,6 +14556,8 @@ data00E7EB:
 #_00E80B: dw $FD00,$0300,$FD00,$0300
 #_00E813: dw $FE80,$0000
 
+;===================================================================================================
+
 routine00E817:
 #_00E817: PHP
 #_00E818: REP #$30
@@ -14313,11 +14566,11 @@ routine00E817:
 #_00E81C: PLB
 #_00E81D: AND.w #$00FF
 #_00E820: CMP.w #$0002
-#_00E823: BNE .branch00E828
+#_00E823: BNE .continue
 
 #_00E825: JMP branch00E8CC
 
-.branch00E828
+.continue
 #_00E828: ASL A
 #_00E829: TAX
 #_00E82A: LDA.w data00EA22,X
@@ -14345,6 +14598,8 @@ routine00E817:
 #_00E85E: AND.w #$00FF
 #_00E861: JSR routine00E99D
 
+;---------------------------------------------------------------------------------------------------
+
 #branch00E864:
 #_00E864: LDX.w $0640
 #_00E867: INX
@@ -14371,7 +14626,9 @@ routine00E817:
 #_00E896: JSR routine00E99D
 #_00E899: JSL AddSelfAsVector
 
-EXIT_00E89D:
+;---------------------------------------------------------------------------------------------------
+
+#EXIT_00E89D:
 #_00E89D: PLB
 #_00E89E: PLP
 #_00E89F: RTL
@@ -14399,6 +14656,8 @@ routine00E8A0:
 
 #_00E8C7: INC.w $0640
 #_00E8CA: BRA branch00E864
+
+;---------------------------------------------------------------------------------------------------
 
 #branch00E8CC:
 #_00E8CC: STZ.w $0650
@@ -14479,6 +14738,8 @@ data00E957:
 #_00E95D: db 4, 4
 #_00E95F: db 5, 4
 
+;===================================================================================================
+
 routine00E961:
 #_00E961: LDA.b #$08
 #_00E963: LDX.b #$00
@@ -14497,7 +14758,7 @@ routine00E961:
 #_00E985: RTS
 
 ;===================================================================================================
-
+; TODO weird
 routine00E986:
 #_00E986: LDX.w $0640
 #_00E989: INX
@@ -14505,10 +14766,11 @@ routine00E986:
 #_00E98D: AND.w #$00FF
 #_00E990: STA.w $064A
 
-.branch00E993
+.next
 #_00E993: JSL AddSelfAsVector
+
 #_00E997: DEC.w $064A
-#_00E99A: BNE .branch00E993
+#_00E99A: BNE .next
 
 #_00E99C: RTS
 
@@ -14654,6 +14916,8 @@ data00EA92:
 #_00EB5A: db $0B,$FF,$0C,$00,$00,$50,$84,$00
 #_00EB62: db $00,$21,$0B,$FF
 
+;===================================================================================================
+
 routine00EB66:
 #_00EB66: PHP
 #_00EB67: CLC
@@ -14690,6 +14954,8 @@ routine00EB66:
 #_00EBA6: PLP
 #_00EBA7: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00EBA8:
 #_00EBA8: REP #$30
@@ -14722,12 +14988,12 @@ routine00EBC5:
 #_00EBD6: LDX.w #$0000
 #_00EBD9: LDY.w #$06C0
 
-.branch00EBDC
+.next
 #_00EBDC: LDA.l GFX_23F900,X
 #_00EBE0: STA.l $7F6000,X
 #_00EBE4: INX
 #_00EBE5: DEY
-#_00EBE6: BNE .branch00EBDC
+#_00EBE6: BNE .next
 
 #_00EBE8: REP #$20
 #_00EBEA: LDA.w #$0004
@@ -14768,13 +15034,13 @@ routine00EC1C:
 #_00EC21: LDY.w #$0800
 #_00EC24: LDA.w #$0000
 
-.branch00EC27
+.next
 #_00EC27: STA.l $7F7000,X
 #_00EC2B: STA.l $7F6000,X
 #_00EC2F: INX
 #_00EC30: INX
 #_00EC31: DEY
-#_00EC32: BNE .branch00EC27
+#_00EC32: BNE .next
 
 #_00EC34: REP #$20
 #_00EC36: LDA.w #$0000
@@ -14801,12 +15067,12 @@ routine00EC51:
 #_00EC61: LDX.w #$0000
 #_00EC64: LDY.w #$0020
 
-.branch00EC67
+.next
 #_00EC67: LDA.l GFX_23FFE0,X
 #_00EC6B: STA.l $7E2300,X
 #_00EC6F: INX
 #_00EC70: DEY
-#_00EC71: BNE .branch00EC67
+#_00EC71: BNE .next
 
 #_00EC73: LDA.b #$01
 #_00EC75: STA.l $7E22FD
@@ -14885,6 +15151,8 @@ routine00ECC3:
 .bits
 #_00ECFA: db $80,$40,$20,$10,$08,$04,$02,$01
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00ED02:
 #_00ED02: REP #$10
@@ -14949,10 +15217,10 @@ routine00ED38:
 Shift16bitAleft_Ytimes:
 #_00ED5C: REP #$30
 
-.branch00ED5E
+.next
 #_00ED5E: ASL A
 #_00ED5F: DEY
-#_00ED60: BNE .branch00ED5E
+#_00ED60: BNE .next
 
 #_00ED62: RTS
 
@@ -14961,10 +15229,10 @@ Shift16bitAleft_Ytimes:
 Shift16bitAright_Ytimes:
 #_00ED63: REP #$30
 
-.branch00ED65
+.next
 #_00ED65: LSR A
 #_00ED66: DEY
-#_00ED67: BNE .branch00ED65
+#_00ED67: BNE .next
 
 #_00ED69: RTS
 
@@ -14994,6 +15262,8 @@ routine00ED6A:
 
 routine00ED94:
 #_00ED94: SEP #$30
+
+; TODO directions
 #_00ED96: LDA.w $040D
 #_00ED99: BEQ .branch00EDA9
 
@@ -15007,6 +15277,8 @@ routine00ED94:
 
 .branch00EDA6
 #_00EDA6: JMP .branch00EEED
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00EDA9
 #_00EDA9: REP #$30
@@ -15456,7 +15728,7 @@ DrawAutoMapFacingNorth:
 
 #_00F03C: RTS
 
-;---------------------------------------------------------------------------------------------------
+;===================================================================================================
 
 DrawAutoMapFacingEast:
 #_00F03D: REP #$30
@@ -15721,18 +15993,23 @@ routine00F1FA:
 
 #_00F208: REP #$20
 #_00F20A: PHA
+
 #_00F20B: LDA.w $0D11
 #_00F20E: BEQ .branch00F218
 
 #_00F210: PLA
+
 #_00F211: LDA.w #$00FF
 #_00F214: STA.w $0CF9
+
 #_00F217: RTS
 
 .branch00F218
 #_00F218: PLA
+
 #_00F219: AND.w #$00FF
 #_00F21C: STA.w $0CF9
+
 #_00F21F: RTS
 
 ;===================================================================================================
@@ -16049,6 +16326,8 @@ routine00F4C0:
 .exit
 #_00F4D6: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00F4D7
 #_00F4D7: REP #$20
 #_00F4D9: LDA.w $0CF9
@@ -16062,7 +16341,7 @@ routine00F4C0:
 
 #_00F4EF: SEP #$20
 
-.branch00F4F1
+.next
 #_00F4F1: LDA.l GFX_23F900,X
 #_00F4F5: PHX
 #_00F4F6: LDX.w $0CFB
@@ -16072,7 +16351,7 @@ routine00F4C0:
 #_00F502: INX
 #_00F503: INC.w $0CFB
 #_00F506: DEY
-#_00F507: BNE .branch00F4F1
+#_00F507: BNE .next
 
 #_00F509: REP #$20
 #_00F50B: LDA.w $0CF9
@@ -16093,6 +16372,8 @@ data00F527:
 #_00F52F: db $00,$3C,$00,$3C,$00,$00,$00,$00
 #_00F537: db $00,$00,$00,$00,$3C,$00,$3C,$00
 #_00F53F: db $3C,$00,$3C,$00,$00,$00,$00,$00
+
+;===================================================================================================
 
 ; TODO this looks like stupid math
 routine00F547:
@@ -16202,6 +16483,8 @@ routine00F5D7:
 #_00F604: STA.w $0D11
 #_00F607: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00F608
 #_00F608: REP #$30
 #_00F60A: LDA.w $0D07
@@ -16227,6 +16510,8 @@ routine00F5D7:
 
 .branch00F62F
 #_00F62F: JMP routine00F5D7
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00F632
 #_00F632: REP #$30
@@ -16255,6 +16540,8 @@ routine00F5D7:
 .branch00F65C
 #_00F65C: JMP routine00F5D7
 
+;---------------------------------------------------------------------------------------------------
+
 #_00F65F: LDA.w #$0001
 #_00F662: STA.w $0D11
 #_00F665: RTS
@@ -16267,6 +16554,8 @@ data00F6FF:
 #_00F66F: dw $0800,$0400,$0400,$0200
 #_00F677: dw $0100,$0200,$0100,$8000
 #_00F67F: dw $0080,$FFFF
+
+;===================================================================================================
 
 routine00F683:
 #_00F683: PHP
@@ -16321,6 +16610,8 @@ routine00F683:
 #_00F6C9: STA.l $7F7000,X
 #_00F6CD: BRA .branch00F6E6
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00F6CF
 #_00F6CF: REP #$20
 #_00F6D1: DEC A
@@ -16354,7 +16645,7 @@ routine00F6EE:
 #_00F6F3: LDX.w #$003C
 #_00F6F6: LDY.w #$0020
 
-.branch00F6F9
+.next
 #_00F6F9: LDA.b #$00
 #_00F6FB: STA.l $7F7000,X
 
@@ -16366,7 +16657,7 @@ routine00F6EE:
 
 #_00F707: SEP #$20
 #_00F709: DEY
-#_00F70A: BNE .branch00F6F9
+#_00F70A: BNE .next
 
 #_00F70C: PLP
 #_00F70D: RTS
@@ -16386,6 +16677,8 @@ routine00F70E:
 
 data00F71F:
 #_00F71F: db $01,$00,$80,$80,$00,$FF,$FF
+
+;===================================================================================================
 
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00F726:
@@ -16465,6 +16758,8 @@ routine00F726:
 #_00F78F: PLP
 #_00F790: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00F791:
 #_00F791: PHP
@@ -16474,7 +16769,7 @@ routine00F791:
 #_00F796: LDX.w #$003C
 #_00F799: LDY.w #$0020
 
-.branch00F79C
+.next
 #_00F79C: LDA.b #$00
 #_00F79E: STA.l $7F7000,X
 
@@ -16486,7 +16781,7 @@ routine00F791:
 
 #_00F7AA: SEP #$20
 #_00F7AC: DEY
-#_00F7AD: BNE .branch00F79C
+#_00F7AD: BNE .next
 
 #_00F7AF: PLP
 #_00F7B0: RTS
