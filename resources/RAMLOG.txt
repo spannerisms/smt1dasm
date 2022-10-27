@@ -23,14 +23,29 @@ $0468 used for a jump at one point
 $0500[0x2] - used with demon stats? number of combatants?
 $0502[0x2] - Seems to be index of demon into stats table at $1000
 $050A[?] - 2 byte demon ids
+
 $0512[0x2] - 
 $0514[0x2] - 
+
+$0518[0x2] - Caster data index
+$051A[0x2] - Target data index
+
+$0522[0x?] - Number of magic stones to give after battle
 
 $052A[0x2] - seems to be battle mode flags?
 	ORA $2000 whe escaping?
 
 $0564[0x2] - something loading demons?
+$0568[0x8] - Enemy drops
+
 $0578 - number of max stat points
+
+$057E[0x2] - If non zero, nyorai is active
+$0582[0x2] - If non zero, rosary is active
+$0582[0x2] - If non zero, amulet is active
+$0588[0x2] - If non zero, core shield is active
+$05A6[0x2] - If non zero, fuma bell is active
+
 
 $05D6[0x02] - EXP gained in battle
 $0688 - inventory page
@@ -58,7 +73,7 @@ $09F4[0x1] - something with menus
 		0x8D seems to be for spell/item selection
 
 $09F8[0x1] - something menu
-
+$09FB[0x1] - max menu position?
 
 $0A24[0x2] - holds index for which sub bank to look at
 $0A26[0x2] - holds info for findings pointers in banks 8,9,A,B

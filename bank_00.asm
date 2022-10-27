@@ -2418,7 +2418,7 @@ routine008D25:
 ; X - high byte of 32-bit dividend
 ; Y - 16-bit divisor
 ;===================================================================================================
-Divide_32bit_by_16bit_with_arguments:
+Divide_32bit_by_16bit_XA_by_Y:
 #_008E40: STA.w $0E80
 #_008E43: STX.w $0E82
 #_008E46: STY.w $0E84
@@ -2435,12 +2435,14 @@ Divide_32bit_by_16bit_with_arguments:
 Divide_32bit_by_16bit_preset:
 #_008E49: LDA.w #$0000
 #_008E4C: STA.w $0E86
+
 #_008E4F: LDX.w #$0020
 #_008E52: ROL.w $0E80
 #_008E55: ROL.w $0E82
 
 .nextbit
 #_008E58: ROL.w $0E86
+
 #_008E5B: LDA.w $0E86
 #_008E5E: SEC
 #_008E5F: SBC.w $0E84
@@ -2451,6 +2453,7 @@ Divide_32bit_by_16bit_preset:
 .nooverflow
 #_008E67: ROL.w $0E80
 #_008E6A: ROL.w $0E82
+
 #_008E6D: DEX
 #_008E6E: BNE .nextbit
 
@@ -2477,6 +2480,7 @@ RoundQuotient:
 .rounddown
 #_008E82: LDA.w $0E80
 #_008E85: LDX.w $0E82
+
 #_008E88: RTL
 
 ;===================================================================================================
@@ -3254,8 +3258,11 @@ routine009209:
 #_009302: RTL
 
 ;===================================================================================================
-
-routine009303:
+; A = bitfield for what to fade?
+; Y = duration?
+; X = ??
+;===================================================================================================
+GraduallyFadeStuff:
 #_009303: PHP
 #_009304: SEP #$30
 #_009306: STA.w $0EDC
@@ -3850,7 +3857,24 @@ routine009602:
 #_009642: RTL
 
 ;===================================================================================================
-
+;  $0ED5      $0ED7      $0ED8      $0ED9
+; aaaaaaaa   bbbbbbbb   cccccccc   dddddddd
+;
+;GetRandomInt {
+;	S = B.7
+;
+;	B <<= 1
+;	B |= D.7
+;
+;	D <<= 1
+;	D |= ~(A.0 ^ 1) & ~(A.1 ^ 1)
+;
+;	C += (B + 0x22 + D + S) ^ 0x5A
+;
+;	A ^= C
+;
+;	return A
+;}
 GetRandomInt:
 #_009643: PHP
 #_009644: SEP #$20
@@ -5455,7 +5479,7 @@ routine00A056:
 
 ;===================================================================================================
 
-routine00A0AE:
+UpdateDialogBox:
 #_00A0AE: PHP
 #_00A0AF: REP #$30
 #_00A0B1: LDA.w #$0004
@@ -6436,7 +6460,7 @@ routine00A774:
 #_00A779: JSL routine00C76F
 #_00A77D: LDA.b #$05
 #_00A77F: JSL routine00C752
-#_00A783: JSL routine00A0AE
+#_00A783: JSL UpdateDialogBox
 
 #_00A787: SEP #$20
 #_00A789: LDA.w $0400
@@ -6608,14 +6632,22 @@ routine00A840:
 ;===================================================================================================
 
 ; TODO seems to somewhat determine RNG things
-; 045A seems to be an RNG call thing
 routine00A8B3:
 #_00A8B3: PHP
 #_00A8B4: SEP #$30
+
+; x = x coord
+; y = y coord
+; e = event stuff on turn
+
+; xxxxxxxx -> 0xxxxxx0
 #_00A8B6: LDA.w $070C
 #_00A8B9: AND.b #$FC
 #_00A8BB: LSR A
 #_00A8BC: STA.w $00E0
+
+; yyyyyyyy -> yy000000
+; eeeeeeee -> eeeeeeyy
 #_00A8BF: LDA.w $070D
 #_00A8C2: AND.b #$FC
 #_00A8C4: ASL A
@@ -6624,22 +6656,34 @@ routine00A8B3:
 #_00A8C7: ROL.w $00E1
 #_00A8CA: ASL A
 #_00A8CB: ROL.w $00E1
+
+;   yy000000
+; + 0xxxxxx0
 #_00A8CE: CLC
 #_00A8CF: ADC.w $00E0
 #_00A8D2: ADC.b #$00
 #_00A8D4: STA.w $00E0
+
+; eeeeeeyy -> 110000yy
 #_00A8D7: LDA.w $00E1
 #_00A8DA: AND.b #$03
 #_00A8DC: ADC.b #$C0
 #_00A8DE: STA.w $00E1
+
+; Bank 04
 #_00A8E1: LDA.b #$04
 #_00A8E3: STA.w $00E2
+
 #_00A8E6: LDY.b #$00
 #_00A8E8: LDA.b [$E0],Y
 #_00A8EA: STA.w $045A
+
+
 #_00A8ED: INY
+
 #_00A8EE: LDA.b [$E0],Y
 #_00A8F0: STA.w $0713
+
 #_00A8F3: PLP
 #_00A8F4: RTL
 
@@ -8220,7 +8264,7 @@ UpdateMaxHP:
 .branch00B53C
 #_00B53C: PHX
 #_00B53D: LDX.w #$0000
-#_00B540: JSL Divide_32bit_by_16bit_with_arguments
+#_00B540: JSL Divide_32bit_by_16bit_XA_by_Y
 #_00B544: JSL RoundQuotient
 
 #_00B548: SEP #$20
@@ -8599,16 +8643,22 @@ GetEquipmentStat:
 
 ;===================================================================================================
 
-Index_07B505_AisItem_YisProperty:
+GetUseItemStat:
 #_00B79F: PHP
+
 #_00B7A0: SEP #$20
+
 #_00B7A2: STA.w CPUMULTA
+
 #_00B7A5: LDA.b #$04
 #_00B7A7: STA.w CPUMULTB
+
 #_00B7AA: PHB
+
 #_00B7AB: LDA.b #$07
 #_00B7AD: PHA
 #_00B7AE: PLB
+
 #_00B7AF: NOP
 #_00B7B0: NOP
 #_00B7B1: NOP
@@ -8619,11 +8669,14 @@ Index_07B505_AisItem_YisProperty:
 #_00B7B6: NOP
 
 #_00B7B7: REP #$30
+
 #_00B7B9: TYA
 #_00B7BA: CLC
 #_00B7BB: ADC.w CPUPRODUCTL
 #_00B7BE: TAY
-#_00B7BF: LDA.w UNREACH_07B505,Y
+
+#_00B7BF: LDA.w UseItemStats,Y
+
 #_00B7C2: PLB
 #_00B7C3: PLP
 #_00B7C4: RTL
@@ -10452,7 +10505,7 @@ routine00C51A:
 
 ;===================================================================================================
 
-routine00C55F:
+HideTheMenu:
 #_00C55F: PHP
 #_00C560: REP #$30
 
@@ -10539,10 +10592,10 @@ routine00C57F:
 #_00C5E5: LDA.b #$04
 #_00C5E7: LDX.b #$00
 #_00C5E9: LDY.b #$01
-#_00C5EB: JSL routine009303
+#_00C5EB: JSL GraduallyFadeStuff
 #_00C5EF: LDX.b #$1C
 #_00C5F1: STX.w $0F75
-#_00C5F4: JSL routine00EB66
+#_00C5F4: JSL DisplayUnderworldMap
 #_00C5F8: STZ.w $0F4D
 #_00C5FB: STZ.w $0F4E
 #_00C5FE: LDA.b #$FF
@@ -10760,7 +10813,7 @@ routine00C76F:
 ;===================================================================================================
 
 routine00C7A1:
-#_00C7A1: JSL routine00A0AE
+#_00C7A1: JSL UpdateDialogBox
 #_00C7A5: JSL Dungeon_UpdateAutoMapper
 #_00C7A9: RTL
 
@@ -10772,7 +10825,7 @@ routine00C7AA:
 #_00C7AD: LDA.b #$04
 #_00C7AF: LDX.b #$00
 #_00C7B1: LDY.b #$02
-#_00C7B3: JSL routine009303
+#_00C7B3: JSL GraduallyFadeStuff
 #_00C7B7: JSR Disable_BG2_OnMainScreen
 #_00C7BA: JSR routine00C805
 #_00C7BD: LDA.b #$04
@@ -11845,7 +11898,7 @@ RoomEventVectors:
 #_00CE66: dw RoomEvent_IntradungeonStairs
 #_00CE68: dw RoomEvent_IntradungeonStairs
 #_00CE6A: dw RoomEvent_0A_SignA
-#_00CE6C: dw routine00D15E
+#_00CE6C: dw RoomEvent_0B_TurnNPC
 
 ;===================================================================================================
 
@@ -12243,7 +12296,7 @@ RoomEvent_IntradungeonStairs:
 
 .branch00D10B
 #_00D10B: JSL UpdateVisitedSquares
-#_00D10F: JSL routine00A0AE
+#_00D10F: JSL UpdateDialogBox
 #_00D113: JSL routine00C7AA
 #_00D117: JSL routine00A840
 #_00D11B: JSL UpdateDirTilemap
@@ -12294,7 +12347,7 @@ routine00D142:
 
 ;===================================================================================================
 
-routine00D15E:
+RoomEvent_0B_TurnNPC:
 #_00D15E: REP #$30
 
 #_00D160: LDA.w #DungeonTurnNPCLocations
@@ -12916,7 +12969,7 @@ RoomEvent_LookForChest:
 #_00D61F: LDA.w #$0033
 #_00D622: JSL routine01808A
 #_00D626: PLA
-#_00D627: JSL routine00A0AE
+#_00D627: JSL UpdateDialogBox
 #_00D62B: PLP
 #_00D62C: RTS
 
@@ -13462,7 +13515,7 @@ routine00D982:
 
 routine00D9AD:
 #_00D9AD: JSL routine01808A
-#_00D9B1: JSL routine00A0AE
+#_00D9B1: JSL UpdateDialogBox
 #_00D9B5: RTS
 
 ;===================================================================================================
@@ -14918,18 +14971,19 @@ data00EA92:
 
 ;===================================================================================================
 
-routine00EB66:
+DisplayUnderworldMap:
 #_00EB66: PHP
 #_00EB67: CLC
 
 #_00EB68: REP #$30
+
 #_00EB6A: LDA.w #$0000
 #_00EB6D: STA.w $0D11
 
-.branch00EB70
-#_00EB70: JSR routine00EC51
-#_00EB73: JSR routine00EBF8
-#_00EB76: JSR routine00EBC5
+.reload
+#_00EB70: JSR UploadDungeonMapPalette
+#_00EB73: JSR ClearDungeonMap
+#_00EB76: JSR UploadDungeonMapGraphics
 
 #_00EB79: REP #$30
 #_00EB7B: JSR routine00ED6A
@@ -14937,7 +14991,9 @@ routine00EB66:
 #_00EB81: JSR routine00EF93
 
 #_00EB84: REP #$30
+
 #_00EB86: JSR routine00F547
+
 #_00EB89: LDA.w #$0000
 #_00EB8C: JSL VRAM_From_7FXXXX
 #_00EB90: JSL AddSelfAsVector
@@ -14946,11 +15002,13 @@ routine00EB66:
 #_00EB96: JSR routine00F5D7
 
 #_00EB99: REP #$30
+
 #_00EB9B: LDA.w $0D11
 #_00EB9E: CMP.w #$0001
-#_00EBA1: BEQ .branch00EB70
+#_00EBA1: BEQ .reload
 
 #_00EBA3: JSR routine00EC1C
+
 #_00EBA6: PLP
 #_00EBA7: RTL
 
@@ -14975,7 +15033,7 @@ routine00EBA8:
 
 ;===================================================================================================
 
-routine00EBC5:
+UploadDungeonMapGraphics:
 #_00EBC5: REP #$10
 #_00EBC7: LDA.w #$3000
 #_00EBCA: STA.w $0CF3
@@ -15005,18 +15063,19 @@ routine00EBC5:
 
 ;===================================================================================================
 
-routine00EBF8:
+ClearDungeonMap:
 #_00EBF8: REP #$20
+
 #_00EBFA: LDX.w #$0000
 #_00EBFD: LDY.w #$0400
 #_00EC00: LDA.w #$1400
 
-.branch00EC03
+.fill_next
 #_00EC03: STA.l $7F7000,X
 #_00EC07: INX
 #_00EC08: INX
 #_00EC09: DEY
-#_00EC0A: BNE .branch00EC03
+#_00EC0A: BNE .fill_next
 
 #_00EC0C: REP #$20
 #_00EC0E: LDA.w #$0000
@@ -15057,18 +15116,20 @@ routine00EC1C:
 
 ;===================================================================================================
 
-routine00EC51:
+UploadDungeonMapPalette:
 #_00EC51: SEP #$20
 #_00EC53: REP #$10
+
 #_00EC55: LDA.b #$50
 #_00EC57: STA.l $7E22FE
+
 #_00EC5B: LDA.b #$10
 #_00EC5D: STA.l $7E22FF
 #_00EC61: LDX.w #$0000
 #_00EC64: LDY.w #$0020
 
 .next
-#_00EC67: LDA.l GFX_23FFE0,X
+#_00EC67: LDA.l DungeonMapPalette,X
 #_00EC6B: STA.l $7E2300,X
 #_00EC6F: INX
 #_00EC70: DEY
@@ -15076,21 +15137,26 @@ routine00EC51:
 
 #_00EC73: LDA.b #$01
 #_00EC75: STA.l $7E22FD
+
 #_00EC79: JSL AddSelfAsVector
+
 #_00EC7D: RTS
 
 ;===================================================================================================
 
-routine00EC7E:
+GetRoomsOffsetIntoData:
 #_00EC7E: REP #$30
 #_00EC80: PHY
+
 #_00EC81: LDA.w $0CF5
 #_00EC84: AND.w #$007F
 #_00EC87: ASL A
 #_00EC88: STA.w $0CF9
+
 #_00EC8B: LDA.w $0CF7
 #_00EC8E: AND.w #$003F
 #_00EC91: LDY.w #$0008
+
 #_00EC94: JSR Shift16bitAleft_Ytimes
 #_00EC97: ORA.w $0CF9
 #_00EC9A: AND.w #$3FFE
@@ -15099,20 +15165,28 @@ routine00EC7E:
 #_00ECA1: RTS
 
 ;===================================================================================================
-
-GetRoomOffsetIntoData:
+; $0CF5 = ..xxxxx.
+; $0CF7 = ..yyyy..
+; $0CF9 = .... ..yy yyxx xxx.
+;===================================================================================================
+GetBlockOffsetIntoData:
 #_00ECA2: REP #$30
+
 #_00ECA4: PHY
+
 #_00ECA5: LDA.w $0CF5
 #_00ECA8: LSR A
 #_00ECA9: AND.w #$003E
 #_00ECAC: STA.w $0CF9
+
 #_00ECAF: LDA.w $0CF7
 #_00ECB2: LDY.w #$0004
 #_00ECB5: JSR Shift16bitAleft_Ytimes
+
 #_00ECB8: AND.w #$03C0
 #_00ECBB: ORA.w $0CF9
 #_00ECBE: STA.w $0CF9
+
 #_00ECC1: PLY
 #_00ECC2: RTS
 
@@ -15240,22 +15314,28 @@ Shift16bitAright_Ytimes:
 
 routine00ED6A:
 #_00ED6A: REP #$30
+
 #_00ED6C: LDA.w #$0000
 #_00ED6F: STA.w $0CF5
 #_00ED72: STA.w $0CF7
 
 #_00ED75: SEP #$20
+
 #_00ED77: LDA.w $070C
 #_00ED7A: STA.w $0CF5
+
 #_00ED7D: LDA.w $070D
 #_00ED80: STA.w $0CF7
 
 #_00ED83: REP #$20
-#_00ED85: JSR GetRoomOffsetIntoData
+
+#_00ED85: JSR GetBlockOffsetIntoData
 #_00ED88: TAX
-#_00ED89: LDA.l UNREACH_04C000,X
+
+#_00ED89: LDA.l DungeonIDByBlock,X
 #_00ED8D: AND.w #$FF3F
 #_00ED90: STA.w $0CF3
+
 #_00ED93: RTS
 
 ;===================================================================================================
@@ -15265,27 +15345,30 @@ routine00ED94:
 
 ; TODO directions
 #_00ED96: LDA.w $040D
-#_00ED99: BEQ .branch00EDA9
+#_00ED99: BEQ .facing_north
 
 #_00ED9B: CMP.b #$01
-#_00ED9D: BEQ .branch00EE13
+#_00ED9D: BEQ .facing_east
 
 #_00ED9F: CMP.b #$02
-#_00EDA1: BNE .branch00EDA6
+#_00EDA1: BNE .not_facing_south
 
-#_00EDA3: JMP .branch00EE80
+#_00EDA3: JMP .facing_south
 
-.branch00EDA6
-#_00EDA6: JMP .branch00EEED
+.not_facing_south
+#_00EDA6: JMP .facing_west
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch00EDA9
+.facing_north
 #_00EDA9: REP #$30
+
 #_00EDAB: LDX.w #$0000
+
 #_00EDAE: LDA.w #$0000
 #_00EDB1: STA.w $0CFB
 #_00EDB4: STA.w $0CFD
+
 #_00EDB7: LDY.w #$0020
 
 .branch00ADBA
@@ -15294,7 +15377,7 @@ routine00ED94:
 #_00EDBC: LDY.w #$0010
 
 .branch00EDBF
-#_00EDBF: LDA.l UNREACH_04C000,X
+#_00EDBF: LDA.l DungeonIDByBlock,X
 #_00EDC3: AND.w #$FF3F
 #_00EDC6: CMP.w $0CF3
 #_00EDC9: BEQ .branch00EDE1
@@ -15328,7 +15411,7 @@ routine00ED94:
 #_00EDEB: LDY.w #$0020
 
 .branch00EDEE
-#_00EDEE: LDA.l UNREACH_04C000,X
+#_00EDEE: LDA.l DungeonIDByBlock,X
 #_00EDF2: AND.w #$FF3F
 #_00EDF5: CMP.w $0CF3
 #_00EDF8: BEQ .exit_bounce
@@ -15353,7 +15436,9 @@ routine00ED94:
 .exit_bounce
 #_00EE10: JMP .EXIT_00EF56
 
-.branch00EE13
+;---------------------------------------------------------------------------------------------------
+
+.facing_east
 #_00EE13: REP #$30
 #_00EE15: LDX.w #$003E
 #_00EE18: LDA.w #$001F
@@ -15368,7 +15453,7 @@ routine00ED94:
 #_00EE29: LDY.w #$0020
 
 .branch00EE2C
-#_00EE2C: LDA.l UNREACH_04C000,X
+#_00EE2C: LDA.l DungeonIDByBlock,X
 #_00EE30: AND.w #$FF3F
 #_00EE33: CMP.w $0CF3
 #_00EE36: BEQ .branch00EE4D
@@ -15401,7 +15486,7 @@ routine00ED94:
 #_00EE57: LDY.w #$0010
 
 .branch00EE5A
-#_00EE5A: LDA.l UNREACH_04C000,X
+#_00EE5A: LDA.l DungeonIDByBlock,X
 #_00EE5E: AND.w #$FF3F
 #_00EE61: CMP.w $0CF3
 #_00EE64: BEQ .EXIT_00EE7D
@@ -15426,7 +15511,9 @@ routine00ED94:
 .EXIT_00EE7D
 #_00EE7D: JMP .EXIT_00EF56
 
-.branch00EE80
+;---------------------------------------------------------------------------------------------------
+
+.facing_south
 #_00EE80: REP #$30
 #_00EE82: LDX.w #$03FE
 #_00EE85: LDA.w #$001F
@@ -15441,7 +15528,7 @@ routine00ED94:
 #_00EE96: LDY.w #$0010
 
 .branch00EE99
-#_00EE99: LDA.l UNREACH_04C000,X
+#_00EE99: LDA.l DungeonIDByBlock,X
 #_00EE9D: AND.w #$FF3F
 #_00EEA0: CMP.w $0CF3
 #_00EEA3: BEQ .branch00EEBB
@@ -15475,7 +15562,7 @@ routine00ED94:
 #_00EEC5: LDY.w #$0020
 
 .branch00EEC8
-#_00EEC8: LDA.l UNREACH_04C000,X
+#_00EEC8: LDA.l DungeonIDByBlock,X
 #_00EECC: AND.w #$FF3F
 #_00EECF: CMP.w $0CF3
 #_00EED2: BEQ .EXIT_00EEEA
@@ -15499,7 +15586,9 @@ routine00ED94:
 .EXIT_00EEEA
 #_00EEEA: JMP .EXIT_00EF56
 
-.branch00EEED
+;---------------------------------------------------------------------------------------------------
+
+.facing_west
 #_00EEED: REP #$30
 #_00EEEF: LDX.w #$03C0
 #_00EEF2: LDA.w #$0000
@@ -15514,7 +15603,7 @@ routine00ED94:
 #_00EF03: LDY.w #$0020
 
 .branch00EF06
-#_00EF06: LDA.l UNREACH_04C000,X
+#_00EF06: LDA.l DungeonIDByBlock,X
 #_00EF0A: AND.w #$FF3F
 #_00EF0D: CMP.w $0CF3
 #_00EF10: BEQ .branch00EF27
@@ -15547,7 +15636,7 @@ routine00ED94:
 #_00EF31: LDY.w #$0010
 
 .branch00EF34
-#_00EF34: LDA.l UNREACH_04C000,X
+#_00EF34: LDA.l DungeonIDByBlock,X
 #_00EF38: AND.w #$FF3F
 #_00EF3B: CMP.w $0CF3
 #_00EF3E: BEQ .EXIT_00EF56
@@ -15921,20 +16010,26 @@ DrawAutoMapFacingWest:
 
 routine00F199:
 #_00F199: REP #$30
+
 #_00F19B: LDA.w #$0000
 #_00F19E: STA.w $0D03
+
 #_00F1A1: LDA.w $0CF5
 #_00F1A4: STA.w $0CFF
+
 #_00F1A7: RTS
 
 ;===================================================================================================
 
 routine00F1A8:
 #_00F1A8: REP #$30
+
 #_00F1AA: LDA.w #$0000
 #_00F1AD: STA.w $0D03
+
 #_00F1B0: LDA.w $0CF7
 #_00F1B3: STA.w $0CFF
+
 #_00F1B6: RTS
 
 ;===================================================================================================
@@ -16016,12 +16111,15 @@ routine00F1FA:
 
 CheckIfRoomInHiddenArea:
 #_00F220: REP #$30
-#_00F222: JSR GetRoomOffsetIntoData
+
+#_00F222: JSR GetBlockOffsetIntoData
 #_00F225: TAX
-#_00F226: LDA.l UNREACH_04C000,X
+
+#_00F226: LDA.l DungeonIDByBlock,X
 #_00F22A: AND.w #$FF3F
 #_00F22D: EOR.w $0CF3
 #_00F230: STA.w $0CF9
+
 #_00F233: RTS
 
 ;===================================================================================================
@@ -16029,10 +16127,10 @@ CheckIfRoomInHiddenArea:
 routine00F234:
 #_00F234: REP #$30
 
-#_00F236: JSR routine00EC7E
+#_00F236: JSR GetRoomsOffsetIntoData
 #_00F239: TAX
 
-#_00F23A: LDA.l UNREACH_048000,X
+#_00F23A: LDA.l UnderworldRoomData,X
 #_00F23E: STA.w $0CF9
 #_00F241: STA.w $0D05
 
@@ -16041,7 +16139,6 @@ routine00F234:
 
 #_00F249: SEP #$20
 #_00F24B: LDA.w $040D
-
 #_00F24E: REP #$30
 
 #_00F250: AND.w #$0003
@@ -17062,8 +17159,8 @@ org $00FFC0
 #_00FFC0: db "DIGITAL DEVIL STORY  "
 #_00FFD5: db $20,$02,$0B,$03,$00,$EB,$00
 #_00FFDC: dw $528B,$AD74
-#_00FFE0: dw $0400
 
+#_00FFE0: dw $0400
 #_00FFE2: dw $00B5BB ; loose op
 #_00FFE4: dw $0400
 #_00FFE6: dw Native_BRK

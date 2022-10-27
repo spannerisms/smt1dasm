@@ -2617,7 +2617,7 @@ item_2A_name:
 
 ; あめのぬぼこ | AMENONUBOKO | Amenonuboko
 ; Ame-no-nuboko [Amenonuhoko]
-; Amenonuhoko is a mythical spear; Amenonuboko is probably a dev typo
+; Amenonuhoko is a mythical spear; Amenonuboko is how it's spelled a lot??? wtf is going on 
 item_2B_name:
 #_098BB2: db $25, $46, $3D, $3B, $AF, $2E, $FF
 
@@ -2754,7 +2754,7 @@ item_44_name:
 item_45_name:
 #_098C77: db $17, $03, $05, $0A, $7C, $72, $7C, $FF
 
-; Burōningu M2 | BUROーNINGUM2 | 
+; ブローニングM2 | BUROーNINGUM2 | Burōningu M2
 ; Browning M2
 item_46_name:
 #_098C7F: db $C6, $87, $5A, $72, $8A, $B7, $17, $03, $FF
@@ -3541,7 +3541,7 @@ item_E1_name:
 
 ; おみくじ | OMIKUZI | Omikuji
 ; Omikuji
-; fortune slips
+; Fortune slips
 item_E2_name:
 #_099122: db $29, $44, $2C, $A2, $FF
 

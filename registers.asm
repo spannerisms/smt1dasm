@@ -247,7 +247,7 @@ CGDATA = $002122
 ; $2123 w1 fvh
 ; $2124 w1 fvh
 ; $2125 w1 fvh
-;  W12SEL   W34SEL   SOBJSEL
+;  W12SEL   W34SEL   WOBJSEL
 ; dmckbjai dmckbjai dmckbjai
 ; i - invert window 1 on BG1/BG3/OBJ (0: normal logic | 1: invert logic)
 ; a - enable window 1 on BG1/BG3/OBJ (0: disabled | 1: enabled)
@@ -333,8 +333,6 @@ SUBDES = $00212D
 ; o - window mask for OBJ (0: disabled | 1: enabled)
 TMW = $00212E
 TSW = $00212F
-THRUMAIN = $00212E
-THRUSUB = $00212F
 
 ; COLOR MATH SETTINGS
 ; $2130 w1 fvh

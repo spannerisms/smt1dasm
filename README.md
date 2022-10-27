@@ -1,7 +1,7 @@
 # Shin Megami Tensei (J1.0) disassembly
 Far from complete, but published so others may use it as they see fit.
 
-I can be found on the ALTTP Randomizer Discord as kan#7240 (you can ping me in the #general-dev or #off-topic channels) for the 0 people that need to contact me about contributing to this.
+I can be found on Discord as kan#7240 either on the ALTTP Randomizer server (you can ping me in the #off-topic channel) or on the [Shin Megami Tensei Randomizer server](https://discord.gg/FZsX6HPZw5) for the 0 people that need to contact me about contributing to this.
 
 ## Some notes
 * The beginning of every line will have an address label of the form `#_AAAAAA:`, where `AAAAAA` is the 24-bit address in ROM in hexadecimal. The `#` prevents the label from creating a new hierarchy. The `_` is required as labels may not begin with numbers.

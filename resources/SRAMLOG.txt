@@ -111,6 +111,8 @@ $x728	$7E:0428	8		"him" name
 $x750	$7E:0450	1		Last turn/move? 1 right, 2 left, 3 turnaround
 $x751	$7E:0451	1		Frame counter
 
+$x75A	$7E:045A	1		global map properties?
+
 $x75C	$7E:045C	2		MAG taken per step (x10 with rollover)
 
 $x75B	$7E:04B0	2		Some OW movement counter; caps at 1000

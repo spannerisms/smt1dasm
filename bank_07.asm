@@ -1144,6 +1144,7 @@ DungeonWarpLocations:
 ;===================================================================================================
 
 ; TODO
+; dw $YYXX : db XX, YY?
 DungeonStairsLocations:
 #_079478: dw $0112 : db $17, $01, $00, $00
 #_07947E: dw $0116 : db $11, $01, $00, $00
@@ -2086,7 +2087,7 @@ DungeonRoomNPCLocations:
 #_07A40D: dw $0002, $02E4 ; Pascal at home
 #_07A411: dw $0000, $02E1 ; Mommy at home
 #_07A415: dw $0301, $02E6 ; doctor neighbor
-#_07A419: dw $0300, $02E7 ; Steven
+#_07A419: dw $0300, $02E7 ; Momo at home
 #_07A41D: dw $0101, $02E5 ; instant reject TODO
 #_07A421: dw $0105, $02CE ; some bar TODO
 #_07A425: dw $0403, $8032 ; Survival shop TODO which
@@ -2136,7 +2137,7 @@ DungeonRoomNPCLocations:
 #_07A4D5: dw $0E37, $0314 ; old man: you can't escape shinjuku
 #_07A4D9: dw $0B3E, $803C ; Bar TODO which
 #_07A4DD: dw $0131, $4078 ; Jakyou
-#_07A4E1: dw $0932, $806A ; Armorer TODO which
+#_07A4E1: dw $0932, $806A ; Gaia shop TODO which
 #_07A4E5: dw $053D, $8063 ; Mesia church shop
 #_07A4E9: dw $0133, $8070 ; Healer
 #_07A4ED: dw $0639, $8033 ; Armorer TODO which
@@ -2230,7 +2231,7 @@ DungeonRoomNPCLocations:
 #_07A64D: dw $1805, $C04F ; mad scientist; T9SC/P fight
 #_07A651: dw $1311, $8063 ; Mesia church shop
 #_07A655: dw $1611, $8070 ; Healer
-#_07A659: dw $1216, $806A ; Armorer TODO which
+#_07A659: dw $1216, $806A ; Gaia shop TODO which
 #_07A65D: dw $1516, $4078 ; Jakyou
 #_07A661: dw $121C, $4050 ; old man: you did what Haniel said
 #_07A665: dw $1827, $032B ; Ginza terminal
@@ -2278,7 +2279,7 @@ DungeonRoomNPCLocations:
 #_07A70D: dw $1065, $804A ; Armorer TODO which
 #_07A711: dw $1067, $032A ; Ikebukuro terminal
 #_07A715: dw $1D67, $402B ; Steven in jail TODO
-#_07A719: dw $1267, $806A ; Armorer TODO which
+#_07A719: dw $1267, $806A ; Gaia shop TODO which
 #_07A71D: dw $1667, $4078 ; Jakyou
 #_07A721: dw $1761, $8053 ; Junk store TODO which
 #_07A725: dw $176D, $401A ; Yama: ok you're making me mad
@@ -2298,7 +2299,7 @@ DungeonRoomNPCLocations:
 #_07A75D: dw $1163, $4027 ; Gaian: you're a punk-ass bitch
 #_07A761: dw $1871, $032D ; Ueno terminal
 #_07A765: dw $1873, $4078 ; Jakyou
-#_07A769: dw $1271, $806A ; Armorer TODO which
+#_07A769: dw $1271, $806A ; Gaia shop TODO which
 #_07A76D: dw $1575, $8042 ; Arms dealer TODO which
 #_07A771: dw $1775, $804B ; Armorer TODO which
 #_07A775: dw $1E72, $8054 ; Junk store TODO which
@@ -2316,7 +2317,7 @@ DungeonRoomNPCLocations:
 #_07A7A5: dw $1A70, $4035 ; man: I wanna go to TDL
 #_07A7A9: dw $1A77, $4036 ; old man: you killed Ladon?
 #_07A7AD: dw $2C06, $8043 ; Arms dealer TODO which
-#_07A7B1: dw $2E06, $806A ; Armorer TODO which
+#_07A7B1: dw $2E06, $806A ; Gaia shop TODO which
 #_07A7B5: dw $2006, $C05B ; Gaian in TDL? TODO
 #_07A7B9: dw $2007, $C05C ; Angel TODO
 #_07A7BD: dw $2008, $C059 ; Gurr: grrr
@@ -2325,7 +2326,7 @@ DungeonRoomNPCLocations:
 #_07A7C9: dw $2907, $C058 ; man: gotta pay the TDL toll
 #_07A7CD: dw $241D, $C05D ; summoner: nice computer
 #_07A7D1: dw $2D06, $0331 ; T.D.L. terminal
-#_07A7D5: dw $2B28, $806A ; Armorer TODO which
+#_07A7D5: dw $2B28, $806A ; Gaia shop TODO which
 #_07A7D9: dw $2B2A, $032E ; Cath-CH terminal TODO
 #_07A7DD: dw $2B2F, $8070 ; Healer
 #_07A7E1: dw $2829, $8045 ; Arms dealer TODO which
@@ -2549,7 +2550,7 @@ data07AAB7:
 
 ;===================================================================================================
 
-; ddxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx ..ss..tt iiiiiiii
+; xxxxxxxx ddyyyyyy ..ss..tt iiiiiiii
 ; d - direction
 ;     00 - north
 ;     01 - east
@@ -2896,48 +2897,99 @@ EquipmentStats:
 #_07B4F9: db $82, $10, $10, $0B, $00, $00, $30, $00, $00, $00, $00, $00 ; item AF
 
 ;===================================================================================================
+; TODO analyze every value
+; byte 0: wb.. .cnl
+;           w - usable outside battle
+;           b - usable in battle?
+;           c - chaos
+;           n - neutral
+;           l - law
+; byte 1: 
+; byte 2: which routine they use (sorta)
+; byte 3: 
+UseItemStats:
+#_07B505: db $C7,$00,$2A,$80 ; 0xB0
+#_07B509: db $C7,$00,$2B,$80 ; 0xB1
+#_07B50D: db $C7,$00,$80,$80 ; 0xB2
+#_07B511: db $C7,$00,$81,$80 ; 0xB3
+#_07B515: db $C7,$00,$82,$80 ; 0xB4
+#_07B519: db $C7,$00,$83,$80 ; 0xB5
+#_07B51D: db $C7,$00,$31,$82 ; 0xB6
+#_07B521: db $C7,$00,$32,$82 ; 0xB7
+#_07B525: db $C7,$00,$33,$82 ; 0xB8
+#_07B529: db $C7,$00,$84,$80 ; 0xB9
+#_07B52D: db $C7,$00,$85,$82 ; 0xBA
+#_07B531: db $C7,$00,$86,$82 ; 0xBB
+#_07B535: db $C7,$00,$87,$FF ; 0xBC
+#_07B539: db $87,$00,$88,$83 ; 0xBD
+#_07B53D: db $87,$00,$89,$83 ; 0xBE
+#_07B541: db $87,$00,$8A,$83 ; 0xBF
+#_07B545: db $87,$00,$8B,$83 ; 0xC0
+#_07B549: db $87,$00,$8C,$83 ; 0xC1
+#_07B54D: db $87,$00,$8D,$83 ; 0xC2
+#_07B551: db $47,$00,$00,$00 ; 0xC3
+#_07B555: db $47,$00,$0D,$00 ; 0xC4
+#_07B559: db $47,$00,$0E,$00 ; 0xC5
+#_07B55D: db $47,$00,$0F,$00 ; 0xC6
+#_07B561: db $47,$00,$50,$00 ; 0xC7
+#_07B565: db $47,$00,$01,$00 ; 0xC8
+#_07B569: db $47,$00,$02,$00 ; 0xC9
+#_07B56D: db $47,$00,$09,$00 ; 0xCA
+#_07B571: db $47,$00,$0A,$00 ; 0xCB
+#_07B575: db $47,$00,$06,$00 ; 0xCC
+#_07B579: db $47,$00,$15,$00 ; 0xCD
+#_07B57D: db $47,$00,$16,$00 ; 0xCE
+#_07B581: db $47,$00,$12,$00 ; 0xCF
+#_07B585: db $47,$00,$14,$00 ; 0xD0
+#_07B589: db $47,$00,$1D,$00 ; 0xD1
+#_07B58D: db $47,$00,$50,$00 ; 0xD2
+#_07B591: db $47,$00,$18,$00 ; 0xD3
+#_07B595: db $47,$FC,$8E,$80 ; 0xD4
+#_07B599: db $47,$04,$8F,$80 ; 0xD5
+#_07B59D: db $47,$00,$90,$00 ; 0xD6
+#_07B5A1: db $47,$FF,$15,$00 ; 0xD7
+#_07B5A5: db $47,$01,$17,$00 ; 0xD8
+#_07B5A9: db $47,$00,$3B,$00 ; 0xD9
+#_07B5AD: db $C6,$00,$91,$FF ; 0xDA
+#_07B5B1: db $46,$00,$92,$FF ; 0xDB
+#_07B5B5: db $C1,$00,$93,$FF ; 0xDC
+#_07B5B9: db $87,$00,$94,$FF ; 0xDD
+#_07B5BD: db $47,$00,$95,$FF ; 0xDE
+#_07B5C1: db $87,$00,$3C,$FF ; 0xDF
+#_07B5C5: db $87,$00,$96,$FF ; 0xE0
+#_07B5C9: db $47,$00,$97,$00 ; 0xE1
+#_07B5CD: db $C7,$00,$98,$80 ; 0xE2
+#_07B5D1: db $47,$FE,$99,$00 ; 0xE3
+#_07B5D5: db $00,$01,$00,$00 ; 0xE4
+#_07B5D9: db $00,$00,$B0,$00 ; 0xE5
+#_07B5DD: db $00,$00,$00,$00 ; 0xE6
+#_07B5E1: db $00,$33,$33,$33 ; 0xE7
+#_07B5E5: db $00,$00,$00,$0B ; 0xE8
+#_07B5E9: db $00,$00,$01,$00 ; 0xE9
+#_07B5ED: db $00,$B0,$00,$00 ; 0xEA
+#_07B5F1: db $00,$10,$00,$00 ; 0xEB
+#_07B5F5: db $00,$00,$10,$00 ; 0xEC
+#_07B5F9: db $00,$00,$00,$01 ; 0xED
+#_07B5FD: db $00,$00,$00,$10 ; 0xEE
+#_07B601: db $00,$00,$00,$00 ; 0xEF
 
-UNREACH_07B505:
-#_07B505: db $C7,$00,$2A,$80,$C7,$00,$2B,$80
-#_07B50D: db $C7,$00,$80,$80,$C7,$00,$81,$80
-#_07B515: db $C7,$00,$82,$80,$C7,$00,$83,$80
-#_07B51D: db $C7,$00,$31,$82,$C7,$00,$32,$82
-#_07B525: db $C7,$00,$33,$82,$C7,$00,$84,$80
-#_07B52D: db $C7,$00,$85,$82,$C7,$00,$86,$82
-#_07B535: db $C7,$00,$87,$FF,$87,$00,$88,$83
-#_07B53D: db $87,$00,$89,$83,$87,$00,$8A,$83
-#_07B545: db $87,$00,$8B,$83,$87,$00,$8C,$83
-#_07B54D: db $87,$00,$8D,$83,$47,$00,$00,$00
-#_07B555: db $47,$00,$0D,$00,$47,$00,$0E,$00
-#_07B55D: db $47,$00,$0F,$00,$47,$00,$50,$00
-#_07B565: db $47,$00,$01,$00,$47,$00,$02,$00
-#_07B56D: db $47,$00,$09,$00,$47,$00,$0A,$00
-#_07B575: db $47,$00,$06,$00,$47,$00,$15,$00
-#_07B57D: db $47,$00,$16,$00,$47,$00,$12,$00
-#_07B585: db $47,$00,$14,$00,$47,$00,$1D,$00
-#_07B58D: db $47,$00,$50,$00,$47,$00,$18,$00
-#_07B595: db $47,$FC,$8E,$80,$47,$04,$8F,$80
-#_07B59D: db $47,$00,$90,$00,$47,$FF,$15,$00
-#_07B5A5: db $47,$01,$17,$00,$47,$00,$3B,$00
-#_07B5AD: db $C6,$00,$91,$FF,$46,$00,$92,$FF
-#_07B5B5: db $C1,$00,$93,$FF,$87,$00,$94,$FF
-#_07B5BD: db $47,$00,$95,$FF,$87,$00,$3C,$FF
-#_07B5C5: db $87,$00,$96,$FF,$47,$00,$97,$00
-#_07B5CD: db $C7,$00,$98,$80,$47,$FE,$99,$00
-#_07B5D5: db $00,$01,$00,$00,$00,$00,$B0,$00
-#_07B5DD: db $00,$00,$00,$00,$00,$33,$33,$33
-#_07B5E5: db $00,$00,$00,$0B,$00,$00,$01,$00
-#_07B5ED: db $00,$B0,$00,$00,$00,$10,$00,$00
-#_07B5F5: db $00,$00,$10,$00,$00,$00,$00,$01
-#_07B5FD: db $00,$00,$00,$10,$00,$00,$00,$00
-#_07B605: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B60D: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B615: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B61D: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B625: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B62D: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B635: db $07,$00,$00,$00,$07,$00,$00,$00
-#_07B63D: db $07,$00,$00,$00,$07,$00,$00,$00
+; key items
+#_07B605: db $07,$00,$00,$00 ; 0xF0
+#_07B609: db $07,$00,$00,$00 ; 0xF1
+#_07B60D: db $07,$00,$00,$00 ; 0xF2
+#_07B611: db $07,$00,$00,$00 ; 0xF3
+#_07B615: db $07,$00,$00,$00 ; 0xF4
+#_07B619: db $07,$00,$00,$00 ; 0xF5
+#_07B61D: db $07,$00,$00,$00 ; 0xF6
+#_07B621: db $07,$00,$00,$00 ; 0xF7
+#_07B625: db $07,$00,$00,$00 ; 0xF8
+#_07B629: db $07,$00,$00,$00 ; 0xF9
+#_07B62D: db $07,$00,$00,$00 ; 0xFA
+#_07B631: db $07,$00,$00,$00 ; 0xFB
+#_07B635: db $07,$00,$00,$00 ; 0xFC
+#_07B639: db $07,$00,$00,$00 ; 0xFD
+#_07B63D: db $07,$00,$00,$00 ; 0xFE
+#_07B641: db $07,$00,$00,$00 ; 0xFF
 
 ;===================================================================================================
 ; TODO
@@ -2947,124 +2999,124 @@ UNREACH_07B505:
 ; positive and $FF are okay?
 ;===================================================================================================
 SkillData:
-#_07B645: db $42, $17, $00, $03, $00, $00
-#_07B64B: db $42, $40, $00, $07, $00, $00
-#_07B651: db $42, $13, $0F, $05, $00, $00
-#_07B657: db $42, $32, $0F, $09, $00, $00
-#_07B65D: db $43, $0F, $00, $03, $10, $00
-#_07B663: db $43, $28, $00, $08, $10, $00
-#_07B669: db $43, $0C, $0C, $06, $10, $00
-#_07B66F: db $43, $20, $0C, $0B, $10, $00
-#_07B675: db $44, $13, $00, $04, $08, $00
-#_07B67B: db $44, $37, $00, $09, $08, $00
-#_07B681: db $44, $10, $0A, $07, $08, $00
-#_07B687: db $44, $29, $0A, $0C, $08, $00
-#_07B68D: db $45, $12, $00, $02, $00, $00
-#_07B693: db $45, $32, $00, $05, $00, $00
-#_07B699: db $45, $0E, $0F, $04, $00, $00
-#_07B69F: db $45, $26, $0F, $07, $00, $00
-#_07B6A5: db $46, $2C, $0F, $0E, $02, $00
-#_07B6AB: db $45, $50, $0F, $08, $00, $00
-#_07B6B1: db $47, $46, $0F, $0F, $00, $00
-#_07B6B7: db $47, $55, $0F, $1E, $00, $00
-#_07B6BD: db $47, $0C, $00, $03, $00, $00
-#_07B6C3: db $48, $10, $01, $05, $00, $40
-#_07B6C9: db $48, $0C, $0F, $0A, $00, $40
-#_07B6CF: db $49, $10, $01, $03, $00, $80
-#_07B6D5: db $49, $0C, $09, $09, $00, $80
-#_07B6DB: db $46, $14, $0B, $03, $40, $00
-#_07B6E1: db $4B, $1C, $07, $03, $20, $00
-#_07B6E7: db $46, $16, $0A, $02, $02, $00
-#_07B6ED: db $46, $12, $0B, $02, $01, $00
-#_07B6F3: db $4A, $18, $00, $06, $80, $00
-#_07B6F9: db $4A, $0C, $0C, $04, $04, $00
-#_07B6FF: db $4A, $00, $00, $02, $00, $00
-#_07B705: db $4A, $00, $FF, $04, $00, $00
-#_07B70B: db $4A, $00, $FF, $04, $00, $00
-#_07B711: db $4A, $00, $FF, $02, $00, $00
-#_07B717: db $4F, $00, $FF, $04, $00, $00
-#_07B71D: db $4F, $00, $FF, $04, $00, $00
-#_07B723: db $4F, $00, $FF, $02, $00, $00
-#_07B729: db $4F, $00, $FF, $04, $00, $00
-#_07B72F: db $4F, $00, $FF, $05, $00, $00
-#_07B735: db $4F, $00, $FF, $06, $00, $00
-#_07B73B: db $4F, $00, $FF, $06, $00, $00
-#_07B741: db $CF, $00, $80, $02, $00, $00
-#_07B747: db $CF, $00, $80, $04, $00, $00
-#_07B74D: db $CF, $00, $80, $08, $00, $00
-#_07B753: db $CF, $00, $FF, $06, $00, $00
-#_07B759: db $CF, $00, $FF, $0E, $00, $00
-#_07B75F: db $CF, $00, $82, $02, $7F, $00
-#_07B765: db $CF, $00, $FF, $04, $7F, $00
-#_07B76B: db $CF, $00, $82, $04, $00, $08
-#_07B771: db $CF, $00, $82, $06, $00, $10
-#_07B777: db $CF, $00, $82, $0A, $00, $20
-#_07B77D: db $CF, $00, $82, $0C, $00, $40
-#_07B783: db $CF, $00, $82, $18, $00, $C0
-#_07B789: db $CF, $00, $FF, $08, $00, $00
-#_07B78F: db $CF, $00, $80, $0A, $00, $00
-#_07B795: db $8F, $00, $FF, $02, $00, $00
-#_07B79B: db $8F, $00, $FF, $06, $00, $00
-#_07B7A1: db $8F, $00, $FF, $06, $00, $00
-#_07B7A7: db $4F, $00, $FF, $02, $00, $00
-#_07B7AD: db $8F, $00, $FF, $06, $00, $00
-#_07B7B3: db $CF, $00, $FF, $08, $00, $00
-#_07B7B9: db $CF, $00, $FF, $14, $00, $00
-#_07B7BF: db $4F, $00, $FF, $08, $00, $00
-#_07B7C5: db $49, $0C, $00, $02, $00, $10
-#_07B7CB: db $49, $0A, $00, $04, $00, $20
-#_07B7D1: db $49, $0C, $00, $08, $00, $80
-#_07B7D7: db $49, $09, $00, $08, $00, $01
-#_07B7DD: db $49, $06, $00, $08, $00, $04
-#_07B7E3: db $4A, $0C, $0F, $06, $80, $00
-#_07B7E9: db $4A, $16, $0F, $04, $01, $00
-#_07B7EF: db $46, $0E, $0F, $04, $01, $00
-#_07B7F5: db $46, $17, $0F, $06, $40, $00
-#_07B7FB: db $4B, $0A, $0F, $02, $02, $00
-#_07B801: db $4B, $09, $0F, $08, $20, $00
-#_07B807: db $49, $14, $00, $04, $00, $00
-#_07B80D: db $49, $16, $00, $04, $00, $00
-#_07B813: db $49, $12, $00, $08, $00, $00
-#_07B819: db $42, $3C, $0B, $08, $00, $00
-#_07B81F: db $43, $26, $0A, $08, $10, $00
-#_07B825: db $45, $20, $08, $07, $00, $08
-#_07B82B: db $46, $0A, $0F, $04, $00, $00
-#_07B831: db $42, $34, $07, $05, $00, $00
-#_07B837: db $44, $2C, $07, $06, $08, $00
-#_07B83D: db $4A, $1E, $00, $04, $00, $00
-#_07B843: db $4F, $00, $FF, $04, $00, $00
-#_07B849: db $4F, $00, $FF, $04, $00, $00
-#_07B84F: db $4C, $03, $00, $03, $00, $00
-#_07B855: db $4C, $03, $00, $04, $00, $08
-#_07B85B: db $4C, $03, $00, $05, $00, $10
-#_07B861: db $4C, $03, $00, $06, $00, $20
-#_07B867: db $4C, $01, $00, $05, $80, $00
-#_07B86D: db $4D, $02, $01, $03, $00, $00
-#_07B873: db $4D, $02, $01, $05, $00, $08
-#_07B879: db $4D, $02, $01, $08, $00, $10
-#_07B87F: db $4E, $02, $00, $02, $00, $08
-#_07B885: db $4E, $03, $00, $04, $00, $10
-#_07B88B: db $45, $01, $0F, $04, $00, $00
-#_07B891: db $4E, $02, $09, $06, $00, $00
-#_07B897: db $4C, $04, $03, $06, $00, $00
-#_07B89D: db $4C, $03, $00, $05, $20, $00
-#_07B8A3: db $4C, $02, $0F, $07, $00, $00
-#_07B8A9: db $4C, $05, $02, $05, $00, $00
-#_07B8AF: db $4D, $04, $03, $06, $00, $00
-#_07B8B5: db $4D, $03, $0F, $09, $00, $00
-#_07B8BB: db $4D, $03, $00, $04, $00, $00
-#_07B8C1: db $45, $00, $FF, $00, $00, $00
-#_07B8C7: db $4F, $00, $FF, $00, $00, $00
-#_07B8CD: db $4F, $08, $00, $00, $00, $00
-#_07B8D3: db $4F, $0A, $FF, $00, $00, $00
-#_07B8D9: db $4F, $00, $FF, $00, $00, $00
-#_07B8DF: db $4F, $00, $FF, $00, $00, $00
-#_07B8E5: db $4F, $00, $FF, $00, $00, $00
-#_07B8EB: db $4F, $00, $FF, $00, $00, $00
-#_07B8F1: db $4F, $00, $FF, $00, $00, $00
-#_07B8F7: db $4F, $00, $FF, $00, $00, $00
-#_07B8FD: db $4F, $00, $FF, $00, $00, $00
-#_07B903: db $4F, $00, $FF, $00, $00, $00
+#_07B645: db $42, $17, $00, $03, $00, $00 ; 0x00
+#_07B64B: db $42, $40, $00, $07, $00, $00 ; 0x01
+#_07B651: db $42, $13, $0F, $05, $00, $00 ; 0x02
+#_07B657: db $42, $32, $0F, $09, $00, $00 ; 0x03
+#_07B65D: db $43, $0F, $00, $03, $10, $00 ; 0x04
+#_07B663: db $43, $28, $00, $08, $10, $00 ; 0x05
+#_07B669: db $43, $0C, $0C, $06, $10, $00 ; 0x06
+#_07B66F: db $43, $20, $0C, $0B, $10, $00 ; 0x07
+#_07B675: db $44, $13, $00, $04, $08, $00 ; 0x08
+#_07B67B: db $44, $37, $00, $09, $08, $00 ; 0x09
+#_07B681: db $44, $10, $0A, $07, $08, $00 ; 0x0A
+#_07B687: db $44, $29, $0A, $0C, $08, $00 ; 0x0B
+#_07B68D: db $45, $12, $00, $02, $00, $00 ; 0x0C
+#_07B693: db $45, $32, $00, $05, $00, $00 ; 0x0D
+#_07B699: db $45, $0E, $0F, $04, $00, $00 ; 0x0E
+#_07B69F: db $45, $26, $0F, $07, $00, $00 ; 0x0F
+#_07B6A5: db $46, $2C, $0F, $0E, $02, $00 ; 0x10
+#_07B6AB: db $45, $50, $0F, $08, $00, $00 ; 0x11
+#_07B6B1: db $47, $46, $0F, $0F, $00, $00 ; 0x12
+#_07B6B7: db $47, $55, $0F, $1E, $00, $00 ; 0x13
+#_07B6BD: db $47, $0C, $00, $03, $00, $00 ; 0x14
+#_07B6C3: db $48, $10, $01, $05, $00, $40 ; 0x15
+#_07B6C9: db $48, $0C, $0F, $0A, $00, $40 ; 0x16
+#_07B6CF: db $49, $10, $01, $03, $00, $80 ; 0x17
+#_07B6D5: db $49, $0C, $09, $09, $00, $80 ; 0x18
+#_07B6DB: db $46, $14, $0B, $03, $40, $00 ; 0x19
+#_07B6E1: db $4B, $1C, $07, $03, $20, $00 ; 0x1A
+#_07B6E7: db $46, $16, $0A, $02, $02, $00 ; 0x1B
+#_07B6ED: db $46, $12, $0B, $02, $01, $00 ; 0x1C
+#_07B6F3: db $4A, $18, $00, $06, $80, $00 ; 0x1D
+#_07B6F9: db $4A, $0C, $0C, $04, $04, $00 ; 0x1E
+#_07B6FF: db $4A, $00, $00, $02, $00, $00 ; 0x1F
+#_07B705: db $4A, $00, $FF, $04, $00, $00 ; 0x20
+#_07B70B: db $4A, $00, $FF, $04, $00, $00 ; 0x21
+#_07B711: db $4A, $00, $FF, $02, $00, $00 ; 0x22
+#_07B717: db $4F, $00, $FF, $04, $00, $00 ; 0x23
+#_07B71D: db $4F, $00, $FF, $04, $00, $00 ; 0x24
+#_07B723: db $4F, $00, $FF, $02, $00, $00 ; 0x25
+#_07B729: db $4F, $00, $FF, $04, $00, $00 ; 0x26
+#_07B72F: db $4F, $00, $FF, $05, $00, $00 ; 0x27
+#_07B735: db $4F, $00, $FF, $06, $00, $00 ; 0x28
+#_07B73B: db $4F, $00, $FF, $06, $00, $00 ; 0x29
+#_07B741: db $CF, $00, $80, $02, $00, $00 ; 0x2A
+#_07B747: db $CF, $00, $80, $04, $00, $00 ; 0x2B
+#_07B74D: db $CF, $00, $80, $08, $00, $00 ; 0x2C
+#_07B753: db $CF, $00, $FF, $06, $00, $00 ; 0x2D
+#_07B759: db $CF, $00, $FF, $0E, $00, $00 ; 0x2E
+#_07B75F: db $CF, $00, $82, $02, $7F, $00 ; 0x2F
+#_07B765: db $CF, $00, $FF, $04, $7F, $00 ; 0x30
+#_07B76B: db $CF, $00, $82, $04, $00, $08 ; 0x31
+#_07B771: db $CF, $00, $82, $06, $00, $10 ; 0x32
+#_07B777: db $CF, $00, $82, $0A, $00, $20 ; 0x33
+#_07B77D: db $CF, $00, $82, $0C, $00, $40 ; 0x34
+#_07B783: db $CF, $00, $82, $18, $00, $C0 ; 0x35
+#_07B789: db $CF, $00, $FF, $08, $00, $00 ; 0x36
+#_07B78F: db $CF, $00, $80, $0A, $00, $00 ; 0x37
+#_07B795: db $8F, $00, $FF, $02, $00, $00 ; 0x38
+#_07B79B: db $8F, $00, $FF, $06, $00, $00 ; 0x39
+#_07B7A1: db $8F, $00, $FF, $06, $00, $00 ; 0x3A
+#_07B7A7: db $4F, $00, $FF, $02, $00, $00 ; 0x3B
+#_07B7AD: db $8F, $00, $FF, $06, $00, $00 ; 0x3C
+#_07B7B3: db $CF, $00, $FF, $08, $00, $00 ; 0x3D
+#_07B7B9: db $CF, $00, $FF, $14, $00, $00 ; 0x3E
+#_07B7BF: db $4F, $00, $FF, $08, $00, $00 ; 0x3F
+#_07B7C5: db $49, $0C, $00, $02, $00, $10 ; 0x40
+#_07B7CB: db $49, $0A, $00, $04, $00, $20 ; 0x41
+#_07B7D1: db $49, $0C, $00, $08, $00, $80 ; 0x42
+#_07B7D7: db $49, $09, $00, $08, $00, $01 ; 0x43
+#_07B7DD: db $49, $06, $00, $08, $00, $04 ; 0x44
+#_07B7E3: db $4A, $0C, $0F, $06, $80, $00 ; 0x45
+#_07B7E9: db $4A, $16, $0F, $04, $01, $00 ; 0x46
+#_07B7EF: db $46, $0E, $0F, $04, $01, $00 ; 0x47
+#_07B7F5: db $46, $17, $0F, $06, $40, $00 ; 0x48
+#_07B7FB: db $4B, $0A, $0F, $02, $02, $00 ; 0x49
+#_07B801: db $4B, $09, $0F, $08, $20, $00 ; 0x4A
+#_07B807: db $49, $14, $00, $04, $00, $00 ; 0x4B
+#_07B80D: db $49, $16, $00, $04, $00, $00 ; 0x4C
+#_07B813: db $49, $12, $00, $08, $00, $00 ; 0x4D
+#_07B819: db $42, $3C, $0B, $08, $00, $00 ; 0x4E
+#_07B81F: db $43, $26, $0A, $08, $10, $00 ; 0x4F
+#_07B825: db $45, $20, $08, $07, $00, $08 ; 0x50
+#_07B82B: db $46, $0A, $0F, $04, $00, $00 ; 0x51
+#_07B831: db $42, $34, $07, $05, $00, $00 ; 0x52
+#_07B837: db $44, $2C, $07, $06, $08, $00 ; 0x53
+#_07B83D: db $4A, $1E, $00, $04, $00, $00 ; 0x54
+#_07B843: db $4F, $00, $FF, $04, $00, $00 ; 0x55
+#_07B849: db $4F, $00, $FF, $04, $00, $00 ; 0x56
+#_07B84F: db $4C, $03, $00, $03, $00, $00 ; 0x57
+#_07B855: db $4C, $03, $00, $04, $00, $08 ; 0x58
+#_07B85B: db $4C, $03, $00, $05, $00, $10 ; 0x59
+#_07B861: db $4C, $03, $00, $06, $00, $20 ; 0x5A
+#_07B867: db $4C, $01, $00, $05, $80, $00 ; 0x5B
+#_07B86D: db $4D, $02, $01, $03, $00, $00 ; 0x5C
+#_07B873: db $4D, $02, $01, $05, $00, $08 ; 0x5D
+#_07B879: db $4D, $02, $01, $08, $00, $10 ; 0x5E
+#_07B87F: db $4E, $02, $00, $02, $00, $08 ; 0x5F
+#_07B885: db $4E, $03, $00, $04, $00, $10 ; 0x60
+#_07B88B: db $45, $01, $0F, $04, $00, $00 ; 0x61
+#_07B891: db $4E, $02, $09, $06, $00, $00 ; 0x62
+#_07B897: db $4C, $04, $03, $06, $00, $00 ; 0x63
+#_07B89D: db $4C, $03, $00, $05, $20, $00 ; 0x64
+#_07B8A3: db $4C, $02, $0F, $07, $00, $00 ; 0x65
+#_07B8A9: db $4C, $05, $02, $05, $00, $00 ; 0x66
+#_07B8AF: db $4D, $04, $03, $06, $00, $00 ; 0x67
+#_07B8B5: db $4D, $03, $0F, $09, $00, $00 ; 0x68
+#_07B8BB: db $4D, $03, $00, $04, $00, $00 ; 0x69
+#_07B8C1: db $45, $00, $FF, $00, $00, $00 ; 0x6A
+#_07B8C7: db $4F, $00, $FF, $00, $00, $00 ; 0x6B
+#_07B8CD: db $4F, $08, $00, $00, $00, $00 ; 0x6C
+#_07B8D3: db $4F, $0A, $FF, $00, $00, $00 ; 0x6D
+#_07B8D9: db $4F, $00, $FF, $00, $00, $00 ; 0x6E
+#_07B8DF: db $4F, $00, $FF, $00, $00, $00 ; 0x6F
+#_07B8E5: db $4F, $00, $FF, $00, $00, $00 ; 0x70
+#_07B8EB: db $4F, $00, $FF, $00, $00, $00 ; 0x71
+#_07B8F1: db $4F, $00, $FF, $00, $00, $00 ; 0x72
+#_07B8F7: db $4F, $00, $FF, $00, $00, $00 ; 0x73
+#_07B8FD: db $4F, $00, $FF, $00, $00, $00 ; 0x74
+#_07B903: db $4F, $00, $FF, $00, $00, $00 ; 0x75
 
 ;===================================================================================================
 
@@ -3770,24 +3822,21 @@ DemonLoadInfo:
 ;===================================================================================================
 
 data07CB0F:
-#_07CB0F: db $00,$FF,$FF,$FF,$FF,$FF
-#_07CB15: db $FF,$FF,$FF,$00,$00,$FF,$FF,$FF
-#_07CB1D: db $FF,$FF,$FF,$FF,$9F,$FF,$FF,$FF
-#_07CB25: db $FF,$FF,$FF,$FF,$FF,$1F,$FF,$FF
-#_07CB2D: db $FF,$FF,$FF,$FF,$FF,$FF,$00,$7F
-#_07CB35: db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$00
-#_07CB3D: db $00,$7F,$FF,$FF,$FF,$FF,$FF,$FF
-#_07CB45: db $1F,$BF,$FF,$FF,$FF,$FF,$FF,$FF
-#_07CB4D: db $FF,$00,$3F,$BF,$FF,$FF,$FF,$FF
-#_07CB55: db $FF,$FF,$00,$00,$3F,$BF,$FF,$FF
-#_07CB5D: db $FF,$FF,$FF,$00,$00,$00,$3F,$BF
-#_07CB65: db $FF,$FF,$FF,$FF,$00,$00,$00,$3F
-#_07CB6D: db $7F,$BF,$FF,$FF,$FF,$00,$00,$00
-#_07CB75: db $00,$00,$3F,$7F,$BF,$FF,$00,$00
-#_07CB7D: db $1F,$3F,$5F,$8F,$BF,$DF,$FF,$00
-#_07CB85: db $0F,$2F,$4F,$7F,$AF,$CF,$EF,$FF
-#_07CB8D: db $1F,$3F,$5F,$7F,$9F,$BF,$DF,$EF
-#_07CB95: db $FF
+#_07CB0F: db $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB18: db $00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB21: db $9F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB2A: db $1F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB33: db $00,$7F,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB3C: db $00,$00,$7F,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB45: db $1F,$BF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB4E: db $00,$3F,$BF,$FF,$FF,$FF,$FF,$FF,$FF
+#_07CB57: db $00,$00,$3F,$BF,$FF,$FF,$FF,$FF,$FF
+#_07CB60: db $00,$00,$00,$3F,$BF,$FF,$FF,$FF,$FF
+#_07CB69: db $00,$00,$00,$3F,$7F,$BF,$FF,$FF,$FF
+#_07CB72: db $00,$00,$00,$00,$00,$3F,$7F,$BF,$FF
+#_07CB7B: db $00,$00,$1F,$3F,$5F,$8F,$BF,$DF,$FF
+#_07CB84: db $00,$0F,$2F,$4F,$7F,$AF,$CF,$EF,$FF
+#_07CB8D: db $1F,$3F,$5F,$7F,$9F,$BF,$DF,$EF,$FF
 
 ;===================================================================================================
 
@@ -3813,2930 +3862,2930 @@ DemonStats:
 .demon_000
 #_07CBFA: db 82 ; level
 #_07CBFB: dw 990, 822 ; HP, MP
-#_07CBFF: db 36, 18, 19, 20, 20, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CBFF: db 36, 18, 19, 20, 20, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC05: db 50, 0, 17, 5, 0 ; Alignment, TODO
 #_07CC0A: db $12, $16, $2C ; Move12, Move16, Move2C
-#_07CC0D: db $70, $00, $77 ; no clue yet
+#_07CC0D: db $70, $00, $77 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CC10: db 57 ; CP
 #_07CC11: db $00 ; ill find out
 
 .demon_001
 #_07CC12: db 72 ; level
 #_07CC13: dw 840, 999 ; HP, MP
-#_07CC17: db 35, 13, 14, 20, 21, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CC17: db 35, 13, 14, 20, 21, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC1D: db 72, 0, 22, 5, 0 ; Alignment, TODO
 #_07CC22: db $09, $0B, $27 ; Move09, Move0B, Move27
-#_07CC25: db $00, $00, $00 ; no clue yet
+#_07CC25: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CC28: db 53 ; CP
 #_07CC29: db $00 ; ill find out
 
 .demon_002
 #_07CC2A: db 64 ; level
 #_07CC2B: dw 818, 998 ; HP, MP
-#_07CC2F: db 34, 14, 15, 22, 13, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CC2F: db 34, 14, 15, 22, 13, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC35: db 64, 0, 20, 7, 0 ; Alignment, TODO
 #_07CC3A: db $01, $03, $16 ; Move01, Move03, Move16
-#_07CC3D: db $00, $00, $00 ; no clue yet
+#_07CC3D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CC40: db 49 ; CP
 #_07CC41: db $00 ; ill find out
 
 .demon_003
 #_07CC42: db 58 ; level
 #_07CC43: dw 760, 526 ; HP, MP
-#_07CC47: db 31, 18, 19, 16, 10, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CC47: db 31, 18, 19, 16, 10, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC4D: db 78, 0, 22, 7, 0 ; Alignment, TODO
 #_07CC52: db $07, $28, $10 ; Move07, Move28, Move10
-#_07CC55: db $00, $00, $00 ; no clue yet
+#_07CC55: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CC58: db 45 ; CP
 #_07CC59: db $00 ; ill find out
 
 .demon_004
 #_07CC5A: db 51 ; level
 #_07CC5B: dw 630, 732 ; HP, MP
-#_07CC5F: db 29, 12, 15, 17, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CC5F: db 29, 12, 15, 17, 12, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC65: db 75, 0, 22, 4, 0 ; Alignment, TODO
 #_07CC6A: db $16, $19, $0B ; Move16, Move19, Move0B
-#_07CC6D: db $00, $00, $00 ; no clue yet
+#_07CC6D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CC70: db 40 ; CP
 #_07CC71: db $00 ; ill find out
 
 .demon_005
 #_07CC72: db 40 ; level
 #_07CC73: dw 455, 501 ; HP, MP
-#_07CC77: db 22, 14, 13, 14, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CC77: db 22, 14, 13, 14, 12, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC7D: db 93, 0, 22, 4, 0 ; Alignment, TODO
 #_07CC82: db $03, $1D, $20 ; Move03, Move1D, Move20
-#_07CC85: db $00, $00, $00 ; no clue yet
+#_07CC85: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CC88: db 31 ; CP
 #_07CC89: db $00 ; ill find out
 
 .demon_006
 #_07CC8A: db 64 ; level
 #_07CC8B: dw 767, 299 ; HP, MP
-#_07CC8F: db 22, 15, 23, 12, 20, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CC8F: db 22, 15, 23, 12, 20, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07CC95: db 42, 1, 19, 8, 0 ; Alignment, TODO
 #_07CC9A: db $2E, $35, $33 ; Move2E, Move35, Move33
-#_07CC9D: db $00, $00, $00 ; no clue yet
+#_07CC9D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CCA0: db 43 ; CP
 #_07CCA1: db $20 ; ill find out
 
 .demon_007
 #_07CCA2: db 50 ; level
 #_07CCA3: dw 610, 300 ; HP, MP
-#_07CCA7: db 19, 15, 19, 13, 12, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CCA7: db 19, 15, 19, 13, 12, 17 ; STR, INT, MAG, STM, SPD, LUK
 #_07CCAD: db 48, 1, 19, 5, 0 ; Alignment, TODO
 #_07CCB2: db $2C, $35, $1D ; Move2C, Move35, Move1D
-#_07CCB5: db $00, $00, $00 ; no clue yet
+#_07CCB5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CCB8: db 35 ; CP
 #_07CCB9: db $20 ; ill find out
 
 .demon_008
 #_07CCBA: db 39 ; level
 #_07CCBB: dw 450, 280 ; HP, MP
-#_07CCBF: db 14, 22, 19, 9, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CCBF: db 14, 22, 19, 9, 9, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CCC5: db 56, 2, 19, 5, 0 ; Alignment, TODO
 #_07CCCA: db $29, $28, $26 ; Move29, Move28, Move26
-#_07CCCD: db $00, $00, $00 ; no clue yet
+#_07CCCD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CCD0: db 29 ; CP
 #_07CCD1: db $20 ; ill find out
 
 .demon_009
 #_07CCD2: db 28 ; level
 #_07CCD3: dw 252, 210 ; HP, MP
-#_07CCD7: db 9, 13, 16, 11, 10, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CCD7: db 9, 13, 16, 11, 10, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07CCDD: db 63, 1, 19, 5, 0 ; Alignment, TODO
 #_07CCE2: db $1F, $3C, $37 ; Move1F, Move3C, Move37
-#_07CCE5: db $00, $00, $00 ; no clue yet
+#_07CCE5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CCE8: db 22 ; CP
 #_07CCE9: db $20 ; ill find out
 
 .demon_00A
 #_07CCEA: db 16 ; level
 #_07CCEB: dw 155, 128 ; HP, MP
-#_07CCEF: db 11, 9, 11, 10, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CCEF: db 11, 9, 11, 10, 12, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07CCF5: db 70, 3, 19, 7, 0 ; Alignment, TODO
 #_07CCFA: db $45, $47, $2B ; Move45, Move47, Move2B
-#_07CCFD: db $00, $00, $00 ; no clue yet
+#_07CCFD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD00: db 17 ; CP
 #_07CD01: db $20 ; ill find out
 
 .demon_00B
 #_07CD02: db 116 ; level
 #_07CD03: dw 999, 340 ; HP, MP
-#_07CD07: db 40, 27, 29, 24, 25, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD07: db 40, 27, 29, 24, 25, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD0D: db 241, 0, 35, 7, 0 ; Alignment, TODO
 #_07CD12: db $03, $0B, $12 ; Move03, Move0B, Move12
-#_07CD15: db $00, $00, $00 ; no clue yet
+#_07CD15: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD18: db 74 ; CP
 #_07CD19: db $00 ; ill find out
 
 .demon_00C
 #_07CD1A: db 88 ; level
 #_07CD1B: dw 960, 310 ; HP, MP
-#_07CD1F: db 37, 16, 19, 21, 26, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD1F: db 37, 16, 19, 21, 26, 17 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD25: db 251, 0, 28, 5, 0 ; Alignment, TODO
 #_07CD2A: db $0B, $09, $42 ; Move0B, Move09, Move42
-#_07CD2D: db $00, $00, $00 ; no clue yet
+#_07CD2D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD30: db 67 ; CP
 #_07CD31: db $00 ; ill find out
 
 .demon_00D
 #_07CD32: db 80 ; level
 #_07CD33: dw 800, 280 ; HP, MP
-#_07CD37: db 35, 15, 15, 29, 16, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD37: db 35, 15, 15, 29, 16, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD3D: db 234, 0, 22, 4, 0 ; Alignment, TODO
 #_07CD42: db $16, $03, $10 ; Move16, Move03, Move10
-#_07CD45: db $00, $00, $00 ; no clue yet
+#_07CD45: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD48: db 53 ; CP
 #_07CD49: db $00 ; ill find out
 
 .demon_00E
 #_07CD4A: db 73 ; level
 #_07CD4B: dw 830, 300 ; HP, MP
-#_07CD4F: db 31, 12, 11, 21, 30, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD4F: db 31, 12, 11, 21, 30, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD55: db 227, 0, 22, 8, 0 ; Alignment, TODO
 #_07CD5A: db $0F, $0D, $62 ; Move0F, Move0D, Move62
-#_07CD5D: db $00, $00, $00 ; no clue yet
+#_07CD5D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD60: db 51 ; CP
 #_07CD61: db $00 ; ill find out
 
 .demon_00F
 #_07CD62: db 67 ; level
 #_07CD63: dw 850, 240 ; HP, MP
-#_07CD67: db 33, 15, 16, 18, 18, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD67: db 33, 15, 16, 18, 18, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD6D: db 210, 0, 22, 4, 10 ; Alignment, TODO
 #_07CD72: db $09, $0B, $28 ; Move09, Move0B, Move28
-#_07CD75: db $00, $00, $00 ; no clue yet
+#_07CD75: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD78: db 49 ; CP
 #_07CD79: db $00 ; ill find out
 
 .demon_010
 #_07CD7A: db 60 ; level
 #_07CD7B: dw 900, 64 ; HP, MP
-#_07CD7F: db 27, 17, 20, 17, 15, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD7F: db 27, 17, 20, 17, 15, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD85: db 202, 0, 28, 4, 22 ; Alignment, TODO
 #_07CD8A: db $01, $03, $18 ; Move01, Move03, Move18
-#_07CD8D: db $00, $00, $00 ; no clue yet
+#_07CD8D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CD90: db 46 ; CP
 #_07CD91: db $00 ; ill find out
 
 .demon_011
 #_07CD92: db 53 ; level
 #_07CD93: dw 728, 256 ; HP, MP
-#_07CD97: db 26, 16, 16, 18, 13, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CD97: db 26, 16, 16, 18, 13, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07CD9D: db 238, 0, 28, 4, 22 ; Alignment, TODO
 #_07CDA2: db $0D, $0F, $2C ; Move0D, Move0F, Move2C
-#_07CDA5: db $00, $00, $00 ; no clue yet
+#_07CDA5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CDA8: db 42 ; CP
 #_07CDA9: db $00 ; ill find out
 
 .demon_012
 #_07CDAA: db 47 ; level
 #_07CDAB: dw 565, 235 ; HP, MP
-#_07CDAF: db 25, 10, 10, 20, 20, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CDAF: db 25, 10, 10, 20, 20, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07CDB5: db 211, 0, 7, 0, 0 ; Alignment, TODO
 #_07CDBA: db $01, $03, $16 ; Move01, Move03, Move16
-#_07CDBD: db $00, $00, $00 ; no clue yet
+#_07CDBD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CDC0: db 32 ; CP
 #_07CDC1: db $00 ; ill find out
 
 .demon_013
 #_07CDC2: db 75 ; level
 #_07CDC3: dw 880, 180 ; HP, MP
-#_07CDC7: db 37, 16, 21, 22, 17, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CDC7: db 37, 16, 21, 22, 17, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07CDCD: db 168, 0, 23, 4, 10 ; Alignment, TODO
 #_07CDD2: db $2B, $07, $16 ; Move2B, Move07, Move16
-#_07CDD5: db $50, $00, $00 ; no clue yet
+#_07CDD5: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CDD8: db 51 ; CP
 #_07CDD9: db $00 ; ill find out
 
 .demon_014
 #_07CDDA: db 68 ; level
 #_07CDDB: dw 660, 170 ; HP, MP
-#_07CDDF: db 35, 10, 13, 28, 19, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CDDF: db 35, 10, 13, 28, 19, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CDE5: db 176, 0, 23, 0, 0 ; Alignment, TODO
 #_07CDEA: db $1A, $27, $4E ; Move1A, Move27, Move4E
-#_07CDED: db $50, $00, $00 ; no clue yet
+#_07CDED: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CDF0: db 47 ; CP
 #_07CDF1: db $00 ; ill find out
 
 .demon_015
 #_07CDF2: db 65 ; level
 #_07CDF3: dw 656, 161 ; HP, MP
-#_07CDF7: db 34, 9, 12, 20, 23, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CDF7: db 34, 9, 12, 20, 23, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07CDFD: db 150, 0, 23, 0, 0 ; Alignment, TODO
 #_07CE02: db $09, $0B, $39 ; Move09, Move0B, Move39
-#_07CE05: db $50, $00, $00 ; no clue yet
+#_07CE05: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE08: db 45 ; CP
 #_07CE09: db $00 ; ill find out
 
 .demon_016
 #_07CE0A: db 63 ; level
 #_07CE0B: dw 707, 151 ; HP, MP
-#_07CE0F: db 34, 11, 16, 18, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE0F: db 34, 11, 16, 18, 19, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07CE15: db 146, 0, 23, 0, 0 ; Alignment, TODO
 #_07CE1A: db $03, $01, $56 ; Move03, Move01, Move56
-#_07CE1D: db $50, $00, $00 ; no clue yet
+#_07CE1D: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE20: db 43 ; CP
 #_07CE21: db $00 ; ill find out
 
 .demon_017
 #_07CE22: db 59 ; level
 #_07CE23: dw 630, 148 ; HP, MP
-#_07CE27: db 33, 10, 11, 28, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE27: db 33, 10, 11, 28, 13, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CE2D: db 159, 0, 23, 0, 5 ; Alignment, TODO
 #_07CE32: db $01, $23, $2B ; Move01, Move23, Move2B
-#_07CE35: db $50, $00, $00 ; no clue yet
+#_07CE35: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE38: db 40 ; CP
 #_07CE39: db $00 ; ill find out
 
 .demon_018
 #_07CE3A: db 57 ; level
 #_07CE3B: dw 660, 145 ; HP, MP
-#_07CE3F: db 31, 12, 20, 16, 15, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE3F: db 31, 12, 20, 16, 15, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07CE45: db 152, 0, 23, 0, 24 ; Alignment, TODO
 #_07CE4A: db $0F, $0D, $1A ; Move0F, Move0D, Move1A
-#_07CE4D: db $50, $00, $00 ; no clue yet
+#_07CE4D: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE50: db 38 ; CP
 #_07CE51: db $00 ; ill find out
 
 .demon_019
 #_07CE52: db 55 ; level
 #_07CE53: dw 640, 108 ; HP, MP
-#_07CE57: db 32, 9, 11, 13, 26, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE57: db 32, 9, 11, 13, 26, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CE5D: db 149, 0, 23, 0, 22 ; Alignment, TODO
 #_07CE62: db $0B, $23, $25 ; Move0B, Move23, Move25
-#_07CE65: db $50, $00, $00 ; no clue yet
+#_07CE65: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE68: db 36 ; CP
 #_07CE69: db $00 ; ill find out
 
 .demon_01A
 #_07CE6A: db 46 ; level
 #_07CE6B: dw 540, 110 ; HP, MP
-#_07CE6F: db 29, 11, 13, 14, 15, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE6F: db 29, 11, 13, 14, 15, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07CE75: db 166, 0, 23, 0, 0 ; Alignment, TODO
 #_07CE7A: db $09, $30, $1E ; Move09, Move30, Move1E
-#_07CE7D: db $50, $00, $00 ; no clue yet
+#_07CE7D: db $50, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE80: db 31 ; CP
 #_07CE81: db $00 ; ill find out
 
 .demon_01B
 #_07CE82: db 43 ; level
 #_07CE83: dw 490, 90 ; HP, MP
-#_07CE87: db 28, 9, 10, 15, 14, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE87: db 28, 9, 10, 15, 14, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07CE8D: db 164, 0, 23, 0, 0 ; Alignment, TODO
 #_07CE92: db $0B, $05, $1A ; Move0B, Move05, Move1A
-#_07CE95: db $0F, $14, $00 ; no clue yet
+#_07CE95: db $0F, $14, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CE98: db 29 ; CP
 #_07CE99: db $00 ; ill find out
 
 .demon_01C
 #_07CE9A: db 38 ; level
 #_07CE9B: dw 402, 120 ; HP, MP
-#_07CE9F: db 23, 11, 12, 17, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CE9F: db 23, 11, 12, 17, 9, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CEA5: db 177, 0, 23, 0, 0 ; Alignment, TODO
 #_07CEAA: db $0D, $11, $2E ; Move0D, Move11, Move2E
-#_07CEAD: db $00, $00, $00 ; no clue yet
+#_07CEAD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CEB0: db 27 ; CP
 #_07CEB1: db $00 ; ill find out
 
 .demon_01D
 #_07CEB2: db 31 ; level
 #_07CEB3: dw 282, 142 ; HP, MP
-#_07CEB7: db 20, 9, 13, 12, 10, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CEB7: db 20, 9, 13, 12, 10, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CEBD: db 168, 0, 23, 0, 0 ; Alignment, TODO
 #_07CEC2: db $1F, $37, $3D ; Move1F, Move37, Move3D
-#_07CEC5: db $00, $00, $00 ; no clue yet
+#_07CEC5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CEC8: db 21 ; CP
 #_07CEC9: db $00 ; ill find out
 
 .demon_01E
 #_07CECA: db 23 ; level
 #_07CECB: dw 201, 80 ; HP, MP
-#_07CECF: db 17, 10, 9, 11, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CECF: db 17, 10, 9, 11, 9, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07CED5: db 170, 0, 23, 0, 0 ; Alignment, TODO
 #_07CEDA: db $0D, $05, $17 ; Move0D, Move05, Move17
-#_07CEDD: db $00, $00, $00 ; no clue yet
+#_07CEDD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CEE0: db 19 ; CP
 #_07CEE1: db $00 ; ill find out
 
 .demon_01F
 #_07CEE2: db 110 ; level
 #_07CEE3: dw 999, 400 ; HP, MP
-#_07CEE7: db 40, 24, 24, 24, 24, 24 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CEE7: db 40, 24, 24, 24, 24, 24 ; STR, INT, MAG, STM, SPD, LUK
 #_07CEED: db 10, 0, 35, 8, 21 ; Alignment, TODO
 #_07CEF2: db $2C, $03, $12 ; Move2C, Move03, Move12
-#_07CEF5: db $00, $00, $00 ; no clue yet
+#_07CEF5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CEF8: db 72 ; CP
 #_07CEF9: db $00 ; ill find out
 
 .demon_020
 #_07CEFA: db 96 ; level
 #_07CEFB: dw 930, 370 ; HP, MP
-#_07CEFF: db 34, 19, 19, 34, 19, 19 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CEFF: db 34, 19, 19, 34, 19, 19 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF05: db 21, 0, 19, 7, 22 ; Alignment, TODO
 #_07CF0A: db $0B, $2C, $2E ; Move0B, Move2C, Move2E
-#_07CF0D: db $00, $00, $00 ; no clue yet
+#_07CF0D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CF10: db 64 ; CP
 #_07CF11: db $00 ; ill find out
 
 .demon_021
 #_07CF12: db 91 ; level
 #_07CF13: dw 940, 380 ; HP, MP
-#_07CF17: db 28, 18, 28, 18, 28, 18 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CF17: db 28, 18, 28, 18, 28, 18 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF1D: db 34, 0, 19, 7, 14 ; Alignment, TODO
 #_07CF22: db $05, $07, $0B ; Move05, Move07, Move0B
-#_07CF25: db $00, $00, $00 ; no clue yet
+#_07CF25: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CF28: db 57 ; CP
 #_07CF29: db $00 ; ill find out
 
 .demon_022
 #_07CF2A: db 83 ; level
 #_07CF2B: dw 900, 340 ; HP, MP
-#_07CF2F: db 30, 17, 17, 30, 17, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CF2F: db 30, 17, 17, 30, 17, 17 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF35: db 42, 0, 19, 8, 10 ; Alignment, TODO
 #_07CF3A: db $0F, $1A, $35 ; Move0F, Move1A, Move35
-#_07CF3D: db $00, $00, $00 ; no clue yet
+#_07CF3D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CF40: db 53 ; CP
 #_07CF41: db $00 ; ill find out
 
 .demon_023
 #_07CF42: db 67 ; level
 #_07CF43: dw 800, 310 ; HP, MP
-#_07CF47: db 30, 17, 17, 22, 17, 17 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CF47: db 30, 17, 17, 22, 17, 17 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF4D: db 34, 0, 19, 7, 0 ; Alignment, TODO
 #_07CF52: db $0F, $26, $39 ; Move0F, Move26, Move39
-#_07CF55: db $20, $00, $00 ; no clue yet
+#_07CF55: db $20, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CF58: db 45 ; CP
 #_07CF59: db $00 ; ill find out
 
 .demon_024
 #_07CF5A: db 61 ; level
 #_07CF5B: dw 720, 290 ; HP, MP
-#_07CF5F: db 28, 16, 16, 16, 16, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CF5F: db 28, 16, 16, 16, 16, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF65: db 38, 0, 19, 0, 0 ; Alignment, TODO
 #_07CF6A: db $2E, $3C, $34 ; Move2E, Move3C, Move34
-#_07CF6D: db $20, $00, $00 ; no clue yet
+#_07CF6D: db $20, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CF70: db 42 ; CP
 #_07CF71: db $00 ; ill find out
 
 .demon_025
 #_07CF72: db 52 ; level
 #_07CF73: dw 630, 260 ; HP, MP
-#_07CF77: db 26, 14, 14, 18, 14, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CF77: db 26, 14, 14, 18, 14, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF7D: db 46, 0, 19, 0, 0 ; Alignment, TODO
 #_07CF82: db $09, $20, $1D ; Move09, Move20, Move1D
-#_07CF85: db $20, $00, $00 ; no clue yet
+#_07CF85: db $20, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CF88: db 36 ; CP
 #_07CF89: db $00 ; ill find out
 
 .demon_026
 #_07CF8A: db 46 ; level
 #_07CF8B: dw 550, 160 ; HP, MP
-#_07CF8F: db 22, 17, 17, 17, 13, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CF8F: db 22, 17, 17, 17, 13, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07CF95: db 52, 0, 19, 0, 0 ; Alignment, TODO
 #_07CF9A: db $03, $2E, $36 ; Move03, Move2E, Move36
-#_07CF9D: db $20, $00, $02 ; no clue yet
+#_07CF9D: db $20, $00, $02 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CFA0: db 32 ; CP
 #_07CFA1: db $00 ; ill find out
 
 .demon_027
 #_07CFA2: db 40 ; level
 #_07CFA3: dw 420, 150 ; HP, MP
-#_07CFA7: db 24, 11, 11, 20, 11, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CFA7: db 24, 11, 11, 20, 11, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07CFAD: db 56, 0, 19, 0, 0 ; Alignment, TODO
 #_07CFB2: db $16, $23, $24 ; Move16, Move23, Move24
-#_07CFB5: db $20, $00, $02 ; no clue yet
+#_07CFB5: db $20, $00, $02 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CFB8: db 30 ; CP
 #_07CFB9: db $00 ; ill find out
 
 .demon_028
 #_07CFBA: db 34 ; level
 #_07CFBB: dw 323, 140 ; HP, MP
-#_07CFBF: db 20, 12, 12, 12, 12, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CFBF: db 20, 12, 12, 12, 12, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07CFC5: db 61, 0, 19, 0, 0 ; Alignment, TODO
 #_07CFCA: db $01, $15, $2B ; Move01, Move15, Move2B
-#_07CFCD: db $13, $D4, $9E ; no clue yet
+#_07CFCD: db $13, $D4, $9E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CFD0: db 27 ; CP
 #_07CFD1: db $62 ; ill find out
 
 .demon_029
 #_07CFD2: db 14 ; level
 #_07CFD3: dw 70, 60 ; HP, MP
-#_07CFD7: db 14, 8, 8, 8, 8, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CFD7: db 14, 8, 8, 8, 8, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07CFDD: db 65, 0, 19, 0, 16 ; Alignment, TODO
 #_07CFE2: db $2D, $15, $30 ; Move2D, Move15, Move30
-#_07CFE5: db $13, $D4, $9E ; no clue yet
+#_07CFE5: db $13, $D4, $9E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07CFE8: db 14 ; CP
 #_07CFE9: db $62 ; ill find out
 
 .demon_02A
 #_07CFEA: db 74 ; level
 #_07CFEB: dw 930, 140 ; HP, MP
-#_07CFEF: db 38, 15, 19, 17, 20, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07CFEF: db 38, 15, 19, 17, 20, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07CFF5: db 184, 0, 8, 0, 0 ; Alignment, TODO
 #_07CFFA: db $59, $65, $68 ; Move59, Move65, Move68
-#_07CFFD: db $00, $00, $00 ; no clue yet
+#_07CFFD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D000: db 48 ; CP
 #_07D001: db $00 ; ill find out
 
 .demon_02B
 #_07D002: db 67 ; level
 #_07D003: dw 810, 150 ; HP, MP
-#_07D007: db 30, 15, 18, 20, 19, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D007: db 30, 15, 18, 20, 19, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D00D: db 173, 0, 10, 0, 0 ; Alignment, TODO
 #_07D012: db $2E, $65, $66 ; Move2E, Move65, Move66
-#_07D015: db $00, $00, $00 ; no clue yet
+#_07D015: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D018: db 44 ; CP
 #_07D019: db $00 ; ill find out
 
 .demon_02C
 #_07D01A: db 62 ; level
 #_07D01B: dw 780, 120 ; HP, MP
-#_07D01F: db 31, 10, 13, 15, 20, 19 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D01F: db 31, 10, 13, 15, 20, 19 ; STR, INT, MAG, STM, SPD, LUK
 #_07D025: db 169, 0, 20, 0, 0 ; Alignment, TODO
 #_07D02A: db $4E, $68, $57 ; Move4E, Move68, Move57
-#_07D02D: db $00, $00, $00 ; no clue yet
+#_07D02D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D030: db 40 ; CP
 #_07D031: db $00 ; ill find out
 
 .demon_02D
 #_07D032: db 56 ; level
 #_07D033: dw 710, 110 ; HP, MP
-#_07D037: db 29, 12, 14, 14, 22, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D037: db 29, 12, 14, 14, 22, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D03D: db 196, 0, 8, 0, 0 ; Alignment, TODO
 #_07D042: db $58, $50, $68 ; Move58, Move50, Move68
-#_07D045: db $05, $2F, $00 ; no clue yet
+#_07D045: db $05, $2F, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D048: db 37 ; CP
 #_07D049: db $00 ; ill find out
 
 .demon_02E
 #_07D04A: db 49 ; level
 #_07D04B: dw 580, 100 ; HP, MP
-#_07D04F: db 26, 12, 16, 12, 16, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D04F: db 26, 12, 16, 12, 16, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D055: db 161, 2, 8, 0, 0 ; Alignment, TODO
 #_07D05A: db $0B, $2E, $33 ; Move0B, Move2E, Move33
-#_07D05D: db $00, $00, $00 ; no clue yet
+#_07D05D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D060: db 33 ; CP
 #_07D061: db $00 ; ill find out
 
 .demon_02F
 #_07D062: db 44 ; level
 #_07D063: dw 555, 90 ; HP, MP
-#_07D067: db 21, 10, 15, 11, 15, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D067: db 21, 10, 15, 11, 15, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07D06D: db 171, 3, 10, 0, 0 ; Alignment, TODO
 #_07D072: db $15, $17, $35 ; Move15, Move17, Move35
-#_07D075: db $00, $00, $00 ; no clue yet
+#_07D075: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D078: db 29 ; CP
 #_07D079: db $00 ; ill find out
 
 .demon_030
 #_07D07A: db 72 ; level
 #_07D07B: dw 757, 323 ; HP, MP
-#_07D07F: db 18, 20, 19, 16, 28, 16 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D07F: db 18, 20, 19, 16, 28, 16 ; STR, INT, MAG, STM, SPD, LUK
 #_07D085: db 28, 0, 3, 8, 0 ; Alignment, TODO
 #_07D08A: db $67, $61, $1E ; Move67, Move61, Move1E
-#_07D08D: db $00, $00, $00 ; no clue yet
+#_07D08D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D090: db 43 ; CP
 #_07D091: db $00 ; ill find out
 
 .demon_031
 #_07D092: db 65 ; level
 #_07D093: dw 688, 299 ; HP, MP
-#_07D097: db 17, 18, 18, 15, 26, 16 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D097: db 17, 18, 18, 15, 26, 16 ; STR, INT, MAG, STM, SPD, LUK
 #_07D09D: db 30, 0, 7, 8, 0 ; Alignment, TODO
 #_07D0A2: db $01, $03, $61 ; Move01, Move03, Move61
-#_07D0A5: db $00, $00, $00 ; no clue yet
+#_07D0A5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D0A8: db 38 ; CP
 #_07D0A9: db $00 ; ill find out
 
 .demon_032
 #_07D0AA: db 57 ; level
 #_07D0AB: dw 600, 240 ; HP, MP
-#_07D0AF: db 16, 16, 16, 17, 25, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D0AF: db 16, 16, 16, 17, 25, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07D0B5: db 31, 0, 7, 8, 0 ; Alignment, TODO
 #_07D0BA: db $2B, $4E, $35 ; Move2B, Move4E, Move35
-#_07D0BD: db $00, $00, $00 ; no clue yet
+#_07D0BD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D0C0: db 34 ; CP
 #_07D0C1: db $00 ; ill find out
 
 .demon_033
 #_07D0C2: db 47 ; level
 #_07D0C3: dw 477, 199 ; HP, MP
-#_07D0C7: db 15, 15, 15, 11, 23, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D0C7: db 15, 15, 15, 11, 23, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07D0CD: db 32, 0, 3, 8, 0 ; Alignment, TODO
 #_07D0D2: db $5C, $61, $17 ; Move5C, Move61, Move17
-#_07D0D5: db $00, $00, $00 ; no clue yet
+#_07D0D5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D0D8: db 30 ; CP
 #_07D0D9: db $00 ; ill find out
 
 .demon_034
 #_07D0DA: db 36 ; level
 #_07D0DB: dw 316, 202 ; HP, MP
-#_07D0DF: db 12, 11, 12, 14, 21, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D0DF: db 12, 11, 12, 14, 21, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D0E5: db 34, 0, 17, 8, 0 ; Alignment, TODO
 #_07D0EA: db $2B, $2D, $34 ; Move2B, Move2D, Move34
-#_07D0ED: db $00, $00, $00 ; no clue yet
+#_07D0ED: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D0F0: db 25 ; CP
 #_07D0F1: db $00 ; ill find out
 
 .demon_035
 #_07D0F2: db 62 ; level
 #_07D0F3: dw 700, 100 ; HP, MP
-#_07D0F7: db 31, 13, 16, 17, 20, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D0F7: db 31, 13, 16, 17, 20, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D0FD: db 115, 0, 2, 0, 0 ; Alignment, TODO
 #_07D102: db $4E, $4A, $30 ; Move4E, Move4A, Move30
-#_07D105: db $00, $00, $00 ; no clue yet
+#_07D105: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D108: db 40 ; CP
 #_07D109: db $00 ; ill find out
 
 .demon_036
 #_07D10A: db 55 ; level
 #_07D10B: dw 650, 90 ; HP, MP
-#_07D10F: db 29, 9, 11, 18, 21, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D10F: db 29, 9, 11, 18, 21, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07D115: db 116, 0, 20, 0, 0 ; Alignment, TODO
 #_07D11A: db $4E, $57, $5C ; Move4E, Move57, Move5C
-#_07D11D: db $00, $00, $00 ; no clue yet
+#_07D11D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D120: db 36 ; CP
 #_07D121: db $00 ; ill find out
 
 .demon_037
 #_07D122: db 52 ; level
 #_07D123: dw 590, 80 ; HP, MP
-#_07D127: db 25, 10, 12, 19, 18, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D127: db 25, 10, 12, 19, 18, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D12D: db 113, 0, 2, 0, 0 ; Alignment, TODO
 #_07D132: db $4A, $57, $16 ; Move4A, Move57, Move16
-#_07D135: db $00, $00, $00 ; no clue yet
+#_07D135: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D138: db 33 ; CP
 #_07D139: db $00 ; ill find out
 
 .demon_038
 #_07D13A: db 42 ; level
 #_07D13B: dw 525, 75 ; HP, MP
-#_07D13F: db 23, 8, 10, 21, 10, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D13F: db 23, 8, 10, 21, 10, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07D145: db 114, 0, 17, 0, 0 ; Alignment, TODO
 #_07D14A: db $2C, $2D, $36 ; Move2C, Move2D, Move36
-#_07D14D: db $00, $00, $00 ; no clue yet
+#_07D14D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D150: db 28 ; CP
 #_07D151: db $00 ; ill find out
 
 .demon_039
 #_07D152: db 41 ; level
 #_07D153: dw 505, 65 ; HP, MP
-#_07D157: db 23, 10, 12, 24, 9, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D157: db 23, 10, 12, 24, 9, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07D15D: db 75, 0, 10, 0, 0 ; Alignment, TODO
 #_07D162: db $63, $4F, $16 ; Move63, Move4F, Move16
-#_07D165: db $00, $00, $00 ; no clue yet
+#_07D165: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D168: db 27 ; CP
 #_07D169: db $00 ; ill find out
 
 .demon_03A
 #_07D16A: db 38 ; level
 #_07D16B: dw 380, 70 ; HP, MP
-#_07D16F: db 22, 9, 12, 13, 14, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D16F: db 22, 9, 12, 13, 14, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07D175: db 67, 0, 17, 0, 0 ; Alignment, TODO
 #_07D17A: db $3C, $34, $15 ; Move3C, Move34, Move15
-#_07D17D: db $00, $00, $00 ; no clue yet
+#_07D17D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D180: db 24 ; CP
 #_07D181: db $00 ; ill find out
 
 .demon_03B
 #_07D182: db 31 ; level
 #_07D183: dw 290, 60 ; HP, MP
-#_07D187: db 19, 10, 11, 15, 11, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D187: db 19, 10, 11, 15, 11, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D18D: db 71, 0, 17, 0, 0 ; Alignment, TODO
 #_07D192: db $60, $29, $33 ; Move60, Move29, Move33
-#_07D195: db $00, $00, $00 ; no clue yet
+#_07D195: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D198: db 21 ; CP
 #_07D199: db $00 ; ill find out
 
 .demon_03C
 #_07D19A: db 22 ; level
 #_07D19B: dw 171, 51 ; HP, MP
-#_07D19F: db 16, 6, 10, 10, 12, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D19F: db 16, 6, 10, 10, 12, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D1A5: db 70, 0, 17, 0, 0 ; Alignment, TODO
 #_07D1AA: db $2B, $3B, $32 ; Move2B, Move3B, Move32
-#_07D1AD: db $00, $00, $00 ; no clue yet
+#_07D1AD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D1B0: db 15 ; CP
 #_07D1B1: db $00 ; ill find out
 
 .demon_03D
 #_07D1B2: db 17 ; level
 #_07D1B3: dw 131, 41 ; HP, MP
-#_07D1B7: db 14, 7, 7, 9, 10, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D1B7: db 14, 7, 7, 9, 10, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07D1BD: db 69, 0, 17, 0, 0 ; Alignment, TODO
 #_07D1C2: db $15, $30, $63 ; Move15, Move30, Move63
-#_07D1C5: db $00, $00, $00 ; no clue yet
+#_07D1C5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D1C8: db 13 ; CP
 #_07D1C9: db $00 ; ill find out
 
 .demon_03E
 #_07D1CA: db 40 ; level
 #_07D1CB: dw 160, 55 ; HP, MP
-#_07D1CF: db 23, 9, 10, 13, 20, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D1CF: db 23, 9, 10, 13, 20, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07D1D5: db 130, 0, 7, 0, 0 ; Alignment, TODO
 #_07D1DA: db $01, $03, $3C ; Move01, Move03, Move3C
-#_07D1DD: db $00, $00, $00 ; no clue yet
+#_07D1DD: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D1E0: db 18 ; CP
 #_07D1E1: db $00 ; ill find out
 
 .demon_03F
 #_07D1E2: db 30 ; level
 #_07D1E3: dw 200, 60 ; HP, MP
-#_07D1E7: db 15, 10, 12, 15, 18, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D1E7: db 15, 10, 12, 15, 18, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D1ED: db 129, 0, 8, 0, 0 ; Alignment, TODO
 #_07D1F2: db $2C, $2E, $09 ; Move2C, Move2E, Move09
-#_07D1F5: db $00, $00, $00 ; no clue yet
+#_07D1F5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D1F8: db 14 ; CP
 #_07D1F9: db $20 ; ill find out
 
 .demon_040
 #_07D1FA: db 25 ; level
 #_07D1FB: dw 99, 70 ; HP, MP
-#_07D1FF: db 13, 14, 11, 7, 22, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D1FF: db 13, 14, 11, 7, 22, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D205: db 128, 0, 9, 7, 0 ; Alignment, TODO
 #_07D20A: db $05, $0A, $1B ; Move05, Move0A, Move1B
-#_07D20D: db $00, $00, $00 ; no clue yet
+#_07D20D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D210: db 11 ; CP
 #_07D211: db $20 ; ill find out
 
 .demon_041
 #_07D212: db 20 ; level
 #_07D213: dw 100, 50 ; HP, MP
-#_07D217: db 18, 8, 12, 16, 10, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D217: db 18, 8, 12, 16, 10, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D21D: db 127, 0, 10, 0, 0 ; Alignment, TODO
 #_07D222: db $15, $0F, $27 ; Move15, Move0F, Move27
-#_07D225: db $00, $00, $00 ; no clue yet
+#_07D225: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D228: db 12 ; CP
 #_07D229: db $00 ; ill find out
 
 .demon_042
 #_07D22A: db 17 ; level
 #_07D22B: dw 60, 36 ; HP, MP
-#_07D22F: db 19, 7, 8, 7, 13, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D22F: db 19, 7, 8, 7, 13, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D235: db 129, 0, 7, 0, 0 ; Alignment, TODO
 #_07D23A: db $01, $02, $56 ; Move01, Move02, Move56
-#_07D23D: db $00, $00, $00 ; no clue yet
+#_07D23D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D240: db 9 ; CP
 #_07D241: db $00 ; ill find out
 
 .demon_043
 #_07D242: db 14 ; level
 #_07D243: dw 50, 38 ; HP, MP
-#_07D247: db 11, 8, 13, 12, 9, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D247: db 11, 8, 13, 12, 9, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D24D: db 128, 0, 8, 0, 0 ; Alignment, TODO
 #_07D252: db $2B, $2D, $09 ; Move2B, Move2D, Move09
-#_07D255: db $00, $00, $00 ; no clue yet
+#_07D255: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D258: db 7 ; CP
 #_07D259: db $00 ; ill find out
 
 .demon_044
 #_07D25A: db 11 ; level
 #_07D25B: dw 45, 34 ; HP, MP
-#_07D25F: db 8, 12, 10, 6, 15, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D25F: db 8, 12, 10, 6, 15, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D265: db 127, 0, 9, 4, 0 ; Alignment, TODO
 #_07D26A: db $0E, $05, $1C ; Move0E, Move05, Move1C
-#_07D26D: db $00, $00, $00 ; no clue yet
+#_07D26D: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D270: db 6 ; CP
 #_07D271: db $00 ; ill find out
 
 .demon_045
 #_07D272: db 8 ; level
 #_07D273: dw 40, 26 ; HP, MP
-#_07D277: db 10, 7, 11, 14, 6, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D277: db 10, 7, 11, 14, 6, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D27D: db 126, 0, 10, 0, 0 ; Alignment, TODO
 #_07D282: db $24, $25, $23 ; Move24, Move25, Move23
-#_07D285: db $00, $00, $00 ; no clue yet
+#_07D285: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D288: db 5 ; CP
 #_07D289: db $00 ; ill find out
 
 .demon_046
 #_07D28A: db 69 ; level
 #_07D28B: dw 747, 171 ; HP, MP
-#_07D28F: db 36, 12, 16, 18, 24, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D28F: db 36, 12, 16, 18, 24, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D295: db 242, 3, 23, 8, 10 ; Alignment, TODO
 #_07D29A: db $54, $10, $18 ; Move54, Move10, Move18
-#_07D29D: db $20, $B4, $CB ; no clue yet
+#_07D29D: db $20, $B4, $CB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D2A0: db 39 ; CP
 #_07D2A1: db $20 ; ill find out
 
 .demon_047
 #_07D2A2: db 61 ; level
 #_07D2A3: dw 644, 155 ; HP, MP
-#_07D2A7: db 33, 11, 13, 18, 23, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D2A7: db 33, 11, 13, 18, 23, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D2AD: db 238, 3, 23, 7, 16 ; Alignment, TODO
 #_07D2B2: db $54, $19, $2C ; Move54, Move19, Move2C
-#_07D2B5: db $10, $B4, $EC ; no clue yet
+#_07D2B5: db $10, $B4, $EC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D2B8: db 34 ; CP
 #_07D2B9: db $20 ; ill find out
 
 .demon_048
 #_07D2BA: db 54 ; level
 #_07D2BB: dw 568, 142 ; HP, MP
-#_07D2BF: db 28, 10, 14, 15, 21, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D2BF: db 28, 10, 14, 15, 21, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D2C5: db 233, 5, 26, 0, 10 ; Alignment, TODO
 #_07D2CA: db $1A, $46, $1D ; Move1A, Move46, Move1D
-#_07D2CD: db $10, $B4, $92 ; no clue yet
+#_07D2CD: db $10, $B4, $92 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D2D0: db 31 ; CP
 #_07D2D1: db $20 ; ill find out
 
 .demon_049
 #_07D2D2: db 49 ; level
 #_07D2D3: dw 560, 110 ; HP, MP
-#_07D2D7: db 20, 10, 13, 16, 20, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D2D7: db 20, 10, 13, 16, 20, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D2DD: db 229, 7, 8, 10, 16 ; Alignment, TODO
 #_07D2E2: db $64, $2B, $55 ; Move64, Move2B, Move55
-#_07D2E5: db $20, $B4, $01 ; no clue yet
+#_07D2E5: db $20, $B4, $01 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D2E8: db 29 ; CP
 #_07D2E9: db $21 ; ill find out
 
 .demon_04A
 #_07D2EA: db 45 ; level
 #_07D2EB: dw 484, 131 ; HP, MP
-#_07D2EF: db 24, 9, 13, 13, 18, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D2EF: db 24, 9, 13, 13, 18, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D2F5: db 231, 23, 23, 4, 15 ; Alignment, TODO
 #_07D2FA: db $54, $03, $45 ; Move54, Move03, Move45
-#_07D2FD: db $10, $B4, $CB ; no clue yet
+#_07D2FD: db $10, $B4, $CB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D300: db 27 ; CP
 #_07D301: db $21 ; ill find out
 
 .demon_04B
 #_07D302: db 39 ; level
 #_07D303: dw 404, 121 ; HP, MP
-#_07D307: db 21, 9, 10, 19, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D307: db 21, 9, 10, 19, 15, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D30D: db 240, 23, 25, 0, 17 ; Alignment, TODO
 #_07D312: db $28, $41, $2E ; Move28, Move41, Move2E
-#_07D315: db $E7, $B8, $CA ; no clue yet
+#_07D315: db $E7, $B8, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D318: db 24 ; CP
 #_07D319: db $20 ; ill find out
 
 .demon_04C
 #_07D31A: db 36 ; level
 #_07D31B: dw 343, 101 ; HP, MP
-#_07D31F: db 20, 9, 10, 13, 18, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D31F: db 20, 9, 10, 13, 18, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07D325: db 209, 33, 23, 4, 10 ; Alignment, TODO
 #_07D32A: db $0A, $1F, $21 ; Move0A, Move1F, Move21
-#_07D32D: db $D7, $21, $CA ; no clue yet
+#_07D32D: db $D7, $21, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D330: db 22 ; CP
 #_07D331: db $20 ; ill find out
 
 .demon_04D
 #_07D332: db 33 ; level
 #_07D333: dw 252, 98 ; HP, MP
-#_07D337: db 17, 8, 11, 16, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D337: db 17, 8, 11, 16, 15, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D33D: db 198, 33, 1, 0, 11 ; Alignment, TODO
 #_07D342: db $08, $24, $5B ; Move08, Move24, Move5B
-#_07D345: db $D6, $1A, $CA ; no clue yet
+#_07D345: db $D6, $1A, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D348: db 20 ; CP
 #_07D349: db $21 ; ill find out
 
 .demon_04E
 #_07D34A: db 63 ; level
 #_07D34B: dw 660, 220 ; HP, MP
-#_07D34F: db 30, 13, 13, 15, 26, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D34F: db 30, 13, 13, 15, 26, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D355: db 82, 0, 9, 7, 5 ; Alignment, TODO
 #_07D35A: db $0F, $23, $3A ; Move0F, Move23, Move3A
-#_07D35D: db $17, $33, $DC ; no clue yet
+#_07D35D: db $17, $33, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D360: db 36 ; CP
 #_07D361: db $11 ; ill find out
 
 .demon_04F
 #_07D362: db 60 ; level
 #_07D363: dw 626, 262 ; HP, MP
-#_07D367: db 26, 11, 15, 26, 12, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D367: db 26, 11, 15, 26, 12, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07D36D: db 88, 7, 22, 0, 5 ; Alignment, TODO
 #_07D372: db $17, $2C, $3E ; Move17, Move2C, Move3E
-#_07D375: db $16, $D3, $DC ; no clue yet
+#_07D375: db $16, $D3, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D378: db 34 ; CP
 #_07D379: db $11 ; ill find out
 
 .demon_050
 #_07D37A: db 55 ; level
 #_07D37B: dw 525, 161 ; HP, MP
-#_07D37F: db 29, 12, 14, 18, 15, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D37F: db 29, 12, 14, 18, 15, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D385: db 90, 64, 7, 0, 11 ; Alignment, TODO
 #_07D38A: db $03, $25, $24 ; Move03, Move25, Move24
-#_07D38D: db $E0, $B4, $BA ; no clue yet
+#_07D38D: db $E0, $B4, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D390: db 31 ; CP
 #_07D391: db $11 ; ill find out
 
 .demon_051
 #_07D392: db 52 ; level
 #_07D393: dw 585, 232 ; HP, MP
-#_07D397: db 24, 14, 16, 11, 21, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D397: db 24, 14, 16, 11, 21, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D39D: db 101, 80, 9, 0, 8 ; Alignment, TODO
 #_07D3A2: db $1A, $0F, $61 ; Move1A, Move0F, Move61
-#_07D3A5: db $D5, $2B, $BA ; no clue yet
+#_07D3A5: db $D5, $2B, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D3A8: db 30 ; CP
 #_07D3A9: db $11 ; ill find out
 
 .demon_052
 #_07D3AA: db 50 ; level
 #_07D3AB: dw 505, 202 ; HP, MP
-#_07D3AF: db 23, 16, 18, 12, 16, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D3AF: db 23, 16, 18, 12, 16, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D3B5: db 95, 48, 22, 0, 7 ; Alignment, TODO
 #_07D3BA: db $01, $03, $39 ; Move01, Move03, Move39
-#_07D3BD: db $D7, $C9, $BA ; no clue yet
+#_07D3BD: db $D7, $C9, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D3C0: db 28 ; CP
 #_07D3C1: db $10 ; ill find out
 
 .demon_053
 #_07D3C2: db 43 ; level
 #_07D3C3: dw 456, 141 ; HP, MP
-#_07D3C7: db 21, 12, 12, 11, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D3C7: db 21, 12, 12, 11, 19, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D3CD: db 98, 48, 9, 0, 10 ; Alignment, TODO
 #_07D3D2: db $0F, $24, $23 ; Move0F, Move24, Move23
-#_07D3D5: db $D0, $B4, $BA ; no clue yet
+#_07D3D5: db $D0, $B4, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D3D8: db 26 ; CP
 #_07D3D9: db $11 ; ill find out
 
 .demon_054
 #_07D3DA: db 41 ; level
 #_07D3DB: dw 501, 191 ; HP, MP
-#_07D3DF: db 17, 14, 19, 13, 11, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D3DF: db 17, 14, 19, 13, 11, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D3E5: db 105, 32, 17, 0, 5 ; Alignment, TODO
 #_07D3EA: db $17, $35, $3A ; Move17, Move35, Move3A
-#_07D3ED: db $10, $B4, $9C ; no clue yet
+#_07D3ED: db $10, $B4, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D3F0: db 24 ; CP
 #_07D3F1: db $11 ; ill find out
 
 .demon_055
 #_07D3F2: db 37 ; level
 #_07D3F3: dw 246, 181 ; HP, MP
-#_07D3F7: db 13, 13, 17, 15, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D3F7: db 13, 13, 17, 15, 14, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D3FD: db 100, 64, 25, 4, 10 ; Alignment, TODO
 #_07D402: db $0D, $41, $11 ; Move0D, Move41, Move11
-#_07D405: db $27, $C4, $89 ; no clue yet
+#_07D405: db $27, $C4, $89 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D408: db 22 ; CP
 #_07D409: db $00 ; ill find out
 
 .demon_056
 #_07D40A: db 34 ; level
 #_07D40B: dw 313, 131 ; HP, MP
-#_07D40F: db 15, 11, 14, 10, 19, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D40F: db 15, 11, 14, 10, 19, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07D415: db 102, 24, 8, 0, 11 ; Alignment, TODO
 #_07D41A: db $09, $2B, $55 ; Move09, Move2B, Move55
-#_07D41D: db $D5, $20, $BA ; no clue yet
+#_07D41D: db $D5, $20, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D420: db 20 ; CP
 #_07D421: db $11 ; ill find out
 
 .demon_057
 #_07D422: db 21 ; level
 #_07D423: dw 152, 140 ; HP, MP
-#_07D427: db 11, 12, 11, 8, 13, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D427: db 11, 12, 11, 8, 13, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07D42D: db 104, 18, 8, 0, 22 ; Alignment, TODO
 #_07D432: db $24, $1E, $2D ; Move24, Move1E, Move2D
-#_07D435: db $17, $0F, $0E ; no clue yet
+#_07D435: db $17, $0F, $0E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D438: db 12 ; CP
 #_07D439: db $21 ; ill find out
 
 .demon_058
 #_07D43A: db 15 ; level
 #_07D43B: dw 62, 58 ; HP, MP
-#_07D43F: db 11, 9, 10, 8, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D43F: db 11, 9, 10, 8, 11, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D445: db 108, 17, 7, 0, 21 ; Alignment, TODO
 #_07D44A: db $01, $05, $1C ; Move01, Move05, Move1C
-#_07D44D: db $17, $E9, $0E ; no clue yet
+#_07D44D: db $17, $E9, $0E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D450: db 9 ; CP
 #_07D451: db $20 ; ill find out
 
 .demon_059
 #_07D452: db 62 ; level
 #_07D453: dw 590, 340 ; HP, MP
-#_07D457: db 26, 23, 20, 14, 18, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D457: db 26, 23, 20, 14, 18, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D45D: db 248, 40, 24, 7, 20 ; Alignment, TODO
 #_07D462: db $5B, $0B, $43 ; Move5B, Move0B, Move43
-#_07D465: db $20, $E4, $AD ; no clue yet
+#_07D465: db $20, $E4, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D468: db 38 ; CP
 #_07D469: db $10 ; ill find out
 
 .demon_05A
 #_07D46A: db 54 ; level
 #_07D46B: dw 545, 323 ; HP, MP
-#_07D46F: db 20, 18, 24, 12, 16, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D46F: db 20, 18, 24, 12, 16, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D475: db 240, 56, 25, 7, 18 ; Alignment, TODO
 #_07D47A: db $54, $19, $4C ; Move54, Move19, Move4C
-#_07D47D: db $17, $D1, $AD ; no clue yet
+#_07D47D: db $17, $D1, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D480: db 33 ; CP
 #_07D481: db $21 ; ill find out
 
 .demon_05B
 #_07D482: db 49 ; level
 #_07D483: dw 499, 288 ; HP, MP
-#_07D487: db 18, 19, 22, 14, 13, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D487: db 18, 19, 22, 14, 13, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D48D: db 238, 39, 25, 4, 18 ; Alignment, TODO
 #_07D492: db $54, $1A, $4B ; Move54, Move1A, Move4B
-#_07D495: db $10, $B4, $AD ; no clue yet
+#_07D495: db $10, $B4, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D498: db 28 ; CP
 #_07D499: db $00 ; ill find out
 
 .demon_05C
 #_07D49A: db 44 ; level
 #_07D49B: dw 484, 272 ; HP, MP
-#_07D49F: db 17, 16, 18, 11, 18, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D49F: db 17, 16, 18, 11, 18, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D4A5: db 223, 23, 25, 4, 21 ; Alignment, TODO
 #_07D4AA: db $09, $19, $40 ; Move09, Move19, Move40
-#_07D4AD: db $E7, $CA, $AD ; no clue yet
+#_07D4AD: db $E7, $CA, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D4B0: db 24 ; CP
 #_07D4B1: db $20 ; ill find out
 
 .demon_05D
 #_07D4B2: db 35 ; level
 #_07D4B3: dw 355, 266 ; HP, MP
-#_07D4B7: db 14, 14, 16, 10, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D4B7: db 14, 14, 16, 10, 16, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D4BD: db 221, 39, 25, 0, 20 ; Alignment, TODO
 #_07D4C2: db $02, $17, $03 ; Move02, Move17, Move03
-#_07D4C5: db $D0, $B4, $AD ; no clue yet
+#_07D4C5: db $D0, $B4, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D4C8: db 22 ; CP
 #_07D4C9: db $01 ; ill find out
 
 .demon_05E
 #_07D4CA: db 28 ; level
 #_07D4CB: dw 144, 153 ; HP, MP
-#_07D4CF: db 11, 14, 16, 9, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D4CF: db 11, 14, 16, 9, 12, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D4D5: db 212, 40, 25, 0, 18 ; Alignment, TODO
 #_07D4DA: db $05, $5B, $48 ; Move05, Move5B, Move48
-#_07D4DD: db $E7, $ED, $AD ; no clue yet
+#_07D4DD: db $E7, $ED, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D4E0: db 15 ; CP
 #_07D4E1: db $21 ; ill find out
 
 .demon_05F
 #_07D4E2: db 24 ; level
 #_07D4E3: dw 62, 82 ; HP, MP
-#_07D4E7: db 12, 16, 12, 7, 10, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D4E7: db 12, 16, 12, 7, 10, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D4ED: db 201, 40, 14, 0, 18 ; Alignment, TODO
 #_07D4F2: db $0D, $1A, $19 ; Move0D, Move1A, Move19
-#_07D4F5: db $E7, $CC, $01 ; no clue yet
+#_07D4F5: db $E7, $CC, $01 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D4F8: db 9 ; CP
 #_07D4F9: db $02 ; ill find out
 
 .demon_060
 #_07D4FA: db 14 ; level
 #_07D4FB: dw 39, 55 ; HP, MP
-#_07D4FF: db 10, 12, 11, 7, 7, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D4FF: db 10, 12, 11, 7, 7, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D505: db 196, 71, 14, 0, 18 ; Alignment, TODO
 #_07D50A: db $09, $26, $15 ; Move09, Move26, Move15
-#_07D50D: db $37, $CB, $DB ; no clue yet
+#_07D50D: db $37, $CB, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D510: db 7 ; CP
 #_07D511: db $01 ; ill find out
 
 .demon_061
 #_07D512: db 7 ; level
 #_07D513: dw 22, 40 ; HP, MP
-#_07D517: db 7, 11, 8, 6, 10, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D517: db 7, 11, 8, 6, 10, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D51D: db 190, 39, 25, 0, 10 ; Alignment, TODO
 #_07D522: db $22, $0D, $19 ; Move22, Move0D, Move19
-#_07D525: db $D0, $B4, $CB ; no clue yet
+#_07D525: db $D0, $B4, $CB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D528: db 3 ; CP
 #_07D529: db $01 ; ill find out
 
 .demon_062
 #_07D52A: db 64 ; level
 #_07D52B: dw 696, 292 ; HP, MP
-#_07D52F: db 27, 18, 22, 13, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D52F: db 27, 18, 22, 13, 19, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D535: db 132, 130, 22, 5, 14 ; Alignment, TODO
 #_07D53A: db $1C, $28, $0B ; Move1C, Move28, Move0B
-#_07D53D: db $13, $34, $AC ; no clue yet
+#_07D53D: db $13, $34, $AC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D540: db 36 ; CP
 #_07D541: db $10 ; ill find out
 
 .demon_063
 #_07D542: db 61 ; level
 #_07D543: dw 666, 399 ; HP, MP
-#_07D547: db 17, 17, 20, 12, 25, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D547: db 17, 17, 20, 12, 25, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07D54D: db 134, 49, 22, 8, 18 ; Alignment, TODO
 #_07D552: db $1D, $0F, $29 ; Move1D, Move0F, Move29
-#_07D555: db $27, $EC, $AC ; no clue yet
+#_07D555: db $27, $EC, $AC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D558: db 34 ; CP
 #_07D559: db $11 ; ill find out
 
 .demon_064
 #_07D55A: db 59 ; level
 #_07D55B: dw 600, 220 ; HP, MP
-#_07D55F: db 28, 15, 15, 17, 16, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D55F: db 28, 15, 15, 17, 16, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D565: db 114, 129, 22, 5, 10 ; Alignment, TODO
 #_07D56A: db $16, $23, $1E ; Move16, Move23, Move1E
-#_07D56D: db $17, $ED, $AB ; no clue yet
+#_07D56D: db $17, $ED, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D570: db 32 ; CP
 #_07D571: db $10 ; ill find out
 
 .demon_065
 #_07D572: db 55 ; level
 #_07D573: dw 580, 190 ; HP, MP
-#_07D577: db 25, 15, 13, 18, 15, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D577: db 25, 15, 13, 18, 15, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D57D: db 116, 129, 22, 5, 10 ; Alignment, TODO
 #_07D582: db $0D, $24, $21 ; Move0D, Move24, Move21
-#_07D585: db $17, $E9, $AB ; no clue yet
+#_07D585: db $17, $E9, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D588: db 30 ; CP
 #_07D589: db $10 ; ill find out
 
 .demon_066
 #_07D58A: db 46 ; level
 #_07D58B: dw 550, 150 ; HP, MP
-#_07D58F: db 20, 16, 12, 19, 12, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D58F: db 20, 16, 12, 19, 12, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D595: db 133, 77, 11, 0, 17 ; Alignment, TODO
 #_07D59A: db $05, $06, $2C ; Move05, Move06, Move2C
-#_07D59D: db $E4, $E6, $AB ; no clue yet
+#_07D59D: db $E4, $E6, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D5A0: db 26 ; CP
 #_07D5A1: db $03 ; ill find out
 
 .demon_067
 #_07D5A2: db 40 ; level
 #_07D5A3: dw 399, 260 ; HP, MP
-#_07D5A7: db 14, 14, 15, 9, 17, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D5A7: db 14, 14, 15, 9, 17, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D5AD: db 126, 71, 22, 8, 11 ; Alignment, TODO
 #_07D5B2: db $1B, $0F, $19 ; Move1B, Move0F, Move19
-#_07D5B5: db $E4, $EE, $AB ; no clue yet
+#_07D5B5: db $E4, $EE, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D5B8: db 23 ; CP
 #_07D5B9: db $20 ; ill find out
 
 .demon_068
 #_07D5BA: db 36 ; level
 #_07D5BB: dw 262, 135 ; HP, MP
-#_07D5BF: db 19, 11, 13, 11, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D5BF: db 19, 11, 13, 11, 12, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D5C5: db 131, 55, 21, 0, 15 ; Alignment, TODO
 #_07D5CA: db $23, $26, $03 ; Move23, Move26, Move03
-#_07D5CD: db $E6, $E4, $AB ; no clue yet
+#_07D5CD: db $E6, $E4, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D5D0: db 20 ; CP
 #_07D5D1: db $01 ; ill find out
 
 .demon_069
 #_07D5D2: db 26 ; level
 #_07D5D3: dw 120, 110 ; HP, MP
-#_07D5D7: db 15, 13, 13, 9, 11, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D5D7: db 15, 13, 13, 9, 11, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07D5DD: db 118, 23, 21, 0, 14 ; Alignment, TODO
 #_07D5E2: db $19, $09, $2B ; Move19, Move09, Move2B
-#_07D5E5: db $E8, $E9, $AB ; no clue yet
+#_07D5E5: db $E8, $E9, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D5E8: db 14 ; CP
 #_07D5E9: db $22 ; ill find out
 
 .demon_06A
 #_07D5EA: db 23 ; level
 #_07D5EB: dw 132, 82 ; HP, MP
-#_07D5EF: db 16, 9, 8, 12, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D5EF: db 16, 9, 8, 12, 12, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D5F5: db 135, 71, 21, 0, 6 ; Alignment, TODO
 #_07D5FA: db $1A, $1E, $39 ; Move1A, Move1E, Move39
-#_07D5FD: db $E6, $EB, $AB ; no clue yet
+#_07D5FD: db $E6, $EB, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D600: db 12 ; CP
 #_07D601: db $02 ; ill find out
 
 .demon_06B
 #_07D602: db 18 ; level
 #_07D603: dw 140, 115 ; HP, MP
-#_07D607: db 11, 14, 10, 7, 10, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D607: db 11, 14, 10, 7, 10, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D60D: db 130, 51, 8, 0, 10 ; Alignment, TODO
 #_07D612: db $1D, $2B, $2D ; Move1D, Move2B, Move2D
-#_07D615: db $E8, $13, $AB ; no clue yet
+#_07D615: db $E8, $13, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D618: db 11 ; CP
 #_07D619: db $22 ; ill find out
 
 .demon_06C
 #_07D61A: db 15 ; level
 #_07D61B: dw 75, 59 ; HP, MP
-#_07D61F: db 12, 8, 9, 8, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D61F: db 12, 8, 9, 8, 11, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D625: db 124, 33, 21, 0, 11 ; Alignment, TODO
 #_07D62A: db $08, $48, $46 ; Move08, Move48, Move46
-#_07D62D: db $17, $B4, $02 ; no clue yet
+#_07D62D: db $17, $B4, $02 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D630: db 9 ; CP
 #_07D631: db $01 ; ill find out
 
 .demon_06D
 #_07D632: db 12 ; level
 #_07D633: dw 57, 56 ; HP, MP
-#_07D637: db 8, 12, 10, 7, 8, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D637: db 8, 12, 10, 7, 8, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D63D: db 112, 17, 21, 0, 20 ; Alignment, TODO
 #_07D642: db $47, $1D, $2D ; Move47, Move1D, Move2D
-#_07D645: db $17, $0C, $AE ; no clue yet
+#_07D645: db $17, $0C, $AE ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D648: db 7 ; CP
 #_07D649: db $22 ; ill find out
 
 .demon_06E
 #_07D64A: db 9 ; level
 #_07D64B: dw 45, 46 ; HP, MP
-#_07D64F: db 7, 8, 12, 5, 7, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D64F: db 7, 8, 12, 5, 7, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D655: db 129, 16, 7, 0, 10 ; Alignment, TODO
 #_07D65A: db $00, $02, $01 ; Move00, Move02, Move01
-#_07D65D: db $17, $C9, $DC ; no clue yet
+#_07D65D: db $17, $C9, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D660: db 6 ; CP
 #_07D661: db $01 ; ill find out
 
 .demon_06F
 #_07D662: db 8 ; level
 #_07D663: dw 41, 43 ; HP, MP
-#_07D667: db 6, 5, 13, 6, 6, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D667: db 6, 5, 13, 6, 6, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D66D: db 122, 16, 11, 0, 10 ; Alignment, TODO
 #_07D672: db $04, $05, $06 ; Move04, Move05, Move06
-#_07D675: db $17, $CC, $DC ; no clue yet
+#_07D675: db $17, $CC, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D678: db 5 ; CP
 #_07D679: db $01 ; ill find out
 
 .demon_070
 #_07D67A: db 6 ; level
 #_07D67B: dw 36, 39 ; HP, MP
-#_07D67F: db 7, 8, 7, 7, 7, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D67F: db 7, 8, 7, 7, 7, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D685: db 132, 49, 21, 0, 18 ; Alignment, TODO
 #_07D68A: db $23, $25, $26 ; Move23, Move25, Move26
-#_07D68D: db $14, $08, $DC ; no clue yet
+#_07D68D: db $14, $08, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D690: db 4 ; CP
 #_07D691: db $02 ; ill find out
 
 .demon_071
 #_07D692: db 2 ; level
 #_07D693: dw 15, 16 ; HP, MP
-#_07D697: db 2, 8, 9, 3, 8, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D697: db 2, 8, 9, 3, 8, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D69D: db 113, 145, 9, 0, 6 ; Alignment, TODO
 #_07D6A2: db $1C, $2A, $09 ; Move1C, Move2A, Move09
-#_07D6A5: db $27, $E6, $9E ; no clue yet
+#_07D6A5: db $27, $E6, $9E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D6A8: db 1 ; CP
 #_07D6A9: db $22 ; ill find out
 
 .demon_072
 #_07D6AA: db 66 ; level
 #_07D6AB: dw 711, 277 ; HP, MP
-#_07D6AF: db 30, 17, 19, 18, 16, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D6AF: db 30, 17, 19, 18, 16, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D6B5: db 189, 32, 7, 0, 14 ; Alignment, TODO
 #_07D6BA: db $01, $56, $03 ; Move01, Move56, Move03
-#_07D6BD: db $16, $36, $DB ; no clue yet
+#_07D6BD: db $16, $36, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D6C0: db 38 ; CP
 #_07D6C1: db $10 ; ill find out
 
 .demon_073
 #_07D6C2: db 63 ; level
 #_07D6C3: dw 655, 266 ; HP, MP
-#_07D6C7: db 29, 14, 17, 17, 20, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D6C7: db 29, 14, 17, 17, 20, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D6CD: db 183, 32, 11, 0, 21 ; Alignment, TODO
 #_07D6D2: db $05, $07, $1E ; Move05, Move07, Move1E
-#_07D6D5: db $17, $CC, $CB ; no clue yet
+#_07D6D5: db $17, $CC, $CB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D6D8: db 36 ; CP
 #_07D6D9: db $10 ; ill find out
 
 .demon_074
 #_07D6DA: db 60 ; level
 #_07D6DB: dw 666, 292 ; HP, MP
-#_07D6DF: db 28, 16, 18, 16, 14, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D6DF: db 28, 16, 18, 16, 14, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D6E5: db 199, 0, 24, 0, 16 ; Alignment, TODO
 #_07D6EA: db $4E, $4F, $50 ; Move4E, Move4F, Move50
-#_07D6ED: db $E6, $2E, $DA ; no clue yet
+#_07D6ED: db $E6, $2E, $DA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D6F0: db 35 ; CP
 #_07D6F1: db $11 ; ill find out
 
 .demon_075
 #_07D6F2: db 57 ; level
 #_07D6F3: dw 616, 252 ; HP, MP
-#_07D6F7: db 27, 14, 12, 17, 20, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D6F7: db 27, 14, 12, 17, 20, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D6FD: db 182, 134, 24, 0, 5 ; Alignment, TODO
 #_07D702: db $17, $18, $35 ; Move17, Move18, Move35
-#_07D705: db $26, $2D, $9A ; no clue yet
+#_07D705: db $26, $2D, $9A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D708: db 33 ; CP
 #_07D709: db $10 ; ill find out
 
 .demon_076
 #_07D70A: db 51 ; level
 #_07D70B: dw 575, 242 ; HP, MP
-#_07D70F: db 26, 13, 16, 13, 17, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D70F: db 26, 13, 16, 13, 17, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D715: db 174, 48, 7, 0, 11 ; Alignment, TODO
 #_07D71A: db $01, $57, $5B ; Move01, Move57, Move5B
-#_07D71D: db $D6, $29, $CA ; no clue yet
+#_07D71D: db $D6, $29, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D720: db 30 ; CP
 #_07D721: db $11 ; ill find out
 
 .demon_077
 #_07D722: db 48 ; level
 #_07D723: dw 533, 233 ; HP, MP
-#_07D727: db 24, 13, 15, 14, 14, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D727: db 24, 13, 15, 14, 14, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D72D: db 178, 32, 22, 4, 12 ; Alignment, TODO
 #_07D732: db $1A, $1D, $03 ; Move1A, Move1D, Move03
-#_07D735: db $D6, $27, $CA ; no clue yet
+#_07D735: db $D6, $27, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D738: db 28 ; CP
 #_07D739: db $10 ; ill find out
 
 .demon_078
 #_07D73A: db 42 ; level
 #_07D73B: dw 460, 195 ; HP, MP
-#_07D73F: db 22, 14, 14, 12, 11, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D73F: db 22, 14, 14, 12, 11, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D745: db 181, 48, 13, 0, 6 ; Alignment, TODO
 #_07D74A: db $0F, $29, $27 ; Move0F, Move29, Move27
-#_07D74D: db $C0, $B4, $AD ; no clue yet
+#_07D74D: db $C0, $B4, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D750: db 25 ; CP
 #_07D751: db $10 ; ill find out
 
 .demon_079
 #_07D752: db 39 ; level
 #_07D753: dw 363, 220 ; HP, MP
-#_07D757: db 20, 16, 12, 13, 10, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D757: db 20, 16, 12, 13, 10, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D75D: db 173, 136, 21, 0, 8 ; Alignment, TODO
 #_07D762: db $1C, $1D, $3E ; Move1C, Move1D, Move3E
-#_07D765: db $D0, $B4, $CA ; no clue yet
+#_07D765: db $D0, $B4, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D768: db 23 ; CP
 #_07D769: db $00 ; ill find out
 
 .demon_07A
 #_07D76A: db 35 ; level
 #_07D76B: dw 248, 122 ; HP, MP
-#_07D76F: db 20, 11, 11, 10, 15, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D76F: db 20, 11, 11, 10, 15, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D775: db 176, 32, 21, 0, 10 ; Alignment, TODO
 #_07D77A: db $23, $20, $1B ; Move23, Move20, Move1B
-#_07D77D: db $D7, $16, $CA ; no clue yet
+#_07D77D: db $D7, $16, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D780: db 21 ; CP
 #_07D781: db $00 ; ill find out
 
 .demon_07B
 #_07D782: db 31 ; level
 #_07D783: dw 202, 116 ; HP, MP
-#_07D787: db 15, 11, 13, 11, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D787: db 15, 11, 13, 11, 14, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07D78D: db 169, 32, 9, 5, 10 ; Alignment, TODO
 #_07D792: db $22, $21, $03 ; Move22, Move21, Move03
-#_07D795: db $D6, $EC, $CA ; no clue yet
+#_07D795: db $D6, $EC, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D798: db 19 ; CP
 #_07D799: db $00 ; ill find out
 
 .demon_07C
 #_07D79A: db 27 ; level
 #_07D79B: dw 152, 97 ; HP, MP
-#_07D79F: db 17, 9, 12, 12, 10, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D79F: db 17, 9, 12, 12, 10, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07D7A5: db 170, 32, 7, 0, 15 ; Alignment, TODO
 #_07D7AA: db $01, $69, $1B ; Move01, Move69, Move1B
-#_07D7AD: db $D6, $EE, $CA ; no clue yet
+#_07D7AD: db $D6, $EE, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D7B0: db 16 ; CP
 #_07D7B1: db $00 ; ill find out
 
 .demon_07D
 #_07D7B2: db 18 ; level
 #_07D7B3: dw 91, 112 ; HP, MP
-#_07D7B7: db 13, 9, 10, 6, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D7B7: db 13, 9, 10, 6, 12, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D7BD: db 171, 39, 8, 4, 10 ; Alignment, TODO
 #_07D7C2: db $0A, $55, $51 ; Move0A, Move55, Move51
-#_07D7C5: db $10, $B4, $DC ; no clue yet
+#_07D7C5: db $10, $B4, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D7C8: db 11 ; CP
 #_07D7C9: db $00 ; ill find out
 
 .demon_07E
 #_07D7CA: db 12 ; level
 #_07D7CB: dw 58, 48 ; HP, MP
-#_07D7CF: db 11, 8, 9, 7, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D7CF: db 11, 8, 9, 7, 9, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D7D5: db 172, 134, 24, 0, 17 ; Alignment, TODO
 #_07D7DA: db $0C, $1E, $17 ; Move0C, Move1E, Move17
-#_07D7DD: db $1A, $B7, $DC ; no clue yet
+#_07D7DD: db $1A, $B7, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D7E0: db 8 ; CP
 #_07D7E1: db $02 ; ill find out
 
 .demon_07F
 #_07D7E2: db 8 ; level
 #_07D7E3: dw 41, 36 ; HP, MP
-#_07D7E7: db 8, 7, 8, 6, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D7E7: db 8, 7, 8, 6, 8, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D7ED: db 160, 16, 9, 0, 10 ; Alignment, TODO
 #_07D7F2: db $00, $1B, $1C ; Move00, Move1B, Move1C
-#_07D7F5: db $1C, $C3, $DC ; no clue yet
+#_07D7F5: db $1C, $C3, $DC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D7F8: db 5 ; CP
 #_07D7F9: db $02 ; ill find out
 
 .demon_080
 #_07D7FA: db 61 ; level
 #_07D7FB: dw 670, 99 ; HP, MP
-#_07D7FF: db 33, 12, 15, 16, 16, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D7FF: db 33, 12, 15, 16, 16, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07D805: db 182, 0, 2, 5, 14 ; Alignment, TODO
 #_07D80A: db $68, $4E, $57 ; Move68, Move4E, Move57
-#_07D80D: db $27, $C9, $ED ; no clue yet
+#_07D80D: db $27, $C9, $ED ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D810: db 36 ; CP
 #_07D811: db $10 ; ill find out
 
 .demon_081
 #_07D812: db 57 ; level
 #_07D813: dw 630, 88 ; HP, MP
-#_07D817: db 24, 11, 14, 18, 22, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D817: db 24, 11, 14, 18, 22, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07D81D: db 194, 129, 2, 10, 5 ; Alignment, TODO
 #_07D822: db $57, $66, $FF ; Move57, Move66, MoveFF
-#_07D825: db $20, $EA, $1C ; no clue yet
+#_07D825: db $20, $EA, $1C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D828: db 34 ; CP
 #_07D829: db $03 ; ill find out
 
 .demon_082
 #_07D82A: db 53 ; level
 #_07D82B: dw 610, 82 ; HP, MP
-#_07D82F: db 30, 13, 16, 14, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D82F: db 30, 13, 16, 14, 12, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D835: db 189, 17, 20, 0, 10 ; Alignment, TODO
 #_07D83A: db $4E, $65, $66 ; Move4E, Move65, Move66
-#_07D83D: db $E7, $C9, $DB ; no clue yet
+#_07D83D: db $E7, $C9, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D840: db 32 ; CP
 #_07D841: db $11 ; ill find out
 
 .demon_083
 #_07D842: db 50 ; level
 #_07D843: dw 590, 78 ; HP, MP
-#_07D847: db 27, 11, 14, 12, 15, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D847: db 27, 11, 14, 12, 15, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07D84D: db 177, 33, 17, 0, 11 ; Alignment, TODO
 #_07D852: db $57, $53, $68 ; Move57, Move53, Move68
-#_07D855: db $D7, $CB, $DB ; no clue yet
+#_07D855: db $D7, $CB, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D858: db 30 ; CP
 #_07D859: db $11 ; ill find out
 
 .demon_084
 #_07D85A: db 46 ; level
 #_07D85B: dw 515, 69 ; HP, MP
-#_07D85F: db 25, 10, 11, 18, 15, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D85F: db 25, 10, 11, 18, 15, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D865: db 190, 48, 8, 0, 15 ; Alignment, TODO
 #_07D86A: db $58, $64, $50 ; Move58, Move64, Move50
-#_07D86D: db $D7, $C7, $DB ; no clue yet
+#_07D86D: db $D7, $C7, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D870: db 28 ; CP
 #_07D871: db $03 ; ill find out
 
 .demon_085
 #_07D872: db 41 ; level
 #_07D873: dw 433, 96 ; HP, MP
-#_07D877: db 24, 10, 12, 15, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D877: db 24, 10, 12, 15, 13, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D87D: db 171, 65, 8, 0, 12 ; Alignment, TODO
 #_07D882: db $09, $24, $55 ; Move09, Move24, Move55
-#_07D885: db $D5, $1C, $DB ; no clue yet
+#_07D885: db $D5, $1C, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D888: db 24 ; CP
 #_07D889: db $11 ; ill find out
 
 .demon_086
 #_07D88A: db 46 ; level
 #_07D88B: dw 477, 270 ; HP, MP
-#_07D88F: db 14, 15, 19, 11, 24, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D88F: db 14, 15, 19, 11, 24, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D895: db 87, 19, 3, 9, 10 ; Alignment, TODO
 #_07D89A: db $48, $1D, $2D ; Move48, Move1D, Move2D
-#_07D89D: db $14, $E7, $8E ; no clue yet
+#_07D89D: db $14, $E7, $8E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D8A0: db 23 ; CP
 #_07D8A1: db $21 ; ill find out
 
 .demon_087
 #_07D8A2: db 34 ; level
 #_07D8A3: dw 188, 122 ; HP, MP
-#_07D8A7: db 13, 11, 8, 12, 22, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D8A7: db 13, 11, 8, 12, 22, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D8AD: db 85, 32, 3, 8, 20 ; Alignment, TODO
 #_07D8B2: db $5C, $61, $49 ; Move5C, Move61, Move49
-#_07D8B5: db $17, $EB, $8C ; no clue yet
+#_07D8B5: db $17, $EB, $8C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D8B8: db 17 ; CP
 #_07D8B9: db $11 ; ill find out
 
 .demon_088
 #_07D8BA: db 18 ; level
 #_07D8BB: dw 77, 68 ; HP, MP
-#_07D8BF: db 12, 10, 7, 7, 17, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D8BF: db 12, 10, 7, 7, 17, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D8C5: db 79, 51, 3, 8, 12 ; Alignment, TODO
 #_07D8CA: db $5C, $48, $21 ; Move5C, Move48, Move21
-#_07D8CD: db $17, $EC, $8C ; no clue yet
+#_07D8CD: db $17, $EC, $8C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D8D0: db 7 ; CP
 #_07D8D1: db $21 ; ill find out
 
 .demon_089
 #_07D8D2: db 7 ; level
 #_07D8D3: dw 29, 49 ; HP, MP
-#_07D8D7: db 6, 8, 5, 5, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D8D7: db 6, 8, 5, 5, 15, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07D8DD: db 81, 67, 3, 7, 11 ; Alignment, TODO
 #_07D8E2: db $5C, $1C, $19 ; Move5C, Move1C, Move19
-#_07D8E5: db $17, $0A, $8C ; no clue yet
+#_07D8E5: db $17, $0A, $8C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D8E8: db 4 ; CP
 #_07D8E9: db $22 ; ill find out
 
 .demon_08A
 #_07D8EA: db 50 ; level
 #_07D8EB: dw 550, 67 ; HP, MP
-#_07D8EF: db 22, 9, 12, 16, 22, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D8EF: db 22, 9, 12, 16, 22, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07D8F5: db 118, 0, 9, 8, 22 ; Alignment, TODO
 #_07D8FA: db $5C, $0F, $57 ; Move5C, Move0F, Move57
-#_07D8FD: db $10, $B4, $9C ; no clue yet
+#_07D8FD: db $10, $B4, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D900: db 28 ; CP
 #_07D901: db $03 ; ill find out
 
 .demon_08B
 #_07D902: db 43 ; level
 #_07D903: dw 420, 56 ; HP, MP
-#_07D907: db 25, 7, 10, 14, 18, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D907: db 25, 7, 10, 14, 18, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D90D: db 139, 2, 20, 0, 22 ; Alignment, TODO
 #_07D912: db $57, $4E, $35 ; Move57, Move4E, Move35
-#_07D915: db $17, $B4, $AC ; no clue yet
+#_07D915: db $17, $B4, $AC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D918: db 25 ; CP
 #_07D919: db $03 ; ill find out
 
 .demon_08C
 #_07D91A: db 40 ; level
 #_07D91B: dw 400, 54 ; HP, MP
-#_07D91F: db 24, 6, 8, 15, 17, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D91F: db 24, 6, 8, 15, 17, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D925: db 122, 33, 2, 0, 10 ; Alignment, TODO
 #_07D92A: db $63, $56, $65 ; Move63, Move56, Move65
-#_07D92D: db $E0, $B4, $9C ; no clue yet
+#_07D92D: db $E0, $B4, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D930: db 24 ; CP
 #_07D931: db $03 ; ill find out
 
 .demon_08D
 #_07D932: db 38 ; level
 #_07D933: dw 380, 52 ; HP, MP
-#_07D937: db 22, 8, 8, 14, 18, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D937: db 22, 8, 8, 14, 18, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07D93D: db 132, 34, 2, 0, 4 ; Alignment, TODO
 #_07D942: db $57, $3C, $39 ; Move57, Move3C, Move39
-#_07D945: db $E5, $ED, $9C ; no clue yet
+#_07D945: db $E5, $ED, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D948: db 23 ; CP
 #_07D949: db $03 ; ill find out
 
 .demon_08E
 #_07D94A: db 35 ; level
 #_07D94B: dw 255, 48 ; HP, MP
-#_07D94F: db 20, 6, 7, 19, 14, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D94F: db 20, 6, 7, 19, 14, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D955: db 130, 17, 2, 0, 5 ; Alignment, TODO
 #_07D95A: db $69, $60, $32 ; Move69, Move60, Move32
-#_07D95D: db $E7, $D2, $9C ; no clue yet
+#_07D95D: db $E7, $D2, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D960: db 21 ; CP
 #_07D961: db $03 ; ill find out
 
 .demon_08F
 #_07D962: db 28 ; level
 #_07D963: dw 210, 42 ; HP, MP
-#_07D967: db 21, 4, 5, 13, 13, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D967: db 21, 4, 5, 13, 13, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07D96D: db 125, 33, 2, 0, 15 ; Alignment, TODO
 #_07D972: db $63, $4A, $65 ; Move63, Move4A, Move65
-#_07D975: db $D7, $B1, $9C ; no clue yet
+#_07D975: db $D7, $B1, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D978: db 17 ; CP
 #_07D979: db $03 ; ill find out
 
 .demon_090
 #_07D97A: db 19 ; level
 #_07D97B: dw 106, 82 ; HP, MP
-#_07D97F: db 12, 12, 8, 8, 14, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D97F: db 12, 12, 8, 8, 14, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D985: db 131, 35, 21, 7, 13 ; Alignment, TODO
 #_07D98A: db $5C, $0D, $1D ; Move5C, Move0D, Move1D
-#_07D98D: db $10, $B4, $0E ; no clue yet
+#_07D98D: db $10, $B4, $0E ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D990: db 12 ; CP
 #_07D991: db $22 ; ill find out
 
 .demon_091
 #_07D992: db 16 ; level
 #_07D993: dw 140, 28 ; HP, MP
-#_07D997: db 15, 6, 7, 17, 5, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D997: db 15, 6, 7, 17, 5, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D99D: db 115, 2, 2, 0, 15 ; Alignment, TODO
 #_07D9A2: db $25, $66, $55 ; Move25, Move66, Move55
-#_07D9A5: db $10, $B4, $AE ; no clue yet
+#_07D9A5: db $10, $B4, $AE ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D9A8: db 10 ; CP
 #_07D9A9: db $11 ; ill find out
 
 .demon_092
 #_07D9AA: db 12 ; level
 #_07D9AB: dw 63, 41 ; HP, MP
-#_07D9AF: db 10, 8, 8, 7, 9, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D9AF: db 10, 8, 8, 7, 9, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D9B5: db 120, 18, 21, 0, 5 ; Alignment, TODO
 #_07D9BA: db $57, $19, $39 ; Move57, Move19, Move39
-#_07D9BD: db $20, $B4, $9B ; no clue yet
+#_07D9BD: db $20, $B4, $9B ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D9C0: db 8 ; CP
 #_07D9C1: db $01 ; ill find out
 
 .demon_093
 #_07D9C2: db 8 ; level
 #_07D9C3: dw 48, 12 ; HP, MP
-#_07D9C7: db 9, 7, 5, 5, 13, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D9C7: db 9, 7, 5, 5, 13, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07D9CD: db 140, 1, 2, 0, 6 ; Alignment, TODO
 #_07D9D2: db $0C, $23, $3B ; Move0C, Move23, Move3B
-#_07D9D5: db $10, $B4, $BD ; no clue yet
+#_07D9D5: db $10, $B4, $BD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D9D8: db 5 ; CP
 #_07D9D9: db $11 ; ill find out
 
 .demon_094
 #_07D9DA: db 52 ; level
 #_07D9DB: dw 533, 88 ; HP, MP
-#_07D9DF: db 30, 10, 10, 18, 19, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D9DF: db 30, 10, 10, 18, 19, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07D9E5: db 143, 1, 23, 0, 5 ; Alignment, TODO
 #_07D9EA: db $03, $09, $32 ; Move03, Move09, Move32
-#_07D9ED: db $16, $2A, $CB ; no clue yet
+#_07D9ED: db $16, $2A, $CB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07D9F0: db 22 ; CP
 #_07D9F1: db $00 ; ill find out
 
 .demon_095
 #_07D9F2: db 46 ; level
 #_07D9F3: dw 411, 50 ; HP, MP
-#_07D9F7: db 28, 6, 6, 19, 21, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07D9F7: db 28, 6, 6, 19, 21, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07D9FD: db 138, 0, 16, 0, 15 ; Alignment, TODO
 #_07DA02: db $22, $65, $69 ; Move22, Move65, Move69
-#_07DA05: db $E6, $28, $AB ; no clue yet
+#_07DA05: db $E6, $28, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA08: db 20 ; CP
 #_07DA09: db $02 ; ill find out
 
 .demon_096
 #_07DA0A: db 40 ; level
 #_07DA0B: dw 379, 66 ; HP, MP
-#_07DA0F: db 26, 9, 7, 15, 16, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA0F: db 26, 9, 7, 15, 16, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DA15: db 141, 33, 20, 0, 11 ; Alignment, TODO
 #_07DA1A: db $09, $69, $25 ; Move09, Move69, Move25
-#_07DA1D: db $E7, $CA, $AB ; no clue yet
+#_07DA1D: db $E7, $CA, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA20: db 17 ; CP
 #_07DA21: db $02 ; ill find out
 
 .demon_097
 #_07DA22: db 39 ; level
 #_07DA23: dw 389, 55 ; HP, MP
-#_07DA27: db 25, 7, 9, 19, 12, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA27: db 25, 7, 9, 19, 12, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DA2D: db 142, 33, 20, 0, 17 ; Alignment, TODO
 #_07DA32: db $52, $1A, $65 ; Move52, Move1A, Move65
-#_07DA35: db $D7, $C8, $CA ; no clue yet
+#_07DA35: db $D7, $C8, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA38: db 16 ; CP
 #_07DA39: db $02 ; ill find out
 
 .demon_098
 #_07DA3A: db 30 ; level
 #_07DA3B: dw 222, 38 ; HP, MP
-#_07DA3F: db 22, 8, 9, 11, 13, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA3F: db 22, 8, 9, 11, 13, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DA45: db 138, 50, 19, 0, 5 ; Alignment, TODO
 #_07DA4A: db $2B, $45, $31 ; Move2B, Move45, Move31
-#_07DA4D: db $D6, $CE, $EA ; no clue yet
+#_07DA4D: db $D6, $CE, $EA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA50: db 14 ; CP
 #_07DA51: db $21 ; ill find out
 
 .demon_099
 #_07DA52: db 14 ; level
 #_07DA53: dw 53, 14 ; HP, MP
-#_07DA57: db 14, 5, 5, 14, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA57: db 14, 5, 5, 14, 8, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07DA5D: db 128, 165, 13, 0, 16 ; Alignment, TODO
 #_07DA62: db $69, $25, $23 ; Move69, Move25, Move23
-#_07DA65: db $27, $0D, $AB ; no clue yet
+#_07DA65: db $27, $0D, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA68: db 9 ; CP
 #_07DA69: db $02 ; ill find out
 
 .demon_09A
 #_07DA6A: db 49 ; level
 #_07DA6B: dw 512, 128 ; HP, MP
-#_07DA6F: db 28, 8, 11, 19, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA6F: db 28, 8, 11, 19, 19, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DA75: db 188, 1, 18, 0, 10 ; Alignment, TODO
 #_07DA7A: db $23, $24, $65 ; Move23, Move24, Move65
-#_07DA7D: db $D0, $00, $1A ; no clue yet
+#_07DA7D: db $D0, $00, $1A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA80: db 26 ; CP
 #_07DA81: db $11 ; ill find out
 
 .demon_09B
 #_07DA82: db 44 ; level
 #_07DA83: dw 404, 108 ; HP, MP
-#_07DA87: db 26, 9, 10, 18, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA87: db 26, 9, 10, 18, 16, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DA8D: db 155, 177, 17, 0, 1 ; Alignment, TODO
 #_07DA92: db $2B, $33, $34 ; Move2B, Move33, Move34
-#_07DA95: db $C6, $24, $DE ; no clue yet
+#_07DA95: db $C6, $24, $DE ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DA98: db 24 ; CP
 #_07DA99: db $11 ; ill find out
 
 .demon_09C
 #_07DA9A: db 38 ; level
 #_07DA9B: dw 377, 98 ; HP, MP
-#_07DA9F: db 23, 8, 10, 12, 20, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DA9F: db 23, 8, 10, 12, 20, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DAA5: db 198, 2, 18, 0, 11 ; Alignment, TODO
 #_07DAAA: db $19, $1E, $21 ; Move19, Move1E, Move21
-#_07DAAD: db $D0, $B4, $CA ; no clue yet
+#_07DAAD: db $D0, $B4, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DAB0: db 22 ; CP
 #_07DAB1: db $20 ; ill find out
 
 .demon_09D
 #_07DAB2: db 34 ; level
 #_07DAB3: dw 296, 85 ; HP, MP
-#_07DAB7: db 21, 9, 11, 12, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DAB7: db 21, 9, 11, 12, 12, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DABD: db 179, 33, 13, 0, 11 ; Alignment, TODO
 #_07DAC2: db $0D, $4A, $2B ; Move0D, Move4A, Move2B
-#_07DAC5: db $D4, $1B, $CA ; no clue yet
+#_07DAC5: db $D4, $1B, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DAC8: db 20 ; CP
 #_07DAC9: db $11 ; ill find out
 
 .demon_09E
 #_07DACA: db 24 ; level
 #_07DACB: dw 135, 78 ; HP, MP
-#_07DACF: db 16, 8, 9, 15, 9, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DACF: db 16, 8, 9, 15, 9, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DAD5: db 166, 65, 1, 0, 17 ; Alignment, TODO
 #_07DADA: db $22, $23, $27 ; Move22, Move23, Move27
-#_07DADD: db $D5, $17, $CA ; no clue yet
+#_07DADD: db $D5, $17, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DAE0: db 14 ; CP
 #_07DAE1: db $11 ; ill find out
 
 .demon_09F
 #_07DAE2: db 13 ; level
 #_07DAE3: dw 73, 58 ; HP, MP
-#_07DAE7: db 13, 6, 8, 9, 9, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DAE7: db 13, 6, 8, 9, 9, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DAED: db 159, 50, 1, 0, 20 ; Alignment, TODO
 #_07DAF2: db $2A, $09, $30 ; Move2A, Move09, Move30
-#_07DAF5: db $17, $0B, $DA ; no clue yet
+#_07DAF5: db $17, $0B, $DA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DAF8: db 8 ; CP
 #_07DAF9: db $01 ; ill find out
 
 .demon_0A0
 #_07DAFA: db 10 ; level
 #_07DAFB: dw 51, 28 ; HP, MP
-#_07DAFF: db 12, 6, 7, 8, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DAFF: db 12, 6, 7, 8, 10, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB05: db 162, 50, 8, 0, 11 ; Alignment, TODO
 #_07DB0A: db $08, $2D, $55 ; Move08, Move2D, Move55
-#_07DB0D: db $17, $09, $EA ; no clue yet
+#_07DB0D: db $17, $09, $EA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DB10: db 6 ; CP
 #_07DB11: db $02 ; ill find out
 
 .demon_0A1
 #_07DB12: db 50 ; level
 #_07DB13: dw 530, 120 ; HP, MP
-#_07DB17: db 30, 11, 13, 20, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DB17: db 30, 11, 13, 20, 12, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB1D: db 72, 16, 10, 0, 17 ; Alignment, TODO
 #_07DB22: db $25, $65, $2C ; Move25, Move65, Move2C
-#_07DB25: db $10, $B4, $ED ; no clue yet
+#_07DB25: db $10, $B4, $ED ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DB28: db 29 ; CP
 #_07DB29: db $11 ; ill find out
 
 .demon_0A2
 #_07DB2A: db 47 ; level
 #_07DB2B: dw 540, 90 ; HP, MP
-#_07DB2F: db 24, 10, 11, 22, 11, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DB2F: db 24, 10, 11, 22, 11, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB35: db 98, 32, 10, 0, 15 ; Alignment, TODO
 #_07DB3A: db $73, $65, $69 ; Move73, Move65, Move69
-#_07DB3D: db $E0, $B4, $1C ; no clue yet
+#_07DB3D: db $E0, $B4, $1C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DB40: db 25 ; CP
 #_07DB41: db $02 ; ill find out
 
 .demon_0A3
 #_07DB42: db 43 ; level
 #_07DB43: dw 470, 110 ; HP, MP
-#_07DB47: db 23, 11, 13, 16, 15, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DB47: db 23, 11, 13, 16, 15, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB4D: db 71, 16, 17, 0, 16 ; Alignment, TODO
 #_07DB52: db $03, $2C, $16 ; Move03, Move2C, Move16
-#_07DB55: db $E0, $B4, $EB ; no clue yet
+#_07DB55: db $E0, $B4, $EB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DB58: db 24 ; CP
 #_07DB59: db $11 ; ill find out
 
 .demon_0A4
 #_07DB5A: db 35 ; level
 #_07DB5B: dw 213, 72 ; HP, MP
-#_07DB5F: db 19, 8, 12, 17, 10, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DB5F: db 19, 8, 12, 17, 10, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB65: db 68, 149, 17, 1, 5 ; Alignment, TODO
 #_07DB6A: db $15, $2B, $32 ; Move15, Move2B, Move32
-#_07DB6D: db $E5, $E6, $CB ; no clue yet
+#_07DB6D: db $E5, $E6, $CB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DB70: db 19 ; CP
 #_07DB71: db $11 ; ill find out
 
 .demon_0A5
 #_07DB72: db 26 ; level
 #_07DB73: dw 165, 65 ; HP, MP
-#_07DB77: db 18, 8, 10, 15, 9, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DB77: db 18, 8, 10, 15, 9, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB7D: db 97, 16, 10, 0, 15 ; Alignment, TODO
 #_07DB82: db $24, $15, $69 ; Move24, Move15, Move69
-#_07DB85: db $C6, $ED, $2A ; no clue yet
+#_07DB85: db $C6, $ED, $2A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DB88: db 14 ; CP
 #_07DB89: db $11 ; ill find out
 
 .demon_0A6
 #_07DB8A: db 19 ; level
 #_07DB8B: dw 105, 48 ; HP, MP
-#_07DB8F: db 17, 7, 8, 12, 7, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DB8F: db 17, 7, 8, 12, 7, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DB95: db 69, 32, 10, 0, 10 ; Alignment, TODO
 #_07DB9A: db $05, $06, $24 ; Move05, Move06, Move24
-#_07DB9D: db $D7, $CC, $1B ; no clue yet
+#_07DB9D: db $D7, $CC, $1B ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DBA0: db 11 ; CP
 #_07DBA1: db $02 ; ill find out
 
 .demon_0A7
 #_07DBA2: db 16 ; level
 #_07DBA3: dw 80, 42 ; HP, MP
-#_07DBA7: db 15, 6, 6, 11, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DBA7: db 15, 6, 6, 11, 11, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DBAD: db 87, 33, 10, 6, 10 ; Alignment, TODO
 #_07DBB2: db $5F, $1A, $15 ; Move5F, Move1A, Move15
-#_07DBB5: db $17, $D2, $AD ; no clue yet
+#_07DBB5: db $17, $D2, $AD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DBB8: db 9 ; CP
 #_07DBB9: db $11 ; ill find out
 
 .demon_0A8
 #_07DBBA: db 12 ; level
 #_07DBBB: dw 61, 27 ; HP, MP
-#_07DBBF: db 11, 7, 9, 10, 6, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DBBF: db 11, 7, 9, 10, 6, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DBC5: db 78, 17, 10, 0, 5 ; Alignment, TODO
 #_07DBCA: db $04, $49, $06 ; Move04, Move49, Move06
-#_07DBCD: db $E0, $B4, $29 ; no clue yet
+#_07DBCD: db $E0, $B4, $29 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DBD0: db 7 ; CP
 #_07DBD1: db $02 ; ill find out
 
 .demon_0A9
 #_07DBD2: db 6 ; level
 #_07DBD3: dw 40, 24 ; HP, MP
-#_07DBD7: db 6, 5, 6, 8, 10, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DBD7: db 6, 5, 6, 8, 10, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DBDD: db 102, 1, 10, 0, 5 ; Alignment, TODO
 #_07DBE2: db $24, $25, $2F ; Move24, Move25, Move2F
-#_07DBE5: db $E9, $D9, $29 ; no clue yet
+#_07DBE5: db $E9, $D9, $29 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DBE8: db 4 ; CP
 #_07DBE9: db $02 ; ill find out
 
 .demon_0AA
 #_07DBEA: db 4 ; level
 #_07DBEB: dw 28, 25 ; HP, MP
-#_07DBEF: db 4, 7, 7, 7, 8, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DBEF: db 4, 7, 7, 7, 8, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DBF5: db 98, 129, 10, 0, 10 ; Alignment, TODO
 #_07DBFA: db $0C, $1A, $23 ; Move0C, Move1A, Move23
-#_07DBFD: db $E2, $B4, $29 ; no clue yet
+#_07DBFD: db $E2, $B4, $29 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC00: db 3 ; CP
 #_07DC01: db $01 ; ill find out
 
 .demon_0AB
 #_07DC02: db 2 ; level
 #_07DC03: dw 18, 20 ; HP, MP
-#_07DC07: db 2, 8, 7, 7, 7, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC07: db 2, 8, 7, 7, 7, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC0D: db 94, 145, 10, 0, 16 ; Alignment, TODO
 #_07DC12: db $25, $46, $22 ; Move25, Move46, Move22
-#_07DC15: db $12, $B6, $29 ; no clue yet
+#_07DC15: db $12, $B6, $29 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC18: db 2 ; CP
 #_07DC19: db $01 ; ill find out
 
 .demon_0AC
 #_07DC1A: db 41 ; level
 #_07DC1B: dw 400, 98 ; HP, MP
-#_07DC1F: db 25, 8, 8, 16, 20, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC1F: db 25, 8, 8, 16, 20, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC25: db 136, 20, 18, 0, 21 ; Alignment, TODO
 #_07DC2A: db $5C, $57, $69 ; Move5C, Move57, Move69
-#_07DC2D: db $10, $B4, $29 ; no clue yet
+#_07DC2D: db $10, $B4, $29 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC30: db 10 ; CP
 #_07DC31: db $12 ; ill find out
 
 .demon_0AD
 #_07DC32: db 23 ; level
 #_07DC33: dw 130, 56 ; HP, MP
-#_07DC37: db 14, 10, 7, 10, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC37: db 14, 10, 7, 10, 14, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC3D: db 128, 35, 18, 5, 13 ; Alignment, TODO
 #_07DC42: db $5C, $1C, $23 ; Move5C, Move1C, Move23
-#_07DC45: db $17, $D1, $19 ; no clue yet
+#_07DC45: db $17, $D1, $19 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC48: db 6 ; CP
 #_07DC49: db $22 ; ill find out
 
 .demon_0AE
 #_07DC4A: db 5 ; level
 #_07DC4B: dw 30, 22 ; HP, MP
-#_07DC4F: db 5, 7, 6, 9, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC4F: db 5, 7, 6, 9, 9, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC55: db 130, 130, 1, 0, 17 ; Alignment, TODO
 #_07DC5A: db $24, $2B, $57 ; Move24, Move2B, Move57
-#_07DC5D: db $2A, $03, $3A ; no clue yet
+#_07DC5D: db $2A, $03, $3A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC60: db 1 ; CP
 #_07DC61: db $02 ; ill find out
 
 .demon_0AF
 #_07DC62: db 53 ; level
 #_07DC63: dw 510, 290 ; HP, MP
-#_07DC67: db 15, 28, 22, 13, 12, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC67: db 15, 28, 22, 13, 12, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC6D: db 32, 1, 18, 4, 9 ; Alignment, TODO
 #_07DC72: db $0D, $0F, $36 ; Move0D, Move0F, Move36
-#_07DC75: db $29, $B3, $28 ; no clue yet
+#_07DC75: db $29, $B3, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC78: db 0 ; CP
 #_07DC79: db $30 ; ill find out
 
 .demon_0B0
 #_07DC7A: db 37 ; level
 #_07DC7B: dw 305, 198 ; HP, MP
-#_07DC7F: db 13, 13, 12, 15, 14, 12 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC7F: db 13, 13, 12, 15, 14, 12 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC85: db 33, 1, 1, 0, 17 ; Alignment, TODO
 #_07DC8A: db $09, $2B, $11 ; Move09, Move2B, Move11
-#_07DC8D: db $16, $DC, $28 ; no clue yet
+#_07DC8D: db $16, $DC, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DC90: db 0 ; CP
 #_07DC91: db $30 ; ill find out
 
 .demon_0B1
 #_07DC92: db 22 ; level
 #_07DC93: dw 125, 42 ; HP, MP
-#_07DC97: db 14, 7, 5, 12, 15, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DC97: db 14, 7, 5, 12, 15, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DC9D: db 38, 32, 1, 7, 10 ; Alignment, TODO
 #_07DCA2: db $22, $1E, $20 ; Move22, Move1E, Move20
-#_07DCA5: db $E5, $18, $28 ; no clue yet
+#_07DCA5: db $E5, $18, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DCA8: db 0 ; CP
 #_07DCA9: db $30 ; ill find out
 
 .demon_0B2
 #_07DCAA: db 18 ; level
 #_07DCAB: dw 81, 35 ; HP, MP
-#_07DCAF: db 12, 9, 6, 11, 7, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DCAF: db 12, 9, 6, 11, 7, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DCB5: db 45, 65, 1, 0, 1 ; Alignment, TODO
 #_07DCBA: db $2D, $FF, $FF ; Move2D, MoveFF, MoveFF
-#_07DCBD: db $E4, $CD, $28 ; no clue yet
+#_07DCBD: db $E4, $CD, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DCC0: db 0 ; CP
 #_07DCC1: db $30 ; ill find out
 
 .demon_0B3
 #_07DCC2: db 56 ; level
 #_07DCC3: dw 540, 0 ; HP, MP
-#_07DCC7: db 20, 7, 7, 14, 26, 25 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DCC7: db 20, 7, 7, 14, 26, 25 ; STR, INT, MAG, STM, SPD, LUK
 #_07DCCD: db 239, 0, 18, 1, 12 ; Alignment, TODO
 #_07DCD2: db $69, $67, $60 ; Move69, Move67, Move60
-#_07DCD5: db $27, $DF, $28 ; no clue yet
+#_07DCD5: db $27, $DF, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DCD8: db 0 ; CP
 #_07DCD9: db $40 ; ill find out
 
 .demon_0B4
 #_07DCDA: db 52 ; level
 #_07DCDB: dw 502, 320 ; HP, MP
-#_07DCDF: db 13, 19, 24, 15, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DCDF: db 13, 19, 24, 15, 13, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DCE5: db 227, 21, 18, 0, 12 ; Alignment, TODO
 #_07DCEA: db $0F, $24, $1F ; Move0F, Move24, Move1F
-#_07DCED: db $E4, $DB, $28 ; no clue yet
+#_07DCED: db $E4, $DB, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DCF0: db 0 ; CP
 #_07DCF1: db $40 ; ill find out
 
 .demon_0B5
 #_07DCF2: db 40 ; level
 #_07DCF3: dw 380, 188 ; HP, MP
-#_07DCF7: db 19, 10, 11, 12, 19, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DCF7: db 19, 10, 11, 12, 19, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DCFD: db 225, 34, 18, 1, 21 ; Alignment, TODO
 #_07DD02: db $53, $62, $60 ; Move53, Move62, Move60
-#_07DD05: db $E7, $15, $28 ; no clue yet
+#_07DD05: db $E7, $15, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD08: db 0 ; CP
 #_07DD09: db $21 ; ill find out
 
 .demon_0B6
 #_07DD0A: db 27 ; level
 #_07DD0B: dw 146, 122 ; HP, MP
-#_07DD0F: db 10, 11, 14, 11, 10, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD0F: db 10, 11, 14, 11, 10, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DD15: db 223, 32, 1, 0, 19 ; Alignment, TODO
 #_07DD1A: db $52, $0D, $09 ; Move52, Move0D, Move09
-#_07DD1D: db $D4, $D8, $28 ; no clue yet
+#_07DD1D: db $D4, $D8, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD20: db 0 ; CP
 #_07DD21: db $40 ; ill find out
 
 .demon_0B7
 #_07DD22: db 20 ; level
 #_07DD23: dw 95, 18 ; HP, MP
-#_07DD27: db 17, 8, 5, 9, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD27: db 17, 8, 5, 9, 12, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DD2D: db 222, 160, 1, 4, 1 ; Alignment, TODO
 #_07DD32: db $63, $FF, $FF ; Move63, MoveFF, MoveFF
-#_07DD35: db $D0, $B4, $28 ; no clue yet
+#_07DD35: db $D0, $B4, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD38: db 0 ; CP
 #_07DD39: db $40 ; ill find out
 
 .demon_0B8
 #_07DD3A: db 15 ; level
 #_07DD3B: dw 75, 0 ; HP, MP
-#_07DD3F: db 11, 8, 6, 8, 10, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD3F: db 11, 8, 6, 8, 10, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DD45: db 219, 64, 1, 0, 0 ; Alignment, TODO
 #_07DD4A: db $FF, $FF, $FF ; MoveFF, MoveFF, MoveFF
-#_07DD4D: db $DA, $05, $28 ; no clue yet
+#_07DD4D: db $DA, $05, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD50: db 0 ; CP
 #_07DD51: db $40 ; ill find out
 
 .demon_0B9
 #_07DD52: db 71 ; level
 #_07DD53: dw 737, 151 ; HP, MP
-#_07DD57: db 28, 21, 24, 20, 10, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD57: db 28, 21, 24, 20, 10, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DD5D: db 49, 128, 28, 4, 19 ; Alignment, TODO
 #_07DD62: db $54, $10, $03 ; Move54, Move10, Move03
-#_07DD65: db $14, $D5, $ED ; no clue yet
+#_07DD65: db $14, $D5, $ED ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD68: db 38 ; CP
 #_07DD69: db $60 ; ill find out
 
 .demon_0BA
 #_07DD6A: db 66 ; level
 #_07DD6B: dw 707, 141 ; HP, MP
-#_07DD6F: db 34, 12, 21, 14, 14, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD6F: db 34, 12, 21, 14, 14, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DD75: db 52, 132, 28, 1, 10 ; Alignment, TODO
 #_07DD7A: db $01, $28, $1A ; Move01, Move28, Move1A
-#_07DD7D: db $E4, $D6, $D1 ; no clue yet
+#_07DD7D: db $E4, $D6, $D1 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD80: db 35 ; CP
 #_07DD81: db $61 ; ill find out
 
 .demon_0BB
 #_07DD82: db 62 ; level
 #_07DD83: dw 747, 121 ; HP, MP
-#_07DD87: db 32, 14, 19, 13, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD87: db 32, 14, 19, 13, 12, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DD8D: db 41, 133, 28, 4, 17 ; Alignment, TODO
 #_07DD92: db $4D, $17, $18 ; Move4D, Move17, Move18
-#_07DD95: db $D6, $D3, $C1 ; no clue yet
+#_07DD95: db $D6, $D3, $C1 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DD98: db 32 ; CP
 #_07DD99: db $61 ; ill find out
 
 .demon_0BC
 #_07DD9A: db 44 ; level
 #_07DD9B: dw 505, 212 ; HP, MP
-#_07DD9F: db 26, 10, 12, 15, 10, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DD9F: db 26, 10, 12, 15, 10, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DDA5: db 44, 133, 28, 4, 16 ; Alignment, TODO
 #_07DDAA: db $09, $0B, $17 ; Move09, Move0B, Move17
-#_07DDAD: db $D4, $26, $C1 ; no clue yet
+#_07DDAD: db $D4, $26, $C1 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DDB0: db 24 ; CP
 #_07DDB1: db $61 ; ill find out
 
 .demon_0BD
 #_07DDB2: db 99 ; level
 #_07DDB3: dw 989, 433 ; HP, MP
-#_07DDB7: db 37, 24, 26, 20, 23, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DDB7: db 37, 24, 26, 20, 23, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07DDBD: db 250, 128, 33, 5, 11 ; Alignment, TODO
 #_07DDC2: db $10, $03, $18 ; Move10, Move03, Move18
-#_07DDC5: db $30, $B4, $43 ; no clue yet
+#_07DDC5: db $30, $B4, $43 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DDC8: db 60 ; CP
 #_07DDC9: db $60 ; ill find out
 
 .demon_0BE
 #_07DDCA: db 82 ; level
 #_07DDCB: dw 969, 343 ; HP, MP
-#_07DDCF: db 35, 20, 21, 18, 18, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DDCF: db 35, 20, 21, 18, 18, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07DDD5: db 255, 132, 31, 0, 21 ; Alignment, TODO
 #_07DDDA: db $0F, $1D, $2B ; Move0F, Move1D, Move2B
-#_07DDDD: db $35, $DA, $32 ; no clue yet
+#_07DDDD: db $35, $DA, $32 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DDE0: db 56 ; CP
 #_07DDE1: db $62 ; ill find out
 
 .demon_0BF
 #_07DDE2: db 78 ; level
 #_07DDE3: dw 949, 292 ; HP, MP
-#_07DDE7: db 33, 19, 22, 16, 21, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DDE7: db 33, 19, 22, 16, 21, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DDED: db 242, 128, 29, 8, 17 ; Alignment, TODO
 #_07DDF2: db $0B, $44, $18 ; Move0B, Move44, Move18
-#_07DDF5: db $35, $E1, $32 ; no clue yet
+#_07DDF5: db $35, $E1, $32 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DDF8: db 48 ; CP
 #_07DDF9: db $60 ; ill find out
 
 .demon_0C0
 #_07DDFA: db 74 ; level
 #_07DDFB: dw 888, 262 ; HP, MP
-#_07DDFF: db 31, 18, 19, 23, 18, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DDFF: db 31, 18, 19, 23, 18, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE05: db 231, 129, 29, 7, 11 ; Alignment, TODO
 #_07DE0A: db $09, $20, $1D ; Move09, Move20, Move1D
-#_07DE0D: db $30, $B4, $21 ; no clue yet
+#_07DE0D: db $30, $B4, $21 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DE10: db 45 ; CP
 #_07DE11: db $61 ; ill find out
 
 .demon_0C1
 #_07DE12: db 68 ; level
 #_07DE13: dw 840, 180 ; HP, MP
-#_07DE17: db 29, 19, 15, 20, 19, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DE17: db 29, 19, 15, 20, 19, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE1D: db 228, 129, 23, 8, 17 ; Alignment, TODO
 #_07DE22: db $69, $29, $67 ; Move69, Move29, Move67
-#_07DE25: db $30, $B4, $21 ; no clue yet
+#_07DE25: db $30, $B4, $21 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DE28: db 41 ; CP
 #_07DE29: db $60 ; ill find out
 
 .demon_0C2
 #_07DE2A: db 60 ; level
 #_07DE2B: dw 660, 82 ; HP, MP
-#_07DE2F: db 33, 13, 15, 13, 14, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DE2F: db 33, 13, 15, 13, 14, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE35: db 193, 128, 18, 0, 22 ; Alignment, TODO
 #_07DE3A: db $57, $4E, $28 ; Move57, Move4E, Move28
-#_07DE3D: db $E6, $35, $1C ; no clue yet
+#_07DE3D: db $E6, $35, $1C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DE40: db 32 ; CP
 #_07DE41: db $62 ; ill find out
 
 .demon_0C3
 #_07DE42: db 54 ; level
 #_07DE43: dw 570, 28 ; HP, MP
-#_07DE47: db 25, 8, 10, 15, 19, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DE47: db 25, 8, 10, 15, 19, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE4D: db 188, 16, 2, 0, 10 ; Alignment, TODO
 #_07DE52: db $64, $65, $68 ; Move64, Move65, Move68
-#_07DE55: db $10, $B4, $9B ; no clue yet
+#_07DE55: db $10, $B4, $9B ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DE58: db 29 ; CP
 #_07DE59: db $53 ; ill find out
 
 .demon_0C4
 #_07DE5A: db 51 ; level
 #_07DE5B: dw 440, 44 ; HP, MP
-#_07DE5F: db 27, 9, 10, 16, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DE5F: db 27, 9, 10, 16, 16, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE65: db 182, 16, 12, 0, 21 ; Alignment, TODO
 #_07DE6A: db $5E, $41, $50 ; Move5E, Move41, Move50
-#_07DE6D: db $E5, $2C, $DB ; no clue yet
+#_07DE6D: db $E5, $2C, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DE70: db 25 ; CP
 #_07DE71: db $53 ; ill find out
 
 .demon_0C5
 #_07DE72: db 43 ; level
 #_07DE73: dw 366, 30 ; HP, MP
-#_07DE77: db 22, 4, 9, 15, 17, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DE77: db 22, 4, 9, 15, 17, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE7D: db 181, 16, 2, 4, 13 ; Alignment, TODO
 #_07DE82: db $57, $61, $4E ; Move57, Move61, Move4E
-#_07DE85: db $D6, $25, $9C ; no clue yet
+#_07DE85: db $D6, $25, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DE88: db 20 ; CP
 #_07DE89: db $53 ; ill find out
 
 .demon_0C6
 #_07DE8A: db 37 ; level
 #_07DE8B: dw 266, 24 ; HP, MP
-#_07DE8F: db 19, 4, 7, 14, 21, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DE8F: db 19, 4, 7, 14, 21, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DE95: db 179, 32, 2, 7, 23 ; Alignment, TODO
 #_07DE9A: db $73, $64, $57 ; Move73, Move64, Move57
-#_07DE9D: db $D6, $22, $9C ; no clue yet
+#_07DE9D: db $D6, $22, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DEA0: db 17 ; CP
 #_07DEA1: db $53 ; ill find out
 
 .demon_0C7
 #_07DEA2: db 30 ; level
 #_07DEA3: dw 119, 12 ; HP, MP
-#_07DEA7: db 22, 3, 5, 12, 14, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DEA7: db 22, 3, 5, 12, 14, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DEAD: db 182, 48, 2, 0, 10 ; Alignment, TODO
 #_07DEB2: db $5E, $5A, $74 ; Move5E, Move5A, Move74
-#_07DEB5: db $D5, $B8, $AB ; no clue yet
+#_07DEB5: db $D5, $B8, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DEB8: db 15 ; CP
 #_07DEB9: db $53 ; ill find out
 
 .demon_0C8
 #_07DEBA: db 22 ; level
 #_07DEBB: dw 99, 10 ; HP, MP
-#_07DEBF: db 18, 4, 5, 11, 11, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DEBF: db 18, 4, 5, 11, 11, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DEC5: db 178, 48, 2, 0, 17 ; Alignment, TODO
 #_07DECA: db $2A, $64, $68 ; Move2A, Move64, Move68
-#_07DECD: db $D6, $E4, $AB ; no clue yet
+#_07DECD: db $D6, $E4, $AB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DED0: db 10 ; CP
 #_07DED1: db $53 ; ill find out
 
 .demon_0C9
 #_07DED2: db 53 ; level
 #_07DED3: dw 494, 79 ; HP, MP
-#_07DED7: db 15, 8, 9, 11, 36, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DED7: db 15, 8, 9, 11, 36, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DEDD: db 53, 32, 3, 8, 12 ; Alignment, TODO
 #_07DEE2: db $57, $61, $4F ; Move57, Move61, Move4F
-#_07DEE5: db $18, $E4, $9C ; no clue yet
+#_07DEE5: db $18, $E4, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DEE8: db 30 ; CP
 #_07DEE9: db $61 ; ill find out
 
 .demon_0CA
 #_07DEEA: db 42 ; level
 #_07DEEB: dw 344, 65 ; HP, MP
-#_07DEEF: db 12, 9, 8, 10, 30, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DEEF: db 12, 9, 8, 10, 30, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DEF5: db 56, 32, 3, 8, 20 ; Alignment, TODO
 #_07DEFA: db $5C, $61, $17 ; Move5C, Move61, Move17
-#_07DEFD: db $17, $EB, $9C ; no clue yet
+#_07DEFD: db $17, $EB, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF00: db 22 ; CP
 #_07DF01: db $61 ; ill find out
 
 .demon_0CB
 #_07DF02: db 20 ; level
 #_07DF03: dw 89, 43 ; HP, MP
-#_07DF07: db 10, 7, 9, 9, 15, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF07: db 10, 7, 9, 9, 15, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF0D: db 58, 48, 3, 5, 10 ; Alignment, TODO
 #_07DF12: db $5D, $61, $74 ; Move5D, Move61, Move74
-#_07DF15: db $15, $EF, $AC ; no clue yet
+#_07DF15: db $15, $EF, $AC ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF18: db 11 ; CP
 #_07DF19: db $71 ; ill find out
 
 .demon_0CC
 #_07DF1A: db 8 ; level
 #_07DF1B: dw 19, 26 ; HP, MP
-#_07DF1F: db 5, 6, 8, 6, 9, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF1F: db 5, 6, 8, 6, 9, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF25: db 61, 16, 3, 0, 12 ; Alignment, TODO
 #_07DF2A: db $0C, $49, $1B ; Move0C, Move49, Move1B
-#_07DF2D: db $16, $E5, $CD ; no clue yet
+#_07DF2D: db $16, $E5, $CD ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF30: db 4 ; CP
 #_07DF31: db $60 ; ill find out
 
 .demon_0CD
 #_07DF32: db 62 ; level
 #_07DF33: dw 666, 66 ; HP, MP
-#_07DF37: db 34, 11, 12, 16, 19, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF37: db 34, 11, 12, 16, 19, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF3D: db 142, 128, 23, 5, 14 ; Alignment, TODO
 #_07DF42: db $5C, $57, $4F ; Move5C, Move57, Move4F
-#_07DF45: db $15, $31, $CE ; no clue yet
+#_07DF45: db $15, $31, $CE ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF48: db 33 ; CP
 #_07DF49: db $62 ; ill find out
 
 .demon_0CE
 #_07DF4A: db 51 ; level
 #_07DF4B: dw 620, 22 ; HP, MP
-#_07DF4F: db 20, 6, 7, 16, 25, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF4F: db 20, 6, 7, 16, 25, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF55: db 141, 32, 12, 11, 12 ; Alignment, TODO
 #_07DF5A: db $64, $66, $55 ; Move64, Move66, Move55
-#_07DF5D: db $10, $B4, $02 ; no clue yet
+#_07DF5D: db $10, $B4, $02 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF60: db 22 ; CP
 #_07DF61: db $53 ; ill find out
 
 .demon_0CF
 #_07DF62: db 47 ; level
 #_07DF63: dw 444, 32 ; HP, MP
-#_07DF67: db 25, 9, 11, 15, 17, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF67: db 25, 9, 11, 15, 17, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF6D: db 141, 32, 2, 0, 10 ; Alignment, TODO
 #_07DF72: db $60, $4A, $5A ; Move60, Move4A, Move5A
-#_07DF75: db $15, $23, $9C ; no clue yet
+#_07DF75: db $15, $23, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF78: db 25 ; CP
 #_07DF79: db $61 ; ill find out
 
 .demon_0D0
 #_07DF7A: db 44 ; level
 #_07DF7B: dw 499, 54 ; HP, MP
-#_07DF7F: db 16, 14, 16, 10, 18, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF7F: db 16, 14, 16, 10, 18, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF85: db 140, 2, 26, 0, 14 ; Alignment, TODO
 #_07DF8A: db $1C, $1D, $20 ; Move1C, Move1D, Move20
-#_07DF8D: db $14, $D8, $9C ; no clue yet
+#_07DF8D: db $14, $D8, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DF90: db 24 ; CP
 #_07DF91: db $70 ; ill find out
 
 .demon_0D1
 #_07DF92: db 27 ; level
 #_07DF93: dw 134, 32 ; HP, MP
-#_07DF97: db 21, 4, 5, 11, 12, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DF97: db 21, 4, 5, 11, 12, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07DF9D: db 141, 64, 2, 0, 16 ; Alignment, TODO
 #_07DFA2: db $57, $63, $01 ; Move57, Move63, Move01
-#_07DFA5: db $10, $B4, $9C ; no clue yet
+#_07DFA5: db $10, $B4, $9C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DFA8: db 15 ; CP
 #_07DFA9: db $52 ; ill find out
 
 .demon_0D2
 #_07DFAA: db 15 ; level
 #_07DFAB: dw 88, 18 ; HP, MP
-#_07DFAF: db 16, 5, 5, 8, 10, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DFAF: db 16, 5, 5, 8, 10, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DFB5: db 143, 21, 2, 0, 15 ; Alignment, TODO
 #_07DFBA: db $5C, $59, $49 ; Move5C, Move59, Move49
-#_07DFBD: db $26, $EF, $0C ; no clue yet
+#_07DFBD: db $26, $EF, $0C ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DFC0: db 10 ; CP
 #_07DFC1: db $53 ; ill find out
 
 .demon_0D3
 #_07DFC2: db 53 ; level
 #_07DFC3: dw 722, 59 ; HP, MP
-#_07DFC7: db 30, 11, 12, 14, 13, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DFC7: db 30, 11, 12, 14, 13, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07DFCD: db 110, 0, 26, 0, 10 ; Alignment, TODO
 #_07DFD2: db $40, $50, $49 ; Move40, Move50, Move49
-#_07DFD5: db $27, $E8, $DB ; no clue yet
+#_07DFD5: db $27, $E8, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DFD8: db 28 ; CP
 #_07DFD9: db $61 ; ill find out
 
 .demon_0D4
 #_07DFDA: db 51 ; level
 #_07DFDB: dw 500, 31 ; HP, MP
-#_07DFDF: db 32, 6, 9, 19, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DFDF: db 32, 6, 9, 19, 12, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07DFE5: db 109, 48, 1, 0, 20 ; Alignment, TODO
 #_07DFEA: db $73, $65, $0A ; Move73, Move65, Move0A
-#_07DFED: db $D5, $EA, $DA ; no clue yet
+#_07DFED: db $D5, $EA, $DA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07DFF0: db 27 ; CP
 #_07DFF1: db $52 ; ill find out
 
 .demon_0D5
 #_07DFF2: db 48 ; level
 #_07DFF3: dw 465, 48 ; HP, MP
-#_07DFF7: db 28, 9, 10, 13, 15, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07DFF7: db 28, 9, 10, 13, 15, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07DFFD: db 107, 32, 1, 0, 13 ; Alignment, TODO
 #_07E002: db $52, $49, $69 ; Move52, Move49, Move69
-#_07E005: db $E6, $2A, $1A ; no clue yet
+#_07E005: db $E6, $2A, $1A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E008: db 26 ; CP
 #_07E009: db $60 ; ill find out
 
 .demon_0D6
 #_07E00A: db 45 ; level
 #_07E00B: dw 323, 42 ; HP, MP
-#_07E00F: db 21, 8, 8, 20, 13, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E00F: db 21, 8, 8, 20, 13, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07E015: db 110, 16, 11, 0, 12 ; Alignment, TODO
 #_07E01A: db $05, $58, $07 ; Move05, Move58, Move07
-#_07E01D: db $E7, $EF, $DA ; no clue yet
+#_07E01D: db $E7, $EF, $DA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E020: db 24 ; CP
 #_07E021: db $51 ; ill find out
 
 .demon_0D7
 #_07E022: db 37 ; level
 #_07E023: dw 259, 38 ; HP, MP
-#_07E027: db 20, 7, 7, 11, 20, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E027: db 20, 7, 7, 11, 20, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E02D: db 108, 32, 1, 0, 21 ; Alignment, TODO
 #_07E032: db $57, $65, $0D ; Move57, Move65, Move0D
-#_07E035: db $D6, $E8, $CA ; no clue yet
+#_07E035: db $D6, $E8, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E038: db 20 ; CP
 #_07E039: db $61 ; ill find out
 
 .demon_0D8
 #_07E03A: db 28 ; level
 #_07E03B: dw 129, 28 ; HP, MP
-#_07E03F: db 15, 6, 7, 13, 13, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E03F: db 15, 6, 7, 13, 13, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07E045: db 103, 32, 11, 0, 13 ; Alignment, TODO
 #_07E04A: db $05, $07, $62 ; Move05, Move07, Move62
-#_07E04D: db $D8, $EF, $CA ; no clue yet
+#_07E04D: db $D8, $EF, $CA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E050: db 15 ; CP
 #_07E051: db $52 ; ill find out
 
 .demon_0D9
 #_07E052: db 11 ; level
 #_07E053: dw 42, 16 ; HP, MP
-#_07E057: db 12, 4, 5, 10, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E057: db 12, 4, 5, 10, 8, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E05D: db 109, 80, 1, 0, 15 ; Alignment, TODO
 #_07E062: db $2A, $73, $75 ; Move2A, Move73, Move75
-#_07E065: db $E9, $09, $2A ; no clue yet
+#_07E065: db $E9, $09, $2A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E068: db 8 ; CP
 #_07E069: db $52 ; ill find out
 
 .demon_0DA
 #_07E06A: db 8 ; level
 #_07E06B: dw 26, 11 ; HP, MP
-#_07E06F: db 7, 4, 5, 12, 3, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E06F: db 7, 4, 5, 12, 3, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07E075: db 101, 160, 1, 2, 15 ; Alignment, TODO
 #_07E07A: db $25, $55, $49 ; Move25, Move55, Move49
-#_07E07D: db $E7, $E5, $2B ; no clue yet
+#_07E07D: db $E7, $E5, $2B ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E080: db 4 ; CP
 #_07E081: db $52 ; ill find out
 
 .demon_0DB
 #_07E082: db 5 ; level
 #_07E083: dw 20, 14 ; HP, MP
-#_07E087: db 4, 6, 5, 5, 10, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E087: db 4, 6, 5, 5, 10, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E08D: db 105, 16, 1, 0, 10 ; Alignment, TODO
 #_07E092: db $08, $5C, $74 ; Move08, Move5C, Move74
-#_07E095: db $E0, $B4, $3A ; no clue yet
+#_07E095: db $E0, $B4, $3A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E098: db 2 ; CP
 #_07E099: db $51 ; ill find out
 
 .demon_0DC
 #_07E09A: db 54 ; level
 #_07E09B: dw 720, 200 ; HP, MP
-#_07E09F: db 12, 32, 22, 14, 8, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E09F: db 12, 32, 22, 14, 8, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E0A5: db 203, 132, 24, 15, 19 ; Alignment, TODO
 #_07E0AA: db $0B, $4D, $18 ; Move0B, Move4D, Move18
-#_07E0AD: db $27, $EA, $3D ; no clue yet
+#_07E0AD: db $27, $EA, $3D ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E0B0: db 32 ; CP
 #_07E0B1: db $60 ; ill find out
 
 .demon_0DD
 #_07E0B2: db 46 ; level
 #_07E0B3: dw 363, 52 ; HP, MP
-#_07E0B7: db 25, 7, 7, 29, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E0B7: db 25, 7, 7, 29, 9, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E0BD: db 202, 36, 12, 0, 21 ; Alignment, TODO
 #_07E0C2: db $54, $58, $5E ; Move54, Move58, Move5E
-#_07E0C5: db $D0, $B4, $CE ; no clue yet
+#_07E0C5: db $D0, $B4, $CE ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E0C8: db 25 ; CP
 #_07E0C9: db $52 ; ill find out
 
 .demon_0DE
 #_07E0CA: db 40 ; level
 #_07E0CB: dw 353, 42 ; HP, MP
-#_07E0CF: db 20, 5, 8, 9, 26, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E0CF: db 20, 5, 8, 9, 26, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E0D5: db 190, 37, 24, 0, 16 ; Alignment, TODO
 #_07E0DA: db $40, $50, $43 ; Move40, Move50, Move43
-#_07E0DD: db $10, $B4, $DA ; no clue yet
+#_07E0DD: db $10, $B4, $DA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E0E0: db 22 ; CP
 #_07E0E1: db $61 ; ill find out
 
 .demon_0DF
 #_07E0E2: db 35 ; level
 #_07E0E3: dw 187, 46 ; HP, MP
-#_07E0E7: db 11, 7, 27, 10, 10, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E0E7: db 11, 7, 27, 10, 10, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E0ED: db 180, 52, 25, 0, 16 ; Alignment, TODO
 #_07E0F2: db $46, $03, $01 ; Move46, Move03, Move01
-#_07E0F5: db $D7, $1E, $BA ; no clue yet
+#_07E0F5: db $D7, $1E, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E0F8: db 18 ; CP
 #_07E0F9: db $61 ; ill find out
 
 .demon_0E0
 #_07E0FA: db 25 ; level
 #_07E0FB: dw 103, 38 ; HP, MP
-#_07E0FF: db 19, 5, 8, 14, 8, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E0FF: db 19, 5, 8, 14, 8, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E105: db 205, 53, 5, 0, 17 ; Alignment, TODO
 #_07E10A: db $1A, $05, $17 ; Move1A, Move05, Move17
-#_07E10D: db $D0, $B4, $BA ; no clue yet
+#_07E10D: db $D0, $B4, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E110: db 13 ; CP
 #_07E111: db $60 ; ill find out
 
 .demon_0E1
 #_07E112: db 22 ; level
 #_07E113: dw 69, 19 ; HP, MP
-#_07E117: db 16, 7, 6, 14, 7, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E117: db 16, 7, 6, 14, 7, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E11D: db 199, 37, 5, 0, 10 ; Alignment, TODO
 #_07E122: db $5E, $4C, $45 ; Move5E, Move4C, Move45
-#_07E125: db $E7, $E8, $D9 ; no clue yet
+#_07E125: db $E7, $E8, $D9 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E128: db 10 ; CP
 #_07E129: db $71 ; ill find out
 
 .demon_0E2
 #_07E12A: db 17 ; level
 #_07E12B: dw 52, 15 ; HP, MP
-#_07E12F: db 13, 6, 6, 11, 8, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E12F: db 13, 6, 6, 11, 8, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E135: db 212, 52, 5, 0, 12 ; Alignment, TODO
 #_07E13A: db $73, $59, $75 ; Move73, Move59, Move75
-#_07E13D: db $D4, $EB, $C9 ; no clue yet
+#_07E13D: db $D4, $EB, $C9 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E140: db 7 ; CP
 #_07E141: db $52 ; ill find out
 
 .demon_0E3
 #_07E142: db 7 ; level
 #_07E143: dw 39, 29 ; HP, MP
-#_07E147: db 4, 7, 5, 5, 13, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E147: db 4, 7, 5, 5, 13, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E14D: db 201, 132, 14, 7, 9 ; Alignment, TODO
 #_07E152: db $1B, $01, $FF ; Move1B, Move01, MoveFF
-#_07E155: db $17, $E5, $1A ; no clue yet
+#_07E155: db $17, $E5, $1A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E158: db 6 ; CP
 #_07E159: db $71 ; ill find out
 
 .demon_0E4
 #_07E15A: db 5 ; level
 #_07E15B: dw 25, 0 ; HP, MP
-#_07E15F: db 3, 5, 3, 7, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E15F: db 3, 5, 3, 7, 10, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E165: db 210, 4, 4, 3, 10 ; Alignment, TODO
 #_07E16A: db $5C, $75, $57 ; Move5C, Move75, Move57
-#_07E16D: db $1A, $02, $19 ; no clue yet
+#_07E16D: db $1A, $02, $19 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E170: db 10 ; CP
 #_07E171: db $51 ; ill find out
 
 .demon_0E5
 #_07E172: db 44 ; level
 #_07E173: dw 299, 31 ; HP, MP
-#_07E177: db 23, 8, 8, 22, 11, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E177: db 23, 8, 8, 22, 11, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07E17D: db 166, 6, 13, 7, 13 ; Alignment, TODO
 #_07E182: db $54, $75, $42 ; Move54, Move75, Move42
-#_07E185: db $20, $B4, $DB ; no clue yet
+#_07E185: db $20, $B4, $DB ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E188: db 20 ; CP
 #_07E189: db $60 ; ill find out
 
 .demon_0E6
 #_07E18A: db 29 ; level
 #_07E18B: dw 144, 28 ; HP, MP
-#_07E18F: db 8, 14, 16, 9, 14, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E18F: db 8, 14, 16, 9, 14, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E195: db 161, 22, 6, 0, 20 ; Alignment, TODO
 #_07E19A: db $54, $10, $0F ; Move54, Move10, Move0F
-#_07E19D: db $E0, $B4, $DA ; no clue yet
+#_07E19D: db $E0, $B4, $DA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E1A0: db 12 ; CP
 #_07E1A1: db $B0 ; ill find out
 
 .demon_0E7
 #_07E1A2: db 23 ; level
 #_07E1A3: dw 108, 21 ; HP, MP
-#_07E1A7: db 10, 8, 13, 10, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E1A7: db 10, 8, 13, 10, 10, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E1AD: db 156, 37, 14, 0, 10 ; Alignment, TODO
 #_07E1B2: db $54, $1A, $4D ; Move54, Move1A, Move4D
-#_07E1B5: db $E6, $B7, $BA ; no clue yet
+#_07E1B5: db $E6, $B7, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E1B8: db 10 ; CP
 #_07E1B9: db $61 ; ill find out
 
 .demon_0E8
 #_07E1BA: db 19 ; level
 #_07E1BB: dw 89, 16 ; HP, MP
-#_07E1BF: db 9, 7, 12, 10, 10, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E1BF: db 9, 7, 12, 10, 10, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E1C5: db 154, 101, 5, 3, 16 ; Alignment, TODO
 #_07E1CA: db $54, $75, $59 ; Move54, Move75, Move59
-#_07E1CD: db $E0, $B4, $BA ; no clue yet
+#_07E1CD: db $E0, $B4, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E1D0: db 9 ; CP
 #_07E1D1: db $B0 ; ill find out
 
 .demon_0E9
 #_07E1D2: db 14 ; level
 #_07E1D3: dw 34, 14 ; HP, MP
-#_07E1D7: db 8, 6, 13, 10, 8, 2 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E1D7: db 8, 6, 13, 10, 8, 2 ; STR, INT, MAG, STM, SPD, LUK
 #_07E1DD: db 150, 37, 5, 0, 23 ; Alignment, TODO
 #_07E1E2: db $0C, $22, $1E ; Move0C, Move22, Move1E
-#_07E1E5: db $E5, $B7, $A9 ; no clue yet
+#_07E1E5: db $E5, $B7, $A9 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E1E8: db 7 ; CP
 #_07E1E9: db $B0 ; ill find out
 
 .demon_0EA
 #_07E1EA: db 9 ; level
 #_07E1EB: dw 40, 13 ; HP, MP
-#_07E1EF: db 7, 8, 12, 6, 6, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E1EF: db 7, 8, 12, 6, 6, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E1F5: db 148, 53, 6, 2, 12 ; Alignment, TODO
 #_07E1FA: db $54, $1A, $1B ; Move54, Move1A, Move1B
-#_07E1FD: db $17, $C7, $89 ; no clue yet
+#_07E1FD: db $17, $C7, $89 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E200: db 5 ; CP
 #_07E201: db $B0 ; ill find out
 
 .demon_0EB
 #_07E202: db 4 ; level
 #_07E203: dw 23, 9 ; HP, MP
-#_07E207: db 3, 6, 6, 7, 9, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E207: db 3, 6, 6, 7, 9, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E20D: db 145, 133, 6, 2, 2 ; Alignment, TODO
 #_07E212: db $1B, $FF, $FF ; Move1B, MoveFF, MoveFF
-#_07E215: db $20, $B4, $88 ; no clue yet
+#_07E215: db $20, $B4, $88 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E218: db 2 ; CP
 #_07E219: db $50 ; ill find out
 
 .demon_0EC
 #_07E21A: db 18 ; level
 #_07E21B: dw 186, 21 ; HP, MP
-#_07E21F: db 15, 5, 11, 10, 4, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E21F: db 15, 5, 11, 10, 4, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E225: db 143, 53, 4, 6, 22 ; Alignment, TODO
 #_07E22A: db $54, $75, $59 ; Move54, Move75, Move59
-#_07E22D: db $10, $B4, $BA ; no clue yet
+#_07E22D: db $10, $B4, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E230: db 10 ; CP
 #_07E231: db $B0 ; ill find out
 
 .demon_0ED
 #_07E232: db 10 ; level
 #_07E233: dw 57, 12 ; HP, MP
-#_07E237: db 9, 7, 6, 8, 6, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E237: db 9, 7, 6, 8, 6, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E23D: db 125, 36, 4, 10, 6 ; Alignment, TODO
 #_07E242: db $73, $75, $FF ; Move73, Move75, MoveFF
-#_07E245: db $14, $42, $29 ; no clue yet
+#_07E245: db $14, $42, $29 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E248: db 6 ; CP
 #_07E249: db $B0 ; ill find out
 
 .demon_0EE
 #_07E24A: db 7 ; level
 #_07E24B: dw 53, 10 ; HP, MP
-#_07E24F: db 7, 6, 5, 7, 7, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E24F: db 7, 6, 5, 7, 7, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E255: db 134, 52, 4, 3, 17 ; Alignment, TODO
 #_07E25A: db $73, $5E, $59 ; Move73, Move5E, Move59
-#_07E25D: db $E7, $C7, $59 ; no clue yet
+#_07E25D: db $E7, $C7, $59 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E260: db 4 ; CP
 #_07E261: db $71 ; ill find out
 
 .demon_0EF
 #_07E262: db 6 ; level
 #_07E263: dw 39, 8 ; HP, MP
-#_07E267: db 8, 6, 5, 5, 5, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E267: db 8, 6, 5, 5, 5, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E26D: db 130, 148, 4, 3, 10 ; Alignment, TODO
 #_07E272: db $73, $5D, $75 ; Move73, Move5D, Move75
-#_07E275: db $E6, $40, $59 ; no clue yet
+#_07E275: db $E6, $40, $59 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E278: db 3 ; CP
 #_07E279: db $B0 ; ill find out
 
 .demon_0F0
 #_07E27A: db 3 ; level
 #_07E27B: dw 46, 10 ; HP, MP
-#_07E27F: db 4, 5, 5, 5, 3, 2 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E27F: db 4, 5, 5, 5, 3, 2 ; STR, INT, MAG, STM, SPD, LUK
 #_07E285: db 140, 130, 4, 2, 5 ; Alignment, TODO
 #_07E28A: db $75, $5D, $FF ; Move75, Move5D, MoveFF
-#_07E28D: db $18, $01, $69 ; no clue yet
+#_07E28D: db $18, $01, $69 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E290: db 2 ; CP
 #_07E291: db $B0 ; ill find out
 
 .demon_0F1
 #_07E292: db 2 ; level
 #_07E293: dw 32, 9 ; HP, MP
-#_07E297: db 3, 6, 4, 6, 4, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E297: db 3, 6, 4, 6, 4, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E29D: db 136, 130, 4, 3, 10 ; Alignment, TODO
 #_07E2A2: db $73, $75, $5E ; Move73, Move75, Move5E
-#_07E2A5: db $18, $04, $69 ; no clue yet
+#_07E2A5: db $18, $04, $69 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E2A8: db 2 ; CP
 #_07E2A9: db $B0 ; ill find out
 
 .demon_0F2
 #_07E2AA: db 1 ; level
 #_07E2AB: dw 31, 6 ; HP, MP
-#_07E2AF: db 2, 6, 5, 5, 2, 1 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E2AF: db 2, 6, 5, 5, 2, 1 ; STR, INT, MAG, STM, SPD, LUK
 #_07E2B5: db 134, 4, 4, 3, 6 ; Alignment, TODO
 #_07E2BA: db $73, $58, $FF ; Move73, Move58, MoveFF
-#_07E2BD: db $18, $B0, $69 ; no clue yet
+#_07E2BD: db $18, $B0, $69 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E2C0: db 1 ; CP
 #_07E2C1: db $B0 ; ill find out
 
 .demon_0F3
 #_07E2C2: db 44 ; level
 #_07E2C3: dw 470, 40 ; HP, MP
-#_07E2C7: db 19, 10, 14, 17, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E2C7: db 19, 10, 14, 17, 12, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E2CD: db 223, 20, 27, 4, 21 ; Alignment, TODO
 #_07E2D2: db $0D, $1A, $40 ; Move0D, Move1A, Move40
-#_07E2D5: db $EA, $1F, $BA ; no clue yet
+#_07E2D5: db $EA, $1F, $BA ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E2D8: db 22 ; CP
 #_07E2D9: db $C0 ; ill find out
 
 .demon_0F4
 #_07E2DA: db 32 ; level
 #_07E2DB: dw 450, 20 ; HP, MP
-#_07E2DF: db 14, 9, 12, 16, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E2DF: db 14, 9, 12, 16, 9, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E2E5: db 222, 20, 13, 0, 18 ; Alignment, TODO
 #_07E2EA: db $73, $54, $50 ; Move73, Move54, Move50
-#_07E2ED: db $E0, $B4, $28 ; no clue yet
+#_07E2ED: db $E0, $B4, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E2F0: db 13 ; CP
 #_07E2F1: db $C0 ; ill find out
 
 .demon_0F5
 #_07E2F2: db 13 ; level
 #_07E2F3: dw 52, 13 ; HP, MP
-#_07E2F7: db 7, 5, 6, 15, 7, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E2F7: db 7, 5, 6, 15, 7, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E2FD: db 221, 20, 12, 2, 7 ; Alignment, TODO
 #_07E302: db $54, $73, $FF ; Move54, Move73, MoveFF
-#_07E305: db $E0, $B4, $28 ; no clue yet
+#_07E305: db $E0, $B4, $28 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E308: db 4 ; CP
 #_07E309: db $C0 ; ill find out
 
 .demon_0F6
 #_07E30A: db 4 ; level
 #_07E30B: dw 22, 9 ; HP, MP
-#_07E30F: db 2, 3, 3, 6, 10, 3 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E30F: db 2, 3, 3, 6, 10, 3 ; STR, INT, MAG, STM, SPD, LUK
 #_07E315: db 220, 132, 25, 2, 17 ; Alignment, TODO
 #_07E31A: db $73, $0C, $20 ; Move73, Move0C, Move20
-#_07E31D: db $D0, $B4, $8A ; no clue yet
+#_07E31D: db $D0, $B4, $8A ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E320: db 2 ; CP
 #_07E321: db $C0 ; ill find out
 
 .demon_0F7
 #_07E322: db 2 ; level
 #_07E323: dw 20, 0 ; HP, MP
-#_07E327: db 3, 6, 4, 7, 5, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E327: db 3, 6, 4, 7, 5, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E32D: db 201, 128, 1, 0, 2 ; Alignment, TODO
 #_07E332: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
-#_07E335: db $D5, $41, $70 ; no clue yet
+#_07E335: db $D5, $41, $70 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E338: db 0 ; CP
 #_07E339: db $A0 ; ill find out
 
 .demon_0F8
 #_07E33A: db 1 ; level
 #_07E33B: dw 18, 0 ; HP, MP
-#_07E33F: db 3, 5, 4, 4, 6, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E33F: db 3, 5, 4, 4, 6, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E345: db 200, 0, 1, 0, 2 ; Alignment, TODO
 #_07E34A: db $74, $FF, $FF ; Move74, MoveFF, MoveFF
-#_07E34D: db $DA, $00, $70 ; no clue yet
+#_07E34D: db $DA, $00, $70 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E350: db 0 ; CP
 #_07E351: db $A0 ; ill find out
 
 .demon_0F9
 #_07E352: db 32 ; level
 #_07E353: dw 180, 0 ; HP, MP
-#_07E357: db 12, 10, 6, 13, 20, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E357: db 12, 10, 6, 13, 20, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E35D: db 0, 16, 15, 12, 1 ; Alignment, TODO
 #_07E362: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
-#_07E365: db $1A, $C6, $A0 ; no clue yet
+#_07E365: db $1A, $C6, $A0 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E368: db 0 ; CP
 #_07E369: db $B0 ; ill find out
 
 .demon_0FA
 #_07E36A: db 25 ; level
 #_07E36B: dw 80, 0 ; HP, MP
-#_07E36F: db 11, 9, 5, 20, 8, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E36F: db 11, 9, 5, 20, 8, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E375: db 0, 32, 15, 12, 2 ; Alignment, TODO
 #_07E37A: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
-#_07E37D: db $1A, $C5, $A0 ; no clue yet
+#_07E37D: db $1A, $C5, $A0 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E380: db 0 ; CP
 #_07E381: db $B0 ; ill find out
 
 .demon_0FB
 #_07E382: db 21 ; level
 #_07E383: dw 60, 0 ; HP, MP
-#_07E387: db 19, 4, 2, 15, 10, 4 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E387: db 19, 4, 2, 15, 10, 4 ; STR, INT, MAG, STM, SPD, LUK
 #_07E38D: db 0, 32, 15, 0, 1 ; Alignment, TODO
 #_07E392: db $75, $FF, $FF ; Move75, MoveFF, MoveFF
-#_07E395: db $1A, $C4, $A0 ; no clue yet
+#_07E395: db $1A, $C4, $A0 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E398: db 0 ; CP
 #_07E399: db $B0 ; ill find out
 
 .demon_0FC
 #_07E39A: db 15 ; level
 #_07E39B: dw 40, 8 ; HP, MP
-#_07E39F: db 10, 6, 1, 8, 17, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E39F: db 10, 6, 1, 8, 17, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E3A5: db 0, 64, 15, 0, 1 ; Alignment, TODO
 #_07E3AA: db $53, $FF, $FF ; Move53, MoveFF, MoveFF
-#_07E3AD: db $1A, $DF, $A0 ; no clue yet
+#_07E3AD: db $1A, $DF, $A0 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E3B0: db 10 ; CP
 #_07E3B1: db $B0 ; ill find out
 
 .demon_0FD
 #_07E3B2: db 11 ; level
 #_07E3B3: dw 80, 0 ; HP, MP
-#_07E3B7: db 9, 6, 6, 7, 9, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E3B7: db 9, 6, 6, 7, 9, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E3BD: db 10, 144, 16, 0, 12 ; Alignment, TODO
 #_07E3C2: db $73, $4A, $74 ; Move73, Move4A, Move74
-#_07E3C5: db $70, $B4, $06 ; no clue yet
+#_07E3C5: db $70, $B4, $06 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E3C8: db 10 ; CP
 #_07E3C9: db $B0 ; ill find out
 
 .demon_0FE
 #_07E3CA: db 2 ; level
 #_07E3CB: dw 13, 8 ; HP, MP
-#_07E3CF: db 2, 6, 3, 11, 1, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E3CF: db 2, 6, 3, 11, 1, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E3D5: db 20, 128, 16, 2, 6 ; Alignment, TODO
 #_07E3DA: db $75, $1B, $FF ; Move75, Move1B, MoveFF
-#_07E3DD: db $10, $B4, $0B ; no clue yet
+#_07E3DD: db $10, $B4, $0B ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E3E0: db 10 ; CP
 #_07E3E1: db $C0 ; ill find out
 
 .demon_0FF
 #_07E3E2: db 0 ; level
 #_07E3E3: dw 0, 0 ; HP, MP
-#_07E3E7: db 0, 0, 0, 0, 0, 0 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E3E7: db 0, 0, 0, 0, 0, 0 ; STR, INT, MAG, STM, SPD, LUK
 #_07E3ED: db 0, 0, 0, 0, 0 ; Alignment, TODO
 #_07E3F2: db $00, $00, $00 ; Move00, Move00, Move00
-#_07E3F5: db $00, $00, $00 ; no clue yet
+#_07E3F5: db $00, $00, $00 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E3F8: db 0 ; CP
 #_07E3F9: db $00 ; ill find out
 
 .demon_100
 #_07E3FA: db 10 ; level
 #_07E3FB: dw 120, 55 ; HP, MP
-#_07E3FF: db 9, 8, 8, 7, 12, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E3FF: db 9, 8, 8, 7, 12, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E405: db 168, 1, 21, 0, 11 ; Alignment, TODO
 #_07E40A: db $1B, $1C, $19 ; Move1B, Move1C, Move19
-#_07E40D: db $30, $B4, $65 ; no clue yet
+#_07E40D: db $30, $B4, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E410: db 0 ; CP
 #_07E411: db $FF ; ill find out
 
 .demon_101
 #_07E412: db 12 ; level
 #_07E413: dw 132, 48 ; HP, MP
-#_07E417: db 7, 11, 9, 8, 14, 5 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E417: db 7, 11, 9, 8, 14, 5 ; STR, INT, MAG, STM, SPD, LUK
 #_07E41D: db 220, 0, 21, 4, 13 ; Alignment, TODO
 #_07E422: db $20, $1E, $24 ; Move20, Move1E, Move24
-#_07E425: db $40, $B4, $65 ; no clue yet
+#_07E425: db $40, $B4, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E428: db 0 ; CP
 #_07E429: db $00 ; ill find out
 
 .demon_102
 #_07E42A: db 15 ; level
 #_07E42B: dw 398, 50 ; HP, MP
-#_07E42F: db 12, 10, 9, 12, 10, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E42F: db 12, 10, 9, 12, 10, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07E435: db 180, 0, 28, 0, 13 ; Alignment, TODO
 #_07E43A: db $02, $1A, $0E ; Move02, Move1A, Move0E
-#_07E43D: db $40, $B4, $65 ; no clue yet
+#_07E43D: db $40, $B4, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E440: db 0 ; CP
 #_07E441: db $00 ; ill find out
 
 .demon_103
 #_07E442: db 28 ; level
 #_07E443: dw 440, 60 ; HP, MP
-#_07E447: db 14, 18, 11, 13, 16, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E447: db 14, 18, 11, 13, 16, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07E44D: db 210, 0, 28, 0, 10 ; Alignment, TODO
 #_07E452: db $1A, $69, $2B ; Move1A, Move69, Move2B
-#_07E455: db $4F, $0E, $65 ; no clue yet
+#_07E455: db $4F, $0E, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E458: db 0 ; CP
 #_07E459: db $00 ; ill find out
 
 .demon_104
 #_07E45A: db 30 ; level
 #_07E45B: dw 482, 90 ; HP, MP
-#_07E45F: db 16, 10, 12, 15, 11, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E45F: db 16, 10, 12, 15, 11, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07E465: db 50, 0, 28, 0, 10 ; Alignment, TODO
 #_07E46A: db $09, $0A, $4A ; Move09, Move0A, Move4A
-#_07E46D: db $40, $B4, $65 ; no clue yet
+#_07E46D: db $40, $B4, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E470: db 0 ; CP
 #_07E471: db $00 ; ill find out
 
 .demon_105
 #_07E472: db 32 ; level
 #_07E473: dw 320, 60 ; HP, MP
-#_07E477: db 22, 10, 11, 21, 12, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E477: db 22, 10, 11, 21, 12, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07E47D: db 60, 0, 0, 0, 20 ; Alignment, TODO
 #_07E482: db $0D, $2B, $0F ; Move0D, Move2B, Move0F
-#_07E485: db $40, $B9, $65 ; no clue yet
+#_07E485: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E488: db 0 ; CP
 #_07E489: db $00 ; ill find out
 
 .demon_106
 #_07E48A: db 32 ; level
 #_07E48B: dw 310, 60 ; HP, MP
-#_07E48F: db 20, 14, 17, 23, 15, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E48F: db 20, 14, 17, 23, 15, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07E495: db 180, 0, 0, 0, 20 ; Alignment, TODO
 #_07E49A: db $02, $01, $1A ; Move02, Move01, Move1A
-#_07E49D: db $40, $B9, $65 ; no clue yet
+#_07E49D: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E4A0: db 0 ; CP
 #_07E4A1: db $00 ; ill find out
 
 .demon_107
 #_07E4A2: db 43 ; level
 #_07E4A3: dw 560, 50 ; HP, MP
-#_07E4A7: db 30, 10, 12, 21, 13, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E4A7: db 30, 10, 12, 21, 13, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07E4AD: db 190, 0, 28, 7, 10 ; Alignment, TODO
 #_07E4B2: db $1A, $05, $0B ; Move1A, Move05, Move0B
-#_07E4B5: db $4F, $14, $65 ; no clue yet
+#_07E4B5: db $4F, $14, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E4B8: db 0 ; CP
 #_07E4B9: db $00 ; ill find out
 
 .demon_108
 #_07E4BA: db 48 ; level
 #_07E4BB: dw 700, 90 ; HP, MP
-#_07E4BF: db 22, 17, 17, 15, 25, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E4BF: db 22, 17, 17, 15, 25, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07E4C5: db 250, 0, 29, 10, 14 ; Alignment, TODO
 #_07E4CA: db $0F, $19, $1D ; Move0F, Move19, Move1D
-#_07E4CD: db $60, $B9, $06 ; no clue yet
+#_07E4CD: db $60, $B9, $06 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E4D0: db 0 ; CP
 #_07E4D1: db $00 ; ill find out
 
 .demon_109
 #_07E4D2: db 52 ; level
 #_07E4D3: dw 2272, 250 ; HP, MP
-#_07E4D7: db 30, 15, 16, 22, 12, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E4D7: db 30, 15, 16, 22, 12, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07E4DD: db 167, 0, 51, 11, 11 ; Alignment, TODO
 #_07E4E2: db $01, $03, $63 ; Move01, Move03, Move63
-#_07E4E5: db $40, $B9, $65 ; no clue yet
+#_07E4E5: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E4E8: db 0 ; CP
 #_07E4E9: db $00 ; ill find out
 
 .demon_10A
 #_07E4EA: db 46 ; level
 #_07E4EB: dw 1002, 220 ; HP, MP
-#_07E4EF: db 28, 12, 14, 19, 15, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E4EF: db 28, 12, 14, 19, 15, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07E4F5: db 202, 0, 30, 8, 12 ; Alignment, TODO
 #_07E4FA: db $0F, $46, $17 ; Move0F, Move46, Move17
-#_07E4FD: db $40, $B9, $65 ; no clue yet
+#_07E4FD: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E500: db 0 ; CP
 #_07E501: db $00 ; ill find out
 
 .demon_10B
 #_07E502: db 58 ; level
 #_07E503: dw 1310, 0 ; HP, MP
-#_07E507: db 26, 26, 8, 28, 18, 6 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E507: db 26, 26, 8, 28, 18, 6 ; STR, INT, MAG, STM, SPD, LUK
 #_07E50D: db 8, 0, 30, 10, 4 ; Alignment, TODO
 #_07E512: db $53, $FF, $FF ; Move53, MoveFF, MoveFF
-#_07E515: db $40, $C6, $12 ; no clue yet
+#_07E515: db $40, $C6, $12 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E518: db 0 ; CP
 #_07E519: db $00 ; ill find out
 
 .demon_10C
 #_07E51A: db 70 ; level
 #_07E51B: dw 1540, 120 ; HP, MP
-#_07E51F: db 27, 21, 22, 24, 16, 14 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E51F: db 27, 21, 22, 24, 16, 14 ; STR, INT, MAG, STM, SPD, LUK
 #_07E525: db 40, 0, 29, 5, 14 ; Alignment, TODO
 #_07E52A: db $1C, $1D, $0F ; Move1C, Move1D, Move0F
-#_07E52D: db $40, $B9, $65 ; no clue yet
+#_07E52D: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E530: db 0 ; CP
 #_07E531: db $00 ; ill find out
 
 .demon_10D
 #_07E532: db 80 ; level
 #_07E533: dw 1820, 150 ; HP, MP
-#_07E537: db 29, 19, 19, 26, 21, 13 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E537: db 29, 19, 19, 26, 21, 13 ; STR, INT, MAG, STM, SPD, LUK
 #_07E53D: db 32, 0, 30, 8, 14 ; Alignment, TODO
 #_07E542: db $0B, $1D, $16 ; Move0B, Move1D, Move16
-#_07E545: db $40, $B9, $65 ; no clue yet
+#_07E545: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E548: db 0 ; CP
 #_07E549: db $00 ; ill find out
 
 .demon_10E
 #_07E54A: db 77 ; level
 #_07E54B: dw 1610, 64 ; HP, MP
-#_07E54F: db 28, 15, 34, 29, 18, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E54F: db 28, 15, 34, 29, 18, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07E555: db 166, 0, 31, 5, 13 ; Alignment, TODO
 #_07E55A: db $01, $03, $17 ; Move01, Move03, Move17
-#_07E55D: db $40, $B9, $65 ; no clue yet
+#_07E55D: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E560: db 0 ; CP
 #_07E561: db $00 ; ill find out
 
 .demon_10F
 #_07E562: db 72 ; level
 #_07E563: dw 1520, 170 ; HP, MP
-#_07E567: db 30, 10, 13, 36, 19, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E567: db 30, 10, 13, 36, 19, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07E56D: db 160, 0, 29, 5, 10 ; Alignment, TODO
 #_07E572: db $1A, $24, $4E ; Move1A, Move24, Move4E
-#_07E575: db $40, $B9, $65 ; no clue yet
+#_07E575: db $40, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E578: db 0 ; CP
 #_07E579: db $00 ; ill find out
 
 .demon_110
 #_07E57A: db 71 ; level
 #_07E57B: dw 1730, 20 ; HP, MP
-#_07E57F: db 29, 10, 14, 26, 16, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E57F: db 29, 10, 14, 26, 16, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07E585: db 151, 0, 29, 8, 15 ; Alignment, TODO
 #_07E58A: db $68, $4E, $66 ; Move68, Move4E, Move66
-#_07E58D: db $4F, $EA, $65 ; no clue yet
+#_07E58D: db $4F, $EA, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E590: db 0 ; CP
 #_07E591: db $00 ; ill find out
 
 .demon_111
 #_07E592: db 81 ; level
 #_07E593: dw 1920, 200 ; HP, MP
-#_07E597: db 32, 17, 19, 30, 15, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E597: db 32, 17, 19, 30, 15, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07E59D: db 245, 0, 30, 8, 10 ; Alignment, TODO
 #_07E5A2: db $59, $07, $50 ; Move59, Move07, Move50
-#_07E5A5: db $4F, $B9, $65 ; no clue yet
+#_07E5A5: db $4F, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E5A8: db 0 ; CP
 #_07E5A9: db $00 ; ill find out
 
 .demon_112
 #_07E5AA: db 92 ; level
 #_07E5AB: dw 2420, 310 ; HP, MP
-#_07E5AF: db 36, 20, 24, 25, 21, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E5AF: db 36, 20, 24, 25, 21, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07E5B5: db 70, 0, 31, 9, 13 ; Alignment, TODO
 #_07E5BA: db $12, $16, $2B ; Move12, Move16, Move2B
-#_07E5BD: db $32, $B9, $65 ; no clue yet
+#_07E5BD: db $32, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E5C0: db 0 ; CP
 #_07E5C1: db $00 ; ill find out
 
 .demon_113
 #_07E5C2: db 69 ; level
 #_07E5C3: dw 2160, 256 ; HP, MP
-#_07E5C7: db 26, 20, 22, 24, 13, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E5C7: db 26, 20, 22, 24, 13, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07E5CD: db 180, 0, 28, 10, 12 ; Alignment, TODO
 #_07E5D2: db $0D, $0F, $2B ; Move0D, Move0F, Move2B
-#_07E5D5: db $4E, $B9, $65 ; no clue yet
+#_07E5D5: db $4E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E5D8: db 0 ; CP
 #_07E5D9: db $00 ; ill find out
 
 .demon_114
 #_07E5DA: db 81 ; level
 #_07E5DB: dw 2060, 240 ; HP, MP
-#_07E5DF: db 37, 17, 18, 26, 19, 11 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E5DF: db 37, 17, 18, 26, 19, 11 ; STR, INT, MAG, STM, SPD, LUK
 #_07E5E5: db 190, 0, 30, 5, 21 ; Alignment, TODO
 #_07E5EA: db $09, $0B, $28 ; Move09, Move0B, Move28
-#_07E5ED: db $4E, $B9, $65 ; no clue yet
+#_07E5ED: db $4E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E5F0: db 0 ; CP
 #_07E5F1: db $00 ; ill find out
 
 .demon_115
 #_07E5F2: db 96 ; level
 #_07E5F3: dw 1700, 370 ; HP, MP
-#_07E5F7: db 33, 24, 24, 30, 20, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E5F7: db 33, 24, 24, 30, 20, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07E5FD: db 21, 0, 34, 9, 21 ; Alignment, TODO
 #_07E602: db $0B, $05, $28 ; Move0B, Move05, Move28
-#_07E605: db $4E, $B9, $65 ; no clue yet
+#_07E605: db $4E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E608: db 0 ; CP
 #_07E609: db $00 ; ill find out
 
 .demon_116
 #_07E60A: db 83 ; level
 #_07E60B: dw 2310, 340 ; HP, MP
-#_07E60F: db 22, 20, 19, 33, 18, 18 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E60F: db 22, 20, 19, 33, 18, 18 ; STR, INT, MAG, STM, SPD, LUK
 #_07E615: db 44, 0, 31, 8, 12 ; Alignment, TODO
 #_07E61A: db $0F, $1A, $29 ; Move0F, Move1A, Move29
-#_07E61D: db $5E, $B9, $65 ; no clue yet
+#_07E61D: db $5E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E620: db 0 ; CP
 #_07E621: db $00 ; ill find out
 
 .demon_117
 #_07E622: db 91 ; level
 #_07E623: dw 2020, 380 ; HP, MP
-#_07E627: db 26, 26, 28, 21, 38, 19 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E627: db 26, 26, 28, 21, 38, 19 ; STR, INT, MAG, STM, SPD, LUK
 #_07E62D: db 34, 0, 33, 10, 14 ; Alignment, TODO
 #_07E632: db $05, $07, $0B ; Move05, Move07, Move0B
-#_07E635: db $5E, $B9, $65 ; no clue yet
+#_07E635: db $5E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E638: db 0 ; CP
 #_07E639: db $00 ; ill find out
 
 .demon_118
 #_07E63A: db 85 ; level
 #_07E63B: dw 1820, 180 ; HP, MP
-#_07E63F: db 33, 16, 17, 20, 18, 9 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E63F: db 33, 16, 17, 20, 18, 9 ; STR, INT, MAG, STM, SPD, LUK
 #_07E645: db 200, 0, 32, 9, 10 ; Alignment, TODO
 #_07E64A: db $1B, $69, $29 ; Move1B, Move69, Move29
-#_07E64D: db $5E, $B9, $65 ; no clue yet
+#_07E64D: db $5E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E650: db 0 ; CP
 #_07E651: db $00 ; ill find out
 
 .demon_119
 #_07E652: db 98 ; level
 #_07E653: dw 1920, 450 ; HP, MP
-#_07E657: db 29, 31, 27, 23, 32, 16 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E657: db 29, 31, 27, 23, 32, 16 ; STR, INT, MAG, STM, SPD, LUK
 #_07E65D: db 240, 0, 33, 10, 21 ; Alignment, TODO
 #_07E662: db $1D, $0B, $24 ; Move1D, Move0B, Move24
-#_07E665: db $5E, $B9, $65 ; no clue yet
+#_07E665: db $5E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E668: db 0 ; CP
 #_07E669: db $00 ; ill find out
 
 .demon_11A
 #_07E66A: db 100 ; level
 #_07E66B: dw 2110, 360 ; HP, MP
-#_07E66F: db 35, 12, 15, 38, 28, 15 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E66F: db 35, 12, 15, 38, 28, 15 ; STR, INT, MAG, STM, SPD, LUK
 #_07E675: db 233, 0, 30, 9, 14 ; Alignment, TODO
 #_07E67A: db $03, $56, $4E ; Move03, Move56, Move4E
-#_07E67D: db $50, $B9, $65 ; no clue yet
+#_07E67D: db $50, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E680: db 0 ; CP
 #_07E681: db $00 ; ill find out
 
 .demon_11B
 #_07E682: db 99 ; level
 #_07E683: dw 2250, 300 ; HP, MP
-#_07E687: db 35, 14, 22, 31, 19, 23 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E687: db 35, 14, 22, 31, 19, 23 ; STR, INT, MAG, STM, SPD, LUK
 #_07E68D: db 10, 0, 0, 8, 21 ; Alignment, TODO
 #_07E692: db $0F, $15, $2B ; Move0F, Move15, Move2B
-#_07E695: db $50, $B9, $65 ; no clue yet
+#_07E695: db $50, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E698: db 0 ; CP
 #_07E699: db $00 ; ill find out
 
 .demon_11C
 #_07E69A: db 99 ; level
 #_07E69B: dw 2250, 300 ; HP, MP
-#_07E69F: db 37, 15, 20, 32, 21, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E69F: db 37, 15, 20, 32, 21, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07E6A5: db 245, 0, 0, 8, 19 ; Alignment, TODO
 #_07E6AA: db $03, $1A, $1D ; Move03, Move1A, Move1D
-#_07E6AD: db $50, $B9, $65 ; no clue yet
+#_07E6AD: db $50, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E6B0: db 0 ; CP
 #_07E6B1: db $00 ; ill find out
 
 .demon_11D
 #_07E6B2: db 80 ; level
 #_07E6B3: dw 1710, 400 ; HP, MP
-#_07E6B7: db 28, 24, 21, 23, 21, 10 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E6B7: db 28, 24, 21, 23, 21, 10 ; STR, INT, MAG, STM, SPD, LUK
 #_07E6BD: db 230, 0, 31, 9, 18 ; Alignment, TODO
 #_07E6C2: db $19, $1D, $07 ; Move19, Move1D, Move07
-#_07E6C5: db $6E, $B9, $65 ; no clue yet
+#_07E6C5: db $6E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E6C8: db 0 ; CP
 #_07E6C9: db $00 ; ill find out
 
 .demon_11E
 #_07E6CA: db 108 ; level
 #_07E6CB: dw 2710, 433 ; HP, MP
-#_07E6CF: db 36, 15, 19, 23, 28, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E6CF: db 36, 15, 19, 23, 28, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07E6D5: db 255, 0, 33, 11, 13 ; Alignment, TODO
 #_07E6DA: db $10, $50, $42 ; Move10, Move50, Move42
-#_07E6DD: db $5E, $B9, $65 ; no clue yet
+#_07E6DD: db $5E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E6E0: db 0 ; CP
 #_07E6E1: db $00 ; ill find out
 
 .demon_11F
 #_07E6E2: db 116 ; level
 #_07E6E3: dw 10000, 340 ; HP, MP
-#_07E6E7: db 40, 30, 40, 38, 40, 34 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E6E7: db 40, 30, 40, 38, 40, 34 ; STR, INT, MAG, STM, SPD, LUK
 #_07E6ED: db 240, 0, 35, 11, 21 ; Alignment, TODO
 #_07E6F2: db $03, $69, $13 ; Move03, Move69, Move13
-#_07E6F5: db $7E, $B9, $65 ; no clue yet
+#_07E6F5: db $7E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E6F8: db 0 ; CP
 #_07E6F9: db $00 ; ill find out
 
 .demon_120
 #_07E6FA: db 110 ; level
 #_07E6FB: dw 10000, 400 ; HP, MP
-#_07E6FF: db 40, 36, 38, 40, 30, 38 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E6FF: db 40, 36, 38, 40, 30, 38 ; STR, INT, MAG, STM, SPD, LUK
 #_07E705: db 10, 0, 35, 11, 21 ; Alignment, TODO
 #_07E70A: db $03, $2B, $13 ; Move03, Move2B, Move13
-#_07E70D: db $7E, $B9, $65 ; no clue yet
+#_07E70D: db $7E, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E710: db 0 ; CP
 #_07E711: db $00 ; ill find out
 
 .demon_121
 #_07E712: db 32 ; level
 #_07E713: dw 340, 80 ; HP, MP
-#_07E717: db 23, 9, 10, 16, 12, 8 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E717: db 23, 9, 10, 16, 12, 8 ; STR, INT, MAG, STM, SPD, LUK
 #_07E71D: db 120, 0, 18, 4, 13 ; Alignment, TODO
 #_07E722: db $09, $69, $24 ; Move09, Move69, Move24
-#_07E725: db $60, $B9, $65 ; no clue yet
+#_07E725: db $60, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E728: db 0 ; CP
 #_07E729: db $00 ; ill find out
 
 .demon_122
 #_07E72A: db 32 ; level
 #_07E72B: dw 290, 70 ; HP, MP
-#_07E72F: db 18, 10, 13, 11, 8, 7 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E72F: db 18, 10, 13, 11, 8, 7 ; STR, INT, MAG, STM, SPD, LUK
 #_07E735: db 118, 0, 18, 8, 14 ; Alignment, TODO
 #_07E73A: db $2D, $1E, $23 ; Move2D, Move1E, Move23
-#_07E73D: db $60, $B9, $65 ; no clue yet
+#_07E73D: db $60, $B9, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E740: db 0 ; CP
 #_07E741: db $00 ; ill find out
 
 .demon_123
 #_07E742: db 99 ; level
 #_07E743: dw 999, 999 ; HP, MP
-#_07E747: db 25, 35, 25, 20, 40, 40 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E747: db 25, 35, 25, 20, 40, 40 ; STR, INT, MAG, STM, SPD, LUK
 #_07E74D: db 127, 0, 24, 0, 14 ; Alignment, TODO
 #_07E752: db $1C, $1B, $1D ; Move1C, Move1B, Move1D
-#_07E755: db $73, $37, $65 ; no clue yet
+#_07E755: db $73, $37, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E758: db 0 ; CP
 #_07E759: db $00 ; ill find out
 
 .demon_124
 #_07E75A: db 99 ; level
 #_07E75B: dw 999, 999 ; HP, MP
-#_07E75F: db 40, 10, 25, 30, 35, 20 ; STR, INT, MAG, STM, SPD, LUK, STAT_11C
+#_07E75F: db 40, 10, 25, 30, 35, 20 ; STR, INT, MAG, STM, SPD, LUK
 #_07E765: db 0, 0, 24, 0, 10 ; Alignment, TODO
 #_07E76A: db $10, $17, $18 ; Move10, Move17, Move18
-#_07E76D: db $73, $30, $65 ; no clue yet
+#_07E76D: db $73, $30, $65 ; ; Experience/Drop rate, Drop item, Unknown/Magstone drop rate
 #_07E770: db 0 ; CP
 #_07E771: db $00 ; ill find out
 

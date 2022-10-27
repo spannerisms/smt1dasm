@@ -3213,7 +3213,7 @@ TextCommand_2B:
 #_03942B: LDA.w $0E00
 #_03942E: LDX.w $0E02
 #_039431: LDY.w #$000A
-#_039434: JSL Divide_32bit_by_16bit_with_arguments
+#_039434: JSL Divide_32bit_by_16bit_XA_by_Y
 #_039438: PLX
 
 #_039439: SEP #$20
@@ -5338,7 +5338,7 @@ routine03AA7C:
 #_03AA8B: LDX.w $0E16
 #_03AA8E: LDA.w $0E14
 #_03AA91: LDY.w #$0064
-#_03AA94: JSL Divide_32bit_by_16bit_with_arguments
+#_03AA94: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03AA98: PLX
 #_03AA99: LDA.w $102E,X
 #_03AA9C: SEC
@@ -5846,7 +5846,7 @@ TextExtCMD_1A:
 #_03ADDB: JSR GetNextTextByte
 #_03ADDE: LDA.b #$81
 #_03ADE0: STA.w $0C4F
-#_03ADE3: JSL routine00C55F
+#_03ADE3: JSL HideTheMenu
 
 #_03ADE7: REP #$20
 #_03ADE9: LDA.w $07F5
@@ -7174,7 +7174,7 @@ routine03B5FE:
 
 .branch03B677
 #_03B677: JSL routine02D67C
-#_03B67B: JSL routine00A0AE
+#_03B67B: JSL UpdateDialogBox
 #_03B67F: JSL routine0F84F6
 
 #_03B683: SEP #$30
@@ -7182,7 +7182,7 @@ routine03B5FE:
 #_03B687: LDX.b #$00
 #_03B689: LDY.b #$01
 
-#_03B68B: JSL routine009303
+#_03B68B: JSL GraduallyFadeStuff
 #_03B68F: JSL routine0F9342
 #_03B693: JSL routine0F939C
 
@@ -8835,7 +8835,7 @@ HealPercetageOfHP:
 #_03C292: PHX
 #_03C293: LDA.w $1030,X
 #_03C296: LDX.w #$0000
-#_03C299: JSL Divide_32bit_by_16bit_with_arguments
+#_03C299: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03C29D: PLX
 #_03C29E: LDA.w $0E80
 #_03C2A1: CLC
@@ -8855,7 +8855,7 @@ HealPercetageOfMP:
 #_03C2B1: PHX
 #_03C2B2: LDA.w $1034,X
 #_03C2B5: LDX.w #$0000
-#_03C2B8: JSL Divide_32bit_by_16bit_with_arguments
+#_03C2B8: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03C2BC: PLX
 #_03C2BD: LDA.w $0E80
 #_03C2C0: CLC
@@ -10148,7 +10148,7 @@ TextCommand_3E:
 #_03CAD1: TAY
 #_03CAD2: LDA.w $102E,X
 #_03CAD5: LDX.w #$0000
-#_03CAD8: JSL Divide_32bit_by_16bit_with_arguments
+#_03CAD8: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03CADC: PLX
 #_03CADD: LDA.w $1030
 #_03CAE0: SEC
@@ -10183,7 +10183,7 @@ TextCommand_3E:
 #_03CB0E: TAY
 #_03CB0F: LDA.w $1032,X
 #_03CB12: LDX.w #$0000
-#_03CB15: JSL Divide_32bit_by_16bit_with_arguments
+#_03CB15: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03CB19: PLX
 #_03CB1A: LDA.w $1034
 #_03CB1D: SEC
@@ -15360,7 +15360,7 @@ FusionWithVilePlus
 #_03F102: STA.w $0C39
 #_03F105: LDX.w #$0000
 #_03F108: LDY.w #$0003
-#_03F10B: JSL Divide_32bit_by_16bit_with_arguments
+#_03F10B: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03F10F: LDA.w $0E86
 #_03F112: AND.w #$00FF
 #_03F115: BNE .branch03F15C
@@ -15378,7 +15378,7 @@ FusionWithVilePlus
 #_03F12B: STA.w $0C39
 #_03F12E: LDX.w #$0000
 #_03F131: LDY.w #$0007
-#_03F134: JSL Divide_32bit_by_16bit_with_arguments
+#_03F134: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03F138: LDA.w $0E86
 #_03F13B: AND.w #$00FF
 #_03F13E: BNE .branch03F15C
@@ -15750,7 +15750,7 @@ routine03F323:
 #_03F3AC: ADC.w $0C03
 #_03F3AF: LDX.w #$0000
 #_03F3B2: LDY.w #$0003
-#_03F3B5: JSL Divide_32bit_by_16bit_with_arguments
+#_03F3B5: JSL Divide_32bit_by_16bit_XA_by_Y
 #_03F3B9: LDA.w $0E80
 #_03F3BC: CLC
 #_03F3BD: ADC.w $0E0E

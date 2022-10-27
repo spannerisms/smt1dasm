@@ -259,7 +259,7 @@ routine028172:
 #_0281BA: JSL LoadClassyMessage
 #_0281BE: JSL routine03837C
 #_0281C2: JSR routine028203
-#_0281C5: JSL routine00A0AE
+#_0281C5: JSL UpdateDialogBox
 #_0281C9: JSL routine02BEEB
 #_0281CD: BRA .branch028200
 
@@ -276,7 +276,7 @@ routine028172:
 #_0281E2: JSL routine00A056
 #_0281E6: JSL LoadClassyMessage
 #_0281EA: JSL routine03837C
-#_0281EE: JSL routine00A0AE
+#_0281EE: JSL UpdateDialogBox
 #_0281F2: JSR routine028203
 
 #_0281F5: SEP #$20
@@ -298,7 +298,7 @@ routine028203:
 #_028206: LDA.w $102E
 #_028209: LDX.w #$0000
 #_02820C: LDY.w #$000A
-#_02820F: JSL Divide_32bit_by_16bit_with_arguments
+#_02820F: JSL Divide_32bit_by_16bit_XA_by_Y
 #_028213: LDA.w $102E
 #_028216: SEC
 #_028217: SBC.w $0E80
@@ -2749,7 +2749,7 @@ routine029160:
 #_029163: LDA.b #$04
 #_029165: LDX.b #$00
 #_029167: LDY.b #$01
-#_029169: JSL routine009303
+#_029169: JSL GraduallyFadeStuff
 #_02916D: LDA.w $0F74
 #_029170: ORA.b #$02
 #_029172: STA.w $0F74
@@ -8335,8 +8335,11 @@ data02CA3A:
 #_02CA42: db $0C,$0C,$0C,$0C,$0C,$0C,$0C,$0C
 #_02CA4A: db $00
 
+;===================================================================================================
+
 routine02CA4B:
 #_02CA4B: REP #$30
+
 #_02CA4D: LDA.w $09F9
 #_02CA50: BEQ .branch02CA73
 
@@ -8344,6 +8347,7 @@ routine02CA4B:
 #_02CA55: BNE .branch02CA73
 
 #_02CA57: SEP #$20
+
 #_02CA59: INC.w $09F5
 #_02CA5C: LDA.w $09F5
 #_02CA5F: CMP.b #$20
@@ -8364,17 +8368,22 @@ routine02CA4B:
 
 .branch02CA78
 #_02CA78: REP #$20
+
 #_02CA7A: LDA.w $09F3
 #_02CA7D: STA.w $0E00
+
 #_02CA80: LDA.w $09F2
 #_02CA83: STA.w $0E02
+
 #_02CA86: LDA.w $0F2D
 #_02CA89: STA.w $09F9
+
 #_02CA8C: LDA.w $0F2B
 #_02CA8F: AND.w #$0800
 #_02CA92: BEQ .branch02CA9F
 
 #_02CA94: SEP #$20
+
 #_02CA96: DEC.w $09F3
 #_02CA99: LDA.b #!SFX_01
 #_02CA9B: JSL Write_to_APU_transferrable
@@ -8691,7 +8700,7 @@ routine02CDBC:
 #_02CDBE: PHB
 #_02CDBF: PHK
 #_02CDC0: PLB
-#_02CDC1: JSL routine00A0AE
+#_02CDC1: JSL UpdateDialogBox
 #_02CDC5: LDA.b #$80
 #_02CDC7: STA.w $0F0E
 #_02CDCA: LDX.b #$7F
@@ -11723,7 +11732,7 @@ routine02E60A:
 #_02E635: LDA.w $0E00
 #_02E638: LDX.b #$00
 #_02E63A: LDY.b #$01
-#_02E63C: JSL routine009303
+#_02E63C: JSL GraduallyFadeStuff
 #_02E640: RTS
 
 .disable_layer_2
@@ -12086,7 +12095,7 @@ routine02E87C:
 #_02E882: LDA.b #$04
 #_02E884: LDX.b #$00
 #_02E886: LDY.b #$01
-#_02E888: JSL routine009303
+#_02E888: JSL GraduallyFadeStuff
 #_02E88C: JSL routine02E8FB
 #_02E890: JSL routine02E57B
 #_02E894: PLB
@@ -12250,7 +12259,7 @@ routine02E98E:
 #_02E9B6: LDA.b #$04
 #_02E9B8: LDX.b #$00
 #_02E9BA: LDY.b #$01
-#_02E9BC: JSL routine009303
+#_02E9BC: JSL GraduallyFadeStuff
 
 #_02E9C0: SEP #$30
 #_02E9C2: LDA.b #$00

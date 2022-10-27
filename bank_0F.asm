@@ -1637,7 +1637,7 @@ routine0F8B94:
 
 #_0F8CDB: LDX.w #$0000
 #_0F8CDE: LDY.w #$000A
-#_0F8CE1: JSL Divide_32bit_by_16bit_with_arguments
+#_0F8CE1: JSL Divide_32bit_by_16bit_XA_by_Y
 
 #_0F8CE5: LDA.w $0E80
 #_0F8CE8: AND.w #$00FF
@@ -2407,7 +2407,7 @@ routine0F916F:
 #_0F91D2: STZ.b $0F,X
 #_0F91D4: STA.w MAINDES
 #_0F91D7: JSL routine0F945E
-#_0F91DB: JSL routine00A0AE
+#_0F91DB: JSL UpdateDialogBox
 #_0F91DF: LDA.w #$8D07
 #_0F91E2: ROL A
 #_0F91E3: ASL A
@@ -2660,7 +2660,7 @@ routine0F939C:
 
 #_0F93B5: LDX.b #$00
 #_0F93B7: LDY.b #$01
-#_0F93B9: JSL routine009303
+#_0F93B9: JSL GraduallyFadeStuff
 #_0F93BD: LDA.b #$FF
 #_0F93BF: STA.w $0EEF
 #_0F93C2: LDA.b #$43
@@ -3566,7 +3566,7 @@ routine0F99C2:
 #_0F99FA: LDA.w $0E14
 #_0F99FD: LDX.w #$0000
 #_0F9A00: LDY.w $0E02
-#_0F9A03: JSL Divide_32bit_by_16bit_with_arguments
+#_0F9A03: JSL Divide_32bit_by_16bit_XA_by_Y
 #_0F9A07: PLX
 #_0F9A08: LDA.w $0E80
 #_0F9A0B: CLC
@@ -4516,7 +4516,7 @@ R0FA05F_DoesVRAMDMAs:
 #_0FA065: LDA.b #$0C
 #_0FA067: LDX.b #$00
 #_0FA069: LDY.b #$01
-#_0FA06B: JSL routine009303
+#_0FA06B: JSL GraduallyFadeStuff
 #_0FA06F: JSL routine02E350
 #_0FA073: LDA.b #$01
 #_0FA075: JSL VRAM_From_7FXXXX
