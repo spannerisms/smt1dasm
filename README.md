@@ -14,3 +14,6 @@ I can be found on Discord as kan#7240 either on the ALTTP Randomizer server (you
   * Female protagonist: Momo
   * Lawful hero: Jimmy
   * Chaotic hero: "him"
+
+## Special thanks
+* Aikiomik for [their independent documentation of this disassembly](https://github.com/akiomik/smt1-note), which provided useful material for me to borrow.

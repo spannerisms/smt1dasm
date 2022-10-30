@@ -37,7 +37,7 @@ routine028000:
 Module_Overworld:
 #_028032: SEP #$30
 
-#_028034: LDA.b #$02
+#_028034: LDA.b #Module_Overworld>>16
 #_028036: PHA
 #_028037: PLB
 
@@ -180,11 +180,11 @@ routine02813F:
 #_028144: JSL TestGameProgressBit
 #_028148: BCS .branch02814E
 
-#_02814A: LDA.b #!SONG_4E_KICHIJOI
+#_02814A: LDA.b #$4E ; SONG 4E
 #_02814C: BRA .branch028150
 
 .branch02814E
-#_02814E: LDA.b #!SONG_4F_RUINS
+#_02814E: LDA.b #$4F ; SONG 4F
 
 .branch028150
 #_028150: JSL Write_to_APU_transferrable
@@ -198,11 +198,11 @@ routine028156:
 #_02815B: JSL TestGameProgressBit
 #_02815F: BCS .branch028165
 
-#_028161: LDA.b #!SONG_4E_KICHIJOI
+#_028161: LDA.b #$4E ; SONG 4E
 #_028163: BRA .branch028167
 
 .branch028165
-#_028165: LDA.b #!SONG_4F_RUINS
+#_028165: LDA.b #$4F ; SONG 4F
 
 .branch028167
 #_028167: JSL Write_to_APU
@@ -254,7 +254,7 @@ routine028172:
 
 #_0281AE: SEP #$20
 #_0281B0: LDA.b #$03
-#_0281B2: JSL routine00B99C
+#_0281B2: JSL InitializeTextBoxToSizeForNewMessage
 #_0281B6: JSL routine00A056
 #_0281BA: JSL LoadClassyMessage
 #_0281BE: JSL routine03837C
@@ -272,7 +272,7 @@ routine028172:
 
 #_0281DA: SEP #$20
 #_0281DC: LDA.b #$03
-#_0281DE: JSL routine00B99C
+#_0281DE: JSL InitializeTextBoxToSizeForNewMessage
 #_0281E2: JSL routine00A056
 #_0281E6: JSL LoadClassyMessage
 #_0281EA: JSL routine03837C
@@ -298,7 +298,7 @@ routine028203:
 #_028206: LDA.w $102E
 #_028209: LDX.w #$0000
 #_02820C: LDY.w #$000A
-#_02820F: JSL Divide_32bit_by_16bit_XA_by_Y
+#_02820F: JSL DivisionBig_XA_by_Y
 #_028213: LDA.w $102E
 #_028216: SEC
 #_028217: SBC.w $0E80
@@ -1270,11 +1270,13 @@ routine02877F:
 #_0287AB: RTS
 
 ;===================================================================================================
-
-; TODO POSSIBLY UNUSED ROUTINE
-routine0287AC:
+; UNUSED ROUTINE
+;===================================================================================================
+LoadThree:
 #_0287AC: SEP #$20
+
 #_0287AE: LDA.b #$03
+
 #_0287B0: RTS
 
 ;===================================================================================================
@@ -1369,9 +1371,11 @@ DisableNMI_B02:
 
 ;===================================================================================================
 
-Update19xxUntilYZero:
+RunFramesYTimes:
 #_028849: PHP
+
 #_02884A: REP #$30
+
 #_02884C: PHA
 #_02884D: PHX
 #_02884E: PHY
@@ -1382,17 +1386,21 @@ Update19xxUntilYZero:
 
 .branch028853
 #_028853: PHY
+
 #_028854: JSL AddSelfAsVector
+
 #_028858: PLY
 #_028859: DEY
 #_02885A: BNE .branch028853
 
 #_02885C: REP #$30
+
 #_02885E: PLB
 #_02885F: PLD
 #_028860: PLY
 #_028861: PLX
 #_028862: PLA
+
 #_028863: PLP
 #_028864: RTL
 
@@ -3041,7 +3049,7 @@ data0296D7:
 #_0296EE: JSL routine02981B
 
 #_0296F2: SEP #$20
-#_0296F4: LDA.b #!SONG_COMMAND_FD
+#_0296F4: LDA.b #$FD ; SONG FD COMMAND
 #_0296F6: JSL Write_to_APU_transferrable
 
 #_0296FA: REP #$20
@@ -3074,7 +3082,7 @@ data0296D7:
 #_029741: LDX.b #$00
 #_029743: LDY.b #$04
 #_029745: JSL routine009508
-#_029749: LDA.b #!SONG_52_DREAM
+#_029749: LDA.b #$52 ; SONG 52
 #_02974B: JSL Write_to_APU_transferrable
 #_02974F: JSR routine02997B
 #_029752: JSL DarkenScreen
@@ -3105,10 +3113,10 @@ data0296D7:
 #_029796: STA.w $0F00
 
 #_029799: SEP #$30
-#_02979B: LDA.b #!SONG_COMMAND_FD
+#_02979B: LDA.b #$FD ; SONG FD COMMAND
 #_02979D: JSL Write_to_APU_transferrable
 #_0297A1: LDY.b #$78
-#_0297A3: JSL Update19xxUntilYZero
+#_0297A3: JSL RunFramesYTimes
 
 #_0297A7: REP #$30
 #_0297A9: STZ.w $0A33
@@ -3398,7 +3406,7 @@ routine02997B:
 
 #_029A00: REP #$30
 #_029A02: LDY.w #$0120
-#_029A05: JSL Update19xxUntilYZero
+#_029A05: JSL RunFramesYTimes
 
 #_029A09: SEP #$30
 #_029A0B: LDA.b #$14
@@ -3417,7 +3425,7 @@ routine02997B:
 
 #_029A2F: REP #$30
 #_029A31: LDY.w #$0040
-#_029A34: JSL Update19xxUntilYZero
+#_029A34: JSL RunFramesYTimes
 #_029A38: PLP
 #_029A39: RTS
 
@@ -4058,17 +4066,17 @@ routine029E97:
 #_029F28: LDA.w #$0027
 #_029F2B: JSL routine02FC6E
 #_029F2F: JSL BrightenScreen
-#_029F33: LDA.w #!SONG_40_SONGin7000
+#_029F33: LDA.w #$0040 ; SONG 40
 #_029F36: JSL Write_to_APU_transferrable
 #_029F3A: LDY.w #$0028
-#_029F3D: JSL Update19xxUntilYZero
+#_029F3D: JSL RunFramesYTimes
 #_029F41: LDA.w #$0027
 #_029F44: JSL routine02FC09
 #_029F48: LDX.w #$0000
 
 .branch029F4B
 #_029F4B: PHX
-#_029F4C: LDA.w #!SFX_32
+#_029F4C: LDA.w #$0032 ; SFX 32
 #_029F4F: JSL Write_to_APU_transferrable
 #_029F53: JSR routine02A163
 #_029F56: JSR routine02A18E
@@ -4078,7 +4086,7 @@ routine029E97:
 #_029F5E: CPX.w $0A3B
 #_029F61: BNE .branch029F4B
 
-#_029F63: LDA.w #!SFX_33
+#_029F63: LDA.w #$0033 ; SFX 33
 #_029F66: JSL Write_to_APU_transferrable
 #_029F6A: JSR routine02A465
 #_029F6D: JSR routine02A51F
@@ -4150,10 +4158,10 @@ routine029FCC:
 #_029FFF: JSL routine0F84F6
 
 #_02A003: SEP #$30
-#_02A005: LDA.b #!SONG_44_JAKYOU
+#_02A005: LDA.b #$44 ; SONG 44
 #_02A007: JSL Write_to_APU
 #_02A00B: LDA.b #$07
-#_02A00D: JSL routine00B99C
+#_02A00D: JSL InitializeTextBoxToSizeForNewMessage
 #_02A011: JSL routine00A056
 #_02A015: PLB
 #_02A016: RTL
@@ -4272,7 +4280,7 @@ routine02A10D:
 #_02A110: LDA.b #$02
 #_02A112: STA.w $0F74
 #_02A115: STA.w MAINDES
-#_02A118: LDA.b #!SFX_35
+#_02A118: LDA.b #$35 ; SFX 35
 #_02A11A: JSL Write_to_APU_transferrable
 
 #_02A11E: REP #$30
@@ -4291,7 +4299,7 @@ routine02A10D:
 #_02A142: STA.w $0F74
 #_02A145: STA.w MAINDES
 #_02A148: LDY.b #$14
-#_02A14A: JSL Update19xxUntilYZero
+#_02A14A: JSL RunFramesYTimes
 #_02A14E: LDY.b #$20
 
 .branch02A150
@@ -4468,7 +4476,7 @@ routine02A23E:
 .branch02A259
 #_02A259: AND.w #$00FF
 #_02A25C: TAY
-#_02A25D: JSL Update19xxUntilYZero
+#_02A25D: JSL RunFramesYTimes
 #_02A261: JSR routine02A267
 #_02A264: PLA
 #_02A265: PLX
@@ -4782,7 +4790,7 @@ routine02A465:
 #_02A48A: LDX.w #$0036
 #_02A48D: JSL routine0F85AF
 #_02A491: LDY.w $0E10
-#_02A494: JSL Update19xxUntilYZero
+#_02A494: JSL RunFramesYTimes
 #_02A498: LDA.w $0E14
 #_02A49B: CLC
 #_02A49C: ADC.w $0E12
@@ -4827,7 +4835,7 @@ routine02A465:
 #_02A4F5: LDX.w #$0036
 #_02A4F8: JSL routine0F85AF
 #_02A4FC: LDY.w #$001E
-#_02A4FF: JSL Update19xxUntilYZero
+#_02A4FF: JSL RunFramesYTimes
 #_02A503: LDY.w #$001F
 
 .branch02A506
@@ -4851,7 +4859,7 @@ routine02A51F:
 #_02A520: JSL Reset_OAMrelatedWRAM
 
 #_02A524: SEP #$30
-#_02A526: LDA.b #!SFX_34
+#_02A526: LDA.b #$34 ; SFX 34
 #_02A528: JSL Write_to_APU_transferrable
 #_02A52C: LDA.b #$2E
 #_02A52E: JSL routine02F609
@@ -4886,7 +4894,7 @@ routine02A51F:
 #_02A57A: STA.w $1A08
 #_02A57D: STA.w $1A18
 #_02A580: LDY.w #$0050
-#_02A583: JSL Update19xxUntilYZero
+#_02A583: JSL RunFramesYTimes
 #_02A587: JSL Reset_OAMrelatedWRAM
 #_02A58B: PLP
 #_02A58C: RTS
@@ -5429,7 +5437,7 @@ routine02AD0D:
 #_02ADF1: LDY.w #$0002
 #_02ADF4: JSL routine03D775
 #_02ADF8: JSL routine0384F9_long
-#_02ADFC: JSL Update19XXuntil0100
+#_02ADFC: JSL RunFramesUntil0100IsFlagged
 #_02AE00: LDA.w $0980
 #_02AE03: CLC
 #_02AE04: ADC.w #$0040
@@ -6423,7 +6431,7 @@ routine02BA95:
 #_02BA98: PHB
 
 #_02BA99: SEP #$20
-#_02BA9B: LDA.b #$02
+#_02BA9B: LDA.b #routine02BA95>>16
 #_02BA9D: PHA
 
 #_02BA9E: REP #$20
@@ -6475,7 +6483,7 @@ routine02BACF:
 #_02BAE8: DEY
 
 .branch02BAE9
-#_02BAE9: JSL Update19XXuntil0100
+#_02BAE9: JSL RunFramesUntil0100IsFlagged
 #_02BAED: PHY
 #_02BAEE: LDX.w #$0001
 #_02BAF1: JSR routine02BB25
@@ -6586,7 +6594,7 @@ data02BB9A:
 ; TODO POSSIBLY UNUSED ROUTINE
 routine02BBBA:
 #_02BBBA: PHP
-#_02BBBB: JSL Update19XXuntil0100
+#_02BBBB: JSL RunFramesUntil0100IsFlagged
 
 #_02BBBF: SEP #$20
 #_02BBC1: LDA.b #$10
@@ -6748,7 +6756,7 @@ data02BCC2:
 
 routine02BCCE:
 #_02BCCE: REP #$30
-#_02BCD0: JSL Update19XXuntil0100
+#_02BCD0: JSL RunFramesUntil0100IsFlagged
 #_02BCD4: LDA.w #$3F1C
 #_02BCD7: STA.w $0CEE
 #_02BCDA: LDA.w #$00FF
@@ -6793,6 +6801,7 @@ Handle_IdleHUD:
 #_02BD24: LDA.w $0B3A
 #_02BD27: AND.w #$0080
 #_02BD2A: BEQ .active
+
 #_02BD2C: RTS
 
 .active
@@ -6800,20 +6809,25 @@ Handle_IdleHUD:
 #_02BD30: AND.w #$00FF
 #_02BD33: ASL A
 #_02BD34: TAY
-#_02BD35: LDA.w .slide,Y
+
+#_02BD35: LDA.w .slide_vectors,Y
 #_02BD38: STA.w $00E0
+
 #_02BD3B: JMP ($00E0)
 
-.slide
+.slide_vectors
 #_02BD3E: dw IdleHUD_StartSlide_and_Money
 #_02BD40: dw IdleHUD_StartSlide_and_MAG
 #_02BD42: dw IdleHUD_AllOpen
+
+;===================================================================================================
 
 ; TODO figure this out more
 ; 194X stuff seems related to OAM
 IdleHUD_StartSlide_and_Money:
 #_02BD44: SEP #$20
-#_02BD46: LDA.b #YEN
+
+#_02BD46: LDA.b #$5B ; Yen symbol
 #_02BD48: STA.w $0CC6
 
 #_02BD4B: LDA.b #$EC
@@ -6825,11 +6839,12 @@ IdleHUD_StartSlide_and_Money:
 .yen
 #_02BD56: REP #$20
 
-#_02BD58: LDA.w #VRAMaddr($78EC)
+#_02BD58: LDA.w #$3C76 ; $78EC VRAM
 #_02BD5B: STA.w $0C5C
 
 #_02BD5E: LDA.w $0405 ; 32 bit money
 #_02BD61: STA.w $0E10
+
 #_02BD64: LDA.w $0407
 #_02BD67: STA.w $0E12
 
@@ -6867,24 +6882,28 @@ IdleHUD_StartSlide_and_Money:
 
 #_02BDA6: RTS
 
+;===================================================================================================
+
 IdleHUD_StartSlide_and_MAG:
 #_02BDA7: REP #$20
+
 #_02BDA9: LDA.w $0C64
 #_02BDAC: CMP.w #$00FF
-#_02BDAF: BEQ .branch02BDB2
+#_02BDAF: BEQ .continue
 
 #_02BDB1: RTS
 
-.branch02BDB2
-#_02BDB2: SEP #$20
+.continue
+#_02BDB2: SEP #$20 ; !WTF
 #_02BDB4: REP #$20
-#_02BDB6: LDA.w #VRAMaddr($792C)
+
+#_02BDB6: LDA.w #$3C96 ; $792C VRAM
 #_02BDB9: STA.w $0C5C
+
 #_02BDBC: LDA.w $0409
-
 #_02BDBF: STA.w $0E10
-#_02BDC2: LDA.w $040B
 
+#_02BDC2: LDA.w $040B
 #_02BDC5: STA.w $0E12
 
 #_02BDC8: LDX.w #$0001
@@ -6898,12 +6917,18 @@ IdleHUD_StartSlide_and_MAG:
 #_02BDDA: STZ.w $0C64
 
 #_02BDDD: SEP #$20
+
 #_02BDDF: LDA.b #$A7
 #_02BDE1: STA.w $0CC6
+
 #_02BDE4: INC A
 #_02BDE5: STA.w $0CC7
+
 #_02BDE8: INC.w $0B3A
+
 #_02BDEB: RTS
+
+;===================================================================================================
 
 IdleHUD_AllOpen:
 #_02BDEC: RTS
@@ -6913,6 +6938,7 @@ IdleHUD_AllOpen:
 ;===================================================================================================
 Draw_MoneyMagCount_toHUD:
 #_02BDED: PHP
+
 #_02BDEE: SEP #$30
 
 #_02BDF0: PHX
@@ -6923,6 +6949,7 @@ Draw_MoneyMagCount_toHUD:
 
 .next_tile
 #_02BDF8: SEP #$20
+
 #_02BDFA: LDA.w $0E00,Y
 #_02BDFD: CMP.b #$CF
 #_02BDFF: BNE .nonempty_tile
@@ -6931,6 +6958,7 @@ Draw_MoneyMagCount_toHUD:
 
 .nonempty_tile
 #_02BE03: STA.w $0CC6,X
+
 #_02BE06: INX
 #_02BE07: DEY
 #_02BE08: BPL .next_tile
@@ -6942,45 +6970,58 @@ Draw_MoneyMagCount_toHUD:
 
 routine02BE0C:
 #_02BE0C: PHP
+
 #_02BE0D: SEP #$20
 #_02BE0F: REP #$10
+
 #_02BE11: PHB
 #_02BE12: PHK
 #_02BE13: PLB
+
 #_02BE14: LDX.w #$0000
 
-.branch02BE17
+.next
 #_02BE17: LDA.w data02C824,X
 #_02BE1A: CMP.b #$FF
 #_02BE1C: BEQ .branch02BE3C
 
 #_02BE1E: CMP.w $07F5
-#_02BE21: BNE .branch02BE2B
+#_02BE21: BNE .skip
 
 #_02BE23: LDA.w data02C825,X
 #_02BE26: CMP.w $07F6
 #_02BE29: BEQ .branch02BE31
 
-.branch02BE2B
+.skip
 #_02BE2B: INX
 #_02BE2C: INX
 #_02BE2D: INX
 #_02BE2E: INX
-#_02BE2F: BRA .branch02BE17
+#_02BE2F: BRA .next
+
+;---------------------------------------------------------------------------------------------------
 
 .branch02BE31
 #_02BE31: REP #$20
+
 #_02BE33: LDA.w data02C826,X
 #_02BE36: STA.w $0A12
+
 #_02BE39: PLB
+
 #_02BE3A: PLP
 #_02BE3B: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch02BE3C
 #_02BE3C: REP #$20
+
 #_02BE3E: LDA.w #$0000
 #_02BE41: STA.w $0A12
+
 #_02BE44: PLB
+
 #_02BE45: PLP
 #_02BE46: RTS
 
@@ -7020,33 +7061,48 @@ routine02BE47:
 #_02BE90: JSR DisableNMI_B02
 #_02BE93: JSL ZeroVRAM_02
 #_02BE97: JSL ZeroCGRAM_02
+
 #_02BE9B: LDA.b #$00
 #_02BE9D: JSR routine02C10F
+
 #_02BEA0: LDA.b #$00
 #_02BEA2: JSL routine02F609
+
 #_02BEA6: LDA.b #$00
 #_02BEA8: JSL routine02FC6E
 #_02BEAC: JSL routine0F9AE1
 
+;---------------------------------------------------------------------------------------------------
+
 #_02BEB0: REP #$20
+
 #_02BEB2: LDA.w #$3D83
 #_02BEB5: STA.w $0A0B
+
 #_02BEB8: LDA.w #$3DC4
 #_02BEBB: STA.w $0A1A
+
 #_02BEBE: LDA.w #$0018
 #_02BEC1: STA.w $0A1E
+
 #_02BEC4: LDA.w #$000C
 #_02BEC7: STA.w $0A20
+
 #_02BECA: LDA.w #$0002
 #_02BECD: STA.w $0A1C
+
 #_02BED0: JSR DisableFBlank_02
 #_02BED3: JSR EnableNMI_B02
+
 #_02BED6: LDA.w #$0001
 #_02BED9: JSL routine02CBD1
+
 #_02BEDD: LDA.w #$0007
 #_02BEE0: JSL routine02CBD1
 #_02BEE4: JSL routine00A17E
+
 #_02BEE8: PLB
+
 #_02BEE9: PLP
 #_02BEEA: RTL
 
@@ -7220,7 +7276,7 @@ routine02C03A:
 #_02C05B: LSR A
 #_02C05C: STA.w $0714
 #_02C05F: PHB
-#_02C060: LDA.b #$01
+#_02C060: LDA.b #$01 ; TODO make label
 #_02C062: PHA
 #_02C063: PLB
 #_02C064: JSL routine0F850B
@@ -7453,7 +7509,7 @@ routine02C1D3:
 #_02C1F6: LDA.b #$07
 #_02C1F8: JSL routine02CBD1
 #_02C1FC: LDA.b #$03
-#_02C1FE: JSL routine00B99C
+#_02C1FE: JSL InitializeTextBoxToSizeForNewMessage
 #_02C202: JSL routine00A056
 
 #_02C206: REP #$30
@@ -7533,7 +7589,7 @@ routine02C1D3:
 #_02C2D1: STA.w $0148
 #_02C2D4: LDA.w #$0003
 #_02C2D7: STA.w $0100
-#_02C2DA: JSL Update19XXuntil0100
+#_02C2DA: JSL RunFramesUntil0100IsFlagged
 #_02C2DE: STZ.w $0E00
 
 .branch02C2E1
@@ -7905,7 +7961,7 @@ routine02C3FC:
 #_02C60B: JSL routine00A17E
 #_02C60F: JSL routine0F84F6
 #_02C613: LDA.b #$03
-#_02C615: JSL routine00B99C
+#_02C615: JSL InitializeTextBoxToSizeForNewMessage
 #_02C619: JSL routine00A056
 #_02C61D: PLB
 #_02C61E: RTL
@@ -8214,7 +8270,7 @@ routine02C929:
 #_02C92C: BNE .branch02C902
 
 .branch02C92E
-#_02C92E: LDA.b #!SFX_03
+#_02C92E: LDA.b #$03 ; SFX 03
 #_02C930: JSL Write_to_APU_transferrable
 #_02C934: LDA.b #$FF
 #_02C936: STA.w $0A58
@@ -8224,7 +8280,7 @@ routine02C929:
 
 .selection:
 #_02C941: SEP #$20
-#_02C943: LDA.b #!SFX_02
+#_02C943: LDA.b #$02 ; SFX 02
 #_02C945: JSL Write_to_APU_transferrable
 
 .branch02C949
@@ -8291,7 +8347,7 @@ routine02C9D5:
 #_02C9D7: PHB
 
 #_02C9D8: SEP #$20
-#_02C9DA: LDA.b #$02
+#_02C9DA: LDA.b #data02CA3A>>16
 #_02C9DC: PHA
 
 #_02C9DD: REP #$20
@@ -8385,7 +8441,7 @@ routine02CA4B:
 #_02CA94: SEP #$20
 
 #_02CA96: DEC.w $09F3
-#_02CA99: LDA.b #!SFX_01
+#_02CA99: LDA.b #$01 ; SFX 01
 #_02CA9B: JSL Write_to_APU_transferrable
 
 .branch02CA9F
@@ -8396,7 +8452,7 @@ routine02CA4B:
 
 #_02CAA9: SEP #$20
 #_02CAAB: INC.w $09F3
-#_02CAAE: LDA.b #!SFX_01
+#_02CAAE: LDA.b #$01 ; SFX 01
 #_02CAB0: JSL Write_to_APU_transferrable
 
 .branch02CAB4
@@ -8407,7 +8463,7 @@ routine02CA4B:
 
 #_02CABE: SEP #$20
 #_02CAC0: DEC.w $09F2
-#_02CAC3: LDA.b #!SFX_01
+#_02CAC3: LDA.b #$01 ; SFX 01
 #_02CAC5: JSL Write_to_APU_transferrable
 
 .branch02CAC9
@@ -8418,7 +8474,7 @@ routine02CA4B:
 
 #_02CAD3: SEP #$20
 #_02CAD5: INC.w $09F2
-#_02CAD8: LDA.b #!SFX_01
+#_02CAD8: LDA.b #$01 ; SFX 01
 #_02CADA: JSL Write_to_APU_transferrable
 
 .branch02CADE
@@ -8589,7 +8645,7 @@ routine02CBD1:
 #_02CBE8: PHB
 
 #_02CBE9: SEP #$20
-#_02CBEB: LDA.b #$02
+#_02CBEB: LDA.b #data02CC3C>>16
 #_02CBED: PHA
 
 #_02CBEE: REP #$20
@@ -8871,7 +8927,7 @@ routine02CE87:
 #_02CF1F: SEP #$20
 #_02CF21: LDA.b #$01
 #_02CF23: STA.w $0CF2
-#_02CF26: LDA.b #!SFX_0D
+#_02CF26: LDA.b #$0D ; SFX 0D
 #_02CF28: JSL Write_to_APU_transferrable
 #_02CF2C: LDA.b #$01
 #_02CF2E: STA.w $0EFE
@@ -8926,7 +8982,7 @@ routine02CE87:
 
 #_02CFB3: SEP #$30
 #_02CFB5: LDA.b #$07
-#_02CFB7: JSL routine00B99C
+#_02CFB7: JSL InitializeTextBoxToSizeForNewMessage
 #_02CFBB: JSL routine00A056
 
 #_02CFBF: REP #$20
@@ -9152,7 +9208,7 @@ routine02D0B8:
 #_02D1A7: JSL BrightenScreen
 
 #_02D1AB: SEP #$20
-#_02D1AD: LDA.b #!SONG_56_GAME_OVER
+#_02D1AD: LDA.b #$56 ; SONG 56
 #_02D1AF: JSL Write_to_APU_transferrable
 #_02D1B3: LDA.b #$01
 #_02D1B5: STA.w $0CF2
@@ -10080,7 +10136,7 @@ routine02D7C0:
 
 #_02D805: SEP #$20
 #_02D807: DEC.w $098D
-#_02D80A: LDA.b #!SFX_01
+#_02D80A: LDA.b #$01 ; SFX 01
 #_02D80C: JSL Write_to_APU_transferrable
 
 .branch02D810
@@ -10091,7 +10147,7 @@ routine02D7C0:
 
 #_02D81A: SEP #$20
 #_02D81C: INC.w $098D
-#_02D81F: LDA.b #!SFX_01
+#_02D81F: LDA.b #$01 ; SFX 01
 #_02D821: JSL Write_to_APU_transferrable
 
 .branch02D825
@@ -10102,7 +10158,7 @@ routine02D7C0:
 
 #_02D82F: SEP #$20
 #_02D831: DEC.w $098C
-#_02D834: LDA.b #!SFX_01
+#_02D834: LDA.b #$01 ; SFX 01
 #_02D836: JSL Write_to_APU_transferrable
 
 .branch02D83A
@@ -10113,7 +10169,7 @@ routine02D7C0:
 
 #_02D844: SEP #$20
 #_02D846: INC.w $098C
-#_02D849: LDA.b #!SFX_01
+#_02D849: LDA.b #$01 ; SFX 01
 #_02D84B: JSL Write_to_APU_transferrable
 
 .branch02D84F
@@ -10360,7 +10416,7 @@ routine02D9DF:
 #_02DA19: RTS
 
 .branch02DA1A
-#_02DA1A: LDA.w #!SFX_02
+#_02DA1A: LDA.w #$0002 ; SFX 02
 #_02DA1D: JSL Write_to_APU_transferrable
 
 #_02DA21: SEP #$30
@@ -10373,7 +10429,7 @@ routine02D9DF:
 
 .branch02DA30
 #_02DA30: SEP #$30
-#_02DA32: LDA.b #!SFX_02
+#_02DA32: LDA.b #$02 ; SFX 02
 #_02DA34: JSL Write_to_APU_transferrable
 #_02DA38: LDX.w $098E
 #_02DA3B: LDA.w $09AC,X
@@ -10416,7 +10472,7 @@ data02DA84:
 
 .branch02DA8C
 #_02DA8C: SEP #$30
-#_02DA8E: LDA.b #!SFX_03
+#_02DA8E: LDA.b #$03 ; SFX 03
 #_02DA90: JSL Write_to_APU_transferrable
 #_02DA94: JSR routine02DB0A
 #_02DA97: LDX.w $098E
@@ -10531,7 +10587,7 @@ routine02DB2C:
 routine02DB45:
 #_02DB45: PHP
 #_02DB46: SEP #$20
-#_02DB48: LDA.b #!SFX_02
+#_02DB48: LDA.b #$02 ; SFX 02
 #_02DB4A: JSL Write_to_APU_transferrable
 #_02DB4E: INC.w $0990
 #_02DB51: JSR routine02DB6D
@@ -10544,7 +10600,7 @@ routine02DB45:
 routine02DB59:
 #_02DB59: PHP
 #_02DB5A: SEP #$20
-#_02DB5C: LDA.b #!SFX_02
+#_02DB5C: LDA.b #$02 ; SFX 02
 #_02DB5E: JSL Write_to_APU_transferrable
 #_02DB62: DEC.w $0990
 #_02DB65: JSR routine02DB6D
@@ -13265,7 +13321,7 @@ routine02FC09:
 #_02FC11: PHB
 
 #_02FC12: SEP #$20
-#_02FC14: LDA.b #$02
+#_02FC14: LDA.b #data02FD4D>>16
 #_02FC16: PHA
 
 #_02FC17: REP #$20
@@ -13327,7 +13383,7 @@ routine02FC6E:
 #_02FC74: PHB
 
 #_02FC75: SEP #$20
-#_02FC77: LDA.b #$02
+#_02FC77: LDA.b #data02FD4D>>16
 #_02FC79: PHA
 
 #_02FC7A: REP #$20

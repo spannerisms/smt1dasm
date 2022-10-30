@@ -127,7 +127,7 @@ kAAs = $8B ; ァ
 kIIs = $8C ; ィ
 kEEs = $8D ; ェ
 kOOs = $8E ; ォ
-;kUUs = $8F ; ゥ ???
+;kUUs = $8F ; ゥ why doesn't this exist
 
 kYAs = $8F ; ャ
 kYUs = $90 ; ュ
@@ -136,6 +136,7 @@ kYOs = $91 ; ョ
 kTSUs = $92 ; ッ
 k__ = $93 ; ・
 
+; dakuten kana ゛
 hGA = $9C ; が
 hGI = $9D ; ぎ
 hGU = $9E ; ぐ
@@ -166,6 +167,7 @@ hPU = $B2 ; ぷ
 hPE = $B3 ; ぺ
 hPO = $B4 ; ぽ
 
+; handakuten kana ゜
 kGA = $B5 ; ガ
 kGI = $B6 ; ギ
 kGU = $B7 ; グ
@@ -196,5 +198,7 @@ kPU = $CB ; プ
 kPE = $CC ; ペ
 kPO = $CD ; ポ
 
+; why is this unique? lol
 kVU = $CE ; ヴ
+
 BLNK = $CF ; ⎵

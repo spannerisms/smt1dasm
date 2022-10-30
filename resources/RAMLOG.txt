@@ -9,9 +9,14 @@ $C0[0x3] - used for indirect loads
 $C3[0x3] - used for secondary text reading
 $E0 - used for indirect addressing a lot
 
-$0100[0x02] - Number of DMAs to do
-$0102[0x02] - location to write to
-$0104[0x02] - Size of transfer
+$0100[0x02] - Number of DMAs to do (bit 15 flags vertical RLE)
+	Chunked:
+		2 bytes for VRAM address
+		2 bytes for number of 16-bit words to transfer
+	RLE: 
+		$0102[0x02] - VRAM address (incremented in the loop)
+		$0104[0x02] - Number of words to write (transfer size is x2 of this)
+
 $0106[0x0210] - arb dma data
 
 $0400[0x100] - mirror of SRAM 70:X700 story stuff mostly it seems
@@ -20,9 +25,12 @@ $0450 caches controller input for parsing
 $0460 used to index a jump table
 $0468 used for a jump at one point
 
-$0500[0x2] - used with demon stats? number of combatants?
+$0500[0x2] - used with demon stats? 
 $0502[0x2] - Seems to be index of demon into stats table at $1000
-$050A[?] - 2 byte demon ids
+$050A[0x2] - Slot 0 demon id
+$050C[0x2] - Slot 1 demon id
+$050E[0x2] - Slot 0 combatant count
+$0510[0x2] - Slot 1 combatant count
 
 $0512[0x2] - 
 $0514[0x2] - 
@@ -30,7 +38,10 @@ $0514[0x2] -
 $0518[0x2] - Caster data index
 $051A[0x2] - Target data index
 
-$0522[0x?] - Number of magic stones to give after battle
+$051E[0x2] - Money gained in battle
+$0520[0x2] - MAG gained in battle
+
+$0522[0x2] - Number of magic stones to give after battle
 
 $052A[0x2] - seems to be battle mode flags?
 	ORA $2000 whe escaping?
@@ -84,6 +95,7 @@ $0A33[0x2] - flag for whether to call 039653 in some cases; text?
 $0A33[0x1] - position counter for text?
 $0A3C[0x1] - if 1, text commands are +0x60
 $0A3E[0x2] - caches spell offsets at one point
+
 $0A50[0x1] - Used when adding an item to inventory
 $0A51[0x1] - Used when removing an item
 		0x00       search inventory
@@ -228,7 +240,7 @@ look at routine 02987B
 $0F77 - SUBDES for IRQ?
 $0F7C - CGADSUB for IRQ?
 $0F7E - NMI flag (bit 7); also flags whether to transfer OAM
-$0F81 - seems to flag IRQ?
+$0F81 - IRQ subroutine identifier
 $0F83 seems to hold the APU port for writing with routine in bank0C
 $0F84[0x4] - mirrors of apu ports i guess
 
@@ -282,9 +294,9 @@ $1600[0x60] - demon stats similar layout to player stats
 
 	$1640[0x2] - Move 2
 	$1642[0x2] - Move 3
-	$1644[0x2] - 
-	$1646[0x2] - 
-	$1648[0x2] - 
+	$1644[0x2] - XP/Drop rate
+	$1646[0x2] - Drop item
+	$1648[0x2] - Money/Magstone
 	$164A[0x2] - CP
 	$164C[0x2] - 
 	$164E[0x2] - Nothing

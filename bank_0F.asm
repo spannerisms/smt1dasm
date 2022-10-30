@@ -441,41 +441,57 @@ data0F8468:
 #_0F8488: dw $0004,$0003,$0002,$0001
 #_0F8490: dw $0024,$0023,$0022,$0021
 
+;===================================================================================================
+; Enters with:
+;    A = item ID
+; Exits with:
+;    Carry - set on success
+;===================================================================================================
 LookForItemInInventory:
 #_0F8498: PHX
 #_0F8499: PHP
+
 #_0F849A: SEP #$30
+
 #_0F849C: STA.w $0E00
+
 #_0F849F: PHB
 #_0F84A0: PHK
 #_0F84A1: PLB
+
 #_0F84A2: LDX.b #$00
 
-.branch0F84A4
+.keep_looking
 #_0F84A4: LDA.w $0781,X
-#_0F84A7: BEQ .branch0F84B1
+#_0F84A7: BEQ .have_none_of_item
 
 #_0F84A9: LDA.w $0780,X
 #_0F84AC: CMP.w $0E00
-#_0F84AF: BEQ .branch0F84BC
+#_0F84AF: BEQ .have_item
 
-.branch0F84B1
+.have_none_of_item
 #_0F84B1: INX
 #_0F84B2: INX
 #_0F84B3: CPX.b #$3C
-#_0F84B5: BNE .branch0F84A4
+#_0F84B5: BNE .keep_looking
 
+; Boo!
 #_0F84B7: PLB
 #_0F84B8: PLP
 #_0F84B9: PLX
+
 #_0F84BA: CLC
+
 #_0F84BB: RTL
 
-.branch0F84BC
+; Yay!
+.have_item
 #_0F84BC: PLB
 #_0F84BD: PLP
 #_0F84BE: PLX
+
 #_0F84BF: SEC
+
 #_0F84C0: RTL
 
 ;===================================================================================================
@@ -1082,7 +1098,7 @@ routine0F8836:
 
 #_0F88C1: JSL BrightenScreen
 
-#_0F88C5: LDA.b #!SONG_50_SHOP
+#_0F88C5: LDA.b #$50 ; SONG 50
 #_0F88C7: JSL Write_to_APU_transferrable
 
 #_0F88CB: LDA.b #$01
@@ -1132,7 +1148,7 @@ routine0F8836:
 
 #_0F8919: SEP #$20
 
-#_0F891B: LDA.b #!SFX_01
+#_0F891B: LDA.b #$01 ; SFX 01
 #_0F891D: JSL Write_to_APU_transferrable
 
 #_0F8921: LDA.w $09F3
@@ -1215,7 +1231,7 @@ routine0F899D:
 #_0F89A4: LDA.b #$01
 #_0F89A6: STA.w $0CF3
 
-#_0F89A9: LDA.b #!SFX_03
+#_0F89A9: LDA.b #$03 ; SFX 03
 #_0F89AB: JSL Write_to_APU_transferrable
 #_0F89AF: BRA .branch0F8996
 
@@ -1231,7 +1247,7 @@ routine0F89B3:
 #_0F89B7: JSL Reset_OAMrelatedWRAM
 
 #_0F89BB: SEP #$20
-#_0F89BD: LDA.b #!SFX_02
+#_0F89BD: LDA.b #$02 ; SFX 02
 #_0F89BF: JSL Write_to_APU_transferrable
 #_0F89C3: STZ.w $0A58
 
@@ -1334,7 +1350,7 @@ routine0F89B3:
 
 #_0F8A77: SEP #$20
 
-#_0F8A79: LDA.b #!SFX_01
+#_0F8A79: LDA.b #$01 ; SFX 01
 #_0F8A7B: JSL Write_to_APU_transferrable
 
 #_0F8A7F: LDA.w $09F3
@@ -1355,7 +1371,7 @@ routine0F89B3:
 #_0F8A93: LDA.b #$FF
 #_0F8A95: STA.w $0A58
 
-#_0F8A98: LDA.b #!SFX_03
+#_0F8A98: LDA.b #$03 ; SFX 03
 #_0F8A9A: JSL Write_to_APU_transferrable
 
 .branch0F8A9E
@@ -1413,7 +1429,7 @@ routine0F89B3:
 #_0F8AF4: LDA.w $0A58
 #_0F8AF7: BNE .branch0F8AFF
 
-#_0F8AF9: LDA.b #!SFX_02
+#_0F8AF9: LDA.b #$02 ; SFX 02
 #_0F8AFB: JSL Write_to_APU_transferrable
 
 .branch0F8AFF
@@ -1637,7 +1653,7 @@ routine0F8B94:
 
 #_0F8CDB: LDX.w #$0000
 #_0F8CDE: LDY.w #$000A
-#_0F8CE1: JSL Divide_32bit_by_16bit_XA_by_Y
+#_0F8CE1: JSL DivisionBig_XA_by_Y
 
 #_0F8CE5: LDA.w $0E80
 #_0F8CE8: AND.w #$00FF
@@ -1753,7 +1769,7 @@ data0F8D93:
 routine0F8D97:
 #_0F8D97: SEP #$20
 
-#_0F8D99: LDA.b #!SFX_04
+#_0F8D99: LDA.b #$04 ; SFX 04
 #_0F8D9B: JSL Write_to_APU_transferrable
 
 #_0F8D9F: REP #$30
@@ -1792,7 +1808,7 @@ routine0F8D97:
 #_0F8DD7: BEQ .branch0F8DD0
 
 #_0F8DD9: SEP #$20
-#_0F8DDB: LDA.b #!SFX_02
+#_0F8DDB: LDA.b #$02 ; SFX 02
 #_0F8DDD: JSL Write_to_APU_transferrable
 
 #_0F8DE1: REP #$20
@@ -2174,8 +2190,8 @@ routine0F903F:
 #_0F9041: LDA.w #$0000
 #_0F9044: JSL routine02E98E
 #_0F9048: LDY.w #$003C
-#_0F904B: JSL Update19xxUntilYZero
-#_0F904F: LDA.w #!SFX_09
+#_0F904B: JSL RunFramesYTimes
+#_0F904F: LDA.w #$0009 ; SFX 09
 #_0F9052: JSL Write_to_APU_transferrable
 
 #_0F9056: SEP #$20
@@ -2186,7 +2202,7 @@ routine0F903F:
 #_0F905D: STA.w $0F43
 #_0F9060: PHA
 #_0F9061: LDY.w #$0003
-#_0F9064: JSL Update19xxUntilYZero
+#_0F9064: JSL RunFramesYTimes
 #_0F9068: PLA
 #_0F9069: DEC A
 #_0F906A: BPL .branch0F905A
@@ -2201,7 +2217,7 @@ routine0F903F:
 
 routine0F907A:
 #_0F907A: REP #$30
-#_0F907C: JSL routine03E0BD
+#_0F907C: JSL routine03E0C5_long
 #_0F9080: LDA.w $0B5F
 #_0F9083: CMP.w #$000C
 #_0F9086: BEQ .branch0F90B8
@@ -2411,7 +2427,7 @@ routine0F916F:
 #_0F91DF: LDA.w #$8D07
 #_0F91E2: ROL A
 #_0F91E3: ASL A
-#_0F91E4: JSL routine00B99C
+#_0F91E4: JSL InitializeTextBoxToSizeForNewMessage
 #_0F91E8: JSL routine00A056
 
 #_0F91EC: REP #$20
@@ -3106,7 +3122,7 @@ routine0F9696:
 #_0F969A: SEP #$20
 #_0F969C: LDA.b #$20
 #_0F969E: STA.w $0A2C
-#_0F96A1: LDA.b #!SFX_04
+#_0F96A1: LDA.b #$04 ; SFX 04
 #_0F96A3: JSL Write_to_APU_transferrable
 
 #_0F96A7: REP #$20
@@ -3129,7 +3145,7 @@ routine0F9696:
 #_0F96C4: LDA.w data0F96DE,Y
 #_0F96C7: JSL routine0385C8
 #_0F96CB: JSL routine0384F9_long
-#_0F96CF: JSL Update19XXuntil0100
+#_0F96CF: JSL RunFramesUntil0100IsFlagged
 #_0F96D3: JSL Update19XXUntilInput
 #_0F96D7: JSL routine0F9720
 #_0F96DB: PLB
@@ -3226,7 +3242,7 @@ routine0F9720:
 #_0F9760: BNE .branch0F9754
 
 #_0F9762: JSL routine0384F9_long
-#_0F9766: JSL Update19XXuntil0100
+#_0F9766: JSL RunFramesUntil0100IsFlagged
 
 #_0F976A: REP #$20
 #_0F976C: PLA
@@ -3450,7 +3466,7 @@ routine0F98C4:
 #_0F9935: PHP
 #_0F9936: LDA.w #$00FF
 #_0F9939: STA.w $0A71
-#_0F993C: LDA.w #!SFX_2D
+#_0F993C: LDA.w #$002D ; SFX 2D
 #_0F993F: JSL Write_to_APU_transferrable
 #_0F9943: LDA.w #$00FC
 #_0F9946: LDX.w #$0000
@@ -3566,7 +3582,7 @@ routine0F99C2:
 #_0F99FA: LDA.w $0E14
 #_0F99FD: LDX.w #$0000
 #_0F9A00: LDY.w $0E02
-#_0F9A03: JSL Divide_32bit_by_16bit_XA_by_Y
+#_0F9A03: JSL DivisionBig_XA_by_Y
 #_0F9A07: PLX
 #_0F9A08: LDA.w $0E80
 #_0F9A0B: CLC
@@ -3594,9 +3610,9 @@ routine0F99C2:
 #_0F9A3A: ADC.w $106A
 #_0F9A3D: DEC A
 #_0F9A3E: TAX
-#_0F9A3F: LDA.l UNREACH_078C00,X
+#_0F9A3F: LDA.l UNREACH_078C00+0,X
 #_0F9A43: STA.w $106C
-#_0F9A46: LDA.l UNREACH_078C02,X
+#_0F9A46: LDA.l UNREACH_078C00+2,X
 #_0F9A4A: AND.w #$00FF
 #_0F9A4D: STA.w $106E
 #_0F9A50: LDA.w $101C
@@ -4016,7 +4032,7 @@ routine0F9C77:
 
 #_0F9D1D: SEP #$30
 #_0F9D1F: LDA.b #$03
-#_0F9D21: JSL routine00B99C
+#_0F9D21: JSL InitializeTextBoxToSizeForNewMessage
 #_0F9D25: JSL routine00A056
 #_0F9D29: LDA.b #$E5
 #_0F9D2B: JSL ClearGameProgressBit_long
@@ -4194,7 +4210,7 @@ routine0F9D99:
 
 #_0F9E60: SEP #$30
 #_0F9E62: LDY.b #$05
-#_0F9E64: JSL Update19xxUntilYZero
+#_0F9E64: JSL RunFramesYTimes
 #_0F9E68: PLP
 #_0F9E69: PLX
 #_0F9E6A: LDA.w $09F3
@@ -4221,7 +4237,7 @@ routine0F9D99:
 
 #_0F9E8D: SEP #$30
 #_0F9E8F: LDY.b #$0A
-#_0F9E91: JSL Update19xxUntilYZero
+#_0F9E91: JSL RunFramesYTimes
 #_0F9E95: PLP
 #_0F9E96: PLA
 #_0F9E97: CMP.w $09F3
@@ -4376,7 +4392,7 @@ RearrangeItems:
 ; Clips 32-bit money at $0405 to the range [0,999999]
 ; Clips 32-bit MAG at $0409 to the range [0,99999]
 ;===================================================================================================
-ClipToRangeMoneyAndMAG:
+ClampMoneyAndMAG:
 #_0F9F97: PHP
 #_0F9F98: PHB
 #_0F9F99: PHK
@@ -4817,7 +4833,7 @@ routine0FA25E:
 #_0FA294: SEC
 #_0FA295: SBC.b #$E4
 #_0FA297: TAX
-#_0FA298: LDA.l data03C523,X
+#_0FA298: LDA.l TextExtCMD_59_items,X
 #_0FA29C: STA.w $0A50
 #_0FA29F: STZ.w $0A51
 
@@ -5042,7 +5058,7 @@ routine0FA3BD:
 
 #_0FA3EB: SEP #$30
 #_0FA3ED: LDA.b #$07
-#_0FA3EF: JSL routine00B99C
+#_0FA3EF: JSL InitializeTextBoxToSizeForNewMessage
 #_0FA3F3: JSL routine00A056
 #_0FA3F7: PLP
 #_0FA3F8: RTL
@@ -6510,14 +6526,14 @@ routine0FC929:
 #_0FC950: STA.w $0F4F
 
 #_0FC953: SEP #$20
-#_0FC955: LDA.b #!SONG_5D_TITLE_OPENING
+#_0FC955: LDA.b #$5D ; SONG 5D
 #_0FC957: JSL Write_to_APU_transferrable
 #_0FC95B: JSR routine0FCA3C
 #_0FC95E: JSR routine0FCA1B
 #_0FC961: JSR routine0FCA0A
 #_0FC964: JSR routine0FCA0A
 #_0FC967: JSR routine0FD1A7
-#_0FC96A: LDA.b #!SONG_COMMAND_FF
+#_0FC96A: LDA.b #$FF ; SONG FF COMMAND
 #_0FC96C: JSL Write_to_APU_transferrable
 #_0FC970: JSR routine0FCA0A
 #_0FC973: JSR routine0FCA0A
@@ -6525,7 +6541,7 @@ routine0FC929:
 #_0FC979: JSR routine0FD081
 #_0FC97C: JSR routine0FCC11
 #_0FC97F: JSR routine0FD4FF
-#_0FC982: LDA.b #!SONG_5E_TITLE_SCREEN
+#_0FC982: LDA.b #$5E ; SONG 5E
 #_0FC984: JSL Write_to_APU_transferrable
 #_0FC988: JSR routine0FD843
 #_0FC98B: JSR routine0FD4DA
@@ -6552,7 +6568,7 @@ routine0FC929:
 #_0FC9B4: TXS
 #_0FC9B5: JSR routine0FCC11
 #_0FC9B8: JSR routine0FD081
-#_0FC9BB: LDA.w #!SONG_5E_TITLE_SCREEN
+#_0FC9BB: LDA.w #$005E ; SONG 5E
 #_0FC9BE: JSL Write_to_APU_transferrable
 #_0FC9C2: JSR routine0FD4DA
 #_0FC9C5: JSR routine0FD807
@@ -6586,7 +6602,7 @@ routine0FC929:
 
 .branch0FC9FA
 #_0FC9FA: SEP #$20
-#_0FC9FC: LDA.b #!SFX_02
+#_0FC9FC: LDA.b #$02 ; SFX 02
 #_0FC9FE: JSL Write_to_APU_transferrable
 #_0FCA02: JSR routine0FD1A7
 #_0FCA05: JSR routine0FCC11
@@ -9491,7 +9507,7 @@ routine0FE77C:
 #_0FE787: BEQ .EXIT_0FE7A2
 
 #_0FE789: SEP #$20
-#_0FE78B: LDA.b #!SFX_01
+#_0FE78B: LDA.b #$01 ; SFX 01
 #_0FE78D: JSL Write_to_APU_transferrable
 
 #_0FE791: REP #$20
@@ -9599,7 +9615,7 @@ routine0FE7FD:
 #_0FE85F: JSL Reset_OAMrelatedWRAM
 
 #_0FE863: SEP #$20
-#_0FE865: LDA.b #!SONG_5F_ENDING
+#_0FE865: LDA.b #$5F ; SONG 5F
 #_0FE867: JSL Write_to_APU_transferrable
 
 #_0FE86B: REP #$20
@@ -9621,7 +9637,7 @@ routine0FE880:
 #_0FE880: PHP
 #_0FE881: REP #$30
 #_0FE883: SEP #$20
-#_0FE885: LDA.b #!SONG_56_GAME_OVER
+#_0FE885: LDA.b #$56 ; SONG 56
 #_0FE887: JSL Write_to_APU_transferrable
 #_0FE88B: JSR routine0FE9BC
 
@@ -9667,7 +9683,7 @@ routine0FE8DC:
 #_0FE8DC: PHP
 #_0FE8DD: REP #$30
 #_0FE8DF: SEP #$20
-#_0FE8E1: LDA.b #!SONG_46_CHAOS
+#_0FE8E1: LDA.b #$46 ; SONG 46
 #_0FE8E3: JSL Write_to_APU_transferrable
 
 #_0FE8E7: REP #$20
@@ -9719,7 +9735,7 @@ routine0FE8DC:
 #_0FE958: JSR routine0FEBAD
 
 #_0FE95B: SEP #$20
-#_0FE95D: LDA.b #!SONG_COMMAND_FD
+#_0FE95D: LDA.b #$FD ; SONG FD COMMAND
 #_0FE95F: JSL Write_to_APU_transferrable
 #_0FE963: JSR routine0FD1A7
 #_0FE966: PLP
@@ -9731,7 +9747,7 @@ routine0FE968:
 #_0FE968: PHP
 #_0FE969: REP #$30
 #_0FE96B: SEP #$20
-#_0FE96D: LDA.b #!SONG_58_EPILOGUE
+#_0FE96D: LDA.b #$58 ; SONG 58
 #_0FE96F: JSL Write_to_APU_transferrable
 #_0FE973: JSR routine0FE9BC
 
@@ -9763,7 +9779,7 @@ routine0FE968:
 #_0FE9AC: JSR routine0FEBAD
 
 #_0FE9AF: SEP #$20
-#_0FE9B1: LDA.b #!SONG_COMMAND_FD
+#_0FE9B1: LDA.b #$FD ; SONG FD COMMAND
 #_0FE9B3: JSL Write_to_APU_transferrable
 #_0FE9B7: JSR routine0FD1A7
 #_0FE9BA: PLP
@@ -10613,7 +10629,7 @@ routine0FF01A:
 #_0FF090: JSR routine0FF30B
 
 #_0FF093: SEP #$20
-#_0FF095: LDA.b #!SONG_COMMAND_FD
+#_0FF095: LDA.b #$FD ; SONG FD COMMAND
 #_0FF097: JSL Write_to_APU_transferrable
 #_0FF09B: JSR routine0FF2C7
 #_0FF09E: PLP
@@ -12115,7 +12131,7 @@ routine0FFA55:
 #_0FFA8D: LDA.b #$01
 #_0FFA8F: STA.l $7E22FD
 
-.branch0FFA93:
+.branch0FFA93
 #_0FFA93: PLY
 #_0FFA94: PLX
 #_0FFA95: PLP

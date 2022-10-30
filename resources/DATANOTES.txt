@@ -42,9 +42,9 @@ $1C:B000
 
 $07:E78A
 	contains pointers to data structured as:
-	[2 bytes] - $0100 - Minimum number of words before stopping
-	[2 bytes] - $0102 - VRAM word address
-	[2 bytes] - $0104 - Size for loop transfers
+	[2 bytes] - $0100 - Number of DMAs; bit 15 means all DMAs are RLE
+	[2 bytes] - $0102 - VRAM address
+	[2 bytes] - $0104 - Number of words
 	[Data] write 2 bytes at a time until done or $FFFF
 	if $FFFF then
 	[2 bytes] - $0E80 - Number of loops to run

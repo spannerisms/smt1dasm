@@ -4793,8 +4793,8 @@ Message_02_02_01:
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_02_02:
-#_0AA00E: db $D8, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
-#_0AA011: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
+#_0AA00E: db $D8, $00, $06 ; [set2] go to message 06 if LUK < RNG(0, DemonLUK+8)
+#_0AA011: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
 #_0AA014: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA016: db $F3 ; [set2] wait for key and new line
 #_0AA017: db $F1 ; [set2] clear message box
@@ -4851,7 +4851,7 @@ Message_02_02_07:
 #_0AA042: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA044: db $F3 ; [set2] wait for key and new line
 #_0AA045: db $F1 ; [set2] clear message box
-#_0AA046: db $D8, $01, $0C ; [set2] go to message 0C if RNG, 01 TODO
+#_0AA046: db $D8, $01, $0C ; [set2] go to message 0C if LUK < RNG(0, DemonLUK+16)
 #_0AA049: db $E8, $2B ; [set2] [COMMAND 48:2B]
 #_0AA04B: db $F3 ; [set2] wait for key and new line
 #_0AA04C: db $F1 ; [set2] clear message box
@@ -4899,7 +4899,7 @@ Message_02_02_0A:
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
 Message_02_02_0B:
-#_0AA077: db $D8, $02, $0C ; [set2] go to message 0C if RNG, 02 TODO
+#_0AA077: db $D8, $02, $0C ; [set2] go to message 0C if LUK < RNG(0, DemonLUK+32)
 #_0AA07A: db $EB, $EF ; [set2] prewritten text EF
 #_0AA07C: db $F3 ; [set2] wait for key and new line
 #_0AA07D: db $F1 ; [set2] clear message box
@@ -4934,7 +4934,7 @@ Message_02_02_0D:
 
 Message_02_02_0E:
 #_0AA099: db $D6, $01, $10 ; [set2] go to message 10 if RNG, 01 TODO
-#_0AA09C: db $D7, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
+#_0AA09C: db $D7, $01, $0F ; [set2] go to message 0F if LUK < RNG(0, 32)
 #_0AA09F: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA0A1: db $F3 ; [set2] wait for key and new line
 #_0AA0A2: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
@@ -4982,7 +4982,7 @@ Message_02_02_12:
 ;===================================================================================================
 
 Message_02_02_13:
-#_0AA0CA: db $D8, $01, $0C ; [set2] go to message 0C if RNG, 01 TODO
+#_0AA0CA: db $D8, $01, $0C ; [set2] go to message 0C if LUK < RNG(0, DemonLUK+16)
 #_0AA0CD: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0AA0D0: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA0D2: db $F3 ; [set2] wait for key and new line
@@ -5091,7 +5091,7 @@ Message_02_03_02:
 ; «てにいれた»
 ; «>[DEMONX]は にげていった!»
 Message_02_03_03:
-#_0AA12D: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
+#_0AA12D: db $D7, $01, $04 ; [set2] go to message 04 if LUK < RNG(0, 32)
 #_0AA130: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA132: db $F3 ; [set2] wait for key and new line
 #_0AA133: db $F1 ; [set2] clear message box
@@ -5134,7 +5134,7 @@ Message_02_03_06:
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
 Message_02_03_07:
-#_0AA157: db $D8, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
+#_0AA157: db $D8, $01, $08 ; [set2] go to message 08 if LUK < RNG(0, DemonLUK+16)
 #_0AA15A: db $EB, $EF ; [set2] prewritten text EF
 #_0AA15C: db $F3 ; [set2] wait for key and new line
 #_0AA15D: db $F1 ; [set2] clear message box
@@ -5254,7 +5254,7 @@ Message_02_03_11:
 ;===================================================================================================
 
 Message_02_03_12:
-#_0AA1CA: db $D7, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
+#_0AA1CA: db $D7, $01, $13 ; [set2] go to message 13 if LUK < RNG(0, 32)
 #_0AA1CD: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA1CF: db $F3 ; [set2] wait for key and new line
 #_0AA1D0: db $F1 ; [set2] clear message box
@@ -5396,7 +5396,7 @@ Message_02_03_1F:
 ; «>[CHASE]の うたは»
 ; «[CLASSX] [DEMONX]を とりこにした»
 Message_02_03_20:
-#_0AA254: db $D8, $01, $21 ; [set2] go to message 21 if RNG, 01 TODO
+#_0AA254: db $D8, $01, $21 ; [set2] go to message 21 if LUK < RNG(0, DemonLUK+16)
 #_0AA257: db $EB, $E7 ; [set2] prewritten text E7
 #_0AA259: db $F3 ; [set2] wait for key and new line
 #_0AA25A: db $FE, $03 ; [set2] [COMMAND 5E:03]
@@ -5433,7 +5433,7 @@ Message_02_04_01:
 
 Message_02_04_02:
 #_0AA276: db $D5, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
-#_0AA279: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
+#_0AA279: db $D7, $01, $04 ; [set2] go to message 04 if LUK < RNG(0, 32)
 #_0AA27C: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
@@ -5496,7 +5496,7 @@ Message_02_04_07:
 ;===================================================================================================
 
 Message_02_04_08:
-#_0AA2B6: db $D7, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
+#_0AA2B6: db $D7, $01, $0F ; [set2] go to message 0F if LUK < RNG(0, 32)
 #_0AA2B9: db $D4, $00, $0A ; [set2] go to message 0A if RNG, 00 TODO
 #_0AA2BC: db $E9, $09 ; [set2] go to message 09
 
@@ -5591,7 +5591,7 @@ Message_02_04_11:
 #_0AA30B: db $FC, $E9, $00 ; [set2] test progress bit E9 for message 00
 #_0AA30E: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA311: db $D4, $00, $13 ; [set2] go to message 13 if RNG, 00 TODO
-#_0AA314: db $D7, $01, $12 ; [set2] go to message 12 if RNG, 01 TODO
+#_0AA314: db $D7, $01, $12 ; [set2] go to message 12 if LUK < RNG(0, 32)
 #_0AA317: db $E9, $09 ; [set2] go to message 09
 
 ;===================================================================================================
@@ -5638,7 +5638,7 @@ Message_02_04_14:
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_04_15:
-#_0AA33B: db $D8, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
+#_0AA33B: db $D8, $01, $16 ; [set2] go to message 16 if LUK < RNG(0, DemonLUK+16)
 #_0AA33E: db $DA, $00, $0B, $97 ; [set2] ext command 00: go to message 97 if MC INT > 11
 #_0AA342: db $ED ; [set2] write demon name indexed from $0526
 #_0AA343: db $3E, $CF, $30, $57, $27, $A2, $57, $3A ; は⎵しょうじょに
@@ -5693,7 +5693,7 @@ Message_02_04_18:
 ; «てにいれた»
 ; «>[DEMONX]は さっていった»
 Message_02_04_19:
-#_0AA38B: db $D7, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
+#_0AA38B: db $D7, $01, $1A ; [set2] go to message 1A if LUK < RNG(0, 32)
 #_0AA38E: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0AA390: db $F3 ; [set2] wait for key and new line
 #_0AA391: db $F1 ; [set2] clear message box
@@ -5783,7 +5783,7 @@ Message_02_05_02:
 ;===================================================================================================
 
 Message_02_05_03:
-#_0AA3E4: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
+#_0AA3E4: db $D7, $01, $04 ; [set2] go to message 04 if LUK < RNG(0, 32)
 #_0AA3E7: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA3E9: db $F3 ; [set2] wait for key and new line
 #_0AA3EA: db $F7, $2E, $80 ; [set2] [COMMAND 57] $2E $80 TODO
@@ -5906,7 +5906,7 @@ Message_02_05_0E:
 ;===================================================================================================
 
 Message_02_05_0F:
-#_0AA464: db $D7, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
+#_0AA464: db $D7, $01, $13 ; [set2] go to message 13 if LUK < RNG(0, 32)
 #_0AA467: db $E9, $10 ; [set2] go to message 10
 
 ;===================================================================================================
@@ -5930,7 +5930,7 @@ Message_02_05_10:
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
 Message_02_05_11:
-#_0AA479: db $D8, $02, $12 ; [set2] go to message 12 if RNG, 02 TODO
+#_0AA479: db $D8, $02, $12 ; [set2] go to message 12 if LUK < RNG(0, DemonLUK+32)
 #_0AA47C: db $EB, $48 ; [set2] prewritten text 48
 #_0AA47E: db $F3 ; [set2] wait for key and new line
 #_0AA47F: db $F1 ; [set2] clear message box
@@ -6176,7 +6176,7 @@ Message_02_07_05:
 Message_02_07_06:
 #_0AA565: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AA567: db $EF, $07 ; [set2] YES/NO - go to message 07 if YES
-#_0AA569: db $D7, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
+#_0AA569: db $D7, $00, $09 ; [set2] go to message 09 if LUK < RNG(0, 16)
 #_0AA56C: db $EB, $E1 ; [set2] prewritten text E1
 #_0AA56E: db $F3 ; [set2] wait for key and new line
 #_0AA56F: db $FE, $06 ; [set2] [COMMAND 5E:06]
@@ -6184,7 +6184,7 @@ Message_02_07_06:
 ;===================================================================================================
 
 Message_02_07_07:
-#_0AA571: db $D7, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
+#_0AA571: db $D7, $01, $08 ; [set2] go to message 08 if LUK < RNG(0, 32)
 #_0AA574: db $E9, $04 ; [set2] go to message 04
 
 ;===================================================================================================
@@ -6288,7 +6288,7 @@ Message_02_08_04:
 ;===================================================================================================
 
 Message_02_08_05:
-#_0AA5D9: db $D8, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
+#_0AA5D9: db $D8, $01, $06 ; [set2] go to message 06 if LUK < RNG(0, DemonLUK+16)
 #_0AA5DC: db $E9, $01 ; [set2] go to message 01
 
 ;===================================================================================================
@@ -6386,7 +6386,7 @@ Message_02_09_02:
 ;===================================================================================================
 
 Message_02_09_03:
-#_0AA63E: db $D8, $00, $04 ; [set2] go to message 04 if RNG, 00 TODO
+#_0AA63E: db $D8, $00, $04 ; [set2] go to message 04 if LUK < RNG(0, DemonLUK+8)
 #_0AA641: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
@@ -6402,7 +6402,7 @@ Message_02_09_04:
 ;===================================================================================================
 
 Message_02_09_05:
-#_0AA64C: db $D7, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
+#_0AA64C: db $D7, $00, $06 ; [set2] go to message 06 if LUK < RNG(0, 16)
 #_0AA64F: db $E9, $0E ; [set2] go to message 0E
 
 ;===================================================================================================
@@ -6664,7 +6664,7 @@ Message_02_0A_10:
 
 ; «>[DEMONX]は なんたいかにげだした»
 Message_02_0A_11:
-#_0AA749: db $D7, $00, $12 ; [set2] go to message 12 if RNG, 00 TODO
+#_0AA749: db $D7, $00, $12 ; [set2] go to message 12 if LUK < RNG(0, 16)
 #_0AA74C: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
 #_0AA74F: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA751: db $F3 ; [set2] wait for key and new line
@@ -6700,7 +6700,7 @@ Message_02_0A_13:
 
 ; «>[DEMONX]は きくたいせいに はいった»
 Message_02_0A_14:
-#_0AA76D: db $D8, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
+#_0AA76D: db $D8, $01, $15 ; [set2] go to message 15 if LUK < RNG(0, DemonLUK+16)
 #_0AA770: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA772: db $F3 ; [set2] wait for key and new line
 #_0AA773: db $F1 ; [set2] clear message box
@@ -6785,7 +6785,7 @@ Message_02_0A_1B:
 ;===================================================================================================
 
 Message_02_0A_1C:
-#_0AA7C6: db $D8, $01, $1D ; [set2] go to message 1D if RNG, 01 TODO
+#_0AA7C6: db $D8, $01, $1D ; [set2] go to message 1D if LUK < RNG(0, DemonLUK+16)
 #_0AA7C9: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA7CB: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress bit E3 if 01 is nonzero; otherwise reset
 #_0AA7CE: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
@@ -6810,7 +6810,7 @@ Message_02_0A_1E:
 Message_02_0A_1F:
 #_0AA7DE: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0AA7E0: db $F3 ; [set2] wait for key and new line
-#_0AA7E1: db $D7, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
+#_0AA7E1: db $D7, $00, $20 ; [set2] go to message 20 if LUK < RNG(0, 16)
 #_0AA7E4: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
@@ -6884,7 +6884,7 @@ Message_02_0A_25:
 ;===================================================================================================
 
 Message_02_0A_26:
-#_0AA82B: db $D8, $01, $27 ; [set2] go to message 27 if RNG, 01 TODO
+#_0AA82B: db $D8, $01, $27 ; [set2] go to message 27 if LUK < RNG(0, DemonLUK+16)
 #_0AA82E: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA830: db $F3 ; [set2] wait for key and new line
 #_0AA831: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -6908,7 +6908,7 @@ Message_02_0A_27:
 ; «[CLASSX] [DEMONX]を とりこにした»
 ; «>[DEMONX]は きくたいせいに はいった»
 Message_02_0A_28:
-#_0AA841: db $D8, $02, $29 ; [set2] go to message 29 if RNG, 02 TODO
+#_0AA841: db $D8, $02, $29 ; [set2] go to message 29 if LUK < RNG(0, DemonLUK+32)
 #_0AA844: db $EB, $E7 ; [set2] prewritten text E7
 #_0AA846: db $F3 ; [set2] wait for key and new line
 #_0AA847: db $F1 ; [set2] clear message box
@@ -6962,7 +6962,7 @@ Message_02_0A_2B:
 
 Message_02_0A_2C:
 #_0AA87A: db $D4, $01, $2E ; [set2] go to message 2E if RNG, 01 TODO
-#_0AA87D: db $D7, $00, $2D ; [set2] go to message 2D if RNG, 00 TODO
+#_0AA87D: db $D7, $00, $2D ; [set2] go to message 2D if LUK < RNG(0, 16)
 #_0AA880: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA882: db $F3 ; [set2] wait for key and new line
 #_0AA883: db $E5, $01 ; [set2] [COMMAND 45:01]
@@ -7054,7 +7054,7 @@ Message_02_0A_32:
 Message_02_0A_33:
 #_0AA8D5: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AA8D8: db $D4, $00, $35 ; [set2] go to message 35 if RNG, 00 TODO
-#_0AA8DB: db $D7, $00, $34 ; [set2] go to message 34 if RNG, 00 TODO
+#_0AA8DB: db $D7, $00, $34 ; [set2] go to message 34 if LUK < RNG(0, 16)
 #_0AA8DE: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AA8E0: db $F3 ; [set2] wait for key and new line
 #_0AA8E1: db $F1 ; [set2] clear message box
@@ -7124,7 +7124,7 @@ Message_02_0A_38:
 ;===================================================================================================
 
 Message_02_0A_39:
-#_0AA922: db $D8, $01, $43 ; [set2] go to message 43 if RNG, 01 TODO
+#_0AA922: db $D8, $01, $43 ; [set2] go to message 43 if LUK < RNG(0, DemonLUK+16)
 #_0AA925: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA927: db $D4, $00, $3A ; [set2] go to message 3A if RNG, 00 TODO
 #_0AA92A: db $E8, $06 ; [set2] [COMMAND 48:06]
@@ -7184,7 +7184,7 @@ Message_02_0A_3D:
 ; «>[CHASE]は みごとに いわをくだいた»
 Message_02_0A_3E:
 #_0AA966: db $E5, $01 ; [set2] [COMMAND 45:01]
-#_0AA968: db $D9, $3F ; [set2] [COMMAND 39] go to message 3F if RNG TODO
+#_0AA968: db $D9, $3F ; [set2] go to message 3F if (STR+STR_BONUS) < (8+RNG(0, 32))
 #_0AA96A: db $EB, $DE ; [set2] prewritten text DE
 #_0AA96C: db $F3 ; [set2] wait for key and new line
 #_0AA96D: db $F1 ; [set2] clear message box
@@ -7212,7 +7212,7 @@ Message_02_0A_3F:
 
 ; «>[DEMONX]は さっていった»
 Message_02_0A_40:
-#_0AA983: db $D7, $01, $41 ; [set2] go to message 41 if RNG, 01 TODO
+#_0AA983: db $D7, $01, $41 ; [set2] go to message 41 if LUK < RNG(0, 32)
 #_0AA986: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AA988: db $F3 ; [set2] wait for key and new line
 #_0AA989: db $F1 ; [set2] clear message box
@@ -7231,7 +7231,7 @@ Message_02_0A_41:
 ;===================================================================================================
 
 Message_02_0A_42:
-#_0AA997: db $D7, $01, $25 ; [set2] go to message 25 if RNG, 01 TODO
+#_0AA997: db $D7, $01, $25 ; [set2] go to message 25 if LUK < RNG(0, 32)
 #_0AA99A: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA99C: db $F3 ; [set2] wait for key and new line
 #_0AA99D: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -7417,7 +7417,7 @@ Message_02_0A_51:
 ; «>[DEMONX]は さっていった»
 Message_02_0A_52:
 #_0AAA72: db $E6, $80 ; [set2] [COMMAND 46:80]
-#_0AAA74: db $D8, $01, $53 ; [set2] go to message 53 if RNG, 01 TODO
+#_0AAA74: db $D8, $01, $53 ; [set2] go to message 53 if LUK < RNG(0, DemonLUK+16)
 #_0AAA77: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0AAA79: db $F3 ; [set2] wait for key and new line
 #_0AAA7A: db $F1 ; [set2] clear message box
@@ -7439,7 +7439,7 @@ Message_02_0A_53:
 ;===================================================================================================
 
 Message_02_0A_54:
-#_0AAA8B: db $D7, $01, $55 ; [set2] go to message 55 if RNG, 01 TODO
+#_0AAA8B: db $D7, $01, $55 ; [set2] go to message 55 if LUK < RNG(0, 32)
 #_0AAA8E: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
@@ -7450,7 +7450,7 @@ Message_02_0A_55:
 ;===================================================================================================
 
 Message_02_0A_56:
-#_0AAA93: db $D7, $01, $57 ; [set2] go to message 57 if RNG, 01 TODO
+#_0AAA93: db $D7, $01, $57 ; [set2] go to message 57 if LUK < RNG(0, 32)
 #_0AAA96: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AAA98: db $F3 ; [set2] wait for key and new line
 #_0AAA99: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -7480,7 +7480,7 @@ Message_02_0A_58:
 
 Message_02_0A_59:
 #_0AAAB0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
-#_0AAAB3: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
+#_0AAAB3: db $D7, $01, $34 ; [set2] go to message 34 if LUK < RNG(0, 32)
 #_0AAAB6: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AAAB8: db $F3 ; [set2] wait for key and new line
 #_0AAAB9: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -7490,7 +7490,7 @@ Message_02_0A_59:
 
 ; «>[CHASE]たちは にげだした»
 Message_02_0A_5A:
-#_0AAABE: db $D7, $00, $5B ; [set2] go to message 5B if RNG, 00 TODO
+#_0AAABE: db $D7, $00, $5B ; [set2] go to message 5B if LUK < RNG(0, 16)
 #_0AAAC1: db $EB, $E6 ; [set2] prewritten text E6
 #_0AAAC3: db $F3 ; [set2] wait for key and new line
 #_0AAAC4: db $FE, $04 ; [set2] [COMMAND 5E:04]
@@ -7527,7 +7527,7 @@ Message_02_0A_5C:
 ; «>[DEMONX]は さっていった»
 Message_02_0A_5D:
 #_0AAADC: db $D4, $00, $5F ; [set2] go to message 5F if RNG, 00 TODO
-#_0AAADF: db $D7, $01, $5E ; [set2] go to message 5E if RNG, 01 TODO
+#_0AAADF: db $D7, $01, $5E ; [set2] go to message 5E if LUK < RNG(0, 32)
 #_0AAAE2: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0AAAE4: db $F3 ; [set2] wait for key and new line
 #_0AAAE5: db $F1 ; [set2] clear message box
@@ -7592,7 +7592,7 @@ Message_02_0A_62:
 ;===================================================================================================
 
 Message_02_0A_63:
-#_0AAB18: db $D8, $01, $64 ; [set2] go to message 64 if RNG, 01 TODO
+#_0AAB18: db $D8, $01, $64 ; [set2] go to message 64 if LUK < RNG(0, DemonLUK+16)
 #_0AAB1B: db $E8, $2F ; [set2] [COMMAND 48:2F]
 #_0AAB1D: db $F3 ; [set2] wait for key and new line
 #_0AAB1E: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -7667,7 +7667,7 @@ Message_02_0B_04:
 ;===================================================================================================
 
 Message_02_0B_05:
-#_0AAB65: db $D7, $01, $0E ; [set2] go to message 0E if RNG, 01 TODO
+#_0AAB65: db $D7, $01, $0E ; [set2] go to message 0E if LUK < RNG(0, 32)
 #_0AAB68: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0AAB6A: db $D4, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AAB6D: db $E8, $0A ; [set2] [COMMAND 48:0A]
@@ -7750,7 +7750,7 @@ Message_02_0B_0B:
 ; «[DEMONX]を とらえた!»
 ; >[DEMONX]は おびえている
 Message_02_0B_0C:
-#_0AABCA: db $D8, $02, $0D ; [set2] go to message 0D if RNG, 02 TODO
+#_0AABCA: db $D8, $02, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+32)
 #_0AABCD: db $EB, $48 ; [set2] prewritten text 48
 #_0AABCF: db $F3 ; [set2] wait for key and new line
 #_0AABD0: db $F1 ; [set2] clear message box
@@ -7852,7 +7852,7 @@ Message_02_0B_13:
 ;===================================================================================================
 
 Message_02_0B_14:
-#_0AAC3D: db $D8, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
+#_0AAC3D: db $D8, $01, $1A ; [set2] go to message 1A if LUK < RNG(0, DemonLUK+16)
 #_0AAC40: db $D4, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
 #_0AAC43: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0AAC45: db $D6, $01, $16 ; [set2] go to message 16 if RNG, 01 TODO
@@ -7969,7 +7969,7 @@ Message_02_0B_1E:
 
 Message_02_0B_1F:
 #_0AACB8: db $D5, $02, $21 ; [set2] go to message 21 if RNG, 02 TODO
-#_0AACBB: db $D7, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
+#_0AACBB: db $D7, $01, $20 ; [set2] go to message 20 if LUK < RNG(0, 32)
 #_0AACBE: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
@@ -8026,7 +8026,7 @@ Message_02_0B_23:
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
 Message_02_0B_24:
-#_0AACEC: db $D8, $02, $0D ; [set2] go to message 0D if RNG, 02 TODO
+#_0AACEC: db $D8, $02, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+32)
 #_0AACEF: db $EB, $48 ; [set2] prewritten text 48
 #_0AACF1: db $F3 ; [set2] wait for key and new line
 #_0AACF2: db $F1 ; [set2] clear message box
@@ -8229,7 +8229,7 @@ Message_02_0B_36:
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0B_37:
-#_0AADB6: db $D7, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
+#_0AADB6: db $D7, $01, $04 ; [set2] go to message 04 if LUK < RNG(0, 32)
 #_0AADB9: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AADBB: db $D4, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
 #_0AADBE: db $E8, $38 ; [set2] [COMMAND 48:38]
@@ -8246,7 +8246,7 @@ Message_02_0B_37:
 ;===================================================================================================
 
 Message_02_0B_38:
-#_0AADCE: db $D8, $01, $39 ; [set2] go to message 39 if RNG, 01 TODO
+#_0AADCE: db $D8, $01, $39 ; [set2] go to message 39 if LUK < RNG(0, DemonLUK+16)
 #_0AADD1: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AADD3: db $F3 ; [set2] wait for key and new line
 #_0AADD4: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -8314,7 +8314,7 @@ Message_02_0B_3D:
 ; «>[DEMONX]は きくたいせいに はいった»
 Message_02_0B_3E:
 #_0AAE0C: db $E6, $02 ; [set2] [COMMAND 46:02]
-#_0AAE0E: db $D7, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
+#_0AAE0E: db $D7, $01, $15 ; [set2] go to message 15 if LUK < RNG(0, 32)
 #_0AAE11: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAE13: db $F3 ; [set2] wait for key and new line
 #_0AAE14: db $F1 ; [set2] clear message box
@@ -8327,7 +8327,7 @@ Message_02_0B_3E:
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0B_3F:
-#_0AAE1B: db $D8, $01, $0D ; [set2] go to message 0D if RNG, 01 TODO
+#_0AAE1B: db $D8, $01, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+16)
 #_0AAE1E: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AAE20: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAE22: db $F3 ; [set2] wait for key and new line
@@ -8349,7 +8349,7 @@ Message_02_0B_40:
 
 ; «>[DEMONX]は きくたいせいに はいった»
 Message_02_0B_41:
-#_0AAE32: db $D7, $01, $15 ; [set2] go to message 15 if RNG, 01 TODO
+#_0AAE32: db $D7, $01, $15 ; [set2] go to message 15 if LUK < RNG(0, 32)
 #_0AAE35: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAE37: db $F3 ; [set2] wait for key and new line
 #_0AAE38: db $F1 ; [set2] clear message box
@@ -8375,7 +8375,7 @@ Message_02_0B_42:
 ; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_43:
-#_0AAE4B: db $D7, $01, $46 ; [set2] go to message 46 if RNG, 01 TODO
+#_0AAE4B: db $D7, $01, $46 ; [set2] go to message 46 if LUK < RNG(0, 32)
 #_0AAE4E: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AAE50: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAE52: db $F3 ; [set2] wait for key and new line
@@ -8415,7 +8415,7 @@ Message_02_0B_46:
 ; «>[CHASE]たちは にげだした»
 Message_02_0B_47:
 #_0AAE76: db $E6, $FC ; [set2] [COMMAND 46:FC]
-#_0AAE78: db $D7, $00, $48 ; [set2] go to message 48 if RNG, 00 TODO
+#_0AAE78: db $D7, $00, $48 ; [set2] go to message 48 if LUK < RNG(0, 16)
 #_0AAE7B: db $EB, $E6 ; [set2] prewritten text E6
 #_0AAE7D: db $F3 ; [set2] wait for key and new line
 #_0AAE7E: db $FE, $04 ; [set2] [COMMAND 5E:04]
@@ -8450,7 +8450,7 @@ Message_02_0B_49:
 ; «どうしますか?»
 Message_02_0B_4A:
 #_0AAE95: db $D4, $00, $51 ; [set2] go to message 51 if RNG, 00 TODO
-#_0AAE98: db $D7, $01, $4F ; [set2] go to message 4F if RNG, 01 TODO
+#_0AAE98: db $D7, $01, $4F ; [set2] go to message 4F if LUK < RNG(0, 32)
 #_0AAE9B: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0AAE9D: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAE9F: db $F3 ; [set2] wait for key and new line
@@ -8467,7 +8467,7 @@ Message_02_0B_4A:
 
 ; «>[DEMONX]は きくたいせいに はいった»
 Message_02_0B_4B:
-#_0AAEAD: db $D8, $01, $4C ; [set2] go to message 4C if RNG, 01 TODO
+#_0AAEAD: db $D8, $01, $4C ; [set2] go to message 4C if LUK < RNG(0, DemonLUK+16)
 #_0AAEB0: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAEB2: db $F3 ; [set2] wait for key and new line
 #_0AAEB3: db $F1 ; [set2] clear message box
@@ -8546,7 +8546,7 @@ Message_02_0B_51:
 ;===================================================================================================
 
 Message_02_0B_52:
-#_0AAEFB: db $D7, $01, $53 ; [set2] go to message 53 if RNG, 01 TODO
+#_0AAEFB: db $D7, $01, $53 ; [set2] go to message 53 if LUK < RNG(0, 32)
 #_0AAEFE: db $E9, $4E ; [set2] go to message 4E
 
 ;===================================================================================================
@@ -8629,7 +8629,7 @@ Message_02_0C_01:
 ;===================================================================================================
 
 Message_02_0C_02:
-#_0AAF50: db $D8, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
+#_0AAF50: db $D8, $00, $14 ; [set2] go to message 14 if LUK < RNG(0, DemonLUK+8)
 #_0AAF53: db $E9, $03 ; [set2] go to message 03
 
 ;===================================================================================================
@@ -8668,7 +8668,7 @@ Message_02_0C_05:
 ;===================================================================================================
 
 Message_02_0C_06:
-#_0AAF7B: db $D8, $01, $07 ; [set2] go to message 07 if RNG, 01 TODO
+#_0AAF7B: db $D8, $01, $07 ; [set2] go to message 07 if LUK < RNG(0, DemonLUK+16)
 #_0AAF7E: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAF80: db $D4, $00, $52 ; [set2] go to message 52 if RNG, 00 TODO
 #_0AAF83: db $E8, $06 ; [set2] [COMMAND 48:06]
@@ -8687,7 +8687,7 @@ Message_02_0C_07:
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
 Message_02_0C_08:
-#_0AAF8F: db $D8, $02, $09 ; [set2] go to message 09 if RNG, 02 TODO
+#_0AAF8F: db $D8, $02, $09 ; [set2] go to message 09 if LUK < RNG(0, DemonLUK+32)
 #_0AAF92: db $EB, $EF ; [set2] prewritten text EF
 #_0AAF94: db $F3 ; [set2] wait for key and new line
 #_0AAF95: db $F1 ; [set2] clear message box
@@ -8719,7 +8719,7 @@ Message_02_0C_0A:
 
 Message_02_0C_0B:
 #_0AAFAE: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AAFB0: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
+#_0AAFB0: db $D8, $01, $13 ; [set2] go to message 13 if LUK < RNG(0, DemonLUK+16)
 #_0AAFB3: db $D4, $00, $52 ; [set2] go to message 52 if RNG, 00 TODO
 #_0AAFB6: db $E7, $0C, $49, $49, $0D ; [set2] randomly pick from messages 0C, 49, 49, 0D
 
@@ -8812,7 +8812,7 @@ Message_02_0C_15:
 #_0AB003: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB005: db $F3 ; [set2] wait for key and new line
 #_0AB006: db $F1 ; [set2] clear message box
-#_0AB007: db $D8, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
+#_0AB007: db $D8, $00, $09 ; [set2] go to message 09 if LUK < RNG(0, DemonLUK+8)
 #_0AB00A: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB00C: db $D4, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
 #_0AB00F: db $E8, $2B ; [set2] [COMMAND 48:2B]
@@ -9035,7 +9035,7 @@ Message_02_0C_2B:
 #_0AB0E8: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0AB0EB: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB0ED: db $D4, $00, $2D ; [set2] go to message 2D if RNG, 00 TODO
-#_0AB0F0: db $D7, $01, $2C ; [set2] go to message 2C if RNG, 01 TODO
+#_0AB0F0: db $D7, $01, $2C ; [set2] go to message 2C if LUK < RNG(0, 32)
 #_0AB0F3: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB0F5: db $F3 ; [set2] wait for key and new line
 #_0AB0F6: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -9104,7 +9104,7 @@ Message_02_0C_31:
 ; «>[DEMONX]に からかわれています»
 ; «どうしますか?»
 Message_02_0C_32:
-#_0AB132: db $D8, $00, $3E ; [set2] go to message 3E if RNG, 00 TODO
+#_0AB132: db $D8, $00, $3E ; [set2] go to message 3E if LUK < RNG(0, DemonLUK+8)
 #_0AB135: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB137: db $D4, $01, $3D ; [set2] go to message 3D if RNG, 01 TODO
 #_0AB13A: db $E8, $03 ; [set2] [COMMAND 48:03]
@@ -9123,7 +9123,7 @@ Message_02_0C_32:
 ; «>[DEMONX]は ちかづいてきた»
 ; «どうしますか?»
 Message_02_0C_33:
-#_0AB14A: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
+#_0AB14A: db $D8, $01, $37 ; [set2] go to message 37 if LUK < RNG(0, DemonLUK+16)
 #_0AB14D: db $E8, $15 ; [set2] [COMMAND 48:15]
 #_0AB14F: db $F3 ; [set2] wait for key and new line
 #_0AB150: db $F1 ; [set2] clear message box
@@ -9363,7 +9363,7 @@ Message_02_0C_49:
 ;===================================================================================================
 
 Message_02_0C_4A:
-#_0AB246: db $D8, $01, $4C ; [set2] go to message 4C if RNG, 01 TODO
+#_0AB246: db $D8, $01, $4C ; [set2] go to message 4C if LUK < RNG(0, DemonLUK+16)
 #_0AB249: db $D4, $00, $4B ; [set2] go to message 4B if RNG, 00 TODO
 #_0AB24C: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB24E: db $F3 ; [set2] wait for key and new line
@@ -9397,7 +9397,7 @@ Message_02_0C_4C:
 ;===================================================================================================
 
 Message_02_0C_4D:
-#_0AB267: db $D8, $01, $4C ; [set2] go to message 4C if RNG, 01 TODO
+#_0AB267: db $D8, $01, $4C ; [set2] go to message 4C if LUK < RNG(0, DemonLUK+16)
 #_0AB26A: db $D4, $02, $4E ; [set2] go to message 4E if RNG, 02 TODO
 #_0AB26D: db $D4, $01, $50 ; [set2] go to message 50 if RNG, 01 TODO
 #_0AB270: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -9466,7 +9466,7 @@ Message_02_0C_53:
 Message_02_0C_54:
 #_0AB2A7: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AB2A9: db $F3 ; [set2] wait for key and new line
-#_0AB2AA: db $D7, $01, $56 ; [set2] go to message 56 if RNG, 01 TODO
+#_0AB2AA: db $D7, $01, $56 ; [set2] go to message 56 if LUK < RNG(0, 32)
 #_0AB2AD: db $D4, $00, $55 ; [set2] go to message 55 if RNG, 00 TODO
 #_0AB2B0: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
 
@@ -9497,7 +9497,7 @@ Message_02_0C_56:
 ;===================================================================================================
 
 Message_02_0C_57:
-#_0AB2CA: db $D8, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
+#_0AB2CA: db $D8, $01, $14 ; [set2] go to message 14 if LUK < RNG(0, DemonLUK+16)
 #_0AB2CD: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AB2CF: db $D4, $01, $58 ; [set2] go to message 58 if RNG, 01 TODO
 #_0AB2D2: db $E9, $03 ; [set2] go to message 03
@@ -9535,7 +9535,7 @@ Message_02_0C_5A:
 #_0AB2EC: db $EB, $C3 ; [set2] prewritten text C3
 #_0AB2EE: db $F3 ; [set2] wait for key and new line
 #_0AB2EF: db $F1 ; [set2] clear message box
-#_0AB2F0: db $D8, $01, $6B ; [set2] go to message 6B if RNG, 01 TODO
+#_0AB2F0: db $D8, $01, $6B ; [set2] go to message 6B if LUK < RNG(0, DemonLUK+16)
 #_0AB2F3: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB2F5: db $D4, $00, $63 ; [set2] go to message 63 if RNG, 00 TODO
 #_0AB2F8: db $EB, $E8 ; [set2] prewritten text E8
@@ -9695,7 +9695,7 @@ Message_02_0C_6B:
 ;===================================================================================================
 
 Message_02_0C_6C:
-#_0AB389: db $D7, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
+#_0AB389: db $D7, $01, $3C ; [set2] go to message 3C if LUK < RNG(0, 32)
 #_0AB38C: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB38E: db $F3 ; [set2] wait for key and new line
 #_0AB38F: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -9757,7 +9757,7 @@ Message_02_0C_71:
 ; «>[DEMONX]は さっていった»
 Message_02_0C_72:
 #_0AB3C5: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
-#_0AB3C8: db $D7, $01, $73 ; [set2] go to message 73 if RNG, 01 TODO
+#_0AB3C8: db $D7, $01, $73 ; [set2] go to message 73 if LUK < RNG(0, 32)
 #_0AB3CB: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0AB3CD: db $F3 ; [set2] wait for key and new line
 #_0AB3CE: db $F1 ; [set2] clear message box
@@ -9939,7 +9939,7 @@ Message_02_0D_09:
 
 Message_02_0D_0A:
 #_0AB484: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0AB486: db $D8, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
+#_0AB486: db $D8, $01, $0B ; [set2] go to message 0B if LUK < RNG(0, DemonLUK+16)
 #_0AB489: db $E9, $18 ; [set2] go to message 18
 
 ;===================================================================================================
@@ -9976,7 +9976,7 @@ Message_02_0D_0F:
 ;===================================================================================================
 
 Message_02_0D_10:
-#_0AB4A6: db $D7, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
+#_0AB4A6: db $D7, $01, $14 ; [set2] go to message 14 if LUK < RNG(0, 32)
 #_0AB4A9: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AB4AB: db $D4, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0AB4AE: db $E8, $0A ; [set2] [COMMAND 48:0A]
@@ -10004,7 +10004,7 @@ Message_02_0D_11:
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
 Message_02_0D_12:
-#_0AB4C4: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
+#_0AB4C4: db $D8, $01, $13 ; [set2] go to message 13 if LUK < RNG(0, DemonLUK+16)
 #_0AB4C7: db $E8, $33 ; [set2] [COMMAND 48:33]
 #_0AB4C9: db $F3 ; [set2] wait for key and new line
 #_0AB4CA: db $F1 ; [set2] clear message box
@@ -10054,7 +10054,7 @@ Message_02_0D_16:
 
 Message_02_0D_17:
 #_0AB4FA: db $D5, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
-#_0AB4FD: db $D8, $01, $2D ; [set2] go to message 2D if RNG, 01 TODO
+#_0AB4FD: db $D8, $01, $2D ; [set2] go to message 2D if LUK < RNG(0, DemonLUK+16)
 #_0AB500: db $E7, $18, $19, $19, $2C ; [set2] randomly pick from messages 18, 19, 19, 2C
 
 ;===================================================================================================
@@ -10118,7 +10118,7 @@ Message_02_0D_1D:
 ;===================================================================================================
 
 Message_02_0D_1E:
-#_0AB544: db $D8, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
+#_0AB544: db $D8, $01, $20 ; [set2] go to message 20 if LUK < RNG(0, DemonLUK+16)
 #_0AB547: db $D4, $00, $1F ; [set2] go to message 1F if RNG, 00 TODO
 #_0AB54A: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB54C: db $F3 ; [set2] wait for key and new line
@@ -10152,7 +10152,7 @@ Message_02_0D_20:
 ;===================================================================================================
 
 Message_02_0D_21:
-#_0AB565: db $D8, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
+#_0AB565: db $D8, $01, $20 ; [set2] go to message 20 if LUK < RNG(0, DemonLUK+16)
 #_0AB568: db $D4, $02, $24 ; [set2] go to message 24 if RNG, 02 TODO
 #_0AB56B: db $D4, $01, $22 ; [set2] go to message 22 if RNG, 01 TODO
 #_0AB56E: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -10227,8 +10227,8 @@ Message_02_0D_27:
 ;===================================================================================================
 
 Message_02_0D_28:
-#_0AB5B4: db $D7, $01, $2A ; [set2] go to message 2A if RNG, 01 TODO
-#_0AB5B7: db $D7, $02, $29 ; [set2] go to message 29 if RNG, 02 TODO
+#_0AB5B4: db $D7, $01, $2A ; [set2] go to message 2A if LUK < RNG(0, 32)
+#_0AB5B7: db $D7, $02, $29 ; [set2] go to message 29 if LUK < RNG(0, 64)
 #_0AB5BA: db $E9, $18 ; [set2] go to message 18
 
 ;===================================================================================================
@@ -10536,7 +10536,7 @@ Message_02_0D_46:
 ; «>[CHASE]の がんこうは»
 ; «[DEMONX]を とりこに した»
 Message_02_0D_47:
-#_0AB6E0: db $D8, $02, $48 ; [set2] go to message 48 if RNG, 02 TODO
+#_0AB6E0: db $D8, $02, $48 ; [set2] go to message 48 if LUK < RNG(0, DemonLUK+32)
 #_0AB6E3: db $EB, $EF ; [set2] prewritten text EF
 #_0AB6E5: db $F3 ; [set2] wait for key and new line
 #_0AB6E6: db $F1 ; [set2] clear message box
@@ -10548,7 +10548,7 @@ Message_02_0D_47:
 ;===================================================================================================
 
 Message_02_0D_48:
-#_0AB6EF: db $D8, $01, $13 ; [set2] go to message 13 if RNG, 01 TODO
+#_0AB6EF: db $D8, $01, $13 ; [set2] go to message 13 if LUK < RNG(0, DemonLUK+16)
 #_0AB6F2: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0AB6F5: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AB6F7: db $E9, $01 ; [set2] go to message 01
@@ -10590,7 +10590,7 @@ Message_02_0D_4B:
 ;===================================================================================================
 
 Message_02_0D_4C:
-#_0AB71A: db $D7, $01, $4E ; [set2] go to message 4E if RNG, 01 TODO
+#_0AB71A: db $D7, $01, $4E ; [set2] go to message 4E if LUK < RNG(0, 32)
 #_0AB71D: db $D4, $00, $4D ; [set2] go to message 4D if RNG, 00 TODO
 #_0AB720: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AB722: db $F3 ; [set2] wait for key and new line
@@ -10699,7 +10699,7 @@ Message_02_0D_56:
 ;===================================================================================================
 
 Message_02_0D_57:
-#_0AB786: db $D7, $01, $59 ; [set2] go to message 59 if RNG, 01 TODO
+#_0AB786: db $D7, $01, $59 ; [set2] go to message 59 if LUK < RNG(0, 32)
 #_0AB789: db $E9, $58 ; [set2] go to message 58
 
 ;===================================================================================================
@@ -10789,7 +10789,7 @@ Message_02_0D_60:
 ;===================================================================================================
 
 Message_02_0D_61:
-#_0AB7DB: db $D8, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
+#_0AB7DB: db $D8, $00, $62 ; [set2] go to message 62 if LUK < RNG(0, DemonLUK+8)
 #_0AB7DE: db $E7, $1D, $1D, $60, $55 ; [set2] randomly pick from messages 1D, 1D, 60, 55
 
 ;===================================================================================================
@@ -10874,7 +10874,7 @@ Message_02_0D_6A:
 ;===================================================================================================
 
 Message_02_0D_6B:
-#_0AB82E: db $D7, $01, $64 ; [set2] go to message 64 if RNG, 01 TODO
+#_0AB82E: db $D7, $01, $64 ; [set2] go to message 64 if LUK < RNG(0, 32)
 #_0AB831: db $E9, $58 ; [set2] go to message 58
 
 ;===================================================================================================
@@ -10895,7 +10895,7 @@ Message_02_0D_6D:
 #_0AB840: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AB842: db $F3 ; [set2] wait for key and new line
 #_0AB843: db $F1 ; [set2] clear message box
-#_0AB844: db $D7, $01, $6F ; [set2] go to message 6F if RNG, 01 TODO
+#_0AB844: db $D7, $01, $6F ; [set2] go to message 6F if LUK < RNG(0, 32)
 #_0AB847: db $D4, $00, $6E ; [set2] go to message 6E if RNG, 00 TODO
 #_0AB84A: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
 
@@ -11064,7 +11064,7 @@ Message_02_0E_0E:
 ; «>[CHASE]の うたは»
 ; «[CLASSX] [DEMONX]を とりこにした»
 Message_02_0E_0F:
-#_0AB8EA: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
+#_0AB8EA: db $D8, $01, $11 ; [set2] go to message 11 if LUK < RNG(0, DemonLUK+16)
 #_0AB8ED: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB8EF: db $D4, $00, $10 ; [set2] go to message 10 if RNG, 00 TODO
 #_0AB8F2: db $EB, $E7 ; [set2] prewritten text E7
@@ -11163,7 +11163,7 @@ Message_02_0E_18:
 ; «>だいぶ きまずく なってきた»
 Message_02_0E_19:
 #_0AB94F: db $D4, $01, $1A ; [set2] go to message 1A if RNG, 01 TODO
-#_0AB952: db $D7, $01, $20 ; [set2] go to message 20 if RNG, 01 TODO
+#_0AB952: db $D7, $01, $20 ; [set2] go to message 20 if LUK < RNG(0, 32)
 #_0AB955: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AB957: db $F3 ; [set2] wait for key and new line
 #_0AB958: db $F1 ; [set2] clear message box
@@ -11228,7 +11228,7 @@ Message_02_0E_20:
 
 ; «>[DEMONX]は なんたいかにげだした»
 Message_02_0E_21:
-#_0AB993: db $D7, $00, $22 ; [set2] go to message 22 if RNG, 00 TODO
+#_0AB993: db $D7, $00, $22 ; [set2] go to message 22 if LUK < RNG(0, 16)
 #_0AB996: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB998: db $F3 ; [set2] wait for key and new line
 #_0AB999: db $F1 ; [set2] clear message box
@@ -11263,7 +11263,7 @@ Message_02_0E_23:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0E_24:
-#_0AB9B6: db $D8, $01, $30 ; [set2] go to message 30 if RNG, 01 TODO
+#_0AB9B6: db $D8, $01, $30 ; [set2] go to message 30 if LUK < RNG(0, DemonLUK+16)
 #_0AB9B9: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB9BB: db $D4, $01, $2C ; [set2] go to message 2C if RNG, 01 TODO
 #_0AB9BE: db $EB, $E8 ; [set2] prewritten text E8
@@ -11303,8 +11303,8 @@ Message_02_0E_27:
 
 Message_02_0E_28:
 #_0AB9E0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
-#_0AB9E3: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
-#_0AB9E6: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
+#_0AB9E3: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
+#_0AB9E6: db $D8, $01, $37 ; [set2] go to message 37 if LUK < RNG(0, DemonLUK+16)
 #_0AB9E9: db $E9, $36 ; [set2] go to message 36
 
 ;===================================================================================================
@@ -11432,7 +11432,7 @@ Message_02_0E_33:
 Message_02_0E_34:
 #_0ABA67: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0ABA69: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
-#_0ABA6C: db $D7, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
+#_0ABA6C: db $D7, $01, $3B ; [set2] go to message 3B if LUK < RNG(0, 32)
 #_0ABA6F: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0ABA71: db $F3 ; [set2] wait for key and new line
 #_0ABA72: db $F1 ; [set2] clear message box
@@ -11557,7 +11557,7 @@ Message_02_0E_41:
 Message_02_0E_42:
 #_0ABAEB: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0ABAEE: db $D4, $00, $43 ; [set2] go to message 43 if RNG, 00 TODO
-#_0ABAF1: db $D7, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
+#_0ABAF1: db $D7, $01, $3B ; [set2] go to message 3B if LUK < RNG(0, 32)
 #_0ABAF4: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0ABAF6: db $F3 ; [set2] wait for key and new line
 #_0ABAF7: db $E5, $04 ; [set2] [COMMAND 45:04]
@@ -11794,7 +11794,7 @@ Message_02_0E_58:
 ;===================================================================================================
 
 Message_02_0E_59:
-#_0ABBEA: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
+#_0ABBEA: db $D8, $01, $11 ; [set2] go to message 11 if LUK < RNG(0, DemonLUK+16)
 #_0ABBED: db $D4, $00, $5A ; [set2] go to message 5A if RNG, 00 TODO
 #_0ABBF0: db $E9, $10 ; [set2] go to message 10
 
@@ -11820,7 +11820,7 @@ Message_02_0E_5A:
 ;===================================================================================================
 
 Message_02_0E_5B:
-#_0ABC03: db $D8, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
+#_0ABC03: db $D8, $01, $11 ; [set2] go to message 11 if LUK < RNG(0, DemonLUK+16)
 #_0ABC06: db $D4, $02, $5E ; [set2] go to message 5E if RNG, 02 TODO
 #_0ABC09: db $D4, $01, $5C ; [set2] go to message 5C if RNG, 01 TODO
 #_0ABC0C: db $E8, $10 ; [set2] [COMMAND 48:10]
@@ -11888,7 +11888,7 @@ Message_02_0E_60:
 
 Message_02_0E_61:
 #_0ABC44: db $E6, $80 ; [set2] [COMMAND 46:80]
-#_0ABC46: db $D8, $00, $62 ; [set2] go to message 62 if RNG, 00 TODO
+#_0ABC46: db $D8, $00, $62 ; [set2] go to message 62 if LUK < RNG(0, DemonLUK+8)
 #_0ABC49: db $E9, $7E ; [set2] go to message 7E
 
 ;===================================================================================================
@@ -11901,13 +11901,13 @@ Message_02_0E_62:
 ;===================================================================================================
 
 Message_02_0E_63:
-#_0ABC51: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
+#_0ABC51: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
 #_0ABC54: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
 ;===================================================================================================
 
 Message_02_0E_64:
-#_0ABC56: db $D7, $01, $65 ; [set2] go to message 65 if RNG, 01 TODO
+#_0ABC56: db $D7, $01, $65 ; [set2] go to message 65 if LUK < RNG(0, 32)
 #_0ABC59: db $E9, $1E ; [set2] go to message 1E
 
 ;===================================================================================================
@@ -11936,7 +11936,7 @@ Message_02_0E_66:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0E_67:
-#_0ABC70: db $D8, $01, $75 ; [set2] go to message 75 if RNG, 01 TODO
+#_0ABC70: db $D8, $01, $75 ; [set2] go to message 75 if LUK < RNG(0, DemonLUK+16)
 #_0ABC73: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0ABC75: db $D4, $01, $6A ; [set2] go to message 6A if RNG, 01 TODO
 #_0ABC78: db $EB, $E8 ; [set2] prewritten text E8
@@ -12094,7 +12094,7 @@ Message_02_0E_75:
 ;===================================================================================================
 
 Message_02_0E_76:
-#_0ABD0E: db $D7, $01, $65 ; [set2] go to message 65 if RNG, 01 TODO
+#_0ABD0E: db $D7, $01, $65 ; [set2] go to message 65 if LUK < RNG(0, 32)
 #_0ABD11: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0ABD13: db $F3 ; [set2] wait for key and new line
 #_0ABD14: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -12167,7 +12167,7 @@ Message_02_0E_7C:
 
 Message_02_0E_7D:
 #_0ABD5C: db $D4, $00, $7F ; [set2] go to message 7F if RNG, 00 TODO
-#_0ABD5F: db $D7, $01, $57 ; [set2] go to message 57 if RNG, 01 TODO
+#_0ABD5F: db $D7, $01, $57 ; [set2] go to message 57 if LUK < RNG(0, 32)
 #_0ABD62: db $E9, $7E ; [set2] go to message 7E
 
 ;===================================================================================================
@@ -12223,7 +12223,7 @@ Message_02_0E_82:
 Message_02_0E_83:
 #_0ABD8D: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
 #_0ABD90: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0ABD92: db $D7, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
+#_0ABD92: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
 #_0ABD95: db $DB, $01, $37 ; [set2] [COMMAND 3B] go to message 37 if something 01 TODO
 #_0ABD98: db $E9, $36 ; [set2] go to message 36
 
@@ -12306,7 +12306,7 @@ Message_02_0F_05:
 ;===================================================================================================
 
 Message_02_0F_06:
-#_0ABDF6: db $D7, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
+#_0ABDF6: db $D7, $01, $11 ; [set2] go to message 11 if LUK < RNG(0, 32)
 #_0ABDF9: db $E6, $03 ; [set2] [COMMAND 46:03]
 #_0ABDFB: db $D4, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
 #_0ABDFE: db $E9, $07 ; [set2] go to message 07
@@ -12381,7 +12381,7 @@ Message_02_0F_0D:
 ;===================================================================================================
 
 Message_02_0F_0E:
-#_0ABE4A: db $D8, $02, $10 ; [set2] go to message 10 if RNG, 02 TODO
+#_0ABE4A: db $D8, $02, $10 ; [set2] go to message 10 if LUK < RNG(0, DemonLUK+32)
 #_0ABE4D: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
@@ -12532,7 +12532,7 @@ Message_02_0F_1D:
 ;===================================================================================================
 
 Message_02_0F_1E:
-#_0ABEDB: db $D7, $01, $1F ; [set2] go to message 1F if RNG, 01 TODO
+#_0ABEDB: db $D7, $01, $1F ; [set2] go to message 1F if LUK < RNG(0, 32)
 #_0ABEDE: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0ABEE0: db $F3 ; [set2] wait for key and new line
 #_0ABEE1: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -12600,7 +12600,7 @@ Message_02_0F_24:
 ;===================================================================================================
 
 Message_02_0F_25:
-#_0ABF1A: db $D8, $01, $01 ; [set2] go to message 01 if RNG, 01 TODO
+#_0ABF1A: db $D8, $01, $01 ; [set2] go to message 01 if LUK < RNG(0, DemonLUK+16)
 #_0ABF1D: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0ABF1F: db $F3 ; [set2] wait for key and new line
 #_0ABF20: db $E6, $03 ; [set2] [COMMAND 46:03]
@@ -12711,7 +12711,7 @@ Message_02_0F_31:
 ;===================================================================================================
 
 Message_02_0F_32:
-#_0ABF8C: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
+#_0ABF8C: db $D7, $01, $34 ; [set2] go to message 34 if LUK < RNG(0, 32)
 #_0ABF8F: db $D4, $00, $05 ; [set2] go to message 05 if RNG, 00 TODO
 #_0ABF92: db $DA, $01, $33 ; [set2] ext command 01: go to message 33 if MC INT = 0
 #_0ABF95: db $E9, $19 ; [set2] go to message 19
@@ -12750,7 +12750,7 @@ Message_02_0F_35:
 ; «>[CHASE]の がんこうは するどく»
 ; «[DEMONX]を とらえた!»
 Message_02_0F_36:
-#_0ABFB1: db $D8, $01, $37 ; [set2] go to message 37 if RNG, 01 TODO
+#_0ABFB1: db $D8, $01, $37 ; [set2] go to message 37 if LUK < RNG(0, DemonLUK+16)
 #_0ABFB4: db $EB, $48 ; [set2] prewritten text 48
 #_0ABFB6: db $F3 ; [set2] wait for key and new line
 #_0ABFB7: db $F1 ; [set2] clear message box
@@ -12808,7 +12808,7 @@ Message_02_0F_3A:
 ;===================================================================================================
 
 Message_02_0F_3B:
-#_0ABFF2: db $D8, $02, $10 ; [set2] go to message 10 if RNG, 02 TODO
+#_0ABFF2: db $D8, $02, $10 ; [set2] go to message 10 if LUK < RNG(0, DemonLUK+32)
 #_0ABFF5: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
@@ -12823,7 +12823,7 @@ Message_02_0F_3C:
 Message_02_0F_3D:
 #_0ABFFD: db $E8, $42 ; [set2] [COMMAND 48:42]
 #_0ABFFF: db $F3 ; [set2] wait for key and new line
-#_0AC000: db $D7, $01, $3E ; [set2] go to message 3E if RNG, 01 TODO
+#_0AC000: db $D7, $01, $3E ; [set2] go to message 3E if LUK < RNG(0, 32)
 #_0AC003: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
 ;===================================================================================================
@@ -12912,7 +12912,7 @@ Message_02_0F_46:
 ; «>[DEMONX]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0F_47:
-#_0AC050: db $D7, $01, $05 ; [set2] go to message 05 if RNG, 01 TODO
+#_0AC050: db $D7, $01, $05 ; [set2] go to message 05 if LUK < RNG(0, 32)
 #_0AC053: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC055: db $D4, $01, $49 ; [set2] go to message 49 if RNG, 01 TODO
 #_0AC058: db $E8, $38 ; [set2] [COMMAND 48:38]
@@ -12929,7 +12929,7 @@ Message_02_0F_47:
 ;===================================================================================================
 
 Message_02_0F_48:
-#_0AC068: db $D8, $01, $17 ; [set2] go to message 17 if RNG, 01 TODO
+#_0AC068: db $D8, $01, $17 ; [set2] go to message 17 if LUK < RNG(0, DemonLUK+16)
 #_0AC06B: db $E8, $39 ; [set2] [COMMAND 48:39]
 #_0AC06D: db $F3 ; [set2] wait for key and new line
 #_0AC06E: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -12973,7 +12973,7 @@ Message_02_0F_4B:
 
 Message_02_0F_4C:
 #_0AC092: db $E6, $02 ; [set2] [COMMAND 46:02]
-#_0AC094: db $D7, $01, $4D ; [set2] go to message 4D if RNG, 01 TODO
+#_0AC094: db $D7, $01, $4D ; [set2] go to message 4D if LUK < RNG(0, 32)
 #_0AC097: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC099: db $F3 ; [set2] wait for key and new line
 #_0AC09A: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -12990,7 +12990,7 @@ Message_02_0F_4D:
 ; «>[DEMONX]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0F_4E:
-#_0AC0A3: db $D8, $01, $10 ; [set2] go to message 10 if RNG, 01 TODO
+#_0AC0A3: db $D8, $01, $10 ; [set2] go to message 10 if LUK < RNG(0, DemonLUK+16)
 #_0AC0A6: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AC0A8: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC0AA: db $F3 ; [set2] wait for key and new line
@@ -13006,7 +13006,7 @@ Message_02_0F_4E:
 ;===================================================================================================
 
 Message_02_0F_4F:
-#_0AC0B8: db $D7, $01, $4D ; [set2] go to message 4D if RNG, 01 TODO
+#_0AC0B8: db $D7, $01, $4D ; [set2] go to message 4D if LUK < RNG(0, 32)
 #_0AC0BB: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC0BD: db $F3 ; [set2] wait for key and new line
 #_0AC0BE: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -13029,7 +13029,7 @@ Message_02_0F_50:
 ; «>[DEMONX]は おどしてきた»
 ; «どうしますか?»
 Message_02_0F_51:
-#_0AC0CD: db $D7, $01, $5D ; [set2] go to message 5D if RNG, 01 TODO
+#_0AC0CD: db $D7, $01, $5D ; [set2] go to message 5D if LUK < RNG(0, 32)
 #_0AC0D0: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AC0D2: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AC0D4: db $F3 ; [set2] wait for key and new line
@@ -13129,7 +13129,7 @@ Message_02_0F_59:
 ;===================================================================================================
 
 Message_02_0F_5A:
-#_0AC13B: db $D8, $01, $5C ; [set2] go to message 5C if RNG, 01 TODO
+#_0AC13B: db $D8, $01, $5C ; [set2] go to message 5C if LUK < RNG(0, DemonLUK+16)
 #_0AC13E: db $D4, $00, $5B ; [set2] go to message 5B if RNG, 00 TODO
 #_0AC141: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC143: db $F3 ; [set2] wait for key and new line
@@ -13175,7 +13175,7 @@ Message_02_0F_5D:
 ; «>[CHASE]たちは にげだした»
 Message_02_0F_5E:
 #_0AC165: db $E6, $FC ; [set2] [COMMAND 46:FC]
-#_0AC167: db $D7, $00, $5F ; [set2] go to message 5F if RNG, 00 TODO
+#_0AC167: db $D7, $00, $5F ; [set2] go to message 5F if LUK < RNG(0, 16)
 #_0AC16A: db $EB, $E6 ; [set2] prewritten text E6
 #_0AC16C: db $F3 ; [set2] wait for key and new line
 #_0AC16D: db $FE, $04 ; [set2] [COMMAND 5E:04]
@@ -13210,7 +13210,7 @@ Message_02_0F_60:
 ; «どうしますか?»
 Message_02_0F_61:
 #_0AC184: db $D4, $00, $68 ; [set2] go to message 68 if RNG, 00 TODO
-#_0AC187: db $D7, $01, $66 ; [set2] go to message 66 if RNG, 01 TODO
+#_0AC187: db $D7, $01, $66 ; [set2] go to message 66 if LUK < RNG(0, 32)
 #_0AC18A: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0AC18C: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC18E: db $F3 ; [set2] wait for key and new line
@@ -13226,7 +13226,7 @@ Message_02_0F_61:
 ;===================================================================================================
 
 Message_02_0F_62:
-#_0AC19C: db $D8, $01, $63 ; [set2] go to message 63 if RNG, 01 TODO
+#_0AC19C: db $D8, $01, $63 ; [set2] go to message 63 if LUK < RNG(0, DemonLUK+16)
 #_0AC19F: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AC1A1: db $F3 ; [set2] wait for key and new line
 #_0AC1A2: db $E6, $02 ; [set2] [COMMAND 46:02]
@@ -13298,7 +13298,7 @@ Message_02_0F_68:
 ;===================================================================================================
 
 Message_02_0F_69:
-#_0AC1E2: db $D7, $01, $34 ; [set2] go to message 34 if RNG, 01 TODO
+#_0AC1E2: db $D7, $01, $34 ; [set2] go to message 34 if LUK < RNG(0, 32)
 #_0AC1E5: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AC1E7: db $F3 ; [set2] wait for key and new line
 #_0AC1E8: db $E6, $04 ; [set2] [COMMAND 46:04]
@@ -13499,7 +13499,7 @@ Message_02_10_12:
 ;===================================================================================================
 
 Message_02_10_13:
-#_0AC2AC: db $D7, $01, $14 ; [set2] go to message 14 if RNG, 01 TODO
+#_0AC2AC: db $D7, $01, $14 ; [set2] go to message 14 if LUK < RNG(0, 32)
 #_0AC2AF: db $E9, $12 ; [set2] go to message 12
 
 ;===================================================================================================
@@ -13941,7 +13941,7 @@ Message_02_12_04:
 
 Message_02_12_05:
 #_0AC43C: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress bit E9 if 01 is nonzero; otherwise reset
-#_0AC43F: db $D8, $00, $06 ; [set2] go to message 06 if RNG, 00 TODO
+#_0AC43F: db $D8, $00, $06 ; [set2] go to message 06 if LUK < RNG(0, DemonLUK+8)
 #_0AC442: db $E8, $54 ; [set2] [COMMAND 48:54]
 #_0AC444: db $F3 ; [set2] wait for key and new line
 #_0AC445: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -14059,7 +14059,7 @@ Message_02_13_06:
 #_0AC4B6: db $EF, $07 ; [set2] YES/NO - go to message 07 if YES
 #_0AC4B8: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AC4BA: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
-#_0AC4BC: db $D8, $00, $0D ; [set2] go to message 0D if RNG, 00 TODO
+#_0AC4BC: db $D8, $00, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+8)
 #_0AC4BF: db $EB, $E1 ; [set2] prewritten text E1
 #_0AC4C1: db $F3 ; [set2] wait for key and new line
 #_0AC4C2: db $FE, $06 ; [set2] [COMMAND 5E:06]
@@ -14067,7 +14067,7 @@ Message_02_13_06:
 ;===================================================================================================
 
 Message_02_13_07:
-#_0AC4C4: db $D8, $01, $08 ; [set2] go to message 08 if RNG, 01 TODO
+#_0AC4C4: db $D8, $01, $08 ; [set2] go to message 08 if LUK < RNG(0, DemonLUK+16)
 #_0AC4C7: db $E8, $54 ; [set2] [COMMAND 48:54]
 #_0AC4C9: db $F3 ; [set2] wait for key and new line
 #_0AC4CA: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -14096,7 +14096,7 @@ Message_02_13_09:
 ;===================================================================================================
 
 Message_02_13_0A:
-#_0AC4E0: db $D7, $01, $0B ; [set2] go to message 0B if RNG, 01 TODO
+#_0AC4E0: db $D7, $01, $0B ; [set2] go to message 0B if LUK < RNG(0, 32)
 #_0AC4E3: db $E9, $01 ; [set2] go to message 01
 
 ;===================================================================================================
@@ -23530,7 +23530,7 @@ Message_02_1F_00:
 #_0AFB9C: db $D7, $01 ; load scene 01
 #_0AFB9E: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_0AFBA3: db $FE, $17, $00 ; ext command 17: set $0BE2 and $07E1 to $00 TODO
-#_0AFBA6: db $FE, $04, $01, $0C ; ext command 04: message 01 if 11C >= 112; 0C if >= 144
+#_0AFBA6: db $FE, $04, $01, $0C ; ext command 04: message 01 if alignment >= 112; 0C if >= 144
 
 ;===================================================================================================
 
@@ -23700,7 +23700,7 @@ Message_02_1F_10:
 #_0AFCAE: db $F2, $34 ; prewritten text 34
 #_0AFCB0: db $CF, $30, $2F, $26, $9A ; ⎵しさい:
 #_0AFCB5: db $F9 ; new line
-#_0AFCB6: db $FE, $04, $15, $12 ; ext command 04: message 15 if 11C >= 112; 12 if >= 144
+#_0AFCB6: db $FE, $04, $15, $12 ; ext command 04: message 15 if alignment >= 112; 12 if >= 144
 #_0AFCBA: db $D3, $12 ; go to message 12
 
 ;===================================================================================================

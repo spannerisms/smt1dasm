@@ -1,17 +1,21 @@
-
 org $038000
+
+;===================================================================================================
 
 routine038000:
 #_038000: SEP #$30
+
 #_038002: STZ.w $0A58
 #_038005: STZ.w $0C4E
+
 #_038008: JSR routine0384F9
-#_03800B: JSL Update19XXuntil0100
+#_03800B: JSL RunFramesUntil0100IsFlagged
 #_03800F: JSL routine02CB99
 #_038013: JSL routine0380FA
 
 #_038017: REP #$20
 #_038019: SEP #$10
+
 #_03801B: LDX.b #$00
 #_03801D: LDY.b #$00
 #_03801F: LDA.w $0E00
@@ -24,19 +28,26 @@ routine038000:
 #_038028: BCC .branch038038
 
 #_03802A: PHA
+
 #_03802B: PHP
 #_03802C: SEP #$20
+
 #_03802E: TYA
 #_03802F: STA.w $0C44,X
+
 #_038032: PLP
 #_038033: PLA
+
 #_038034: JSR routine038176
+
 #_038037: INX
 
 .branch038038
 #_038038: INY
 #_038039: CPY.b #$0E
 #_03803B: BNE .branch038027
+
+;---------------------------------------------------------------------------------------------------
 
 #_03803D: SEP #$30
 #_03803F: TXA
@@ -59,13 +70,16 @@ routine038000:
 .branch03805C
 #_03805C: LDA.w $09FB
 #_03805F: STA.w $09F1
+
 #_038062: LDA.b #$03
 #_038064: STA.w $09F4
+
 #_038067: STZ.w $09F2
 #_03806A: STZ.w $09F3
 #_03806D: JSL routine02C8E9
 
 #_038071: SEP #$30
+
 #_038073: LDA.w $09F3
 #_038076: BMI .branch0380BB
 
@@ -73,39 +87,53 @@ routine038000:
 #_038079: CLC
 #_03807A: ADC.w $09F2
 #_03807D: TAX
+
 #_03807E: LDA.w $0C44,X
 #_038081: STA.w $0C4E
 #_038084: STA.w $0BE2
 #_038087: STA.w $07E1
+
 #_03808A: ASL A
 #_03808B: CLC
 #_03808C: ADC.w $0BE2
 #_03808F: TAY
+
 #_038090: LDA.w data0380D0,Y
 #_038093: STA.w $070C
+
 #_038096: LDA.w data0380D1,Y
 #_038099: PHA
+
 #_03809A: AND.b #$3F
 #_03809C: STA.w $070D
+
 #_03809F: PLA
 #_0380A0: ASL A
 #_0380A1: ROL A
 #_0380A2: ROL A
 #_0380A3: AND.b #$03
 #_0380A5: STA.w $040D
+
 #_0380A8: LDA.w data0380D2,Y
 #_0380AB: STA.w $0710
+
 #_0380AE: STZ.w $05A6
 #_0380B1: STZ.w $05A7
+
 #_0380B4: JSR routine038B8E
 #_0380B7: JSR GetNextTextByte
+
 #_0380BA: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0380BB
 #_0380BB: JSR routine038B8E
 #_0380BE: JSR GetNextTextByte
 #_0380C1: JSR RelocateTextPointer
 #_0380C4: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0380C5
 #_0380C5: SEP #$30
@@ -127,24 +155,31 @@ data0380D2:
 #_0380EA: db $13,$6D,$0E,$08,$06,$ED,$11,$53
 #_0380F2: db $0C,$06,$1E,$2D,$07,$3A,$34,$08
 
+;===================================================================================================
+
 routine0380FA:
 #_0380FA: PHP
+
 #_0380FB: PHB
 #_0380FC: PHK
 #_0380FD: PLB
 
 #_0380FE: REP #$30
+
 #_038100: LDA.w $0BE2
 #_038103: AND.w #$00FF
 #_038106: ASL A
 #_038107: TAY
-#_038108: LDA.w data03815A,Y
+
+#_038108: LDA.w .bits,Y
 #_03810B: ORA.w $07F3
 #_03810E: AND.w #$3FFF
 #_038111: STA.w $07F3
-#_038114: LDA.w data03815A,Y
+
+#_038114: LDA.w .bits,Y
 #_038117: EOR.w #$FFFF
 #_03811A: STA.w $0E02
+
 #_03811D: LDA.w #$002F
 #_038120: JSL TestGameProgressBit
 #_038124: BCS .branch038131
@@ -154,6 +189,8 @@ routine0380FA:
 #_03812C: STA.w $0E00
 #_03812F: BRA .branch03814E
 
+;---------------------------------------------------------------------------------------------------
+
 .branch038131
 #_038131: LDA.w #$009E
 #_038134: JSL TestGameProgressBit
@@ -162,6 +199,7 @@ routine0380FA:
 #_03813A: LDA.w $07F3
 #_03813D: AND.w #$FFFC
 #_038140: STA.w $0E00
+
 #_038143: BRA .branch03814E
 
 .branch038145
@@ -173,18 +211,24 @@ routine0380FA:
 #_03814E: LDA.w $0E00
 #_038151: AND.w $0E02
 #_038154: STA.w $0E00
+
 #_038157: PLB
 #_038158: PLP
 #_038159: RTL
 
-data03815A:
+;---------------------------------------------------------------------------------------------------
+
+.bits
 #_03815A: dw $0001,$0002,$0004,$0008
 #_038162: dw $0010,$0020,$0040,$0080
 #_03816A: dw $0100,$0200,$0400,$0800
 #_038172: dw $1000,$2000
 
+;===================================================================================================
+
 routine038176:
 #_038176: PHP
+
 #_038177: REP #$30
 #_038179: PHA
 #_03817A: PHX
@@ -192,30 +236,38 @@ routine038176:
 #_03817C: PHD
 #_03817D: PHB
 
+; redundant
 #_03817E: REP #$30
+
 #_038180: TXA
 #_038181: AND.w #$00FF
 #_038184: ASL A
 #_038185: TAX
+
 #_038186: LDA.w $0A1A
 #_038189: CLC
 #_03818A: ADC.w data0381BC,X
 #_03818D: STA.w $0980
 
 #_038190: SEP #$20
+
 #_038192: STZ.w $0A33
+
 #_038195: LDA.b #$08
 #_038197: STA.w $00C5
 
 #_03819A: REP #$20
+
 #_03819C: TYA
 #_03819D: AND.w #$00FF
 #_0381A0: STA.w $0A39
+
 #_0381A3: LDA.w #data08FF9B
 #_0381A6: STA.w $00C3
+
 #_0381A9: JSR WriteTextIndexW0A39
 #_0381AC: JSR routine0384F9
-#_0381AF: JSL Update19XXuntil0100
+#_0381AF: JSL RunFramesUntil0100IsFlagged
 
 #_0381B3: REP #$30
 #_0381B5: PLB
@@ -224,6 +276,7 @@ routine038176:
 #_0381B8: PLX
 #_0381B9: PLA
 #_0381BA: PLP
+
 #_0381BB: RTS
 
 data0381BC:
@@ -264,23 +317,27 @@ TextExtCMD_5D:
 #_0381F7: JSL routine02CDBC
 #_0381FB: JSL routine02CE87
 #_0381FF: JSL routine0F84F6
+
 #_038203: RTS
 
 ;===================================================================================================
 
 routine038204:
 #_038204: PHP
-#_038205: JSL Update19XXuntil0100
+
+#_038205: JSL RunFramesUntil0100IsFlagged
 
 #_038209: REP #$20
 #_03820B: PHB
 
 #_03820C: SEP #$20
-#_03820E: LDA.b #$03
+
+#_03820E: LDA.b #routine038204>>16
 #_038210: PHA
 
 #_038211: REP #$20
 #_038213: PLB
+
 #_038214: LDA.w #$0003
 #_038217: STA.w $0A2A
 
@@ -297,65 +354,86 @@ routine038204:
 #_03822F: STA.w $0A0F
 
 #_038232: SEP #$20
+
 #_038234: LDA.b #$11
 #_038236: STA.w $0A11
+
 #_038239: LDA.b #$00
 #_03823B: STA.w INIDISP
+
 #_03823E: STA.w $0F43
 #_038241: JSL BrightenScreen
+
 #_038245: LDA.b #$03
-#_038247: JSL routine00B99C
+#_038247: JSL InitializeTextBoxToSizeForNewMessage
 #_03824B: JSL routine00A056
 #_03824F: JSL routine03837C
+
 #_038253: PLB
 #_038254: PLP
 #_038255: RTL
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
-routine038256:
+routine0F8736_bounce:
 #_038256: JSL routine0F8736
 #_03825A: RTS
 
-Update19XXuntil0100:
+;===================================================================================================
+
+RunFramesUntil0100IsFlagged:
 #_03825B: PHP
+
 #_03825C: REP #$30
+
 #_03825E: PHA
 #_03825F: PHX
 #_038260: PHY
 #_038261: PHD
 #_038262: PHB
 
-.branch038263
+.loop
 #_038263: SEP #$20
+
 #_038265: JSL AddSelfAsVector
+
 #_038269: LDA.w $0100
-#_03826C: BNE .branch038263
+#_03826C: BNE .loop
 
 #_03826E: REP #$30
+
 #_038270: PLB
 #_038271: PLD
 #_038272: PLY
 #_038273: PLX
 #_038274: PLA
+
 #_038275: PLP
+
 #_038276: RTL
 
 ;===================================================================================================
 
 routine038277:
 #_038277: PHP
+
 #_038278: REP #$30
 #_03827A: STA.w $0E00
+
 #_03827D: PHB
 #_03827E: PHK
 #_03827F: PLB
-#_038280: JSL Update19XXuntil0100
+
+#_038280: JSL RunFramesUntil0100IsFlagged
+
 #_038284: LDY.w #$0000
 
-.branch038287
+.loop
 #_038287: PHY
+
 #_038288: TYA
-#_038289: ASL A
+#_038289: ASL A ; x32
 #_03828A: ASL A
 #_03828B: ASL A
 #_03828C: ASL A
@@ -365,29 +443,36 @@ routine038277:
 #_038292: SEC
 #_038293: SBC.w #$0020
 #_038296: STA.w $0102
+
 #_038299: LDA.w $0A1E
 #_03829C: STA.w $0104
 #_03829F: TAY
+
 #_0382A0: LDX.w #$0000
 
-.branch0382A3
+.copy_next
 #_0382A3: LDA.w $0E00
 #_0382A6: STA.w $0106,X
+
 #_0382A9: INX
 #_0382AA: INX
+
 #_0382AB: DEY
-#_0382AC: BPL .branch0382A3
+#_0382AC: BPL .copy_next
 
 #_0382AE: LDA.w #$0001
 #_0382B1: STA.w $0100
-#_0382B4: JSL Update19XXuntil0100
+
+#_0382B4: JSL RunFramesUntil0100IsFlagged
+
 #_0382B8: PLY
 #_0382B9: INY
 #_0382BA: CPY.w #$000E
-#_0382BD: BNE .branch038287
+#_0382BD: BNE .loop
 
 #_0382BF: PLB
 #_0382C0: PLP
+
 #_0382C1: RTL
 
 ;===================================================================================================
@@ -398,38 +483,48 @@ routine0382C2:
 #_0382C3: PHX
 #_0382C4: PHY
 #_0382C5: PHP
+
 #_0382C6: SEP #$20
+
 #_0382C8: LDY.w $0A26
+
 #_0382CB: LDA.w TextDataBanks,Y
 #_0382CE: STA.w $00C2
 
 #_0382D1: REP #$30
+
 #_0382D3: LDA.w $0A26
 #_0382D6: AND.w #$00FF
 #_0382D9: ASL A
 #_0382DA: TAX
 
-; TODO WTF this tends to read from bank 07 when called via some menus
+; !WTF this tends to read from bank 07 when called via some menus
 ; Making this, generally, open bus then
-; it doesn't matter, as it shortly thereafter reads the correct values
+; it doesn't matter though, as it shortly thereafter reads the correct values
 ; in bank03 when called again
 #_0382DB: LDA.w TextDataBankStarts,X 
 #_0382DE: STA.w $00C0
+
 #_0382E1: LDA.w $0A24
 #_0382E4: AND.w #$00FF
 #_0382E7: ASL A
 #_0382E8: TAY
+
 #_0382E9: LDA.b [$C0],Y
 #_0382EB: STA.w $00C0
+
 #_0382EE: LDA.w $0A22
 #_0382F1: ASL A
 #_0382F2: TAY
 #_0382F3: LDA.b [$C0],Y
+
 #_0382F5: STA.w $00C0
+
 #_0382F8: PLP
 #_0382F9: PLY
 #_0382FA: PLX
 #_0382FB: PLA
+
 #_0382FC: RTS
 
 ;===================================================================================================
@@ -444,21 +539,27 @@ RelocateTextPointer_long:
 ;===================================================================================================
 RelocateTextPointer:
 #_038301: PHP ; input: A for message ID in bank
+
 #_038302: PHB
 #_038303: PHK
 #_038304: PLB
+
 #_038305: SEP #$20
+
 #_038307: PHA
 
 #_038308: LDY.w $0A26
+
 #_03830B: LDA.w TextDataBanks,Y
 #_03830E: STA.w $00C2
 
 #_038311: REP #$30
+
 #_038313: LDA.w $0A26
 #_038316: AND.w #$00FF
 #_038319: ASL A
 #_03831A: TAX
+
 #_03831B: LDA.w TextDataBankStarts,X
 #_03831E: STA.w $00C0
 
@@ -471,17 +572,24 @@ RelocateTextPointer:
 #_03832B: STA.w $00C0
 
 #_03832E: SEP #$20
+
 #_038330: PLA
 
 #_038331: REP #$20
+
 #_038333: AND.w #$00FF
 #_038336: ASL A
 #_038337: TAY
+
 #_038338: LDA.b [$C0],Y
 #_03833A: STA.w $00C0
+
 #_03833D: PLB
 #_03833E: PLP
+
 #_03833F: RTS
+
+;===================================================================================================
 
 TextDataBanks:
 #_038340: db Message_00_Pointers>>16
@@ -495,13 +603,18 @@ TextDataBankStarts:
 #_038348: dw Message_02_Pointers
 #_03834A: dw Message_03_Pointers
 
+;===================================================================================================
+
 routine03834C:
 #_03834C: PHP
+
 #_03834D: SEP #$20
+
 #_03834F: PHB
 #_038350: PHK
 #_038351: PLB
-#_038352: BRA .branch0383C4
+
+#_038352: BRA HandleNextTextByte
 
 ;===================================================================================================
 ; Used for TALK in COMBAT
@@ -509,10 +622,13 @@ routine03834C:
 ;===================================================================================================
 routine038354:
 #_038354: PHP
+
 #_038355: SEP #$20
+
 #_038357: LDA.b #$01
 #_038359: STA.w $0A3C
 #_03835C: STZ.w $0A3D
+
 #_03835F: STZ.w $0A4C
 
 #_038362: LDA.w $0A22
@@ -528,16 +644,24 @@ routine038354:
 #_038374: STA.w $0A26
 
 #_038377: JSR routine0382C2
-#_03837A: BRA .branch038358
 
-#routine03837C:
+#_03837A: BRA routine038358
+
+;===================================================================================================
+
+routine03837C:
 #_03837C: PHP
+
 #_03837D: SEP #$20
+
 #_03837F: STZ.w $0A3C
 #_038382: STZ.w $0A3D
 
-.branch038358
+;===================================================================================================
+
+routine038358:
 #_038385: STZ.w $0C4F
+
 #_038388: PHB
 #_038389: PHK
 #_03838A: PLB
@@ -552,13 +676,17 @@ routine038354:
 #_03839F: JSR routine0382C2
 #_0383A2: STZ.w $0A31
 
-.branch0383A5
+;===================================================================================================
+
+routine0383A5:
 #_0383A5: REP #$20
+
 #_0383A7: LDA.w $0A2F
 #_0383AA: STA.w $0980
+
 #_0383AD: LDA.w $0A1C
 #_0383B0: AND.w #$00FF
-#_0383B3: ASL A
+#_0383B3: ASL A ; x32
 #_0383B4: ASL A
 #_0383B5: ASL A
 #_0383B6: ASL A
@@ -568,31 +696,43 @@ routine038354:
 #_0383BC: STA.w $0A2F
 
 #_0383BF: SEP #$20
+
 #_0383C1: STZ.w $0A33
 
-.branch0383C4
+;===================================================================================================
+
+HandleNextTextByte:
 #_0383C4: SEP #$30
+
 #_0383C6: LDY.b #$00
+
 #_0383C8: LDA.b [$C0],Y
 #_0383CA: STA.w $0A2D
 
 #_0383CD: REP #$20
+
 #_0383CF: INC.w $00C0
 
 #_0383D2: SEP #$20
+
 #_0383D4: CMP.b #$D0
-#_0383D6: BCS .branch0383DE
+#_0383D6: BCS .command
 
 #_0383D8: JSL WriteNextMessageChar
-#_0383DC: BRA .branch0383C4
+#_0383DC: BRA HandleNextTextByte
 
-.branch0383DE
+;---------------------------------------------------------------------------------------------------
+
+.command
 #_0383DE: REP #$20
+
 #_0383E0: LDA.w #.return-1
 #_0383E3: PHA
 
 #_0383E4: SEP #$20
+
 #_0383E6: LDY.w $0A3C
+
 #_0383E9: LDA.w $0A2D
 #_0383EC: SEC
 #_0383ED: SBC.b #$D0
@@ -603,14 +743,19 @@ routine038354:
 
 #_0383F5: SEP #$10
 #_0383F7: REP #$20
+
 #_0383F9: LDA.w TextCommands,X
 #_0383FC: STA.w $00E2
+
 #_0383FF: JMP ($00E2)
 
+;---------------------------------------------------------------------------------------------------
+
 .return
-#_038402: JSL Update19XXuntil0100 ; from pha above
+#_038402: JSL RunFramesUntil0100IsFlagged ; from pha above
 
 #_038406: SEP #$30
+
 #_038408: LDY.w $0A3C
 #_03840B: LDX.w data038423,Y
 
@@ -619,20 +764,25 @@ routine038354:
 #_038411: CMP.b #$FF
 #_038413: BNE .branch038418
 
-#_038415: JMP .branch0383C4
+#_038415: JMP HandleNextTextByte
 
 .branch038418
 #_038418: INX
+
 #_038419: CMP.w $0A2D
 #_03841C: BNE .branch03840E
 
-#_03841E: JMP .branch0383A5
+#_03841E: JMP routine0383A5
+
+;===================================================================================================
 
 TextCommandOffset:
 #_038421: db $00,$60
 
 data038423:
 #_038423: db $00,$09
+
+;===================================================================================================
 
 ; TODO unmerge higher text commands
 TextCommands:
@@ -651,7 +801,7 @@ TextCommands:
 #_03843D: dw TextCommand_0C_AddMAG                     ; 0xDC
 #_03843F: dw TextCommand_0D_CheckInventoryForItem      ; 0xDD
 #_038441: dw TextCommand_0E                            ; 0xDE
-#_038443: dw TextCommand_0F                            ; 0xDF
+#_038443: dw TextCommand_0F_Wait7Frames                ; 0xDF
 #_038445: dw TextCommand_10_SetSpellMaybe              ; 0xE0
 #_038447: dw TextCommand_11                            ; 0xE1
 #_038449: dw TextCommand_12                            ; 0xE2
@@ -760,7 +910,9 @@ routine0384F9_long:
 
 routine0384F9:
 #_0384F9: PHP
+
 #_0384FA: REP #$30
+
 #_0384FC: PHA
 #_0384FD: PHX
 #_0384FE: PHY
@@ -768,6 +920,7 @@ routine0384F9:
 #_038500: PHB
 
 #_038501: SEP #$20
+
 #_038503: LDA.w $0A33
 #_038506: BEQ .branch03850B
 
@@ -775,118 +928,159 @@ routine0384F9:
 
 .branch03850B
 #_03850B: REP #$30
+
 #_03850D: PLB
 #_03850E: PLD
 #_03850F: PLY
 #_038510: PLX
 #_038511: PLA
 #_038512: PLP
+
 #_038513: RTS
+
+;===================================================================================================
 
 MessageTooLong:
 #_038514: PLA
 #_038515: PLP
 #_038516: PLX
 #_038517: PLY
+
 #_038518: RTL
+
+;===================================================================================================
 
 WriteNextMessageChar:
 #_038519: PHY
 #_03851A: PHX
 #_03851B: PHP
+
 #_03851C: SEP #$30
+
 #_03851E: PHA
+
 #_03851F: LDA.w $0A33 ; index into array
 #_038522: CMP.b #$40 ; max value
+
+;===================================================================================================
 
 routine038524:
 #_038524: BEQ MessageTooLong
 
 #_038526: PLA
-#_038527: CMP.b #$CF
-#_038529: BEQ .branch03852F
+#_038527: CMP.b #$CF ; space
+#_038529: BEQ .is_space
 
 #_03852B: CMP.b #$9C
-#_03852D: BCS .branch03854D
+#_03852D: BCS .has_dakuten
 
-.branch03852F
+.is_space
 #_03852F: LDX.w $0A33
+
 #_038532: STA.w $0900,X
-#_038535: LDA.b #$CF
+
+#_038535: LDA.b #$CF ; space
 #_038537: STA.w $0940,X
+
 #_03853A: LDA.w $0A2C
 #_03853D: STA.w $0901,X
 #_038540: STA.w $0941,X
+
 #_038543: INC.w $0A33
 #_038546: INC.w $0A33
+
 #_038549: PLP
 #_03854A: PLX
 #_03854B: PLY
+
 #_03854C: RTL
 
-.branch03854D
+;---------------------------------------------------------------------------------------------------
+
+.has_dakuten
 #_03854D: CMP.b #$B5
-#_03854F: BCS .branch03857F
+#_03854F: BCS .has_handakuten
 
 #_038551: SEC
 #_038552: SBC.b #$9C
 #_038554: TAY
+
 #_038555: PHB
 #_038556: PHK
 #_038557: PLB
-#_038558: LDA.w data038596,Y
+
+#_038558: LDA.w DakutenBaseKana,Y
 #_03855B: PLB
 
-.branch03855C
+.add_character
 #_03855C: LDX.w $0A33
 #_03855F: STA.w $0900,X
-#_038562: LDA.b #$9E ; vertical flip tile too?
+
+#_038562: LDA.b #$9E ; dakuten
+
 #_038564: CPY.b #$14
-#_038566: BCC .branch038569
+#_038566: BCC .use_dakuten
 
-#_038568: INC A
+#_038568: INC A ; #9F handakuten
 
-.branch038569
+.use_dakuten
 #_038569: STA.w $0940,X
+
 #_03856C: LDA.w $0A2C
 #_03856F: STA.w $0901,X
 #_038572: STA.w $0941,X
+
 #_038575: INC.w $0A33
 #_038578: INC.w $0A33
+
 #_03857B: PLP
 #_03857C: PLX
 #_03857D: PLY
+
 #_03857E: RTL
 
-.branch03857F
+;---------------------------------------------------------------------------------------------------
+
+.has_handakuten
 #_03857F: CMP.b #$CE
-#_038581: BEQ .branch038590
+#_038581: BEQ .never_mind_it_is_vu
 
 #_038583: SEC
 #_038584: SBC.b #$B5
 #_038586: TAY
+
 #_038587: PHB
 #_038588: PHK
 #_038589: PLB
-#_03858A: LDA.w data0385AF,Y
-#_03858D: PLB
-#_03858E: BRA .branch03855C
 
-.branch038590
+#_03858A: LDA.w HandakutenBaseKana,Y
+
+#_03858D: PLB
+#_03858E: BRA .add_character
+
+;---------------------------------------------------------------------------------------------------
+
+.never_mind_it_is_vu
 #_038590: LDA.b #$5F
 #_038592: LDY.b #$00
-#_038594: BRA .branch03855C
 
-data038596:
-#_038596: db $2A,$2B,$2C,$2D,$2E,$2F,$30,$31
-#_03859E: db $32,$33,$34,$35,$36,$37,$38,$3E
-#_0385A6: db $3F,$40,$41,$42,$3E,$3F,$40,$41
+#_038594: BRA .add_character
+
+;===================================================================================================
+; How/why is this different from 00AB42?
+;===================================================================================================
+DakutenBaseKana:
+#_038596: db $2A, $2B, $2C, $2D, $2E, $2F, $30, $31
+#_03859E: db $32, $33, $34, $35, $36, $37, $38, $3E
+#_0385A6: db $3F, $40, $41, $42, $3E, $3F, $40, $41
 #_0385AE: db $42
 
-data0385AF:
-#_0385AF: db $62,$63,$64,$65,$66,$67,$68,$69
-#_0385B7: db $6A,$6B,$6C,$6D,$6E,$6F,$70,$76
-#_0385BF: db $77,$78,$79,$7A,$76,$77,$78,$79
+;---------------------------------------------------------------------------------------------------
+
+HandakutenBaseKana:
+#_0385AF: db $62, $63, $64, $65, $66, $67, $68, $69
+#_0385B7: db $6A, $6B, $6C, $6D, $6E, $6F, $70, $76
+#_0385BF: db $77, $78, $79, $7A, $76, $77, $78, $79
 #_0385C7: db $7A
 
 ;===================================================================================================
@@ -926,87 +1120,119 @@ GetNextTextByte_long:
 GetNextTextByte:
 #_0385ED: PHY
 #_0385EE: PHP
+
 #_0385EF: SEP #$30
+
 #_0385F1: LDY.b #$00
 #_0385F3: LDA.b [$C0],Y
 
 #_0385F5: REP #$20
+
 #_0385F7: INC.w $00C0
+
 #_0385FA: PLP
 #_0385FB: PLY
+
 #_0385FC: RTS
 
 ;===================================================================================================
 
 TextCommand_00_SetProgressBit:
 #_0385FD: SEP #$30
+
 #_0385FF: JSR GetNextTextByte
 
 ;===================================================================================================
 
 SetGameProgressBit:
 #_038602: PHP
+
 #_038603: SEP #$30
+
 #_038605: PHA
+
 #_038606: AND.b #$07
 #_038608: TAY
+
 #_038609: PLA
-#_03860A: LSR A
+
+#_03860A: LSR A ; /8
 #_03860B: LSR A
 #_03860C: LSR A
 #_03860D: TAX
+
 #_03860E: PHB
 #_03860F: PHK
 #_038610: PLB
+
 #_038611: LDA.w $07C0,X
 #_038614: ORA.w TextCommand_SetBit,Y
 #_038617: STA.w $07C0,X
+
 #_03861A: PLB
 #_03861B: PLP
+
 #_03861C: RTS
+
+;===================================================================================================
 
 SetGameProgressBit_long:
 #_03861D: JSR SetGameProgressBit
 #_038620: RTL
 
+;===================================================================================================
+
 TextCommand_SetBit:
-#_038621: db $01,$02,$04,$08,$10,$20,$40,$80
+#_038621: db $01, $02, $04, $08, $10, $20, $40, $80
+
+;---------------------------------------------------------------------------------------------------
 
 TextCommand_ResetBit:
-#_038629: db $FE,$FD,$FB,$F7,$EF,$DF,$BF,$7F
+#_038629: db $FE, $FD, $FB, $F7, $EF, $DF, $BF, $7F
 
 ;===================================================================================================
 
 TextCommand_01_ClearProgressBit:
 #_038631: SEP #$30
+
 #_038633: JSR GetNextTextByte
 
 ;===================================================================================================
 
 ClearGameProgressBit:
 #_038636: PHA
+
 #_038637: AND.b #$07
 #_038639: TAY
+
 #_03863A: PLA
-#_03863B: LSR A
+
+#_03863B: LSR A ; /8
 #_03863C: LSR A
 #_03863D: LSR A
 #_03863E: TAX
+
 #_03863F: PHB
 #_038640: PHK
 #_038641: PLB
+
 #_038642: LDA.w $07C0,X
 #_038645: AND.w TextCommand_ResetBit,Y
 #_038648: STA.w $07C0,X
+
 #_03864B: PLB
+
 #_03864C: RTS
 
 ;===================================================================================================
 
 ClearGameProgressBit_long:
 #_03864D: PHP
+
 #_03864E: JSR ClearGameProgressBit
+
 #_038651: PLP
+
 #_038652: RTL
 
 ;===================================================================================================
@@ -1015,7 +1241,9 @@ ClearGameProgressBit_long:
 TextCommand_5C:
 TextCommand_02:
 #_038653: SEP #$30
+
 #_038655: JSR GetNextTextByte
+
 #_038658: JSL TestGameProgressBit
 #_03865C: BCC .dontrelocate
 
@@ -1025,6 +1253,7 @@ TextCommand_02:
 
 .dontrelocate
 #_038665: JSR GetNextTextByte
+
 #_038668: RTS
 
 ;===================================================================================================
@@ -1032,7 +1261,7 @@ TextCommand_02:
 ;===================================================================================================
 TextCommand_49_RelocateTextPointer:
 TextCommand_03_RelocateTextPointer:
-#_038669: SEP #$20
+#_038669: SEP #$20 ; SEP #$30
 #_03866B: SEP #$10
 
 #_03866D: JSR GetNextTextByte
@@ -1049,14 +1278,15 @@ TextCommand_04:
 #_038677: JSR GetNextTextByte
 #_03867A: AND.w #$00FF
 
-.branch03867D
+.loop
 #_03867D: PHA
 #_03867E: PHP
 
 #_03867F: CMP.w $0A2A
-#_038682: BCS .branch038696
+#_038682: BCS .done
 
 #_038684: DEC.w $0A2A
+
 #_038687: LDA.w $0A2A
 
 #_03868A: JSL routine00BAC0
@@ -1064,29 +1294,40 @@ TextCommand_04:
 
 #_038692: PLP
 #_038693: PLA
-#_038694: BRA .branch03867D
+#_038694: BRA .loop
 
-.branch038696
+;---------------------------------------------------------------------------------------------------
+
+.done
 #_038696: PLP
 #_038697: PLA
+
 #_038698: STA.w $0A2A
+
 #_03869B: DEC A
 #_03869C: DEC A
+
 #_03869D: JSL routine02CBD1
 #_0386A1: JSR TextCommand_2A
+
 #_0386A4: PLP
+
 #_0386A5: RTS
 
 ;===================================================================================================
 
 TextCommand_05_WriteToAPU:
 #_0386A6: SEP #$30
+
 #_0386A8: JSR GetNextTextByte
 #_0386AB: PHA
+
 #_0386AC: JSL Write_to_APU_transferrable
+
 #_0386B0: PLA
 #_0386B1: CMP.b #$38
 #_0386B3: BCS .music
+
 #_0386B5: RTS
 
 .music
@@ -1095,11 +1336,13 @@ TextCommand_05_WriteToAPU:
 
 #_0386BA: LDA.b #$FF
 #_0386BC: STA.w $0EFE
+
 #_0386BF: RTS
 
 .permloadedsong
 #_0386C0: LDA.b #$FF
 #_0386C2: STA.w $05BA
+
 #_0386C5: RTS
 
 ;===================================================================================================
@@ -1112,6 +1355,7 @@ TextCommand_06:
 
 #_0386CE: JSR GetNextTextByte
 #_0386D1: STA.w $0A69
+
 #_0386D4: AND.b #$FF
 #_0386D6: BEQ .deleting_sprite
 
@@ -1129,6 +1373,7 @@ TextCommand_06:
 
 TextCommand_07:
 #_0386E9: SEP #$30
+
 #_0386EB: STZ.w $0CF3
 #_0386EE: STZ.w $0CF4
 
@@ -1153,31 +1398,40 @@ TextCommand_07:
 .branch03870C
 #_03870C: AND.b #$7F
 #_03870E: STA.w $0A59
+
 #_038711: JSR GetNextTextByte
 #_038714: STA.w $0A5B
+
 #_038717: JSL R0FA05F_DoesVRAMDMAs
+
 #_03871B: RTS
 
 .branch03871C
 #_03871C: JSL routine0F939C
+
 #_038720: RTS
 
 ;===================================================================================================
 
 TextCommand_08:
 #_038721: SEP #$30
+
 #_038723: JSR routine0384F9
-#_038726: JSL Update19XXuntil0100
+#_038726: JSL RunFramesUntil0100IsFlagged
 #_03872A: JSL routine02CB99
 
 #_03872E: REP #$30
+
 #_038730: LDA.w #$0007
 #_038733: STA.w $0E00
+
 #_038736: JSR routine0392C1
 
 #_038739: SEP #$30
+
 #_03873B: LDA.b #$06
 #_03873D: STA.w $0B3D
+
 #_038740: STZ.w $0A33
 #_038743: STZ.w $0B3C
 
@@ -1187,86 +1441,112 @@ TextCommand_08:
 #_03874C: JSR routine038883
 
 #_03874F: SEP #$30
+
 #_038751: LDA.w $0B5F
 #_038754: STA.w $0E00
+
 #_038757: LDX.b #$00
 #_038759: STX.w $0E04
 
 .branch03875C
 #_03875C: CPX.w $0B3E
-#_03875F: BEQ .branch038781
+#_03875F: BEQ .handle_buffer
 
 #_038761: LDA.w $0B3D
 #_038764: STA.w $0B4F,X
+
 #_038767: LDA.w $0E00
 #_03876A: SEC
 #_03876B: SBC.w $0B3D
 #_03876E: STA.w $0E00
+
 #_038771: LDA.w $0E04
 #_038774: STA.w $0B3F,X
+
 #_038777: CLC
 #_038778: ADC.w $0B3D
 #_03877B: STA.w $0E04
+
 #_03877E: INX
 #_03877F: BRA .branch03875C
 
-.branch038781
+;---------------------------------------------------------------------------------------------------
+
+.handle_buffer
 #_038781: LDA.w $0E00
 #_038784: INC A
 #_038785: STA.w $0B4F,X
+
 #_038788: LDA.w $0E04
 #_03878B: STA.w $0B3F,X
 
 #_03878E: SEP #$20
+
 #_038790: LDA.w $00C2
 #_038793: STA.w $00E2
 
 #_038796: REP #$20
+
 #_038798: LDA.w $00C0
 #_03879B: STA.w $00E0
+
 #_03879E: LDY.w $0B5F
 #_0387A1: LDX.b #$00
 
-.branch0387A3
+.add_to_buffer
 #_0387A3: SEP #$20
 #_0387A5: JSR GetNextTextByte
 #_0387A8: JSR GetNextTextByte
 #_0387AB: STA.w $0B61,X
+
 #_0387AE: INX
 #_0387AF: DEY
-#_0387B0: BPL .branch0387A3
+#_0387B0: BPL .add_to_buffer
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0387B2
 #_0387B2: JSR routine038B8E
 
 #_0387B5: SEP #$30
+
 #_0387B7: LDX.w $0B3C
+
 #_0387BA: LDA.w $0B3F,X
 #_0387BD: ASL A
 #_0387BE: TAY
+
 #_0387BF: LDA.w $0B4F,X
 #_0387C2: TAX
+
 #_0387C3: INC.w $0980
 
 .branch0387C6
 #_0387C6: PHY
 #_0387C7: PHX
 #_0387C8: PHP
+
 #_0387C9: REP #$20
+
 #_0387CB: LDA.w $0980
 #_0387CE: CLC
 #_0387CF: ADC.w #$0040
 #_0387D2: STA.w $0980
+
 #_0387D5: LDA.b [$E0],Y
 #_0387D7: JSR routine0388AD
 #_0387DA: JSR TextCommand_29
-#_0387DD: JSR routine03889E
-#_0387E0: JSR routine03889E
+#_0387DD: JSR Add_0x20_to_0A2F
+#_0387E0: JSR Add_0x20_to_0A2F
+
 #_0387E3: PLP
+
 #_0387E4: PLX
 #_0387E5: PLY
+
 #_0387E6: INY
 #_0387E7: INY
+
 #_0387E8: DEX
 #_0387E9: BNE .branch0387C6
 
@@ -1278,7 +1558,8 @@ TextCommand_08:
 #_0387F6: AND.b #$FF
 #_0387F8: BEQ .branch0387B2
 
-#_0387FA: JSL Update19XXuntil0100
+#_0387FA: JSL RunFramesUntil0100IsFlagged
+
 #_0387FE: RTS
 
 ;===================================================================================================
@@ -1305,41 +1586,55 @@ routine0387FF:
 #_03881D: BIT.w #$0100
 #_038820: BNE .branch038831
 
+;---------------------------------------------------------------------------------------------------
+
 .branch038822
 #_038822: SEP #$20
 #_038824: DEC.w $0B3C
-#_038827: BPL .branch038843
+#_038827: BPL .exit_false
 
 #_038829: LDA.w $0B3E
 #_03882C: STA.w $0B3C
-#_03882F: BRA .branch038843
+#_03882F: BRA .exit_false
+
+;---------------------------------------------------------------------------------------------------
 
 .branch038831
 #_038831: SEP #$20
 #_038833: INC.w $0B3C
 #_038836: LDA.w $0B3C
 #_038839: CMP.w $0B3E
-#_03883C: BCC .branch038843
+#_03883C: BCC .exit_false
 
-#_03883E: BEQ .branch038843
+#_03883E: BEQ .exit_false
 
 #_038840: STZ.w $0B3C
 
-.branch038843
+;---------------------------------------------------------------------------------------------------
+
+.exit_false
 #_038843: LDA.b #$00
+
 #_038845: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch038846
 #_038846: SEP #$20
+
 #_038848: LDA.w $0B3C
 #_03884B: STA.w $0E10
+
 #_03884E: LDA.w $0B3D
 #_038851: STA.w $0E11
+
 #_038854: JSR Multiply_0E10_by_0E11
+
 #_038857: LDA.w $0E12
 #_03885A: CLC
 #_03885B: ADC.w $09F3
 #_03885E: TAY
+
 #_03885F: LDA.w $0B61,Y
 #_038862: JSR RelocateTextPointer
 #_038865: JSR routine038B8E
@@ -1357,34 +1652,46 @@ routine0387FF:
 #_038878: JSR TextCommand_2A
 
 #_03887B: SEP #$20
+
 #_03887D: STZ.w $0A33
+
 #_038880: LDA.b #$FF
+
 #_038882: RTS
 
 ;===================================================================================================
 
 routine038883:
 #_038883: PHP
+
 #_038884: LDA.w $0B5F
 #_038887: STA.w $0E10
 #_03888A: STZ.w $0E11
+
 #_03888D: LDA.w $0B3D
 #_038890: STA.w $0E12
+
 #_038893: JSR routine039600
+
 #_038896: LDA.w $0E13
 #_038899: STA.w $0B3E
+
 #_03889C: PLP
 #_03889D: RTS
 
 ;===================================================================================================
-
-routine03889E:
+; Why? Lol
+;===================================================================================================
+Add_0x20_to_0A2F:
 #_03889E: PHP
+
 #_03889F: REP #$20
+
 #_0388A1: LDA.w $0A2F
 #_0388A4: CLC
 #_0388A5: ADC.w #$0020
 #_0388A8: STA.w $0A2F
+
 #_0388AB: PLP
 #_0388AC: RTS
 
@@ -1392,27 +1699,35 @@ routine03889E:
 
 routine0388AD:
 #_0388AD: PHP
+
 #_0388AE: SEP #$20
 #_0388B0: PHA
-#_0388B1: LDA.b #$09
+
+#_0388B1: LDA.b #MessageSelectionPointers>>16
 #_0388B3: STA.w $00C5
+
 #_0388B6: STZ.w $0A33
 #_0388B9: PLA
 
 #_0388BA: REP #$20
+
 #_0388BC: AND.w #$00FF
 #_0388BF: STA.w $0A39
+
 #_0388C2: LDA.w $0A3C
 #_0388C5: AND.w #$0001
 #_0388C8: ASL A
 #_0388C9: TAY
-#_0388CA: LDA.w data0388D5,Y
+
+#_0388CA: LDA.w .pointers,Y
 #_0388CD: STA.w $00C3
+
 #_0388D0: JSR WriteTextIndexW0A39
+
 #_0388D3: PLP
 #_0388D4: RTS
 
-data0388D5:
+.pointers
 #_0388D5: dw MessageSelectionPointers
 #_0388D7: dw BattleSelectionPointers
 
@@ -1423,6 +1738,7 @@ data0388D5:
 ;===================================================================================================
 TextCommand_09_CheckYENForNextMessage:
 #_0388D9: REP #$20
+
 #_0388DB: JSR TextRead32bitfrom24
 
 #_0388DE: LDA.w $0E02
@@ -1435,10 +1751,12 @@ TextCommand_09_CheckYENForNextMessage:
 
 #_0388EE: JSR GetNextTextByte
 #_0388F1: JSR RelocateTextPointer
+
 #_0388F4: RTS
 
 .dontrelocate
 #_0388F5: JSR GetNextTextByte
+
 #_0388F8: RTS
 
 ;===================================================================================================
@@ -1446,9 +1764,11 @@ TextCommand_09_CheckYENForNextMessage:
 ;===================================================================================================
 TextCommand_0A_GiveMoney:
 #_0388F9: SEP #$20
+
 #_0388FB: JSR TextRead32bitfrom24
 
 #_0388FE: REP #$20
+
 #_038900: LDA.w $0405
 #_038903: CLC
 #_038904: ADC.w $0E00
@@ -1458,8 +1778,9 @@ TextCommand_0A_GiveMoney:
 #_03890D: ADC.w $0E02
 #_038910: STA.w $0407
 
-#_038913: JSL ClipToRangeMoneyAndMAG
+#_038913: JSL ClampMoneyAndMAG
 #_038917: JSL routine0F945E ; TODO ?
+
 #_03891B: RTS
 
 ;===================================================================================================
@@ -1499,7 +1820,9 @@ TextRead32bitfrom24:
 ;===================================================================================================
 TextCommand_0B_CheckMAGForNextMessage:
 #_03893D: REP #$20
+
 #_03893F: JSR TextRead32bitfrom24
+
 #_038942: LDA.w $040B
 #_038945: CMP.w $0E02
 #_038948: BCS .dontrelocate
@@ -1509,12 +1832,15 @@ TextCommand_0B_CheckMAGForNextMessage:
 #_038950: BCS .dontrelocate
 
 #_038952: SEP #$20
+
 #_038954: JSR GetNextTextByte
 #_038957: JSR RelocateTextPointer
+
 #_03895A: RTS
 
 .dontrelocate
 #_03895B: JSR GetNextTextByte
+
 #_03895E: RTS
 
 ;===================================================================================================
@@ -1522,6 +1848,7 @@ TextCommand_0B_CheckMAGForNextMessage:
 ;===================================================================================================
 TextCommand_0C_AddMAG:
 #_03895F: REP #$20
+
 #_038961: JSR TextRead32bitfrom24
 
 #_038964: LDA.w $0409
@@ -1533,23 +1860,24 @@ TextCommand_0C_AddMAG:
 #_038971: ADC.w $0E02
 #_038974: STA.w $040B
 
-#_038977: JSL ClipToRangeMoneyAndMAG
+#_038977: JSL ClampMoneyAndMAG
+
 #_03897B: RTS
 
 ;===================================================================================================
-; 
-;===================================================================================================
+
 TextCommand_0D_CheckInventoryForItem:
 #_03897C: SEP #$30
+
 #_03897E: JSR GetNextTextByte
 #_038981: JSL LookForItemInInventory
-#_038985: BCS .branch03898E
+#_038985: BCS .have_item
 
 #_038987: JSR GetNextTextByte
 #_03898A: JSR RelocateTextPointer
 #_03898D: RTS
 
-.branch03898E
+.have_item
 #_03898E: JSR GetNextTextByte
 #_038991: RTS
 
@@ -1580,14 +1908,15 @@ TextCommand_0E:
 #_0389BD: RTS
 
 ;===================================================================================================
-; TODO
-;===================================================================================================
-TextCommand_0F:
+
+TextCommand_0F_Wait7Frames:
 #_0389BE: JSR routine0384F9
 
 #_0389C1: SEP #$30
+
 #_0389C3: LDY.b #$07
-#_0389C5: JSL Update19xxUntilYZero
+#_0389C5: JSL RunFramesYTimes
+
 #_0389C9: RTS
 
 ;===================================================================================================
@@ -1595,8 +1924,10 @@ TextCommand_0F:
 ;===================================================================================================
 TextCommand_10_SetSpellMaybe:
 #_0389CA: SEP #$20
+
 #_0389CC: JSR GetNextTextByte
 #_0389CF: STA.w $0A52
+
 #_0389D2: RTS
 
 ;===================================================================================================
@@ -1622,6 +1953,8 @@ TextCommand_12:
 
 #_0389EB: REP #$10
 #_0389ED: JSR GetNextTextByte
+
+;===================================================================================================
 
 routine0389F0:
 #_0389F0: REP #$20
@@ -1677,6 +2010,8 @@ routine0389F0:
 #_038A5D: INX
 #_038A5E: BRA .branch038A3B
 
+;---------------------------------------------------------------------------------------------------
+
 .branch038A60
 #_038A60: LDA.w $0E00
 #_038A63: INC A
@@ -1702,12 +2037,14 @@ routine0389F0:
 #_038A82: JSR routine038B8E
 
 #_038A85: REP #$20
+
 #_038A87: JSR routine038BBF
 #_038A8A: JSR routine038C0E
 #_038A8D: JSR routine038CF4
 #_038A90: JSR routine038A9A
 
 #_038A93: SEP #$20
+
 #_038A95: AND.b #$FF
 #_038A97: BEQ .branch038A7F
 
@@ -1717,61 +2054,75 @@ routine0389F0:
 
 routine038A9A:
 #_038A9A: REP #$20
+
 #_038A9C: LDA.w $0F2D
 #_038A9F: BIT.w #$0080
-#_038AA2: BNE .branch038AF3
+#_038AA2: BNE .pressed_A
 
 #_038AA4: BIT.w #$8000
-#_038AA7: BEQ .branch038AAC
+#_038AA7: BEQ .didnt_press_b
 
-#_038AA9: JMP .branch038B7B
+#_038AA9: JMP .pressed_b
 
-.branch038AAC
+.didnt_press_b
 #_038AAC: BIT.w #$0800
-#_038AAF: BNE .branch038AC0
+#_038AAF: BNE .pressed_up_or_left
 
 #_038AB1: BIT.w #$0400
-#_038AB4: BNE .branch038ADB
+#_038AB4: BNE .pressed_right_or_down
 
 #_038AB6: BIT.w #$0200
-#_038AB9: BNE .branch038AC0
+#_038AB9: BNE .pressed_up_or_left
 
 #_038ABB: BIT.w #$0100
-#_038ABE: BNE .branch038ADB
+#_038ABE: BNE .pressed_right_or_down
 
-.branch038AC0
+;---------------------------------------------------------------------------------------------------
+
+.pressed_up_or_left
 #_038AC0: SEP #$20
+
 #_038AC2: DEC.w $0B3C
-#_038AC5: BPL .branch038ACD
+#_038AC5: BPL .no_wrap
 
 #_038AC7: LDA.w $0B3E
 #_038ACA: STA.w $0B3C
 
-.branch038ACD
+.no_wrap
 #_038ACD: SEP #$10
+
 #_038ACF: LDX.w $0B3C
+
 #_038AD2: LDA.w $0B4F,X
 #_038AD5: DEC A
 #_038AD6: STA.w $09F3
-#_038AD9: BRA .branch038AF0
 
-.branch038ADB
+#_038AD9: BRA .finished_dpad
+
+;---------------------------------------------------------------------------------------------------
+
+.pressed_right_or_down
 #_038ADB: SEP #$20
+
 #_038ADD: STZ.w $09F3
+
 #_038AE0: INC.w $0B3C
+
 #_038AE3: LDA.w $0B3C
 #_038AE6: CMP.w $0B3E
-#_038AE9: BCC .branch038AF0
-
-#_038AEB: BEQ .branch038AF0
+#_038AE9: BCC .finished_dpad
+#_038AEB: BEQ .finished_dpad
 
 #_038AED: STZ.w $0B3C
 
-.branch038AF0
+.finished_dpad
 #_038AF0: LDA.b #$00
+
 #_038AF2: RTS
 
-.branch038AF3
+;---------------------------------------------------------------------------------------------------
+
+.pressed_A
 #_038AF3: SEP #$20
 #_038AF5: LDA.w $0B3C
 #_038AF8: STA.w $0E10
@@ -1829,95 +2180,127 @@ routine038A9A:
 #_038B73: JSR TextCommand_2A
 
 #_038B76: SEP #$20
+
 #_038B78: LDA.b #$01
+
 #_038B7A: RTS
 
-.branch038B7B
+;---------------------------------------------------------------------------------------------------
+
+.pressed_b
 #_038B7B: JSR routine038B8E
 
 #_038B7E: SEP #$20
+
 #_038B80: JSR GetNextTextByte
 #_038B83: JSR RelocateTextPointer
 #_038B86: JSR TextCommand_2A
 
 #_038B89: SEP #$20
+
 #_038B8B: LDA.b #$FF
+
 #_038B8D: RTS
 
 ;===================================================================================================
 
 routine038B8E:
-#_038B8E: JSL Update19XXuntil0100
+#_038B8E: JSL RunFramesUntil0100IsFlagged
 
 #_038B92: REP #$20
+
 #_038B94: LDA.w $0A1A
 #_038B97: CLC
 #_038B98: ADC.w #$0040
 #_038B9B: STA.w $0980
+
 #_038B9E: LDA.w $0A20
 #_038BA1: LSR A
 #_038BA2: TAX
 
-.branch038BA3
+.loop
 #_038BA3: REP #$20
+
 #_038BA5: LDA.w $0980
 #_038BA8: JSR routine038CBC
+
 #_038BAB: CLC
 #_038BAC: ADC.w #$0040
 #_038BAF: STA.w $0980
+
 #_038BB2: DEX
-#_038BB3: BNE .branch038BA3
+#_038BB3: BNE .loop
 
 #_038BB5: LDA.w $0A1A
 #_038BB8: STA.w $0980
 #_038BBB: STA.w $0A2F
+
 #_038BBE: RTS
 
 ;===================================================================================================
 
 routine038BBF:
 #_038BBF: REP #$20
+
 #_038BC1: LDA.w $0A1A
 #_038BC4: CLC
 #_038BC5: ADC.w #$0040
 #_038BC8: STA.w $0980
 
 #_038BCB: SEP #$30
+
 #_038BCD: LDX.w $0B3C
+
 #_038BD0: LDA.w $0B3F,X
 #_038BD3: TAY
+
 #_038BD4: LDX.b #$00
 
-.branch038BD6
+;---------------------------------------------------------------------------------------------------
+
+.loop
 #_038BD6: SEP #$30
+
 #_038BD8: PHY
 #_038BD9: PHX
+
 #_038BDA: LDA.b ($E0),Y
 #_038BDC: PHA
+
 #_038BDD: JSL routine0F94B2
 #_038BE1: JSR routine038D1C
+
 #_038BE4: PLA
+
 #_038BE5: JSR routine038D53
 #_038BE8: JSR TextCommand_29
 
 #_038BEB: REP #$20
+
 #_038BED: LDA.w $0980
 #_038BF0: CLC
 #_038BF1: ADC.w #$0040
 #_038BF4: STA.w $0980
 
 #_038BF7: SEP #$30
+
 #_038BF9: PLX
 #_038BFA: PLY
+
 #_038BFB: INY
 #_038BFC: PHY
+
 #_038BFD: LDY.w $0B3C
+
 #_038C00: LDA.w $0B4F,Y
+
 #_038C03: PLY
+
 #_038C04: STA.w $0E00
+
 #_038C07: INX
 #_038C08: CPX.w $0E00
-#_038C0B: BNE .branch038BD6
+#_038C0B: BNE .loop
 
 #_038C0D: RTS
 
@@ -1925,6 +2308,7 @@ routine038BBF:
 
 routine038C0E:
 #_038C0E: SEP #$20
+
 #_038C10: LDA.w $0B3E
 #_038C13: BNE .branch038C16
 
@@ -1941,6 +2325,7 @@ routine038C0E:
 
 .branch038C23
 #_038C23: REP #$20
+
 #_038C25: LDA.w $0A1E
 #_038C28: AND.w #$00FF
 #_038C2B: DEC A
@@ -1948,31 +2333,39 @@ routine038C0E:
 #_038C2D: CLC
 #_038C2E: ADC.w $0A1A
 #_038C31: STA.w $0102
+
 #_038C34: LDA.w #$0001
 #_038C37: STA.w $0104
+
 #_038C3A: LDA.w #$A0AB
 #_038C3D: STA.w $0106
+
 #_038C40: LDA.w #$0001
 #_038C43: STA.w $0100
-#_038C46: JSL Update19XXuntil0100
+#_038C46: JSL RunFramesUntil0100IsFlagged
+
 #_038C4A: RTS
 
 ;===================================================================================================
 
 routine038C4B:
 #_038C4B: REP #$20
+
 #_038C4D: LDA.w $0A20
 #_038C50: INC A
 #_038C51: AND.w #$00FF
 #_038C54: DEC A
-#_038C55: ASL A
+
+#_038C55: ASL A ; x32
 #_038C56: ASL A
 #_038C57: ASL A
 #_038C58: ASL A
 #_038C59: ASL A
+
 #_038C5A: CLC
 #_038C5B: ADC.w $0A1A
 #_038C5E: STA.w $0E00
+
 #_038C61: LDA.w $0A1E
 #_038C64: AND.w #$00FF
 #_038C67: DEC A
@@ -1980,13 +2373,18 @@ routine038C4B:
 #_038C69: CLC
 #_038C6A: ADC.w $0E00
 #_038C6D: STA.w $0102
+
 #_038C70: LDA.w #$0001
 #_038C73: STA.w $0104
+
 #_038C76: LDA.w #$20AB
 #_038C79: STA.w $0106
+
 #_038C7C: LDA.w #$0001
 #_038C7F: STA.w $0100
-#_038C82: JSL Update19XXuntil0100
+
+#_038C82: JSL RunFramesUntil0100IsFlagged
+
 #_038C86: RTS
 
 ;===================================================================================================
@@ -2011,14 +2409,16 @@ routine038C87:
 #_038CAE: STA.w $010C
 #_038CB1: LDA.w #$0002
 #_038CB4: STA.w $0100
-#_038CB7: JSL Update19XXuntil0100
+#_038CB7: JSL RunFramesUntil0100IsFlagged
 #_038CBB: RTS
 
 ;===================================================================================================
 
 routine038CBC:
 #_038CBC: PHP
+
 #_038CBD: REP #$30
+
 #_038CBF: PHA
 #_038CC0: PHX
 #_038CC1: PHY
@@ -2029,32 +2429,39 @@ routine038CBC:
 #_038CC6: STA.w $0980
 
 #_038CC9: SEP #$30
+
 #_038CCB: LDA.w $0A1E
 #_038CCE: ASL A
 #_038CCF: STA.w $0A33
+
 #_038CD2: TAX
+
 #_038CD3: DEX
 #_038CD4: DEX
 
 .branch038CD5
 #_038CD5: REP #$20
+
 #_038CD7: LDA.w #$20CF
 #_038CDA: STA.w $0900,X
 #_038CDD: STA.w $0940,X
+
 #_038CE0: DEX
 #_038CE1: DEX
 #_038CE2: BPL .branch038CD5
 
 #_038CE4: JSR routine0384F9
-#_038CE7: JSL Update19XXuntil0100
+#_038CE7: JSL RunFramesUntil0100IsFlagged
 
 #_038CEB: REP #$30
+
 #_038CED: PLB
 #_038CEE: PLD
 #_038CEF: PLY
 #_038CF0: PLX
 #_038CF1: PLA
 #_038CF2: PLP
+
 #_038CF3: RTS
 
 ;===================================================================================================
@@ -2107,12 +2514,12 @@ routine038D1C:
 #_038D3F: JSL TestGameProgressBit
 #_038D43: BCC .branch038D4C
 
-#_038D45: LDA.b #YEN2
+#_038D45: LDA.b #$5C ; Macca symbol
 #_038D47: JSL routine0385C8
 #_038D4B: RTS
 
 .branch038D4C
-#_038D4C: LDA.b #YEN
+#_038D4C: LDA.b #$5B ; Yen symbol
 #_038D4E: JSL routine0385C8
 #_038D52: RTS
 
@@ -2378,7 +2785,7 @@ TextCommand_15:
 #_038EF5: AND.w #$007F
 #_038EF8: ASL A
 #_038EF9: TAX
-#_038EFA: LDA.w data038F1C,X
+#_038EFA: LDA.w .vectors,X
 #_038EFD: STA.w $00E0
 
 #_038F00: REP #$20
@@ -2396,7 +2803,7 @@ TextCommand_15:
 #_038F17: REP #$30
 #_038F19: JMP ($00E0)
 
-data038F1C:
+.vectors
 #_038F1C: dw routine038F56
 #_038F1E: dw routine038F3A
 #_038F20: dw routine038F40
@@ -3014,7 +3421,7 @@ routine0392C1:
 
 TextCommand_28:
 #_0392E1: JSR routine0384F9
-#_0392E4: JSL Update19XXuntil0100
+#_0392E4: JSL RunFramesUntil0100IsFlagged
 #_0392E8: JSL routine02CB99
 
 #_0392EC: REP #$30
@@ -3041,7 +3448,7 @@ TextCommand_28:
 #_039317: BNE .branch03930B
 
 #_039319: JSR routine0384F9
-#_03931C: JSL Update19XXuntil0100
+#_03931C: JSL RunFramesUntil0100IsFlagged
 
 #_039320: SEP #$20
 #_039322: STZ.w $0A33
@@ -3062,7 +3469,7 @@ TextCommand_28:
 #_039340: BNE .branch039334
 
 #_039342: JSR routine0384F9
-#_039345: JSL Update19XXuntil0100
+#_039345: JSL RunFramesUntil0100IsFlagged
 #_039349: LDA.w $0980
 #_03934C: SEC
 #_03934D: SBC.w #$0040
@@ -3126,7 +3533,7 @@ NoText:
 
 TextCommand_29:
 #_0393B4: JSR routine0384F9
-#_0393B7: JSL Update19XXuntil0100
+#_0393B7: JSL RunFramesUntil0100IsFlagged
 
 #_0393BB: REP #$20
 
@@ -3185,7 +3592,7 @@ TextCommand_2A_long:
 
 TextCommand_2A:
 #_0393FF: JSR routine0384F9
-#_039402: JSL Update19XXuntil0100
+#_039402: JSL RunFramesUntil0100IsFlagged
 
 ;===================================================================================================
 
@@ -3213,7 +3620,7 @@ TextCommand_2B:
 #_03942B: LDA.w $0E00
 #_03942E: LDX.w $0E02
 #_039431: LDY.w #$000A
-#_039434: JSL Divide_32bit_by_16bit_XA_by_Y
+#_039434: JSL DivisionBig_XA_by_Y
 #_039438: PLX
 
 #_039439: SEP #$20
@@ -3291,7 +3698,7 @@ TextCommand_2C:
 
 .branch0394B6
 #_0394B6: JSR routine0384F9
-#_0394B9: JSL Update19XXuntil0100
+#_0394B9: JSL RunFramesUntil0100IsFlagged
 
 #_0394BD: REP #$20
 #_0394BF: LDA.w $0F2B
@@ -3330,7 +3737,7 @@ UNREACHABLE_0394EE:
 
 .branch0394F8
 #_0394F8: SEP #$30
-#_0394FA: LDA.b #!SFX_02
+#_0394FA: LDA.b #$02 ; SFX 02
 #_0394FC: JSL Write_to_APU_transferrable
 #_039500: LDX.w $0A33
 #_039503: DEX
@@ -3340,7 +3747,7 @@ UNREACHABLE_0394EE:
 #_03950A: LDA.b #$20
 #_03950C: STA.w $0901,X
 #_03950F: JSR routine0384F9
-#_039512: JSL Update19XXuntil0100
+#_039512: JSL RunFramesUntil0100IsFlagged
 #_039516: RTS
 
 ;===================================================================================================
@@ -3663,6 +4070,8 @@ LoadClassyMessage:
 #_039703: dw .set_2_message_ids
 #_039705: dw .set_3_message_ids
 
+;---------------------------------------------------------------------------------------------------
+
 .set_0_message_ids
 #_039707: dw $0000,$0100,$0200,$0300
 #_03970F: dw $0400,$0500,$0600,$0700
@@ -3880,6 +4289,8 @@ LoadClassyMessage:
 #_039DAF: dw $4E0C,$500C,$520C,$5D0C
 #_039DB7: dw $5F0C,$6A0C,$6E0C,$720C
 
+;---------------------------------------------------------------------------------------------------
+
 .set_1_message_ids
 #_039DBF: dw $0000,$0100,$0A00,$1300
 #_039DC7: dw $1500,$1600,$1B00,$1C00
@@ -3918,6 +4329,8 @@ LoadClassyMessage:
 #_039ECF: dw $080A,$090A,$0A0A,$0B0A
 #_039ED7: dw $0C0A
 
+;---------------------------------------------------------------------------------------------------
+
 .set_2_message_ids
 #_039ED9: dw $0001,$0002,$1702,$0003
 #_039EE1: dw $0004,$0005,$0006,$0007
@@ -3950,6 +4363,8 @@ LoadClassyMessage:
 #_039FB9: dw $241F,$251F,$271F,$291F
 #_039FC1: dw $2B1F,$2D1F,$311F
 
+;---------------------------------------------------------------------------------------------------
+
 .set_3_message_ids
 #_039FC7: dw $0000,$0001,$0002,$0102
 #_039FCF: dw $1202,$1302,$1402,$1502
@@ -3978,6 +4393,8 @@ LoadClassyMessage:
 #_03A087: dw $1F08,$0009,$0209,$1209
 #_03A08F: dw $1309,$1409,$1509,$1709
 #_03A097: dw $1909,$1B09,$000A
+
+;===================================================================================================
 
 ; TODO pointers for menu listings it seems?
 data03A09D:
@@ -4027,7 +4444,6 @@ data03A09D:
 ; TODO
 #_03A1E5: dw $0003,$0703
 #_03A1E9: db $06
-
 
 ;===================================================================================================
 
@@ -4801,14 +5217,16 @@ ItemShopPrices:
 
 routine03A768:
 #_03A768: SEP #$30
+
 #_03A76A: JSR GetNextTextByte
 #_03A76D: ASL A
 #_03A76E: TAX
+
 #_03A76F: LDA.w $0A3C
 #_03A772: BNE .branch03A772
 
 #_03A774: REP #$20
-#_03A776: LDA.w data03A793,X
+#_03A776: LDA.w ExtendedTextCommands,X
 #_03A779: STA.w $00E0
 #_03A77C: LDA.w #.branch03A772-1
 #_03A77F: PHA
@@ -4816,16 +5234,21 @@ routine03A768:
 
 .branch03A772
 #_03A783: REP #$20
-#_03A785: LDA.w .vectors_2,X
+
+#_03A785: LDA.w ExtendedTextCommandsOfSomeOtherType,X
 #_03A788: STA.w $00E0
+
 #_03A78B: LDA.w #.exit-1
 #_03A78E: PHA
+
 #_03A78F: JMP ($00E0)
 
 .exit
 #_03A792: RTS
 
-data03A793:
+;===================================================================================================
+
+ExtendedTextCommands:
 #_03A793: dw TextExtCMD_00          ; 0x00
 #_03A795: dw TextExtCMD_01          ; 0x01
 #_03A797: dw TextExtCMD_02          ; 0x02
@@ -4946,8 +5369,8 @@ data03A793:
 #_03A87D: dw TextExtCMD_75          ; 0x75
 
 ;---------------------------------------------------------------------------------------------------
-
-.vectors_2
+; TODO
+ExtendedTextCommandsOfSomeOtherType
 #_03A87F: dw routine03D2DA
 #_03A881: dw routine03D2F7
 #_03A883: dw routine03D32B
@@ -5169,7 +5592,7 @@ TextExtCMD_07:
 #_03A998: TAY
 
 #_03A999: DEY
-#_03A99A: JSL Update19xxUntilYZero
+#_03A99A: JSL RunFramesYTimes
 
 #_03A99E: RTS
 
@@ -5338,7 +5761,7 @@ routine03AA7C:
 #_03AA8B: LDX.w $0E16
 #_03AA8E: LDA.w $0E14
 #_03AA91: LDY.w #$0064
-#_03AA94: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03AA94: JSL DivisionBig_XA_by_Y
 #_03AA98: PLX
 #_03AA99: LDA.w $102E,X
 #_03AA9C: SEC
@@ -5412,15 +5835,19 @@ routine03AB0B:
 #_03AB0B: LDA.w $0E00
 #_03AB0E: ASL A
 #_03AB0F: TAY
-#_03AB10: LDA.w data03AB19,Y
+
+#_03AB10: LDA.w .vectors,Y
 #_03AB13: STA.w $00E0
+
 #_03AB16: JMP ($00E0)
 
-data03AB19:
+.vectors
 #_03AB19: dw routine03AB21
 #_03AB1B: dw routine03AB33
 #_03AB1D: dw routine03AB33
 #_03AB1F: dw routine03AB33
+
+;===================================================================================================
 
 routine03AB21:
 #_03AB21: LDA.w #$0000
@@ -5443,15 +5870,19 @@ routine03AB3E:
 #_03AB3E: LDA.w $0E00
 #_03AB41: ASL A
 #_03AB42: TAY
-#_03AB43: LDA.w data03AB4C,Y
+
+#_03AB43: LDA.w .vectors,Y
 #_03AB46: STA.w $00E0
+
 #_03AB49: JMP ($00E0)
 
-data03AB4C:
+.vectors
 #_03AB4C: dw routine03AB54
 #_03AB4E: dw routine03AB72
 #_03AB50: dw routine03BA74
 #_03AB52: dw routine03BA74
+
+;===================================================================================================
 
 routine03AB54:
 #_03AB54: LDA.w $0E00
@@ -5890,28 +6321,40 @@ TextExtCMD_1C:
 #_03AE24: dw .routine03AE32
 #_03AE26: dw .routine03AE3F
 
+;---------------------------------------------------------------------------------------------------
+
 .brightenScreen
 #_03AE28: JSL BrightenScreen
 #_03AE2C: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .darkenScreen
 #_03AE2D: JSL DarkenScreen
 #_03AE31: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .routine03AE32
 #_03AE32: SEP #$30
+
 #_03AE34: LDA.b #$01
 #_03AE36: LDX.b #$00
 #_03AE38: LDY.b #$04
 #_03AE3A: JSL routine009443
+
 #_03AE3E: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .routine03AE3F
 #_03AE3F: SEP #$30
+
 #_03AE41: LDA.b #$04
 #_03AE43: LDX.b #$00
 #_03AE45: LDY.b #$01
 #_03AE47: JSL routine009443
+
 #_03AE4B: RTS
 
 ;===================================================================================================
@@ -6609,7 +7052,7 @@ TextExtCMD_2D:
 #_03B274: SEP #$30
 
 #_03B276: JSR GetNextTextByte
-#_03B279: JSL routine00B99C
+#_03B279: JSL InitializeTextBoxToSizeForNewMessage
 
 #_03B27D: RTS
 
@@ -6997,7 +7440,8 @@ routine03B4E0:
 #_03B4E6: PHB
 
 #_03B4E7: SEP #$20
-#_03B4E9: LDA.b #$03
+
+#_03B4E9: LDA.b #routine03B4E0>>16
 #_03B4EB: PHA
 
 #_03B4EC: REP #$20
@@ -7145,6 +7589,8 @@ routine03B5FE:
 .data03B639
 #_03B639: db $0D,$0C,$14
 
+;---------------------------------------------------------------------------------------------------
+
 .branch03B63C
 #_03B63C: SEP #$30
 #_03B63E: LDA.b #$06
@@ -7237,7 +7683,7 @@ routine03B5FE:
 routine03B6F9:
 #_03B6F9: SEP #$30
 #_03B6FB: LDA.b #$07
-#_03B6FD: JSL routine00B99C
+#_03B6FD: JSL InitializeTextBoxToSizeForNewMessage
 #_03B701: JSL routine00A056
 
 #_03B705: REP #$30
@@ -7389,26 +7835,26 @@ routine03B819:
 ;===================================================================================================
 
 ElevatorFloorNumbers:
-#_03B82E: db $CF, $02 ;  1
-#_03B830: db $CF, $03 ;  2
-#_03B832: db $CF, $04 ;  3
-#_03B834: db $CF, $05 ;  4
-#_03B836: db $CF, $06 ;  5
-#_03B838: db $CF, $07 ;  6
-#_03B83A: db $CF, $08 ;  7
-#_03B83C: db $CF, $09 ;  8
-#_03B83E: db $CF, $0A ;  9
-#_03B840: db $02, $01 ; 10
-#_03B842: db $02, $02 ; 11
-#_03B844: db $02, $03 ; 12
-#_03B846: db $02, $04 ; 13
-#_03B848: db $04, $01 ; 30
-#_03B84A: db $04, $02 ; 31
-#_03B84C: db $04, $03 ; 32
-#_03B84E: db $05, $06 ; 45
-#_03B850: db $05, $07 ; 46
-#_03B852: db $05, $08 ; 47
-#_03B854: db $05, $09 ; 48
+#_03B82E: db $CF, $02 ; " 1"
+#_03B830: db $CF, $03 ; " 2"
+#_03B832: db $CF, $04 ; " 3"
+#_03B834: db $CF, $05 ; " 4"
+#_03B836: db $CF, $06 ; " 5"
+#_03B838: db $CF, $07 ; " 6"
+#_03B83A: db $CF, $08 ; " 7"
+#_03B83C: db $CF, $09 ; " 8"
+#_03B83E: db $CF, $0A ; " 9"
+#_03B840: db $02, $01 ; "10"
+#_03B842: db $02, $02 ; "11"
+#_03B844: db $02, $03 ; "12"
+#_03B846: db $02, $04 ; "13"
+#_03B848: db $04, $01 ; "30"
+#_03B84A: db $04, $02 ; "31"
+#_03B84C: db $04, $03 ; "32"
+#_03B84E: db $05, $06 ; "45"
+#_03B850: db $05, $07 ; "46"
+#_03B852: db $05, $08 ; "47"
+#_03B854: db $05, $09 ; "48"
 
 ;===================================================================================================
 
@@ -7513,7 +7959,7 @@ routine03B8E8:
 #_03B8F0: CMP.w $09F3
 #_03B8F3: BEQ .branch03B928
 
-#_03B8F5: LDA.b #!SFX_0C
+#_03B8F5: LDA.b #$0C ; SFX 0C
 #_03B8F7: JSL Write_to_APU_transferrable
 
 .branch03B8FB
@@ -7529,20 +7975,20 @@ routine03B8E8:
 #_03B910: BCC .branch03B91D
 
 #_03B912: LDY.b #$3C
-#_03B914: JSL Update19xxUntilYZero
+#_03B914: JSL RunFramesYTimes
 #_03B918: DEC.w $0E00
 #_03B91B: BRA .branch03B8FB
 
 .branch03B91D
 #_03B91D: LDY.b #$3C
-#_03B91F: JSL Update19xxUntilYZero
+#_03B91F: JSL RunFramesYTimes
 #_03B923: INC.w $0E00
 #_03B926: BRA .branch03B8FB
 
 .branch03B928
 #_03B928: REP #$30
 #_03B92A: LDY.w #$001E
-#_03B92D: JSL Update19xxUntilYZero
+#_03B92D: JSL RunFramesYTimes
 #_03B931: LDA.w #$0013
 #_03B934: STA.w $0E08
 #_03B937: JSR routine03B93B
@@ -7630,7 +8076,7 @@ routine03B9A4:
 
 .branch03B9C3
 #_03B9C3: PHY
-#_03B9C4: LDA.b #!SFX_30
+#_03B9C4: LDA.b #$30 ; SFX 30
 #_03B9C6: JSL Write_to_APU_transferrable
 #_03B9CA: PLY
 
@@ -7651,7 +8097,7 @@ routine03B9A4:
 #_03B9E1: STA.w $0ED4
 #_03B9E4: LDA.w data03BA25,Y
 #_03B9E7: TAY
-#_03B9E8: JSL Update19xxUntilYZero
+#_03B9E8: JSL RunFramesYTimes
 
 #_03B9EC: PLY
 #_03B9ED: INY
@@ -7663,7 +8109,7 @@ routine03B9A4:
 .branch03B9F3
 #_03B9F3: PLY
 #_03B9F4: LDY.b #$0A
-#_03B9F6: JSL Update19xxUntilYZero
+#_03B9F6: JSL RunFramesYTimes
 
 #_03B9FA: SEP #$30
 #_03B9FC: LDX.w $09F3
@@ -7704,6 +8150,8 @@ data03BA25:
 #_03BA7D: dw $0001,$0002,$0001,$0002
 #_03BA85: dw $0000
 
+;===================================================================================================
+
 routine03BA87:
 #_03BA87: SEP #$30
 #_03BA89: JSR routine03B8CD
@@ -7711,7 +8159,7 @@ routine03BA87:
 #_03BA8F: CMP.w $09F3
 #_03BA92: BEQ .branch03BA9A
 
-#_03BA94: LDA.b #!SFX_0C
+#_03BA94: LDA.b #$0C ; SFX 0C
 #_03BA96: JSL Write_to_APU_transferrable
 
 .branch03BA9A
@@ -8008,7 +8456,7 @@ routine03BBF0:
 
 routine03BCD3:
 #_03BCD3: REP #$30
-#_03BCD5: LDA.w #!SFX_08
+#_03BCD5: LDA.w #$0008 ; SFX 08
 #_03BCD8: JSL Write_to_APU_transferrable
 #_03BCDC: LDA.w #$0000
 
@@ -8021,7 +8469,7 @@ routine03BCD3:
 
 #_03BCEB: SEP #$10
 #_03BCED: LDY.b #$03
-#_03BCEF: JSL Update19xxUntilYZero
+#_03BCEF: JSL RunFramesYTimes
 #_03BCF3: PLP
 #_03BCF4: PLA
 #_03BCF5: INC A
@@ -8034,7 +8482,7 @@ routine03BCD3:
 
 routine03BCFC:
 #_03BCFC: REP #$30
-#_03BCFE: LDA.w #!SFX_08
+#_03BCFE: LDA.w #$0008 ; SFX 08
 #_03BD01: JSL Write_to_APU_transferrable
 #_03BD05: LDA.w #$0004
 
@@ -8047,7 +8495,7 @@ routine03BCFC:
 
 #_03BD14: SEP #$10
 #_03BD16: LDY.b #$03
-#_03BD18: JSL Update19xxUntilYZero
+#_03BD18: JSL RunFramesYTimes
 #_03BD1C: PLP
 #_03BD1D: PLA
 #_03BD1E: DEC A
@@ -8359,7 +8807,7 @@ TextExtCMD_42:
 #_03BF70: JSL BrightenScreen
 #_03BF74: JSL routine0F84F6
 #_03BF78: LDA.b #$07
-#_03BF7A: JSL routine00B99C
+#_03BF7A: JSL InitializeTextBoxToSizeForNewMessage
 #_03BF7E: JSL routine00A056
 
 #_03BF82: SEP #$20
@@ -8431,6 +8879,8 @@ TextExtCMD_45:
 #_03BFDE: STA.w $0A7D,X
 #_03BFE1: JSR GetNextTextByte
 #_03BFE4: RTS
+
+;===================================================================================================
 
 ; TODO POSSIBLY UNUSED ROUTINE
 routine03BFEE_long:
@@ -8714,7 +9164,7 @@ TextExtCMD_4B:
 #_03C1A1: JSR routine038D1C
 #_03C1A4: JSR TextExtCMD_36
 #_03C1A7: JSR routine0384F9
-#_03C1AA: JSL Update19XXuntil0100
+#_03C1AA: JSL RunFramesUntil0100IsFlagged
 #_03C1AE: PLP
 #_03C1AF: PLY
 #_03C1B0: PLX
@@ -8787,7 +9237,7 @@ TextExtCMD_4C:
 #_03C23B: BCC .branch03C281
 
 #_03C23D: STA.w $0407
-#_03C240: JSL ClipToRangeMoneyAndMAG
+#_03C240: JSL ClampMoneyAndMAG
 #_03C244: JSL routine009F56
 #_03C248: LDA.w $0C43
 #_03C24B: AND.w #$00FF
@@ -8835,7 +9285,7 @@ HealPercetageOfHP:
 #_03C292: PHX
 #_03C293: LDA.w $1030,X
 #_03C296: LDX.w #$0000
-#_03C299: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03C299: JSL DivisionBig_XA_by_Y
 #_03C29D: PLX
 #_03C29E: LDA.w $0E80
 #_03C2A1: CLC
@@ -8855,7 +9305,7 @@ HealPercetageOfMP:
 #_03C2B1: PHX
 #_03C2B2: LDA.w $1034,X
 #_03C2B5: LDX.w #$0000
-#_03C2B8: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03C2B8: JSL DivisionBig_XA_by_Y
 #_03C2BC: PLX
 #_03C2BD: LDA.w $0E80
 #_03C2C0: CLC
@@ -8923,6 +9373,8 @@ data03C318:
 data03C336:
 #_03C336: db $28,$32,$3C,$46,$4B,$50,$0C,$0F
 #_03C33E: db $12
+
+;===================================================================================================
 
 TextExtCMD_4F:
 #_03C33F: JSL routine0F945E
@@ -9031,7 +9483,7 @@ TextExtCMD_53:
 #_03C3F6: SBC.w $0A16
 #_03C3F9: STA.w $0407
 
-#_03C3FC: JSL ClipToRangeMoneyAndMAG
+#_03C3FC: JSL ClampMoneyAndMAG
 
 #_03C400: JSL routine009F56
 #_03C404: JSL routine009FDE
@@ -9052,7 +9504,7 @@ TextExtCMD_55:
 #_03C418: ADC.w $0A16
 #_03C41B: STA.w $0407
 
-#_03C41E: JSL ClipToRangeMoneyAndMAG
+#_03C41E: JSL ClampMoneyAndMAG
 
 #_03C422: JSL routine009F56
 #_03C426: JSL routine009FDE
@@ -9226,14 +9678,16 @@ TextExtCMD_59:
 #_03C511: SEC
 #_03C512: SBC.b #$E4
 #_03C514: TAX
-#_03C515: LDA.w data03C523,X
+#_03C515: LDA.w TextExtCMD_59_items,X
 #_03C518: STA.w $0A50
 #_03C51B: STZ.w $0A51
 #_03C51E: JSR AddItemToInventory
 #_03C521: PLP
 #_03C522: RTS
 
-data03C523:
+;---------------------------------------------------------------------------------------------------
+
+TextExtCMD_59_items:
 #_03C523: db $CB,$DF,$D4,$BB,$E0,$B9,$E1,$C9
 #_03C52B: db $D6,$DE,$D5,$BC
 
@@ -9640,11 +10094,11 @@ TextCommand_35:
 #_03C74C: INX
 #_03C74D: BRA .branch03C73C
 
-;===================================================================================================
-
 data03C74F:
 #_03C74F: dw $B0AF,$B2B1,$B4B3,$B6B5
 #_03C757: dw $B8B7,$F8F7,$FFFF
+
+;===================================================================================================
 
 TextCommand_36:
 #_03C75D: REP #$30
@@ -9654,7 +10108,7 @@ TextCommand_36:
 #_03C768: JSR GetNextTextByte
 #_03C76B: AND.w #$00FF
 #_03C76E: TAY
-#_03C76F: LDA.w data03C810,Y
+#_03C76F: LDA.w TextCommand_SmallMasks,Y
 #_03C772: AND.w #$00FF
 #_03C775: STA.w $0E02
 #_03C778: JSL GetRandomInt
@@ -9679,97 +10133,121 @@ TextCommand_36:
 
 TextCommand_37:
 #_03C79C: REP #$30
+
 #_03C79E: JSR GetNextTextByte
 #_03C7A1: AND.w #$00FF
 #_03C7A4: TAY
-#_03C7A5: LDA.w data03C7CE,Y
+
+#_03C7A5: LDA.w .masks,Y
 #_03C7A8: AND.w #$00FF
 #_03C7AB: STA.w $0E00
+
 #_03C7AE: JSL GetRandomInt
+
 #_03C7B2: LDA.w $0ED5
 #_03C7B5: AND.w $0E00
 #_03C7B8: STA.w $0E00
+
 #_03C7BB: LDA.w $101A
 #_03C7BE: CMP.w $0E00
-#_03C7C1: BCC .branch03C7C7
+#_03C7C1: BCC .change_message
 
 #_03C7C3: JSR GetNextTextByte
+
 #_03C7C6: RTS
 
-.branch03C7C7
+.change_message
 #_03C7C7: JSR GetNextTextByte
 #_03C7CA: JSR RelocateTextPointer
+
 #_03C7CD: RTS
 
-data03C7CE:
-#_03C7CE: db $0F,$1F,$3F
+.masks
+#_03C7CE: db $0F, $1F, $3F
 
 ;===================================================================================================
 
 TextCommand_38:
 #_03C7D1: REP #$30
+
 #_03C7D3: LDX.w $0526
+
 #_03C7D6: LDA.w $1014,X
 #_03C7D9: STA.w $0E00
+
 #_03C7DC: JSR GetNextTextByte
 #_03C7DF: AND.w #$00FF
 #_03C7E2: TAY
-#_03C7E3: LDA.w data03C810,Y
+
+#_03C7E3: LDA.w TextCommand_SmallMasks,Y
 #_03C7E6: AND.w #$00FF
 #_03C7E9: STA.w $0E02
+
 #_03C7EC: JSL GetRandomInt
 #_03C7F0: LDA.w $0ED5
 #_03C7F3: AND.w $0E02
 #_03C7F6: CLC
 #_03C7F7: ADC.w $0E00
 #_03C7FA: STA.w $0E00
+
 #_03C7FD: LDA.w $1014
 #_03C800: CMP.w $0E00
-#_03C803: BCC .branch03C809
+#_03C803: BCC .change_message
 
 #_03C805: JSR GetNextTextByte
+
 #_03C808: RTS
 
-.branch03C809
+.change_message
 #_03C809: JSR GetNextTextByte
 #_03C80C: JSR RelocateTextPointer
+
 #_03C80F: RTS
 
-data03C810:
-#_03C810: db $07,$0F,$1F
+;===================================================================================================
+
+TextCommand_SmallMasks:
+#_03C810: db $07, $0F, $1F
 
 ;===================================================================================================
 
 TextCommand_39:
 #_03C813: REP #$30
+
 #_03C815: LDA.w $1010
 #_03C818: CLC
 #_03C819: ADC.w $1036
 #_03C81C: STA.w $0E00
+
 #_03C81F: JSL GetRandomInt
+
 #_03C823: LDA.w $0ED5
 #_03C826: AND.w #$001F
 #_03C829: CLC
 #_03C82A: ADC.w #$0008
 #_03C82D: INC A
 #_03C82E: CMP.w $0E00
-#_03C831: BCS .branch03C837
+#_03C831: BCS .change_message
 
 #_03C833: JSR GetNextTextByte
+
 #_03C836: RTS
 
-.branch03C837
+.change_message
 #_03C837: JSR GetNextTextByte
 #_03C83A: JSR RelocateTextPointer
+
 #_03C83D: RTS
 
 ;===================================================================================================
 
 TextCommand_3B:
 #_03C83E: REP #$30
+
 #_03C840: JSR GetNextTextByte
 #_03C843: AND.w #$00FF
 #_03C846: STA.w $0E00
+
 #_03C849: LDA.w $0E00
 #_03C84C: BEQ .branch03C879
 
@@ -9804,14 +10282,15 @@ TextCommand_3B:
 .branch03C88A
 #_03C88A: DEC A
 #_03C88B: CMP.w $0A40
-#_03C88E: BCS .branch03C894
+#_03C88E: BCS .change_message
 
 #_03C890: JSR GetNextTextByte
 #_03C893: RTS
 
-.branch03C894
+.change_message
 #_03C894: JSR GetNextTextByte
 #_03C897: JSR RelocateTextPointer
+
 #_03C89A: RTS
 
 ;===================================================================================================
@@ -9855,12 +10334,12 @@ TextCommand_3C:
 .branch03C8E7
 #_03C8E7: INC A
 #_03C8E8: CMP.w $0A42
-#_03C8EB: BCS .branch03C8F1
+#_03C8EB: BCS .change_message
 
 #_03C8ED: JSR GetNextTextByte
 #_03C8F0: RTS
 
-.branch03C8F1
+.change_message
 #_03C8F1: JSR GetNextTextByte
 #_03C8F4: JSR RelocateTextPointer
 #_03C8F7: RTS
@@ -9910,16 +10389,18 @@ TextCommand_3D:
 .branch03C945
 #_03C945: LDA.w $0E00
 #_03C948: TAY
-#_03C949: LDA.w data03C952,Y
+#_03C949: LDA.w .vectors,Y
 #_03C94C: STA.w $00E0
 #_03C94F: JMP ($00E0)
 
-data03C952:
+.vectors
 #_03C952: dw routine03C95C
 #_03C954: dw routine03C987
 #_03C956: dw routine03C9B2
 #_03C958: dw routine03C9CF
 #_03C95A: dw routine03C9F2
+
+;===================================================================================================
 
 routine03C95C:
 #_03C95C: REP #$30
@@ -9934,7 +10415,7 @@ routine03C95C:
 #_03C975: STA.w $0407
 #_03C978: LDA.w #$0000
 #_03C97B: STA.w $0A44
-#_03C97E: JSL ClipToRangeMoneyAndMAG
+#_03C97E: JSL ClampMoneyAndMAG
 #_03C982: JSL routine0F945E
 #_03C986: RTS
 
@@ -9953,7 +10434,7 @@ routine03C987:
 #_03C9A0: STA.w $040B
 #_03C9A3: LDA.w #$0001
 #_03C9A6: STA.w $0A44
-#_03C9A9: JSL ClipToRangeMoneyAndMAG
+#_03C9A9: JSL ClampMoneyAndMAG
 #_03C9AD: JSL routine0F945E
 #_03C9B1: RTS
 
@@ -9969,11 +10450,11 @@ routine03C9B2:
 
 #_03C9C4: SEP #$20
 #_03C9C6: LDA.w $0A58
-#_03C9C9: BEQ .EXIT_03C9CE
+#_03C9C9: BEQ .exit
 
 #_03C9CB: JMP routine03C95C
 
-.EXIT_03C9CE
+.exit
 #_03C9CE: RTS
 
 ;===================================================================================================
@@ -9990,11 +10471,11 @@ routine03C9CF:
 
 #_03C9E7: SEP #$20
 #_03C9E9: LDA.w $0A58
-#_03C9EC: BEQ .EXIT_03C9F1
+#_03C9EC: BEQ .exit
 
 #_03C9EE: JMP routine03C987
 
-.EXIT_03C9F1
+.exit
 #_03C9F1: RTS
 
 ;===================================================================================================
@@ -10009,11 +10490,11 @@ routine03C9F2:
 
 #_03CA04: SEP #$20
 #_03CA06: LDA.w $0A58
-#_03CA09: BEQ .EXIT_03CA0E
+#_03CA09: BEQ .exit
 
 #_03CA0B: JMP routine03C95C
 
-.EXIT_03CA0E
+.exit
 #_03CA0E: RTS
 
 ;===================================================================================================
@@ -10148,7 +10629,7 @@ TextCommand_3E:
 #_03CAD1: TAY
 #_03CAD2: LDA.w $102E,X
 #_03CAD5: LDX.w #$0000
-#_03CAD8: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03CAD8: JSL DivisionBig_XA_by_Y
 #_03CADC: PLX
 #_03CADD: LDA.w $1030
 #_03CAE0: SEC
@@ -10183,7 +10664,7 @@ TextCommand_3E:
 #_03CB0E: TAY
 #_03CB0F: LDA.w $1032,X
 #_03CB12: LDX.w #$0000
-#_03CB15: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03CB15: JSL DivisionBig_XA_by_Y
 #_03CB19: PLX
 #_03CB1A: LDA.w $1034
 #_03CB1D: SEC
@@ -10227,11 +10708,11 @@ TextCommand_40:
 #_03CB5A: LDA.w $1006,X
 #_03CB5D: JSR routine03D005
 #_03CB60: DEC A
-#_03CB61: BPL .branch03CB64
+#_03CB61: BPL .continue
 
 #_03CB63: RTS
 
-.branch03CB64
+.continue
 #_03CB64: STA.w $0E00
 #_03CB67: ASL A
 #_03CB68: ASL A
@@ -10261,21 +10742,25 @@ TextCommand_40:
 #_03CB96: LDA.w $0A44
 #_03CB99: ASL A
 #_03CB9A: TAY
-#_03CB9B: LDA.w data03CBA4,Y
+#_03CB9B: LDA.w .vectors,Y
 #_03CB9E: STA.w $00E0
 #_03CBA1: JMP ($00E0)
 
-data03CBA4:
+.vectors
 #_03CBA4: dw routine03CBAE
 #_03CBA6: dw routine03CBB9
 #_03CBA8: dw routine03CBFB
 #_03CBAA: dw routine03CBFF
 #_03CBAC: dw routine03CC12
 
+;===================================================================================================
+
 routine03CBAE:
 #_03CBAE: JSL routine03C99C
 #_03CBB2: JSR routine03CBC4
+
 #_03CBB5: STA.w $0A46
+
 #_03CBB8: RTS
 
 ;===================================================================================================
@@ -10283,7 +10768,9 @@ routine03CBAE:
 routine03CBB9:
 #_03CBB9: JSL routine03CCB1
 #_03CBBD: JSR routine03CBC4
+
 #_03CBC0: STA.w $0A46
+
 #_03CBC3: RTS
 
 ;===================================================================================================
@@ -10316,12 +10803,14 @@ routine03CBC4:
 
 routine03CBFB:
 #_03CBFB: STZ.w $0A46
+
 #_03CBFE: RTS
 
 ;===================================================================================================
 
 routine03CBFF:
 #_03CBFF: JSL GetRandomInt
+
 #_03CC03: LDA.w $0ED5
 #_03CC06: AND.w #$000F
 #_03CC09: CMP.w #$000C
@@ -10334,12 +10823,17 @@ routine03CBFF:
 
 routine03CC12:
 #_03CC12: REP #$30
+
 #_03CC14: LDA.w #$00B4
 #_03CC17: STA.w $0A50
+
 #_03CC1A: LDA.w #$0005
 #_03CC1D: STA.w $0A44
 #_03CC20: STZ.w $0A46
+
 #_03CC23: RTS
+
+;===================================================================================================
 
 data03CC24:
 #_03CC24: db $47,$8F,$BF,$DF,$FF,$3F,$8F,$BF
@@ -10365,12 +10859,15 @@ data03CC60:
 
 routine03C99C:
 #_03CC9C: PHP
+
 #_03CC9D: PHB
 #_03CC9E: PHK
 #_03CC9F: PLB
 
 #_03CCA0: REP #$30
+
 #_03CCA2: LDX.w $0526
+
 #_03CCA5: LDA.w $100A,X
 #_03CCA8: ASL A
 #_03CCA9: ASL A
@@ -10381,6 +10878,7 @@ routine03C99C:
 
 .exit
 #_03CCAE: PLB
+
 #_03CCAF: PLP
 #_03CCB0: RTL
 
@@ -10388,16 +10886,21 @@ routine03C99C:
 
 routine03CCB1:
 #_03CCB1: PHP
+
 #_03CCB2: PHB
 #_03CCB3: PHK
 #_03CCB4: PLB
 
 #_03CCB5: REP #$30
+
 #_03CCB7: LDX.w $0526
+
 #_03CCBA: LDA.w $100A,X
 #_03CCBD: ASL A
 #_03CCBE: ASL A
+
 #_03CCBF: PLB
+
 #_03CCC0: PLP
 #_03CCC1: RTL
 
@@ -10405,21 +10908,26 @@ routine03CCB1:
 
 TextCommand_5D:
 #_03CCC2: REP #$30
+
 #_03CCC4: LDA.w $0A44
 #_03CCC7: AND.w #$0007
 #_03CCCA: ASL A
 #_03CCCB: TAY
-#_03CCCC: LDA.w data03CCD5,Y
+
+#_03CCCC: LDA.w .vectors,Y
 #_03CCCF: STA.w $00E0
+
 #_03CCD2: JMP ($00E0)
 
-data03CCD5:
+.vectors
 #_03CCD5: dw routine03CCE1
 #_03CCD7: dw routine03CD0D
 #_03CCD9: dw CODE_03CD95
 #_03CCDB: dw routine03CDB8
 #_03CCDD: dw routine03CD72
 #_03CCDF: dw routine03CD72
+
+;===================================================================================================
 
 routine03CCE1:
 #_03CCE1: LDA.w $0407
@@ -10465,6 +10973,8 @@ routine03CD0D:
 #_03CD33: JSR routine03CD39
 #_03CD36: JMP .branch03CDE2
 
+;---------------------------------------------------------------------------------------------------
+
 routine03CD39:
 #_03CD39: PHP
 #_03CD3A: REP #$20
@@ -10478,11 +10988,11 @@ routine03CD39:
 #_03CD47: ADC.w $0A40
 #_03CD4A: STA.w $0A40
 #_03CD4D: CMP.w #$0020
-#_03CD50: BCC .EXIT_03CD70
+#_03CD50: BCC .exit
 
 #_03CD52: LDA.w #$001F
 #_03CD55: STA.w $0A40
-#_03CD58: BRA .EXIT_03CD70
+#_03CD58: BRA .exit
 
 .branch03CD5A
 #_03CD5A: PLA
@@ -10491,12 +11001,12 @@ routine03CD39:
 #_03CD5F: ADC.w $0A42
 #_03CD62: STA.w $0A42
 #_03CD65: CMP.w #$0020
-#_03CD68: BCC .EXIT_03CD70
+#_03CD68: BCC .exit
 
 #_03CD6A: LDA.w #$001F
 #_03CD6D: STA.w $0A42
 
-.EXIT_03CD70
+.exit
 #_03CD70: PLP
 #_03CD71: RTS
 
@@ -10581,23 +11091,28 @@ data03CDF1:
 
 TextCommand_41:
 #_03CDFD: REP #$30
+
 #_03CDFF: JSR GetNextTextByte
 #_03CE02: AND.w #$00FF
 #_03CE05: ASL A
 #_03CE06: TAY
+
 #_03CE07: LDX.w data03CE1F,Y
+
 #_03CE0A: LDA.w $102E
 
-.branch03CE0D
+.shift
 #_03CE0D: LSR A
 #_03CE0E: DEX
-#_03CE0F: BPL .branch03CE0D
+#_03CE0F: BPL .shift
 
 #_03CE11: STA.w $0E00
+
 #_03CE14: LDA.w $102E
 #_03CE17: SEC
 #_03CE18: SBC.w $0E00
 #_03CE1B: STA.w $102E
+
 #_03CE1E: RTS
 
 data03CE1F:
@@ -10638,56 +11153,67 @@ TextCommand_42:
 
 TextCommand_43:
 #_03CE4F: REP #$30
+
 #_03CE51: LDA.w $0409
 #_03CE54: STA.w $0E00
+
 #_03CE57: LDA.w $040B
 #_03CE5A: STA.w $0E02
+
 #_03CE5D: LDX.w #$0004
 
-.branch03CE60
+.roll
 #_03CE60: LSR.w $0E02
 #_03CE63: ROR.w $0E00
+
 #_03CE66: DEX
-#_03CE67: BPL .branch03CE60
+#_03CE67: BPL .roll
 
 #_03CE69: LDA.w $0409
 #_03CE6C: SEC
 #_03CE6D: SBC.w $0E00
 #_03CE70: STA.w $0409
+
 #_03CE73: LDA.w $040B
 #_03CE76: SBC.w $0E02
 #_03CE79: STA.w $040B
+
 #_03CE7C: RTS
 
 ;===================================================================================================
 
 TextCommand_44:
 #_03CE7D: REP #$30
+
 #_03CE7F: LDA.w #$0000
 
-.branch03CE82
+.next
 #_03CE82: LDA.w $1000,X
-#_03CE85: BEQ .branch03CE9F
+#_03CE85: BEQ .skip
 
 #_03CE87: LDA.w $100C,X
 #_03CE8A: STA.w $0E00
+
 #_03CE8D: LDA.w $100E,X
 #_03CE90: STA.w $0E02
+
 #_03CE93: LDY.w #$0007
 
-.branch03CE96
+.shift
 #_03CE96: LSR.w $0E02
 #_03CE99: ROR.w $0E00
-#_03CE9C: DEY
-#_03CE9D: BPL .branch03CE96
 
-.branch03CE9F
+#_03CE9C: DEY
+#_03CE9D: BPL .shift
+
+.skip
 #_03CE9F: TXA
 #_03CEA0: CLC
 #_03CEA1: ADC.w #$0060
 #_03CEA4: TAX
+
 #_03CEA5: CMP.w #$0180
-#_03CEA8: BNE .branch03CE82
+#_03CEA8: BNE .next
 
 #_03CEAA: RTS
 
@@ -10695,14 +11221,15 @@ TextCommand_44:
 
 TextCommand_45:
 #_03CEAB: REP #$30
+
 #_03CEAD: JSR GetNextTextByte
 #_03CEB0: AND.w #$00FF
 #_03CEB3: BIT.w #$0080
-#_03CEB6: BEQ .branch03CEBB
+#_03CEB6: BEQ .positive
 
 #_03CEB8: ORA.w #$FF00
 
-.branch03CEBB
+.positive
 #_03CEBB: CLC
 #_03CEBC: ADC.w $0A40
 #_03CEBF: STA.w $0A40
@@ -10716,10 +11243,12 @@ TextCommand_45:
 .branch03CECA
 #_03CECA: LDA.w #$001F
 #_03CECD: STA.w $0A40
+
 #_03CED0: RTS
 
 .branch03CED1
 #_03CED1: STZ.w $0A40
+
 #_03CED4: RTS
 
 ;===================================================================================================
@@ -10729,11 +11258,11 @@ TextCommand_46:
 #_03CED7: JSR GetNextTextByte
 #_03CEDA: AND.w #$00FF
 #_03CEDD: BIT.w #$0080
-#_03CEE0: BEQ .branch03CEE5
+#_03CEE0: BEQ .positive
 
 #_03CEE2: ORA.w #$FF00
 
-.branch03CEE5
+.positive
 #_03CEE5: CLC
 #_03CEE6: ADC.w $0A42
 #_03CEE9: STA.w $0A42
@@ -10747,107 +11276,140 @@ TextCommand_46:
 .branch03CEF4
 #_03CEF4: LDA.w #$001F
 #_03CEF7: STA.w $0A42
+
 #_03CEFA: RTS
 
 .branch03CEFB
 #_03CEFB: STZ.w $0A42
+
 #_03CEFE: RTS
 
 ;===================================================================================================
 
 TextCommand_47:
 #_03CEFF: REP #$30
+
 #_03CF01: LDX.w #$0000
 
-.branch03CF04
+.next_byte
 #_03CF04: JSR GetNextTextByte
 #_03CF07: AND.w #$00FF
 #_03CF0A: STA.w $0E00,X
+
 #_03CF0D: INX
 #_03CF0E: INX
 #_03CF0F: CPX.w #$0008
-#_03CF12: BNE .branch03CF04
+#_03CF12: BNE .next_byte
 
 #_03CF14: JSL GetRandomInt
 #_03CF18: LDA.w $0ED5
 #_03CF1B: AND.w #$0003
 #_03CF1E: ASL A
 #_03CF1F: TAX
+
 #_03CF20: LDA.w $0E00,X
 #_03CF23: JSR RelocateTextPointer
+
 #_03CF26: RTS
 
 ;===================================================================================================
 
 TextCommand_48:
 #_03CF27: SEP #$20
+
 #_03CF29: INC.w $0A3D
+
 #_03CF2C: JSR GetNextTextByte
 #_03CF2F: STA.w $0E00
 
 #_03CF32: REP #$30
+
 #_03CF34: LDA.w $0A22
 #_03CF37: PHA
+
 #_03CF38: LDA.w $0A24
 #_03CF3B: PHA
+
 #_03CF3C: LDA.w $0A26
 #_03CF3F: PHA
+
 #_03CF40: LDA.w $00C2
 #_03CF43: PHA
+
 #_03CF44: LDA.w $00C0
 #_03CF47: PHA
+
+;---------------------------------------------------------------------------------------------------
+
 #_03CF48: LDA.w $0E00
 #_03CF4B: AND.w #$00FF
 #_03CF4E: DEC A
 #_03CF4F: STA.w $0E00
 #_03CF52: STA.w $0E10
+
 #_03CF55: LDA.w $0A4A
-#_03CF58: LSR A
+#_03CF58: LSR A ; /16
 #_03CF59: LSR A
 #_03CF5A: LSR A
 #_03CF5B: LSR A
 #_03CF5C: AND.w #$000F
 #_03CF5F: TAY
+
 #_03CF60: LDA.w data03CFC0,Y
 #_03CF63: AND.w #$00FF
 #_03CF66: STA.w $0E11
+
 #_03CF69: JSR Multiply_0E10_by_0E11
+
 #_03CF6C: LDA.w $0A4A
 #_03CF6F: AND.w #$000F
 #_03CF72: CLC
 #_03CF73: ADC.w $0E12
 #_03CF76: STA.w $0A22
+
 #_03CF79: LDA.w $0A4A
-#_03CF7C: LSR A
+#_03CF7C: LSR A ; /16
 #_03CF7D: LSR A
 #_03CF7E: LSR A
 #_03CF7F: LSR A
 #_03CF80: AND.w #$000F
 #_03CF83: TAY
+
 #_03CF84: LDA.w data03CFB3,Y
 #_03CF87: STA.w $0A24
+
 #_03CF8A: LDA.w #$0002
 #_03CF8D: STA.w $0A26
+
 #_03CF90: JSR routine0382C2
 #_03CF93: JSL routine03834C
 
+;---------------------------------------------------------------------------------------------------
+
 #_03CF97: REP #$20
+
 #_03CF99: PLA
 #_03CF9A: STA.w $00C0
+
 #_03CF9D: PLA
 #_03CF9E: STA.w $00C2
+
 #_03CFA1: PLA
 #_03CFA2: STA.w $0A26
+
 #_03CFA5: PLA
 #_03CFA6: STA.w $0A24
+
 #_03CFA9: PLA
 #_03CFAA: STA.w $0A22
 
 #_03CFAD: SEP #$20
+
 #_03CFAF: DEC.w $0A3D
+
 #_03CFB2: RTS
 
-;===================================================================================================
+;---------------------------------------------------------------------------------------------------
 
 data03CFB3:
 #_03CFB3: db $16,$18,$19,$1A,$1B,$16,$18,$19
@@ -10861,43 +11423,59 @@ data03CFC0:
 
 TextCommand_4D:
 #_03CFCD: SEP #$20
+
 #_03CFCF: LDA.b #DemonNamePointers>>16
 #_03CFD1: STA.w $00C5
 
 #_03CFD4: REP #$30
+
 #_03CFD6: LDX.w $0526
+
 #_03CFD9: LDA.w $1004,X
 #_03CFDC: STA.w $0A39
+
 #_03CFDF: LDA.w #DemonNamePointers>>0
 #_03CFE2: STA.w $00C3
+
 #_03CFE5: JSR WriteTextIndexW0A39
+
 #_03CFE8: RTS
 
 ;===================================================================================================
 
 TextCommand_4E:
 #_03CFE9: SEP #$20
+
 #_03CFEB: LDA.b #ClassNamePointers>>16
 #_03CFED: STA.w $00C5
 
 #_03CFF0: REP #$30
+
 #_03CFF2: LDX.w $0526
+
 #_03CFF5: LDA.w $1006,X
 #_03CFF8: STA.w $0A39
+
 #_03CFFB: LDA.w #ClassNamePointers>>0
 #_03CFFE: STA.w $00C3
+
 #_03D001: JSR WriteTextIndexW0A39
+
 #_03D004: RTS
 
 ;===================================================================================================
 
 routine03D005:
 #_03D005: PHP
+
 #_03D006: REP #$30
+
 #_03D008: AND.w #$00FF
 #_03D00B: TAY
+
 #_03D00C: LDA.w data03D014,Y
 #_03D00F: AND.w #$00FF
+
 #_03D012: PLP
 #_03D013: RTS
 
@@ -10912,22 +11490,27 @@ data03D014:
 
 TextCommand_56:
 #_03D038: SEP #$30
+
 #_03D03A: LDA.w $0A44
 #_03D03D: ASL A
 #_03D03E: TAY
 
 #_03D03F: REP #$20
-#_03D041: LDA.w data03D04A,Y
+
+#_03D041: LDA.w .vectors,Y
 #_03D044: STA.w $00E0
+
 #_03D047: JMP ($00E0)
 
-data03D04A:
+.vectors
 #_03D04A: dw routine03D056
 #_03D04C: dw routine03D05D
 #_03D04E: dw routine03D064
 #_03D050: dw routine03D072
 #_03D052: dw TextCommand_23_localbounce
 #_03D054: dw routine03D088
+
+;===================================================================================================
 
 routine03D056:
 #_03D056: JSR routine03D0BB
@@ -10984,23 +11567,26 @@ routine03D088:
 
 routine03D096:
 #_03D096: REP #$30
+
 #_03D098: LDA.w $0A46
 #_03D09B: STA.w $0E10
 #_03D09E: STZ.w $0E12
+
 #_03D0A1: JSL HEXtoDEC_rightaligned_tiles_rtl
+
 #_03D0A5: LDY.w #$0005
 
-.branch03D0A8
+.next_char
 #_03D0A8: LDA.w $0E00,Y
 #_03D0AB: AND.w #$00FF
 #_03D0AE: CMP.w #$00CF
-#_03D0B1: BEQ .branch03D0B7
+#_03D0B1: BEQ .is_space
 
 #_03D0B3: JSL WriteNextMessageChar
 
-.branch03D0B7
+.is_space
 #_03D0B7: DEY
-#_03D0B8: BPL .branch03D0A8
+#_03D0B8: BPL .next_char
 
 #_03D0BA: RTS
 
@@ -11009,67 +11595,86 @@ routine03D096:
 routine03D0BB:
 #_03D0BB: LDA.w #$00EC
 #_03D0BE: JSL TestGameProgressBit
-#_03D0C2: BCC .branch03D0C9
+#_03D0C2: BCC .use_yen
 
-#_03D0C4: LDA.w #$205C
-#_03D0C7: BRA .branch03D0CC
+#_03D0C4: LDA.w #$205C ; Macca symbol
+#_03D0C7: BRA .draw_char
 
-.branch03D0C9
-#_03D0C9: LDA.w #$205B
+.use_yen
+#_03D0C9: LDA.w #$205B ; Yen symbol
 
-.branch03D0CC
+.draw_char
 #_03D0CC: LDX.w $0A33
+
 #_03D0CF: STA.w $0900,X
-#_03D0D2: LDA.w #$20CF
+
+#_03D0D2: LDA.w #$20CF ; space
 #_03D0D5: STA.w $0940,X
+
 #_03D0D8: INC.w $0A33
 #_03D0DB: INC.w $0A33
+
 #_03D0DE: RTS
 
 ;===================================================================================================
 
 routine03D0DF:
-#_03D0DF: LDA.w #$20A7
+#_03D0DF: LDA.w #$20A7 ; ぢ
+
 #_03D0E2: LDX.w $0A33
 #_03D0E5: STA.w $0900,X
+
 #_03D0E8: INC A
 #_03D0E9: STA.w $0902,X
-#_03D0EC: LDA.w #$20CF
+
+#_03D0EC: LDA.w #$20CF ; space
 #_03D0EF: STA.w $0940,X
 #_03D0F2: STA.w $0942,X
+
 #_03D0F5: INC.w $0A33
 #_03D0F8: INC.w $0A33
 #_03D0FB: INC.w $0A33
 #_03D0FE: INC.w $0A33
+
 #_03D101: RTS
+
+;===================================================================================================
 
 TextCommand_59:
 #_03D102: REP #$30
+
 #_03D104: LDX.w $0526
+
 #_03D107: LDA.w $1018,X
 #_03D10A: STA.w $0E00
+
 #_03D10D: JSR GetNextTextByte
 #_03D110: AND.w #$00FF
 #_03D113: TAY
-#_03D114: LDA.w data03C810,Y
+
+#_03D114: LDA.w TextCommand_SmallMasks,Y
 #_03D117: AND.w #$00FF
 #_03D11A: STA.w $0E02
+
 #_03D11D: JSL GetRandomInt
 #_03D121: LDA.w $0ED5
 #_03D124: AND.w $0E02
 #_03D127: CLC
 #_03D128: ADC.w $0E00
 #_03D12B: STA.w $0E00
+
 #_03D12E: LDA.w $1018
 #_03D131: CMP.w $0E00
-#_03D134: BCC .branch03D13A
+#_03D134: BCC .change_message
 
 #_03D136: JSR GetNextTextByte
+
 #_03D139: RTS
 
-.branch03D13A
+.change_message
 #_03D13A: JSR GetNextTextByte
 #_03D13D: JSR RelocateTextPointer
+
 #_03D140: RTS
 
 ;===================================================================================================
@@ -11113,7 +11718,7 @@ TextCommand_5A:
 #_03D186: LDA.w $0407
 #_03D189: ADC.w #$0000
 #_03D18C: STA.w $0407
-#_03D18F: JSL ClipToRangeMoneyAndMAG
+#_03D18F: JSL ClampMoneyAndMAG
 #_03D193: JSL routine0F945E
 #_03D197: RTS
 
@@ -11149,7 +11754,7 @@ TextCommand_5A:
 #_03D1CC: LDA.w $040B
 #_03D1CF: ADC.w #$0000
 #_03D1D2: STA.w $040B
-#_03D1D5: JSL ClipToRangeMoneyAndMAG
+#_03D1D5: JSL ClampMoneyAndMAG
 #_03D1D9: JSL routine0F945E
 #_03D1DD: RTS
 
@@ -11157,26 +11762,31 @@ TextCommand_5A:
 
 TextCommand_5B:
 #_03D1DE: SEP #$30
+
 #_03D1E0: JSR GetNextTextByte
 #_03D1E3: AND.b #$FF
-#_03D1E5: BNE .branch03D1EE
+#_03D1E5: BNE .set_progress_bit
 
 #_03D1E7: JSR GetNextTextByte
 #_03D1EA: JSR ClearGameProgressBit
+
 #_03D1ED: RTS
 
-.branch03D1EE
+.set_progress_bit
 #_03D1EE: JSR GetNextTextByte
 #_03D1F1: JSR SetGameProgressBit
+
 #_03D1F4: RTS
 
 ;===================================================================================================
 
 TextCommand_33:
 #_03D1F5: SEP #$30
+
 #_03D1F7: LDA.b #$20
 #_03D1F9: STA.w $0A2C
 #_03D1FC: STZ.w $0A48
+
 #_03D1FF: JSR GetNextTextByte
 #_03D202: CMP.b #$00
 #_03D204: BEQ .branch03D20B
@@ -11186,6 +11796,7 @@ TextCommand_33:
 
 .branch03D20B
 #_03D20B: STA.w $0E00
+
 #_03D20E: LDA.w $0A4A
 #_03D211: LSR A
 #_03D212: LSR A
@@ -11197,20 +11808,28 @@ TextCommand_33:
 #_03D21A: TAY
 
 #_03D21B: REP #$20
+
 #_03D21D: LDA.w data03D429,Y
 #_03D220: STA.w $0A12
+
 #_03D223: LDA.w #$0018
 #_03D226: STA.w $0A1E
+
 #_03D229: LDA.w #$0004
 #_03D22C: STA.w $0A20
+
 #_03D22F: LDA.w #$0002
 #_03D232: STA.w $0A1C
+
 #_03D235: LDA.w #$0003
 #_03D238: STA.w $0A2A
+
 #_03D23B: LDA.w #$3DC4
 #_03D23E: STA.w $0A1A
+
 #_03D241: JSL LoadClassyMessage
 #_03D245: JSR routine0382C2
+
 #_03D248: RTS
 
 data03D429:
@@ -11286,47 +11905,55 @@ TextCommand_5E:
 
 routine03D2DA:
 #_03D2DA: REP #$30
+
 #_03D2DC: LDX.w #$0060
+
 #_03D2DF: LDA.w $1000,X
-#_03D2E2: BEQ .branch03D2F0
+#_03D2E2: BEQ .change_message
 
 #_03D2E4: LDA.w $1002,X
 #_03D2E7: AND.w #$F640
-#_03D2EA: BNE .branch03D2F0
+#_03D2EA: BNE .change_message
 
 #_03D2EC: JSR GetNextTextByte
+
 #_03D2EF: RTS
 
-.branch03D2F0
+.change_message
 #_03D2F0: JSR GetNextTextByte
 #_03D2F3: JSR RelocateTextPointer
+
 #_03D2F6: RTS
 
 ;===================================================================================================
 
 routine03D2F7:
 #_03D2F7: REP #$30
+
 #_03D2F9: LDA.w $0524
 #_03D2FC: BNE .branch03D30B
 
 #_03D2FE: JSL routine03D31F
 #_03D302: CMP.w #$0008
-#_03D305: BCS .branch03D318
+#_03D305: BCS .change_message
 
 #_03D307: JSR GetNextTextByte
+
 #_03D30A: RTS
 
 .branch03D30B
 #_03D30B: JSL routine03D31F
 #_03D30F: CMP.w #$0004
-#_03D312: BCS .branch03D318
+#_03D312: BCS .change_message
 
 #_03D314: JSR GetNextTextByte
+
 #_03D317: RTS
 
-.branch03D318
+.change_message
 #_03D318: JSR GetNextTextByte
 #_03D31B: JSR RelocateTextPointer
+
 #_03D31E: RTS
 
 ;===================================================================================================
@@ -11344,16 +11971,18 @@ routine03D31F:
 
 routine03D32B:
 #_03D32B: REP #$30
+
 #_03D32D: JSL routine03D31F
 #_03D331: CMP.w #$0001
-#_03D334: BEQ .branch03D33A
+#_03D334: BEQ .change_message
 
 #_03D336: JSR GetNextTextByte
 #_03D339: RTS
 
-.branch03D33A
+.change_message
 #_03D33A: JSR GetNextTextByte
 #_03D33D: JSR RelocateTextPointer
+
 #_03D340: RTS
 
 ;===================================================================================================
@@ -11524,7 +12153,7 @@ routine03D413:
 #_03D44E: STA.w $0104
 #_03D451: LDA.w #$0001
 #_03D454: STA.w $0100
-#_03D457: JSL Update19XXuntil0100
+#_03D457: JSL RunFramesUntil0100IsFlagged
 #_03D45B: RTS
 
 data03D45C:
@@ -11615,42 +12244,57 @@ routine03D4FB:
 #_03D516: PLP
 #_03D517: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 TextWhiteSpaceFill_long:
 #_03D518: JSR TextWhiteSpaceFill
 #_03D51B: RTL
 
+;===================================================================================================
+
 TextWhiteSpaceFill:
 #_03D51C: PHX
 #_03D51D: PHY
+
 #_03D51E: PHP
+
 #_03D51F: SEP #$30
+
 #_03D521: LDY.b #$00
 #_03D523: STZ.w $0A33
 
-.nextchar
+.next_space
 #_03D526: LDA.b #$CF
 #_03D528: JSL WriteNextMessageChar
+
 #_03D52C: INY
 #_03D52D: CPY.b #$20
-#_03D52F: BNE .nextchar
+#_03D52F: BNE .next_space
 
 #_03D531: STZ.w $0A33
+
 #_03D534: PLP
+
 #_03D535: PLY
 #_03D536: PLX
+
 #_03D537: RTS
 
 ;===================================================================================================
 
 routine03D538:
 #_03D538: PHP
+
 #_03D539: SEP #$30
+
 #_03D53B: TXA
 #_03D53C: ASL A
 #_03D53D: STA.w $0A33
+
 #_03D540: JSR GetCorrectCurrencyCharacter
 #_03D543: JSL WriteNextMessageChar
+
 #_03D547: PLP
 #_03D548: RTS
 
@@ -11659,31 +12303,40 @@ routine03D538:
 ;===================================================================================================
 GetCorrectCurrencyCharacter:
 #_03D549: SEP #$30
+
 #_03D54B: LDA.b #$EC
 #_03D54D: JSL TestGameProgressBit
-#_03D551: BCC .loadyen
+#_03D551: BCC .use_yen
 
-#_03D553: LDA.b #YEN2
+#_03D553: LDA.b #$5C ; Macca symbol
+
 #_03D555: RTS
 
-.loadyen
-#_03D556: LDA.b #YEN
+.use_yen
+#_03D556: LDA.b #$5B ; Yen symbol
+
 #_03D558: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
-routine03D559:
+UnusedMultipleXBy64:
 #_03D559: PHP
+
 #_03D55A: REP #$30
+
 #_03D55C: TXA
 #_03D55D: AND.w #$000F
-#_03D560: ASL A
+#_03D560: ASL A ; x64
 #_03D561: ASL A
 #_03D562: ASL A
 #_03D563: ASL A
 #_03D564: ASL A
 #_03D565: ASL A
 #_03D566: TAX
+
 #_03D567: PLP
+
 #_03D568: RTS
 
 ;===================================================================================================
@@ -11714,7 +12367,7 @@ routine03D569:
 #_03D59C: LDA.w $0E16
 #_03D59F: ADC.w #$0000
 #_03D5A2: STA.w $0E12
-#_03D5A5: JSR routine03D5FF
+#_03D5A5: JSR Shift_32bit_0E10_Right8Times
 #_03D5A8: LDA.w $0E10
 #_03D5AB: STA.w $0A14
 #_03D5AE: LDA.w $0E12
@@ -11725,7 +12378,7 @@ routine03D569:
 #_03D5B7: LDA.w $1034,X
 #_03D5BA: SEC
 #_03D5BB: SBC.w $1032,X
-#_03D5BE: BMI .EXIT_03D5FD
+#_03D5BE: BMI .exit
 
 #_03D5C0: STA.w $0E10
 #_03D5C3: LDA.w $07E1
@@ -11742,7 +12395,7 @@ routine03D569:
 #_03D5DE: LDA.w $0E16
 #_03D5E1: ADC.w #$0000
 #_03D5E4: STA.w $0E12
-#_03D5E7: JSR routine03D5FF
+#_03D5E7: JSR Shift_32bit_0E10_Right8Times
 #_03D5EA: LDA.w $0E10
 #_03D5ED: CLC
 #_03D5EE: ADC.w $0A14
@@ -11751,30 +12404,37 @@ routine03D569:
 #_03D5F7: ADC.w $0A16
 #_03D5FA: STA.w $0A16
 
-.EXIT_03D5FD
+.exit
 #_03D5FD: PLP
 #_03D5FE: RTS
 
 ;===================================================================================================
 
-routine03D5FF:
+Shift_32bit_0E10_Right8Times:
 #_03D5FF: PHX
+
 #_03D600: LDX.w #$0007
 
-.branch03D603
+.shift
 #_03D603: LSR.w $0E12
 #_03D606: ROR.w $0E10
+
 #_03D609: DEX
-#_03D60A: BPL .branch03D603
+#_03D60A: BPL .shift
 
 #_03D60C: PLX
+
 #_03D60D: RTS
+
+;===================================================================================================
 
 data03D60E:
 #_03D60E: dw $0100,$0180,$0300
 
 data03D614:
 #_03D614: dw $014D,$01CD,$0380
+
+;===================================================================================================
 
 routine03D61A:
 #_03D61A: PHP
@@ -11830,7 +12490,7 @@ routine03D648:
 #_03D67B: LDA.w $0E16
 #_03D67E: ADC.w #$0000
 #_03D681: STA.w $0E12
-#_03D684: JSR routine03D5FF
+#_03D684: JSR Shift_32bit_0E10_Right8Times
 #_03D687: LDA.w $0E10
 #_03D68A: CLC
 #_03D68B: ADC.w $0A14
@@ -11847,54 +12507,73 @@ data03D69C:
 #_03D6AC: dw $0000,$0005,$0005,$0000
 #_03D6B4: dw $0000,$0005,$0000,$0000
 
+;===================================================================================================
+
 routine03D6BC:
 #_03D6BC: PHP
+
 #_03D6BD: SEP #$30
+
 #_03D6BF: AND.b #$0F
 #_03D6C1: ASL A
 #_03D6C2: STA.w $0E00
+
 #_03D6C5: ASL A
 #_03D6C6: CLC
 #_03D6C7: ADC.w $0E00
 #_03D6CA: TAY
 
 #_03D6CB: SEP #$20
+
 #_03D6CD: TXA
 #_03D6CE: ASL A
 #_03D6CF: STA.w $0A33
 #_03D6D2: LDA.b #$06
 #_03D6D4: STA.w $0E10
 
-.branch03D6D7
-#_03D6D7: LDA.w data03D6E6,Y
+.next_char
+#_03D6D7: LDA.w .texts,Y
 #_03D6DA: JSL WriteNextMessageChar
+
 #_03D6DE: INY
 #_03D6DF: DEC.w $0E10
-#_03D6E2: BNE .branch03D6D7
+#_03D6E2: BNE .next_char
 
 #_03D6E4: PLP
 #_03D6E5: RTS
 
-data03D6E6:
-#_03D6E6: db $0E,$0F,$0B,$0E,$CF,$CF,$0E,$23
-#_03D6EE: db $13,$18,$11,$CF,$1D,$1E,$19,$18
-#_03D6F6: db $0F,$CF,$1A,$0B,$16,$23,$24,$0F
-#_03D6FE: db $1A,$19,$13,$1D,$19,$18,$10,$16
-#_03D706: db $23,$CF,$CF,$CF,$10,$1C,$19,$11
-#_03D70E: db $CF,$CF,$0D,$1F,$1C,$1D,$0F,$CF
-#_03D716: db $0D,$12,$0B,$1C,$17,$CF,$1D,$16
-#_03D71E: db $0F,$0F,$1A,$CF,$0C,$13,$18,$0E
-#_03D726: db $CF,$CF,$10,$1C,$0F,$0F,$24,$0F
-#_03D72E: db $1D,$12,$19,$0D,$15,$CF,$0D,$16
-#_03D736: db $19,$1D,$0F,$CF,$1A,$0B,$18,$13
-#_03D73E: db $0D,$CF,$12,$0B,$1A,$1A,$23,$CF
+;---------------------------------------------------------------------------------------------------
+; Duplicate of StatusConditionsText at $07EE66
+;---------------------------------------------------------------------------------------------------
+.texts
+#_03D6E6: db $0E, $0F, $0B, $0E, $CF, $CF ; "DEAD  "
+#_03D6EC: db $0E, $23, $13, $18, $11, $CF ; "DYING "
+#_03D6F2: db $1D, $1E, $19, $18, $0F, $CF ; "STONE "
+#_03D6F8: db $1A, $0B, $16, $23, $24, $0F ; "PALYZE"
+#_03D6FE: db $1A, $19, $13, $1D, $19, $18 ; "POISON"
+#_03D704: db $10, $16, $23, $CF, $CF, $CF ; "FLY   "
+#_03D70A: db $10, $1C, $19, $11, $CF, $CF ; "FROG  "
+#_03D710: db $0D, $1F, $1C, $1D, $0F, $CF ; "CURSE "
+#_03D716: db $0D, $12, $0B, $1C, $17, $CF ; "CHARM "
+#_03D71C: db $1D, $16, $0F, $0F, $1A, $CF ; "SLEEP "
+#_03D722: db $0C, $13, $18, $0E, $CF, $CF ; "BIND  "
+#_03D728: db $10, $1C, $0F, $0F, $24, $0F ; "FREEZE"
+#_03D72E: db $1D, $12, $19, $0D, $15, $CF ; "SHOCK "
+#_03D734: db $0D, $16, $19, $1D, $0F, $CF ; "CLOSE "
+#_03D73A: db $1A, $0B, $18, $13, $0D, $CF ; "PANIC "
+#_03D740: db $12, $0B, $1A, $1A, $23, $CF ; "HAPPY "
+
+;===================================================================================================
 
 routine03D746:
 #_03D746: PHP
+
 #_03D747: REP #$20
+
 #_03D749: STA.w $0E10
 #_03D74C: STZ.w $0E12
 #_03D74F: JSL routine03D775
+
 #_03D753: PLP
 #_03D754: RTS
 
@@ -11907,7 +12586,7 @@ routine03D775:
 #_03D75A: PHB
 
 #_03D75B: SEP #$20
-#_03D75D: LDA.b #$03
+#_03D75D: LDA.b #routine03D775>>16
 #_03D75F: PHA
 
 #_03D760: REP #$20
@@ -12215,7 +12894,7 @@ HEXtoDEC_32bit_Bank03:
 #_03D92C: REP #$20
 #_03D92E: LDA.w #$3CE0
 #_03D931: STA.w $0A0B
-#_03D934: JSR routine03DE52
+#_03D934: JSR AddTransferForTheWordMoney
 #_03D937: JSL routine0F9720
 #_03D93B: JSR routine03D413
 #_03D93E: JSL BrightenScreen
@@ -12248,7 +12927,7 @@ HEXtoDEC_32bit_Bank03:
 
 .branch03D971
 #_03D971: SEP #$20
-#_03D973: JSR routine03DE52
+#_03D973: JSR AddTransferForTheWordMoney
 
 #_03D976: REP #$20
 #_03D978: LDA.w $0BE0
@@ -12323,7 +13002,7 @@ HEXtoDEC_32bit_Bank03:
 
 #_03DA1B: SEP #$20
 #_03DA1D: LDA.b #$07
-#_03DA1F: JSL routine00B99C
+#_03DA1F: JSL InitializeTextBoxToSizeForNewMessage
 #_03DA23: JSL routine00A056
 #_03DA27: RTS
 
@@ -12535,7 +13214,7 @@ routine03DADB:
 #_03DBA4: LDA.b #$3C
 #_03DBA6: STA.w $0A33
 #_03DBA9: JSR routine0384F9
-#_03DBAC: JSL Update19XXuntil0100
+#_03DBAC: JSL RunFramesUntil0100IsFlagged
 #_03DBB0: LDA.b #$20
 #_03DBB2: STA.w $0A2C
 #_03DBB5: RTS
@@ -12606,7 +13285,7 @@ routine03DBD6:
 #_03DC4B: LDA.b #$3C
 #_03DC4D: STA.w $0A33
 #_03DC50: JSR routine0384F9
-#_03DC53: JSL Update19XXuntil0100
+#_03DC53: JSL RunFramesUntil0100IsFlagged
 #_03DC57: LDA.b #$20
 #_03DC59: STA.w $0A2C
 #_03DC5C: RTS
@@ -12731,7 +13410,7 @@ routine03DCDB:
 #_03DD1F: BRA .branch03DD27
 
 .branch03DD21
-#_03DD21: LDA.b #!SFX_04
+#_03DD21: LDA.b #$04 ; SFX 04
 #_03DD23: JSL Write_to_APU_transferrable
 
 .branch03DD27
@@ -12759,9 +13438,10 @@ routine03DCDB:
 
 routine03DD47:
 #_03DD47: REP #$30
+
 #_03DD49: LDA.w $0B3C
 #_03DD4C: AND.w #$0001
-#_03DD4F: ASL A
+#_03DD4F: ASL A ; x16
 #_03DD50: ASL A
 #_03DD51: ASL A
 #_03DD52: ASL A
@@ -12769,21 +13449,25 @@ routine03DD47:
 #_03DD54: ADC.w $09F3
 #_03DD57: AND.w #$001F
 #_03DD5A: TAY
+
 #_03DD5B: LDA.w $0BA4,Y
 #_03DD5E: AND.w #$00FF
 #_03DD61: ASL A
 #_03DD62: TAY
+
 #_03DD63: LDA.w data03DBB6,Y
 #_03DD66: STA.w $0BA1
+
 #_03DD69: RTS
 
 ;===================================================================================================
 
 routine03DD6A:
 #_03DD6A: SEP #$30
+
 #_03DD6C: LDA.w $0B3C
 #_03DD6F: AND.b #$01
-#_03DD71: ASL A
+#_03DD71: ASL A ; x16
 #_03DD72: ASL A
 #_03DD73: ASL A
 #_03DD74: ASL A
@@ -12791,18 +13475,20 @@ routine03DD6A:
 #_03DD76: ADC.w $09F3
 #_03DD79: AND.b #$1F
 #_03DD7B: TAX
+
 #_03DD7C: LDY.b #$00
 
-.branch03DD7E
+.next
 #_03DD7E: LDA.w $0BA5,X
 #_03DD81: STA.w $0BA4,X
+
 #_03DD84: CMP.b #$FF
 #_03DD86: BEQ .exit
 
 #_03DD88: INX
 #_03DD89: INY
 #_03DD8A: CPY.b #$0C
-#_03DD8C: BNE .branch03DD7E
+#_03DD8C: BNE .next
 
 #_03DD8E: LDA.b #$FF
 #_03DD90: STA.w $0BA4,X
@@ -12826,6 +13512,7 @@ routine03DD94:
 #_03DDA2: LDA.w #$0000
 #_03DDA5: STA.w $1000,X
 #_03DDA8: JSL routine0F853F
+
 #_03DDAC: RTS
 
 ;===================================================================================================
@@ -12873,20 +13560,26 @@ routine03DDAD:
 
 routine03DDF2:
 #_03DDF2: REP #$30
+
 #_03DDF4: LDX.w $0BA1
+
 #_03DDF7: LDA.w $0BA3
 #_03DDFA: AND.w #$00FF
 #_03DDFD: ASL A
 #_03DDFE: TAY
-#_03DDFF: LDA.w data03DE08,Y
+
+#_03DDFF: LDA.w .vectors,Y
 #_03DE02: STA.w $00E0
+
 #_03DE05: JMP ($00E0)
 
-data03DE08:
+.vectors
 #_03DE08: dw routine03DE10
 #_03DE0A: dw routine03DE2E
 #_03DE0C: dw routine03DE38
 #_03DE0E: dw routine03DE42
+
+;===================================================================================================
 
 routine03DE10:
 #_03DE10: LDA.w $102E,X
@@ -12930,49 +13623,64 @@ routine03DE42:
 #_03DE42: LDA.w $1002,X
 #_03DE45: AND.w #$3FFF
 #_03DE48: STA.w $1002,X
+
 #_03DE4B: LDA.w #$0001
 #_03DE4E: STA.w $102E,X
+
 #_03DE51: RTS
 
 ;===================================================================================================
 
-routine03DE52:
+AddTransferForTheWordMoney:
 #_03DE52: REP #$30
+
 #_03DE54: LDA.w #$3C88
 #_03DE57: STA.w $0102
+
 #_03DE5A: LDA.w #$000E
 #_03DE5D: STA.w $0104
+
 #_03DE60: LDX.w #$0000
 #_03DE63: TXY
 
-.branch03DE64
-#_03DE64: LDA.w data03DE9E,Y
+.next_letter_of_money
+#_03DE64: LDA.w TheWordMoney,Y
 #_03DE67: AND.w #$00FF
 #_03DE6A: ORA.w #$2000
 #_03DE6D: STA.w $0106,X
+
 #_03DE70: INX
 #_03DE71: INX
+
 #_03DE72: INY
 #_03DE73: CPY.w #$0006
-#_03DE76: BNE .branch03DE64
+#_03DE76: BNE .next_letter_of_money
 
 #_03DE78: JSR GetCorrectCurrencyCharacter
 
 #_03DE7B: REP #$30
+
 #_03DE7D: AND.w #$00FF
 #_03DE80: ORA.w #$2000
 #_03DE83: STA.w $0112
+
 #_03DE86: LDA.w #$20CF
 #_03DE89: STA.w $0114
+
 #_03DE8C: LDX.w #$0016
 #_03DE8F: JSL routine02BC0D
+
 #_03DE93: LDA.w #$0001
 #_03DE96: STA.w $0100
-#_03DE99: JSL Update19XXuntil0100
+
+#_03DE99: JSL RunFramesUntil0100IsFlagged
+
 #_03DE9D: RTS
 
-data03DE9E:
-#_03DE9E: db $17,$19,$18,$0F,$23,$9A
+;===================================================================================================
+
+TheWordMoney:
+#_03DE9E: db $17, $19, $18, $0F, $23, $9A ; "MONEY:"
 
 ;===================================================================================================
 
@@ -13046,14 +13754,17 @@ TextExtCMD_51:
 .branch03DF11
 #_03DF11: JSR GetNextTextByte
 #_03DF14: JSR RelocateTextPointer
+
 #_03DF17: RTS
 
 ;===================================================================================================
 
 TextExtCMD_50:
 #_03DF18: REP #$30
+
 #_03DF1A: JSL routine0F9B8A
 #_03DF1E: JSL routine0F9BB1
+
 #_03DF22: RTS
 
 ;===================================================================================================
@@ -13182,6 +13893,7 @@ routine03DFBD:
 #_03DFEF: DEC A
 #_03DFF0: AND.w #$00FF
 #_03DFF3: CMP.w $0E00
+
 #_03DFF6: RTS
 
 ;===================================================================================================
@@ -13295,11 +14007,15 @@ routine03DFF7:
 data03E0BA:
 #_03E0BA: db $02,$08,$09
 
-routine03E0BD:
+;---------------------------------------------------------------------------------------------------
+
+routine03E0C5_long:
 #_03E0BD: PHB
 #_03E0BE: PHK
 #_03E0BF: PLB
+
 #_03E0C0: JSR routine03E0C5
+
 #_03E0C3: PLB
 #_03E0C4: RTL
 
@@ -13333,6 +14049,7 @@ routine03E0C5:
 #_03E0EC: BNE .branch03E0D3
 
 #_03E0EE: JSL routine0F8F26
+
 #_03E0F2: PLP
 #_03E0F3: RTS
 
@@ -13456,30 +14173,42 @@ data03E19B:
 #_03E19B: dw $012F,$0130,$0131,$012B
 #_03E1A3: dw $0132,$012C,$012D,$012E
 
+;===================================================================================================
+
 routine03E1AB:
 #_03E1AB: SEP #$10
 #_03E1AD: REP #$20
+
 #_03E1AF: LDX.b #$20
 #_03E1B1: STX.w $0A2C
+
 #_03E1B4: LDA.w $0B3C
 #_03E1B7: AND.w #$00FF
 #_03E1BA: STA.w $0A39
+
 #_03E1BD: LDA.w #data08FF89>>0
 #_03E1C0: STA.w $00C3
+
 #_03E1C3: LDA.w #$3CC4
 #_03E1C6: STA.w $0980
+
 #_03E1C9: JSR routine03E6DF
 
 #_03E1CC: SEP #$20
+
 #_03E1CE: LDA.b #data08FF89>>16
 #_03E1D0: STA.w $00C5
 #_03E1D3: STZ.w $0A33
+
 #_03E1D6: JSR WriteTextIndexW0A39
+
 #_03E1D9: LDA.b #$16
 #_03E1DB: ASL A
 #_03E1DC: STA.w $0A33
+
 #_03E1DF: JSR routine0384F9
-#_03E1E2: JSL Update19XXuntil0100
+#_03E1E2: JSL RunFramesUntil0100IsFlagged
+
 #_03E1E6: RTS
 
 ;===================================================================================================
@@ -13661,6 +14390,8 @@ routine03E1E7:
 #_03E2F5: PLA
 #_03E2F6: PLP
 
+;---------------------------------------------------------------------------------------------------
+
 .branch03E2F7
 #_03E2F7: REP #$20
 #_03E2F9: LDA.w $0F2D
@@ -13710,7 +14441,7 @@ routine03E1E7:
 #_03E344: LDA.b #$3C
 #_03E346: STA.w $0A33
 #_03E349: JSR routine0384F9
-#_03E34C: JSL Update19XXuntil0100
+#_03E34C: JSL RunFramesUntil0100IsFlagged
 
 #_03E350: REP #$20
 #_03E352: LDA.w $0980
@@ -13722,17 +14453,17 @@ routine03E1E7:
 
 #_03E35E: SEP #$10
 #_03E360: CPX.w $0B3D
-#_03E363: BEQ .EXIT_03E368
+#_03E363: BEQ .exit
 
 #_03E365: JMP .branch03E208
 
-.EXIT_03E368
+.exit
 #_03E368: RTS
 
 ;===================================================================================================
 
 routine03E369:
-#_03E369: JSL Update19XXuntil0100
+#_03E369: JSL RunFramesUntil0100IsFlagged
 
 #_03E36D: REP #$30
 #_03E36F: LDA.w $0A0B
@@ -13783,7 +14514,7 @@ routine03E369:
 #_03E3C2: REP #$30
 #_03E3C4: LDA.w #$0001
 #_03E3C7: STA.w $0100
-#_03E3CA: JSL Update19XXuntil0100
+#_03E3CA: JSL RunFramesUntil0100IsFlagged
 #_03E3CE: RTS
 
 .branch03E3CF
@@ -13817,6 +14548,8 @@ data03E40A:
 
 data03E416:
 #_03E416: db $1C,$0F,$1D,$1F,$16,$1E
+
+;===================================================================================================
 
 routine03E41C:
 #_03E41C: SEP #$30
@@ -13953,7 +14686,7 @@ routine03E41C:
 #_03E4EE: LDA.b #$3C
 #_03E4F0: STA.w $0A33
 #_03E4F3: JSR routine0384F9
-#_03E4F6: JSL Update19XXuntil0100
+#_03E4F6: JSL RunFramesUntil0100IsFlagged
 
 #_03E4FA: REP #$20
 #_03E4FC: LDA.w $0980
@@ -13971,13 +14704,16 @@ routine03E41C:
 
 .branch03E512
 #_03E512: SEP #$20
+
 #_03E514: LDA.b #$20
 #_03E516: STA.w $0A2C
+
 #_03E519: RTS
 
 ;===================================================================================================
 ; TODO fusion listings
 ; 098C = demon ids
+;===================================================================================================
 routine03E51A:
 #_03E51A: SEP #$20
 #_03E51C: LDA.w $0A3B
@@ -14036,11 +14772,11 @@ routine03E51A:
 #_03E56F: PLX
 #_03E570: INY
 #_03E571: CPY.w $0B5F
-#_03E574: BEQ .EXIT_03E579
+#_03E574: BEQ .exit
 
 #_03E576: JMP .branch03E53B
 
-.EXIT_03E579
+.exit
 #_03E579: RTS
 
 ;---------------------------------------------------------------------------------------------------
@@ -14296,6 +15032,7 @@ routine03E690:
 routine03E6DF:
 #_03E6DF: PHP
 #_03E6E0: REP #$30
+
 #_03E6E2: PHA
 #_03E6E3: PHX
 #_03E6E4: PHY
@@ -14303,24 +15040,29 @@ routine03E6DF:
 #_03E6E6: PHB
 
 #_03E6E7: SEP #$30
+
 #_03E6E9: LDX.b #$00
+
 #_03E6EB: STZ.w $0A33
 
-.branch03E6EE
+.next_space
 #_03E6EE: LDA.b #$CF
 #_03E6F0: JSL WriteNextMessageChar
+
 #_03E6F4: INX
 #_03E6F5: CPX.b #$1E
-#_03E6F7: BNE .branch03E6EE
+#_03E6F7: BNE .next_space
 
 #_03E6F9: STZ.w $0A33
 
 #_03E6FC: REP #$30
+
 #_03E6FE: PLB
 #_03E6FF: PLD
 #_03E700: PLY
 #_03E701: PLX
 #_03E702: PLA
+
 #_03E703: PLP
 #_03E704: RTS
 
@@ -14329,8 +15071,10 @@ routine03E6DF:
 GetDemonXClass:
 #_03E705: PHX
 #_03E706: PHY
+
 #_03E707: PHP
 #_03E708: REP #$30
+
 #_03E70A: AND.w #$00FF
 #_03E70D: ASL A
 #_03E70E: TAX
@@ -14498,42 +15242,57 @@ data03E7CE:
 
 GetDemonXLevel:
 #_03EA3F: REP #$30
+
 #_03EA41: ASL A
 #_03EA42: TAX
+
 #_03EA43: PHX
+
 #_03EA44: LDA.w $0BED,X
 #_03EA47: STA.w $0E10
+
 #_03EA4A: LDA.w #$0018
 #_03EA4D: STA.w $0E11
+
 #_03EA50: JSR Multiply_0E10_by_0E11
+
 #_03EA53: LDX.w $0E12
 #_03EA56: LDA.l DemonStats,X
+
 #_03EA5A: PLX
+
 #_03EA5B: AND.w #$00FF
 #_03EA5E: STA.w $0BFF,X
+
 #_03EA61: RTS
 
 ;===================================================================================================
 
 routine03EA62:
 #_03EA62: REP #$30
+
 #_03EA64: LDA.w #$FFFF
 #_03EA67: STA.w $0C0B
 #_03EA6A: STA.w $0C0D
 #_03EA6D: STA.w $0C0F
+
 #_03EA70: LDA.w #$0006
 #_03EA73: STA.w $0C11
+
 #_03EA76: RTS
 
 ;===================================================================================================
 
 routine03EA77:
 #_03EA77: SEP #$20
+
 #_03EA79: LDA.w $0A3B
 #_03EA7C: CMP.b #$03
 #_03EA7E: BNE routine03EA83
 
 #_03EA80: JMP routine03F258
+
+;===================================================================================================
 
 routine03EA83:
 #_03EA83: LDA.w $0BED
@@ -14585,7 +15344,7 @@ routine03EAAA:
 #_03EAD8: CMP.w $0BEF
 #_03EADB: BNE .different_demons
 
-#_03EADD: JMP Branch03F853
+#_03EADD: JMP routine03F853
 
 .different_demons
 #_03EAE0: LDA.w $0BF3
@@ -14653,11 +15412,13 @@ routine03EAAA:
 #_03EB52: AND.w #$000F
 #_03EB55: ASL A
 #_03EB56: TAY
-#_03EB57: LDA.w data03EB60,Y
+
+#_03EB57: LDA.w .vectors,Y
 #_03EB5A: STA.w $00E0
+
 #_03EB5D: JMP ($00E0)
 
-data03EB60:
+.vectors
 #_03EB60: dw routine03EB6A
 #_03EB62: dw routine03EC0C
 #_03EB64: dw routine03ED92
@@ -14898,26 +15659,33 @@ data03ED4A:
 #_03ED82: dw $00CD,$00D3,$00DC,$00E5
 #_03ED8A: dw $00EC,$00F3,$00F9,$FFFF
 
+;===================================================================================================
+
 routine03ED92:
 #_03ED92: REP #$30
+
 #_03ED94: LDA.w $0BED
 #_03ED97: SEC
 #_03ED98: SBC.w #$003E
 #_03ED9B: STA.w $0C39
+
 #_03ED9E: LDA.w $0BEF
 #_03EDA1: SEC
 #_03EDA2: SBC.w #$003E
-#_03EDA5: ASL A
+#_03EDA5: ASL A ; x8
 #_03EDA6: ASL A
 #_03EDA7: ASL A
 #_03EDA8: CLC
-#_03EDA9: ADC.w $0C39
+#_03EDA9: ADC.w $0C39 ; x9 overall?
 #_03EDAC: AND.w #$00FF
 #_03EDAF: TAX
+
 #_03EDB0: LDA.w data03EDBD,X
 #_03EDB3: AND.w #$00FF
 #_03EDB6: STA.w $0C0B
+
 #_03EDB9: JSR routine03EDFD
+
 #_03EDBC: RTS
 
 data03EDBD:
@@ -14930,8 +15698,11 @@ data03EDBD:
 #_03EDED: db $32,$6C,$CB,$C6,$7B,$6F,$FF,$A6
 #_03EDF5: db $7C,$6D,$53,$C8,$3D,$9F,$A6,$FF
 
+;===================================================================================================
+
 routine03EDFD:
 #_03EDFD: REP #$30
+
 #_03EDFF: LDX.w #$0002
 #_03EE02: LDY.w #$0000
 
@@ -14947,6 +15718,7 @@ routine03EDFD:
 
 .branch03EE12
 #_03EE12: STY.w $0C0D
+
 #_03EE15: RTS
 
 ;===================================================================================================
@@ -15018,6 +15790,8 @@ data03EE90:
 #_03EE90: db $15,$1E,$0E,$05,$19,$07,$11,$1C
 #_03EE98: db $08,$09,$0A,$FF
 
+;===================================================================================================
+
 routine00EE9C:
 #_03EE9C: LDA.w $0BF3
 #_03EE9F: CMP.w #$0018
@@ -15085,6 +15859,8 @@ data03EF16:
 #_03EF16: db $13,$14,$1A,$0C,$0D,$0F,$0B,$06
 #_03EF1E: db $10,$1B,$12,$1D,$FF
 
+;===================================================================================================
+
 routine03EF23:
 #_03EF23: STA.w $0E00
 #_03EF26: TXA
@@ -15099,7 +15875,7 @@ routine03EF23:
 
 .branch03EF39
 #_03EF39: LDA.w $0E04
-#_03EF3C: JSR routine03EFBA
+#_03EF3C: JSR MultiplyAby24andGiveToX
 #_03EF3F: LDA.l DemonStats,X
 #_03EF43: AND.w #$00FF
 #_03EF46: STA.w $0E06
@@ -15118,8 +15894,10 @@ routine03EF23:
 .branch03EF60
 #_03EF60: LDA.w $0E06
 #_03EF63: STA.w $0C0F
+
 #_03EF66: LDA.w $0E04
 #_03EF69: STA.w $0C0B
+
 #_03EF6C: RTS
 
 ;===================================================================================================
@@ -15138,7 +15916,7 @@ routine03EF6D:
 
 .branch03EF83
 #_03EF83: LDA.w $0E04
-#_03EF86: JSR routine03EFBA
+#_03EF86: JSR MultiplyAby24andGiveToX
 #_03EF89: LDA.l DemonStats,X
 #_03EF8D: AND.w #$00FF
 #_03EF90: STA.w $0E06
@@ -15164,17 +15942,20 @@ routine03EF6D:
 
 ;===================================================================================================
 
-routine03EFBA:
+MultiplyAby24andGiveToX:
 #_03EFBA: PHP
+
 #_03EFBB: REP #$30
-#_03EFBD: ASL A
+#_03EFBD: ASL A ; x8
 #_03EFBE: ASL A
 #_03EFBF: ASL A
 #_03EFC0: STA.w $0E08
-#_03EFC3: ASL A
+
+#_03EFC3: ASL A ; x16
 #_03EFC4: CLC
-#_03EFC5: ADC.w $0E08
+#_03EFC5: ADC.w $0E08 ; x24 overall
 #_03EFC8: TAX
+
 #_03EFC9: PLP
 #_03EFCA: RTS
 
@@ -15237,8 +16018,11 @@ data03F004:
 #_03F033: dw $00FA,$00FB,$00FC,$00FD
 #_03F03B: dw $00FE,$FFFF
 
+;===================================================================================================
+
 routine03F03F:
 #_03F03F: REP #$30
+
 #_03F041: LDX.w #$0002
 #_03F044: BRA .branch03F04B
 
@@ -15360,7 +16144,7 @@ FusionWithVilePlus
 #_03F102: STA.w $0C39
 #_03F105: LDX.w #$0000
 #_03F108: LDY.w #$0003
-#_03F10B: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03F10B: JSL DivisionBig_XA_by_Y
 #_03F10F: LDA.w $0E86
 #_03F112: AND.w #$00FF
 #_03F115: BNE .branch03F15C
@@ -15378,7 +16162,7 @@ FusionWithVilePlus
 #_03F12B: STA.w $0C39
 #_03F12E: LDX.w #$0000
 #_03F131: LDY.w #$0007
-#_03F134: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03F134: JSL DivisionBig_XA_by_Y
 #_03F138: LDA.w $0E86
 #_03F13B: AND.w #$00FF
 #_03F13E: BNE .branch03F15C
@@ -15393,6 +16177,8 @@ FusionWithVilePlus
 #_03F155: BEQ .branch03F158
 
 #_03F157: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03F158
 #_03F158: INC.w $0C11
@@ -15426,6 +16212,8 @@ FusionWithVilePlus
 #_03F191: RTS
 
 #_03F192: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03F193
 #_03F193: REP #$30
@@ -15499,17 +16287,19 @@ FusionWithVilePlus
 #_03F214: INC.w $0C0B
 #_03F217: LDA.w $0C0B
 #_03F21A: CMP.w #$00BD
-#_03F21D: BNE .EXIT_03F225
+#_03F21D: BNE .exit
 
 #_03F21F: LDA.w #$00B9
 #_03F222: STA.w $0C0B
 
-.EXIT_03F225
+.exit
 #_03F225: RTS
 
 data03F226:
 #_03F226: db $FF,$00,$06,$07,$09,$13,$20,$21
 #_03F22E: db $22,$0E
+
+;===================================================================================================
 
 routine03F230:
 #_03F230: REP #$30
@@ -15542,7 +16332,7 @@ routine03F237:
 #_03F254: RTS
 
 .branch03F255
-#_03F255: JMP Branch03F853
+#_03F255: JMP routine03F853
 
 routine03F258:
 #_03F258: LDA.w $0BED
@@ -15587,35 +16377,42 @@ routine03F287:
 .branch03F29A
 #_03F29A: LDA.w #$0000
 #_03F29D: JSR GetDemonXLevel
+
 #_03F2A0: LDA.w #$0001
 #_03F2A3: JSR GetDemonXLevel
+
 #_03F2A6: LDA.w #$0002
 #_03F2A9: JSR GetDemonXLevel
+
 #_03F2AC: LDA.w #$0000
 #_03F2AF: JSR GetDemonXClass
+
 #_03F2B2: LDA.w #$0001
 #_03F2B5: JSR GetDemonXClass
+
 #_03F2B8: LDA.w #$0002
 #_03F2BB: JSR GetDemonXClass
+
 #_03F2BE: JSR routine03F89F
 #_03F2C1: JSR routine03F8E0
+
 #_03F2C4: LDA.w #$0008
 #_03F2C7: CMP.w $0BF9
 #_03F2CA: BCS .branch03F2CF
 
-#_03F2CC: JMP Branch03F853
+#_03F2CC: JMP routine03F853
 
 .branch03F2CF
 #_03F2CF: CMP.w $0BFB
 #_03F2D2: BCS .branch03F2D7
 
-#_03F2D4: JMP Branch03F853
+#_03F2D4: JMP routine03F853
 
 .branch03F2D7
 #_03F2D7: CMP.w $0BFD
 #_03F2DA: BCS .branch03F2DF
 
-#_03F2DC: JMP Branch03F853
+#_03F2DC: JMP routine03F853
 
 .branch03F2DF
 #_03F2DF: LDX.w #$0004
@@ -15654,22 +16451,28 @@ routine03F287:
 #_03F30A: BPL .branch03F2FF
 
 #_03F30C: STY.w $0C39
+
 #_03F30F: TYA
 #_03F310: ASL A
 #_03F311: TAY
-#_03F312: LDA.w data03F31B,Y
+
+#_03F312: LDA.w .vectors,Y
 #_03F315: STA.w $00E0
+
 #_03F318: JMP ($00E0)
 
-data03F31B:
+.vectors
 #_03F31B: dw routine03F323
 #_03F31D: dw routine03F578
 #_03F31F: dw routine03F5D7
 #_03F321: dw routine03F711
 
+;===================================================================================================
+
 routine03F323:
 #_03F323: LDA.w #$0008
 #_03F326: STA.w $0E0E
+
 #_03F329: LDX.w #$0004
 
 .branch03F32C
@@ -15692,14 +16495,14 @@ routine03F323:
 #_03F348: CMP.w #$0008
 #_03F34B: BCC .branch03F350
 
-#_03F34D: JMP Branch03F853
+#_03F34D: JMP routine03F853
 
 .branch03F350
 #_03F350: LDA.w $0BF9
 #_03F353: CMP.w #$0008
 #_03F356: BCC .branch03F35B
 
-#_03F358: JMP Branch03F853
+#_03F358: JMP routine03F853
 
 .branch03F35B
 #_03F35B: ASL A
@@ -15721,7 +16524,7 @@ routine03F323:
 #_03F377: CMP.w #$0008
 #_03F37A: BCC .branch03F37F
 
-#_03F37C: JMP Branch03F853
+#_03F37C: JMP routine03F853
 
 .branch03F37F
 #_03F37F: ASL A
@@ -15750,7 +16553,7 @@ routine03F323:
 #_03F3AC: ADC.w $0C03
 #_03F3AF: LDX.w #$0000
 #_03F3B2: LDY.w #$0003
-#_03F3B5: JSL Divide_32bit_by_16bit_XA_by_Y
+#_03F3B5: JSL DivisionBig_XA_by_Y
 #_03F3B9: LDA.w $0E80
 #_03F3BC: CLC
 #_03F3BD: ADC.w $0E0E
@@ -15844,9 +16647,12 @@ data03F474:
 #_03F514: db $14,$13,$03,$0B,$16,$1E,$14,$03
 #_03F51C: db $0C,$13,$1E,$0B,$FF,$0B,$03,$13
 
+;===================================================================================================
+
 routine03F524:
 #_03F524: LDA.w $0BF3,Y
 #_03F527: CMP.w $0BF3,X
+
 #_03F52A: RTS
 
 ;===================================================================================================
@@ -15854,9 +16660,12 @@ routine03F524:
 routine03F52B:
 #_03F52B: PHX
 #_03F52C: PHP
+
 #_03F52D: REP #$30
+
 #_03F52F: LDX.w #$0000
 #_03F532: LDY.w #$0002
+
 #_03F535: LDA.w $0BFF
 #_03F538: CMP.w $0C01
 #_03F53B: BNE .branch03F540
@@ -15866,11 +16675,14 @@ routine03F52B:
 .branch03F540
 #_03F540: BCC .branch03F545
 
-#_03F542: JSR routine03F866
+#_03F542: JSR SwapStuffInSlots_X_and_Y_03F866
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03F545
 #_03F545: LDX.w #$0000
 #_03F548: LDY.w #$0004
+
 #_03F54B: LDA.w $0BFF
 #_03F54E: CMP.w $0C03
 #_03F551: BCC .branch03F55D
@@ -15882,27 +16694,31 @@ routine03F52B:
 .branch03F558
 #_03F558: BCC .branch03F55D
 
-#_03F55A: JSR routine03F866
+#_03F55A: JSR SwapStuffInSlots_X_and_Y_03F866
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03F55D
 #_03F55D: LDX.w #$0002
 #_03F560: LDY.w #$0004
+
 #_03F563: LDA.w $0C01
 #_03F566: CMP.w $0C03
-#_03F569: BCC .EXIT_03F575
+#_03F569: BCC .exit
 
 #_03F56B: BNE .branch03F570
 
 #_03F56D: JSR routine03F524
 
 .branch03F570
-#_03F570: BCC .EXIT_03F575
+#_03F570: BCC .exit
 
-#_03F572: JSR routine03F866
+#_03F572: JSR SwapStuffInSlots_X_and_Y_03F866
 
-.EXIT_03F575
+.exit
 #_03F575: PLP
 #_03F576: PLX
+
 #_03F577: RTS
 
 ;===================================================================================================
@@ -15925,7 +16741,7 @@ routine03F578:
 #_03F592: LDY.w #$0004
 
 .branch03F595
-#_03F595: JSR routine03F866
+#_03F595: JSR SwapStuffInSlots_X_and_Y_03F866
 
 .branch03F598
 #_03F598: JSR routine03EA83
@@ -15974,7 +16790,7 @@ routine03F5D7:
 #_03F5F1: LDY.w #$0004
 
 .branch03F5F4
-#_03F5F4: JSR routine03F866
+#_03F5F4: JSR SwapStuffInSlots_X_and_Y_03F866
 
 .branch03F5F7
 #_03F5F7: LDA.w $0BED
@@ -16121,6 +16937,8 @@ routine03F5D7:
 data03F709:
 #_03F709: db $42,$43,$44,$45,$3E,$3F,$40,$41
 
+;===================================================================================================
+
 routine03F711:
 #_03F711: REP #$30
 #_03F713: JSR routine03F52B
@@ -16239,7 +17057,7 @@ routine03F711:
 .branch03F7F7
 #_03F7F7: LDX.w #$0000
 #_03F7FA: LDY.w #$0004
-#_03F7FD: JSR routine03F866
+#_03F7FD: JSR SwapStuffInSlots_X_and_Y_03F866
 #_03F800: JMP .branch03F7B6
 
 data03F803:
@@ -16260,7 +17078,9 @@ data03F83B:
 #_03F843: db $FF,$10,$36,$FF,$25,$FF,$FF,$07
 #_03F84B: db $10,$FF,$07,$FF,$36,$07,$FF,$FF
 
-#Branch03F853:
+;===================================================================================================
+
+routine03F853:
 #_03F853: LDA.w #$00F5
 #_03F856: STA.w $0C0B
 
@@ -16274,37 +17094,54 @@ data03F83B:
 
 ;===================================================================================================
 
-routine03F866:
+SwapStuffInSlots_X_and_Y_03F866:
+; TODO
 #_03F866: LDA.w $0BF3,X
 #_03F869: PHA
+
 #_03F86A: LDA.w $0BF3,Y
 #_03F86D: STA.w $0BF3,X
+
 #_03F870: PLA
 #_03F871: STA.w $0BF3,Y
+
+; TODO
 #_03F874: LDA.w $0BF9,X
 #_03F877: PHA
+
 #_03F878: LDA.w $0BF9,Y
 #_03F87B: STA.w $0BF9,X
+
 #_03F87E: PLA
 #_03F87F: STA.w $0BF9,Y
+
+; TODO
 #_03F882: LDA.w $0BED,X
 #_03F885: PHA
+
 #_03F886: LDA.w $0BED,Y
 #_03F889: STA.w $0BED,X
+
 #_03F88C: PLA
 #_03F88D: STA.w $0BED,Y
+
+; TODO
 #_03F890: LDA.w $0BFF,X
 #_03F893: PHA
+
 #_03F894: LDA.w $0BFF,Y
 #_03F897: STA.w $0BFF,X
+
 #_03F89A: PLA
 #_03F89B: STA.w $0BFF,Y
+
 #_03F89E: RTS
 
 ;===================================================================================================
 
 routine03F89F:
 #_03F89F: REP #$30
+
 #_03F8A1: LDA.w #$00EC
 #_03F8A4: CMP.w $0BED
 #_03F8A7: BCS .exit
@@ -16329,11 +17166,14 @@ routine03F89F:
 #_03F8C6: LDA.w #$00EC
 #_03F8C9: STA.w $0C0B
 #_03F8CC: STA.w $0BED
+
 #_03F8CF: LDA.w #$0021
 #_03F8D2: STA.w $0C0D
+
 #_03F8D5: LDA.w #$0000
 #_03F8D8: JSR GetDemonXLevel
 #_03F8DB: STA.w $0C0F
+
 #_03F8DE: PLA
 
 .exit
@@ -16346,23 +17186,25 @@ routine03F8E0:
 #_03F8E2: LDX.w #$0000
 
 .branch03F8E5
-#_03F8E5: LDA.w data03F940,X
+#_03F8E5: LDA.w data03F940+0,X
 #_03F8E8: AND.w #$00FF
 #_03F8EB: CMP.w #$00FF
-#_03F8EE: BEQ .EXIT_03F93F
+#_03F8EE: BEQ .exit
 
 #_03F8F0: JSR routine03F9A0
 #_03F8F3: AND.w #$FFFF
 #_03F8F6: BMI .branch03F914
 
-#_03F8F8: LDA.w data03F941,X
+#_03F8F8: LDA.w data03F940+1,X
 #_03F8FB: AND.w #$00FF
+
 #_03F8FE: JSR routine03F9A0
 #_03F901: AND.w #$FFFF
 #_03F904: BMI .branch03F914
 
-#_03F906: LDA.w data03F942,X
+#_03F906: LDA.w data03F940+2,X
 #_03F909: AND.w #$00FF
+
 #_03F90C: JSR routine03F9A0
 #_03F90F: AND.w #$FFFF
 #_03F912: BPL .branch03F91A
@@ -16375,44 +17217,43 @@ routine03F8E0:
 #_03F918: BRA .branch03F8E5
 
 .branch03F91A
-#_03F91A: LDA.w data03F943,X
+#_03F91A: LDA.w data03F940+3,X
 #_03F91D: AND.w #$00FF
 #_03F920: STA.w $0BED
 #_03F923: STA.w $0C0B
+
 #_03F926: LDA.w #$0000
 #_03F929: JSR GetDemonXClass
+
 #_03F92C: LDA.w #$0000
 #_03F92F: JSR GetDemonXLevel
+
 #_03F932: LDA.w $0BF3
 #_03F935: STA.w $0C0D
+
 #_03F938: LDA.w $0BFF
 #_03F93B: STA.w $0C0F
+
 #_03F93E: PLA
 
-.EXIT_03F93F
+.exit
 #_03F93F: RTS
 
 data03F940:
-#_03F940: db $23
+#_03F940: db $23, $24, $25, $22, $FF
 
-data03F941:
-#_03F941: db $24
-
-data03F942:
-#_03F942: db $25
-
-data03F943:
-#_03F943: db $22,$FF
+;===================================================================================================
 
 routine03F945:
 #_03F945: REP #$30
+
 #_03F947: LDX.w #$0000
 
 .branch03F94A
 #_03F94A: LDA.w data03F996,X
 #_03F94D: AND.w #$00FF
 #_03F950: CMP.w #$00FF
-#_03F953: BEQ .EXIT_03F995
+#_03F953: BEQ .exit
 
 #_03F955: JSR routine03F99A
 #_03F958: AND.w #$FFFF
@@ -16420,6 +17261,7 @@ routine03F945:
 
 #_03F95D: LDA.w data03F997,X
 #_03F960: AND.w #$00FF
+
 #_03F963: JSR routine03F99A
 #_03F966: AND.w #$FFFF
 #_03F969: BPL .branch03F970
@@ -16435,20 +17277,23 @@ routine03F945:
 #_03F973: AND.w #$00FF
 #_03F976: STA.w $0BED
 #_03F979: STA.w $0C0B
+
 #_03F97C: LDA.w #$0000
 #_03F97F: JSR GetDemonXClass
+
 #_03F982: LDA.w #$0000
 #_03F985: JSR GetDemonXLevel
+
 #_03F988: LDA.w $0BF3
 #_03F98B: STA.w $0C0D
+
 #_03F98E: LDA.w $0BFF
 #_03F991: STA.w $0C0F
+
 #_03F994: PLA
 
-.EXIT_03F995
+.exit
 #_03F995: RTS
-
-;===================================================================================================
 
 ; TODO are these demon IDs?
 data03F996:
@@ -16461,12 +17306,17 @@ data03F998:
 #_03F998: db $0C ; Shiva?
 #_03F999: db $FF
 
+;===================================================================================================
+
 routine03F99A:
 #_03F99A: PHX
+
 #_03F99B: LDX.w #$0002
 #_03F99E: BRA .branch03F9A4
 
-routine03F9A0:
+;---------------------------------------------------------------------------------------------------
+
+#routine03F9A0:
 #_03F9A0: PHX
 #_03F9A1: LDX.w #$0004
 
@@ -16652,7 +17502,7 @@ routine03FAAE:
 
 #_03FB14: SEP #$20
 #_03FB16: LDA.b #$07
-#_03FB18: JSL routine00B99C
+#_03FB18: JSL InitializeTextBoxToSizeForNewMessage
 #_03FB1C: JSL routine00A056
 #_03FB20: PLP
 #_03FB21: RTS
@@ -16662,22 +17512,28 @@ routine03FAAE:
 routine03FB22:
 #_03FB22: PHP
 #_03FB23: SEP #$30
+
 #_03FB25: STZ.w $0A58
+
 #_03FB28: STZ.w $0B3C
+
 #_03FB2B: LDA.b #$0C
 #_03FB2D: STA.w $0B3D
 
 #_03FB30: REP #$30
+
 #_03FB32: LDA.w $0B5F
 #_03FB35: AND.w #$00FF
 #_03FB38: ASL A
 #_03FB39: TAX
+
 #_03FB3A: LDA.w #$0000
 
-.branch03FB3D
+.clear_next
 #_03FB3D: STA.w $0B61,X
+
 #_03FB40: DEX
-#_03FB41: BPL .branch03FB3D
+#_03FB41: BPL .clear_next
 
 #_03FB43: PLP
 #_03FB44: RTS
@@ -16743,7 +17599,9 @@ routine03FB45:
 
 .branch03FBB1
 #_03FBB1: JSR routine03FAAE
+
 #_03FBB4: PLB
+
 #_03FBB5: PLP
 #_03FBB6: RTL
 
@@ -16752,25 +17610,29 @@ routine03FB45:
 routine03FBB7:
 #_03FBB7: PHP
 #_03FBB8: SEP #$30
+
 #_03FBBA: JSR routine03E0C5
 #_03FBBD: JSR routine03E0F4
 #_03FBC0: JSR routine03FBE3
-#_03FBC3: BCS .EXIT_03FBE1
+#_03FBC3: BCS .exit
 
 #_03FBC5: LDA.b #$FC
 #_03FBC7: JSL LookForItemInInventory
-#_03FBCB: BCC .EXIT_03FBE1
+#_03FBCB: BCC .exit
 
 #_03FBCD: INC.w $0B5F
 
 #_03FBD0: REP #$20
+
 #_03FBD2: JSR routine03E0F4
+
 #_03FBD5: LDA.w #$0109
 #_03FBD8: STA.w $098C,Y
+
 #_03FBDB: LDA.w #$001A
 #_03FBDE: STA.w $09AC,Y
 
-.EXIT_03FBE1
+.exit
 #_03FBE1: PLP
 #_03FBE2: RTS
 
@@ -16779,37 +17641,41 @@ routine03FBB7:
 routine03FBE3:
 #_03FBE3: PHP
 #_03FBE4: REP #$30
+
 #_03FBE6: LDX.w #$0180
 #_03FBE9: LDY.w #$0000
 
-.branch03FBEC
+.check_next_demon
 #_03FBEC: LDA.w $1000,X
-#_03FBEF: BPL .branch03FBFA
+#_03FBEF: BPL .not_this_demon
 
 #_03FBF1: LDA.w $1002,X
 #_03FBF4: AND.w #$F640
-#_03FBF7: BNE .branch03FBFA
+#_03FBF7: BNE .not_this_demon
 
 #_03FBF9: INY
 
-.branch03FBFA
+.not_this_demon
 #_03FBFA: TXA
 #_03FBFB: CLC
 #_03FBFC: ADC.w #$0060
 #_03FBFF: TAX
+
 #_03FC00: CPX.w #$0600
-#_03FC03: BNE .branch03FBEC
+#_03FC03: BNE .check_next_demon
 
 #_03FC05: CPY.w #$000C
-#_03FC08: BNE .EXIT_CLC_03FC0D
+#_03FC08: BNE .fail
 
 #_03FC0A: PLP
 #_03FC0B: SEC
+
 #_03FC0C: RTS
 
-.EXIT_CLC_03FC0D
+.fail
 #_03FC0D: PLP
 #_03FC0E: CLC
+
 #_03FC0F: RTS
 
 ;===================================================================================================
@@ -16887,6 +17753,9 @@ routine03FC10:
 #_03FC91: STA.w $00C3
 #_03FC94: LDA.w $098C,X
 #_03FC97: STA.w $0A39
+
+;---------------------------------------------------------------------------------------------------
+
 #_03FC9A: PHP
 #_03FC9B: REP #$30
 #_03FC9D: PHA
@@ -16895,7 +17764,6 @@ routine03FC10:
 #_03FCA0: PHD
 #_03FCA1: PHB
 
-#CODE_03FCA2:
 #_03FCA2: JSR WriteTextIndexW0A39
 
 #_03FCA5: REP #$30
@@ -16911,7 +17779,7 @@ routine03FC10:
 #_03FCAF: LDA.b #$3C
 #_03FCB1: STA.w $0A33
 #_03FCB4: JSR routine0384F9
-#_03FCB7: JSL Update19XXuntil0100
+#_03FCB7: JSL RunFramesUntil0100IsFlagged
 
 #_03FCBB: REP #$20
 #_03FCBD: LDA.w $0980
@@ -16924,11 +17792,11 @@ routine03FC10:
 
 #_03FCCA: SEP #$10
 #_03FCCC: CPX.w $0B3D
-#_03FCCF: BEQ .branch03DCd4
+#_03FCCF: BEQ .branch03DCD4
 
 #_03FCD1: JMP .branch03FC20
 
-.branch03DCd4
+.branch03DCD4
 #_03FCD4: SEP #$20
 #_03FCD6: LDA.b #$10
 #_03FCD8: STA.w $0F76
@@ -17071,7 +17939,7 @@ routine03FD17:
 #_03FDD3: LDA.b #$3C
 #_03FDD5: STA.w $0A33
 #_03FDD8: JSR routine0384F9
-#_03FDDB: JSL Update19XXuntil0100
+#_03FDDB: JSL RunFramesUntil0100IsFlagged
 
 #_03FDDF: REP #$20
 #_03FDE1: LDA.w $0980
@@ -17087,6 +17955,8 @@ routine03FD17:
 #_03FDF3: BEQ .branch03FDF8
 
 #_03FDF5: JMP .branch03FD33
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03FDF8
 #_03FDF8: SEP #$20
@@ -17108,7 +17978,7 @@ routine03FD17:
 
 #_03FE23: SEP #$30
 #_03FE25: LDA.w $0A58
-#_03FE28: BNE .EXIT_03FE3C
+#_03FE28: BNE .exit
 
 #_03FE2A: LDA.w $09F3
 #_03FE2D: ASL A
@@ -17121,7 +17991,7 @@ routine03FD17:
 #_03FE37: SEP #$20
 #_03FE39: JSR routine03FE3E
 
-.EXIT_03FE3C
+.exit
 #_03FE3C: PLP
 #_03FE3D: RTS
 
@@ -17190,7 +18060,9 @@ data03FE8A:
 #_03FEAA: dw $003A,$012B,$0109,$012E
 #_03FEB2: dw $003B,$FFFF
 
-UnusedThing03FEB6:
+;===================================================================================================
+
+ArtefactCode_03FEB6:
 #_03FEB6: PLB
 #_03FEB7: PLD
 #_03FEB8: PLY
@@ -17198,7 +18070,6 @@ UnusedThing03FEB6:
 #_03FEBA: PLA
 #_03FEBB: PLP
 
-Unused03FEBC:
 #_03FEBC: SEP #$20
 #_03FEBE: LDA.b #$10
 #_03FEC0: STA.w $0A33
@@ -17221,7 +18092,7 @@ Unused03FEBC:
 #_03FEE6: PHY
 #_03FEE7: PHD
 #_03FEE8: PHB
-#_03FEE9: JSR LOOSE_OP_03963D
+#_03FEE9: JSR.w $03963D ; bad call
 
 #_03FEEC: REP #$30
 #_03FEEE: PLB
@@ -17231,18 +18102,17 @@ Unused03FEBC:
 #_03FEF2: PLA
 #_03FEF3: PLP
 
-UnusedThing03FEF4:
 #_03FEF4: SEP #$20
 #_03FEF6: LDA.b #$24
 #_03FEF8: STA.w $0A33
 #_03FEFB: JSR routine03FF6F
-#_03FEFE: JSL LOOSE_OP_0385D3
+#_03FEFE: JSL $0385D3 ; bad call
 
 #_03FF02: SEP #$20
 #_03FF04: LDA.b #$3C
 #_03FF06: STA.w $0A33
-#_03FF09: JSR LOOSE_OP_038504
-#_03FF0C: JSL Update19XXuntil0100
+#_03FF09: JSR.w $038504 ; bad call
+#_03FF0C: JSL RunFramesUntil0100IsFlagged
 
 #_03FF10: REP #$20
 #_03FF12: LDA.w $0980
@@ -17257,7 +18127,7 @@ UnusedThing03FEF4:
 #_03FF21: CPX.w $0B3D
 #_03FF24: BEQ .branch03FF29
 
-#_03FF26: JMP LOOSE_OP_03FE64
+#_03FF26: JMP.w $03FE64 ; bad call
 
 .branch03FF29
 #_03FF29: SEP #$20
@@ -17279,7 +18149,7 @@ UnusedThing03FEF4:
 
 #_03FF54: SEP #$30
 #_03FF56: LDA.w $0A58
-#_03FF59: BNE .EXIT_03FF6D
+#_03FF59: BNE .exit
 
 #_03FF5B: LDA.w $09F3
 #_03FF5E: ASL A
@@ -17292,7 +18162,7 @@ UnusedThing03FEF4:
 #_03FF68: SEP #$20
 #_03FF6A: JSR routine03FF6F
 
-.EXIT_03FF6D
+.exit
 #_03FF6D: PLP
 #_03FF6E: RTS
 

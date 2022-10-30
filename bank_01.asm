@@ -24,7 +24,7 @@ routine018000:
 #_018035: BMI .branch018062
 
 #_018037: LDA.w #$0002
-#_01803A: JSL routine00B99C
+#_01803A: JSL InitializeTextBoxToSizeForNewMessage
 #_01803E: JSL routine00A056
 #_018042: LDA.w $0E9A
 #_018045: ASL A
@@ -244,7 +244,7 @@ data0181CF:
 ;===================================================================================================
 
 routine0181D7:
-#_0181D7: LDA.w #!SFX_05
+#_0181D7: LDA.w #$0005 ; SFX 05
 #_0181DA: JSL Write_to_APU_transferrable
 #_0181DE: LDX.w #$0001
 #_0181E1: LDA.w $1002
@@ -341,17 +341,20 @@ routine0181D7:
 #_01828D: AND.w #$00FF
 #_018290: ASL A
 #_018291: TAX
-#_018292: LDA.l data0182A3,X
+#_018292: LDA.l .vectors,X
 #_018296: STA.w $0690
+
 #_018299: LDA.w #.branch01820D-1
 #_01829C: PHA
+
 #_01829D: JMP ($0690)
 
 .exit
 #_0182A0: REP #$30
+
 #_0182A2: RTS
 
-data0182A3:
+.vectors
 #_0182A3: dw routine019213
 #_0182A5: dw routine01921E
 #_0182A7: dw routine0195C6_bounce
@@ -605,7 +608,7 @@ routine0183E5:
 .branch018459
 #_018459: JSR routine0185D8
 #_01845C: JSL Update19XXUntilInput
-#_018460: LDA.w #!SFX_02
+#_018460: LDA.w #$0002 ; SFX 02
 #_018463: JSL Write_to_APU_transferrable
 #_018467: LDA.w #$0000
 #_01846A: JSL routine01E5CD
@@ -688,16 +691,18 @@ routine0164AE:
 #_01852A: PHB
 
 #_01852B: SEP #$20
-#_01852D: LDA.b #$07
+
+#_01852D: LDA.b #UNREACH_078C00>>16
 #_01852F: PHA
 
 #_018530: REP #$20
 #_018532: PLB
-#_018533: LDA.w UNREACH_078C00,Y
+
+#_018533: LDA.w UNREACH_078C00+0,Y
 #_018536: SEC
 #_018537: SBC.w $100C,X
 #_01853A: STA.w $0E80
-#_01853D: LDA.w UNREACH_078C02,Y
+#_01853D: LDA.w UNREACH_078C00+2,Y
 #_018540: AND.w #$00FF
 #_018543: SBC.w $100E,X
 #_018546: STA.w $0E82
@@ -803,7 +808,7 @@ routine0185D8:
 #_018618: LDA.w $1006,X
 #_01861B: LDX.w #$0022
 #_01861E: LDY.w #$0000
-#_018621: JSL ReadClassName_long
+#_018621: JSL GetClassName
 #_018625: LDA.w #$009A
 #_018628: STA.w $0112
 #_01862B: LDA.w #$0000
@@ -812,7 +817,7 @@ routine0185D8:
 #_018634: LDA.w $1004,X
 #_018637: LDX.w #$0030
 #_01863A: LDY.w #$000E
-#_01863D: JSL ReadDemonName_long
+#_01863D: JSL GetDemonName
 #_018641: LDA.w #$0000
 #_018644: LDX.w #$0022
 #_018647: LDY.w #$0000
@@ -968,7 +973,7 @@ routine01872E:
 routine018768:
 #_018768: PHP
 #_018769: REP #$30
-#_01876B: LDA.w #!SFX_05
+#_01876B: LDA.w #$0005 ; SFX 05
 #_01876E: JSL Write_to_APU_transferrable
 #_018772: LDX.w #$0001
 #_018775: LDA.w $1002
@@ -1065,7 +1070,7 @@ routine018768:
 #_018828: STA.w $1058
 #_01882B: ASL A
 #_01882C: TAX
-#_01882D: LDA.l data018854,X
+#_01882D: LDA.l .vectors,X
 #_018831: STA.w $0690
 #_018834: PHK
 #_018835: LDA.w #.return-1
@@ -1097,7 +1102,7 @@ routine018768:
 
 ;---------------------------------------------------------------------------------------------------
 
-data018854:
+.vectors
 #_018854: dw routine0196F0
 #_018856: dw routine019239
 #_018858: dw routine019C06
@@ -1111,14 +1116,14 @@ routine01885D:
 #_01885D: LDA.w $1058
 #_018860: ASL A
 #_018861: TAX
-#_018862: LDA.l data018875,X
+#_018862: LDA.l .vectors,X
 #_018866: STA.w $0690
 #_018869: LDA.w $05B4
 #_01886C: LDY.w $05B6
 #_01886F: LDX.w $05B8
 #_018872: JMP ($0690)
 
-data018875:
+.vectors
 #_018875: dw routine019842
 #_018877: dw routine01943D
 
@@ -1293,7 +1298,7 @@ routine01899E:
 .branch0189DD
 #_0189DD: LDY.w #$0008
 #_0189E0: LDX.w #$0024
-#_0189E3: JSL ReadItemNameLong
+#_0189E3: JSL GetItemName
 #_0189E7: LDA.w $071C
 #_0189EA: ASL A
 #_0189EB: ASL A
@@ -1702,7 +1707,8 @@ Module_DistributeStatPoints:
 #_018CB3: BIT.w #$8F80 ; check for ABudlr
 #_018CB6: BEQ .next_frame ; no input
 
-#_018CB8: LDA.w #!SFX_01 ; blip when moving
+ ; blip when moving
+#_018CB8: LDA.w #$0001 ; SFX 01
 #_018CBB: JSL Write_to_APU_transferrable
 
 #_018CBF: LDA.w $0F2B
@@ -1849,7 +1855,7 @@ Module_DistributeStatPoints:
 #_018D9F: BIT.w #$8000
 #_018DA2: BNE .stat_updates_finished
 
-#_018DA4: LDA.w #!SFX_02
+#_018DA4: LDA.w #$0002 ; SFX 02
 #_018DA7: JSL Write_to_APU_transferrable
 #_018DAB: LDX.w $0715
 #_018DAE: BNE .branch018DB7
@@ -1869,7 +1875,7 @@ Module_DistributeStatPoints:
 ;---------------------------------------------------------------------------------------------------
 
 .stat_updates_finished
-#_018DBF: LDA.w #!SFX_03
+#_018DBF: LDA.w #$0003 ; SFX 03
 #_018DC2: JSL Write_to_APU_transferrable
 #_018DC6: RTS
 
@@ -2091,7 +2097,7 @@ routine018F11:
 #_018F66: LDA.b #$1C
 #_018F68: JSL SomeOtherDMAsFromE80
 #_018F6C: LDA.b #$02
-#_018F6E: JSL routine00B99C
+#_018F6E: JSL InitializeTextBoxToSizeForNewMessage
 #_018F72: LDA.b #$00
 #_018F74: STA.w $0F80
 #_018F77: LDA.b #$00
@@ -2472,13 +2478,17 @@ ClearEntityListBuffer:
 
 routine0191C9:
 #_0191C9: SEP #$20
+
 #_0191CB: STA.w $09F1
 #_0191CE: STZ.w $09F0
+
 #_0191D1: LDA.b #$8B
 #_0191D3: STA.w $09F4
 #_0191D6: STZ.w $09F2
+
 #_0191D9: LDA.w $06E1
 #_0191DC: STA.w $09F3
+
 #_0191DF: RTS
 
 ;===================================================================================================
@@ -2505,9 +2515,11 @@ CopyFontIntoWRAM:
 #_019201: JSL routine009602
 
 #_019205: SEP #$30
+
 #_019207: LDA.b #$08
 #_019209: JSL VRAM_From_7FXXXX
 #_01920D: JSL AddSelfAsVector
+
 #_019211: PLP
 #_019212: RTS
 
@@ -3736,7 +3748,7 @@ routine019913:
 #_01998E: JSL routine009F56
 #_019992: JSL routine009FDE
 #_019996: LDA.w #$0002
-#_019999: JSL routine00B99C
+#_019999: JSL InitializeTextBoxToSizeForNewMessage
 #_01999D: JSL routine00A056
 
 #_0199A1: SEP #$30
@@ -3895,7 +3907,7 @@ routine019A75:
 #_019AAB: AND.w #$00FF
 #_019AAE: LDY.w #$0000
 #_019AB1: LDX.w #$0014
-#_019AB4: JSL ReadDemonName_long
+#_019AB4: JSL GetDemonName
 #_019AB8: LDA.w $0690
 #_019ABB: LSR A
 #_019ABC: CLC
@@ -4208,7 +4220,7 @@ routine019C06:
 #_019CB6: LDA.w $1006,X
 #_019CB9: LDX.w #$0022
 #_019CBC: LDY.w #$0000
-#_019CBF: JSL ReadClassName_long
+#_019CBF: JSL GetClassName
 #_019CC3: LDA.w #$209A
 #_019CC6: STA.w $0112
 #_019CC9: LDA.w #$20CF
@@ -4217,7 +4229,7 @@ routine019C06:
 #_019CD2: LDA.w $1004,X
 #_019CD5: LDX.w #$0030
 #_019CD8: LDY.w #$000E
-#_019CDB: JSL ReadDemonName_long
+#_019CDB: JSL GetDemonName
 #_019CDF: LDA.w #$0007
 #_019CE2: LDX.w #$0022
 #_019CE5: LDY.w #$0000
@@ -6292,7 +6304,7 @@ WriteItemNameAndAmt:
 #_01AA85: AND.w #$00FF
 #_01AA88: LDY.w #$0000
 #_01AA8B: LDX.w #$001A
-#_01AA8E: JSL ReadItemNameLong
+#_01AA8E: JSL GetItemName
 #_01AA92: PLA
 #_01AA93: XBA
 #_01AA94: AND.w #$00FF
@@ -6912,7 +6924,7 @@ routine01AE96:
 #_01AE99: PHA
 #_01AE9A: LDY.w #$0000
 #_01AE9D: LDX.w #$001A
-#_01AEA0: JSL ReadSkillName_long
+#_01AEA0: JSL GetSkillName
 #_01AEA4: LDY.w #$0006
 #_01AEA7: LDA.w #$00CF
 
@@ -7308,12 +7320,14 @@ CleanEquipmentVTiles:
 ; not sure what the first part does
 ; but it seems different dungeons do
 ; a different number of RNG rolls
+;===================================================================================================
 TriggerEncounter_Dungeon:
 #_01B144: PHP
+
 #_01B145: SEP #$30
 #_01B147: PHB
 
-#_01B148: LDA.b #$07
+#_01B148: LDA.b #UNREACH_07C10F>>16
 #_01B14A: PHA
 #_01B14B: PLB
 
@@ -7333,24 +7347,27 @@ TriggerEncounter_Dungeon:
 
 .dont_add_50percent
 #_01B161: TAX
+
 #_01B162: PLB
 
 #_01B163: LDA.w $0713
 #_01B166: AND.b #$7F
-#_01B168: BRA .continue
+#_01B168: BRA TriggerEncounter
 
 ;===================================================================================================
 
-#TriggerEncounter_Overworld:
+TriggerEncounter_Overworld:
 #_01B16A: PHP
+
 #_01B16B: SEP #$30
 
 #_01B16D: LDX.w $045B
+
 #_01B170: LDA.b #$01
 
-;---------------------------------------------------------------------------------------------------
+;===================================================================================================
 
-.continue
+TriggerEncounter:
 #_01B172: CLC
 #_01B173: ADC.b #$03
 #_01B175: LSR A
@@ -7358,23 +7375,29 @@ TriggerEncounter_Dungeon:
 #_01B177: ADC.b #$0A
 #_01B179: STA.w $00E0
 #_01B17C: STX.w $00E1
+
+; RNG based on frame counter
 #_01B17F: LDA.w $0451
 #_01B182: AND.b #$03
 #_01B184: TAX
 
-.branch01B185
+.tick_rng
 #_01B185: JSL GetRandomInt
+
 #_01B189: DEX
-#_01B18A: BNE .branch01B185
+#_01B18A: BNE .tick_rng
 
 #_01B18C: AND.b #$0F
 #_01B18E: STA.w CPUMULTA
+
 #_01B191: LDA.w $00E0
 #_01B194: STA.w CPUMULTB
+
 #_01B197: NOP
 #_01B198: NOP
 #_01B199: NOP
 #_01B19A: NOP
+
 #_01B19B: LDA.w CPUPRODUCTH
 #_01B19E: BNE .branch01B1A9
 
@@ -7398,16 +7421,18 @@ TriggerEncounter_Dungeon:
 #_01B1B6: RTL
 
 ;===================================================================================================
-
+; TODO
 routine01B1B7:
 #_01B1B7: SEP #$30
+
 #_01B1B9: BIT.w $0404
-#_01B1BC: BMI .branch01B220
+#_01B1BC: BMI .exit
 
 #_01B1BE: LDA.w $070C
 #_01B1C1: AND.b #$FC
 #_01B1C3: LSR A
 #_01B1C4: STA.w $00E0
+
 #_01B1C7: LDA.w $070D
 #_01B1CA: AND.b #$FC
 #_01B1CC: ASL A
@@ -7420,26 +7445,35 @@ routine01B1B7:
 #_01B1D7: ADC.w $00E0
 #_01B1DA: ADC.b #EncounterData>>0
 #_01B1DC: STA.w $00E0
+
 #_01B1DF: LDA.w $00E1
 #_01B1E2: AND.b #$03
 #_01B1E4: ADC.b #EncounterData>>8
 #_01B1E6: STA.w $00E1
+
 #_01B1E9: LDA.b #EncounterData>>16
 #_01B1EB: STA.w $00E2
+
 #_01B1EE: LDY.b #$00
+
 #_01B1F0: LDA.b [$E0],Y
 #_01B1F2: TAX
+
 #_01B1F3: AND.b #$0F
 #_01B1F5: STA.w $0455
+
 #_01B1F8: TXA
 #_01B1F9: LSR A
 #_01B1FA: LSR A
 #_01B1FB: LSR A
 #_01B1FC: LSR A
 #_01B1FD: STA.w $0456
+
 #_01B200: INY
+
 #_01B201: LDA.b [$E0],Y
 #_01B203: PHA
+
 #_01B204: LDA.b #$2F
 #_01B206: JSL CalcVisitComponent
 #_01B20A: BCS .branch01B21C
@@ -7461,14 +7495,16 @@ routine01B1B7:
 #_01B21C: PLA
 #_01B21D: STA.w $0457
 
-.branch01B220
+.exit
 #_01B220: RTS
 
 ;===================================================================================================
 
 routine01B221:
 #_01B221: PHP
+
 #_01B222: REP #$20
+
 #_01B224: LDA.w $05A6
 #_01B227: BEQ .branch01B25D
 
@@ -7481,19 +7517,23 @@ routine01B221:
 #_01B233: CLC
 #_01B234: ADC.w #data07BD49
 #_01B237: STA.w $00E0
+
 #_01B23A: LDA.w #data07BD49>>16
 #_01B23D: STA.w $00E2
 
 #_01B240: SEP #$30
+
 #_01B242: LDY.b #$00
 
 .branch01B244
 #_01B244: STY.w $00E4
+
 #_01B247: LDA.b [$E0],Y
 #_01B249: LDY.b #$00
 #_01B24B: JSR GetDemonStats
 
 #_01B24E: SEP #$20
+
 #_01B250: CMP.w $100A
 #_01B253: BCC .branch01B260
 
@@ -7520,39 +7560,46 @@ routine01B263:
 #_01B264: SEP #$30
 #_01B266: PHB
 
-#_01B267: LDA.b #$07
+#_01B267: LDA.b #data07BD09>>16
 #_01B269: PHA
 #_01B26A: PLB
 
 #_01B26B: REP #$20
 #_01B26D: SEP #$10
+
 #_01B26F: LDX.w $0455
 #_01B272: LDY.b #$04
 #_01B274: LDA.w #data07BD09
-
 #_01B277: JSR GetDynamicSuccessiveHitChances
+
 #_01B27A: STX.w $0504
 #_01B27D: STZ.w $0505
 
 #_01B280: REP #$30
+
 #_01B282: STZ.w $0EFE
 #_01B285: JSR routine01B90B
+
 #_01B288: LDA.w #$0002
-#_01B28B: JSL routine00B99C
+#_01B28B: JSL InitializeTextBoxToSizeForNewMessage
 #_01B28F: JSL routine00A056
 
 .branch01B293
 #_01B293: JSR routine01DFB8
-#_01B296: JSR routine01E044
+
+#_01B296: JSR ChooseNumberOfEnemyCombatants
 #_01B299: JSL LoadDemonStats
+
 #_01B29D: STZ.w $052A
-#_01B2A0: JSR routine01B996
+#_01B2A0: JSR ClearALotOfBattleStuff
 #_01B2A3: JSR routine01E244
 #_01B2A6: JSR routine01B34A
 #_01B2A9: JSR routine01B9F1
 #_01B2AC: BCS .branch01B2B1
 
 #_01B2AE: JSR routine01BAB9
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01B2B1
 #_01B2B1: JSR SomethingBattleMenu
@@ -7608,6 +7655,8 @@ routine01B263:
 
 #_01B31F: JMP .branch01B293
 
+;---------------------------------------------------------------------------------------------------
+
 .branch01B322
 #_01B322: JSL Cache_WRAM_CGWRAM_First8
 #_01B326: JSL AddSelfAsVector
@@ -7621,7 +7670,7 @@ routine01B263:
 #_01B33B: BNE .branch01B340
 
 .branch01B33D
-#_01B33D: JSR routine01B7EB
+#_01B33D: JSR GiveAllLootFromBattle
 
 .branch01B340
 #_01B340: JSR routine01B9D6
@@ -7631,38 +7680,52 @@ routine01B263:
 #_01B349: RTL
 
 ;===================================================================================================
-
+; TODO something with text?
+;===================================================================================================
 routine01B34A:
 #_01B34A: LDA.w #$0003
 #_01B34D: STA.w $0A26
+
 #_01B350: LDA.w #$0020
 #_01B353: STA.w $0A2C
+
 #_01B356: LDA.w #$0018
 #_01B359: STA.w $0A1E
+
 #_01B35C: LDA.w #$000C
 #_01B35F: STA.w $0A20
+
 #_01B362: LDA.w #$0002
 #_01B365: STA.w $0A1C
+
 #_01B368: RTS
 
 ;===================================================================================================
 
 routine01B369:
 #_01B369: PHA
+
 #_01B36A: LDA.w #$0002
 #_01B36D: JSL routine00BAC0
+
 #_01B371: LDA.w #$0000
 #_01B374: STA.w $0A22
+
 #_01B377: LDA.w #$0001
 #_01B37A: STA.w $0A24
+
 #_01B37D: LDA.w #$3DC4
 #_01B380: STA.w $0A1A
+
 #_01B383: JSL routine03837C
 #_01B387: JSL AddSelfAsVector
+
 #_01B38B: PLA
 #_01B38C: STA.w $0A22
+
 #_01B38F: JSL routine03837C
 #_01B393: JSL AddSelfAsVector
+
 #_01B397: RTS
 
 ;===================================================================================================
@@ -7672,12 +7735,12 @@ DisplayBattleMessageProbably:
 
 #_01B399: LDA.w $052A
 #_01B39C: AND.w #$4000
-#_01B39F: BEQ .branch01B3A3
+#_01B39F: BEQ .show_message
 
 #_01B3A1: PLA
 #_01B3A2: RTS
 
-.branch01B3A3
+.show_message
 #_01B3A3: LDA.w #$0002
 #_01B3A6: JSL routine00BAC0
 
@@ -7700,74 +7763,92 @@ DisplayBattleMessageProbably:
 #_01B3CB: STA.w $0A1A
 #_01B3CE: JSL routine03837C
 #_01B3D2: JSL AddSelfAsVector
+
 #_01B3D6: RTS
 
 ;===================================================================================================
 
 DoTextInCombatMaybe:
 #_01B3D7: PHA
+
 #_01B3D8: LDA.w $052A
 #_01B3DB: AND.w #$4000
-#_01B3DE: BEQ .branch01B3E2
+#_01B3DE: BEQ .show_message
 
 #_01B3E0: PLA
+
 #_01B3E1: RTS
 
-.branch01B3E2
+.show_message
 #_01B3E2: LDA.w #$0000
 #_01B3E5: STA.w $0A22
+
 #_01B3E8: LDA.w #$0001
 #_01B3EB: STA.w $0A24
+
 #_01B3EE: LDA.w #$3E04
 #_01B3F1: STA.w $0A1A
+
 #_01B3F4: JSL routine03837C
 #_01B3F8: JSL AddSelfAsVector
+
 #_01B3FC: LDA.w #$0000
 #_01B3FF: STA.w $0A22
+
 #_01B402: LDA.w #$0001
 #_01B405: STA.w $0A24
+
 #_01B408: LDA.w #$3E44
 #_01B40B: STA.w $0A1A
+
 #_01B40E: JSL routine03837C
 #_01B412: JSL AddSelfAsVector
+
 #_01B416: LDA.w #$0003
 #_01B419: JSL routine00BA70
+
 #_01B41D: PLA
 #_01B41E: STA.w $0A22
+
 #_01B421: LDA.w #$3E04
 #_01B424: STA.w $0A1A
+
 #_01B427: JSL routine03837C
 #_01B42B: JSL AddSelfAsVector
+
 #_01B42F: RTS
 
 ;===================================================================================================
-
+; TODO finds a party member for something
 routine01B430:
 #_01B430: STA.w $0620
+
 #_01B433: LDY.w #$0000
 #_01B436: STY.w $0622
 
-.branch01B439
+.next_check
 #_01B439: LDA.w $0700,Y
-#_01B43C: BMI .branch01B455
+#_01B43C: BMI .end_of_party
 
 #_01B43E: CLC
 #_01B43F: ADC.w $0620
 #_01B442: TAX
+
 #_01B443: LDA.w $0000,X
 #_01B446: CMP.w $0622
-#_01B449: BCC .branch01B44E
+#_01B449: BCC .skip
 
 #_01B44B: STA.w $0622
 
-.branch01B44E
+.skip
 #_01B44E: INY
 #_01B44F: INY
 #_01B450: CPY.w #$000C
-#_01B453: BCC .branch01B439
+#_01B453: BCC .next_check
 
-.branch01B455
+.end_of_party
 #_01B455: LDA.w $0622
+
 #_01B458: RTS
 
 ;===================================================================================================
@@ -7776,15 +7857,18 @@ routine01B459:
 #_01B459: CLC
 #_01B45A: ADC.w #$0600
 #_01B45D: TAY
+
 #_01B45E: LDA.w $0000,Y
 #_01B461: BIT.w $0524
 #_01B464: BPL .branch01B476
 
 #_01B466: PHA
+
 #_01B467: TYA
 #_01B468: CLC
 #_01B469: ADC.w #$0180
 #_01B46C: TAY
+
 #_01B46D: PLA
 #_01B46E: CMP.w $0000,Y
 #_01B471: BCS .branch01B476
@@ -7795,29 +7879,30 @@ routine01B459:
 #_01B476: RTS
 
 ;===================================================================================================
-
+; TODO finds a party member for something
 routine01B477:
 #_01B477: LDY.w #$0000
 
-.branch01B47A
+.next_check
 #_01B47A: LDX.w $0700,Y
-#_01B47D: BMI .branch01B492
+#_01B47D: BMI .end_of_party
 
 #_01B47F: LDA.w $1008,X
 #_01B482: AND.w #$00FF
-#_01B485: BEQ .branch01B48B
+#_01B485: BEQ .skip
 
 #_01B487: XBA
 #_01B488: STA.w $1008,X
 
-.branch01B48B
+.skip
 #_01B48B: INY
 #_01B48C: INY
 #_01B48D: CPY.w #$000C
-#_01B490: BCC .branch01B47A
+#_01B490: BCC .next_check
 
-.branch01B492
+.end_of_party
 #_01B492: JSL routine00A17E
+
 #_01B496: RTS
 
 ;===================================================================================================
@@ -7827,6 +7912,7 @@ routine01B477:
 ;===================================================================================================
 GetDynamicSuccessiveHitChances:
 #_01B497: PHP
+
 #_01B498: REP #$20
 #_01B49A: SEP #$10
 
@@ -7881,37 +7967,39 @@ GetDynamicSuccessiveHitChances:
 ;       0x08       STM
 ;       0x09       SPD
 ;       0x0A       LUK
-;       0x0B       STAT_11C
+;       0x0B       Alignment
 ;       0x0C       1636
 ;       0x0D       1638
 ;       0x0E       163A
 ;       0x0F       163C
-;       0x10       Move 1 ; 163E
-;       0x11       Move 2 ; 1640
-;       0x12       Move 3 ; 1642
-;       0x13       1644
-;       0x14       1646
-;       0x15       1648
-;       0x16       CP 164A
+;       0x10       Move 1
+;       0x11       Move 2
+;       0x12       Move 3
+;       0x13       XP / Drop rate
+;       0x14       Money / MAG drop rate
+;       0x16       CP
 ;       0x17       164C
 ;===================================================================================================
 GetDemonStats:
 #_01B4C8: SEP #$20
+
 #_01B4CA: STA.w PPUMULT16
 #_01B4CD: XBA
 #_01B4CE: STA.w PPUMULT16
 
 #_01B4D1: LDA.b #$18
 #_01B4D3: STA.w PPUMULT8
+
 #_01B4D6: LDA.b #DemonStats>>16
 #_01B4D8: STA.w $00B2
 
 #_01B4DB: REP #$20
+
 #_01B4DD: LDA.w PPUPRODUCTL
 #_01B4E0: CLC
 #_01B4E1: ADC.w #DemonStats
-
 #_01B4E4: STA.w $00B0
+
 #_01B4E7: LDA.b [$B0],Y
 
 #_01B4E9: RTS
@@ -7920,31 +8008,40 @@ GetDemonStats:
 
 routine01B4EA:
 #_01B4EA: PHP
+
 #_01B4EB: REP #$30
 #_01B4ED: PHB
 
 #_01B4EE: SEP #$20
-#_01B4F0: LDA.b #$07
+
+#_01B4F0: LDA.b #DemonStats>>16
 #_01B4F2: PHA
 
 #_01B4F3: REP #$20
 #_01B4F5: PLB
+
 #_01B4F6: LDA.w #$0100
 #_01B4F9: STA.w $052A
+
 #_01B4FC: STZ.w $0504
 #_01B4FF: STZ.w $0528
 #_01B502: STZ.w $0566
+
 #_01B505: JSR routine01B90B
-#_01B508: JSR routine01B996
+#_01B508: JSR ClearALotOfBattleStuff
 #_01B50B: JSR routine01B34A
 
 #_01B50E: SEP #$30
+
 #_01B510: LDA.b #$02
-#_01B512: JSL routine00B99C
+#_01B512: JSL InitializeTextBoxToSizeForNewMessage
 
 #_01B516: REP #$30
+
 #_01B518: JSL LoadDemonStats
+
 #_01B51C: PLB
+
 #_01B51D: PLP
 #_01B51E: RTL
 
@@ -7952,15 +8049,18 @@ routine01B4EA:
 
 routine01B51F:
 #_01B51F: PHP
+
 #_01B520: REP #$30
 #_01B522: PHB
 
 #_01B523: SEP #$20
-#_01B525: LDA.b #$07
+#_01B525: LDA.b #DemonStats>>16
 #_01B527: PHA
 
 #_01B528: REP #$20
+
 #_01B52A: PLB
+
 #_01B52B: JSR routine01B34A
 #_01B52E: JSR SomethingBattleMenu
 #_01B531: BCS .branch01B57F
@@ -7977,6 +8077,7 @@ routine01B51F:
 
 #_01B543: INC.w $0548
 #_01B546: INC.w $0548
+
 #_01B549: LDY.w $0548
 #_01B54C: CPY.w #$001C
 #_01B54F: BCS .branch01B561
@@ -7995,9 +8096,10 @@ routine01B51F:
 #_01B567: JSL routine00AB74
 #_01B56B: LDA.w $0512
 #_01B56E: ORA.w $0514
-#_01B571: BNE .branch01B5AB
+#_01B571: BNE .exit
 
 #_01B573: JSR AddEnemyDrop
+
 #_01B576: LDA.w #$FFFF
 #_01B579: STA.w $0566
 #_01B57C: JSR routine01B8A3
@@ -8011,18 +8113,19 @@ routine01B51F:
 #_01B592: JSR routine01B8F5
 #_01B595: LDA.w $052A
 #_01B598: AND.w #$2400
-#_01B59B: BEQ .branch01B5A5
+#_01B59B: BEQ .distribute_loot
 
 #_01B59D: LDA.w $0512
 #_01B5A0: ORA.w $0514
-#_01B5A3: BNE .branch01B5AB
+#_01B5A3: BNE .exit
 
-.branch01B5A5
-#_01B5A5: JSR routine01B7EB
+.distribute_loot
+#_01B5A5: JSR GiveAllLootFromBattle
 #_01B5A8: JSR routine01B9D6
 
-.branch01B5AB
+.exit
 #_01B5AB: PLB
+
 #_01B5AC: PLP
 #_01B5AD: RTL
 
@@ -8030,16 +8133,20 @@ routine01B51F:
 
 routine01B5AE:
 #_01B5AE: PHP
+
 #_01B5AF: REP #$30
 #_01B5B1: PHB
 
 #_01B5B2: SEP #$20
-#_01B5B4: LDA.b #$07
+
+#_01B5B4: LDA.b #DemonStats>>16
 #_01B5B6: PHA
 
 #_01B5B7: REP #$20
 #_01B5B9: PLB
+
 #_01B5BA: JSL routine01B4EA
+
 #_01B5BE: STZ.w $052A
 #_01B5C1: JSR routine01B34A
 #_01B5C4: JSR routine01BAB9
@@ -8101,7 +8208,7 @@ routine01B5AE:
 #_01B63C: BNE .branch01B641
 
 .branch01B63E
-#_01B63E: JSR routine01B7EB
+#_01B63E: JSR GiveAllLootFromBattle
 
 .branch01B641
 #_01B641: JSR routine01B9D6
@@ -8113,23 +8220,30 @@ routine01B5AE:
 
 routine01B647:
 #_01B647: PHP
+
 #_01B648: REP #$30
 #_01B64A: PHB
 
 #_01B64B: SEP #$20
-#_01B64D: LDA.b #$07
+
+#_01B64D: LDA.b #DemonStats>>16
 #_01B64F: PHA
 
 #_01B650: REP #$20
 #_01B652: PLB
+
 #_01B653: JSL routine01E60C
 #_01B657: JSL Cache_WRAM_CGWRAM_First8
+
 #_01B65B: JSL AddSelfAsVector
+
 #_01B65F: JSL routine01E8F1
 #_01B663: JSR routine01C60E
 #_01B666: JSR routine01B8F5
 #_01B669: JSR routine01B9D6
+
 #_01B66C: PLB
+
 #_01B66D: PLP
 #_01B66E: RTL
 
@@ -8140,11 +8254,13 @@ AddEnemyDrop:
 #_01B673: BCS .no_drop
 
 #_01B675: PHA
+
 #_01B676: LDA.w $0504
 #_01B679: AND.w #$00FF
 #_01B67C: ASL A
 #_01B67D: ASL A
 #_01B67E: TAY
+
 #_01B67F: PLA
 #_01B680: STA.w $0568,Y
 
@@ -8167,13 +8283,16 @@ DetermineEnemyDrop:
 #_01B690: JSL GetRandomInt
 
 #_01B694: LDX.w $0526
+
 #_01B697: LDA.w $1044,X
 #_01B69A: AND.w #$000F
 #_01B69D: BEQ .no_drop
 
 #_01B69F: SEP #$20
+
 #_01B6A1: STA.w CPUMULTA
 #_01B6A4: STA.w CPUMULTB
+
 #_01B6A7: NOP
 #_01B6A8: NOP
 #_01B6A9: NOP
@@ -8182,32 +8301,39 @@ DetermineEnemyDrop:
 #_01B6AC: NOP
 #_01B6AD: NOP
 #_01B6AE: NOP
+
 #_01B6AF: LDA.w CPUPRODUCTL
 #_01B6B2: LSR A
 #_01B6B3: CMP.w $0ED5
 #_01B6B6: BCC .no_drop
 
 #_01B6B8: LDA.w $1046,X
+
 #_01B6BB: PLP
 #_01B6BC: CLC
+
 #_01B6BD: RTL
 
 .no_drop
 #_01B6BE: PLP
 #_01B6BF: SEC
+
 #_01B6C0: RTL
 
 ;===================================================================================================
 
 DetermineEnemyMagicStoneDrops:
 #_01B6C1: PHP
+
 #_01B6C2: REP #$30
 
 #_01B6C4: JSL GetRandomInt
 
 #_01B6C8: LDX.w $0526
+
+; Demons 0xB9 and above give out MAG instead of magstones
 #_01B6CB: LDA.w $1004,X
-#_01B6CE: CMP.w #$00B9
+#_01B6CE: CMP.w #$00B9 ; Demon 0x0B9
 #_01B6D1: BCS .no_drop
 
 #_01B6D3: LDA.w $1048,X
@@ -8215,8 +8341,10 @@ DetermineEnemyMagicStoneDrops:
 #_01B6D9: BEQ .no_drop
 
 #_01B6DB: SEP #$20
+
 #_01B6DD: STA.w CPUMULTA
 #_01B6E0: STA.w CPUMULTB
+
 #_01B6E3: NOP
 #_01B6E4: NOP
 #_01B6E5: NOP
@@ -8225,6 +8353,7 @@ DetermineEnemyMagicStoneDrops:
 #_01B6E8: NOP
 #_01B6E9: NOP
 #_01B6EA: NOP
+
 #_01B6EB: LDA.w CPUPRODUCTL
 #_01B6EE: LSR A
 #_01B6EF: CMP.w $0ED5
@@ -8232,22 +8361,26 @@ DetermineEnemyMagicStoneDrops:
 
 #_01B6F4: PLP
 #_01B6F5: CLC
+
 #_01B6F6: RTL
 
 .no_drop
 #_01B6F7: PLP
 #_01B6F8: SEC
+
 #_01B6F9: RTL
 
 ;===================================================================================================
-
-routine01B6FA:
+; TODO formula
+;===================================================================================================
+GiveCharacterExperienceFromBattle:
 #_01B6FA: PHP
+
 #_01B6FB: REP #$30
 
 #_01B6FD: LDX.w $0526
 
-; top nibble of 
+; top nibble of XP rate
 #_01B700: LDA.w $1044,X
 #_01B703: LSR A
 #_01B704: LSR A
@@ -8300,7 +8433,9 @@ routine01B6FA:
 #_01B742: STY.w CPUDIVIDENDL
 
 #_01B745: SEP #$20
+
 #_01B747: STA.w CPUDIVISOR
+
 #_01B74A: NOP
 #_01B74B: NOP
 #_01B74C: NOP
@@ -8311,36 +8446,43 @@ routine01B6FA:
 #_01B751: NOP
 
 #_01B752: REP #$20
+
 #_01B754: LDA.w CPUQUOTIENTL
 #_01B757: STA.w $0620
 
 .difference_was_small
 #_01B75A: LDA.w $0620
-#_01B75D: BNE .branch01B760
+#_01B75D: BNE .not_zero
 
 #_01B75F: INC A
 
-.branch01B760
+.not_zero
 #_01B760: PLP
 #_01B761: RTL
 
 ;===================================================================================================
-
-routine01B762:
+; TODO formula
+;===================================================================================================
+GainMoneyFromKill:
 #_01B762: PHP
+
 #_01B763: REP #$30
+
 #_01B765: LDX.w $0526
+
 #_01B768: LDA.w $1048,X
 #_01B76B: LSR A
 #_01B76C: LSR A
 #_01B76D: LSR A
 #_01B76E: LSR A
 #_01B76F: TAY
+
 #_01B770: LDA.w $100A,X
 #_01B773: ASL A
 #_01B774: ASL A
 #_01B775: ASL A
 #_01B776: JSR SomeCoolMultiplyAxY
+
 #_01B779: PLP
 #_01B77A: RTL
 
@@ -8348,42 +8490,55 @@ routine01B762:
 
 routine01B77B:
 #_01B77B: PHP
+
 #_01B77C: REP #$30
+
 #_01B77E: LDX.w $0526
 #_01B781: LDX.w $0526
+
 #_01B784: LDA.w $1004,X
-#_01B787: CMP.w #$00B9
-#_01B78A: BCC .branch01B79D
+#_01B787: CMP.w #$00B9 ; Demon 0x0B9
+#_01B78A: BCC .dont_give_anything
 
 #_01B78C: LDA.w $1048,X
 #_01B78F: AND.w #$000F
 #_01B792: TAY
+
 #_01B793: LDA.w $100A,X
 #_01B796: ASL A
 #_01B797: ASL A
 #_01B798: JSR SomeCoolMultiplyAxY
+
 #_01B79B: PLP
 #_01B79C: RTL
 
-.branch01B79D
+.dont_give_anything
 #_01B79D: LDA.w #$0000
+
 #_01B7A0: PLP
 #_01B7A1: RTL
 
 ;===================================================================================================
-
+; Exits with A = for Y (treated as a signed 4-bit number ones' complement?)
+;    0 => 0
+;   >0 => A*Y
+;   <0 => A*(Y+9)
+;===================================================================================================
 SomeCoolMultiplyAxY:
 #_01B7A2: CPY.w #$0000
-#_01B7A5: BEQ .branch01B7E7
+#_01B7A5: BEQ .zero
 
 #_01B7A7: CPY.w #$0008
-#_01B7AA: BCS .branch01B7C6
+#_01B7AA: BCS .negative
 
 #_01B7AC: SEP #$30
+
 #_01B7AE: STA.w PPUMULT16
 #_01B7B1: XBA
 #_01B7B2: STA.w PPUMULT16
+
 #_01B7B5: STY.w PPUMULT8
+
 #_01B7B8: NOP
 #_01B7B9: NOP
 #_01B7BA: NOP
@@ -8394,22 +8549,29 @@ SomeCoolMultiplyAxY:
 #_01B7BF: NOP
 
 #_01B7C0: REP #$30
+
 #_01B7C2: LDA.w PPUPRODUCTL
+
 #_01B7C5: RTS
 
-.branch01B7C6
+;---------------------------------------------------------------------------------------------------
+
+.negative
 #_01B7C6: LSR A
 #_01B7C7: LSR A
 #_01B7C8: LSR A
 
 #_01B7C9: SEP #$30
+
 #_01B7CB: STA.w PPUMULT16
 #_01B7CE: XBA
 #_01B7CF: STA.w PPUMULT16
+
 #_01B7D2: TYA
 #_01B7D3: SEC
 #_01B7D4: SBC.b #$07
 #_01B7D6: STA.w PPUMULT8
+
 #_01B7D9: NOP
 #_01B7DA: NOP
 #_01B7DB: NOP
@@ -8420,23 +8582,30 @@ SomeCoolMultiplyAxY:
 #_01B7E0: NOP
 
 #_01B7E1: REP #$30
+
 #_01B7E3: LDA.w PPUPRODUCTL
+
 #_01B7E6: RTS
 
-.branch01B7E7
+;---------------------------------------------------------------------------------------------------
+
+.zero
 #_01B7E7: LDA.w #$0000
+
 #_01B7EA: RTS
 
 ;===================================================================================================
 ; TODO after battle stuff
 ;===================================================================================================
-routine01B7EB:
+GiveAllLootFromBattle:
 #_01B7EB: LDA.w $052A
 #_01B7EE: AND.w #$BFFF
 #_01B7F1: STA.w $052A
+
 #_01B7F4: JSL routine0181B7
 #_01B7F8: JSL routine009F56
 #_01B7FC: JSL routine009FDE
+
 #_01B800: LDA.w $05D6
 #_01B803: ORA.w $05D8
 #_01B806: ORA.w $05DA
@@ -8445,69 +8614,80 @@ routine01B7EB:
 
 #_01B80E: JSR routine01C640
 
+;---------------------------------------------------------------------------------------------------
+
 .branch01B811
 #_01B811: LDA.w $051E
-#_01B814: BEQ .branch01B819
+#_01B814: BEQ .no_money_gained
 
-#_01B816: JSR routine01C702
+#_01B816: JSR GiveMoneyFromBattle
 
-.branch01B819
+.no_money_gained
 #_01B819: LDA.w $0520
-#_01B81C: BEQ .branch01B821
+#_01B81C: BEQ .no_mag_gained
 
-#_01B81E: JSR routine01C769
+#_01B81E: JSR GiveMAGFromBattle
 
-.branch01B821
+.no_mag_gained
 #_01B821: LDA.w $0522
-#_01B824: BEQ .branch01B829
+#_01B824: BEQ .no_magstones_gained
 
 #_01B826: JSR GiveMagStonesFromBattle
 
-.branch01B829
+;---------------------------------------------------------------------------------------------------
+
+.no_magstones_gained
 #_01B829: LDY.w #$0000
 
-.branch01B82C
+.next_enemy_for_drops
 #_01B82C: STY.w $0600
 
 #_01B82F: LDA.w $0568,Y
-#_01B832: BMI .branch01B839
+#_01B832: BMI .skip_drop
 
-#_01B834: JSR routine01C883
-#_01B837: BCS .branch01B843
+#_01B834: JSR AddEnemyDropFromBattleToInventory
+#_01B837: BCS .abort_droppings
 
-.branch01B839
+.skip_drop
 #_01B839: LDY.w $0600
 #_01B83C: INY
 #_01B83D: INY
 #_01B83E: CPY.w #$0008
-#_01B841: BCC .branch01B82C
+#_01B841: BCC .next_enemy_for_drops
 
-.branch01B843
+.abort_droppings
 #_01B843: JSL routine0181AF
+
 #_01B847: RTS
+
+;===================================================================================================
 
 ; TODO stats?
 routine01B848:
 #_01B848: PHP
+
 #_01B849: REP #$30
+
 #_01B84B: STZ.w $0578
 #_01B84E: PHB
 
 #_01B84F: SEP #$20
-#_01B851: LDA.b #$07
+
+#_01B851: LDA.b #UNREACH_078C00>>16
 #_01B853: PHA
 
 #_01B854: REP #$20
 #_01B856: PLB
+
 #_01B857: LDX.w $0715
 #_01B85A: BIT.w $1000,X
-#_01B85D: BPL .branch01B8A0
+#_01B85D: BPL .exit
 
-#_01B85F: BVC .branch01B8A0
+#_01B85F: BVC .exit
 
 #_01B861: LDA.w $1002,X
 #_01B864: AND.w #$E000
-#_01B867: BNE .branch01B8A0
+#_01B867: BNE .exit
 
 .branch01B869
 #_01B869: LDA.w $100A,X
@@ -8517,11 +8697,13 @@ routine01B848:
 #_01B871: ASL A
 #_01B872: ADC.w $100A,X
 #_01B875: TAY
-#_01B876: LDA.w UNREACH_078C00,Y
+
+#_01B876: LDA.w UNREACH_078C00+0,Y
 #_01B879: SEC
 #_01B87A: SBC.w $100C,X
 #_01B87D: STA.w $0620
-#_01B880: LDA.w UNREACH_078C02,Y
+
+#_01B880: LDA.w UNREACH_078C00+2,Y
 #_01B883: AND.w #$00FF
 #_01B886: SBC.w $100E,X
 #_01B889: BCC .branch01B890
@@ -8536,12 +8718,13 @@ routine01B848:
 
 .branch01B898
 #_01B898: LDA.w $0578
-#_01B89B: BEQ .branch01B8A0
+#_01B89B: BEQ .exit
 
 #_01B89D: JSR routine01C8E1
 
-.branch01B8A0
+.exit
 #_01B8A0: PLB
+
 #_01B8A1: PLP
 #_01B8A2: RTL
 
@@ -8554,7 +8737,7 @@ routine01B8A3:
 
 #_01B8AC: LDY.w #$0600
 
-.branch01B8AF
+.next
 #_01B8AF: LDA.w $1004,Y
 #_01B8B2: CMP.w #$0100
 #_01B8B5: BCS .branch01B8F4
@@ -8579,15 +8762,18 @@ routine01B8A3:
 #_01B8CD: LDA.l $7E3500,X
 #_01B8D1: INX
 #_01B8D2: STA.l $7E3500,X
+
 #_01B8D6: DEX
 #_01B8D7: BPL .branch01B8CA
 
 .branch01B8D9
 #_01B8D9: LDX.w #$0000
+
 #_01B8DC: LDA.w $1004,Y
 #_01B8DF: STA.l $7E3500,X
 
 #_01B8E3: REP #$20
+
 #_01B8E5: BIT.w $0524
 #_01B8E8: BPL .branch01B8F4
 
@@ -8595,7 +8781,7 @@ routine01B8A3:
 #_01B8ED: BCS .branch01B8F4
 
 #_01B8EF: LDY.w #$0780
-#_01B8F2: BRA .branch01B8AF
+#_01B8F2: BRA .next
 
 .branch01B8F4
 #_01B8F4: RTS
@@ -8605,29 +8791,34 @@ routine01B8A3:
 routine01B8F5:
 #_01B8F5: LDA.w $052A
 #_01B8F8: AND.w #$0800
-#_01B8FB: BEQ .branch01B90A
+#_01B8FB: BEQ .exit
 
 #_01B8FD: JSL routine00C51A
+
 #_01B901: LDA.w $052A
 #_01B904: AND.w #$F7FF
 #_01B907: STA.w $052A
 
-.branch01B90A
+.exit
 #_01B90A: RTS
 
 ;===================================================================================================
 
 routine01B90B:
 #_01B90B: SEP #$20
+
 #_01B90D: LDA.w $0400
 #_01B910: ORA.b #$40
 #_01B912: STA.w $0400
+
 #_01B915: LDA.b #$43
 #_01B917: STA.w $0F4B
+
 #_01B91A: LDA.b #$1F
 #_01B91C: STA.w $0F74
 
 #_01B91F: REP #$30
+
 #_01B921: STZ.w $05D6
 #_01B924: STZ.w $05D8
 #_01B927: STZ.w $05DA
@@ -8641,24 +8832,34 @@ routine01B90B:
 #_01B93F: STZ.w $05A8
 #_01B942: STZ.w $05AA
 #_01B945: STZ.w $05D4
+
+;---------------------------------------------------------------------------------------------------
+
 #_01B948: LDA.w #$0008
 #_01B94B: STA.w $0A40
 #_01B94E: STA.w $0A42
+
 #_01B951: LDX.w #$0000
 #_01B954: LDA.w #$FFFF
 
-.branch01B957
+.clear_drops
 #_01B957: STA.w $0568,X
+
 #_01B95A: INX
 #_01B95B: INX
 #_01B95C: CPX.w #$0010
-#_01B95F: BCC .branch01B957
+#_01B95F: BCC .clear_drops
 
 #_01B961: STZ.w $0564
+
 #_01B964: LDA.w #$0600
 #_01B967: STA.w $0526
 
+;---------------------------------------------------------------------------------------------------
+
 #_01B96A: SEP #$30
+
+; TODO menu stuff?
 #_01B96C: LDA.b #$04
 #_01B96E: LDX.b #$00
 #_01B970: LDY.b #$02
@@ -8667,64 +8868,79 @@ routine01B90B:
 #_01B978: STY.w $0EDE
 #_01B97B: STZ.w $0EDA
 
-.branch01B97E
+.wait
 #_01B97E: JSL routine009337
+
 #_01B982: LDA.w $0EDE
 #_01B985: JSL Do19XXVectorsATimes
+
 #_01B989: INC.w $0EDA
+
 #_01B98C: LDA.w $0EDA
 #_01B98F: CMP.b #$08
-#_01B991: BCC .branch01B97E
+#_01B991: BCC .wait
 
 #_01B993: REP #$30
+
 #_01B995: RTS
 
 ;===================================================================================================
 
-routine01B996:
+ClearALotOfBattleStuff:
 #_01B996: STZ.w $0566
 #_01B999: STZ.w $057A
 #_01B99C: STZ.w $05D4
 #_01B99F: STZ.w $058A
+
 #_01B9A2: STZ.w $058C
 #_01B9A5: STZ.w $058E
 #_01B9A8: STZ.w $0590
 #_01B9AB: STZ.w $0592
+
 #_01B9AE: STZ.w $0594
 #_01B9B1: STZ.w $0596
 #_01B9B4: STZ.w $0598
 #_01B9B7: STZ.w $059A
+
 #_01B9BA: STZ.w $059C
 #_01B9BD: STZ.w $059E
 #_01B9C0: STZ.w $05A0
 #_01B9C3: STZ.w $05A2
+
 #_01B9C6: STZ.w $05A4
 #_01B9C9: STZ.w $05AC
 #_01B9CC: STZ.w $05AE
 #_01B9CF: STZ.w $05B0
+
 #_01B9D2: STZ.w $05B2
+
 #_01B9D5: RTS
 
 ;===================================================================================================
 
 routine01B9D6:
 #_01B9D6: JSL BringUpAMenu
+
 #_01B9DA: STZ.w $050E
 #_01B9DD: STZ.w $0510
 #_01B9E0: STZ.w $05A8
 #_01B9E3: STZ.w $0524
 
 #_01B9E6: SEP #$20
+
 #_01B9E8: LDA.w $0400
 #_01B9EB: AND.b #$BF
 #_01B9ED: STA.w $0400
+
 #_01B9F0: RTS
 
 ;===================================================================================================
 
 routine01B9F1:
 #_01B9F1: PHP
+
 #_01B9F2: REP #$20
+
 #_01B9F4: LDA.w $0706
 #_01B9F7: BMI .branch01BA19
 
@@ -8879,7 +9095,7 @@ routine01BAB9:
 #_01BB14: SBC.w $0602
 #_01BB17: AND.w #$7FFF
 #_01BB1A: STA.w $0528
-#_01BB1D: BEQ .branch01BB3D
+#_01BB1D: BEQ .exit
 
 #_01BB1F: BCS .branch01BB25
 
@@ -8891,18 +9107,18 @@ routine01BAB9:
 #_01BB28: JSL GetRandomInt
 #_01BB2C: AND.w #$003F
 #_01BB2F: CMP.w $0600
-#_01BB32: BCS .branch01BB3D
+#_01BB32: BCS .exit
 
 #_01BB34: LDA.w $0528
 #_01BB37: ORA.w #$8000
 #_01BB3A: STA.w $0528
 
-.branch01BB3D
+.exit
 #_01BB3D: PLP
 #_01BB3E: RTS
 
 ;===================================================================================================
-; 
+; TODO
 ;===================================================================================================
 SomethingBattleMenu:
 #_01BB3F: PHP
@@ -8911,8 +9127,9 @@ SomethingBattleMenu:
 #_01BB42: LDA.w $052A
 #_01BB45: AND.w #$DFFF
 #_01BB48: STA.w $052A
+
 #_01BB4B: AND.w #$4000
-#_01BB4E: BEQ .branch01BB64
+#_01BB4E: BEQ branch01BB64
 
 #_01BB50: LDA.w $0F2D
 #_01BB53: BIT.w #$8000
@@ -8924,18 +9141,22 @@ SomethingBattleMenu:
 #_01BB5E: AND.w #$BFFF
 #_01BB61: STA.w $052A
 
-.branch01BB64
+;===================================================================================================
+
+branch01BB64:
 #_01BB64: JSR HandleBattleSong_auto
 #_01BB67: JSR routine01C1B9
 
 #_01BB6A: BIT.w $0528
-#_01BB6D: BPL .branch01BB77
+#_01BB6D: BPL branch01BB77
 #_01BB6F: BVS branch01BBE5
 
 #_01BB71: LDA.w #$002C
 #_01BB74: JSR DisplayBattleMessageProbably
 
-.branch01BB77
+;===================================================================================================
+
+branch01BB77:
 #_01BB77: LDA.w #$0001 ; so type 7
 #_01BB7A: JSL RunOpenMenuDMA_Xplus6
 
@@ -8944,6 +9165,7 @@ SomethingBattleMenu:
 #_01BB84: BEQ .branch01BB93
 
 #_01BB86: JSL routine00C51A
+
 #_01BB8A: LDA.w $052A
 #_01BB8D: AND.w #$F7FF
 #_01BB90: STA.w $052A
@@ -8952,26 +9174,32 @@ SomethingBattleMenu:
 #_01BB93: LDA.w #$0007
 #_01BB96: JSR DisplayBattleMessageProbably
 
+;---------------------------------------------------------------------------------------------------
+
 .next
 #_01BB99: STZ.w $0ED2
 
-#_01BB9C: LDA.w #VRAMaddr($78B0)
+#_01BB9C: LDA.w #$3C58 ; $78B0 VRAM
 #_01BB9F: LDY.w #$0003
 #_01BBA2: LDX.w #$5006
 #_01BBA5: JSL WaitForMenuChoice_A
 
 #_01BBA9: LDA.w $0E9A
-#_01BBAC: BPL .branch01BBB7
+#_01BBAC: BPL .done_menu
 
 #_01BBAE: LDA.w #$0001
 #_01BBB1: JSL RunOpenMenuDMA_Xplus6
 #_01BBB5: BRA .next
 
-.branch01BBB7
+;---------------------------------------------------------------------------------------------------
+
+.done_menu
 #_01BBB7: ASL A
 #_01BBB8: TAX
+
 #_01BBB9: LDA.l .vectors,X
 #_01BBBD: STA.w $0600
+
 #_01BBC0: JMP ($0600)
 
 .vectors
@@ -8979,6 +9207,8 @@ SomethingBattleMenu:
 #_01BBC5: dw CombatMenu_Escape
 #_01BBC7: dw CombatMenu_Talk
 #_01BBC9: dw CombatMenu_Auto
+
+;===================================================================================================
 
 CombatMenu_Fight:
 #_01BBCB: JSR HandleBattleSong_fight
@@ -8988,40 +9218,52 @@ CombatMenu_Fight:
 #_01BBD4: STA.w $052A
 
 #_01BBD7: JSR CombatMenu_HandleFightMenu
+
 #_01BBDA: BCC .branch01BBDF
-#_01BBDC: JMP .branch01BB77
+#_01BBDC: JMP branch01BB77
 
 .branch01BBDF
 #_01BBDF: JSR routine01C0D0
+
 #_01BBE2: PLP
 #_01BBE3: CLC
+
 #_01BBE4: RTS
 
-#branch01BBE5:
+;===================================================================================================
+
+branch01BBE5:
 #_01BBE5: JSR HandleBattleSong_fight
+
 #_01BBE8: LDA.w #$002D
 #_01BBEB: JSR DisplayBattleMessageProbably
 
-#FailedToEscape:
+;===================================================================================================
+
+FailedToEscape:
 #_01BBEE: JSR routine01C0D0
+
 #_01BBF1: LDA.w $052A
 #_01BBF4: ORA.w #$8000
 #_01BBF7: STA.w $052A
+
 #_01BBFA: PLP
 #_01BBFB: CLC
+
 #_01BBFC: RTS
 
 ;===================================================================================================
-; 
-;===================================================================================================
+
 CombatMenu_Escape:
 #_01BBFD: JSR CalculateEscapeSuccess
 #_01BC00: BCS FailedToEscape
 
 #_01BC02: LDA.w #$FFFF
 #_01BC05: STA.w $0566
+
 #_01BC08: PLP
 #_01BC09: SEC
+
 #_01BC0A: RTS
 
 ;===================================================================================================
@@ -9040,7 +9282,7 @@ CombatMenu_Talk:
 
 .branch01BC1D
 #_01BC1D: JSR DisplayBattleMessageProbably
-#_01BC20: JMP .branch01BB64
+#_01BC20: JMP branch01BB64
 
 .branch01BC23
 #_01BC23: LDA.w $057A
@@ -9097,26 +9339,33 @@ CombatMenu_Talk:
 .branch01BC7E
 #_01BC7E: STY.w $0564
 #_01BC81: STX.w $0526
+
 #_01BC84: LDA.w $104C,X
 #_01BC87: STA.w $0A22
+
 #_01BC8A: JSL routine038354
 #_01BC8E: JSL routine0F9493
+
 #_01BC92: LDA.w #$0002
-#_01BC95: JSL routine00B99C
+#_01BC95: JSL InitializeTextBoxToSizeForNewMessage
 #_01BC99: JSR routine01B34A
+
 #_01BC9C: LDA.w $052A
 #_01BC9F: AND.w #$EFFF
 #_01BCA2: STA.w $052A
+
 #_01BCA5: LDA.w $0A4C
 #_01BCA8: ASL A
 #_01BCA9: TAX
+
 #_01BCAA: LDA.l .vectors,X
 #_01BCAE: STA.w $0600
+
 #_01BCB1: JMP ($0600)
 
 .vectors
-#_01BCB4: dw routine01BD10
-#_01BCB6: dw routine01BD13
+#_01BCB4: dw branch01BB64_bounce
+#_01BCB6: dw branch01BB64_Reset057A
 #_01BCB8: dw routine01BCCA
 #_01BCBA: dw routine01BCCF
 #_01BCBC: dw routine01BD1C
@@ -9125,24 +9374,32 @@ CombatMenu_Talk:
 #_01BCC2: dw routine01BD2E
 #_01BCC4: dw routine01BCD7
 #_01BCC6: dw routine01BD4A
-#_01BCC8: dw routine01BD10
+#_01BCC8: dw branch01BB64_bounce
+
+;===================================================================================================
 
 routine01BCCA:
 #_01BCCA: LDA.w #$C000
-#_01BCCD: BRA .branch01BCD2
+#_01BCCD: BRA branch01BCD2
 
 routine01BCCF:
 #_01BCCF: LDA.w #$8000
 
-.branch01BCD2
+;===================================================================================================
+
+branch01BCD2:
 #_01BCD2: STA.w $0528
-#_01BCD5: BRA routine01BD10
+#_01BCD5: BRA branch01BB64_bounce
+
+;===================================================================================================
 
 routine01BCD7:
 #_01BCD7: LDY.w $0564
+
 #_01BCDA: LDA.w $0512,Y
 #_01BCDD: INC A
 #_01BCDE: STA.w $0512,Y
+
 #_01BCE1: CMP.w $050E,Y
 #_01BCE4: BCC .branch01BCE9
 
@@ -9150,13 +9407,17 @@ routine01BCD7:
 
 .branch01BCE9
 #_01BCE9: LDY.w $0526
+
 #_01BCEC: LDA.w #$0001
 #_01BCEF: JSL routine01F537
-#_01BCF3: BRA .branch01BD0D
+#_01BCF3: BRA branch01BD0D
+
+;===================================================================================================
 
 routine01BCF5:
 #_01BCF5: LDX.w $0526
 #_01BCF8: STZ.w $1000,X
+
 #_01BCFB: LDX.w $0564
 #_01BCFE: DEC.w $0512,X
 #_01BD01: BEQ routine01BD2E
@@ -9165,25 +9426,37 @@ routine01BCF5:
 #_01BD06: STX.w $051A
 #_01BD09: JSL routine01E76D
 
-.branch01BD0D
+;===================================================================================================
+
+branch01BD0D:
 #_01BD0D: JSR routine01C1B9
 
-routine01BD10:
-#_01BD10: JMP .branch01BB64
+;===================================================================================================
 
-routine01BD13:
+branch01BB64_bounce:
+#_01BD10: JMP branch01BB64
+
+;===================================================================================================
+
+branch01BB64_Reset057A:
 #_01BD13: LDA.w #$FFFF
 #_01BD16: STA.w $057A
-#_01BD19: JMP .branch01BB64
+
+#_01BD19: JMP branch01BB64
+
+;===================================================================================================
 
 routine01BD1C:
 #_01BD1C: LDA.w $052A
 #_01BD1F: ORA.w #$2000
 #_01BD22: STA.w $052A
+
 #_01BD25: LDA.w #$FFFF
 #_01BD28: STA.w $0566
+
 #_01BD2B: PLP
 #_01BD2C: SEC
+
 #_01BD2D: RTS
 
 ;===================================================================================================
@@ -9254,23 +9527,32 @@ routine01BD4A:
 #_01BDA4: SEC
 #_01BDA5: RTS
 
+;===================================================================================================
+
 CombatMenu_Auto:
 #_01BDA6: JSR HandleBattleSong_fight
+
 #_01BDA9: LDA.w #$000E
 #_01BDAC: JSR DisplayBattleMessageProbably
 #_01BDAF: JSR routine01C311
+
 #_01BDB2: LDA.w $052A
 #_01BDB5: ORA.w #$C000
 #_01BDB8: STA.w $052A
+
 #_01BDBB: JSR routine01C1B9
 
-#branch01BDBE:
+;===================================================================================================
+
+branch01BDBE:
 #_01BDBE: JSR routine01C0D0
+
 #_01BDC1: LDA.w $052A
 #_01BDC4: AND.w #$0800
 #_01BDC7: BNE .branch01BDD6
 
 #_01BDC9: JSL HideTheMenu
+
 #_01BDCD: LDA.w $052A
 #_01BDD0: ORA.w #$0800
 #_01BDD3: STA.w $052A
@@ -9278,6 +9560,7 @@ CombatMenu_Auto:
 .branch01BDD6
 #_01BDD6: PLP
 #_01BDD7: CLC
+
 #_01BDD8: RTS
 
 ;===================================================================================================
@@ -9288,7 +9571,7 @@ CombatMenu_HandleFightMenu:
 #_01BDDC: STZ.w $0ED2
 
 .branch01BDDF
-#_01BDDF: LDA.w #VRAMaddr($78B0)
+#_01BDDF: LDA.w #$3C58 ; $78B0 VRAM
 #_01BDE2: LDY.w #$0004
 #_01BDE5: LDX.w #$1006
 #_01BDE8: JSL CacheCursorPositionAndReset
@@ -9672,7 +9955,7 @@ routine01C04D:
 #_01C06F: BIT.w #$8080
 #_01C072: BNE .branch01C09D
 
-#_01C074: LDA.w #!SFX_01
+#_01C074: LDA.w #$0001 ; SFX 01
 #_01C077: JSL Write_to_APU_transferrable
 #_01C07B: LDA.w $0F2B
 #_01C07E: AND.w #$0300
@@ -9694,13 +9977,13 @@ routine01C04D:
 #_01C09D: BIT.w #$0080
 #_01C0A0: BNE .branch01C0AB
 
-#_01C0A2: LDA.w #!SFX_03
+#_01C0A2: LDA.w #$0003 ; SFX 03
 #_01C0A5: JSL Write_to_APU_transferrable
 #_01C0A9: SEC
 #_01C0AA: RTS
 
 .branch01C0AB
-#_01C0AB: LDA.w #!SFX_02
+#_01C0AB: LDA.w #$0002 ; SFX 02
 #_01C0AE: JSL Write_to_APU_transferrable
 #_01C0B2: LDA.w $0564
 #_01C0B5: ASL A
@@ -10561,7 +10844,7 @@ data01C606:
 #_01C606: dw $FFF7,$FFED,$FFBE,$FF5B
 
 routine01C60E:
-#_01C60E: LDA.w #!SONG_38_DEMON_APPEARS
+#_01C60E: LDA.w #$0038 ; SONG 38
 #_01C611: JSL Write_to_APU_transferrable
 #_01C615: LDY.w #$0000
 
@@ -10705,104 +10988,123 @@ routine01C640:
 
 ;===================================================================================================
 
-routine01C702:
+GiveMoneyFromBattle:
+; Money += $051E
 #_01C702: LDA.w $051E
 #_01C705: STA.w $0620
+
 #_01C708: CLC
 #_01C709: ADC.w $0405
 #_01C70C: STA.w $0405
+
 #_01C70F: LDA.w $0407
 #_01C712: ADC.w #$0000
 #_01C715: STA.w $0407
+
+; cap money at 999999 (0x0F423F)
 #_01C718: LDA.w $0405
 #_01C71B: SEC
 #_01C71C: SBC.w #$423F
 #_01C71F: STA.w $0622
+
 #_01C722: LDA.w $0407
 #_01C725: SBC.w #$000F
 #_01C728: STA.w $0624
-#_01C72B: BCC .branch01C74C
+#_01C72B: BCC .no_clamp_needed
 
 #_01C72D: ORA.w $0622
-#_01C730: BEQ .branch01C74C
+#_01C730: BEQ .no_clamp_needed
 
 #_01C732: LDA.w #$423F
 #_01C735: STA.w $0405
+
 #_01C738: LDA.w #$000F
 #_01C73B: STA.w $0407
+
 #_01C73E: LDA.w $051E
 #_01C741: SEC
 #_01C742: SBC.w $0622
 #_01C745: STA.w $0622
-#_01C748: BEQ .branch01C768
+#_01C748: BEQ .just_leave
+#_01C74A: BNE .add_money
 
-#_01C74A: BNE .branch01C74F
-
-.branch01C74C
+.no_clamp_needed
 #_01C74C: LDA.w $0620
 
-.branch01C74F
+.add_money
 #_01C74F: STA.w $0A54
 #_01C752: STZ.w $0A56
+
 #_01C755: LDA.w $1004
 #_01C758: STA.w $0A3E
+
 #_01C75B: JSL routine009F56
 #_01C75F: JSR routine01CA14
+
 #_01C762: LDA.w #$0020
 #_01C765: JSR DisplayBattleMessageProbably
 
-.branch01C768
+.just_leave
 #_01C768: RTS
 
 ;===================================================================================================
 
-routine01C769:
+GiveMAGFromBattle:
 #_01C769: LDA.w $0520
 #_01C76C: STA.w $0620
+
 #_01C76F: CLC
 #_01C770: ADC.w $0409
 #_01C773: STA.w $0409
+
 #_01C776: LDA.w $040B
 #_01C779: ADC.w #$0000
 #_01C77C: STA.w $040B
+
+; cap mag at 99999 (0x01896F)
 #_01C77F: LDA.w $0409
 #_01C782: SEC
 #_01C783: SBC.w #$869F
 #_01C786: STA.w $0622
+
 #_01C789: LDA.w $040B
 #_01C78C: SBC.w #$0001
 #_01C78F: STA.w $0624
-#_01C792: BCC .branch01C7B3
+#_01C792: BCC .no_clamp_needed
 
 #_01C794: ORA.w $0622
-#_01C797: BEQ .branch01C7B3
+#_01C797: BEQ .no_clamp_needed
 
 #_01C799: LDA.w #$869F
 #_01C79C: STA.w $0409
+
 #_01C79F: LDA.w #$0001
 #_01C7A2: STA.w $040B
+
 #_01C7A5: LDA.w $0520
 #_01C7A8: SEC
 #_01C7A9: SBC.w $0622
 #_01C7AC: STA.w $0622
-#_01C7AF: BEQ .branch01C7CF
+#_01C7AF: BEQ .just_leave
+#_01C7B1: BNE .add_mag
 
-#_01C7B1: BNE .branch01C7B6
-
-.branch01C7B3
+.no_clamp_needed
 #_01C7B3: LDA.w $0620
 
-.branch01C7B6
+.add_mag
 #_01C7B6: STA.w $0A54
 #_01C7B9: STZ.w $0A56
+
 #_01C7BC: LDA.w $1004
 #_01C7BF: STA.w $0A3E
+
 #_01C7C2: JSL routine009FDE
 #_01C7C6: JSR routine01CA14
+
 #_01C7C9: LDA.w #$0021
 #_01C7CC: JSR DisplayBattleMessageProbably
 
-.branch01C7CF
+.just_leave
 #_01C7CF: RTS
 
 ;===================================================================================================
@@ -10920,69 +11222,79 @@ GiveMagStonesFromBattle:
 
 ;===================================================================================================
 
-routine01C883:
+AddEnemyDropFromBattleToInventory:
 #_01C883: STA.w $0A50
+
 #_01C886: LDY.w #$0000
 
-.branch01C889
+.check_next
 #_01C889: LDA.w $0780,Y
 #_01C88C: TAX
+
 #_01C88D: AND.w #$FF00
-#_01C890: BEQ .branch01C8B0
+#_01C890: BEQ .to_next_slot
 
 #_01C892: TXA
 #_01C893: AND.w #$00FF
 #_01C896: CMP.w $0A50
-#_01C899: BNE .branch01C8B0
+#_01C899: BNE .to_next_slot
 
 #_01C89B: LDA.w $0780,Y
 #_01C89E: XBA
 
 #_01C89F: SEP #$20
 #_01C8A1: CMP.b #$09
-#_01C8A3: BCS .branch01C8AE
+#_01C8A3: BCS .we_have_too_many
 
 #_01C8A5: INC A
 
 #_01C8A6: REP #$20
 #_01C8A8: XBA
 #_01C8A9: STA.w $0780,Y
-#_01C8AC: BRA .branch01C8D6
 
-.branch01C8AE
+#_01C8AC: BRA .add_item
+
+.we_have_too_many
 #_01C8AE: REP #$20
 
-.branch01C8B0
+.to_next_slot
 #_01C8B0: INY
 #_01C8B1: INY
 #_01C8B2: CPY.w #$003C
-#_01C8B5: BCC .branch01C889
+#_01C8B5: BCC .check_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_01C8B7: LDY.w #$0000
 
-.branch01C8BA
+.look_for_free_slot
 #_01C8BA: LDA.w $0780,Y
 #_01C8BD: TAX
+
 #_01C8BE: AND.w #$FF00
-#_01C8C1: BNE .branch01C8CE
+#_01C8C1: BNE .occupied
 
 #_01C8C3: LDA.w $0A50
 #_01C8C6: ORA.w #$0100
 #_01C8C9: STA.w $0780,Y
-#_01C8CC: BRA .branch01C8D6
+#_01C8CC: BRA .add_item
 
-.branch01C8CE
+.occupied
 #_01C8CE: INY
 #_01C8CF: INY
 #_01C8D0: CPY.w #$003C
-#_01C8D3: BCC .branch01C8BA
+#_01C8D3: BCC .look_for_free_slot
 
 #_01C8D5: RTS
 
-.branch01C8D6
+;---------------------------------------------------------------------------------------------------
+
+.add_item
 #_01C8D6: JSR routine01CA14
+
 #_01C8D9: LDA.w #$0024
 #_01C8DC: JSR DisplayBattleMessageProbably
+
 #_01C8DF: CLC
 #_01C8E0: RTS
 
@@ -11076,10 +11388,10 @@ routine01C8E1:
 #_01C979: STA.w $102E,X
 #_01C97C: LDA.w $1034,X
 #_01C97F: STA.w $1032,X
-#_01C982: LDA.w #!SONG_3D_LEVEL_UP
+#_01C982: LDA.w #$003D ; SONG 3D
 #_01C985: JSL Write_to_APU_transferrable
 #_01C989: JSL routine0183E5
-#_01C98D: LDA.w #!SONG_38_DEMON_APPEARS
+#_01C98D: LDA.w #$0038 ; SONG 38
 #_01C990: JSL Write_to_APU_transferrable
 
 #_01C994: SEP #$20
@@ -11193,13 +11505,13 @@ HandleBattleSong:
 #_01CA47: BNE .nochange
 
 .preparesong
-#_01CA49: LDA.w #!SONG_3C_BATTLE
+#_01CA49: LDA.w #$003C ; SONG 3C
 #_01CA4C: LDX.w $1604
 #_01CA4F: CPX.w #$0100
 #_01CA52: BCC .normalbattle
 
 #_01CA54: DEC.w $0EFE
-#_01CA57: LDA.w #!SONG_51_BOSS_BATTLE
+#_01CA57: LDA.w #$0051 ; SONG 51
 
 .normalbattle
 #_01CA5A: JSL Write_to_APU_transferrable
@@ -12486,7 +12798,7 @@ routine01D220:
 #_01D284: LDY.w $1026,X
 #_01D287: JSR routine01DD72
 #_01D28A: LDX.w #$0000
-#_01D28D: JSL Divide_32bit_by_16bit_XA_by_Y
+#_01D28D: JSL DivisionBig_XA_by_Y
 #_01D291: JSL RoundQuotient
 #_01D295: DEC A
 #_01D296: BPL .branch01D29B
@@ -12575,9 +12887,9 @@ routine01D303:
 #_01D321: CPX.w #$0600
 #_01D324: BCC .branch01D361
 
-#_01D326: LDA.w #!SFX_2C
+#_01D326: LDA.w #$002C ; SFX 2C
 #_01D329: JSL Write_to_APU_transferrable
-#_01D32D: JSR routine01D4D7
+#_01D32D: JSR DistributeExperiencePointsToTeam
 #_01D330: INC.w $054C
 #_01D333: LDX.w $0564
 #_01D336: DEC.w $0512,X
@@ -12608,7 +12920,7 @@ routine01D303:
 #_01D360: RTS
 
 .branch01D361
-#_01D361: LDA.w #!SFX_2F
+#_01D361: LDA.w #$002F ; SFX 2F
 #_01D364: JSL Write_to_APU_transferrable
 #_01D368: DEC.w $0516
 #_01D36B: LDA.w #$001B
@@ -12714,12 +13026,12 @@ routine01D3BE:
 ;===================================================================================================
 
 routine01D408:
-#_01D408: LDA.w #!SFX_2D
+#_01D408: LDA.w #$002D ; SFX 2D
 #_01D40B: LDX.w $051A
 #_01D40E: CPX.w #$0600
 #_01D411: BCC .branch01D416
 
-#_01D413: LDA.w #!SFX_2B
+#_01D413: LDA.w #$002B ; SFX 2B
 
 .branch01D416
 #_01D416: JSL Write_to_APU_transferrable
@@ -12853,24 +13165,27 @@ routine01D408:
 
 ;===================================================================================================
 
-routine01D4D7:
+DistributeExperiencePointsToTeam:
 #_01D4D7: LDY.w #$0000
 
-.branch01D4DA
+.next_party_member
 #_01D4DA: STY.w $0720
 
 #_01D4DD: LDX.w $0700,Y
-#_01D4E0: BMI .branch01D522
+#_01D4E0: BMI .abort_experience_distribution
 
 #_01D4E2: CPX.w #$0180
-#_01D4E5: BCS .branch01D518
+#_01D4E5: BCS .demon_character
 
 #_01D4E7: STX.w $0715
 #_01D4EA: STX.w CPUDIVIDENDL
 
+; get slot/size of data
 #_01D4ED: SEP #$20
+
 #_01D4EF: LDA.b #$60
 #_01D4F1: STA.w CPUDIVISOR
+
 #_01D4F4: NOP
 #_01D4F5: NOP
 #_01D4F6: NOP
@@ -12881,46 +13196,58 @@ routine01D4D7:
 #_01D4FB: NOP
 
 #_01D4FC: REP #$20
+
 #_01D4FE: LDA.w CPUQUOTIENTL
 #_01D501: ASL A
 #_01D502: STA.w $0500
-#_01D505: JSL routine01B6FA
+
+#_01D505: JSL GiveCharacterExperienceFromBattle
+
 #_01D509: LDX.w $0500
 #_01D50C: CLC
 #_01D50D: ADC.w $05D6,X
-#_01D510: BCC .branch01D515
+#_01D510: BCC .no_experience_overflow
 
+; cap at 65535 experience
 #_01D512: LDA.w #$FFFF
 
-.branch01D515
+.no_experience_overflow
 #_01D515: STA.w $05D6,X
 
-.branch01D518
+.demon_character
 #_01D518: LDY.w $0720
 #_01D51B: INY
 #_01D51C: INY
 #_01D51D: CPY.w #$000C
-#_01D520: BCC .branch01D4DA
+#_01D520: BCC .next_party_member
 
-.branch01D522
-#_01D522: JSL routine01B762
+;---------------------------------------------------------------------------------------------------
+
+.abort_experience_distribution
+#_01D522: JSL GainMoneyFromKill
+
 #_01D526: CLC
 #_01D527: ADC.w $051E
-#_01D52A: BCC .branch01D52F
+#_01D52A: BCC .no_money_overflow
 
 #_01D52C: LDA.w #$FFFF
 
-.branch01D52F
+.no_money_overflow
 #_01D52F: STA.w $051E
+
+;---------------------------------------------------------------------------------------------------
+
 #_01D532: JSL routine01B77B
+
 #_01D536: CLC
 #_01D537: ADC.w $0520
-#_01D53A: BCC .branch01D53F
+#_01D53A: BCC .no_mag_overflow
 
 #_01D53C: LDA.w #$FFFF
 
-.branch01D53F
+.no_mag_overflow
 #_01D53F: STA.w $0520
+
 #_01D542: RTS
 
 ;===================================================================================================
@@ -14154,65 +14481,78 @@ routine01DFB8:
 
 ;===================================================================================================
 
-routine01E044:
+ChooseNumberOfEnemyCombatants:
 #_01E044: REP #$30
+
 #_01E046: STZ.w $050E
 #_01E049: STZ.w $0510
+
 #_01E04C: LDX.w #$0000
 
-.branch01E04F
+.next_demon
 #_01E04F: LDY.w #$000C
 #_01E052: LDA.w $050A,X
 #_01E055: JSR GetDemonStats
+
 #_01E058: LSR A
 #_01E059: LSR A
 #_01E05A: LSR A
 #_01E05B: LSR A
+
 #_01E05C: AND.w #$000F
 #_01E05F: CMP.w #$0008
-#_01E062: BCS .branch01E08A
+#_01E062: BCS .negative
 
+.positive
 #_01E064: STA.w $0512
+
+; add random number [-3,+3]
 #_01E067: JSL GetRandomInt
 #_01E06B: AND.w #$0007
 #_01E06E: ASL A
 #_01E06F: TAY
+
 #_01E070: PHB
 #_01E071: PHK
 #_01E072: PLB
-#_01E073: LDA.w data01E19B,Y
+
+#_01E073: LDA.w EncounterSizeAddends,Y
+
 #_01E076: PLB
 #_01E077: CLC
 #_01E078: ADC.w $0512
-#_01E07B: BEQ .branch01E07F
+#_01E07B: BEQ .zero_enemies
 
-#_01E07D: BPL .branch01E082
+#_01E07D: BPL .positive_enemies
 
-.branch01E07F
+.zero_enemies
 #_01E07F: LDA.w #$0001
 
-.branch01E082
+.positive_enemies
 #_01E082: CMP.w #$0009
-#_01E085: BCC .branch01E08E
+#_01E085: BCC .not_too_many_enemies
 
 #_01E087: LDA.w #$000F
 
-.branch01E08A
+.negative
 #_01E08A: SEC
 #_01E08B: SBC.w #$0007
 
-.branch01E08E
+.not_too_many_enemies
 #_01E08E: STA.w $050E,X
+
 #_01E091: BIT.w $0524
-#_01E094: BPL .branch01E09D
+#_01E094: BPL .done
 
 #_01E096: INX
 #_01E097: INX
 #_01E098: CPX.w #$0004
-#_01E09B: BCC .branch01E04F
+#_01E09B: BCC .next_demon
 
-.branch01E09D
+.done
 #_01E09D: RTS
+
+;===================================================================================================
 
 LoadDemonStats:
 #_01E09E: PHP
@@ -14247,18 +14587,25 @@ LoadDemonStats:
 #_01E0D4: LDY.w $0502
 #_01E0D7: AND.w #$00FF
 #_01E0DA: STA.w $100A,Y
+
 #_01E0DD: LDY.w #$0001
 #_01E0E0: LDA.w $050A,X
 #_01E0E3: JSR GetDemonStats
+
 #_01E0E6: LDY.w $0502
 #_01E0E9: STA.w $102E,Y
 #_01E0EC: STA.w $1030,Y
+
 #_01E0EF: LDY.w #$0003
 #_01E0F2: LDA.w $050A,X
 #_01E0F5: JSR GetDemonStats
+
 #_01E0F8: LDY.w $0502
 #_01E0FB: STA.w $1032,Y
 #_01E0FE: STA.w $1034,Y
+
+;---------------------------------------------------------------------------------------------------
+
 #_01E101: LDA.w #$0000
 
 .loop_a
@@ -14266,17 +14613,22 @@ LoadDemonStats:
 #_01E105: CLC
 #_01E106: ADC.w #$0005
 #_01E109: TAY
+
 #_01E10A: LDA.w $050A,X
 #_01E10D: JSR GetDemonStats
 #_01E110: AND.w #$00FF
 #_01E113: STA.w $00B4
+
 #_01E116: PLA
 #_01E117: PHA
+
 #_01E118: ASL A
 #_01E119: ADC.w $0502
 #_01E11C: TAY
+
 #_01E11D: LDA.w $00B4
 #_01E120: STA.w $1010,Y
+
 #_01E123: PLA
 #_01E124: INC A
 #_01E125: CMP.w #$0007
@@ -14293,6 +14645,7 @@ LoadDemonStats:
 #_01E136: JSR GetDemonStats
 #_01E139: AND.w #$00FF
 #_01E13C: STA.w $00B4
+
 #_01E13F: PLA
 #_01E140: PHA
 #_01E141: ASL A
@@ -14345,7 +14698,9 @@ LoadDemonStats:
 #_01E199: PLP
 #_01E19A: RTL
 
-data01E19B:
+;===================================================================================================
+
+EncounterSizeAddends:
 #_01E19B: dw -3, -2, -1, 0
 #_01E1A3: dw 0, 1, 2, 3
 
@@ -14582,7 +14937,7 @@ LoadDemonEverything:
 
 #_01E33E: SEP #$20
 #_01E340: PHB
-#_01E341: LDA.b #$07
+#_01E341: LDA.b #DemonStats>>16
 #_01E343: PHA
 #_01E344: PLB
 
@@ -14852,7 +15207,7 @@ routine01E4EF:
 
 #_01E50E: SEP #$30
 #_01E510: PHB
-#_01E511: LDA.b #$07
+#_01E511: LDA.b #DemonStats>>16
 #_01E513: PHA
 #_01E514: PLB
 #_01E515: LDA.w $0564
@@ -15504,7 +15859,7 @@ routine01E95F:
 #_01E99E: AND.w #$0040
 #_01E9A1: BNE .branch01E9AE
 
-#_01E9A3: LDA.w #!SFX_21
+#_01E9A3: LDA.w #$0021 ; SFX 21
 #_01E9A6: JSL Write_to_APU_transferrable
 #_01E9AA: JSL routine01EA3C
 
@@ -15774,7 +16129,7 @@ routine01EAC4:
 
 #_01EB2A: LDA.w PPUPRODUCTL
 #_01EB2D: LDX.w #$0000
-#_01EB30: JSL Divide_32bit_by_16bit_XA_by_Y
+#_01EB30: JSL DivisionBig_XA_by_Y
 #_01EB34: JSL RoundQuotient
 #_01EB38: DEC A
 #_01EB39: BPL .not_negative
@@ -15840,6 +16195,8 @@ routine01EAC4:
 #_01EB8D: LDA.w #$FFFF
 #_01EB90: STA.w $0562
 #_01EB93: RTS
+
+;===================================================================================================
 
 ; TODO seems math related
 routine01EB94:
@@ -17088,9 +17445,9 @@ routine01F38D:
 #_01F3BD: ADC.w $0A54
 #_01F3C0: TXY
 #_01F3C1: TAX
-#_01F3C2: LDA.l UNREACH_078C00,X
+#_01F3C2: LDA.l UNREACH_078C00+0,X
 #_01F3C6: STA.w $100C,Y
-#_01F3C9: LDA.l UNREACH_078C02,X
+#_01F3C9: LDA.l UNREACH_078C00+2,X
 #_01F3CD: AND.w #$00FF
 #_01F3D0: STA.w $100E,Y
 #_01F3D3: LDX.w #$0000
@@ -17412,14 +17769,19 @@ routine01F5AA:
 ;===================================================================================================
 GetSkillProperty:
 #_01F5B8: PHP
+
 #_01F5B9: SEP #$20
+
 #_01F5BB: STA.w CPUMULTA
 #_01F5BE: LDA.b #$06
 #_01F5C0: STA.w CPUMULTB
+
 #_01F5C3: PHB
-#_01F5C4: LDA.b #$07
+
+#_01F5C4: LDA.b #SkillData>>16
 #_01F5C6: PHA
 #_01F5C7: PLB
+
 #_01F5C8: NOP
 #_01F5C9: NOP
 #_01F5CA: NOP
@@ -17430,12 +17792,16 @@ GetSkillProperty:
 #_01F5CF: NOP
 
 #_01F5D0: REP #$30
+
 #_01F5D2: TYA
 #_01F5D3: CLC
 #_01F5D4: ADC.w CPUPRODUCTL
 #_01F5D7: TAY
+
 #_01F5D8: LDA.w SkillData,Y
+
 #_01F5DB: PLB
+
 #_01F5DC: PLP
 #_01F5DD: RTL
 
@@ -18622,27 +18988,35 @@ UseIndulgenceItem:
 
 routine01FCFC:
 #_01FCFC: REP #$30
+
 #_01FCFE: XBA
 #_01FCFF: AND.w #$0007
 #_01FD02: ASL A
 #_01FD03: TAX
-#_01FD04: LDA.l data01FD1F,X
+
+#_01FD04: LDA.l .vectors,X
 #_01FD08: STA.w $0600
+
 #_01FD0B: JSL ClearEntityListBuffer
+
 #_01FD0F: STZ.w $0688
 #_01FD12: STZ.w $068A
 
 #_01FD15: SEP #$20
+
 #_01FD17: STZ.w $06E1
 
 #_01FD1A: REP #$20
+
 #_01FD1C: JMP ($0600)
 
-data01FD1F:
+.vectors
 #_01FD1F: dw routine01FD27
 #_01FD21: dw routine01FD80
 #_01FD23: dw routine01FDD8
 #_01FD25: dw routine01FE4D
+
+;===================================================================================================
 
 routine01FD27:
 #_01FD27: LDY.w #$0000

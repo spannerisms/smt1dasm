@@ -20,7 +20,7 @@ Message_03_Pointers:
 Message_03_02_00:
 #_0B8016: db $D2, $9B, $0B ; test progress bit 9B for message 0B
 #_0B8019: db $D2, $9D, $0B ; test progress bit 9D for message 0B
-#_0B801C: db $FE, $04, $01, $0B ; ext command 04: message 01 if 11C >= 112; 0B if >= 144
+#_0B801C: db $FE, $04, $01, $0B ; ext command 04: message 01 if alignment >= 112; 0B if >= 144
 #_0B8020: db $D3, $0B ; go to message 0B
 
 ;===================================================================================================
@@ -487,7 +487,7 @@ Message_03_02_13:
 Message_03_02_14:
 #_0B8491: db $D2, $9C, $20 ; test progress bit 9C for message 20
 #_0B8494: db $D2, $9D, $20 ; test progress bit 9D for message 20
-#_0B8497: db $FE, $04, $20, $15 ; ext command 04: message 20 if 11C >= 112; 15 if >= 144
+#_0B8497: db $FE, $04, $20, $15 ; ext command 04: message 20 if alignment >= 112; 15 if >= 144
 #_0B849B: db $D3, $20 ; go to message 20
 
 ;===================================================================================================
@@ -1106,7 +1106,7 @@ Message_03_02_2F:
 #_0B8AC7: db $D0, $A0 ; set progress bit A0
 #_0B8AC9: db $D2, $A3, $33 ; test progress bit A3 for message 33
 #_0B8ACC: db $D2, $A3, $33 ; test progress bit A3 for message 33
-#_0B8ACF: db $FE, $04, $32, $30 ; ext command 04: message 32 if 11C >= 112; 30 if >= 144
+#_0B8ACF: db $FE, $04, $32, $30 ; ext command 04: message 32 if alignment >= 112; 30 if >= 144
 
 ;===================================================================================================
 
@@ -1363,7 +1363,7 @@ Message_03_02_3C:
 #_0B8D2A: db $F9 ; new line
 #_0B8D2B: db $D0, $A4 ; set progress bit A4
 #_0B8D2D: db $D2, $A7, $40 ; test progress bit A7 for message 40
-#_0B8D30: db $FE, $04, $3D, $3F ; ext command 04: message 3D if 11C >= 112; 3F if >= 144
+#_0B8D30: db $FE, $04, $3D, $3F ; ext command 04: message 3D if alignment >= 112; 3F if >= 144
 
 ;===================================================================================================
 
@@ -1507,7 +1507,7 @@ Message_03_02_43:
 ; >«なかに はいりますか?»
 Message_03_02_44:
 #_0B8E57: db $97 ; >
-#_0B8E58: db $FE, $04, $46, $46 ; ext command 04: message 46 if 11C >= 112; 46 if >= 144
+#_0B8E58: db $FE, $04, $46, $46 ; ext command 04: message 46 if alignment >= 112; 46 if >= 144
 #_0B8E5C: db $F2, $68 ; prewritten text 68
 #_0B8E5E: db $F8, $45 ; YES/NO - go to message 45 if YES
 #_0B8E60: db $FF ; end of message
@@ -1717,7 +1717,7 @@ Message_03_02_59:
 #_0B8F6C: db $FE, $3A, $02, $03 ; ext command 3A: 02 03 TODO
 #_0B8F70: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
 #_0B8F73: db $D4, $03 ; set text box size to 3
-#_0B8F75: db $FE, $04, $5C, $5D ; ext command 04: message 5C if 11C >= 112; 5D if >= 144
+#_0B8F75: db $FE, $04, $5C, $5D ; ext command 04: message 5C if alignment >= 112; 5D if >= 144
 #_0B8F79: db $D2, $AB, $5A ; test progress bit AB for message 5A
 #_0B8F7C: db $D6, $00, $59, $70, $38 ; place sprite 59 in slot 00 at XY:{70,38}
 #_0B8F81: db $4F, $27, $A2, $52, $9A ; ろうじん:
@@ -1974,7 +1974,7 @@ Message_03_02_60:
 #_0B922D: db $F5 ; write demon name from $050A
 #_0B922E: db $9A ; :
 #_0B922F: db $F9 ; new line
-#_0B9230: db $FE, $04, $61, $64 ; ext command 04: message 61 if 11C >= 112; 64 if >= 144
+#_0B9230: db $FE, $04, $61, $64 ; ext command 04: message 61 if alignment >= 112; 64 if >= 144
 #_0B9234: db $D3, $64 ; go to message 64
 
 ;===================================================================================================
@@ -2156,7 +2156,7 @@ Message_03_02_6B:
 #_0B9385: db $F5 ; write demon name from $050A
 #_0B9386: db $9A ; :
 #_0B9387: db $F9 ; new line
-#_0B9388: db $FE, $04, $6C, $6F ; ext command 04: message 6C if 11C >= 112; 6F if >= 144
+#_0B9388: db $FE, $04, $6C, $6F ; ext command 04: message 6C if alignment >= 112; 6F if >= 144
 #_0B938C: db $D3, $6F ; go to message 6F
 
 ;===================================================================================================
@@ -2312,7 +2312,7 @@ Message_03_02_76:
 #_0B94A1: db $F5 ; write demon name from $050A
 #_0B94A2: db $9A ; :
 #_0B94A3: db $F9 ; new line
-#_0B94A4: db $FE, $04, $77, $7A ; ext command 04: message 77 if 11C >= 112; 7A if >= 144
+#_0B94A4: db $FE, $04, $77, $7A ; ext command 04: message 77 if alignment >= 112; 7A if >= 144
 #_0B94A8: db $D3, $7A ; go to message 7A
 
 ;===================================================================================================
@@ -2488,7 +2488,7 @@ Message_03_02_7F:
 #_0B95DB: db $D2, $86, $8B ; test progress bit 86 for message 8B
 #_0B95DE: db $D2, $B2, $8B ; test progress bit B2 for message 8B
 #_0B95E1: db $D2, $D4, $8A ; test progress bit D4 for message 8A
-#_0B95E4: db $FE, $04, $8A, $80 ; ext command 04: message 8A if 11C >= 112; 80 if >= 144
+#_0B95E4: db $FE, $04, $8A, $80 ; ext command 04: message 8A if alignment >= 112; 80 if >= 144
 #_0B95E8: db $DE, $01, $00, $1B, $01 ; load 1x demon 011B
 #_0B95ED: db $E4, $00 ; load demon $00
 #_0B95EF: db $F5 ; write demon name from $050A
@@ -3062,7 +3062,7 @@ Message_03_02_95:
 #_0B9BC0: db $F5 ; write demon name from $050A
 #_0B9BC1: db $9A ; :
 #_0B9BC2: db $F9 ; new line
-#_0B9BC3: db $FE, $04, $9A, $96 ; ext command 04: message 9A if 11C >= 112; 96 if >= 144
+#_0B9BC3: db $FE, $04, $9A, $96 ; ext command 04: message 9A if alignment >= 112; 96 if >= 144
 #_0B9BC7: db $D3, $9A ; go to message 9A
 
 ;===================================================================================================
@@ -3285,7 +3285,7 @@ Message_03_02_A2:
 #_0B9D83: db $F5 ; write demon name from $050A
 #_0B9D84: db $9A ; :
 #_0B9D85: db $F9 ; new line
-#_0B9D86: db $FE, $04, $A7, $A3 ; ext command 04: message A7 if 11C >= 112; A3 if >= 144
+#_0B9D86: db $FE, $04, $A7, $A3 ; ext command 04: message A7 if alignment >= 112; A3 if >= 144
 #_0B9D8A: db $D3, $A7 ; go to message A7
 
 ;===================================================================================================
@@ -3494,7 +3494,7 @@ Message_03_02_AF:
 #_0B9F0F: db $9A ; :
 #_0B9F10: db $F9 ; new line
 #_0B9F11: db $D2, $BD, $B7 ; test progress bit BD for message B7
-#_0B9F14: db $FE, $04, $B4, $B0 ; ext command 04: message B4 if 11C >= 112; B0 if >= 144
+#_0B9F14: db $FE, $04, $B4, $B0 ; ext command 04: message B4 if alignment >= 112; B0 if >= 144
 #_0B9F18: db $D3, $B4 ; go to message B4
 
 ;===================================================================================================
@@ -3655,7 +3655,7 @@ Message_03_02_BB:
 #_0BA03C: db $3D, $A6, $95 ; のだ?
 #_0BA03F: db $FC ; wait for key and new line
 #_0BA040: db $FA ; clear message box
-#_0BA041: db $FE, $04, $BC, $BD ; ext command 04: message BC if 11C >= 112; BD if >= 144
+#_0BA041: db $FE, $04, $BC, $BD ; ext command 04: message BC if alignment >= 112; BD if >= 144
 
 ;===================================================================================================
 
@@ -3741,7 +3741,7 @@ Message_03_02_BF:
 Message_03_02_C0:
 #_0BA121: db $D5, $46 ; send 46 to APU
 #_0BA123: db $D2, $0C, $D6 ; test progress bit 0C for message D6
-#_0BA126: db $FE, $04, $C1, $C2 ; ext command 04: message C1 if 11C >= 112; C2 if >= 144
+#_0BA126: db $FE, $04, $C1, $C2 ; ext command 04: message C1 if alignment >= 112; C2 if >= 144
 #_0BA12A: db $D3, $C2 ; go to message C2
 
 ;===================================================================================================
@@ -3767,7 +3767,7 @@ Message_03_02_C3:
 #_0BA143: db $9A ; :
 #_0BA144: db $F9 ; new line
 #_0BA145: db $D2, $67, $D8 ; test progress bit 67 for message D8
-#_0BA148: db $FE, $04, $C4, $C8 ; ext command 04: message C4 if 11C >= 112; C8 if >= 144
+#_0BA148: db $FE, $04, $C4, $C8 ; ext command 04: message C4 if alignment >= 112; C8 if >= 144
 
 ;===================================================================================================
 
@@ -4304,7 +4304,7 @@ Message_03_02_DD:
 #_0BA601: db $F5 ; write demon name from $050A
 #_0BA602: db $9A ; :
 #_0BA603: db $F9 ; new line
-#_0BA604: db $FE, $04, $DE, $E3 ; ext command 04: message DE if 11C >= 112; E3 if >= 144
+#_0BA604: db $FE, $04, $DE, $E3 ; ext command 04: message DE if alignment >= 112; E3 if >= 144
 
 ;===================================================================================================
 
@@ -4688,7 +4688,7 @@ Message_03_02_EB:
 #_0BA966: db $D5, $45 ; send 45 to APU
 #_0BA968: db $E1, $F1 ; set $0A50 to item F1
 #_0BA96A: db $D2, $B6, $F0 ; test progress bit B6 for message F0
-#_0BA96D: db $FE, $04, $F1, $EC ; ext command 04: message F1 if 11C >= 112; EC if >= 144
+#_0BA96D: db $FE, $04, $F1, $EC ; ext command 04: message F1 if alignment >= 112; EC if >= 144
 
 ;===================================================================================================
 
@@ -4740,7 +4740,7 @@ Message_03_02_EC:
 #_0BA9EE: db $27, $32, $26, $30, $56, $CF, $46, $94 ; うせいしゅ⎵め!
 #_0BA9F6: db $FC ; wait for key and new line
 #_0BA9F7: db $FA ; clear message box
-#_0BA9F8: db $FE, $04, $F2, $ED ; ext command 04: message F2 if 11C >= 112; ED if >= 144
+#_0BA9F8: db $FE, $04, $F2, $ED ; ext command 04: message F2 if alignment >= 112; ED if >= 144
 #_0BA9FC: db $33, $4E, $38, $47, $CF, $43, $4A, $58 ; それとも⎵まよっ
 #_0BAA04: db $34, $25, $9F, $2C, $3A, $CF, $3F, $4A ; たあげくに⎵ひよ
 #_0BAA0C: db $4C, $44, $CF, $2B, $46, $2E, $45 ; りみ⎵きめこむ
@@ -5665,7 +5665,7 @@ Message_03_04_04:
 #_0BB20F: db $9A ; :
 #_0BB210: db $F9 ; new line
 #_0BB211: db $D2, $88, $06 ; test progress bit 88 for message 06
-#_0BB214: db $FE, $04, $05, $09 ; ext command 04: message 05 if 11C >= 112; 09 if >= 144
+#_0BB214: db $FE, $04, $05, $09 ; ext command 04: message 05 if alignment >= 112; 09 if >= 144
 #_0BB218: db $46, $3D, $43, $28, $3A, $CF, $72, $8A ; めのまえに⎵ニン
 #_0BB220: db $B8, $8A, $9C, $CF, $25, $4B, $50, $4E ; ゲンが⎵あらわれ
 #_0BB228: db $4D, $3D, $47 ; るのも
@@ -5896,7 +5896,7 @@ Message_03_04_15:
 #_0BB3FB: db $9A ; :
 #_0BB3FC: db $F9 ; new line
 #_0BB3FD: db $D2, $89, $18 ; test progress bit 89 for message 18
-#_0BB400: db $FE, $04, $1B, $17 ; ext command 04: message 1B if 11C >= 112; 17 if >= 144
+#_0BB400: db $FE, $04, $1B, $17 ; ext command 04: message 1B if alignment >= 112; 17 if >= 144
 #_0BB404: db $72, $8A, $B8, $8A, $2A ; ニンゲンか
 #_0BB409: db $F2, $0B ; prewritten text 0B
 #_0BB40B: db $D2, $C9, $16 ; test progress bit C9 for message 16
@@ -6162,7 +6162,7 @@ Message_03_04_28:
 #_0BB618: db $52, $3D, $CF, $3F, $4A, $58, $2E, $CF ; んの⎵ひよっこ⎵
 #_0BB620: db $A9, $3E, $39, $26, $2A ; ではないか
 #_0BB625: db $F9 ; new line
-#_0BB626: db $FE, $04, $29, $2C ; ext command 04: message 29 if 11C >= 112; 2C if >= 144
+#_0BB626: db $FE, $04, $29, $2C ; ext command 04: message 29 if alignment >= 112; 2C if >= 144
 
 ;===================================================================================================
 
@@ -6236,7 +6236,7 @@ Message_03_04_2D:
 #_0BB6A9: db $F5 ; write demon name from $050A
 #_0BB6AA: db $9A ; :
 #_0BB6AB: db $F9 ; new line
-#_0BB6AC: db $FE, $04, $29, $2E ; ext command 04: message 29 if 11C >= 112; 2E if >= 144
+#_0BB6AC: db $FE, $04, $29, $2E ; ext command 04: message 29 if alignment >= 112; 2E if >= 144
 #_0BB6B0: db $D3, $30 ; go to message 30
 
 ;===================================================================================================
@@ -6383,7 +6383,7 @@ Message_03_04_36:
 #_0BB7A4: db $F9 ; new line
 #_0BB7A5: db $D2, $D5, $3E ; test progress bit D5 for message 3E
 #_0BB7A8: db $D2, $D6, $39 ; test progress bit D6 for message 39
-#_0BB7AB: db $FE, $04, $37, $38 ; ext command 04: message 37 if 11C >= 112; 38 if >= 144
+#_0BB7AB: db $FE, $04, $37, $38 ; ext command 04: message 37 if alignment >= 112; 38 if >= 144
 #_0BB7AF: db $D3, $38 ; go to message 38
 
 ;===================================================================================================
@@ -6834,7 +6834,7 @@ Message_03_05_03:
 #_0BBAA6: db $FE, $07, $19 ; ext command 07: draw buffered text then wait 24 frames
 #_0BBAA9: db $E4, $00 ; load demon $00
 #_0BBAAB: db $FA ; clear message box
-#_0BBAAC: db $FE, $05, $F0, $FF, $07 ; ext command 05: go to message 07 if 11C >= -16
+#_0BBAAC: db $FE, $05, $F0, $FF, $07 ; ext command 05: go to message 07 if alignment >= -16
 #_0BBAB1: db $36, $26, $3A, $CF, $25, $4B, $50, $4E ; ついに⎵あらわれ
 #_0BBAB9: db $34, $2A ; たか
 #_0BBABB: db $F9 ; new line
@@ -6912,7 +6912,7 @@ Message_03_05_08:
 ;===================================================================================================
 
 Message_03_05_09:
-#_0BBB37: db $FE, $04, $0A, $0B ; ext command 04: message 0A if 11C >= 112; 0B if >= 144
+#_0BBB37: db $FE, $04, $0A, $0B ; ext command 04: message 0A if alignment >= 112; 0B if >= 144
 
 ;===================================================================================================
 
@@ -7053,7 +7053,7 @@ Message_03_05_12:
 #_0BBC57: db $FE, $07, $19 ; ext command 07: draw buffered text then wait 24 frames
 #_0BBC5A: db $E4, $00 ; load demon $00
 #_0BBC5C: db $FA ; clear message box
-#_0BBC5D: db $FE, $05, $F0, $FF, $16 ; ext command 05: go to message 16 if 11C >= -16
+#_0BBC5D: db $FE, $05, $F0, $FF, $16 ; ext command 05: go to message 16 if alignment >= -16
 #_0BBC62: db $29, $3B, $30, $3D, $CF, $4A, $27, $39 ; おぬしの⎵ような
 #_0BBC6A: db $CF, $72, $8A, $B8, $8A, $9C, $CF, $25 ; ⎵ニンゲンが⎵あ
 #_0BBC72: db $4B, $50, $4E, $34, $38, $2B ; らわれたとき
@@ -7131,7 +7131,7 @@ Message_03_05_17:
 ;===================================================================================================
 
 Message_03_05_18:
-#_0BBCF3: db $FE, $04, $19, $1A ; ext command 04: message 19 if 11C >= 112; 1A if >= 144
+#_0BBCF3: db $FE, $04, $19, $1A ; ext command 04: message 19 if alignment >= 112; 1A if >= 144
 
 ;===================================================================================================
 
@@ -7280,7 +7280,7 @@ Message_03_05_21:
 #_0BBE14: db $FE, $07, $19 ; ext command 07: draw buffered text then wait 24 frames
 #_0BBE17: db $DE, $00, $00, $17, $01 ; load 1x demon 0017
 #_0BBE1C: db $E4, $00 ; load demon $00
-#_0BBE1E: db $FE, $05, $F0, $FF, $25 ; ext command 05: go to message 25 if 11C >= -16
+#_0BBE1E: db $FE, $05, $F0, $FF, $25 ; ext command 05: go to message 25 if alignment >= -16
 #_0BBE23: db $FA ; clear message box
 #_0BBE24: db $A6, $9C, $CF, $30, $56, $A0, $30, $52 ; だが⎵しゅごしん
 #_0BBE2C: db $38, $CF, $45, $31, $52, $A6, $CF, $35 ; と⎵むすんだ⎵ち
@@ -7368,7 +7368,7 @@ Message_03_05_26:
 ;===================================================================================================
 
 Message_03_05_27:
-#_0BBECB: db $FE, $04, $28, $29 ; ext command 04: message 28 if 11C >= 112; 29 if >= 144
+#_0BBECB: db $FE, $04, $28, $29 ; ext command 04: message 28 if alignment >= 112; 29 if >= 144
 
 ;===================================================================================================
 
@@ -7512,7 +7512,7 @@ Message_03_05_30:
 #_0BBFE4: db $FE, $07, $13 ; ext command 07: draw buffered text then wait 18 frames
 #_0BBFE7: db $E4, $00 ; load demon $00
 #_0BBFE9: db $FA ; clear message box
-#_0BBFEA: db $FE, $05, $F0, $FF, $34 ; ext command 05: go to message 34 if 11C >= -16
+#_0BBFEA: db $FE, $05, $F0, $FF, $34 ; ext command 05: go to message 34 if alignment >= -16
 #_0BBFEF: db $50, $4E, $4B, $CF, $30, $37, $52, $3D ; われら⎵してんの
 #_0BBFF7: db $27, $3E, $CF ; うは⎵
 #_0BBFFA: db $F2, $1C ; prewritten text 1C
@@ -7602,7 +7602,7 @@ Message_03_05_35:
 
 Message_03_05_36:
 #_0BC0B8: db $FA ; clear message box
-#_0BC0B9: db $FE, $04, $37, $39 ; ext command 04: message 37 if 11C >= 112; 39 if >= 144
+#_0BC0B9: db $FE, $04, $37, $39 ; ext command 04: message 37 if alignment >= 112; 39 if >= 144
 
 ;===================================================================================================
 
@@ -8778,7 +8778,7 @@ Message_03_07_0C:
 #_0BCA64: db $CF, $42, $42, $28, $52, $A6 ; ⎵ほほえんだ
 #_0BCA6A: db $FC ; wait for key and new line
 #_0BCA6B: db $FA ; clear message box
-#_0BCA6C: db $FE, $04, $0F, $0D ; ext command 04: message 0F if 11C >= 112; 0D if >= 144
+#_0BCA6C: db $FE, $04, $0F, $0D ; ext command 04: message 0F if alignment >= 112; 0D if >= 144
 #_0BCA70: db $48, $3E, $4C, $CF ; やはり⎵
 #_0BCA74: db $F2, $62 ; prewritten text 62
 #_0BCA76: db $43, $A9, $CF, $2B, $34, $2A ; まで⎵きたか
@@ -9208,7 +9208,7 @@ Message_03_07_15:
 #_0BCF19: db $2B, $34, $3D, $A2, $55 ; きたのじゃ
 #_0BCF1E: db $FC ; wait for key and new line
 #_0BCF1F: db $FA ; clear message box
-#_0BCF20: db $FE, $05, $40, $FF, $1C ; ext command 05: go to message 1C if 11C >= -192
+#_0BCF20: db $FE, $05, $40, $FF, $1C ; ext command 05: go to message 1C if alignment >= -192
 #_0BCF25: db $F2, $5C ; prewritten text 5C
 #_0BCF27: db $CF, $2A, $52, $32, $26, $2F, $32, $4D ; ⎵かんせいさせる
 #_0BCF2F: db $34, $46 ; ため
@@ -9239,7 +9239,7 @@ Message_03_07_15:
 #_0BCF8F: db $68, $CF, $34, $29, $2F, $3C, $AB, $39 ; シ⎵たおさねばな
 #_0BCF97: db $4B, $3B ; らぬ
 #_0BCF99: db $FC ; wait for key and new line
-#_0BCF9A: db $FE, $05, $00, $BF, $18 ; ext command 05: go to message 18 if 11C >= -16640
+#_0BCF9A: db $FE, $05, $00, $BF, $18 ; ext command 05: go to message 18 if alignment >= -16640
 
 ;===================================================================================================
 
@@ -9394,7 +9394,7 @@ Message_03_07_1E:
 #_0BD0D9: db $A0, $2C, $4F, $27, $A9, $25, $58, $34 ; ごくろうであった
 #_0BD0E1: db $FC ; wait for key and new line
 #_0BD0E2: db $FA ; clear message box
-#_0BD0E3: db $FE, $05, $00, $BF, $21 ; ext command 05: go to message 21 if 11C >= -16640
+#_0BD0E3: db $FE, $05, $00, $BF, $21 ; ext command 05: go to message 21 if alignment >= -16640
 #_0BD0E8: db $2F, $37, $CF ; さて⎵
 #_0BD0EB: db $F2, $34 ; prewritten text 34
 #_0BD0ED: db $38, $3A, $4A, $4D ; とによる
