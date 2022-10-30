@@ -4483,7 +4483,7 @@ routine009853:
 #_009853: PHP
 #_009854: SEP #$30
 
-#_009856: LDA.b #UNREACH_078D2C>>16
+#_009856: LDA.b #pointers078D2C>>16
 #_009858: STA.w $0082
 #_00985B: STA.w $0085
 
@@ -4493,7 +4493,7 @@ routine009853:
 
 #_009863: REP #$30
 
-#_009865: LDA.l UNREACH_078D2C,X
+#_009865: LDA.l pointers078D2C,X
 #_009869: STA.w $0080
 
 #_00986C: PHB
@@ -5105,7 +5105,7 @@ routine009C0D:
 
 #_009C10: STA.w $0FCD
 
-#_009C13: LDA.b #data079149>>17
+#_009C13: LDA.b #pointers079149>>17
 #_009C15: STA.w $0082
 #_009C18: STA.w $0085
 #_009C1B: STA.w $0088
@@ -5124,7 +5124,7 @@ routine009C0D:
 
 #_009C2D: REP #$30
 
-#_009C2F: LDA.l data079149,X
+#_009C2F: LDA.l pointers079149,X
 #_009C33: STA.w $0080
 
 #_009C36: PHB
@@ -5233,17 +5233,17 @@ routine009C9B:
 ;---------------------------------------------------------------------------------------------------
 
 .branch009CC5
-#_009CC5: LDA.b #data079241>>16
+#_009CC5: LDA.b #pointers079241>>16
 #_009CC7: STA.w $0088
 
 #_009CCA: LDA.w $0FC4
 #_009CCD: ASL A
 #_009CCE: TAX
 
-#_009CCF: LDA.l data079241+0,X
+#_009CCF: LDA.l pointers079241+0,X
 #_009CD3: STA.w $0086
 
-#_009CD6: LDA.l data079241+1,X
+#_009CD6: LDA.l pointers079241+1,X
 #_009CDA: STA.w $0087
 
 #_009CDD: LDY.w $0FC6
@@ -6790,18 +6790,23 @@ routine00A5EB:
 #_00A65B: PHB
 
 #_00A65C: SEP #$20
+
 #_00A65E: LDA.b #StatusConditionsText>>16
 #_00A660: PHA
 
 #_00A661: REP #$20
+
 #_00A663: PLB
+
 #_00A664: TXA
 #_00A665: ASL A
 #_00A666: STA.w $00E0
+
 #_00A669: ASL A
 #_00A66A: CLC
 #_00A66B: ADC.w $00E0
 #_00A66E: TAX
+
 #_00A66F: LDY.w #$0000
 
 #_00A672: SEP #$20
@@ -6809,9 +6814,12 @@ routine00A5EB:
 .branch00A674
 #_00A674: LDA.w StatusConditionsText,X
 #_00A677: STA.w $0118,Y
+
 #_00A67A: LDA.w $0EFC
 #_00A67D: STA.w $0119,Y
+
 #_00A680: INX
+
 #_00A681: INY
 #_00A682: INY
 #_00A683: CPY.w #$000C
@@ -6819,6 +6827,7 @@ routine00A5EB:
 
 #_00A688: REP #$20
 #_00A68A: PLB
+
 #_00A68B: RTL
 
 ;===================================================================================================
@@ -7718,7 +7727,7 @@ routine00AC12:
 
 #_00AC38: REP #$20
 
-#_00AC3A: LDA.l data079265,X
+#_00AC3A: LDA.l pointers079265,X
 #_00AC3E: STA.w $0083
 #_00AC41: STZ.w $0FC4
 

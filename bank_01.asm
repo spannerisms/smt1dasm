@@ -51,14 +51,19 @@ routine018000:
 routine01806B:
 #_01806B: LDA.w #$0003
 #_01806E: STA.w $0A26
+
 #_018071: LDA.w #$0020
 #_018074: STA.w $0A2C
+
 #_018077: LDA.w #$0018
 #_01807A: STA.w $0A1E
+
 #_01807D: LDA.w #$000C
 #_018080: STA.w $0A20
+
 #_018083: LDA.w #$0002
 #_018086: STA.w $0A1C
+
 #_018089: RTS
 
 ;===================================================================================================
@@ -142,6 +147,7 @@ DisplaySpecificTypeOfMessageIThink:
 
 routine018123:
 #_018123: PHA
+
 #_018124: LDA.w $0400
 #_018127: AND.w #$0040
 #_01812A: BEQ .continue
@@ -188,8 +194,9 @@ routine018123:
 
 routine01818A:
 #_01818A: STA.w $0A22
+
 #_01818D: TYA
-#_01818E: ASL A
+#_01818E: ASL A ; x64
 #_01818F: ASL A
 #_018190: ASL A
 #_018191: ASL A
@@ -198,6 +205,7 @@ routine01818A:
 #_018194: CLC
 #_018195: ADC.w #$3DC4
 #_018198: STA.w $0A1A
+
 #_01819B: LDA.w $0400
 #_01819E: AND.w #$0040
 #_0181A1: BNE .branch0181A6
@@ -207,6 +215,7 @@ routine01818A:
 .branch0181A6
 #_0181A6: JSL routine03837C
 #_0181AA: JSL AddSelfAsVector
+
 #_0181AE: RTS
 
 ;===================================================================================================
@@ -214,14 +223,16 @@ routine01818A:
 routine0181AF:
 #_0181AF: PHP
 #_0181B0: REP #$30
+
 #_0181B2: LDA.w #$0005
 #_0181B5: BRA .branch0181BD
 
 ;===================================================================================================
 
-routine0181B7:
+#routine0181B7:
 #_0181B7: PHP
 #_0181B8: REP #$30
+
 #_0181BA: LDA.w #$0004
 
 .branch0181BD
@@ -230,10 +241,14 @@ routine0181B7:
 #_0181C3: STA.w $0040,X
 
 #_0181C6: SEP #$20
+
 #_0181C8: LDA.b #$80
 #_0181CA: STA.w $1A20,Y
+
 #_0181CD: PLP
 #_0181CE: RTL
+
+;===================================================================================================
 
 data0181CF:
 #_0181CF: dw routine0181D7
@@ -246,17 +261,21 @@ data0181CF:
 routine0181D7:
 #_0181D7: LDA.w #$0005 ; SFX 05
 #_0181DA: JSL Write_to_APU_transferrable
+
 #_0181DE: LDX.w #$0001
+
 #_0181E1: LDA.w $1002
-#_0181E4: BIT.w #$F678
+#_0181E4: BIT.w #$F678 ; checking a lot of awful status conditions TODO name them
 #_0181E7: BNE .branch018204
 
 #_0181E9: LDA.w #$0002
 #_0181EC: JSL CalcVisitComponent
+
 #_0181F0: LDX.w #$0002
 #_0181F3: BCS .branch018204
 
 #_0181F5: JSL routine00A8B3
+
 #_0181F9: LDA.w $045A
 #_0181FC: AND.w #$0080
 #_0181FF: BEQ .branch01820A
@@ -266,15 +285,15 @@ routine0181D7:
 .branch018204
 #_018204: TXA
 #_018205: JSL routine01808A
-#_018209: RTS
 
-;---------------------------------------------------------------------------------------------------
+#_018209: RTS
 
 .branch01820A
 #_01820A: STZ.w $06E0
 
-; TODO POSSIBLY UNUSED BRANCH
-.branch01820D
+;---------------------------------------------------------------------------------------------------
+
+.next
 #_01820D: LDA.w $0E9A
 #_018210: JSL routine01808A
 #_018214: STZ.w $0715
@@ -344,7 +363,7 @@ routine0181D7:
 #_018292: LDA.l .vectors,X
 #_018296: STA.w $0690
 
-#_018299: LDA.w #.branch01820D-1
+#_018299: LDA.w #.next-1 ; all the way at the top here
 #_01829C: PHA
 
 #_01829D: JMP ($0690)
@@ -372,19 +391,22 @@ routine0182AF:
 #_0182B6: BCS .fail
 
 #_0182B8: JSL routine01E95F
+
 #_0182BC: LDA.w $0C4F
 #_0182BF: BPL .branch0182B2
 
 .fail
 #_0182C1: RTS
 
-#routine0182C2:
+;===================================================================================================
+
+routine0182C2:
 #_0182C2: LDY.w #$0000
 
 .branch0182C5
 #_0182C5: LDA.w $0780,Y
 #_0182C8: AND.w #$FF00
-#_0182CB: BNE .branch0182DC
+#_0182CB: BNE .next
 
 #_0182CD: INY
 #_0182CE: INY
@@ -395,36 +417,47 @@ routine0182AF:
 #_0182D7: JSL routine01808A
 #_0182DB: RTS
 
-.branch0182DC
+;---------------------------------------------------------------------------------------------------
+
+.next
 #_0182DC: STZ.w $06E0
 #_0182DF: LDA.w #$0004
 #_0182E2: JSL routine01808A
 
 #_0182E6: SEP #$20
+
 #_0182E8: LDA.b #$02
 #_0182EA: STA.w $09F1
 #_0182ED: STZ.w $09F0
+
 #_0182F0: LDA.b #$0B
 #_0182F2: STA.w $09F4
 #_0182F5: STZ.w $09F2
 
 #_0182F8: SEP #$20
+
 #_0182FA: LDA.w $06E0
 #_0182FD: STA.w $09F3
+
 #_018300: JSL routine02C8E9
+
 #_018304: LDA.w $09F3
 #_018307: BMI .exit
 
 #_018309: STA.w $06E0
 
 #_01830C: REP #$30
+
 #_01830E: AND.w #$00FF
 #_018311: ASL A
 #_018312: TAX
+
 #_018313: LDA.l .vectors,X
 #_018317: STA.w $0690
-#_01831A: LDA.w #.branch0182DC-1
+
+#_01831A: LDA.w #.next-1 ; look up
 #_01831D: PHA
+
 #_01831E: JMP ($0690)
 
 .exit
@@ -440,19 +473,26 @@ routine0182AF:
 
 routine01832A:
 #_01832A: PHP
+
 #_01832B: PHB
 #_01832C: PHK
 #_01832D: PLB
 
 #_01832E: REP #$30
+
 #_018330: LDA.w $0A26
 #_018333: PHA
+
 #_018334: LDA.w #$0003
 #_018337: STA.w $0A26
+
 #_01833A: JSR routine018344
+
 #_01833D: PLA
 #_01833E: STA.w $0A26
+
 #_018341: PLB
+
 #_018342: PLP
 #_018343: RTL
 
@@ -462,14 +502,18 @@ routine018344:
 #_018344: PHP
 #_018345: REP #$30
 
-.branch018347
+#routine018347:
 #_018347: STZ.w $06E1
+
 #_01834A: STZ.w $0688
+
 #_01834D: JSL ClearEntityListBuffer
+
 #_018351: STZ.w $068A
+
 #_018354: LDX.w #$0000
 
-.branch018357
+.next_teammate
 #_018357: BIT.w $1000,X
 #_01835A: BPL .branch018368
 
@@ -486,7 +530,7 @@ routine018344:
 #_01836A: ADC.w #$0060
 #_01836D: TAX
 #_01836E: CMP.w #$0600
-#_018371: BCC .branch018357
+#_018371: BCC .next_teammate
 
 #_018373: LDA.w #$0008
 #_018376: JSL routine01808A
@@ -549,7 +593,7 @@ routine018344:
 #_0183DA: REP #$30
 #_0183DC: LDA.w #$0003
 #_0183DF: STA.w $0E9A
-#_0183E2: JMP .branch018347
+#_0183E2: JMP routine018347
 
 ;===================================================================================================
 
@@ -692,20 +736,22 @@ routine0164AE:
 
 #_01852B: SEP #$20
 
-#_01852D: LDA.b #UNREACH_078C00>>16
+#_01852D: LDA.b #ExperienceTable>>16
 #_01852F: PHA
 
 #_018530: REP #$20
 #_018532: PLB
 
-#_018533: LDA.w UNREACH_078C00+0,Y
+#_018533: LDA.w ExperienceTable+0,Y
 #_018536: SEC
 #_018537: SBC.w $100C,X
 #_01853A: STA.w $0E80
-#_01853D: LDA.w UNREACH_078C00+2,Y
+
+#_01853D: LDA.w ExperienceTable+2,Y
 #_018540: AND.w #$00FF
 #_018543: SBC.w $100E,X
 #_018546: STA.w $0E82
+
 #_018549: PLB
 
 ;---------------------------------------------------------------------------------------------------
@@ -8673,7 +8719,7 @@ routine01B848:
 
 #_01B84F: SEP #$20
 
-#_01B851: LDA.b #UNREACH_078C00>>16
+#_01B851: LDA.b #ExperienceTable>>16
 #_01B853: PHA
 
 #_01B854: REP #$20
@@ -8698,12 +8744,12 @@ routine01B848:
 #_01B872: ADC.w $100A,X
 #_01B875: TAY
 
-#_01B876: LDA.w UNREACH_078C00+0,Y
+#_01B876: LDA.w ExperienceTable+0,Y
 #_01B879: SEC
 #_01B87A: SBC.w $100C,X
 #_01B87D: STA.w $0620
 
-#_01B880: LDA.w UNREACH_078C00+2,Y
+#_01B880: LDA.w ExperienceTable+2,Y
 #_01B883: AND.w #$00FF
 #_01B886: SBC.w $100E,X
 #_01B889: BCC .branch01B890
@@ -16304,8 +16350,8 @@ vectors01EC22:
 #_01EC32: dw routine01EE2E
 #_01EC34: dw routine01EE51
 #_01EC36: dw routine01EE74
-#_01EC38: dw UseOintmentItem
-#_01EC3A: dw UseGyoutanItem
+#_01EC38: dw UseItem_Ointment
+#_01EC3A: dw UseItem_Gyoutan
 #_01EC3C: dw routine01EECF
 #_01EC3E: dw routine01EEEB
 #_01EC40: dw routine01EF62
@@ -16321,7 +16367,7 @@ vectors01EC22:
 #_01EC54: dw routine01F259
 #_01EC56: dw routine01F275
 #_01EC58: dw routine01F2C6
-#_01EC5A: dw UseSmokeBombItem
+#_01EC5A: dw UseItem_SmokeBomb
 #_01EC5C: dw ActivateFumaBell
 #_01EC5E: dw routine01F366
 #_01EC60: dw routine01F38B
@@ -16596,8 +16642,8 @@ routine01EE74:
 #_01EE96: RTS
 
 ; TODO something related to healing?
-UseOintmentItem:
-#_01EE97: JSR routine01FEA7
+UseItem_Ointment:
+#_01EE97: JSR VerifyTargetOfItemIsAlive
 #_01EE9A: BCS .branch01EEB2
 
 #_01EE9C: LDA.w $1004,X
@@ -16616,8 +16662,8 @@ UseOintmentItem:
 
 ;===================================================================================================
 
-UseGyoutanItem:
-#_01EEB3: JSR routine01FEA7
+UseItem_Gyoutan:
+#_01EEB3: JSR VerifyTargetOfItemIsAlive
 #_01EEB6: BCS .branch01EECE
 
 #_01EEB8: LDA.w $1004,X
@@ -16637,7 +16683,7 @@ UseGyoutanItem:
 ;===================================================================================================
 
 routine01EECF:
-#_01EECF: JSR routine01FEA7
+#_01EECF: JSR VerifyTargetOfItemIsAlive
 #_01EED2: BCS .branch01EEB2
 
 #_01EED4: LDA.w $1004,X
@@ -16856,7 +16902,7 @@ routine01EFD9:
 ;===================================================================================================
 
 DoSomeStatusCure:
-#_01F01D: JSR routine01FEA7
+#_01F01D: JSR VerifyTargetOfItemIsAlive
 #_01F020: BCS .exit
 
 #_01F022: LDA.w $1004,X
@@ -17188,7 +17234,7 @@ routine01F21F:
 ;===================================================================================================
 
 routine01F231:
-#_01F231: JSR routine01FEA7
+#_01F231: JSR VerifyTargetOfItemIsAlive
 #_01F234: BCS .branch01F258
 
 #_01F236: LDA.w $1032,X
@@ -17350,7 +17396,7 @@ routine01F2C6:
 
 ;===================================================================================================
 
-UseSmokeBombItem:
+UseItem_SmokeBomb:
 #_01F338: LDA.w $052A
 #_01F33B: AND.w #$0100
 #_01F33E: BNE .failed
@@ -17445,9 +17491,9 @@ routine01F38D:
 #_01F3BD: ADC.w $0A54
 #_01F3C0: TXY
 #_01F3C1: TAX
-#_01F3C2: LDA.l UNREACH_078C00+0,X
+#_01F3C2: LDA.l ExperienceTable+0,X
 #_01F3C6: STA.w $100C,Y
-#_01F3C9: LDA.l UNREACH_078C00+2,X
+#_01F3C9: LDA.l ExperienceTable+2,X
 #_01F3CD: AND.w #$00FF
 #_01F3D0: STA.w $100E,Y
 #_01F3D3: LDX.w #$0000
@@ -17850,7 +17896,7 @@ routine01F60F:
 #_01F61A: ADC.w #$0004
 #_01F61D: TAX
 
-#_01F61E: LDA.l data01F663,X
+#_01F61E: LDA.l .multiplicand,X
 #_01F622: AND.w #$00FF
 #_01F625: TAX
 
@@ -17861,8 +17907,10 @@ routine01F60F:
 #_01F629: STA.w PPUMULT16
 #_01F62C: XBA
 #_01F62D: STA.w PPUMULT16
+
 #_01F630: TXA
 #_01F631: STA.w PPUMULT8
+
 #_01F634: NOP
 #_01F635: NOP
 #_01F636: NOP
@@ -17876,6 +17924,7 @@ routine01F60F:
 
 #_01F63E: LDA.w PPUPRODUCTL
 #_01F641: STA.w $0A54
+
 #_01F644: LDA.w PPUPRODUCTH
 #_01F647: AND.w #$00FF
 #_01F64A: STA.w $0A56
@@ -17893,11 +17942,11 @@ routine01F60F:
 
 #_01F662: RTS
 
-;===================================================================================================
+.multiplicand
+#_01F663: db $03, $04, $05, $06, $08, $0C, $10, $12
+#_01F66B: db $14, $16, $18, $1A, $1C, $1E, $20
 
-data01F663:
-#_01F663: db $03,$04,$05,$06,$08,$0C,$10,$12
-#_01F66B: db $14,$16,$18,$1A,$1C,$1E,$20
+;===================================================================================================
 
 routine01F672:
 #_01F672: PHP
@@ -17944,6 +17993,8 @@ routine01F672:
 
 #_01F6C4: JMP .branch01F747
 
+;---------------------------------------------------------------------------------------------------
+
 .branch01F6C7
 #_01F6C7: LDA.w $0A52
 #_01F6CA: CMP.w #$0015
@@ -17983,15 +18034,21 @@ routine01F672:
 #_01F703: SBC.w #$001F
 #_01F706: ASL A
 #_01F707: TAX
+
 #_01F708: LDA.l vectors01EC22,X
 #_01F70C: STA.w $0E40
-#_01F70F: LDA.w #.return-1
+
+#_01F70F: LDA.w #.return_a-1
 #_01F712: PHA
+
 #_01F713: JMP ($0E40)
 
-.return
+;---------------------------------------------------------------------------------------------------
+
+.return_a
 #_01F716: LDA.w #$FFFF
 #_01F719: STA.w $0562
+
 #_01F71C: BCS .branch01F78B
 
 #_01F71E: LDA.w $0A52
@@ -18000,6 +18057,7 @@ routine01F672:
 #_01F725: ASL A
 #_01F726: ASL A
 #_01F727: TAX
+
 #_01F728: LDA.l data01ECD4,X
 #_01F72C: CMP.w #$FFFF
 #_01F72F: BEQ .branch01F740
@@ -18026,15 +18084,21 @@ routine01F672:
 #_01F748: SBC.w #$0080
 #_01F74B: ASL A
 #_01F74C: TAX
+
 #_01F74D: LDA.l MoreItemUseVectors,X
 #_01F751: STA.w $0E40
-#_01F754: LDA.w #.returnb-1
+
+#_01F754: LDA.w #.return_b-1
 #_01F757: PHA
+
 #_01F758: JMP ($0E40)
 
-.returnb
+;---------------------------------------------------------------------------------------------------
+
+.return_b
 #_01F75B: LDA.w #$FFFF
 #_01F75E: STA.w $0562
+
 #_01F761: BCS .branch01F78B
 
 #_01F763: LDA.w $0A52
@@ -18042,6 +18106,7 @@ routine01F672:
 #_01F767: SBC.w #$0080
 #_01F76A: ASL A
 #_01F76B: TAX
+
 #_01F76C: LDA.l data01F791,X
 #_01F770: CMP.w #$FFFF
 #_01F773: BEQ .branch01F784
@@ -18057,15 +18122,19 @@ routine01F672:
 
 .branch01F784
 #_01F784: JSL routine00A17E
+
 #_01F788: PLP
 #_01F789: CLC
 #_01F78A: RTL
 
 .branch01F78B
 #_01F78B: JSR routine01FEBF
+
 #_01F78E: PLP
 #_01F78F: CLC
 #_01F790: RTL
+
+;---------------------------------------------------------------------------------------------------
 
 data01F791:
 #_01F791: dw $00CE,$00CF,$00D0,$00D1
@@ -18079,37 +18148,37 @@ data01F791:
 ;===================================================================================================
 
 MoreItemUseVectors:
-#_01F7C5: dw UseMagStoneItem
-#_01F7C7: dw UseMuscleDrinkItem
-#_01F7C9: dw UseOrbItem
-#_01F7CB: dw UseHiranyaItem
-#_01F7CD: dw UseSomaItem
-#_01F7CF: dw UseGoldPillItem
-#_01F7D1: dw UseSoulIncenseItem
-#_01F7D3: dw UseBottleItem
-#_01F7D5: dw UseSkillIncense
-#_01F7D7: dw UseSkillIncense
-#_01F7D9: dw UseSkillIncense
-#_01F7DB: dw UseSkillIncense
-#_01F7DD: dw UseSkillIncense
-#_01F7DF: dw UseSkillIncense
-#_01F7E1: dw UseAngelHairItem
-#_01F7E3: dw UseAshuraHandItem
-#_01F7E5: dw UsePentagramItem
-#_01F7E7: dw UseNyoraiItem
-#_01F7E9: dw UseAmidaBeadsItem
-#_01F7EB: dw UseRosaryItem
-#_01F7ED: dw UseAmuletItem
-#_01F7EF: dw UseTalismanItem
-#_01F7F1: dw UseCoreShield
-#_01F7F3: dw UseGushingJarItem
-#_01F7F5: dw UseFortuneSlipsItem
-#_01F7F7: dw UseIndulgenceItem
+#_01F7C5: dw UseItem_MagStone
+#_01F7C7: dw UseItem_MuscleDrink
+#_01F7C9: dw UseItem_Orb
+#_01F7CB: dw UseItem_Hiranya
+#_01F7CD: dw UseItem_Soma
+#_01F7CF: dw UseItem_GoldPill
+#_01F7D1: dw UseItem_SoulIncense
+#_01F7D3: dw UseItem_Bottle
+#_01F7D5: dw UseItem_SkillIncense
+#_01F7D7: dw UseItem_SkillIncense
+#_01F7D9: dw UseItem_SkillIncense
+#_01F7DB: dw UseItem_SkillIncense
+#_01F7DD: dw UseItem_SkillIncense
+#_01F7DF: dw UseItem_SkillIncense
+#_01F7E1: dw UseItem_AngelHair
+#_01F7E3: dw UseItem_AshuraHand
+#_01F7E5: dw UseItem_Pentagram
+#_01F7E7: dw UseItem_Nyorai
+#_01F7E9: dw UseItem_AmidaBeads
+#_01F7EB: dw UseItem_Rosary
+#_01F7ED: dw UseItem_Amulet
+#_01F7EF: dw UseItem_Talisman
+#_01F7F1: dw UseItem_CoreShield
+#_01F7F3: dw UseItem_GushingJar
+#_01F7F5: dw UseItem_FortuneSlips
+#_01F7F7: dw UseItem_Indulgence
 
 ;===================================================================================================
 
-UseMagStoneItem:
-#_01F7F9: JSR routine01FEA7
+UseItem_MagStone:
+#_01F7F9: JSR VerifyTargetOfItemIsAlive
 #_01F7FC: BCS .branch01F81C
 
 #_01F7FE: LDA.w $102E,X
@@ -18137,8 +18206,8 @@ UseMagStoneItem:
 
 ;===================================================================================================
 
-UseMuscleDrinkItem:
-#_01F81E: JSR routine01FEA7
+UseItem_MuscleDrink:
+#_01F81E: JSR VerifyTargetOfItemIsAlive
 #_01F821: BCS .branch01F863
 
 #_01F823: JSL GetRandomInt
@@ -18180,8 +18249,8 @@ UseMuscleDrinkItem:
 
 ;===================================================================================================
 
-UseOrbItem:
-#_01F865: JSR routine01FEA7
+UseItem_Orb:
+#_01F865: JSR VerifyTargetOfItemIsAlive
 #_01F868: BCS .branch01F87A
 
 #_01F86A: LDA.w $102E,X
@@ -18199,8 +18268,8 @@ UseOrbItem:
 
 ;===================================================================================================
 
-UseHiranyaItem:
-#_01F87C: JSR routine01FEA7
+UseItem_Hiranya:
+#_01F87C: JSR VerifyTargetOfItemIsAlive
 #_01F87F: BCS .branch01F8D8
 
 #_01F881: LDA.w $102E,X
@@ -18260,8 +18329,8 @@ UseHiranyaItem:
 
 ;===================================================================================================
 
-UseSomaItem:
-#_01F8DA: JSR routine01FEA7
+UseItem_Soma:
+#_01F8DA: JSR VerifyTargetOfItemIsAlive
 #_01F8DD: BCS .branch01F916
 
 #_01F8DF: LDY.w #$0000
@@ -18304,7 +18373,7 @@ UseSomaItem:
 
 ;===================================================================================================
 
-UseGoldPillItem:
+UseItem_GoldPill:
 #_01F918: LDY.w $0715
 #_01F91B: LDX.w $105A,Y
 #_01F91E: LDA.w $1002,X
@@ -18348,7 +18417,7 @@ UseGoldPillItem:
 
 ;===================================================================================================
 
-UseSoulIncenseItem:
+UseItem_SoulIncense:
 #_01F961: LDY.w $0715
 #_01F964: LDX.w $105A,Y
 #_01F967: LDA.w $1002,X
@@ -18361,14 +18430,20 @@ UseSoulIncenseItem:
 #_01F979: BCC .branch01F993
 
 #_01F97B: STZ.w $1002,X
+
 #_01F97E: LDA.w $1030,X
 #_01F981: STA.w $102E,X
+
 #_01F984: LDA.w $1004,X
 #_01F987: STA.w $0A3E
+
 #_01F98A: LDA.w #$00D4
 #_01F98D: JSL DisplaySpecificTypeOfMessageIThink
+
 #_01F991: CLC
 #_01F992: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01F993
 #_01F993: LDA.w #$0043
@@ -18400,7 +18475,7 @@ UseSoulIncenseItem:
 
 ;===================================================================================================
 
-UseBottleItem:
+UseItem_Bottle:
 #_01F9BD: LDY.w #$0000
 #_01F9C0: STY.w $0A54
 
@@ -18446,9 +18521,9 @@ UseBottleItem:
 
 ;===================================================================================================
 
-UseSkillIncense:
+UseItem_SkillIncense:
 #_01F9FA: PHX
-#_01F9FB: JSR routine01FEA7
+#_01F9FB: JSR VerifyTargetOfItemIsAlive
 #_01F9FE: PLX
 #_01F9FF: BCS .branch01FA5E
 
@@ -18507,7 +18582,7 @@ UseSkillIncense:
 
 ;===================================================================================================
 
-UseAngelHairItem:
+UseItem_AngelHair:
 #_01FA60: STZ.w $0A54
 #_01FA63: LDY.w #$0000
 
@@ -18566,7 +18641,7 @@ UseAngelHairItem:
 
 ;===================================================================================================
 
-UseAshuraHandItem:
+UseItem_AshuraHand:
 #_01FAB9: STZ.w $0A54
 #_01FABC: LDY.w #$0000
 
@@ -18626,7 +18701,7 @@ UseAshuraHandItem:
 
 ;===================================================================================================
 
-UsePentagramItem:
+UseItem_Pentagram:
 #_01FB15: LDA.w $057C
 #_01FB18: BNE .active
 
@@ -18647,7 +18722,7 @@ UsePentagramItem:
 
 ;===================================================================================================
 
-UseNyoraiItem:
+UseItem_Nyorai:
 #_01FB2F: LDA.w $057E
 #_01FB32: BNE .active
 
@@ -18668,7 +18743,7 @@ UseNyoraiItem:
 
 ;===================================================================================================
 
-UseAmidaBeadsItem:
+UseItem_AmidaBeads:
 #_01FB49: LDA.w $0580
 #_01FB4C: BNE .active
 
@@ -18689,7 +18764,7 @@ UseAmidaBeadsItem:
 
 ;===================================================================================================
 
-UseRosaryItem:
+UseItem_Rosary:
 #_01FB63: LDA.w $0582
 #_01FB66: BNE .active
 
@@ -18710,7 +18785,7 @@ UseRosaryItem:
 
 ;===================================================================================================
 
-UseAmuletItem:
+UseItem_Amulet:
 #_01FB7D: LDA.w $0584
 #_01FB80: BNE .active
 
@@ -18731,7 +18806,7 @@ UseAmuletItem:
 
 ;===================================================================================================
 
-UseTalismanItem:
+UseItem_Talisman:
 #_01FB97: LDA.w $0586
 #_01FB9A: BNE .active
 
@@ -18752,7 +18827,7 @@ UseTalismanItem:
 
 ;===================================================================================================
 
-UseCoreShield:
+UseItem_CoreShield:
 #_01FBB1: LDA.w $0588
 #_01FBB4: BNE .active
 
@@ -18773,7 +18848,7 @@ UseCoreShield:
 
 ;===================================================================================================
 
-UseGushingJarItem:
+UseItem_GushingJar:
 #_01FBCB: LDA.w $050A
 #_01FBCE: CMP.w #$0100
 #_01FBD1: BCS .branch01FC29
@@ -18782,6 +18857,7 @@ UseGushingJarItem:
 #_01FBD7: AND.w #$0001
 #_01FBDA: ASL A
 #_01FBDB: TAX
+
 #_01FBDC: LDA.w $0512,X
 #_01FBDF: BNE .branch01FBE6
 
@@ -18831,157 +18907,178 @@ UseGushingJarItem:
 
 ;===================================================================================================
 
-UseFortuneSlipsItem:
-#_01FC2B: JSR routine01FEA7
-#_01FC2E: BCS .branch01FC57
+UseItem_FortuneSlips:
+#_01FC2B: JSR VerifyTargetOfItemIsAlive
+#_01FC2E: BCS .failed_to_use
 
 #_01FC30: JSL GetRandomInt
 #_01FC34: LDX.w #$0000
 
-.branch01FC37
+.draw_next_fortune
 #_01FC37: LDA.l .luck_rolls,X
 #_01FC3B: CMP.w $0ED5
-#_01FC3E: BCS .branch01FC47
+#_01FC3E: BCS .seal_your_fate
 
 #_01FC40: INX
 #_01FC41: INX
 #_01FC42: CPX.w #$000A
-#_01FC45: BCC .branch01FC37
+#_01FC45: BCC .draw_next_fortune
 
-.branch01FC47
+.seal_your_fate
 #_01FC47: LDA.l .vectors,X
 #_01FC4B: STA.w $0E40
 #_01FC4E: LDY.w $0715
 #_01FC51: LDX.w $105A,Y
 #_01FC54: JMP ($0E40)
 
-.branch01FC57
+.failed_to_use
 #_01FC57: SEC
 #_01FC58: RTS
 
 .luck_rolls
-#_01FC59: dw $000F,$004F,$00AF,$00EF
+#_01FC59: dw $000F
+#_01FC5B: dw $004F
+#_01FC5D: dw $00AF
+#_01FC5F: dw $00EF
 #_01FC61: dw $00FF
 
 .vectors
-#_01FC63: dw routine01FC6F
-#_01FC65: dw routine01FC99
-#_01FC67: dw routine01FCB2
-#_01FC69: dw routine01FCB4
-#_01FC6B: dw routine01FCBF
-#_01FC6D: dw routine01FCD5
+#_01FC63: dw FortuneSlip_MaxHPandMP
+#_01FC65: dw FortuneSlip_LevelBasedHPGain
+#_01FC67: dw FortuneSlip_DoNothing
+#_01FC69: dw FortuneSlip_QuarterHP
+#_01FC6B: dw FortuneSlip_TankHPandMP
+#_01FC6D: dw FortuneSlip_1HP
 
 ;===================================================================================================
-
-routine01FC6F:
+; Tops off HP and MP
+;===================================================================================================
+FortuneSlip_MaxHPandMP:
 #_01FC6F: LDY.w #$0000
+
 #_01FC72: LDA.w $102E,X
 #_01FC75: CMP.w $1030,X
-#_01FC78: BCS .branch01FC81
+#_01FC78: BCS .already_max_hp
 
 #_01FC7A: LDA.w $1030,X
 #_01FC7D: STA.w $102E,X
+
 #_01FC80: INY
 
-.branch01FC81
+.already_max_hp
 #_01FC81: LDA.w $1032,X
 #_01FC84: CMP.w $1034,X
-#_01FC87: BCS .branch01FC90
+#_01FC87: BCS .already_max_mp
 
 #_01FC89: LDA.w $1034,X
 #_01FC8C: STA.w $1032,X
 #_01FC8F: INY
 
-.branch01FC90
+.already_max_mp
 #_01FC90: CPY.w #$0000
-#_01FC93: BEQ .branch01FC97
+#_01FC93: BEQ FortuneSlip_CannotUse
 
 #_01FC95: CLC
 #_01FC96: RTS
 
-.branch01FC97
+;===================================================================================================
+
+FortuneSlip_CannotUse:
 #_01FC97: SEC
 #_01FC98: RTS
 
 ;===================================================================================================
-
-routine01FC99:
+; Adds LVL to HP
+;===================================================================================================
+FortuneSlip_LevelBasedHPGain:
 #_01FC99: LDA.w $102E,X
 #_01FC9C: CMP.w $1030,X
-#_01FC9F: BCS .branch01FC97
+#_01FC9F: BCS FortuneSlip_CannotUse
 
 #_01FCA1: CLC
 #_01FCA2: ADC.w $100A,X
 #_01FCA5: CMP.w $1030,X
-#_01FCA8: BCC .branch01FCAD
+#_01FCA8: BCC .no_overflow
 
 #_01FCAA: LDA.w $1030,X
 
-.branch01FCAD
+.no_overflow
 #_01FCAD: STA.w $102E,X
+
 #_01FCB0: CLC
 #_01FCB1: RTS
 
 ;===================================================================================================
-
-routine01FCB2:
+; Does nothing
+;===================================================================================================
+FortuneSlip_DoNothing:
 #_01FCB2: CLC
 #_01FCB3: RTS
 
 ;===================================================================================================
-
-routine01FCB4:
+; Reduces HP to ceil(1/4)
+;===================================================================================================
+FortuneSlip_QuarterHP:
 #_01FCB4: LDA.w $102E,X
 #_01FCB7: LSR A
 #_01FCB8: LSR A
 #_01FCB9: INC A
 #_01FCBA: STA.w $102E,X
+
 #_01FCBD: CLC
 #_01FCBE: RTS
 
 ;===================================================================================================
-
-routine01FCBF:
+; Reduces HP and MP to ceil(1/8)
+;===================================================================================================
+FortuneSlip_TankHPandMP:
 #_01FCBF: LDA.w $102E,X
 #_01FCC2: LSR A
 #_01FCC3: LSR A
 #_01FCC4: LSR A
 #_01FCC5: INC A
 #_01FCC6: STA.w $102E,X
+
 #_01FCC9: LDA.w $1032,X
 #_01FCCC: LSR A
 #_01FCCD: LSR A
 #_01FCCE: LSR A
 #_01FCCF: INC A
 #_01FCD0: STA.w $1032,X
+
 #_01FCD3: CLC
 #_01FCD4: RTS
 
 ;===================================================================================================
-
-routine01FCD5:
+; Reduces HP to 1
+;===================================================================================================
+FortuneSlip_1HP:
 #_01FCD5: LDA.w #$0001
 #_01FCD8: STA.w $102E,X
+
 #_01FCDB: CLC
+
 #_01FCDC: RTS
 
 ;===================================================================================================
 
-UseIndulgenceItem:
+UseItem_Indulgence:
 #_01FCDD: LDA.w $1604
 #_01FCE0: CMP.w #$0100
-#_01FCE3: BCS .branch01FCFB
+#_01FCE3: BCS .fail
 
 #_01FCE5: LDA.w $052A
 #_01FCE8: ORA.w #$0200
 #_01FCEB: STA.w $052A
+
 #_01FCEE: LDA.w #$0000
 #_01FCF1: STZ.w $0512
 #_01FCF4: STZ.w $0514
+
 #_01FCF7: STZ.w $0524
 #_01FCFA: CLC
 
-.branch01FCFB
+.fail
 #_01FCFB: RTS
 
 ;===================================================================================================
@@ -19272,19 +19369,22 @@ routine01FE4D:
 
 ;===================================================================================================
 
-routine01FEA7:
+VerifyTargetOfItemIsAlive:
 #_01FEA7: LDY.w $0715
+
 #_01FEAA: LDX.w $105A,Y
+
 #_01FEAD: LDA.w $1002,X
 #_01FEB0: AND.w #$C000
-#_01FEB3: BNE .branch01FEBD
+#_01FEB3: BNE .they_dead
 
 #_01FEB5: LDA.w $1004,X
 #_01FEB8: STA.w $0A3E
+
 #_01FEBB: CLC
 #_01FEBC: RTS
 
-.branch01FEBD
+.they_dead
 #_01FEBD: SEC
 #_01FEBE: RTS
 
