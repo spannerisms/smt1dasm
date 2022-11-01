@@ -4381,12 +4381,12 @@ routine0097C4:
 #_0097C8: PHB
 
 #_0097C9: SEP #$20
-#_0097CB: LDA.b #PTR16_07E7B0>>16
+#_0097CB: LDA.b #pointers07E7B0>>16
 #_0097CD: PHA
 
 #_0097CE: REP #$20
 #_0097D0: PLB
-#_0097D1: LDA.w PTR16_07E7B0,Y
+#_0097D1: LDA.w pointers07E7B0,Y
 #_0097D4: STA.w $0090
 #_0097D7: LDY.w #$0000
 #_0097DA: LDA.b ($90),Y
@@ -4598,17 +4598,17 @@ routine0098C7:
 #_0098F5: JSR ThisRoutineIsJustAnRTS
 
 .branch0098F8
-#_0098F8: LDA.b #PTR16_0790C4>>16
+#_0098F8: LDA.b #pointers0790C4>>16
 #_0098FA: STA.w $0088
 
 #_0098FD: LDA.w $0FC4
 #_009900: ASL A
 #_009901: TAX
 
-#_009902: LDA.l PTR16_0790C4+0,X
+#_009902: LDA.l pointers0790C4+0,X
 #_009906: STA.w $0086
 
-#_009909: LDA.l PTR16_0790C4+1,X
+#_009909: LDA.l pointers0790C4+1,X
 #_00990D: STA.w $0087
 
 #_009910: LDY.w $0FC6
@@ -4654,20 +4654,20 @@ routine009942:
 #_009942: ASL A
 #_009943: TAY
 
-#_009944: LDA.b #data04C400>>16
+#_009944: LDA.b #pointers04C400>>16
 #_009946: STA.w $0088
 #_009949: STA.w $008B
 #_00994C: STA.w $008E
 
 #_00994F: REP #$30
 
-#_009951: LDA.w #data04C400
+#_009951: LDA.w #pointers04C400
 #_009954: STA.w $008C
 
 #_009957: LDA.b [$8C],Y
 #_009959: STA.w $0086
 
-#_00995C: LDA.w #data04C408
+#_00995C: LDA.w #pointers04C408
 #_00995F: STA.w $008C
 
 #_009962: LDA.b [$8C],Y
@@ -7542,7 +7542,7 @@ WriteTextTo0106:
 #_00AB06: BNE .not_vu
 
 #_00AB08: LDA.b #$5F
-#_00AB0A: LDY.b #$9E
+#_00AB0A: LDY.b #$9E ; dakuten
 #_00AB0C: BRA .write_character
 
 .not_vu
@@ -7587,14 +7587,15 @@ WriteTextTo0106:
 ;===================================================================================================
 
 ; and Handakuten
+; bit7 => use handakuten
 DakutenBaseLetters:
-#_00AB42: db $2A,$2B,$2C,$2D,$2E,$2F,$30,$31
-#_00AB4A: db $32,$33,$34,$35,$36,$37,$38,$3E
-#_00AB52: db $3F,$40,$41,$42,$BE,$BF,$C0,$C1
-#_00AB5A: db $C2,$62,$63,$64,$65,$66,$67,$68
-#_00AB62: db $69,$6A,$6B,$6C,$6D,$6E,$6F,$70
-#_00AB6A: db $76,$77,$78,$79,$7A,$F6,$F7,$F8
-#_00AB72: db $F9,$FA
+#_00AB42: db $2A, $2B, $2C, $2D, $2E, $2F, $30, $31
+#_00AB4A: db $32, $33, $34, $35, $36, $37, $38, $3E
+#_00AB52: db $3F, $40, $41, $42, $BE, $BF, $C0, $C1
+#_00AB5A: db $C2, $62, $63, $64, $65, $66, $67, $68
+#_00AB62: db $69, $6A, $6B, $6C, $6D, $6E, $6F, $70
+#_00AB6A: db $76, $77, $78, $79, $7A, $F6, $F7, $F8
+#_00AB72: db $F9, $FA
 
 ;===================================================================================================
 
@@ -11963,7 +11964,7 @@ routine00CB52:
 #_00CB63: PHA
 
 #_00CB64: REP #$30
-#_00CB66: LDA.w #data07A9BA
+#_00CB66: LDA.w #ElevatorShaftID
 #_00CB69: LDX.w #$0003
 #_00CB6C: JSR Dungeon_FindAssociatedEvent_Moving
 #_00CB6F: BCS .branch00CB90
@@ -17738,8 +17739,18 @@ pushtable
 cleartable
 org $00FFC0
 #_00FFC0: db "DIGITAL DEVIL STORY  "
-#_00FFD5: db $20,$02,$0B,$03,$00,$EB,$00
-#_00FFDC: dw $528B,$AD74
+
+#_00FFD5: db $20 ; ROM mapping: lorom
+#_00FFD6: db $02 ; Cartridge: ROM+RAM+battery
+#_00FFD7: db $0B ; ROM size: 2MB
+#_00FFD8: db $03 ; RAM size: 8kB
+
+#_00FFD9: db $00 ; Region: Japan (J)
+#_00FFDA: db $EB ; Header type: v2
+#_00FFDB: db $00 ; Version: 1.0
+
+#_00FFDC: dw $528B ; complement
+#_00FFDE: dw $AD74 ; checksum
 
 #_00FFE0: dw $0400
 #_00FFE2: dw $00B5BB ; loose op

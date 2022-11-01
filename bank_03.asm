@@ -999,7 +999,7 @@ routine038524:
 
 .has_dakuten
 #_03854D: CMP.b #$B5
-#_03854F: BCS .has_handakuten
+#_03854F: BCS .is_katakana
 
 #_038551: SEC
 #_038552: SBC.b #$9C
@@ -1009,11 +1009,12 @@ routine038524:
 #_038556: PHK
 #_038557: PLB
 
-#_038558: LDA.w DakutenBaseKana,Y
+#_038558: LDA.w DakutenBaseHiragana,Y
 #_03855B: PLB
 
 .add_character
 #_03855C: LDX.w $0A33
+
 #_03855F: STA.w $0900,X
 
 #_038562: LDA.b #$9E ; dakuten
@@ -1021,7 +1022,7 @@ routine038524:
 #_038564: CPY.b #$14
 #_038566: BCC .use_dakuten
 
-#_038568: INC A ; #9F handakuten
+#_038568: INC A ; #$9F handakuten
 
 .use_dakuten
 #_038569: STA.w $0940,X
@@ -1041,7 +1042,7 @@ routine038524:
 
 ;---------------------------------------------------------------------------------------------------
 
-.has_handakuten
+.is_katakana
 #_03857F: CMP.b #$CE
 #_038581: BEQ .never_mind_it_is_vu
 
@@ -1053,7 +1054,7 @@ routine038524:
 #_038588: PHK
 #_038589: PLB
 
-#_03858A: LDA.w HandakutenBaseKana,Y
+#_03858A: LDA.w DakutenBaseKatakana,Y
 
 #_03858D: PLB
 #_03858E: BRA .add_character
@@ -1069,7 +1070,7 @@ routine038524:
 ;===================================================================================================
 ; How/why is this different from 00AB42?
 ;===================================================================================================
-DakutenBaseKana:
+DakutenBaseHiragana:
 #_038596: db $2A, $2B, $2C, $2D, $2E, $2F, $30, $31
 #_03859E: db $32, $33, $34, $35, $36, $37, $38, $3E
 #_0385A6: db $3F, $40, $41, $42, $3E, $3F, $40, $41
@@ -1077,7 +1078,7 @@ DakutenBaseKana:
 
 ;---------------------------------------------------------------------------------------------------
 
-HandakutenBaseKana:
+DakutenBaseKatakana:
 #_0385AF: db $62, $63, $64, $65, $66, $67, $68, $69
 #_0385B7: db $6A, $6B, $6C, $6D, $6E, $6F, $70, $76
 #_0385BF: db $77, $78, $79, $7A, $76, $77, $78, $79
@@ -3917,11 +3918,13 @@ routine039600:
 #_03962C: PLX
 #_03962D: RTS
 
-;---------------------------------------------------------------------------------------------------
+;===================================================================================================
 
 WriteTextIndexW0A39_long:
 #_03962E: JSR WriteTextIndexW0A39
 #_039631: RTL
+
+;===================================================================================================
 
 WriteTextIndexW0A39:
 #_039632: PHP
@@ -7721,7 +7724,7 @@ routine03B6F9:
 #_03B751: AND.w #$000F
 #_03B754: ASL A
 #_03B755: TAX
-#_03B756: LDA.l data07AA1E,X
+#_03B756: LDA.l pointers07AA1E,X
 #_03B75A: STA.w $00E0
 
 #_03B75D: SEP #$20
@@ -12127,7 +12130,7 @@ routine03D413:
 #_03D419: TAY
 #_03D41A: LDA.w data03D45C,Y
 #_03D41D: STA.w $00E0
-#_03D420: LDA.w PTR16_03D45D,Y
+#_03D420: LDA.w pointers03D45D,Y
 #_03D423: STA.w $00E1
 #_03D426: STZ.w $0A33
 #_03D429: LDX.b #$00
@@ -15078,7 +15081,9 @@ GetDemonXClass:
 #_03E70A: AND.w #$00FF
 #_03E70D: ASL A
 #_03E70E: TAX
+
 #_03E70F: PHX
+
 #_03E710: LDA.w $0BED,X
 #_03E713: CMP.w #$0100
 #_03E716: BCS .is_boss
@@ -15087,19 +15092,22 @@ GetDemonXClass:
 
 #_03E71B: SEP #$20
 
-.branch03E71D
+.search_for_class
 #_03E71D: CMP.w ClassCutoffs,X
-#_03E720: BCC .branch03E728
+#_03E720: BCC .class_discovered
 
 #_03E722: INX
 #_03E723: CPX.w #$0024
-#_03E726: BNE .branch03E71D
+#_03E726: BNE .search_for_class
 
-.branch03E728
+.class_discovered
 #_03E728: TXA
 
-.branch03E729
+;---------------------------------------------------------------------------------------------------
+
+.set_class
 #_03E729: PLX
+
 #_03E72A: STA.w $0BF3,X
 #_03E72D: TAY
 
@@ -15122,10 +15130,11 @@ GetDemonXClass:
 #_03E740: SEC
 #_03E741: SBC.w #$0100
 #_03E744: TAX
-#_03E745: LDA.w boss_classes,X
+
+#_03E745: LDA.w BossClasses,X
 
 #_03E748: SEP #$20
-#_03E74A: BRA .branch03E729
+#_03E74A: BRA .set_class
 
 ;===================================================================================================
 
@@ -15138,7 +15147,7 @@ ClassCutoffs:
 #_03E764: db $B9,$BD,$C2,$C9,$CD,$D3,$DC,$E5
 #_03E76C: db $EC,$F3,$F9,$FF
 
-boss_classes:
+BossClasses:
 #_03E770: db $0F,$1E,$25,$25,$00,$25,$25,$03
 #_03E778: db $0B,$1A,$0F,$23,$05,$05,$02,$03
 #_03E780: db $1B,$19,$00,$02,$02,$04,$04,$04

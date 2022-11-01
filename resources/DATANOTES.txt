@@ -1,77 +1,6 @@
-text pointers?
-08F5B9
-08F6DD
-
-
-0382C2 CHECK THIS
-
-
-
-
-
-388D0
-
-
-from 039632/03962E:
-data
-pointer for 8bit data that stops at ff
-09FD7C
-09FEF1
-08FF9B
-08FF89
-09F429
-09F477
-09F577
-09F1BD $0100 pointers (not named with data yet)
-09F3BD $0100 pointers (not named with data yet)
-09F782 (991e3-9f1b9
-
-IN 3B3BF
-08FFC1
-
-8F5AB
-
-CF233
-
-
-
-
-
 $1C:B000
 	Contains palette data; seems to be in sets of 16 colors?
 
-$07:E78A
-	contains pointers to data structured as:
-	[2 bytes] - $0100 - Number of DMAs; bit 15 means all DMAs are RLE
-	[2 bytes] - $0102 - VRAM address
-	[2 bytes] - $0104 - Number of words
-	[Data] write 2 bytes at a time until done or $FFFF
-	if $FFFF then
-	[2 bytes] - $0E80 - Number of loops to run
-				$0E82 - Transfer size from $0104
-				$0E84 - 2*LoopSize for resetting Y
-	Then read stuff again until FFFF
-	Stop when minimum is exceeded
-
-	E7F4
-	E804
-	E83E
-	E882
-	E8D0
-	E90A
-	E932
-	E9BC
-	EA46
-	EAD0
-	EB5A
-	EBE4
-	EC6E
-	ECB4
-	ECF0
-	ED6E
-	ED94
-	EDCA
-	EE08
 
 
 Stats:
@@ -106,11 +35,3 @@ Stats:
 					min(999, ((STR/2 + STM) / 5) * (LVL+1) + 14)
 
 	MP				= min(999, ((((MAG/2)+INT)/8) * (LVL+4))+4)
-
-	JSL GetEquipmentStat(A=ID,Y=Stat)
-	Y		Stat
-	-----------------------------
-	0		Some identifier? maybe who can use it?
-	1		Power/Defense
-	2		Accuracy/Evade
-	

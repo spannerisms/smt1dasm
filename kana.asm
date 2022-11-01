@@ -136,7 +136,7 @@ kYOs = $91 ; ョ
 kTSUs = $92 ; ッ
 k__ = $93 ; ・
 
-; dakuten kana ゛
+; dakuten hiragana ゛゜
 hGA = $9C ; が
 hGI = $9D ; ぎ
 hGU = $9E ; ぐ
@@ -167,7 +167,7 @@ hPU = $B2 ; ぷ
 hPE = $B3 ; ぺ
 hPO = $B4 ; ぽ
 
-; handakuten kana ゜
+; dakuten katakana 
 kGA = $B5 ; ガ
 kGI = $B6 ; ギ
 kGU = $B7 ; グ

@@ -21,26 +21,26 @@ FD3ED - cursor gfx
 fdafc - font gfx
 0FE800+ graphics something
 
-00a232
+00A232
 0384F5
-0385e9
+0385E9
 03825B
-03837c
+03837C
 03957A
-00ba70
-03861d
-00a71e
+00BA70
+03861D
+00A71E
 00B4E1
-00bb1c
-00c409
-02c98f
+00BB1C
+00C409
+02C98F
 009643
 
 018aa7
 
 0f9f97 putting addresses places??
 
-03c515->03b134
+03C515->03B134
 
 038602
 	Y = A & 0x07
@@ -91,10 +91,5 @@ routine tracker:
 
 data to mark
 
-; are these pointers for more data? 038301
-088000
-098000
-0a8000
-0b8000
 
 03a09d

@@ -1,72 +1,74 @@
 org $0D8000
 
 Sample_0D8000:
-#_0D8000: dw $883A,$03F0
+#_0D8000: dw $883A, $03F0
 incbin "bin/brr/SMT_SAMPLE_0D8000.brr"
 
 Sample_0D883E:
-#_0D883E: dw $80A2,$001B
+#_0D883E: dw $80A2, $001B
 incbin "bin/brr/SMT_SAMPLE_0D883E.brr"
 
 Sample_0D88E4:
-#_0D88E4: dw $8129,$001B
+#_0D88E4: dw $8129, $001B
 incbin "bin/brr/SMT_SAMPLE_0D88E4.brr"
 
 Sample_0D8A11:
-#_0D8A11: dw $8051,$0009
+#_0D8A11: dw $8051, $0009
 incbin "bin/brr/SMT_SAMPLE_0D8A11.brr"
 
 Sample_0D8A66:
-#_0D8A66: dw $9D0A,$1D0A
+#_0D8A66: dw $9D0A, $1D0A
 incbin "bin/brr/SMT_SAMPLE_0D8A66.brr"
 
 Sample_0DA774:
-#_0DA774: dw $8195,$001B
+#_0DA774: dw $8195, $001B
 incbin "bin/brr/SMT_SAMPLE_0DA774.brr"
 
 Sample_0DA90D:
-#_0DA90D: dw $8129,$001B
+#_0DA90D: dw $8129, $001B
 incbin "bin/brr/SMT_SAMPLE_0DA90D.brr"
 
 Sample_0DAA3A:
-#_0DAA3A: dw $8090,$0009
+#_0DAA3A: dw $8090, $0009
 incbin "bin/brr/SMT_SAMPLE_0DAA3A.brr"
 
 Sample_0DAACE:
-#_0DAACE: dw $86F6,$05E8
+#_0DAACE: dw $86F6, $05E8
 incbin "bin/brr/SMT_SAMPLE_0DAACE.brr"
 
 Sample_0DB1C8:
-#_0DB1C8: dw $8129,$001B
+#_0DB1C8: dw $8129, $001B
 incbin "bin/brr/SMT_SAMPLE_0DB1C8.brr"
 
 Sample_0DB2F5:
-#_0DB2F5: dw $805A,$001B
+#_0DB2F5: dw $805A, $001B
 incbin "bin/brr/SMT_SAMPLE_0DB2F5.brr"
 
 Sample_0DB353:
-#_0DB353: dw $868A,$057C
+#_0DB353: dw $868A, $057C
 incbin "bin/brr/SMT_SAMPLE_0DB353.brr"
 
 Sample_0DB9E1:
-#_0DB9E1: dw $83BA,$02EB
+#_0DB9E1: dw $83BA, $02EB
 incbin "bin/brr/SMT_SAMPLE_0DB9E1.brr"
 
 Sample_0DBD9F:
-#_0DBD9F: dw $8036,$001B
+#_0DBD9F: dw $8036, $001B
 incbin "bin/brr/SMT_SAMPLE_0DBD9F.brr"
 
 Sample_0DBDD9:
-#_0DBDD9: dw $9CD4,$001B
+#_0DBDD9: dw $9CD4, $001B
 incbin "bin/brr/SMT_SAMPLE_0DBDD9.brr"
 
 Sample_0DDAB1:
-#_0DDAB1: dw $9074,$001B
+#_0DDAB1: dw $9074, $001B
 incbin "bin/brr/SMT_SAMPLE_0DDAB1.brr"
 
 Sample_0DEB29:
-#_0DEB29: dw $82D0,$0249
+#_0DEB29: dw $82D0, $0249
 incbin "bin/brr/SMT_SAMPLE_0DEB29.brr"
+
+;===================================================================================================
 
 ; TODO wtf this shit be
 #_0DEDFD: db $A2,$AA,$AA,$AE,$BA,$AA,$AA,$EA
