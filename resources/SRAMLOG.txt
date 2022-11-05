@@ -19,6 +19,7 @@ $x000	$7E:0700	0x100
 $x000	$7E:0700	0x0C	Slots for characters
 $x00C	$7E:070C	2		Underworld coordinates
 $x00E	$7E:070E	2		IDK coordinates of some kind?
+$x010	$7E:0710	1		Dungeon theme
 $x011	$7E:0711	1		Event of square
 $x012	$7E:0712	1		Flags something
 							bit 7 = moving?
@@ -102,7 +103,7 @@ $x705	$7E:0405	4		Money
 $x709	$7E:0409	4		MAG
 $x70D	$7E:040D	1		Current direction (0=N, 1=E, 2=S, 3=W)
 $x70E	$7E:040E	1		Previous direction
-$x70F	$7E:040F	1		0xMS - M moon phase, S steps /15
+$x70F	$7E:040F	1		$MS - M moon phase, S steps /15
 $x710	$7E:0410	8		Chase name
 $x718	$7E:0418	8		Momo name
 $x720	$7E:0420	8		Jimmy name
@@ -115,7 +116,11 @@ $x75A	$7E:045A	1		global map properties?
 
 $x75C	$7E:045C	2		MAG taken per step (x10 with rollover)
 
-$x75B	$7E:04B0	2		Some OW movement counter; caps at 1000
+$x76A	$7E:046A	1		Toraport direction
+$x76B	$7E:046B	1		Toraport dungeon theme
+$x76C	$7E:046C	2		Toraport destination
+
+$x7B0	$7E:04B0	2		Some OW movement counter; caps at 1000
 
 ------------------------------------------------------------
 $x800	$7E:3000	0x400

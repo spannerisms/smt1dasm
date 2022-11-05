@@ -2228,7 +2228,7 @@ DungeonFreeholeLocations:
 
 ;===================================================================================================
 
-; dw tile : db <x>, <y>, <scene>
+; dw tile : db <x>, <y>, ???
 ; if x bit 8 is set: exit, otherwise, stairs
 DungeonExitLocations:
 #_07A264: dw $0103 : db $B2, $88, $02, $00, $00, $00 ; Kichijoji - my house
@@ -2246,8 +2246,8 @@ DungeonExitLocations:
 #_07A2C4: dw $0150 : db $D3, $8F, $06, $00, $00, $00 ; Shinjuku - mall west? TODO
 #_07A2CC: dw $0757 : db $96, $2A, $02, $00, $00, $00 ; Shinjuku nuked - mall east?
 #_07A2D4: dw $0750 : db $8F, $2B, $06, $00, $00, $00 ; Shinjuku nuked - mall west?
-#_07A2DC: dw $073F : db $55, $02, $08, $55, $04, $0B ; 
-#_07A2E4: dw $0730 : db $52, $02, $08, $52, $04, $0B ; 
+#_07A2DC: dw $073F : db $55, $02, $08, $55, $04, $0B ; Shinjuku nuked to bunker - mall east
+#_07A2E4: dw $0730 : db $52, $02, $08, $52, $04, $0B ; Shinjuku nuked to bunker - mall west
 #_07A2EC: dw $0B27 : db $D0, $94, $02, $00, $00, $00 ; Shinjuku - off limits area TODO
 #_07A2F4: dw $0F2B : db $D0, $89, $02, $00, $00, $00 ; Shinjuku - some building TODO
 #_07A2FC: dw $0F54 : db $93, $4E, $04, $00, $00, $00 ; Shibuya nuked - haven
@@ -2755,13 +2755,14 @@ data07AAB7:
 
 ;===================================================================================================
 
-; xxxxxxxx ddyyyyyy ..ss..tt iiiiiiii
+; .xxxxxxx ddyyyyyy ..ss..tt iiiiiiii
 ; d - direction
 ;     00 - north
 ;     01 - east
 ;     10 - south
 ;     11 - west
-; x - location
+; x - x coordinate
+; y - y coordinate
 ; s - chest type
 ;     00 - cardboard
 ;     01 - wooden box

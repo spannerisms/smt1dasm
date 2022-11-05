@@ -269,7 +269,7 @@ routine0181D7:
 #_0181E7: BNE .branch018204
 
 #_0181E9: LDA.w #$0002
-#_0181EC: JSL CalcVisitComponent
+#_0181EC: JSL CheckGameProgressFlag
 
 #_0181F0: LDX.w #$0002
 #_0181F3: BCS .branch018204
@@ -324,7 +324,7 @@ routine0181D7:
 #_018248: BCS .branch018255
 
 #_01824A: LDA.w #$0000
-#_01824D: JSL CalcVisitComponent
+#_01824D: JSL CheckGameProgressFlag
 #_018251: BCC .branch01821A
 
 #_018253: BRA .branch018263
@@ -334,7 +334,7 @@ routine0181D7:
 #_018258: BCS .branch018263
 
 #_01825A: LDA.w #$0001
-#_01825D: JSL CalcVisitComponent
+#_01825D: JSL CheckGameProgressFlag
 #_018261: BCC .branch01821A
 
 .branch018263
@@ -587,7 +587,7 @@ routine018344:
 #_0183D2: CMP.b #$0A
 #_0183D4: BNE .branch0183DA
 
-#_0183D6: JSL routine00D142
+#_0183D6: JSL RoomEvent_0A_SignA_long
 
 .branch0183DA
 #_0183DA: REP #$30
@@ -696,7 +696,7 @@ routine0164AE:
 #_0184B9: LDA.w $1004,X
 #_0184BC: LDX.w #$0014
 #_0184BF: LDY.w #$0000
-#_0184C2: JSL routine00AA04
+#_0184C2: JSL GetHeroName
 #_0184C6: LDA.w #$0000
 #_0184C9: LDX.w #$0014
 #_0184CC: LDY.w #$0000
@@ -1027,7 +1027,7 @@ routine018768:
 #_01877B: BNE .branch018798
 
 #_01877D: LDA.w #$0002
-#_018780: JSL CalcVisitComponent
+#_018780: JSL CheckGameProgressFlag
 #_018784: LDX.w #$0002
 #_018787: BCS .branch018798
 
@@ -1074,7 +1074,7 @@ routine018768:
 #_0187CE: JSR routine01818A
 #_0187D1: INC.w $0690
 #_0187D4: LDA.w #$0002
-#_0187D7: JSL CalcVisitComponent
+#_0187D7: JSL CheckGameProgressFlag
 #_0187DB: BCS .branch0187FB
 
 #_0187DD: LDA.w $0690
@@ -1085,7 +1085,7 @@ routine018768:
 #_0187E8: BCS .branch0187FB
 
 #_0187EA: LDA.w #$0001
-#_0187ED: JSL CalcVisitComponent
+#_0187ED: JSL CheckGameProgressFlag
 #_0187F1: BCS .branch0187FB
 
 #_0187F3: LDA.w $0690
@@ -2836,7 +2836,7 @@ routine0193AF:
 #_0193AF: LDA.w #$205C
 #_0193B2: STA.w $0106
 #_0193B5: LDA.w #$00EC
-#_0193B8: JSL CalcVisitComponent
+#_0193B8: JSL CheckGameProgressFlag
 #_0193BC: BCC .branch0193C1
 
 #_0193BE: DEC.w $0106
@@ -3275,7 +3275,7 @@ routine0195C6:
 #_01966D: BNE .branch019678
 
 #_01966F: LDA.w #$001C
-#_019672: JSL CalcVisitComponent
+#_019672: JSL CheckGameProgressFlag
 #_019676: BCC .branch01964D
 
 .branch019678
@@ -3724,7 +3724,7 @@ routine0198AF:
 #_019904: BCC .branch019911
 
 #_019906: LDA.w #$00F0
-#_019909: JSL CalcVisitComponent
+#_019909: JSL CheckGameProgressFlag
 #_01990D: BCC .branch019911
 
 .branch01990F
@@ -3803,7 +3803,7 @@ routine019913:
 #_0199A8: CMP.b #$0A
 #_0199AA: BNE .branch0199B0
 
-#_0199AC: JSL routine00D142
+#_0199AC: JSL RoomEvent_0A_SignA_long
 
 .branch0199B0
 #_0199B0: REP #$30
@@ -3912,7 +3912,7 @@ routine0199B3:
 #_019A68: CMP.b #$0A
 #_019A6A: BNE .branch019A70
 
-#_019A6C: JSL routine00D142
+#_019A6C: JSL RoomEvent_0A_SignA_long
 
 .branch019A70
 #_019A70: REP #$30
@@ -5007,7 +5007,7 @@ routine01A190:
 #_01A1B9: LDA.w $1004,X
 #_01A1BC: LDX.w #$0014
 #_01A1BF: LDY.w #$0000
-#_01A1C2: JSL routine00AA04
+#_01A1C2: JSL GetHeroName
 #_01A1C6: LDA.w $0690
 #_01A1C9: CLC
 #_01A1CA: ADC.w #$0002
@@ -5111,7 +5111,7 @@ routine01A190:
 #_01A28E: CMP.b #$0A
 #_01A290: BNE .branch01A296
 
-#_01A292: JSL routine00D142
+#_01A292: JSL RoomEvent_0A_SignA_long
 
 .branch01A296
 #_01A296: REP #$30
@@ -7521,7 +7521,7 @@ routine01B1B7:
 #_01B203: PHA
 
 #_01B204: LDA.b #$2F
-#_01B206: JSL CalcVisitComponent
+#_01B206: JSL CheckGameProgressFlag
 #_01B20A: BCS .branch01B21C
 
 #_01B20C: LDX.w $045A
@@ -8778,7 +8778,7 @@ routine01B848:
 
 routine01B8A3:
 #_01B8A3: LDA.w #$0001
-#_01B8A6: JSL CalcVisitComponent
+#_01B8A6: JSL CheckGameProgressFlag
 #_01B8AA: BCS .branch01B8F4
 
 #_01B8AC: LDY.w #$0600
@@ -14899,16 +14899,24 @@ routine01E244:
 routine01E277:
 #_01E277: STZ.w $0524
 #_01E27A: STZ.w $05BC
+
 #_01E27D: STA.w $0564
 #_01E280: TAY
+
 #_01E281: PHY
+
 #_01E282: LDX.w $0506,Y
-#_01E285: LDA.l data01E2D5,X
+
+#_01E285: LDA.l .songs,X
 #_01E289: AND.w #$00FF
 #_01E28C: JSL Write_to_APU_transferrable
+
 #_01E290: DEC.w $05BA
+
 #_01E293: PLY
+
 #_01E294: LDX.w $0506,Y
+
 #_01E297: LDA.l data01E2B0,X
 #_01E29B: AND.w #$00FF
 #_01E29E: BEQ .branch01E2A9
@@ -14916,11 +14924,13 @@ routine01E277:
 #_01E2A0: CLC
 #_01E2A1: ADC.w #$003C
 #_01E2A4: JSL routine00DB3C
+
 #_01E2A8: RTS
 
 .branch01E2A9
 #_01E2A9: LDA.w #$FFFF
 #_01E2AC: STA.w $05BC
+
 #_01E2AF: RTS
 
 data01E2B0:
@@ -14931,12 +14941,14 @@ data01E2B0:
 #_01E2D0: db $05,$00,$01,$00,$00
 
 ; TODO these are music tracks
-data01E2D5:
+.songs:
 #_01E2D5: db $38,$38,$38,$38,$38,$38,$38,$38
 #_01E2DD: db $38,$38,$38,$39,$42,$42,$42,$3A
 #_01E2E5: db $43,$3A,$43,$3B,$3B,$3F,$39,$39
 #_01E2ED: db $39,$3B,$43,$43,$3A,$43,$3B,$3A
 #_01E2F5: db $3A,$39,$3F,$39,$39
+
+;===================================================================================================
 
 LoadDemonEverything:
 #_01E2FA: PHP
@@ -14970,9 +14982,12 @@ LoadDemonEverything:
 
 .branch01E323
 #_01E323: TAX
+
 #_01E324: LDA.l data01E5AD,X
 #_01E328: STA.w $0620
+
 #_01E32B: LDA.l data01E5AF,X
+
 #_01E32F: BIT.w $05BC
 #_01E332: BPL .branch01E338
 
@@ -15025,23 +15040,31 @@ LoadDemonEverything:
 
 #_01E36F: AND.w #$7FFF
 #_01E372: PHA
+
 #_01E373: PHX
+
 #_01E374: INX
 #_01E375: INX
+
 #_01E376: PHY
+
 #_01E377: CLC
 #_01E378: ADC.w #$0202
 #_01E37B: JSL routine00BC3C
+
 #_01E37F: DEC.w $0624
+
 #_01E382: LDA.w $0622
 #_01E385: SEC
 #_01E386: SBC.w #$001C
 #_01E389: STA.w $0622
+
 #_01E38C: PLY
 #_01E38D: PLX
 #_01E38E: PLA
 
 ;---------------------------------------------------------------------------------------------------
+
 .not_animated
 #_01E38F: JSL routine00BC3C
 
@@ -16116,6 +16139,7 @@ routine01EAC4:
 #_01EACF: BCC .not_special_move
 
 #_01EAD1: JSR routine01EB94
+
 #_01EAD4: LDA.w $0A52
 #_01EAD7: LDY.w #$0004
 #_01EADA: JSL GetSkillProperty
@@ -16338,42 +16362,42 @@ data01EC0E:
 #_01EC1E: dw $F4AC,$F4F3
 
 ;===================================================================================================
-; Spell pointers?
+; Spell pointers
 ;===================================================================================================
 vectors01EC22:
-#_01EC22: dw routine01ED58
-#_01EC24: dw routine01ED92
-#_01EC26: dw routine01EDAE
-#_01EC28: dw routine01EDCA
-#_01EC2A: dw routine01EDE6
-#_01EC2C: dw routine01EDF8
-#_01EC2E: dw routine01EE0A
-#_01EC30: dw routine01EE1C
-#_01EC32: dw routine01EE2E
-#_01EC34: dw routine01EE51
-#_01EC36: dw routine01EE74
-#_01EC38: dw UseItem_Ointment
-#_01EC3A: dw UseItem_Gyoutan
-#_01EC3C: dw routine01EECF
-#_01EC3E: dw routine01EEEB
-#_01EC40: dw routine01EF62
-#_01EC42: dw DoSomeStatusCure
-#_01EC44: dw routine01F039
-#_01EC46: dw DoSomeStatusCure
-#_01EC48: dw DoSomeStatusCure
-#_01EC4A: dw DoSomeStatusCure
-#_01EC4C: dw routine01F09E
-#_01EC4E: dw routine01F0F1
-#_01EC50: dw routine01F146
-#_01EC52: dw routine01F231
-#_01EC54: dw routine01F259
-#_01EC56: dw routine01F275
-#_01EC58: dw routine01F2C6
-#_01EC5A: dw UseItem_SmokeBomb
-#_01EC5C: dw ActivateFumaBell
-#_01EC5E: dw routine01F366
-#_01EC60: dw routine01F38B
-#_01EC62: dw routine01F38B
+#_01EC22: dw routine01ED58      ; 1F
+#_01EC24: dw routine01ED92      ; 20
+#_01EC26: dw routine01EDAE      ; 21
+#_01EC28: dw routine01EDCA      ; 22
+#_01EC2A: dw routine01EDE6      ; 23
+#_01EC2C: dw routine01EDF8      ; 24
+#_01EC2E: dw routine01EE0A      ; 25
+#_01EC30: dw routine01EE1C      ; 26
+#_01EC32: dw routine01EE2E      ; 27
+#_01EC34: dw routine01EE51      ; 28
+#_01EC36: dw routine01EE74      ; 29
+#_01EC38: dw UseItem_Ointment   ; 2A
+#_01EC3A: dw UseItem_Gyoutan    ; 2B
+#_01EC3C: dw routine01EECF      ; 2C
+#_01EC3E: dw routine01EEEB      ; 2D
+#_01EC40: dw routine01EF62      ; 2E
+#_01EC42: dw DoSomeStatusCure   ; 2F
+#_01EC44: dw routine01F039      ; 30
+#_01EC46: dw DoSomeStatusCure   ; 31
+#_01EC48: dw DoSomeStatusCure   ; 32
+#_01EC4A: dw DoSomeStatusCure   ; 33
+#_01EC4C: dw routine01F09E      ; 34
+#_01EC4E: dw routine01F0F1      ; 35
+#_01EC50: dw routine01F146      ; 36
+#_01EC52: dw routine01F231      ; 37
+#_01EC54: dw routine01F259      ; 38
+#_01EC56: dw routine01F275      ; 39
+#_01EC58: dw routine01F2C6      ; 3A
+#_01EC5A: dw UseItem_SmokeBomb  ; 3B
+#_01EC5C: dw ActivateFumaBell   ; 3C
+#_01EC5E: dw routine01F366      ; 3D
+#_01EC60: dw routine01F38B      ; 3E
+#_01EC62: dw routine01F38B      ; 3F
 
 data01EC64:
 #_01EC64: dw $0099,$009A,$009B,$009C
@@ -17308,21 +17332,21 @@ routine01F275:
 #_01F293: BNE .branch01F29D
 
 #_01F295: LDA.b #$5C
-#_01F297: JSL CalcVisitComponent
+#_01F297: JSL CheckGameProgressFlag
 #_01F29B: BCS .branch01F2C2
 
 .branch01F29D
 #_01F29D: LDA.b #$E6
-#_01F29F: JSL CalcVisitComponent
+#_01F29F: JSL CheckGameProgressFlag
 #_01F2A3: BCC .branch01F2C2
 
 #_01F2A5: REP #$20
 #_01F2A7: LDA.w #$FFFF
 #_01F2AA: STA.w $0C4F
 #_01F2AD: LDA.w #$000C
-#_01F2B0: JSL routine00BD75
+#_01F2B0: JSL ClearGameProgressFlag
 #_01F2B4: LDA.w #$00FF
-#_01F2B7: JSL routine00BD75
+#_01F2B7: JSL ClearGameProgressFlag
 #_01F2BB: STZ.w $05A6
 
 #_01F2BE: REP #$20
@@ -17357,16 +17381,17 @@ routine01F2C6:
 #_01F2E0: BNE .branch01F2EA
 
 #_01F2E2: LDA.b #$5C
-#_01F2E4: JSL CalcVisitComponent
+#_01F2E4: JSL CheckGameProgressFlag
 #_01F2E8: BCS .branch01F334
 
 .branch01F2EA
 #_01F2EA: LDA.b #$E6
-#_01F2EC: JSL CalcVisitComponent
+#_01F2EC: JSL CheckGameProgressFlag
 #_01F2F0: BCC .branch01F334
 
 #_01F2F2: LDA.w $046B
 #_01F2F5: STA.w $0710
+
 #_01F2F8: LDA.w $046A
 #_01F2FB: STA.w $040D
 
@@ -17384,9 +17409,9 @@ routine01F2C6:
 #_01F319: JSL routine00A840
 #_01F31D: JSL UpdateDirTilemap
 #_01F321: LDA.w #$000C
-#_01F324: JSL routine00BD75
+#_01F324: JSL ClearGameProgressFlag
 #_01F328: LDA.w #$00FF
-#_01F32B: JSL routine00BD75
+#_01F32B: JSL ClearGameProgressFlag
 #_01F32F: STZ.w $05A6
 #_01F332: CLC
 #_01F333: RTS

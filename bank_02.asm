@@ -1725,25 +1725,32 @@ routine028A36:
 #_028A37: PHB
 #_028A38: PHK
 #_028A39: PLB
+
 #_028A3A: JSR routine028E37
 
 #_028A3D: REP #$30
+
 #_028A3F: LDA.w $0B2B
 #_028A42: AND.w #$00FF
 #_028A45: ASL A
 #_028A46: TAX
 
 #_028A47: SEP #$20
+
 #_028A49: LDA.b #$05
 #_028A4B: STA.w $00E2
+
 #_028A4E: LDA.b #$7E
 #_028A50: STA.w $00E5
 
 #_028A53: REP #$20
+
 #_028A55: LDA.w data028B41,X
 #_028A58: STA.w $00E0
+
 #_028A5B: LDA.w #$7E8000
 #_028A5E: STA.w $00E3
+
 #_028A61: LDY.w #$0000
 
 .branch028A64
@@ -1804,15 +1811,19 @@ routine028A36:
 
 .branch028AD1
 #_028AD1: SEP #$20
+
 #_028AD3: LDA.b #$7E
 #_028AD5: STA.w $00E2
 #_028AD8: STA.w $00E5
 
 #_028ADB: REP #$20
-#_028ADD: LDA.w #DATA_05B000
+
+#_028ADD: LDA.w #data05B000
 #_028AE0: STA.w $00E0
+
 #_028AE3: LDA.w #$7DD000
 #_028AE6: STA.w $00E3
+
 #_028AE9: LDY.w #$0000
 
 .branch028AEC
@@ -1824,15 +1835,19 @@ routine028A36:
 #_028AF5: BNE .branch028AEC
 
 #_028AF7: SEP #$20
+
 #_028AF9: LDA.b #$7E
 #_028AFB: STA.w $00E2
 #_028AFE: STA.w $00E5
 
 #_028B01: REP #$20
-#_028B03: LDA.w #DATA_05B070
+
+#_028B03: LDA.w #data05B070
 #_028B06: STA.w $00E0
+
 #_028B09: LDA.w #$7EE32C
 #_028B0C: STA.w $00E3
+
 #_028B0F: LDX.w #$0000
 
 .branch028B12
@@ -1864,18 +1879,32 @@ routine028A36:
 #_028B3F: PLP
 #_028B40: RTL
 
-; TODO these are pointers in bank05 and some in 7E
+;---------------------------------------------------------------------------------------------------
+
+; TODO these are pointers in bank05 and some in 7E?
 data028B41:
-#_028B41: dw $8000,$9642,$9642,$9642
+#_028B41: dw data058000
+#_028B43: dw data059642
+#_028B45: dw data059642
+#_028B47: dw data059642
 
 data028B49:
-#_028B49: dw $87E0,$A830,$A830,$A830
+#_028B49: dw data0587E0
+#_028B4B: dw data05A830
+#_028B4D: dw data05A830
+#_028B4F: dw data05A830
 
 data028B51:
-#_028B51: dw $8E88,$B668,$B668,$B668
+#_028B51: dw data058E88
+#_028B53: dw data05B668
+#_028B55: dw data05B668
+#_028B57: dw data05B668
 
 data028B59:
-#_028B59: dw $8700,$A632,$A632,$A632
+#_028B59: dw data058700
+#_028B5B: dw data05A632
+#_028B5D: dw data05A632
+#_028B5F: dw data05A632
 
 data028B61:
 #_028B61: dw $D000,$B000,$B000,$B000
@@ -1885,18 +1914,22 @@ data028B61:
 
 routine028B71:
 #_028B71: PHP
+
 #_028B72: PHB
 #_028B73: PHK
 #_028B74: PLB
 
 #_028B75: REP #$30
 #_028B77: JSR routine028E37
+
 #_028B7A: LDA.w $0B2B
 #_028B7D: AND.w #$00FF
 #_028B80: ASL A
 #_028B81: TAY
+
 #_028B82: LDA.w data028C68,Y
 #_028B85: STA.w $00E0
+
 #_028B88: LDY.w #$0000
 
 .branch028B8B
@@ -2051,8 +2084,11 @@ data028C68:
 #_028CC8: dw $009D,$0080,$01E2,$01E3
 #_028CD0: dw $009B,$FFFF
 
+;===================================================================================================
+
 routine028CD4:
 #_028CD4: REP #$30
+
 #_028CD6: LDY.w #$0000
 #_028CD9: LDA.b [$E0],Y
 #_028CDB: LSR A
@@ -2060,12 +2096,15 @@ routine028CD4:
 #_028CDD: LSR A
 #_028CDE: LSR A
 #_028CDF: STA.b $E8
+
 #_028CE1: INC.w $00E0
 #_028CE4: INC.w $00E0
+
 #_028CE7: STZ.b $EA
 
-.branch028CE9
+.next
 #_028CE9: LDY.b $EA
+
 #_028CEB: LDA.b [$E0],Y
 #_028CED: XBA
 #_028CEE: LSR A
@@ -2076,6 +2115,7 @@ routine028CD4:
 #_028CF3: LSR A
 #_028CF4: LSR A
 #_028CF5: PHA
+
 #_028CF6: INY
 #_028CF7: LDA.b [$E0],Y
 #_028CF9: XBA
@@ -2087,6 +2127,7 @@ routine028CD4:
 #_028CFF: LSR A
 #_028D00: AND.w #$01FF
 #_028D03: PHA
+
 #_028D04: INY
 #_028D05: LDA.b [$E0],Y
 #_028D07: XBA
@@ -2097,6 +2138,7 @@ routine028CD4:
 #_028D0C: LSR A
 #_028D0D: AND.w #$01FF
 #_028D10: PHA
+
 #_028D11: INY
 #_028D12: LDA.b [$E0],Y
 #_028D14: XBA
@@ -2106,6 +2148,7 @@ routine028CD4:
 #_028D18: LSR A
 #_028D19: AND.w #$01FF
 #_028D1C: PHA
+
 #_028D1D: INY
 #_028D1E: LDA.b [$E0],Y
 #_028D20: XBA
@@ -2114,6 +2157,7 @@ routine028CD4:
 #_028D23: LSR A
 #_028D24: AND.w #$01FF
 #_028D27: PHA
+
 #_028D28: INY
 #_028D29: LDA.b [$E0],Y
 #_028D2B: XBA
@@ -2121,35 +2165,40 @@ routine028CD4:
 #_028D2D: LSR A
 #_028D2E: AND.w #$01FF
 #_028D31: PHA
+
 #_028D32: INY
 #_028D33: LDA.b [$E0],Y
 #_028D35: XBA
 #_028D36: LSR A
 #_028D37: AND.w #$01FF
 #_028D3A: PHA
+
 #_028D3B: INY
 #_028D3C: LDA.b [$E0],Y
 #_028D3E: XBA
 #_028D3F: AND.w #$01FF
 #_028D42: PHA
+
 #_028D43: INY
 #_028D44: INY
 #_028D45: STY.b $EA
+
 #_028D47: LDY.w #$000E
 
-.branch028D4A
+.copy_back
 #_028D4A: PLA
 #_028D4B: STA.b [$E3],Y
+
 #_028D4D: DEY
 #_028D4E: DEY
-#_028D4F: BPL .branch028D4A
+#_028D4F: BPL .copy_back
 
 #_028D51: LDA.b $E3
 #_028D53: CLC
 #_028D54: ADC.w #$0010
 #_028D57: STA.b $E3
 #_028D59: DEC.b $E8
-#_028D5B: BPL .branch028CE9
+#_028D5B: BPL .next
 
 #_028D5D: RTS
 
@@ -2158,17 +2207,21 @@ routine028CD4:
 ;===================================================================================================
 routine028D5E:
 #_028D5E: REP #$30
+
 #_028D60: LDY.w #$0000
+
 #_028D63: LDA.b [$E0],Y
 #_028D65: LSR A
 #_028D66: LSR A
 #_028D67: LSR A
 #_028D68: STA.b $E8
+
 #_028D6A: INC.w $00E0
 #_028D6D: INC.w $00E0
+
 #_028D70: STZ.b $EA
 
-.branch028D72
+.next
 #_028D72: LDY.b $EA
 #_028D74: LDA.b [$E0],Y
 #_028D76: XBA
@@ -2179,6 +2232,7 @@ routine028D5E:
 #_028D7B: LSR A
 #_028D7C: LSR A
 #_028D7D: PHA
+
 #_028D7E: INY
 #_028D7F: LDA.b [$E0],Y
 #_028D81: XBA
@@ -2188,6 +2242,7 @@ routine028D5E:
 #_028D85: LSR A
 #_028D86: AND.w #$03FF
 #_028D89: PHA
+
 #_028D8A: INY
 #_028D8B: LDA.b [$E0],Y
 #_028D8D: XBA
@@ -2195,29 +2250,34 @@ routine028D5E:
 #_028D8F: LSR A
 #_028D90: AND.w #$03FF
 #_028D93: PHA
+
 #_028D94: INY
 #_028D95: LDA.b [$E0],Y
 #_028D97: XBA
 #_028D98: AND.w #$03FF
 #_028D9B: PHA
+
 #_028D9C: INY
 #_028D9D: INY
 #_028D9E: STY.b $EA
+
 #_028DA0: LDY.w #$0006
 
-.branch028DA3
+.copy_back
 #_028DA3: PLA
 #_028DA4: STA.b [$E3],Y
+
 #_028DA6: DEY
 #_028DA7: DEY
-#_028DA8: BPL .branch028DA3
+#_028DA8: BPL .copy_back
 
 #_028DAA: LDA.b $E3
 #_028DAC: CLC
 #_028DAD: ADC.w #$0008
 #_028DB0: STA.b $E3
+
 #_028DB2: DEC.b $E8
-#_028DB4: BNE .branch028D72
+#_028DB4: BNE .next
 
 #_028DB6: RTS
 
@@ -2226,59 +2286,77 @@ routine028D5E:
 routine028DB7:
 #_028DB7: PHP
 #_028DB8: SEP #$30
+
 #_028DBA: PHB
 #_028DBB: PHK
 #_028DBC: PLB
+
 #_028DBD: JSR routine028E37
+
 #_028DC0: LDA.w $0B2B
 #_028DC3: ASL A
 #_028DC4: TAX
+
 #_028DC5: LDA.b #$FF
 #_028DC7: STA.w $0A71
+
 #_028DCA: PHX
 #_028DCB: PHX
+
 #_028DCC: LDA.w data028E2F,X
 #_028DCF: JSL routine02F609
+
 #_028DD3: PLX
 #_028DD4: LDA.w data028E30,X
 #_028DD7: JSL routine02FC09
+
 #_028DDB: PLX
 #_028DDC: LDA.w data028E30,X
 #_028DDF: JSL routine02FC6E
 #_028DE3: JSL routine0F9AE1
 
 #_028DE7: SEP #$30
+
 #_028DE9: LDA.w $0B2B
 #_028DEC: CMP.b #$03
-#_028DEE: BNE .branch028E2C
+#_028DEE: BNE .exit
 
 #_028DF0: LDA.b #$26
 #_028DF2: JSL routine02FC6E
 
 #_028DF6: SEP #$20
+
 #_028DF8: LDA.b #$08
 #_028DFA: STA.w $0A79
 #_028DFD: STA.w $0A7A
 #_028E00: STA.w $0A7B
 #_028E03: STA.w $0A7C
+
 #_028E06: LDA.b #$0D
 #_028E08: STA.w $0A75
+
 #_028E0B: LDA.b #$13
 #_028E0D: STA.w $0A76
+
 #_028E10: LDA.b #$14
 #_028E12: STA.w $0A77
+
 #_028E15: LDA.b #$15
 #_028E17: STA.w $0A78
+
 #_028E1A: LDA.b #$01
 #_028E1C: STA.w $0A72
+
 #_028E1F: LDA.b #$04
 #_028E21: STA.w $0A74
 #_028E24: STZ.w $0A73
+
 #_028E27: LDA.b #$07
 #_028E29: STA.w $0A71
 
-.branch028E2C
+.exit
 #_028E2C: PLB
+
 #_028E2D: PLP
 #_028E2E: RTL
 
@@ -2289,12 +2367,15 @@ data028E2F:
 data028E30:
 #_028E30: db $01,$2A,$25,$2A,$25,$2A,$25
 
+;===================================================================================================
+
 routine028E37:
 #_028E37: PHP
 #_028E38: SEP #$30
+
 #_028E3A: LDA.b #$2F
 #_028E3C: JSL TestGameProgressBit
-#_028E40: BCC .branch028E67
+#_028E40: BCC .city_streets
 
 #_028E42: LDA.b #$57
 #_028E44: JSL TestGameProgressBit
@@ -2306,23 +2387,27 @@ routine028E37:
 
 #_028E52: LDA.b #$03
 #_028E54: STA.w $0B2B
+
 #_028E57: PLP
 #_028E58: RTS
 
 .branch028E59
 #_028E59: LDA.b #$02
 #_028E5B: STA.w $0B2B
+
 #_028E5E: PLP
 #_028E5F: RTS
 
 .branch028E60
 #_028E60: LDA.b #$01
 #_028E62: STA.w $0B2B
+
 #_028E65: PLP
 #_028E66: RTS
 
-.branch028E67
+.city_streets
 #_028E67: STZ.w $0B2B
+
 #_028E6A: PLP
 #_028E6B: RTS
 
@@ -2330,91 +2415,114 @@ routine028E37:
 
 routine028E6C:
 #_028E6C: REP #$20
+
+; all of these except $0A9D are just immediately overwritten...
 #_028E6E: LDA.w #$FFFF
 #_028E71: STA.w $0A99
 #_028E74: STA.w $0A9B
 #_028E77: STA.w $0A9D
 #_028E7A: STA.w $0A9F
+
 #_028E7D: STZ.w $0A95
 #_028E80: STZ.w $0A97
 #_028E83: STZ.w $0A99
 #_028E86: STZ.w $0A9B
+
 #_028E89: LDA.w #$3C60
 #_028E8C: STA.w $0A9F
 
 #_028E8F: SEP #$30
+
 #_028E91: LDA.w $040F
 #_028E94: STA.w $07EE
 #_028E97: STZ.w $07EF
+
 #_028E9A: STZ.w $07F0
 #_028E9D: STZ.w $07F1
+
 #_028EA0: LDA.b #$FF
 #_028EA2: STA.w $0A71
+
 #_028EA5: LDX.b #$07
 #_028EA7: LDA.b #$00
 
-.branch028EA9
+.clear_next
 #_028EA9: STA.w $0A7D,X
+
 #_028EAC: DEX
-#_028EAD: BPL .branch028EA9
+#_028EAD: BPL .clear_next
 
 .branch028EAF
 #_028EAF: JSL AddSelfAsVector
+
 #_028EB3: JSL routine028ECA
 #_028EB7: JSL routine028EFD
+
 #_028EBB: JSL routine028F58
 #_028EBF: JSL routine0295FA
+
 #_028EC3: JSL routine0FA1A2
 #_028EC7: JMP .branch028EAF
 
+;===================================================================================================
+
 routine028ECA:
 #_028ECA: SEP #$30
+
 #_028ECC: LDA.w $0A71
 #_028ECF: CMP.b #$FF
-#_028ED1: BNE .branch028ED4
+#_028ED1: BNE .continue_a
 
 #_028ED3: RTL
 
-.branch028ED4
+.continue_a
 #_028ED4: DEC.w $0A72
-#_028ED7: BEQ .branch028EDA
+#_028ED7: BEQ .continue_b
 
 #_028ED9: RTL
 
-.branch028EDA
+.continue_b
 #_028EDA: INC.w $0A73
+
 #_028EDD: LDA.w $0A73
 #_028EE0: CMP.w $0A74
-#_028EE3: BNE .branch028EE8
+#_028EE3: BNE .continue_c
 
 #_028EE5: STZ.w $0A73
 
-.branch028EE8
+.continue_c
 #_028EE8: LDX.w $0A73
+
 #_028EEB: LDA.w $0A79,X
 #_028EEE: STA.w $0A72
+
 #_028EF1: LDA.w $0A75,X
 #_028EF4: TAX
+
 #_028EF5: LDA.w $0A71
 #_028EF8: JSL Transfer16Colors_F9AFA
+
 #_028EFC: RTL
 
 ;===================================================================================================
 
 routine028EFD:
 #_028EFD: REP #$30
+
 #_028EFF: LDX.w #$0000
 #_028F02: LDY.w #$0000
 
-.branch028F05
+.next
 #_028F05: SEP #$20
+
 #_028F07: LDA.w $0A7D,Y
-#_028F0A: BEQ .branch028F36
+#_028F0A: BEQ .skip
 
 #_028F0C: CMP.b #$FF
 #_028F0E: BNE .branch028F3F
 
 #_028F10: REP #$20
+
 #_028F12: LDA.w $0A85,X
 #_028F15: PHX
 #_028F16: PHA
@@ -2431,24 +2539,30 @@ routine028EFD:
 #_028F26: STA.w $0A7D,Y
 #_028F29: PLX
 
-.branch028F2A
+.continue_loop
 #_028F2A: PHX
+
 #_028F2B: TXA
 #_028F2C: CLC
 #_028F2D: ADC.b #$10
 #_028F2F: TAX
+
 #_028F30: LDA.b #$80
 #_028F32: STA.w $1A00,X
+
 #_028F35: PLX
 
-.branch028F36
+.skip
 #_028F36: INX
 #_028F37: INX
+
 #_028F38: INY
 #_028F39: CPY.w #$0008
-#_028F3C: BNE .branch028F05
+#_028F3C: BNE .next
 
 #_028F3E: RTL
+
+;---------------------------------------------------------------------------------------------------
 
 .branch028F3F
 #_028F3F: REP #$20
@@ -2465,65 +2579,73 @@ routine028EFD:
 #_028F51: TYX
 #_028F52: INC.w $0A7D,X
 #_028F55: PLX
-#_028F56: BRA .branch028F2A
+#_028F56: BRA .continue_loop
+
+;===================================================================================================
 
 routine028F58:
 #_028F58: REP #$30
+
 #_028F5A: INC.w $0A9D
+
 #_028F5D: LDA.w $0A9D
 #_028F60: AND.w #$0001
-#_028F63: BNE .branch028F66
+#_028F63: BNE .continue_a
 
 #_028F65: RTL
 
-.branch028F66
+.continue_a
 #_028F66: LDY.w #$0000
 #_028F69: TYX
 
-.branch028F6A
+;---------------------------------------------------------------------------------------------------
+
+.next
 #_028F6A: LDA.w $0A99,Y
-#_028F6D: BMI .branch028FA3
+#_028F6D: BMI .skip
 
 #_028F6F: CMP.w #$7FFF
-#_028F72: BEQ .branch028F78
+#_028F72: BEQ .continue_b
 
 #_028F74: DEC A
 #_028F75: STA.w $0A99,Y
 
-.branch028F78
+.continue_b
 #_028F78: LDA.w $0A95,Y
 #_028F7B: XBA
 #_028F7C: AND.w #$00FF
 #_028F7F: BIT.w #$0080
-#_028F82: BEQ .branch028F87
+#_028F82: BEQ .positive_a
 
 #_028F84: ORA.w #$FF00
 
-.branch028F87
+.positive_a
 #_028F87: CLC
 #_028F88: ADC.w $0F4F,X
 #_028F8B: STA.w $0F4F,X
+
 #_028F8E: LDA.w $0A95,Y
 #_028F91: AND.w #$00FF
 #_028F94: BIT.w #$0080
-#_028F97: BEQ .branch028FC9
+#_028F97: BEQ .positive_b
 
 #_028F99: ORA.w #$FF00
 
-.branch028FC9
+.positive_b
 #_028F9C: CLC
 #_028F9D: ADC.w $0F4D,X
 #_028FA0: STA.w $0F4D,X
 
-.branch028FA3
+.skip
 #_028FA3: INY
 #_028FA4: INY
+
 #_028FA5: INX
 #_028FA6: INX
 #_028FA7: INX
 #_028FA8: INX
 #_028FA9: CPY.w #$0004
-#_028FAC: BNE .branch028F6A
+#_028FAC: BNE .next
 
 #_028FAE: RTL
 
@@ -2532,29 +2654,33 @@ routine028F58:
 routine028FAF:
 #_028FAF: PHP
 #_028FB0: SEP #$30
+
 #_028FB2: LDA.w $0B14
-#_028FB5: BNE .branch028FE8
+#_028FB5: BNE .exit
 
 #_028FB7: LDA.w $0B36
-#_028FBA: BEQ .branch028FE8
+#_028FBA: BEQ .exit
 
 #_028FBC: LDA.b #$FF
 #_028FBE: JSL TestGameProgressBit
-#_028FC2: BCS .branch028FE8
+#_028FC2: BCS .exit
 
 #_028FC4: JSL TriggerEncounter_Overworld
-#_028FC8: BCC .branch028FE8
+#_028FC8: BCC .exit
 
 #_028FCA: JSL routine028FEA
 #_028FCE: JSL BestRoutineEver
+
 #_028FD2: JSL routine029039
 #_028FD6: JSL routine01B263
 #_028FDA: JSL routine028156
+
 #_028FDE: STZ.w $045B
 #_028FE1: STZ.w $0B32
+
 #_028FE4: JSL routine0290E3
 
-.branch028FE8
+.exit
 #_028FE8: PLP
 #_028FE9: RTS
 
@@ -2565,9 +2691,11 @@ routine028FEA:
 #_028FEB: JSR OverworldMovement_GetIndexFromCoords
 
 #_028FEE: REP #$30
+
 #_028FF0: LDA.w $0B2E
 #_028FF3: ASL A
 #_028FF4: TAX
+
 #_028FF5: LDA.w $0B2B
 #_028FF8: AND.w #$00FF
 #_028FFB: BEQ routine029022
@@ -2576,10 +2704,13 @@ routine028FEA:
 #_029000: BNE routine029012
 
 #_029002: SEP #$20
+
 #_029004: LDA.w data0293FA,X
 #_029007: STA.w $0457
+
 #_02900A: LDA.w data0293FB,X
 #_02900D: STA.w $0455
+
 #_029010: PLP
 #_029011: RTL
 
@@ -2587,10 +2718,13 @@ routine028FEA:
 
 routine029012:
 #_029012: SEP #$20
+
 #_029014: LDA.w data02923A,X
 #_029017: STA.w $0457
+
 #_02901A: LDA.w data02923B,X
 #_02901D: STA.w $0455
+
 #_029020: PLP
 #_029021: RTL
 
@@ -2598,19 +2732,27 @@ routine029012:
 
 routine029022:
 #_029022: SEP #$20
+
 #_029024: LDA.w data02917A,X
 #_029027: STA.w $0457
+
 #_02902A: LDA.w data02917B,X
 #_02902D: STA.w $0455
+
 #_029030: PLP
 #_029031: RTL
 
+;===================================================================================================
+
 BestRoutineEver:
 #_029032: PHP
+
 #_029033: PHB
 #_029034: PHK
 #_029035: PLB
+
 #_029036: PLB
+
 #_029037: PLP
 #_029038: RTL
 
@@ -2618,67 +2760,95 @@ BestRoutineEver:
 
 routine029039:
 #_029039: PHP
+
 #_02903A: PHB
 #_02903B: PHK
 #_02903C: PLB
 
 #_02903D: SEP #$30
+
 #_02903F: JSL DarkenScreen
 #_029043: LDA.b #$FF
 #_029045: STA.w $0A71
+
 #_029048: LDA.b #$A1
 #_02904A: STA.w $0F00
 #_02904D: STA.w NMITIMEN
+
 #_029050: LDA.b #$80
 #_029052: STA.w $0F43
 #_029055: STA.w INIDISP
+
 #_029058: STZ.w $0F7F
 #_02905B: STZ.w $0F80
+
 #_02905E: LDA.b #$20
 #_029060: STA.w $0A2C
+
 #_029063: JSL Reset_OAMrelatedWRAM
 #_029067: JSR EnableFBlank_02
 #_02906A: JSR DisableNMI_B02
 #_02906D: JSL ZeroVRAM_02
 #_029071: JSL ZeroCGRAM_02
+
 #_029075: LDA.b #$00
 #_029077: JSR routine02C10F
+
 #_02907A: LDA.b #$00
 #_02907C: JSL routine02F609
+
 #_029080: LDA.b #$00
 #_029082: JSL routine02FC6E
+
 #_029086: JSR DisableFBlank_02
 #_029089: JSR EnableNMI_B02
+
 #_02908C: LDA.w $0B16
 #_02908F: LSR A
 #_029090: STA.w $040D
+
 #_029093: STZ.w $0454
+
 #_029096: LDA.b #$01
 #_029098: JSL routine02CBD1
+
 #_02909C: LDA.b #$07
 #_02909E: JSL routine02CBD1
+
 #_0290A2: JSL routine02E87C
 #_0290A6: JSL routine00A17E
 
+;---------------------------------------------------------------------------------------------------
+
 #_0290AA: SEP #$20
+
 #_0290AC: LDA.b #$43
 #_0290AE: STA.w $0F4B
 #_0290B1: STA.w BG12NBA
+
 #_0290B4: LDA.b #$1F
 #_0290B6: STA.w $0F74
 #_0290B9: STA.w MAINDES
+
 #_0290BC: LDA.b #$10
 #_0290BE: STA.w $0F76
 #_0290C1: STA.w SUBDES
+
 #_0290C4: LDA.b #$FF
 #_0290C6: STA.w $0F4F
 #_0290C9: STZ.w $0F50
+
 #_0290CC: JSL routine0F850B
+
 #_0290D0: JSL BrightenScreen
+
 #_0290D4: JSL routine02BA4C
 #_0290D8: JSL routine00A840
+
 #_0290DC: JSL UpdateDirTilemap
+
 #_0290E0: PLB
+
 #_0290E1: PLP
 #_0290E2: RTL
 
@@ -2686,9 +2856,11 @@ routine029039:
 
 routine0290E3:
 #_0290E3: PHP
+
 #_0290E4: PHB
 #_0290E5: PHK
 #_0290E6: PLB
+
 #_0290E7: JSL DarkenScreen
 #_0290EB: JSL Reset_OAMrelatedWRAM
 
@@ -12162,15 +12334,18 @@ routine02E87C:
 
 routine02E897:
 #_02E897: PHP
+
 #_02E898: PHB
 #_02E899: PHK
 #_02E89A: PLB
 
 #_02E89B: SEP #$30
+
 #_02E89D: LDA.b #$04
 #_02E89F: LDX.b #$00
 #_02E8A1: LDY.b #$01
 #_02E8A3: JSL routine009508
+
 #_02E8A7: JSL routine028A36
 #_02E8AB: JSL routine0286C6
 #_02E8AF: JSL routine028708

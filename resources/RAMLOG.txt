@@ -53,7 +53,7 @@ $0578 - number of max stat points
 
 $057E[0x2] - If non zero, nyorai is active
 $0582[0x2] - If non zero, rosary is active
-$0582[0x2] - If non zero, amulet is active
+$0584[0x2] - If non zero, amulet is active
 $0588[0x2] - If non zero, core shield is active
 $05A6[0x2] - If non zero, fuma bell is active
 

@@ -1180,7 +1180,7 @@ routine0F8836:
 #_0F894E: STA.w $09F3
 
 #_0F8951: JSL LoadSaveFile
-#_0F8955: JSL r00D2C5_long
+#_0F8955: JSL routine00D2C8_long
 
 #_0F8959: LDA.w $07E1
 #_0F895C: CMP.b #$12
@@ -1195,7 +1195,7 @@ routine0F8836:
 
 .branch0F896B
 #_0F896B: PHP
-#_0F896C: JSL r00D2C5_long
+#_0F896C: JSL routine00D2C8_long
 
 #_0F8970: SEP #$20
 #_0F8972: LDA.w $070C
@@ -1210,7 +1210,7 @@ routine0F8836:
 #_0F8984: LDA.w $040D
 #_0F8987: STA.w $046A
 
-#_0F898A: JSL r00D2C5_long
+#_0F898A: JSL routine00D2C8_long
 
 #_0F898E: PLP
 #_0F898F: LDA.w $0E0C
