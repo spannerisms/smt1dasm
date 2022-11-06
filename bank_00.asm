@@ -4,8 +4,10 @@ org $008000
 
 Vector_Reset:
 #_008000: SEI
+
 #_008001: CLC
 #_008002: XCE
+
 #_008003: CLD
 
 #_008004: REP #$10
@@ -14,28 +16,32 @@ Vector_Reset:
 #_008008: LDX.w #$1FFF
 #_00800B: TXS
 
-; This label is used+1 in a couple places to get a 0 byte for DMA
-ZeroLand:
+; This operand is used in one place to get a $00 byte for DMA
+ZeroLand = $00800C+1
+
 #_00800C: LDA.b #$00
 #_00800E: STA.w NMITIMEN
 
 #_008011: LDA.b #$80
 #_008013: STA.w INIDISP
 
+;===================================================================================================
+
+CheckForConsoleReset:
 #_008016: LDA.b #$00
 #_008018: STA.l $7EFFFE
 #_00801C: STA.l $7EFFFF
 
 #_008020: LDX.w #$0000
 
-.next_cksm_letter
+.next_checksum_letter
 #_008023: LDA.l TableByCozy,X ; Seems to be some checksum for WRAM
 #_008027: CMP.l $7EFFE0,X
 #_00802B: BNE .checksum_mismatch
 
 #_00802D: INX
 #_00802E: CPX.w #$0014
-#_008031: BCC .next_cksm_letter
+#_008031: BCC .next_checksum_letter
 #_008033: BCS .skip_ATLUS
 
 .checksum_mismatch
@@ -43,13 +49,13 @@ ZeroLand:
 
 #_008039: LDX.w #$0000
 
-.write_cksm
+.write_checksum
 #_00803C: LDA.l TableByCozy,X
 #_008040: STA.l $7EFFE0,X
 
 #_008044: INX
 #_008045: CPX.w #$0014
-#_008048: BCC .write_cksm
+#_008048: BCC .write_checksum
 
 .skip_ATLUS
 #_00804A: JSL InitializeSPC
@@ -259,8 +265,9 @@ ResetMemory:
 #_008192: JSL ZeroALOTofVRAM
 #_008196: JSL Reset_OAMrelatedWRAM
 
-;---------------------------------------------------------------------------------------------------
+;===================================================================================================
 
+InitializeVector1900:
 #_00819A: SEP #$30
 
 #_00819C: LDY.b #$00
@@ -337,7 +344,9 @@ ResetMemory:
 
 MainLoop:
 #_0081EB: JSR GetJoypadInput
+
 #_0081EE: JSR PerformNewestVector
+
 #_0081F1: JSL routine008838
 
 #_0081F5: SEP #$20
@@ -345,9 +354,9 @@ MainLoop:
 #_0081F7: LDA.b #$00
 #_0081F9: STA.w $0F7E
 
-.spinning
+.wait_for_nmi
 #_0081FC: BIT.w $0F7E
-#_0081FF: BPL .spinning
+#_0081FF: BPL .wait_for_nmi
 
 #_008201: BRA MainLoop
 
@@ -581,6 +590,7 @@ Native_NMI:
 #_0082FA: PHA
 #_0082FB: PHX
 #_0082FC: PHY
+
 #_0082FD: PHD
 #_0082FE: PHB
 
@@ -661,6 +671,7 @@ Native_NMI:
 
 #_00836F: PLB
 #_008370: PLD
+
 #_008371: PLY
 #_008372: PLX
 #_008373: PLA
@@ -4440,13 +4451,13 @@ Zero2KBinVRAM_setup:
 #_009819: LDA.b #VMDATA
 #_00981B: STA.w DMA0PORT
 
-#_00981E: LDA.b #ZeroLand+1>>0
+#_00981E: LDA.b #ZeroLand>>0
 #_009820: STA.w DMA0ADDRL
 
-#_009823: LDA.b #ZeroLand+1>>8
+#_009823: LDA.b #ZeroLand>>8
 #_009825: STA.w DMA0ADDRH
 
-#_009828: LDA.b #ZeroLand+1>>16
+#_009828: LDA.b #ZeroLand>>16
 #_00982A: STA.w DMA0ADDRB
 #_00982D: STA.w DMA0SIZEL
 
@@ -5046,12 +5057,13 @@ ReadPage_A_Bank04:
 
 ;===================================================================================================
 
-; TODO something with movement?
+; TODO something with dungeon events? maybe just getting them
 routine009BDE:
 #_009BDE: PHP
 #_009BDF: SEP #$30
 
 #_009BE1: LDX.w $070C
+
 #_009BE4: LDA.w $070D
 #_009BE7: JSR ReadPage_A_Bank04
 
@@ -7640,7 +7652,7 @@ DakutenBaseLetters:
 #_00AB72: db $F9, $FA
 
 ;===================================================================================================
-
+; TODO something with death or game over?
 routine00AB74:
 #_00AB74: PHP
 #_00AB75: REP #$30
@@ -9856,20 +9868,25 @@ routine00BAC0:
 PrepHDMAtypeFromA:
 #_00BB1C: PHP
 #_00BB1D: REP #$30
+
 #_00BB1F: AND.w #$00FF
 #_00BB22: ASL A
 #_00BB23: STA.w $0E80
+
 #_00BB26: ASL A
 #_00BB27: CLC
 #_00BB28: ADC.w $0E80
 #_00BB2B: TAY
 
 #_00BB2C: SEP #$20
+
 #_00BB2E: LDA.b #$01
 #_00BB30: STA.w $0E80
+
 #_00BB33: PHB
 #_00BB34: PHK
 #_00BB35: PLB
+
 #_00BB36: LDX.w #$0000
 
 .branch00BB39
@@ -9887,8 +9904,10 @@ PrepHDMAtypeFromA:
 .branch00BB4B
 #_00BB4B: LDA.w data00BDB0,Y
 #_00BB4E: STA.w DMAXMODE,X
+
 #_00BB51: LDA.b #$01
 #_00BB53: STA.w $0E80
+
 #_00BB56: LDX.w #$0000
 
 .branch00BB59
@@ -12389,6 +12408,7 @@ routine00CB2F:
 
 routine00CB4A:
 #_00CB4A: JSL routine009BDE
+
 #_00CB4E: STA.w $0711
 
 #_00CB51: RTS
@@ -14089,7 +14109,7 @@ RemoveSomeHP:
 #_00D466: JSL routine00C752
 
 #_00D46A: JSL routine00C7A1
-#_00D46E: JSL routine01D3BE
+#_00D46E: JSL VerifyTheHumansAreOkay
 
 #_00D472: LDX.w $0715
 #_00D475: CPX.w #$0180
@@ -15384,7 +15404,7 @@ routine00DCCD:
 #_00DCCD: LDX.b #$18
 #_00DCCF: LDY.b #$0C
 
-.branch00DCD1
+.next
 #_00DCD1: STZ.w $0000,X
 #_00DCD4: STZ.w $0001,X
 
@@ -15411,7 +15431,7 @@ routine00DCCD:
 #_00DCF1: DEX
 #_00DCF2: DEX
 
-#_00DCF3: BPL .branch00DCD1
+#_00DCF3: BPL .next
 
 #_00DCF5: RTS
 
@@ -16401,30 +16421,44 @@ routine00E522:
 #_00E5BA: SBC.w #$000C
 
 #_00E5BD: SEP #$30
+
 #_00E5BF: TAX
+
 #_00E5C0: LDA.w data00E7E5,X
 #_00E5C3: STA.w $0650
+
 #_00E5C6: LDA.w data00E7E8,X
 #_00E5C9: STA.w $0646
 #_00E5CC: STA.w $0640
+
 #_00E5CF: TAX
+
 #_00E5D0: STZ.w $0652
 #_00E5D3: STZ.w $0654
+
 #_00E5D6: LDA.w $0F51
 #_00E5D9: STA.w $0653
+
 #_00E5DC: LDA.w $0F53
 #_00E5DF: STA.w $0655
+
 #_00E5E2: JSR routine00E6B0
 
+;---------------------------------------------------------------------------------------------------
+
 #_00E5E5: REP #$30
+
 #_00E5E7: PHB
+
 #_00E5E8: LDA.w #$001F
 #_00E5EB: LDX.w #$2540
 #_00E5EE: LDY.w #$2560
 #_00E5F1: MVN $7E, $7E
+
 #_00E5F4: PLB
 
 #_00E5F5: SEP #$30
+
 #_00E5F7: LDA.b #$08
 #_00E5F9: LDX.b #$00
 #_00E5FB: LDY.b #$0C
@@ -16432,99 +16466,126 @@ routine00E522:
 #_00E600: STX.w $0EDF
 #_00E603: STY.w $0EDA
 #_00E606: JSL routine009534
+
 #_00E60A: LDA.b #$30
 #_00E60C: STA.w $0F09
 
 #_00E60F: REP #$30
+
 #_00E611: LDA.w #$2360
 #_00E614: STA.w DMA1ADDRL
+
 #_00E617: LDA.w #$0020
 #_00E61A: STA.w DMA1SIZEL
+
 #_00E61D: JSL AddSelfAsVector
+
+;---------------------------------------------------------------------------------------------------
+
 #_00E621: PHB
 
 #_00E622: SEP #$20
+
 #_00E624: LDA.b #$7F
 #_00E626: PHA
 
 #_00E627: REP #$20
 #_00E629: PLB
+
 #_00E62A: LDX.w #$5000
 #_00E62D: LDY.w #$01C0
 
-.branch00E630
+.next_a
 #_00E630: LDA.w $7F0000,X
 #_00E633: AND.w #$E3FF
 #_00E636: ORA.w #$0C00
 #_00E639: STA.w $7F0000,X
+
 #_00E63C: INX
 #_00E63D: INX
+
 #_00E63E: DEY
-#_00E63F: BNE .branch00E630
+#_00E63F: BNE .next_a
 
 #_00E641: PLB
 
+;---------------------------------------------------------------------------------------------------
+
 #_00E642: SEP #$20
+
 #_00E644: LDA.b #$01
 #_00E646: JSL VRAM_From_7FXXXX
 
 #_00E64A: SEP #$30
+
 #_00E64C: LDX.w $0640
 #_00E64F: JSR routine00E6B0
 #_00E652: JSL AddSelfAsVector
+
 #_00E656: INC.w $0640
 #_00E659: INC.w $0640
+
 #_00E65C: PHB
+
 #_00E65D: LDA.b #$7F
 #_00E65F: PHA
 #_00E660: PLB
 
 #_00E661: REP #$30
+
 #_00E663: LDX.w #$5000
 #_00E666: LDY.w #$01C0
 
-.branch00E669
+.next_b
 #_00E669: LDA.w $7F0000,X
 #_00E66C: AND.w #$E3FF
 #_00E66F: ORA.w #$0800
 #_00E672: STA.w $7F0000,X
+
 #_00E675: INX
 #_00E676: INX
+
 #_00E677: DEY
-#_00E678: BNE .branch00E669
+#_00E678: BNE .next_b
 
 #_00E67A: PLB
 
+;---------------------------------------------------------------------------------------------------
+
 #_00E67B: SEP #$20
+
 #_00E67D: LDA.b #$01
 #_00E67F: JSL VRAM_From_7FXXXX
 
 #_00E683: SEP #$30
 
-.branch00E685
+.next_c
 #_00E685: LDY.b #$02
 
-.branch00E687
+.wait
 #_00E687: LDX.w $0640
 #_00E68A: JSR routine00E6B0
-#_00E68D: BEQ .branch00E6A0
+#_00E68D: BEQ .skip
 
 #_00E68F: PHY
 #_00E690: JSL AddSelfAsVector
 #_00E694: PLY
+
 #_00E695: DEY
-#_00E696: BNE .branch00E687
+#_00E696: BNE .wait
 
 #_00E698: INC.w $0640
 #_00E69B: INC.w $0640
-#_00E69E: BRA .branch00E685
+#_00E69E: BRA .next_c
 
-.branch00E6A0
+.skip
 #_00E6A0: SEP #$20
+
 #_00E6A2: LDA.w $0646
 #_00E6A5: STA.w $0640
+
 #_00E6A8: DEC.w $0650
-#_00E6AB: BNE .branch00E685
+#_00E6AB: BNE .next_c
 
 .exit
 #_00E6AD: PLB
@@ -16536,6 +16597,7 @@ routine00E522:
 
 routine00E6B0:
 #_00E6B0: REP #$20
+
 #_00E6B2: LDA.w data00E7EB,X
 #_00E6B5: BNE .continue
 
@@ -16621,21 +16683,24 @@ routine00E719:
 #_00E720: PHB
 
 #_00E721: LSR A
-#_00E722: BCC .branch00E732
+#_00E722: BCC .from_rom
 
 #_00E724: LDA.w #$001F
 #_00E727: LDX.w $064A
 #_00E72A: LDY.w #$2300
 #_00E72D: MVN $7E, $7E
-#_00E730: BRA .branch00E73E
 
-.branch00E732
+#_00E730: BRA .finish
+
+.from_rom
 #_00E732: LDA.w #$001F
 #_00E735: LDX.w $0644
 #_00E738: LDY.w #$2300
 #_00E73B: %MVN($00, $7E)
 
-.branch00E73E
+;---------------------------------------------------------------------------------------------------
+
+.finish
 #_00E73E: PLB
 
 #_00E73F: SEP #$20
@@ -16754,7 +16819,7 @@ routine00E817:
 
 #_00E84C: LDA.w data00EA2C,X
 #_00E84F: AND.w #$00FF
-#_00E852: JSR routine00E9A2
+#_00E852: JSR routine00E9A8_0C00
 
 #_00E855: JSR routine00E986
 
@@ -16763,7 +16828,7 @@ routine00E817:
 
 #_00E85B: LDA.w data00EA2C,X
 #_00E85E: AND.w #$00FF
-#_00E861: JSR routine00E99D
+#_00E861: JSR routine00E9A8_0800
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -16775,7 +16840,7 @@ routine00E817:
 
 #_00E86C: LDA.w data00EA2C,X
 #_00E86F: AND.w #$00FF
-#_00E872: JSR routine00E9A2
+#_00E872: JSR routine00E9A8_0C00
 #_00E875: JSR routine00E986
 
 #_00E878: LDX.w $0640
@@ -16794,7 +16859,7 @@ routine00E817:
 
 #_00E890: LDA.w data00EA2C,X
 #_00E893: AND.w #$00FF
-#_00E896: JSR routine00E99D
+#_00E896: JSR routine00E9A8_0800
 
 #_00E899: JSL AddSelfAsVector
 
@@ -16875,7 +16940,7 @@ routine00E8CC:
 #_00E902: REP #$30
 
 #_00E904: LDA.w #$0001
-#_00E907: JSR routine00E9A2
+#_00E907: JSR routine00E9A8_0C00
 
 #_00E90A: SEP #$30
 
@@ -16928,7 +16993,7 @@ routine00E8CC:
 #_00E948: REP #$30
 
 #_00E94A: LDA.w #$0001
-#_00E94D: JSR routine00E99D
+#_00E94D: JSR routine00E9A8_0800
 
 #_00E950: JSL AddSelfAsVector
 
@@ -16950,6 +17015,7 @@ routine00E961:
 #_00E963: LDX.b #$00
 #_00E965: STA.w $0EDC
 #_00E968: STX.w $0EDF
+
 #_00E96B: STY.w $0EDA
 
 #_00E96E: JSL routine009534
@@ -16987,15 +17053,18 @@ routine00E986:
 
 ;===================================================================================================
 
-routine00E99D:
+routine00E9A8_0800:
 #_00E99D: LDY.w #$0800
-#_00E9A0: BRA branch00E9A5
 
-routine00E9A2:
+#_00E9A0: BRA .start
+
+#routine00E9A8_0C00:
 #_00E9A2: LDY.w #$0C00
 
-#branch00E9A5:
+.start
 #_00E9A5: STY.w $0642
+
+;---------------------------------------------------------------------------------------------------
 
 routine00E9A8:
 #_00E9A8: ASL A
@@ -17008,10 +17077,11 @@ routine00E9A8:
 
 #_00E9B1: INY
 #_00E9B2: INY
+
 #_00E9B3: STA.w $064C
 #_00E9B6: STZ.w $064E
 
-.branch00E9B9
+.big_next
 #_00E9B9: LDA.w $064E
 #_00E9BC: BNE .branch00E9CB
 
@@ -17056,7 +17126,7 @@ routine00E9A8:
 
 #_00E9EA: LDY.w #$0020
 
-.branch00E9ED
+.small_next
 #_00E9ED: LDA.w #$0800
 #_00E9F0: ASL.w $0648
 #_00E9F3: ROL.w $0646
@@ -17076,18 +17146,25 @@ routine00E9A8:
 #_00EA0D: INX
 
 #_00EA0E: DEY
-#_00EA0F: BNE .branch00E9ED
+#_00EA0F: BNE .small_next
 
 #_00EA11: PLY
 #_00EA12: DEC.w $064C
-#_00EA15: BNE .branch00E9B9
+#_00EA15: BNE .big_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00EA17: PHP
 #_00EA18: SEP #$20
+
 #_00EA1A: LDA.b #$01
+
 #_00EA1C: JSL VRAM_From_7FXXXX
+
 #_00EA20: PLP
 #_00EA21: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 data00EA22:
 #_00EA22: dw $0000,$000B,$0000,$0016
@@ -17151,12 +17228,13 @@ DisplayUnderworldMap:
 #_00EB6A: LDA.w #$0000
 #_00EB6D: STA.w $0D11
 
-.reload
+.next
 #_00EB70: JSR UploadDungeonMapPalette
 #_00EB73: JSR ClearDungeonMap
 #_00EB76: JSR UploadDungeonMapGraphics
 
 #_00EB79: REP #$30
+
 #_00EB7B: JSR routine00ED6A
 #_00EB7E: JSR routine00ED94
 #_00EB81: JSR routine00EF93
@@ -17170,13 +17248,14 @@ DisplayUnderworldMap:
 #_00EB90: JSL AddSelfAsVector
 
 #_00EB94: REP #$30
+
 #_00EB96: JSR routine00F5D7
 
 #_00EB99: REP #$30
 
 #_00EB9B: LDA.w $0D11
 #_00EB9E: CMP.w #$0001
-#_00EBA1: BEQ .reload
+#_00EBA1: BEQ .next
 
 #_00EBA3: JSR routine00EC1C
 
@@ -17188,10 +17267,12 @@ DisplayUnderworldMap:
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00EBA8:
 #_00EBA8: REP #$30
+
 #_00EBAA: LDA.w $070C
 #_00EBAD: LSR A
 #_00EBAE: AND.w #$FFFE
 #_00EBB1: STA.w $0CF3
+
 #_00EBB4: LDA.w $070D
 #_00EBB7: LSR A
 #_00EBB8: LSR A
@@ -17199,32 +17280,40 @@ routine00EBA8:
 #_00EBBC: CLC
 #_00EBBD: ADC.w $0CF3
 #_00EBC0: STA.w $0CF3
+
 #_00EBC3: TAX
+
 #_00EBC4: RTS
 
 ;===================================================================================================
 
 UploadDungeonMapGraphics:
 #_00EBC5: REP #$10
+
 #_00EBC7: LDA.w #$3000
 #_00EBCA: STA.w $0CF3
 
 #_00EBCD: SEP #$20
+
 #_00EBCF: LDA.b #$80
 #_00EBD1: STA.w VMAIN
 
 #_00EBD4: SEP #$20
+
 #_00EBD6: LDX.w #$0000
 #_00EBD9: LDY.w #$06C0
 
 .next
 #_00EBDC: LDA.l GFX_23F900,X
 #_00EBE0: STA.l $7F6000,X
+
 #_00EBE4: INX
+
 #_00EBE5: DEY
 #_00EBE6: BNE .next
 
 #_00EBE8: REP #$20
+
 #_00EBEA: LDA.w #$0004
 #_00EBED: JSL VRAM_From_7FXXXX
 #_00EBF1: JSL AddSelfAsVector
@@ -17279,11 +17368,13 @@ routine00EC1C:
 #_00EC32: BNE .next
 
 #_00EC34: REP #$20
+
 #_00EC36: LDA.w #$0000
 #_00EC39: JSL VRAM_From_7FXXXX
 #_00EC3D: JSL AddSelfAsVector
 
 #_00EC41: REP #$30
+
 #_00EC43: LDA.w #$0004
 #_00EC46: JSL VRAM_From_7FXXXX
 #_00EC4A: JSL AddSelfAsVector
@@ -17302,13 +17393,16 @@ UploadDungeonMapPalette:
 
 #_00EC5B: LDA.b #$10
 #_00EC5D: STA.l $7E22FF
+
 #_00EC61: LDX.w #$0000
 #_00EC64: LDY.w #$0020
 
 .next
 #_00EC67: LDA.l DungeonMapPalette,X
 #_00EC6B: STA.l $7E2300,X
+
 #_00EC6F: INX
+
 #_00EC70: DEY
 #_00EC71: BNE .next
 
@@ -17323,6 +17417,7 @@ UploadDungeonMapPalette:
 
 GetRoomsOffsetIntoData:
 #_00EC7E: REP #$30
+
 #_00EC80: PHY
 
 #_00EC81: LDA.w $0CF5
@@ -17340,6 +17435,7 @@ GetRoomsOffsetIntoData:
 #_00EC9D: STA.w $0CF9
 
 #_00ECA0: PLY
+
 #_00ECA1: RTS
 
 ;===================================================================================================
@@ -17369,57 +17465,70 @@ GetBlockOffsetIntoData:
 #_00ECC2: RTS
 
 ;===================================================================================================
-
+; TODO get bit that corresponds to the room maybe?
 routine00ECC3:
 #_00ECC3: REP #$30
+
 #_00ECC5: PHY
 #_00ECC6: PHX
+
 #_00ECC7: LDA.w $0CF5
 #_00ECCA: LSR A
 #_00ECCB: LSR A
 #_00ECCC: LSR A
 #_00ECCD: AND.w #$000F
 #_00ECD0: STA.w $0CF9
+
 #_00ECD3: LDA.w $0CF7
 #_00ECD6: LDY.w #$0004
 #_00ECD9: JSR Shift16bitAleft_Ytimes
+
 #_00ECDC: AND.w #$03F0
 #_00ECDF: ORA.w $0CF9
 #_00ECE2: STA.w $0CF9
+
 #_00ECE5: LDA.w $0CF5
 #_00ECE8: AND.w #$0007
 #_00ECEB: TAX
 
 #_00ECEC: SEP #$20
+
 #_00ECEE: LDA.l .bits,X
 
 #_00ECF2: REP #$20
+
 #_00ECF4: AND.w #$00FF
+
 #_00ECF7: PLX
 #_00ECF8: PLY
+
 #_00ECF9: RTS
 
-; TODO some sort of bitfield
 .bits
-#_00ECFA: db $80,$40,$20,$10,$08,$04,$02,$01
+#_00ECFA: db $80, $40, $20, $10, $08, $04, $02, $01
 
 ;===================================================================================================
 
-; TODO POSSIBLY UNUSED ROUTINE
+; TODO unused?
 routine00ED02:
 #_00ED02: REP #$10
+
 #_00ED04: PHY
+
 #_00ED05: LDA.w $0CF5
 #_00ED08: LSR A
 #_00ED09: LSR A
 #_00ED0A: AND.w #$001F
 #_00ED0D: STA.w $0CFB
+
 #_00ED10: LDA.w $0CF7
 #_00ED13: LSR A
 #_00ED14: LSR A
 #_00ED15: AND.w #$000F
 #_00ED18: STA.w $0CFD
+
 #_00ED1B: PLY
+
 #_00ED1C: RTS
 
 ;===================================================================================================
@@ -17446,21 +17555,26 @@ routine00ED1D:
 #_00ED37: RTS
 
 ;===================================================================================================
-; TODO UNREACHABLE?
+; TODO unused?
 routine00ED38:
 #_00ED38: REP #$30
+
 #_00ED3A: PHY
+
 #_00ED3B: LDA.w $0CFB
 #_00ED3E: AND.w #$001F
 #_00ED41: ASL A
 #_00ED42: STA.w $0CF9
+
 #_00ED45: LDA.w $0CF7
 #_00ED48: AND.w #$000F
 #_00ED4B: LDY.w #$0006
 #_00ED4E: JSR Shift16bitAleft_Ytimes
+
 #_00ED51: ORA.w $0CF9
 #_00ED54: AND.w #$03FE
 #_00ED57: STA.w $0CF9
+
 #_00ED5A: PLY
 #_00ED5B: RTS
 
@@ -17471,6 +17585,7 @@ Shift16bitAleft_Ytimes:
 
 .next
 #_00ED5E: ASL A
+
 #_00ED5F: DEY
 #_00ED60: BNE .next
 
@@ -17483,6 +17598,7 @@ Shift16bitAright_Ytimes:
 
 .next
 #_00ED65: LSR A
+
 #_00ED66: DEY
 #_00ED67: BNE .next
 
@@ -17517,28 +17633,29 @@ routine00ED6A:
 #_00ED93: RTS
 
 ;===================================================================================================
-
+; TODO make .facing_direction labels fully qualified routine00ED94_direction
+; the EXIT_ too
 routine00ED94:
 #_00ED94: SEP #$30
 
 ; TODO directions
 #_00ED96: LDA.w $040D
-#_00ED99: BEQ .facing_north
+#_00ED99: BEQ routine00ED94_north
 
 #_00ED9B: CMP.b #$01
-#_00ED9D: BEQ .facing_east
+#_00ED9D: BEQ routine00ED94_east
 
 #_00ED9F: CMP.b #$02
 #_00EDA1: BNE .not_facing_south
 
-#_00EDA3: JMP .facing_south
+#_00EDA3: JMP routine00ED94_south
 
 .not_facing_south
-#_00EDA6: JMP .facing_west
+#_00EDA6: JMP routine00ED94_west
 
 ;---------------------------------------------------------------------------------------------------
 
-.facing_north
+routine00ED94_north:
 #_00EDA9: REP #$30
 
 #_00EDAB: LDX.w #$0000
@@ -17552,6 +17669,7 @@ routine00ED94:
 .branch00ADBA
 #_00EDBA: PHX
 #_00EDBB: PHY
+
 #_00EDBC: LDY.w #$0010
 
 .branch00EDBF
@@ -17575,7 +17693,7 @@ routine00ED94:
 #_00EDDB: DEY
 #_00EDDC: BNE .branch00ADBA
 
-#_00EDDE: JMP .branch00EF59
+#_00EDDE: JMP routine00ED94_fail
 
 .branch00EDE1
 #_00EDE1: PLX
@@ -17592,7 +17710,7 @@ routine00ED94:
 #_00EDEE: LDA.l DungeonIDByBlock,X
 #_00EDF2: AND.w #$FF3F
 #_00EDF5: CMP.w $0CF3
-#_00EDF8: BEQ .exit_bounce
+#_00EDF8: BEQ .done
 
 #_00EDFA: INX
 #_00EDFB: INX
@@ -17609,14 +17727,14 @@ routine00ED94:
 #_00EE0A: DEY
 #_00EE0B: BNE .branch00EDE9
 
-#_00EE0D: JMP .branch00EF59
+#_00EE0D: JMP routine00ED94_fail
 
-.exit_bounce
-#_00EE10: JMP .EXIT_00EF56
+.done
+#_00EE10: JMP routine00ED94_finished
 
 ;---------------------------------------------------------------------------------------------------
 
-.facing_east
+routine00ED94_east:
 #_00EE13: REP #$30
 #_00EE15: LDX.w #$003E
 #_00EE18: LDA.w #$001F
@@ -17650,7 +17768,7 @@ routine00ED94:
 #_00EE47: DEY
 #_00EE48: BNE .branch00EE27
 
-#_00EE4A: JMP .branch00EF59
+#_00EE4A: JMP routine00ED94_fail
 
 .branch00EE4D
 #_00EE4D: PLX
@@ -17667,7 +17785,7 @@ routine00ED94:
 #_00EE5A: LDA.l DungeonIDByBlock,X
 #_00EE5E: AND.w #$FF3F
 #_00EE61: CMP.w $0CF3
-#_00EE64: BEQ .EXIT_00EE7D
+#_00EE64: BEQ .done
 
 #_00EE66: TXA
 #_00EE67: CLC
@@ -17684,14 +17802,15 @@ routine00ED94:
 #_00EE74: DEC.w $0CFB
 #_00EE77: DEY
 #_00EE78: BNE .branch00EE55
-#_00EE7A: JMP .branch00EF59
 
-.EXIT_00EE7D
-#_00EE7D: JMP .EXIT_00EF56
+#_00EE7A: JMP routine00ED94_fail
+
+.done
+#_00EE7D: JMP routine00ED94_finished
 
 ;---------------------------------------------------------------------------------------------------
 
-.facing_south
+routine00ED94_south:
 #_00EE80: REP #$30
 #_00EE82: LDX.w #$03FE
 #_00EE85: LDA.w #$001F
@@ -17726,7 +17845,7 @@ routine00ED94:
 #_00EEB5: DEY
 #_00EEB6: BNE .branch00EE94
 
-#_00EEB8: JMP .branch00EF59
+#_00EEB8: JMP routine00ED94_fail
 
 .branch00EEBB
 #_00EEBB: PLX
@@ -17743,7 +17862,7 @@ routine00ED94:
 #_00EEC8: LDA.l DungeonIDByBlock,X
 #_00EECC: AND.w #$FF3F
 #_00EECF: CMP.w $0CF3
-#_00EED2: BEQ .EXIT_00EEEA
+#_00EED2: BEQ .done
 
 #_00EED4: DEX
 #_00EED5: DEX
@@ -17759,10 +17878,11 @@ routine00ED94:
 #_00EEE1: DEC.w $0CFD
 #_00EEE4: DEY
 #_00EEE5: BNE .branch00EEC3
-#_00EEE7: JMP .branch00EF59
 
-.EXIT_00EEEA
-#_00EEEA: JMP .EXIT_00EF56
+#_00EEE7: JMP routine00ED94_fail
+
+.done
+#_00EEEA: JMP routine00ED94_finished
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -17800,7 +17920,7 @@ routine00ED94:
 #_00EF21: DEY
 #_00EF22: BNE .branch00EF01
 
-#_00EF24: JMP .branch00EF59
+#_00EF24: JMP routine00ED94_fail
 
 .branch00EF27
 #_00EF27: PLX
@@ -17817,7 +17937,7 @@ routine00ED94:
 #_00EF34: LDA.l DungeonIDByBlock,X
 #_00EF38: AND.w #$FF3F
 #_00EF3B: CMP.w $0CF3
-#_00EF3E: BEQ .EXIT_00EF56
+#_00EF3E: BEQ routine00ED94_finished
 
 #_00EF40: TXA
 #_00EF41: SEC
@@ -17835,17 +17955,23 @@ routine00ED94:
 #_00EF51: DEY
 #_00EF52: BNE .branch00EF2F
 
-#_00EF54: BRA .branch00EF59
+#_00EF54: BRA routine00ED94_fail
 
-.EXIT_00EF56
+;---------------------------------------------------------------------------------------------------
+
+routine00ED94_finished:
 #_00EF56: PLX
 #_00EF57: PLY
+
 #_00EF58: RTS
 
-.branch00EF59
+;---------------------------------------------------------------------------------------------------
+
+routine00ED94_fail:
 #_00EF59: LDA.w #$FFFF
 #_00EF5C: STA.w $0CFB
 #_00EF5F: STA.w $0CFD
+
 #_00EF62: RTS
 
 ;===================================================================================================
@@ -17872,10 +17998,10 @@ routine00EF63:
 #_00EF82: RTS
 
 .tile_offset_x
-#_00EF83: dw 0, 3, 3, 0
+#_00EF83: dw $00, $03, $03, $00
 
 .tile_offset_y
-#_00EF8B: dw 0, 0, 3, 3
+#_00EF8B: dw $00, $00, $03, $03
 
 ;===================================================================================================
 
@@ -17999,59 +18125,78 @@ DrawAutoMapFacingNorth:
 
 DrawAutoMapFacingEast:
 #_00F03D: REP #$30
+
 #_00F03F: JSR routine00F1A8
+
 #_00F042: LDY.w #$0018
 
 .next_row
 #_00F045: PHY
+
 #_00F046: LDA.w $0D03
 #_00F049: STA.w $0D01
+
 #_00F04C: LDA.w $0CFF
 #_00F04F: STA.w $0CF7
+
 #_00F052: LDA.w #$0000
 #_00F055: STA.w $0D07
+
 #_00F058: LDY.w #$0018
 
 .next_room
 #_00F05B: JSR DrawSingleAutoMapRoom
+
 #_00F05E: INC.w $0CF7
+
 #_00F061: LDA.w $0CF7
 #_00F064: AND.w #$003F
 #_00F067: STA.w $0CF7
+
 #_00F06A: INC.w $0D01
 #_00F06D: INC.w $0D01
+
 #_00F070: INC.w $0D07
+
 #_00F073: DEY
 #_00F074: BNE .next_room
 
 #_00F076: DEC.w $0CF5
+
 #_00F079: LDA.w $0CF5
 #_00F07C: AND.w #$007F
 #_00F07F: STA.w $0CF5
 
 #_00F082: SEP #$20
+
 #_00F084: LDA.w $0D15
 #_00F087: BNE .branch00F098
 
 #_00F089: REP #$20
+
 #_00F08B: CLC
+
 #_00F08C: LDA.w $0D03
 #_00F08F: ADC.w #$0040
 #_00F092: STA.w $0D03
+
 #_00F095: INC.w $0D0B
 
 .branch00F098
 #_00F098: SEP #$20
+
 #_00F09A: LDA.w $070C
 #_00F09D: CMP.w $0CF5
 #_00F0A0: BNE .branch00F0AA
 
 #_00F0A2: REP #$20
+
 #_00F0A4: LDA.w $0D0B
 #_00F0A7: STA.w $0D0F
 
 .branch00F0AA
 #_00F0AA: REP #$20
+
 #_00F0AC: PLY
 #_00F0AD: DEY
 #_00F0AE: BNE .next_row
@@ -18062,59 +18207,78 @@ DrawAutoMapFacingEast:
 
 DrawAutoMapFacingSouth:
 #_00F0B1: REP #$30
+
 #_00F0B3: JSR routine00F199
+
 #_00F0B6: LDY.w #$0018
 
 .next_row
 #_00F0B9: PHY
+
 #_00F0BA: LDA.w $0D03
 #_00F0BD: STA.w $0D01
+
 #_00F0C0: LDA.w $0CFF
 #_00F0C3: STA.w $0CF5
+
 #_00F0C6: LDA.w #$0000
 #_00F0C9: STA.w $0D07
+
 #_00F0CC: LDY.w #$0018
 
 .next_room
 #_00F0CF: JSR DrawSingleAutoMapRoom
+
 #_00F0D2: DEC.w $0CF5
+
 #_00F0D5: LDA.w $0CF5
 #_00F0D8: AND.w #$007F
 #_00F0DB: STA.w $0CF5
+
 #_00F0DE: INC.w $0D01
 #_00F0E1: INC.w $0D01
+
 #_00F0E4: INC.w $0D07
+
 #_00F0E7: DEY
 #_00F0E8: BNE .next_room
 
 #_00F0EA: DEC.w $0CF7
+
 #_00F0ED: LDA.w $0CF7
 #_00F0F0: AND.w #$003F
 #_00F0F3: STA.w $0CF7
 
 #_00F0F6: SEP #$20
+
 #_00F0F8: LDA.w $0D15
 #_00F0FB: BNE .branch00F10C
 
 #_00F0FD: REP #$20
+
 #_00F0FF: CLC
+
 #_00F100: LDA.w $0D03
 #_00F103: ADC.w #$0040
 #_00F106: STA.w $0D03
+
 #_00F109: INC.w $0D0B
 
 .branch00F10C
 #_00F10C: SEP #$20
+
 #_00F10E: LDA.w $070D
 #_00F111: CMP.w $0CF7
 #_00F114: BNE .branch00F11E
 
 #_00F116: REP #$20
+
 #_00F118: LDA.w $0D0B
 #_00F11B: STA.w $0D0F
 
 .branch00F11E
 #_00F11E: REP #$20
+
 #_00F120: PLY
 #_00F121: DEY
 #_00F122: BNE .next_row
@@ -18125,59 +18289,78 @@ DrawAutoMapFacingSouth:
 
 DrawAutoMapFacingWest:
 #_00F125: REP #$30
+
 #_00F127: JSR routine00F1A8
+
 #_00F12A: LDY.w #$0018
 
 .next_row
 #_00F12D: PHY
+
 #_00F12E: LDA.w $0D03
 #_00F131: STA.w $0D01
+
 #_00F134: LDA.w $0CFF
 #_00F137: STA.w $0CF7
+
 #_00F13A: LDA.w #$0000
 #_00F13D: STA.w $0D07
+
 #_00F140: LDY.w #$0018
 
 .next_room
 #_00F143: JSR DrawSingleAutoMapRoom
+
 #_00F146: DEC.w $0CF7
+
 #_00F149: LDA.w $0CF7
 #_00F14C: AND.w #$003F
 #_00F14F: STA.w $0CF7
+
 #_00F152: INC.w $0D01
 #_00F155: INC.w $0D01
+
 #_00F158: INC.w $0D07
+
 #_00F15B: DEY
 #_00F15C: BNE .next_room
 
 #_00F15E: INC.w $0CF5
+
 #_00F161: LDA.w $0CF5
 #_00F164: AND.w #$007F
 #_00F167: STA.w $0CF5
 
 #_00F16A: SEP #$20
+
 #_00F16C: LDA.w $0D15
 #_00F16F: BNE .branch00F180
 
 #_00F171: REP #$20
+
 #_00F173: CLC
+
 #_00F174: LDA.w $0D03
 #_00F177: ADC.w #$0040
 #_00F17A: STA.w $0D03
+
 #_00F17D: INC.w $0D0B
 
 .branch00F180
 #_00F180: SEP #$20
+
 #_00F182: LDA.w $070C
 #_00F185: CMP.w $0CF5
 #_00F188: BNE .branch00F192
 
 #_00F18A: REP #$20
+
 #_00F18C: LDA.w $0D0B
 #_00F18F: STA.w $0D0F
 
 .branch00F192
 #_00F192: REP #$20
+
 #_00F194: PLY
 #_00F195: DEY
 #_00F196: BNE .next_row
@@ -18216,31 +18399,37 @@ DrawSingleAutoMapRoom:
 #_00F1B7: PHY
 
 #_00F1B8: JSR CheckIfRoomInHiddenArea
+
 #_00F1BB: LDA.w $0CF9
 #_00F1BE: BNE .exit
 
-#_00F1C0: JSR routine00F1FA
+#_00F1C0: JSR CheckIfRoomHasBeenVisited
+
 #_00F1C3: LDA.w $0CF9
 #_00F1C6: BEQ .exit
 
 #_00F1C8: JSR routine00F234
 
 #_00F1CB: SEP #$20
+
 #_00F1CD: LDA.b #$00
 #_00F1CF: STA.w $0D15
 
 #_00F1D2: REP #$30
+
 #_00F1D4: LDA.w $0D0B
 #_00F1D7: STA.w $0D0D
+
 #_00F1DA: SEC
+
 #_00F1DB: LDA.w $0D07
 #_00F1DE: SBC.w $0D09
-#_00F1E1: BCC .branch00F1E9
+#_00F1E1: BCC .no_overflow
 
 #_00F1E3: LDA.w $0D07
 #_00F1E6: STA.w $0D09
 
-.branch00F1E9
+.no_overflow
 #_00F1E9: SEC
 #_00F1EA: LDA.w $0D13
 #_00F1ED: SBC.w $0D07
@@ -18256,19 +18445,23 @@ DrawSingleAutoMapRoom:
 
 ;===================================================================================================
 
-routine00F1FA:
+CheckIfRoomHasBeenVisited:
 #_00F1FA: REP #$30
+
 #_00F1FC: JSR routine00ECC3
+
 #_00F1FF: LDX.w $0CF9
 
 #_00F202: SEP #$20
+
 #_00F204: AND.l $7E3000,X
 
 #_00F208: REP #$20
+
 #_00F20A: PHA
 
 #_00F20B: LDA.w $0D11
-#_00F20E: BEQ .branch00F218
+#_00F20E: BEQ .test_bit
 
 #_00F210: PLA
 
@@ -18277,7 +18470,7 @@ routine00F1FA:
 
 #_00F217: RTS
 
-.branch00F218
+.test_bit
 #_00F218: PLA
 
 #_00F219: AND.w #$00FF
@@ -18409,10 +18602,13 @@ AddAutoMapRoomToTilemapBuffer:
 #_00F2D8: STA.w $0CF9
 
 #_00F2DB: REP #$30
+
 #_00F2DD: JSR routine00F419
+
 #_00F2E0: LDA.w $0CF9
 #_00F2E3: AND.w #$00FF
 #_00F2E6: STA.w $0CF9
+
 #_00F2E9: AND.w #$00C0
 #_00F2EC: LDY.w #$0008
 #_00F2EF: JSR Shift16bitAleft_Ytimes
@@ -18420,58 +18616,66 @@ AddAutoMapRoomToTilemapBuffer:
 #_00F2F5: ORA.w #$1400
 #_00F2F8: AND.w #$D43F
 #_00F2FB: STA.w $0CF9
+
 #_00F2FE: JSR routine00F4C0
 
 #_00F301: SEP #$20
+
 #_00F303: PHX
+
 #_00F304: LDX.w $0D01
+
 #_00F307: LDA.w $0CF9
 #_00F30A: STA.l $7F7000,X
+
 #_00F30E: LDA.w $0CFA
 #_00F311: STA.l $7F7001,X
+
 #_00F315: PLX
 
 #_00F316: REP #$20
+
 #_00F318: RTS
 
 .room_tiles
-#_00F319: db $01,$1F,$01,$20,$9D,$96,$9D,$97
-#_00F321: db $01,$1F,$01,$20,$9E,$99,$9E,$98
-#_00F329: db $5F,$1A,$5F,$1B,$D6,$8A,$D6,$8B
-#_00F331: db $5F,$1A,$5F,$1B,$D9,$8C,$D9,$8D
-#_00F339: db $01,$1F,$01,$20,$9D,$96,$9D,$97
-#_00F341: db $01,$1F,$01,$20,$9E,$99,$9E,$98
-#_00F349: db $60,$5B,$60,$5C,$D7,$CB,$D7,$8E
-#_00F351: db $60,$5B,$60,$5C,$D8,$CD,$D8,$8F
-#_00F359: db $1D,$16,$1D,$17,$21,$10,$21,$12
-#_00F361: db $1D,$16,$1D,$17,$A2,$91,$A2,$93
-#_00F369: db $56,$0A,$56,$0B,$50,$02,$50,$44
-#_00F371: db $56,$0A,$56,$0B,$D1,$05,$D1,$46
-#_00F379: db $1D,$16,$1D,$17,$21,$10,$21,$12
-#_00F381: db $1D,$16,$1D,$17,$A2,$91,$A2,$93
-#_00F389: db $57,$4B,$57,$0E,$52,$04,$52,$08
-#_00F391: db $57,$4B,$57,$0E,$D3,$06,$D3,$07
-#_00F399: db $01,$1F,$01,$20,$9D,$96,$9D,$97
-#_00F3A1: db $01,$1F,$01,$20,$9E,$99,$9E,$98
-#_00F3A9: db $5F,$1A,$5F,$1B,$D6,$8A,$D6,$8B
-#_00F3B1: db $5F,$1A,$5F,$1B,$D9,$8C,$D9,$8D
-#_00F3B9: db $01,$1F,$01,$20,$9D,$96,$9D,$97
-#_00F3C1: db $01,$1F,$01,$20,$9E,$99,$9E,$98
-#_00F3C9: db $60,$5B,$60,$5C,$D7,$CB,$D7,$8E
-#_00F3D1: db $60,$5B,$60,$5C,$D8,$CD,$D8,$8F
-#_00F3D9: db $1E,$19,$1E,$18,$22,$11,$22,$13
-#_00F3E1: db $1E,$19,$1E,$18,$23,$14,$23,$15
-#_00F3E9: db $59,$0C,$59,$0D,$51,$85,$51,$C6
-#_00F3F1: db $59,$0C,$59,$0D,$54,$09,$54,$64
-#_00F3F9: db $1E,$19,$1E,$18,$22,$11,$22,$13
-#_00F401: db $1E,$19,$1E,$18,$23,$14,$23,$15
-#_00F409: db $58,$4D,$58,$0F,$53,$86,$53,$87
-#_00F411: db $58,$4D,$58,$0F,$55,$24,$55,$03
+#_00F319: db $01, $1F, $01, $20, $9D, $96, $9D, $97
+#_00F321: db $01, $1F, $01, $20, $9E, $99, $9E, $98
+#_00F329: db $5F, $1A, $5F, $1B, $D6, $8A, $D6, $8B
+#_00F331: db $5F, $1A, $5F, $1B, $D9, $8C, $D9, $8D
+#_00F339: db $01, $1F, $01, $20, $9D, $96, $9D, $97
+#_00F341: db $01, $1F, $01, $20, $9E, $99, $9E, $98
+#_00F349: db $60, $5B, $60, $5C, $D7, $CB, $D7, $8E
+#_00F351: db $60, $5B, $60, $5C, $D8, $CD, $D8, $8F
+#_00F359: db $1D, $16, $1D, $17, $21, $10, $21, $12
+#_00F361: db $1D, $16, $1D, $17, $A2, $91, $A2, $93
+#_00F369: db $56, $0A, $56, $0B, $50, $02, $50, $44
+#_00F371: db $56, $0A, $56, $0B, $D1, $05, $D1, $46
+#_00F379: db $1D, $16, $1D, $17, $21, $10, $21, $12
+#_00F381: db $1D, $16, $1D, $17, $A2, $91, $A2, $93
+#_00F389: db $57, $4B, $57, $0E, $52, $04, $52, $08
+#_00F391: db $57, $4B, $57, $0E, $D3, $06, $D3, $07
+#_00F399: db $01, $1F, $01, $20, $9D, $96, $9D, $97
+#_00F3A1: db $01, $1F, $01, $20, $9E, $99, $9E, $98
+#_00F3A9: db $5F, $1A, $5F, $1B, $D6, $8A, $D6, $8B
+#_00F3B1: db $5F, $1A, $5F, $1B, $D9, $8C, $D9, $8D
+#_00F3B9: db $01, $1F, $01, $20, $9D, $96, $9D, $97
+#_00F3C1: db $01, $1F, $01, $20, $9E, $99, $9E, $98
+#_00F3C9: db $60, $5B, $60, $5C, $D7, $CB, $D7, $8E
+#_00F3D1: db $60, $5B, $60, $5C, $D8, $CD, $D8, $8F
+#_00F3D9: db $1E, $19, $1E, $18, $22, $11, $22, $13
+#_00F3E1: db $1E, $19, $1E, $18, $23, $14, $23, $15
+#_00F3E9: db $59, $0C, $59, $0D, $51, $85, $51, $C6
+#_00F3F1: db $59, $0C, $59, $0D, $54, $09, $54, $64
+#_00F3F9: db $1E, $19, $1E, $18, $22, $11, $22, $13
+#_00F401: db $1E, $19, $1E, $18, $23, $14, $23, $15
+#_00F409: db $58, $4D, $58, $0F, $53, $86, $53, $87
+#_00F411: db $58, $4D, $58, $0F, $55, $24, $55, $03
 
 ;===================================================================================================
 
 routine00F419:
 #_00F419: REP #$30
+
 #_00F41B: LDA.w $0D05
 #_00F41E: AND.w #$8000
 #_00F421: BNE .branch00F44F
@@ -18503,54 +18707,80 @@ routine00F419:
 
 #_00F44E: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00F44F
 #_00F44F: LDA.w $0D11
 #_00F452: BEQ .branch00F455
 
 #_00F454: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch00F455
 #_00F455: LDA.w #$002F
 #_00F458: STA.w $0CF9
+
 #_00F45B: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00F45C
 #_00F45C: CLC
+
 #_00F45D: LDA.w $0CF9
 #_00F460: ADC.w #$0021
 #_00F463: STA.w $0CF9
+
 #_00F466: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00F467
 #_00F467: JSR routine00F491
+
 #_00F46A: CLC
+
 #_00F46B: LDA.w $0CF9
 #_00F46E: ADC.w #$0027
 #_00F471: STA.w $0CF9
+
 #_00F474: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00F475
 #_00F475: JSR routine00F491
+
 #_00F478: CLC
+
 #_00F479: LDA.w $0CF9
 #_00F47C: ADC.w #$002B
 #_00F47F: STA.w $0CF9
+
 #_00F482: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00F483
 #_00F483: JSR routine00F491
+
 #_00F486: CLC
+
 #_00F487: LDA.w $0CF9
 #_00F48A: ADC.w #$0030
 #_00F48D: STA.w $0CF9
+
 #_00F490: RTS
 
 ;===================================================================================================
 
 routine00F491:
 #_00F491: PHP
+
 #_00F492: REP #$10
 #_00F494: SEP #$20
+
 #_00F496: LDA.w $0CF9
 #_00F499: AND.b #$3F
 #_00F49B: CMP.b #$05
@@ -18573,6 +18803,7 @@ routine00F491:
 #_00F4B3: BNE .branch00F4B9
 
 #_00F4B5: LDA.b #$02
+
 #_00F4B7: BRA .branch00F4BB
 
 .branch00F4B9
@@ -18580,6 +18811,7 @@ routine00F491:
 
 .branch00F4BB
 #_00F4BB: STA.w $0CF9
+
 #_00F4BE: PLP
 #_00F4BF: RTS
 
@@ -18588,6 +18820,7 @@ routine00F491:
 routine00F4C0:
 #_00F4C0: REP #$10
 #_00F4C2: SEP #$20
+
 #_00F4C4: LDA.w $070C
 #_00F4C7: CMP.w $0CF5
 #_00F4CA: BNE .exit
@@ -18596,21 +18829,24 @@ routine00F4C0:
 #_00F4CF: CMP.w $0CF7
 #_00F4D2: BNE .exit
 
-#_00F4D4: BRA .branch00F4D7
+#_00F4D4: BRA .continue
 
 .exit
 #_00F4D6: RTS
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch00F4D7
+.continue
 #_00F4D7: REP #$20
+
 #_00F4D9: LDA.w $0CF9
 #_00F4DC: AND.w #$003F
 #_00F4DF: LDY.w #$0005
 #_00F4E2: JSR Shift16bitAleft_Ytimes
 #_00F4E5: TAX
+
 #_00F4E6: LDY.w #$0020
+
 #_00F4E9: LDA.w #$0000
 #_00F4EC: STA.w $0CFB
 
@@ -18618,29 +18854,41 @@ routine00F4C0:
 
 .next
 #_00F4F1: LDA.l GFX_23F900,X
+
 #_00F4F5: PHX
+
 #_00F4F6: LDX.w $0CFB
 #_00F4F9: ORA.l data00F527,X
 #_00F4FD: STA.l $7F66C0,X
+
 #_00F501: PLX
 #_00F502: INX
+
 #_00F503: INC.w $0CFB
+
 #_00F506: DEY
 #_00F507: BNE .next
 
+;---------------------------------------------------------------------------------------------------
+
 #_00F509: REP #$20
+
 #_00F50B: LDA.w $0CF9
 #_00F50E: AND.w #$D400
 #_00F511: ORA.w #$0036
 #_00F514: STA.w $0CF9
 
 #_00F517: REP #$20
+
 #_00F519: LDA.w #$0004
 #_00F51C: JSL VRAM_From_7FXXXX
 #_00F520: JSL AddSelfAsVector
 
 #_00F524: REP #$30
+
 #_00F526: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 data00F527:
 #_00F527: db $00,$00,$00,$00,$00,$3C,$00,$3C
@@ -18653,11 +18901,13 @@ data00F527:
 ; TODO this looks like stupid math
 routine00F547:
 #_00F547: REP #$30
+
 #_00F549: LDA.w $0D13
 #_00F54C: AND.w #$00FE
 #_00F54F: ASL A
 #_00F550: ASL A
 #_00F551: STA.w $0D13
+
 #_00F554: SEC
 #_00F555: LDA.w #$0020
 #_00F558: SBC.w $0D09
@@ -18665,6 +18915,7 @@ routine00F547:
 #_00F55E: ASL A
 #_00F55F: ASL A
 #_00F560: STA.w $0D09
+
 #_00F563: SEC
 #_00F564: LDA.w #$0000
 #_00F567: SBC.w $0D09
@@ -18672,23 +18923,27 @@ routine00F547:
 #_00F56B: ADC.w $0D13
 #_00F56E: STA.w $0D09
 #_00F571: STA.w $0F4D
+
 #_00F574: LDA.w #$0000
 #_00F577: STA.w $0D07
+
 #_00F57A: SEC
 #_00F57B: LDA.w $0D0D
 #_00F57E: SBC.w #$0008
 #_00F581: BCC .branch00F5B2
 
 #_00F583: STA.w $0D0D
+
 #_00F586: SEC
 #_00F587: LDA.w $0D0F
 #_00F58A: SBC.w #$0008
-#_00F58D: BCC .branch00F5B8
+#_00F58D: BCC .finished
 
 #_00F58F: SEC
 #_00F590: LDA.w $0D0F
 #_00F593: SBC.w #$0004
 #_00F596: STA.w $0D0F
+
 #_00F599: SEC
 #_00F59A: LDA.w $0D0D
 #_00F59D: SBC.w $0D0F
@@ -18696,135 +18951,166 @@ routine00F547:
 
 #_00F5A2: LDA.w $0D0F
 #_00F5A5: STA.w $0D07
-#_00F5A8: BRA .branch00F5B8
+
+#_00F5A8: BRA .finished
 
 .branch00F5AA
 #_00F5AA: LDA.w $0D0D
 #_00F5AD: STA.w $0D07
-#_00F5B0: BRA .branch00F5B8
+
+#_00F5B0: BRA .finished
 
 .branch00F5B2
 #_00F5B2: LDA.w #$0000
 #_00F5B5: STA.w $0D0D
 
-.branch00F5B8
+;---------------------------------------------------------------------------------------------------
+
+.finished
 #_00F5B8: REP #$20
+
 #_00F5BA: JSR routine00F5C1
 #_00F5BD: STA.w $0F4F
+
 #_00F5C0: RTS
 
 ;===================================================================================================
 
 routine00F5C1:
 #_00F5C1: REP #$20
+
 #_00F5C3: LDA.w $0D07
 #_00F5C6: ASL A
 #_00F5C7: ASL A
 #_00F5C8: ASL A
 #_00F5C9: STA.w $0D09
+
 #_00F5CC: CLC
+
 #_00F5CD: LDA.w #$FFE4
 #_00F5D0: ADC.w $0D09
 #_00F5D3: STA.w $0D09
+
 #_00F5D6: RTS
 
 ;===================================================================================================
 
 routine00F5D7:
 #_00F5D7: REP #$30
+
 #_00F5D9: JSL AddSelfAsVector
 #_00F5DD: JSR routine00F683
 
 #_00F5E0: REP #$30
+
 #_00F5E2: LDA.w $0F2B
 #_00F5E5: AND.w #$F0F0
-#_00F5E8: BNE .branch00F601
+#_00F5E8: BNE .pressed_not_the_dpad
 
 #_00F5EA: LDA.w $0D0D
 #_00F5ED: BEQ routine00F5D7
 
 #_00F5EF: LDA.w $0F2D
 #_00F5F2: AND.w #$0800
-#_00F5F5: BNE .branch00F608
+#_00F5F5: BNE routine00F5D7_up
 
 #_00F5F7: LDA.w $0F2D
 #_00F5FA: AND.w #$0400
-#_00F5FD: BNE .branch00F632
+#_00F5FD: BNE routine00F5D7_down
 
 #_00F5FF: BRA routine00F5D7
 
-.branch00F601
+.pressed_not_the_dpad
 #_00F601: LDA.w #$0000
 #_00F604: STA.w $0D11
+
 #_00F607: RTS
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch00F608
+routine00F5D7_up:
 #_00F608: REP #$30
+
 #_00F60A: LDA.w $0D07
-#_00F60D: BEQ .branch00F62F
+#_00F60D: BEQ .skip
 
 #_00F60F: JSR routine00F70E
 #_00F612: JSR routine00F5C1
+
 #_00F615: LDY.w #$0008
 
-.branch00F618
+.next
 #_00F618: DEC.w $0D09
+
 #_00F61B: LDA.w $0D09
 #_00F61E: STA.w $0F4F
+
 #_00F621: PHY
+
 #_00F622: JSL AddSelfAsVector
 
 #_00F626: REP #$30
+
 #_00F628: PLY
 #_00F629: DEY
-#_00F62A: BNE .branch00F618
+#_00F62A: BNE .next
 
 #_00F62C: DEC.w $0D07
 
-.branch00F62F
+.skip
 #_00F62F: JMP routine00F5D7
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch00F632
+routine00F5D7_down:
 #_00F632: REP #$30
+
 #_00F634: LDA.w $0D07
 #_00F637: CMP.w $0D0D
-#_00F63A: BEQ .branch00F65C
+#_00F63A: BEQ .skip
 
 #_00F63C: JSR routine00F70E
 #_00F63F: JSR routine00F5C1
+
 #_00F642: LDY.w #$0008
 
-.branch00F645
+.next
 #_00F645: INC.w $0D09
+
 #_00F648: LDA.w $0D09
+
 #_00F64B: STA.w $0F4F
+
 #_00F64E: PHY
 #_00F64F: JSL AddSelfAsVector
 
 #_00F653: REP #$30
+
 #_00F655: PLY
 #_00F656: DEY
-#_00F657: BNE .branch00F645
+#_00F657: BNE .next
 
 #_00F659: INC.w $0D07
 
-.branch00F65C
+.skip
 #_00F65C: JMP routine00F5D7
 
 ;---------------------------------------------------------------------------------------------------
 
+; TODO did I miss some vectors/labels here?
 #_00F65F: LDA.w #$0001
 #_00F662: STA.w $0D11
+
 #_00F665: RTS
 
 #_00F666: LDA.w #$0000
 #_00F669: STA.w $0D11
+
 #_00F66C: JMP routine00F5D7
 
+;===================================================================================================
+
+; TODO unused?
 data00F6FF:
 #_00F66F: dw $0800,$0400,$0400,$0200
 #_00F677: dw $0100,$0200,$0100,$8000
@@ -18834,26 +19120,32 @@ data00F6FF:
 
 routine00F683:
 #_00F683: PHP
+
 #_00F684: JSR routine00F6EE
 
 #_00F687: REP #$30
+
 #_00F689: LDA.w $0D07
 #_00F68C: BEQ .branch00F6A4
 
 #_00F68E: DEC A
-#_00F68F: ASL A
+
+#_00F68F: ASL A ; x64
 #_00F690: ASL A
 #_00F691: ASL A
 #_00F692: ASL A
 #_00F693: ASL A
 #_00F694: ASL A
+
 #_00F695: CLC
 #_00F696: ADC.w #$003C
 #_00F699: TAX
 
 #_00F69A: SEP #$20
+
 #_00F69C: LDA.b #$34
 #_00F69E: STA.l $7F7000,X
+
 #_00F6A2: BRA .branch00F6AF
 
 .branch00F6A4
@@ -18865,49 +19157,59 @@ routine00F683:
 
 .branch00F6AF
 #_00F6AF: REP #$20
+
 #_00F6B1: LDA.w $0D07
 #_00F6B4: CMP.w $0D0D
 #_00F6B7: BEQ .branch00F6CF
 
 #_00F6B9: DEC A
-#_00F6BA: ASL A
+
+#_00F6BA: ASL A ; x64
 #_00F6BB: ASL A
 #_00F6BC: ASL A
 #_00F6BD: ASL A
 #_00F6BE: ASL A
 #_00F6BF: ASL A
+
 #_00F6C0: CLC
 #_00F6C1: ADC.w #$02BC
 #_00F6C4: TAX
 
 #_00F6C5: SEP #$20
+
 #_00F6C7: LDA.b #$35
 #_00F6C9: STA.l $7F7000,X
+
 #_00F6CD: BRA .branch00F6E6
 
 ;---------------------------------------------------------------------------------------------------
 
 .branch00F6CF
 #_00F6CF: REP #$20
+
 #_00F6D1: DEC A
 #_00F6D2: DEC A
-#_00F6D3: ASL A
+
+#_00F6D3: ASL A ; x64
 #_00F6D4: ASL A
 #_00F6D5: ASL A
 #_00F6D6: ASL A
 #_00F6D7: ASL A
 #_00F6D8: ASL A
+
 #_00F6D9: CLC
 #_00F6DA: ADC.w #$02BC
 #_00F6DD: TAX
 
 #_00F6DE: SEP #$20
+
 #_00F6E0: LDA.b #$00
 #_00F6E2: STA.l $7F7000,X
 
 .branch00F6E6
 #_00F6E6: LDA.b #$00
 #_00F6E8: JSL VRAM_From_7FXXXX
+
 #_00F6EC: PLP
 #_00F6ED: RTS
 
@@ -18915,8 +19217,10 @@ routine00F683:
 
 routine00F6EE:
 #_00F6EE: PHP
+
 #_00F6EF: REP #$10
 #_00F6F1: SEP #$20
+
 #_00F6F3: LDX.w #$003C
 #_00F6F6: LDY.w #$0020
 
@@ -18925,12 +19229,14 @@ routine00F6EE:
 #_00F6FB: STA.l $7F7000,X
 
 #_00F6FF: REP #$20
+
 #_00F701: TXA
 #_00F702: CLC
 #_00F703: ADC.w #$0040
 #_00F706: TAX
 
 #_00F707: SEP #$20
+
 #_00F709: DEY
 #_00F70A: BNE .next
 
@@ -18942,14 +19248,20 @@ routine00F6EE:
 routine00F70E:
 #_00F70E: PHP
 #_00F70F: REP #$30
+
 #_00F711: JSR routine00F6EE
 
 #_00F714: REP #$20
+
 #_00F716: LDA.w #$0000
 #_00F719: JSL VRAM_From_7FXXXX
+
 #_00F71D: PLP
 #_00F71E: RTS
 
+;===================================================================================================
+
+; TODO unused?
 data00F71F:
 #_00F71F: db $01,$00,$80,$80,$00,$FF,$FF
 
@@ -18958,32 +19270,39 @@ data00F71F:
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00F726:
 #_00F726: PHP
+
 #_00F727: JSR routine00F791
 
 #_00F72A: REP #$30
+
 #_00F72C: LDA.w $0D07
 #_00F72F: BEQ .branch00F747
 
 #_00F731: DEC A
+
 #_00F732: ASL A
 #_00F733: ASL A
 #_00F734: ASL A
 #_00F735: ASL A
 #_00F736: ASL A
 #_00F737: ASL A
+
 #_00F738: CLC
 #_00F739: ADC.w #$003C
 #_00F73C: TAX
 
 #_00F73D: SEP #$20
+
 #_00F73F: LDA.b #$34
 #_00F741: STA.l $7F7000,X
+
 #_00F745: BRA .branch00F752
 
 .branch00F747
 #_00F747: LDX.w #$003C
 
 #_00F74A: SEP #$20
+
 #_00F74C: LDA.b #$00
 #_00F74E: STA.l $7F7000,X
 
@@ -18994,42 +19313,51 @@ routine00F726:
 #_00F75A: BEQ .branch00F772
 
 #_00F75C: DEC A
+
 #_00F75D: ASL A
 #_00F75E: ASL A
 #_00F75F: ASL A
 #_00F760: ASL A
 #_00F761: ASL A
 #_00F762: ASL A
+
 #_00F763: CLC
 #_00F764: ADC.w #$02BC
 #_00F767: TAX
 
 #_00F768: SEP #$20
+
 #_00F76A: LDA.b #$35
 #_00F76C: STA.l $7F7000,X
+
 #_00F770: BRA .branch00F789
 
 .branch00F772
 #_00F772: REP #$20
+
 #_00F774: DEC A
 #_00F775: DEC A
+
 #_00F776: ASL A
 #_00F777: ASL A
 #_00F778: ASL A
 #_00F779: ASL A
 #_00F77A: ASL A
 #_00F77B: ASL A
+
 #_00F77C: CLC
 #_00F77D: ADC.w #$02BC
 #_00F780: TAX
 
 #_00F781: SEP #$20
+
 #_00F783: LDA.b #$00
 #_00F785: STA.l $7F7000,X
 
 .branch00F789
 #_00F789: LDA.b #$00
 #_00F78B: JSL VRAM_From_7FXXXX
+
 #_00F78F: PLP
 #_00F790: RTS
 
@@ -19038,6 +19366,7 @@ routine00F726:
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00F791:
 #_00F791: PHP
+
 #_00F792: REP #$10
 #_00F794: SEP #$20
 
@@ -19049,290 +19378,304 @@ routine00F791:
 #_00F79E: STA.l $7F7000,X
 
 #_00F7A2: REP #$20
+
 #_00F7A4: TXA
 #_00F7A5: CLC
 #_00F7A6: ADC.w #$0040
 #_00F7A9: TAX
 
 #_00F7AA: SEP #$20
+
 #_00F7AC: DEY
 #_00F7AD: BNE .next
 
 #_00F7AF: PLP
 #_00F7B0: RTS
 
+;===================================================================================================
+
 ; TODO POSSIBLY UNUSED ROUTINE
 routine00F7B1:
 #_00F7B1: PHP
 #_00F7B2: REP #$30
+
 #_00F7B4: JSR routine00F791
 
 #_00F7B7: REP #$20
+
 #_00F7B9: LDA.w #$0000
 #_00F7BC: JSL VRAM_From_7FXXXX
+
 #_00F7C0: PLP
 #_00F7C1: RTS
 
+;===================================================================================================
+
 ; I think this is filler
-#_00F7C2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7CA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7D2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7DA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7E2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7EA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7F2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F7FA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F802: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F80A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F812: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F81A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F822: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F82A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F832: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F83A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F842: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F84A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F852: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F85A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F862: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F86A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F872: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F87A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F882: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F88A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F892: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F89A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8A2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8AA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8B2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8BA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8C2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8CA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8D2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8DA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8E2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8EA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8F2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F8FA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F902: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F90A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F912: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F91A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F922: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F92A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F932: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F93A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F942: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F94A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F952: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F95A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F962: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F96A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F972: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F97A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F982: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F98A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F992: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F99A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9A2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9AA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9B2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9BA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9C2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9CA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9D2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9DA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9E2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9EA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9F2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00F9FA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA02: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA0A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA12: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA1A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA22: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA2A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA32: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA3A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA42: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA4A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA52: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA5A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA62: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA6A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA72: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA7A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA82: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA8A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA92: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FA9A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAA2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAAA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAB2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FABA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAC2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FACA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAD2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FADA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAE2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAEA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAF2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FAFA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB02: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB0A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB12: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB1A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB22: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB2A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB32: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB3A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB42: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB4A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB52: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB5A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB62: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB6A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB72: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB7A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB82: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB8A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB92: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FB9A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBA2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBAA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBB2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBBA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBC2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBCA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBD2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBDA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBE2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBEA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBF2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FBFA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC02: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC0A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC12: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC1A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC22: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC2A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC32: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC3A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC42: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC4A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC52: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC5A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC62: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC6A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC72: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC7A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC82: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC8A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC92: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FC9A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCA2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCAA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCB2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCBA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCC2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCCA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCD2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCDA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCE2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCEA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCF2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FCFA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD02: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD0A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD12: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD1A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD22: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD2A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD32: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD3A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD42: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD4A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD52: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD5A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD62: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD6A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD72: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD7A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD82: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD8A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD92: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FD9A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDA2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDAA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDB2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDBA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDC2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDCA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDD2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDDA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDE2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDEA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDF2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FDFA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE02: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE0A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE12: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE1A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE22: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE2A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE32: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE3A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE42: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE4A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE52: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE5A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE62: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE6A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE72: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE7A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE82: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE8A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE92: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FE9A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEA2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEAA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEB2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEBA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEC2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FECA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FED2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEDA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEE2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEEA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEF2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FEFA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF02: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF0A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF12: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF1A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF22: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF2A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF32: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF3A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF42: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF4A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF52: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF5A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF62: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF6A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF72: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF7A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF82: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF8A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF92: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FF9A: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FFA2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FFAA: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FFB2: db $BB,$B5,$00,$04,$02,$04,$00,$04
-#_00FFBA: db $BB,$B5,$00,$04,$02,$04
+#_00F7C2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7CA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7D2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7DA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7E2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7EA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7F2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F7FA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F802: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F80A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F812: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F81A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F822: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F82A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F832: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F83A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F842: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F84A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F852: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F85A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F862: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F86A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F872: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F87A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F882: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F88A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F892: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F89A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8A2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8AA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8B2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8BA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8C2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8CA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8D2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8DA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8E2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8EA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8F2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F8FA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F902: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F90A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F912: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F91A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F922: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F92A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F932: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F93A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F942: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F94A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F952: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F95A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F962: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F96A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F972: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F97A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F982: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F98A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F992: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F99A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9A2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9AA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9B2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9BA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9C2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9CA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9D2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9DA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9E2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9EA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9F2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00F9FA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA02: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA0A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA12: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA1A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA22: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA2A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA32: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA3A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA42: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA4A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA52: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA5A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA62: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA6A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA72: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA7A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA82: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA8A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA92: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FA9A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAA2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAAA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAB2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FABA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAC2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FACA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAD2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FADA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAE2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAEA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAF2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FAFA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB02: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB0A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB12: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB1A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB22: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB2A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB32: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB3A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB42: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB4A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB52: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB5A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB62: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB6A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB72: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB7A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB82: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB8A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB92: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FB9A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBA2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBAA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBB2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBBA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBC2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBCA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBD2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBDA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBE2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBEA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBF2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FBFA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC02: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC0A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC12: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC1A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC22: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC2A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC32: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC3A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC42: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC4A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC52: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC5A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC62: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC6A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC72: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC7A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC82: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC8A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC92: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FC9A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCA2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCAA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCB2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCBA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCC2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCCA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCD2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCDA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCE2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCEA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCF2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FCFA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD02: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD0A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD12: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD1A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD22: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD2A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD32: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD3A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD42: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD4A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD52: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD5A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD62: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD6A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD72: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD7A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD82: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD8A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD92: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FD9A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDA2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDAA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDB2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDBA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDC2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDCA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDD2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDDA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDE2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDEA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDF2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FDFA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE02: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE0A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE12: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE1A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE22: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE2A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE32: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE3A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE42: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE4A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE52: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE5A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE62: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE6A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE72: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE7A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE82: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE8A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE92: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FE9A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEA2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEAA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEB2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEBA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEC2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FECA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FED2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEDA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEE2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEEA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEF2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FEFA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF02: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF0A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF12: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF1A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF22: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF2A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF32: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF3A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF42: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF4A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF52: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF5A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF62: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF6A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF72: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF7A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF82: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF8A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF92: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FF9A: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FFA2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FFAA: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FFB2: db $BB, $B5, $00, $04, $02, $04, $00, $04
+#_00FFBA: db $BB, $B5, $00, $04, $02, $04
+
+;===================================================================================================
+; ROM header
+;===================================================================================================
 
 pushtable
 cleartable
+
 org $00FFC0
 #_00FFC0: db "DIGITAL DEVIL STORY  "
 
@@ -19349,7 +19692,7 @@ org $00FFC0
 #_00FFDE: dw $AD74 ; checksum
 
 #_00FFE0: dw $0400
-#_00FFE2: dw $00B5BB ; loose op
+#_00FFE2: dw $B5BB
 #_00FFE4: dw $0400
 #_00FFE6: dw Native_BRK
 #_00FFE8: dw $0400
@@ -19367,3 +19710,5 @@ org $00FFC0
 #_00FFFE: dw Native_IRQ
 
 pulltable
+
+;===================================================================================================

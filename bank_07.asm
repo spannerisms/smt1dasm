@@ -3199,10 +3199,13 @@ UseItemStats:
 
 ;===================================================================================================
 ; TODO
-; Spell data?
-; fourth property seems to be MP cost
-; if third property is $80-$FE, something is skipped
-; positive and $FF are okay?
+; byte 0: 
+; byte 1: damage
+; byte 2: 
+; byte 3: cost
+; byte 4: status
+; byte 5: status
+; if third property is $80-$FE, something is skipped - positive and $FF are okay?
 ;===================================================================================================
 SkillData:
 #_07B645: db $42, $17, $00, $03, $00, $00 ; 0x00
