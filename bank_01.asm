@@ -12711,7 +12711,7 @@ routine01D0C5:
 #_01D127: RTS
 
 .branch01D128
-#_01D128: JSR routine01D220
+#_01D128: JSR CalculateAttackMultiplier
 
 .branch01D12B
 #_01D12B: JSR TestIfMoveIsReflected
@@ -12872,53 +12872,59 @@ routine01D0C5:
 
 ;===================================================================================================
 
-routine01D220:
+CalculateAttackMultiplier:
 #_01D220: CPY.w #$0180
-#_01D223: BCS .branch01D254
+#_01D223: BCS .demon_caster
 
 #_01D225: LDA.w $1008,Y
 #_01D228: AND.w #$0001
-#_01D22B: BNE .branch01D258
+#_01D22B: BNE .not_using_gun
 
 #_01D22D: JSL GetRandomInt
 #_01D231: AND.w #$00FF
 #_01D234: CMP.w #$0040
-#_01D237: BCS .branch01D251
+#_01D237: BCS .no_bullet_status
 
 #_01D239: LDA.w $1046,Y
 #_01D23C: LDY.w #$0008
 #_01D23F: JSL GetEquipmentStat
 #_01D243: AND.w #$FFFF
-#_01D246: BEQ .branch01D251
+#_01D246: BEQ .no_bullet_status
 
-#_01D248: JSL routine01EBBE
-#_01D24C: BCS .branch01D251
+#_01D248: JSL TestIfTargetAlreadyHasAffliction
+#_01D24C: BCS .no_bullet_status
 
 #_01D24E: STA.w $05AA
 
-.branch01D251
+.no_bullet_status
 #_01D251: LDY.w $0518
 
-.branch01D254
+;---------------------------------------------------------------------------------------------------
+
+.demon_caster
 #_01D254: INY
 #_01D255: INY
 #_01D256: INY
 #_01D257: INY
 
-.branch01D258
+.not_using_gun
 #_01D258: LDA.w $101E,Y
 #_01D25B: LSR A
 #_01D25C: LSR A
 #_01D25D: ADC.w #$0004
 #_01D260: TAX
+
 #_01D261: LDA.w $101E,Y
 
 #_01D264: SEP #$20
+
 #_01D266: STA.w PPUMULT16
 #_01D269: XBA
 #_01D26A: STA.w PPUMULT16
+
 #_01D26D: TXA
 #_01D26E: STA.w PPUMULT8
+
 #_01D271: NOP
 #_01D272: NOP
 #_01D273: NOP
@@ -12929,26 +12935,31 @@ routine01D220:
 #_01D278: NOP
 
 #_01D279: REP #$20
+
 #_01D27B: LDA.w PPUPRODUCTL
-#_01D27E: JSR routine01DD1E
+#_01D27E: JSR ApplyAttackBuff
+
 #_01D281: LDX.w $051A
 #_01D284: LDY.w $1026,X
-#_01D287: JSR routine01DD72
+#_01D287: JSR ApplyDefenseBuff
+
 #_01D28A: LDX.w #$0000
 #_01D28D: JSL DivisionBig_XA_by_Y
 #_01D291: JSL RoundQuotient
+
 #_01D295: DEC A
-#_01D296: BPL .branch01D29B
+#_01D296: BPL .nonzero
 
 #_01D298: LDA.w #$0000
 
-.branch01D29B
+.nonzero
 #_01D29B: STA.w $0562
-#_01D29E: BNE .branch01D2A3
+#_01D29E: BNE .exit
 
+; No status effect if no damage is dealt
 #_01D2A0: STZ.w $05AA
 
-.branch01D2A3
+.exit
 #_01D2A3: RTS
 
 ;===================================================================================================
@@ -13540,7 +13551,7 @@ routine01D5D0:
 #_01D604: BRA .branch01D637
 
 .branch01D606
-#_01D606: JSL routine01EA3C
+#_01D606: JSL DisplayMessageDescribingAttack
 #_01D60A: BRA .branch01D63A
 
 .branch01D60C
@@ -13567,7 +13578,7 @@ routine01D5D0:
 #_01D629: BIT.w #$0006
 #_01D62C: BEQ .branch01D634
 
-#_01D62E: JSL routine01EA3C
+#_01D62E: JSL DisplayMessageDescribingAttack
 #_01D632: BRA .branch01D63A
 
 .branch01D634
@@ -14164,7 +14175,7 @@ data01DB7E:
 
 ;===================================================================================================
 
-routine01DD1E:
+ApplyAttackBuff:
 #_01DD1E: PHA
 
 #_01DD1F: JSR GetSomeSpecialIndicesForCasterAndTarget
@@ -14224,7 +14235,7 @@ routine01DD1E:
 
 ;===================================================================================================
 
-routine01DD72:
+ApplyDefenseBuff:
 #_01DD72: PHA
 #_01DD73: PHY
 
@@ -16101,7 +16112,7 @@ routine01E95F:
 
 #_01E9A3: LDA.w #$0021 ; SFX 21
 #_01E9A6: JSL Write_to_APU_transferrable
-#_01E9AA: JSL routine01EA3C
+#_01E9AA: JSL DisplayMessageDescribingAttack
 
 ; TODO examine logic
 .branch01E9AE
@@ -16145,16 +16156,22 @@ routine01E95F:
 #_01E9EA: SBC.w #$001F
 #_01E9ED: ASL A
 #_01E9EE: TAX
+
 #_01E9EF: LDA.l SkillVectors,X
 #_01E9F3: STA.w $0E40
+
 #_01E9F6: LDA.w #.return-1
 #_01E9F9: PHA
+
 #_01E9FA: JMP ($0E40)
+
+;---------------------------------------------------------------------------------------------------
 
 .return
 #_01E9FD: LDA.w #$FFFF
 #_01EA00: STA.w $0562
-#_01EA03: BCS routine01EA37
+
+#_01EA03: BCS .cast_failed
 
 #_01EA05: LDA.w $0A52
 #_01EA08: SEC
@@ -16170,7 +16187,7 @@ routine01E95F:
 #_01EA18: INX
 
 .branch01EA19
-#_01EA19: LDA.l data01ECD4,X
+#_01EA19: LDA.l CastDescriptionMessageIDs,X
 #_01EA1D: CMP.w #$FFFF
 #_01EA20: BEQ .branch01EA31
 
@@ -16185,33 +16202,37 @@ routine01E95F:
 
 .branch01EA31
 #_01EA31: JSL routine00A17E
+
 #_01EA35: PLP
 #_01EA36: RTL
 
 ;===================================================================================================
 
-routine01EA37:
+.cast_failed
 #_01EA37: JSR routine01FEBF
+
 #_01EA3A: PLP
 #_01EA3B: RTL
 
 ;===================================================================================================
 
-routine01EA3C:
+DisplayMessageDescribingAttack:
 #_01EA3C: LDA.w #$003F
+
 #_01EA3F: LDX.w $0A52
 #_01EA42: CPX.w #$0040
-#_01EA45: BCC .branch01EA54
+#_01EA45: BCC .normal_skill
 
 #_01EA47: TXA
 #_01EA48: SEC
 #_01EA49: SBC.w #$0040
 #_01EA4C: ASL A
 #_01EA4D: TAX
-#_01EA4E: LDA.l data01EC64,X
+
+#_01EA4E: LDA.l DemonSkillMessageIDs,X
 #_01EA52: BMI .exit
 
-.branch01EA54
+.normal_skill
 #_01EA54: JSL DisplayActionMessage
 
 .exit
@@ -16288,7 +16309,7 @@ routine01EA59:
 #_01EABB: STZ.w $0562
 
 #_01EABE: BCS .exit
-#_01EAC0: JMP Branch01EB43
+#_01EAC0: JMP HandleStatusAffliction
 
 .exit
 #_01EAC3: RTS
@@ -16305,35 +16326,34 @@ CastOffensiveSkill:
 #_01EACC: CPY.w #$0057 ; Bite
 #_01EACF: BCC .not_special_move
 
-#_01EAD1: JSR routine01EB94
+#_01EAD1: JSR CalculateAttackDamage
 
 #_01EAD4: LDA.w $0A52
 #_01EAD7: LDY.w #$0004
 #_01EADA: JSL GetSkillProperty
 
 #_01EADE: AND.w #$FFFF
-#_01EAE1: BEQ .branch01EAFA
+#_01EAE1: BEQ .dont_apply_status
 
 #_01EAE3: TAY
 #_01EAE4: JSL GetRandomInt
 #_01EAE8: AND.w #$00FF
 #_01EAEB: CMP.w #$0040
-#_01EAEE: BCS .branch01EAFA
+#_01EAEE: BCS .dont_apply_status
 
 #_01EAF0: TYA
-#_01EAF1: JSL routine01EBBE
-#_01EAF5: BCS .branch01EAFA
+#_01EAF1: JSL TestIfTargetAlreadyHasAffliction
+#_01EAF5: BCS .dont_apply_status
 
 #_01EAF7: STA.w $05AA
 
-.branch01EAFA
+.dont_apply_status
 #_01EAFA: JMP .no_status_affliction
 
 ;---------------------------------------------------------------------------------------------------
 
 .not_special_move
-; gets some sort of damage?
-#_01EAFD: JSR routine01F60F
+#_01EAFD: JSR ApplyMagicDamageBuff
 
 ; round[(Damage * Caster.MPOW) / (round(Target.DEF/8) + Target.MPOW)]
 #_01EB00: LDY.w $0518
@@ -16360,6 +16380,7 @@ CastOffensiveSkill:
 #_01EB1B: REP #$20
 
 #_01EB1D: LDY.w $051A
+
 #_01EB20: LDA.w $1026,Y
 #_01EB23: LSR A
 #_01EB24: LSR A
@@ -16382,20 +16403,21 @@ CastOffensiveSkill:
 
 ;===================================================================================================
 
-#Branch01EB43:
+#HandleStatusAffliction:
 #_01EB43: LDA.w $0A52
+
 #_01EB46: LDY.w #$0004
 #_01EB49: JSL GetSkillProperty
 #_01EB4D: AND.w #$FFFF
 #_01EB50: BEQ .no_status_affliction
 
-#_01EB52: JSL routine01EBBE
+#_01EB52: JSL TestIfTargetAlreadyHasAffliction
 #_01EB56: BCS .no_status_affliction
 
 #_01EB58: AND.w #$0004
 #_01EB5B: BEQ .no_sealing
 
-; check if target has MP
+; check if target has MP to seal
 #_01EB5D: LDX.w $051A
 #_01EB60: LDA.w $1034,X
 #_01EB63: BEQ .no_status_affliction
@@ -16408,14 +16430,14 @@ CastOffensiveSkill:
 #_01EB69: LDX.w #$0000
 #_01EB6C: LDA.w $0A52
 
-.branch01EB6F
-#_01EB6F: CMP.l data01EBFA,X
+.test_for_special_effect
+#_01EB6F: CMP.l SpecialEffectSkillIDs,X
 #_01EB73: BEQ .branch01EB7E
 
 #_01EB75: INX
 #_01EB76: INX
 #_01EB77: CPX.w #$0014
-#_01EB7A: BCC .branch01EB6F
+#_01EB7A: BCC .test_for_special_effect
 
 .no_damage
 #_01EB7C: CLC
@@ -16425,31 +16447,41 @@ CastOffensiveSkill:
 
 .branch01EB7E
 #_01EB7E: TXA
-#_01EB7F: LDA.l pointers01EC0E,X
+
+#_01EB7F: LDA.l SpecialEffectSkillVectors,X
 #_01EB83: STA.w $0E40
+
 #_01EB86: LDA.w #.return-1
 #_01EB89: PHA
+
 #_01EB8A: JMP ($0E40)
 
 .return
 #_01EB8D: LDA.w #$FFFF
 #_01EB90: STA.w $0562
+
 #_01EB93: RTS
 
 ;===================================================================================================
 
-; TODO seems math related
-routine01EB94:
+CalculateAttackDamage:
 #_01EB94: PHA
+
 #_01EB95: LDY.w $0715
-#_01EB98: JSR routine01D220
+
+#_01EB98: JSR CalculateAttackMultiplier
+
 #_01EB9B: PLX
+
 #_01EB9C: LDA.w $0562
 
 #_01EB9F: SEP #$30
+
 #_01EBA1: STA.w PPUMULT16
+
 #_01EBA4: XBA
 #_01EBA5: STA.w PPUMULT16
+
 #_01EBA8: TXA
 #_01EBA9: STA.w PPUMULT8
 
@@ -16463,15 +16495,18 @@ routine01EB94:
 #_01EBB3: NOP
 
 #_01EBB4: REP #$30
+
 #_01EBB6: LDA.w PPUPRODUCTL
 #_01EBB9: LSR A
 #_01EBBA: STA.w $0562
+
 #_01EBBD: RTS
 
 ;===================================================================================================
-; TODO is this checking status compatability?
-routine01EBBE:
+
+TestIfTargetAlreadyHasAffliction:
 #_01EBBE: TAY
+
 #_01EBBF: LDX.w #$0000
 
 .find_the_bit
@@ -16483,7 +16518,7 @@ routine01EBBE:
 #_01EBC7: BRA .find_the_bit
 
 .found_the_index
-#_01EBC9: LDA.l data01EBDA,X
+#_01EBC9: LDA.l .status_bits,X
 
 #_01EBCD: LDX.w $051A
 #_01EBD0: AND.w $1002,X
@@ -16498,7 +16533,7 @@ routine01EBBE:
 #_01EBD9: RTL
 
 ; data is backwards from bit # for whatever reason
-data01EBDA:
+.status_bits
 #_01EBDA: dw $8000 ; F
 #_01EBDC: dw $C000 ; E
 #_01EBDE: dw $E000 ; D
@@ -16518,7 +16553,7 @@ data01EBDA:
 
 ;===================================================================================================
 
-data01EBFA:
+SpecialEffectSkillIDs:
 #_01EBFA: dw $004B
 #_01EBFC: dw $004C
 #_01EBFE: dw $004D
@@ -16530,36 +16565,34 @@ data01EBFA:
 #_01EC0A: dw $0074
 #_01EC0C: dw $0075
 
-pointers01EC0E:
-#_01EC0E: dw routine01F38D
-#_01EC10: dw routine01F38D
-#_01EC12: dw routine01F38D
-#_01EC14: dw routine01F446
-#_01EC16: dw routine01F45F
-#_01EC18: dw routine01F476
-#_01EC1A: dw routine01F48B
-#_01EC1C: dw routine01F49F
-#_01EC1E: dw routine01F4AC
-#_01EC20: dw routine01F4F3
+SpecialEffectSkillVectors:
+#_01EC0E: dw Cast_KissyMoves  ; 0x4B
+#_01EC10: dw Cast_KissyMoves  ; 0x4C
+#_01EC12: dw Cast_KissyMoves  ; 0x4D
+#_01EC14: dw Cast_FogBreath   ; 0x51
+#_01EC16: dw Cast_DeathTouch  ; 0x54
+#_01EC18: dw Cast_WaterWall   ; 0x55
+#_01EC1A: dw Cast_FireWall    ; 0x56
+#_01EC1C: dw Cast_Defend      ; 0x73
+#_01EC1E: dw Cast_Retreat     ; 0x74
+#_01EC20: dw Cast_Rally       ; 0x75
 
 ;===================================================================================================
-; Spell pointers
-;===================================================================================================
-; TODO better, less literal translation
+
 SkillVectors:
-#_01EC22: dw Cast_Makatoranda     ; 1F
+#_01EC22: dw Cast_Makatranda      ; 1F
 #_01EC24: dw Cast_Tarunda         ; 20
 #_01EC26: dw Cast_Rakunda         ; 21
 #_01EC28: dw Cast_Sukunda         ; 22
-#_01EC2A: dw Cast_Tarukaziya      ; 23
-#_01EC2C: dw Cast_Rakukaziya      ; 24
-#_01EC2E: dw Cast_Sukukaziya      ; 25
-#_01EC30: dw Cast_Makakaziya      ; 26
-#_01EC32: dw Cast_Tetoraziya      ; 27
+#_01EC2A: dw Cast_Tarukaja        ; 23
+#_01EC2C: dw Cast_Rakukaja        ; 24
+#_01EC2E: dw Cast_Sukukaja        ; 25
+#_01EC30: dw Cast_Makakaja        ; 26
+#_01EC32: dw Cast_Tetoraja        ; 27
 #_01EC34: dw Cast_Makarakan       ; 28
-#_01EC36: dw Cast_Tetorakan       ; 29
-#_01EC38: dw UseItem_Ointment     ; 2A
-#_01EC3A: dw UseItem_Gyoutan      ; 2B
+#_01EC36: dw Cast_Tetrakarn       ; 29
+#_01EC38: dw Cast_Dia             ; 2A - also Ointment
+#_01EC3A: dw Cast_Diarama         ; 2B - also Gyoutan
 #_01EC3C: dw Cast_Diarahan        ; 2C
 #_01EC3E: dw Cast_Media           ; 2D
 #_01EC40: dw Cast_Mediarahan      ; 2E
@@ -16568,59 +16601,122 @@ SkillVectors:
 #_01EC46: dw Cast_StatusCure      ; 31
 #_01EC48: dw Cast_StatusCure      ; 32
 #_01EC4A: dw Cast_StatusCure      ; 33
-#_01EC4C: dw Cast_Ricarm          ; 34
-#_01EC4E: dw Cast_Samaricarm      ; 35
-#_01EC50: dw Cast_Ricarmudora     ; 36
+#_01EC4C: dw Cast_Recarm          ; 34
+#_01EC4E: dw Cast_Samarecarm      ; 35
+#_01EC50: dw Cast_Recarmda        ; 36
 #_01EC52: dw Cast_Makatora        ; 37
 #_01EC54: dw Cast_Mapper          ; 38
-#_01EC56: dw Cast_Toraest         ; 39
-#_01EC58: dw Cast_Toraport        ; 3A
-#_01EC5A: dw UseItem_SmokeBomb    ; 3B
-#_01EC5C: dw ActivateFumaBell     ; 3C
-#_01EC5E: dw Cast_Sabatoma        ; 3D
-#_01EC60: dw Cast_Sabatomaon      ; 3E
-#_01EC62: dw Cast_Sabatomaon      ; 3F
+#_01EC56: dw Cast_Traesto         ; 39
+#_01EC58: dw Cast_Traport         ; 3A
+#_01EC5A: dw Cast_Trafuri         ; 3B - also Smoke bomb
+#_01EC5C: dw Cast_Estoma          ; 3C - also Fuma bell
+#_01EC5E: dw Cast_Sabbatma        ; 3D
+#_01EC60: dw Cast_Sabbatmaon      ; 3E
+#_01EC62: dw Cast_Sabbatmaon      ; 3F
 
 ;===================================================================================================
 
-data01EC64:
-#_01EC64: dw $0099,$009A,$009B,$009C
-#_01EC6C: dw $009D,$009E,$009F,$00A0
-#_01EC74: dw $00A1,$00A2,$00A3,$00A4
-#_01EC7C: dw $00A5,$00A6,$00A7,$00A8
-#_01EC84: dw $00A9,$00AA,$00AB,$00AC
-#_01EC8C: dw $00AD,$00AE,$00AF,$00B0
-#_01EC94: dw $00B1,$00B2,$00B3,$00B4
-#_01EC9C: dw $00B5,$00B6,$00B7,$00B8
-#_01ECA4: dw $00B9,$00BA,$00BB,$00BC
-#_01ECAC: dw $00BD,$00BE,$00BF,$00C0
-#_01ECB4: dw $00C1,$00C2,$00C3,$00C4
-#_01ECBC: dw $FFFF,$FFFF,$FFFF,$FFFF
-#_01ECC4: dw $FFFF,$FFFF,$FFFF,$00C5
-#_01ECCC: dw $00C6,$00C7,$FFFF,$FFFF
-
-data01ECD4:
-#_01ECD4: dw $006A,$006B,$806C,$806D
-#_01ECDC: dw $806E,$806F,$8070,$8071
-#_01ECE4: dw $8072,$8073,$8074,$8075
-#_01ECEC: dw $8076,$8077,$8078,$8079
-#_01ECF4: dw $FFFF,$FFFF,$FFFF,$FFFF
-#_01ECFC: dw $FFFF,$FFFF,$0080,$0081
-#_01ED04: dw $0082,$0083,$0084,$0085
-#_01ED0C: dw $0086,$0087,$0088,$0089
-#_01ED14: dw $008A,$008B,$008C,$008D
-#_01ED1C: dw $008E,$008F,$0090,$0091
-#_01ED24: dw $0092,$0093,$FFFF,$FFFF
-#_01ED2C: dw $FFFF,$FFFF,$FFFF,$FFFF
-#_01ED34: dw $0096,$FFFF,$FFFF,$FFFF
-#_01ED3C: dw $FFFF,$FFFF,$FFFF,$FFFF
-#_01ED44: dw $0097,$FFFF,$FFFF,$FFFF
-#_01ED4C: dw $0098,$FFFF,$FFFF,$FFFF
-#_01ED54: dw $FFFF,$FFFF
+DemonSkillMessageIDs:
+#_01EC64: dw $0099 ; 40
+#_01EC66: dw $009A ; 41
+#_01EC68: dw $009B ; 42
+#_01EC6A: dw $009C ; 43
+#_01EC6C: dw $009D ; 44
+#_01EC6E: dw $009E ; 45
+#_01EC70: dw $009F ; 46
+#_01EC72: dw $00A0 ; 47
+#_01EC74: dw $00A1 ; 48
+#_01EC76: dw $00A2 ; 49
+#_01EC78: dw $00A3 ; 4A
+#_01EC7A: dw $00A4 ; 4B
+#_01EC7C: dw $00A5 ; 4C
+#_01EC7E: dw $00A6 ; 4D
+#_01EC80: dw $00A7 ; 4E
+#_01EC82: dw $00A8 ; 4F
+#_01EC84: dw $00A9 ; 50
+#_01EC86: dw $00AA ; 51
+#_01EC88: dw $00AB ; 52
+#_01EC8A: dw $00AC ; 53
+#_01EC8C: dw $00AD ; 54
+#_01EC8E: dw $00AE ; 55
+#_01EC90: dw $00AF ; 56
+#_01EC92: dw $00B0 ; 57
+#_01EC94: dw $00B1 ; 58
+#_01EC96: dw $00B2 ; 59
+#_01EC98: dw $00B3 ; 5A
+#_01EC9A: dw $00B4 ; 5B
+#_01EC9C: dw $00B5 ; 5C
+#_01EC9E: dw $00B6 ; 5D
+#_01ECA0: dw $00B7 ; 5E
+#_01ECA2: dw $00B8 ; 5F
+#_01ECA4: dw $00B9 ; 60
+#_01ECA6: dw $00BA ; 61
+#_01ECA8: dw $00BB ; 62
+#_01ECAA: dw $00BC ; 63
+#_01ECAC: dw $00BD ; 64
+#_01ECAE: dw $00BE ; 65
+#_01ECB0: dw $00BF ; 66
+#_01ECB2: dw $00C0 ; 67
+#_01ECB4: dw $00C1 ; 68
+#_01ECB6: dw $00C2 ; 69
+#_01ECB8: dw $00C3 ; 6A
+#_01ECBA: dw $00C4 ; 6B
+#_01ECBC: dw $FFFF ; 6C
+#_01ECBE: dw $FFFF ; 6D
+#_01ECC0: dw $FFFF ; 6E
+#_01ECC2: dw $FFFF ; 6F
+#_01ECC4: dw $FFFF ; 70
+#_01ECC6: dw $FFFF ; 71
+#_01ECC8: dw $FFFF ; 72
+#_01ECCA: dw $00C5 ; 73
+#_01ECCC: dw $00C6 ; 74
+#_01ECCE: dw $00C7 ; 75
+#_01ECD0: dw $FFFF ; 76
+#_01ECD2: dw $FFFF ; 77
 
 ;===================================================================================================
 
-Cast_Makatoranda:
+; TODO
+; dw <player>, <enemy>
+; bit 7 = ???
+CastDescriptionMessageIDs:
+#_01ECD4: dw $006A, $006B ; 1F
+#_01ECD8: dw $806C, $806D ; 20
+#_01ECDC: dw $806E, $806F ; 21
+#_01ECE0: dw $8070, $8071 ; 22
+#_01ECE4: dw $8072, $8073 ; 23
+#_01ECE8: dw $8074, $8075 ; 24
+#_01ECEC: dw $8076, $8077 ; 25
+#_01ECF0: dw $8078, $8079 ; 26
+#_01ECF4: dw $FFFF, $FFFF ; 27
+#_01ECF8: dw $FFFF, $FFFF ; 28
+#_01ECFC: dw $FFFF, $FFFF ; 29
+#_01ED00: dw $0080, $0081 ; 2A
+#_01ED04: dw $0082, $0083 ; 2B
+#_01ED08: dw $0084, $0085 ; 2C
+#_01ED0C: dw $0086, $0087 ; 2D
+#_01ED10: dw $0088, $0089 ; 2E
+#_01ED14: dw $008A, $008B ; 2F
+#_01ED18: dw $008C ,$008D ; 30
+#_01ED1C: dw $008E, $008F ; 31
+#_01ED20: dw $0090, $0091 ; 32
+#_01ED24: dw $0092, $0093 ; 33
+#_01ED28: dw $FFFF, $FFFF ; 34
+#_01ED2C: dw $FFFF, $FFFF ; 35
+#_01ED30: dw $FFFF, $FFFF ; 36
+#_01ED34: dw $0096, $FFFF ; 37
+#_01ED38: dw $FFFF, $FFFF ; 38
+#_01ED3C: dw $FFFF, $FFFF ; 39
+#_01ED40: dw $FFFF, $FFFF ; 3A
+#_01ED44: dw $0097, $FFFF ; 3B
+#_01ED48: dw $FFFF, $FFFF ; 3C
+#_01ED4C: dw $0098, $FFFF ; 3D
+#_01ED50: dw $FFFF, $FFFF ; 3E
+#_01ED54: dw $FFFF, $FFFF ; 3F
+
+;===================================================================================================
+
+Cast_Makatranda:
 #_01ED58: LDX.w $051A
 
 #_01ED5B: LDA.w $1034,X
@@ -16664,7 +16760,7 @@ Cast_Makatoranda:
 ; These status effects use unsigned comparisons instead of signed?
 ;===================================================================================================
 Cast_Tarunda:
-#_01ED92: JSR GetIndexForCurrentUser_Player2
+#_01ED92: JSR GetBuffIndexForTarget
 
 #_01ED95: LDA.w $058A,X
 #_01ED98: DEC A
@@ -16688,7 +16784,7 @@ Cast_Tarunda:
 ;===================================================================================================
 
 Cast_Rakunda:
-#_01EDAE: JSR GetIndexForCurrentUser_Player2
+#_01EDAE: JSR GetBuffIndexForTarget
 
 #_01EDB1: LDA.w $058E,X
 #_01EDB4: DEC A
@@ -16712,7 +16808,7 @@ Cast_Rakunda:
 ;===================================================================================================
 
 Cast_Sukunda:
-#_01EDCA: JSR GetIndexForCurrentUser_Player2
+#_01EDCA: JSR GetBuffIndexForTarget
 
 #_01EDCD: LDA.w $0592,X
 #_01EDD0: DEC A
@@ -16735,8 +16831,8 @@ Cast_Sukunda:
 
 ;===================================================================================================
 
-Cast_Tarukaziya:
-#_01EDE6: JSR GetIndexForCurrentUser_Player0
+Cast_Tarukaja:
+#_01EDE6: JSR GetBuffIndexForCaster
 
 #_01EDE9: LDA.w $058A,X
 #_01EDEC: INC A
@@ -16753,8 +16849,8 @@ Cast_Tarukaziya:
 
 ;===================================================================================================
 
-Cast_Rakukaziya:
-#_01EDF8: JSR GetIndexForCurrentUser_Player0
+Cast_Rakukaja:
+#_01EDF8: JSR GetBuffIndexForCaster
 
 #_01EDFB: LDA.w $058E,X
 #_01EDFE: INC A
@@ -16771,8 +16867,8 @@ Cast_Rakukaziya:
 
 ;===================================================================================================
 
-Cast_Sukukaziya:
-#_01EE0A: JSR GetIndexForCurrentUser_Player0
+Cast_Sukukaja:
+#_01EE0A: JSR GetBuffIndexForCaster
 
 #_01EE0D: LDA.w $0592,X
 #_01EE10: INC A
@@ -16789,8 +16885,8 @@ Cast_Sukukaziya:
 
 ;===================================================================================================
 
-Cast_Makakaziya:
-#_01EE1C: JSR GetIndexForCurrentUser_Player0
+Cast_Makakaja:
+#_01EE1C: JSR GetBuffIndexForCaster
 
 #_01EE1F: LDA.w $0596,X
 #_01EE22: INC A
@@ -16807,8 +16903,8 @@ Cast_Makakaziya:
 
 ;===================================================================================================
 
-Cast_Tetoraziya:
-#_01EE2E: JSR GetIndexForCurrentUser_Player0
+Cast_Tetoraja:
+#_01EE2E: JSR GetBuffIndexForCaster
 
 #_01EE31: LDA.w $059A,X
 #_01EE34: BNE .already_active
@@ -16837,7 +16933,7 @@ Cast_Tetoraziya:
 ;===================================================================================================
 
 Cast_Makarakan:
-#_01EE51: JSR GetIndexForCurrentUser_Player0
+#_01EE51: JSR GetBuffIndexForCaster
 
 #_01EE54: LDA.w $059E,X
 #_01EE57: BNE .already_active
@@ -16865,8 +16961,8 @@ Cast_Makarakan:
 
 ;===================================================================================================
 
-Cast_Tetorakan:
-#_01EE74: JSR GetIndexForCurrentUser_Player0
+Cast_Tetrakarn:
+#_01EE74: JSR GetBuffIndexForCaster
 
 #_01EE77: LDA.w $05A2,X
 #_01EE7A: BNE .already_active
@@ -16894,7 +16990,7 @@ Cast_Tetorakan:
 
 ;===================================================================================================
 
-UseItem_Ointment:
+Cast_Dia:
 #_01EE97: JSR VerifyTargetIsAlive
 #_01EE9A: BCS SkillFail_01EEB2
 
@@ -16916,7 +17012,7 @@ SkillFail_01EEB2:
 
 ;===================================================================================================
 
-UseItem_Gyoutan:
+Cast_Diarama:
 #_01EEB3: JSR VerifyTargetIsAlive
 #_01EEB6: BCS .fail
 
@@ -17308,7 +17404,7 @@ Cast_Penpatora:
 
 ;===================================================================================================
 
-Cast_Ricarm:
+Cast_Recarm:
 #_01F09E: LDY.w $0715
 
 #_01F0A1: LDX.w $105A,Y
@@ -17366,7 +17462,7 @@ Cast_Ricarm:
 
 ;===================================================================================================
 
-Cast_Samaricarm:
+Cast_Samarecarm:
 #_01F0F1: LDY.w $0715
 
 #_01F0F4: LDX.w $105A,Y
@@ -17423,7 +17519,7 @@ Cast_Samaricarm:
 
 ;===================================================================================================
 
-Cast_Ricarmudora:
+Cast_Recarmda:
 #_01F146: STZ.w $0A56
 
 #_01F149: LDX.w $0715
@@ -17492,6 +17588,7 @@ Cast_Ricarmudora:
 
 #_01F1AD: LDA.w $1030,X
 #_01F1B0: STA.w $102E,X
+
 #_01F1B3: INC.w $0A56
 
 .party_member_didnt_overflow_hp
@@ -17501,6 +17598,7 @@ Cast_Ricarmudora:
 
 #_01F1BE: LDA.w $1034,X
 #_01F1C1: STA.w $1032,X
+
 #_01F1C4: INC.w $0A56
 
 .skip_party_member
@@ -17639,7 +17737,7 @@ Cast_Mapper:
 
 ;===================================================================================================
 
-Cast_Toraest:
+Cast_Traesto:
 #_01F275: SEP #$20
 
 #_01F277: LDA.w $0404
@@ -17697,7 +17795,7 @@ Cast_Toraest:
 
 ;===================================================================================================
 
-Cast_Toraport:
+Cast_Traport:
 #_01F2C6: SEP #$20
 
 #_01F2C8: LDA.w $0404
@@ -17770,7 +17868,7 @@ Cast_Toraport:
 
 ;===================================================================================================
 
-UseItem_SmokeBomb:
+Cast_Trafuri:
 #_01F338: LDA.w $052A
 #_01F33B: AND.w #$0100
 #_01F33E: BNE .failed
@@ -17791,7 +17889,7 @@ UseItem_SmokeBomb:
 
 ;===================================================================================================
 
-ActivateFumaBell:
+Cast_Estoma:
 #_01F353: LDA.w $05A6
 #_01F356: BNE .active
 
@@ -17809,7 +17907,7 @@ ActivateFumaBell:
 
 ;===================================================================================================
 
-Cast_Sabatoma:
+Cast_Sabbatma:
 #_01F366: LDX.w $0715
 
 #_01F369: LDA.w $105E,X
@@ -17838,13 +17936,13 @@ Cast_Sabatoma:
 ;===================================================================================================
 ; What?
 ;===================================================================================================
-Cast_Sabatomaon:
+Cast_Sabbatmaon:
 #_01F38B: SEC
 #_01F38C: RTS
 
 ;===================================================================================================
 
-routine01F38D:
+Cast_KissyMoves:
 #_01F38D: LDX.w $051A
 
 #_01F390: LDA.w $1002,X
@@ -17877,6 +17975,7 @@ routine01F38D:
 #_01F3BC: CLC
 #_01F3BD: ADC.w $0A54
 #_01F3C0: TXY
+
 #_01F3C1: TAX
 
 #_01F3C2: LDA.l ExperienceTable+0,X
@@ -17965,9 +18064,10 @@ TestIfBeadsWillProtectMe:
 #_01F445: RTS
 
 ;===================================================================================================
-
-routine01F446:
-#_01F446: JSR GetIndexForCurrentUser_Player2
+; Lowers accuracy
+;===================================================================================================
+Cast_FogBreath:
+#_01F446: JSR GetBuffIndexForTarget
 
 #_01F449: LDA.w $0592,X
 #_01F44C: DEC A
@@ -17985,8 +18085,9 @@ routine01F446:
 #_01F45E: RTS
 
 ;===================================================================================================
-
-routine01F45F:
+; Heals for damage dealt
+;===================================================================================================
+Cast_DeathTouch:
 #_01F45F: LDX.w $0518
 
 #_01F462: LDA.w $102E,X
@@ -18005,8 +18106,8 @@ routine01F45F:
 
 ;===================================================================================================
 
-routine01F476:
-#_01F476: JSR GetIndexForCurrentUser_Player0
+Cast_WaterWall:
+#_01F476: JSR GetBuffIndexForCaster
 
 #_01F479: LDA.w $05AC,X
 #_01F47C: BNE .already_active
@@ -18024,8 +18125,8 @@ routine01F476:
 
 ;===================================================================================================
 
-routine01F48B:
-#_01F48B: JSR GetIndexForCurrentUser_Player0
+Cast_FireWall:
+#_01F48B: JSR GetBuffIndexForCaster
 
 #_01F48E: LDA.w $05B0,X
 #_01F491: BNE .already_active
@@ -18041,7 +18142,7 @@ routine01F48B:
 
 ;===================================================================================================
 
-routine01F49F:
+Cast_Defend:
 #_01F49F: LDX.w $0518
 
 #_01F4A2: LDA.w $1008,X
@@ -18052,7 +18153,7 @@ routine01F49F:
 
 ;===================================================================================================
 
-routine01F4AC:
+Cast_Retreat:
 #_01F4AC: LDX.w $0518
 #_01F4AF: STZ.w $1000,X
 
@@ -18096,7 +18197,7 @@ routine01F4AC:
 
 ;===================================================================================================
 
-routine01F4F3:
+Cast_Rally:
 #_01F4F3: JSL GetRandomInt
 #_01F4F7: AND.w #$00FF
 #_01F4FA: CMP.w #$0020
@@ -18221,7 +18322,7 @@ routine01F537:
 
 ;===================================================================================================
 
-GetIndexForCurrentUser_Player0:
+GetBuffIndexForCaster:
 #_01F59C: LDX.w #$0000
 
 #_01F59F: LDY.w $0715
@@ -18236,7 +18337,7 @@ GetIndexForCurrentUser_Player0:
 
 ;===================================================================================================
 
-GetIndexForCurrentUser_Player2:
+GetBuffIndexForTarget:
 #_01F5AA: LDX.w #$0002
 
 #_01F5AD: LDY.w $0715
@@ -18326,7 +18427,7 @@ AttemptSpellCast:
 
 ;===================================================================================================
 
-routine01F60F:
+ApplyMagicDamageBuff:
 #_01F60F: PHA
 
 #_01F610: JSR GetSomeSpecialIndicesForCasterAndTarget
@@ -18406,7 +18507,9 @@ routine01F60F:
 routine01F672:
 #_01F672: PHP
 #_01F673: REP #$30
+
 #_01F675: LDX.w $0715
+
 #_01F678: LDA.w $0400
 #_01F67B: AND.w #$0040
 #_01F67E: BEQ .branch01F686
@@ -18417,14 +18520,18 @@ routine01F672:
 .branch01F686
 #_01F686: LDA.w $1004,X
 #_01F689: STA.w $0A3E
+
 #_01F68C: LDA.w $1058,X
 #_01F68F: AND.w #$00FF
 #_01F692: STA.w $0A50
+
 #_01F695: SEC
 #_01F696: SBC.w #$00B0
 #_01F699: LDY.w #$0002
 #_01F69C: JSL GetUseItemStat
+
 #_01F6A0: PHA
+
 #_01F6A1: LDA.w $0400
 #_01F6A4: AND.w #$0040
 #_01F6A7: BNE .branch01F6B0
@@ -18513,13 +18620,14 @@ routine01F672:
 #_01F726: ASL A
 #_01F727: TAX
 
-#_01F728: LDA.l data01ECD4,X
+#_01F728: LDA.l CastDescriptionMessageIDs,X
 #_01F72C: CMP.w #$FFFF
 #_01F72F: BEQ .branch01F740
 
 #_01F731: BMI .branch01F739
 
 #_01F733: JSL DisplayActionMessage
+
 #_01F737: BRA .branch01F740
 
 .branch01F739
@@ -18533,6 +18641,8 @@ routine01F672:
 #_01F744: PLP
 #_01F745: CLC
 #_01F746: RTL
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01F747
 #_01F747: SEC

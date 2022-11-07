@@ -1964,23 +1964,27 @@ TestGameProgressBit:
 
 WriteCharacterName:
 #_0F8EED: SEP #$30
+
 #_0F8EEF: ASL A
 #_0F8EF0: ASL A
 #_0F8EF1: ASL A
 #_0F8EF2: TAY
+
 #_0F8EF3: LDX.b #$08
 
-.branch0F8EF5
+.next_character
 #_0F8EF5: LDA.w $0410,Y
 #_0F8EF8: CMP.b #$FF
-#_0F8EFA: BEQ .branch0F8F04
+#_0F8EFA: BEQ .done
 
 #_0F8EFC: JSL WriteNextMessageChar
-#_0F8F00: INY
-#_0F8F01: DEX
-#_0F8F02: BNE .branch0F8EF5
 
-.branch0F8F04
+#_0F8F00: INY
+
+#_0F8F01: DEX
+#_0F8F02: BNE .next_character
+
+.done
 #_0F8F04: RTL
 
 ;===================================================================================================

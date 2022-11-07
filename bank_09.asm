@@ -1775,317 +1775,319 @@ class_26_name:
 SkillNames:
 
 ; アギ | AGI
-; 
+; Agi
 skill_00_name:
 #_0987D2: db $5D, $B6, $FF
 
 ; アギラオ | AGIRAO
-; 
+; Agilao
 skill_01_name:
 #_0987D5: db $5D, $B6, $83, $61, $FF
 
 ; マハラギ | MAHARAGI
-; 
+; Maragi
 skill_02_name:
 #_0987DA: db $7B, $76, $83, $B6, $FF
 
 ; マハラギオン | MAHARAGION
-; 
+; Maragion
 skill_03_name:
 #_0987DF: db $7B, $76, $83, $B6, $61, $8A, $FF
 
 ; ブフ | BUHU
-; 
+; Bufu
 skill_04_name:
 #_0987E6: db $C6, $78, $FF
 
 ; ブフーラ | BUHUーRA
-; 
+; Bufula
 skill_05_name:
 #_0987E9: db $C6, $78, $5A, $83, $FF
 
 ; マハーブフ | MAHAーBUHU
-; 
+; Mabufu
 skill_06_name:
 #_0987EE: db $7B, $76, $5A, $C6, $78, $FF
 
 ; マハブフーラ | MAHABUHUーRA
-; 
+; Mabufula
 skill_07_name:
 #_0987F4: db $7B, $76, $C6, $78, $5A, $83, $FF
 
 ; ジオ | ZIO
-; 
+; Zio
 skill_08_name:
 #_0987FB: db $BB, $61, $FF
 
 ; ジオンガ | ZIONGA
-; 
+; Zionga
 skill_09_name:
 #_0987FE: db $BB, $61, $8A, $B5, $FF
 
 ; マハジオ | MAHAZIO
-; 
+; Mazio
 skill_0A_name:
 #_098803: db $7B, $76, $BB, $61, $FF
 
 ; マハジオンガ | MAHAZIONGA
-; 
+; Mazionga
 skill_0B_name:
 #_098808: db $7B, $76, $BB, $61, $8A, $B5, $FF
 
 ; ザン | ZAN
-; 
+; Zan
 skill_0C_name:
 #_09880F: db $BA, $8A, $FF
 
 ; ザンマ | ZANMA
-; 
+; Zanma
 skill_0D_name:
 #_098812: db $BA, $8A, $7B, $FF
 
 ; マハザン | MAHAZAN
-; 
+; Mazan
 skill_0E_name:
 #_098816: db $7B, $76, $BA, $8A, $FF
 
 ; マハザンマ | MAHAZANMA
-; 
+; Mazanma
 skill_0F_name:
 #_09881B: db $7B, $76, $BA, $8A, $7B, $FF
 
 ; テンタラフー | TENTARAHUー
-; 
+; Tentarafoo
 skill_10_name:
 #_098821: db $6F, $8A, $6C, $83, $78, $5A, $FF
 
 ; リムドーラ | RIMUDOーRA
-; 
+; Rimdora
 skill_11_name:
 #_098828: db $84, $7D, $C3, $5A, $83, $FF
 
 ; メギド | MEGIDO
-; 
+; Megido
 skill_12_name:
 #_09882E: db $7E, $B6, $C3, $FF
 
 ; メギドラオン | MEGIDORAON
-; 
+; Megidolaon
 skill_13_name:
 #_098832: db $7E, $B6, $C3, $83, $61, $8A, $FF
 
+; TODO ????
 ; マトラポー | MATORAPOー
-; 
+; Matrapo
 skill_14_name:
 #_098839: db $7B, $70, $83, $CD, $5A, $FF
 
 ; ハンマ | HANMA
-; 
+; Hama
 skill_15_name:
 #_09883F: db $76, $8A, $7B, $FF
 
 ; マハンマ | MAHANMA
-; 
+; Mahama
 skill_16_name:
 #_098843: db $7B, $76, $8A, $7B, $FF
 
 ; ムド | MUDO
-; 
+; Mudo
 skill_17_name:
 #_098848: db $7D, $C3, $FF
 
 ; ムドオン | MUDOON
-; 
+; Mudoon
 skill_18_name:
 #_09884B: db $7D, $C3, $61, $8A, $FF
 
 ; ドルミナー | DORUMINAー
-; 
+; Dormina
 skill_19_name:
 #_098850: db $C3, $85, $7C, $71, $5A, $FF
 
 ; シバブー | SIBABUー
-; 
+; Shibaboo
 skill_1A_name:
 #_098856: db $68, $C4, $C6, $5A, $FF
 
 ; プリンパ | PURINPA
-; 
+; Pulinpa
 skill_1B_name:
 #_09885B: db $CB, $84, $8A, $C9, $FF
 
 ; ハピルマ | HAPIRUMA
-; 
+; Hapirma
 skill_1C_name:
 #_098860: db $76, $CA, $85, $7B, $FF
 
 ; マリンカリン | MARINKARIN
-; 
+; Marin karin
 skill_1D_name:
 #_098865: db $7B, $84, $8A, $62, $84, $8A, $FF
 
 ; マカジャマ | MAKAZIyaMA
-; 
+; Makajam
 skill_1E_name:
 #_09886C: db $7B, $62, $BB, $8F, $7B, $FF
 
 ; マカトランダ | MAKATORANDA
-; 
+; Makatranda
 skill_1F_name:
 #_098872: db $7B, $62, $70, $83, $8A, $BF, $FF
 
 ; タルンダ | TARUNDA
-; 
+; Tarunda
 skill_20_name:
 #_098879: db $6C, $85, $8A, $BF, $FF
 
 ; ラクンダ | RAKUNDA
-; 
+; Rakunda
 skill_21_name:
 #_09887E: db $83, $64, $8A, $BF, $FF
 
 ; スクンダ | SUKUNDA
-; 
+; Sukunda
 skill_22_name:
 #_098883: db $69, $64, $8A, $BF, $FF
 
 ; タルカジャ | TARUKAZIya
-; 
+; Tarukaja
 skill_23_name:
 #_098888: db $6C, $85, $62, $BB, $8F, $FF
 
 ; ラクカジャ | RAKUKAZIya
-; 
+; Rakukaja
 skill_24_name:
 #_09888E: db $83, $64, $62, $BB, $8F, $FF
 
 ; スクカジャ | SUKUKAZIya
-; 
+; Sukukaja
 skill_25_name:
 #_098894: db $69, $64, $62, $BB, $8F, $FF
 
 ; マカカジャ | MAKAKAZIya
-; 
+; Makakaja
 skill_26_name:
 #_09889A: db $7B, $62, $62, $BB, $8F, $FF
 
 ; テトラジャ | TETORAZIya
-; 
+; Tetraja
 skill_27_name:
 #_0988A0: db $6F, $70, $83, $BB, $8F, $FF
 
 ; マカラカーン | MAKARAKAーN
-; 
+; Makarakarn
 skill_28_name:
 #_0988A6: db $7B, $62, $83, $62, $5A, $8A, $FF
 
 ; テトラカーン | TETORAKAーN
-; 
+; Tetrakarn
 skill_29_name:
 #_0988AD: db $6F, $70, $83, $62, $5A, $8A, $FF
 
 ; ディア | DEiA
-; 
+; Dia
 skill_2A_name:
 #_0988B4: db $C2, $8C, $5D, $FF
 
 ; ディアラマ | DEiARAMA
-; 
+; Diarama
 skill_2B_name:
 #_0988B8: db $C2, $8C, $5D, $83, $7B, $FF
 
 ; ディアラハン | DEiARAHAN
-; 
+; Diarahan
 skill_2C_name:
 #_0988BE: db $C2, $8C, $5D, $83, $76, $8A, $FF
 
 ; メディア | MEDEiA
-; 
+; Media
 skill_2D_name:
 #_0988C5: db $7E, $C2, $8C, $5D, $FF
 
 ; メディアラハン | MEDEiARAHAN
-; 
+; Mediarahan
 skill_2E_name:
 #_0988CA: db $7E, $C2, $8C, $5D, $83, $76, $8A, $FF
 
 ; パトラ | PATORA
-; 
+; Patra
 skill_2F_name:
 #_0988D2: db $C9, $70, $83, $FF
 
 ; ペンパトラ | PENPATORA
-; 
+; Penpatra
 skill_30_name:
 #_0988D6: db $CC, $8A, $C9, $70, $83, $FF
 
 ; ポズムディ | POZUMUDEi
-; 
+; Posumudi
 skill_31_name:
 #_0988DC: db $CD, $BC, $7D, $C2, $8C, $FF
 
 ; パララディ | PARARADEi
-; 
+; Paraladi
 skill_32_name:
 #_0988E2: db $C9, $83, $83, $C2, $8C, $FF
 
 ; ペトラディ | PETORADEi
-; 
+; Petradi
 skill_33_name:
 #_0988E8: db $CC, $70, $83, $C2, $8C, $FF
 
 ; リカーム | RIKAーMU
-; 
+; Recarm
 skill_34_name:
 #_0988EE: db $84, $62, $5A, $7D, $FF
 
 ; サマリカーム | SAMARIKAーMU
-; 
+; Samarecarm
 skill_35_name:
 #_0988F3: db $67, $7B, $84, $62, $5A, $7D, $FF
 
 ; リカームドラ | RIKAーMUDORA
-; 
+; Recarmda
 skill_36_name:
 #_0988FA: db $84, $62, $5A, $7D, $C3, $83, $FF
 
 ; マカトラ | MAKATORA
-; 
+; Makatora
 skill_37_name:
 #_098901: db $7B, $62, $70, $83, $FF
 
 ; マッパー | MAtsuPAー
-; 
+; Mapper
 skill_38_name:
 #_098906: db $7B, $92, $C9, $5A, $FF
 
 ; トラエスト | TORAESUTO
-; 
+; Traesto
 skill_39_name:
 #_09890B: db $70, $83, $60, $69, $70, $FF
 
 ; トラポート | TORAPOーTO
-; 
+; Traport
 skill_3A_name:
 #_098911: db $70, $83, $CD, $5A, $70, $FF
 
-; トラフーリ | TORAHUーRI
-; 
+; トラフーリ | TORAFUーRI
+; Trafuri
 skill_3B_name:
 #_098917: db $70, $83, $78, $5A, $84, $FF
 
 ; エストマ | ESUTOMA
-; 
+; Estoma
 skill_3C_name:
 #_09891D: db $60, $69, $70, $7B, $FF
 
 ; サバトマ | SABATOMA
-; 
+; Sabbatma
 skill_3D_name:
 #_098922: db $67, $C4, $70, $7B, $FF
 
+; TODO????
 ; サバトマオン | SABATOMAON
-; 
+; Sabbatmaon
 skill_3E_name:
 #_098927: db $67, $C4, $70, $7B, $61, $8A, $FF
 
@@ -2179,7 +2181,7 @@ skill_50_name:
 #_0989A6: db $AA, $2C, $B5, $69, $C6, $86, $69, $FF
 
 ; フォッグブレス | HUotsuGUBURESU
-; 
+; Fog breath
 skill_51_name:
 #_0989AE: db $78, $8E, $92, $B7, $C6, $86, $69, $FF
 
@@ -2194,17 +2196,17 @@ skill_53_name:
 #_0989BE: db $A9, $52, $9F, $2B, $FF
 
 ; デスタッチ | DESUTAtsuTI
-; 
+; Death touch
 skill_54_name:
 #_0989C3: db $C2, $69, $6C, $92, $6D, $FF
 
 ; みずのかべ | MIZUNOKABE
-; 
+; Water wall
 skill_55_name:
 #_0989C9: db $44, $A3, $3D, $2A, $AE, $FF
 
 ; ほのおのかべ | HONOONOKABE
-; 
+; Fire wall
 skill_56_name:
 #_0989CF: db $42, $3D, $29, $3D, $2A, $AE, $FF
 
@@ -2340,17 +2342,17 @@ skill_72_name:
 #_098A4F: db $FF
 
 ; まもる | MAMORU
-; 
+; Defend
 skill_73_name:
 #_098A50: db $43, $47, $4D, $FF
 
 ; にける | NIKERU
-; 
+; Retreat
 skill_74_name:
 #_098A54: db $3A, $2D, $4D, $FF
 
 ; なかまよび | NAKAMAYOBI
-; 
+; Rally
 skill_75_name:
 #_098A58: db $39, $2A, $43, $4A, $AC, $FF
 

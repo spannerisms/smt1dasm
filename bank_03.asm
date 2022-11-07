@@ -3150,8 +3150,10 @@ TextCommand_1F_Write_him_Name:
 
 TextCommand_20_WriteChaseName:
 #_039147: SEP #$20
+
 #_039149: LDA.b #$00
 #_03914B: JSL WriteCharacterName
+
 #_03914F: RTS
 
 ;===================================================================================================
