@@ -1086,7 +1086,7 @@ DakutenBaseKatakana:
 
 ;===================================================================================================
 
-routine0385C8:
+WriteSingleCharacterTo0900:
 #_0385C8: PHX
 #_0385C9: PHP
 
@@ -2507,7 +2507,7 @@ routine038D1C:
 .branch038D32
 #_038D32: SEP #$20
 #_038D34: LDA.b #$CF
-#_038D36: JSL routine0385C8
+#_038D36: JSL WriteSingleCharacterTo0900
 #_038D3A: DEY
 #_038D3B: BNE .branch038D32
 
@@ -2516,12 +2516,12 @@ routine038D1C:
 #_038D43: BCC .branch038D4C
 
 #_038D45: LDA.b #$5C ; Macca symbol
-#_038D47: JSL routine0385C8
+#_038D47: JSL WriteSingleCharacterTo0900
 #_038D4B: RTS
 
 .branch038D4C
 #_038D4C: LDA.b #$5B ; Yen symbol
-#_038D4E: JSL routine0385C8
+#_038D4E: JSL WriteSingleCharacterTo0900
 #_038D52: RTS
 
 ;===================================================================================================
@@ -2552,7 +2552,7 @@ routine038D53:
 
 #_038D7E: SEP #$20
 #_038D80: LDA.b #$01
-#_038D82: JSL routine0385C8
+#_038D82: JSL WriteSingleCharacterTo0900
 
 #_038D86: REP #$30
 #_038D88: PLB
@@ -3667,7 +3667,7 @@ TextCommand_2B:
 .branch039477
 #_039477: LDA.w $0E04,Y
 #_03947A: STA.w $0904,X
-#_03947D: JSL routine0385C8
+#_03947D: JSL WriteSingleCharacterTo0900
 
 .branch039481
 #_039481: INY
@@ -3816,9 +3816,9 @@ Multiply_0E10_by_0E11:
 #_03955C: PHP
 #_03955D: SEP #$30
 #_03955F: LDA.w $0E10
-#_039562: STA.w CPUMULTA
+#_039562: STA.w WRMPYA
 #_039565: LDA.w $0E11
-#_039568: STA.w CPUMULTB
+#_039568: STA.w WRMPYB
 #_03956B: LDX.b #$08
 
 .wait
@@ -3826,7 +3826,7 @@ Multiply_0E10_by_0E11:
 #_03956E: BNE .wait
 
 #_039570: REP #$20
-#_039572: LDA.w CPUPRODUCTL
+#_039572: LDA.w RDMPYL
 #_039575: STA.w $0E12
 #_039578: PLP
 #_039579: RTS
@@ -3843,28 +3843,28 @@ Multiply0E1x_b03:
 #_039583: LDA.w $0E10
 #_039586: LDX.w $0E12
 #_039589: JSR Multiply_AX_b03
-#_03958C: LDA.w CPUPRODUCTL
+#_03958C: LDA.w RDMPYL
 #_03958F: STA.w $0E14
-#_039592: LDA.w CPUPRODUCTH
+#_039592: LDA.w RDMPYH
 #_039595: STA.w $0E15
 #_039598: LDA.w $0E10
 #_03959B: LDX.w $0E13
 #_03959E: JSR Multiply_AX_b03
-#_0395A1: LDA.w CPUPRODUCTL
+#_0395A1: LDA.w RDMPYL
 #_0395A4: CLC
 #_0395A5: ADC.w $0E15
 #_0395A8: STA.w $0E15
-#_0395AB: LDA.w CPUPRODUCTH
+#_0395AB: LDA.w RDMPYH
 #_0395AE: ADC.b #$00
 #_0395B0: STA.w $0E16
 #_0395B3: LDA.w $0E11
 #_0395B6: LDX.w $0E12
 #_0395B9: JSR Multiply_AX_b03
-#_0395BC: LDA.w CPUPRODUCTL
+#_0395BC: LDA.w RDMPYL
 #_0395BF: CLC
 #_0395C0: ADC.w $0E15
 #_0395C3: STA.w $0E15
-#_0395C6: LDA.w CPUPRODUCTH
+#_0395C6: LDA.w RDMPYH
 #_0395C9: ADC.w $0E16
 #_0395CC: STA.w $0E16
 #_0395CF: LDA.b #$00
@@ -3873,19 +3873,19 @@ Multiply0E1x_b03:
 #_0395D6: LDA.w $0E11
 #_0395D9: LDX.w $0E13
 #_0395DC: JSR Multiply_AX_b03
-#_0395DF: LDA.w CPUPRODUCTL
+#_0395DF: LDA.w RDMPYL
 #_0395E2: CLC
 #_0395E3: ADC.w $0E16
 #_0395E6: STA.w $0E16
-#_0395E9: LDA.w CPUPRODUCTH
+#_0395E9: LDA.w RDMPYH
 #_0395EC: ADC.w $0E17
 #_0395EF: STA.w $0E17
 #_0395F2: PLP
 #_0395F3: RTS
 
 Multiply_AX_b03:
-#_0395F4: STA.w CPUMULTA
-#_0395F7: STX.w CPUMULTB
+#_0395F4: STA.w WRMPYA
+#_0395F7: STX.w WRMPYB
 #_0395FA: LDX.b #$08
 
 .wait
@@ -3902,11 +3902,11 @@ routine039600:
 #_039602: SEP #$20
 #_039604: SEP #$10
 #_039606: LDA.w $0E10
-#_039609: STA.w CPUDIVIDENDL
+#_039609: STA.w WRDIVL
 #_03960C: LDA.w $0E11
-#_03960F: STA.w CPUDIVIDENDH
+#_03960F: STA.w WRDIVH
 #_039612: LDA.w $0E12
-#_039615: STA.w CPUDIVISOR
+#_039615: STA.w WRDIVB
 #_039618: LDX.b #$10
 
 .branch03961A
@@ -3914,9 +3914,9 @@ routine039600:
 #_03961B: BNE .branch03961A
 
 #_03961D: REP #$20
-#_03961F: LDA.w CPUQUOTIENTL
+#_03961F: LDA.w RDDIVL
 #_039622: STA.w $0E13
-#_039625: LDA.w CPUREMAINDERL
+#_039625: LDA.w RDMPYL
 #_039628: STA.w $0E15
 #_03962B: PLP
 #_03962C: PLX
@@ -7388,10 +7388,10 @@ TextExtCMD_38:
 #_03B486: SEP #$20
 #_03B488: LDA.b #$03
 #_03B48A: STA.w $0F76
-#_03B48D: STA.w SUBDES
+#_03B48D: STA.w TS
 #_03B490: LDA.b #$1F
 #_03B492: STA.w $0F74
-#_03B495: STA.w MAINDES
+#_03B495: STA.w TM
 
 #_03B498: REP #$30
 
@@ -7435,7 +7435,7 @@ TextExtCMD_39:
 #_03B4D5: SEP #$20
 #_03B4D7: LDA.b #$02
 #_03B4D9: STA.w $0F76
-#_03B4DC: STA.w SUBDES
+#_03B4DC: STA.w TS
 #_03B4DF: RTS
 
 ;===================================================================================================
@@ -7643,7 +7643,7 @@ routine03B5FE:
 #_03B699: LDA.w $0F0D
 #_03B69C: AND.b #$F7
 #_03B69E: STA.w $0F0D
-#_03B6A1: STA.w HDMAENABLE
+#_03B6A1: STA.w HDMAEN
 #_03B6A4: LDA.b #$F8
 #_03B6A6: STA.w $0F53
 #_03B6A9: STA.w $0ED4
@@ -8799,7 +8799,7 @@ TextExtCMD_42:
 #_03BF41: JSL routine0F8836
 #_03BF45: LDA.b #$1F
 #_03BF47: STA.w $0F74
-#_03BF4A: STA.w MAINDES
+#_03BF4A: STA.w TM
 #_03BF4D: STZ.w $0F7F
 #_03BF50: STZ.w $0F80
 #_03BF53: STZ.w $0A33
@@ -9245,7 +9245,7 @@ TextExtCMD_4C:
 
 #_03C23D: STA.w $0407
 #_03C240: JSL ClampMoneyAndMAG
-#_03C244: JSL routine009F56
+#_03C244: JSL WriteMoneyToHUD
 #_03C248: LDA.w $0C43
 #_03C24B: AND.w #$00FF
 #_03C24E: ASL A
@@ -9492,8 +9492,8 @@ TextExtCMD_53:
 
 #_03C3FC: JSL ClampMoneyAndMAG
 
-#_03C400: JSL routine009F56
-#_03C404: JSL routine009FDE
+#_03C400: JSL WriteMoneyToHUD
+#_03C404: JSL WriteMAGToHUD
 
 #_03C408: RTS
 
@@ -9513,8 +9513,8 @@ TextExtCMD_55:
 
 #_03C41E: JSL ClampMoneyAndMAG
 
-#_03C422: JSL routine009F56
-#_03C426: JSL routine009FDE
+#_03C422: JSL WriteMoneyToHUD
+#_03C426: JSL WriteMAGToHUD
 
 #_03C42A: RTS
 
@@ -9778,17 +9778,17 @@ TextExtCMD_66:
 #_03C58F: SEP #$30
 
 #_03C591: LDA.b #$A7
-#_03C593: JSL routine0385C8
+#_03C593: JSL WriteSingleCharacterTo0900
 
 #_03C597: LDA.b #$A8
-#_03C599: JSL routine0385C8
+#_03C599: JSL WriteSingleCharacterTo0900
 
 #_03C59D: RTS
 
 ;===================================================================================================
 
 TextExtCMD_67:
-#_03C59E: JSL routine0F907A
+#_03C59E: JSL CheckInventoryForCoolSwordOrVase
 #_03C5A2: RTS
 
 ;===================================================================================================
@@ -12607,7 +12607,7 @@ routine03D775:
 
 .branch03D76E
 #_03D76E: LDA.w $0E00,Y
-#_03D771: JSL routine0385C8
+#_03D771: JSL WriteSingleCharacterTo0900
 #_03D775: DEY
 #_03D776: BPL .branch03D76E
 
@@ -12862,7 +12862,7 @@ HEXtoDEC_32bit_Bank03:
 #_03D8D1: STA.w BG3SC
 #_03D8D4: STA.w $0F49
 #_03D8D7: LDA.b #$16
-#_03D8D9: STA.w MAINDES
+#_03D8D9: STA.w TM
 #_03D8DC: STA.w $0F74
 #_03D8DF: LDA.b #$FF
 #_03D8E1: STA.w $0F7F
@@ -12971,7 +12971,7 @@ HEXtoDEC_32bit_Bank03:
 
 #_03D9B6: SEP #$30
 #_03D9B8: LDA.b #$16
-#_03D9BA: STA.w MAINDES
+#_03D9BA: STA.w TM
 #_03D9BD: STA.w $0F74
 #_03D9C0: LDA.b #$3C
 #_03D9C2: STA.w BG3SC
@@ -13160,7 +13160,7 @@ routine03DADB:
 #_03DB0E: REP #$30
 #_03DB10: LDY.w $0BE9
 #_03DB13: LDA.w data03D4BE,Y
-#_03DB16: JSL routine0385C8
+#_03DB16: JSL WriteSingleCharacterTo0900
 
 #_03DB1A: SEP #$20
 #_03DB1C: LDA.b #$06
@@ -13181,7 +13181,7 @@ routine03DADB:
 #_03DB44: LDA.w #$001E
 #_03DB47: STA.w $0A33
 #_03DB4A: LDA.w #$005A
-#_03DB4D: JSL routine0385C8
+#_03DB4D: JSL WriteSingleCharacterTo0900
 #_03DB51: LDX.w $0BA1
 #_03DB54: LDA.w $1034,X
 #_03DB57: BEQ .branch03DB67
@@ -13196,11 +13196,11 @@ routine03DADB:
 #_03DB67: LDA.w #$0028
 #_03DB6A: STA.w $0A33
 #_03DB6D: LDA.w #$0093
-#_03DB70: JSL routine0385C8
+#_03DB70: JSL WriteSingleCharacterTo0900
 #_03DB74: LDA.w #$0093
-#_03DB77: JSL routine0385C8
+#_03DB77: JSL WriteSingleCharacterTo0900
 #_03DB7B: LDA.w #$0093
-#_03DB7E: JSL routine0385C8
+#_03DB7E: JSL WriteSingleCharacterTo0900
 
 .branch03DB82
 #_03DB82: REP #$30
@@ -13262,7 +13262,7 @@ routine03DBD6:
 #_03DC09: REP #$30
 #_03DC0B: LDY.w $0BE9
 #_03DC0E: LDA.w data03D4BE,Y
-#_03DC11: JSL routine0385C8
+#_03DC11: JSL WriteSingleCharacterTo0900
 
 #_03DC15: SEP #$20
 #_03DC17: LDA.b #$06
@@ -13340,7 +13340,7 @@ routine03DC83:
 
 .branch03DCA0
 #_03DCA0: LDA.b #$10
-#_03DCA2: STA.w SUBDES
+#_03DCA2: STA.w TS
 #_03DCA5: STA.w $0F76
 #_03DCA8: LDA.b #$04
 #_03DCAA: STA.w CGADSUB
@@ -13908,7 +13908,7 @@ routine03DFBD:
 routine03DFF7:
 #_03DFF7: SEP #$30
 #_03DFF9: LDA.b #$10
-#_03DFFB: STA.w SUBDES
+#_03DFFB: STA.w TS
 #_03DFFE: STA.w $0F76
 #_03E001: LDA.b #$04
 #_03E003: STA.w CGADSUB
@@ -14031,29 +14031,31 @@ routine03E0C5_long:
 routine03E0C5:
 #_03E0C5: PHP
 #_03E0C6: SEP #$20
+
 #_03E0C8: STZ.w $0B5F
 
 #_03E0CB: REP #$30
+
 #_03E0CD: LDX.w #$0180
 #_03E0D0: LDY.w #$0000
 
-.branch03E0D3
+.next_teammate
 #_03E0D3: LDA.w $1000,X
-#_03E0D6: BPL .branch03E0E3
+#_03E0D6: BPL .skip_teammate
 
 #_03E0D8: LDA.w $1002,X
 #_03E0DB: AND.w #$F640
-#_03E0DE: BNE .branch03E0E3
+#_03E0DE: BNE .skip_teammate
 
 #_03E0E0: INC.w $0B5F
 
-.branch03E0E3
+.skip_teammate
 #_03E0E3: TXA
 #_03E0E4: CLC
 #_03E0E5: ADC.w #$0060
 #_03E0E8: TAX
 #_03E0E9: CPX.w #$0600
-#_03E0EC: BNE .branch03E0D3
+#_03E0EC: BNE .next_teammate
 
 #_03E0EE: JSL routine0F8F26
 
@@ -14260,7 +14262,7 @@ routine03E1E7:
 .branch03E220
 #_03E220: REP #$20
 #_03E222: LDA.w data03E40A,X
-#_03E225: JSL routine0385C8
+#_03E225: JSL WriteSingleCharacterTo0900
 
 #_03E229: SEP #$20
 #_03E22B: LDA.b #$04
@@ -14572,7 +14574,7 @@ routine03E41C:
 #_03E42A: JSR routine03E6DF
 #_03E42D: STZ.w $0A33
 #_03E430: LDA.b #$B1
-#_03E432: JSL routine0385C8
+#_03E432: JSL WriteSingleCharacterTo0900
 #_03E436: LDA.b #$04
 #_03E438: STA.w $0A33
 #_03E43B: LDA.b #ClassNamePointers>>16
@@ -14771,7 +14773,7 @@ routine03E51A:
 
 .branch03E563
 #_03E563: SEP #$20
-#_03E565: JSL routine0385C8
+#_03E565: JSL WriteSingleCharacterTo0900
 #_03E569: PLP
 #_03E56A: PLA
 #_03E56B: STA.w $0E00
@@ -14805,7 +14807,7 @@ routine03E51A:
 #_03E590: LDA.w $098C,X
 #_03E593: STA.w $0BEF
 #_03E596: JSR DetermineFusionCompatibility
-#_03E599: JSL routine0385C8
+#_03E599: JSL WriteSingleCharacterTo0900
 #_03E59D: PLP
 #_03E59E: PLX
 
@@ -14866,7 +14868,7 @@ routine03E51A:
 
 .branch03E5F4
 #_03E5F4: SEP #$20
-#_03E5F6: JSL routine0385C8
+#_03E5F6: JSL WriteSingleCharacterTo0900
 #_03E5FA: PLP
 #_03E5FB: PLA
 #_03E5FC: STA.w $0E00
@@ -14900,7 +14902,7 @@ routine03E51A:
 #_03E627: LDA.w $098C,X
 #_03E62A: STA.w $0BF1
 #_03E62D: JSR DetermineFusionCompatibility
-#_03E630: JSL routine0385C8
+#_03E630: JSL WriteSingleCharacterTo0900
 #_03E634: PLP
 #_03E635: PLX
 
@@ -17426,7 +17428,7 @@ routine03F9F5:
 #_03FA3B: STA.w BG3SC
 #_03FA3E: STA.w $0F49
 #_03FA41: LDA.b #$16
-#_03FA43: STA.w MAINDES
+#_03FA43: STA.w TM
 #_03FA46: STA.w $0F74
 #_03FA49: LDA.b #$FF
 #_03FA4B: STA.w $0F7F
@@ -17481,7 +17483,7 @@ routine03FAAE:
 
 #_03FAB6: SEP #$20
 #_03FAB8: LDA.b #$1E
-#_03FABA: STA.w MAINDES
+#_03FABA: STA.w TM
 #_03FABD: STA.w $0F74
 #_03FAC0: LDA.b #$3C
 #_03FAC2: STA.w BG3SC
@@ -17716,7 +17718,7 @@ routine03FC10:
 
 #_03FC36: REP #$20
 #_03FC38: LDA.w data03E40A,X
-#_03FC3B: JSL routine0385C8
+#_03FC3B: JSL WriteSingleCharacterTo0900
 
 #_03FC3F: SEP #$20
 #_03FC41: LDA.b #$04
@@ -17813,7 +17815,7 @@ routine03FC10:
 #_03FCD4: SEP #$20
 #_03FCD6: LDA.b #$10
 #_03FCD8: STA.w $0F76
-#_03FCDB: STA.w SUBDES
+#_03FCDB: STA.w TS
 #_03FCDE: LDA.b #$04
 #_03FCE0: STA.w $0F7B
 #_03FCE3: STA.w CGADSUB
@@ -17874,7 +17876,7 @@ routine03FD17:
 .branch03FD4C
 #_03FD4C: REP #$20
 #_03FD4E: LDA.w data03E40A,X
-#_03FD51: JSL routine0385C8
+#_03FD51: JSL WriteSingleCharacterTo0900
 
 #_03FD55: SEP #$20
 #_03FD57: LDA.b #$04
@@ -17945,7 +17947,7 @@ routine03FD17:
 #_03FDC5: LDA.b #$24
 #_03FDC7: STA.w $0A33
 #_03FDCA: JSR routine03FE3E
-#_03FDCD: JSL routine0385C8
+#_03FDCD: JSL WriteSingleCharacterTo0900
 
 .branch03FDD1
 #_03FDD1: SEP #$20
@@ -17975,7 +17977,7 @@ routine03FD17:
 #_03FDF8: SEP #$20
 #_03FDFA: LDA.b #$10
 #_03FDFC: STA.w $0F76
-#_03FDFF: STA.w SUBDES
+#_03FDFF: STA.w TS
 #_03FE02: LDA.b #$04
 #_03FE04: STA.w $0F7B
 #_03FE07: STA.w CGADSUB
@@ -18146,7 +18148,7 @@ ArtefactCode_03FEB6:
 #_03FF29: SEP #$20
 #_03FF2B: LDA.b #$10
 #_03FF2D: STA.w $0F76
-#_03FF30: STA.w SUBDES
+#_03FF30: STA.w TS
 #_03FF33: LDA.b #$04
 #_03FF35: STA.w $0F7B
 #_03FF38: STA.w CGADSUB

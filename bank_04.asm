@@ -2078,10 +2078,11 @@ UnderworldRoomData:
 #_04BFF8: dw $0044, $0044, $0074, $0017
 
 ;===================================================================================================
-; bffffff hhiiiiii
+; bffffff chiiiiii
 ;   b - floor direction (0: above ground | 1: basement)
 ;   f - floor number (roughly)
-;   h - hidden room ID
+;   c - computer blocked (0: free | 1: blocked)
+;   h - hidden room
 ;   i - dungeon ID
 ;===================================================================================================
 DungeonIDByBlock:

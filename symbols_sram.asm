@@ -40,7 +40,9 @@ RMEVENT          = $7E0711
 ;   e - event?
 MVFLAG           = $7E0712
 
-UNKNOWN_7E0713   = $7E0713
+; Current dungeon floor
+DGFLR            = $7E0713
+
 UNKNOWN_7E0714   = $7E0714
 
 ; Current user's stats offset
@@ -332,7 +334,7 @@ UNKNOWN_7E0403   = $7E0403
 UNKNOWN_7E0404   = $7E0404
 
 
-; Current money, whether it's Yen or Makka
+; Current money, whether it's Yen or Macca
 CASH             = $7E0405
 
 ; Current magnetite
@@ -398,6 +400,7 @@ UNKNOWN_7E0450   = $7E0450
 
 ; Frame counter
 FRAME            = $7E0451
+
 UNKNOWN_7E0452   = $7E0452
 UNKNOWN_7E0453   = $7E0453
 UNKNOWN_7E0454   = $7E0454
@@ -407,8 +410,8 @@ UNKNOWN_7E0457   = $7E0457
 UNKNOWN_7E0458   = $7E0458
 UNKNOWN_7E0459   = $7E0459
 
-; TODO something with map properties?
-UNKNOWN_7E045A   = $7E045A
+; Current dungeon ID
+DGID             = $7E045A
 
 UNKNOWN_7E045B   = $7E045B
 

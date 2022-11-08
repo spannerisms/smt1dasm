@@ -121,6 +121,7 @@ Write_to_APU_transferrable:
 
 #_0C8080: STA.w $0F84,Y
 #_0C8083: TAY
+
 #_0C8084: BMI SyncAPUPort1
 
 ; these songs need to transfer data

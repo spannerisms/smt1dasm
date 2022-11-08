@@ -9,6 +9,7 @@ routine0F8000:
 #_0F8003: AND.w #$00FF
 #_0F8006: ASL A
 #_0F8007: STA.w $0E00
+
 #_0F800A: ASL A
 #_0F800B: CLC
 #_0F800C: ADC.w $0E00
@@ -58,6 +59,7 @@ routine0F8000:
 
 .branch0F8050
 #_0F8050: STA.w VMDATAH
+
 #_0F8053: LDA.b [$E0],Y
 #_0F8055: AND.b #$0F
 #_0F8057: BEQ .branch0F805D
@@ -67,6 +69,7 @@ routine0F8000:
 
 .branch0F805D
 #_0F805D: STA.w VMDATAH
+
 #_0F8060: INY
 #_0F8061: CPY.w $0E02
 #_0F8064: BNE .branch0F8042
@@ -88,6 +91,8 @@ data0F806C:
 data0F806D:
 #_0F806D: db $00,$20,$27,$00,$C0,$02,$00,$10
 
+;===================================================================================================
+; TODO easy data table to deal with
 routine0F8075:
 #_0F8075: PHP
 #_0F8076: REP #$30
@@ -107,56 +112,73 @@ routine0F8075:
 #_0F8088: LDA.w data0F80F5,Y
 #_0F808B: AND.w #$00FF
 #_0F808E: STA.w $00E2
+
 #_0F8091: LDA.w data0F80F6,Y
 #_0F8094: STA.w $00E0
+
 #_0F8097: LDA.w data0F80F8,Y
 #_0F809A: AND.w #$00FF
 #_0F809D: STA.w $0E00
+
 #_0F80A0: LDA.w data0F80F9,Y
 #_0F80A3: AND.w #$00FF
 #_0F80A6: STA.w $0E02
 #_0F80A9: STZ.w $0E04
 
 #_0F80AC: SEP #$20
+
 #_0F80AE: LDA.b #$00
 #_0F80B0: STA.w VMAIN
+
 #_0F80B3: LDX.w $0E02
 
 .branch0F80B6
 #_0F80B6: PHX
+
 #_0F80B7: LDA.w $0E04
 #_0F80BA: STA.w VMADDL
+
 #_0F80BD: LDA.w $0E05
 #_0F80C0: STA.w VMADDH
+
 #_0F80C3: LDY.w #$0000
 
 .branch0F80C6
 #_0F80C6: LDA.b [$E0],Y
 #_0F80C8: STA.w VMDATAL
+
 #_0F80CB: INY
 #_0F80CC: CPY.w $0E00
 #_0F80CF: BNE .branch0F80C6
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F80D1: REP #$20
+
 #_0F80D3: LDA.w $0E04
 #_0F80D6: CLC
 #_0F80D7: ADC.w #$0080
 #_0F80DA: STA.w $0E04
+
 #_0F80DD: LDA.w $00E0
 #_0F80E0: CLC
 #_0F80E1: ADC.w $0E00
 #_0F80E4: STA.w $00E0
 
 #_0F80E7: SEP #$20
+
 #_0F80E9: PLX
 #_0F80EA: DEX
 #_0F80EB: BNE .branch0F80B6
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F80ED: LDA.b #$80
 #_0F80EF: STA.w VMAIN
 
 #_0F80F2: PLB
 #_0F80F3: PLP
+
 #_0F80F4: RTL
 
 ; TODO merge
@@ -220,26 +242,34 @@ data0F80F9:
 #_0F8271: db $00,$00,$00,$00,$00,$00,$00,$00
 #_0F8279: db $00
 
+;===================================================================================================
+
 routine0F827A:
 #_0F827A: PHP
+
 #_0F827B: PHB
 #_0F827C: PHK
 #_0F827D: PLB
 
 #_0F827E: SEP #$20
+
 #_0F8280: LDA.b #$00
 #_0F8282: STA.w VMAIN
 
 #_0F8285: REP #$30
+
 #_0F8287: LDY.w #$002D
 
-.branch0F828A
+.next_chunk
 #_0F828A: REP #$20
+
 #_0F828C: PHY
+
 #_0F828D: TYA
 #_0F828E: ASL A
 #_0F828F: ASL A
 #_0F8290: TAX
+
 #_0F8291: ASL A
 #_0F8292: ASL A
 #_0F8293: ASL A
@@ -248,31 +278,39 @@ routine0F827A:
 #_0F8296: STA.w VMADDL
 
 #_0F8299: SEP #$20
+
 #_0F829B: LDA.w data0F82DD,X
 #_0F829E: STA.w $0E00
+
 #_0F82A1: LDA.w data0F82DE,X
 #_0F82A4: STA.w $0E02
+
 #_0F82A7: LDA.w data0F82DF,X
 #_0F82AA: STA.w $0E04
+
 #_0F82AD: LDA.w data0F82E0,X
 #_0F82B0: STA.w $0E06
 #_0F82B3: LDY.w #$001F
 
-.branch0F82B6
+.next_tile
 #_0F82B6: LDA.w $0E00
 #_0F82B9: STA.w VMDATAL
+
 #_0F82BC: LDA.w $0E02
 #_0F82BF: STA.w VMDATAL
+
 #_0F82C2: LDA.w $0E04
 #_0F82C5: STA.w VMDATAL
+
 #_0F82C8: LDA.w $0E06
 #_0F82CB: STA.w VMDATAL
+
 #_0F82CE: DEY
-#_0F82CF: BPL .branch0F82B6
+#_0F82CF: BPL .next_tile
 
 #_0F82D1: PLY
 #_0F82D2: DEY
-#_0F82D3: BPL .branch0F828A
+#_0F82D3: BPL .next_chunk
 
 #_0F82D5: LDA.b #$80
 #_0F82D7: STA.w VMAIN
@@ -317,8 +355,7 @@ data0F82E0:
 #_0F8398: db $62
 
 ;===================================================================================================
-; 
-;===================================================================================================
+
 routine0F8399:
 #_0F8399: PHP
 #_0F839A: REP #$30
@@ -326,6 +363,7 @@ routine0F8399:
 #_0F839C: PHA
 #_0F839D: PHX
 #_0F839E: PHY
+
 #_0F839F: PHD
 #_0F83A0: PHB
 
@@ -334,49 +372,64 @@ routine0F8399:
 #_0F83A3: PLB
 
 #_0F83A4: SEP #$20
+
 #_0F83A6: LDA.b #$E5
 #_0F83A8: JSL TestGameProgressBit
-#_0F83AC: BCC .branch0F83B1
-#_0F83AE: JMP .branch0F843E
+#_0F83AC: BCC .continue
 
-.branch0F83B1
+#_0F83AE: JMP .exit
+
+;---------------------------------------------------------------------------------------------------
+
+.continue
 #_0F83B1: REP #$20
+
 #_0F83B3: LDA.w $0B00
 #_0F83B6: AND.w #$00FF
 #_0F83B9: STA.w $1A80
+
 #_0F83BC: LDA.w $0B02
 #_0F83BF: AND.w #$00FF
 #_0F83C2: STA.w $1AC0
 
 #_0F83C5: SEP #$30
+
 #_0F83C7: LDA.w $101C
 #_0F83CA: LSR A
 #_0F83CB: LSR A
 #_0F83CC: LSR A
 #_0F83CD: TAX
+
 #_0F83CE: INC.w $0B39
+
 #_0F83D1: LDA.w $0B39
 #_0F83D4: CMP.w data0F8448,X
 #_0F83D7: BCC .branch0F83EA
 
 #_0F83D9: INC.w $0B38
 #_0F83DC: INC.w $0B38
+
 #_0F83DF: LDA.w $0B38
 #_0F83E2: AND.b #$07
 #_0F83E4: STA.w $0B38
+
 #_0F83E7: STZ.w $0B39
 
 .branch0F83EA
 #_0F83EA: STZ.w $0E00
+
 #_0F83ED: LDA.w $101C
 #_0F83F0: CMP.b #$70
 #_0F83F2: BCC .branch0F83FE
 
 #_0F83F4: INC.w $0E00
+
 #_0F83F7: CMP.b #$90
 #_0F83F9: BCC .branch0F83FE
 
 #_0F83FB: INC.w $0E00
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F83FE
 #_0F83FE: LDA.w $0E00
@@ -385,9 +438,12 @@ routine0F8399:
 #_0F8403: ASL A
 #_0F8404: ASL A
 #_0F8405: PHA
+
 #_0F8406: JSL routine028708
+
 #_0F840A: PLA
 #_0F840B: STA.w $0E00
+
 #_0F840E: LDA.w $0B29
 #_0F8411: AND.b #$0F
 #_0F8413: CMP.b #$0A
@@ -410,22 +466,29 @@ routine0F8399:
 #_0F842E: TAX
 
 #_0F842F: REP #$20
+
 #_0F8431: LDA.w data0F8468,X
 #_0F8434: STA.w $0020
 
 #_0F8437: SEP #$20
+
 #_0F8439: LDA.b #$80
 #_0F843B: STA.w $1A10
 
-.branch0F843E
+;---------------------------------------------------------------------------------------------------
+
+.exit
 #_0F843E: PLB
 
 #_0F843F: REP #$30
+
 #_0F8441: PLB
 #_0F8442: PLD
+
 #_0F8443: PLY
 #_0F8444: PLX
 #_0F8445: PLA
+
 #_0F8446: PLP
 #_0F8447: RTL
 
@@ -447,7 +510,7 @@ data0F8468:
 ; Enters with:
 ;    A = item ID
 ; Exits with:
-;    Carry - set on success
+;    carry - set on success
 ;===================================================================================================
 LookForItemInInventory:
 #_0F8498: PHX
@@ -501,16 +564,18 @@ LookForItemInInventory:
 routine0F84C1:
 #_0F84C1: PHP
 #_0F84C2: REP #$30
+
 #_0F84C4: STA.w $0E00
+
 #_0F84C7: LDX.w #$0180
 
-.branch0F84CA
+.next_teammate
 #_0F84CA: LDA.w $1000,X
-#_0F84CD: BPL .branch0F84E9
+#_0F84CD: BPL .skip_teammate
 
 #_0F84CF: LDA.w $1004,X
 #_0F84D2: CMP.w $0E00
-#_0F84D5: BNE .branch0F84E9
+#_0F84D5: BNE .skip_teammate
 
 #_0F84D7: LDA.w $1000,X
 #_0F84DA: AND.w #$4000
@@ -522,13 +587,14 @@ routine0F84C1:
 #_0F84E3: LDA.w #$0000
 #_0F84E6: STA.w $1000,X
 
-.branch0F84E9
+.skip_teammate
 #_0F84E9: TXA
 #_0F84EA: CLC
 #_0F84EB: ADC.w #$0060
 #_0F84EE: TAX
+
 #_0F84EF: CPX.w #$0600
-#_0F84F2: BNE .branch0F84CA
+#_0F84F2: BNE .next_teammate
 
 #_0F84F4: PLP
 #_0F84F5: RTL
@@ -538,10 +604,15 @@ routine0F84C1:
 routine0F84F6:
 #_0F84F6: PHP
 #_0F84F7: SEP #$20
+
 #_0F84F9: JSL routine0F850B
+
 #_0F84FD: JSL routine02BA4C
+
 #_0F8501: JSL routine00A840
+
 #_0F8505: JSL UpdateDirTilemap
+
 #_0F8509: PLP
 #_0F850A: RTL
 
@@ -550,24 +621,32 @@ routine0F84F6:
 routine0F850B:
 #_0F850B: PHP
 #_0F850C: REP #$30
+
 #_0F850E: LDY.w #$000A
 #_0F8511: LDX.w #$0014
+
 #_0F8514: LDA.w #$0008
 #_0F8517: STA.w $1A60,X
+
 #_0F851A: LDA.w #$00F0
 #_0F851D: STA.w $1AA0,X
+
 #_0F8520: LDA.w #$0011
 #_0F8523: STA.w $0000,X
 
 #_0F8526: SEP #$20
+
 #_0F8528: LDA.b #$80
 #_0F852A: STA.w $1A00,Y
+
 #_0F852D: LDA.b #$03
 #_0F852F: STA.w $0F76
-#_0F8532: STA.w SUBDES
+#_0F8532: STA.w TS
+
 #_0F8535: LDA.b #$50
 #_0F8537: STA.w $0F7B
 #_0F853A: STA.w CGADSUB
+
 #_0F853D: PLP
 #_0F853E: RTL
 
@@ -575,60 +654,78 @@ routine0F850B:
 
 routine0F853F:
 #_0F853F: PHX
+
 #_0F8540: PHP
+
 #_0F8541: PHB
 #_0F8542: PHK
 #_0F8543: PLB
 
 #_0F8544: REP #$30
+
 #_0F8546: STX.w $0E00
 #_0F8549: LDX.w #$0000
 
-.branch0F854C
+.next_teammate
 #_0F854C: LDA.w $0700,X
 #_0F854F: CMP.w $0E00
-#_0F8552: BEQ .branch0F8566
+#_0F8552: BEQ .shift_teammates
 
 #_0F8554: INX
 #_0F8555: INX
 #_0F8556: CPX.w #$000C
-#_0F8559: BNE .branch0F854C
+#_0F8559: BNE .next_teammate
 
 #_0F855B: SEP #$20
+
 #_0F855D: LDA.b #$FF
 #_0F855F: STA.w $0A58
+
 #_0F8562: PLB
+
 #_0F8563: PLP
+
 #_0F8564: PLX
+
 #_0F8565: RTL
 
-.branch0F8566
+;---------------------------------------------------------------------------------------------------
+
+.shift_teammates
 #_0F8566: LDA.w $0702,X
 #_0F8569: STA.w $0700,X
+
 #_0F856C: INX
 #_0F856D: INX
 #_0F856E: CPX.w #$000C
-#_0F8571: BNE .branch0F8566
+#_0F8571: BNE .shift_teammates
 
 #_0F8573: LDA.w #$FFFF
 #_0F8576: STA.w $070A
 
 #_0F8579: SEP #$20
+
 #_0F857B: STZ.w $0A58
+
 #_0F857E: PLB
+
 #_0F857F: PLP
+
 #_0F8580: PLX
+
 #_0F8581: RTL
 
 ;===================================================================================================
-
+; TODO chaos alignment check?
 routine0F8582:
 #_0F8582: PHP
+
 #_0F8583: PHB
 #_0F8584: PHK
 #_0F8585: PLB
 
 #_0F8586: REP #$30
+
 #_0F8588: LDA.w $101C
 #_0F858B: CMP.w #$0070
 #_0F858E: BCC .branch0F859F
@@ -650,13 +747,17 @@ routine0F8582:
 .branch0F85A7
 #_0F85A7: PLB
 #_0F85A8: PLP
+
 #_0F85A9: CLC
+
 #_0F85AA: RTL
 
 .branch0F85AB
 #_0F85AB: PLB
+
 #_0F85AC: PLP
 #_0F85AD: SEC
+
 #_0F85AE: RTL
 
 ;===================================================================================================
@@ -664,48 +765,61 @@ routine0F8582:
 routine0F85AF:
 #_0F85AF: PHP
 #_0F85B0: SEP #$30
+
 #_0F85B2: STA.w $0E02
 #_0F85B5: STX.w $0E04
 #_0F85B8: STY.w $0E00
+
 #_0F85BB: PHB
 #_0F85BC: PHK
 #_0F85BD: PLB
+
 #_0F85BE: LDA.w $0E04
 #_0F85C1: SEC
 #_0F85C2: SBC.w $0E02
 #_0F85C5: INC A
 #_0F85C6: STA.l $7E22FF
+
 #_0F85CA: LDA.w $0E02
 #_0F85CD: STA.l $7E22FE
 
 #_0F85D1: REP #$30
+
 #_0F85D3: LDA.w $0E00
 #_0F85D6: AND.w #$00FF
 #_0F85D9: STA.w $0E00
+
 #_0F85DC: ASL A
 #_0F85DD: ASL A
 #_0F85DE: ASL A
 #_0F85DF: ASL A
 #_0F85E0: ASL A
 #_0F85E1: STA.w $0E06
+
 #_0F85E4: ASL A
 #_0F85E5: ASL A
 #_0F85E6: ASL A
 #_0F85E7: ASL A
 #_0F85E8: ASL A
 #_0F85E9: STA.w $0E08
+
 #_0F85EC: LDA.w $0E02
 #_0F85EF: AND.w #$00FF
 #_0F85F2: ASL A
 #_0F85F3: STA.w $0E02
+
 #_0F85F6: LDA.w $0E04
 #_0F85F9: AND.w #$00FF
 #_0F85FC: ASL A
 #_0F85FD: STA.w $0E04
+
 #_0F8600: STZ.w $0E0C
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F8603
 #_0F8603: LDX.w $0E02
+
 #_0F8606: LDA.l $7E2500,X
 #_0F860A: AND.w #$001F
 #_0F860D: CLC
@@ -713,11 +827,15 @@ routine0F85AF:
 #_0F8611: CMP.w #$001F
 #_0F8614: BCC .branch0F8619
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F8616: LDA.w #$001F
 
 .branch0F8619
 #_0F8619: STA.w $0E0A
+
 #_0F861C: LDX.w $0E02
+
 #_0F861F: LDA.l $7E2500,X
 #_0F8623: AND.w #$03E0
 #_0F8626: CLC
@@ -725,12 +843,16 @@ routine0F85AF:
 #_0F862A: CMP.w #$03E0
 #_0F862D: BCC .branch0F8632
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F862F: LDA.w #$03E0
 
 .branch0F8632
 #_0F8632: ORA.w $0E0A
 #_0F8635: STA.w $0E0A
+
 #_0F8638: LDX.w $0E02
+
 #_0F863B: LDA.l $7E2500,X
 #_0F863F: AND.w #$7C00
 #_0F8642: CLC
@@ -738,24 +860,35 @@ routine0F85AF:
 #_0F8646: CMP.w #$7C00
 #_0F8649: BCC .branch0F864E
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F864B: LDA.w #$7C00
 
 .branch0F864E
 #_0F864E: ORA.w $0E0A
+
 #_0F8651: LDX.w $0E0C
+
 #_0F8654: STA.l $7E2300,X
 #_0F8658: INC.w $0E0C
 #_0F865B: INC.w $0E0C
+
 #_0F865E: INC.w $0E02
 #_0F8661: INC.w $0E02
+
 #_0F8664: LDA.w $0E04
 #_0F8667: CMP.w $0E02
 #_0F866A: BCS .branch0F8603
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F866C: SEP #$20
+
 #_0F866E: LDA.b #$01
 #_0F8670: STA.l $7E22FD
+
 #_0F8674: PLB
+
 #_0F8675: PLP
 #_0F8676: RTL
 
@@ -764,17 +897,21 @@ routine0F85AF:
 routine0F8677:
 #_0F8677: PHP
 #_0F8678: SEP #$30
+
 #_0F867A: STA.w $0E02
 #_0F867D: STX.w $0E04
 #_0F8680: STY.w $0E00
+
 #_0F8683: PHB
 #_0F8684: PHK
 #_0F8685: PLB
+
 #_0F8686: LDA.w $0E04
 #_0F8689: SEC
 #_0F868A: SBC.w $0E02
 #_0F868D: INC A
 #_0F868E: STA.l $7E22FF
+
 #_0F8692: LDA.w $0E02
 #_0F8695: STA.l $7E22FE
 
@@ -811,40 +948,47 @@ routine0F8677:
 
 #_0F86C8: STZ.w $0E0C
 
-.branch0F86CB
+;---------------------------------------------------------------------------------------------------
+
+.next
 #_0F86CB: LDX.w $0E02
+
 #_0F86CE: LDA.l $7E2500,X
 #_0F86D2: AND.w #$001F
 #_0F86D5: SEC
 #_0F86D6: SBC.w $0E00
-#_0F86D9: BPL .branch0F86DE
+#_0F86D9: BPL .positive_a
 
 #_0F86DB: LDA.w #$0000
 
-.branch0F86DE
+.positive_a
 #_0F86DE: STA.w $0E0A
+
 #_0F86E1: LDX.w $0E02
+
 #_0F86E4: LDA.l $7E2500,X
 #_0F86E8: AND.w #$03E0
 #_0F86EB: SEC
 #_0F86EC: SBC.w $0E06
-#_0F86EF: BPL .branch0F86F4
+#_0F86EF: BPL .positive_b
 
 #_0F86F1: LDA.w #$0000
 
-.branch0F86F4
+.positive_b
 #_0F86F4: ORA.w $0E0A
 #_0F86F7: STA.w $0E0A
+
 #_0F86FA: LDX.w $0E02
+
 #_0F86FD: LDA.l $7E2500,X
 #_0F8701: AND.w #$7C00
 #_0F8704: SEC
 #_0F8705: SBC.w $0E08
-#_0F8708: BPL .branch0F870D
+#_0F8708: BPL .positive_c
 
 #_0F870A: LDA.w #$0000
 
-.branch0F870D
+.positive_c
 #_0F870D: ORA.w $0E0A
 #_0F8710: LDX.w $0E0C
 #_0F8713: STA.l $7E2300,X
@@ -857,7 +1001,9 @@ routine0F8677:
 
 #_0F8723: LDA.w $0E04
 #_0F8726: CMP.w $0E02
-#_0F8729: BCS .branch0F86CB
+#_0F8729: BCS .next
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F872B: SEP #$20
 #_0F872D: LDA.b #$01
@@ -871,13 +1017,16 @@ routine0F8677:
 
 routine0F8736:
 #_0F8736: REP #$20
+
 #_0F8738: LDA.w $0F2D
 #_0F873B: AND.w #$0040
-#_0F873E: BNE .branch0F8741
+#_0F873E: BNE .loop
 
 #_0F8740: RTL
 
-.branch0F8741
+;---------------------------------------------------------------------------------------------------
+
+.loop
 #_0F8741: REP #$30
 
 #_0F8743: LDA.w #$3DC4
@@ -924,100 +1073,120 @@ routine0F8736:
 
 #_0F8795: LDA.w $0F2B
 #_0F8798: BIT.w #$0040
-#_0F879B: BNE .branch0F8808
+#_0F879B: BNE .pressed_x
 
 #_0F879D: BIT.w #$0080
-#_0F87A0: BNE .branch0F8803
+#_0F87A0: BNE .pressed_a
 
 #_0F87A2: BIT.w #$0800
-#_0F87A5: BEQ .branch0F87AA
+#_0F87A5: BEQ .didnt_press_up
 
 #_0F87A7: INC.w $0A12
 
-.branch0F87AA
+.didnt_press_up
 #_0F87AA: BIT.w #$0400
-#_0F87AD: BEQ .branch0F87B2
+#_0F87AD: BEQ .didnt_press_down
 
 #_0F87AF: DEC.w $0A12
 
-.branch0F87B2
+.didnt_press_down
 #_0F87B2: BIT.w #$0200
-#_0F87B5: BEQ .branch0F87C1
+#_0F87B5: BEQ .didnt_press_left
 
 #_0F87B7: LDA.w $0A12
 #_0F87BA: CLC
 #_0F87BB: ADC.w #$0010
 #_0F87BE: STA.w $0A12
 
-.branch0F87C1
+.didnt_press_left
 #_0F87C1: LDA.w $0F2B
 #_0F87C4: BIT.w #$0100
-#_0F87C7: BEQ .branch0F87D6
+#_0F87C7: BEQ .didnt_press_right
 
 #_0F87C9: LDA.w $0A12
 #_0F87CC: SEC
 #_0F87CD: SBC.w #$0010
 #_0F87D0: STA.w $0A12
-#_0F87D3: JMP .branch0F8741
 
-.branch0F87D6
+#_0F87D3: JMP .loop
+
+;---------------------------------------------------------------------------------------------------
+
+.didnt_press_right
 #_0F87D6: LDA.w $0F2B
 #_0F87D9: BIT.w #$0020
-#_0F87DC: BEQ .branch0F87EB
+#_0F87DC: BEQ .didnt_press_left_shoulder
 
 #_0F87DE: LDA.w $0A12
 #_0F87E1: SEC
 #_0F87E2: SBC.w #$4000
 #_0F87E5: STA.w $0A12
-#_0F87E8: JMP .branch0F8741
 
-.branch0F87EB
+#_0F87E8: JMP .loop
+
+;---------------------------------------------------------------------------------------------------
+
+.didnt_press_left_shoulder
 #_0F87EB: LDA.w $0F2B
 #_0F87EE: BIT.w #$0010
-#_0F87F1: BNE .branch0F87F6
+#_0F87F1: BNE .didnt_press_right_shoulder
 
-#_0F87F3: JMP .branch0F8741
+#_0F87F3: JMP .loop
 
-.branch0F87F6
+;---------------------------------------------------------------------------------------------------
+
+.didnt_press_right_shoulder
 #_0F87F6: LDA.w $0A12
 #_0F87F9: CLC
 #_0F87FA: ADC.w #$4000
 #_0F87FD: STA.w $0A12
-#_0F8800: JMP .branch0F8741
 
-.branch0F8803
+#_0F8800: JMP .loop
+
+;---------------------------------------------------------------------------------------------------
+
+.pressed_a
 #_0F8803: JSL LoadClassyMessage
+
 #_0F8807: RTL
 
-.branch0F8808
+;---------------------------------------------------------------------------------------------------
+
+.pressed_x
 #_0F8808: JSL DarkenScreen
 #_0F880C: JSL routine02C3FC
 #_0F8810: JSL BrightenScreen
+
 #_0F8814: JSL LoadClassyMessage
+
 #_0F8818: RTL
 
 ;===================================================================================================
 
 routine0F8819:
 #_0F8819: PHP
+
 #_0F881A: PHB
 #_0F881B: PHK
 #_0F881C: PLB
 
 #_0F881D: SEP #$20
-#_0F881F: LDA.w $0CF3
-#_0F8822: BEQ .branch0F8827
-#_0F8824: JMP .branch0F8833
 
-.branch0F8827
+#_0F881F: LDA.w $0CF3
+#_0F8822: BEQ .continue
+
+#_0F8824: JMP .exit
+
+.continue
 #_0F8827: LDA.b #$00
 #_0F8829: JSL routine02C10F_long
 
 #_0F882D: LDA.b #$00
 #_0F882F: JSL routine0F8836
 
-.branch0F8833
+.exit
 #_0F8833: PLB
+
 #_0F8834: PLP
 #_0F8835: RTL
 
@@ -1025,6 +1194,7 @@ routine0F8819:
 
 routine0F8836:
 #_0F8836: PHP
+
 #_0F8837: PHB
 #_0F8838: PHK
 #_0F8839: PLB
@@ -1032,6 +1202,7 @@ routine0F8836:
 #_0F883A: SEP #$30
 #_0F883C: STA.w $0E0E
 #_0F883F: STZ.w $0E0F
+
 #_0F8842: STZ.w $0A58
 
 #_0F8845: LDA.b #$80
@@ -1055,6 +1226,8 @@ routine0F8836:
 #_0F8868: JSL routine02F609
 #_0F886C: JSR routine0F8B94
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F886F: LDA.b #$60
 #_0F8871: STA.w OBSEL
 #_0F8874: STA.w $0F44
@@ -1069,10 +1242,10 @@ routine0F8836:
 #_0F8883: STA.w BG3SC
 
 #_0F8886: LDA.b #$14
-#_0F8888: STA.w MAINDES
+#_0F8888: STA.w TM
 
 #_0F888B: LDA.b #$04
-#_0F888D: STA.w SUBDES
+#_0F888D: STA.w TS
 
 #_0F8890: LDA.b #$02
 #_0F8892: STA.w CGWSEL
@@ -1092,7 +1265,10 @@ routine0F8836:
 #_0F88AD: LDA.b #$00
 #_0F88AF: JSL routine02FC6E
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F88B3: SEP #$20
+
 #_0F88B5: STZ.w BG3HOFS
 #_0F88B8: STZ.w BG3HOFS
 #_0F88BB: STZ.w BG3VOFS
@@ -1107,15 +1283,20 @@ routine0F8836:
 #_0F88CD: STA.w $0EFE
 
 #_0F88D0: SEP #$30
+
 #_0F88D2: STZ.w $09F3
 
-.branch0F88D5
+;---------------------------------------------------------------------------------------------------
+
+.loop
 #_0F88D5: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F88D9: SEP #$10
+
 #_0F88DB: LDY.w $09F3
 
 #_0F88DE: REP #$20
+
 #_0F88E0: LDA.w data0F89B1,Y
 #_0F88E3: AND.w #$00FF
 #_0F88E6: STA.w $1AA0
@@ -1137,16 +1318,19 @@ routine0F8836:
 
 #_0F8904: LDA.w $0F2B
 #_0F8907: BIT.w #$1080
-#_0F890A: BNE .branch0F892C
+#_0F890A: BNE .pressed_start_or_a
 
 #_0F890C: BIT.w #$8000
-#_0F890F: BEQ .branch0F8914
+#_0F890F: BEQ .didnt_press_b
 
-#_0F8911: JMP routine0F899D
+#_0F8911: JMP .branch0F899D
 
-.branch0F8914
+;---------------------------------------------------------------------------------------------------
+
+.didnt_press_b
+; test for select, up, down
 #_0F8914: BIT.w #$2C00
-#_0F8917: BEQ .branch0F88D5
+#_0F8917: BEQ .loop
 
 #_0F8919: SEP #$20
 
@@ -1157,20 +1341,28 @@ routine0F8836:
 #_0F8924: INC A
 #_0F8925: AND.b #$01
 #_0F8927: STA.w $09F3
-#_0F892A: BRA .branch0F88D5
 
-.branch0F892C
+#_0F892A: BRA .loop
+
+;---------------------------------------------------------------------------------------------------
+
+.pressed_start_or_a
 #_0F892C: LDA.w $09F3
 #_0F892F: STA.w $0E0C
+
 #_0F8932: JSL routine0F89B3
 
 #_0F8936: SEP #$20
+
 #_0F8938: LDA.w $0A58
 #_0F893B: BEQ .branch0F8946
 
 #_0F893D: LDA.w $0E02
 #_0F8940: STA.w $09F3
-#_0F8943: JMP .branch0F88D5
+
+#_0F8943: JMP .loop
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F8946
 #_0F8946: LDA.w $0E0E
@@ -1191,10 +1383,14 @@ routine0F8836:
 
 .branch0F8965
 #_0F8965: JSR routine0F8D97
-#_0F8968: JMP .branch0F88D5
+
+#_0F8968: JMP .loop
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F896B
 #_0F896B: PHP
+
 #_0F896C: JSL routine00D2C8_long
 
 #_0F8970: SEP #$20
@@ -1213,18 +1409,23 @@ routine0F8836:
 #_0F898A: JSL routine00D2C8_long
 
 #_0F898E: PLP
+
 #_0F898F: LDA.w $0E0C
 #_0F8992: JSL routine02D3F7
 
+;---------------------------------------------------------------------------------------------------
+
 .branch0F8996
 #_0F8996: JSL DarkenScreen
+
 #_0F899A: PLB
+
 #_0F899B: PLP
 #_0F899C: RTL
 
-;===================================================================================================
+;---------------------------------------------------------------------------------------------------
 
-routine0F899D:
+.branch0F899D
 #_0F899D: SEP #$20
 
 #_0F899F: LDA.b #$FF
@@ -1237,11 +1438,16 @@ routine0F899D:
 #_0F89AB: JSL Write_to_APU_transferrable
 #_0F89AF: BRA .branch0F8996
 
+;---------------------------------------------------------------------------------------------------
+
 data0F89B1:
 #_0F89B1: db $1F,$6F
 
+;===================================================================================================
+
 routine0F89B3:
 #_0F89B3: PHP
+
 #_0F89B4: PHB
 #_0F89B5: PHK
 #_0F89B6: PLB
@@ -1249,17 +1455,21 @@ routine0F89B3:
 #_0F89B7: JSL Reset_OAMrelatedWRAM
 
 #_0F89BB: SEP #$20
+
 #_0F89BD: LDA.b #$02 ; SFX 02
 #_0F89BF: JSL Write_to_APU_transferrable
+
 #_0F89C3: STZ.w $0A58
 
 #_0F89C6: REP #$30
+
 #_0F89C8: LDA.w $09F3
 #_0F89CB: AND.w #$00FF
 #_0F89CE: STA.w $0E02
 
 #_0F89D1: ASL A
 #_0F89D2: TAY
+
 #_0F89D3: LDA.w data0F8D8F,Y
 #_0F89D6: STA.w $0E00
 
@@ -1271,8 +1481,10 @@ routine0F89B3:
 .branch0F89DF
 #_0F89DF: LDA.w data0F8B02,Y
 #_0F89E2: STA.w $0106,X
+
 #_0F89E5: INX
 #_0F89E6: INX
+
 #_0F89E7: INY
 #_0F89E8: INY
 #_0F89E9: CPX.w #$0010
@@ -1295,29 +1507,36 @@ routine0F89B3:
 
 #_0F8A07: LDA.w #$0001
 #_0F8A0A: STA.w $0100
+
 #_0F8A0D: PHY
 #_0F8A0E: JSL AddSelfAsVectorAndMakeSpace
 #_0F8A12: PLY
+
 #_0F8A13: LDA.w $0E00
 #_0F8A16: CLC
 #_0F8A17: ADC.w #$0020
 #_0F8A1A: STA.w $0E00
+
 #_0F8A1D: CPY.w #$0080
 #_0F8A20: BNE .branch0F89DC
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F8A22: SEP #$30
 #_0F8A24: STZ.w $09F3
 
-.branch0F8A27
+.loop
 #_0F8A27: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F8A2B: SEP #$10
 #_0F8A2D: LDY.w $09F3
 
 #_0F8A30: REP #$20
+
 #_0F8A32: LDA.w data0F8B92,Y
 #_0F8A35: AND.w #$00FF
 #_0F8A38: STA.w $1AA0
+
 #_0F8A3B: LDA.w $0E02
 #_0F8A3E: BEQ .branch0F8A4A
 
@@ -1335,20 +1554,23 @@ routine0F89B3:
 #_0F8A56: STZ.w $0040
 
 #_0F8A59: SEP #$20
+
 #_0F8A5B: LDA.b #$80
 #_0F8A5D: STA.w $1A00
 #_0F8A60: STA.w $1A20
 
 #_0F8A63: REP #$20
+
 #_0F8A65: LDA.w $0F2B
 #_0F8A68: BIT.w #$1080
-#_0F8A6B: BNE .branch0F8A8A
+#_0F8A6B: BNE .pressed_start_or_a
 
 #_0F8A6D: BIT.w #$8000
-#_0F8A70: BNE .branch0F8A91
+#_0F8A70: BNE .pressed_b
 
+; test for select, up, down
 #_0F8A72: BIT.w #$2C00
-#_0F8A75: BEQ .branch0F8A27
+#_0F8A75: BEQ .loop
 
 #_0F8A77: SEP #$20
 
@@ -1360,14 +1582,17 @@ routine0F89B3:
 #_0F8A83: AND.b #$01
 #_0F8A85: STA.w $09F3
 
-#_0F8A88: BRA .branch0F8A27
+#_0F8A88: BRA .loop
 
-.branch0F8A8A
+;---------------------------------------------------------------------------------------------------
+
+.pressed_start_or_a
 #_0F8A8A: SEP #$20
+
 #_0F8A8C: LDA.w $09F3
 #_0F8A8F: BEQ .branch0F8A9E
 
-.branch0F8A91
+.pressed_b
 #_0F8A91: SEP #$20
 
 #_0F8A93: LDA.b #$FF
@@ -1385,18 +1610,23 @@ routine0F89B3:
 
 .branch0F8AAA
 #_0F8AAA: STA.w $0106,X
+
 #_0F8AAD: INX
 #_0F8AAE: INX
+
 #_0F8AAF: CPX.w #$0010
 #_0F8AB2: BNE .branch0F8AAA
 
 #_0F8AB4: LDY.w #$0006
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F8AB7
 #_0F8AB7: PHY
 
 #_0F8AB8: LDA.w #$0001
 #_0F8ABB: STA.w $0100
+
 #_0F8ABE: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F8AC2: LDA.w $0102
@@ -1408,15 +1638,20 @@ routine0F89B3:
 #_0F8ACD: DEY
 #_0F8ACE: BPL .branch0F8AB7
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F8AD0: LDX.w #$0000
 
 .branch0F8AD3
 #_0F8AD3: LDA.w data0F8B82,X
 #_0F8AD6: STA.w $0106,X
+
 #_0F8AD9: INX
 #_0F8ADA: INX
 #_0F8ADB: CPX.w #$0010
 #_0F8ADE: BNE .branch0F8AD3
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F8AE0: LDA.w $0E02
 #_0F8AE3: INC A
@@ -1425,17 +1660,20 @@ routine0F89B3:
 
 #_0F8AE8: LDA.w #$0001
 #_0F8AEB: STA.w $0100
+
 #_0F8AEE: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F8AF2: SEP #$20
+
 #_0F8AF4: LDA.w $0A58
-#_0F8AF7: BNE .branch0F8AFF
+#_0F8AF7: BNE .exit_silently
 
 #_0F8AF9: LDA.b #$02 ; SFX 02
 #_0F8AFB: JSL Write_to_APU_transferrable
 
-.branch0F8AFF
+.exit_silently
 #_0F8AFF: PLB
+
 #_0F8B00: PLP
 #_0F8B01: RTL
 
@@ -1465,16 +1703,19 @@ data0F8B82:
 data0F8B92:
 #_0F8B92: db $3F,$4F
 
+;===================================================================================================
+
 routine0F8B94:
 #_0F8B94: PHP
 #_0F8B95: REP #$30
-#_0F8B97: LDA.w #$3C43
+
+#_0F8B97: LDA.w #$3C43 ; $7886 in VRAM
 #_0F8B9A: STA.w VMADDL
 
-#_0F8B9D: LDA.w #$009E
+#_0F8B9D: LDA.w #$009E ; TODO dakuten?
 #_0F8BA0: STA.w VMDATAL
 
-#_0F8BA3: LDA.w #$3C63
+#_0F8BA3: LDA.w #$3C63 ; $78C6 in VRAM
 #_0F8BA6: STA.w VMADDL
 
 #_0F8BA9: LDA.w $0E0E
@@ -1483,18 +1724,23 @@ routine0F8B94:
 #_0F8BAE: ASL A
 #_0F8BAF: ASL A
 #_0F8BB0: TAX
+
 #_0F8BB1: LDY.w #$0000
 
-.branch0F8BB4
+.next_character
 #_0F8BB4: LDA.w SaveOrLoadPickText,X
 #_0F8BB7: AND.w #$00FF
 #_0F8BBA: STA.w VMDATAL
+
 #_0F8BBD: INX
 #_0F8BBE: INY
 #_0F8BBF: CPY.w #$0010
-#_0F8BC2: BNE .branch0F8BB4
+#_0F8BC2: BNE .next_character
 
 #_0F8BC4: JSR routine0F8E09
+
+;---------------------------------------------------------------------------------------------------
+
 #_0F8BC7: LDX.w #$0000
 #_0F8BCA: LDY.w #$0000
 
@@ -1839,12 +2085,17 @@ data0F8E02:
 
 routine0F8E09:
 #_0F8E09: REP #$30
+
 #_0F8E0B: LDA.w #$3CCA
 #_0F8E0E: STA.w $0E00
+
 #_0F8E11: JSR routine0F8E1E
+
 #_0F8E14: LDA.w #$3E0A
 #_0F8E17: STA.w $0E00
+
 #_0F8E1A: JSR routine0F8E1E
+
 #_0F8E1D: RTS
 
 ;===================================================================================================
@@ -1852,68 +2103,87 @@ routine0F8E09:
 routine0F8E1E:
 #_0F8E1E: LDX.w #$0000
 
-.branch0F8E21
+.next_chunk
 #_0F8E21: LDA.w $0E00
 #_0F8E24: STA.w VMADDL
+
 #_0F8E27: LDA.w data0F8E61,X
 #_0F8E2A: CMP.w #$FFFF
-#_0F8E2D: BNE .branch0F8E30
+#_0F8E2D: BNE .valid
 
 #_0F8E2F: RTS
 
-.branch0F8E30
-#_0F8E30: LDY.w data0F8E63,X
-#_0F8E33: JSR routine0F8E5A
-#_0F8E36: LDA.w data0F8E65,X
-#_0F8E39: LDY.w data0F8E67,X
-#_0F8E3C: JSR routine0F8E5A
-#_0F8E3F: LDA.w data0F8E69,X
-#_0F8E42: LDY.w data0F8E6B,X
-#_0F8E45: JSR routine0F8E5A
+.valid
+#_0F8E30: LDY.w data0F8E61+2,X
+#_0F8E33: JSR .transfer_y_copies
+
+#_0F8E36: LDA.w data0F8E61+4,X
+#_0F8E39: LDY.w data0F8E61+6,X
+#_0F8E3C: JSR .transfer_y_copies
+
+#_0F8E3F: LDA.w data0F8E61+8,X
+#_0F8E42: LDY.w data0F8E61+10,X
+#_0F8E45: JSR .transfer_y_copies
+
 #_0F8E48: LDA.w $0E00
 #_0F8E4B: CLC
 #_0F8E4C: ADC.w #$0020
 #_0F8E4F: STA.w $0E00
+
 #_0F8E52: TXA
 #_0F8E53: CLC
 #_0F8E54: ADC.w #$000C
 #_0F8E57: TAX
-#_0F8E58: BRA .branch0F8E21
 
-routine0F8E5A:
+#_0F8E58: BRA .next_chunk
+
+;===================================================================================================
+
+.transfer_y_copies
 #_0F8E5A: STA.w VMDATAL
+
 #_0F8E5D: DEY
-#_0F8E5E: BNE routine0F8E5A
+#_0F8E5E: BNE .transfer_y_copies
 
 #_0F8E60: RTS
 
+;---------------------------------------------------------------------------------------------------
+
+; groups of 3 sets of 4 bytes
 data0F8E61:
-#_0F8E61: dw $00D8
+#_0F8E61: dw $00D8, $0001
+#_0F8E65: dw $00D9, $0011
+#_0F8E69: dw $40D8, $0001
 
-data0F8E63:
-#_0F8E63: dw $0001
+#_0F8E6D: dw $00DA, $0001
+#_0F8E71: dw $00CF, $0011
+#_0F8E75: dw $40DA, $0001
 
-data0F8E65:
-#_0F8E65: dw $00D9
+#_0F8E79: dw $00DA, $0001
+#_0F8E7D: dw $00CF, $0011
+#_0F8E81: dw $40DA, $0001
 
-data0F8E67:
-#_0F8E67: dw $0011
+#_0F8E85: dw $00DA, $0001
+#_0F8E89: dw $00CF, $0011
+#_0F8E8D: dw $40DA, $0001
 
-data0F8E69:
-#_0F8E69: dw $40D8
+#_0F8E91: dw $00DA, $0001
+#_0F8E95: dw $00CF, $0011
+#_0F8E99: dw $40DA, $
 
-data0F8E6B:
-#_0F8E6B: dw $0001,$00DA,$0001,$00CF
-#_0F8E73: dw $0011,$40DA,$0001,$00DA
-#_0F8E7B: dw $0001,$00CF,$0011,$40DA
-#_0F8E83: dw $0001,$00DA,$0001,$00CF
-#_0F8E8B: dw $0011,$40DA,$0001,$00DA
-#_0F8E93: dw $0001,$00CF,$0011,$40DA
-#_0F8E9B: dw $0001,$00DA,$0001,$00CF
-#_0F8EA3: dw $0011,$40DA,$0001,$00DA
-#_0F8EAB: dw $0001,$00CF,$0011,$40DA
-#_0F8EB3: dw $0001,$80D8,$0001,$80D9
-#_0F8EBB: dw $0011,$C0D8,$0001,$FFFF
+#_0F8E9D: dw $00DA, $0001
+#_0F8EA1: dw $00CF, $0011
+#_0F8EA5: dw $40DA, $0001
+
+#_0F8EA9: dw $00DA, $0001
+#_0F8EAD: dw $00CF, $0011
+#_0F8EB1: dw $40DA, $0001
+
+#_0F8EB5: dw $80D8, $0001
+#_0F8EB9: dw $80D9, $0011
+#_0F8EBD: dw $C0D8, $0001
+
+#_0F8EC1: dw $FFFF
 
 ;===================================================================================================
 ; This takes a single input A and turns it into a game state check
@@ -1926,10 +2196,13 @@ data0F8E6B:
 TestGameProgressBit:
 #_0F8EC3: PHX
 #_0F8EC4: PHP
+
 #_0F8EC5: SEP #$30
+
 #_0F8EC7: PHA
 #_0F8EC8: AND.b #$07
 #_0F8ECA: TAY
+
 #_0F8ECB: PLA
 #_0F8ECC: LSR A
 #_0F8ECD: LSR A
@@ -1939,6 +2212,7 @@ TestGameProgressBit:
 #_0F8ED0: PHB
 #_0F8ED1: PHK
 #_0F8ED2: PLB
+
 #_0F8ED3: LDA.w $07C0,X
 #_0F8ED6: AND.w .bits,Y
 #_0F8ED9: BEQ .false
@@ -1946,19 +2220,25 @@ TestGameProgressBit:
 .true
 #_0F8EDB: PLB
 #_0F8EDC: PLP
+
 #_0F8EDD: PLX
+
 #_0F8EDE: SEC
+
 #_0F8EDF: RTL
 
 .false
 #_0F8EE0: PLB
 #_0F8EE1: PLP
+
 #_0F8EE2: PLX
+
 #_0F8EE3: CLC
+
 #_0F8EE4: RTL
 
 .bits
-#_0F8EE5: db $01,$02,$04,$08,$10,$20,$40,$80
+#_0F8EE5: db $01, $02, $04, $08, $10, $20, $40, $80
 
 ;===================================================================================================
 
@@ -1992,6 +2272,7 @@ WriteCharacterName:
 routine0F8F05:
 #_0F8F05: PHP
 #_0F8F06: SEP #$30
+
 #_0F8F08: LDA.b #$1C
 #_0F8F0A: JSL TestGameProgressBit
 #_0F8F0E: BCS .branch0F8F23
@@ -2006,11 +2287,13 @@ routine0F8F05:
 
 #_0F8F20: PLP
 #_0F8F21: SEC
+
 #_0F8F22: RTL
 
 .branch0F8F23
 #_0F8F23: PLP
 #_0F8F24: CLC
+
 #_0F8F25: RTL
 
 ;===================================================================================================
@@ -2018,6 +2301,7 @@ routine0F8F05:
 routine0F8F26:
 #_0F8F26: PHP
 #_0F8F27: SEP #$30
+
 #_0F8F29: JSL routine0F8F05
 #_0F8F2D: BCC .branch0F8F32
 
@@ -2032,102 +2316,119 @@ routine0F8F26:
 routine0F8F34:
 #_0F8F34: PHP
 #_0F8F35: REP #$30
+
 #_0F8F37: PHY
+
 #_0F8F38: JSL routine0F8F05
+
 #_0F8F3C: PLY
-#_0F8F3D: BCC .branch0F8F53
+#_0F8F3D: BCC .fail
 
 #_0F8F3F: LDA.w #$0134
 #_0F8F42: STA.w $098C,Y
+
 #_0F8F45: LDA.w #$0024
 #_0F8F48: STA.w $09AC,Y
+
 #_0F8F4B: LDA.w #$FFFF
 #_0F8F4E: STA.w $0C13,Y
+
 #_0F8F51: INY
 #_0F8F52: INY
 
-.branch0F8F53
+.fail
 #_0F8F53: PLP
 #_0F8F54: RTL
 
 ;===================================================================================================
-
+; TODO is this checking for pascal?
 routine0F8F55:
 #_0F8F55: PHP
 #_0F8F56: REP #$30
+
 #_0F8F58: LDA.w $0BED
 #_0F8F5B: CMP.w #$0134
-#_0F8F5E: BEQ .branch0F8F6B
+#_0F8F5E: BEQ .succeed
 
 #_0F8F60: LDA.w $0BEF
 #_0F8F63: CMP.w #$0134
-#_0F8F66: BEQ .branch0F8F6B
+#_0F8F66: BEQ .succeed
 
 #_0F8F68: PLP
 #_0F8F69: CLC
+
 #_0F8F6A: RTL
 
-.branch0F8F6B
+.succeed
 #_0F8F6B: LDA.w #$008B
 #_0F8F6E: STA.w $0C0B
+
 #_0F8F71: LDA.w #$0012
 #_0F8F74: STA.w $0C0D
+
 #_0F8F77: LDA.w #$0037
 #_0F8F7A: STA.w $0C0F
+
 #_0F8F7D: STZ.w $0C11
+
 #_0F8F80: PLP
 #_0F8F81: SEC
+
 #_0F8F82: RTL
 
 ;===================================================================================================
-
-routine0F8F83:
+; TODO related to above
+#routine0F8F83:
 #_0F8F83: PHP
 #_0F8F84: REP #$30
+
 #_0F8F86: LDA.w $0BED
 #_0F8F89: CMP.w #$0134
-#_0F8F8C: BEQ .branch0F8F6B
+#_0F8F8C: BEQ .succeed
 
 #_0F8F8E: LDA.w $0BEF
 #_0F8F91: CMP.w #$0134
-#_0F8F94: BEQ .branch0F8F6B
+#_0F8F94: BEQ .succeed
 
 #_0F8F96: LDA.w $0BF1
 #_0F8F99: CMP.w #$0134
-#_0F8F9C: BEQ .branch0F8F6B
+#_0F8F9C: BEQ .succeed
 
 #_0F8F9E: PLP
 #_0F8F9F: CLC
+
 #_0F8FA0: RTL
 
 ;===================================================================================================
-
+; TODO more pascal stuff?
 routine0F8FA1:
 #_0F8FA1: PHP
 #_0F8FA2: REP #$30
+
 #_0F8FA4: LDA.w $0BED
 #_0F8FA7: CMP.w #$0134
-#_0F8FAA: BEQ .branch0F8FC6
+#_0F8FAA: BEQ .succeed
 
 #_0F8FAC: LDA.w $0BEF
 #_0F8FAF: CMP.w #$0134
-#_0F8FB2: BEQ .branch0F8FC6
+#_0F8FB2: BEQ .succeed
 
 #_0F8FB4: LDA.w $0A3B
 #_0F8FB7: AND.w #$0001
-#_0F8FBA: BEQ .branch0F8FC4
+#_0F8FBA: BEQ .fail
 
 #_0F8FBC: LDA.w $0BF1
 #_0F8FBF: CMP.w #$0134
-#_0F8FC2: BEQ .branch0F8FC6
+#_0F8FC2: BEQ .succeed
 
-.branch0F8FC4
+.fail
 #_0F8FC4: PLP
 #_0F8FC5: RTL
 
-.branch0F8FC6
+.succeed
 #_0F8FC6: LDA.w #$001B
 #_0F8FC9: JSL SetGameProgressBit_long
+
 #_0F8FCD: PLP
 #_0F8FCE: RTL
 
@@ -2135,11 +2436,13 @@ routine0F8FA1:
 
 routine0F8FCF:
 #_0F8FCF: PHP
+
 #_0F8FD0: PHB
 #_0F8FD1: PHK
 #_0F8FD2: PLB
 
 #_0F8FD3: SEP #$30
+
 #_0F8FD5: LDA.w $07E1
 #_0F8FD8: ASL A
 #_0F8FD9: CLC
@@ -2147,9 +2450,11 @@ routine0F8FCF:
 #_0F8FDD: CLC
 #_0F8FDE: ADC.w $09F3
 #_0F8FE1: TAY
+
 #_0F8FE2: LDA.w $07E1
 #_0F8FE5: ASL A
 #_0F8FE6: TAX
+
 #_0F8FE7: LDA.w $040F
 #_0F8FEA: AND.b #$F0
 #_0F8FEC: CMP.w data0F9007,X
@@ -2160,6 +2465,7 @@ routine0F8FCF:
 
 .branch0F8FF6
 #_0F8FF6: LDA.w data0F9015,Y
+
 #_0F8FF9: BRA .branch9F8FFE
 
 .branch0F8FFB
@@ -2168,7 +2474,9 @@ routine0F8FCF:
 .branch9F8FFE
 #_0F8FFE: STA.w $0A50
 #_0F9001: STZ.w $0A51
+
 #_0F9004: PLB
+
 #_0F9005: PLP
 #_0F9006: RTL
 
@@ -2193,120 +2501,143 @@ data0F902A:
 
 routine0F903F:
 #_0F903F: REP #$30
+
 #_0F9041: LDA.w #$0000
 #_0F9044: JSL routine02E98E
+
 #_0F9048: LDY.w #$003C
 #_0F904B: JSL RunFramesYTimes
+
 #_0F904F: LDA.w #$0009 ; SFX 09
 #_0F9052: JSL Write_to_APU_transferrable
 
 #_0F9056: SEP #$20
+
 #_0F9058: LDA.b #$0F
 
-.branch0F905A
+.darken
 #_0F905A: STA.w INIDISP
 #_0F905D: STA.w $0F43
+
 #_0F9060: PHA
+
 #_0F9061: LDY.w #$0003
 #_0F9064: JSL RunFramesYTimes
+
 #_0F9068: PLA
 #_0F9069: DEC A
-#_0F906A: BPL .branch0F905A
+#_0F906A: BPL .darken
 
 #_0F906C: REP #$20
+
 #_0F906E: JSL GetNextTextByte_long
 #_0F9072: AND.w #$00FF
 #_0F9075: JSL routine0FE7FD
+
 #_0F9079: RTL
 
 ;===================================================================================================
 
-routine0F907A:
+CheckInventoryForCoolSwordOrVase:
 #_0F907A: REP #$30
+
 #_0F907C: JSL routine03E0C5_long
+
 #_0F9080: LDA.w $0B5F
 #_0F9083: CMP.w #$000C
-#_0F9086: BEQ .branch0F90B8
+#_0F9086: BEQ .dont_relocate
 
 #_0F9088: CMP.w #$000B
-#_0F908B: BNE .branch0F9096
+#_0F908B: BNE .dont_check_inventory
 
-#_0F908D: LDA.w #$00FC
+#_0F908D: LDA.w #$00FC ; belial's vase
 #_0F9090: JSL LookForItemInInventory
-#_0F9094: BCS .branch0F90B8
+#_0F9094: BCS .dont_relocate
 
-.branch0F9096
+.dont_check_inventory
 #_0F9096: SEP #$30
+
 #_0F9098: LDX.b #$00
 
-.branch0F909A
+.sword_swearch
 #_0F909A: LDA.w $0781,X
-#_0F909D: BEQ .branch0F90B2
+#_0F909D: BEQ .nothing_in_slot
 
 #_0F909F: LDA.w $0780,X
-#_0F90A2: CMP.b #$19
-#_0F90A4: BEQ .branch0F90BD
+#_0F90A2: CMP.b #$19 ; hina tsurugi's sword
+#_0F90A4: BEQ .have_valid_sword
 
-#_0F90A6: CMP.b #$1D
-#_0F90A8: BEQ .branch0F90BD
+#_0F90A6: CMP.b #$1D ; futsu-no-mitama
+#_0F90A8: BEQ .have_valid_sword
 
-#_0F90AA: CMP.b #$38
-#_0F90AC: BEQ .branch0F90BD
+#_0F90AA: CMP.b #$38 ; ame-no-murakumo
+#_0F90AC: BEQ .have_valid_sword
 
-#_0F90AE: CMP.b #$2A
-#_0F90B0: BEQ .branch0F90BD
+#_0F90AE: CMP.b #$2A ; renki-no-ken
+#_0F90B0: BEQ .have_valid_sword
 
-.branch0F90B2
+.nothing_in_slot
 #_0F90B2: INX
 #_0F90B3: INX
 #_0F90B4: CPX.b #$3C
-#_0F90B6: BNE .branch0F909A
+#_0F90B6: BNE .sword_swearch
 
-.branch0F90B8
+;---------------------------------------------------------------------------------------------------
+
+.dont_relocate
 #_0F90B8: JSL GetNextTextByte_long
 #_0F90BC: RTL
 
-.branch0F90BD
+.have_valid_sword
 #_0F90BD: JSL GetNextTextByte_long
 #_0F90C1: JSL RelocateTextPointer_long
+
 #_0F90C5: RTL
 
 ;===================================================================================================
 
 routine0F90C6:
 #_0F90C6: SEP #$20
+
 #_0F90C8: STZ.w $0A58
+
 #_0F90CB: JSL routine03FB45
 
 #_0F90CF: SEP #$20
+
 #_0F90D1: LDA.w $0A58
-#_0F90D4: BEQ .branch0F90E3
+#_0F90D4: BEQ .clear_value_that_is_obviously_already_zero
 
 #_0F90D6: CMP.b #$FF
-#_0F90D8: BEQ .branch0F90E6
+#_0F90D8: BEQ .dont_relocate
 
 #_0F90DA: JSL GetNextTextByte_long
 #_0F90DE: JSL RelocateTextPointer_long
+
 #_0F90E2: RTL
 
-.branch0F90E3
+.clear_value_that_is_obviously_already_zero
 #_0F90E3: STZ.w $0A58
 
-.branch0F90E6
+.dont_relocate
 #_0F90E6: JSL GetNextTextByte_long
+
 #_0F90EA: RTL
 
 ;===================================================================================================
 
 routine0F90EB:
 #_0F90EB: PHP
+
 #_0F90EC: PHB
 #_0F90ED: PHK
 #_0F90EE: PLB
 
 #_0F90EF: SEP #$30
+
 #_0F90F1: LDA.w $0A50
 #_0F90F4: PHA
+
 #_0F90F5: LDX.b #$00
 
 .branch0F90F7
@@ -2337,6 +2668,7 @@ routine0F90EB:
 #_0F9124: BNE .branch0F913B
 
 #_0F9126: REP #$30
+
 #_0F9128: LDA.w $0BEF
 #_0F912B: CMP.w #$0109
 #_0F912E: BEQ .branch0F9152
@@ -2346,6 +2678,8 @@ routine0F90EB:
 #_0F9138: PLB
 #_0F9139: PLP
 #_0F913A: RTL
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F913B
 #_0F913B: REP #$30
@@ -2380,37 +2714,54 @@ data0F9167:
 ;===================================================================================================
 routine0F916F:
 #_0F916F: SEP #$30
+
 #_0F9171: LDA.w $0A3D
 #_0F9174: PHA
+
 #_0F9175: JSL TextCommand_2A_long
+
 #_0F9179: JSL GetNextTextByte_long
 #_0F917D: STA.w $0E00
 
 #_0F9180: REP #$30
+
 #_0F9182: LDA.w $0A22
 #_0F9185: PHA
+
 #_0F9186: LDA.w $0A24
 #_0F9189: PHA
+
 #_0F918A: LDA.w $0A26
 #_0F918D: PHA
+
 #_0F918E: LDA.w $00C2
 #_0F9191: PHA
+
 #_0F9192: LDA.w $00C0
 #_0F9195: PHA
+
 #_0F9196: JSR routine0F922C
 
 #_0F9199: SEP #$30
+
 #_0F919B: LDA.b #$1E
 #_0F919D: STA.w $0F74
-#_0F91A0: STA.w MAINDES
+#_0F91A0: STA.w TM
+
 #_0F91A3: LDA.b #$00
 #_0F91A5: JSL ClearSomeBank7FBuffers
+
 #_0F91A9: LDA.b #$00
 #_0F91AB: JSL VRAM_From_7FXXXX
+
 #_0F91AF: JSL AddSelfAsVectorAndMakeSpace
+
+;---------------------------------------------------------------------------------------------------
+
 #_0F91B3: LDA.w $0EEF
 #_0F91B6: PHA
 #_0F91B7: PHP
+
 #_0F91B8: LDA.w $0E00
 #_0F91BB: BNE .branch0F91C3
 
@@ -2422,123 +2773,157 @@ routine0F916F:
 
 .branch0F91C7
 #_0F91C7: PLP
+
 #_0F91C8: PLA
 #_0F91C9: STA.w $0EEF
+
 #_0F91CC: JSR routine0F92A6
-#_0F91CF: LDA.w #$8D1F
-#_0F91D2: STZ.b $0F,X
-#_0F91D4: STA.w MAINDES
+
+#_0F91CF: LDA.b #$1F
+#_0F91D1: STA.w $0F74
+#_0F91D4: STA.w TM
+
 #_0F91D7: JSL routine0F945E
 #_0F91DB: JSL UpdateDialogBox
-#_0F91DF: LDA.w #$8D07
-#_0F91E2: ROL A
-#_0F91E3: ASL A
+
+#_0F91DF: LDA.b #$07
+#_0F91E1: STA.w $0A2A
+
 #_0F91E4: JSL InitializeTextBoxToSizeForNewMessage
 #_0F91E8: JSL routine00A056
 
 #_0F91EC: REP #$20
+
 #_0F91EE: LDA.w #$0018
 #_0F91F1: STA.w $0A1E
+
 #_0F91F4: LDA.w #$000C
 #_0F91F7: STA.w $0A20
+
 #_0F91FA: LDA.w #$0002
 #_0F91FD: STA.w $0A1C
+
 #_0F9200: LDA.w #$3DC4
 #_0F9203: STA.w $0A1A
+
 #_0F9206: STA.w $0980
+
 #_0F9209: STZ.w $0A33
+
+;---------------------------------------------------------------------------------------------------
+
 #_0F920C: PLA
 #_0F920D: STA.w $00C0
+
 #_0F9210: PLA
 #_0F9211: STA.w $00C2
+
 #_0F9214: PLA
 #_0F9215: STA.w $0A26
+
 #_0F9218: PLA
 #_0F9219: STA.w $0A24
+
 #_0F921C: PLA
 #_0F921D: STA.w $0A22
 
 #_0F9220: SEP #$20
+
 #_0F9222: PLA
 #_0F9223: STA.w $0A3D
+
 #_0F9226: LDA.b #$01
 #_0F9228: STA.w $0A18
+
 #_0F922B: RTL
 
 ;===================================================================================================
 
 routine0F922C:
 #_0F922C: PHP
+
 #_0F922D: PHB
 #_0F922E: PHK
 #_0F922F: PLB
 
 #_0F9230: REP #$30
+
 #_0F9232: LDX.w #$0000
 
-.branch0F9235
-#_0F9235: LDA.w data0F928C,X
+.next_chunk
+#_0F9235: LDA.w data0F928C+0,X
 #_0F9238: CMP.w #$FFFF
-#_0F923B: BEQ .branch0F9271
+#_0F923B: BEQ .end_of_chunks
 
 #_0F923D: STA.w $00D0
-#_0F9240: LDA.w data0F928E,X
+
+#_0F9240: LDA.w data0F928C+2,X
 #_0F9243: STA.w $00D2
-#_0F9246: LDA.w data0F9290,X
+
+#_0F9246: LDA.w data0F928C+4,X
 #_0F9249: STA.w $0E0E
-#_0F924C: LDA.w data0F9292,X
+
+#_0F924C: LDA.w data0F928C+6,X
 #_0F924F: STA.w $00D4
+
 #_0F9252: LDA.w #$007E
 #_0F9255: STA.w $00D6
 
 #_0F9258: SEP #$20
+
 #_0F925A: LDY.w #$0000
 
-.branch0F925D
+.copy_next
 #_0F925D: LDA.b [$D0],Y
 #_0F925F: STA.b [$D4],Y
+
 #_0F9261: INY
 #_0F9262: CPY.w $0E0E
-#_0F9265: BNE .branch0F925D
+#_0F9265: BNE .copy_next
 
 #_0F9267: REP #$20
+
 #_0F9269: TXA
 #_0F926A: CLC
 #_0F926B: ADC.w #$0008
 #_0F926E: TAX
-#_0F926F: BRA .branch0F9235
 
-.branch0F9271
+#_0F926F: BRA .next_chunk
+
+;---------------------------------------------------------------------------------------------------
+
+.end_of_chunks
 #_0F9271: JSL routine02E835
 
 #_0F9275: REP #$30
+
 #_0F9277: LDX.w #$0000
 
-.branch0F927a
+.copy_next_cgram
 #_0F927A: LDA.l $7E2500,X
 #_0F927E: STA.l $7E9800,X
+
 #_0F9282: INX
 #_0F9283: INX
 #_0F9284: CPX.w #$0200
-#_0F9287: BNE .branch0F927a
+#_0F9287: BNE .copy_next_cgram
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F9289: PLB
+
 #_0F928A: PLP
 #_0F928B: RTS
 
+;===================================================================================================
+
 data0F928C:
-#_0F928C: dw $2000
+#_0F928C: dd $7E2000 : dw $0220, $7E8000
+#_0F9294: dd $000000 : dw $0080, $7E8800
+#_0F929C: dd $001A00 : dw $02C0, $7E9000
+#_0F92A4: dw $FFFF
 
-data0F928E:
-#_0F928E: dw $007E
-
-data0F9290:
-#_0F9290: dw $0220
-
-data0F9292:
-#_0F9292: dw $8000,$0000,$0000,$0080
-#_0F929A: dw $8800,$1A00,$0000,$02C0
-#_0F92A2: dw $9000,$FFFF
+;===================================================================================================
 
 routine0F92A6:
 #_0F92A6: PHP
@@ -2547,78 +2932,103 @@ routine0F92A6:
 #_0F92A9: PLB
 
 #_0F92AA: SEP #$30
+
 #_0F92AC: LDA.b #$00
 #_0F92AE: STZ.w $0F09
+
 #_0F92B1: LDA.b #$00
 #_0F92B3: STA.w DMA1MODE
-#_0F92B6: LDA.b #$22
+
+#_0F92B6: LDA.b #CGDATA
 #_0F92B8: STA.w DMA1PORT
-#_0F92BB: LDA.b #$00
+
+#_0F92BB: LDA.b #$7E9800>>0
 #_0F92BD: STA.w DMA1ADDRL
-#_0F92C0: LDA.b #$98
+#_0F92C0: LDA.b #$7E9800>>8
 #_0F92C2: STA.w DMA1ADDRH
-#_0F92C5: LDA.b #$7E
+#_0F92C5: LDA.b #$7E9800>>16
 #_0F92C7: STA.w DMA1ADDRB
+
+; $0200
 #_0F92CA: LDA.b #$00
 #_0F92CC: STA.w DMA1SIZEL
 #_0F92CF: LDA.b #$02
 #_0F92D1: STA.w DMA1SIZEH
+
 #_0F92D4: LDA.b #$02
 #_0F92D6: ORA.w $0F06
 #_0F92D9: STA.w $0F06
+
 #_0F92DC: JSL AddSelfAsVectorAndMakeSpace
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F92E0: REP #$30
+
 #_0F92E2: LDX.w #$0000
 
-.branch0F92E5
-#_0F92E5: LDA.w data0F928C,X
+.next_chunk
+#_0F92E5: LDA.w data0F928C+0,X
 #_0F92E8: CMP.w #$FFFF
-#_0F92EB: BEQ .branch0F9321
+#_0F92EB: BEQ .end_of_chunks
 
 #_0F92ED: STA.w $00D4
-#_0F92F0: LDA.w data0F928E,X
+
+#_0F92F0: LDA.w data0F928C+2,X
 #_0F92F3: STA.w $00D6
-#_0F92F6: LDA.w data0F9290,X
+
+#_0F92F6: LDA.w data0F928C+4,X
 #_0F92F9: STA.w $0E0E
-#_0F92FC: LDA.w data0F9292,X
+
+#_0F92FC: LDA.w data0F928C+6,X
 #_0F92FF: STA.w $00D0
+
 #_0F9302: LDA.w #$007E
 #_0F9305: STA.w $00D2
 
 #_0F9308: SEP #$20
 #_0F930A: LDY.w #$0000
 
-.branch0F930D
+.copy_next
 #_0F930D: LDA.b [$D0],Y
 #_0F930F: STA.b [$D4],Y
 #_0F9311: INY
 #_0F9312: CPY.w $0E0E
-#_0F9315: BNE .branch0F930D
+#_0F9315: BNE .copy_next
 
 #_0F9317: REP #$20
+
 #_0F9319: TXA
 #_0F931A: CLC
 #_0F931B: ADC.w #$0008
 #_0F931E: TAX
-#_0F931F: BRA .branch0F92E5
 
-.branch0F9321
+#_0F931F: BRA .next_chunk
+
+;---------------------------------------------------------------------------------------------------
+
+.end_of_chunks
 #_0F9321: SEP #$30
+
 #_0F9323: LDA.w $0EEF
-#_0F9326: BEQ .branch0F9335
+#_0F9326: BEQ .no_wait
 
 #_0F9328: JSL routine02E32D
+
 #_0F932C: JSL AddSelfAsVectorAndMakeSpace
+
 #_0F9330: LDA.b #$FF
 #_0F9332: STA.w $0EEF
 
-.branch0F9335
+.no_wait
 #_0F9335: SEP #$20
+
 #_0F9337: LDA.b #$1F
-#_0F9339: STA.w MAINDES
+#_0F9339: STA.w TM
 #_0F933C: STA.w $0F74
+
 #_0F933F: PLB
+
 #_0F9340: PLP
 #_0F9341: RTS
 
@@ -2627,41 +3037,50 @@ routine0F92A6:
 routine0F9342:
 #_0F9342: PHP
 #_0F9343: SEP #$20
+
 #_0F9345: LDA.w $0F74
 #_0F9348: CMP.b #$14
-#_0F934A: BEQ .branch0F939A
+#_0F934A: BEQ .exit
 
 #_0F934C: JSL routine02E835
 #_0F9350: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F9354: SEP #$30
+
 #_0F9356: LDA.b #$FF
 #_0F9358: STA.w $0A71
+
 #_0F935B: LDA.b #$1F
 #_0F935D: STA.w $0F74
-#_0F9360: STA.w MAINDES
+#_0F9360: STA.w TM
+
 #_0F9363: LDA.b #$43
 #_0F9365: STA.w $0F4B
 #_0F9368: STA.w BG12NBA
+
 #_0F936B: LDA.b #$38
 #_0F936D: STA.w BG1SC
 #_0F9370: STA.w $0F47
+
 #_0F9373: LDA.b #$00
 #_0F9375: JSL routine02FC6E
 
 #_0F9379: REP #$20
+
 #_0F937B: LDA.w #$FFFF
 #_0F937E: STA.w $0A99
 #_0F9381: STA.w $0A9A
 #_0F9384: STA.w $0A9B
 #_0F9387: STA.w $0A9C
+
 #_0F938A: STZ.w $0A95
 #_0F938D: STZ.w $0A96
 #_0F9390: STZ.w $0A97
 #_0F9393: STZ.w $0A98
+
 #_0F9396: JSL routine0F9493
 
-.branch0F939A
+.exit
 #_0F939A: PLP
 #_0F939B: RTL
 
@@ -2673,84 +3092,112 @@ routine0F939C:
 #_0F93A1: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F93A5: SEP #$30
+
 #_0F93A7: LDA.b #$FF
 #_0F93A9: STA.w $0A71
+
 #_0F93AC: LDA.w $0EEF
 #_0F93AF: AND.b #$0C
 #_0F93B1: CMP.b #$08
-#_0F93B3: BEQ routine0F9414
+#_0F93B3: BEQ .branch0F9414
 
 #_0F93B5: LDX.b #$00
 #_0F93B7: LDY.b #$01
 #_0F93B9: JSL GraduallyFadeStuff
+
 #_0F93BD: LDA.b #$FF
 #_0F93BF: STA.w $0EEF
+
 #_0F93C2: LDA.b #$43
 #_0F93C4: STA.w $0F4B
 #_0F93C7: STA.w BG12NBA
+
 #_0F93CA: LDA.b #$38
 #_0F93CC: STA.w BG1SC
 #_0F93CF: STA.w $0F47
+
+;---------------------------------------------------------------------------------------------------
+
 #_0F93D2: LDA.b #$00
 #_0F93D4: JSL ClearSomeBank7FBuffers
+
 #_0F93D8: LDA.b #$00
 #_0F93DA: JSL VRAM_From_7FXXXX
 #_0F93DE: JSL AddSelfAsVectorAndMakeSpace
+
 #_0F93E2: LDA.b #$01
 #_0F93E4: JSL ClearSomeBank7FBuffers
+
 #_0F93E8: LDA.b #$01
 #_0F93EA: JSL VRAM_From_7FXXXX
 #_0F93EE: JSL AddSelfAsVectorAndMakeSpace
 
-.branch0F93F2
+;---------------------------------------------------------------------------------------------------
+
+.clean_up
 #_0F93F2: REP #$20
+
 #_0F93F4: LDA.w #$FFFF
 #_0F93F7: STA.w $0A99
 #_0F93FA: STA.w $0A9A
 #_0F93FD: STA.w $0A9B
 #_0F9400: STA.w $0A9C
+
 #_0F9403: STZ.w $0A95
 #_0F9406: STZ.w $0A96
 #_0F9409: STZ.w $0A97
 #_0F940C: STZ.w $0A98
 #_0F940F: STZ.w $0F4F
+
 #_0F9412: PLP
 #_0F9413: RTL
 
-;===================================================================================================
+;---------------------------------------------------------------------------------------------------
 
-routine0F9414:
+.branch0F9414
 #_0F9414: SEP #$20
+
 #_0F9416: LDA.w $0F74
 #_0F9419: AND.b #$FE
 #_0F941B: STA.w $0F74
-#_0F941E: STA.w MAINDES
+#_0F941E: STA.w TM
+
 #_0F9421: LDA.b #$02
 #_0F9423: STA.w $0F76
-#_0F9426: STA.w SUBDES
+#_0F9426: STA.w TS
+
 #_0F9429: LDA.b #$43
 #_0F942B: STA.w $0F4B
 #_0F942E: STA.w BG12NBA
+
 #_0F9431: LDA.b #$38
 #_0F9433: STA.w BG1SC
 #_0F9436: STA.w $0F47
+
 #_0F9439: LDA.b #$00
 #_0F943B: JSL ClearSomeBank7FBuffers
+
 #_0F943F: LDA.b #$00
 #_0F9441: JSL VRAM_From_7FXXXX
 #_0F9445: JSL AddSelfAsVectorAndMakeSpace
+
 #_0F9449: LDA.w $0F74
 #_0F944C: ORA.b #$01
 #_0F944E: STA.w $0F74
-#_0F9451: STA.w MAINDES
+#_0F9451: STA.w TM
+
 #_0F9454: LDA.b #$03
 #_0F9456: STA.w $0F76
-#_0F9459: STA.w SUBDES
-#_0F945C: BRA .branch0F93F2
+#_0F9459: STA.w TS
+
+#_0F945C: BRA .clean_up
+
+;===================================================================================================
 
 routine0F945E:
 #_0F945E: PHP
 #_0F945F: SEP #$20
+
 #_0F9461: LDA.w $0404
 #_0F9464: BEQ .branch0F946F
 
@@ -2761,21 +3208,24 @@ routine0F945E:
 
 .branch0F946F
 #_0F946F: REP #$20
+
 #_0F9471: LDA.w $1A74
 #_0F9474: CMP.w #$0010
-#_0F9477: BEQ .branch0F9484
+#_0F9477: BEQ .no_menu
 
 #_0F9479: SEP #$30
 #_0F947B: LDA.w $0A18
-#_0F947E: BNE .branch0F9484
+#_0F947E: BNE .no_menu
 
-#_0F9480: JSL routine0181B7
+#_0F9480: JSL TriggerMenuGrow
 
-.branch0F9484
+.no_menu
 #_0F9484: LDA.b #$01
 #_0F9486: STA.w $0A18
-#_0F9489: JSL routine009F56
-#_0F948D: JSL routine009FDE
+
+#_0F9489: JSL WriteMoneyToHUD
+#_0F948D: JSL WriteMAGToHUD
+
 #_0F9491: PLP
 #_0F9492: RTL
 
@@ -2784,19 +3234,22 @@ routine0F945E:
 routine0F9493:
 #_0F9493: PHP
 #_0F9494: REP #$20
+
 #_0F9496: LDA.w $1A74
 #_0F9499: CMP.w #$0010
-#_0F949C: BNE .branch0F94AD
+#_0F949C: BNE .no_menu
 
 #_0F949E: SEP #$20
-#_0F94A0: LDA.w $0A18
-#_0F94A3: BEQ .branch0F94AD
 
-#_0F94A5: JSL routine0181AF
+#_0F94A0: LDA.w $0A18
+#_0F94A3: BEQ .no_menu
+
+#_0F94A5: JSL TriggerMenuShrink
 #_0F94A9: JSL BringUpAMenu
 
-.branch0F94AD
+.no_menu
 #_0F94AD: STZ.w $0A18
+
 #_0F94B0: PLP
 #_0F94B1: RTL
 
@@ -2804,42 +3257,56 @@ routine0F9493:
 
 routine0F94B2:
 #_0F94B2: PHP
+
 #_0F94B3: PHB
 #_0F94B4: PHK
 #_0F94B5: PLB
 
 #_0F94B6: SEP #$20
+
 #_0F94B8: STA.w $098D
+
 #_0F94BB: PHA
+
 #_0F94BC: STY.w $098C
 
 #_0F94BF: REP #$20
+
 #_0F94C1: LDX.b #$30
 #_0F94C3: LDA.w #$20CF
 
-.branch0F94C6
+.clear_next
 #_0F94C6: STA.w $0900,X
 #_0F94C9: STA.w $0940,X
 #_0F94CC: DEX
 #_0F94CD: DEX
-#_0F94CE: BPL .branch0F94C6
+#_0F94CE: BPL .clear_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F94D0: SEP #$20
+
 #_0F94D2: STZ.w $0A33
+
 #_0F94D5: LDA.b #$CF
-#_0F94D7: JSL routine0385C8
-#_0F94DB: LDA.b #$09
+#_0F94D7: JSL WriteSingleCharacterTo0900
+
+#_0F94DB: LDA.b #ItemNamePointers>>16
 #_0F94DD: STA.w $00C5
+
 #_0F94E0: PLA
 
 #_0F94E1: REP #$20
+
 #_0F94E3: AND.w #$00FF
 #_0F94E6: STA.w $0A39
+
 #_0F94E9: LDA.w #ItemNamePointers
 #_0F94EC: STA.w $00C3
 #_0F94EF: JSL WriteTextIndexW0A39_long
 
 #_0F94F3: SEP #$30
+
 #_0F94F5: LDA.w $0A2D
 #_0F94F8: CMP.b #$E3
 #_0F94FA: BNE .branch0F9542
@@ -2847,18 +3314,18 @@ routine0F94B2:
 #_0F94FC: LDA.b #$14
 #_0F94FE: STA.w $0A33
 #_0F9501: LDA.b #$22
-#_0F9503: JSL routine0385C8
+#_0F9503: JSL WriteSingleCharacterTo0900
 #_0F9507: LDY.w $098C
 #_0F950A: LDA.w $098E,Y
 #_0F950D: PHA
 #_0F950E: AND.b #$0F
 #_0F9510: INC A
-#_0F9511: JSL routine0385C8
+#_0F9511: JSL WriteSingleCharacterTo0900
 #_0F9515: LDA.b #$CF
-#_0F9517: JSL routine0385C8
+#_0F9517: JSL WriteSingleCharacterTo0900
 #_0F951B: PLA
 #_0F951C: AND.b #$F0
-#_0F951E: BEQ .branch0F953B
+#_0F951E: BEQ .exit
 
 #_0F9520: PHA
 #_0F9521: LSR A
@@ -2868,25 +3335,33 @@ routine0F94B2:
 #_0F9525: DEC A
 #_0F9526: TAY
 #_0F9527: LDA.w data0F953E,Y
-#_0F952A: JSL routine0385C8
+#_0F952A: JSL WriteSingleCharacterTo0900
 #_0F952E: PLA
 #_0F952F: SEC
 #_0F9530: SBC.b #$10
 #_0F9532: LSR A
 #_0F9533: TAY
+
 #_0F9534: LDA.w $0410,Y
 #_0F9537: JSL WriteNextMessageChar
 
-.branch0F953B
+.exit
 #_0F953B: PLB
+
 #_0F953C: PLP
 #_0F953D: RTL
 
 data0F953E:
-#_0F953E: db $A1,$9D,$A1,$A1
+#_0F953E: db $A1
+#_0F953F: db $9D
+#_0F9540: db $A1
+#_0F9541: db $A1
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F9542
 #_0F9542: REP #$30
+
 #_0F9544: LDA.w $098D
 #_0F9547: AND.w #$00FF
 #_0F954A: CMP.w #$00B0
@@ -2899,6 +3374,7 @@ data0F953E:
 #_0F9555: CLC
 #_0F9556: ADC.w $0E00
 #_0F9559: TAX
+
 #_0F955A: LDA.l EquipmentStats,X
 #_0F955E: STA.w $0E00
 
@@ -2910,7 +3386,7 @@ data0F953E:
 #_0F956D: BEQ .no_boys_allowed
 
 #_0F956F: LDA.w #$00A1
-#_0F9572: JSL routine0385C8
+#_0F9572: JSL WriteSingleCharacterTo0900
 
 .no_boys_allowed
 #_0F9576: LDA.w $0E00
@@ -2918,7 +3394,7 @@ data0F953E:
 #_0F957C: BEQ .no_girls_allowed
 
 #_0F957E: LDA.w #$009D
-#_0F9581: JSL routine0385C8
+#_0F9581: JSL WriteSingleCharacterTo0900
 
 .no_girls_allowed
 #_0F9585: LDA.w #$001A
@@ -2929,22 +3405,24 @@ data0F953E:
 #_0F9591: TAY
 
 #_0F9592: LDA.w EquipmentAlignmentLetters,Y
-#_0F9595: JSL routine0385C8
+#_0F9595: JSL WriteSingleCharacterTo0900
 
 .branch0F9599
 #_0F9599: PLB
 #_0F959A: PLP
 #_0F959B: RTL
 
+;===================================================================================================
+
 EquipmentAlignmentLetters:
-#_0F959C: db $CF ; 000 - 
-#_0F959D: db $16 ; 001 - L
-#_0F959E: db $18 ; 010 - N
-#_0F959F: db $CF ; 011 - 
-#_0F95A0: db $0D ; 100 - C
-#_0F95A1: db $CF ; 101 - 
-#_0F95A2: db $CF ; 110 - 
-#_0F95A3: db $0B ; 111 - A
+#_0F959C: db $CF ; 000 - " "
+#_0F959D: db $16 ; 001 - "L"
+#_0F959E: db $18 ; 010 - "N"
+#_0F959F: db $CF ; 011 - " "
+#_0F95A0: db $0D ; 100 - "C"
+#_0F95A1: db $CF ; 101 - " "
+#_0F95A2: db $CF ; 110 - " "
+#_0F95A3: db $0B ; 111 - "A"
 
 ;===================================================================================================
 
@@ -3149,7 +3627,7 @@ routine0F9696:
 #_0F96C2: BNE .branch0F96B7
 
 #_0F96C4: LDA.w data0F96DE,Y
-#_0F96C7: JSL routine0385C8
+#_0F96C7: JSL WriteSingleCharacterTo0900
 #_0F96CB: JSL routine0384F9_long
 #_0F96CF: JSL RunFramesUntil0100IsFlagged
 #_0F96D3: JSL Update19XXUntilInput
@@ -3835,7 +4313,9 @@ routine0F9B47:
 
 routine0F9B8A:
 #_0F9B8A: REP #$30
+
 #_0F9B8C: LDY.w #$0002
+
 #_0F9B8F: LDA.w $0A3B
 #_0F9B92: AND.w #$0001
 #_0F9B95: BEQ .branch0F9B9A
@@ -4030,7 +4510,7 @@ routine0F9C77:
 #_0F9D01: JSL routine02CBD1
 #_0F9D05: LDA.b #$1F
 #_0F9D07: STA.w $0F74
-#_0F9D0A: STA.w MAINDES
+#_0F9D0A: STA.w TM
 #_0F9D0D: JSL BrightenScreen
 #_0F9D11: JSL routine00A17E
 #_0F9D15: JSL routine00C7AA
@@ -4123,7 +4603,7 @@ routine0F9D99:
 #_0F9D99: SEP #$20
 #_0F9D9B: LDA.b #$16
 #_0F9D9D: STA.w $0F74
-#_0F9DA0: STA.w MAINDES
+#_0F9DA0: STA.w TM
 #_0F9DA3: LDA.b #$02
 #_0F9DA5: STA.w $0A3B
 
@@ -4192,7 +4672,7 @@ routine0F9D99:
 #_0F9E2B: SEP #$30
 #_0F9E2D: LDA.b #$10
 #_0F9E2F: STA.w $0F76
-#_0F9E32: STA.w SUBDES
+#_0F9E32: STA.w TS
 #_0F9E35: LDA.b #$04
 #_0F9E37: STA.w $0F7B
 #_0F9E3A: STA.w CGADSUB
@@ -4405,6 +4885,7 @@ ClampMoneyAndMAG:
 #_0F9F9A: PLB
 
 #_0F9F9B: REP #$30
+
 #_0F9F9D: LDA.w $0407
 #_0F9FA0: BPL .moneypositive
 
@@ -4413,20 +4894,20 @@ ClampMoneyAndMAG:
 #_0F9FA8: BRA .clipMAG
 
 .moneypositive
-#_0F9FAA: CMP.w #1000000>>16 ; 0xF
+#_0F9FAA: CMP.w #$0F ; 1,000,000>>16
 #_0F9FAD: BCC .clipMAG
 #_0F9FAF: BCS .toomuchmoney
 
 ; unreachable code
-; anything 983040 or above will become 999999
+; anything 983,040 or above will become 999,999
 #_0F9FB1: LDA.w $0405
-#_0F9FB4: CMP.w #1000000>>0 ; 0x4240
+#_0F9FB4: CMP.w #$4240 ; 1,000,000 & 0xFFFF
 #_0F9FB7: BCC .clipMAG
 
 .toomuchmoney
-#_0F9FB9: LDA.w #999999>>16 ; 0xF
+#_0F9FB9: LDA.w #$0F ; 999,999>>16
 #_0F9FBC: STA.w $0407
-#_0F9FBF: LDA.w #999999>>0 ; 0x423F
+#_0F9FBF: LDA.w #$423F ; 999,999 & 0xFFFF
 #_0F9FC2: STA.w $0405
 
 .clipMAG
@@ -4441,51 +4922,60 @@ ClampMoneyAndMAG:
 #_0F9FD2: LDA.w $040B
 #_0F9FD5: BEQ .done
 
-#_0F9FD7: CMP.w #100000>>16 ; 0x01
+#_0F9FD7: CMP.w #$01 ; 100,000>>16
 #_0F9FDA: BNE .checkmaglow
 
 #_0F9FDC: LDA.w $0409
-#_0F9FDF: CMP.w #100000>>0 ; 0x86A0
+#_0F9FDF: CMP.w #$86A0 ; 100,000 & 0xFFFF
 #_0F9FE2: BCC .done
 
 .checkmaglow
-#_0F9FE4: LDA.w #99999>>16 ; 0x1
+#_0F9FE4: LDA.w #$01 ; 99,999>>16
 #_0F9FE7: STA.w $0407
-#_0F9FEA: LDA.w #99999>>0 ; 0x869F
+#_0F9FEA: LDA.w #$869F ; 99,999 & 0xFFFF
 #_0F9FED: STA.w $0405
 
 .done
 #_0F9FF0: PLB
+
 #_0F9FF1: PLP
 #_0F9FF2: RTL
 
 ;===================================================================================================
-
+; TODO document calculations
 routine0F9FF3:
 #_0F9FF3: PHP
+
 #_0F9FF4: PHB
 #_0F9FF5: PHK
 #_0F9FF6: PLB
 
 #_0F9FF7: REP #$30
+
 #_0F9FF9: PHA
 #_0F9FFA: PHX
+
 #_0F9FFB: LDA.w DMA0SIZEL
-#_0F9FFE: BEQ .branch0FA004
+#_0F9FFE: BEQ .no_pending_dma
 
 #_0FA000: JSL AddSelfAsVectorAndMakeSpace
 
-.branch0FA004
+.no_pending_dma
 #_0FA004: SEP #$30
-#_0FA006: STZ.w DMAENABLE
+
+#_0FA006: STZ.w MDMAEN
+
 #_0FA009: LDA.w $0F06
 #_0FA00C: AND.b #$FE
 #_0FA00E: STA.w $0F06
 
 #_0FA011: REP #$30
+
 #_0FA013: PLX
+
 #_0FA014: PLA
 #_0FA015: PHA
+
 #_0FA016: AND.w #$000F
 #_0FA019: XBA
 #_0FA01A: ASL A
@@ -4494,6 +4984,7 @@ routine0F9FF3:
 #_0FA01D: CLC
 #_0FA01E: ADC.w #$8000
 #_0FA021: STA.w DMA0ADDRL
+
 #_0FA024: PLA
 #_0FA025: LSR A
 #_0FA026: LSR A
@@ -4504,75 +4995,103 @@ routine0F9FF3:
 #_0FA02D: ADC.w #$0024
 
 #_0FA030: SEP #$20
+
 #_0FA032: STA.w DMA0ADDRB
 
 #_0FA035: REP #$20
+
 #_0FA037: TXA
 #_0FA038: AND.w #$00FF
 #_0FA03B: XBA
 #_0FA03C: ASL A
 #_0FA03D: ASL A
 #_0FA03E: STA.w $0F07
+
 #_0FA041: LDA.w #$0800
 #_0FA044: STA.w DMA0SIZEL
 
 #_0FA047: SEP #$20
+
 #_0FA049: LDA.b #$01
 #_0FA04B: STA.w DMA0MODE
-#_0FA04E: LDA.b #$18
+
+#_0FA04E: LDA.b #VMDATA
 #_0FA050: STA.w DMA0PORT
+
 #_0FA053: LDA.b #$01
 #_0FA055: STA.w $0F06
+
 #_0FA058: JSL AddSelfAsVectorAndMakeSpace
+
 #_0FA05C: PLB
+
 #_0FA05D: PLP
 #_0FA05E: RTL
 
+;===================================================================================================
+
 R0FA05F_DoesVRAMDMAs:
 #_0FA05F: PHP
+
 #_0FA060: PHB
 #_0FA061: PHK
 #_0FA062: PLB
 
 #_0FA063: SEP #$30
+
 #_0FA065: LDA.b #$0C
 #_0FA067: LDX.b #$00
 #_0FA069: LDY.b #$01
 #_0FA06B: JSL GraduallyFadeStuff
+
 #_0FA06F: JSL routine02E350
+
 #_0FA073: LDA.b #$01
 #_0FA075: JSL VRAM_From_7FXXXX
+
 #_0FA079: JSL AddSelfAsVectorAndMakeSpace
 
 #_0FA07D: SEP #$30
+
 #_0FA07F: LDA.w $0A6B
-#_0FA082: AND.b #$FF
+#_0FA082: AND.b #$FF ; why?
 #_0FA084: STA.w $0F51
+
 #_0FA087: LDA.w $0A6D
-#_0FA08A: AND.b #$FF
+#_0FA08A: AND.b #$FF ; seriously? why?
 #_0FA08C: STA.w $0F53
+
 #_0FA08F: LDA.w $0A5B
 #_0FA092: STA.w $0A59
+
 #_0FA095: JSL routine02E350
+
 #_0FA099: LDA.b #$00
 #_0FA09B: JSL VRAM_From_7FXXXX
+
 #_0FA09F: JSL AddSelfAsVectorAndMakeSpace
 
+;---------------------------------------------------------------------------------------------------
+
 #_0FA0A3: REP #$20
+
 #_0FA0A5: LDA.w #$FFFF
 #_0FA0A8: STA.w $0A9B
 
 #_0FA0AB: SEP #$30
+
 #_0FA0AD: LDA.w $0A6B
-#_0FA0B0: AND.b #$FF
+#_0FA0B0: AND.b #$FF ; you keep doing this
 #_0FA0B2: STA.w $0F4D
+
 #_0FA0B5: LDA.w $0A6D
-#_0FA0B8: AND.b #$FF
+#_0FA0B8: AND.b #$FF ; why do you keep doing this?
 #_0FA0BA: STA.w $0F4F
+
 #_0FA0BD: LDA.w $0F74
 #_0FA0C0: ORA.b #$01
 #_0FA0C2: STA.w $0F74
-#_0FA0C5: STA.w MAINDES
+#_0FA0C5: STA.w TM
 
 #_0FA0C8: LDA.b #$29
 #_0FA0CA: STA.w $0F48
@@ -4588,10 +5107,12 @@ R0FA05F_DoesVRAMDMAs:
 #_0FA0DE: JSL routine0091A1
 
 #_0FA0E2: SEP #$20
+
 #_0FA0E4: LDA.b #$FF
 #_0FA0E6: STA.w $0EEF
 
 #_0FA0E9: PLB
+
 #_0FA0EA: PLP
 #_0FA0EB: RTL
 
@@ -4599,12 +5120,15 @@ R0FA05F_DoesVRAMDMAs:
 
 routine0FA0EC:
 #_0FA0EC: PHP
+
 #_0FA0ED: PHB
 #_0FA0EE: PHK
 #_0FA0EF: PLB
 
 #_0FA0F0: REP #$30
+
 #_0FA0F2: STZ.w $0E00
+
 #_0FA0F5: LDA.w #$00EC
 #_0FA0F8: JSL TestGameProgressBit
 #_0FA0FC: BCC .branch0FA104
@@ -4615,10 +5139,12 @@ routine0FA0EC:
 .branch0FA104
 #_0FA104: LDY.w $0E00
 
-#_0FA107: LDA.w data0FA149,Y
+#_0FA107: LDA.w multiplicand,Y
 #_0FA10A: STA.w $0E10
+
 #_0FA10D: LDA.w $0A14
 #_0FA110: STA.w $0E12
+
 #_0FA113: JSL Multiply0E1x_b03_long
 
 #_0FA117: LDA.w $0E14
@@ -4628,7 +5154,7 @@ routine0FA0EC:
 #_0FA120: STA.w $0E04
 
 #_0FA123: LDY.w $0E00
-#_0FA126: LDA.w data0FA149,Y
+#_0FA126: LDA.w multiplicand,Y
 #_0FA129: STA.w $0E10
 
 #_0FA12C: LDA.w $0A16
@@ -4642,63 +5168,77 @@ routine0FA0EC:
 #_0FA13F: CLC
 #_0FA140: ADC.w $0E14
 #_0FA143: STA.w $0A16
+
 #_0FA146: PLB
 #_0FA147: PLP
 #_0FA148: RTL
 
-data0FA149:
-#_0FA149: dw $000A,$0001
+multiplicand:
+#_0FA149: dw $000A
+#_0FA14B: dw $0001
 
+;===================================================================================================
+; TODO seems to be seraph angel deletion
 routine0FA14D:
 #_0FA14D: SEP #$20
+
 #_0FA14F: LDA.b #$03
 #_0FA151: STA.w $0A3B
 
 #_0FA154: REP #$30
+
 #_0FA156: LDA.w #$0020
 #_0FA159: STA.w $0BED
+
 #_0FA15C: LDA.w #$0021
 #_0FA15F: STA.w $0BEF
+
 #_0FA162: LDA.w #$0022
 #_0FA165: STA.w $0BF1
+
 #_0FA168: LDA.w #$0133
 #_0FA16B: STA.w $0C0B
+
 #_0FA16E: LDX.w #$0180
 
-.branch0FA171
+.next
 #_0FA171: LDA.w $1000,X
-#_0FA174: BPL .branch0FA192
+#_0FA174: BPL .skip
 
 #_0FA176: LDA.w $1004,X
-#_0FA179: CMP.w #$0020
-#_0FA17C: BEQ .branch0FA188
+#_0FA179: CMP.w #$0020 ; Gabriel
+#_0FA17C: BEQ .is_seraph_angel
 
-#_0FA17E: CMP.w #$0021
-#_0FA181: BEQ .branch0FA188
+#_0FA17E: CMP.w #$0021 ; Raphael
+#_0FA181: BEQ .is_seraph_angel
 
-#_0FA183: CMP.w #$0022
-#_0FA186: BNE .branch0FA192
+#_0FA183: CMP.w #$0022 ; Uriel
+#_0FA186: BNE .skip
 
-.branch0FA188
+.is_seraph_angel
 #_0FA188: LDA.w #$0000
 #_0FA18B: STA.w $1000,X
+
 #_0FA18E: JSL routine0F853F
 
-.branch0FA192
+.skip
 #_0FA192: TXA
 #_0FA193: CLC
 #_0FA194: ADC.w #$0060
 #_0FA197: TAX
+
 #_0FA198: CMP.w #$0600
-#_0FA19B: BNE .branch0FA171
+#_0FA19B: BNE .next
 
 #_0FA19D: JSL routine029E97
+
 #_0FA1A1: RTL
 
 ;===================================================================================================
 
 routine0FA1A2:
 #_0FA1A2: PHP
+
 #_0FA1A3: PHB
 #_0FA1A4: PHK
 #_0FA1A5: PLB
@@ -6769,8 +7309,8 @@ PPUSettings_0FCAB6:
 #_0FCAF8: STA.w WOBJLOG
 
 #_0FCAFB: LDA.b #$13
-#_0FCAFD: STA.w MAINDES
-#_0FCB00: STA.w SUBDES
+#_0FCAFD: STA.w TM
+#_0FCB00: STA.w TS
 
 #_0FCB03: LDA.b #$00
 #_0FCB05: STA.w TMW
@@ -6793,17 +7333,17 @@ PPUSettings_0FCAB6:
 #_0FCB24: STA.w JOYPADIO
 
 #_0FCB27: LDA.b #$00
-#_0FCB29: STA.w CPUMULTA
-#_0FCB2C: STA.w CPUMULTB
-#_0FCB2F: STA.w CPUDIVIDENDL
-#_0FCB32: STA.w CPUDIVIDENDH
-#_0FCB35: STA.w CPUDIVISOR
+#_0FCB29: STA.w WRMPYA
+#_0FCB2C: STA.w WRMPYB
+#_0FCB2F: STA.w WRDIVL
+#_0FCB32: STA.w WRDIVH
+#_0FCB35: STA.w WRDIVB
 #_0FCB38: STA.w HTIMEL
 #_0FCB3B: STA.w HTIMEH
 #_0FCB3E: STA.w VTIMEL
 #_0FCB41: STA.w VTIMEH
-#_0FCB44: STA.w DMAENABLE
-#_0FCB47: STA.w HDMAENABLE
+#_0FCB44: STA.w MDMAEN
+#_0FCB47: STA.w HDMAEN
 
 #_0FCB4A: LDA.b #$40
 #_0FCB4C: STA.w BG12NBA
@@ -7245,31 +7785,31 @@ routine0FCED0:
 
 #_0FCEE2: SEP #$20
 #_0FCEE4: LDA.w $0CFD
-#_0FCEE7: STA.w CPUMULTA
+#_0FCEE7: STA.w WRMPYA
 #_0FCEEA: LDA.w $0CF3
-#_0FCEED: STA.w CPUMULTB
+#_0FCEED: STA.w WRMPYB
 #_0FCEF0: PHB
 #_0FCEF1: PLB
-#_0FCEF2: LDA.w CPUPRODUCTH
+#_0FCEF2: LDA.w RDMPYH
 #_0FCEF5: STA.w $0CF5
 #_0FCEF8: LDA.w $0CF4
-#_0FCEFB: STA.w CPUMULTB
+#_0FCEFB: STA.w WRMPYB
 #_0FCEFE: PHB
 #_0FCEFF: PLB
-#_0FCF00: LDX.w CPUPRODUCTL
+#_0FCF00: LDX.w RDMPYL
 #_0FCF03: STX.w $0CF7
 #_0FCF06: LDA.w $0CFE
-#_0FCF09: STA.w CPUMULTA
+#_0FCF09: STA.w WRMPYA
 #_0FCF0C: LDA.w $0CF3
-#_0FCF0F: STA.w CPUMULTB
+#_0FCF0F: STA.w WRMPYB
 #_0FCF12: PHB
 #_0FCF13: PLB
-#_0FCF14: LDX.w CPUPRODUCTL
+#_0FCF14: LDX.w RDMPYL
 #_0FCF17: LDA.w $0CF4
-#_0FCF1A: STA.w CPUMULTB
+#_0FCF1A: STA.w WRMPYB
 #_0FCF1D: PHB
 #_0FCF1E: PLB
-#_0FCF1F: LDA.w CPUPRODUCTL
+#_0FCF1F: LDA.w RDMPYL
 #_0FCF22: STA.w $0CF6
 
 #_0FCF25: REP #$20
@@ -7630,11 +8170,11 @@ Divide144_by_A:
 #_0FD17C: SEP #$30
 #_0FD17E: PHA
 #_0FD17F: LDA.b #$00
-#_0FD181: STA.w CPUDIVIDENDL
+#_0FD181: STA.w WRDIVL
 #_0FD184: LDA.b #$90
-#_0FD186: STA.w CPUDIVIDENDH
+#_0FD186: STA.w WRDIVH
 #_0FD189: PLA
-#_0FD18A: STA.w CPUDIVISOR
+#_0FD18A: STA.w WRDIVB
 #_0FD18D: NOP
 #_0FD18E: NOP
 #_0FD18F: NOP
@@ -7647,9 +8187,9 @@ Divide144_by_A:
 #_0FD196: NOP
 #_0FD197: NOP
 #_0FD198: NOP
-#_0FD199: LDA.w CPUQUOTIENTL
+#_0FD199: LDA.w RDDIVL
 #_0FD19C: STA.w $0CF3
-#_0FD19F: LDA.w CPUQUOTIENTH
+#_0FD19F: LDA.w RDDIVH
 #_0FD1A2: STA.w $0CF4
 #_0FD1A5: PLP
 #_0FD1A6: RTS
@@ -8025,10 +8565,10 @@ routine0FD418:
 #_0FD44A: STA.w OBSEL
 #_0FD44D: STA.w $0F44
 #_0FD450: LDA.b #$0F
-#_0FD452: STA.w MAINDES
+#_0FD452: STA.w TM
 #_0FD455: STA.w $0F74
 #_0FD458: LDA.b #$10
-#_0FD45A: STA.w SUBDES
+#_0FD45A: STA.w TS
 #_0FD45D: STA.w $0F76
 #_0FD460: LDA.b #$02
 #_0FD462: STA.w CGWSEL
@@ -9847,8 +10387,8 @@ routine0FE9F8:
 #_0FEA38: STA.w BG4HOFS
 #_0FEA3B: STA.w BG4VOFS
 #_0FEA3E: LDA.b #$00
-#_0FEA40: STA.w DMAENABLE
-#_0FEA43: STA.w HDMAENABLE
+#_0FEA40: STA.w MDMAEN
+#_0FEA43: STA.w HDMAEN
 #_0FEA46: PLP
 #_0FEA47: RTS
 
@@ -11408,7 +11948,7 @@ routine0FF581:
 #_0FF582: REP #$10
 #_0FF584: SEP #$20
 #_0FF586: LDA.b #$00
-#_0FF588: STA.w HDMAENABLE
+#_0FF588: STA.w HDMAEN
 #_0FF58B: LDA.b #$02
 
 routine0FF58D:
@@ -11424,7 +11964,7 @@ routine0FF58D:
 #_0FF5A4: LDA.b #$00
 #_0FF5A6: STA.w DMA0ADDRL
 #_0FF5A9: LDA.b #$01
-#_0FF5AB: STA.w HDMAENABLE
+#_0FF5AB: STA.w HDMAEN
 #_0FF5AE: PLP
 #_0FF5AF: RTS
 
@@ -11695,8 +12235,8 @@ routine0FF668:
 #_0FF777: JSL Reset_OAMrelatedWRAM
 #_0FF77B: JSL PPUSettings_00C409
 #_0FF77F: LDA.b #$00
-#_0FF781: STA.w DMAENABLE
-#_0FF784: STA.w HDMAENABLE
+#_0FF781: STA.w MDMAEN
+#_0FF784: STA.w HDMAEN
 #_0FF787: JSR routine0FEA7A
 #_0FF78A: JSR EnableNMI_B0F
 #_0FF78D: LDA.b #$0F

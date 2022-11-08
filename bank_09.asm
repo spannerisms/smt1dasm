@@ -3685,7 +3685,7 @@ item_FC_name:
 item_FD_name:
 #_0991D5: db $30, $47, $52, $3D, $9D, $57, $2C, $FF
 
-; ￥のたば | ￥NOTABA | 
+; ¥のたば | ¥NOTABA | 
 ; Cigarette money?
 ; "bundle of yen"?
 item_FE_name:
@@ -16106,28 +16106,28 @@ thingA_11_name:
 thingA_12_name:
 #_09FC95: db $CF, $44, $32, $51, $CF, $A9, $4D, $FF
 
-; ⎵かけじく⎵⎵⎵⎵⎵⎵⎵⎵⎵⎵￥⎵10000 | KAKEZIKU ￥ 10000
+; ⎵かけじく⎵⎵⎵⎵⎵⎵⎵⎵⎵⎵¥⎵10000 | KAKEZIKU ¥ 10000
 ; 
 thingA_13_name:
 #_09FC9D: db $CF, $2A, $2D, $A2, $2C, $CF, $CF, $CF
 #_09FCA5: db $CF, $CF, $CF, $CF, $CF, $CF, $CF, $5B
 #_09FCAD: db $CF, $02, $01, $01, $01, $01, $FF
 
-; ⎵すいぼくが⎵⎵⎵⎵⎵⎵⎵⎵⎵￥⎵12800 | SUIBOKUGA ￥ 12800
+; ⎵すいぼくが⎵⎵⎵⎵⎵⎵⎵⎵⎵¥⎵12800 | SUIBOKUGA ¥ 12800
 ; 
 thingA_14_name:
 #_09FCB4: db $CF, $31, $26, $AF, $2C, $9C, $CF, $CF
 #_09FCBC: db $CF, $CF, $CF, $CF, $CF, $CF, $CF, $5B
 #_09FCC4: db $CF, $02, $03, $09, $01, $01, $FF
 
-; ⎵いしどうろう⎵⎵⎵⎵⎵⎵⎵⎵￥⎵25000 | ISIDOUROU ￥ 25000
+; ⎵いしどうろう⎵⎵⎵⎵⎵⎵⎵⎵¥⎵25000 | ISIDOUROU ¥ 25000
 ; 
 thingA_15_name:
 #_09FCCB: db $CF, $26, $30, $AA, $27, $4F, $27, $CF
 #_09FCD3: db $CF, $CF, $CF, $CF, $CF, $CF, $CF, $5B
 #_09FCDB: db $CF, $03, $06, $01, $01, $01, $FF
 
-; ⎵おうごんのぶつぞう⎵⎵⎵⎵⎵￥⎵43000 | OUGONNOBUTUZOU ￥ 43000
+; ⎵おうごんのぶつぞう⎵⎵⎵⎵⎵¥⎵43000 | OUGONNOBUTUZOU ¥ 43000
 ; 
 thingA_16_name:
 #_09FCE2: db $CF, $29, $27, $A0, $52, $3D, $AD, $36

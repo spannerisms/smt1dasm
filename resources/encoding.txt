@@ -1,0 +1,331 @@
+# null
+00      █		null
+
+# arabic numerals
+01      0
+02      1
+03      2
+04      3
+05      4
+06      5
+07      6
+08      7
+09      8
+0A      9
+
+# latin alphabet
+0B      A
+0C      B
+0D      C
+0E      D
+0F      E
+10      F
+11      G
+12      H
+13      I
+14      J
+15      K
+16      L
+17      M
+18      N
+19      O
+1A      P
+1B      Q
+1C      R
+1D      S
+1E      T
+1F      U
+20      V
+21      W
+22      X
+23      Y
+24      Z
+
+# hiragana
+25      あ		a
+26      い		i
+27      う		u
+28      え		e
+29      お		o
+
+2A      か		ka
+2B      き		ki
+2C      く		ku
+2D      け		ke
+2E      こ		ko
+
+2F      さ		sa
+30      し		si
+31      す		su
+32      せ		se
+33      そ		so
+
+34      た		ta
+35      ち		ti
+36      つ		tu
+37      て		te
+38      と		to
+
+39      な		na
+3A      に		ni
+3B      ぬ		nu
+3C      ね		ne
+3D      の		no
+
+3E      は		ha
+3F      ひ		hi
+40      ふ		hu
+41      へ		he
+42      ほ		ho
+
+43      ま		ma
+44      み		mi
+45      む		mu
+46      め		me
+47      も		mo
+
+48      や		ya
+49      ゆ		yu
+4A      よ		yo
+
+4B      ら		ra
+4C      り		ri
+4D      る		ru
+4E      れ		re
+4F      ろ		ro
+
+50      わ		wa
+51      を		wo
+
+52      ん		nn
+
+53      ぁ		a
+54      ぉ		o
+
+55      ゃ		ya
+56      ゅ		yu
+57      ょ		yo
+
+58      っ		tsu
+59      ぅ		u
+
+# punctuation 1
+5A      ー		ー
+5B      ¥		yen
+5C      ħ		macca
+
+# katakana
+5D      ア		a
+5E      イ		i
+5F      ウ		u
+60      エ		e
+61      オ		o
+
+62      カ		ka
+63      キ		ki
+64      ク		ku
+65      ケ		ke
+66      コ		ko
+
+67      サ		sa
+68      シ		si
+69      ス		su
+6A      セ		se
+6B      ソ		so
+
+6C      タ		ta
+6D      チ		ti
+6E      ツ		tu
+6F      テ		te
+70      ト		to
+
+71      ナ		na
+72      ニ		ni
+73      ヌ		nu
+74      ネ		ne
+75      ノ		no
+
+76      ハ		ha
+77      ヒ		hi
+78      フ		hu
+79      ヘ		he
+7A      ホ		ho
+
+7B      マ		ma
+7C      ミ		mi
+7D      ム		mu
+7E      メ		me
+7F      モ		mo
+
+80      ヤ		ya
+81      ユ		yu
+82      ヨ		yo
+
+83      ラ		ra
+84      リ		ri
+85      ル		ru
+86      レ		re
+87      ロ		ro
+
+88      ワ		wa
+89      ヲ		wo
+
+8A      ン		nn
+
+8B      ァ		aa
+8C      ィ		ii
+8D      ェ		ee
+8E      ォ		oo		why doesn't ゥ exist ????
+
+8F      ャ		yas
+90      ュ		yus
+91      ョ		yos
+
+92      ッ		tsus
+
+# punctuation 2
+93      ・		interpunct
+94      !		exclamation mark
+95      ?		question mark
+96      &		ampersand
+97      >		greater than
+98      /		slash
+99      '		apostrophe
+9A      :		colon
+9B      .		period
+
+# dakuten hiragana
+9C      が		ga
+9D      ぎ		gi
+9E      ぐ		gu
+9F      げ		ge
+A0      ご		go
+
+A1      ざ		za
+A2      じ		zi
+A3      ず		zu
+A4      ぜ		ze
+A5      ぞ		zo
+
+A6      だ		da
+A7      ぢ		di
+A8      づ		du
+A9      で		de
+AA      ど		do
+
+AB      ば		ba
+AC      び		bi
+AD      ぶ		bu
+AE      べ		be
+AF      ぼ		bo
+
+# handakuten hiragana
+B0      ぱ		pa
+B1      ぴ		pi
+B2      ぷ		pu
+B3      ぺ		pe
+B4      ぽ		po
+
+# dakuten katakana
+B5      ガ		ga
+B6      ギ		gi
+B7      グ		gu
+B8      ゲ		ge
+B9      ゴ		go
+BA      ザ		za
+BB      ジ		zi
+BC      ズ		zu
+BD      ゼ		ze
+BE      ゾ		zo
+BF      ダ		da
+C0      ヂ		di
+C1      ヅ		du
+C2      デ		de
+C3      ド		do
+C4      バ		ba
+C5      ビ		bi
+C6      ブ		bu
+C7      ベ		be
+C8      ボ		bo
+
+# handakuten katakana
+C9      パ		pa
+CA      ピ		pi
+CB      プ		pu
+CC      ペ		pe
+CD      ポ		po
+
+# vu
+CE      ヴ		vu
+
+# space
+CF      ⎵		space
+
+#===================================================================================================
+# Unencoded characters by tile ID
+#===================================================================================================
+9C      _		underscore
+9D      ♀		female
+9E      ゛		dakuten
+9F      ゜		handakuten
+A0      #		number
+A1      ♂		male
+A2      10		10 in small font
+A3      11		11 in small font
+A4      12		12 in small font
+A5      13		13 in small font
+A6      14		14 in small font
+A7      ᴍ		MAG in small caps
+A8      ᴀɢ		MAG in small caps
+A9      ⭘		fusion symbol
+AA      ※		fusion symbol
+AB      ⏷		wait cursor
+AF      り<		???
+B0      ○		
+B1      ◎		fusion symbol
+
+#===================================================================================================
+# HUD characters (transparent background)
+#===================================================================================================
+B3      0
+B4      1
+B5      2
+B6      3
+B7      4
+B8      5
+B9      6
+BA      7
+BB      8
+BC      9
+BD      A
+BE      B
+C0      E
+C1      F
+C2      H
+C3      L
+C4      M
+C5      N
+C6      O
+C7      R
+C8      S
+C9      T
+CA      U
+CB      W
+CC      ¥
+CD      ħ
+CE      ᴍ
+DB      ⟋
+DC      ⨉
+DE      _
+DF      ᴀɢ
+EB      C
+EC      D
+ED      G
+EE      I
+EF      K
+F0      P
+F1      Q
+F2      V
+F3      Y
+F4      '
+F5      J

@@ -211,11 +211,11 @@ ResetMemory:
 #_00813B: STX.w $0F5D
 
 #_00813E: LDX.b #$1F
-#_008140: STX.b MAINDES
+#_008140: STX.b TM
 #_008142: STX.w $0F74
 
 #_008145: LDX.b #$04
-#_008147: STX.b SUBDES
+#_008147: STX.b TS
 #_008149: STX.w $0F76
 
 #_00814C: LDX.b #$00
@@ -251,11 +251,11 @@ ResetMemory:
 #_008179: STA.w $0F03
 
 #_00817C: LDX.b #$00
-#_00817E: STX.b DMAENABLE
+#_00817E: STX.b MDMAEN
 #_008180: STX.w $0F05
 #_008183: STX.w $0F06
 
-#_008186: STX.b HDMAENABLE
+#_008186: STX.b HDMAEN
 #_008188: STX.w $0F0D
 #_00818B: STX.w $0F0E
 
@@ -684,7 +684,7 @@ TransferOAMfromWRAM:
 #_008375: REP #$20
 
 #_008377: LDX.b #$00
-#_008379: STX.w DMAENABLE
+#_008379: STX.w MDMAEN
 
 #_00837C: STZ.w OAMADDR
 
@@ -704,7 +704,7 @@ TransferOAMfromWRAM:
 #_008397: STA.w DMA7SIZEL
 
 #_00839A: LDX.b #$80
-#_00839C: STX.w DMAENABLE
+#_00839C: STX.w MDMAEN
 
 #_00839F: SEP #$20
 
@@ -755,6 +755,7 @@ WRAMDMAprep:
 CGRAMDMAprep:
 #_0083DB: LDA.w $0F09
 #_0083DE: STA.w CGADD
+
 #_0083E1: BRA StartDMA_0083F5
 
 ;===================================================================================================
@@ -776,7 +777,7 @@ VRAMDMAprep:
 
 #StartDMA_0083F5:
 #_0083F5: LDA.w $0F06
-#_0083F8: STA.w DMAENABLE
+#_0083F8: STA.w MDMAEN
 
 #_0083FB: LDA.b #$00
 #_0083FD: STA.w $0F06
@@ -787,7 +788,7 @@ VRAMDMAprep:
 
 SetUpCachedHDMA:
 #_008401: LDX.b #$00
-#_008403: STX.w HDMAENABLE
+#_008403: STX.w HDMAEN
 #_008406: STX.w $1926
 
 #_008409: LDA.w $0F0E
@@ -840,7 +841,7 @@ SetUpCachedHDMA:
 
 .branch00844E
 #_00844E: AND.b #$7F
-#_008450: STA.w HDMAENABLE
+#_008450: STA.w HDMAEN
 #_008453: STA.w $0F0D
 
 #_008456: LDA.b #$00
@@ -1202,13 +1203,13 @@ routine0085B0_SetIRQType1:
 #_0085F6: STA.w BG12NBA
 
 #_0085F9: LDA.w $0F76
-#_0085FC: STA.w SUBDES
+#_0085FC: STA.w TS
 
 #_0085FF: LDA.w $0F7B
 #_008602: STA.w CGADSUB
 
 #_008605: LDA.w $0F74
-#_008608: STA.w MAINDES
+#_008608: STA.w TM
 
 #_00860B: LDA.w Data_IRQ_Timer6A
 
@@ -1235,7 +1236,7 @@ routine0085B0_SetIRQType2:
 #_00862B: STA.w BG12NBA
 
 #_00862E: LDA.b #$10
-#_008630: STA.w SUBDES
+#_008630: STA.w TS
 
 #_008633: LDA.b #$01
 #_008635: STA.w CGADSUB
@@ -1341,7 +1342,7 @@ IRQ_HandleSubScreen:
 #_0086A2: SEP #$20
 
 #_0086A4: LDA.w $0F77
-#_0086A7: STA.w SUBDES
+#_0086A7: STA.w TS
 
 #_0086AA: LDA.w $0F7C
 #_0086AD: STA.w CGADSUB
@@ -1371,7 +1372,7 @@ IRQ_BGMODE0:
 
 #_0086D1: LDA.w $0F74
 #_0086D4: AND.w $0F75
-#_0086D7: STA.w MAINDES
+#_0086D7: STA.w TM
 
 #_0086DA: LDA.w $0F00
 #_0086DD: AND.b #$CF
@@ -1436,7 +1437,7 @@ IRQ_HandleMainScreen:
 #_00871D: SEP #$20
 
 #_00871F: LDA.b #$0E ; BG 2, 3, 4
-#_008721: STA.w MAINDES
+#_008721: STA.w TM
 
 #_008724: LDA.w Data_IRQ_Timer7F
 #_008727: STA.w VTIMEL
@@ -1462,13 +1463,13 @@ IRQ_BGMODE0_B:
 #_008742: STA.w BG12NBA
 
 #_008745: LDA.w $0F77
-#_008748: STA.w SUBDES
+#_008748: STA.w TS
 
 #_00874B: LDA.w $0F7C
 #_00874E: STA.w CGADSUB
 
 #_008751: LDA.b #$0C
-#_008753: STA.w MAINDES
+#_008753: STA.w TM
 
 #_008756: LDA.w $0F00
 #_008759: AND.b #$CF
@@ -1632,10 +1633,12 @@ routine008838_preset:
 
 #_008850: REP #$20
 #_008852: ASL.w $0000,X
+
 #_008855: LDA.w #$8000
 #_008858: CLC
 #_008859: ADC.w $0000,X
 #_00885C: STA.w $0000,X
+
 #_00885F: LDA.b ($00,X)
 #_008861: STA.w $0000,X
 
@@ -1720,11 +1723,14 @@ routine008838_preset:
 #_0088DE: BPL .branch0088F6
 
 #_0088E0: REP #$20
+
 #_0088E2: ASL.w $0040,X
+
 #_0088E5: LDA.w #$D901
 #_0088E8: CLC
 #_0088E9: ADC.w $0040,X
 #_0088EC: STA.w $0040,X
+
 #_0088EF: LDA.b ($40,X)
 #_0088F1: STA.w $0040,X
 #_0088F4: BRA .branch008916
@@ -1919,7 +1925,7 @@ routine00894A:
 #_008A17: STA.w PPUMULT16
 #_008A1A: LDA.w $194F
 #_008A1D: STA.w PPUMULT8
-#_008A20: LDA.w PPUPRODUCTL
+#_008A20: LDA.w MPYL
 #_008A23: STA.w $194B
 #_008A26: LDA.w $194F
 #_008A29: EOR.b #$FF
@@ -1946,7 +1952,7 @@ routine00894A:
 #_008A55: STA.w PPUMULT16
 #_008A58: LDA.w $1951
 #_008A5B: STA.w PPUMULT8
-#_008A5E: LDA.w PPUPRODUCTL
+#_008A5E: LDA.w MPYL
 #_008A61: STA.w $194C
 #_008A64: LDA.w $1951
 #_008A67: EOR.b #$FF
@@ -2818,24 +2824,30 @@ routine008F57:
 
 VRAM_From_7FXXXX:
 #_008F82: SEP #$30
+
 #_008F84: ASL A
 #_008F85: TAX
 #_008F86: ASL A
 #_008F87: TAY
+
 #_008F88: PHB
 #_008F89: PHK
 #_008F8A: PLB
 
 #_008F8B: REP #$20
-#_008F8D: LDA.w data008FF3,X
+
+#_008F8D: LDA.w .vram_address,X
 #_008F90: STA.w $0F07
+
 #_008F93: LDX.b #$01
 #_008F95: STX.w DMA0MODE
+
 #_008F98: LDX.b #VMDATA
 #_008F9A: STX.w DMA0PORT
-#_008F9D: LDA.w .page_and_size+0,Y
 
+#_008F9D: LDA.w .page_and_size+0,Y
 #_008FA0: STA.w DMA0ADDRL
+
 #_008FA3: LDX.b #$7F
 #_008FA5: STX.w DMA0ADDRB
 
@@ -2843,11 +2855,14 @@ VRAM_From_7FXXXX:
 #_008FAB: STA.w DMA0SIZEL
 
 #_008FAE: SEP #$20
+
 #_008FB0: LDA.w $0F06
 #_008FB3: ORA.b #$01
 #_008FB5: STA.w $0F06
+
 #_008FB8: LDX.b #$00
-#_008FBA: STX.w DMAENABLE
+#_008FBA: STX.w MDMAEN
+
 #_008FBD: PLB
 #_008FBE: RTL
 
@@ -2866,12 +2881,20 @@ VRAM_From_7FXXXX:
 #_008FEB: dw $7F2000, $1000
 #_008FEF: dw $7F3000, $1000
 
-; TODO wtf is this
-data008FF3:
-#_008FF3: dw $3800,$2800,$3C00,$3400
-#_008FFB: dw $3000,$4000,$2000,$2800
-#_009003: dw $6000,$0000,$0800,$1000
-#_00900B: dw $1800
+.vram_address
+#_008FF3: dw $3800 ; $7000 in VRAM
+#_008FF5: dw $2800 ; $5000 in VRAM
+#_008FF7: dw $3C00 ; $7800 in VRAM
+#_008FF9: dw $3400 ; $6800 in VRAM
+#_008FFB: dw $3000 ; $6000 in VRAM
+#_008FFD: dw $4000 ; $8000 in VRAM
+#_008FFF: dw $2000 ; $4000 in VRAM
+#_009001: dw $2800 ; $5000 in VRAM
+#_009003: dw $6000 ; $C000 in VRAM
+#_009005: dw $0000 ; $0000 in VRAM
+#_009007: dw $0800 ; $1000 in VRAM
+#_009009: dw $1000 ; $2000 in VRAM
+#_00900B: dw $1800 ; $3000 in VRAM
 
 ;===================================================================================================
 
@@ -2916,6 +2939,8 @@ WaitForMenuChoice_FirstPerson:
 #_009044: BIT.w #$0C00
 #_009047: BEQ .keep_waiting
 
+;---------------------------------------------------------------------------------------------------
+
 .pressed_up_or_down
 #_009049: LDX.w $0E9A
 #_00904C: STX.w $0EB6
@@ -2933,6 +2958,7 @@ WaitForMenuChoice_FirstPerson:
 
 #_009063: LDA.w $0EA8
 #_009066: STA.w $0E9A
+
 #_009069: BRA .update_and_continue
 
 .pressed_down
@@ -2945,7 +2971,10 @@ WaitForMenuChoice_FirstPerson:
 
 #_009078: LDA.w #$0000
 #_00907B: STA.w $0E9A
+
 #_00907E: BRA .update_and_continue
+
+;---------------------------------------------------------------------------------------------------
 
 .pressed_B_or_A
 #_009080: AND.w #$0080
@@ -2961,11 +2990,15 @@ WaitForMenuChoice_FirstPerson:
 
 #_009094: LDA.w #$0003 ; SFX 03
 #_009097: JSL Write_to_APU_transferrable
+
 #_00909B: BRA .exit
+
+;---------------------------------------------------------------------------------------------------
 
 .pressed_A
 #_00909D: LDA.w #$0002 ; SFX 02
 #_0090A0: JSL Write_to_APU_transferrable
+
 #_0090A4: BIT.w $0EC4
 #_0090A7: BVS .exit
 
@@ -3047,10 +3080,13 @@ PrepCursorMovementDMA:
 
 .red_palette
 #_00910C: PHA
+
 #_00910D: LDA.w $0EC4 ; number of characters
 #_009110: AND.w #$00FF
 #_009113: STA.w $7E2220,X
+
 #_009116: TAY
+
 #_009117: PLA
 
 #_009118: INX
@@ -3058,6 +3094,7 @@ PrepCursorMovementDMA:
 
 .next_tile
 #_00911A: STA.w $7E2220,X ; property to mask in
+
 #_00911D: INX
 #_00911E: INX
 #_00911F: DEY
@@ -3070,6 +3107,7 @@ PrepCursorMovementDMA:
 #_00912A: STA.w $7E2220
 
 #_00912D: LDA.w $0EB6 ; previous menu position for writing the off palettes
+
 #_009130: BRA .next_menu_slot
 
 .exit
@@ -3079,7 +3117,7 @@ PrepCursorMovementDMA:
 
 ;===================================================================================================
 
-CacheCursorPositionAndReset:
+CacheCursorPositionAndSet:
 #_009134: STA.w $0E8C
 
 #_009137: STY.w $0EA8
@@ -3172,16 +3210,18 @@ routine0091A1:
 #_0091A2: SEP #$30
 
 #_0091A4: STA.w $0EDC
-#_0091A7: STX.w $0EDF
-#_0091AA: DEY
 
+#_0091A7: STX.w $0EDF
+
+#_0091AA: DEY
 #_0091AB: STY.w $0EDE
+
 #_0091AE: STZ.w $0EDA
 
 .branch0091B1
 #_0091B1: JSL routine0091FD
 
-.branch0091B5
+.next
 #_0091B5: LDA.w $0EDE
 #_0091B8: BNE .branch0091BB
 
@@ -3195,15 +3235,15 @@ routine0091A1:
 #_0091C3: STA.w $0EDA
 
 #_0091C6: CMP.b #$10
-#_0091C8: BEQ .branch0091CE
+#_0091C8: BEQ .continue
 
 #_0091CA: BCS .exit
 
 #_0091CC: BCC .branch0091B1
 
-.branch0091CE
+.continue
 #_0091CE: JSL Cache_WRAM_CGWRAM_First8
-#_0091D2: BRA .branch0091B5
+#_0091D2: BRA .next
 
 .exit
 #_0091D4: PLP
@@ -3238,6 +3278,7 @@ Cache_WRAM_CGWRAM_First8:
 #_0091F0: BCC .next_color
 
 #_0091F2: SEP #$20
+
 #_0091F4: LDA.w $0EDF
 #_0091F7: JSR SetUpCGRAMDMA
 
@@ -3259,37 +3300,48 @@ routine0091FD:
 #_009204: LDX.b #$00
 #_009206: STX.w $0EDB
 
-;===================================================================================================
+;---------------------------------------------------------------------------------------------------
 
-routine009209:
+.next_loop
 #_009209: LDA.w $0EDC
 #_00920C: STA.w $0EDD
+
 #_00920F: LDA.b #$E0
 
 .branch009211
 #_009211: CLC
 #_009212: ADC.b #$20
 #_009214: TAY
+
 #_009215: LSR.w $0EDD
+
 #_009218: DEX
 #_009219: BPL .branch009211
+
 #_00921B: BCS .branch00922C
 
 .branch00921D
 #_00921D: LDA.w $7E2500,Y
 #_009220: STA.w $7E2300,Y
+
 #_009223: INY
+
 #_009224: TYA
 #_009225: AND.b #$1F
 #_009227: BNE .branch00921D
+
 #_009229: JMP .branch0092ED
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00922C
 #_00922C: PHY
 
 #_00922D: REP #$20
+
 #_00922F: LDA.w $7E2500,Y
 #_009232: ASL A
+
 #_009233: LDX.b #$04
 
 .branch009235
@@ -3298,6 +3350,7 @@ routine009209:
 .branch009237
 #_009237: ASL A
 #_009238: ROL.w $0EE0,X
+
 #_00923B: DEY
 #_00923C: BPL .branch009237
 
@@ -3305,20 +3358,27 @@ routine009209:
 #_00923F: DEX
 #_009240: BPL .branch009235
 
+;---------------------------------------------------------------------------------------------------
+
 #_009242: SEP #$20
+
 #_009244: PHB
 #_009245: PHK
 #_009246: PLB
+
 #_009247: LDX.b #$04
 
 .branch009249
 #_009249: LDA.w $0EE0,X
 #_00924C: AND.b #$1F
-#_00924E: STA.w CPUDIVIDENDL
+#_00924E: STA.w WRDIVL
+
 #_009251: LDA.b #$00
-#_009253: STA.w CPUDIVIDENDH
+#_009253: STA.w WRDIVH
+
 #_009256: LDA.b #$10
-#_009258: STA.w CPUDIVISOR
+#_009258: STA.w WRDIVB
+
 #_00925B: NOP
 #_00925C: NOP
 #_00925D: NOP
@@ -3327,21 +3387,28 @@ routine009209:
 #_009260: NOP
 #_009261: NOP
 #_009262: NOP
-#_009263: LDA.w CPUQUOTIENTL
+
+#_009263: LDA.w RDDIVL
 #_009266: STA.w $0EE0,X
-#_009269: LDA.w CPUREMAINDERL
+
+#_009269: LDA.w RDMPYL
 #_00926C: STA.w $0EE6,X
+
 #_00926F: DEX
 #_009270: DEX
 #_009271: BPL .branch009249
+
+;---------------------------------------------------------------------------------------------------
 
 #_009273: LDX.b #$04
 
 .branch009275
 #_009275: LDA.w $0EE0,X
-#_009278: STA.w CPUMULTA
+#_009278: STA.w WRMPYA
+
 #_00927B: LDA.w $0EDA
-#_00927E: STA.w CPUMULTB
+#_00927E: STA.w WRMPYB
+
 #_009281: NOP
 #_009282: NOP
 #_009283: NOP
@@ -3350,12 +3417,16 @@ routine009209:
 #_009286: NOP
 #_009287: NOP
 #_009288: NOP
-#_009289: LDA.w CPUPRODUCTL
+
+#_009289: LDA.w RDMPYL
 #_00928C: STA.w $0EE0,X
+
 #_00928F: LDA.w $0EE6,X
-#_009292: STA.w CPUMULTA
+#_009292: STA.w WRMPYA
+
 #_009295: LDA.w $0EDA
-#_009298: STA.w CPUMULTB
+#_009298: STA.w WRMPYB
+
 #_00929B: NOP
 #_00929C: NOP
 #_00929D: NOP
@@ -3364,10 +3435,13 @@ routine009209:
 #_0092A0: NOP
 #_0092A1: NOP
 #_0092A2: NOP
-#_0092A3: LDA.w CPUPRODUCTL
-#_0092A6: STA.w CPUMULTA
+
+#_0092A3: LDA.w RDMPYL
+#_0092A6: STA.w WRMPYA
+
 #_0092A9: LDA.b #$10
-#_0092AB: STA.w CPUMULTB
+#_0092AB: STA.w WRMPYB
+
 #_0092AE: NOP
 #_0092AF: NOP
 #_0092B0: NOP
@@ -3376,17 +3450,22 @@ routine009209:
 #_0092B3: NOP
 #_0092B4: NOP
 #_0092B5: NOP
-#_0092B6: LDA.w CPUPRODUCTH
+
+#_0092B6: LDA.w RDMPYH
 #_0092B9: CLC
 #_0092BA: ADC.w $0EE0,X
 #_0092BD: STA.w $0EE0,X
+
 #_0092C0: DEX
 #_0092C1: DEX
 #_0092C2: BPL .branch009275
 
+;---------------------------------------------------------------------------------------------------
+
 #_0092C4: PLB
 
 #_0092C5: REP #$20
+
 #_0092C7: LDX.b #$00
 
 .branch0092C9
@@ -3395,6 +3474,7 @@ routine009209:
 .branch0092CB
 #_0092CB: LSR.w $0EE0,X
 #_0092CE: ROR A
+
 #_0092CF: DEY
 #_0092D0: BPL .branch0092CB
 
@@ -3403,18 +3483,25 @@ routine009209:
 #_0092D4: CPX.b #$06
 #_0092D6: BNE .branch0092C9
 
+;---------------------------------------------------------------------------------------------------
+
 #_0092D8: PLY
+
 #_0092D9: LSR A
 #_0092DA: STA.w $7E2300,Y
 
 #_0092DD: SEP #$20
+
 #_0092DF: INY
 #_0092E0: INY
+
 #_0092E1: TYA
 #_0092E2: AND.b #$1F
 #_0092E4: BEQ .branch0092E9
 
 #_0092E6: JMP .branch00922C
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0092E9
 #_0092E9: JSL AddSelfAsVectorAndMakeSpace
@@ -3423,10 +3510,11 @@ routine009209:
 #_0092ED: LDX.w $0EDB
 #_0092F0: INX
 #_0092F1: STX.w $0EDB
+
 #_0092F4: CPX.b #$08
 #_0092F6: BCS .branch0092FB
 
-#_0092F8: JMP routine009209
+#_0092F8: JMP .next_loop
 
 .branch0092FB
 #_0092FB: LDA.w $0EDF
@@ -3502,6 +3590,7 @@ routine009337:
 #_00934B: CLC
 #_00934C: ADC.b #$20
 #_00934E: TAY
+
 #_00934F: LSR.w $0EDD
 #_009352: DEX
 #_009353: BPL .branch00934B
@@ -3511,17 +3600,22 @@ routine009337:
 .branch009357
 #_009357: LDA.w $7E2500,Y
 #_00935A: STA.w $7E2300,Y
+
 #_00935D: INY
+
 #_00935E: TYA
 #_00935F: AND.b #$1F
 #_009361: BNE .branch009357
 
 #_009363: JMP .branch00942D
 
+;---------------------------------------------------------------------------------------------------
+
 .branch009366
 #_009366: PHY
 
 #_009367: REP #$20
+
 #_009369: LDA.w $7E2500,Y
 #_00936C: ASL A
 #_00936D: LDX.b #$04
@@ -3532,6 +3626,7 @@ routine009337:
 .branch009371
 #_009371: ASL A
 #_009372: ROL.w $0EE0,X
+
 #_009375: DEY
 #_009376: BPL .branch009371
 
@@ -3539,20 +3634,27 @@ routine009337:
 #_009379: DEX
 #_00937A: BPL .branch00936F
 
+;---------------------------------------------------------------------------------------------------
+
 #_00937C: SEP #$20
+
 #_00937E: PHB
 #_00937F: PHK
 #_009380: PLB
+
 #_009381: LDX.b #$04
 
 .branch009383
 #_009383: LDA.w $0EE0,X
 #_009386: AND.b #$1F
-#_009388: STA.w CPUDIVIDENDL
+#_009388: STA.w WRDIVL
+
 #_00938B: LDA.b #$00
-#_00938D: STA.w CPUDIVIDENDH
+#_00938D: STA.w WRDIVH
+
 #_009390: LDA.b #$10
-#_009392: STA.w CPUDIVISOR
+#_009392: STA.w WRDIVB
+
 #_009395: NOP
 #_009396: NOP
 #_009397: NOP
@@ -3561,23 +3663,30 @@ routine009337:
 #_00939A: NOP
 #_00939B: NOP
 #_00939C: NOP
-#_00939D: LDA.w CPUQUOTIENTL
+
+#_00939D: LDA.w RDDIVL
 #_0093A0: STA.w $0EE0,X
-#_0093A3: LDA.w CPUREMAINDERL
+
+#_0093A3: LDA.w RDMPYL
 #_0093A6: STA.w $0EE6,X
+
 #_0093A9: DEX
 #_0093AA: DEX
 #_0093AB: BPL .branch009383
+
+;---------------------------------------------------------------------------------------------------
 
 #_0093AD: LDX.b #$04
 
 .branch0093AF
 #_0093AF: LDA.w $0EE0,X
-#_0093B2: STA.w CPUMULTA
+#_0093B2: STA.w WRMPYA
+
 #_0093B5: LDA.b #$0F
 #_0093B7: SEC
 #_0093B8: SBC.w $0EDA
-#_0093BB: STA.w CPUMULTB
+#_0093BB: STA.w WRMPYB
+
 #_0093BE: NOP
 #_0093BF: NOP
 #_0093C0: NOP
@@ -3586,14 +3695,18 @@ routine009337:
 #_0093C3: NOP
 #_0093C4: NOP
 #_0093C5: NOP
-#_0093C6: LDA.w CPUPRODUCTL
+
+#_0093C6: LDA.w RDMPYL
 #_0093C9: STA.w $0EE0,X
+
 #_0093CC: LDA.w $0EE6,X
-#_0093CF: STA.w CPUMULTA
+#_0093CF: STA.w WRMPYA
+
 #_0093D2: LDA.b #$0F
 #_0093D4: SEC
 #_0093D5: SBC.w $0EDA
-#_0093D8: STA.w CPUMULTB
+#_0093D8: STA.w WRMPYB
+
 #_0093DB: NOP
 #_0093DC: NOP
 #_0093DD: NOP
@@ -3602,10 +3715,13 @@ routine009337:
 #_0093E0: NOP
 #_0093E1: NOP
 #_0093E2: NOP
-#_0093E3: LDA.w CPUPRODUCTL
-#_0093E6: STA.w CPUMULTA
+
+#_0093E3: LDA.w RDMPYL
+#_0093E6: STA.w WRMPYA
+
 #_0093E9: LDA.b #$10
-#_0093EB: STA.w CPUMULTB
+#_0093EB: STA.w WRMPYB
+
 #_0093EE: NOP
 #_0093EF: NOP
 #_0093F0: NOP
@@ -3614,17 +3730,22 @@ routine009337:
 #_0093F3: NOP
 #_0093F4: NOP
 #_0093F5: NOP
-#_0093F6: LDA.w CPUPRODUCTH
+
+#_0093F6: LDA.w RDMPYH
 #_0093F9: CLC
 #_0093FA: ADC.w $0EE0,X
 #_0093FD: STA.w $0EE0,X
+
 #_009400: DEX
 #_009401: DEX
 #_009402: BPL .branch0093AF
 
+;---------------------------------------------------------------------------------------------------
+
 #_009404: PLB
 
 #_009405: REP #$20
+
 #_009407: LDX.b #$00
 
 .branch009409
@@ -3633,6 +3754,7 @@ routine009337:
 .branch00940B
 #_00940B: LSR.w $0EE0,X
 #_00940E: ROR A
+
 #_00940F: DEY
 #_009410: BPL .branch00940B
 
@@ -3641,18 +3763,25 @@ routine009337:
 #_009414: CPX.b #$06
 #_009416: BNE .branch009409
 
+;---------------------------------------------------------------------------------------------------
+
 #_009418: PLY
+
 #_009419: LSR A
 #_00941A: STA.w $7E2300,Y
 
 #_00941D: SEP #$20
+
 #_00941F: INY
 #_009420: INY
+
 #_009421: TYA
 #_009422: AND.b #$1F
 #_009424: BEQ .branch009429
 
 #_009426: JMP .branch009366
+
+;---------------------------------------------------------------------------------------------------
 
 .branch009429
 #_009429: JSL AddSelfAsVectorAndMakeSpace
@@ -3661,6 +3790,7 @@ routine009337:
 #_00942D: LDX.w $0EDB
 #_009430: INX
 #_009431: STX.w $0EDB
+
 #_009434: CPX.b #$08
 #_009436: BCS .branch00943B
 
@@ -3669,6 +3799,7 @@ routine009337:
 .branch00943B
 #_00943B: LDA.w $0EDF
 #_00943E: JSR SetUpCGRAMDMA
+
 #_009441: PLB
 #_009442: RTL
 
@@ -3707,42 +3838,55 @@ routine009443:
 
 routine00946D:
 #_00946D: SEP #$30
+
 #_00946F: PHB
 #_009470: LDA.b #$7E
 #_009472: PHA
 #_009473: PLB
+
 #_009474: LDX.b #$00
 #_009476: STX.w $0EDB
 
-.branch009479
+.next_loop
 #_009479: LDA.w $0EDC
 #_00947C: STA.w $0EDD
+
 #_00947F: LDA.b #$E0
 
 .branch009481
 #_009481: CLC
 #_009482: ADC.b #$20
 #_009484: TAY
+
 #_009485: LSR.w $0EDD
+
 #_009488: DEX
 #_009489: BPL .branch009481
+
 #_00948B: BCS .branch00949C
 
 .branch00948D
 #_00948D: LDA.w $7E2500,Y
 #_009490: STA.w $7E2300,Y
+
 #_009493: INY
+
 #_009494: TYA
 #_009495: AND.b #$1F
 #_009497: BNE .branch00948D
+
 #_009499: JMP .branch0094F2
+
+;---------------------------------------------------------------------------------------------------
 
 .branch00949C
 #_00949C: PHY
 
 #_00949D: REP #$20
+
 #_00949F: LDA.w $7E2500,Y
 #_0094A2: ASL A
+
 #_0094A3: LDX.b #$04
 
 .branch0094A5
@@ -3751,6 +3895,7 @@ routine00946D:
 .branch0094A7
 #_0094A7: ASL A
 #_0094A8: ROL.w $0EE0,X
+
 #_0094AB: DEY
 #_0094AC: BPL .branch0094A7
 
@@ -3758,7 +3903,10 @@ routine00946D:
 #_0094AF: DEX
 #_0094B0: BPL .branch0094A5
 
+;---------------------------------------------------------------------------------------------------
+
 #_0094B2: SEP #$20
+
 #_0094B4: LDX.b #$04
 
 .branch0094B6
@@ -3775,7 +3923,10 @@ routine00946D:
 #_0094C7: DEX
 #_0094C8: BPL .branch0094B6
 
+;---------------------------------------------------------------------------------------------------
+
 #_0094CA: REP #$20
+
 #_0094CC: LDX.b #$00
 
 .branch0094CE
@@ -3784,6 +3935,7 @@ routine00946D:
 .branch0094D0
 #_0094D0: LSR.w $0EE0,X
 #_0094D3: ROR A
+
 #_0094D4: DEY
 #_0094D5: BPL .branch0094D0
 
@@ -3792,18 +3944,25 @@ routine00946D:
 #_0094D9: CPX.b #$06
 #_0094DB: BNE .branch0094CE
 
+;---------------------------------------------------------------------------------------------------
+
 #_0094DD: PLY
+
 #_0094DE: LSR A
 #_0094DF: STA.w $7E2300,Y
 
 #_0094E2: SEP #$20
+
 #_0094E4: INY
 #_0094E5: INY
+
 #_0094E6: TYA
 #_0094E7: AND.b #$1F
 #_0094E9: BEQ .branch0094EE
 
 #_0094EB: JMP .branch00949C
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0094EE
 #_0094EE: JSL AddSelfAsVectorAndMakeSpace
@@ -3815,11 +3974,13 @@ routine00946D:
 
 #_0094F9: CPX.b #$08
 #_0094FB: BCS .branch009500
-#_0094FD: JMP .branch009479
+
+#_0094FD: JMP .next_loop
 
 .branch009500
 #_009500: LDA.w $0EDF
 #_009503: JSR SetUpCGRAMDMA
+
 #_009506: PLB
 #_009507: RTL
 
@@ -3859,23 +4020,30 @@ routine009508:
 
 routine009534:
 #_009534: SEP #$30
+
 #_009536: PHB
+
 #_009537: LDA.b #$7E
 #_009539: PHA
 #_00953A: PLB
+
 #_00953B: STZ.w $0EDB
+
 #_00953E: LDX.b #$00
 
-.branch009540
+.next_loop
 #_009540: LDA.w $0EDC
 #_009543: STA.w $0EDD
+
 #_009546: LDA.b #$E0
 
 .branch009548
 #_009548: CLC
 #_009549: ADC.b #$20
 #_00954B: TAY
+
 #_00954C: LSR.w $0EDD
+
 #_00954F: DEX
 #_009550: BPL .branch009548
 #_009552: BCS .branch009563
@@ -3883,18 +4051,25 @@ routine009534:
 .branch009554
 #_009554: LDA.w $7E2500,Y
 #_009557: STA.w $7E2300,Y
+
 #_00955A: INY
+
 #_00955B: TYA
 #_00955C: AND.b #$1F
 #_00955E: BNE .branch009554
+
 #_009560: JMP .branch0095B9
+
+;---------------------------------------------------------------------------------------------------
 
 .branch009563
 #_009563: PHY
 
 #_009564: REP #$20
+
 #_009566: LDA.w $7E2500,Y
 #_009569: ASL A
+
 #_00956A: LDX.b #$04
 
 .branch00956C
@@ -3903,6 +4078,7 @@ routine009534:
 .branch00956E
 #_00956E: ASL A
 #_00956F: ROL.w $0EE0,X
+
 #_009572: DEY
 #_009573: BPL .branch00956E
 
@@ -3910,7 +4086,10 @@ routine009534:
 #_009576: DEX
 #_009577: BPL .branch00956C
 
+;---------------------------------------------------------------------------------------------------
+
 #_009579: SEP #$20
+
 #_00957B: LDX.b #$04
 
 .branch00957D
@@ -3927,7 +4106,10 @@ routine009534:
 #_00958E: DEX
 #_00958F: BPL .branch00957D
 
+;---------------------------------------------------------------------------------------------------
+
 #_009591: REP #$20
+
 #_009593: LDX.b #$00
 
 .branch009595
@@ -3936,6 +4118,7 @@ routine009534:
 .branch009597
 #_009597: LSR.w $0EE0,X
 #_00959A: ROR A
+
 #_00959B: DEY
 #_00959C: BPL .branch009597
 
@@ -3944,16 +4127,22 @@ routine009534:
 #_0095A0: CPX.b #$06
 #_0095A2: BNE .branch009595
 
+;---------------------------------------------------------------------------------------------------
+
 #_0095A4: PLY
+
 #_0095A5: LSR A
 #_0095A6: STA.w $7E2300,Y
 
 #_0095A9: SEP #$20
+
 #_0095AB: INY
 #_0095AC: INY
+
 #_0095AD: TYA
 #_0095AE: AND.b #$1F
 #_0095B0: BEQ .branch0095B5
+
 #_0095B2: JMP .branch009563
 
 .branch0095B5
@@ -3963,14 +4152,18 @@ routine009534:
 #_0095B9: LDX.w $0EDB
 #_0095BC: INX
 #_0095BD: STX.w $0EDB
+
 #_0095C0: CPX.b #$08
 #_0095C2: BCS .branch0095C7
 
-#_0095C4: JMP .branch009540
+;---------------------------------------------------------------------------------------------------
+
+#_0095C4: JMP .next_loop
 
 .branch0095C7
 #_0095C7: LDA.w $0EDF
 #_0095CA: JSR SetUpCGRAMDMA
+
 #_0095CD: PLB
 #_0095CE: RTL
 
@@ -4026,7 +4219,7 @@ routine009602:
 
 #_009614: LDY.w #$0000
 
-.branch009617
+.next_loop
 #_009617: LDA.b [$98]
 #_009619: STA.b [$94],Y
 
@@ -4038,21 +4231,24 @@ routine009602:
 
 #_009623: TYA
 #_009624: AND.w #$000F
-#_009627: BNE .branch009617
+#_009627: BNE .next_loop
 
 .branch009629
 #_009629: LDA.w #$0000
 #_00962C: STA.b [$94],Y
+
 #_00962E: INY
 #_00962F: INY
+
 #_009630: TYA
 #_009631: AND.w #$001F
 #_009634: BNE .branch009629
 
 #_009636: INC.w $047A
+
 #_009639: LDA.w $047A
 #_00963C: CMP.w $0476
-#_00963F: BCC .branch009617
+#_00963F: BCC .next_loop
 
 #_009641: PLP
 #_009642: RTL
@@ -4077,6 +4273,9 @@ routine009602:
 ;	
 ;		return A
 ;	}
+;
+; TODO a quick analysis by isofrieze suggests this is an LSFR
+; TODO figure out taps, etc.
 ;===================================================================================================
 GetRandomInt:
 #_009643: PHP
@@ -4113,8 +4312,8 @@ GetRandomInt:
 #_009670: RTL
 
 ;===================================================================================================
-
-ZeroALOTofVRAM: ; TODO figure out how much and where
+; TODO figure out how much and where
+ZeroALOTofVRAM:
 #_009671: PHP
 #_009672: SEP #$30
 
@@ -4143,7 +4342,7 @@ ZeroALOTofVRAM: ; TODO figure out how much and where
 
 .branch009694
 #_009694: JSL Zero2KBinVRAM_setup
-#_009698: STA.w DMAENABLE
+#_009698: STA.w MDMAEN
 
 #_00969B: DEC.w $0E80
 #_00969E: BPL .branch009694
@@ -4172,7 +4371,7 @@ ZeroALOTofVRAM: ; TODO figure out how much and where
 
 .branch0096C0
 #_0096C0: JSL Zero2KBinVRAM_setup
-#_0096C4: STA.w DMAENABLE
+#_0096C4: STA.w MDMAEN
 #_0096C7: DEC.w $0E80
 #_0096CA: BPL .branch0096C0
 
@@ -4200,7 +4399,7 @@ ZeroALOTofVRAM: ; TODO figure out how much and where
 
 .branch0096EC
 #_0096EC: JSL Zero2KBinVRAM_setup
-#_0096F0: STA.w DMAENABLE
+#_0096F0: STA.w MDMAEN
 #_0096F3: DEC.w $0E80
 #_0096F6: BPL .branch0096EC
 
@@ -4226,7 +4425,7 @@ ZeroALOTofVRAM: ; TODO figure out how much and where
 
 .branch009718
 #_009718: JSL Zero2KBinVRAM_setup
-#_00971C: STA.w DMAENABLE
+#_00971C: STA.w MDMAEN
 #_00971F: DEC.w $0E80
 #_009722: BPL .branch009718
 
@@ -4237,7 +4436,7 @@ ZeroALOTofVRAM: ; TODO figure out how much and where
 
 ;===================================================================================================
 
-Empty_First_4K_in_7F0000:
+EmptyFirst4KBin7F0000:
 #_00972B: PHP
 #_00972C: REP #$30
 
@@ -4246,6 +4445,7 @@ Empty_First_4K_in_7F0000:
 
 .next
 #_009732: STA.l $7F0000,X
+
 #_009736: INX
 #_009737: INX
 #_009738: CPX.w #$1000
@@ -4387,33 +4587,46 @@ routine0097BB:
 
 routine0097C4:
 #_0097C4: REP #$10
+
 #_0097C6: ASL A
 #_0097C7: TAY
+
 #_0097C8: PHB
 
 #_0097C9: SEP #$20
+
 #_0097CB: LDA.b #pointers07E7B0>>16
 #_0097CD: PHA
 
 #_0097CE: REP #$20
+
 #_0097D0: PLB
+
 #_0097D1: LDA.w pointers07E7B0,Y
 #_0097D4: STA.w $0090
+
 #_0097D7: LDY.w #$0000
+
 #_0097DA: LDA.b ($90),Y
 #_0097DC: STA.w $0100,Y
+
 #_0097DF: STA.w $0E80
+
 #_0097E2: INY
 #_0097E3: INY
 
-.branch0097E4
+;---------------------------------------------------------------------------------------------------
+
+.next_transfer
 #_0097E4: LDX.w #$0000
 
 .branch0097E7
 #_0097E7: LDA.b ($90),Y
 #_0097E9: STA.w $0100,Y
+
 #_0097EC: INY
 #_0097ED: INY
+
 #_0097EE: INX
 #_0097EF: INX
 #_0097F0: CPX.w #$0004
@@ -4421,20 +4634,25 @@ routine0097C4:
 
 #_0097F5: ASL A
 #_0097F6: STA.w $0E82
+
 #_0097F9: LDX.w #$0000
 
 .branch0097FC
 #_0097FC: LDA.b ($90),Y
 #_0097FE: STA.w $0106,X
+
 #_009801: INY
 #_009802: INY
+
 #_009803: INX
 #_009804: INX
 #_009805: CPX.w $0E82
 #_009808: BCC .branch0097FC
 
 #_00980A: DEC.w $0E80
-#_00980D: BNE .branch0097E4
+#_00980D: BNE .next_transfer
+
+;---------------------------------------------------------------------------------------------------
 
 #_00980F: PLB
 #_009810: RTL
@@ -4483,6 +4701,7 @@ routine00983C:
 #_009846: LDA.w $0F48
 #_009849: AND.b #$FC
 #_00984B: STA.w $0F08
+
 #_00984E: STZ.w $0F07
 
 #_009851: PLP
@@ -4515,7 +4734,9 @@ routine009853:
 #_009872: STZ.w $0FC0
 #_009875: STZ.w $0FC2
 
-.branch009878
+;---------------------------------------------------------------------------------------------------
+
+.next
 #_009878: LDA.w $0FC4
 #_00987B: ASL A
 #_00987C: TAY
@@ -4532,18 +4753,21 @@ routine009853:
 #_00988B: BCC .branch009885
 
 #_00988D: INC.w $0FC4
+
 #_009890: LDA.w $0FC4
 #_009893: LSR A
 #_009894: LSR A
 #_009895: LSR A
-#_009896: BCC .branch00989C
+#_009896: BCC .dont_frame
 
 #_009898: JSL AddSelfAsVector
 
-.branch00989C
+.dont_frame
 #_00989C: LDA.w $0FC4
 #_00989F: CMP.w #$0013
-#_0098A2: BCC .branch009878
+#_0098A2: BCC .next
+
+;---------------------------------------------------------------------------------------------------
 
 #_0098A4: LDA.w $0EF5
 #_0098A7: AND.w #$8000
@@ -4581,10 +4805,12 @@ routine0098C7:
 #_0098D4: TAX
 
 #_0098D5: INY
+
 #_0098D6: LDA.b [$83],Y
 #_0098D8: CLC
 #_0098D9: ADC.w $070D
 #_0098DC: JSR ReadPage_A_Bank04
+
 #_0098DF: STX.w $0FC8
 
 #_0098E2: TAY
@@ -4631,14 +4857,14 @@ routine0098C7:
 
 #_00991C: LDA.w $0FC8
 
-.rollin_deep
+.roll
 #_00991F: ASL A
 #_009920: ROL.w $0FC8
 #_009923: ASL A
 #_009924: ROL.w $0FC8
 
 #_009927: DEX
-#_009928: BPL .rollin_deep
+#_009928: BPL .roll
 
 #_00992A: LDA.w $0FC8
 #_00992D: AND.b #$03
@@ -4652,6 +4878,7 @@ routine0098C7:
 
 .branch00993B
 #_00993B: JSR routine009942
+
 #_00993E: SEC
 
 .exit
@@ -4873,6 +5100,7 @@ routine009942:
 #_009A66: INC.w $0FC0
 
 #_009A69: LDX.w $0FC0
+
 #_009A6C: BRA .branch009A74
 
 ;---------------------------------------------------------------------------------------------------
@@ -4898,8 +5126,9 @@ routine009942:
 #_009A85: INY
 #_009A86: CPY.w #$0014
 #_009A89: BCC .branch009A7C
-
 #_009A8B: BCS .exit_b
+
+;---------------------------------------------------------------------------------------------------
 
 .branch009A8D
 #_009A8D: ASL A
@@ -5072,14 +5301,14 @@ routine009BDE:
 
 #_009BEC: LDX.w $040D ; number of times to shift A
 
-.rollin_deep
+.rollin_rollin
 #_009BEF: ASL A
 #_009BF0: ROL.w $0FC8
 #_009BF3: ASL A
 #_009BF4: ROL.w $0FC8
 
 #_009BF7: DEX
-#_009BF8: BPL .rollin_deep
+#_009BF8: BPL .rollin_rollin
 
 #_009BFA: LDA.w $0FC8
 #_009BFD: AND.b #$03
@@ -5117,7 +5346,7 @@ routine009C0D:
 
 #_009C10: STA.w $0FCD
 
-#_009C13: LDA.b #pointers079149>>17
+#_009C13: LDA.b #pointers079149>>16
 #_009C15: STA.w $0082
 #_009C18: STA.w $0085
 #_009C1B: STA.w $0088
@@ -5735,8 +5964,9 @@ ResetSomeTextMaybe:
 
 ;===================================================================================================
 
-routine009F56:
+WriteMoneyToHUD:
 #_009F56: PHP
+
 #_009F57: JSL routine00A9AD
 
 #_009F5B: REP #$30
@@ -5826,7 +6056,7 @@ routine009F56:
 
 ;===================================================================================================
 
-routine009FDE:
+WriteMAGToHUD:
 #_009FDE: PHP
 
 #_009FDF: JSL routine00A9AD
@@ -7096,7 +7326,7 @@ UpdateDirTilemap:
 routine00A840:
 #_00A840: PHP
 #_00A841: JSL routine00A9AD
-#_00A845: JSL routine00A8B3
+#_00A845: JSL GetCurrentRoomFloorAndDungeonID
 
 #_00A849: SEP #$30
 #_00A84B: LDA.b #$20
@@ -7155,8 +7385,7 @@ routine00A840:
 
 ;===================================================================================================
 
-; TODO seems to somewhat determine RNG things
-routine00A8B3:
+GetCurrentRoomFloorAndDungeonID:
 #_00A8B3: PHP
 #_00A8B4: SEP #$30
 
@@ -7185,23 +7414,23 @@ routine00A8B3:
 ; + 0xxxxxx0
 #_00A8CE: CLC
 #_00A8CF: ADC.w $00E0
-#_00A8D2: ADC.b #$00
+#_00A8D2: ADC.b #DungeonIDByBlock>>0
 #_00A8D4: STA.w $00E0
 
 ; eeeeeeyy -> 110000yy
 #_00A8D7: LDA.w $00E1
 #_00A8DA: AND.b #$03
-#_00A8DC: ADC.b #$C0
+#_00A8DC: ADC.b #DungeonIDByBlock>>8
 #_00A8DE: STA.w $00E1
 
 ; Bank 04
-#_00A8E1: LDA.b #$04
+#_00A8E1: LDA.b #DungeonIDByBlock>>16
 #_00A8E3: STA.w $00E2
 
 #_00A8E6: LDY.b #$00
+
 #_00A8E8: LDA.b [$E0],Y
 #_00A8EA: STA.w $045A
-
 
 #_00A8ED: INY
 
@@ -8893,17 +9122,17 @@ UpdateMaxHP:
 
 #_00B548: SEP #$20
 
-#_00B54A: STA.w CPUMULTA
+#_00B54A: STA.w WRMPYA
 
 #_00B54D: PLX
 
 #_00B54E: LDA.w $100A,X
 #_00B551: INC A
-#_00B552: STA.w CPUMULTB
+#_00B552: STA.w WRMPYB
 
 #_00B555: REP #$20
 
-#_00B557: LDA.w CPUPRODUCTL
+#_00B557: LDA.w RDMPYL
 #_00B55A: CLC
 #_00B55B: ADC.w #$000C
 #_00B55E: CPX.w #$0060
@@ -8941,12 +9170,12 @@ UpdateMaxMP:
 
 #_00B587: SEP #$20
 
-#_00B589: STA.w CPUMULTA
+#_00B589: STA.w WRMPYA
 #_00B58C: LDA.w $100A,X
 
 #_00B58F: CLC
 #_00B590: ADC.b #$04
-#_00B592: STA.w CPUMULTB
+#_00B592: STA.w WRMPYB
 
 #_00B595: NOP
 #_00B596: NOP
@@ -8959,7 +9188,7 @@ UpdateMaxMP:
 
 #_00B59D: REP #$20
 
-#_00B59F: LDA.w CPUPRODUCTL
+#_00B59F: LDA.w RDMPYL
 #_00B5A2: CLC
 #_00B5A3: ADC.w #$0004
 #_00B5A6: STA.w $1034,X
@@ -9288,9 +9517,9 @@ GetEquipmentStat:
 
 #_00B77A: SEP #$20
 
-#_00B77C: STA.w CPUMULTA ; A = Equipment ID
+#_00B77C: STA.w WRMPYA ; A = Equipment ID
 #_00B77F: LDA.b #$0C
-#_00B781: STA.w CPUMULTB
+#_00B781: STA.w WRMPYB
 
 #_00B784: PHB
 
@@ -9311,7 +9540,7 @@ GetEquipmentStat:
 
 #_00B793: TYA ; Y = requested stat
 #_00B794: CLC
-#_00B795: ADC.w CPUPRODUCTL
+#_00B795: ADC.w RDMPYL
 #_00B798: TAY
 
 #_00B799: LDA.w EquipmentStats,Y
@@ -9328,10 +9557,10 @@ GetUseItemStat:
 
 #_00B7A0: SEP #$20
 
-#_00B7A2: STA.w CPUMULTA
+#_00B7A2: STA.w WRMPYA
 
 #_00B7A5: LDA.b #$04
-#_00B7A7: STA.w CPUMULTB
+#_00B7A7: STA.w WRMPYB
 
 #_00B7AA: PHB
 
@@ -9352,7 +9581,7 @@ GetUseItemStat:
 
 #_00B7B9: TYA
 #_00B7BA: CLC
-#_00B7BB: ADC.w CPUPRODUCTL
+#_00B7BB: ADC.w RDMPYL
 #_00B7BE: TAY
 
 #_00B7BF: LDA.w UseItemStats,Y
@@ -9427,10 +9656,10 @@ routine00B7C5:
 
 #_00B824: SEP #$20
 #_00B826: LDA.b #$02
-#_00B828: STA.w MAINDES
+#_00B828: STA.w TM
 #_00B82B: STA.w $0F74
 #_00B82E: LDA.b #$00
-#_00B830: STA.w SUBDES
+#_00B830: STA.w TS
 #_00B833: STA.w $0F76
 #_00B836: LDA.b #$0F
 #_00B838: STA.w INIDISP
@@ -9667,16 +9896,16 @@ routine00B9AD:
 #_00B9CE: ADC.b #$1F
 #_00B9D0: TAX
 #_00B9D1: LDA.w $0EED
-#_00B9D4: STA.w CPUMULTA
+#_00B9D4: STA.w WRMPYA
 #_00B9D7: LDA.b #$0E
-#_00B9D9: STA.w CPUMULTB
+#_00B9D9: STA.w WRMPYB
 #_00B9DC: LDY.b #$08
 
 .branch00B9DE
 #_00B9DE: DEY
 #_00B9DF: BNE .branch00B9DE
 
-#_00B9E1: LDA.w CPUPRODUCTL
+#_00B9E1: LDA.w RDMPYL
 #_00B9E4: STA.w $0EEE
 #_00B9E7: LDA.b #$50
 #_00B9E9: SEC
@@ -10001,7 +10230,7 @@ SomeOtherDMAsFromE80:
 
 #_00BBEA: SEP #$30
 #_00BBEC: LDX.b #$00
-#_00BBEE: STX.w DMAENABLE
+#_00BBEE: STX.w MDMAEN
 
 #_00BBF1: PLB
 #_00BBF2: PLP
@@ -10171,7 +10400,7 @@ routine00BC3C:
 #_00BCCC: STA.w $0F06
 
 #_00BCCF: LDA.b #$00
-#_00BCD1: STA.w DMAENABLE
+#_00BCD1: STA.w MDMAEN
 
 #_00BCD4: JSL AddSelfAsVector
 
@@ -10259,7 +10488,7 @@ routine00BCDB:
 #_00BD4B: STA.w $0F06
 
 #_00BD4E: LDA.b #$00
-#_00BD50: STA.w DMAENABLE
+#_00BD50: STA.w MDMAEN
 
 #_00BD53: JSL AddSelfAsVector
 
@@ -10821,7 +11050,7 @@ routine00C197:
 
 #_00C1AB: JSL PPUSettings_00C409
 #_00C1AF: JSL ZeroALOTofVRAM
-#_00C1B3: JSL Empty_First_4K_in_7F0000
+#_00C1B3: JSL EmptyFirst4KBin7F0000
 #_00C1B7: JSL routine008F57
 
 ; $4000 in VRAM
@@ -10832,7 +11061,7 @@ routine00C197:
 
 #_00C1C5: LDA.b #$02
 #_00C1C7: JSL SomeOtherDMAsFromE80
-#_00C1CB: STA.w DMAENABLE
+#_00C1CB: STA.w MDMAEN
 
 ; $8000 in VRAM
 #_00C1CE: LDA.b #$00
@@ -10848,7 +11077,7 @@ routine00C197:
 #_00C1E1: CLC
 #_00C1E2: ADC.b #$04
 #_00C1E4: JSL SomeOtherDMAsFromE80
-#_00C1E8: STA.w DMAENABLE
+#_00C1E8: STA.w MDMAEN
 
 ; $7800 in VRAM
 #_00C1EB: LDA.b #$00
@@ -10858,7 +11087,7 @@ routine00C197:
 
 #_00C1F5: LDA.b #$1C
 #_00C1F7: JSL SomeOtherDMAsFromE80
-#_00C1FB: STA.w DMAENABLE
+#_00C1FB: STA.w MDMAEN
 
 ; $6800 in VRAM
 #_00C1FE: LDA.b #$00
@@ -10868,7 +11097,7 @@ routine00C197:
 
 #_00C208: LDA.b #$1D
 #_00C20A: JSL SomeOtherDMAsFromE80
-#_00C20E: STA.w DMAENABLE
+#_00C20E: STA.w MDMAEN
 
 ; $0000 in VRAM
 #_00C211: LDA.b #$00
@@ -10878,7 +11107,7 @@ routine00C197:
 
 #_00C21B: LDA.b #$03
 #_00C21D: JSL SomeOtherDMAsFromE80
-#_00C221: STA.w DMAENABLE
+#_00C221: STA.w MDMAEN
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -10920,14 +11149,14 @@ routine00C197:
 
 #_00C264: LDA.b #$1E
 #_00C266: JSL SomeOtherDMAsFromE80
-#_00C26A: STA.w DMAENABLE
+#_00C26A: STA.w MDMAEN
 
 #_00C26D: LDA.b #$C0
 #_00C26F: STA.w CGADD
 
 #_00C272: LDA.b #$1E
 #_00C274: JSL SomeOtherDMAsFromE80
-#_00C278: STA.w DMAENABLE
+#_00C278: STA.w MDMAEN
 
 ; TODO wram address?
 #_00C27B: LDA.b #$00
@@ -10974,7 +11203,7 @@ routine00C197:
 #_00C2BA: JSL SomeOtherDMAsFromE80
 
 #_00C2BE: LDX.b #$80
-#_00C2C0: STX.w DMAENABLE
+#_00C2C0: STX.w MDMAEN
 
 #_00C2C3: STZ.w $0F06
 
@@ -10988,7 +11217,7 @@ routine00C197:
 
 #_00C2D7: JSL routine00A14C
 
-#_00C2DB: JSL Empty_First_4K_in_7F0000
+#_00C2DB: JSL EmptyFirst4KBin7F0000
 
 #_00C2DF: LDA.b #$F8
 #_00C2E1: STA.w $0F53
@@ -11097,7 +11326,7 @@ routine00C351:
 #_00C395: BEQ .branch00C3AD
 
 #_00C397: JSL routine00D3DA
-#_00C39B: JSL routine018000
+#_00C39B: JSL GameMenu
 
 #_00C39F: LDA.w $0C4F
 #_00C3A2: BMI .branch00C3C3
@@ -11145,11 +11374,11 @@ routine00C351:
 #_00C3E4: LDA.b #$0C
 #_00C3E6: STA.w $0F7C
 
-#_00C3E9: STZ.w DMAENABLE
+#_00C3E9: STZ.w MDMAEN
 #_00C3EC: STZ.w $0F05
 #_00C3EF: STZ.w $0F06
 
-#_00C3F2: STZ.w HDMAENABLE
+#_00C3F2: STZ.w HDMAEN
 #_00C3F5: STZ.w $0F0D
 #_00C3F8: STZ.w $0F0E
 
@@ -11271,14 +11500,14 @@ PPUSettings_00C409:
 #_00C4AC: STX.w $0F5D
 
 #_00C4AF: LDX.b #$1F
-#_00C4B1: STX.b MAINDES
+#_00C4B1: STX.b TM
 #_00C4B3: STX.w $0F74
 
 #_00C4B6: LDX.b #$1D
 #_00C4B8: STX.w $0F75
 
 #_00C4BB: LDX.b #$03
-#_00C4BD: STX.b SUBDES
+#_00C4BD: STX.b TS
 #_00C4BF: STX.w $0F76
 
 #_00C4C2: LDX.b #$10
@@ -11293,6 +11522,7 @@ PPUSettings_00C409:
 
 #_00C4D3: STX.b COLDATA
 #_00C4D5: STX.w $0F7D
+
 #_00C4D8: STX.b SETINI
 
 #_00C4DA: LDX.b #$02
@@ -11324,11 +11554,11 @@ PPUSettings_00C409:
 
 #_00C502: LDX.b #$00
 
-#_00C504: STX.b DMAENABLE
+#_00C504: STX.b MDMAEN
 #_00C506: STX.w $0F05
 #_00C509: STX.w $0F06
 
-#_00C50C: STX.b HDMAENABLE
+#_00C50C: STX.b HDMAEN
 #_00C50E: STX.w $0F0D
 #_00C511: STX.w $0F0E
 
@@ -11694,7 +11924,7 @@ data00C739:
 Disable_BG2_OnMainScreen:
 #_00C73A: LDA.w $0F74
 #_00C73D: AND.b #$FD
-#_00C73F: STA.w MAINDES
+#_00C73F: STA.w TM
 #_00C742: STA.w $0F74
 
 #_00C745: RTS
@@ -11704,7 +11934,7 @@ Disable_BG2_OnMainScreen:
 Enable_BG2_OnMainScreen:
 #_00C746: LDA.w $0F74
 #_00C749: ORA.b #$02
-#_00C74B: STA.w MAINDES
+#_00C74B: STA.w TM
 #_00C74E: STA.w $0F74
 
 #_00C751: RTS
@@ -12549,7 +12779,7 @@ LookForAlwaysThereNPC:
 #_00CC1A: JSR routine00D2C8
 
 .branch00CC1D
-#_00CC1D: JSL routine00A8B3
+#_00CC1D: JSL GetCurrentRoomFloorAndDungeonID
 
 #_00CC21: SEP #$30
 #_00CC23: LDA.w $0EFE
@@ -12757,13 +12987,13 @@ RunMovementDrain:
 #_00CD3A: SEP #$20
 
 #_00CD3C: LDA.w $045C
-#_00CD3F: STA.w CPUDIVIDENDL
+#_00CD3F: STA.w WRDIVL
 
 #_00CD42: LDA.w $045D
-#_00CD45: STA.w CPUDIVIDENDH
+#_00CD45: STA.w WRDIVH
 
 #_00CD48: LDA.b #$0A
-#_00CD4A: STA.w CPUDIVISOR
+#_00CD4A: STA.w WRDIVB
 
 #_00CD4D: NOP
 #_00CD4E: NOP
@@ -12776,10 +13006,10 @@ RunMovementDrain:
 
 #_00CD55: REP #$20
 
-#_00CD57: LDA.w CPUQUOTIENTL
+#_00CD57: LDA.w RDDIVL
 #_00CD5A: STA.w $0E00
 
-#_00CD5D: LDA.w CPUREMAINDERL
+#_00CD5D: LDA.w RDMPYL
 #_00CD60: STA.w $045C
 
 #_00CD63: LDA.w $0409
@@ -14256,7 +14486,7 @@ RoomEvent_LookForChest:
 
 #_00D60D: REP #$30
 #_00D60F: LDA.w #$0032
-#_00D612: JSL routine01808A
+#_00D612: JSL DisplaySystemMessage
 
 #_00D616: SEP #$20
 #_00D618: LDA.w $09F3
@@ -14264,7 +14494,7 @@ RoomEvent_LookForChest:
 
 #_00D61D: REP #$30
 #_00D61F: LDA.w #$0033
-#_00D622: JSL routine01808A
+#_00D622: JSL DisplaySystemMessage
 #_00D626: PLA
 #_00D627: JSL UpdateDialogBox
 #_00D62B: PLP
@@ -14471,13 +14701,13 @@ routine00D6E3:
 #_00D73B: STA.w $0A54
 #_00D73E: STZ.w $0A56
 
-#_00D741: JSL routine0181B7
-#_00D745: JSL routine009F56
-#_00D749: JSL routine009FDE
+#_00D741: JSL TriggerMenuGrow
+#_00D745: JSL WriteMoneyToHUD
+#_00D749: JSL WriteMAGToHUD
 
 #_00D74D: LDA.w #$0035
 #_00D750: JSR routine00D9AD
-#_00D753: JSL routine0181AF
+#_00D753: JSL TriggerMenuShrink
 
 #_00D757: JSL BringUpAMenu
 #_00D75B: JSR routine00D982
@@ -14537,13 +14767,13 @@ routine00D760:
 #_00D7B1: STA.w $0A54
 #_00D7B4: STZ.w $0A56
 
-#_00D7B7: JSL routine0181B7
-#_00D7BB: JSL routine009F56
-#_00D7BF: JSL routine009FDE
+#_00D7B7: JSL TriggerMenuGrow
+#_00D7BB: JSL WriteMoneyToHUD
+#_00D7BF: JSL WriteMAGToHUD
 
 #_00D7C3: LDA.w #$0036
 #_00D7C6: JSR routine00D9AD
-#_00D7C9: JSL routine0181AF
+#_00D7C9: JSL TriggerMenuShrink
 
 #_00D7CD: JSL BringUpAMenu
 #_00D7D1: JSR routine00D982
@@ -14895,7 +15125,7 @@ routine00D982:
 ;===================================================================================================
 
 routine00D9AD:
-#_00D9AD: JSL routine01808A
+#_00D9AD: JSL DisplaySystemMessage
 #_00D9B1: JSL UpdateDialogBox
 
 #_00D9B5: RTS
