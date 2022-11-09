@@ -6213,7 +6213,7 @@ Message_03_04_2B:
 #_0BB68B: db $F2, $0B ; prewritten text 0B
 #_0BB68D: db $FC ; wait for key and new line
 #_0BB68E: db $D0, $D0 ; set progress bit D0
-#_0BB690: db $FE, $02, $E0 ; ext command 02: add 224 to STAT_11C if progress bit FB
+#_0BB690: db $FE, $02, $E0 ; ext command 02: add 224 to alignment if progress bit FB
 #_0BB693: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0BB695: db $FF ; end of message
 
@@ -6317,7 +6317,7 @@ Message_03_04_31:
 #_0BB730: db $FC ; wait for key and new line
 #_0BB731: db $DE, $00, $00, $BD, $01 ; load 1x demon 00BD
 #_0BB736: db $FE, $26, $04 ; ext command 26: something 04 TODO
-#_0BB739: db $FE, $02, $20 ; ext command 02: add 32 to STAT_11C if progress bit FB
+#_0BB739: db $FE, $02, $20 ; ext command 02: add 32 to alignment if progress bit FB
 #_0BB73C: db $D0, $D0 ; set progress bit D0
 #_0BB73E: db $FF ; end of message
 
@@ -8943,11 +8943,11 @@ Message_03_07_0F:
 #_0BCC5F: db $D5, $11 ; send 11 to APU
 #_0BCC61: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BCC64: db $D5, $2D ; send 2D to APU
-#_0BCC66: db $FE, $0B, $00, $1E ; ext command 0B: something 1E, 00
+#_0BCC66: db $FE, $0B, $00, $1E ; ext command 0B: remove 30% of chase hp
 #_0BCC6A: db $D5, $11 ; send 11 to APU
 #_0BCC6C: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BCC6F: db $D5, $2D ; send 2D to APU
-#_0BCC71: db $FE, $0B, $01, $1E ; ext command 0B: something 1E, 01
+#_0BCC71: db $FE, $0B, $01, $1E ; ext command 0B: remove 30% of momo hp
 #_0BCC75: db $FC ; wait for key and new line
 
 ;===================================================================================================
@@ -9455,7 +9455,7 @@ Message_03_07_21:
 #_0BD187: db $7C, $3A, $CF, $49, $2C, $9C, $4A, $26 ; ミに⎵ゆくがよい
 #_0BD18F: db $FC ; wait for key and new line
 #_0BD190: db $D0, $66 ; set progress bit 66
-#_0BD192: db $FE, $02, $50 ; ext command 02: add 80 to STAT_11C if progress bit FB
+#_0BD192: db $FE, $02, $50 ; ext command 02: add 80 to alignment if progress bit FB
 #_0BD195: db $D0, $FB ; set progress bit FB
 #_0BD197: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0BD199: db $FF ; end of message
@@ -9474,7 +9474,7 @@ Message_03_07_22:
 Message_03_07_23:
 #_0BD19F: db $D0, $63 ; set progress bit 63
 #_0BD1A1: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_0BD1A3: db $FE, $02, $E0 ; ext command 02: add 224 to STAT_11C if progress bit FB
+#_0BD1A3: db $FE, $02, $E0 ; ext command 02: add 224 to alignment if progress bit FB
 #_0BD1A6: db $D2, $64, $24 ; test progress bit 64 for message 24
 #_0BD1A9: db $FF ; end of message
 
@@ -9522,7 +9522,7 @@ Message_03_07_26:
 #_0BD1EB: db $F7, $5F, $27 ; go to message 27 if RNG <= $5F
 #_0BD1EE: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BD1F1: db $D5, $0E ; send 0E to APU
-#_0BD1F3: db $FE, $0B, $00, $0A ; ext command 0B: something 0A, 00
+#_0BD1F3: db $FE, $0B, $00, $0A ; ext command 0B: remove 10% of chase hp
 #_0BD1F7: db $D3, $2C ; go to message 2C
 
 ;===================================================================================================
@@ -9531,7 +9531,7 @@ Message_03_07_27:
 #_0BD1F9: db $F7, $7F, $28 ; go to message 28 if RNG <= $7F
 #_0BD1FC: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BD1FF: db $D5, $0E ; send 0E to APU
-#_0BD201: db $FE, $0B, $00, $0F ; ext command 0B: something 0F, 00
+#_0BD201: db $FE, $0B, $00, $0F ; ext command 0B: remove 15% of chase hp
 #_0BD205: db $D3, $2C ; go to message 2C
 
 ;===================================================================================================
@@ -9540,7 +9540,7 @@ Message_03_07_28:
 #_0BD207: db $F7, $3F, $29 ; go to message 29 if RNG <= $3F
 #_0BD20A: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BD20D: db $D5, $0E ; send 0E to APU
-#_0BD20F: db $FE, $0B, $00, $1E ; ext command 0B: something 1E, 00
+#_0BD20F: db $FE, $0B, $00, $1E ; ext command 0B: remove 30% of chase hp
 #_0BD213: db $D3, $2C ; go to message 2C
 
 ;===================================================================================================
@@ -9549,7 +9549,7 @@ Message_03_07_29:
 #_0BD215: db $F7, $3F, $2A ; go to message 2A if RNG <= $3F
 #_0BD218: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BD21B: db $D5, $0E ; send 0E to APU
-#_0BD21D: db $FE, $0B, $00, $32 ; ext command 0B: something 32, 00
+#_0BD21D: db $FE, $0B, $00, $32 ; ext command 0B: remove 50% of chase hp
 #_0BD221: db $D3, $2C ; go to message 2C
 
 ;===================================================================================================
@@ -9558,7 +9558,7 @@ Message_03_07_2A:
 #_0BD223: db $F7, $7F, $2B ; go to message 2B if RNG <= $7F
 #_0BD226: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BD229: db $D5, $0E ; send 0E to APU
-#_0BD22B: db $FE, $0B, $00, $46 ; ext command 0B: something 46, 00
+#_0BD22B: db $FE, $0B, $00, $46 ; ext command 0B: remove 70% of chase hp
 #_0BD22F: db $D3, $2C ; go to message 2C
 
 ;===================================================================================================
@@ -9566,7 +9566,7 @@ Message_03_07_2A:
 Message_03_07_2B:
 #_0BD231: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_0BD234: db $D5, $0E ; send 0E to APU
-#_0BD236: db $FE, $0B, $00, $5A ; ext command 0B: something 5A, 00
+#_0BD236: db $FE, $0B, $00, $5A ; ext command 0B: remove 90% of chase hp
 
 ;===================================================================================================
 
@@ -9614,12 +9614,12 @@ Message_03_07_2D:
 #_0BD294: db $CF, $2F, $25, $CF, $2B, $44, $3E, $CF ; ⎵さあ⎵きみは⎵
 #_0BD29C: db $AA, $27, $2A, $39, $95 ; どうかな?
 #_0BD2A1: db $FC ; wait for key and new line
-#_0BD2A2: db $FE, $2E, $00, $00 ; ext command 2E: 00 00 2E TODO
-#_0BD2A7: db $FE, $2E, $00, $01 ; ext command 2E: 00 01 2E TODO
-#_0BD2AC: db $FE, $2E, $00, $02 ; ext command 2E: 00 02 2E TODO
-#_0BD2B1: db $FE, $2E, $00, $03 ; ext command 2E: 00 03 2E TODO
-#_0BD2B6: db $FE, $2E, $00, $05 ; ext command 2E: 00 05 2E TODO
-#_0BD2BB: db $FE, $2E, $00, $06 ; ext command 2E: 00 06 2E TODO
+#_0BD2A2: db $FE, $2E, $00, $00 ; ext command 2E: go to message 2E if Chase is Dead
+#_0BD2A7: db $FE, $2E, $00, $01 ; ext command 2E: go to message 2E if Chase is Dying
+#_0BD2AC: db $FE, $2E, $00, $02 ; ext command 2E: go to message 2E if Chase is Stoned
+#_0BD2B1: db $FE, $2E, $00, $03 ; ext command 2E: go to message 2E if Chase is Paralyzed
+#_0BD2B6: db $FE, $2E, $00, $05 ; ext command 2E: go to message 2E if Chase is Fly
+#_0BD2BB: db $FE, $2E, $00, $06 ; ext command 2E: go to message 2E if Chase is Frog
 #_0BD2C0: db $F7, $5F, $2F ; go to message 2F if RNG <= $5F
 
 ;===================================================================================================
@@ -9826,7 +9826,7 @@ Message_03_07_3A:
 
 Message_03_07_3B:
 #_0BD492: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_0BD494: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
+#_0BD494: db $FE, $02, $10 ; ext command 02: add 16 to alignment if progress bit FB
 #_0BD497: db $D0, $91 ; set progress bit 91
 #_0BD499: db $D3, $45 ; go to message 45
 
@@ -9871,7 +9871,7 @@ Message_03_07_3E:
 
 Message_03_07_3F:
 #_0BD4D3: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_0BD4D5: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_0BD4D5: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_0BD4D8: db $D0, $92 ; set progress bit 92
 #_0BD4DA: db $D3, $45 ; go to message 45
 
@@ -9894,7 +9894,7 @@ Message_03_07_40:
 #_0BD4FE: db $3F, $2B, $4A, $32, $4B, $4E, $34, $3D ; ひきよせられたの
 #_0BD506: db $A6, $94 ; だ!
 #_0BD508: db $FC ; wait for key and new line
-#_0BD509: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
+#_0BD509: db $FE, $02, $10 ; ext command 02: add 16 to alignment if progress bit FB
 #_0BD50C: db $D0, $93 ; set progress bit 93
 #_0BD50E: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_0BD511: db $FE, $24, $FF ; ext command 24: something FF TODO
@@ -9935,7 +9935,7 @@ Message_03_07_42:
 #_0BD562: db $A9, $31 ; です
 #_0BD564: db $F2, $0B ; prewritten text 0B
 #_0BD566: db $FC ; wait for key and new line
-#_0BD567: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_0BD567: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_0BD56A: db $D0, $94 ; set progress bit 94
 #_0BD56C: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_0BD56F: db $FE, $24, $FF ; ext command 24: something FF TODO
@@ -11525,7 +11525,7 @@ Message_03_09_0D:
 #_0BE3E7: db $FC ; wait for key and new line
 #_0BE3E8: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0BE3EA: db $D0, $2B ; set progress bit 2B
-#_0BE3EC: db $FE, $02, $E0 ; ext command 02: add 224 to STAT_11C if progress bit FB
+#_0BE3EC: db $FE, $02, $E0 ; ext command 02: add 224 to alignment if progress bit FB
 #_0BE3EF: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
@@ -11701,7 +11701,7 @@ Message_03_09_16:
 #_0BE579: db $FC ; wait for key and new line
 #_0BE57A: db $D6, $00, $00 ; delete sprite in slot 00
 #_0BE57D: db $D0, $34 ; set progress bit 34
-#_0BE57F: db $FE, $02, $FF ; ext command 02: add 255 to STAT_11C if progress bit FB
+#_0BE57F: db $FE, $02, $FF ; ext command 02: add 255 to alignment if progress bit FB
 #_0BE582: db $FF ; end of message
 
 ;===================================================================================================
@@ -11754,7 +11754,7 @@ Message_03_09_18:
 #_0BE5EE: db $FC ; wait for key and new line
 #_0BE5EF: db $D6, $00, $00 ; delete sprite in slot 00
 #_0BE5F2: db $D0, $35 ; set progress bit 35
-#_0BE5F4: db $FE, $02, $FF ; ext command 02: add 255 to STAT_11C if progress bit FB
+#_0BE5F4: db $FE, $02, $FF ; ext command 02: add 255 to alignment if progress bit FB
 #_0BE5F7: db $FF ; end of message
 
 ;===================================================================================================
@@ -11796,7 +11796,7 @@ Message_03_09_1A:
 #_0BE640: db $FE, $62 ; ext command 62: Call routine 0FA371 TODO
 #_0BE642: db $D6, $00, $00 ; delete sprite in slot 00
 #_0BE645: db $D0, $36 ; set progress bit 36
-#_0BE647: db $FE, $02, $FF ; ext command 02: add 255 to STAT_11C if progress bit FB
+#_0BE647: db $FE, $02, $FF ; ext command 02: add 255 to alignment if progress bit FB
 #_0BE64A: db $FF ; end of message
 
 ;===================================================================================================

@@ -4828,7 +4828,7 @@ Message_02_02_05:
 #_0AA02D: db $EB, $F4 ; [set2] prewritten text F4
 #_0AA02F: db $F3 ; [set2] wait for key and new line
 #_0AA030: db $F1 ; [set2] clear message box
-#_0AA031: db $DF, $09 ; [set2] [COMMAND 3F:09]
+#_0AA031: db $DF, $09 ; [set2] inflict status: sleep
 #_0AA033: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA035: db $F3 ; [set2] wait for key and new line
 #_0AA036: db $F1 ; [set2] clear message box
@@ -4882,7 +4882,7 @@ Message_02_02_09:
 #_0AA066: db $EB, $F5 ; [set2] prewritten text F5
 #_0AA068: db $F3 ; [set2] wait for key and new line
 #_0AA069: db $F1 ; [set2] clear message box
-#_0AA06A: db $DF, $08 ; [set2] [COMMAND 3F:08]
+#_0AA06A: db $DF, $08 ; [set2] inflict status: charm
 #_0AA06C: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA06E: db $F3 ; [set2] wait for key and new line
 #_0AA06F: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -5270,7 +5270,7 @@ Message_02_03_13:
 #_0AA1D6: db $EB, $F5 ; [set2] prewritten text F5
 #_0AA1D8: db $F3 ; [set2] wait for key and new line
 #_0AA1D9: db $F1 ; [set2] clear message box
-#_0AA1DA: db $DF, $08 ; [set2] [COMMAND 3F:08]
+#_0AA1DA: db $DF, $08 ; [set2] inflict status: charm
 #_0AA1DC: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AA1DE: db $F3 ; [set2] wait for key and new line
 #_0AA1DF: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -5312,7 +5312,7 @@ Message_02_03_17:
 Message_02_03_18:
 #_0AA1FD: db $EB, $F4 ; [set2] prewritten text F4
 #_0AA1FF: db $F3 ; [set2] wait for key and new line
-#_0AA200: db $DF, $09 ; [set2] [COMMAND 3F:09]
+#_0AA200: db $DF, $09 ; [set2] inflict status: sleep
 #_0AA202: db $F1 ; [set2] clear message box
 #_0AA203: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA205: db $F3 ; [set2] wait for key and new line
@@ -6665,7 +6665,7 @@ Message_02_0A_10:
 ; «>[DEMONX]は なんたいかにげだした»
 Message_02_0A_11:
 #_0AA749: db $D7, $00, $12 ; [set2] go to message 12 if LUK < RNG(0, 16)
-#_0AA74C: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
+#_0AA74C: db $DA, $02, $0F ; [set2] ext command 02: add 15 to alignment if progress bit FB
 #_0AA74F: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA751: db $F3 ; [set2] wait for key and new line
 #_0AA752: db $F1 ; [set2] clear message box
@@ -6849,7 +6849,7 @@ Message_02_0A_22:
 
 ; «>[DEMONX]は なんたいかにげだした»
 Message_02_0A_23:
-#_0AA806: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
+#_0AA806: db $DA, $02, $0F ; [set2] ext command 02: add 15 to alignment if progress bit FB
 #_0AA809: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA80B: db $F3 ; [set2] wait for key and new line
 #_0AA80C: db $F1 ; [set2] clear message box
@@ -6983,7 +6983,7 @@ Message_02_0A_2D:
 
 ; «>[DEMONX]は なんたいかにげだした»
 Message_02_0A_2E:
-#_0AA891: db $DA, $02, $0F ; [set2] ext command 02: add 15 to STAT_11C if progress bit FB
+#_0AA891: db $DA, $02, $0F ; [set2] ext command 02: add 15 to alignment if progress bit FB
 #_0AA894: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA896: db $F3 ; [set2] wait for key and new line
 #_0AA897: db $F1 ; [set2] clear message box
@@ -7261,7 +7261,7 @@ Message_02_0A_44:
 #_0AA9B5: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA9B7: db $F3 ; [set2] wait for key and new line
 #_0AA9B8: db $F1 ; [set2] clear message box
-#_0AA9B9: db $DA, $02, $45 ; [set2] ext command 02: add 69 to STAT_11C if progress bit FB
+#_0AA9B9: db $DA, $02, $45 ; [set2] ext command 02: add 69 to alignment if progress bit FB
 #_0AA9BC: db $97 ; >
 #_0AA9BD: db $ED ; [set2] write demon name indexed from $0526
 #_0AA9BE: db $3E, $CF, $25, $2B, $4E, $37, $39, $52 ; は⎵あきれてなん
@@ -9422,7 +9422,7 @@ Message_02_0C_4F:
 #_0AB27E: db $EB, $EC ; [set2] prewritten text EC
 #_0AB280: db $F3 ; [set2] wait for key and new line
 #_0AB281: db $F1 ; [set2] clear message box
-#_0AB282: db $E1, $02 ; [set2] [COMMAND 41:02]
+#_0AB282: db $E1, $02 ; [set2] remove 1/8 of player's hp
 #_0AB284: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0AB286: db $F3 ; [set2] wait for key and new line
 #_0AB287: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -9489,7 +9489,7 @@ Message_02_0C_56:
 #_0AB2BF: db $EB, $F5 ; [set2] prewritten text F5
 #_0AB2C1: db $F3 ; [set2] wait for key and new line
 #_0AB2C2: db $F1 ; [set2] clear message box
-#_0AB2C3: db $DF, $08 ; [set2] [COMMAND 3F:08]
+#_0AB2C3: db $DF, $08 ; [set2] inflict status: charm
 #_0AB2C5: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AB2C7: db $F3 ; [set2] wait for key and new line
 #_0AB2C8: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -9600,7 +9600,7 @@ Message_02_0C_61:
 
 ; «>[DEMONX]は なんたいかにげだした»
 Message_02_0C_62:
-#_0AB32F: db $DA, $02, $11 ; [set2] ext command 02: add 17 to STAT_11C if progress bit FB
+#_0AB32F: db $DA, $02, $11 ; [set2] ext command 02: add 17 to alignment if progress bit FB
 #_0AB332: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB334: db $F3 ; [set2] wait for key and new line
 #_0AB335: db $F1 ; [set2] clear message box
@@ -10200,7 +10200,7 @@ Message_02_0D_25:
 #_0AB591: db $EB, $EC ; [set2] prewritten text EC
 #_0AB593: db $F3 ; [set2] wait for key and new line
 #_0AB594: db $F1 ; [set2] clear message box
-#_0AB595: db $E1, $02 ; [set2] [COMMAND 41:02]
+#_0AB595: db $E1, $02 ; [set2] remove 1/8 of player's hp
 #_0AB597: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0AB599: db $F3 ; [set2] wait for key and new line
 #_0AB59A: db $F7, $17, $80 ; [set2] [COMMAND 57] $17 $80 TODO
@@ -10256,7 +10256,7 @@ Message_02_0D_2A:
 #_0AB5CA: db $EB, $F4 ; [set2] prewritten text F4
 #_0AB5CC: db $F3 ; [set2] wait for key and new line
 #_0AB5CD: db $F1 ; [set2] clear message box
-#_0AB5CE: db $DF, $09 ; [set2] [COMMAND 3F:09]
+#_0AB5CE: db $DF, $09 ; [set2] inflict status: sleep
 #_0AB5D0: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB5D2: db $F3 ; [set2] wait for key and new line
 #_0AB5D3: db $F1 ; [set2] clear message box
@@ -10914,7 +10914,7 @@ Message_02_0D_6F:
 #_0AB855: db $EB, $F5 ; [set2] prewritten text F5
 #_0AB857: db $F3 ; [set2] wait for key and new line
 #_0AB858: db $F1 ; [set2] clear message box
-#_0AB859: db $DF, $08 ; [set2] [COMMAND 3F:08]
+#_0AB859: db $DF, $08 ; [set2] inflict status: charm
 #_0AB85B: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AB85D: db $F3 ; [set2] wait for key and new line
 #_0AB85E: db $FE, $02 ; [set2] [COMMAND 5E:02]
@@ -11232,7 +11232,7 @@ Message_02_0E_21:
 #_0AB996: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB998: db $F3 ; [set2] wait for key and new line
 #_0AB999: db $F1 ; [set2] clear message box
-#_0AB99A: db $DA, $02, $46 ; [set2] ext command 02: add 70 to STAT_11C if progress bit FB
+#_0AB99A: db $DA, $02, $46 ; [set2] ext command 02: add 70 to alignment if progress bit FB
 #_0AB99D: db $EB, $CB ; [set2] prewritten text CB
 #_0AB99F: db $F3 ; [set2] wait for key and new line
 #_0AB9A0: db $FE, $05 ; [set2] [COMMAND 5E:05]
@@ -11328,7 +11328,7 @@ Message_02_0E_2B:
 #_0AB9FA: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB9FC: db $F3 ; [set2] wait for key and new line
 #_0AB9FD: db $F1 ; [set2] clear message box
-#_0AB9FE: db $DA, $02, $3A ; [set2] ext command 02: add 58 to STAT_11C if progress bit FB
+#_0AB9FE: db $DA, $02, $3A ; [set2] ext command 02: add 58 to alignment if progress bit FB
 #_0ABA01: db $EB, $CB ; [set2] prewritten text CB
 #_0ABA03: db $F3 ; [set2] wait for key and new line
 #_0ABA04: db $FE, $05 ; [set2] [COMMAND 5E:05]
@@ -11863,7 +11863,7 @@ Message_02_0E_5F:
 #_0ABC29: db $EB, $EC ; [set2] prewritten text EC
 #_0ABC2B: db $F3 ; [set2] wait for key and new line
 #_0ABC2C: db $F1 ; [set2] clear message box
-#_0ABC2D: db $E1, $02 ; [set2] [COMMAND 41:02]
+#_0ABC2D: db $E1, $02 ; [set2] remove 1/8 of player's hp
 #_0ABC2F: db $E8, $1C ; [set2] [COMMAND 48:1C]
 #_0ABC31: db $F3 ; [set2] wait for key and new line
 #_0ABC32: db $E9, $84 ; [set2] go to message 84
@@ -22939,7 +22939,7 @@ Message_02_1E_14:
 #_0AF672: db $30, $3A, $31, $4D, $52, $A9, $31, $2A ; しにするんですか
 #_0AF67A: db $94 ; !
 #_0AF67B: db $FC ; wait for key and new line
-#_0AF67C: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
+#_0AF67C: db $FE, $02, $05 ; ext command 02: add 5 to alignment if progress bit FB
 #_0AF67F: db $D3, $16 ; go to message 16
 
 ;===================================================================================================
@@ -22960,7 +22960,7 @@ Message_02_1E_15:
 #_0AF6A3: db $30, $A6, $CF, $45, $35, $55, $A6, $A4 ; しだ⎵むちゃだぜ
 #_0AF6AB: db $94 ; !
 #_0AF6AC: db $FC ; wait for key and new line
-#_0AF6AD: db $FE, $02, $FB ; ext command 02: add 251 to STAT_11C if progress bit FB
+#_0AF6AD: db $FE, $02, $FB ; ext command 02: add 251 to alignment if progress bit FB
 
 ;===================================================================================================
 
@@ -23581,7 +23581,7 @@ Message_02_1F_03:
 ;===================================================================================================
 
 Message_02_1F_04:
-#_0AFC10: db $FE, $16, $05 ; ext command 16: something message 05 TODO
+#_0AFC10: db $FE, $16, $05 ; ext command 16: goto message 05 if anyone isn't full HP/MP
 #_0AFC13: db $FA ; clear message box
 #_0AFC14: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
 #_0AFC16: db $D3, $02 ; go to message 02
@@ -23599,7 +23599,7 @@ Message_02_1F_05:
 
 ; ちりょうがひつようなもの«は おらぬようだな»
 Message_02_1F_06:
-#_0AFC1E: db $FE, $15, $10, $07 ; ext command 15: something message 07, 10
+#_0AFC1E: db $FE, $15, $10, $07 ; ext command 15: goto message 07 if someone is afflicted; permissive
 #_0AFC22: db $FA ; clear message box
 #_0AFC23: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
 #_0AFC2B: db $27, $39, $47, $3D ; うなもの
@@ -23618,7 +23618,7 @@ Message_02_1F_07:
 
 ; «みな いきているようだな»
 Message_02_1F_08:
-#_0AFC39: db $FE, $15, $12, $09 ; ext command 15: something message 09, 12
+#_0AFC39: db $FE, $15, $12, $09 ; ext command 15: goto message 09 if someone is dead; permissive
 #_0AFC3D: db $FA ; clear message box
 #_0AFC3E: db $F2, $49 ; prewritten text 49
 #_0AFC40: db $FC ; wait for key and new line
@@ -23635,7 +23635,7 @@ Message_02_1F_09:
 
 ; だれも のろわれて«は おらぬようだな»
 Message_02_1F_0A:
-#_0AFC48: db $FE, $15, $11, $0B ; ext command 15: something message 0B, 11
+#_0AFC48: db $FE, $15, $11, $0B ; ext command 15: goto message 0B if someone is cursed; permissive
 #_0AFC4C: db $FA ; clear message box
 #_0AFC4D: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
 #_0AFC55: db $37 ; て
@@ -23828,7 +23828,7 @@ Message_02_1F_19:
 ;===================================================================================================
 
 Message_02_1F_1A:
-#_0AFDC2: db $FE, $16, $1B ; ext command 16: something message 1B TODO
+#_0AFDC2: db $FE, $16, $1B ; ext command 16: goto message 1B if anyone isn't full HP/MP
 #_0AFDC5: db $FA ; clear message box
 #_0AFDC6: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
 #_0AFDC8: db $D3, $13 ; go to message 13
@@ -23846,7 +23846,7 @@ Message_02_1F_1B:
 
 ; ちりょうがひつようなもの«は おらぬようだな»
 Message_02_1F_1C:
-#_0AFDD0: db $FE, $15, $10, $1D ; ext command 15: something message 1D, 10
+#_0AFDD0: db $FE, $15, $10, $1D ; ext command 15: goto message 1D if someone is afflicted; permissive
 #_0AFDD4: db $FA ; clear message box
 #_0AFDD5: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
 #_0AFDDD: db $27, $39, $47, $3D ; うなもの
@@ -23865,7 +23865,7 @@ Message_02_1F_1D:
 
 ; «みな いきているようだな»
 Message_02_1F_1E:
-#_0AFDEB: db $FE, $15, $12, $1F ; ext command 15: something message 1F, 12
+#_0AFDEB: db $FE, $15, $12, $1F ; ext command 15: goto message 1F if someone is dead; permissive
 #_0AFDEF: db $FA ; clear message box
 #_0AFDF0: db $F2, $49 ; prewritten text 49
 #_0AFDF2: db $FC ; wait for key and new line
@@ -23882,7 +23882,7 @@ Message_02_1F_1F:
 
 ; だれも のろわれて«は おらぬようだな»
 Message_02_1F_20:
-#_0AFDFA: db $FE, $15, $11, $21 ; ext command 15: something message 21, 11
+#_0AFDFA: db $FE, $15, $11, $21 ; ext command 15: goto message 21 if someone is cursed; permissive
 #_0AFDFE: db $FA ; clear message box
 #_0AFDFF: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
 #_0AFE07: db $37 ; て
@@ -23960,7 +23960,7 @@ Message_02_1F_26:
 ;===================================================================================================
 
 Message_02_1F_27:
-#_0AFE84: db $FE, $16, $28 ; ext command 16: something message 28 TODO
+#_0AFE84: db $FE, $16, $28 ; ext command 16: goto message 28 if anyone isn't full HP/MP
 #_0AFE87: db $FA ; clear message box
 #_0AFE88: db $FE, $0F, $00 ; ext command 0F: set $0BA3 to $00 then something TODO
 #_0AFE8A: db $D3, $25 ; go to message 25
@@ -23978,7 +23978,7 @@ Message_02_1F_28:
 
 ; ちりょうがひつようなもの«は おらぬようだな»
 Message_02_1F_29:
-#_0AFE92: db $FE, $15, $10, $2A ; ext command 15: something message 2A, 10
+#_0AFE92: db $FE, $15, $10, $2A ; ext command 15: goto message 2A if someone is afflicted; permissive
 #_0AFE96: db $FA ; clear message box
 #_0AFE97: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
 #_0AFE9F: db $27, $39, $47, $3D ; うなもの
@@ -23997,7 +23997,7 @@ Message_02_1F_2A:
 
 ; «みな いきているようだな»
 Message_02_1F_2B:
-#_0AFEAD: db $FE, $15, $12, $2C ; ext command 15: something message 2C, 12
+#_0AFEAD: db $FE, $15, $12, $2C ; ext command 15: goto message 2C if someone is dead; permissive
 #_0AFEB1: db $FA ; clear message box
 #_0AFEB2: db $F2, $49 ; prewritten text 49
 #_0AFEB4: db $FC ; wait for key and new line
@@ -24014,7 +24014,7 @@ Message_02_1F_2C:
 
 ; だれも のろわれて«は おらぬようだな»
 Message_02_1F_2D:
-#_0AFEBC: db $FE, $15, $11, $2E ; ext command 15: something message 2E, 11
+#_0AFEBC: db $FE, $15, $11, $2E ; ext command 15: goto message 2E if someone is cursed; permissive
 #_0AFEC0: db $FA ; clear message box
 #_0AFEC1: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
 #_0AFEC9: db $37 ; て

@@ -22,1751 +22,1751 @@ DemonNames:
 
 ; ヴィシュヌ | VUiSIyuNU
 ; Vishnu
-demon_00_name:
+Demon_00_name:
 #_098016: db $CE, $8C, $68, $90, $73, $FF
 
 ; インドラ | INDORA
 ; Indra
-demon_01_name:
+Demon_01_name:
 #_09801C: db $5E, $8A, $C3, $83, $FF
 
 ; フドウミョウオウ | HUDOUMIyoUOU
 ; Fudo Myoo
-demon_02_name:
+Demon_02_name:
 #_098021: db $78, $C3, $5F, $7C, $91, $5F, $61, $5F, $FF
 
 ; オーディン | OーDEiN
 ; Odin
-demon_03_name:
+Demon_03_name:
 #_09802A: db $61, $5A, $C2, $8C, $8A, $FF
 
 ; アラハバキ | ARAHABAKI
 ; Arahabaki
-demon_04_name:
+Demon_04_name:
 #_098030: db $5D, $83, $76, $C4, $63, $FF
 
 ; ロキ | ROKI
 ; Loki
-demon_05_name:
+Demon_05_name:
 #_098036: db $87, $63, $FF
 
 ; ラクシュミ | RAKUSIyuMI
 ; Lakshmi
-demon_06_name:
+Demon_06_name:
 #_098039: db $83, $64, $68, $90, $7C, $FF
 
 ; キクリヒメ | KIKURIHIME
 ; Kikuri Hime
-demon_07_name:
+Demon_07_name:
 #_09803F: db $63, $64, $84, $77, $7E, $FF
 
 ; サラスヴァティ | SARASUVUaTEi
 ; Saraswati
-demon_08_name:
+Demon_08_name:
 #_098045: db $67, $83, $69, $CE, $8B, $6F, $8C, $FF
 
 ; クシナダヒメ | KUSINADAHIME
 ; 
-demon_09_name:
+Demon_09_name:
 #_09804D: db $64, $68, $71, $BF, $77, $7E, $FF
 
 ; アメノウズメ | AMENOUZUME
 ; 
-demon_0A_name:
+Demon_0A_name:
 #_098054: db $5D, $7E, $75, $5F, $BC, $7E, $FF
 
 ; アスラおう | ASURAOU
 ; Asura King
-demon_0B_name:
+Demon_0B_name:
 #_09805B: db $5D, $69, $83, $29, $27, $FF
 
 ; シヴァ | SIVUa
 ; Shiva
-demon_0C_name:
+Demon_0C_name:
 #_098061: db $68, $CE, $8B, $FF
 
 ; マハカーラ | MAHAKAーRA
 ; Mahakala
-demon_0D_name:
+Demon_0D_name:
 #_098065: db $7B, $76, $62, $5A, $83, $FF
 
 ; セイテンタイセイ | SEITENTAISEI
 ; 
-demon_0E_name:
+Demon_0E_name:
 #_09806B: db $6A, $5E, $6F, $8A, $6C, $5E, $6A, $5E, $FF
 
 ; インドラジット | INDORAZItsuTO
 ; 
-demon_0F_name:
+Demon_0F_name:
 #_098074: db $5E, $8A, $C3, $83, $BB, $92, $70, $FF
 
 ; ヤマ | YAMA
 ; Yama
-demon_10_name:
+Demon_10_name:
 #_09807C: db $80, $7B, $FF
 
 ; ラーヴァナ | RAーVUaNA
 ; 
-demon_11_name:
+Demon_11_name:
 #_09807F: db $83, $5A, $CE, $8B, $71, $FF
 
 ; アグニ | AGUNI
 ; 
-demon_12_name:
+Demon_12_name:
 #_098085: db $5D, $B7, $72, $FF
 
 ; ビシャモンテン | BISIyaMONTEN
 ; 
-demon_13_name:
+Demon_13_name:
 #_098089: db $C5, $68, $8F, $7F, $8A, $6F, $8A, $FF
 
 ; ニオウ | NIOU
 ; 
-demon_14_name:
+Demon_14_name:
 #_098091: db $72, $61, $5F, $FF
 
 ; タケミカヅチ | TAKEMIKADUTI
 ; 
-demon_15_name:
+Demon_15_name:
 #_098095: db $6C, $65, $7C, $62, $C1, $6D, $FF
 
 ; ヒノカグツチ | HINOKAGUTUTI
 ; 
-demon_16_name:
+Demon_16_name:
 #_09809C: db $77, $75, $62, $B7, $6E, $6D, $FF
 
 ; ジコクテン | ZIKOKUTEN
 ; 
-demon_17_name:
+Demon_17_name:
 #_0980A3: db $BB, $66, $64, $6F, $8A, $FF
 
 ; コウモクテン | KOUMOKUTEN
 ; 
-demon_18_name:
+Demon_18_name:
 #_0980A9: db $66, $5F, $7F, $64, $6F, $8A, $FF
 
 ; ゾウチョウテン | ZOUTIyoUTEN
 ; 
-demon_19_name:
+Demon_19_name:
 #_0980B0: db $BE, $5F, $6D, $91, $5F, $6F, $8A, $FF
 
 ; ナガスネヒコ | NAGASUNEHIKO
 ; 
-demon_1A_name:
+Demon_1A_name:
 #_0980B8: db $71, $B5, $69, $74, $77, $66, $FF
 
 ; タケミナカタ | TAKEMINAKATA
 ; 
-demon_1B_name:
+Demon_1B_name:
 #_0980BF: db $6C, $65, $7C, $71, $62, $6C, $FF
 
 ; オオモノヌシ | OOMONONUSI
 ; 
-demon_1C_name:
+Demon_1C_name:
 #_0980C6: db $61, $61, $7F, $75, $73, $68, $FF
 
 ; コトシロヌシ | KOTOSIRONUSI
 ; 
-demon_1D_name:
+Demon_1D_name:
 #_0980CD: db $66, $70, $68, $87, $73, $68, $FF
 
 ; ヒトコトヌシ | HITOKOTONUSI
 ; 
-demon_1E_name:
+Demon_1E_name:
 #_0980D4: db $77, $70, $66, $70, $73, $68, $FF
 
 ; ミカエル | MIKAERU
 ; 
-demon_1F_name:
+Demon_1F_name:
 #_0980DB: db $7C, $62, $60, $85, $FF
 
 ; ガブリエル | GABURIERU
 ; 
-demon_20_name:
+Demon_20_name:
 #_0980E0: db $B5, $C6, $84, $60, $85, $FF
 
 ; ラファエル | RAHUaERU
 ; 
-demon_21_name:
+Demon_21_name:
 #_0980E6: db $83, $78, $8B, $60, $85, $FF
 
 ; ウリエル | URIERU
 ; 
-demon_22_name:
+Demon_22_name:
 #_0980EC: db $5F, $84, $60, $85, $FF
 
 ; ケルプ | KERUPU
 ; 
-demon_23_name:
+Demon_23_name:
 #_0980F1: db $65, $85, $CB, $FF
 
 ; ソロネ | SORONE
 ; 
-demon_24_name:
+Demon_24_name:
 #_0980F5: db $6B, $87, $74, $FF
 
 ; ドミニオン | DOMINION
 ; 
-demon_25_name:
+Demon_25_name:
 #_0980F9: db $C3, $7C, $72, $61, $8A, $FF
 
 ; ヴァーチャー | VUaーTIyaー
 ; 
-demon_26_name:
+Demon_26_name:
 #_0980FF: db $CE, $8B, $5A, $6D, $8F, $5A, $FF
 
 ; パワー | PAWAー
 ; 
-demon_27_name:
+Demon_27_name:
 #_098106: db $C9, $88, $5A, $FF
 
 ; アークエンジェル | AーKUENZIeRU
 ; 
-demon_28_name:
+Demon_28_name:
 #_09810A: db $5D, $5A, $64, $60, $8A, $BB, $8D, $85, $FF
 
 ; エンジェル | ENZIeRU
 ; 
-demon_29_name:
+Demon_29_name:
 #_098113: db $60, $8A, $BB, $8D, $85, $FF
 
 ; アナンタ | ANANTA
 ; 
-demon_2A_name:
+Demon_2A_name:
 #_098119: db $5D, $71, $8A, $6C, $FF
 
 ; マヤ | MAYA
 ; 
-demon_2B_name:
+Demon_2B_name:
 #_09811E: db $7B, $80, $FF
 
 ; ペクヨン | PEKUYON
 ; 
-demon_2C_name:
+Demon_2C_name:
 #_098121: db $CC, $64, $82, $8A, $FF
 
 ; ヴリトラ | VURITORA
 ; 
-demon_2D_name:
+Demon_2D_name:
 #_098126: db $CE, $84, $70, $83, $FF
 
 ; ガンガー | GANGAー
 ; 
-demon_2E_name:
+Demon_2E_name:
 #_09812B: db $B5, $8A, $B5, $5A, $FF
 
 ; コワトリクエ | KOWATORIKUE
 ; 
-demon_2F_name:
+Demon_2F_name:
 #_098130: db $66, $88, $70, $84, $64, $60, $FF
 
 ; ガルーダ | GARUーDA
 ; 
-demon_30_name:
+Demon_30_name:
 #_098137: db $B5, $85, $5A, $BF, $FF
 
 ; ヤタガラス | YATAGARASU
 ; 
-demon_31_name:
+Demon_31_name:
 #_09813C: db $80, $6C, $B5, $83, $69, $FF
 
 ; フェニックス | HUeNItsuKUSU
 ; 
-demon_32_name:
+Demon_32_name:
 #_098142: db $78, $8D, $72, $92, $64, $69, $FF
 
 ; ジャターユ | ZIyaTAーYU
 ; 
-demon_33_name:
+Demon_33_name:
 #_098149: db $BB, $8F, $6C, $5A, $81, $FF
 
 ; ホウオウ | HOUOU
 ; 
-demon_34_name:
+Demon_34_name:
 #_09814F: db $7A, $5F, $61, $5F, $FF
 
 ; バロン | BARON
 ; 
-demon_35_name:
+Demon_35_name:
 #_098154: db $C4, $87, $8A, $FF
 
 ; キマイラ | KIMAIRA
 ; 
-demon_36_name:
+Demon_36_name:
 #_098158: db $63, $7B, $5E, $83, $FF
 
 ; ナラシンハ | NARASINHA
 ; 
-demon_37_name:
+Demon_37_name:
 #_09815D: db $71, $83, $68, $8A, $76, $FF
 
 ; ナンディ | NANDEi
 ; 
-demon_38_name:
+Demon_38_name:
 #_098163: db $71, $8A, $C2, $8C, $FF
 
 ; ゲンブ | GENBU
 ; 
-demon_39_name:
+Demon_39_name:
 #_098168: db $B8, $8A, $C6, $FF
 
 ; キリン | KIRIN
 ; 
-demon_3A_name:
+Demon_3A_name:
 #_09816C: db $63, $84, $8A, $FF
 
 ; パピルサグ | PAPIRUSAGU
 ; 
-demon_3B_name:
+Demon_3B_name:
 #_098170: db $C9, $CA, $85, $67, $B7, $FF
 
 ; ハクタク | HAKUTAKU
 ; 
-demon_3C_name:
+Demon_3C_name:
 #_098176: db $76, $64, $6C, $64, $FF
 
 ; ユニコーン | YUNIKOーN
 ; 
-demon_3D_name:
+Demon_3D_name:
 #_09817B: db $81, $72, $66, $5A, $8A, $FF
 
 ; サラマンダー | SARAMANDAー
 ; 
-demon_3E_name:
+Demon_3E_name:
 #_098181: db $67, $83, $7B, $8A, $BF, $5A, $FF
 
 ; ウンディーネ | UNDEiーNE
 ; 
-demon_3F_name:
+Demon_3F_name:
 #_098188: db $5F, $8A, $C2, $8C, $5A, $74, $FF
 
 ; シルフ | SIRUHU
 ; 
-demon_40_name:
+Demon_40_name:
 #_09818F: db $68, $85, $78, $FF
 
 ; ノーム | NOーMU
 ; 
-demon_41_name:
+Demon_41_name:
 #_098193: db $75, $5A, $7D, $FF
 
 ; フレイミーズ | HUREIMIーZU
 ; 
-demon_42_name:
+Demon_42_name:
 #_098197: db $78, $86, $5E, $7C, $5A, $BC, $FF
 
 ; アクアンズ | AKUANZU
 ; 
-demon_43_name:
+Demon_43_name:
 #_09819E: db $5D, $64, $5D, $8A, $BC, $FF
 
 ; エアロス | EAROSU
 ; 
-demon_44_name:
+Demon_44_name:
 #_0981A4: db $60, $5D, $87, $69, $FF
 
 ; アーシーズ | AーSIーZU
 ; 
-demon_45_name:
+Demon_45_name:
 #_0981A9: db $5D, $5A, $68, $5A, $BC, $FF
 
 ; カーリー | KAーRIー
 ; 
-demon_46_name:
+Demon_46_name:
 #_0981AF: db $62, $5A, $84, $5A, $FF
 
 ; ハリティー | HARITEiー
 ; 
-demon_47_name:
+Demon_47_name:
 #_0981B4: db $76, $84, $6F, $8C, $5A, $FF
 
 ; ランダ | RANDA
 ; 
-demon_48_name:
+Demon_48_name:
 #_0981BA: db $83, $8A, $BF, $FF
 
 ; スキュラ | SUKIyuRA
 ; 
-demon_49_name:
+Demon_49_name:
 #_0981BE: db $69, $63, $90, $83, $FF
 
 ; ダーキニー | DAーKINIー
 ; 
-demon_4A_name:
+Demon_4A_name:
 #_0981C3: db $BF, $5A, $63, $72, $5A, $FF
 
 ; ゴルゴン | GORUGON
 ; 
-demon_4B_name:
+Demon_4B_name:
 #_0981C9: db $B9, $85, $B9, $8A, $FF
 
 ; ターラカ | TAーRAKA
 ; 
-demon_4C_name:
+Demon_4C_name:
 #_0981CE: db $6C, $5A, $83, $62, $FF
 
 ; ラミア | RAMIA
 ; 
-demon_4D_name:
+Demon_4D_name:
 #_0981D3: db $83, $7C, $5D, $FF
 
 ; ハヌマーン | HANUMAーN
 ; 
-demon_4E_name:
+Demon_4E_name:
 #_0981D7: db $76, $73, $7B, $5A, $8A, $FF
 
 ; ガネーシャ | GANEーSIya
 ; 
-demon_4F_name:
+Demon_4F_name:
 #_0981DD: db $B5, $74, $5A, $68, $8F, $FF
 
 ; キンナラ | KINNARA
 ; 
-demon_50_name:
+Demon_50_name:
 #_0981E3: db $63, $8A, $71, $83, $FF
 
 ; テング | TENGU
 ; 
-demon_51_name:
+Demon_51_name:
 #_0981E8: db $6F, $8A, $B7, $FF
 
 ; コロンゾン | KORONZON
 ; 
-demon_52_name:
+Demon_52_name:
 #_0981EC: db $66, $87, $8A, $BE, $8A, $FF
 
 ; オンコット | ONKOtsuTO
 ; 
-demon_53_name:
+Demon_53_name:
 #_0981F2: db $61, $8A, $66, $92, $70, $FF
 
 ; ロア | ROA
 ; 
-demon_54_name:
+Demon_54_name:
 #_0981F8: db $87, $5D, $FF
 
 ; ウオッチャー | UOtsuTIyaー
 ; 
-demon_55_name:
+Demon_55_name:
 #_0981FB: db $5F, $61, $92, $6D, $8F, $5A, $FF
 
 ; イソラ | ISORA
 ; 
-demon_56_name:
+Demon_56_name:
 #_098202: db $5E, $6B, $83, $FF
 
 ; アプサラス | APUSARASU
 ; 
-demon_57_name:
+Demon_57_name:
 #_098206: db $5D, $CB, $67, $83, $69, $FF
 
 ; キンナリー | KINNARIー
 ; 
-demon_58_name:
+Demon_58_name:
 #_09820C: db $63, $8A, $71, $84, $5A, $FF
 
 ; ヴァンパイア | VUaNPAIA
 ; 
-demon_59_name:
+Demon_59_name:
 #_098212: db $CE, $8B, $8A, $C9, $5E, $5D, $FF
 
 ; サキュバス | SAKIyuBASU
 ; 
-demon_5A_name:
+Demon_5A_name:
 #_098219: db $67, $63, $90, $C4, $69, $FF
 
 ; インキュバス | INKIyuBASU
 ; 
-demon_5B_name:
+Demon_5B_name:
 #_09821F: db $5E, $8A, $63, $90, $C4, $69, $FF
 
 ; ニ・カロン | NI・KARON
 ; 
-demon_5C_name:
+Demon_5C_name:
 #_098226: db $72, $93, $62, $87, $8A, $FF
 
 ; チュルルック | TIyuRURUtsuKU
 ; 
-demon_5D_name:
+Demon_5D_name:
 #_09822C: db $6D, $90, $85, $85, $92, $64, $FF
 
 ; リリム | RIRIMU
 ; Lilim
-demon_5E_name:
+Demon_5E_name:
 #_098233: db $84, $84, $7D, $FF
 
 ; ナイトメア | NAITOMEA
 ; 
-demon_5F_name:
+Demon_5F_name:
 #_098237: db $71, $5E, $70, $7E, $5D, $FF
 
 ; キャク | KIyaKU
 ; 
-demon_60_name:
+Demon_60_name:
 #_09823D: db $63, $8F, $64, $FF
 
 ; インプ | INPU
 ; Imp
-demon_61_name:
+Demon_61_name:
 #_098241: db $5E, $8A, $CB, $FF
 
 ; オベロン | OBERON
 ; 
-demon_62_name:
+Demon_62_name:
 #_098245: db $61, $C7, $87, $8A, $FF
 
 ; センコ | SENKO
 ; 
-demon_63_name:
+Demon_63_name:
 #_09824A: db $6A, $8A, $66, $FF
 
 ; クーフー・リン | KUーHUー・RIN
 ; 
-demon_64_name:
+Demon_64_name:
 #_09824E: db $64, $5A, $78, $5A, $93, $84, $8A, $FF
 
 ; タム・リン | TAMU・RIN
 ; 
-demon_65_name:
+Demon_65_name:
 #_098256: db $6C, $7D, $93, $84, $8A, $FF
 
 ; トロール | TOROーRU
 ; 
-demon_66_name:
+Demon_66_name:
 #_09825C: db $70, $87, $5A, $85, $FF
 
 ; センリ | SENRI
 ; 
-demon_67_name:
+Demon_67_name:
 #_098261: db $6A, $8A, $84, $FF
 
 ; ホブゴブリン | HOBUGOBURIN
 ; Hobgoblin
-demon_68_name:
+Demon_68_name:
 #_098265: db $7A, $C6, $B9, $C6, $84, $8A, $FF
 
 ; エルフ | ERUHU
 ; 
-demon_69_name:
+Demon_69_name:
 #_09826C: db $60, $85, $78, $FF
 
 ; ケルピー | KERUPIー
 ; 
-demon_6A_name:
+Demon_6A_name:
 #_098270: db $65, $85, $CA, $5A, $FF
 
 ; ルサールカ | RUSAーRUKA
 ; 
-demon_6B_name:
+Demon_6B_name:
 #_098275: db $85, $67, $5A, $85, $62, $FF
 
 ; ガンダルバ | GANDARUBA
 ; 
-demon_6C_name:
+Demon_6C_name:
 #_09827B: db $B5, $8A, $BF, $85, $C4, $FF
 
 ; ドリアード | DORIAーDO
 ; Dryad
-demon_6D_name:
+Demon_6D_name:
 #_098281: db $C3, $84, $5D, $5A, $C3, $FF
 
 ; ジャックランタン | ZIyatsuKURANTAN
 ; Jack-o-Lantern
-demon_6E_name:
+Demon_6E_name:
 #_098287: db $BB, $8F, $92, $64, $83, $8A, $6C, $8A, $FF
 
 ; ジャックフロスト | ZIyatsuKUHUROSUTO
 ; Jack Frost
-demon_6F_name:
+Demon_6F_name:
 #_098290: db $BB, $8F, $92, $64, $78, $87, $69, $70, $FF
 
 ; ゴブリン | GOBURIN
 ; Goblin
-demon_70_name:
+Demon_70_name:
 #_098299: db $B9, $C6, $84, $8A, $FF
 
 ; ピクシー | PIKUSIー
 ; Pixie
-demon_71_name:
+Demon_71_name:
 #_09829E: db $CA, $64, $68, $5A, $FF
 
 ; フラロウス | HURAROUSU
 ; 
-demon_72_name:
+Demon_72_name:
 #_0982A3: db $78, $83, $87, $5F, $69, $FF
 
 ; フルーレティ | HURUーRETEi
 ; 
-demon_73_name:
+Demon_73_name:
 #_0982A9: db $78, $85, $5A, $86, $6F, $8C, $FF
 
 ; アバドン | ABADON
 ; Abadon
-demon_74_name:
+Demon_74_name:
 #_0982B0: db $5D, $C4, $C3, $8A, $FF
 
 ; サマエル | SAMAERU
 ; 
-demon_75_name:
+Demon_75_name:
 #_0982B5: db $67, $7B, $60, $85, $FF
 
 ; マルコキアス | MARUKOKIASU
 ; 
-demon_76_name:
+Demon_76_name:
 #_0982BA: db $7B, $85, $66, $63, $5D, $69, $FF
 
 ; オセ | OSE
 ; 
-demon_77_name:
+Demon_77_name:
 #_0982C1: db $61, $6A, $FF
 
 ; デカラビア | DEKARABIA
 ; 
-demon_78_name:
+Demon_78_name:
 #_0982C4: db $C2, $62, $83, $C5, $5D, $FF
 
 ; レオナルド | REONARUDO
 ; 
-demon_79_name:
+Demon_79_name:
 #_0982CA: db $86, $61, $71, $85, $C3, $FF
 
 ; オロバス | OROBASU
 ; 
-demon_7A_name:
+Demon_7A_name:
 #_0982D0: db $61, $87, $C4, $69, $FF
 
 ; シトリー | SITORIー
 ; 
-demon_7B_name:
+Demon_7B_name:
 #_0982D5: db $68, $70, $84, $5A, $FF
 
 ; ベリス | BERISU
 ; 
-demon_7C_name:
+Demon_7C_name:
 #_0982DA: db $C7, $84, $69, $FF
 
 ; フォルネウス | HUoRUNEUSU
 ; 
-demon_7D_name:
+Demon_7D_name:
 #_0982DE: db $78, $8E, $85, $74, $5F, $69, $FF
 
 ; ガミジン | GAMIZIN
 ; 
-demon_7E_name:
+Demon_7E_name:
 #_0982E5: db $B5, $7C, $BB, $8A, $FF
 
 ; アンドラス | ANDORASU
 ; 
-demon_7F_name:
+Demon_7F_name:
 #_0982EA: db $5D, $8A, $C3, $83, $69, $FF
 
 ; ペンドラゴン | PENDORAGON
 ; 
-demon_80_name:
+Demon_80_name:
 #_0982F0: db $CC, $8A, $C3, $83, $B9, $8A, $FF
 
 ; ヤマタノオロチ | YAMATANOOROTI
 ; 
-demon_81_name:
+Demon_81_name:
 #_0982F7: db $80, $7B, $6C, $75, $61, $87, $6D, $FF
 
 ; イツァム・ナー | ITUaMU・NAー
 ; 
-demon_82_name:
+Demon_82_name:
 #_0982FF: db $5E, $6E, $8B, $7D, $93, $71, $5A, $FF
 
 ; ケツアルカトル | KETUARUKATORU
 ; 
-demon_83_name:
+Demon_83_name:
 #_098307: db $65, $6E, $5D, $85, $62, $70, $85, $FF
 
 ; ユルング | YURUNGU
 ; 
-demon_84_name:
+Demon_84_name:
 #_09830F: db $81, $85, $8A, $B7, $FF
 
 ; ナーガ・ラジャ | NAーGA・RAZIya
 ; 
-demon_85_name:
+Demon_85_name:
 #_098314: db $71, $5A, $B5, $93, $83, $BB, $8F, $FF
 
 ; セイレーン | SEIREーN
 ; Siren
-demon_86_name:
+Demon_86_name:
 #_09831C: db $6A, $5E, $86, $5A, $8A, $FF
 
 ; バイブ・カハ | BAIBU・KAHA
 ; 
-demon_87_name:
+Demon_87_name:
 #_098322: db $C4, $5E, $C6, $93, $62, $76, $FF
 
 ; コカクチョウ | KOKAKUTIyoU
 ; 
-demon_88_name:
+Demon_88_name:
 #_098329: db $66, $62, $64, $6D, $91, $5F, $FF
 
 ; ハーピー | HAーPIー
 ; 
-demon_89_name:
+Demon_89_name:
 #_098330: db $76, $5A, $CA, $5A, $FF
 
 ; グリフォン | GURIHUoN
 ; 
-demon_8A_name:
+Demon_8A_name:
 #_098335: db $B7, $84, $78, $8E, $8A, $FF
 
 ; ケルベロス | KERUBEROSU
 ; 
-demon_8B_name:
+Demon_8B_name:
 #_09833B: db $65, $85, $C7, $87, $69, $FF
 
 ; ラクチャランゴ | RAKUTIyaRANGO
 ; 
-demon_8C_name:
+Demon_8C_name:
 #_098341: db $83, $64, $6D, $8F, $83, $8A, $B9, $FF
 
 ; オルトロス | ORUTOROSU
 ; 
-demon_8D_name:
+Demon_8D_name:
 #_098349: db $61, $85, $70, $87, $69, $FF
 
 ; タムズ | TAMUZU
 ; 
-demon_8E_name:
+Demon_8E_name:
 #_09834F: db $6C, $7D, $BC, $FF
 
 ; ストーンカ | SUTOーNKA
 ; 
-demon_8F_name:
+Demon_8F_name:
 #_098353: db $69, $70, $5A, $8A, $62, $FF
 
 ; ネコマタ | NEKOMATA
 ; 
-demon_90_name:
+Demon_90_name:
 #_098359: db $74, $66, $7B, $6C, $FF
 
 ; タンキ | TANKI
 ; 
-demon_91_name:
+Demon_91_name:
 #_09835E: db $6C, $8A, $63, $FF
 
 ; カーシー | KAーSIー
 ; 
-demon_92_name:
+Demon_92_name:
 #_098362: db $62, $5A, $68, $5A, $FF
 
 ; サンキ | SANKI
 ; 
-demon_93_name:
+Demon_93_name:
 #_098367: db $67, $8A, $63, $FF
 
 ; ヤクシャ | YAKUSIya
 ; 
-demon_94_name:
+Demon_94_name:
 #_09836B: db $80, $64, $68, $8F, $FF
 
 ; ナタク | NATAKU
 ; 
-demon_95_name:
+Demon_95_name:
 #_098370: db $71, $6C, $64, $FF
 
 ; メズキ | MEZUKI
 ; 
-demon_96_name:
+Demon_96_name:
 #_098374: db $7E, $BC, $63, $FF
 
 ; ゴズキ | GOZUKI
 ; 
-demon_97_name:
+Demon_97_name:
 #_098378: db $B9, $BC, $63, $FF
 
 ; ヤクシニー | YAKUSINIー
 ; 
-demon_98_name:
+Demon_98_name:
 #_09837C: db $80, $64, $68, $72, $5A, $FF
 
 ; スパルトイ | SUPARUTOI
 ; 
-demon_99_name:
+Demon_99_name:
 #_098382: db $69, $C9, $85, $70, $5E, $FF
 
 ; シュテンドウジ | SIyuTENDOUZI
 ; 
-demon_9A_name:
+Demon_9A_name:
 #_098388: db $68, $90, $6F, $8A, $C3, $5F, $BB, $FF
 
 ; トウルダク | TOURUDAKU
 ; 
-demon_9B_name:
+Demon_9B_name:
 #_098390: db $70, $5F, $85, $BF, $64, $FF
 
 ; イバラギドウジ | IBARAGIDOUZI
 ; 
-demon_9C_name:
+Demon_9C_name:
 #_098396: db $5E, $C4, $83, $B6, $C3, $5F, $BB, $FF
 
 ; プルシキ | PURUSIKI
 ; 
-demon_9D_name:
+Demon_9D_name:
 #_09839E: db $CB, $85, $68, $63, $FF
 
 ; モムノフ | MOMUNOHU
 ; 
-demon_9E_name:
+Demon_9E_name:
 #_0983A3: db $7F, $7D, $75, $78, $FF
 
 ; ボーグル | BOーGURU
 ; 
-demon_9F_name:
+Demon_9F_name:
 #_0983A8: db $C8, $5A, $B7, $85, $FF
 
 ; アズミ | AZUMI
 ; 
-demon_A0_name:
+Demon_A0_name:
 #_0983AD: db $5D, $BC, $7C, $FF
 
 ; アトラス | ATORASU
 ; 
-demon_A1_name:
+Demon_A1_name:
 #_0983B1: db $5D, $70, $83, $69, $FF
 
 ; ジャイアント | ZIyaIANTO
 ; 
-demon_A2_name:
+Demon_A2_name:
 #_0983B6: db $BB, $8F, $5E, $5D, $8A, $70, $FF
 
 ; サルタヒコ | SARUTAHIKO
 ; 
-demon_A3_name:
+Demon_A3_name:
 #_0983BD: db $67, $85, $6C, $77, $66, $FF
 
 ; カワンチャ | KAWANTIya
 ; 
-demon_A4_name:
+Demon_A4_name:
 #_0983C3: db $62, $88, $8A, $6D, $8F, $FF
 
 ; ドワーフ | DOWAーHU
 ; 
-demon_A5_name:
+Demon_A5_name:
 #_0983C9: db $C3, $88, $5A, $78, $FF
 
 ; ブッカブー | BUtsuKABUー
 ; 
-demon_A6_name:
+Demon_A6_name:
 #_0983CE: db $C6, $92, $62, $C6, $5A, $FF
 
 ; ツチグモ | TUTIGUMO
 ; 
-demon_A7_name:
+Demon_A7_name:
 #_0983D4: db $6E, $6D, $B7, $7F, $FF
 
 ; ファハン | HUaHAN
 ; 
-demon_A8_name:
+Demon_A8_name:
 #_0983D9: db $78, $8B, $76, $8A, $FF
 
 ; コボルト | KOBORUTO
 ; 
-demon_A9_name:
+Demon_A9_name:
 #_0983DE: db $66, $C8, $85, $70, $FF
 
 ; ノッカー | NOtsuKAー
 ; 
-demon_AA_name:
+Demon_AA_name:
 #_0983E3: db $75, $92, $62, $5A, $FF
 
 ; ブラウニー | BURAUNIー
 ; 
-demon_AB_name:
+Demon_AB_name:
 #_0983E8: db $C6, $83, $5F, $72, $5A, $FF
 
 ; ワーウルフ | WAーURUHU
 ; 
-demon_AC_name:
+Demon_AC_name:
 #_0983EE: db $88, $5A, $5F, $85, $78, $FF
 
 ; ワーキャット | WAーKIyatsuTO
 ; 
-demon_AD_name:
+Demon_AD_name:
 #_0983F4: db $88, $5A, $63, $8F, $92, $70, $FF
 
 ; ワードッグ | WAーDOtsuGU
 ; 
-demon_AE_name:
+Demon_AE_name:
 #_0983FB: db $88, $5A, $C3, $92, $B7, $FF
 
 ; スキャナー | SUKIyaNAー
 ; 
-demon_AF_name:
+Demon_AF_name:
 #_098401: db $69, $63, $8F, $71, $5A, $FF
 
 ; メイガス | MEIGASU
 ; 
-demon_B0_name:
+Demon_B0_name:
 #_098407: db $7E, $5E, $B5, $69, $FF
 
 ; テンプルナイト | TENPURUNAITO
 ; 
-demon_B1_name:
+Demon_B1_name:
 #_09840C: db $6F, $8A, $CB, $85, $71, $5E, $70, $FF
 
 ; きょうしんしゃ | KIyoUSINSIya
 ; 
-demon_B2_name:
+Demon_B2_name:
 #_098414: db $2B, $57, $27, $30, $52, $30, $55, $FF
 
 ; アサシン | ASASIN
 ; 
-demon_B3_name:
+Demon_B3_name:
 #_09841C: db $5D, $67, $68, $8A, $FF
 
 ; やみほうし | YAMIHOUSI
 ; 
-demon_B4_name:
+Demon_B4_name:
 #_098421: db $48, $44, $42, $27, $30, $FF
 
 ; おにじょろう | ONIZIyoROU
 ; 
-demon_B5_name:
+Demon_B5_name:
 #_098427: db $29, $3A, $A2, $57, $4F, $27, $FF
 
 ; はかいそう | HAKAISOU
 ; 
-demon_B6_name:
+Demon_B6_name:
 #_09842E: db $3E, $2A, $26, $33, $27, $FF
 
 ; しょけいライダー | SIyoKEIRAIDAー
 ; 
-demon_B7_name:
+Demon_B7_name:
 #_098434: db $30, $57, $2D, $26, $83, $5E, $BF, $5A, $FF
 
 ; とっこうたい | TOtsuKOUTAI
 ; 
-demon_B8_name:
+Demon_B8_name:
 #_09843D: db $38, $58, $2E, $27, $34, $26, $FF
 
 ; トウテツ | TOUTETU
 ; 
-demon_B9_name:
+Demon_B9_name:
 #_098444: db $70, $5F, $6F, $6E, $FF
 
 ; オーカス | OーKASU
 ; 
-demon_BA_name:
+Demon_BA_name:
 #_098449: db $61, $5A, $62, $69, $FF
 
 ; テトカトリポカ | TETOKATORIPOKA
 ; 
-demon_BB_name:
+Demon_BB_name:
 #_09844E: db $6F, $70, $62, $70, $84, $CD, $62, $FF
 
 ; ミシャグジさま | MISIyaGUZISAMA
 ; 
-demon_BC_name:
+Demon_BC_name:
 #_098456: db $7C, $68, $8F, $B7, $BB, $2F, $43, $FF
 
 ; ベルゼブブ | BERUZEBUBU
 ; 
-demon_BD_name:
+Demon_BD_name:
 #_09845E: db $C7, $85, $BD, $C6, $C6, $FF
 
 ; マーラ | MAーRA
 ; 
-demon_BE_name:
+Demon_BE_name:
 #_098464: db $7B, $5A, $83, $FF
 
 ; バエル | BAERU
 ; 
-demon_BF_name:
+Demon_BF_name:
 #_098468: db $C4, $60, $85, $FF
 
 ; ダゴン | DAGON
 ; 
-demon_C0_name:
+Demon_C0_name:
 #_09846C: db $BF, $B9, $8A, $FF
 
 ; アリオク | ARIOKU
 ; 
-demon_C1_name:
+Demon_C1_name:
 #_098470: db $5D, $84, $61, $64, $FF
 
 ; ファフニール | HUaHUNIーRU
 ; 
-demon_C2_name:
+Demon_C2_name:
 #_098475: db $78, $8B, $78, $72, $5A, $85, $FF
 
 ; サーペント | SAーPENTO
 ; 
-demon_C3_name:
+Demon_C3_name:
 #_09847C: db $67, $5A, $CC, $8A, $70, $FF
 
 ; バジリスク | BAZIRISUKU
 ; 
-demon_C4_name:
+Demon_C4_name:
 #_098482: db $C4, $BB, $84, $69, $64, $FF
 
 ; ワイバーン | WAIBAーN
 ; 
-demon_C5_name:
+Demon_C5_name:
 #_098488: db $88, $5E, $C4, $5A, $8A, $FF
 
 ; ワイアーム | WAIAーMU
 ; 
-demon_C6_name:
+Demon_C6_name:
 #_09848E: db $88, $5E, $5D, $5A, $7D, $FF
 
 ; コカトライス | KOKATORAISU
 ; 
-demon_C7_name:
+Demon_C7_name:
 #_098494: db $66, $62, $70, $83, $5E, $69, $FF
 
 ; ワーム | WAーMU
 ; 
-demon_C8_name:
+Demon_C8_name:
 #_09849B: db $88, $5A, $7D, $FF
 
 ; フレスベルグ | HURESUBERUGU
 ; 
-demon_C9_name:
+Demon_C9_name:
 #_09849F: db $78, $86, $69, $C7, $85, $B7, $FF
 
 ; グルル | GURURU
 ; 
-demon_CA_name:
+Demon_CA_name:
 #_0984A6: db $B7, $85, $85, $FF
 
 ; フリアイ | HURIAI
 ; 
-demon_CB_name:
+Demon_CB_name:
 #_0984AA: db $78, $84, $5D, $5E, $FF
 
 ; フケイ | HUKEI
 ; 
-demon_CC_name:
+Demon_CC_name:
 #_0984AF: db $78, $65, $5E, $FF
 
 ; フェンリル | HUeNRIRU
 ; 
-demon_CD_name:
+Demon_CD_name:
 #_0984B3: db $78, $8D, $8A, $84, $85, $FF
 
 ; クラーケン | KURAーKEN
 ; 
-demon_CE_name:
+Demon_CE_name:
 #_0984B9: db $64, $83, $5A, $65, $8A, $FF
 
 ; マンティコア | MANTEiKOA
 ; 
-demon_CF_name:
+Demon_CF_name:
 #_0984BF: db $7B, $8A, $6F, $8C, $66, $5D, $FF
 
 ; タマモ | TAMAMO
 ; 
-demon_D0_name:
+Demon_D0_name:
 #_0984C6: db $6C, $7B, $7F, $FF
 
 ; アツユ | ATUYU
 ; 
-demon_D1_name:
+Demon_D1_name:
 #_0984CA: db $5D, $6E, $81, $FF
 
 ; ヌエ | NUE
 ; 
-demon_D2_name:
+Demon_D2_name:
 #_0984CE: db $73, $60, $FF
 
 ; ギリメカラ | GIRIMEKARA
 ; 
-demon_D3_name:
+Demon_D3_name:
 #_0984D1: db $B6, $84, $7E, $62, $83, $FF
 
 ; サイクロプス | SAIKUROPUSU
 ; 
-demon_D4_name:
+Demon_D4_name:
 #_0984D7: db $67, $5E, $64, $87, $CB, $69, $FF
 
 ; ラクシャーサ | RAKUSIyaーSA
 ; 
-demon_D5_name:
+Demon_D5_name:
 #_0984DE: db $83, $64, $68, $8F, $5A, $67, $FF
 
 ; バーベガジ | BAーBEGAZI
 ; 
-demon_D6_name:
+Demon_D6_name:
 #_0984E5: db $C4, $5A, $C7, $B5, $BB, $FF
 
 ; ラケー | RAKEー
 ; 
-demon_D7_name:
+Demon_D7_name:
 #_0984EB: db $83, $65, $5A, $FF
 
 ; ウェンディゴ | UeNDEiGO
 ; 
-demon_D8_name:
+Demon_D8_name:
 #_0984EF: db $5F, $8D, $8A, $C2, $8C, $B9, $FF
 
 ; オーク | OーKU
 ; 
-demon_D9_name:
+Demon_D9_name:
 #_0984F6: db $61, $5A, $64, $FF
 
 ; ドンコウ | DONKOU
 ; 
-demon_DA_name:
+Demon_DA_name:
 #_0984FA: db $C3, $8A, $66, $5F, $FF
 
 ; グレムリン | GUREMURIN
 ; 
-demon_DB_name:
+Demon_DB_name:
 #_0984FF: db $B7, $86, $7D, $84, $8A, $FF
 
 ; リッチ | RItsuTI
 ; 
-demon_DC_name:
+Demon_DC_name:
 #_098505: db $84, $92, $6D, $FF
 
 ; ヴェータラ | VUeーTARA
 ; 
-demon_DD_name:
+Demon_DD_name:
 #_098509: db $CE, $8D, $5A, $6C, $83, $FF
 
 ; サンニ・ヤカー | SANNI・YAKAー
 ; 
-demon_DE_name:
+Demon_DE_name:
 #_09850F: db $67, $8A, $72, $93, $80, $62, $5A, $FF
 
 ; サウォバク | SAUoBAKU
 ; 
-demon_DF_name:
+Demon_DF_name:
 #_098517: db $67, $5F, $8E, $C4, $64, $FF
 
 ; ベイコク | BEIKOKU
 ; 
-demon_E0_name:
+Demon_E0_name:
 #_09851D: db $C7, $5E, $66, $64, $FF
 
 ; マンイーター | MANIーTAー
 ; 
-demon_E1_name:
+Demon_E1_name:
 #_098522: db $7B, $8A, $5E, $5A, $6C, $5A, $FF
 
 ; グール | GUーRU
 ; 
-demon_E2_name:
+Demon_E2_name:
 #_098529: db $B7, $5A, $85, $FF
 
 ; おしち | OSITI
 ; 
-demon_E3_name:
+Demon_E3_name:
 #_09852D: db $29, $30, $35, $FF
 
 ; ガキ | GAKI
 ; 
-demon_E4_name:
+Demon_E4_name:
 #_098531: db $B5, $63, $FF
 
 ; レギオン | REGION
 ; 
-demon_E5_name:
+Demon_E5_name:
 #_098534: db $86, $B6, $61, $8A, $FF
 
 ; ファントム | HUaNTOMU
 ; 
-demon_E6_name:
+Demon_E6_name:
 #_098539: db $78, $8B, $8A, $70, $7D, $FF
 
 ; ラルウァイ | RARUUaI
 ; 
-demon_E7_name:
+Demon_E7_name:
 #_09853F: db $83, $85, $5F, $8B, $5E, $FF
 
 ; ピシャーチャ | PISIyaーTIya
 ; 
-demon_E8_name:
+Demon_E8_name:
 #_098545: db $CA, $68, $8F, $5A, $6D, $8F, $FF
 
 ; レムルース | REMURUーSU
 ; 
-demon_E9_name:
+Demon_E9_name:
 #_09854C: db $86, $7D, $85, $5A, $69, $FF
 
 ; シェイド | SIeIDO
 ; 
-demon_EA_name:
+Demon_EA_name:
 #_098552: db $68, $8D, $5E, $C3, $FF
 
 ; ゴースト | GOーSUTO
 ; 
-demon_EB_name:
+Demon_EB_name:
 #_098557: db $B9, $5A, $69, $70, $FF
 
 ; コープス | KOーPUSU
 ; 
-demon_EC_name:
+Demon_EC_name:
 #_09855C: db $66, $5A, $CB, $69, $FF
 
 ; ゾンビアーミー | ZONBIAーMIー
 ; 
-demon_ED_name:
+Demon_ED_name:
 #_098561: db $BE, $8A, $C5, $5D, $5A, $7C, $5A, $FF
 
 ; ボディコニアン | BODEiKONIAN
 ; 
-demon_EE_name:
+Demon_EE_name:
 #_098569: db $C8, $C2, $8C, $66, $72, $5D, $8A, $FF
 
 ; ゾンビコップ | ZONBIKOtsuPU
 ; 
-demon_EF_name:
+Demon_EF_name:
 #_098571: db $BE, $8A, $C5, $66, $92, $CB, $FF
 
 ; オバタリオン | OBATARION
 ; 
-demon_F0_name:
+Demon_F0_name:
 #_098578: db $61, $C4, $6C, $84, $61, $8A, $FF
 
 ; レディーゾンビ | REDEiーZONBI
 ; 
-demon_F1_name:
+Demon_F1_name:
 #_09857F: db $86, $C2, $8C, $5A, $BE, $8A, $C5, $FF
 
 ; ゾンビ | ZONBI
 ; 
-demon_F2_name:
+Demon_F2_name:
 #_098587: db $BE, $8A, $C5, $FF
 
 ; バックベアード | BAtsuKUBEAーDO
 ; 
-demon_F3_name:
+Demon_F3_name:
 #_09858B: db $C4, $92, $64, $C7, $5D, $5A, $C3, $FF
 
 ; ブラックウーズ | BURAtsuKUUーZU
 ; 
-demon_F4_name:
+Demon_F4_name:
 #_098593: db $C6, $83, $92, $64, $5F, $5A, $BC, $FF
 
 ; スライム | SURAIMU
 ; 
-demon_F5_name:
+Demon_F5_name:
 #_09859B: db $69, $83, $5E, $7D, $FF
 
 ; モウリョウ | MOURIyoU
 ; 
-demon_F6_name:
+Demon_F6_name:
 #_0985A0: db $7F, $5F, $84, $91, $5F, $FF
 
 ; やくざ | YAKUZA
 ; 
-demon_F7_name:
+Demon_F7_name:
 #_0985A6: db $48, $2C, $A1, $FF
 
 ; ちんぴら | TINPIRA
 ; 
-demon_F8_name:
+Demon_F8_name:
 #_0985AA: db $35, $52, $B1, $4B, $FF
 
 ; T95D | T95D
 ; 
-demon_F9_name:
+Demon_F9_name:
 #_0985AF: db $1E, $0A, $06, $0E, $FF
 
 ; T95C/P | T95C/P
 ; 
-demon_FA_name:
+Demon_FA_name:
 #_0985B4: db $1E, $0A, $06, $0D, $98, $1A, $FF
 
 ; T93G | T93G
 ; 
-demon_FB_name:
+Demon_FB_name:
 #_0985BB: db $1E, $0A, $04, $11, $FF
 
 ; ビットボール | BItsuTOBOーRU
 ; 
-demon_FC_name:
+Demon_FC_name:
 #_0985C0: db $C5, $92, $70, $C8, $5A, $85, $FF
 
 ; ビッグフット | BItsuGUHUtsuTO
 ; 
-demon_FD_name:
+Demon_FD_name:
 #_0985C7: db $C5, $92, $B7, $78, $92, $70, $FF
 
 ; クグツ | KUGUTU
 ; 
-demon_FE_name:
+Demon_FE_name:
 #_0985CE: db $64, $B7, $6E, $FF
 
 ; がったいふのう | GAtsuTAIHUNOU
 ; 
-demon_FF_name:
+Demon_FF_name:
 #_0985D2: db $9C, $58, $34, $26, $40, $3D, $27, $FF
 
 ;===================================================================================================
 
 ; オリアス | ORIASU
 ; 
-boss_00_name:
+Boss_00_name:
 #_0985DA: db $61, $84, $5D, $69, $FF
 
 ; アマノサクガミ | AMANOSAKUGAMI
 ; 
-boss_01_name:
+Boss_01_name:
 #_0985DF: db $5D, $7B, $75, $67, $64, $B5, $7C, $FF
 
 ; ドウマン | DOUMAN
 ; 
-boss_02_name:
+Boss_02_name:
 #_0985E7: db $C3, $5F, $7B, $8A, $FF
 
 ; ゴトウ | GOTOU
 ; 
-boss_03_name:
+Boss_03_name:
 #_0985EC: db $B9, $70, $5F, $FF
 
 ; トール | TOーRU
 ; 
-boss_04_name:
+Boss_04_name:
 #_0985F0: db $70, $5A, $85, $FF
 
 ; かいじん | KAIZIN
 ; 
-boss_05_name:
+Boss_05_name:
 #_0985F4: db $2A, $26, $A2, $52, $FF
 
 ; かいじん | KAIZIN
 ; 
-boss_06_name:
+Boss_06_name:
 #_0985F9: db $2A, $26, $A2, $52, $FF
 
 ; タケミナカタ | TAKEMINAKATA
 ; 
-boss_07_name:
+Boss_07_name:
 #_0985FE: db $6C, $65, $7C, $71, $62, $6C, $FF
 
 ; アルケニー | ARUKENIー
 ; 
-boss_08_name:
+Boss_08_name:
 #_098605: db $5D, $85, $65, $72, $5A, $FF
 
 ; ベリアル | BERIARU
 ; 
-boss_09_name:
+Boss_09_name:
 #_09860B: db $C7, $84, $5D, $85, $FF
 
 ; ネビロス | NEBIROSU
 ; 
-boss_0A_name:
+Boss_0A_name:
 #_098610: db $74, $C5, $87, $69, $FF
 
 ; けいびシステム | KEIBISISUTEMU
 ; 
-boss_0B_name:
+Boss_0B_name:
 #_098615: db $2D, $26, $AC, $68, $69, $6F, $7D, $FF
 
 ; カズフェル | KAZUHUeRU
 ; 
-boss_0C_name:
+Boss_0C_name:
 #_09861D: db $62, $BC, $78, $8D, $85, $FF
 
 ; ハニエル | HANIERU
 ; 
-boss_0D_name:
+Boss_0D_name:
 #_098623: db $76, $72, $60, $85, $FF
 
 ; ヤマ | YAMA
 ; 
-boss_0E_name:
+Boss_0E_name:
 #_098628: db $80, $7B, $FF
 
 ; ニオウ | NIOU
 ; 
-boss_0F_name:
+Boss_0F_name:
 #_09862B: db $72, $61, $5F, $FF
 
 ; ラドン | RADON
 ; 
-boss_10_name:
+Boss_10_name:
 #_09862F: db $83, $C3, $8A, $FF
 
 ; エキドナ | EKIDONA
 ; 
-boss_11_name:
+Boss_11_name:
 #_098633: db $60, $63, $C3, $71, $FF
 
 ; ヴィシュヌ | VUiSIyuNU
 ; 
-boss_12_name:
+Boss_12_name:
 #_098638: db $CE, $8C, $68, $90, $73, $FF
 
 ; ラーヴァナ | RAーVUaNA
 ; 
-boss_13_name:
+Boss_13_name:
 #_09863E: db $83, $5A, $CE, $8B, $71, $FF
 
 ; インドラジット | INDORAZItsuTO
 ; 
-boss_14_name:
+Boss_14_name:
 #_098644: db $5E, $8A, $C3, $83, $BB, $92, $70, $FF
 
 ; ガブリエル | GABURIERU
 ; 
-boss_15_name:
+Boss_15_name:
 #_09864C: db $B5, $C6, $84, $60, $85, $FF
 
 ; ウリエル | URIERU
 ; 
-boss_16_name:
+Boss_16_name:
 #_098652: db $5F, $84, $60, $85, $FF
 
 ; ラファエル | RAHUaERU
 ; 
-boss_17_name:
+Boss_17_name:
 #_098657: db $83, $78, $8B, $60, $85, $FF
 
 ; アリオク | ARIOKU
 ; 
-boss_18_name:
+Boss_18_name:
 #_09865D: db $5D, $84, $61, $64, $FF
 
 ; アスタロト | ASUTAROTO
 ; 
-boss_19_name:
+Boss_19_name:
 #_098662: db $5D, $69, $6C, $87, $70, $FF
 
 ; スルト | SURUTO
 ; 
-boss_1A_name:
+Boss_1A_name:
 #_098668: db $69, $85, $70, $FF
 
 ; ロウヒーロー | ROUHIーROー
 ; 
-boss_1B_name:
+Boss_1B_name:
 #_09866C: db $87, $5F, $77, $5A, $87, $5A, $FF
 
 ; カオスヒーロー | KAOSUHIーROー
 ; 
-boss_1C_name:
+Boss_1C_name:
 #_098673: db $62, $61, $69, $77, $5A, $87, $5A, $FF
 
 ; リリス | RIRISU
 ; 
-boss_1D_name:
+Boss_1D_name:
 #_09867B: db $84, $84, $69, $FF
 
 ; ベルゼブブ | BERUZEBUBU
 ; 
-boss_1E_name:
+Boss_1E_name:
 #_09867F: db $C7, $85, $BD, $C6, $C6, $FF
 
 ; ミカエル | MIKAERU
 ; 
-boss_1F_name:
+Boss_1F_name:
 #_098685: db $7C, $62, $60, $85, $FF
 
 ; アスラおう | ASURAOU
 ; 
-boss_20_name:
+Boss_20_name:
 #_09868A: db $5D, $69, $83, $29, $27, $FF
 
 ; ゼンキ | ZENKI
 ; 
-boss_21_name:
+Boss_21_name:
 #_098690: db $BD, $8A, $63, $FF
 
 ; ゴキ | GOKI
 ; 
-boss_22_name:
+Boss_22_name:
 #_098694: db $B9, $63, $FF
 
 ; デイビット | DEIBItsuTO
 ; 
-boss_23_name:
+Boss_23_name:
 #_098697: db $C2, $5E, $C5, $92, $70, $FF
 
 ; ペイルライダー | PEIRURAIDAー
 ; Pale rider
-boss_24_name:
+Boss_24_name:
 #_09869D: db $CC, $5E, $85, $83, $5E, $BF, $5A, $FF
 
 ; だいそうじょう | DAISOUZIyoU
 ; 
-boss_25_name:
+Boss_25_name:
 #_0986A5: db $A6, $26, $33, $27, $A2, $57, $27, $FF
 
 ; マサカドさま | MASAKADOSAMA
 ; 
-boss_26_name:
+Boss_26_name:
 #_0986AD: db $7B, $67, $62, $C3, $2F, $43, $FF
 
 ; カメ | KAME
 ; 
-boss_27_name:
+Boss_27_name:
 #_0986B4: db $62, $7E, $FF
 
 ; タコ | TAKO
 ; 
-boss_28_name:
+Boss_28_name:
 #_0986B7: db $6C, $66, $FF
 
 ; ビシャモンテン | BISIyaMONTEN
 ; 
-boss_29_name:
+Boss_29_name:
 #_0986BA: db $C5, $68, $8F, $7F, $8A, $6F, $8A, $FF
 
 ; してんのう | SITENNOU
 ; 
-boss_2A_name:
+Boss_2A_name:
 #_0986C2: db $30, $37, $52, $3D, $27, $FF
 
 ; れんきのけん | RENKINOKEN
 ; 
-boss_2B_name:
+Boss_2B_name:
 #_0986C8: db $4E, $52, $2B, $3D, $2D, $52, $FF
 
 ; ふうじんけん | HUUZINKEN
 ; 
-boss_2C_name:
+Boss_2C_name:
 #_0986CF: db $40, $27, $A2, $52, $2D, $52, $FF
 
 ; らいじんけん | RAIZINKEN
 ; 
-boss_2D_name:
+Boss_2D_name:
 #_0986D6: db $4B, $26, $A2, $52, $2D, $52, $FF
 
 ; かりゅうけん | KARIyuUKEN
 ; 
-boss_2E_name:
+Boss_2E_name:
 #_0986DD: db $2A, $4C, $56, $27, $2D, $52, $FF
 
 ; くさなぎのつるぎ | KUSANAGINOTURUGI
 ; 
-boss_2F_name:
+Boss_2F_name:
 #_0986E4: db $2C, $2F, $39, $9D, $3D, $36, $4D, $9D, $FF
 
 ; ふつのみたま | HUTUNOMITAMA
 ; 
-boss_30_name:
+Boss_30_name:
 #_0986ED: db $40, $36, $3D, $44, $34, $43, $FF
 
 ; あめのむらくも | AMENOMURAKUMO
 ; 
-boss_31_name:
+Boss_31_name:
 #_0986F4: db $25, $46, $3D, $45, $4B, $2C, $47, $FF
 
 ; ひのかぐつち | HINOKAGUTUTI
 ; 
-boss_32_name:
+Boss_32_name:
 #_0986FC: db $3F, $3D, $2A, $9E, $36, $35, $FF
 
 ; エンゼルリング | ENZERURINGU
 ; 
-boss_33_name:
+Boss_33_name:
 #_098703: db $60, $8A, $BD, $85, $84, $8A, $B7, $FF
 
 ; パスカル | PASUKARU
 ; 
-boss_34_name:
+Boss_34_name:
 #_09870B: db $C9, $69, $62, $85, $FF
 
 ; わるお | WARUO
 ; 
-boss_35_name:
+Boss_35_name:
 #_098710: db $50, $4D, $29, $FF
 
 ;===================================================================================================
 
 ; マジン | MAZIN
 ; 
-class_00_name:
+Class_00_name:
 #_098714: db $7B, $BB, $8A, $FF
 
 ; メガミ | MEGAMI
 ; 
-class_01_name:
+Class_01_name:
 #_098718: db $7E, $B5, $7C, $FF
 
 ; テンマ | TENMA
 ; 
-class_02_name:
+Class_02_name:
 #_09871C: db $6F, $8A, $7B, $FF
 
 ; キシン | KISIN
 ; 
-class_03_name:
+Class_03_name:
 #_098720: db $63, $68, $8A, $FF
 
 ; セラフ | SERAHU
 ; 
-class_04_name:
+Class_04_name:
 #_098724: db $6A, $83, $78, $FF
 
 ; テンシ | TENSI
 ; 
-class_05_name:
+Class_05_name:
 #_098728: db $6F, $8A, $68, $FF
 
 ; リュウジン | RIyuUZIN
 ; 
-class_06_name:
+Class_06_name:
 #_09872C: db $84, $90, $5F, $BB, $8A, $FF
 
 ; レイチョウ | REITIyoU
 ; 
-class_07_name:
+Class_07_name:
 #_098732: db $86, $5E, $6D, $91, $5F, $FF
 
 ; シンジュウ | SINZIyuU
 ; 
-class_08_name:
+Class_08_name:
 #_098738: db $68, $8A, $BB, $90, $5F, $FF
 
 ; セイジュウ | SEIZIyuU
 ; 
-class_09_name:
+Class_09_name:
 #_09873E: db $6A, $5E, $BB, $90, $5F, $FF
 
 ; セイレイ | SEIREI
 ; 
-class_0A_name:
+Class_0A_name:
 #_098744: db $6A, $5E, $86, $5E, $FF
 
 ; キジョ | KIZIyo
 ; 
-class_0B_name:
+Class_0B_name:
 #_098749: db $63, $BB, $91, $FF
 
 ; ヨウマ | YOUMA
 ; 
-class_0C_name:
+Class_0C_name:
 #_09874D: db $82, $5F, $7B, $FF
 
 ; ヤマ | YAMA
 ; 
-class_0D_name:
+Class_0D_name:
 #_098751: db $80, $7B, $FF
 
 ; ヨウセイ | YOUSEI
 ; 
-class_0E_name:
+Class_0E_name:
 #_098754: db $82, $5F, $6A, $5E, $FF
 
 ; ダテンシ | DATENSI
 ; 
-class_0F_name:
+Class_0F_name:
 #_098759: db $BF, $6F, $8A, $68, $FF
 
 ; リュウオウ | RIyuUOU
 ; 
-class_10_name:
+Class_10_name:
 #_09875E: db $84, $90, $5F, $61, $5F, $FF
 
 ; ヨウチョウ | YOUTIyoU
 ; 
-class_11_name:
+Class_11_name:
 #_098764: db $82, $5F, $6D, $91, $5F, $FF
 
 ; マジュウ | MAZIyuU
 ; 
-class_12_name:
+Class_12_name:
 #_09876A: db $7B, $BB, $90, $5F, $FF
 
 ; トウキ | TOUKI
 ; 
-class_13_name:
+Class_13_name:
 #_09876F: db $70, $5F, $63, $FF
 
 ; ヨウキ | YOUKI
 ; 
-class_14_name:
+Class_14_name:
 #_098773: db $82, $5F, $63, $FF
 
 ; チレイ | TIREI
 ; 
-class_15_name:
+Class_15_name:
 #_098777: db $6D, $86, $5E, $FF
 
 ; ジュウジン | ZIyuUZIN
 ; 
-class_16_name:
+Class_16_name:
 #_09877B: db $BB, $90, $5F, $BB, $8A, $FF
 
 ; メシアキョウト | MESIAKIyoUTO
 ; 
-class_17_name:
+Class_17_name:
 #_098781: db $7E, $68, $5D, $63, $91, $5F, $70, $FF
 
 ; ガイアキョウト | GAIAKIyoUTO
 ; 
-class_18_name:
+Class_18_name:
 #_098789: db $B5, $5E, $5D, $63, $91, $5F, $70, $FF
 
 ; ジャシン | ZIyaSIN
 ; 
-class_19_name:
+Class_19_name:
 #_098791: db $BB, $8F, $68, $8A, $FF
 
 ; マオウ | MAOU
 ; 
-class_1A_name:
+Class_1A_name:
 #_098796: db $7B, $61, $5F, $FF
 
 ; ジャリュウ | ZIyaRIyuU
 ; 
-class_1B_name:
+Class_1B_name:
 #_09879A: db $BB, $8F, $84, $90, $5F, $FF
 
 ; キョウチョウ | KIyoUTIyoU
 ; 
-class_1C_name:
+Class_1C_name:
 #_0987A0: db $63, $91, $5F, $6D, $91, $5F, $FF
 
 ; ヨウジュウ | YOUZIyuU
 ; 
-class_1D_name:
+Class_1D_name:
 #_0987A7: db $82, $5F, $BB, $90, $5F, $FF
 
 ; ジャキ | ZIyaKI
 ; 
-class_1E_name:
+Class_1E_name:
 #_0987AD: db $BB, $8F, $63, $FF
 
 ; ユウキ | YUUKI
 ; 
-class_1F_name:
+Class_1F_name:
 #_0987B1: db $81, $5F, $63, $FF
 
 ; アクリョウ | AKURIyoU
 ; 
-class_20_name:
+Class_20_name:
 #_0987B5: db $5D, $64, $84, $91, $5F, $FF
 
 ; シキ | SIKI
 ; 
-class_21_name:
+Class_21_name:
 #_0987BB: db $68, $63, $FF
 
 ; ゲドウ | GEDOU
 ; 
-class_22_name:
+Class_22_name:
 #_0987BE: db $B8, $C3, $5F, $FF
 
 ; マシン | MASIN
 ; 
-class_23_name:
+Class_23_name:
 #_0987C2: db $7B, $68, $8A, $FF
 
 ; イヌ | INU
 ; 
-class_24_name:
+Class_24_name:
 #_0987C6: db $5E, $73, $FF
 
 ; チョウジン | TIyoUZIN
 ; 
-class_25_name:
+Class_25_name:
 #_0987C9: db $6D, $91, $5F, $BB, $8A, $FF
 
 ; ケン | KEN
 ; 
-class_26_name:
+Class_26_name:
 #_0987CF: db $65, $8A, $FF
 
 ;===================================================================================================
@@ -1776,624 +1776,624 @@ SkillNames:
 
 ; アギ | AGI
 ; Agi
-skill_00_name:
+Skill_00_name:
 #_0987D2: db $5D, $B6, $FF
 
 ; アギラオ | AGIRAO
 ; Agilao
-skill_01_name:
+Skill_01_name:
 #_0987D5: db $5D, $B6, $83, $61, $FF
 
 ; マハラギ | MAHARAGI
 ; Maragi
-skill_02_name:
+Skill_02_name:
 #_0987DA: db $7B, $76, $83, $B6, $FF
 
 ; マハラギオン | MAHARAGION
 ; Maragion
-skill_03_name:
+Skill_03_name:
 #_0987DF: db $7B, $76, $83, $B6, $61, $8A, $FF
 
 ; ブフ | BUHU
 ; Bufu
-skill_04_name:
+Skill_04_name:
 #_0987E6: db $C6, $78, $FF
 
 ; ブフーラ | BUHUーRA
 ; Bufula
-skill_05_name:
+Skill_05_name:
 #_0987E9: db $C6, $78, $5A, $83, $FF
 
 ; マハーブフ | MAHAーBUHU
 ; Mabufu
-skill_06_name:
+Skill_06_name:
 #_0987EE: db $7B, $76, $5A, $C6, $78, $FF
 
 ; マハブフーラ | MAHABUHUーRA
 ; Mabufula
-skill_07_name:
+Skill_07_name:
 #_0987F4: db $7B, $76, $C6, $78, $5A, $83, $FF
 
 ; ジオ | ZIO
 ; Zio
-skill_08_name:
+Skill_08_name:
 #_0987FB: db $BB, $61, $FF
 
 ; ジオンガ | ZIONGA
 ; Zionga
-skill_09_name:
+Skill_09_name:
 #_0987FE: db $BB, $61, $8A, $B5, $FF
 
 ; マハジオ | MAHAZIO
 ; Mazio
-skill_0A_name:
+Skill_0A_name:
 #_098803: db $7B, $76, $BB, $61, $FF
 
 ; マハジオンガ | MAHAZIONGA
 ; Mazionga
-skill_0B_name:
+Skill_0B_name:
 #_098808: db $7B, $76, $BB, $61, $8A, $B5, $FF
 
 ; ザン | ZAN
 ; Zan
-skill_0C_name:
+Skill_0C_name:
 #_09880F: db $BA, $8A, $FF
 
 ; ザンマ | ZANMA
 ; Zanma
-skill_0D_name:
+Skill_0D_name:
 #_098812: db $BA, $8A, $7B, $FF
 
 ; マハザン | MAHAZAN
 ; Mazan
-skill_0E_name:
+Skill_0E_name:
 #_098816: db $7B, $76, $BA, $8A, $FF
 
 ; マハザンマ | MAHAZANMA
 ; Mazanma
-skill_0F_name:
+Skill_0F_name:
 #_09881B: db $7B, $76, $BA, $8A, $7B, $FF
 
 ; テンタラフー | TENTARAHUー
 ; Tentarafoo
-skill_10_name:
+Skill_10_name:
 #_098821: db $6F, $8A, $6C, $83, $78, $5A, $FF
 
 ; リムドーラ | RIMUDOーRA
 ; Rimdora
-skill_11_name:
+Skill_11_name:
 #_098828: db $84, $7D, $C3, $5A, $83, $FF
 
 ; メギド | MEGIDO
 ; Megido
-skill_12_name:
+Skill_12_name:
 #_09882E: db $7E, $B6, $C3, $FF
 
 ; メギドラオン | MEGIDORAON
 ; Megidolaon
-skill_13_name:
+Skill_13_name:
 #_098832: db $7E, $B6, $C3, $83, $61, $8A, $FF
 
 ; TODO ????
 ; マトラポー | MATORAPOー
 ; Matrapo
-skill_14_name:
+Skill_14_name:
 #_098839: db $7B, $70, $83, $CD, $5A, $FF
 
 ; ハンマ | HANMA
 ; Hama
-skill_15_name:
+Skill_15_name:
 #_09883F: db $76, $8A, $7B, $FF
 
 ; マハンマ | MAHANMA
 ; Mahama
-skill_16_name:
+Skill_16_name:
 #_098843: db $7B, $76, $8A, $7B, $FF
 
 ; ムド | MUDO
 ; Mudo
-skill_17_name:
+Skill_17_name:
 #_098848: db $7D, $C3, $FF
 
 ; ムドオン | MUDOON
 ; Mudoon
-skill_18_name:
+Skill_18_name:
 #_09884B: db $7D, $C3, $61, $8A, $FF
 
 ; ドルミナー | DORUMINAー
 ; Dormina
-skill_19_name:
+Skill_19_name:
 #_098850: db $C3, $85, $7C, $71, $5A, $FF
 
 ; シバブー | SIBABUー
 ; Shibaboo
-skill_1A_name:
+Skill_1A_name:
 #_098856: db $68, $C4, $C6, $5A, $FF
 
 ; プリンパ | PURINPA
 ; Pulinpa
-skill_1B_name:
+Skill_1B_name:
 #_09885B: db $CB, $84, $8A, $C9, $FF
 
 ; ハピルマ | HAPIRUMA
 ; Hapirma
-skill_1C_name:
+Skill_1C_name:
 #_098860: db $76, $CA, $85, $7B, $FF
 
 ; マリンカリン | MARINKARIN
 ; Marin karin
-skill_1D_name:
+Skill_1D_name:
 #_098865: db $7B, $84, $8A, $62, $84, $8A, $FF
 
 ; マカジャマ | MAKAZIyaMA
 ; Makajam
-skill_1E_name:
+Skill_1E_name:
 #_09886C: db $7B, $62, $BB, $8F, $7B, $FF
 
 ; マカトランダ | MAKATORANDA
 ; Makatranda
-skill_1F_name:
+Skill_1F_name:
 #_098872: db $7B, $62, $70, $83, $8A, $BF, $FF
 
 ; タルンダ | TARUNDA
 ; Tarunda
-skill_20_name:
+Skill_20_name:
 #_098879: db $6C, $85, $8A, $BF, $FF
 
 ; ラクンダ | RAKUNDA
 ; Rakunda
-skill_21_name:
+Skill_21_name:
 #_09887E: db $83, $64, $8A, $BF, $FF
 
 ; スクンダ | SUKUNDA
 ; Sukunda
-skill_22_name:
+Skill_22_name:
 #_098883: db $69, $64, $8A, $BF, $FF
 
 ; タルカジャ | TARUKAZIya
 ; Tarukaja
-skill_23_name:
+Skill_23_name:
 #_098888: db $6C, $85, $62, $BB, $8F, $FF
 
 ; ラクカジャ | RAKUKAZIya
 ; Rakukaja
-skill_24_name:
+Skill_24_name:
 #_09888E: db $83, $64, $62, $BB, $8F, $FF
 
 ; スクカジャ | SUKUKAZIya
 ; Sukukaja
-skill_25_name:
+Skill_25_name:
 #_098894: db $69, $64, $62, $BB, $8F, $FF
 
 ; マカカジャ | MAKAKAZIya
 ; Makakaja
-skill_26_name:
+Skill_26_name:
 #_09889A: db $7B, $62, $62, $BB, $8F, $FF
 
 ; テトラジャ | TETORAZIya
 ; Tetraja
-skill_27_name:
+Skill_27_name:
 #_0988A0: db $6F, $70, $83, $BB, $8F, $FF
 
 ; マカラカーン | MAKARAKAーN
 ; Makarakarn
-skill_28_name:
+Skill_28_name:
 #_0988A6: db $7B, $62, $83, $62, $5A, $8A, $FF
 
 ; テトラカーン | TETORAKAーN
 ; Tetrakarn
-skill_29_name:
+Skill_29_name:
 #_0988AD: db $6F, $70, $83, $62, $5A, $8A, $FF
 
 ; ディア | DEiA
 ; Dia
-skill_2A_name:
+Skill_2A_name:
 #_0988B4: db $C2, $8C, $5D, $FF
 
 ; ディアラマ | DEiARAMA
 ; Diarama
-skill_2B_name:
+Skill_2B_name:
 #_0988B8: db $C2, $8C, $5D, $83, $7B, $FF
 
 ; ディアラハン | DEiARAHAN
 ; Diarahan
-skill_2C_name:
+Skill_2C_name:
 #_0988BE: db $C2, $8C, $5D, $83, $76, $8A, $FF
 
 ; メディア | MEDEiA
 ; Media
-skill_2D_name:
+Skill_2D_name:
 #_0988C5: db $7E, $C2, $8C, $5D, $FF
 
 ; メディアラハン | MEDEiARAHAN
 ; Mediarahan
-skill_2E_name:
+Skill_2E_name:
 #_0988CA: db $7E, $C2, $8C, $5D, $83, $76, $8A, $FF
 
 ; パトラ | PATORA
 ; Patra
-skill_2F_name:
+Skill_2F_name:
 #_0988D2: db $C9, $70, $83, $FF
 
 ; ペンパトラ | PENPATORA
 ; Penpatra
-skill_30_name:
+Skill_30_name:
 #_0988D6: db $CC, $8A, $C9, $70, $83, $FF
 
 ; ポズムディ | POZUMUDEi
 ; Posumudi
-skill_31_name:
+Skill_31_name:
 #_0988DC: db $CD, $BC, $7D, $C2, $8C, $FF
 
 ; パララディ | PARARADEi
 ; Paraladi
-skill_32_name:
+Skill_32_name:
 #_0988E2: db $C9, $83, $83, $C2, $8C, $FF
 
 ; ペトラディ | PETORADEi
 ; Petradi
-skill_33_name:
+Skill_33_name:
 #_0988E8: db $CC, $70, $83, $C2, $8C, $FF
 
 ; リカーム | RIKAーMU
 ; Recarm
-skill_34_name:
+Skill_34_name:
 #_0988EE: db $84, $62, $5A, $7D, $FF
 
 ; サマリカーム | SAMARIKAーMU
 ; Samarecarm
-skill_35_name:
+Skill_35_name:
 #_0988F3: db $67, $7B, $84, $62, $5A, $7D, $FF
 
 ; リカームドラ | RIKAーMUDORA
 ; Recarmda
-skill_36_name:
+Skill_36_name:
 #_0988FA: db $84, $62, $5A, $7D, $C3, $83, $FF
 
 ; マカトラ | MAKATORA
 ; Makatora
-skill_37_name:
+Skill_37_name:
 #_098901: db $7B, $62, $70, $83, $FF
 
 ; マッパー | MAtsuPAー
 ; Mapper
-skill_38_name:
+Skill_38_name:
 #_098906: db $7B, $92, $C9, $5A, $FF
 
 ; トラエスト | TORAESUTO
 ; Traesto
-skill_39_name:
+Skill_39_name:
 #_09890B: db $70, $83, $60, $69, $70, $FF
 
 ; トラポート | TORAPOーTO
 ; Traport
-skill_3A_name:
+Skill_3A_name:
 #_098911: db $70, $83, $CD, $5A, $70, $FF
 
 ; トラフーリ | TORAFUーRI
 ; Trafuri
-skill_3B_name:
+Skill_3B_name:
 #_098917: db $70, $83, $78, $5A, $84, $FF
 
 ; エストマ | ESUTOMA
 ; Estoma
-skill_3C_name:
+Skill_3C_name:
 #_09891D: db $60, $69, $70, $7B, $FF
 
 ; サバトマ | SABATOMA
 ; Sabbatma
-skill_3D_name:
+Skill_3D_name:
 #_098922: db $67, $C4, $70, $7B, $FF
 
 ; TODO????
 ; サバトマオン | SABATOMAON
 ; Sabbatmaon
-skill_3E_name:
+Skill_3E_name:
 #_098927: db $67, $C4, $70, $7B, $61, $8A, $FF
 
 ; null
-skill_3F_name:
+Skill_3F_name:
 #_09892E: db $FF
 
 ; パララアイ | PARARAAI
 ; 
-skill_40_name:
+Skill_40_name:
 #_09892F: db $C9, $83, $83, $5D, $5E, $FF
 
 ; ペトラアイ | PETORAAI
 ; 
-skill_41_name:
+Skill_41_name:
 #_098935: db $CC, $70, $83, $5D, $5E, $FF
 
 ; しへのみち | SIHENOMITI
 ; 
-skill_42_name:
+Skill_42_name:
 #_09893B: db $30, $41, $3D, $44, $35, $FF
 
 ; ブラッドスチール | BURAtsuDOSUTIーRU
 ; 
-skill_43_name:
+Skill_43_name:
 #_098941: db $C6, $83, $92, $C3, $69, $6D, $5A, $85, $FF
 
 ; バエルののろい | BAERUNONOROI
 ; 
-skill_44_name:
+Skill_44_name:
 #_09894A: db $C4, $60, $85, $3D, $3D, $4F, $26, $FF
 
 ; セクシーダンス | SEKUSIーDANSU
 ; 
-skill_45_name:
+Skill_45_name:
 #_098952: db $6A, $64, $68, $5A, $BF, $8A, $69, $FF
 
 ; ハッピーステップ | HAtsuPIーSUTEtsuPU
 ; 
-skill_46_name:
+Skill_46_name:
 #_09895A: db $76, $92, $CA, $5A, $69, $6F, $92, $CB, $FF
 
 ; しあわせのうた | SIAWASENOUTA
 ; 
-skill_47_name:
+Skill_47_name:
 #_098963: db $30, $25, $50, $32, $3D, $27, $34, $FF
 
 ; こもりうた | KOMORIUTA
 ; 
-skill_48_name:
+Skill_48_name:
 #_09896B: db $2E, $47, $4C, $27, $34, $FF
 
 ; パニックボイス | PANItsuKUBOISU
 ; 
-skill_49_name:
+Skill_49_name:
 #_098971: db $C9, $72, $92, $64, $C8, $5E, $69, $FF
 
 ; バインドボイス | BAINDOBOISU
 ; 
-skill_4A_name:
+Skill_4A_name:
 #_098979: db $C4, $5E, $8A, $C3, $C8, $5E, $69, $FF
 
 ; あくまのキス | AKUMANOKISU
 ; 
-skill_4B_name:
+Skill_4B_name:
 #_098981: db $25, $2C, $43, $3D, $63, $69, $FF
 
 ; あくまのキス | AKUMANOKISU
 ; 
-skill_4C_name:
+Skill_4C_name:
 #_098988: db $25, $2C, $43, $3D, $63, $69, $FF
 
 ; デビルスマイル | DEBIRUSUMAIRU
 ; 
-skill_4D_name:
+Skill_4D_name:
 #_09898F: db $C2, $C5, $85, $69, $7B, $5E, $85, $FF
 
 ; ファイアブレス | HUaIABURESU
 ; 
-skill_4E_name:
+Skill_4E_name:
 #_098997: db $78, $8B, $5E, $5D, $C6, $86, $69, $FF
 
 ; アイスブレス | AISUBURESU
 ; 
-skill_4F_name:
+Skill_4F_name:
 #_09899F: db $5D, $5E, $69, $C6, $86, $69, $FF
 
 ; どくガスブレス | DOKUGASUBURESU
 ; 
-skill_50_name:
+Skill_50_name:
 #_0989A6: db $AA, $2C, $B5, $69, $C6, $86, $69, $FF
 
 ; フォッグブレス | HUotsuGUBURESU
 ; Fog breath
-skill_51_name:
+Skill_51_name:
 #_0989AE: db $78, $8E, $92, $B7, $C6, $86, $69, $FF
 
 ; ファイアボール | HUaIABOーRU
 ; 
-skill_52_name:
+Skill_52_name:
 #_0989B6: db $78, $8B, $5E, $5D, $C8, $5A, $85, $FF
 
 ; でんげき | DENGEKI
 ; 
-skill_53_name:
+Skill_53_name:
 #_0989BE: db $A9, $52, $9F, $2B, $FF
 
 ; デスタッチ | DESUTAtsuTI
 ; Death touch
-skill_54_name:
+Skill_54_name:
 #_0989C3: db $C2, $69, $6C, $92, $6D, $FF
 
 ; みずのかべ | MIZUNOKABE
 ; Water wall
-skill_55_name:
+Skill_55_name:
 #_0989C9: db $44, $A3, $3D, $2A, $AE, $FF
 
 ; ほのおのかべ | HONOONOKABE
 ; Fire wall
-skill_56_name:
+Skill_56_name:
 #_0989CF: db $42, $3D, $29, $3D, $2A, $AE, $FF
 
 ; かみつき | KAMITUKI
 ; 
-skill_57_name:
+Skill_57_name:
 #_0989D6: db $2A, $44, $36, $2B, $FF
 
 ; どくかみつき | DOKUKAMITUKI
 ; 
-skill_58_name:
+Skill_58_name:
 #_0989DB: db $AA, $2C, $2A, $44, $36, $2B, $FF
 
 ; まひかみつき | MAHIKAMITUKI
 ; 
-skill_59_name:
+Skill_59_name:
 #_0989E2: db $43, $3F, $2A, $44, $36, $2B, $FF
 
 ; せきかかみつき | SEKIKAKAMITUKI
 ; 
-skill_5A_name:
+Skill_5A_name:
 #_0989E9: db $32, $2B, $2A, $2A, $44, $36, $2B, $FF
 
 ; みわくかみつき | MIWAKUKAMITUKI
 ; 
-skill_5B_name:
+Skill_5B_name:
 #_0989F1: db $44, $50, $2C, $2A, $44, $36, $2B, $FF
 
 ; ひっかき | HItsuKAKI
 ; 
-skill_5C_name:
+Skill_5C_name:
 #_0989F9: db $3F, $58, $2A, $2B, $FF
 
 ; どくひっかき | DOKUHItsuKAKI
 ; 
-skill_5D_name:
+Skill_5D_name:
 #_0989FE: db $AA, $2C, $3F, $58, $2A, $2B, $FF
 
 ; まひひっかき | MAHIHItsuKAKI
 ; 
-skill_5E_name:
+Skill_5E_name:
 #_098A05: db $43, $3F, $3F, $58, $2A, $2B, $FF
 
 ; どくばり | DOKUBARI
 ; 
-skill_5F_name:
+Skill_5F_name:
 #_098A0C: db $AA, $2C, $AB, $4C, $FF
 
 ; まひばり | MAHIBARI
 ; 
-skill_60_name:
+Skill_60_name:
 #_098A11: db $43, $3F, $AB, $4C, $FF
 
 ; はばたき | HABATAKI
 ; 
-skill_61_name:
+Skill_61_name:
 #_098A16: db $3E, $AB, $34, $2B, $FF
 
 ; つくもばり | TUKUMOBARI
 ; 
-skill_62_name:
+Skill_62_name:
 #_098A1B: db $36, $2C, $47, $AB, $4C, $FF
 
 ; たいあたり | TAIATARI
 ; 
-skill_63_name:
+Skill_63_name:
 #_098A21: db $34, $26, $25, $34, $4C, $FF
 
 ; まきつき | MAKITUKI
 ; 
-skill_64_name:
+Skill_64_name:
 #_098A27: db $43, $2B, $36, $2B, $FF
 
 ; あばれまわり | ABAREMAWARI
 ; 
-skill_65_name:
+Skill_65_name:
 #_098A2C: db $25, $AB, $4E, $43, $50, $4C, $FF
 
 ; おしつぶし | OSITUBUSI
 ; 
-skill_66_name:
+Skill_66_name:
 #_098A33: db $29, $30, $36, $AD, $30, $FF
 
 ; ひっさつ | HItsuSATU
 ; 
-skill_67_name:
+Skill_67_name:
 #_098A39: db $3F, $58, $2F, $36, $FF
 
 ; テール | TEーRU
 ; 
-skill_68_name:
+Skill_68_name:
 #_098A3E: db $6F, $5A, $85, $FF
 
 ; かいしん | KAISIN
 ; 
-skill_69_name:
+Skill_69_name:
 #_098A42: db $2A, $26, $30, $52, $FF
 
 ; null
-skill_6A_name:
+Skill_6A_name:
 #_098A47: db $FF
 
 ; null
-skill_6B_name:
+Skill_6B_name:
 #_098A48: db $FF
 
 ; null
-skill_6C_name:
+Skill_6C_name:
 #_098A49: db $FF
 
 ; null
-skill_6D_name:
+Skill_6D_name:
 #_098A4A: db $FF
 
 ; null
-skill_6E_name:
+Skill_6E_name:
 #_098A4B: db $FF
 
 ; null
-skill_6F_name:
+Skill_6F_name:
 #_098A4C: db $FF
 
 ; null
-skill_70_name:
+Skill_70_name:
 #_098A4D: db $FF
 
 ; null
-skill_71_name:
+Skill_71_name:
 #_098A4E: db $FF
 
 ; null
-skill_72_name:
+Skill_72_name:
 #_098A4F: db $FF
 
 ; まもる | MAMORU
 ; Defend
-skill_73_name:
+Skill_73_name:
 #_098A50: db $43, $47, $4D, $FF
 
 ; にける | NIKERU
 ; Retreat
-skill_74_name:
+Skill_74_name:
 #_098A54: db $3A, $2D, $4D, $FF
 
 ; なかまよび | NAKAMAYOBI
 ; Rally
-skill_75_name:
+Skill_75_name:
 #_098A58: db $39, $2A, $43, $4A, $AC, $FF
 
 ; null
-skill_76_name:
+Skill_76_name:
 #_098A5E: db $FF
 
 ; null
-skill_77_name:
+Skill_77_name:
 #_098A5F: db $FF
 
 ; null
-skill_78_name:
+Skill_78_name:
 #_098A60: db $FF
 
 ; null
-skill_79_name:
+Skill_79_name:
 #_098A61: db $FF
 
 ; null
-skill_7A_name:
+Skill_7A_name:
 #_098A62: db $FF
 
 ; null
-skill_7B_name:
+Skill_7B_name:
 #_098A63: db $FF
 
 ; null
-skill_7C_name:
+Skill_7C_name:
 #_098A64: db $FF
 
 ; null
-skill_7D_name:
+Skill_7D_name:
 #_098A65: db $FF
 
 ; null
-skill_7E_name:
+Skill_7E_name:
 #_098A66: db $FF
 
 ; null
-skill_7F_name:
+Skill_7F_name:
 #_098A67: db $FF
 
 ;===================================================================================================
@@ -2403,1343 +2403,1343 @@ ItemNames:
 
 ; アタックナイフ | ATAtsuKUNAIHU | Atakkunaifu 
 ; Attack knife
-item_00_name:
+Item_00_name:
 #_098A68: db $5D, $6C, $92, $64, $71, $5E, $78, $FF
 
 ; マチェット | MATIetsuTO | Machetto
 ; Machete
-item_01_name:
+Item_01_name:
 #_098A70: db $7B, $6D, $8D, $92, $70, $FF
 
 ; トンファー | TONHUaー | Tonfā
 ; Tonfā
-item_02_name:
+Item_02_name:
 #_098A76: db $70, $8A, $78, $8B, $5A, $FF
 
 ; スパイクロッド | SUPAIKUROtsuDO | Supaikuroddo
 ; Spike rod
-item_03_name:
+Item_03_name:
 #_098A7C: db $69, $C9, $5E, $64, $87, $92, $C3, $FF
 
 ; もぞうとう | MOZOUTOU | Mozō-gatana
 ; Replica sword
-item_04_name:
+Item_04_name:
 #_098A84: db $47, $A5, $27, $38, $27, $FF
 
 ; むめいのかたな | MUMEINOKATANA | Mumei no katana
 ; Unnamed katana
-item_05_name:
+Item_05_name:
 #_098A8A: db $45, $46, $26, $3D, $2A, $34, $39, $FF
 
 ; せいりゅうとう | SEIRIyuUTOU | Seiryu-to
 ; Rectifier
-item_06_name:
+Item_06_name:
 #_098A92: db $32, $26, $4C, $56, $27, $38, $27, $FF
 
 ; さそりムチ | SASORIMUTI | 
 ; Scorpion whip
-item_07_name:
+Item_07_name:
 #_098A9A: db $2F, $33, $4C, $7D, $6D, $FF
 
 ; バトルハンマー | BATORUHANMAー | Batoruhanmā
 ; Battle hammer
-item_08_name:
+Item_08_name:
 #_098AA0: db $C4, $70, $85, $76, $8A, $7B, $5A, $FF
 
 ; さんせつこん | SANSETUKON | San-setsu-kon
 ; Three-section staff
-item_09_name:
+Item_09_name:
 #_098AA8: db $2F, $52, $32, $36, $2E, $52, $FF
 
 ; びぜんのたんとう | BIZENNOTANTOU | 
 ; Bizen's Tanto
-item_0A_name:
+Item_0A_name:
 #_098AAF: db $AC, $A4, $52, $3D, $34, $52, $38, $27, $FF
 
 ; チェーンソー | TIeーNSOー | Chēnsō 
 ; Chainsaw
-item_0B_name:
+Item_0B_name:
 #_098AB8: db $6D, $8D, $5A, $8A, $6B, $5A, $FF
 
 ; アセイミナイフ | ASEIMINAIHU | 
 ; Swiss Army Knife
-item_0C_name:
+Item_0C_name:
 #_098ABF: db $5D, $6A, $5E, $7C, $71, $5E, $78, $FF
 
 ; グラディウス | GURADEiUSU | Guradiusu
 ; Gladius
-item_0D_name:
+Item_0D_name:
 #_098AC7: db $B7, $83, $C2, $8C, $5F, $69, $FF
 
 ; めいとうこてつ | MEITOUKOTETU | 
 ; Meito Kotetsu [Kotetsu's Honor?]
-item_0E_name:
+Item_0E_name:
 #_098ACE: db $46, $26, $38, $27, $2E, $37, $36, $FF
 
 ; ともえのなぎなた | TOMOENONAGINATA | 
 ; Tomoe's Naginata
 ; Corkscrew?
-item_0F_name:
+Item_0F_name:
 #_098AD6: db $38, $47, $28, $3D, $39, $9D, $39, $34, $FF
 
 ; みかづきのたち | MIKADUKINOTATI | 
 ; Mikazuchi's Tachi
-item_10_name:
+Item_10_name:
 #_098ADF: db $44, $2A, $A8, $2B, $3D, $34, $35, $FF
 
 ; ひかりのこだち | HIKARINOKODATI | 
 ; Kodachi of Light
-item_11_name:
+Item_11_name:
 #_098AE7: db $3F, $2A, $4C, $3D, $2E, $A6, $35, $FF
 
 ; ギロチンアクス | GIROTINAKUSU | 
 ; Guillotine axe
-item_12_name:
+Item_12_name:
 #_098AEF: db $B6, $87, $6D, $8A, $5D, $64, $69, $FF
 
 ; ぐれんのムチ | GURENNOMUTI | 
 ; Lotus whip
-item_13_name:
+Item_13_name:
 #_098AF7: db $9E, $4E, $52, $3D, $7D, $6D, $FF
 
 ; びぜんおさふね | BIZENOSAHUNE | Bizen-Osafune
-item_14_name:
+Item_14_name:
 #_098AFE: db $AC, $A4, $52, $29, $2F, $40, $3C, $FF
 
 ; らいでんのムチ | RAIDENNOMUTI | 
 ; Raiden's whip
-item_15_name:
+Item_15_name:
 #_098B06: db $4B, $26, $A9, $52, $3D, $7D, $6D, $FF
 
 ; ランスオブカース | RANSUOBUKAーSU | 
 ; Lance of Curses
-item_16_name:
+Item_16_name:
 #_098B0E: db $83, $8A, $69, $61, $C6, $62, $5A, $69, $FF
 
 ; カムドのつるぎ | KAMUDONOTURUGI | Kamudo no turugi
 ; Kamudo's sword
-item_17_name:
+Item_17_name:
 #_098B17: db $62, $7D, $C3, $3D, $36, $4D, $9D, $FF
 
 ; プラズマソード | PURAZUMASOーDO | 
 ; Plasma sword
-item_18_name:
+Item_18_name:
 #_098B1F: db $CB, $83, $BC, $7B, $6B, $5A, $C3, $FF
 
 ; くさなぎのつるぎ | KUSANAGINOTURUGI | 
 ; Kusanagi-no-tsurugi
-item_19_name:
+Item_19_name:
 #_098B27: db $2C, $2F, $39, $9D, $3D, $36, $4D, $9D, $FF
 
 ; ブリューナク | BURIyuーNAKU | 
 ; Brionac
-item_1A_name:
+Item_1A_name:
 #_098B30: db $C6, $84, $90, $5A, $71, $64, $FF
 
 ; とっこしょ | TOtsuKOSIyo | Tokkosho
 ; Vajra
-item_1B_name:
+Item_1B_name:
 #_098B37: db $38, $58, $2E, $30, $57, $FF
 
 ; クチナワのけん | KUTINAWANOKEN | 
 ; Kuchinawa's sword
-item_1C_name:
+Item_1C_name:
 #_098B3D: db $64, $6D, $71, $88, $3D, $2D, $52, $FF
 
 ; ふつのみたま | HUTUNOMITAMA | 
 ; Futsu-no-mitama [Normal mitama???]
-item_1D_name:
+Item_1D_name:
 #_098B45: db $40, $36, $3D, $44, $34, $43, $FF
 
 ; ソニックブレード | SONItsuKUBUREーDO | 
 ; Sonic blade
-item_1E_name:
+Item_1E_name:
 #_098B4C: db $6B, $72, $92, $64, $C6, $86, $5A, $C3, $FF
 
 ; クラウソナス | KURAUSONASU | 
 ; Clioamh Solais
-item_1F_name:
+Item_1F_name:
 #_098B55: db $64, $83, $5F, $6B, $71, $69, $FF
 
 ; しちせいけん | SITISEIKEN | Shichiseiken
 ; Seven-Star Sword
-item_20_name:
+Item_20_name:
 #_098B5C: db $30, $35, $32, $26, $2D, $52, $FF
 
 ; ひぎょうさんこ | HIGIyoUSANKO | 
 ; Higyosanko
-item_21_name:
+Item_21_name:
 #_098B63: db $3F, $9D, $57, $27, $2F, $52, $2E, $FF
 
 ; きくすいのこだち | KIKUSUINOKODATI | 
 ; Kodachi of Kikusui
-item_22_name:
+Item_22_name:
 #_098B6B: db $2B, $2C, $31, $26, $3D, $2E, $A6, $35, $FF
 
 ; ようとうニヒル | YOUTOUNIHIRU | 
 ; Yoto Nihiru
-item_23_name:
+Item_23_name:
 #_098B74: db $4A, $27, $38, $27, $72, $77, $85, $FF
 
 ; メイドのミヤゲ | MEIDONOMIYAGE | 
 ; Present from Hades
-item_24_name:
+Item_24_name:
 #_098B7C: db $7E, $5E, $C3, $3D, $7C, $80, $B8, $FF
 
 ; ゲイボルク | GEIBORUKU | 
 ; Gae Bolga
-item_25_name:
+Item_25_name:
 #_098B84: db $B8, $5E, $C8, $85, $64, $FF
 
 ; まけんムラマサ | MAKENMURAMASA | Maken Muramasa
 ; Maken muramasa [Muramasa's Cursed Sword]
 ; Muramasa was a famous swordsmith
-item_26_name:
+Item_26_name:
 #_098B8A: db $43, $2D, $52, $7D, $83, $7B, $67, $FF
 
 ; デスブリンガー | DESUBURINGAー | 
 ; Deathbringer
-item_27_name:
+Item_27_name:
 #_098B92: db $C2, $69, $C6, $84, $8A, $B5, $5A, $FF
 
 ; くびかりスプーン | KUBIKARISUPUーN | 
 ; Headhunter spoon
-item_28_name:
+Item_28_name:
 #_098B9A: db $2C, $AC, $2A, $4C, $69, $CB, $5A, $8A, $FF
 
 ; きゅうびのムチ | KIyuUBINOMUTI | 
 ; Cat of nine tails
-item_29_name:
+Item_29_name:
 #_098BA3: db $2B, $56, $27, $AC, $3D, $7D, $6D, $FF
 
 ; れんきのけん | RENKINOKEN | 
 ; Renki-no-ken [Alchemist's Sword]
-item_2A_name:
+Item_2A_name:
 #_098BAB: db $4E, $52, $2B, $3D, $2D, $52, $FF
 
 ; あめのぬぼこ | AMENONUBOKO | Amenonuboko
 ; Ame-no-nuboko [Amenonuhoko]
 ; Amenonuhoko is a mythical spear; Amenonuboko is how it's spelled a lot??? wtf is going on 
-item_2B_name:
+Item_2B_name:
 #_098BB2: db $25, $46, $3D, $3B, $AF, $2E, $FF
 
 ; やつかのけん | YATUKANOKEN | 
 ; Yatsuka's sword
-item_2C_name:
+Item_2C_name:
 #_098BB9: db $48, $36, $2A, $3D, $2D, $52, $FF
 
 ; バルハラソード | BARUHARASOーDO | 
 ; Valhalla sword
-item_2D_name:
+Item_2D_name:
 #_098BC0: db $C4, $85, $76, $83, $6B, $5A, $C3, $FF
 
 ; はおうのつるぎ | HAOUNOTURUGI | 
 ; Sword of Hao
-item_2E_name:
+Item_2E_name:
 #_098BC8: db $3E, $29, $27, $3D, $36, $4D, $9D, $FF
 
 ; めいふはづき | MEIHUHADUKI | 
 ; Hades Hazuki
-item_2F_name:
+Item_2F_name:
 #_098BD0: db $46, $26, $40, $3E, $A8, $2B, $FF
 
 ; てんしのラッパ | TENSINORAtsuPA | 
 ; Angel's Trumpet
-item_30_name:
+Item_30_name:
 #_098BD7: db $37, $52, $30, $3D, $83, $92, $C9, $FF
 
 ; ルナブレイド | RUNABUREIDO | 
 ; Luna Blade
-item_31_name:
+Item_31_name:
 #_098BDF: db $85, $71, $C6, $86, $5E, $C3, $FF
 
 ; しにがみのかね | SINIGAMINOKANE | 
 ; Reaper's Bell
-item_32_name:
+Item_32_name:
 #_098BE6: db $30, $3A, $9C, $44, $3D, $2A, $3C, $FF
 
 ; まじょうせん | MAZIyoUSEN | 
 ; Majousen
-item_33_name:
+Item_33_name:
 #_098BEE: db $43, $A2, $57, $27, $32, $52, $FF
 
 ; ロータスワンド | ROーTASUWANDO | 
 ; Lotus Wand
-item_34_name:
+Item_34_name:
 #_098BF5: db $87, $5A, $6C, $69, $88, $8A, $C3, $FF
 
 ; ロンギヌス | RONGINUSU | 
 ; Longinus
-item_35_name:
+Item_35_name:
 #_098BFD: db $87, $8A, $B6, $73, $69, $FF
 
 ; ソルブレイド | SORUBUREIDO | 
 ; Soul blade
-item_36_name:
+Item_36_name:
 #_098C03: db $6B, $85, $C6, $86, $5E, $C3, $FF
 
 ; ストラディバリ | SUTORADEiBARI | 
 ; Stradivari
-item_37_name:
+Item_37_name:
 #_098C0A: db $69, $70, $83, $C2, $8C, $C4, $84, $FF
 
 ; あめのむらくも | AMENOMURAKUMO | 
 ; Ame-no-Murakumo
 ; Murakumo is some sort of sword maybe (passing clouds)
-item_38_name:
+Item_38_name:
 #_098C12: db $25, $46, $3D, $45, $4B, $2C, $47, $FF
 
 ; ふうじんけん | HUUZINKEN | 
 ; Fuujin-ken [Scattered wind sword]
-item_39_name:
+Item_39_name:
 #_098C1A: db $40, $27, $A2, $52, $2D, $52, $FF
 
 ; らいじんけん | RAIZINKEN | 
 ; Raijin-ken [Thunder sword]
-item_3A_name:
+Item_3A_name:
 #_098C21: db $4B, $26, $A2, $52, $2D, $52, $FF
 
 ; かりゅうけん | KARIyuUKEN | 
 ; Karyu-ken [River sword]
-item_3B_name:
+Item_3B_name:
 #_098C28: db $2A, $4C, $56, $27, $2D, $52, $FF
 
 ; あまのみつるぎ | AMANOMITURUGI | 
 ; Sword of Heaven
-item_3C_name:
+Item_3C_name:
 #_098C2F: db $25, $43, $3D, $44, $36, $4D, $9D, $FF
 
 ; マサカドのかたな | MASAKADONOKATANA | 
 ; Masakodo's katana
-item_3D_name:
+Item_3D_name:
 #_098C37: db $7B, $67, $62, $C3, $3D, $2A, $34, $39, $FF
 
 ; くりからのつるぎ | KURIKARANOTURUGI | 
 ; Kurikara's sword
-item_3E_name:
+Item_3E_name:
 #_098C40: db $2C, $4C, $2A, $4B, $3D, $36, $4D, $9D, $FF
 
 ; ひのかぐつち | HINOKAGUTUTI | 
 ; Hinokagutsuchi
-item_3F_name:
+Item_3F_name:
 #_098C49: db $3F, $3D, $2A, $9E, $36, $35, $FF
 
 ; ニューナンブ | NIyuーNANBU | 
 ; New Nanbu
-item_40_name:
+Item_40_name:
 #_098C50: db $72, $90, $5A, $71, $8A, $C6, $FF
 
 ; ベレッタ92F | BEREtsuTA92F | Beretta 92F
 ; Beretta 92F
-item_41_name:
+Item_41_name:
 #_098C57: db $C7, $86, $92, $6C, $0A, $03, $10, $FF
 
 ; MP5マシンガン | MP5MASINGAN | MP5 mashingan
 ; MP5 machine gun
-item_42_name:
+Item_42_name:
 #_098C5F: db $17, $1A, $06, $7B, $68, $8A, $B5, $8A, $FF
 
 ; M16ライフル | M16RAIHURU | M16 Raifuru
 ; M16 rifle
-item_43_name:
+Item_43_name:
 #_098C68: db $17, $02, $07, $83, $5E, $78, $85, $FF
 
 ; SPAS12 | SPAS12 | SPAS12
 ; SPAS12
-item_44_name:
+Item_44_name:
 #_098C70: db $1D, $1A, $0B, $1D, $02, $03, $FF
 
 ; M249ミニミ | M249MINIMI | M249 Minimi
 ; M249 SAW LMG [FN Minimi]
 ; Combines the American weapon name (M249) with the Belgian weapon name (Minimi)
 ; Mini mitrailleuse is French for "mini machine gun"
-item_45_name:
+Item_45_name:
 #_098C77: db $17, $03, $05, $0A, $7C, $72, $7C, $FF
 
 ; ブローニングM2 | BUROーNINGUM2 | Burōningu M2
 ; Browning M2
-item_46_name:
+Item_46_name:
 #_098C7F: db $C6, $87, $5A, $72, $8A, $B7, $17, $03, $FF
 
 ; パウザP50 | PAUZAP50 | Pauza P50
 ; Pauza P50
-item_47_name:
+Item_47_name:
 #_098C88: db $C9, $5F, $BA, $1A, $06, $01, $FF
 
 ; きらいほう | KIRAIHOU | 
 ; Explosive gun [Mine gun?]
-item_48_name:
+Item_48_name:
 #_098C8F: db $2B, $4B, $26, $42, $27, $FF
 
 ; おうごんじゅう | OUGONZIyuU | 
 ; Golden gun
-item_49_name:
+Item_49_name:
 #_098C95: db $29, $27, $A0, $52, $A2, $56, $27, $FF
 
 ; ギガスマッシャー | GIGASUMAtsuSIyaー | 
 ; Gigasmasher
-item_4A_name:
+Item_4A_name:
 #_098C9D: db $B6, $B5, $69, $7B, $92, $68, $8F, $5A, $FF
 
 ; くにとものじゅう | KUNITOMONOZIyuU | 
 ; Kinitomo's Gun
-item_4B_name:
+Item_4B_name:
 #_098CA6: db $2C, $3A, $38, $47, $3D, $A2, $56, $27, $FF
 
 ; M134ミニガン | M134MINIGAN | M134 Minigan
 ; M134 minigun
-item_4C_name:
+Item_4C_name:
 #_098CAF: db $17, $02, $04, $05, $7C, $72, $B5, $8A, $FF
 
 ; レールガン | REーRUGAN | Rērugan 
 ; Railgun
-item_4D_name:
+Item_4D_name:
 #_098CB8: db $86, $5A, $85, $B5, $8A, $FF
 
 ; メギドファイア | MEGIDOHUaIA | 
 ; Megiddo Fire
-item_4E_name:
+Item_4E_name:
 #_098CBE: db $7E, $B6, $C3, $78, $8B, $5E, $5D, $FF
 
 ; ピースメーカー | PIーSUMEーKAー | Pīsumēkā
 ; Peacemaker
-item_4F_name:
+Item_4F_name:
 #_098CC6: db $CA, $5A, $69, $7E, $5A, $62, $5A, $FF
 
 ; つうじょうだん | TUUZIyoUDAN | 
 ; Bullets
-item_50_name:
+Item_50_name:
 #_098CCE: db $36, $27, $A2, $57, $27, $A6, $52, $FF
 
 ; ショットシェル | SIyotsuTOSIeRU | 
 ; Shotgun shells
-item_51_name:
+Item_51_name:
 #_098CD6: db $68, $91, $92, $70, $68, $8D, $85, $FF
 
 ; どくばりだん | DOKUBARIDAN | 
 ; Poisoned bullets
-item_52_name:
+Item_52_name:
 #_098CDE: db $AA, $2C, $AB, $4C, $A6, $52, $FF
 
 ; しんけいだん | SINKEIDAN | 
 ; Nerve bullets
-item_53_name:
+Item_53_name:
 #_098CE5: db $30, $52, $2D, $26, $A6, $52, $FF
 
 ; のろいのだんがん | NOROINODANGAN | 
 ; Cursed bullets
-item_54_name:
+Item_54_name:
 #_098CEC: db $3D, $4F, $26, $3D, $A6, $52, $9C, $52, $FF
 
 ; せいなるだんがん | SEINARUDANGAN | 
 ; Blessed bullets
-item_55_name:
+Item_55_name:
 #_098CF5: db $32, $26, $39, $4D, $A6, $52, $9C, $52, $FF
 
 ; ぎんのだんがん | GINNODANGAN | 
 ; Silver bullets
-item_56_name:
+Item_56_name:
 #_098CFE: db $9D, $52, $3D, $A6, $52, $9C, $52, $FF
 
 ; ウラニウムだん | URANIUMUDAN | 
 ; Uranium slugs
-item_57_name:
+Item_57_name:
 #_098D06: db $5F, $83, $72, $5F, $7D, $A6, $52, $FF
 
 ; プルトニウムだん | PURUTONIUMUDAN | 
 ; Plutonium slugs
-item_58_name:
+Item_58_name:
 #_098D0E: db $CB, $85, $70, $72, $5F, $7D, $A6, $52, $FF
 
 ; まりょくのたま | MARIyoKUNOTAMA | 
 ; Magic shells
-item_59_name:
+Item_59_name:
 #_098D17: db $43, $4C, $57, $2C, $3D, $34, $43, $FF
 
 ; メデューサのたま | MEDEyuーSANOTAMA | 
 ; Medusa shells
-item_5A_name:
+Item_5A_name:
 #_098D1F: db $7E, $C2, $90, $5A, $67, $3D, $34, $43, $FF
 
 ; まふうじのたま | MAHUUZINOTAMA | 
 ; Antimagic shells
-item_5B_name:
+Item_5B_name:
 #_098D28: db $43, $40, $27, $A2, $3D, $34, $43, $FF
 
 ; せんこうだん | SENKOUDAN | 
 ; Flash slugs
-item_5C_name:
+Item_5C_name:
 #_098D30: db $32, $52, $2E, $27, $A6, $52, $FF
 
 ; ハッピーショット | HAtsuPIーSIyotsuTO | 
 ; Happy shot
-item_5D_name:
+Item_5D_name:
 #_098D37: db $76, $92, $CA, $5A, $68, $91, $92, $70, $FF
 
 ; ひかりのだんがん | HIKARINODANGAN | 
 ; Bullets of Light
-item_5E_name:
+Item_5E_name:
 #_098D40: db $3F, $2A, $4C, $3D, $A6, $52, $9C, $52, $FF
 
 ; やみのだんがん | YAMINODANGAN | 
 ; Bullets of Darkness
-item_5F_name:
+Item_5F_name:
 #_098D49: db $48, $44, $3D, $A6, $52, $9C, $52, $FF
 
 ; ヘッドギア | HEtsuDOGIA | 
 ; Headgear
-item_60_name:
+Item_60_name:
 #_098D51: db $79, $92, $C3, $B6, $5D, $FF
 
 ; フルヘルム | HURUHERUMU | Furuherumu
 ; Full helm
-item_61_name:
+Item_61_name:
 #_098D57: db $78, $85, $79, $85, $7D, $FF
 
 ; フリッツヘルム | HURItsuTUHERUMU | 
 ;  Fritz helm
-item_62_name:
+Item_62_name:
 #_098D5D: db $78, $84, $92, $6E, $79, $85, $7D, $FF
 
 ; メタルクラウン | METARUKURAUN | 
 ; Metal crown
-item_63_name:
+Item_63_name:
 #_098D65: db $7E, $6C, $85, $64, $83, $5F, $8A, $FF
 
 ; デュラハンヘルム | DEyuRAHANHERUMU | 
 ; Dullachan helm
-item_64_name:
+Item_64_name:
 #_098D6D: db $C2, $90, $83, $76, $8A, $79, $85, $7D, $FF
 
 ; さんかくぼうし | SANKAKUBOUSI | 
 ; Tricorne hat
-item_65_name:
+Item_65_name:
 #_098D76: db $2F, $52, $2A, $2C, $AF, $27, $30, $FF
 
 ; ダーククラウン | DAーKUKURAUN | 
 ; Dark crown
-item_66_name:
+Item_66_name:
 #_098D7E: db $BF, $5A, $64, $64, $83, $5F, $8A, $FF
 
 ; おにくいカブト | ONIKUIKABUTO | 
 ; Demoneater helm
-item_67_name:
+Item_67_name:
 #_098D86: db $29, $3A, $2C, $26, $62, $C6, $70, $FF
 
 ; せいれいまえだて | SEIREIMAEDATE | 
 ; Spirit crest
-item_68_name:
+Item_68_name:
 #_098D8E: db $32, $26, $4E, $26, $43, $28, $A6, $37, $FF
 
 ; ドラゴンヘルム | DORAGONHERUMU | 
 ; Dragon helm
-item_69_name:
+Item_69_name:
 #_098D97: db $C3, $83, $B9, $8A, $79, $85, $7D, $FF
 
 ; くれないのかぶと | KURENAINOKABUTO | 
 ; Crimson helm
-item_6A_name:
+Item_6A_name:
 #_098D9F: db $2C, $4E, $39, $26, $3D, $2A, $AD, $38, $FF
 
 ; ちえのわ | TIENOWA | 
 ; Circlet of Knowledge [TODO what?]
-item_6B_name:
+Item_6B_name:
 #_098DA8: db $35, $28, $3D, $50, $FF
 
 ; マスカレード | MASUKAREーDO | 
 ; Masquerade
-item_6C_name:
+Item_6C_name:
 #_098DAD: db $7B, $69, $62, $86, $5A, $C3, $FF
 
 ; きんこ | KINKO | 
 ; Safe
-item_6D_name:
+Item_6D_name:
 #_098DB4: db $2B, $52, $2E, $FF
 
 ; ヘルメスヘルム | HERUMESUHERUMU | 
 ; Hermes' Helmet
-item_6E_name:
+Item_6E_name:
 #_098DB8: db $79, $85, $7E, $69, $79, $85, $7D, $FF
 
 ; パンツァーヘルム | PANTUaーHERUMU | 
 ; Panzer Helm
-item_6F_name:
+Item_6F_name:
 #_098DC0: db $C9, $8A, $6E, $8B, $5A, $79, $85, $7D, $FF
 
 ; ヤクトヘルム | YAKUTOHERUMU | 
 ; Jagd helm
 ; Reference to the Gundam series
-item_70_name:
+Item_70_name:
 #_098DC9: db $80, $64, $70, $79, $85, $7D, $FF
 
 ; シュツルムヘルム | SIyuTURUMUHERUMU | 
 ; Sturm helm
 ; This should probably be storm, but I'm leaving it as Sturm for Erica
-item_71_name:
+Item_71_name:
 #_098DD0: db $68, $90, $6E, $85, $7D, $79, $85, $7D, $FF
 
 ; まどうしのマスク | MADOUSINOMASUKU | 
 ; Magician's mask
-item_72_name:
+Item_72_name:
 #_098DD9: db $43, $AA, $27, $30, $3D, $7B, $69, $64, $FF
 
 ; つきかげのひも | TUKIKAGENOHIMO | 
 ; Moonbeam string
-item_73_name:
+Item_73_name:
 #_098DE2: db $36, $2B, $2A, $9F, $3D, $3F, $47, $FF
 
 ; すわほっしょう | SUWAHOtsuSIyoU | 
 ; Suwa Hossho's helmet
-item_74_name:
+Item_74_name:
 #_098DEA: db $31, $50, $42, $58, $30, $57, $27, $FF
 
 ; ジーザスヘルム | ZIーZASUHERUMU | 
 ; Jesus helm
-item_75_name:
+Item_75_name:
 #_098DF2: db $BB, $5A, $BA, $69, $79, $85, $7D, $FF
 
 ; てんまのかぶと | TENMANOKABUTO | 
 ; Tenma helmet
-item_76_name:
+Item_76_name:
 #_098DFA: db $37, $52, $43, $3D, $2A, $AD, $38, $FF
 
 ; マサカドのかぶと | MASAKADONOKABUTO | 
 ; Masakado's helmet
-item_77_name:
+Item_77_name:
 #_098E02: db $7B, $67, $62, $C3, $3D, $2A, $AD, $38, $FF
 
 ; サバイバーベスト | SABAIBAーBESUTO | 
 ; Survival vest
-item_78_name:
+Item_78_name:
 #_098E0B: db $67, $C4, $5E, $C4, $5A, $C7, $69, $70, $FF
 
 ; ケブラーベスト | KEBURAーBESUTO | 
 ; Kevlar vest
-item_79_name:
+Item_79_name:
 #_098E14: db $65, $C6, $83, $5A, $C7, $69, $70, $FF
 
 ; ファイアガード | HUaIAGAーDO | 
 ; Fire guard
-item_7A_name:
+Item_7A_name:
 #_098E1C: db $78, $8B, $5E, $5D, $B5, $5A, $C3, $FF
 
 ; サンダーガード | SANDAーGAーDO | 
 ; Thunder guard
-item_7B_name:
+Item_7B_name:
 #_098E24: db $67, $8A, $BF, $5A, $B5, $5A, $C3, $FF
 
 ; ハイレグアーマー | HAIREGUAーMAー | 
 ; Highleg armor
-item_7C_name:
+Item_7C_name:
 #_098E2C: db $76, $5E, $86, $B7, $5D, $5A, $7B, $5A, $FF
 
 ; アゲハドレス | AGEHADORESU | 
 ; Ageha dress [Butterfly dress]
-item_7D_name:
+Item_7D_name:
 #_098E35: db $5D, $B8, $76, $C3, $86, $69, $FF
 
 ; イタリアーマー | ITARIAーMAー | 
 ; Italiarmor [Italian armor]
-item_7E_name:
+Item_7E_name:
 #_098E3C: db $5E, $6C, $84, $5D, $5A, $7B, $5A, $FF
 
 ; テトラジャマー | TETORAZIyaMAー | 
 ; Tetrajammer
-item_7F_name:
+Item_7F_name:
 #_098E44: db $6F, $70, $83, $BB, $8F, $7B, $5A, $FF
 
 ; はおうのよろい | HAOUNOYOROI | 
 ; Haou's armor
-item_80_name:
+Item_80_name:
 #_098E4C: db $3E, $29, $27, $3D, $4A, $4F, $26, $FF
 
 ; ほうのころも | HOUNOKOROMO | 
 ; Robe of Law
-item_81_name:
+Item_81_name:
 #_098E54: db $42, $27, $3D, $2E, $4F, $47, $FF
 
 ; ドラゴンメイル | DORAGONMEIRU | 
 ; Dragon mail
-item_82_name:
+Item_82_name:
 #_098E5B: db $C3, $83, $B9, $8A, $7E, $5E, $85, $FF
 
 ; くれないのよろい | KURENAINOYOROI | 
 ; Crimson armor
-item_83_name:
+Item_83_name:
 #_098E63: db $2C, $4E, $39, $26, $3D, $4A, $4F, $26, $FF
 
 ; デビルコルセット | DEBIRUKORUSEtsuTO | 
 ; Devil corset
-item_84_name:
+Item_84_name:
 #_098E6C: db $C2, $C5, $85, $66, $85, $6A, $92, $70, $FF
 
 ; しっこくのよろい | SItsuKOKUNOYOROI | 
 ; Black armor
-item_85_name:
+Item_85_name:
 #_098E75: db $30, $58, $2E, $2C, $3D, $4A, $4F, $26, $FF
 
 ; パワードスーツ | PAWAーDOSUーTU | 
 ; Powered suit
-item_86_name:
+Item_86_name:
 #_098E7E: db $C9, $88, $5A, $C3, $69, $5A, $6E, $FF
 
 ; はくまのよろい | HAKUMANOYOROI | 
 ; Hakuma's armor
-item_87_name:
+Item_87_name:
 #_098E86: db $3E, $2C, $43, $3D, $4A, $4F, $26, $FF
 
 ; パンツァースーツ | PANTUaーSUーTU | 
 ; Panzer suit
-item_88_name:
+Item_88_name:
 #_098E8E: db $C9, $8A, $6E, $8B, $5A, $69, $5A, $6E, $FF
 
 ; ヤクトアーマー | YAKUTOAーMAー | 
 ; Jagd armor
-item_89_name:
+Item_89_name:
 #_098E97: db $80, $64, $70, $5D, $5A, $7B, $5A, $FF
 
 ; シュツルムスーツ | SIyuTURUMUSUーTU | 
 ; Sturm suit
-item_8A_name:
+Item_8A_name:
 #_098E9F: db $68, $90, $6E, $85, $7D, $69, $5A, $6E, $FF
 
 ; アースメイル | AーSUMEIRU | 
 ; Earth mail
-item_8B_name:
+Item_8B_name:
 #_098EA8: db $5D, $5A, $69, $7E, $5E, $85, $FF
 
 ; アーガマスーツ | AーGAMASUーTU | 
 ; Argama suit
 ; Likely another Gundam reference
-item_8C_name:
+Item_8C_name:
 #_098EAF: db $5D, $5A, $B5, $7B, $69, $5A, $6E, $FF
 
 ; ジーザスアーマー | ZIーZASUAーMAー | 
 ; Jesus armor
-item_8D_name:
+Item_8D_name:
 #_098EB7: db $BB, $5A, $BA, $69, $5D, $5A, $7B, $5A, $FF
 
 ; てんまのよろい | TENMANOYOROI | 
 ; Tenma armor
 ; Pegasus?
-item_8E_name:
+Item_8E_name:
 #_098EC0: db $37, $52, $43, $3D, $4A, $4F, $26, $FF
 
 ; マサカドのよろい | MASAKADONOYOROI | 
 ; Masakado's armor
-item_8F_name:
+Item_8F_name:
 #_098EC8: db $7B, $67, $62, $C3, $3D, $4A, $4F, $26, $FF
 
 ; レザーグラブ | REZAーGURABU | 
 ; Leather glove
-item_90_name:
+Item_90_name:
 #_098ED1: db $86, $BA, $5A, $B7, $83, $C6, $FF
 
 ; リベットナックル | RIBEtsuTONAtsuKURU | 
 ; Rivet knuckle
-item_91_name:
+Item_91_name:
 #_098ED8: db $84, $C7, $92, $70, $71, $92, $64, $85, $FF
 
 ; カイザーナックル | KAIZAーNAtsuKURU | 
 ; Kaiser knuckle
-item_92_name:
+Item_92_name:
 #_098EE1: db $62, $5E, $BA, $5A, $71, $92, $64, $85, $FF
 
 ; ガントレット | GANTOREtsuTO | 
 ; Gauntlet
-item_93_name:
+Item_93_name:
 #_098EEA: db $B5, $8A, $70, $86, $92, $70, $FF
 
 ; サイバーアーム | SAIBAーAーMU | 
 ; Cyber arm
-item_94_name:
+Item_94_name:
 #_098EF1: db $67, $5E, $C4, $5A, $5D, $5A, $7D, $FF
 
 ; アイアンクロー | AIANKUROー | 
 ; Iron claw
-item_95_name:
+Item_95_name:
 #_098EF9: db $5D, $5E, $5D, $8A, $64, $87, $5A, $FF
 
 ; アトラスのこて | ATORASUNOKOTE | 
 ; Atlas gauntlet
-item_96_name:
+Item_96_name:
 #_098F01: db $5D, $70, $83, $69, $3D, $2E, $37, $FF
 
 ; きしんのこて | KISINNOKOTE | 
 ; Kishin gauntlet [Noble gauntlet?]
-item_97_name:
+Item_97_name:
 #_098F09: db $2B, $30, $52, $3D, $2E, $37, $FF
 
 ; ドラウプニル | DORAUPUNIRU | 
 ; Draupnir
 ; Gold ring from Norse mythology
-item_98_name:
+Item_98_name:
 #_098F10: db $C3, $83, $5F, $CB, $72, $85, $FF
 
 ; くれないのこて | KURENAINOKOTE | 
 ; Crimson gauntlet
-item_99_name:
+Item_99_name:
 #_098F17: db $2C, $4E, $39, $26, $3D, $2E, $37, $FF
 
 ; パンツァフィスト | PANTUaHUiSUTO | 
 ; Panzer fist
-item_9A_name:
+Item_9A_name:
 #_098F1F: db $C9, $8A, $6E, $8B, $78, $8C, $69, $70, $FF
 
 ; ヤクトグラブ | YAKUTOGURABU | 
 ; Jagd glove
-item_9B_name:
+Item_9B_name:
 #_098F28: db $80, $64, $70, $B7, $83, $C6, $FF
 
 ; シュツルムグラブ | SIyuTURUMUGURABU | 
 ; Sturm glove
-item_9C_name:
+Item_9C_name:
 #_098F2F: db $68, $90, $6E, $85, $7D, $B7, $83, $C6, $FF
 
 ; ジーザスグラブ | ZIーZASUGURABU | 
 ; Jesus glove
-item_9D_name:
+Item_9D_name:
 #_098F38: db $BB, $5A, $BA, $69, $B7, $83, $C6, $FF
 
 ; てんまのこて | TENMANOKOTE | 
 ; Tenma gauntlet
-item_9E_name:
+Item_9E_name:
 #_098F40: db $37, $52, $43, $3D, $2E, $37, $FF
 
 ; マサカドのこて | MASAKADONOKOTE | 
 ; Masakado's gauntlet
-item_9F_name:
+Item_9F_name:
 #_098F47: db $7B, $67, $62, $C3, $3D, $2E, $37, $FF
 
 ; レザーブーツ | REZAーBUーTU | 
 ; Leather boots
-item_A0_name:
+Item_A0_name:
 #_098F4F: db $86, $BA, $5A, $C6, $5A, $6E, $FF
 
 ; コンバットブーツ | KONBAtsuTOBUーTU | 
 ; Combat boots
-item_A1_name:
+Item_A1_name:
 #_098F56: db $66, $8A, $C4, $92, $70, $C6, $5A, $6E, $FF
 
 ; ライダーブーツ | RAIDAーBUーTU | 
 ; Rider boots
-item_A2_name:
+Item_A2_name:
 #_098F5F: db $83, $5E, $BF, $5A, $C6, $5A, $6E, $FF
 
 ; ジェットブーツ | ZIetsuTOBUーTU | 
 ; Jet boots
-item_A3_name:
+Item_A3_name:
 #_098F67: db $BB, $8D, $92, $70, $C6, $5A, $6E, $FF
 
 ; スカイヒール | SUKAIHIーRU | 
 ; Sky heels
-item_A4_name:
+Item_A4_name:
 #_098F6F: db $69, $62, $5E, $77, $5A, $85, $FF
 
 ; メタルブーツ | METARUBUーTU | 
 ; Metal boots
-item_A5_name:
+Item_A5_name:
 #_098F76: db $7E, $6C, $85, $C6, $5A, $6E, $FF
 
 ; ダンシングヒール | DANSINGUHIーRU | 
 ; Dancing heels
-item_A6_name:
+Item_A6_name:
 #_098F7D: db $BF, $8A, $68, $8A, $B7, $77, $5A, $85, $FF
 
 ; ドラゴンブーツ | DORAGONBUーTU | 
 ; Dragon boots
-item_A7_name:
+Item_A7_name:
 #_098F86: db $C3, $83, $B9, $8A, $C6, $5A, $6E, $FF
 
 ; むしゃのぐそく | MUSIyaNOGUSOKU | 
 ; Musha greaves [Warrior greaves]
-item_A8_name:
+Item_A8_name:
 #_098F8E: db $45, $30, $55, $3D, $9E, $33, $2C, $FF
 
 ; くれないのぐそく | KURENAINOGUSOKU | 
 ; Crimson greaves
-item_A9_name:
+Item_A9_name:
 #_098F96: db $2C, $4E, $39, $26, $3D, $9E, $33, $2C, $FF
 
 ; パンツァーレッグ | PANTUaーREtsuGU | 
 ; Panzer legs
-item_AA_name:
+Item_AA_name:
 #_098F9F: db $C9, $8A, $6E, $8B, $5A, $86, $92, $B7, $FF
 
 ; ヤクトレッグ | YAKUTOREtsuGU | 
 ; Jagd legs
-item_AB_name:
+Item_AB_name:
 #_098FA8: db $80, $64, $70, $86, $92, $B7, $FF
 
 ; シュツルムレッグ | SIyuTURUMUREtsuGU | 
 ; Sturm legs
-item_AC_name:
+Item_AC_name:
 #_098FAF: db $68, $90, $6E, $85, $7D, $86, $92, $B7, $FF
 
 ; ジーザスレッグ | ZIーZASUREtsuGU | 
 ; Jesus legs
-item_AD_name:
+Item_AD_name:
 #_098FB8: db $BB, $5A, $BA, $69, $86, $92, $B7, $FF
 
 ; てんまのぐそく | TENMANOGUSOKU | 
 ; Tenma greaves
-item_AE_name:
+Item_AE_name:
 #_098FC0: db $37, $52, $43, $3D, $9E, $33, $2C, $FF
 
 ; マサカドのぐそく | MASAKADONOGUSOKU | 
 ; Masakado's greaves
-item_AF_name:
+Item_AF_name:
 #_098FC8: db $7B, $67, $62, $C3, $3D, $9E, $33, $2C, $FF
 
 ; きずぐすり | KIZUGUSURI | 
 ; Ointment
-item_B0_name:
+Item_B0_name:
 #_098FD1: db $2B, $A3, $9E, $31, $4C, $FF
 
 ; ぎゅうおうたん | GIyuUOUTAN | Gyoutan
 ; Gyoutan
-item_B1_name:
+Item_B1_name:
 #_098FD7: db $9D, $56, $27, $29, $27, $34, $52, $FF
 
 ; ませき | MASEKI | 
 ; Magic stone
-item_B2_name:
+Item_B2_name:
 #_098FDF: db $43, $32, $2B, $FF
 
 ; マッスルドリンコ | MAtsuSURUDORINKO | 
 ; Muscle drink
-item_B3_name:
+Item_B3_name:
 #_098FE3: db $7B, $92, $69, $85, $C3, $84, $8A, $66, $FF
 
 ; ほうぎょく | HOUGIyoKU | 
 ; Orb
-item_B4_name:
+Item_B4_name:
 #_098FEC: db $42, $27, $9D, $57, $2C, $FF
 
 ; ヒランヤ | HIRANYA | Hiranya
 ; Hiranya
-item_B5_name:
+Item_B5_name:
 #_098FF2: db $77, $83, $8A, $80, $FF
 
 ; ディスポイズン | DEiSUPOIZUN | 
 ; Dis-poison
-item_B6_name:
+Item_B6_name:
 #_098FF7: db $C2, $8C, $69, $CD, $5E, $BC, $8A, $FF
 
 ; ディスパライズ | DEiSUPARAIZU | 
 ; Dis-paralyze
-item_B7_name:
+Item_B7_name:
 #_098FFF: db $C2, $8C, $69, $C9, $83, $5E, $BC, $FF
 
 ; ディストーン | DEiSUTOーN | 
 ; De-stone
-item_B8_name:
+Item_B8_name:
 #_099007: db $C2, $8C, $69, $70, $5A, $8A, $FF
 
 ; ソーマ | SOーMA | Soma
 ; Soma
-item_B9_name:
+Item_B9_name:
 #_09900E: db $6B, $5A, $7B, $FF
 
 ; きんたん | KINTAN | 
 ; Gold pill
-item_BA_name:
+Item_BA_name:
 #_099012: db $2B, $52, $34, $52, $FF
 
 ; はんごんこう | HANGONKOU | 
 ; Soul incense
-item_BB_name:
+Item_BB_name:
 #_099017: db $3E, $52, $A0, $52, $2E, $27, $FF
 
 ; まほうびん | MAHOUBIN | 
 ; Magic bottle
-item_BC_name:
+Item_BC_name:
 #_09901E: db $43, $42, $27, $AC, $52, $FF
 
 ; つよさのこう | TUYOSANOKOU | 
 ; Strength incense
-item_BD_name:
+Item_BD_name:
 #_099024: db $36, $4A, $2F, $3D, $2E, $27, $FF
 
 ; ちえのこう | TIENOKOU | 
 ; Intelligence incense
-item_BE_name:
+Item_BE_name:
 #_09902B: db $35, $28, $3D, $2E, $27, $FF
 
 ; まりょくのこう | MARIyoKUNOKOU | 
 ; Magic incense
-item_BF_name:
+Item_BF_name:
 #_099031: db $43, $4C, $57, $2C, $3D, $2E, $27, $FF
 
 ; たいりょくのこう | TAIRIyoKUNOKOU | 
 ; Stamina incense
-item_C0_name:
+Item_C0_name:
 #_099039: db $34, $26, $4C, $57, $2C, $3D, $2E, $27, $FF
 
 ; はやさのこう | HAYASANOKOU | 
 ; Speed incense
-item_C1_name:
+Item_C1_name:
 #_099042: db $3E, $48, $2F, $3D, $2E, $27, $FF
 
 ; うんのこう | UNNOKOU | 
 ; Luck incense
-item_C2_name:
+Item_C2_name:
 #_099049: db $27, $52, $3D, $2E, $27, $FF
 
 ; かえんびん | KAENBIN | 
 ; Molotov cocktail
-item_C3_name:
+Item_C3_name:
 #_09904F: db $2A, $28, $52, $AC, $52, $FF
 
 ; ハンドグレネード | HANDOGURENEーDO | 
 ; Hand grenade
-item_C4_name:
+Item_C4_name:
 #_099055: db $76, $8A, $C3, $B7, $86, $74, $5A, $C3, $FF
 
 ; スティンガー | SUTEiNGAー | 
 ; Stinger
-item_C5_name:
+Item_C5_name:
 #_09905E: db $69, $6F, $8C, $8A, $B5, $5A, $FF
 
 ; ドラゴンATM | DORAGONATM | Doragon ATM 
 ; Dragon ATM
-item_C6_name:
+Item_C6_name:
 #_099065: db $C3, $83, $B9, $8A, $0B, $1E, $17, $FF
 
 ; どくやくびん | DOKUYAKUBIN | 
 ; Poison bottle
-item_C7_name:
+Item_C7_name:
 #_09906D: db $AA, $2C, $48, $2C, $AC, $52, $FF
 
 ; アギラオストーン | AGIRAOSUTOーN | 
-; Agirao stone
-item_C8_name:
+; Agilao stone
+Item_C8_name:
 #_099074: db $5D, $B6, $83, $61, $69, $70, $5A, $8A, $FF
 
 ; マハラギストーン | MAHARAGISUTOーN | 
-; Maha agi stone
-item_C9_name:
+; Maragi stone
+Item_C9_name:
 #_09907D: db $7B, $76, $83, $B6, $69, $70, $5A, $8A, $FF
 
 ; ジオンガストーン | ZIONGASUTOーN | 
 ; Zionga stone
-item_CA_name:
+Item_CA_name:
 #_099086: db $BB, $61, $8A, $B5, $69, $70, $5A, $8A, $FF
 
 ; マハジオストーン | MAHAZIOSUTOーN | 
-; Maha zio stone
-item_CB_name:
+; Mazio stone
+Item_CB_name:
 #_09908F: db $7B, $76, $BB, $61, $69, $70, $5A, $8A, $FF
 
 ; マハブフストーン | MAHABUHUSUTOーN | 
-; Maha bufu stone
-item_CC_name:
+; Mabufu stone
+Item_CC_name:
 #_099098: db $7B, $76, $C6, $78, $69, $70, $5A, $8A, $FF
 
 ; せいすい | SEISUI | 
 ; Holy water
-item_CD_name:
+Item_CD_name:
 #_0990A1: db $32, $26, $31, $26, $FF
 
 ; たまがえり | TAMAGAERI | 
 ; Soul returner
-item_CE_name:
+Item_CE_name:
 #_0990A6: db $34, $43, $9C, $28, $4C, $FF
 
 ; はまや | HAMAYA | Hamaya
 ; Hamaya
-item_CF_name:
+Item_CF_name:
 #_0990AC: db $3E, $43, $48, $FF
 
 ; じごくだま | ZIGOKUDAMA | 
 ; Hell soul
-item_D0_name:
+Item_D0_name:
 #_0990B0: db $A2, $A0, $2C, $A6, $43, $FF
 
 ; チャーム | TIyaーMU | 
 ; Charm
-item_D1_name:
+Item_D1_name:
 #_0990B6: db $6D, $8F, $5A, $7D, $FF
 
 ; どくや | DOKUYA | 
 ; Poison arrow
-item_D2_name:
+Item_D2_name:
 #_0990BB: db $AA, $2C, $48, $FF
 
 ; ひこうばり | HIKOUBARI | 
 ; 
-item_D3_name:
+Item_D3_name:
 #_0990BF: db $3F, $2E, $27, $AB, $4C, $FF
 
 ; エンゼルヘアー | ENZERUHEAー | 
 ; Angel hair
-item_D4_name:
+Item_D4_name:
 #_0990C5: db $60, $8A, $BD, $85, $79, $5D, $5A, $FF
 
 ; アシュラのて | ASIyuRANOTE | 
-; Ashura hand
-item_D5_name:
+; Asura hand
+Item_D5_name:
 #_0990CD: db $5D, $68, $90, $83, $3D, $37, $FF
 
 ; ペンタグラム | PENTAGURAMU | 
 ; Pentagram
-item_D6_name:
+Item_D6_name:
 #_0990D4: db $CC, $8A, $6C, $B7, $83, $7D, $FF
 
 ; せがきまい | SEGAKIMAI | 
 ; Segaki rice
-item_D7_name:
+Item_D7_name:
 #_0990DB: db $32, $9C, $2B, $43, $26, $FF
 
 ; こどくざら | KODOKUZARA | Kodokuzara
 ; Kodokuzara
-item_D8_name:
+Item_D8_name:
 #_0990E1: db $2E, $AA, $2C, $A1, $4B, $FF
 
 ; えんまくだん | ENMAKUDAN | 
 ; Smoke bomb
-item_D9_name:
+Item_D9_name:
 #_0990E7: db $28, $52, $43, $2C, $A6, $52, $FF
 
 ; にょらいぞう | NIyoRAIZOU | 
 ; Nyorai statue
-item_DA_name:
+Item_DA_name:
 #_0990EE: db $3A, $57, $4B, $26, $A5, $27, $FF
 
 ; あみだじゅず | AMIDAZIyuZU | 
 ; Amida beads
-item_DB_name:
+Item_DB_name:
 #_0990F5: db $25, $44, $A6, $A2, $56, $A3, $FF
 
 ; ロザリオ | ROZARIO | 
 ; Rosary [beads]?
-item_DC_name:
+Item_DC_name:
 #_0990FC: db $87, $BA, $84, $61, $FF
 
 ; アムレット | AMUREtsuTO | 
 ; Amulet
-item_DD_name:
+Item_DD_name:
 #_099101: db $5D, $7D, $86, $92, $70, $FF
 
 ; タリスマン | TARISUMAN | 
 ; Talisman
-item_DE_name:
+Item_DE_name:
 #_099107: db $6C, $84, $69, $7B, $8A, $FF
 
 ; ふうまのすず | HUUMANOSUZU | 
 ; Fuma bell
-item_DF_name:
+Item_DF_name:
 #_09910D: db $40, $27, $43, $3D, $31, $A3, $FF
 
 ; コアシールド | KOASIーRUDO | 
 ; Core shield
-item_E0_name:
+Item_E0_name:
 #_099114: db $66, $5D, $68, $5A, $85, $C3, $FF
 
 ; わきみのつぼ | WAKIMINOTUBO | 
 ; Gushing jar
-item_E1_name:
+Item_E1_name:
 #_09911B: db $50, $2B, $44, $3D, $36, $AF, $FF
 
 ; おみくじ | OMIKUZI | Omikuji
 ; Omikuji
 ; Fortune slips
-item_E2_name:
+Item_E2_name:
 #_099122: db $29, $44, $2C, $A2, $FF
 
 ; めんざいふ | MENZAIHU | 
 ; Indulgence
-item_E3_name:
+Item_E3_name:
 #_099127: db $46, $52, $A1, $26, $40, $FF
 
 ; ガーネット | GAーNEtsuTO | 
 ; Garnet
-item_E4_name:
+Item_E4_name:
 #_09912D: db $B5, $5A, $74, $92, $70, $FF
 
 ; アメジスト | AMEZISUTO | 
 ; Amethyst
-item_E5_name:
+Item_E5_name:
 #_099133: db $5D, $7E, $BB, $69, $70, $FF
 
 ; アクアマリン | AKUAMARIN | 
 ; Aquamarine
-item_E6_name:
+Item_E6_name:
 #_099139: db $5D, $64, $5D, $7B, $84, $8A, $FF
 
 ; ダイヤモンド | DAIYAMONDO | 
 ; Diamond
-item_E7_name:
+Item_E7_name:
 #_099140: db $BF, $5E, $80, $7F, $8A, $C3, $FF
 
 ; エメラルド | EMERARUDO | 
 ; Emerald
-item_E8_name:
+Item_E8_name:
 #_099147: db $60, $7E, $83, $85, $C3, $FF
 
 ; パール | PAーRU | 
 ; Pearl
-item_E9_name:
+Item_E9_name:
 #_09914D: db $C9, $5A, $85, $FF
 
 ; ルビー | RUBIー | 
 ; Ruby
-item_EA_name:
+Item_EA_name:
 #_099151: db $85, $C5, $5A, $FF
 
 ; オニキス | ONIKISU | 
 ; Onyx
-item_EB_name:
+Item_EB_name:
 #_099155: db $61, $72, $63, $69, $FF
 
 ; サファイア | SAHUaIA | 
 ; Sapphire
-item_EC_name:
+Item_EC_name:
 #_09915A: db $67, $78, $8B, $5E, $5D, $FF
 
 ; オパール | OPAーRU | 
 ; Opal
-item_ED_name:
+Item_ED_name:
 #_099160: db $61, $C9, $5A, $85, $FF
 
 ; トパーズ | TOPAーZU | 
 ; Topaz
-item_EE_name:
+Item_EE_name:
 #_099165: db $70, $C9, $5A, $BC, $FF
 
 ; ターコイズ | TAーKOIZU | 
 ; Turquoise
-item_EF_name:
+Item_EF_name:
 #_09916A: db $6C, $5A, $66, $5E, $BC, $FF
 
 ; IDカード | IDKAーDO | 
 ; ID card
-item_F0_name:
+Item_F0_name:
 #_099170: db $13, $0E, $62, $5A, $C3, $FF
 
 ; エンゼルリング | ENZERURINGU | 
 ; Angel ring
-item_F1_name:
+Item_F1_name:
 #_099176: db $60, $8A, $BD, $85, $84, $8A, $B7, $FF
 
 ; ぎぞうIDカード | GIZOUIDKAーDO | 
 ; Gizou ID card
-item_F2_name:
+Item_F2_name:
 #_09917E: db $9D, $A5, $27, $13, $0E, $62, $5A, $C3, $FF
 
 ; BARのマッチ | BARNOMAtsuTI | 
 ; Bar matches
-item_F3_name:
+Item_F3_name:
 #_099187: db $0C, $0B, $1C, $3D, $7B, $92, $6D, $FF
 
 ; おうごんのリンゴ | OUGONNORINGO | 
 ; Apple of Apples [Golden apple]
-item_F4_name:
+Item_F4_name:
 #_09918F: db $29, $27, $A0, $52, $3D, $84, $8A, $B9, $FF
 
 ; メモリーボード | MEMORIーBOーDO | 
 ; Memory board
-item_F5_name:
+Item_F5_name:
 #_099198: db $7E, $7F, $84, $5A, $C8, $5A, $C3, $FF
 
 ; きっこうのすず | KItsuKOUNOSUZU | 
 ; Turtle bell
-item_F6_name:
+Item_F6_name:
 #_0991A0: db $2B, $58, $2E, $27, $3D, $31, $A3, $FF
 
 ; タコのふえ | TAKONOHUE | 
 ; Octupus tentacle
-item_F7_name:
+Item_F7_name:
 #_0991A8: db $6C, $66, $3D, $40, $28, $FF
 
 ; スルトのつめ | SURUTONOTUME | 
 ; Surtr claws
 ; Slut's claw
 ; Is slut right? It's hilarious.
-item_F8_name:
+Item_F8_name:
 #_0991AE: db $69, $85, $70, $3D, $36, $46, $FF
 
 ; アスタロトのはね | ASUTAROTONOHANE | 
 ; Astaroth feather
-item_F9_name:
+Item_F9_name:
 #_0991B5: db $5D, $69, $6C, $87, $70, $3D, $3E, $3C, $FF
 
 ; アリオクのきば | ARIOKUNOKIBA | 
 ; Ariok's fang
-item_FA_name:
+Item_FA_name:
 #_0991BE: db $5D, $84, $61, $64, $3D, $2B, $AB, $FF
 
 ; デビルリング | DEBIRURINGU | 
 ; Devil ring
-item_FB_name:
+Item_FB_name:
 #_0991C6: db $C2, $C5, $85, $84, $8A, $B7, $FF
 
 ; ベリアルのつぼ | BERIARUNOTUBO | 
 ; Belial vase TODO
-item_FC_name:
+Item_FC_name:
 #_0991CD: db $C7, $84, $5D, $85, $3D, $36, $AF, $FF
 
 ; しもんのぎょく | SIMONNOGIyoKU | 
 ; King's fingerprint TODO
 ; Simon?
-item_FD_name:
+Item_FD_name:
 #_0991D5: db $30, $47, $52, $3D, $9D, $57, $2C, $FF
 
 ; ¥のたば | ¥NOTABA | 
 ; Cigarette money?
 ; "bundle of yen"?
-item_FE_name:
+Item_FE_name:
 #_0991DD: db $5B, $3D, $34, $AB, $FF
 
 ; null
-item_FF_name:
+Item_FF_name:
 #_0991E2: db $FF
 
 ;===================================================================================================
 
 ; ブレンド | BURENDO
 ; Blend
-drink_00_name:
+Drink_00_name:
 #_0991E3: db $C6, $86, $8A, $C3, $FF
 
 ; モカ | MOKA
 ; Mocha
-drink_01_name:
+Drink_01_name:
 #_0991E8: db $7F, $62, $FF
 
 ; ブルーマウンテン | BURUーMAUNTEN
 ; Blue mountain
-drink_02_name:
+Drink_02_name:
 #_0991EB: db $C6, $85, $5A, $7B, $5F, $8A, $6F, $8A, $FF
 
 ; オンザロック | ONZAROtsuKU
 ; On the rocks
-drink_03_name:
+Drink_03_name:
 #_0991F4: db $61, $8A, $BA, $87, $92, $64, $FF
 
 ; ジンフィズ | ZINHUiZU
 ; Gin fizz
-drink_04_name:
+Drink_04_name:
 #_0991FB: db $BB, $8A, $78, $8C, $BC, $FF
 
 ; ウォッカトニック | UotsuKATONItsuKU
 ; Vodka tonic
-drink_05_name:
+Drink_05_name:
 #_099201: db $5F, $8E, $92, $62, $70, $72, $92, $64, $FF
 
 ; スピードカクテル | SUPIーDOKAKUTERU
 ; Speed cocktail
-drink_06_name:
+Drink_06_name:
 #_09920A: db $69, $CA, $5A, $C3, $62, $64, $6F, $85, $FF
 
 ; マジカルフィズ | MAZIKARUHUiZU
 ; Magical fizz
-drink_07_name:
+Drink_07_name:
 #_099213: db $7B, $BB, $62, $85, $78, $8C, $BC, $FF
 
 ; ミラクルトニック | MIRAKURUTONItsuKU
 ; Miracle tonic
-drink_08_name:
+Drink_08_name:
 #_09921B: db $7C, $83, $64, $85, $70, $72, $92, $64, $FF
 
 ;===================================================================================================
@@ -4126,7 +4126,7 @@ Message_01_01_0E:
 #_0995ED: db $3E, $26, $4C, $CF, $2C, $26, $25, $4B ; はいり⎵くいあら
 #_0995F5: db $34, $46, $4A, $94 ; ためよ!
 #_0995F9: db $F9 ; new line
-#_0995FA: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_0995FA: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_0995FD: db $D3, $11 ; go to message 11
 
 ;===================================================================================================
@@ -4154,7 +4154,7 @@ Message_01_01_0F:
 #_09963C: db $F9 ; new line
 #_09963D: db $4A, $26, $39 ; よいな
 #_099640: db $FC ; wait for key and new line
-#_099641: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
+#_099641: db $FE, $02, $10 ; ext command 02: add 16 to alignment if progress bit FB
 #_099644: db $D3, $17 ; go to message 17
 
 ;===================================================================================================
@@ -4164,7 +4164,7 @@ Message_01_01_0F:
 ; しょけいは みょうちょう とりおこなう
 Message_01_01_10:
 #_099646: db $D0, $70 ; set progress bit 70
-#_099648: db $FE, $02, $FB ; ext command 02: add 251 to STAT_11C if progress bit FB
+#_099648: db $FE, $02, $FB ; ext command 02: add 251 to alignment if progress bit FB
 #_09964B: db $FA ; clear message box
 #_09964C: db $43, $2E, $38, $3A, $CF, $47, $58, $37 ; まことに⎵もって
 #_099654: db $CF, $49, $4D, $30, $9C, $34, $26, $94 ; ⎵ゆるしがたい!
@@ -4248,7 +4248,7 @@ Message_01_01_15:
 
 Message_01_01_16:
 #_09971D: db $E7, $00 ; call routine 01E5CD with value 00 TODO
-#_09971F: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_09971F: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_099722: db $D0, $6E ; set progress bit 6E
 #_099724: db $D3, $06 ; go to message 06
 
@@ -4256,7 +4256,7 @@ Message_01_01_16:
 
 Message_01_01_17:
 #_099726: db $D0, $6F ; set progress bit 6F
-#_099728: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
+#_099728: db $FE, $02, $05 ; ext command 02: add 5 to alignment if progress bit FB
 #_09972B: db $D3, $06 ; go to message 06
 
 ;===================================================================================================
@@ -4486,7 +4486,7 @@ Message_01_01_26:
 Message_01_01_27:
 #_0998E4: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_0998E6: db $FA ; clear message box
-#_0998E7: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_0998E7: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_0998EA: db $D0, $77 ; set progress bit 77
 
 ;===================================================================================================
@@ -5142,7 +5142,7 @@ Message_01_02_05:
 #_099F1B: db $D6, $00, $00 ; delete sprite in slot 00
 #_099F1E: db $D6, $00, $35, $70, $28 ; place sprite 35 in slot 00 at XY:{70,28}
 #_099F23: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
-#_099F26: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
+#_099F26: db $FE, $02, $10 ; ext command 02: add 16 to alignment if progress bit FB
 #_099F29: db $D0, $79 ; set progress bit 79
 #_099F2B: db $D0, $FB ; set progress bit FB
 #_099F2D: db $D6, $00, $00 ; delete sprite in slot 00
@@ -5767,7 +5767,7 @@ Message_01_02_1F:
 #_09A4EE: db $D5, $11 ; send 11 to APU
 #_09A4F0: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_09A4F3: db $D5, $2D ; send 2D to APU
-#_09A4F5: db $FE, $0B, $00, $19 ; ext command 0B: something 19, 00
+#_09A4F5: db $FE, $0B, $00, $19 ; ext command 0B: remove 25% of chase hp
 #_09A4F9: db $FC ; wait for key and new line
 
 ;===================================================================================================
@@ -7621,7 +7621,7 @@ Message_01_03_34:
 #_09B5C5: db $FC ; wait for key and new line
 #_09B5C6: db $D6, $00, $00 ; delete sprite in slot 00
 #_09B5C9: db $D0, $8B ; set progress bit 8B
-#_09B5CB: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_09B5CB: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_09B5CE: db $E9, $02, $35 ; go to message 35 maybe TODO
 #_09B5D1: db $FA ; clear message box
 #_09B5D2: db $EE ; write lawful hero name
@@ -8599,7 +8599,7 @@ Message_01_04_07:
 #_09BE24: db $2E, $2E, $2A, $4B, $CF, $49, $2C, $9C ; ここから⎵ゆくが
 #_09BE2C: db $CF, $4A, $26 ; ⎵よい
 #_09BE2F: db $FC ; wait for key and new line
-#_09BE30: db $FE, $03, $00 ; ext command 03: add 0 to STAT_11C if progress bit FB
+#_09BE30: db $FE, $03, $00 ; ext command 03: add 0 to alignment if progress bit FB
 #_09BE33: db $D0, $67 ; set progress bit 67
 #_09BE35: db $D0, $FB ; set progress bit FB
 
@@ -10162,7 +10162,7 @@ Message_01_05_0C:
 #_09CB1B: db $3E, $30, $51, $CF, $2A, $2D, $37, $48 ; はしを⎵かけてや
 #_09CB23: db $4F, $27 ; ろう
 #_09CB25: db $FC ; wait for key and new line
-#_09CB26: db $FE, $02, $B0 ; ext command 02: add 176 to STAT_11C if progress bit FB
+#_09CB26: db $FE, $02, $B0 ; ext command 02: add 176 to alignment if progress bit FB
 #_09CB29: db $D0, $FB ; set progress bit FB
 #_09CB2B: db $FA ; clear message box
 #_09CB2C: db $E7, $00 ; call routine 01E5CD with value 00 TODO
@@ -10330,7 +10330,7 @@ Message_01_05_14:
 #_09CC63: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09CC66: db $DE, $01, $00, $1B, $01 ; load 1x demon 011B
 #_09CC6B: db $E4, $00 ; load demon $00
-#_09CC6D: db $FE, $02, $20 ; ext command 02: add 32 to STAT_11C if progress bit FB
+#_09CC6D: db $FE, $02, $20 ; ext command 02: add 32 to alignment if progress bit FB
 #_09CC70: db $EE ; write lawful hero name
 #_09CC71: db $9A ; :
 #_09CC72: db $F9 ; new line
@@ -10554,7 +10554,7 @@ Message_01_05_1A:
 #_09CEC4: db $D6, $00, $00 ; delete sprite in slot 00
 #_09CEC7: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
 #_09CECC: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
-#_09CECF: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_09CECF: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_09CED2: db $D0, $7D ; set progress bit 7D
 #_09CED4: db $D6, $00, $00 ; delete sprite in slot 00
 #_09CED7: db $D6, $01, $00 ; delete sprite in slot 01
@@ -10757,7 +10757,7 @@ Message_01_05_21:
 #_09D0C6: db $CF, $25, $32, $51, $CF, $39, $9C, $30 ; ⎵あせを⎵ながし
 #_09D0CE: db $43, $30, $57, $27, $94 ; ましょう!
 #_09D0D3: db $FC ; wait for key and new line
-#_09D0D4: db $FE, $02, $FF ; ext command 02: add 255 to STAT_11C if progress bit FB
+#_09D0D4: db $FE, $02, $FF ; ext command 02: add 255 to alignment if progress bit FB
 #_09D0D7: db $FF ; end of message
 
 ;===================================================================================================
@@ -11833,7 +11833,7 @@ Message_01_00_0F:
 #_09D9D8: db $4C, $43, $31 ; ります
 #_09D9DB: db $FC ; wait for key and new line
 #_09D9DC: db $D0, $51 ; set progress bit 51
-#_09D9DE: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_09D9DE: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_09D9E1: db $D3, $0C ; go to message 0C
 
 ;===================================================================================================
@@ -13036,7 +13036,7 @@ Message_01_06_10:
 #_09E4A2: db $3A, $CF, $28, $26, $2E, $27, $25, $4E ; に⎵えいこうあれ
 #_09E4AA: db $F2, $0B ; prewritten text 0B
 #_09E4AC: db $FC ; wait for key and new line
-#_09E4AD: db $FE, $02, $20 ; ext command 02: add 32 to STAT_11C if progress bit FB
+#_09E4AD: db $FE, $02, $20 ; ext command 02: add 32 to alignment if progress bit FB
 
 ;===================================================================================================
 
@@ -13984,7 +13984,7 @@ Message_01_07_20:
 
 Message_01_07_21:
 #_09EDC5: db $D0, $62 ; set progress bit 62
-#_09EDC7: db $FE, $02, $10 ; ext command 02: add 16 to STAT_11C if progress bit FB
+#_09EDC7: db $FE, $02, $10 ; ext command 02: add 16 to alignment if progress bit FB
 #_09EDCA: db $FF ; end of message
 
 ;===================================================================================================
@@ -14005,7 +14005,7 @@ Message_01_07_22:
 #_09EDFC: db $2F, $26 ; さい
 #_09EDFE: db $FC ; wait for key and new line
 #_09EDFF: db $D0, $62 ; set progress bit 62
-#_09EE01: db $FE, $02, $F0 ; ext command 02: add 240 to STAT_11C if progress bit FB
+#_09EE01: db $FE, $02, $F0 ; ext command 02: add 240 to alignment if progress bit FB
 #_09EE04: db $FF ; end of message
 
 ;===================================================================================================
@@ -14627,777 +14627,776 @@ Message_01_0A_13:
 ;===================================================================================================
 
 DemonNamePointers:
-#_09F1BD: dw demon_00_name
-#_09F1BF: dw demon_01_name
-#_09F1C1: dw demon_02_name
-#_09F1C3: dw demon_03_name
-#_09F1C5: dw demon_04_name
-#_09F1C7: dw demon_05_name
-#_09F1C9: dw demon_06_name
-#_09F1CB: dw demon_07_name
-#_09F1CD: dw demon_08_name
-#_09F1CF: dw demon_09_name
-#_09F1D1: dw demon_0A_name
-#_09F1D3: dw demon_0B_name
-#_09F1D5: dw demon_0C_name
-#_09F1D7: dw demon_0D_name
-#_09F1D9: dw demon_0E_name
-#_09F1DB: dw demon_0F_name
-#_09F1DD: dw demon_10_name
-#_09F1DF: dw demon_11_name
-#_09F1E1: dw demon_12_name
-#_09F1E3: dw demon_13_name
-#_09F1E5: dw demon_14_name
-#_09F1E7: dw demon_15_name
-#_09F1E9: dw demon_16_name
-#_09F1EB: dw demon_17_name
-#_09F1ED: dw demon_18_name
-#_09F1EF: dw demon_19_name
-#_09F1F1: dw demon_1A_name
-#_09F1F3: dw demon_1B_name
-#_09F1F5: dw demon_1C_name
-#_09F1F7: dw demon_1D_name
-#_09F1F9: dw demon_1E_name
-#_09F1FB: dw demon_1F_name
-#_09F1FD: dw demon_20_name
-#_09F1FF: dw demon_21_name
-#_09F201: dw demon_22_name
-#_09F203: dw demon_23_name
-#_09F205: dw demon_24_name
-#_09F207: dw demon_25_name
-#_09F209: dw demon_26_name
-#_09F20B: dw demon_27_name
-#_09F20D: dw demon_28_name
-#_09F20F: dw demon_29_name
-#_09F211: dw demon_2A_name
-#_09F213: dw demon_2B_name
-#_09F215: dw demon_2C_name
-#_09F217: dw demon_2D_name
-#_09F219: dw demon_2E_name
-#_09F21B: dw demon_2F_name
-#_09F21D: dw demon_30_name
-#_09F21F: dw demon_31_name
-#_09F221: dw demon_32_name
-#_09F223: dw demon_33_name
-#_09F225: dw demon_34_name
-#_09F227: dw demon_35_name
-#_09F229: dw demon_36_name
-#_09F22B: dw demon_37_name
-#_09F22D: dw demon_38_name
-#_09F22F: dw demon_39_name
-#_09F231: dw demon_3A_name
-#_09F233: dw demon_3B_name
-#_09F235: dw demon_3C_name
-#_09F237: dw demon_3D_name
-#_09F239: dw demon_3E_name
-#_09F23B: dw demon_3F_name
-#_09F23D: dw demon_40_name
-#_09F23F: dw demon_41_name
-#_09F241: dw demon_42_name
-#_09F243: dw demon_43_name
-#_09F245: dw demon_44_name
-#_09F247: dw demon_45_name
-#_09F249: dw demon_46_name
-#_09F24B: dw demon_47_name
-#_09F24D: dw demon_48_name
-#_09F24F: dw demon_49_name
-#_09F251: dw demon_4A_name
-#_09F253: dw demon_4B_name
-#_09F255: dw demon_4C_name
-#_09F257: dw demon_4D_name
-#_09F259: dw demon_4E_name
-#_09F25B: dw demon_4F_name
-#_09F25D: dw demon_50_name
-#_09F25F: dw demon_51_name
-#_09F261: dw demon_52_name
-#_09F263: dw demon_53_name
-#_09F265: dw demon_54_name
-#_09F267: dw demon_55_name
-#_09F269: dw demon_56_name
-#_09F26B: dw demon_57_name
-#_09F26D: dw demon_58_name
-#_09F26F: dw demon_59_name
-#_09F271: dw demon_5A_name
-#_09F273: dw demon_5B_name
-#_09F275: dw demon_5C_name
-#_09F277: dw demon_5D_name
-#_09F279: dw demon_5E_name
-#_09F27B: dw demon_5F_name
-#_09F27D: dw demon_60_name
-#_09F27F: dw demon_61_name
-#_09F281: dw demon_62_name
-#_09F283: dw demon_63_name
-#_09F285: dw demon_64_name
-#_09F287: dw demon_65_name
-#_09F289: dw demon_66_name
-#_09F28B: dw demon_67_name
-#_09F28D: dw demon_68_name
-#_09F28F: dw demon_69_name
-#_09F291: dw demon_6A_name
-#_09F293: dw demon_6B_name
-#_09F295: dw demon_6C_name
-#_09F297: dw demon_6D_name
-#_09F299: dw demon_6E_name
-#_09F29B: dw demon_6F_name
-#_09F29D: dw demon_70_name
-#_09F29F: dw demon_71_name
-#_09F2A1: dw demon_72_name
-#_09F2A3: dw demon_73_name
-#_09F2A5: dw demon_74_name
-#_09F2A7: dw demon_75_name
-#_09F2A9: dw demon_76_name
-#_09F2AB: dw demon_77_name
-#_09F2AD: dw demon_78_name
-#_09F2AF: dw demon_79_name
-#_09F2B1: dw demon_7A_name
-#_09F2B3: dw demon_7B_name
-#_09F2B5: dw demon_7C_name
-#_09F2B7: dw demon_7D_name
-#_09F2B9: dw demon_7E_name
-#_09F2BB: dw demon_7F_name
-#_09F2BD: dw demon_80_name
-#_09F2BF: dw demon_81_name
-#_09F2C1: dw demon_82_name
-#_09F2C3: dw demon_83_name
-#_09F2C5: dw demon_84_name
-#_09F2C7: dw demon_85_name
-#_09F2C9: dw demon_86_name
-#_09F2CB: dw demon_87_name
-#_09F2CD: dw demon_88_name
-#_09F2CF: dw demon_89_name
-#_09F2D1: dw demon_8A_name
-#_09F2D3: dw demon_8B_name
-#_09F2D5: dw demon_8C_name
-#_09F2D7: dw demon_8D_name
-#_09F2D9: dw demon_8E_name
-#_09F2DB: dw demon_8F_name
-#_09F2DD: dw demon_90_name
-#_09F2DF: dw demon_91_name
-#_09F2E1: dw demon_92_name
-#_09F2E3: dw demon_93_name
-#_09F2E5: dw demon_94_name
-#_09F2E7: dw demon_95_name
-#_09F2E9: dw demon_96_name
-#_09F2EB: dw demon_97_name
-#_09F2ED: dw demon_98_name
-#_09F2EF: dw demon_99_name
-#_09F2F1: dw demon_9A_name
-#_09F2F3: dw demon_9B_name
-#_09F2F5: dw demon_9C_name
-#_09F2F7: dw demon_9D_name
-#_09F2F9: dw demon_9E_name
-#_09F2FB: dw demon_9F_name
-#_09F2FD: dw demon_A0_name
-#_09F2FF: dw demon_A1_name
-#_09F301: dw demon_A2_name
-#_09F303: dw demon_A3_name
-#_09F305: dw demon_A4_name
-#_09F307: dw demon_A5_name
-#_09F309: dw demon_A6_name
-#_09F30B: dw demon_A7_name
-#_09F30D: dw demon_A8_name
-#_09F30F: dw demon_A9_name
-#_09F311: dw demon_AA_name
-#_09F313: dw demon_AB_name
-#_09F315: dw demon_AC_name
-#_09F317: dw demon_AD_name
-#_09F319: dw demon_AE_name
-#_09F31B: dw demon_AF_name
-#_09F31D: dw demon_B0_name
-#_09F31F: dw demon_B1_name
-#_09F321: dw demon_B2_name
-#_09F323: dw demon_B3_name
-#_09F325: dw demon_B4_name
-#_09F327: dw demon_B5_name
-#_09F329: dw demon_B6_name
-#_09F32B: dw demon_B7_name
-#_09F32D: dw demon_B8_name
-#_09F32F: dw demon_B9_name
-#_09F331: dw demon_BA_name
-#_09F333: dw demon_BB_name
-#_09F335: dw demon_BC_name
-#_09F337: dw demon_BD_name
-#_09F339: dw demon_BE_name
-#_09F33B: dw demon_BF_name
-#_09F33D: dw demon_C0_name
-#_09F33F: dw demon_C1_name
-#_09F341: dw demon_C2_name
-#_09F343: dw demon_C3_name
-#_09F345: dw demon_C4_name
-#_09F347: dw demon_C5_name
-#_09F349: dw demon_C6_name
-#_09F34B: dw demon_C7_name
-#_09F34D: dw demon_C8_name
-#_09F34F: dw demon_C9_name
-#_09F351: dw demon_CA_name
-#_09F353: dw demon_CB_name
-#_09F355: dw demon_CC_name
-#_09F357: dw demon_CD_name
-#_09F359: dw demon_CE_name
-#_09F35B: dw demon_CF_name
-#_09F35D: dw demon_D0_name
-#_09F35F: dw demon_D1_name
-#_09F361: dw demon_D2_name
-#_09F363: dw demon_D3_name
-#_09F365: dw demon_D4_name
-#_09F367: dw demon_D5_name
-#_09F369: dw demon_D6_name
-#_09F36B: dw demon_D7_name
-#_09F36D: dw demon_D8_name
-#_09F36F: dw demon_D9_name
-#_09F371: dw demon_DA_name
-#_09F373: dw demon_DB_name
-#_09F375: dw demon_DC_name
-#_09F377: dw demon_DD_name
-#_09F379: dw demon_DE_name
-#_09F37B: dw demon_DF_name
-#_09F37D: dw demon_E0_name
-#_09F37F: dw demon_E1_name
-#_09F381: dw demon_E2_name
-#_09F383: dw demon_E3_name
-#_09F385: dw demon_E4_name
-#_09F387: dw demon_E5_name
-#_09F389: dw demon_E6_name
-#_09F38B: dw demon_E7_name
-#_09F38D: dw demon_E8_name
-#_09F38F: dw demon_E9_name
-#_09F391: dw demon_EA_name
-#_09F393: dw demon_EB_name
-#_09F395: dw demon_EC_name
-#_09F397: dw demon_ED_name
-#_09F399: dw demon_EE_name
-#_09F39B: dw demon_EF_name
-#_09F39D: dw demon_F0_name
-#_09F39F: dw demon_F1_name
-#_09F3A1: dw demon_F2_name
-#_09F3A3: dw demon_F3_name
-#_09F3A5: dw demon_F4_name
-#_09F3A7: dw demon_F5_name
-#_09F3A9: dw demon_F6_name
-#_09F3AB: dw demon_F7_name
-#_09F3AD: dw demon_F8_name
-#_09F3AF: dw demon_F9_name
-#_09F3B1: dw demon_FA_name
-#_09F3B3: dw demon_FB_name
-#_09F3B5: dw demon_FC_name
-#_09F3B7: dw demon_FD_name
-#_09F3B9: dw demon_FE_name
-#_09F3BB: dw demon_FF_name
+#_09F1BD: dw Demon_00_name
+#_09F1BF: dw Demon_01_name
+#_09F1C1: dw Demon_02_name
+#_09F1C3: dw Demon_03_name
+#_09F1C5: dw Demon_04_name
+#_09F1C7: dw Demon_05_name
+#_09F1C9: dw Demon_06_name
+#_09F1CB: dw Demon_07_name
+#_09F1CD: dw Demon_08_name
+#_09F1CF: dw Demon_09_name
+#_09F1D1: dw Demon_0A_name
+#_09F1D3: dw Demon_0B_name
+#_09F1D5: dw Demon_0C_name
+#_09F1D7: dw Demon_0D_name
+#_09F1D9: dw Demon_0E_name
+#_09F1DB: dw Demon_0F_name
+#_09F1DD: dw Demon_10_name
+#_09F1DF: dw Demon_11_name
+#_09F1E1: dw Demon_12_name
+#_09F1E3: dw Demon_13_name
+#_09F1E5: dw Demon_14_name
+#_09F1E7: dw Demon_15_name
+#_09F1E9: dw Demon_16_name
+#_09F1EB: dw Demon_17_name
+#_09F1ED: dw Demon_18_name
+#_09F1EF: dw Demon_19_name
+#_09F1F1: dw Demon_1A_name
+#_09F1F3: dw Demon_1B_name
+#_09F1F5: dw Demon_1C_name
+#_09F1F7: dw Demon_1D_name
+#_09F1F9: dw Demon_1E_name
+#_09F1FB: dw Demon_1F_name
+#_09F1FD: dw Demon_20_name
+#_09F1FF: dw Demon_21_name
+#_09F201: dw Demon_22_name
+#_09F203: dw Demon_23_name
+#_09F205: dw Demon_24_name
+#_09F207: dw Demon_25_name
+#_09F209: dw Demon_26_name
+#_09F20B: dw Demon_27_name
+#_09F20D: dw Demon_28_name
+#_09F20F: dw Demon_29_name
+#_09F211: dw Demon_2A_name
+#_09F213: dw Demon_2B_name
+#_09F215: dw Demon_2C_name
+#_09F217: dw Demon_2D_name
+#_09F219: dw Demon_2E_name
+#_09F21B: dw Demon_2F_name
+#_09F21D: dw Demon_30_name
+#_09F21F: dw Demon_31_name
+#_09F221: dw Demon_32_name
+#_09F223: dw Demon_33_name
+#_09F225: dw Demon_34_name
+#_09F227: dw Demon_35_name
+#_09F229: dw Demon_36_name
+#_09F22B: dw Demon_37_name
+#_09F22D: dw Demon_38_name
+#_09F22F: dw Demon_39_name
+#_09F231: dw Demon_3A_name
+#_09F233: dw Demon_3B_name
+#_09F235: dw Demon_3C_name
+#_09F237: dw Demon_3D_name
+#_09F239: dw Demon_3E_name
+#_09F23B: dw Demon_3F_name
+#_09F23D: dw Demon_40_name
+#_09F23F: dw Demon_41_name
+#_09F241: dw Demon_42_name
+#_09F243: dw Demon_43_name
+#_09F245: dw Demon_44_name
+#_09F247: dw Demon_45_name
+#_09F249: dw Demon_46_name
+#_09F24B: dw Demon_47_name
+#_09F24D: dw Demon_48_name
+#_09F24F: dw Demon_49_name
+#_09F251: dw Demon_4A_name
+#_09F253: dw Demon_4B_name
+#_09F255: dw Demon_4C_name
+#_09F257: dw Demon_4D_name
+#_09F259: dw Demon_4E_name
+#_09F25B: dw Demon_4F_name
+#_09F25D: dw Demon_50_name
+#_09F25F: dw Demon_51_name
+#_09F261: dw Demon_52_name
+#_09F263: dw Demon_53_name
+#_09F265: dw Demon_54_name
+#_09F267: dw Demon_55_name
+#_09F269: dw Demon_56_name
+#_09F26B: dw Demon_57_name
+#_09F26D: dw Demon_58_name
+#_09F26F: dw Demon_59_name
+#_09F271: dw Demon_5A_name
+#_09F273: dw Demon_5B_name
+#_09F275: dw Demon_5C_name
+#_09F277: dw Demon_5D_name
+#_09F279: dw Demon_5E_name
+#_09F27B: dw Demon_5F_name
+#_09F27D: dw Demon_60_name
+#_09F27F: dw Demon_61_name
+#_09F281: dw Demon_62_name
+#_09F283: dw Demon_63_name
+#_09F285: dw Demon_64_name
+#_09F287: dw Demon_65_name
+#_09F289: dw Demon_66_name
+#_09F28B: dw Demon_67_name
+#_09F28D: dw Demon_68_name
+#_09F28F: dw Demon_69_name
+#_09F291: dw Demon_6A_name
+#_09F293: dw Demon_6B_name
+#_09F295: dw Demon_6C_name
+#_09F297: dw Demon_6D_name
+#_09F299: dw Demon_6E_name
+#_09F29B: dw Demon_6F_name
+#_09F29D: dw Demon_70_name
+#_09F29F: dw Demon_71_name
+#_09F2A1: dw Demon_72_name
+#_09F2A3: dw Demon_73_name
+#_09F2A5: dw Demon_74_name
+#_09F2A7: dw Demon_75_name
+#_09F2A9: dw Demon_76_name
+#_09F2AB: dw Demon_77_name
+#_09F2AD: dw Demon_78_name
+#_09F2AF: dw Demon_79_name
+#_09F2B1: dw Demon_7A_name
+#_09F2B3: dw Demon_7B_name
+#_09F2B5: dw Demon_7C_name
+#_09F2B7: dw Demon_7D_name
+#_09F2B9: dw Demon_7E_name
+#_09F2BB: dw Demon_7F_name
+#_09F2BD: dw Demon_80_name
+#_09F2BF: dw Demon_81_name
+#_09F2C1: dw Demon_82_name
+#_09F2C3: dw Demon_83_name
+#_09F2C5: dw Demon_84_name
+#_09F2C7: dw Demon_85_name
+#_09F2C9: dw Demon_86_name
+#_09F2CB: dw Demon_87_name
+#_09F2CD: dw Demon_88_name
+#_09F2CF: dw Demon_89_name
+#_09F2D1: dw Demon_8A_name
+#_09F2D3: dw Demon_8B_name
+#_09F2D5: dw Demon_8C_name
+#_09F2D7: dw Demon_8D_name
+#_09F2D9: dw Demon_8E_name
+#_09F2DB: dw Demon_8F_name
+#_09F2DD: dw Demon_90_name
+#_09F2DF: dw Demon_91_name
+#_09F2E1: dw Demon_92_name
+#_09F2E3: dw Demon_93_name
+#_09F2E5: dw Demon_94_name
+#_09F2E7: dw Demon_95_name
+#_09F2E9: dw Demon_96_name
+#_09F2EB: dw Demon_97_name
+#_09F2ED: dw Demon_98_name
+#_09F2EF: dw Demon_99_name
+#_09F2F1: dw Demon_9A_name
+#_09F2F3: dw Demon_9B_name
+#_09F2F5: dw Demon_9C_name
+#_09F2F7: dw Demon_9D_name
+#_09F2F9: dw Demon_9E_name
+#_09F2FB: dw Demon_9F_name
+#_09F2FD: dw Demon_A0_name
+#_09F2FF: dw Demon_A1_name
+#_09F301: dw Demon_A2_name
+#_09F303: dw Demon_A3_name
+#_09F305: dw Demon_A4_name
+#_09F307: dw Demon_A5_name
+#_09F309: dw Demon_A6_name
+#_09F30B: dw Demon_A7_name
+#_09F30D: dw Demon_A8_name
+#_09F30F: dw Demon_A9_name
+#_09F311: dw Demon_AA_name
+#_09F313: dw Demon_AB_name
+#_09F315: dw Demon_AC_name
+#_09F317: dw Demon_AD_name
+#_09F319: dw Demon_AE_name
+#_09F31B: dw Demon_AF_name
+#_09F31D: dw Demon_B0_name
+#_09F31F: dw Demon_B1_name
+#_09F321: dw Demon_B2_name
+#_09F323: dw Demon_B3_name
+#_09F325: dw Demon_B4_name
+#_09F327: dw Demon_B5_name
+#_09F329: dw Demon_B6_name
+#_09F32B: dw Demon_B7_name
+#_09F32D: dw Demon_B8_name
+#_09F32F: dw Demon_B9_name
+#_09F331: dw Demon_BA_name
+#_09F333: dw Demon_BB_name
+#_09F335: dw Demon_BC_name
+#_09F337: dw Demon_BD_name
+#_09F339: dw Demon_BE_name
+#_09F33B: dw Demon_BF_name
+#_09F33D: dw Demon_C0_name
+#_09F33F: dw Demon_C1_name
+#_09F341: dw Demon_C2_name
+#_09F343: dw Demon_C3_name
+#_09F345: dw Demon_C4_name
+#_09F347: dw Demon_C5_name
+#_09F349: dw Demon_C6_name
+#_09F34B: dw Demon_C7_name
+#_09F34D: dw Demon_C8_name
+#_09F34F: dw Demon_C9_name
+#_09F351: dw Demon_CA_name
+#_09F353: dw Demon_CB_name
+#_09F355: dw Demon_CC_name
+#_09F357: dw Demon_CD_name
+#_09F359: dw Demon_CE_name
+#_09F35B: dw Demon_CF_name
+#_09F35D: dw Demon_D0_name
+#_09F35F: dw Demon_D1_name
+#_09F361: dw Demon_D2_name
+#_09F363: dw Demon_D3_name
+#_09F365: dw Demon_D4_name
+#_09F367: dw Demon_D5_name
+#_09F369: dw Demon_D6_name
+#_09F36B: dw Demon_D7_name
+#_09F36D: dw Demon_D8_name
+#_09F36F: dw Demon_D9_name
+#_09F371: dw Demon_DA_name
+#_09F373: dw Demon_DB_name
+#_09F375: dw Demon_DC_name
+#_09F377: dw Demon_DD_name
+#_09F379: dw Demon_DE_name
+#_09F37B: dw Demon_DF_name
+#_09F37D: dw Demon_E0_name
+#_09F37F: dw Demon_E1_name
+#_09F381: dw Demon_E2_name
+#_09F383: dw Demon_E3_name
+#_09F385: dw Demon_E4_name
+#_09F387: dw Demon_E5_name
+#_09F389: dw Demon_E6_name
+#_09F38B: dw Demon_E7_name
+#_09F38D: dw Demon_E8_name
+#_09F38F: dw Demon_E9_name
+#_09F391: dw Demon_EA_name
+#_09F393: dw Demon_EB_name
+#_09F395: dw Demon_EC_name
+#_09F397: dw Demon_ED_name
+#_09F399: dw Demon_EE_name
+#_09F39B: dw Demon_EF_name
+#_09F39D: dw Demon_F0_name
+#_09F39F: dw Demon_F1_name
+#_09F3A1: dw Demon_F2_name
+#_09F3A3: dw Demon_F3_name
+#_09F3A5: dw Demon_F4_name
+#_09F3A7: dw Demon_F5_name
+#_09F3A9: dw Demon_F6_name
+#_09F3AB: dw Demon_F7_name
+#_09F3AD: dw Demon_F8_name
+#_09F3AF: dw Demon_F9_name
+#_09F3B1: dw Demon_FA_name
+#_09F3B3: dw Demon_FB_name
+#_09F3B5: dw Demon_FC_name
+#_09F3B7: dw Demon_FD_name
+#_09F3B9: dw Demon_FE_name
+#_09F3BB: dw Demon_FF_name
 
 ;===================================================================================================
 
 BossNamePointers:
-#_09F3BD: dw boss_00_name
-#_09F3BF: dw boss_01_name
-#_09F3C1: dw boss_02_name
-#_09F3C3: dw boss_03_name
-#_09F3C5: dw boss_04_name
-#_09F3C7: dw boss_05_name
-#_09F3C9: dw boss_06_name
-#_09F3CB: dw boss_07_name
-#_09F3CD: dw boss_08_name
-#_09F3CF: dw boss_09_name
-#_09F3D1: dw boss_0A_name
-#_09F3D3: dw boss_0B_name
-#_09F3D5: dw boss_0C_name
-#_09F3D7: dw boss_0D_name
-#_09F3D9: dw boss_0E_name
-#_09F3DB: dw boss_0F_name
-#_09F3DD: dw boss_10_name
-#_09F3DF: dw boss_11_name
-#_09F3E1: dw boss_12_name
-#_09F3E3: dw boss_13_name
-#_09F3E5: dw boss_14_name
-#_09F3E7: dw boss_15_name
-#_09F3E9: dw boss_16_name
-#_09F3EB: dw boss_17_name
-#_09F3ED: dw boss_18_name
-#_09F3EF: dw boss_19_name
-#_09F3F1: dw boss_1A_name
-#_09F3F3: dw boss_1B_name
-#_09F3F5: dw boss_1C_name
-#_09F3F7: dw boss_1D_name
-#_09F3F9: dw boss_1E_name
-#_09F3FB: dw boss_1F_name
-#_09F3FD: dw boss_20_name
-#_09F3FF: dw boss_21_name
-#_09F401: dw boss_22_name
-#_09F403: dw boss_23_name
-#_09F405: dw boss_24_name
-#_09F407: dw boss_25_name
-#_09F409: dw boss_26_name
-#_09F40B: dw boss_27_name
-#_09F40D: dw boss_28_name
-#_09F40F: dw boss_29_name
-#_09F411: dw boss_2A_name
-#_09F413: dw boss_2B_name
-#_09F415: dw boss_2C_name
-#_09F417: dw boss_2D_name
-#_09F419: dw boss_2E_name
-#_09F41B: dw boss_2F_name
-#_09F41D: dw boss_30_name
-#_09F41F: dw boss_31_name
-#_09F421: dw boss_32_name
-#_09F423: dw boss_33_name
-#_09F425: dw boss_34_name
-#_09F427: dw boss_35_name
+#_09F3BD: dw Boss_00_name
+#_09F3BF: dw Boss_01_name
+#_09F3C1: dw Boss_02_name
+#_09F3C3: dw Boss_03_name
+#_09F3C5: dw Boss_04_name
+#_09F3C7: dw Boss_05_name
+#_09F3C9: dw Boss_06_name
+#_09F3CB: dw Boss_07_name
+#_09F3CD: dw Boss_08_name
+#_09F3CF: dw Boss_09_name
+#_09F3D1: dw Boss_0A_name
+#_09F3D3: dw Boss_0B_name
+#_09F3D5: dw Boss_0C_name
+#_09F3D7: dw Boss_0D_name
+#_09F3D9: dw Boss_0E_name
+#_09F3DB: dw Boss_0F_name
+#_09F3DD: dw Boss_10_name
+#_09F3DF: dw Boss_11_name
+#_09F3E1: dw Boss_12_name
+#_09F3E3: dw Boss_13_name
+#_09F3E5: dw Boss_14_name
+#_09F3E7: dw Boss_15_name
+#_09F3E9: dw Boss_16_name
+#_09F3EB: dw Boss_17_name
+#_09F3ED: dw Boss_18_name
+#_09F3EF: dw Boss_19_name
+#_09F3F1: dw Boss_1A_name
+#_09F3F3: dw Boss_1B_name
+#_09F3F5: dw Boss_1C_name
+#_09F3F7: dw Boss_1D_name
+#_09F3F9: dw Boss_1E_name
+#_09F3FB: dw Boss_1F_name
+#_09F3FD: dw Boss_20_name
+#_09F3FF: dw Boss_21_name
+#_09F401: dw Boss_22_name
+#_09F403: dw Boss_23_name
+#_09F405: dw Boss_24_name
+#_09F407: dw Boss_25_name
+#_09F409: dw Boss_26_name
+#_09F40B: dw Boss_27_name
+#_09F40D: dw Boss_28_name
+#_09F40F: dw Boss_29_name
+#_09F411: dw Boss_2A_name
+#_09F413: dw Boss_2B_name
+#_09F415: dw Boss_2C_name
+#_09F417: dw Boss_2D_name
+#_09F419: dw Boss_2E_name
+#_09F41B: dw Boss_2F_name
+#_09F41D: dw Boss_30_name
+#_09F41F: dw Boss_31_name
+#_09F421: dw Boss_32_name
+#_09F423: dw Boss_33_name
+#_09F425: dw Boss_34_name
+#_09F427: dw Boss_35_name
 
 ;===================================================================================================
 ; TODO
 ;===================================================================================================
 ClassNamePointers:
-#_09F429: dw class_00_name
-#_09F42B: dw class_01_name
-#_09F42D: dw class_02_name
-#_09F42F: dw class_03_name
-#_09F431: dw class_04_name
-#_09F433: dw class_05_name
-#_09F435: dw class_06_name
-#_09F437: dw class_07_name
-#_09F439: dw class_08_name
-#_09F43B: dw class_09_name
-#_09F43D: dw class_0A_name
-#_09F43F: dw class_0B_name
-#_09F441: dw class_0C_name
-#_09F443: dw class_0D_name
-#_09F445: dw class_0E_name
-#_09F447: dw class_0F_name
-#_09F449: dw class_10_name
-#_09F44B: dw class_11_name
-#_09F44D: dw class_12_name
-#_09F44F: dw class_13_name
-#_09F451: dw class_14_name
-#_09F453: dw class_15_name
-#_09F455: dw class_16_name
-#_09F457: dw class_17_name
-#_09F459: dw class_18_name
-#_09F45B: dw class_19_name
-#_09F45D: dw class_1A_name
-#_09F45F: dw class_1B_name
-#_09F461: dw class_1C_name
-#_09F463: dw class_1D_name
-#_09F465: dw class_1E_name
-#_09F467: dw class_1F_name
-#_09F469: dw class_20_name
-#_09F46B: dw class_21_name
-#_09F46D: dw class_22_name
-#_09F46F: dw class_23_name
-#_09F471: dw class_24_name
-#_09F473: dw class_25_name
-#_09F475: dw class_26_name
+#_09F429: dw Class_00_name
+#_09F42B: dw Class_01_name
+#_09F42D: dw Class_02_name
+#_09F42F: dw Class_03_name
+#_09F431: dw Class_04_name
+#_09F433: dw Class_05_name
+#_09F435: dw Class_06_name
+#_09F437: dw Class_07_name
+#_09F439: dw Class_08_name
+#_09F43B: dw Class_09_name
+#_09F43D: dw Class_0A_name
+#_09F43F: dw Class_0B_name
+#_09F441: dw Class_0C_name
+#_09F443: dw Class_0D_name
+#_09F445: dw Class_0E_name
+#_09F447: dw Class_0F_name
+#_09F449: dw Class_10_name
+#_09F44B: dw Class_11_name
+#_09F44D: dw Class_12_name
+#_09F44F: dw Class_13_name
+#_09F451: dw Class_14_name
+#_09F453: dw Class_15_name
+#_09F455: dw Class_16_name
+#_09F457: dw Class_17_name
+#_09F459: dw Class_18_name
+#_09F45B: dw Class_19_name
+#_09F45D: dw Class_1A_name
+#_09F45F: dw Class_1B_name
+#_09F461: dw Class_1C_name
+#_09F463: dw Class_1D_name
+#_09F465: dw Class_1E_name
+#_09F467: dw Class_1F_name
+#_09F469: dw Class_20_name
+#_09F46B: dw Class_21_name
+#_09F46D: dw Class_22_name
+#_09F46F: dw Class_23_name
+#_09F471: dw Class_24_name
+#_09F473: dw Class_25_name
+#_09F475: dw Class_26_name
 
 ;===================================================================================================
 
 SkillNamePointers:
-#_09F477: dw skill_00_name
-#_09F479: dw skill_01_name
-#_09F47B: dw skill_02_name
-#_09F47D: dw skill_03_name
-#_09F47F: dw skill_04_name
-#_09F481: dw skill_05_name
-#_09F483: dw skill_06_name
-#_09F485: dw skill_07_name
-#_09F487: dw skill_08_name
-#_09F489: dw skill_09_name
-#_09F48B: dw skill_0A_name
-#_09F48D: dw skill_0B_name
-#_09F48F: dw skill_0C_name
-#_09F491: dw skill_0D_name
-#_09F493: dw skill_0E_name
-#_09F495: dw skill_0F_name
-#_09F497: dw skill_10_name
-#_09F499: dw skill_11_name
-#_09F49B: dw skill_12_name
-#_09F49D: dw skill_13_name
-#_09F49F: dw skill_14_name
-#_09F4A1: dw skill_15_name
-#_09F4A3: dw skill_16_name
-#_09F4A5: dw skill_17_name
-#_09F4A7: dw skill_18_name
-#_09F4A9: dw skill_19_name
-#_09F4AB: dw skill_1A_name
-#_09F4AD: dw skill_1B_name
-#_09F4AF: dw skill_1C_name
-#_09F4B1: dw skill_1D_name
-#_09F4B3: dw skill_1E_name
-#_09F4B5: dw skill_1F_name
-#_09F4B7: dw skill_20_name
-#_09F4B9: dw skill_21_name
-#_09F4BB: dw skill_22_name
-#_09F4BD: dw skill_23_name
-#_09F4BF: dw skill_24_name
-#_09F4C1: dw skill_25_name
-#_09F4C3: dw skill_26_name
-#_09F4C5: dw skill_27_name
-#_09F4C7: dw skill_28_name
-#_09F4C9: dw skill_29_name
-#_09F4CB: dw skill_2A_name
-#_09F4CD: dw skill_2B_name
-#_09F4CF: dw skill_2C_name
-#_09F4D1: dw skill_2D_name
-#_09F4D3: dw skill_2E_name
-#_09F4D5: dw skill_2F_name
-#_09F4D7: dw skill_30_name
-#_09F4D9: dw skill_31_name
-#_09F4DB: dw skill_32_name
-#_09F4DD: dw skill_33_name
-#_09F4DF: dw skill_34_name
-#_09F4E1: dw skill_35_name
-#_09F4E3: dw skill_36_name
-#_09F4E5: dw skill_37_name
-#_09F4E7: dw skill_38_name
-#_09F4E9: dw skill_39_name
-#_09F4EB: dw skill_3A_name
-#_09F4ED: dw skill_3B_name
-#_09F4EF: dw skill_3C_name
-#_09F4F1: dw skill_3D_name
-#_09F4F3: dw skill_3E_name
-#_09F4F5: dw skill_3F_name
-#_09F4F7: dw skill_40_name
-#_09F4F9: dw skill_41_name
-#_09F4FB: dw skill_42_name
-#_09F4FD: dw skill_43_name
-#_09F4FF: dw skill_44_name
-#_09F501: dw skill_45_name
-#_09F503: dw skill_46_name
-#_09F505: dw skill_47_name
-#_09F507: dw skill_48_name
-#_09F509: dw skill_49_name
-#_09F50B: dw skill_4A_name
-#_09F50D: dw skill_4B_name
-#_09F50F: dw skill_4C_name
-#_09F511: dw skill_4D_name
-#_09F513: dw skill_4E_name
-#_09F515: dw skill_4F_name
-#_09F517: dw skill_50_name
-#_09F519: dw skill_51_name
-#_09F51B: dw skill_52_name
-#_09F51D: dw skill_53_name
-#_09F51F: dw skill_54_name
-#_09F521: dw skill_55_name
-#_09F523: dw skill_56_name
-#_09F525: dw skill_57_name
-#_09F527: dw skill_58_name
-#_09F529: dw skill_59_name
-#_09F52B: dw skill_5A_name
-#_09F52D: dw skill_5B_name
-#_09F52F: dw skill_5C_name
-#_09F531: dw skill_5D_name
-#_09F533: dw skill_5E_name
-#_09F535: dw skill_5F_name
-#_09F537: dw skill_60_name
-#_09F539: dw skill_61_name
-#_09F53B: dw skill_62_name
-#_09F53D: dw skill_63_name
-#_09F53F: dw skill_64_name
-#_09F541: dw skill_65_name
-#_09F543: dw skill_66_name
-#_09F545: dw skill_67_name
-#_09F547: dw skill_68_name
-#_09F549: dw skill_69_name
-#_09F54B: dw skill_6A_name
-#_09F54D: dw skill_6B_name
-#_09F54F: dw skill_6C_name
-#_09F551: dw skill_6D_name
-#_09F553: dw skill_6E_name
-#_09F555: dw skill_6F_name
-#_09F557: dw skill_70_name
-#_09F559: dw skill_71_name
-#_09F55B: dw skill_72_name
-#_09F55D: dw skill_73_name
-#_09F55F: dw skill_74_name
-#_09F561: dw skill_75_name
-#_09F563: dw skill_76_name
-#_09F565: dw skill_77_name
-#_09F567: dw skill_78_name
-#_09F569: dw skill_79_name
-#_09F56B: dw skill_7A_name
-#_09F56D: dw skill_7B_name
-#_09F56F: dw skill_7C_name
-#_09F571: dw skill_7D_name
-#_09F573: dw skill_7E_name
-#_09F575: dw skill_7F_name
+#_09F477: dw Skill_00_name
+#_09F479: dw Skill_01_name
+#_09F47B: dw Skill_02_name
+#_09F47D: dw Skill_03_name
+#_09F47F: dw Skill_04_name
+#_09F481: dw Skill_05_name
+#_09F483: dw Skill_06_name
+#_09F485: dw Skill_07_name
+#_09F487: dw Skill_08_name
+#_09F489: dw Skill_09_name
+#_09F48B: dw Skill_0A_name
+#_09F48D: dw Skill_0B_name
+#_09F48F: dw Skill_0C_name
+#_09F491: dw Skill_0D_name
+#_09F493: dw Skill_0E_name
+#_09F495: dw Skill_0F_name
+#_09F497: dw Skill_10_name
+#_09F499: dw Skill_11_name
+#_09F49B: dw Skill_12_name
+#_09F49D: dw Skill_13_name
+#_09F49F: dw Skill_14_name
+#_09F4A1: dw Skill_15_name
+#_09F4A3: dw Skill_16_name
+#_09F4A5: dw Skill_17_name
+#_09F4A7: dw Skill_18_name
+#_09F4A9: dw Skill_19_name
+#_09F4AB: dw Skill_1A_name
+#_09F4AD: dw Skill_1B_name
+#_09F4AF: dw Skill_1C_name
+#_09F4B1: dw Skill_1D_name
+#_09F4B3: dw Skill_1E_name
+#_09F4B5: dw Skill_1F_name
+#_09F4B7: dw Skill_20_name
+#_09F4B9: dw Skill_21_name
+#_09F4BB: dw Skill_22_name
+#_09F4BD: dw Skill_23_name
+#_09F4BF: dw Skill_24_name
+#_09F4C1: dw Skill_25_name
+#_09F4C3: dw Skill_26_name
+#_09F4C5: dw Skill_27_name
+#_09F4C7: dw Skill_28_name
+#_09F4C9: dw Skill_29_name
+#_09F4CB: dw Skill_2A_name
+#_09F4CD: dw Skill_2B_name
+#_09F4CF: dw Skill_2C_name
+#_09F4D1: dw Skill_2D_name
+#_09F4D3: dw Skill_2E_name
+#_09F4D5: dw Skill_2F_name
+#_09F4D7: dw Skill_30_name
+#_09F4D9: dw Skill_31_name
+#_09F4DB: dw Skill_32_name
+#_09F4DD: dw Skill_33_name
+#_09F4DF: dw Skill_34_name
+#_09F4E1: dw Skill_35_name
+#_09F4E3: dw Skill_36_name
+#_09F4E5: dw Skill_37_name
+#_09F4E7: dw Skill_38_name
+#_09F4E9: dw Skill_39_name
+#_09F4EB: dw Skill_3A_name
+#_09F4ED: dw Skill_3B_name
+#_09F4EF: dw Skill_3C_name
+#_09F4F1: dw Skill_3D_name
+#_09F4F3: dw Skill_3E_name
+#_09F4F5: dw Skill_3F_name
+#_09F4F7: dw Skill_40_name
+#_09F4F9: dw Skill_41_name
+#_09F4FB: dw Skill_42_name
+#_09F4FD: dw Skill_43_name
+#_09F4FF: dw Skill_44_name
+#_09F501: dw Skill_45_name
+#_09F503: dw Skill_46_name
+#_09F505: dw Skill_47_name
+#_09F507: dw Skill_48_name
+#_09F509: dw Skill_49_name
+#_09F50B: dw Skill_4A_name
+#_09F50D: dw Skill_4B_name
+#_09F50F: dw Skill_4C_name
+#_09F511: dw Skill_4D_name
+#_09F513: dw Skill_4E_name
+#_09F515: dw Skill_4F_name
+#_09F517: dw Skill_50_name
+#_09F519: dw Skill_51_name
+#_09F51B: dw Skill_52_name
+#_09F51D: dw Skill_53_name
+#_09F51F: dw Skill_54_name
+#_09F521: dw Skill_55_name
+#_09F523: dw Skill_56_name
+#_09F525: dw Skill_57_name
+#_09F527: dw Skill_58_name
+#_09F529: dw Skill_59_name
+#_09F52B: dw Skill_5A_name
+#_09F52D: dw Skill_5B_name
+#_09F52F: dw Skill_5C_name
+#_09F531: dw Skill_5D_name
+#_09F533: dw Skill_5E_name
+#_09F535: dw Skill_5F_name
+#_09F537: dw Skill_60_name
+#_09F539: dw Skill_61_name
+#_09F53B: dw Skill_62_name
+#_09F53D: dw Skill_63_name
+#_09F53F: dw Skill_64_name
+#_09F541: dw Skill_65_name
+#_09F543: dw Skill_66_name
+#_09F545: dw Skill_67_name
+#_09F547: dw Skill_68_name
+#_09F549: dw Skill_69_name
+#_09F54B: dw Skill_6A_name
+#_09F54D: dw Skill_6B_name
+#_09F54F: dw Skill_6C_name
+#_09F551: dw Skill_6D_name
+#_09F553: dw Skill_6E_name
+#_09F555: dw Skill_6F_name
+#_09F557: dw Skill_70_name
+#_09F559: dw Skill_71_name
+#_09F55B: dw Skill_72_name
+#_09F55D: dw Skill_73_name
+#_09F55F: dw Skill_74_name
+#_09F561: dw Skill_75_name
+#_09F563: dw Skill_76_name
+#_09F565: dw Skill_77_name
+#_09F567: dw Skill_78_name
+#_09F569: dw Skill_79_name
+#_09F56B: dw Skill_7A_name
+#_09F56D: dw Skill_7B_name
+#_09F56F: dw Skill_7C_name
+#_09F571: dw Skill_7D_name
+#_09F573: dw Skill_7E_name
+#_09F575: dw Skill_7F_name
 
 ;===================================================================================================
 
 ItemNamePointers:
-#_09F577: dw item_00_name
-#_09F579: dw item_01_name
-#_09F57B: dw item_02_name
-#_09F57D: dw item_03_name
-#_09F57F: dw item_04_name
-#_09F581: dw item_05_name
-#_09F583: dw item_06_name
-#_09F585: dw item_07_name
-#_09F587: dw item_08_name
-#_09F589: dw item_09_name
-#_09F58B: dw item_0A_name
-#_09F58D: dw item_0B_name
-#_09F58F: dw item_0C_name
-#_09F591: dw item_0D_name
-#_09F593: dw item_0E_name
-#_09F595: dw item_0F_name
-#_09F597: dw item_10_name
-#_09F599: dw item_11_name
-#_09F59B: dw item_12_name
-#_09F59D: dw item_13_name
-#_09F59F: dw item_14_name
-#_09F5A1: dw item_15_name
-#_09F5A3: dw item_16_name
-#_09F5A5: dw item_17_name
-#_09F5A7: dw item_18_name
-#_09F5A9: dw item_19_name
-#_09F5AB: dw item_1A_name
-#_09F5AD: dw item_1B_name
-#_09F5AF: dw item_1C_name
-#_09F5B1: dw item_1D_name
-#_09F5B3: dw item_1E_name
-#_09F5B5: dw item_1F_name
-#_09F5B7: dw item_20_name
-#_09F5B9: dw item_21_name
-#_09F5BB: dw item_22_name
-#_09F5BD: dw item_23_name
-#_09F5BF: dw item_24_name
-#_09F5C1: dw item_25_name
-#_09F5C3: dw item_26_name
-#_09F5C5: dw item_27_name
-#_09F5C7: dw item_28_name
-#_09F5C9: dw item_29_name
-#_09F5CB: dw item_2A_name
-#_09F5CD: dw item_2B_name
-#_09F5CF: dw item_2C_name
-#_09F5D1: dw item_2D_name
-#_09F5D3: dw item_2E_name
-#_09F5D5: dw item_2F_name
-#_09F5D7: dw item_30_name
-#_09F5D9: dw item_31_name
-#_09F5DB: dw item_32_name
-#_09F5DD: dw item_33_name
-#_09F5DF: dw item_34_name
-#_09F5E1: dw item_35_name
-#_09F5E3: dw item_36_name
-#_09F5E5: dw item_37_name
-#_09F5E7: dw item_38_name
-#_09F5E9: dw item_39_name
-#_09F5EB: dw item_3A_name
-#_09F5ED: dw item_3B_name
-#_09F5EF: dw item_3C_name
-#_09F5F1: dw item_3D_name
-#_09F5F3: dw item_3E_name
-#_09F5F5: dw item_3F_name
-#_09F5F7: dw item_40_name
-#_09F5F9: dw item_41_name
-#_09F5FB: dw item_42_name
-#_09F5FD: dw item_43_name
-#_09F5FF: dw item_44_name
-#_09F601: dw item_45_name
-#_09F603: dw item_46_name
-#_09F605: dw item_47_name
-#_09F607: dw item_48_name
-#_09F609: dw item_49_name
-#_09F60B: dw item_4A_name
-#_09F60D: dw item_4B_name
-#_09F60F: dw item_4C_name
-#_09F611: dw item_4D_name
-#_09F613: dw item_4E_name
-#_09F615: dw item_4F_name
-#_09F617: dw item_50_name
-#_09F619: dw item_51_name
-#_09F61B: dw item_52_name
-#_09F61D: dw item_53_name
-#_09F61F: dw item_54_name
-#_09F621: dw item_55_name
-#_09F623: dw item_56_name
-#_09F625: dw item_57_name
-#_09F627: dw item_58_name
-#_09F629: dw item_59_name
-#_09F62B: dw item_5A_name
-#_09F62D: dw item_5B_name
-#_09F62F: dw item_5C_name
-#_09F631: dw item_5D_name
-#_09F633: dw item_5E_name
-#_09F635: dw item_5F_name
-#_09F637: dw item_60_name
-#_09F639: dw item_61_name
-#_09F63B: dw item_62_name
-#_09F63D: dw item_63_name
-#_09F63F: dw item_64_name
-#_09F641: dw item_65_name
-#_09F643: dw item_66_name
-#_09F645: dw item_67_name
-#_09F647: dw item_68_name
-#_09F649: dw item_69_name
-#_09F64B: dw item_6A_name
-#_09F64D: dw item_6B_name
-#_09F64F: dw item_6C_name
-#_09F651: dw item_6D_name
-#_09F653: dw item_6E_name
-#_09F655: dw item_6F_name
-#_09F657: dw item_70_name
-#_09F659: dw item_71_name
-#_09F65B: dw item_72_name
-#_09F65D: dw item_73_name
-#_09F65F: dw item_74_name
-#_09F661: dw item_75_name
-#_09F663: dw item_76_name
-#_09F665: dw item_77_name
-#_09F667: dw item_78_name
-#_09F669: dw item_79_name
-#_09F66B: dw item_7A_name
-#_09F66D: dw item_7B_name
-#_09F66F: dw item_7C_name
-#_09F671: dw item_7D_name
-#_09F673: dw item_7E_name
-#_09F675: dw item_7F_name
-#_09F677: dw item_80_name
-#_09F679: dw item_81_name
-#_09F67B: dw item_82_name
-#_09F67D: dw item_83_name
-#_09F67F: dw item_84_name
-#_09F681: dw item_85_name
-#_09F683: dw item_86_name
-#_09F685: dw item_87_name
-#_09F687: dw item_88_name
-#_09F689: dw item_89_name
-#_09F68B: dw item_8A_name
-#_09F68D: dw item_8B_name
-#_09F68F: dw item_8C_name
-#_09F691: dw item_8D_name
-#_09F693: dw item_8E_name
-#_09F695: dw item_8F_name
-#_09F697: dw item_90_name
-#_09F699: dw item_91_name
-#_09F69B: dw item_92_name
-#_09F69D: dw item_93_name
-#_09F69F: dw item_94_name
-#_09F6A1: dw item_95_name
-#_09F6A3: dw item_96_name
-#_09F6A5: dw item_97_name
-#_09F6A7: dw item_98_name
-#_09F6A9: dw item_99_name
-#_09F6AB: dw item_9A_name
-#_09F6AD: dw item_9B_name
-#_09F6AF: dw item_9C_name
-#_09F6B1: dw item_9D_name
-#_09F6B3: dw item_9E_name
-#_09F6B5: dw item_9F_name
-#_09F6B7: dw item_A0_name
-#_09F6B9: dw item_A1_name
-#_09F6BB: dw item_A2_name
-#_09F6BD: dw item_A3_name
-#_09F6BF: dw item_A4_name
-#_09F6C1: dw item_A5_name
-#_09F6C3: dw item_A6_name
-#_09F6C5: dw item_A7_name
-#_09F6C7: dw item_A8_name
-#_09F6C9: dw item_A9_name
-#_09F6CB: dw item_AA_name
-#_09F6CD: dw item_AB_name
-#_09F6CF: dw item_AC_name
-#_09F6D1: dw item_AD_name
-#_09F6D3: dw item_AE_name
-#_09F6D5: dw item_AF_name
-#_09F6D7: dw item_B0_name
-#_09F6D9: dw item_B1_name
-#_09F6DB: dw item_B2_name
-#_09F6DD: dw item_B3_name
-#_09F6DF: dw item_B4_name
-#_09F6E1: dw item_B5_name
-#_09F6E3: dw item_B6_name
-#_09F6E5: dw item_B7_name
-#_09F6E7: dw item_B8_name
-#_09F6E9: dw item_B9_name
-#_09F6EB: dw item_BA_name
-#_09F6ED: dw item_BB_name
-#_09F6EF: dw item_BC_name
-#_09F6F1: dw item_BD_name
-#_09F6F3: dw item_BE_name
-#_09F6F5: dw item_BF_name
-#_09F6F7: dw item_C0_name
-#_09F6F9: dw item_C1_name
-#_09F6FB: dw item_C2_name
-#_09F6FD: dw item_C3_name
-#_09F6FF: dw item_C4_name
-#_09F701: dw item_C5_name
-#_09F703: dw item_C6_name
-#_09F705: dw item_C7_name
-#_09F707: dw item_C8_name
-#_09F709: dw item_C9_name
-#_09F70B: dw item_CA_name
-#_09F70D: dw item_CB_name
-#_09F70F: dw item_CC_name
-#_09F711: dw item_CD_name
-#_09F713: dw item_CE_name
-#_09F715: dw item_CF_name
-#_09F717: dw item_D0_name
-#_09F719: dw item_D1_name
-#_09F71B: dw item_D2_name
-#_09F71D: dw item_D3_name
-#_09F71F: dw item_D4_name
-#_09F721: dw item_D5_name
-#_09F723: dw item_D6_name
-#_09F725: dw item_D7_name
-#_09F727: dw item_D8_name
-#_09F729: dw item_D9_name
-#_09F72B: dw item_DA_name
-#_09F72D: dw item_DB_name
-#_09F72F: dw item_DC_name
-#_09F731: dw item_DD_name
-#_09F733: dw item_DE_name
-#_09F735: dw item_DF_name
-#_09F737: dw item_E0_name
-#_09F739: dw item_E1_name
-#_09F73B: dw item_E2_name
-#_09F73D: dw item_E3_name
-#_09F73F: dw item_E4_name
-#_09F741: dw item_E5_name
-#_09F743: dw item_E6_name
-#_09F745: dw item_E7_name
-#_09F747: dw item_E8_name
-#_09F749: dw item_E9_name
-#_09F74B: dw item_EA_name
-#_09F74D: dw item_EB_name
-#_09F74F: dw item_EC_name
-#_09F751: dw item_ED_name
-#_09F753: dw item_EE_name
-#_09F755: dw item_EF_name
-#_09F757: dw item_F0_name
-#_09F759: dw item_F1_name
-#_09F75B: dw item_F2_name
-#_09F75D: dw item_F3_name
-#_09F75F: dw item_F4_name
-#_09F761: dw item_F5_name
-#_09F763: dw item_F6_name
-#_09F765: dw item_F7_name
-#_09F767: dw item_F8_name
-#_09F769: dw item_F9_name
-#_09F76B: dw item_FA_name
-#_09F76D: dw item_FB_name
-#_09F76F: dw item_FC_name
-#_09F771: dw item_FD_name
-#_09F773: dw item_FE_name
-#_09F775: dw item_FF_name
-#_09F777: dw item_terminator
+#_09F577: dw Item_00_name
+#_09F579: dw Item_01_name
+#_09F57B: dw Item_02_name
+#_09F57D: dw Item_03_name
+#_09F57F: dw Item_04_name
+#_09F581: dw Item_05_name
+#_09F583: dw Item_06_name
+#_09F585: dw Item_07_name
+#_09F587: dw Item_08_name
+#_09F589: dw Item_09_name
+#_09F58B: dw Item_0A_name
+#_09F58D: dw Item_0B_name
+#_09F58F: dw Item_0C_name
+#_09F591: dw Item_0D_name
+#_09F593: dw Item_0E_name
+#_09F595: dw Item_0F_name
+#_09F597: dw Item_10_name
+#_09F599: dw Item_11_name
+#_09F59B: dw Item_12_name
+#_09F59D: dw Item_13_name
+#_09F59F: dw Item_14_name
+#_09F5A1: dw Item_15_name
+#_09F5A3: dw Item_16_name
+#_09F5A5: dw Item_17_name
+#_09F5A7: dw Item_18_name
+#_09F5A9: dw Item_19_name
+#_09F5AB: dw Item_1A_name
+#_09F5AD: dw Item_1B_name
+#_09F5AF: dw Item_1C_name
+#_09F5B1: dw Item_1D_name
+#_09F5B3: dw Item_1E_name
+#_09F5B5: dw Item_1F_name
+#_09F5B7: dw Item_20_name
+#_09F5B9: dw Item_21_name
+#_09F5BB: dw Item_22_name
+#_09F5BD: dw Item_23_name
+#_09F5BF: dw Item_24_name
+#_09F5C1: dw Item_25_name
+#_09F5C3: dw Item_26_name
+#_09F5C5: dw Item_27_name
+#_09F5C7: dw Item_28_name
+#_09F5C9: dw Item_29_name
+#_09F5CB: dw Item_2A_name
+#_09F5CD: dw Item_2B_name
+#_09F5CF: dw Item_2C_name
+#_09F5D1: dw Item_2D_name
+#_09F5D3: dw Item_2E_name
+#_09F5D5: dw Item_2F_name
+#_09F5D7: dw Item_30_name
+#_09F5D9: dw Item_31_name
+#_09F5DB: dw Item_32_name
+#_09F5DD: dw Item_33_name
+#_09F5DF: dw Item_34_name
+#_09F5E1: dw Item_35_name
+#_09F5E3: dw Item_36_name
+#_09F5E5: dw Item_37_name
+#_09F5E7: dw Item_38_name
+#_09F5E9: dw Item_39_name
+#_09F5EB: dw Item_3A_name
+#_09F5ED: dw Item_3B_name
+#_09F5EF: dw Item_3C_name
+#_09F5F1: dw Item_3D_name
+#_09F5F3: dw Item_3E_name
+#_09F5F5: dw Item_3F_name
+#_09F5F7: dw Item_40_name
+#_09F5F9: dw Item_41_name
+#_09F5FB: dw Item_42_name
+#_09F5FD: dw Item_43_name
+#_09F5FF: dw Item_44_name
+#_09F601: dw Item_45_name
+#_09F603: dw Item_46_name
+#_09F605: dw Item_47_name
+#_09F607: dw Item_48_name
+#_09F609: dw Item_49_name
+#_09F60B: dw Item_4A_name
+#_09F60D: dw Item_4B_name
+#_09F60F: dw Item_4C_name
+#_09F611: dw Item_4D_name
+#_09F613: dw Item_4E_name
+#_09F615: dw Item_4F_name
+#_09F617: dw Item_50_name
+#_09F619: dw Item_51_name
+#_09F61B: dw Item_52_name
+#_09F61D: dw Item_53_name
+#_09F61F: dw Item_54_name
+#_09F621: dw Item_55_name
+#_09F623: dw Item_56_name
+#_09F625: dw Item_57_name
+#_09F627: dw Item_58_name
+#_09F629: dw Item_59_name
+#_09F62B: dw Item_5A_name
+#_09F62D: dw Item_5B_name
+#_09F62F: dw Item_5C_name
+#_09F631: dw Item_5D_name
+#_09F633: dw Item_5E_name
+#_09F635: dw Item_5F_name
+#_09F637: dw Item_60_name
+#_09F639: dw Item_61_name
+#_09F63B: dw Item_62_name
+#_09F63D: dw Item_63_name
+#_09F63F: dw Item_64_name
+#_09F641: dw Item_65_name
+#_09F643: dw Item_66_name
+#_09F645: dw Item_67_name
+#_09F647: dw Item_68_name
+#_09F649: dw Item_69_name
+#_09F64B: dw Item_6A_name
+#_09F64D: dw Item_6B_name
+#_09F64F: dw Item_6C_name
+#_09F651: dw Item_6D_name
+#_09F653: dw Item_6E_name
+#_09F655: dw Item_6F_name
+#_09F657: dw Item_70_name
+#_09F659: dw Item_71_name
+#_09F65B: dw Item_72_name
+#_09F65D: dw Item_73_name
+#_09F65F: dw Item_74_name
+#_09F661: dw Item_75_name
+#_09F663: dw Item_76_name
+#_09F665: dw Item_77_name
+#_09F667: dw Item_78_name
+#_09F669: dw Item_79_name
+#_09F66B: dw Item_7A_name
+#_09F66D: dw Item_7B_name
+#_09F66F: dw Item_7C_name
+#_09F671: dw Item_7D_name
+#_09F673: dw Item_7E_name
+#_09F675: dw Item_7F_name
+#_09F677: dw Item_80_name
+#_09F679: dw Item_81_name
+#_09F67B: dw Item_82_name
+#_09F67D: dw Item_83_name
+#_09F67F: dw Item_84_name
+#_09F681: dw Item_85_name
+#_09F683: dw Item_86_name
+#_09F685: dw Item_87_name
+#_09F687: dw Item_88_name
+#_09F689: dw Item_89_name
+#_09F68B: dw Item_8A_name
+#_09F68D: dw Item_8B_name
+#_09F68F: dw Item_8C_name
+#_09F691: dw Item_8D_name
+#_09F693: dw Item_8E_name
+#_09F695: dw Item_8F_name
+#_09F697: dw Item_90_name
+#_09F699: dw Item_91_name
+#_09F69B: dw Item_92_name
+#_09F69D: dw Item_93_name
+#_09F69F: dw Item_94_name
+#_09F6A1: dw Item_95_name
+#_09F6A3: dw Item_96_name
+#_09F6A5: dw Item_97_name
+#_09F6A7: dw Item_98_name
+#_09F6A9: dw Item_99_name
+#_09F6AB: dw Item_9A_name
+#_09F6AD: dw Item_9B_name
+#_09F6AF: dw Item_9C_name
+#_09F6B1: dw Item_9D_name
+#_09F6B3: dw Item_9E_name
+#_09F6B5: dw Item_9F_name
+#_09F6B7: dw Item_A0_name
+#_09F6B9: dw Item_A1_name
+#_09F6BB: dw Item_A2_name
+#_09F6BD: dw Item_A3_name
+#_09F6BF: dw Item_A4_name
+#_09F6C1: dw Item_A5_name
+#_09F6C3: dw Item_A6_name
+#_09F6C5: dw Item_A7_name
+#_09F6C7: dw Item_A8_name
+#_09F6C9: dw Item_A9_name
+#_09F6CB: dw Item_AA_name
+#_09F6CD: dw Item_AB_name
+#_09F6CF: dw Item_AC_name
+#_09F6D1: dw Item_AD_name
+#_09F6D3: dw Item_AE_name
+#_09F6D5: dw Item_AF_name
+#_09F6D7: dw Item_B0_name
+#_09F6D9: dw Item_B1_name
+#_09F6DB: dw Item_B2_name
+#_09F6DD: dw Item_B3_name
+#_09F6DF: dw Item_B4_name
+#_09F6E1: dw Item_B5_name
+#_09F6E3: dw Item_B6_name
+#_09F6E5: dw Item_B7_name
+#_09F6E7: dw Item_B8_name
+#_09F6E9: dw Item_B9_name
+#_09F6EB: dw Item_BA_name
+#_09F6ED: dw Item_BB_name
+#_09F6EF: dw Item_BC_name
+#_09F6F1: dw Item_BD_name
+#_09F6F3: dw Item_BE_name
+#_09F6F5: dw Item_BF_name
+#_09F6F7: dw Item_C0_name
+#_09F6F9: dw Item_C1_name
+#_09F6FB: dw Item_C2_name
+#_09F6FD: dw Item_C3_name
+#_09F6FF: dw Item_C4_name
+#_09F701: dw Item_C5_name
+#_09F703: dw Item_C6_name
+#_09F705: dw Item_C7_name
+#_09F707: dw Item_C8_name
+#_09F709: dw Item_C9_name
+#_09F70B: dw Item_CA_name
+#_09F70D: dw Item_CB_name
+#_09F70F: dw Item_CC_name
+#_09F711: dw Item_CD_name
+#_09F713: dw Item_CE_name
+#_09F715: dw Item_CF_name
+#_09F717: dw Item_D0_name
+#_09F719: dw Item_D1_name
+#_09F71B: dw Item_D2_name
+#_09F71D: dw Item_D3_name
+#_09F71F: dw Item_D4_name
+#_09F721: dw Item_D5_name
+#_09F723: dw Item_D6_name
+#_09F725: dw Item_D7_name
+#_09F727: dw Item_D8_name
+#_09F729: dw Item_D9_name
+#_09F72B: dw Item_DA_name
+#_09F72D: dw Item_DB_name
+#_09F72F: dw Item_DC_name
+#_09F731: dw Item_DD_name
+#_09F733: dw Item_DE_name
+#_09F735: dw Item_DF_name
+#_09F737: dw Item_E0_name
+#_09F739: dw Item_E1_name
+#_09F73B: dw Item_E2_name
+#_09F73D: dw Item_E3_name
+#_09F73F: dw Item_E4_name
+#_09F741: dw Item_E5_name
+#_09F743: dw Item_E6_name
+#_09F745: dw Item_E7_name
+#_09F747: dw Item_E8_name
+#_09F749: dw Item_E9_name
+#_09F74B: dw Item_EA_name
+#_09F74D: dw Item_EB_name
+#_09F74F: dw Item_EC_name
+#_09F751: dw Item_ED_name
+#_09F753: dw Item_EE_name
+#_09F755: dw Item_EF_name
+#_09F757: dw Item_F0_name
+#_09F759: dw Item_F1_name
+#_09F75B: dw Item_F2_name
+#_09F75D: dw Item_F3_name
+#_09F75F: dw Item_F4_name
+#_09F761: dw Item_F5_name
+#_09F763: dw Item_F6_name
+#_09F765: dw Item_F7_name
+#_09F767: dw Item_F8_name
+#_09F769: dw Item_F9_name
+#_09F76B: dw Item_FA_name
+#_09F76D: dw Item_FB_name
+#_09F76F: dw Item_FC_name
+#_09F771: dw Item_FD_name
+#_09F773: dw Item_FE_name
+#_09F775: dw Item_FF_name
+#_09F777: dw Item_terminator
 
 ;---------------------------------------------------------------------------------------------------
 
 ; ーーーーーーーー
-item_terminator:
+Item_terminator:
 #_09F779: db $5A, $5A, $5A, $5A, $5A, $5A, $5A, $5A, $FF
 
 ;===================================================================================================
 
-; TODO handle this table and stuff
 DrinkNamePointers:
-#_09F782: dw drink_00_name
-#_09F784: dw drink_01_name
-#_09F786: dw drink_02_name
-#_09F788: dw drink_03_name
-#_09F78A: dw drink_04_name
-#_09F78C: dw drink_05_name
-#_09F78E: dw drink_06_name
-#_09F790: dw drink_07_name
-#_09F792: dw drink_08_name
+#_09F782: dw Drink_00_name
+#_09F784: dw Drink_01_name
+#_09F786: dw Drink_02_name
+#_09F788: dw Drink_03_name
+#_09F78A: dw Drink_04_name
+#_09F78C: dw Drink_05_name
+#_09F78E: dw Drink_06_name
+#_09F790: dw Drink_07_name
+#_09F792: dw Drink_08_name
 
 ;===================================================================================================
 

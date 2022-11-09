@@ -2920,8 +2920,8 @@ DungeonChestLocations:
 ; byte 5: high nibble mag bonus, low nibble vit bonus
 ; byte 6: high nibble spd bonus, low nibble luk bonus
 ; byte 7: 
-; byte 8: something with curse?
-; byte 9: something with curse?
+; byte 8: status affliction
+; byte 9: status affliction
 ; byte A: 
 ; byte B: 
 EquipmentStats:

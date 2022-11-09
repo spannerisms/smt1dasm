@@ -262,10 +262,10 @@ routine038176:
 #_03819D: AND.w #$00FF
 #_0381A0: STA.w $0A39
 
-#_0381A3: LDA.w #data08FF9B
+#_0381A3: LDA.w #TerminalDestinationNamePointers
 #_0381A6: STA.w $00C3
 
-#_0381A9: JSR WriteTextIndexW0A39
+#_0381A9: JSR WriteIndexedEntityNameToBuffer
 #_0381AC: JSR routine0384F9
 #_0381AF: JSL RunFramesUntil0100IsFlagged
 
@@ -301,13 +301,13 @@ routine0381DC:
 #_0381E1: AND.w #$00FF
 #_0381E4: STA.w $0A39
 
-#_0381E7: LDA.w #data08FF9B
+#_0381E7: LDA.w #TerminalDestinationNamePointers
 #_0381EA: STA.w $00C3
 
 #_0381ED: LDA.w #$0008
 #_0381F0: STA.w $00C5
 
-#_0381F3: JSR WriteTextIndexW0A39
+#_0381F3: JSR WriteIndexedEntityNameToBuffer
 
 #_0381F6: RTS
 
@@ -784,107 +784,107 @@ data038423:
 
 ;===================================================================================================
 
-; TODO unmerge higher text commands
 TextCommands:
-#_038425: dw TextCommand_00_SetProgressBit             ; 0xD0
-#_038427: dw TextCommand_01_ClearProgressBit           ; 0xD1
-#_038429: dw TextCommand_02                            ; 0xD2
-#_03842B: dw TextCommand_03_RelocateTextPointer        ; 0xD3
-#_03842D: dw TextCommand_04                            ; 0xD4
-#_03842F: dw TextCommand_05_WriteToAPU                 ; 0xD5
-#_038431: dw TextCommand_06                            ; 0xD6
-#_038433: dw TextCommand_07                            ; 0xD7
-#_038435: dw TextCommand_08                            ; 0xD8
-#_038437: dw TextCommand_09_CheckYENForNextMessage     ; 0xD9
-#_038439: dw TextCommand_0A_GiveMoney                  ; 0xDA
-#_03843B: dw TextCommand_0B_CheckMAGForNextMessage     ; 0xDB
-#_03843D: dw TextCommand_0C_AddMAG                     ; 0xDC
-#_03843F: dw TextCommand_0D_CheckInventoryForItem      ; 0xDD
-#_038441: dw TextCommand_0E                            ; 0xDE
-#_038443: dw TextCommand_0F_Wait7Frames                ; 0xDF
-#_038445: dw TextCommand_10_SetSpellMaybe              ; 0xE0
-#_038447: dw TextCommand_11                            ; 0xE1
-#_038449: dw TextCommand_12                            ; 0xE2
-#_03844B: dw TextCommand_13                            ; 0xE3
-#_03844D: dw TextCommand_14_LoadDemonData              ; 0xE4
-#_03844F: dw TextCommand_15                            ; 0xE5
-#_038451: dw TextCommand_16                            ; 0xE6
-#_038453: dw TextCommand_17                            ; 0xE7
-#_038455: dw TextCommand_18                            ; 0xE8
-#_038457: dw TextCommand_19                            ; 0xE9
-#_038459: dw TextCommand_1A                            ; 0xEA
-#_03845B: dw TextCommand_1B                            ; 0xEB
-#_03845D: dw TextCommand_1C                            ; 0xEC
-#_03845F: dw TextCommand_1D_WriteMomoName              ; 0xED
-#_038461: dw TextCommand_1E_WriteJimmyName             ; 0xEE
-#_038463: dw TextCommand_1F_Write_him_Name             ; 0xEF
-#_038465: dw TextCommand_20_WriteChaseName             ; 0xF0
-#_038467: dw TextCommand_21                            ; 0xF1
-#_038469: dw TextCommand_22                            ; 0xF2
-#_03846B: dw TextCommand_23                            ; 0xF3
-#_03846D: dw TextCommand_24                            ; 0xF4
-#_03846F: dw TextCommand_25                            ; 0xF5
-#_038471: dw TextCommand_26                            ; 0xF6
-#_038473: dw TextCommand_27_RNGDecision                ; 0xF7
-#_038475: dw TextCommand_28                            ; 0xF8
-#_038477: dw TextCommand_29                            ; 0xF9
-#_038479: dw TextCommand_2A                            ; 0xFA
-#_03847B: dw TextCommand_2B                            ; 0xFB
-#_03847D: dw TextCommand_2C                            ; 0xFC
-#_03847F: dw TextCommand_2D                            ; 0xFD
-#_038481: dw TextCommand_2E                            ; 0xFE
-#_038483: dw TextCommand_2F                            ; 0xFF
+#_038425: dw TextCommand_SetProgressBit             ; 0xD0
+#_038427: dw TextCommand_ClearProgressBit           ; 0xD1
+#_038429: dw TextCommand_RelocateIfProgressFlag     ; 0xD2
+#_03842B: dw TextCommand_RelocateTextPointer        ; 0xD3
+#_03842D: dw TextCommand_SetTextBoxSize             ; 0xD4
+#_03842F: dw TextCommand_WriteToAPU                 ; 0xD5
+#_038431: dw TextCommand_AddOrRemoveSprite          ; 0xD6
+#_038433: dw TextCommand_LoadScene                  ; 0xD7
+#_038435: dw TextCommand_OptionsList                ; 0xD8
+#_038437: dw TextCommand_CheckYENForNextMessage     ; 0xD9
+#_038439: dw TextCommand_GiveMoney                  ; 0xDA
+#_03843B: dw TextCommand_CheckMAGForNextMessage     ; 0xDB
+#_03843D: dw TextCommand_AddMAG                     ; 0xDC
+#_03843F: dw TextCommand_CheckInventoryForItem      ; 0xDD
+#_038441: dw TextCommand_0E                         ; 0xDE
+#_038443: dw TextCommand_Wait7Frames                ; 0xDF
+#_038445: dw TextCommand_SetSpellID                 ; 0xE0
+#_038447: dw TextCommand_SetItemID                  ; 0xE1
+#_038449: dw TextCommand_12                         ; 0xE2
+#_03844B: dw TextCommand_13                         ; 0xE3
+#_03844D: dw TextCommand_LoadDemonData              ; 0xE4
+#_03844F: dw TextCommand_15                         ; 0xE5
+#_038451: dw TextCommand_16                         ; 0xE6
+#_038453: dw TextCommand_17                         ; 0xE7
+#_038455: dw TextCommand_WriteDemon1Name            ; 0xE8
+#_038457: dw TextCommand_19                         ; 0xE9
+#_038459: dw TextCommand_1A                         ; 0xEA
+#_03845B: dw TextCommand_1B                         ; 0xEB
+#_03845D: dw TextCommand_1C                         ; 0xEC
+#_03845F: dw TextCommand_WriteMomoName              ; 0xED
+#_038461: dw TextCommand_WriteJimmyName             ; 0xEE
+#_038463: dw TextCommand_Write_him_Name             ; 0xEF
+#_038465: dw TextCommand_WriteChaseName             ; 0xF0
+#_038467: dw TextCommand_21                         ; 0xF1
+#_038469: dw TextCommand_WriteCommonPhrase          ; 0xF2
+#_03846B: dw TextCommand_WriteItemName              ; 0xF3
+#_03846D: dw TextCommand_WriteSpellName             ; 0xF4
+#_03846F: dw TextCommand_WriteDemon0Name            ; 0xF5
+#_038471: dw TextCommand_WriteClassName             ; 0xF6
+#_038473: dw TextCommand_RNGDecision                ; 0xF7
+#_038475: dw TextCommand_YesOrNoPrompt              ; 0xF8
+#_038477: dw TextCommand_29                         ; 0xF9
+#_038479: dw TextCommand_ClearMessageBox            ; 0xFA
+#_03847B: dw TextCommand_Write32BitInteger          ; 0xFB
+#_03847D: dw TextCommand_WaitForKey                 ; 0xFC
+#_03847F: dw TextCommand_2D                         ; 0xFD
+#_038481: dw TextCommand_ExtendedTextCommand        ; 0xFE
+#_038483: dw TerminateMessage                       ; 0xFF
 
 ;---------------------------------------------------------------------------------------------------
-
-#_038485: dw TextCommand_30                            ; 0xD0
-#_038487: dw TextCommand_31                            ; 0xD1
-#_038489: dw TextCommand_32                            ; 0xD2
-#_03848B: dw TextCommand_33                            ; 0xD3
-#_03848D: dw TextCommand_34                            ; 0xD4
-#_03848F: dw TextCommand_35                            ; 0xD5
-#_038491: dw TextCommand_36                            ; 0xD6
-#_038493: dw TextCommand_37                            ; 0xD7
-#_038495: dw TextCommand_38                            ; 0xD8
-#_038497: dw TextCommand_39                            ; 0xD9
-#_038499: dw TextCommand_2E                            ; 0xDA
-#_03849B: dw TextCommand_3B                            ; 0xDB
-#_03849D: dw TextCommand_3C                            ; 0xDC
-#_03849F: dw TextCommand_3D                            ; 0xDD
-#_0384A1: dw TextCommand_3E                            ; 0xDE
-#_0384A3: dw TextCommand_3F                            ; 0xDF
-#_0384A5: dw TextCommand_40                            ; 0xE0
-#_0384A7: dw TextCommand_41                            ; 0xE1
-#_0384A9: dw TextCommand_42                            ; 0xE2
-#_0384AB: dw TextCommand_43                            ; 0xE3
-#_0384AD: dw TextCommand_44                            ; 0xE4
-#_0384AF: dw TextCommand_45                            ; 0xE5
-#_0384B1: dw TextCommand_46                            ; 0xE6
-#_0384B3: dw TextCommand_47                            ; 0xE7
-#_0384B5: dw TextCommand_48                            ; 0xE8
-#_0384B7: dw TextCommand_03_RelocateTextPointer        ; 0xE9
-#_0384B9: dw TextCommand_05_WriteToAPU                 ; 0xEA
-#_0384BB: dw TextCommand_22                            ; 0xEB
-#_0384BD: dw TextCommand_23                            ; 0xEC
-#_0384BF: dw TextCommand_4D                            ; 0xED
-#_0384C1: dw TextCommand_4E                            ; 0xEE
-#_0384C3: dw TextCommand_28                            ; 0xEF
-#_0384C5: dw TextCommand_29                            ; 0xF0
-#_0384C7: dw TextCommand_2A                            ; 0xF1
-#_0384C9: dw TextCommand_08                            ; 0xF2
-#_0384CB: dw TextCommand_2C                            ; 0xF3
-#_0384CD: dw TextCommand_2B                            ; 0xF4
-#_0384CF: dw TextCommand_55                            ; 0xF5
-#_0384D1: dw TextCommand_56                            ; 0xF6
-#_0384D3: dw TextCommand_57                            ; 0xF7
-#_0384D5: dw TextCommand_20_WriteChaseName             ; 0xF8
-#_0384D7: dw TextCommand_59                            ; 0xF9
-#_0384D9: dw TextCommand_5A                            ; 0xFA
-#_0384DB: dw TextCommand_5B                            ; 0xFB
-#_0384DD: dw TextCommand_02                            ; 0xFC
-#_0384DF: dw TextCommand_5D                            ; 0xFD
-#_0384E1: dw TextCommand_5E                            ; 0xFE
-#_0384E3: dw TextCommand_2F                            ; 0xFF
+; Battle message commands
+;---------------------------------------------------------------------------------------------------
+#_038485: dw TextCommand_30                         ; 0xD0
+#_038487: dw TextCommand_31                         ; 0xD1
+#_038489: dw TextCommand_32                         ; 0xD2
+#_03848B: dw TextCommand_33                         ; 0xD3
+#_03848D: dw TextCommand_34                         ; 0xD4
+#_03848F: dw TextCommand_35                         ; 0xD5
+#_038491: dw TextCommand_36                         ; 0xD6
+#_038493: dw TextCommand_37                         ; 0xD7
+#_038495: dw TextCommand_38                         ; 0xD8
+#_038497: dw TextCommand_39                         ; 0xD9
+#_038499: dw TextCommand_ExtendedTextCommand        ; 0xDA
+#_03849B: dw TextCommand_3B                         ; 0xDB
+#_03849D: dw TextCommand_3C                         ; 0xDC
+#_03849F: dw TextCommand_3D                         ; 0xDD
+#_0384A1: dw TextCommand_3E                         ; 0xDE
+#_0384A3: dw TextCommand_InflictStatus              ; 0xDF
+#_0384A5: dw TextCommand_40                         ; 0xE0
+#_0384A7: dw TextCommand_RemoveFractionOfHP         ; 0xE1
+#_0384A9: dw TextCommand_42                         ; 0xE2
+#_0384AB: dw TextCommand_43                         ; 0xE3
+#_0384AD: dw TextCommand_44                         ; 0xE4
+#_0384AF: dw TextCommand_45                         ; 0xE5
+#_0384B1: dw TextCommand_46                         ; 0xE6
+#_0384B3: dw TextCommand_PickRandomOf4Messages      ; 0xE7
+#_0384B5: dw TextCommand_48                         ; 0xE8
+#_0384B7: dw TextCommand_RelocateTextPointer        ; 0xE9
+#_0384B9: dw TextCommand_WriteToAPU                 ; 0xEA
+#_0384BB: dw TextCommand_WriteCommonPhrase          ; 0xEB
+#_0384BD: dw TextCommand_WriteItemName              ; 0xEC
+#_0384BF: dw TextCommand_4D                         ; 0xED
+#_0384C1: dw TextCommand_4E                         ; 0xEE
+#_0384C3: dw TextCommand_YesOrNoPrompt              ; 0xEF
+#_0384C5: dw TextCommand_29                         ; 0xF0
+#_0384C7: dw TextCommand_ClearMessageBox            ; 0xF1
+#_0384C9: dw TextCommand_OptionsList                ; 0xF2
+#_0384CB: dw TextCommand_WaitForKey                 ; 0xF3
+#_0384CD: dw TextCommand_Write32BitInteger          ; 0xF4
+#_0384CF: dw TextCommand_55                         ; 0xF5
+#_0384D1: dw TextCommand_AskForItemOrMoney          ; 0xF6
+#_0384D3: dw TextCommand_57                         ; 0xF7
+#_0384D5: dw TextCommand_WriteChaseName             ; 0xF8
+#_0384D7: dw TextCommand_59                         ; 0xF9
+#_0384D9: dw TextCommand_5A                         ; 0xFA
+#_0384DB: dw TextCommand_SetOrClearProgressFlag     ; 0xFB
+#_0384DD: dw TextCommand_RelocateIfProgressFlag     ; 0xFC
+#_0384DF: dw TextCommand_5D                         ; 0xFD
+#_0384E1: dw TextCommand_5E                         ; 0xFE
+#_0384E3: dw TerminateMessage                       ; 0xFF
 
 ;===================================================================================================
 ; TODO timers?
@@ -1085,8 +1085,9 @@ DakutenBaseKatakana:
 #_0385C7: db $7A
 
 ;===================================================================================================
-
-WriteSingleCharacterTo0900:
+; Writes unencoded tiles
+;===================================================================================================
+WriteSingleTileToMessageBuffer:
 #_0385C8: PHX
 #_0385C9: PHP
 
@@ -1138,7 +1139,7 @@ GetNextTextByte:
 
 ;===================================================================================================
 
-TextCommand_00_SetProgressBit:
+TextCommand_SetProgressBit:
 #_0385FD: SEP #$30
 
 #_0385FF: JSR GetNextTextByte
@@ -1193,7 +1194,7 @@ TextCommand_ResetBit:
 
 ;===================================================================================================
 
-TextCommand_01_ClearProgressBit:
+TextCommand_ClearProgressBit:
 #_038631: SEP #$30
 
 #_038633: JSR GetNextTextByte
@@ -1239,20 +1240,20 @@ ClearGameProgressBit_long:
 ;===================================================================================================
 ; relocate text pointer if condition met
 ;===================================================================================================
-TextCommand_5C:
-TextCommand_02:
+TextCommand_RelocateIfProgressFlag:
 #_038653: SEP #$30
 
 #_038655: JSR GetNextTextByte
 
 #_038658: JSL TestGameProgressBit
-#_03865C: BCC .dontrelocate
+#_03865C: BCC .dont_relocate
 
 #_03865E: JSR GetNextTextByte
 #_038661: JSR RelocateTextPointer
+
 #_038664: RTS
 
-.dontrelocate
+.dont_relocate
 #_038665: JSR GetNextTextByte
 
 #_038668: RTS
@@ -1260,8 +1261,7 @@ TextCommand_02:
 ;===================================================================================================
 ; relocate text pointer always
 ;===================================================================================================
-TextCommand_49_RelocateTextPointer:
-TextCommand_03_RelocateTextPointer:
+TextCommand_RelocateTextPointer:
 #_038669: SEP #$20 ; SEP #$30
 #_03866B: SEP #$10
 
@@ -1272,7 +1272,7 @@ TextCommand_03_RelocateTextPointer:
 
 ;===================================================================================================
 
-TextCommand_04:
+TextCommand_SetTextBoxSize:
 #_038674: PHP
 #_038675: REP #$30
 
@@ -1309,7 +1309,7 @@ TextCommand_04:
 #_03869C: DEC A
 
 #_03869D: JSL routine02CBD1
-#_0386A1: JSR TextCommand_2A
+#_0386A1: JSR TextCommand_ClearMessageBox
 
 #_0386A4: PLP
 
@@ -1317,7 +1317,7 @@ TextCommand_04:
 
 ;===================================================================================================
 
-TextCommand_05_WriteToAPU:
+TextCommand_WriteToAPU:
 #_0386A6: SEP #$30
 
 #_0386A8: JSR GetNextTextByte
@@ -1348,7 +1348,7 @@ TextCommand_05_WriteToAPU:
 
 ;===================================================================================================
 
-TextCommand_06:
+TextCommand_AddOrRemoveSprite:
 #_0386C6: SEP #$20
 
 #_0386C8: JSR GetNextTextByte
@@ -1368,11 +1368,12 @@ TextCommand_06:
 
 .deleting_sprite
 #_0386E4: JSL routine02E6C9
+
 #_0386E8: RTS
 
 ;===================================================================================================
 
-TextCommand_07:
+TextCommand_LoadScene:
 #_0386E9: SEP #$30
 
 #_0386EB: STZ.w $0CF3
@@ -1414,7 +1415,7 @@ TextCommand_07:
 
 ;===================================================================================================
 
-TextCommand_08:
+TextCommand_OptionsList:
 #_038721: SEP #$30
 
 #_038723: JSR routine0384F9
@@ -1629,7 +1630,7 @@ routine0387FF:
 #_03884E: LDA.w $0B3D
 #_038851: STA.w $0E11
 
-#_038854: JSR Multiply_0E10_by_0E11
+#_038854: JSR SmallMultiplication
 
 #_038857: LDA.w $0E12
 #_03885A: CLC
@@ -1639,7 +1640,7 @@ routine0387FF:
 #_03885F: LDA.w $0B61,Y
 #_038862: JSR RelocateTextPointer
 #_038865: JSR routine038B8E
-#_038868: JSR TextCommand_2A
+#_038868: JSR TextCommand_ClearMessageBox
 
 #_03886B: SEP #$20
 #_03886D: STZ.w $0A33
@@ -1650,7 +1651,7 @@ routine0387FF:
 #_038873: JSR routine038B8E
 
 #_038876: SEP #$20
-#_038878: JSR TextCommand_2A
+#_038878: JSR TextCommand_ClearMessageBox
 
 #_03887B: SEP #$20
 
@@ -1723,7 +1724,7 @@ routine0388AD:
 #_0388CA: LDA.w .pointers,Y
 #_0388CD: STA.w $00C3
 
-#_0388D0: JSR WriteTextIndexW0A39
+#_0388D0: JSR WriteIndexedEntityNameToBuffer
 
 #_0388D3: PLP
 #_0388D4: RTS
@@ -1737,25 +1738,25 @@ routine0388AD:
 ; if N > Money
 ;   relocate
 ;===================================================================================================
-TextCommand_09_CheckYENForNextMessage:
+TextCommand_CheckYENForNextMessage:
 #_0388D9: REP #$20
 
 #_0388DB: JSR TextRead32bitfrom24
 
 #_0388DE: LDA.w $0E02
 #_0388E1: CMP.w $0407
-#_0388E4: BCC .dontrelocate
+#_0388E4: BCC .dont_relocate
 
 #_0388E6: LDA.w $0405
 #_0388E9: CMP.w $0E00
-#_0388EC: BCS .dontrelocate
+#_0388EC: BCS .dont_relocate
 
 #_0388EE: JSR GetNextTextByte
 #_0388F1: JSR RelocateTextPointer
 
 #_0388F4: RTS
 
-.dontrelocate
+.dont_relocate
 #_0388F5: JSR GetNextTextByte
 
 #_0388F8: RTS
@@ -1763,7 +1764,7 @@ TextCommand_09_CheckYENForNextMessage:
 ;===================================================================================================
 ; Read a 24 bit number, then add that to money
 ;===================================================================================================
-TextCommand_0A_GiveMoney:
+TextCommand_GiveMoney:
 #_0388F9: SEP #$20
 
 #_0388FB: JSR TextRead32bitfrom24
@@ -1819,18 +1820,18 @@ TextRead32bitfrom24:
 ; If MAG<X
 ;   relocate
 ;===================================================================================================
-TextCommand_0B_CheckMAGForNextMessage:
+TextCommand_CheckMAGForNextMessage:
 #_03893D: REP #$20
 
 #_03893F: JSR TextRead32bitfrom24
 
 #_038942: LDA.w $040B
 #_038945: CMP.w $0E02
-#_038948: BCS .dontrelocate
+#_038948: BCS .dont_relocate
 
 #_03894A: LDA.w $0409
 #_03894D: CMP.w $0E00
-#_038950: BCS .dontrelocate
+#_038950: BCS .dont_relocate
 
 #_038952: SEP #$20
 
@@ -1839,7 +1840,7 @@ TextCommand_0B_CheckMAGForNextMessage:
 
 #_03895A: RTS
 
-.dontrelocate
+.dont_relocate
 #_03895B: JSR GetNextTextByte
 
 #_03895E: RTS
@@ -1847,7 +1848,7 @@ TextCommand_0B_CheckMAGForNextMessage:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-TextCommand_0C_AddMAG:
+TextCommand_AddMAG:
 #_03895F: REP #$20
 
 #_038961: JSR TextRead32bitfrom24
@@ -1867,7 +1868,7 @@ TextCommand_0C_AddMAG:
 
 ;===================================================================================================
 
-TextCommand_0D_CheckInventoryForItem:
+TextCommand_CheckInventoryForItem:
 #_03897C: SEP #$30
 
 #_03897E: JSR GetNextTextByte
@@ -1910,7 +1911,7 @@ TextCommand_0E:
 
 ;===================================================================================================
 
-TextCommand_0F_Wait7Frames:
+TextCommand_Wait7Frames:
 #_0389BE: JSR routine0384F9
 
 #_0389C1: SEP #$30
@@ -1923,7 +1924,7 @@ TextCommand_0F_Wait7Frames:
 ;===================================================================================================
 ; TODO
 ;===================================================================================================
-TextCommand_10_SetSpellMaybe:
+TextCommand_SetSpellID:
 #_0389CA: SEP #$20
 
 #_0389CC: JSR GetNextTextByte
@@ -1934,7 +1935,7 @@ TextCommand_10_SetSpellMaybe:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-TextCommand_11:
+TextCommand_SetItemID:
 #_0389D3: REP #$20
 
 #_0389D5: JSR GetNextTextByte
@@ -2129,7 +2130,7 @@ routine038A9A:
 #_038AF8: STA.w $0E10
 #_038AFB: LDA.w $0B3D
 #_038AFE: STA.w $0E11
-#_038B01: JSR Multiply_0E10_by_0E11
+#_038B01: JSR SmallMultiplication
 #_038B04: LDA.w $0E12
 #_038B07: CLC
 #_038B08: ADC.w $09F3
@@ -2178,7 +2179,7 @@ routine038A9A:
 #_038B6A: STA.w $0A56
 #_038B6D: JSR routine038B8E
 #_038B70: JSR GetNextTextByte
-#_038B73: JSR TextCommand_2A
+#_038B73: JSR TextCommand_ClearMessageBox
 
 #_038B76: SEP #$20
 
@@ -2195,7 +2196,7 @@ routine038A9A:
 
 #_038B80: JSR GetNextTextByte
 #_038B83: JSR RelocateTextPointer
-#_038B86: JSR TextCommand_2A
+#_038B86: JSR TextCommand_ClearMessageBox
 
 #_038B89: SEP #$20
 
@@ -2506,8 +2507,8 @@ routine038D1C:
 
 .branch038D32
 #_038D32: SEP #$20
-#_038D34: LDA.b #$CF
-#_038D36: JSL WriteSingleCharacterTo0900
+#_038D34: LDA.b #$CF ; space
+#_038D36: JSL WriteSingleTileToMessageBuffer
 #_038D3A: DEY
 #_038D3B: BNE .branch038D32
 
@@ -2516,12 +2517,12 @@ routine038D1C:
 #_038D43: BCC .branch038D4C
 
 #_038D45: LDA.b #$5C ; Macca symbol
-#_038D47: JSL WriteSingleCharacterTo0900
+#_038D47: JSL WriteSingleTileToMessageBuffer
 #_038D4B: RTS
 
 .branch038D4C
 #_038D4C: LDA.b #$5B ; Yen symbol
-#_038D4E: JSL WriteSingleCharacterTo0900
+#_038D4E: JSL WriteSingleTileToMessageBuffer
 #_038D52: RTS
 
 ;===================================================================================================
@@ -2551,8 +2552,8 @@ routine038D53:
 #_038D7A: JSL routine03D775
 
 #_038D7E: SEP #$20
-#_038D80: LDA.b #$01
-#_038D82: JSL WriteSingleCharacterTo0900
+#_038D80: LDA.b #$01 ; 0
+#_038D82: JSL WriteSingleTileToMessageBuffer
 
 #_038D86: REP #$30
 #_038D88: PLB
@@ -2600,7 +2601,7 @@ routine038D8F:
 TextCommand_13:
 #_038DB9: SEP #$30
 
-#_038DBB: JSL RearrangeItems
+#_038DBB: JSL CountAndArrangeGemsOrSomething
 #_038DBF: LDX.b #$00
 #_038DC1: STX.w $0C51
 
@@ -2647,7 +2648,7 @@ TextCommand_13:
 #_038E00: CMP.w #$FFFF
 #_038E03: BEQ .branch038E20
 
-#_038E05: JSL routine0F95FC
+#_038E05: JSL CheckItemForCurses
 #_038E09: BCS .branch038E20
 
 #_038E0B: PHX
@@ -2769,9 +2770,8 @@ routine038E6D:
 #_038EE4: RTS
 
 ;===================================================================================================
-; 
-;===================================================================================================
-TextCommand_14_LoadDemonData:
+
+TextCommand_LoadDemonData:
 #_038EE5: SEP #$20
 
 #_038EE7: JSR GetNextTextByte
@@ -2883,7 +2883,7 @@ routine038F56:
 #_038F97: LDA.w #$0002
 #_038F9A: STA.w $0A1C
 #_038F9D: STZ.w $0A28
-#_038FA0: JSR TextCommand_2A
+#_038FA0: JSR TextCommand_ClearMessageBox
 #_038FA3: LDA.w #$0003
 #_038FA6: STA.w $0A2A
 #_038FA9: STA.w $0E00
@@ -2947,11 +2947,11 @@ TextCommand_17:
 
 ;===================================================================================================
 
-TextCommand_18:
+TextCommand_WriteDemon1Name:
 #_039014: REP #$20
 
 #_039016: LDA.w $050C
-#_039019: JMP routine03925C
+#_039019: JMP WriteDemonNameToBuffer
 
 ;===================================================================================================
 
@@ -3097,12 +3097,14 @@ TextCommand_1C:
 #_039112: PHA
 
 #_039113: SEP #$20
-#_039115: LDA.b #$09
+
+#_039115: LDA.b #DemonNamePointers>>16
 #_039117: STA.w $00C5
 
 #_03911A: REP #$20
+
 #_03911C: PLA
-#_03911D: JMP routine03925C
+#_03911D: JMP WriteDemonNameToBuffer
 
 .branch039120
 #_039120: AND.w #$000F
@@ -3111,7 +3113,7 @@ TextCommand_1C:
 
 ;===================================================================================================
 
-TextCommand_1D_WriteMomoName:
+TextCommand_WriteMomoName:
 #_039128: SEP #$20
 
 #_03912A: LDA.b #$01
@@ -3121,7 +3123,7 @@ TextCommand_1D_WriteMomoName:
 
 ;===================================================================================================
 
-TextCommand_1E_WriteJimmyName:
+TextCommand_WriteJimmyName:
 #_039131: SEP #$20
 
 #_039133: LDA.b #$02
@@ -3131,14 +3133,14 @@ TextCommand_1E_WriteJimmyName:
 
 ;===================================================================================================
 
-TextCommand_1F_Write_him_Name_long:
-#_03913A: JSR TextCommand_1F_Write_him_Name
+TextCommand_Write_him_Name_long:
+#_03913A: JSR TextCommand_Write_him_Name
 
 #_03913D: RTL
 
 ;===================================================================================================
 
-TextCommand_1F_Write_him_Name:
+TextCommand_Write_him_Name:
 #_03913E: SEP #$20
 
 #_039140: LDA.b #$03
@@ -3148,7 +3150,7 @@ TextCommand_1F_Write_him_Name:
 
 ;===================================================================================================
 
-TextCommand_20_WriteChaseName:
+TextCommand_WriteChaseName:
 #_039147: SEP #$20
 
 #_039149: LDA.b #$00
@@ -3233,7 +3235,7 @@ TextCommand_21:
 
 ;===================================================================================================
 
-TextCommand_22:
+TextCommand_WriteCommonPhrase:
 #_0391B0: SEP #$30
 #_0391B2: INC.w $0A3D
 #_0391B5: JSR GetNextTextByte
@@ -3285,13 +3287,13 @@ TextCommand_22:
 
 ;===================================================================================================
 
-TextCommand_23_long:
-#_039214: JSR TextCommand_23
+TextCommand_WriteItemName_long:
+#_039214: JSR TextCommand_WriteItemName
 #_039217: RTL
 
 ;===================================================================================================
 
-TextCommand_23:
+TextCommand_WriteItemName:
 #_039218: SEP #$20
 #_03921A: LDA.b #ItemNamePointers>>16
 #_03921C: STA.w $00C5
@@ -3302,12 +3304,12 @@ TextCommand_23:
 #_039227: STA.w $0A39
 #_03922A: LDA.w #ItemNamePointers>>0
 #_03922D: STA.w $00C3
-#_039230: JSR WriteTextIndexW0A39
+#_039230: JSR WriteIndexedEntityNameToBuffer
 #_039233: RTS
 
 ;===================================================================================================
 
-TextCommand_24:
+TextCommand_WriteSpellName:
 #_039234: SEP #$20
 #_039236: LDA.b #SkillNamePointers>>16
 #_039238: STA.w $00C5
@@ -3318,12 +3320,12 @@ TextCommand_24:
 #_039243: STA.w $0A39
 #_039246: LDA.w #SkillNamePointers>>0
 #_039249: STA.w $00C3
-#_03924C: JSR WriteTextIndexW0A39
+#_03924C: JSR WriteIndexedEntityNameToBuffer
 #_03924F: RTS
 
 ;===================================================================================================
 
-TextCommand_25:
+TextCommand_WriteDemon0Name:
 #_039250: SEP #$20
 #_039252: LDA.b #DemonNamePointers>>16
 #_039254: STA.w $00C5
@@ -3331,8 +3333,11 @@ TextCommand_25:
 #_039257: REP #$20
 #_039259: LDA.w $050A
 
-routine03925C:
+;---------------------------------------------------------------------------------------------------
+
+WriteDemonNameToBuffer:
 #_03925C: STA.w $0A39
+
 #_03925F: CMP.w #$0100
 #_039262: BCS .boss_name
 
@@ -3340,18 +3345,21 @@ routine03925C:
 
 .branch039267
 #_039267: STA.w $00C3
-#_03926A: JSR WriteTextIndexW0A39
+
+#_03926A: JSR WriteIndexedEntityNameToBuffer
+
 #_03926D: RTS
 
 .boss_name
 #_03926E: AND.w #$00FF
 #_039271: STA.w $0A39
+
 #_039274: LDA.w #BossNamePointers>>0
 #_039277: BRA .branch039267
 
 ;===================================================================================================
 
-TextCommand_26:
+TextCommand_WriteClassName:
 #_039279: SEP #$20
 #_03927B: LDA.b #ClassNamePointers>>16
 #_03927D: STA.w $00C5
@@ -3362,13 +3370,13 @@ TextCommand_26:
 #_039288: STA.w $0A39
 #_03928B: LDA.w #ClassNamePointers>>0
 #_03928E: STA.w $00C3
-#_039291: JSR WriteTextIndexW0A39
+#_039291: JSR WriteIndexedEntityNameToBuffer
 #_039294: RTS
 
 ;===================================================================================================
 ; Uses RNG to determine if there should be a change
 ;===================================================================================================
-TextCommand_27_RNGDecision:
+TextCommand_RNGDecision:
 #_039295: SEP #$20
 #_039297: SEP #$10
 
@@ -3405,26 +3413,31 @@ routine0392C1_long:
 
 routine0392C1:
 #_0392C1: REP #$30
+
 #_0392C3: INC.w $0E00
 
-.branch0392C6
+.wait
 #_0392C6: REP #$30
+
 #_0392C8: LDA.w $0A2A
 #_0392CB: CMP.w $0E00
-#_0392CE: BCC .branch0392D1
+#_0392CE: BCC .continue
 
 #_0392D0: RTS
 
-.branch0392D1
+.continue
 #_0392D1: LDA.w $0A2A
+
 #_0392D4: JSL routine00BA70
 #_0392D8: JSL AddSelfAsVector
+
 #_0392DC: INC.w $0A2A
-#_0392DF: BRA .branch0392C6
+
+#_0392DF: BRA .wait
 
 ;===================================================================================================
 
-TextCommand_28:
+TextCommand_YesOrNoPrompt:
 #_0392E1: JSR routine0384F9
 #_0392E4: JSL RunFramesUntil0100IsFlagged
 #_0392E8: JSL routine02CB99
@@ -3579,14 +3592,14 @@ routine0393C4:
 
 ;===================================================================================================
 
-TextCommand_2A_long:
+TextCommand_ClearMessageBox_long:
 #_0393F5: PHP
 
 #_0393F6: PHB
 #_0393F7: PHK
 #_0393F8: PLB
 
-#_0393F9: JSR TextCommand_2A
+#_0393F9: JSR TextCommand_ClearMessageBox
 
 #_0393FC: PLB
 #_0393FD: PLP
@@ -3595,7 +3608,7 @@ TextCommand_2A_long:
 
 ;===================================================================================================
 
-TextCommand_2A:
+TextCommand_ClearMessageBox:
 #_0393FF: JSR routine0384F9
 #_039402: JSL RunFramesUntil0100IsFlagged
 
@@ -3612,7 +3625,7 @@ routine039406:
 
 ;===================================================================================================
 
-TextCommand_2B:
+TextCommand_Write32BitInteger:
 #_039419: REP #$30
 #_03941B: LDA.w $0A54
 #_03941E: STA.w $0E00
@@ -3667,7 +3680,7 @@ TextCommand_2B:
 .branch039477
 #_039477: LDA.w $0E04,Y
 #_03947A: STA.w $0904,X
-#_03947D: JSL WriteSingleCharacterTo0900
+#_03947D: JSL WriteSingleTileToMessageBuffer
 
 .branch039481
 #_039481: INY
@@ -3678,7 +3691,7 @@ TextCommand_2B:
 
 ;===================================================================================================
 
-TextCommand_2C:
+TextCommand_WaitForKey:
 #_039487: REP #$20
 #_039489: JSR routine0393C4
 #_03948C: INC.w $0A28
@@ -3760,19 +3773,22 @@ UNREACHABLE_0394EE:
 ;===================================================================================================
 TextCommand_2D:
 #_039517: SEP #$20
+
 #_039519: JSR GetNextTextByte
 #_03951C: STA.w $0A3B
+
 #_03951F: RTS
 
 ;===================================================================================================
 
-TextCommand_2E:
-#_039520: JSR routine03A768
+TextCommand_ExtendedTextCommand:
+#_039520: JSR ExtendedTextCommand
+
 #_039523: RTS
 
 ;===================================================================================================
 
-TextCommand_2F:
+TerminateMessage:
 #_039524: JSR routine0384F9
 
 #_039527: SEP #$20
@@ -3805,20 +3821,26 @@ TextCommand_2F:
 #_039556: PLP
 #_039557: RTL
 
-Multiply_0E10_by_0E11_long:
-#_039558: JSR Multiply_0E10_by_0E11
+;===================================================================================================
+
+SmallMultiplication_long:
+#_039558: JSR SmallMultiplication
+
 #_03955B: RTL
 
 ;===================================================================================================
-; 
+; Multiplies 2 8-bit numbers
 ;===================================================================================================
-Multiply_0E10_by_0E11:
+SmallMultiplication:
 #_03955C: PHP
 #_03955D: SEP #$30
+
 #_03955F: LDA.w $0E10
 #_039562: STA.w WRMPYA
+
 #_039565: LDA.w $0E11
 #_039568: STA.w WRMPYB
+
 #_03956B: LDX.b #$08
 
 .wait
@@ -3826,66 +3848,98 @@ Multiply_0E10_by_0E11:
 #_03956E: BNE .wait
 
 #_039570: REP #$20
+
 #_039572: LDA.w RDMPYL
 #_039575: STA.w $0E12
+
 #_039578: PLP
 #_039579: RTS
 
-Multiply0E1x_b03_long:
-#_03957A: JSR Multiply0E1x_b03
+;===================================================================================================
+
+BigMultiplication_long:
+#_03957A: JSR BigMultiplication
+
 #_03957D: RTL
 
-Multiply0E1x_b03:
-#_03957E: PHP ; I think this is just multiplying two 16-bit numbers
+;===================================================================================================
+; Multiplies two 16-bit numbers
+;===================================================================================================
+BigMultiplication:
+#_03957E: PHP
 
 #_03957F: SEP #$20
 #_039581: SEP #$10
+
 #_039583: LDA.w $0E10
 #_039586: LDX.w $0E12
-#_039589: JSR Multiply_AX_b03
+#_039589: JSR .a_times_x
+
 #_03958C: LDA.w RDMPYL
 #_03958F: STA.w $0E14
 #_039592: LDA.w RDMPYH
+
 #_039595: STA.w $0E15
+
+;---------------------------------------------------------------------------------------------------
+
 #_039598: LDA.w $0E10
 #_03959B: LDX.w $0E13
-#_03959E: JSR Multiply_AX_b03
+#_03959E: JSR .a_times_x
+
 #_0395A1: LDA.w RDMPYL
 #_0395A4: CLC
 #_0395A5: ADC.w $0E15
 #_0395A8: STA.w $0E15
+
 #_0395AB: LDA.w RDMPYH
 #_0395AE: ADC.b #$00
 #_0395B0: STA.w $0E16
+
+;---------------------------------------------------------------------------------------------------
+
 #_0395B3: LDA.w $0E11
 #_0395B6: LDX.w $0E12
-#_0395B9: JSR Multiply_AX_b03
+#_0395B9: JSR .a_times_x
+
 #_0395BC: LDA.w RDMPYL
 #_0395BF: CLC
 #_0395C0: ADC.w $0E15
 #_0395C3: STA.w $0E15
+
 #_0395C6: LDA.w RDMPYH
 #_0395C9: ADC.w $0E16
 #_0395CC: STA.w $0E16
+
 #_0395CF: LDA.b #$00
 #_0395D1: ADC.b #$00
 #_0395D3: STA.w $0E17
+
+;---------------------------------------------------------------------------------------------------
+
 #_0395D6: LDA.w $0E11
 #_0395D9: LDX.w $0E13
-#_0395DC: JSR Multiply_AX_b03
+
+#_0395DC: JSR .a_times_x
+
 #_0395DF: LDA.w RDMPYL
 #_0395E2: CLC
 #_0395E3: ADC.w $0E16
 #_0395E6: STA.w $0E16
+
 #_0395E9: LDA.w RDMPYH
 #_0395EC: ADC.w $0E17
 #_0395EF: STA.w $0E17
+
 #_0395F2: PLP
 #_0395F3: RTS
 
-Multiply_AX_b03:
+;---------------------------------------------------------------------------------------------------
+
+.a_times_x
 #_0395F4: STA.w WRMPYA
 #_0395F7: STX.w WRMPYB
+
 #_0395FA: LDX.b #$08
 
 .wait
@@ -3924,38 +3978,46 @@ routine039600:
 
 ;===================================================================================================
 
-WriteTextIndexW0A39_long:
-#_03962E: JSR WriteTextIndexW0A39
+WriteIndexedEntityNameToBuffer_long:
+#_03962E: JSR WriteIndexedEntityNameToBuffer
 #_039631: RTL
 
 ;===================================================================================================
 
-WriteTextIndexW0A39:
+WriteIndexedEntityNameToBuffer:
 #_039632: PHP
 #_039633: REP #$30
+
 #_039635: LDA.w $0A39
 #_039638: ASL A
 #_039639: TAY
+
 #_03963A: LDA.b [$C3],Y
 #_03963C: STA.w $00C3
+
 #_03963F: LDY.w #$0000
 
-.branch039642
+.next_character
 #_039642: SEP #$30
+
 #_039644: LDA.b [$C3],Y
 #_039646: CMP.b #$FF
-#_039648: BEQ .branch039651
+#_039648: BEQ .end
 
 #_03964A: JSL WriteNextMessageChar
-#_03964E: INY
-#_03964F: BRA .branch039642
 
-.branch039651
+#_03964E: INY
+#_03964F: BRA .next_character
+
+.end
 #_039651: PLP
 #_039652: RTS
 
+;===================================================================================================
+
 R039653_SomeTextPars:
 #_039653: REP #$30
+
 #_039655: LDA.w $0A33
 #_039658: CLC
 #_039659: ADC.w #$0004
@@ -3975,12 +4037,16 @@ R039653_SomeTextPars:
 
 #_039674: STA.w $0E00
 #_039677: STZ.w $0E02
+
 #_03967A: STX.w $0E04
+
+;---------------------------------------------------------------------------------------------------
 
 #_03967D: LDY.w #$0000
 
-.branch039680
+.next
 #_039680: LDX.w $0E02
+
 #_039683: LDA.w $0900,Y
 #_039686: STA.w $0106,X
 
@@ -3997,7 +4063,7 @@ R039653_SomeTextPars:
 #_03969E: INY
 #_03969F: INY
 #_0396A0: DEC.w $0E00
-#_0396A3: BNE .branch039680
+#_0396A3: BNE .next
 
 #_0396A5: LDA.w #$0002
 #_0396A8: STA.w $0100
@@ -4015,30 +4081,39 @@ ClearTextBuffer_long:
 ClearTextBuffer:
 #_0396B0: PHX
 #_0396B1: PHA
+
 #_0396B2: PHP
+
 #_0396B3: REP #$30
+
 #_0396B5: LDX.w #$0000
 #_0396B8: LDA.w #$20CF
 
-.nextchar
+.next
 #_0396BB: STA.w $0900,X
+
 #_0396BE: INX
 #_0396BF: INX
 #_0396C0: CPX.w #$0080
-#_0396C3: BNE .nextchar
+#_0396C3: BNE .next
 
 #_0396C5: PLP
+
 #_0396C6: PLA
 #_0396C7: PLX
+
 #_0396C8: RTS
 
 ;===================================================================================================
 ; I called these classy messages for some reason
+;===================================================================================================
 LoadClassyMessage:
 #_0396C9: REP #$30
+
 #_0396CB: PHB
 #_0396CC: PHK
 #_0396CD: PLB
+
 #_0396CE: LDA.w $0A12
 #_0396D1: PHA
 #_0396D2: AND.w #$C000
@@ -4050,26 +4125,35 @@ LoadClassyMessage:
 #_0396DA: LSR A
 #_0396DB: LSR A
 #_0396DC: STA.w $0A26
+
 #_0396DF: ASL A
 #_0396E0: TAY
 
 #_0396E1: LDA.w .pointers,Y
 #_0396E4: STA.w $00E0
+
 #_0396E7: PLA
 #_0396E8: AND.w #$3FFF
 #_0396EB: ASL A
 #_0396EC: TAY
+
 #_0396ED: LDA.b ($E0),Y
 
 #_0396EF: SEP #$20
+
 #_0396F1: STA.w $0A24
+
 #_0396F4: XBA
 
 #_0396F5: REP #$20
+
 #_0396F7: AND.w #$00FF
 #_0396FA: STA.w $0A22
+
 #_0396FD: PLB
 #_0396FE: RTL
+
+;---------------------------------------------------------------------------------------------------
 
 .pointers
 #_0396FF: dw .set_0_message_ids
@@ -4080,377 +4164,783 @@ LoadClassyMessage:
 ;---------------------------------------------------------------------------------------------------
 
 .set_0_message_ids
-#_039707: dw $0000,$0100,$0200,$0300
-#_03970F: dw $0400,$0500,$0600,$0700
-#_039717: dw $0800,$0900,$0A00,$0B00
-#_03971F: dw $0C00,$0D00,$0E00,$0F00
-#_039727: dw $1000,$1100,$1200,$1300
-#_03972F: dw $1400,$1500,$1600,$1700
-#_039737: dw $1800,$1900,$1A00,$1B00
-#_03973F: dw $1C00,$1D00,$1E00,$1F00
-#_039747: dw $2000,$2100,$2200,$2300
-#_03974F: dw $2400,$2500,$2600,$2700
-#_039757: dw $2800,$2900,$2A00,$2B00
-#_03975F: dw $2C00,$2D00,$2E00,$2F00
-#_039767: dw $3000,$3100,$3200,$3300
-#_03976F: dw $3400,$3500,$3600,$3700
-#_039777: dw $3800,$3900,$3A00,$3B00
-#_03977F: dw $3C00,$3D00,$3E00,$3F00
-#_039787: dw $4000,$4100,$4200,$4300
-#_03978F: dw $4400,$4500,$4600,$4700
-#_039797: dw $4800,$4900,$4A00,$4B00
-#_03979F: dw $4C00,$4D00,$4E00,$4F00
-#_0397A7: dw $5000,$5100,$5200,$5300
-#_0397AF: dw $5400,$5500,$5600,$5700
-#_0397B7: dw $5800,$5900,$5A00,$5B00
-#_0397BF: dw $5C00,$5D00,$5E00,$5F00
-#_0397C7: dw $6000,$6100,$6200,$6300
-#_0397CF: dw $6400,$6500,$6600,$6700
-#_0397D7: dw $6800,$6900,$6A00,$6B00
-#_0397DF: dw $6C00,$6D00,$6E00,$6F00
-#_0397E7: dw $7000,$7100,$7200,$7300
-#_0397EF: dw $7400,$7500,$7600,$7700
-#_0397F7: dw $7800,$7900,$7A00,$7B00
-#_0397FF: dw $7C00,$7D00,$7E00,$7F00
-#_039807: dw $8000,$8100,$8200,$8300
-#_03980F: dw $8400,$8500,$8600,$8700
-#_039817: dw $8800,$8900,$8A00,$8B00
-#_03981F: dw $8C00,$8D00,$8E00,$8F00
-#_039827: dw $9000,$9100,$0001,$0002
-#_03982F: dw $0102,$0202,$0302,$0402
-#_039837: dw $0502,$0602,$0702,$0802
-#_03983F: dw $0902,$0A02,$0B02,$0C02
-#_039847: dw $0D02,$0E02,$0F02,$1002
-#_03984F: dw $1102,$1202,$1302,$1402
-#_039857: dw $1502,$1602,$1702,$1802
-#_03985F: dw $1902,$1A02,$1B02,$1C02
-#_039867: dw $1D02,$1E02,$1F02,$2002
-#_03986F: dw $2102,$2202,$2302,$2402
-#_039877: dw $2502,$2602,$2702,$2802
-#_03987F: dw $2902,$2A02,$2B02,$2C02
-#_039887: dw $2D02,$2E02,$2F02,$3002
-#_03988F: dw $3102,$3202,$3302,$3402
-#_039897: dw $3502,$3602,$3702,$3802
-#_03989F: dw $3902,$3A02,$3B02,$3C02
-#_0398A7: dw $3D02,$3E02,$3F02,$4002
-#_0398AF: dw $4102,$4202,$4302,$4402
-#_0398B7: dw $4502,$4602,$4702,$4802
-#_0398BF: dw $4902,$4A02,$4B02,$4C02
-#_0398C7: dw $4D02,$4E02,$4F02,$5002
-#_0398CF: dw $5102,$5202,$5302,$5402
-#_0398D7: dw $5502,$5602,$5702,$5802
-#_0398DF: dw $5902,$5A02,$5B02,$5C02
-#_0398E7: dw $5D02,$5E02,$5F02,$6002
-#_0398EF: dw $6102,$6202,$6302,$6402
-#_0398F7: dw $6502,$6602,$6702,$6802
-#_0398FF: dw $6902,$6A02,$6B02,$6C02
-#_039907: dw $6D02,$6E02,$6F02,$7002
-#_03990F: dw $7102,$7202,$7302,$7402
-#_039917: dw $7502,$7602,$7702,$7802
-#_03991F: dw $7902,$7A02,$7B02,$7C02
-#_039927: dw $7D02,$7E02,$7F02,$8002
-#_03992F: dw $8102,$8202,$8302,$8402
-#_039937: dw $8502,$8602,$8702,$8802
-#_03993F: dw $8902,$8A02,$8B02,$8C02
-#_039947: dw $8D02,$8E02,$8F02,$9002
-#_03994F: dw $9102,$9202,$9302,$9402
-#_039957: dw $9502,$9602,$9702,$9802
-#_03995F: dw $9902,$9A02,$9B02,$9C02
-#_039967: dw $9D02,$9E02,$9F02,$A002
-#_03996F: dw $A102,$A202,$A302,$A402
-#_039977: dw $A502,$A602,$A702,$A802
-#_03997F: dw $A902,$AA02,$AB02,$AC02
-#_039987: dw $AD02,$AE02,$AF02,$B002
-#_03998F: dw $B102,$B202,$B302,$B402
-#_039997: dw $B502,$B602,$B702,$B802
-#_03999F: dw $B902,$BA02,$BB02,$BC02
-#_0399A7: dw $BD02,$BE02,$BF02,$C002
-#_0399AF: dw $C102,$C202,$C302,$C402
-#_0399B7: dw $C502,$C602,$C702,$C802
-#_0399BF: dw $C902,$CA02,$CB02,$CC02
-#_0399C7: dw $CD02,$CE02,$CF02,$D002
-#_0399CF: dw $D102,$D202,$D302,$D402
-#_0399D7: dw $D502,$D602,$D702,$D802
-#_0399DF: dw $D902,$DA02,$DB02,$DC02
-#_0399E7: dw $DD02,$DE02,$DF02,$E002
-#_0399EF: dw $E102,$E202,$E302,$E402
-#_0399F7: dw $E502,$E602,$E702,$E802
-#_0399FF: dw $E902,$EA02,$EB02,$EC02
-#_039A07: dw $ED02,$EE02,$EF02,$F002
-#_039A0F: dw $F102,$F202,$F302,$F402
-#_039A17: dw $F502,$F602,$F702,$F802
-#_039A1F: dw $F902,$FA02,$FB02,$0003
-#_039A27: dw $0103,$0203,$0303,$0403
-#_039A2F: dw $0503,$0603,$0703,$0803
-#_039A37: dw $0903,$0A03,$0B03,$0C03
-#_039A3F: dw $0D03,$0E03,$0F03,$1003
-#_039A47: dw $1103,$1203,$1303,$1403
-#_039A4F: dw $1503,$1603,$1703,$1803
-#_039A57: dw $1903,$1A03,$1B03,$1C03
-#_039A5F: dw $1D03,$1E03,$1F03,$2003
-#_039A67: dw $2103,$2203,$2303,$2403
-#_039A6F: dw $2503,$2603,$2703,$2803
-#_039A77: dw $2903,$2A03,$2B03,$2C03
-#_039A7F: dw $2D03,$2E03,$2F03,$3003
-#_039A87: dw $3103,$3203,$3303,$3403
-#_039A8F: dw $3503,$3603,$3703,$3803
-#_039A97: dw $3903,$3A03,$3B03,$3C03
-#_039A9F: dw $3D03,$3E03,$3F03,$4003
-#_039AA7: dw $4103,$4203,$4303,$4403
-#_039AAF: dw $4503,$4603,$4703,$4803
-#_039AB7: dw $4903,$4A03,$4B03,$4C03
-#_039ABF: dw $4D03,$4E03,$4F03,$5003
-#_039AC7: dw $5103,$5203,$5303,$5403
-#_039ACF: dw $5503,$5603,$5703,$5803
-#_039AD7: dw $5903,$5A03,$5B03,$5C03
-#_039ADF: dw $5D03,$5E03,$5F03,$6003
-#_039AE7: dw $6103,$6203,$6303,$6403
-#_039AEF: dw $6503,$6603,$6703,$6803
-#_039AF7: dw $6903,$6A03,$6B03,$6C03
-#_039AFF: dw $6D03,$6E03,$6F03,$7003
-#_039B07: dw $7103,$7203,$7303,$7403
-#_039B0F: dw $7503,$7603,$7703,$7803
-#_039B17: dw $7903,$7A03,$7B03,$7C03
-#_039B1F: dw $7D03,$7E03,$7F03,$8003
-#_039B27: dw $8103,$8203,$8303,$8403
-#_039B2F: dw $8503,$8603,$8703,$8803
-#_039B37: dw $8903,$8A03,$8B03,$8C03
-#_039B3F: dw $8D03,$8E03,$8F03,$9003
-#_039B47: dw $9103,$9203,$9303,$9403
-#_039B4F: dw $9503,$9603,$9703,$9803
-#_039B57: dw $9903,$9A03,$9B03,$9C03
-#_039B5F: dw $9D03,$9E03,$9F03,$A003
-#_039B67: dw $A103,$A203,$A303,$A403
-#_039B6F: dw $A503,$A603,$A703,$A803
-#_039B77: dw $A903,$AA03,$AB03,$AC03
-#_039B7F: dw $AD03,$AE03,$AF03,$B003
-#_039B87: dw $B103,$B203,$B303,$B403
-#_039B8F: dw $B503,$B603,$B703,$B803
-#_039B97: dw $B903,$BA03,$BB03,$BC03
-#_039B9F: dw $BD03,$BE03,$BF03,$C003
-#_039BA7: dw $C103,$C203,$C303,$C403
-#_039BAF: dw $C503,$C603,$C703,$C803
-#_039BB7: dw $C903,$CA03,$CB03,$CC03
-#_039BBF: dw $CD03,$CE03,$CF03,$D003
-#_039BC7: dw $D103,$D203,$D303,$D403
-#_039BCF: dw $D503,$D603,$D703,$D803
-#_039BD7: dw $D903,$DA03,$DB03,$DC03
-#_039BDF: dw $DD03,$DE03,$DF03,$E003
-#_039BE7: dw $E103,$E203,$E303,$0004
-#_039BEF: dw $0005,$0105,$0205,$0305
-#_039BF7: dw $0405,$0505,$0605,$0705
-#_039BFF: dw $0805,$0905,$0A05,$0B05
-#_039C07: dw $0C05,$0D05,$0E05,$0F05
-#_039C0F: dw $1005,$1105,$1205,$1305
-#_039C17: dw $1405,$1505,$1605,$1705
-#_039C1F: dw $1805,$1905,$1A05,$1B05
-#_039C27: dw $1C05,$1D05,$1E05,$1F05
-#_039C2F: dw $2005,$2105,$2205,$2305
-#_039C37: dw $2405,$2505,$2605,$2705
-#_039C3F: dw $2805,$2905,$2A05,$2B05
-#_039C47: dw $2C05,$2D05,$2E05,$2F05
-#_039C4F: dw $3005,$3105,$3205,$3305
-#_039C57: dw $3405,$3505,$3605,$3705
-#_039C5F: dw $3805,$3905,$3A05,$3B05
-#_039C67: dw $3C05,$3D05,$3E05,$3F05
-#_039C6F: dw $4005,$4105,$4205,$4305
-#_039C77: dw $4405,$4505,$4605,$4705
-#_039C7F: dw $4805,$4905,$4A05,$4B05
-#_039C87: dw $4C05,$4D05,$4E05,$4F05
-#_039C8F: dw $0006,$0206,$0406,$0606
-#_039C97: dw $0906,$0B06,$0D06,$0E06
-#_039C9F: dw $0F06,$1206,$1706,$1A06
-#_039CA7: dw $1C06,$1F06,$2406,$2706
-#_039CAF: dw $2A06,$2B06,$0007,$0207
-#_039CB7: dw $0F07,$1007,$1107,$1207
-#_039CBF: dw $1307,$1C07,$1F07,$2607
-#_039CC7: dw $0008,$1208,$1D08,$1E08
-#_039CCF: dw $2D08,$3008,$3108,$3608
-#_039CD7: dw $3908,$0009,$0109,$0A09
-#_039CDF: dw $0D09,$1609,$1809,$1B09
-#_039CE7: dw $1F09,$2109,$2A09,$2C09
-#_039CEF: dw $2D09,$3209,$3809,$4D09
-#_039CF7: dw $4F09,$5209,$5309,$5409
-#_039CFF: dw $5509,$5C09,$5E09,$6109
-#_039D07: dw $6409,$000A,$020A,$030A
-#_039D0F: dw $040A,$050A,$060A,$070A
-#_039D17: dw $090A,$0B0A,$0C0A,$0D0A
-#_039D1F: dw $0E0A,$0F0A,$100A,$120A
-#_039D27: dw $130A,$140A,$150A,$160A
-#_039D2F: dw $170A,$1C0A,$1D0A,$1E0A
-#_039D37: dw $1F0A,$200A,$210A,$220A
-#_039D3F: dw $230A,$240A,$250A,$290A
-#_039D47: dw $000B,$010B,$020B,$040B
-#_039D4F: dw $070B,$080B,$0A0B,$0E0B
-#_039D57: dw $0F0B,$100B,$110B,$120B
-#_039D5F: dw $130B,$140B,$150B,$160B
-#_039D67: dw $170B,$180B,$190B,$1A0B
-#_039D6F: dw $1B0B,$1C0B,$1D0B,$1E0B
-#_039D77: dw $1F0B,$200B,$210B,$220B
-#_039D7F: dw $000C,$010C,$160C,$1C0C
-#_039D87: dw $1F0C,$210C,$230C,$290C
-#_039D8F: dw $2D0C,$2E0C,$310C,$340C
-#_039D97: dw $370C,$3A0C,$3D0C,$400C
-#_039D9F: dw $430C,$470C,$480C,$490C
-#_039DA7: dw $4A0C,$4B0C,$4C0C,$4D0C
-#_039DAF: dw $4E0C,$500C,$520C,$5D0C
-#_039DB7: dw $5F0C,$6A0C,$6E0C,$720C
+#_039707: dw $0000, $0100, $0200, $0300
+#_03970F: dw $0400, $0500, $0600, $0700
+#_039717: dw $0800, $0900, $0A00, $0B00
+#_03971F: dw $0C00, $0D00, $0E00, $0F00
+#_039727: dw $1000, $1100, $1200, $1300
+#_03972F: dw $1400, $1500, $1600, $1700
+#_039737: dw $1800, $1900, $1A00, $1B00
+#_03973F: dw $1C00, $1D00, $1E00, $1F00
+#_039747: dw $2000, $2100, $2200, $2300
+#_03974F: dw $2400, $2500, $2600, $2700
+#_039757: dw $2800, $2900, $2A00, $2B00
+#_03975F: dw $2C00, $2D00, $2E00, $2F00
+#_039767: dw $3000, $3100, $3200, $3300
+#_03976F: dw $3400, $3500, $3600, $3700
+#_039777: dw $3800, $3900, $3A00, $3B00
+#_03977F: dw $3C00, $3D00, $3E00, $3F00
+#_039787: dw $4000, $4100, $4200, $4300
+#_03978F: dw $4400, $4500, $4600, $4700
+#_039797: dw $4800, $4900, $4A00, $4B00
+#_03979F: dw $4C00, $4D00, $4E00, $4F00
+#_0397A7: dw $5000, $5100, $5200, $5300
+#_0397AF: dw $5400, $5500, $5600, $5700
+#_0397B7: dw $5800, $5900, $5A00, $5B00
+#_0397BF: dw $5C00, $5D00, $5E00, $5F00
+#_0397C7: dw $6000, $6100, $6200, $6300
+#_0397CF: dw $6400, $6500, $6600, $6700
+#_0397D7: dw $6800, $6900, $6A00, $6B00
+#_0397DF: dw $6C00, $6D00, $6E00, $6F00
+#_0397E7: dw $7000, $7100, $7200, $7300
+#_0397EF: dw $7400, $7500, $7600, $7700
+#_0397F7: dw $7800, $7900, $7A00, $7B00
+#_0397FF: dw $7C00, $7D00, $7E00, $7F00
+#_039807: dw $8000, $8100, $8200, $8300
+#_03980F: dw $8400, $8500, $8600, $8700
+#_039817: dw $8800, $8900, $8A00, $8B00
+#_03981F: dw $8C00, $8D00, $8E00, $8F00
+#_039827: dw $9000, $9100, $0001, $0002
+#_03982F: dw $0102, $0202, $0302, $0402
+#_039837: dw $0502, $0602, $0702, $0802
+#_03983F: dw $0902, $0A02, $0B02, $0C02
+#_039847: dw $0D02, $0E02, $0F02, $1002
+#_03984F: dw $1102, $1202, $1302, $1402
+#_039857: dw $1502, $1602, $1702, $1802
+#_03985F: dw $1902, $1A02, $1B02, $1C02
+#_039867: dw $1D02, $1E02, $1F02, $2002
+#_03986F: dw $2102, $2202, $2302, $2402
+#_039877: dw $2502, $2602, $2702, $2802
+#_03987F: dw $2902, $2A02, $2B02, $2C02
+#_039887: dw $2D02, $2E02, $2F02, $3002
+#_03988F: dw $3102, $3202, $3302, $3402
+#_039897: dw $3502, $3602, $3702, $3802
+#_03989F: dw $3902, $3A02, $3B02, $3C02
+#_0398A7: dw $3D02, $3E02, $3F02, $4002
+#_0398AF: dw $4102, $4202, $4302, $4402
+#_0398B7: dw $4502, $4602, $4702, $4802
+#_0398BF: dw $4902, $4A02, $4B02, $4C02
+#_0398C7: dw $4D02, $4E02, $4F02, $5002
+#_0398CF: dw $5102, $5202, $5302, $5402
+#_0398D7: dw $5502, $5602, $5702, $5802
+#_0398DF: dw $5902, $5A02, $5B02, $5C02
+#_0398E7: dw $5D02, $5E02, $5F02, $6002
+#_0398EF: dw $6102, $6202, $6302, $6402
+#_0398F7: dw $6502, $6602, $6702, $6802
+#_0398FF: dw $6902, $6A02, $6B02, $6C02
+#_039907: dw $6D02, $6E02, $6F02, $7002
+#_03990F: dw $7102, $7202, $7302, $7402
+#_039917: dw $7502, $7602, $7702, $7802
+#_03991F: dw $7902, $7A02, $7B02, $7C02
+#_039927: dw $7D02, $7E02, $7F02, $8002
+#_03992F: dw $8102, $8202, $8302, $8402
+#_039937: dw $8502, $8602, $8702, $8802
+#_03993F: dw $8902, $8A02, $8B02, $8C02
+#_039947: dw $8D02, $8E02, $8F02, $9002
+#_03994F: dw $9102, $9202, $9302, $9402
+#_039957: dw $9502, $9602, $9702, $9802
+#_03995F: dw $9902, $9A02, $9B02, $9C02
+#_039967: dw $9D02, $9E02, $9F02, $A002
+#_03996F: dw $A102, $A202, $A302, $A402
+#_039977: dw $A502, $A602, $A702, $A802
+#_03997F: dw $A902, $AA02, $AB02, $AC02
+#_039987: dw $AD02, $AE02, $AF02, $B002
+#_03998F: dw $B102, $B202, $B302, $B402
+#_039997: dw $B502, $B602, $B702, $B802
+#_03999F: dw $B902, $BA02, $BB02, $BC02
+#_0399A7: dw $BD02, $BE02, $BF02, $C002
+#_0399AF: dw $C102, $C202, $C302, $C402
+#_0399B7: dw $C502, $C602, $C702, $C802
+#_0399BF: dw $C902, $CA02, $CB02, $CC02
+#_0399C7: dw $CD02, $CE02, $CF02, $D002
+#_0399CF: dw $D102, $D202, $D302, $D402
+#_0399D7: dw $D502, $D602, $D702, $D802
+#_0399DF: dw $D902, $DA02, $DB02, $DC02
+#_0399E7: dw $DD02, $DE02, $DF02, $E002
+#_0399EF: dw $E102, $E202, $E302, $E402
+#_0399F7: dw $E502, $E602, $E702, $E802
+#_0399FF: dw $E902, $EA02, $EB02, $EC02
+#_039A07: dw $ED02, $EE02, $EF02, $F002
+#_039A0F: dw $F102, $F202, $F302, $F402
+#_039A17: dw $F502, $F602, $F702, $F802
+#_039A1F: dw $F902, $FA02, $FB02, $0003
+#_039A27: dw $0103, $0203, $0303, $0403
+#_039A2F: dw $0503, $0603, $0703, $0803
+#_039A37: dw $0903, $0A03, $0B03, $0C03
+#_039A3F: dw $0D03, $0E03, $0F03, $1003
+#_039A47: dw $1103, $1203, $1303, $1403
+#_039A4F: dw $1503, $1603, $1703, $1803
+#_039A57: dw $1903, $1A03, $1B03, $1C03
+#_039A5F: dw $1D03, $1E03, $1F03, $2003
+#_039A67: dw $2103, $2203, $2303, $2403
+#_039A6F: dw $2503, $2603, $2703, $2803
+#_039A77: dw $2903, $2A03, $2B03, $2C03
+#_039A7F: dw $2D03, $2E03, $2F03, $3003
+#_039A87: dw $3103, $3203, $3303, $3403
+#_039A8F: dw $3503, $3603, $3703, $3803
+#_039A97: dw $3903, $3A03, $3B03, $3C03
+#_039A9F: dw $3D03, $3E03, $3F03, $4003
+#_039AA7: dw $4103, $4203, $4303, $4403
+#_039AAF: dw $4503, $4603, $4703, $4803
+#_039AB7: dw $4903, $4A03, $4B03, $4C03
+#_039ABF: dw $4D03, $4E03, $4F03, $5003
+#_039AC7: dw $5103, $5203, $5303, $5403
+#_039ACF: dw $5503, $5603, $5703, $5803
+#_039AD7: dw $5903, $5A03, $5B03, $5C03
+#_039ADF: dw $5D03, $5E03, $5F03, $6003
+#_039AE7: dw $6103, $6203, $6303, $6403
+#_039AEF: dw $6503, $6603, $6703, $6803
+#_039AF7: dw $6903, $6A03, $6B03, $6C03
+#_039AFF: dw $6D03, $6E03, $6F03, $7003
+#_039B07: dw $7103, $7203, $7303, $7403
+#_039B0F: dw $7503, $7603, $7703, $7803
+#_039B17: dw $7903, $7A03, $7B03, $7C03
+#_039B1F: dw $7D03, $7E03, $7F03, $8003
+#_039B27: dw $8103, $8203, $8303, $8403
+#_039B2F: dw $8503, $8603, $8703, $8803
+#_039B37: dw $8903, $8A03, $8B03, $8C03
+#_039B3F: dw $8D03, $8E03, $8F03, $9003
+#_039B47: dw $9103, $9203, $9303, $9403
+#_039B4F: dw $9503, $9603, $9703, $9803
+#_039B57: dw $9903, $9A03, $9B03, $9C03
+#_039B5F: dw $9D03, $9E03, $9F03, $A003
+#_039B67: dw $A103, $A203, $A303, $A403
+#_039B6F: dw $A503, $A603, $A703, $A803
+#_039B77: dw $A903, $AA03, $AB03, $AC03
+#_039B7F: dw $AD03, $AE03, $AF03, $B003
+#_039B87: dw $B103, $B203, $B303, $B403
+#_039B8F: dw $B503, $B603, $B703, $B803
+#_039B97: dw $B903, $BA03, $BB03, $BC03
+#_039B9F: dw $BD03, $BE03, $BF03, $C003
+#_039BA7: dw $C103, $C203, $C303, $C403
+#_039BAF: dw $C503, $C603, $C703, $C803
+#_039BB7: dw $C903, $CA03, $CB03, $CC03
+#_039BBF: dw $CD03, $CE03, $CF03, $D003
+#_039BC7: dw $D103, $D203, $D303, $D403
+#_039BCF: dw $D503, $D603, $D703, $D803
+#_039BD7: dw $D903, $DA03, $DB03, $DC03
+#_039BDF: dw $DD03, $DE03, $DF03, $E003
+#_039BE7: dw $E103, $E203, $E303, $0004
+#_039BEF: dw $0005, $0105, $0205, $0305
+#_039BF7: dw $0405, $0505, $0605, $0705
+#_039BFF: dw $0805, $0905, $0A05, $0B05
+#_039C07: dw $0C05, $0D05, $0E05, $0F05
+#_039C0F: dw $1005, $1105, $1205, $1305
+#_039C17: dw $1405, $1505, $1605, $1705
+#_039C1F: dw $1805, $1905, $1A05, $1B05
+#_039C27: dw $1C05, $1D05, $1E05, $1F05
+#_039C2F: dw $2005, $2105, $2205, $2305
+#_039C37: dw $2405, $2505, $2605, $2705
+#_039C3F: dw $2805, $2905, $2A05, $2B05
+#_039C47: dw $2C05, $2D05, $2E05, $2F05
+#_039C4F: dw $3005, $3105, $3205, $3305
+#_039C57: dw $3405, $3505, $3605, $3705
+#_039C5F: dw $3805, $3905, $3A05, $3B05
+#_039C67: dw $3C05, $3D05, $3E05, $3F05
+#_039C6F: dw $4005, $4105, $4205, $4305
+#_039C77: dw $4405, $4505, $4605, $4705
+#_039C7F: dw $4805, $4905, $4A05, $4B05
+#_039C87: dw $4C05, $4D05, $4E05, $4F05
+#_039C8F: dw $0006, $0206, $0406, $0606
+#_039C97: dw $0906, $0B06, $0D06, $0E06
+#_039C9F: dw $0F06, $1206, $1706, $1A06
+#_039CA7: dw $1C06, $1F06, $2406, $2706
+#_039CAF: dw $2A06, $2B06, $0007, $0207
+#_039CB7: dw $0F07, $1007, $1107, $1207
+#_039CBF: dw $1307, $1C07, $1F07, $2607
+#_039CC7: dw $0008, $1208, $1D08, $1E08
+#_039CCF: dw $2D08, $3008, $3108, $3608
+#_039CD7: dw $3908, $0009, $0109, $0A09
+#_039CDF: dw $0D09, $1609, $1809, $1B09
+#_039CE7: dw $1F09, $2109, $2A09, $2C09
+#_039CEF: dw $2D09, $3209, $3809, $4D09
+#_039CF7: dw $4F09, $5209, $5309, $5409
+#_039CFF: dw $5509, $5C09, $5E09, $6109
+#_039D07: dw $6409, $000A, $020A, $030A
+#_039D0F: dw $040A, $050A, $060A, $070A
+#_039D17: dw $090A, $0B0A, $0C0A, $0D0A
+#_039D1F: dw $0E0A, $0F0A, $100A, $120A
+#_039D27: dw $130A, $140A, $150A, $160A
+#_039D2F: dw $170A, $1C0A, $1D0A, $1E0A
+#_039D37: dw $1F0A, $200A, $210A, $220A
+#_039D3F: dw $230A, $240A, $250A, $290A
+#_039D47: dw $000B, $010B, $020B, $040B
+#_039D4F: dw $070B, $080B, $0A0B, $0E0B
+#_039D57: dw $0F0B, $100B, $110B, $120B
+#_039D5F: dw $130B, $140B, $150B, $160B
+#_039D67: dw $170B, $180B, $190B, $1A0B
+#_039D6F: dw $1B0B, $1C0B, $1D0B, $1E0B
+#_039D77: dw $1F0B, $200B, $210B, $220B
+#_039D7F: dw $000C, $010C, $160C, $1C0C
+#_039D87: dw $1F0C, $210C, $230C, $290C
+#_039D8F: dw $2D0C, $2E0C, $310C, $340C
+#_039D97: dw $370C, $3A0C, $3D0C, $400C
+#_039D9F: dw $430C, $470C, $480C, $490C
+#_039DA7: dw $4A0C, $4B0C, $4C0C, $4D0C
+#_039DAF: dw $4E0C, $500C, $520C, $5D0C
+#_039DB7: dw $5F0C, $6A0C, $6E0C, $720C
 
 ;---------------------------------------------------------------------------------------------------
 
 .set_1_message_ids
-#_039DBF: dw $0000,$0100,$0A00,$1300
-#_039DC7: dw $1500,$1600,$1B00,$1C00
-#_039DCF: dw $2000,$2300,$2400,$2500
-#_039DD7: dw $2700,$2900,$2A00,$2C00
-#_039DDF: dw $2E00,$3000,$3200,$3400
-#_039DE7: dw $3600,$3800,$3A00,$0001
-#_039DEF: dw $0201,$0601,$0901,$1901
-#_039DF7: dw $1C01,$1F01,$2301,$2D01
-#_039DFF: dw $2E01,$2F01,$3001,$3101
-#_039E07: dw $3201,$3301,$3401,$3601
-#_039E0F: dw $3801,$3901,$3A01,$3B01
-#_039E17: dw $0002,$0A02,$1202,$1302
-#_039E1F: dw $1402,$1502,$1602,$1702
-#_039E27: dw $1802,$1C02,$1D02,$1F02
-#_039E2F: dw $2302,$2F02,$0003,$0703
-#_039E37: dw $1403,$2803,$2F03,$3703
-#_039E3F: dw $3A03,$3E03,$4203,$4603
-#_039E47: dw $4A03,$4F03,$5303,$5703
-#_039E4F: dw $5B03,$5D03,$5F03,$6103
-#_039E57: dw $6603,$6703,$6903,$6A03
-#_039E5F: dw $0004,$1004,$2004,$2B04
-#_039E67: dw $2C04,$2D04,$2E04,$2F04
-#_039E6F: dw $3004,$3104,$3204,$3304
-#_039E77: dw $3404,$3504,$4304,$4404
-#_039E7F: dw $0005,$1E05,$2205,$2505
-#_039E87: dw $2705,$2805,$2905,$2A05
-#_039E8F: dw $2B05,$2C05,$2D05,$3705
-#_039E97: dw $3C05,$4105,$4605,$0006
-#_039E9F: dw $0306,$1506,$1606,$0007
-#_039EA7: dw $0807,$1407,$1607,$1807
-#_039EAF: dw $0008,$0408,$0508,$0808
-#_039EB7: dw $0908,$0B08,$1608,$0009
-#_039EBF: dw $000A,$010A,$020A,$030A
-#_039EC7: dw $040A,$050A,$060A,$070A
-#_039ECF: dw $080A,$090A,$0A0A,$0B0A
+#_039DBF: dw $0000, $0100, $0A00, $1300
+#_039DC7: dw $1500, $1600, $1B00, $1C00
+#_039DCF: dw $2000, $2300, $2400, $2500
+#_039DD7: dw $2700, $2900, $2A00, $2C00
+#_039DDF: dw $2E00, $3000, $3200, $3400
+#_039DE7: dw $3600, $3800, $3A00, $0001
+#_039DEF: dw $0201, $0601, $0901, $1901
+#_039DF7: dw $1C01, $1F01, $2301, $2D01
+#_039DFF: dw $2E01, $2F01, $3001, $3101
+#_039E07: dw $3201, $3301, $3401, $3601
+#_039E0F: dw $3801, $3901, $3A01, $3B01
+#_039E17: dw $0002, $0A02, $1202, $1302
+#_039E1F: dw $1402, $1502, $1602, $1702
+#_039E27: dw $1802, $1C02, $1D02, $1F02
+#_039E2F: dw $2302, $2F02, $0003, $0703
+#_039E37: dw $1403, $2803, $2F03, $3703
+#_039E3F: dw $3A03, $3E03, $4203, $4603
+#_039E47: dw $4A03, $4F03, $5303, $5703
+#_039E4F: dw $5B03, $5D03, $5F03, $6103
+#_039E57: dw $6603, $6703, $6903, $6A03
+#_039E5F: dw $0004, $1004, $2004, $2B04
+#_039E67: dw $2C04, $2D04, $2E04, $2F04
+#_039E6F: dw $3004, $3104, $3204, $3304
+#_039E77: dw $3404, $3504, $4304, $4404
+#_039E7F: dw $0005, $1E05, $2205, $2505
+#_039E87: dw $2705, $2805, $2905, $2A05
+#_039E8F: dw $2B05, $2C05, $2D05, $3705
+#_039E97: dw $3C05, $4105, $4605, $0006
+#_039E9F: dw $0306, $1506, $1606, $0007
+#_039EA7: dw $0807, $1407, $1607, $1807
+#_039EAF: dw $0008, $0408, $0508, $0808
+#_039EB7: dw $0908, $0B08, $1608, $0009
+#_039EBF: dw $000A, $010A, $020A, $030A
+#_039EC7: dw $040A, $050A, $060A, $070A
+#_039ECF: dw $080A, $090A, $0A0A, $0B0A
 #_039ED7: dw $0C0A
 
 ;---------------------------------------------------------------------------------------------------
 
 .set_2_message_ids
-#_039ED9: dw $0001,$0002,$1702,$0003
-#_039EE1: dw $0004,$0005,$0006,$0007
-#_039EE9: dw $0008,$0009,$0409,$000A
-#_039EF1: dw $210A,$000B,$1F0B,$000C
-#_039EF9: dw $770C,$780C,$000D,$000E
-#_039F01: dw $080E,$090E,$4F0E,$840E
-#_039F09: dw $850E,$000F,$0010,$0110
-#_039F11: dw $0210,$0310,$0F10,$2310
-#_039F19: dw $0011,$0111,$0211,$0012
-#_039F21: dw $0612,$0812,$0013,$0113
-#_039F29: dw $0A13,$0014,$0214,$0914
-#_039F31: dw $0D14,$0F14,$0015,$0115
-#_039F39: dw $0016,$0116,$001D,$011D
-#_039F41: dw $021D,$031D,$041D,$051D
-#_039F49: dw $061D,$071D,$081D,$091D
-#_039F51: dw $0A1D,$111D,$141D,$151D
-#_039F59: dw $171D,$181D,$191D,$1A1D
-#_039F61: dw $1B1D,$1C1D,$1D1D,$1E1D
-#_039F69: dw $201D,$211D,$221D,$231D
-#_039F71: dw $241D,$251D,$261D,$271D
-#_039F79: dw $281D,$2A1D,$2B1D,$2C1D
-#_039F81: dw $2D1D,$2E1D,$2F1D,$001E
-#_039F89: dw $041E,$081E,$0C1E,$0D1E
-#_039F91: dw $0E1E,$0F1E,$101E,$111E
-#_039F99: dw $1C1E,$201E,$231E,$001F
-#_039FA1: dw $021F,$031F,$041F,$061F
-#_039FA9: dw $081F,$0A1F,$101F,$131F
-#_039FB1: dw $1A1F,$1C1F,$201F,$221F
-#_039FB9: dw $241F,$251F,$271F,$291F
-#_039FC1: dw $2B1F,$2D1F,$311F
+#_039ED9: dw $0001, $0002, $1702, $0003
+#_039EE1: dw $0004, $0005, $0006, $0007
+#_039EE9: dw $0008, $0009, $0409, $000A
+#_039EF1: dw $210A, $000B, $1F0B, $000C
+#_039EF9: dw $770C, $780C, $000D, $000E
+#_039F01: dw $080E, $090E, $4F0E, $840E
+#_039F09: dw $850E, $000F, $0010, $0110
+#_039F11: dw $0210, $0310, $0F10, $2310
+#_039F19: dw $0011, $0111, $0211, $0012
+#_039F21: dw $0612, $0812, $0013, $0113
+#_039F29: dw $0A13, $0014, $0214, $0914
+#_039F31: dw $0D14, $0F14, $0015, $0115
+#_039F39: dw $0016, $0116, $001D, $011D
+#_039F41: dw $021D, $031D, $041D, $051D
+#_039F49: dw $061D, $071D, $081D, $091D
+#_039F51: dw $0A1D, $111D, $141D, $151D
+#_039F59: dw $171D, $181D, $191D, $1A1D
+#_039F61: dw $1B1D, $1C1D, $1D1D, $1E1D
+#_039F69: dw $201D, $211D, $221D, $231D
+#_039F71: dw $241D, $251D, $261D, $271D
+#_039F79: dw $281D, $2A1D, $2B1D, $2C1D
+#_039F81: dw $2D1D, $2E1D, $2F1D, $001E
+#_039F89: dw $041E, $081E, $0C1E, $0D1E
+#_039F91: dw $0E1E, $0F1E, $101E, $111E
+#_039F99: dw $1C1E, $201E, $231E, $001F
+#_039FA1: dw $021F, $031F, $041F, $061F
+#_039FA9: dw $081F, $0A1F, $101F, $131F
+#_039FB1: dw $1A1F, $1C1F, $201F, $221F
+#_039FB9: dw $241F, $251F, $271F, $291F
+#_039FC1: dw $2B1F, $2D1F, $311F
 
 ;---------------------------------------------------------------------------------------------------
 
 .set_3_message_ids
-#_039FC7: dw $0000,$0001,$0002,$0102
-#_039FCF: dw $1202,$1302,$1402,$1502
-#_039FD7: dw $2702,$2802,$2902,$2A02
-#_039FDF: dw $2F02,$3502,$3602,$3C02
-#_039FE7: dw $4202,$4702,$4C02,$5102
-#_039FEF: dw $5502,$5902,$5E02,$6002
-#_039FF7: dw $6902,$6B02,$7402,$7602
-#_039FFF: dw $7F02,$9302,$9502,$A002
-#_03A007: dw $A202,$AD02,$AF02,$BA02
-#_03A00F: dw $C002,$DB02,$DD02,$E902
-#_03A017: dw $EB02,$0003,$0103,$0303
-#_03A01F: dw $0503,$0603,$0703,$0903
-#_03A027: dw $0A03,$0B03,$0D03,$0F03
-#_03A02F: dw $1803,$1A03,$1C03,$0004
-#_03A037: dw $0404,$1104,$1504,$2604
-#_03A03F: dw $3404,$3604,$4104,$4404
-#_03A047: dw $4704,$4A04,$0005,$0205
-#_03A04F: dw $0F05,$1105,$1E05,$2005
-#_03A057: dw $2D05,$2F05,$4205,$4A05
-#_03A05F: dw $4C05,$0006,$0106,$0506
-#_03A067: dw $0F06,$1206,$1406,$0007
-#_03A06F: dw $0C07,$1407,$2507,$2D07
-#_03A077: dw $3607,$3907,$3D07,$4007
-#_03A07F: dw $4207,$4607,$0008,$0B08
-#_03A087: dw $1F08,$0009,$0209,$1209
-#_03A08F: dw $1309,$1409,$1509,$1709
-#_03A097: dw $1909,$1B09,$000A
+#_039FC7: dw $0000, $0001, $0002, $0102
+#_039FCF: dw $1202, $1302, $1402, $1502
+#_039FD7: dw $2702, $2802, $2902, $2A02
+#_039FDF: dw $2F02, $3502, $3602, $3C02
+#_039FE7: dw $4202, $4702, $4C02, $5102
+#_039FEF: dw $5502, $5902, $5E02, $6002
+#_039FF7: dw $6902, $6B02, $7402, $7602
+#_039FFF: dw $7F02, $9302, $9502, $A002
+#_03A007: dw $A202, $AD02, $AF02, $BA02
+#_03A00F: dw $C002, $DB02, $DD02, $E902
+#_03A017: dw $EB02, $0003, $0103, $0303
+#_03A01F: dw $0503, $0603, $0703, $0903
+#_03A027: dw $0A03, $0B03, $0D03, $0F03
+#_03A02F: dw $1803, $1A03, $1C03, $0004
+#_03A037: dw $0404, $1104, $1504, $2604
+#_03A03F: dw $3404, $3604, $4104, $4404
+#_03A047: dw $4704, $4A04, $0005, $0205
+#_03A04F: dw $0F05, $1105, $1E05, $2005
+#_03A057: dw $2D05, $2F05, $4205, $4A05
+#_03A05F: dw $4C05, $0006, $0106, $0506
+#_03A067: dw $0F06, $1206, $1406, $0007
+#_03A06F: dw $0C07, $1407, $2507, $2D07
+#_03A077: dw $3607, $3907, $3D07, $4007
+#_03A07F: dw $4207, $4607, $0008, $0B08
+#_03A087: dw $1F08, $0009, $0209, $1209
+#_03A08F: dw $1309, $1409, $1509, $1709
+#_03A097: dw $1909, $1B09, $000A
 
 ;===================================================================================================
 
-; TODO pointers for menu listings it seems?
-data03A09D:
-#_03A09D: dw $A0ED,$A0F4,$A0FB,$A101
-#_03A0A5: dw $A107,$A10E,$A115,$A11C
-#_03A0AD: dw $A121,$A126,$A12B,$A130
-#_03A0B5: dw $A137,$A13E,$A144,$A14A
-#_03A0BD: dw $A151,$A158,$A15E,$A165
-#_03A0C5: dw $A16C,$A172,$A179,$A17F
-#_03A0CD: dw $A186,$A18D,$A193,$A19A
-#_03A0D5: dw $A1A1,$A1A7,$A1AE,$A1B5
-#_03A0DD: dw $A1BC,$A1C3,$A1CA,$A1D0
-#_03A0E5: dw $A1D6,$A1DB,$A1E0,$A1E5
+ShopActionMessagePointers:
+#_03A09D: dw data03A0ED
+#_03A09F: dw data03A0F4
+#_03A0A1: dw data03A0FB
+#_03A0A3: dw data03A101
+#_03A0A5: dw data03A107
+#_03A0A7: dw data03A10E
+#_03A0A9: dw data03A115
+#_03A0AB: dw data03A11C
+#_03A0AD: dw data03A121
+#_03A0AF: dw data03A126
+#_03A0B1: dw data03A12B
+#_03A0B3: dw data03A130
+#_03A0B5: dw data03A137
+#_03A0B7: dw data03A13E
+#_03A0B9: dw data03A144
+#_03A0BB: dw data03A14A
+#_03A0BD: dw data03A151
+#_03A0BF: dw data03A158
+#_03A0C1: dw data03A15E
+#_03A0C3: dw data03A165
+#_03A0C5: dw data03A16C
+#_03A0C7: dw data03A172
+#_03A0C9: dw data03A179
+#_03A0CB: dw data03A17F
+#_03A0CD: dw data03A186
+#_03A0CF: dw data03A18D
+#_03A0D1: dw data03A193
+#_03A0D3: dw data03A19A
+#_03A0D5: dw data03A1A1
+#_03A0D7: dw data03A1A7
+#_03A0D9: dw data03A1AE
+#_03A0DB: dw data03A1B5
+#_03A0DD: dw data03A1BC
+#_03A0DF: dw data03A1C3
+#_03A0E1: dw data03A1CA
+#_03A0E3: dw data03A1D0
+#_03A0E5: dw data03A1D6
+#_03A0E7: dw data03A1DB
+#_03A0E9: dw data03A1E0
+#_03A0EB: dw data03A1E5
 
-#_03A0ED: dw $0005,$0201,$0703,$0504
-#_03A0F5: dw $0100,$0302,$0407,$0004
-#_03A0FD: dw $0301,$0407,$0004,$0301
-#_03A105: dw $0407,$0005,$0201,$0703
-#_03A10D: dw $0504,$0100,$0302,$0407
-#_03A115: dw $0005,$0201,$0703,$0304
-#_03A11D: dw $0300,$0607,$0003,$0703
-#_03A125: dw $0306,$0300,$0607,$0003
-#_03A12D: dw $0703,$0506,$0100,$0302
-#_03A135: dw $0407,$0005,$0201,$0703
-#_03A13D: dw $0404,$0100,$0703,$0404
-#_03A145: dw $0100,$0703,$0504,$0100
-#_03A14D: dw $0302,$0407,$0005,$0201
-#_03A155: dw $0703,$0404,$0100,$0703
-#_03A15D: dw $0504,$0100,$0302,$0407
-#_03A165: dw $0005,$0201,$0703,$0404
-#_03A16D: dw $0100,$0703,$0504,$0100
-#_03A175: dw $0302,$0407,$0004,$0301
-#_03A17D: dw $0407,$0005,$0201,$0703
-#_03A185: dw $0504,$0100,$0302,$0407
-#_03A18D: dw $0004,$0301,$0407,$0005
-#_03A195: dw $0201,$0703,$0504,$0100
-#_03A19D: dw $0302,$0407,$0004,$0301
-#_03A1A5: dw $0407,$0005,$0201,$0703
-#_03A1AD: dw $0504,$0100,$0302,$0407
-#_03A1B5: dw $0005,$0201,$0703,$0504
-#_03A1BD: dw $0100,$0302,$0407,$0005
-#_03A1C5: dw $0201,$0703,$0404,$0100
-#_03A1CD: dw $0703,$0404,$0100,$0703
-#_03A1D5: dw $0304,$0300,$0607,$0003
-#_03A1DD: dw $0703,$0306,$0300,$0607
+;---------------------------------------------------------------------------------------------------
 
-; TODO
-#_03A1E5: dw $0003,$0703
-#_03A1E9: db $06
+data03A0ED:
+#_03A0ED: db $05 ; message count
+#_03A0EE: db $00 ; Buy
+#_03A0EF: db $01 ; Sell
+#_03A0F0: db $02 ; Equip
+#_03A0F1: db $03 ; Check status
+#_03A0F2: db $07 ; Sort items
+#_03A0F3: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A0F4:
+#_03A0F4: db $05 ; message count
+#_03A0F5: db $00 ; Buy
+#_03A0F6: db $01 ; Sell
+#_03A0F7: db $02 ; Equip
+#_03A0F8: db $03 ; Check status
+#_03A0F9: db $07 ; Sort items
+#_03A0FA: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A0FB:
+#_03A0FB: db $04 ; message count
+#_03A0FC: db $00 ; Buy
+#_03A0FD: db $01 ; Sell
+#_03A0FE: db $03 ; Check status
+#_03A0FF: db $07 ; Sort items
+#_03A100: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A101:
+#_03A101: db $04 ; message count
+#_03A102: db $00 ; Buy
+#_03A103: db $01 ; Sell
+#_03A104: db $03 ; Check status
+#_03A105: db $07 ; Sort items
+#_03A106: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A107:
+#_03A107: db $05 ; message count
+#_03A108: db $00 ; Buy
+#_03A109: db $01 ; Sell
+#_03A10A: db $02 ; Equip
+#_03A10B: db $03 ; Check status
+#_03A10C: db $07 ; Sort items
+#_03A10D: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A10E:
+#_03A10E: db $05 ; message count
+#_03A10F: db $00 ; Buy
+#_03A110: db $01 ; Sell
+#_03A111: db $02 ; Equip
+#_03A112: db $03 ; Check status
+#_03A113: db $07 ; Sort items
+#_03A114: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A115:
+#_03A115: db $05 ; message count
+#_03A116: db $00 ; Buy
+#_03A117: db $01 ; Sell
+#_03A118: db $02 ; Equip
+#_03A119: db $03 ; Check status
+#_03A11A: db $07 ; Sort items
+#_03A11B: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A11C:
+#_03A11C: db $03 ; message count
+#_03A11D: db $00 ; Buy
+#_03A11E: db $03 ; Check status
+#_03A11F: db $07 ; Sort items
+#_03A120: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A121:
+#_03A121: db $03 ; message count
+#_03A122: db $00 ; Buy
+#_03A123: db $03 ; Check status
+#_03A124: db $07 ; Sort items
+#_03A125: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A126:
+#_03A126: db $03 ; message count
+#_03A127: db $00 ; Buy
+#_03A128: db $03 ; Check status
+#_03A129: db $07 ; Sort items
+#_03A12A: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A12B:
+#_03A12B: db $03 ; message count
+#_03A12C: db $00 ; Buy
+#_03A12D: db $03 ; Check status
+#_03A12E: db $07 ; Sort items
+#_03A12F: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A130:
+#_03A130: db $05 ; message count
+#_03A131: db $00 ; Buy
+#_03A132: db $01 ; Sell
+#_03A133: db $02 ; Equip
+#_03A134: db $03 ; Check status
+#_03A135: db $07 ; Sort items
+#_03A136: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A137:
+#_03A137: db $05 ; message count
+#_03A138: db $00 ; Buy
+#_03A139: db $01 ; Sell
+#_03A13A: db $02 ; Equip
+#_03A13B: db $03 ; Check status
+#_03A13C: db $07 ; Sort items
+#_03A13D: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A13E:
+#_03A13E: db $04 ; message count
+#_03A13F: db $00 ; Buy
+#_03A140: db $01 ; Sell
+#_03A141: db $03 ; Check status
+#_03A142: db $07 ; Sort items
+#_03A143: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A144:
+#_03A144: db $04 ; message count
+#_03A145: db $00 ; Buy
+#_03A146: db $01 ; Sell
+#_03A147: db $03 ; Check status
+#_03A148: db $07 ; Sort items
+#_03A149: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A14A:
+#_03A14A: db $05 ; message count
+#_03A14B: db $00 ; Buy
+#_03A14C: db $01 ; Sell
+#_03A14D: db $02 ; Equip
+#_03A14E: db $03 ; Check status
+#_03A14F: db $07 ; Sort items
+#_03A150: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A151:
+#_03A151: db $05 ; message count
+#_03A152: db $00 ; Buy
+#_03A153: db $01 ; Sell
+#_03A154: db $02 ; Equip
+#_03A155: db $03 ; Check status
+#_03A156: db $07 ; Sort items
+#_03A157: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A158:
+#_03A158: db $04 ; message count
+#_03A159: db $00 ; Buy
+#_03A15A: db $01 ; Sell
+#_03A15B: db $03 ; Check status
+#_03A15C: db $07 ; Sort items
+#_03A15D: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A15E:
+#_03A15E: db $05 ; message count
+#_03A15F: db $00 ; Buy
+#_03A160: db $01 ; Sell
+#_03A161: db $02 ; Equip
+#_03A162: db $03 ; Check status
+#_03A163: db $07 ; Sort items
+#_03A164: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A165:
+#_03A165: db $05 ; message count
+#_03A166: db $00 ; Buy
+#_03A167: db $01 ; Sell
+#_03A168: db $02 ; Equip
+#_03A169: db $03 ; Check status
+#_03A16A: db $07 ; Sort items
+#_03A16B: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A16C:
+#_03A16C: db $04 ; message count
+#_03A16D: db $00 ; Buy
+#_03A16E: db $01 ; Sell
+#_03A16F: db $03 ; Check status
+#_03A170: db $07 ; Sort items
+#_03A171: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A172:
+#_03A172: db $05 ; message count
+#_03A173: db $00 ; Buy
+#_03A174: db $01 ; Sell
+#_03A175: db $02 ; Equip
+#_03A176: db $03 ; Check status
+#_03A177: db $07 ; Sort items
+#_03A178: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A179:
+#_03A179: db $04 ; message count
+#_03A17A: db $00 ; Buy
+#_03A17B: db $01 ; Sell
+#_03A17C: db $03 ; Check status
+#_03A17D: db $07 ; Sort items
+#_03A17E: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A17F:
+#_03A17F: db $05 ; message count
+#_03A180: db $00 ; Buy
+#_03A181: db $01 ; Sell
+#_03A182: db $02 ; Equip
+#_03A183: db $03 ; Check status
+#_03A184: db $07 ; Sort items
+#_03A185: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A186:
+#_03A186: db $05 ; message count
+#_03A187: db $00 ; Buy
+#_03A188: db $01 ; Sell
+#_03A189: db $02 ; Equip
+#_03A18A: db $03 ; Check status
+#_03A18B: db $07 ; Sort items
+#_03A18C: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A18D:
+#_03A18D: db $04 ; message count
+#_03A18E: db $00 ; Buy
+#_03A18F: db $01 ; Sell
+#_03A190: db $03 ; Check status
+#_03A191: db $07 ; Sort items
+#_03A192: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A193:
+#_03A193: db $05 ; message count
+#_03A194: db $00 ; Buy
+#_03A195: db $01 ; Sell
+#_03A196: db $02 ; Equip
+#_03A197: db $03 ; Check status
+#_03A198: db $07 ; Sort items
+#_03A199: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A19A:
+#_03A19A: db $05 ; message count
+#_03A19B: db $00 ; Buy
+#_03A19C: db $01 ; Sell
+#_03A19D: db $02 ; Equip
+#_03A19E: db $03 ; Check status
+#_03A19F: db $07 ; Sort items
+#_03A1A0: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1A1:
+#_03A1A1: db $04 ; message count
+#_03A1A2: db $00 ; Buy
+#_03A1A3: db $01 ; Sell
+#_03A1A4: db $03 ; Check status
+#_03A1A5: db $07 ; Sort items
+#_03A1A6: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1A7:
+#_03A1A7: db $05 ; message count
+#_03A1A8: db $00 ; Buy
+#_03A1A9: db $01 ; Sell
+#_03A1AA: db $02 ; Equip
+#_03A1AB: db $03 ; Check status
+#_03A1AC: db $07 ; Sort items
+#_03A1AD: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1AE:
+#_03A1AE: db $05 ; message count
+#_03A1AF: db $00 ; Buy
+#_03A1B0: db $01 ; Sell
+#_03A1B1: db $02 ; Equip
+#_03A1B2: db $03 ; Check status
+#_03A1B3: db $07 ; Sort items
+#_03A1B4: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1B5:
+#_03A1B5: db $05 ; message count
+#_03A1B6: db $00 ; Buy
+#_03A1B7: db $01 ; Sell
+#_03A1B8: db $02 ; Equip
+#_03A1B9: db $03 ; Check status
+#_03A1BA: db $07 ; Sort items
+#_03A1BB: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1BC:
+#_03A1BC: db $05 ; message count
+#_03A1BD: db $00 ; Buy
+#_03A1BE: db $01 ; Sell
+#_03A1BF: db $02 ; Equip
+#_03A1C0: db $03 ; Check status
+#_03A1C1: db $07 ; Sort items
+#_03A1C2: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1C3:
+#_03A1C3: db $05 ; message count
+#_03A1C4: db $00 ; Buy
+#_03A1C5: db $01 ; Sell
+#_03A1C6: db $02 ; Equip
+#_03A1C7: db $03 ; Check status
+#_03A1C8: db $07 ; Sort items
+#_03A1C9: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1CA:
+#_03A1CA: db $04 ; message count
+#_03A1CB: db $00 ; Buy
+#_03A1CC: db $01 ; Sell
+#_03A1CD: db $03 ; Check status
+#_03A1CE: db $07 ; Sort items
+#_03A1CF: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1D0:
+#_03A1D0: db $04 ; message count
+#_03A1D1: db $00 ; Buy
+#_03A1D2: db $01 ; Sell
+#_03A1D3: db $03 ; Check status
+#_03A1D4: db $07 ; Sort items
+#_03A1D5: db $04 ; Exit store
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1D6:
+#_03A1D6: db $03 ; message count
+#_03A1D7: db $00 ; Buy
+#_03A1D8: db $03 ; Check status
+#_03A1D9: db $07 ; Sort items
+#_03A1DA: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1DB:
+#_03A1DB: db $03 ; message count
+#_03A1DC: db $00 ; Buy
+#_03A1DD: db $03 ; Check status
+#_03A1DE: db $07 ; Sort items
+#_03A1DF: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1E0:
+#_03A1E0: db $03 ; message count
+#_03A1E1: db $00 ; Buy
+#_03A1E2: db $03 ; Check status
+#_03A1E3: db $07 ; Sort items
+#_03A1E4: db $06 ; Don't buy
+
+;---------------------------------------------------------------------------------------------------
+
+data03A1E5:
+#_03A1E5: db $03 ; message count
+#_03A1E6: db $00 ; Buy
+#_03A1E7: db $03 ; Check status
+#_03A1E8: db $07 ; Sort items
+#_03A1E9: db $06 ; Don't buy
 
 ;===================================================================================================
 
@@ -5222,7 +5712,7 @@ ItemShopPrices:
 
 ;===================================================================================================
 
-routine03A768:
+ExtendedTextCommand:
 #_03A768: SEP #$30
 
 #_03A76A: JSR GetNextTextByte
@@ -5256,124 +5746,124 @@ routine03A768:
 ;===================================================================================================
 
 ExtendedTextCommands:
-#_03A793: dw TextExtCMD_00          ; 0x00
-#_03A795: dw TextExtCMD_01          ; 0x01
-#_03A797: dw TextExtCMD_02          ; 0x02
-#_03A799: dw TextExtCMD_03          ; 0x03
-#_03A79B: dw TextExtCMD_04          ; 0x04
-#_03A79D: dw TextExtCMD_05          ; 0x05
-#_03A79F: dw TextExtCMD_06          ; 0x06
-#_03A7A1: dw TextExtCMD_07          ; 0x07
-#_03A7A3: dw TextExtCMD_08          ; 0x08
-#_03A7A5: dw TextExtCMD_09          ; 0x09
-#_03A7A7: dw TextExtCMD_0A          ; 0x0A
-#_03A7A9: dw TextExtCMD_0B          ; 0x0B
-#_03A7AB: dw TextExtCMD_0C          ; 0x0C
-#_03A7AD: dw TextExtCMD_0D          ; 0x0D
-#_03A7AF: dw TextExtCMD_0E          ; 0x0E
-#_03A7B1: dw TextExtCMD_0F          ; 0x0F
-#_03A7B3: dw TextExtCMD_10          ; 0x10
-#_03A7B5: dw TextExtCMD_11          ; 0x11
-#_03A7B7: dw TextExtCMD_12          ; 0x12
-#_03A7B9: dw TextExtCMD_13          ; 0x13
-#_03A7BB: dw TextExtCMD_14          ; 0x14
-#_03A7BD: dw TextExtCMD_15          ; 0x15
-#_03A7BF: dw TextExtCMD_16          ; 0x16
-#_03A7C1: dw TextExtCMD_17          ; 0x17
-#_03A7C3: dw routine038000          ; 0x18
-#_03A7C5: dw routine0381DC          ; 0x19
-#_03A7C7: dw TextExtCMD_1A          ; 0x1A
-#_03A7C9: dw TextExtCMD_1B          ; 0x1B
-#_03A7CB: dw TextExtCMD_1C          ; 0x1C
-#_03A7CD: dw TextCommand_57         ; 0x1D
-#_03A7CF: dw TextExtCMD_1E          ; 0x1E
-#_03A7D1: dw TextExtCMD_1F          ; 0x1F
-#_03A7D3: dw TextExtCMD_20          ; 0x20
-#_03A7D5: dw TextExtCMD_21          ; 0x21
-#_03A7D7: dw TextExtCMD_22          ; 0x22
-#_03A7D9: dw TextExtCMD_23          ; 0x23
-#_03A7DB: dw TextExtCMD_24          ; 0x24
-#_03A7DD: dw TextExtCMD_25          ; 0x25
-#_03A7DF: dw TextExtCMD_26          ; 0x26
-#_03A7E1: dw TextExtCMD_27          ; 0x27
-#_03A7E3: dw AddItemToInventory     ; 0x28
-#_03A7E5: dw TakeItemFromSomewhere  ; 0x29
-#_03A7E7: dw TextExtCMD_2A          ; 0x2A
-#_03A7E9: dw TextExtCMD_2B          ; 0x2B
-#_03A7EB: dw TextExtCMD_2C          ; 0x2C
-#_03A7ED: dw TextExtCMD_2D          ; 0x2D
-#_03A7EF: dw TextExtCMD_2E          ; 0x2E
-#_03A7F1: dw TextExtCMD_2F          ; 0x2F
-#_03A7F3: dw TextExtCMD_30          ; 0x30
-#_03A7F5: dw TextExtCMD_31          ; 0x31
-#_03A7F7: dw TextExtCMD_32          ; 0x32
-#_03A7F9: dw TextExtCMD_33          ; 0x33
-#_03A7FB: dw TextExtCMD_34          ; 0x34
-#_03A7FD: dw TextExtCMD_35          ; 0x35
-#_03A7FF: dw TextExtCMD_36          ; 0x36
-#_03A801: dw TextExtCMD_37          ; 0x37
-#_03A803: dw TextExtCMD_38          ; 0x38
-#_03A805: dw TextExtCMD_39          ; 0x39
-#_03A807: dw TextExtCMD_3A          ; 0x3A
-#_03A809: dw TextExtCMD_3B          ; 0x3B
-#_03A80B: dw TextExtCMD_3C          ; 0x3C
-#_03A80D: dw TextExtCMD_3D          ; 0x3D
-#_03A80F: dw TextCommand_55         ; 0x3E
-#_03A811: dw TextExtCMD_3F          ; 0x3F
-#_03A813: dw TextExtCMD_40          ; 0x40
-#_03A815: dw TextExtCMD_41          ; 0x41
-#_03A817: dw TextExtCMD_42          ; 0x42
-#_03A819: dw TextExtCMD_43          ; 0x43
-#_03A81B: dw TextExtCMD_44          ; 0x44
-#_03A81D: dw TextExtCMD_45          ; 0x45
-#_03A81F: dw TextExtCMD_46          ; 0x46
-#_03A821: dw TextExtCMD_47          ; 0x47
-#_03A823: dw TextExtCMD_48          ; 0x48
-#_03A825: dw TextExtCMD_49          ; 0x49
-#_03A827: dw TextExtCMD_4A          ; 0x4A
-#_03A829: dw TextExtCMD_4B          ; 0x4B
-#_03A82B: dw TextExtCMD_4C          ; 0x4C
-#_03A82D: dw TextExtCMD_4D          ; 0x4D
-#_03A82F: dw TextExtCMD_4E          ; 0x4E
-#_03A831: dw TextExtCMD_4F          ; 0x4F
-#_03A833: dw TextExtCMD_50          ; 0x50
-#_03A835: dw TextExtCMD_51          ; 0x51
-#_03A837: dw TextExtCMD_52          ; 0x52
-#_03A839: dw TextExtCMD_53          ; 0x53
-#_03A83B: dw TextExtCMD_53          ; 0x54
-#_03A83D: dw TextExtCMD_55          ; 0x55
-#_03A83F: dw TextExtCMD_56          ; 0x56
-#_03A841: dw TextExtCMD_57          ; 0x57
-#_03A843: dw TextExtCMD_58          ; 0x58
-#_03A845: dw TextExtCMD_59          ; 0x59
-#_03A847: dw TextExtCMD_5A          ; 0x5A
-#_03A849: dw TextExtCMD_5B          ; 0x5B
-#_03A84B: dw TextExtCMD_5C          ; 0x5C
-#_03A84D: dw TextExtCMD_5D          ; 0x5D
-#_03A84F: dw TextExtCMD_5E          ; 0x5E
-#_03A851: dw TextExtCMD_5F          ; 0x5F
-#_03A853: dw TextExtCMD_60          ; 0x60
-#_03A855: dw TextExtCMD_61          ; 0x61
-#_03A857: dw TextExtCMD_62          ; 0x62
-#_03A859: dw TextExtCMD_63          ; 0x63
-#_03A85B: dw TextExtCMD_64          ; 0x64
-#_03A85D: dw TextExtCMD_65          ; 0x65
-#_03A85F: dw TextExtCMD_66          ; 0x66
-#_03A861: dw TextExtCMD_67          ; 0x67
-#_03A863: dw TextExtCMD_68          ; 0x68
-#_03A865: dw TextExtCMD_69          ; 0x69
-#_03A867: dw TextExtCMD_6A          ; 0x6A
-#_03A869: dw TextExtCMD_6B          ; 0x6B
-#_03A86B: dw TextExtCMD_6C          ; 0x6C
-#_03A86D: dw TextExtCMD_6D          ; 0x6D
-#_03A86F: dw TextExtCMD_6E          ; 0x6E
-#_03A871: dw TextExtCMD_6F          ; 0x6F
-#_03A873: dw TextExtCMD_70          ; 0x70
-#_03A875: dw TextExtCMD_71          ; 0x71
-#_03A877: dw TextExtCMD_72          ; 0x72
-#_03A879: dw TextExtCMD_73          ; 0x73
-#_03A87B: dw TextExtCMD_74          ; 0x74
-#_03A87D: dw TextExtCMD_75          ; 0x75
+#_03A793: dw TextCommand_TestChaseINT             ; 0x00
+#_03A795: dw TextCommand_TestChaseINTFor0         ; 0x01
+#_03A797: dw TextExtCMD_02                        ; 0x02
+#_03A799: dw TextExtCMD_03                        ; 0x03
+#_03A79B: dw TextCommand_TestAlignmentForMessage  ; 0x04
+#_03A79D: dw TextCommand_TestAlignmentRange       ; 0x05
+#_03A79F: dw TextCommand_TestChaseLevel           ; 0x06
+#_03A7A1: dw TextCommand_WaitXFrames              ; 0x07
+#_03A7A3: dw TextExtCMD_08                        ; 0x08
+#_03A7A5: dw TextExtCMD_09                        ; 0x09
+#_03A7A7: dw TextCommand_CheckMoonPhase           ; 0x0A
+#_03A7A9: dw TextCommand_RemovePercentageOfHP     ; 0x0B
+#_03A7AB: dw TextExtCMD_0C                        ; 0x0C
+#_03A7AD: dw TextExtCMD_0D                        ; 0x0D
+#_03A7AF: dw TextCommand_SEP20                    ; 0x0E
+#_03A7B1: dw TextExtCMD_0F                        ; 0x0F
+#_03A7B3: dw TextExtCMD_10                        ; 0x10
+#_03A7B5: dw TextExtCMD_11                        ; 0x11
+#_03A7B7: dw TextExtCMD_12                        ; 0x12
+#_03A7B9: dw TextCommand_LookForDyingDemon        ; 0x13
+#_03A7BB: dw TextExtCMD_14                        ; 0x14
+#_03A7BD: dw TextCommand_TestForStatusCategories  ; 0x15
+#_03A7BF: dw TextCommand_TestForMissingHPandMP    ; 0x16
+#_03A7C1: dw TextExtCMD_17                        ; 0x17
+#_03A7C3: dw routine038000                        ; 0x18
+#_03A7C5: dw routine0381DC                        ; 0x19
+#_03A7C7: dw TextExtCMD_1A                        ; 0x1A
+#_03A7C9: dw TextExtCMD_1B                        ; 0x1B
+#_03A7CB: dw TextExtCMD_1C                        ; 0x1C
+#_03A7CD: dw TextCommand_57                       ; 0x1D
+#_03A7CF: dw TextExtCMD_1E                        ; 0x1E
+#_03A7D1: dw TextExtCMD_1F                        ; 0x1F
+#_03A7D3: dw TextExtCMD_20                        ; 0x20
+#_03A7D5: dw TextExtCMD_21                        ; 0x21
+#_03A7D7: dw TextExtCMD_22                        ; 0x22
+#_03A7D9: dw TextExtCMD_23                        ; 0x23
+#_03A7DB: dw TextExtCMD_24                        ; 0x24
+#_03A7DD: dw TextExtCMD_25                        ; 0x25
+#_03A7DF: dw TextExtCMD_26                        ; 0x26
+#_03A7E1: dw TextExtCMD_27                        ; 0x27
+#_03A7E3: dw AddItemToInventory                   ; 0x28
+#_03A7E5: dw TakeItemFromSomewhere                ; 0x29
+#_03A7E7: dw TextExtCMD_2A                        ; 0x2A
+#_03A7E9: dw TextExtCMD_2B                        ; 0x2B
+#_03A7EB: dw TextExtCMD_2C                        ; 0x2C
+#_03A7ED: dw TextExtCMD_2D                        ; 0x2D
+#_03A7EF: dw TextCommand_TestForStatusMessage     ; 0x2E
+#_03A7F1: dw TextExtCMD_2F                        ; 0x2F
+#_03A7F3: dw TextExtCMD_30                        ; 0x30
+#_03A7F5: dw TextExtCMD_31                        ; 0x31
+#_03A7F7: dw TextExtCMD_32                        ; 0x32
+#_03A7F9: dw TextExtCMD_33                        ; 0x33
+#_03A7FB: dw TextExtCMD_34                        ; 0x34
+#_03A7FD: dw TextExtCMD_35                        ; 0x35
+#_03A7FF: dw TextExtCMD_36                        ; 0x36
+#_03A801: dw TextExtCMD_37                        ; 0x37
+#_03A803: dw TextExtCMD_38                        ; 0x38
+#_03A805: dw TextExtCMD_39                        ; 0x39
+#_03A807: dw TextExtCMD_3A                        ; 0x3A
+#_03A809: dw TextExtCMD_3B                        ; 0x3B
+#_03A80B: dw TextExtCMD_3C                        ; 0x3C
+#_03A80D: dw TextExtCMD_3D                        ; 0x3D
+#_03A80F: dw TextCommand_55                       ; 0x3E
+#_03A811: dw TextExtCMD_3F                        ; 0x3F
+#_03A813: dw TextExtCMD_40                        ; 0x40
+#_03A815: dw TextExtCMD_41                        ; 0x41
+#_03A817: dw TextExtCMD_42                        ; 0x42
+#_03A819: dw TextExtCMD_43                        ; 0x43
+#_03A81B: dw TextExtCMD_44                        ; 0x44
+#_03A81D: dw TextExtCMD_45                        ; 0x45
+#_03A81F: dw TextExtCMD_46                        ; 0x46
+#_03A821: dw TextExtCMD_47                        ; 0x47
+#_03A823: dw TextCommand_TryToTake1000Money       ; 0x48
+#_03A825: dw TextExtCMD_49                        ; 0x49
+#_03A827: dw TextExtCMD_4A                        ; 0x4A
+#_03A829: dw TextExtCMD_4B                        ; 0x4B
+#_03A82B: dw TextExtCMD_4C                        ; 0x4C
+#_03A82D: dw TextExtCMD_4D                        ; 0x4D
+#_03A82F: dw TextExtCMD_4E                        ; 0x4E
+#_03A831: dw TextExtCMD_4F                        ; 0x4F
+#_03A833: dw TextExtCMD_50                        ; 0x50
+#_03A835: dw TextExtCMD_51                        ; 0x51
+#_03A837: dw TextExtCMD_52                        ; 0x52
+#_03A839: dw TextExtCMD_53                        ; 0x53
+#_03A83B: dw TextExtCMD_53                        ; 0x54
+#_03A83D: dw TextExtCMD_55                        ; 0x55
+#_03A83F: dw TextExtCMD_56                        ; 0x56
+#_03A841: dw TextExtCMD_57                        ; 0x57
+#_03A843: dw TextExtCMD_58                        ; 0x58
+#_03A845: dw TextCommand_TradeGemForItem          ; 0x59
+#_03A847: dw TextCommand_Take3Items               ; 0x5A
+#_03A849: dw TextExtCMD_5B                        ; 0x5B
+#_03A84B: dw TextExtCMD_5C                        ; 0x5C
+#_03A84D: dw TextExtCMD_5D                        ; 0x5D
+#_03A84F: dw TextExtCMD_5E                        ; 0x5E
+#_03A851: dw TextExtCMD_5F                        ; 0x5F
+#_03A853: dw TextExtCMD_60                        ; 0x60
+#_03A855: dw TextExtCMD_61                        ; 0x61
+#_03A857: dw TextExtCMD_62                        ; 0x62
+#_03A859: dw TextExtCMD_63                        ; 0x63
+#_03A85B: dw TextExtCMD_64                        ; 0x64
+#_03A85D: dw TextExtCMD_65                        ; 0x65
+#_03A85F: dw TextExtCMD_66                        ; 0x66
+#_03A861: dw TextExtCMD_67                        ; 0x67
+#_03A863: dw TextExtCMD_68                        ; 0x68
+#_03A865: dw TextExtCMD_69                        ; 0x69
+#_03A867: dw TextExtCMD_6A                        ; 0x6A
+#_03A869: dw TextExtCMD_6B                        ; 0x6B
+#_03A86B: dw TextExtCMD_6C                        ; 0x6C
+#_03A86D: dw TextExtCMD_6D                        ; 0x6D
+#_03A86F: dw TextExtCMD_6E                        ; 0x6E
+#_03A871: dw TextExtCMD_6F                        ; 0x6F
+#_03A873: dw TextExtCMD_70                        ; 0x70
+#_03A875: dw TextExtCMD_71                        ; 0x71
+#_03A877: dw TextExtCMD_72                        ; 0x72
+#_03A879: dw TextExtCMD_73                        ; 0x73
+#_03A87B: dw TextExtCMD_74                        ; 0x74
+#_03A87D: dw TextExtCMD_75                        ; 0x75
 
 ;---------------------------------------------------------------------------------------------------
 ; TODO
@@ -5389,42 +5879,49 @@ TextExtCMD_3F:
 
 ;===================================================================================================
 
-TextExtCMD_00:
+TextCommand_TestChaseINT:
 #_03A886: SEP #$20
+
 #_03A888: JSR GetNextTextByte
 #_03A88B: CMP.w $1012
-#_03A88E: BCS branch03A894
+#_03A88E: BCS RelocateBecauseOfMyIntelligence
 
 #_03A890: JSR GetNextTextByte
+
 #_03A893: RTS
 
-;---------------------------------------------------------------------------------------------------
+;===================================================================================================
 
-#branch03A894:
+RelocateBecauseOfMyIntelligence:
 #_03A894: JSR GetNextTextByte
 #_03A897: JSR RelocateTextPointer
+
 #_03A89A: RTS
 
 ;===================================================================================================
 
-TextExtCMD_01:
+TextCommand_TestChaseINTFor0:
 #_03A89B: SEP #$20
+
 #_03A89D: JSR Load8Bit00
 #_03A8A0: CMP.w $1012
-#_03A8A3: BCS branch03A894
+#_03A8A3: BCS RelocateBecauseOfMyIntelligence
 
 #_03A8A5: JSR GetNextTextByte
+
 #_03A8A8: RTS
 
 ;===================================================================================================
 
 Load8Bit00:
 #_03A8A9: SEP #$20
+
 #_03A8AB: LDA.b #$00
+
 #_03A8AD: RTS
 
 ;===================================================================================================
-
+; TODO alignment related by have to analyze the bounds
 TextExtCMD_02:
 #_03A8AE: SEP #$20
 #_03A8B0: JSR GetNextTextByte
@@ -5509,7 +6006,7 @@ TextExtCMD_03:
 
 ;===================================================================================================
 
-TextExtCMD_04:
+TextCommand_TestAlignmentForMessage:
 #_03A92A: SEP #$20
 
 #_03A92C: JSR GetNextTextByte
@@ -5530,16 +6027,18 @@ TextExtCMD_04:
 .branch03A944
 #_03A944: LDA.w $0E01
 #_03A947: JSR RelocateTextPointer
+
 #_03A94A: RTS
 
 .branch03A94B
 #_03A94B: LDA.w $0E00
 #_03A94E: JSR RelocateTextPointer
+
 #_03A951: RTS
 
 ;===================================================================================================
-
-TextExtCMD_05:
+; TODO need to reparse text banks for this
+TextCommand_TestAlignmentRange:
 #_03A952: SEP #$20
 
 #_03A954: JSR GetNextTextByte
@@ -5569,28 +6068,29 @@ TextExtCMD_05:
 
 ;===================================================================================================
 ; Test MC level
-; TODO
 ;===================================================================================================
-TextExtCMD_06:
+TextCommand_TestChaseLevel:
 #_03A97A: SEP #$20
 
 #_03A97C: JSR GetNextTextByte
 #_03A97F: DEC A
 
 #_03A980: CMP.w $100A
-#_03A983: BCS .branch03A989
+#_03A983: BCS .weak
 
 #_03A985: JSR GetNextTextByte
+
 #_03A988: RTS
 
-.branch03A989
+.weak
 #_03A989: JSR GetNextTextByte
 #_03A98C: JSR RelocateTextPointer
+
 #_03A98F: RTS
 
 ;===================================================================================================
 
-TextExtCMD_07:
+TextCommand_WaitXFrames:
 #_03A990: JSR routine0384F9
 
 #_03A993: SEP #$30
@@ -5680,127 +6180,158 @@ routine03A9DD:
 #_03AA09: RTS
 
 ;===================================================================================================
-
+; TODO counting humans?
 TextExtCMD_09:
 #_03AA0A: JSR routine03A9DD
 
 #_03AA0D: REP #$30
+
 #_03AA0F: LDX.w #$0180
+
 #_03AA12: STZ.w $0E00
 
-.branch03AA16
+.next_teammate
 #_03AA15: LDA.w $1000,X
-#_03AA18: BPL .branch03AA1D
+#_03AA18: BPL .skip
 
 #_03AA1A: INC.w $0E00
 
-.branch03AA1D
+.skip
 #_03AA1D: TXA
 #_03AA1E: CLC
 #_03AA1F: ADC.w #$0060
 #_03AA22: TAX
+
 #_03AA23: CPX.w #$0600
-#_03AA26: BNE .branch03AA16
+#_03AA26: BNE .next_teammate
+
+;---------------------------------------------------------------------------------------------------
 
 #_03AA28: SEP #$20
+
 #_03AA2A: LDA.w $0E00
 #_03AA2D: CMP.w $0C52
-#_03AA30: BCC .branch03AA39
+#_03AA30: BCC .not_enough_qualify
 
 #_03AA32: JSR GetNextTextByte
 #_03AA35: JSR RelocateTextPointer
+
 #_03AA38: RTS
 
-.branch03AA39
+.not_enough_qualify
 #_03AA39: JSR GetNextTextByte
+
 #_03AA3C: RTS
 
 ;===================================================================================================
-
-TextExtCMD_0A:
+; This command actually appears to be unused.
+;===================================================================================================
+TextCommand_CheckMoonPhase:
 #_03AA3D: SEP #$20
+
 #_03AA3F: LDA.w $040F
 #_03AA42: LSR A
 #_03AA43: LSR A
 #_03AA44: LSR A
 #_03AA45: LSR A
 #_03AA46: STA.w $0E00
+
 #_03AA49: JSR GetNextTextByte
 #_03AA4C: CMP.w $0E00
-#_03AA4F: BEQ .branch03AA58
+#_03AA4F: BEQ .correct_moon
 
 #_03AA51: JSR GetNextTextByte
 #_03AA54: JSR RelocateTextPointer
+
 #_03AA57: RTS
 
-.branch03AA58
+.correct_moon
 #_03AA58: JSR GetNextTextByte
+
 #_03AA5B: RTS
 
 ;===================================================================================================
 
-TextExtCMD_0B:
+TextCommand_RemovePercentageOfHP:
 #_03AA5C: SEP #$30
+
 #_03AA5E: JSR GetNextTextByte
 #_03AA61: CMP.b #$FF
-#_03AA63: BEQ .branch03AAA4
+#_03AA63: BEQ .hurt_everyone
 
 #_03AA65: REP #$30
 #_03AA67: AND.w #$00FF
 #_03AA6A: ASL A
 #_03AA6B: TAY
-#_03AA6C: LDX.w CharacterOffsets_bank03,Y
+
+#_03AA6C: LDX.w PartyIDtoOffset,Y
+
 #_03AA6F: JSR GetNextTextByte
 #_03AA72: AND.w #$00FF
-#_03AA75: JSR routine03AA7C
+#_03AA75: JSR .remove_fraction_of_hp
 #_03AA78: JSR routine00A17E_bounce
+
 #_03AA7B: RTS
 
-;===================================================================================================
+;---------------------------------------------------------------------------------------------------
 
-routine03AA7C:
+.remove_fraction_of_hp
 #_03AA7C: REP #$30
+
 #_03AA7E: PHX
+
 #_03AA7F: STA.w $0E10
+
 #_03AA82: LDA.w $102E,X
 #_03AA85: STA.w $0E12
-#_03AA88: JSR Multiply0E1x_b03
+
+#_03AA88: JSR BigMultiplication
+
 #_03AA8B: LDX.w $0E16
 #_03AA8E: LDA.w $0E14
 #_03AA91: LDY.w #$0064
 #_03AA94: JSL DivisionBig_XA_by_Y
+
 #_03AA98: PLX
+
 #_03AA99: LDA.w $102E,X
 #_03AA9C: SEC
 #_03AA9D: SBC.w $0E80
 #_03AAA0: STA.w $102E,X
+
 #_03AAA3: RTS
 
-.branch03AAA4
+;---------------------------------------------------------------------------------------------------
+
+.hurt_everyone
 #_03AAA4: JSR GetNextTextByte
 
 #_03AAA7: REP #$30
+
 #_03AAA9: AND.w #$00FF
 #_03AAAC: STA.w $0E00
+
 #_03AAAF: LDX.w #$0000
 
-.branch03AAB2
+.next_teammate
 #_03AAB2: LDA.w $1000,X
 #_03AAB5: AND.w #$4000
-#_03AAB8: BEQ .branch03AAC0
+#_03AAB8: BEQ .skip
 
 #_03AABA: LDA.w $0E00
-#_03AABD: JSR routine03AA7C
+#_03AABD: JSR .remove_fraction_of_hp
 
-.branch03AAC0
+.skip
 #_03AAC0: TXA
 #_03AAC1: CLC
 #_03AAC2: ADC.w #$0060
 #_03AAC5: TAX
+
 #_03AAC6: CPX.w #$0600
-#_03AAC9: BNE .branch03AAB2
+#_03AAC9: BNE .next_teammate
 
 #_03AACB: JSR routine00A17E_bounce
+
 #_03AACE: RTS
 
 ;===================================================================================================
@@ -5808,33 +6339,48 @@ routine03AA7C:
 ; TODO stat creation?
 TextExtCMD_0C:
 #_03AACF: REP #$30
+
 #_03AAD1: JSR GetNextTextByte
 #_03AAD4: AND.w #$0003
 #_03AAD7: STA.w $0E00
+
 #_03AADA: PHA
+
 #_03AADB: PHP
+
 #_03AADC: ASL A
 #_03AADD: TAY
+
 #_03AADE: LDA.w .stat_offsets,Y
 #_03AAE1: STA.w $0715
+
 #_03AAE4: LDA.w #$0012
 #_03AAE7: STA.w $0578
+
 #_03AAEA: JSR routine03AB0B
+
 #_03AAED: JSL routine0183E5
+
 #_03AAF1: PLP
+
 #_03AAF2: PLA
 #_03AAF3: STA.w $0E00
+
 #_03AAF6: CMP.w #$0001
-#_03AAF9: BNE .branch03AAFF
+#_03AAF9: BNE .not_momo
 
 #_03AAFB: JSL routine00B465
 
-.branch03AAFF
+.not_momo
 #_03AAFF: JSR routine03AB3E
+
 #_03AB02: RTS
 
 .stat_offsets
-#_03AB03: dw $0000, $0060, $00C0, $0120
+#_03AB03: dw $0000
+#_03AB05: dw $0060
+#_03AB07: dw $00C0
+#_03AB09: dw $0120
 
 ;===================================================================================================
 
@@ -5866,9 +6412,11 @@ routine03AB21:
 
 routine03AB33:
 #_03AB33: SEP #$20
+
 #_03AB35: LDA.b #$FF
 #_03AB37: STA.w $0A71
 #_03AB3A: JSR routine03ABE6
+
 #_03AB3D: RTS
 
 ;===================================================================================================
@@ -5964,6 +6512,8 @@ data03ABDA:
 #_03ABDA: db $FE,$00,$00,$FE,$00,$00,$FE,$00
 #_03ABE2: db $00,$00,$FE,$00
 
+;===================================================================================================
+
 routine03ABE6:
 #_03ABE6: PHP
 #_03ABE7: SEP #$30
@@ -5998,70 +6548,100 @@ routine03ABE6:
 #_03AC18: RTS
 
 ;===================================================================================================
-
+; TODO
 TextExtCMD_0D:
 #_03AC19: SEP #$30
+
 #_03AC1B: JSR GetNextTextByte
 #_03AC1E: CMP.b #$FF
-#_03AC20: BEQ .branch03AC47
+#_03AC20: BEQ .hurt_everyone
 
 #_03AC22: REP #$30
+
 #_03AC24: AND.w #$00FF
 #_03AC27: ASL A
 #_03AC28: TAY
-#_03AC29: LDX.w CharacterOffsets_bank03,Y
+
+#_03AC29: LDX.w PartyIDtoOffset,Y
+
 #_03AC2C: JSR GetNextTextByte
 #_03AC2F: AND.w #$00FF
 #_03AC32: ASL A
 #_03AC33: TAY
-#_03AC34: LDA.w Bits_Descending_15to0,Y
+
+#_03AC34: LDA.w StatusConditionBits,Y
 #_03AC37: STA.w $0E00
+
 #_03AC3A: LDA.w $1002,X
 #_03AC3D: ORA.w $0E00
 #_03AC40: STA.w $1002,X
+
 #_03AC43: JSR routine00A17E_bounce
+
 #_03AC46: RTS
 
-.branch03AC47
+;---------------------------------------------------------------------------------------------------
+
+.hurt_everyone
 #_03AC47: REP #$30
+
 #_03AC49: JSR GetNextTextByte
 #_03AC4C: AND.w #$00FF
 #_03AC4F: ASL A
 #_03AC50: TAY
-#_03AC51: LDA.w Bits_Descending_15to0,Y
+
+#_03AC51: LDA.w StatusConditionBits,Y
 #_03AC54: STA.w $0E00
+
 #_03AC57: LDX.w #$0000
 
-.branch03AC5A
+.next_teammate
 #_03AC5A: LDA.w $1000,X
 #_03AC5D: AND.w #$4000
-#_03AC60: BEQ .branch03AC6B
+#_03AC60: BEQ .not_dying
 
 #_03AC62: LDA.w $1002,X
 #_03AC65: ORA.w $0E00
 #_03AC68: STA.w $1002,X
 
-.branch03AC6B
+.not_dying
 #_03AC6B: TXA
 #_03AC6C: CLC
 #_03AC6D: ADC.w #$0060
 #_03AC70: TAX
+
 #_03AC71: CPX.w #$0600
-#_03AC74: BNE .branch03AC5A
+#_03AC74: BNE .next_teammate
 
 #_03AC76: JSR routine00A17E_bounce
-#_03AC79: RTS
 
-Bits_Descending_15to0:
-#_03AC7A: dw $8000,$4000,$2000,$1000
-#_03AC82: dw $0800,$0400,$0200,$0100
-#_03AC8A: dw $0080,$0040,$0020,$0010
-#_03AC92: dw $0008,$0004,$0002,$0001
+#_03AC79: RTS
 
 ;===================================================================================================
 
-TextExtCMD_0E:
+StatusConditionBits:
+#_03AC7A: dw $8000 ; 0 - Dead
+#_03AC7C: dw $4000 ; 1 - Dying
+#_03AC7E: dw $2000 ; 2 - Stone
+#_03AC80: dw $1000 ; 3 - Paralysis
+#_03AC82: dw $0800 ; 4 - Poison
+#_03AC84: dw $0400 ; 5 - Fly
+#_03AC86: dw $0200 ; 6 - Frog
+#_03AC88: dw $0100 ; 7 - Curse
+#_03AC8A: dw $0080 ; 8 - Charm
+#_03AC8C: dw $0040 ; 9 - Sleep
+#_03AC8E: dw $0020 ; A - Bind
+#_03AC90: dw $0010 ; B - Freeze
+#_03AC92: dw $0008 ; C - Shock
+#_03AC94: dw $0004 ; D - Close
+#_03AC96: dw $0002 ; E - Panic
+#_03AC98: dw $0001 ; F - Happy
+
+;===================================================================================================
+
+TextCommand_SEP20:
 #_03AC9A: SEP #$20
+
 #_03AC9C: RTS
 
 ;===================================================================================================
@@ -6072,7 +6652,7 @@ TextExtCMD_0F:
 #_03AC9F: LDA.b #$00
 #_03ACA1: STA.w $0BA3
 
-#_03ACA4: JMP .branch03D893
+#_03ACA4: JMP routine03D893
 
 ;===================================================================================================
 
@@ -6082,7 +6662,7 @@ TextExtCMD_10:
 #_03ACA9: LDA.b #$01
 #_03ACAB: STA.w $0BA3
 
-#_03ACAE: JMP .branch03D893
+#_03ACAE: JMP routine03D893
 
 ;===================================================================================================
 
@@ -6092,7 +6672,7 @@ TextExtCMD_11:
 #_03ACB3: LDA.b #$03
 #_03ACB5: STA.w $0BA3
 
-#_03ACB8: JMP .branch03D893
+#_03ACB8: JMP routine03D893
 
 ;===================================================================================================
 
@@ -6102,33 +6682,36 @@ TextExtCMD_12:
 #_03ACBD: LDA.b #$02
 #_03ACBF: STA.w $0BA3
 
-#_03ACC2: JMP .branch03D893
+#_03ACC2: JMP routine03D893
 
 ;===================================================================================================
 
-TextExtCMD_13:
+TextCommand_LookForDyingDemon:
 #_03ACC5: REP #$30
 
 #_03ACC7: LDX.w #$0180
 
-.branch03ACCA
+.next_teammate
 #_03ACCA: LDA.w $1000,X
 #_03ACCD: AND.w #$4000
-#_03ACD0: BNE .branch03ACE1
+#_03ACD0: BNE .dead
 
 #_03ACD2: TXA
 #_03ACD3: CLC
 #_03ACD4: ADC.w #$0060
 #_03ACD7: TAX
+
 #_03ACD8: CMP.w #$0600
-#_03ACDB: BNE .branch03ACCA
+#_03ACDB: BNE .next_teammate
 
 #_03ACDD: JSR GetNextTextByte
+
 #_03ACE0: RTS
 
-.branch03ACE1
+.dead
 #_03ACE1: JSR GetNextTextByte
 #_03ACE4: JSR RelocateTextPointer
+
 #_03ACE7: RTS
 
 ;===================================================================================================
@@ -6143,93 +6726,110 @@ TextExtCMD_14:
 
 ;===================================================================================================
 
-TextExtCMD_15:
+TextCommand_TestForStatusCategories:
 #_03ACF1: REP #$30
+
 #_03ACF3: JSR GetNextTextByte
 #_03ACF6: STA.w $0E02
+
 #_03ACF9: AND.w #$000F
 #_03ACFC: ASL A
 #_03ACFD: TAX
-#_03ACFE: LDA.w data03AD3C,X
+
+#_03ACFE: LDA.w .status_masks,X
 #_03AD01: STA.w $0E00
+
 #_03AD04: LDX.w #$0000
 
-.branch03AD07
+.next_teammate
 #_03AD07: LDA.w $1000,X
-#_03AD0A: BPL .branch03AD24
+#_03AD0A: BPL .skip_teammate
 
 #_03AD0C: LDA.w $0E02
 #_03AD0F: AND.w #$00F0
-#_03AD12: BNE .branch03AD1C
+#_03AD12: BNE .dont_skip_something
 
+; TODO wtf is this bit? :(
 #_03AD14: LDA.w $1000,X
 #_03AD17: AND.w #$4000
-#_03AD1A: BEQ .branch03AD24
+#_03AD1A: BEQ .skip_teammate
 
-.branch03AD1C
+.dont_skip_something
 #_03AD1C: LDA.w $1002,X
 #_03AD1F: AND.w $0E00
-#_03AD22: BNE .branch03AD33
+#_03AD22: BNE .someone_afflicted
 
-.branch03AD24
+.skip_teammate
 #_03AD24: TXA
 #_03AD25: CLC
 #_03AD26: ADC.w #$0060
 #_03AD29: TAX
+
 #_03AD2A: CMP.w #$0600
-#_03AD2D: BNE .branch03AD07
+#_03AD2D: BNE .next_teammate
 
 #_03AD2F: JSR GetNextTextByte
+
 #_03AD32: RTS
 
-.branch03AD33
+.someone_afflicted
 #_03AD33: SEP #$20
+
 #_03AD35: JSR GetNextTextByte
 #_03AD38: JSR RelocateTextPointer
+
 #_03AD3B: RTS
 
-data03AD3C:
-#_03AD3C: dw $38FF,$0700,$C000
+.status_masks
+#_03AD3C: dw $38FF ; everything else
+#_03AD3E: dw $0700 ; cursed
+#_03AD40: dw $C000 ; dead or dying
 
 ;===================================================================================================
 
-TextExtCMD_16:
+TextCommand_TestForMissingHPandMP:
 #_03AD42: REP #$30
+
 #_03AD44: LDX.w #$0000
 
-.branch03AD47
+.next_teammate
 #_03AD47: LDA.w $1000,X
 #_03AD4A: AND.w #$C000
-#_03AD4D: BEQ .branch03AD67
+#_03AD4D: BEQ .skip_teammate
 
 #_03AD4F: LDA.w $1002,X
 #_03AD52: AND.w #$C000
-#_03AD55: BNE .branch03AD67
+#_03AD55: BNE .skip_teammate
 
 #_03AD57: LDA.w $102E,X
 #_03AD5A: CMP.w $1030,X
-#_03AD5D: BCC .branch03AD7B
+#_03AD5D: BCC .someone_drained
 
 #_03AD5F: LDA.w $1032,X
 #_03AD62: CMP.w $1034,X
-#_03AD65: BCC .branch03AD7B
+#_03AD65: BCC .someone_drained
 
-.branch03AD67
+.skip_teammate
 #_03AD67: TXA
 #_03AD68: CLC
 #_03AD69: ADC.w #$0060
 #_03AD6C: TAX
+
 #_03AD6D: CMP.w #$0600
-#_03AD70: BNE .branch03AD47
+#_03AD70: BNE .next_teammate
 
 #_03AD72: SEP #$20
+
 #_03AD74: JSR GetNextTextByte
 #_03AD77: JSR RelocateTextPointer
+
 #_03AD7A: RTS
 
-.branch03AD7B
+.someone_drained
 #_03AD7B: SEP #$20
+
 #_03AD7D: JSR GetNextTextByte
+
 #_03AD80: RTS
 
 ;===================================================================================================
@@ -6238,6 +6838,7 @@ TextExtCMD_17:
 #_03AD81: SEP #$20
 
 #_03AD83: JSR GetNextTextByte
+
 #_03AD86: STA.w $0BE2
 #_03AD89: STA.w $07E1
 
@@ -6252,17 +6853,22 @@ TextExtCMD_1A:
 #_03AD94: BMI .branch03ADC4
 
 #_03AD96: STA.w $070C
+
 #_03AD99: JSR GetNextTextByte
 #_03AD9C: PHA
+
 #_03AD9D: AND.b #$3F
 #_03AD9F: STA.w $070D
+
 #_03ADA2: PLA
 #_03ADA3: ASL A
 #_03ADA4: ROL A
 #_03ADA5: ROL A
 #_03ADA6: AND.b #$03
 #_03ADA8: STA.w $040D
+
 #_03ADAB: JSR GetNextTextByte
+
 #_03ADAE: STA.w $0710
 #_03ADB1: JSR GetNextTextByte
 #_03ADB4: JSR GetNextTextByte
@@ -6305,6 +6911,8 @@ TextExtCMD_1A:
 #_03AE05: STA.w $046A
 #_03AE08: RTS
 
+;===================================================================================================
+
 TextExtCMD_1B:
 #_03AE09: SEP #$30
 #_03AE0B: JMP TextExtCMD_1A
@@ -6313,11 +6921,13 @@ TextExtCMD_1B:
 
 TextExtCMD_1C:
 #_03AE0E: SEP #$30
+
 #_03AE10: JSR GetNextTextByte
 #_03AE13: ASL A
 #_03AE14: TAY
 
 #_03AE15: REP #$20
+
 #_03AE17: LDA.w .vectors,Y
 #_03AE1A: STA.w $00E0
 #_03AE1D: JMP ($00E0)
@@ -6368,80 +6978,100 @@ TextExtCMD_1C:
 
 TextCommand_57:
 #_03AE4C: SEP #$20
+
 #_03AE4E: JSR GetNextTextByte
 #_03AE51: STA.w $0A12
+
 #_03AE54: JSR GetNextTextByte
 #_03AE57: STA.w $0A13
+
 #_03AE5A: JSL LoadClassyMessage
+
 #_03AE5E: JSR routine0382C2
+
 #_03AE61: RTS
 
 ;===================================================================================================
 
 TextExtCMD_1F:
 #_03AE62: REP #$30
+
 #_03AE64: LDA.w $0C0B
 #_03AE67: STA.w $050A
+
 #_03AE6A: STZ.w $0524
+
 #_03AE6D: LDA.w #$0001
 #_03AE70: STA.w $050E
 #_03AE73: JSL LoadDemonStats
+
 #_03AE77: LDA.w $050A
 #_03AE7A: CMP.w #$008B
-#_03AE7D: BEQ .branch03AE92
+#_03AE7D: BEQ .cerberus
 
-.branch03AE7F
+.test_level
 #_03AE7F: LDA.w $100A
 #_03AE82: CMP.w $160A
-#_03AE85: BCS .branch03AE8E
+#_03AE85: BCS .dont_relocate
 
 #_03AE87: JSR GetNextTextByte
 #_03AE8A: JSR RelocateTextPointer
+
 #_03AE8D: RTS
 
-.branch03AE8E
+.dont_relocate
 #_03AE8E: JSR GetNextTextByte
+
 #_03AE91: RTS
 
-.branch03AE92
+;---------------------------------------------------------------------------------------------------
+
+.cerberus
 #_03AE92: LDA.w $0BED
 #_03AE95: CMP.w #$0134
-#_03AE98: BEQ .branch03AE8E
+#_03AE98: BEQ .dont_relocate
 
 #_03AE9A: LDA.w $0BEF
 #_03AE9D: CMP.w #$0134
-#_03AEA0: BEQ .branch03AE8E
+#_03AEA0: BEQ .dont_relocate
 
 #_03AEA2: LDA.w $0A3B
 #_03AEA5: AND.w #$0001
-#_03AEA8: BEQ .branch03AE7F
+#_03AEA8: BEQ .test_level
 
 #_03AEAA: LDA.w $0BF1
 #_03AEAD: CMP.w #$0134
-#_03AEB0: BEQ .branch03AE8E
+#_03AEB0: BEQ .dont_relocate
 
-#_03AEB2: BRA .branch03AE7F
+#_03AEB2: BRA .test_level
 
 ;===================================================================================================
 
 TextExtCMD_20:
 #_03AEB4: REP #$30
+
 #_03AEB6: LDA.w $0C0B
 #_03AEB9: STA.w $050A
+
 #_03AEBC: STZ.w $0524
+
 #_03AEBF: LDA.w #$0001
 #_03AEC2: STA.w $050E
+
 #_03AEC5: JSL LoadDemonStats
+
 #_03AEC9: LDX.w #$0600
 #_03AECC: JSL routine0F8582
-#_03AED0: BCC .branch03AED9
+#_03AED0: BCC .dont_relocate
 
 #_03AED2: JSR GetNextTextByte
 #_03AED5: JSR RelocateTextPointer
+
 #_03AED8: RTS
 
-.branch03AED9
+.dont_relocate
 #_03AED9: JSR GetNextTextByte
+
 #_03AEDC: RTS
 
 ;===================================================================================================
@@ -6488,68 +7118,76 @@ TextExtCMD_22:
 
 TextExtCMD_23:
 #_03AF05: REP #$30
+
 #_03AF07: JSR GetNextTextByte
 #_03AF0A: AND.w #$00FF
 #_03AF0D: STA.w $0E00
+
 #_03AF10: CMP.w #$00FF
-#_03AF13: BEQ .branch03AF3B
+#_03AF13: BEQ .examine_party
 
 #_03AF15: CMP.w #$00FE
-#_03AF18: BEQ .branch03AF3B
+#_03AF18: BEQ .examine_party
 
 #_03AF1A: ASL A
 #_03AF1B: TAY
-#_03AF1C: LDX.w CharacterOffsets_bank03,Y
+
+#_03AF1C: LDX.w PartyIDtoOffset,Y
+
 #_03AF1F: LDA.w $1002,X
 #_03AF22: AND.w #$C000
-#_03AF25: BEQ .branch03AF2A
+#_03AF25: BEQ .specific_person_not_dying
 
 #_03AF27: JMP routine00A17E_bounce
 
-.branch03AF2A
+.specific_person_not_dying
 #_03AF2A: LDA.w $1030,X
 #_03AF2D: CMP.w $102E,X
-#_03AF30: BCS .branch03AF35
+#_03AF30: BCS .no_hp_overflow
 
 #_03AF32: JMP routine00A17E_bounce
 
-.branch03AF35
+.no_hp_overflow
 #_03AF35: STA.w $102E,X
+
 #_03AF38: JMP routine00A17E_bounce
 
-.branch03AF3B
+;---------------------------------------------------------------------------------------------------
+
+.examine_party
 #_03AF3B: LDX.w #$0000
 
-.branch03AF3E
+.next_teammate
 #_03AF3E: LDA.w $1000,X
-#_03AF41: BPL .branch03AF66
+#_03AF41: BPL .skip_teammate
 
 #_03AF43: LDA.w $1002,X
 #_03AF46: AND.w #$C000
-#_03AF49: BNE .branch03AF66
+#_03AF49: BNE .skip_teammate
 
 #_03AF4B: LDA.w $0E00
 #_03AF4E: CMP.w #$00FE
-#_03AF51: BEQ .branch03AF5B
+#_03AF51: BEQ .check_hp
 
 #_03AF53: LDA.w $1000,X
 #_03AF56: AND.w #$4000
-#_03AF59: BEQ .branch03AF66
+#_03AF59: BEQ .skip_teammate
 
-.branch03AF5B
+.check_hp
 #_03AF5B: LDA.w $1030,X
 #_03AF5E: CMP.w $102E,X
-#_03AF61: BCC .branch03AF66
+#_03AF61: BCC .skip_teammate
 
 #_03AF63: STA.w $102E,X
 
-.branch03AF66
+.skip_teammate
 #_03AF66: TXA
 #_03AF67: CLC
 #_03AF68: ADC.w #$0060
 #_03AF6B: TAX
+
 #_03AF6C: CMP.w #$0600
-#_03AF6F: BNE .branch03AF3E
+#_03AF6F: BNE .next_teammate
 
 #_03AF71: JMP routine00A17E_bounce
 
@@ -6557,18 +7195,22 @@ TextExtCMD_23:
 
 TextExtCMD_24:
 #_03AF74: REP #$30
+
 #_03AF76: JSR GetNextTextByte
 #_03AF79: AND.w #$00FF
 #_03AF7C: STA.w $0E00
+
 #_03AF7F: CMP.w #$00FF
-#_03AF82: BEQ .branch03AFAA
+#_03AF82: BEQ .examine_party
 
 #_03AF84: CMP.w #$00FE
-#_03AF87: BEQ .branch03AFAA
+#_03AF87: BEQ .examine_party
 
 #_03AF89: ASL A
 #_03AF8A: TAY
-#_03AF8B: LDX.w CharacterOffsets_bank03,Y
+
+#_03AF8B: LDX.w PartyIDtoOffset,Y
+
 #_03AF8E: LDA.w $1002,X
 #_03AF91: AND.w #$C000
 #_03AF94: BEQ .branch03AF99
@@ -6578,47 +7220,51 @@ TextExtCMD_24:
 .branch03AF99
 #_03AF99: LDA.w $1034,X
 #_03AF9C: CMP.w $1032,X
-#_03AF9F: BCS .branch03AFA4
+#_03AF9F: BCS .no_overflow
 
 #_03AFA1: JMP routine00A17E_bounce
 
-.branch03AFA4
+.no_overflow
 #_03AFA4: STA.w $1032,X
+
 #_03AFA7: JMP routine00A17E_bounce
 
-.branch03AFAA
+;---------------------------------------------------------------------------------------------------
+
+.examine_party
 #_03AFAA: LDX.w #$0000
 
-.branch03AFAD
+.next_teammate
 #_03AFAD: LDA.w $1000,X
-#_03AFB0: BPL .branch03AFD5
+#_03AFB0: BPL .skip_teammate
 
 #_03AFB2: LDA.w $1002,X
 #_03AFB5: AND.w #$C000
-#_03AFB8: BNE .branch03AFD5
+#_03AFB8: BNE .skip_teammate
 
 #_03AFBA: LDA.w $0E00
 #_03AFBD: CMP.w #$00FE
-#_03AFC0: BEQ .branch03AFCA
+#_03AFC0: BEQ .check_mp
 
 #_03AFC2: LDA.w $1000,X
 #_03AFC5: AND.w #$4000
-#_03AFC8: BEQ .branch03AFD5
+#_03AFC8: BEQ .skip_teammate
 
-.branch03AFCA
+.check_mp
 #_03AFCA: LDA.w $1034,X
 #_03AFCD: CMP.w $1032,X
-#_03AFD0: BCC .branch03AFD5
+#_03AFD0: BCC .skip_teammate
 
 #_03AFD2: STA.w $1032,X
 
-.branch03AFD5
+.skip_teammate
 #_03AFD5: TXA
 #_03AFD6: CLC
 #_03AFD7: ADC.w #$0060
 #_03AFDA: TAX
+
 #_03AFDB: CMP.w #$0600
-#_03AFDE: BNE .branch03AFAD
+#_03AFDE: BNE .next_teammate
 
 #_03AFE0: JMP routine00A17E_bounce
 
@@ -6626,48 +7272,56 @@ TextExtCMD_24:
 
 TextExtCMD_25:
 #_03AFE3: REP #$30
+
 #_03AFE5: JSR GetNextTextByte
 #_03AFE8: AND.w #$00FF
 #_03AFEB: STA.w $0E00
+
 #_03AFEE: CMP.w #$00FF
-#_03AFF1: BEQ .branch03B006
+#_03AFF1: BEQ .examine_party
 
 #_03AFF3: CMP.w #$00FE
-#_03AFF6: BEQ .branch03B006
+#_03AFF6: BEQ .examine_party
 
 #_03AFF8: ASL A
 #_03AFF9: TAY
-#_03AFFA: LDX.w CharacterOffsets_bank03,Y
+
+#_03AFFA: LDX.w PartyIDtoOffset,Y
+
 #_03AFFD: LDA.w #$0000
 #_03B000: STA.w $1002,X
+
 #_03B003: JMP routine00A17E_bounce
 
-.branch03B006
+;---------------------------------------------------------------------------------------------------
+
+.examine_party
 #_03B006: LDX.w #$0000
 
-.branch03B009
+.next_teammate
 #_03B009: LDA.w $1000,X
-#_03B00C: BPL .branch03B024
+#_03B00C: BPL .skip_teammate
 
 #_03B00E: LDA.w $0E00
 #_03B011: CMP.w #$00FE
-#_03B014: BEQ .branch03B01E
+#_03B014: BEQ .clear_status
 
 #_03B016: LDA.w $1000,X
 #_03B019: AND.w #$4000
-#_03B01C: BEQ .branch03B024
+#_03B01C: BEQ .skip_teammate
 
-.branch03B01E
+.clear_status
 #_03B01E: LDA.w #$0000
 #_03B021: STA.w $1002,X
 
-.branch03B024
+.skip_teammate
 #_03B024: TXA
 #_03B025: CLC
 #_03B026: ADC.w #$0060
 #_03B029: TAX
+
 #_03B02A: CMP.w #$0600
-#_03B02D: BNE .branch03B009
+#_03B02D: BNE .next_teammate
 
 ;===================================================================================================
 
@@ -6676,100 +7330,130 @@ routine00A17E_bounce:
 #_03B033: RTS
 
 ;===================================================================================================
-
+; TODO recruitment?
 TextExtCMD_26:
 #_03B034: SEP #$20
+
 #_03B036: JSR GetNextTextByte
 #_03B039: CMP.b #$04
-#_03B03B: BCS .branch03B075
+#_03B03B: BCS .add_demon
 
 #_03B03D: CMP.b #$01
-#_03B03F: BNE .branch03B047
+#_03B03F: BNE .not_momo
 
 #_03B041: PHA
+
 #_03B042: JSL routine0F99C2
+
 #_03B046: PLA
 
-.branch03B047
+;---------------------------------------------------------------------------------------------------
+
+.not_momo
 #_03B047: REP #$30
+
 #_03B049: AND.w #$00FF
 #_03B04C: ASL A
 #_03B04D: TAY
-#_03B04E: LDX.w CharacterOffsets_bank03,Y
+
+#_03B04E: LDX.w PartyIDtoOffset,Y
 #_03B051: STX.w $0E00
+
 #_03B054: LDA.w #$C000
 #_03B057: STA.w $1000,X
+
 #_03B05A: LDX.w #$0000
 
-.branch03B05D
+.next_party_slot
 #_03B05D: LDA.w $0700,X
 #_03B060: CMP.w #$FFFF
-#_03B063: BEQ .branch03B06C
+#_03B063: BEQ .empty_slot
 
 #_03B065: INX
 #_03B066: INX
 #_03B067: CPX.w #$000C
-#_03B06A: BNE .branch03B05D
+#_03B06A: BNE .next_party_slot
 
-.branch03B06C
+.empty_slot
 #_03B06C: LDA.w $0E00
 #_03B06F: STA.w $0700,X
+
 #_03B072: JMP routine00A17E_bounce
 
-.branch03B075
+;---------------------------------------------------------------------------------------------------
+
+.add_demon
 #_03B075: REP #$30
+
 #_03B077: AND.w #$0001
 #_03B07A: ASL A
 #_03B07B: TAX
+
 #_03B07C: LDA.w $050A,X
 #_03B07F: STA.w $0E00
+
 #_03B082: LDX.w #$0180
 
-.branch03B085
+.next_teammate
 #_03B085: LDA.w $1000,X
-#_03B088: BEQ .branch03B09D
+#_03B088: BEQ .copy_demon
 
 #_03B08A: TXA
 #_03B08B: CLC
 #_03B08C: ADC.w #$0060
 #_03B08F: TAX
+
 #_03B090: CMP.w #$0600
-#_03B093: BNE .branch03B085
+#_03B093: BNE .next_teammate
+
+;---------------------------------------------------------------------------------------------------
 
 #_03B095: SEP #$20
+
 #_03B097: LDA.b #$FF
 #_03B099: STA.w $0A58
+
 #_03B09C: RTS
 
-.branch03B09D
+;---------------------------------------------------------------------------------------------------
+
+.copy_demon
 #_03B09D: PHX
+
 #_03B09E: LDA.w $0E00
 #_03B0A1: STA.w $050A
+
 #_03B0A4: STZ.w $0524
+
 #_03B0A7: LDA.w #$0001
 #_03B0AA: STA.w $050E
+
 #_03B0AD: JSL LoadDemonStats
+
 #_03B0B1: PLX
+
 #_03B0B2: TXA
 #_03B0B3: CLC
 #_03B0B4: ADC.w #$1000
 #_03B0B7: STA.w $00E0
+
 #_03B0BA: LDY.w #$0000
 
-.branch03B0BD
+.copy_next_stat
 #_03B0BD: LDA.w $1600,Y
 #_03B0C0: STA.b ($E0),Y
 #_03B0C2: INY
 #_03B0C3: CPY.w #$0060
-#_03B0C6: BNE .branch03B0BD
+#_03B0C6: BNE .copy_next_stat
 
 #_03B0C8: LDA.w #$8000
 #_03B0CB: STA.w $1000,X
+
 #_03B0CE: JMP routine00A17E_bounce
 
 ;===================================================================================================
 
-CharacterOffsets_bank03:
+PartyIDtoOffset:
 #_03B0D1: dw $0000, $0060, $00C0, $0120
 #_03B0D9: dw $0180, $01E0, $0240, $02A0
 #_03B0E1: dw $0300, $0360, $03C0, $0420
@@ -6779,39 +7463,48 @@ CharacterOffsets_bank03:
 
 TextExtCMD_27:
 #_03B0F1: SEP #$20
+
 #_03B0F3: JSR GetNextTextByte
 #_03B0F6: CMP.b #$04
-#_03B0F8: BCS routine03B11F
+#_03B0F8: BCS .demon
 
 #_03B0FA: REP #$30
+
 #_03B0FC: AND.w #$00FF
 #_03B0FF: ASL A
 #_03B100: TAY
-#_03B101: LDX.w CharacterOffsets_bank03,Y
+
+#_03B101: LDX.w PartyIDtoOffset,Y
 #_03B104: STX.w $0E00
+
 #_03B107: LDA.w #$0000
 #_03B10A: STA.w $1000,X
+
 #_03B10D: LDX.w $0E00
 #_03B110: JSL routine0F853F
 
 #_03B114: SEP #$20
+
 #_03B116: LDA.w $0A58
-#_03B119: BPL .branch03B11C
+#_03B119: BPL .continue
 
 #_03B11B: RTS
 
-.branch03B11C
+.continue
 #_03B11C: JMP routine00A17E_bounce
 
 ;===================================================================================================
 
-routine03B11F:
+.demon
 #_03B11F: REP #$30
+
 #_03B121: AND.w #$0001
 #_03B124: ASL A
 #_03B125: TAX
+
 #_03B126: LDA.w $050A,X
 #_03B129: JSL routine0F84C1
+
 #_03B12D: JMP routine00A17E_bounce
 
 ;===================================================================================================
@@ -6825,7 +7518,9 @@ AddItemToInventory_long:
 ;===================================================================================================
 AddItemToInventory:
 #_03B134: SEP #$30
+
 #_03B136: STZ.w $0A58
+
 #_03B139: LDX.b #$00
 
 ; first look for an existing stack
@@ -6839,6 +7534,7 @@ AddItemToInventory:
 #_03B148: BEQ .invalid_slot
 
 #_03B14A: INC.w $0781,X
+
 #_03B14D: BRA .exit
 
 .invalid_slot
@@ -6846,6 +7542,8 @@ AddItemToInventory:
 #_03B150: INX
 #_03B151: CPX.b #$3C
 #_03B153: BNE .next_slot
+
+;---------------------------------------------------------------------------------------------------
 
 #_03B155: LDX.b #$00
 
@@ -6882,7 +7580,9 @@ TakeItemFromSomewhere_long:
 ;===================================================================================================
 TakeItemFromSomewhere:
 #_03B177: SEP #$30
+
 #_03B179: STZ.w $0A58
+
 ; $0A51 indicates how the item is being removed
 ; 0x00         Search inventory
 ; 0x01 - 0x7F  Take from a specific slot
@@ -6904,10 +7604,12 @@ TakeItemFromSomewhere:
 
 #_03B192: DEC.w $0781,X
 #_03B195: BEQ .that_was_the_last_one
+
 #_03B197: RTS
 
 .that_was_the_last_one
-#_03B198: JSL RearrangeItems
+#_03B198: JSL CountAndArrangeGemsOrSomething
+
 #_03B19C: RTS
 
 .not_here
@@ -6917,35 +7619,48 @@ TakeItemFromSomewhere:
 #_03B1A1: BNE .next_slot
 
 #_03B1A3: DEC.w $0A58
+
 #_03B1A6: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 ; Look in a specific inventory slot and assume there's nonzero
 .check_specific_slot
 #_03B1A7: ASL A
 #_03B1A8: TAX
+
 #_03B1A9: LDA.w $0781,X
 #_03B1AC: DEC A
 #_03B1AD: STA.w $0781,X
+
 #_03B1B0: BEQ .now_theres_no_more
+
 #_03B1B2: RTS
 
 .now_theres_no_more
-#_03B1B3: JSL RearrangeItems
+#_03B1B3: JSL CountAndArrangeGemsOrSomething
+
 #_03B1B7: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 ; Take from a character, searching all their equipment
 .take_from_character
 #_03B1B8: REP #$30
+
 #_03B1BA: AND.w #$007F
 #_03B1BD: DEC A
 #_03B1BE: AND.w #$000F
 #_03B1C1: ASL A
 #_03B1C2: TAX
-#_03B1C3: LDA.l CharacterOffsets_bank03,X
+
+#_03B1C3: LDA.l PartyIDtoOffset,X
 #_03B1C7: TAX
+
 #_03B1C8: LDA.w $0A50
 #_03B1CB: AND.w #$00FF
 #_03B1CE: STA.w $0A50
+
 #_03B1D1: LDY.w #$0006
 
 .next_equipment_slot
@@ -6959,19 +7674,27 @@ TakeItemFromSomewhere:
 #_03B1DF: BPL .next_equipment_slot
 
 #_03B1E1: SEP #$30
+
 #_03B1E3: DEC.w $0A58
+
 #_03B1E6: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .they_were_holding_it
 #_03B1E7: LDA.w #$FFFF
 #_03B1EA: STA.w $0692
 #_03B1ED: STA.w $1042,X
+
 #_03B1F0: TXA
 #_03B1F1: AND.w #$FFF0
 #_03B1F4: STA.w $0715
+
 #_03B1F7: JSL routine01A700
+
 #_03B1FB: LDX.w $0715
 #_03B1FE: JSL UpdatePlayerStats
+
 #_03B202: RTS
 
 ;===================================================================================================
@@ -6982,6 +7705,7 @@ TextExtCMD_2A:
 
 #_03B205: LDA.b #$FF
 #_03B207: STA.w $0EEF
+
 #_03B20A: JSL routine02E87C
 
 #_03B20E: REP #$20
@@ -6997,54 +7721,69 @@ TextExtCMD_2A:
 
 TextExtCMD_2B:
 #_03B21B: REP #$30
+
 #_03B21D: JSR GetNextTextByte
 #_03B220: AND.w #$00FF
 #_03B223: CMP.w #$0004
-#_03B226: BCS .branch03B237
+#_03B226: BCS .demon
 
 #_03B228: ASL A
 #_03B229: TAY
-#_03B22A: LDX.w CharacterOffsets_bank03,Y
+#_03B22A: LDX.w PartyIDtoOffset,Y
+
 #_03B22D: LDA.w $1000,X
 #_03B230: AND.w #$4000
-#_03B233: BEQ .branch03B260
+#_03B233: BEQ .dying_message
 
-#_03B235: BEQ .branch03B269
+; Impossible branch
+; should this have been a BRA?
+#_03B235: BEQ .dont_relocate
 
-.branch03B237
+;---------------------------------------------------------------------------------------------------
+
+.demon
 #_03B237: AND.w #$0001
 #_03B23A: ASL A
 #_03B23B: TAY
+
 #_03B23C: LDA.w $050A,Y
 #_03B23F: STA.w $0E00
+
 #_03B242: LDX.w #$0180
 
-.branch03B245
+.next_teammate
 #_03B245: LDA.w $1000,X
 #_03B248: AND.w #$4000
-#_03B24B: BEQ .branch03B255
+#_03B24B: BEQ .not_dying
 
 #_03B24D: LDA.w $1004,X
 #_03B250: CMP.w $0E00
-#_03B253: BEQ .branch03B269
+#_03B253: BEQ .dont_relocate
 
-.branch03B255
+.not_dying
 #_03B255: TXA
 #_03B256: CLC
 #_03B257: ADC.w #$0060
 #_03B25A: TAX
-#_03B25B: CMP.w #$0600
-#_03B25E: BNE .branch03B245
 
-.branch03B260
+#_03B25B: CMP.w #$0600
+#_03B25E: BNE .next_teammate
+
+;---------------------------------------------------------------------------------------------------
+
+.dying_message
 #_03B260: SEP #$20
+
 #_03B262: JSR GetNextTextByte
 #_03B265: JSR RelocateTextPointer
+
 #_03B268: RTS
 
-.branch03B269
+.dont_relocate
 #_03B269: SEP #$20
+
 #_03B26B: JSR GetNextTextByte
+
 #_03B26E: RTS
 
 ;===================================================================================================
@@ -7065,85 +7804,104 @@ TextExtCMD_2D:
 
 ;===================================================================================================
 
-TextExtCMD_2E:
+TextCommand_TestForStatusMessage:
 #_03B27E: REP #$30
+
 #_03B280: JSR GetNextTextByte
 #_03B283: AND.w #$00FF
 #_03B286: ASL A
 #_03B287: TAY
-#_03B288: LDX.w CharacterOffsets_bank03,Y
+
+#_03B288: LDX.w PartyIDtoOffset,Y
+
 #_03B28B: JSR GetNextTextByte
 #_03B28E: AND.w #$00FF
 #_03B291: ASL A
 #_03B292: TAY
-#_03B293: LDA.w Bits_Descending_15to0,Y
+
+#_03B293: LDA.w StatusConditionBits,Y
 #_03B296: STA.w $0E00
+
 #_03B299: LDA.w $1002,X
 #_03B29C: AND.w $0E00
-#_03B29F: BNE .branch03B2A5
+#_03B29F: BNE .afflicted
 
 #_03B2A1: JSR GetNextTextByte
 #_03B2A4: RTS
 
-.branch03B2A5
+.afflicted
 #_03B2A5: SEP #$20
+
 #_03B2A7: JSR GetNextTextByte
 #_03B2AA: JSR RelocateTextPointer
+
 #_03B2AD: RTS
 
 ;===================================================================================================
-
+; TODO upload palette?
 TextExtCMD_2F:
 #_03B2AE: SEP #$30
+
 #_03B2B0: LDA.l $0022FD
-#_03B2B4: BEQ .branch03B2BA
+#_03B2B4: BEQ .no_delay
 
 #_03B2B6: JSL AddSelfAsVectorAndMakeSpace
 
-.branch03B2BA
+.no_delay
 #_03B2BA: JSR GetNextTextByte
 
 #_03B2BD: REP #$30
+
 #_03B2BF: AND.w #$00FF
 #_03B2C2: BIT.w #$0080
-#_03B2C5: BNE .branch03B2D5
+#_03B2C5: BNE .back_palette
 
 #_03B2C7: PHA
+
 #_03B2C8: JSR GetNextTextByte
 #_03B2CB: AND.w #$00FF
 #_03B2CE: TAX
+
 #_03B2CF: PLA
 #_03B2D0: JSL Transfer16Colors_F9AFA
+
 #_03B2D4: RTS
 
-.branch03B2D5
+;---------------------------------------------------------------------------------------------------
+
+.back_palette
 #_03B2D5: AND.w #$007F
 #_03B2D8: ORA.w #$0008
 #_03B2DB: PHA
+
 #_03B2DC: JSR GetNextTextByte
 #_03B2DF: AND.w #$00FF
 #_03B2E2: CLC
 #_03B2E3: ADC.w #$0100
 #_03B2E6: TAX
+
 #_03B2E7: PLA
 #_03B2E8: JSL Transfer16Colors_F9AFA
+
 #_03B2EC: RTS
 
 ;===================================================================================================
 
 TextExtCMD_30:
 #_03B2ED: SEP #$30
+
 #_03B2EF: JSR GetNextTextByte
 #_03B2F2: AND.b #$FF
-#_03B2F4: BEQ .branch03B31E
+#_03B2F4: BEQ .no_list
 
 #_03B2F6: PHA
+
 #_03B2F7: LDX.b #$00
 
-.branch03B2F9
+.next
 #_03B2F9: JSR GetNextTextByte
 #_03B2FC: CMP.b #$FF
-#_03B2FE: BEQ .branch03B30C
+#_03B2FE: BEQ .end_of_list
 
 #_03B300: STA.w $0A75,X
 
@@ -7151,30 +7909,40 @@ TextExtCMD_30:
 #_03B306: STA.w $0A79,X
 
 #_03B309: INX
-#_03B30A: BRA .branch03B2F9
+#_03B30A: BRA .next
 
-.branch03B30C
+.end_of_list
 #_03B30C: TXA
 #_03B30D: STA.w $0A74
+
 #_03B310: DEC A
 #_03B311: STA.w $0A73
+
 #_03B314: LDA.b #$01
 #_03B316: STA.w $0A72
+
 #_03B319: PLA
 #_03B31A: STA.w $0A71
+
 #_03B31D: RTS
 
-.branch03B31E
+;---------------------------------------------------------------------------------------------------
+
+.no_list
 #_03B31E: LDA.b #$FF
 #_03B320: STA.w $0A71
+
 #_03B323: JSL AddSelfAsVector
+
 #_03B327: RTS
 
 ;===================================================================================================
 
 TextExtCMD_31:
 #_03B328: SEP #$20
+
 #_03B32A: INC.w $0A3D
+
 #_03B32D: JSR GetNextTextByte
 #_03B330: STA.w $0E00
 
@@ -7186,6 +7954,7 @@ TextExtCMD_31:
 #_03B33C: PHA
 #_03B33D: LDA.w $0A26
 #_03B340: PHA
+
 #_03B341: LDA.w $00C2
 #_03B344: PHA
 #_03B345: LDA.w $00C0
@@ -7194,20 +7963,24 @@ TextExtCMD_31:
 #_03B349: LDA.w $0E00
 #_03B34C: AND.w #$00FF
 #_03B34F: STA.w $0A22
+
 #_03B352: LDA.w #$0002
 #_03B355: STA.w $0A24
 #_03B358: STZ.w $0A26
+
 #_03B35B: LDA.w $0C41
 #_03B35E: AND.w #$00FF
 #_03B361: ASL A
 #_03B362: ASL A
 #_03B363: STA.w $0E00
+
 #_03B366: ASL A
 #_03B367: CLC
 #_03B368: ADC.w $0E00
 #_03B36B: CLC
 #_03B36C: ADC.w $0A22
 #_03B36F: STA.w $0A22
+
 #_03B372: JSR routine0382C2
 #_03B375: JSL routine03834C
 
@@ -7217,6 +7990,7 @@ TextExtCMD_31:
 #_03B37C: STA.w $00C0
 #_03B37F: PLA
 #_03B380: STA.w $00C2
+
 #_03B383: PLA
 #_03B384: STA.w $0A26
 #_03B387: PLA
@@ -7225,60 +7999,79 @@ TextExtCMD_31:
 #_03B38C: STA.w $0A22
 
 #_03B38F: SEP #$20
+
 #_03B391: DEC.w $0A3D
+
 #_03B394: RTS
 
 ;===================================================================================================
 
 TextExtCMD_32:
 #_03B395: REP #$30
+
 #_03B397: LDA.w $0C41
 #_03B39A: AND.w #$00FF
 #_03B39D: ASL A
 #_03B39E: TAY
+
 #_03B39F: PHY
-#_03B3A0: LDA.w data03A09D,Y
+
+#_03B3A0: LDA.w ShopActionMessagePointers,Y
 #_03B3A3: STA.w $00E0
+
 #_03B3A6: LDY.w #$0000
 
 #_03B3A9: SEP #$30
+
 #_03B3AB: LDA.b ($E0),Y
 #_03B3AD: TAX
+
 #_03B3AE: STA.w $09F1
 #_03B3B1: STZ.w $09F0
 #_03B3B4: STZ.w $09F2
 #_03B3B7: STZ.w $09F3
+
 #_03B3BA: LDA.b #$04
 #_03B3BC: STA.w $09F4
 
 .next_menu_item
 #_03B3BF: INY
+
 #_03B3C0: PHX
 #_03B3C1: PHY
 
 #_03B3C2: REP #$20
-#_03B3C4: LDA.w #data08FFC1
+
+#_03B3C4: LDA.w #ShopActionMessagePointers
 #_03B3C7: STA.w $00C3
 
 #_03B3CA: SEP #$20
-#_03B3CC: LDA.b #$08
+
+#_03B3CC: LDA.b #ShopActionMessagePointers>>16
 #_03B3CE: STA.w $00C5
+
 #_03B3D1: STZ.w $0A33
 
 #_03B3D4: LDA.b ($E0),Y
 #_03B3D6: STA.w $0A39
-#_03B3D9: JSR WriteTextIndexW0A39
+
+#_03B3D9: JSR WriteIndexedEntityNameToBuffer
 #_03B3DC: JSR TextCommand_29
 
 #_03B3DF: REP #$20
+
 #_03B3E1: LDA.w $0980
 #_03B3E4: CLC
 #_03B3E5: ADC.w #$0040
 #_03B3E8: STA.w $0980
+
 #_03B3EB: PLY
 #_03B3EC: PLX
+
 #_03B3ED: DEX
 #_03B3EE: BPL .next_menu_item
+
+;---------------------------------------------------------------------------------------------------
 
 #_03B3F0: JSL routine02C8E9
 
@@ -7286,40 +8079,50 @@ TextExtCMD_32:
 #_03B3F6: PLY
 
 #_03B3F7: SEP #$20
+
 #_03B3F9: LDA.w $09F3
 #_03B3FC: BMI .branch03B40E
 
 #_03B3FE: REP #$20
-#_03B400: LDA.w data03A09D,Y
+
+#_03B400: LDA.w ShopActionMessagePointers,Y
 #_03B403: STA.w $00E0
+
 #_03B406: LDY.w $09F3
 #_03B409: INY
 
 #_03B40A: SEP #$30
+
 #_03B40C: LDA.b ($E0),Y
 
 .branch03B40E
 #_03B40E: STA.w $0C42
+
 #_03B411: STZ.w $0A33
+
 #_03B414: RTS
 
 ;===================================================================================================
 
 TextExtCMD_33:
 #_03B415: SEP #$30
+
 #_03B417: JSR GetNextTextByte
 #_03B41A: PHA
+
 #_03B41B: JSR GetNextTextByte
 #_03B41E: STA.w $0E00
+
 #_03B421: PLA
 #_03B422: CMP.w $0C42
-#_03B425: BEQ .branch03B428
+#_03B425: BEQ .relocate
 
 #_03B427: RTS
 
-.branch03B428
+.relocate
 #_03B428: LDA.w $0E00
 #_03B42B: JSR RelocateTextPointer
+
 #_03B42E: RTS
 
 ;===================================================================================================
@@ -7330,48 +8133,58 @@ TextExtCMD_34:
 #_03B431: STZ.w $0A33
 
 #_03B434: LDA.w $0C41
+
 #_03B437: JMP routine0389F0
 
 ;===================================================================================================
-
+; TODO cash check
 TextExtCMD_35:
 #_03B43A: REP #$20
+
 #_03B43C: LDA.w $0407
 #_03B43F: CMP.w $0A16
-#_03B442: BCC .branch03B454
+#_03B442: BCC .relocate
 
-#_03B444: BNE .branch03B44E
+#_03B444: BNE .dont_relocate
 
 #_03B446: LDA.w $0405
 #_03B449: CMP.w $0A14
-#_03B44C: BCC .branch03B454
+#_03B44C: BCC .relocate
 
-.branch03B44E
+.dont_relocate
 #_03B44E: SEP #$20
 #_03B450: JSR GetNextTextByte
+
 #_03B453: RTS
 
-.branch03B454
+.relocate
 #_03B454: SEP #$20
+
 #_03B456: JSR GetNextTextByte
 #_03B459: JSR RelocateTextPointer
+
 #_03B45C: RTS
 
 ;===================================================================================================
 
 TextExtCMD_36:
 #_03B45D: REP #$20
+
 #_03B45F: LDA.w $0A14
 #_03B462: STA.w $0E10
+
 #_03B465: LDA.w $0A16
 #_03B468: STA.w $0E12
 
 #_03B46B: SEP #$30
+
 #_03B46D: LDA.w $0A33
 #_03B470: LSR A
 #_03B471: TAX
+
 #_03B472: LDY.b #$05
 #_03B474: JSL routine03D775
+
 #_03B478: RTS
 
 ;===================================================================================================
@@ -7380,15 +8193,18 @@ TextExtCMD_37:
 #_03B479: JSL routine0F9493
 #_03B47D: JSL routine00C7AA
 #_03B481: JSL routine0F84F6
+
 #_03B485: RTS
 
 ;===================================================================================================
 
 TextExtCMD_38:
 #_03B486: SEP #$20
+
 #_03B488: LDA.b #$03
 #_03B48A: STA.w $0F76
 #_03B48D: STA.w TS
+
 #_03B490: LDA.b #$1F
 #_03B492: STA.w $0F74
 #_03B495: STA.w TM
@@ -7403,13 +8219,15 @@ TextExtCMD_38:
 
 #_03B4A8: LDA.w #$0000
 
-.branch03B4AB
+.loop
 #_03B4AB: PHA
+
 #_03B4AC: JSR routine03B4E0
+
 #_03B4AF: PLA
 #_03B4B0: INC A
 #_03B4B1: CMP.w #$0008
-#_03B4B4: BNE .branch03B4AB
+#_03B4B4: BNE .loop
 
 #_03B4B6: RTS
 
@@ -7417,25 +8235,32 @@ TextExtCMD_38:
 
 TextExtCMD_39:
 #_03B4B7: REP #$30
+
 #_03B4B9: LDA.w #$0017
 #_03B4BC: JSL routine02F609
+
 #_03B4C0: LDA.w #$000D
 #_03B4C3: JSL routine02FC6E
+
 #_03B4C7: LDA.w #$0007
 
-.branch03B4CA
+.loop
 #_03B4CA: PHA
+
 #_03B4CB: JSR routine03B4E0
+
 #_03B4CE: PLA
 #_03B4CF: DEC A
-#_03B4D0: BPL .branch03B4CA
+#_03B4D0: BPL .loop
 
 #_03B4D2: JSR routine03B4E0
 
 #_03B4D5: SEP #$20
+
 #_03B4D7: LDA.b #$02
 #_03B4D9: STA.w $0F76
 #_03B4DC: STA.w TS
+
 #_03B4DF: RTS
 
 ;===================================================================================================
@@ -7443,7 +8268,9 @@ TextExtCMD_39:
 routine03B4E0:
 #_03B4E0: PHP
 #_03B4E1: REP #$30
+
 #_03B4E3: STA.w $0E00
+
 #_03B4E6: PHB
 
 #_03B4E7: SEP #$20
@@ -7452,49 +8279,61 @@ routine03B4E0:
 #_03B4EB: PHA
 
 #_03B4EC: REP #$20
+
 #_03B4EE: PLB
+
 #_03B4EF: LDX.w #$0000
 #_03B4F2: LDA.w #$0000
 
-.branch03B4F5
+.clear_next
 #_03B4F5: STA.l $7F7000,X
+
 #_03B4F9: INX
 #_03B4FA: INX
 #_03B4FB: CPX.w #$0800
-#_03B4FE: BNE .branch03B4F5
+#_03B4FE: BNE .clear_next
 
 #_03B500: LDA.w $0E00
-#_03B503: BMI .branch03B55B
+#_03B503: BMI .finished
+
+;---------------------------------------------------------------------------------------------------
 
 #_03B505: SEP #$20
+
 #_03B507: LDA.b #$7F
 #_03B509: STA.w $00E2
 #_03B50C: STA.w $00E5
 
 #_03B50F: REP #$20
+
 #_03B511: LDX.w #$0000
 
-.branch03B514
+.next_chunk
 #_03B514: LDA.w $0E00
 #_03B517: INC A
 #_03B518: ASL A
 #_03B519: TAY
-#_03B51A: LDA.w data03B584,Y
+
+#_03B51A: LDA.w .target,Y
 #_03B51D: CMP.w #$FFFF
-#_03B520: BEQ .branch03B55B
+#_03B520: BEQ .finished
 
 #_03B522: STA.w $00E0
+
 #_03B525: LDA.w $0E00
 #_03B528: ASL A
 #_03B529: TAY
-#_03B52A: LDA.w data03B596,Y
+
+#_03B52A: LDA.w .increment,Y
 #_03B52D: CLC
 #_03B52E: ADC.w $00E0
 #_03B531: STA.w $00E3
+
 #_03B534: LDY.w #$0000
 
-.branch03B537
-#_03B537: LDA.w data03B5A6,X
+; TODO groups of 11
+.next_copy
+#_03B537: LDA.w .tiles,X
 #_03B53A: AND.w #$00FF
 #_03B53D: ORA.w #$0C00
 #_03B540: STA.b [$E0],Y
@@ -7504,67 +8343,93 @@ routine03B4E0:
 #_03B548: STA.b [$E3],Y
 
 #_03B54A: INX
+
 #_03B54B: TYA
 #_03B54C: CLC
 #_03B54D: ADC.w #$0040
 #_03B550: TAY
+
 #_03B551: CPY.w #$02C0
-#_03B554: BNE .branch03B537
+#_03B554: BNE .next_copy
 
 #_03B556: DEC.w $0E00
-#_03B559: BRA .branch03B514
+#_03B559: BRA .next_chunk
 
-.branch03B55B
+;---------------------------------------------------------------------------------------------------
+
+.finished
 #_03B55B: SEP #$20
+
 #_03B55D: LDA.b #$01
 #_03B55F: STA.w $0ED4
 
 #_03B562: REP #$20
+
 #_03B564: STZ.w $0F4D
 #_03B567: STZ.w $0F4F
+
 #_03B56A: LDA.w #$0000
 #_03B56D: JSL VRAM_From_7FXXXX
+
 #_03B571: JSL AddSelfAsVectorAndMakeSpace
+
 #_03B575: JSL AddSelfAsVector
 #_03B579: JSL AddSelfAsVector
 #_03B57D: JSL AddSelfAsVector
+
 #_03B581: PLB
 #_03B582: PLP
+
 #_03B583: RTS
 
-data03B584:
-#_03B584: dw $FFFF,$7050,$7052,$7054
-#_03B58C: dw $7056,$7058,$705A,$705C
-#_03B594: dw $705E
+;---------------------------------------------------------------------------------------------------
 
-data03B596:
-#_03B596: dw $001E,$001A,$0016,$0012
-#_03B59E: dw $000E,$000A,$0006,$0002
+.target
+#_03B584: dw $FFFF ; done
 
-data03B5A6:
-#_03B5A6: db $06,$0A,$0E,$13,$18,$1D,$22,$27
-#_03B5AE: db $2B,$2F,$31,$05,$09,$0D,$12,$17
-#_03B5B6: db $1C,$21,$26,$2A,$2E,$30,$02,$08
-#_03B5BE: db $0C,$11,$16,$1B,$20,$25,$29,$2D
-#_03B5C6: db $02,$01,$07,$0B,$10,$15,$1A,$1F
-#_03B5CE: db $24,$28,$2C,$01,$02,$04,$02,$0F
-#_03B5D6: db $14,$19,$1E,$23,$02,$04,$02,$01
-#_03B5DE: db $03,$01,$03,$01,$03,$01,$03,$01
-#_03B5E6: db $03,$01,$02,$04,$02,$04,$02,$04
-#_03B5EE: db $02,$04,$02,$04,$02,$01,$03,$01
-#_03B5F6: db $03,$01,$03,$01,$03,$01,$03,$01
+#_03B586: dw $7F7050
+#_03B588: dw $7F7052
+#_03B58A: dw $7F7054
+#_03B58C: dw $7F7056
+#_03B58E: dw $7F7058
+#_03B590: dw $7F705A
+#_03B592: dw $7F705C
+#_03B594: dw $7F705E
+
+.increment
+#_03B596: dw $001E
+#_03B598: dw $001A
+#_03B59A: dw $0016
+#_03B59C: dw $0012
+#_03B59E: dw $000E
+#_03B5A0: dw $000A
+#_03B5A2: dw $0006
+#_03B5A4: dw $0002
+
+.tiles
+#_03B5A6: db $06, $0A, $0E, $13, $18, $1D, $22, $27, $2B, $2F, $31
+#_03B5B1: db $05, $09, $0D, $12, $17, $1C, $21, $26, $2A, $2E, $30
+#_03B5BC: db $02, $08, $0C, $11, $16, $1B, $20, $25, $29, $2D, $02
+#_03B5C7: db $01, $07, $0B, $10, $15, $1A, $1F, $24, $28, $2C, $01
+#_03B5D2: db $02, $04, $02, $0F, $14, $19, $1E, $23, $02, $04, $02
+#_03B5DD: db $01, $03, $01, $03, $01, $03, $01, $03, $01, $03, $01
+#_03B5E8: db $02, $04, $02, $04, $02, $04, $02, $04, $02, $04, $02
+#_03B5F3: db $01, $03, $01, $03, $01, $03, $01, $03, $01, $03, $01
 
 ;===================================================================================================
 
 routine03B5FE:
 #_03B5FE: PHP
+
 #_03B5FF: PHB
 #_03B600: PHK
 #_03B601: PLB
 
 #_03B602: SEP #$30
+
 #_03B604: STZ.w $0CF3
 #_03B607: STZ.w $0CF4
+
 #_03B60A: JSL Reset_OAMrelatedWRAM
 
 #_03B60E: LDA.b #$29
@@ -7574,6 +8439,7 @@ routine03B5FE:
 #_03B616: JSL routine02F609
 
 #_03B61A: REP #$30
+
 #_03B61C: LDA.w $0717
 #_03B61F: LSR A
 #_03B620: LSR A
@@ -7581,10 +8447,13 @@ routine03B5FE:
 #_03B622: LSR A
 #_03B623: AND.w #$0003
 #_03B626: TAX
+
 #_03B627: PHA
+
 #_03B628: LDA.w .data03B639,X
 #_03B62B: AND.w #$00FF
 #_03B62E: STA.w $0A59
+
 #_03B631: PLA
 #_03B632: BEQ .branch03B637
 
@@ -7832,11 +8701,14 @@ routine03B819:
 #_03B819: JSR routine03B8BC
 
 #_03B81C: SEP #$30
+
 #_03B81E: LDA.b #$05
 #_03B820: STA.w $09F4
 #_03B823: STZ.w $09F2
 #_03B826: STZ.w $09F0
+
 #_03B829: JSL routine02C8E9
+
 #_03B82D: RTS
 
 ;===================================================================================================
@@ -7881,7 +8753,9 @@ ElevatorTextBottom:
 routine03B87A:
 #_03B87A: PHP
 #_03B87B: SEP #$30
+
 #_03B87D: JSR routine03B8CD
+
 #_03B880: LDA.w $0E00
 #_03B883: CMP.w $09F3
 #_03B886: BEQ .exit
@@ -7893,6 +8767,7 @@ routine03B87A:
 
 #_03B88F: LDA.b #$1F
 #_03B891: STA.w $0A76
+
 #_03B894: BRA .branch03B8A0
 
 .branch03B896
@@ -7925,12 +8800,16 @@ routine03B87A:
 
 routine03B8BC:
 #_03B8BC: SEP #$30
+
 #_03B8BE: JSR routine03B8CD
 
 #_03B8C1: REP #$30
+
 #_03B8C3: LDA.w #$0013
 #_03B8C6: STA.w $0E08
+
 #_03B8C9: JSR routine03B93B
+
 #_03B8CC: RTS
 
 ;===================================================================================================
@@ -7938,22 +8817,26 @@ routine03B8BC:
 routine03B8CD:
 #_03B8CD: PHP
 #_03B8CE: SEP #$30
+
 #_03B8D0: LDX.b #$00
+
 #_03B8D2: LDA.w $0713
 
-.branch03B85D
+.next
 #_03B8D5: CMP.w $098C,X
-#_03B8D8: BEQ .branch03B8DD
+#_03B8D8: BEQ .found
 
 #_03B8DA: INX
-#_03B8DB: BRA .branch03B85D
+#_03B8DB: BRA .next
 
-.branch03B8DD
+.found
 #_03B8DD: TXA
 
 #_03B8DE: REP #$20
+
 #_03B8E0: AND.w #$00FF
 #_03B8E3: STA.w $0E00
+
 #_03B8E6: PLP
 #_03B8E7: RTS
 
@@ -7961,44 +8844,59 @@ routine03B8CD:
 
 routine03B8E8:
 #_03B8E8: SEP #$30
+
 #_03B8EA: JSR routine03B8CD
+
 #_03B8ED: LDA.w $0E00
 #_03B8F0: CMP.w $09F3
-#_03B8F3: BEQ .branch03B928
+#_03B8F3: BEQ .equal
 
 #_03B8F5: LDA.b #$0C ; SFX 0C
 #_03B8F7: JSL Write_to_APU_transferrable
 
-.branch03B8FB
+.next
 #_03B8FB: PHP
 #_03B8FC: REP #$20
+
 #_03B8FE: LDA.w #$0014
 #_03B901: STA.w $0E08
+
 #_03B904: JSR routine03B93B
+
 #_03B907: PLP
+
 #_03B908: LDA.w $0E00
 #_03B90B: CMP.w $09F3
-#_03B90E: BEQ .branch03B928
-#_03B910: BCC .branch03B91D
+#_03B90E: BEQ .equal
+#_03B910: BCC .lower
 
 #_03B912: LDY.b #$3C
 #_03B914: JSL RunFramesYTimes
-#_03B918: DEC.w $0E00
-#_03B91B: BRA .branch03B8FB
 
-.branch03B91D
+#_03B918: DEC.w $0E00
+#_03B91B: BRA .next
+
+.lower
 #_03B91D: LDY.b #$3C
 #_03B91F: JSL RunFramesYTimes
-#_03B923: INC.w $0E00
-#_03B926: BRA .branch03B8FB
 
-.branch03B928
+#_03B923: INC.w $0E00
+
+#_03B926: BRA .next
+
+;---------------------------------------------------------------------------------------------------
+
+.equal
 #_03B928: REP #$30
+
 #_03B92A: LDY.w #$001E
 #_03B92D: JSL RunFramesYTimes
+
 #_03B931: LDA.w #$0013
 #_03B934: STA.w $0E08
+
 #_03B937: JSR routine03B93B
+
 #_03B93A: RTS
 
 ;===================================================================================================
@@ -8016,12 +8914,15 @@ routine03B93B:
 
 #_03B94F: LDA.w #$0000
 #_03B952: STA.w $0E02
-#_03B955: ASL A
+
+#_03B955: ASL A ; are you okay?
 #_03B956: STA.w $0E04
 
-.branch03B959
+.next
 #_03B959: PHX
+
 #_03B95A: LDA.w #$0012
+
 #_03B95D: CPX.w $0E00
 #_03B960: BNE .branch03B965
 
@@ -8029,158 +8930,216 @@ routine03B93B:
 
 .branch03B965
 #_03B965: LDX.w $0E04
+
 #_03B968: STA.w $0000,X
+
 #_03B96B: LDA.w $0E06
 #_03B96E: STA.w $1AA0,X
+
 #_03B971: LDA.w #$0028
 #_03B974: STA.w $1A60,X
+
 #_03B977: LDA.w $0E06
 #_03B97A: CLC
 #_03B97B: ADC.w #$000E
 #_03B97E: STA.w $0E06
 
 #_03B981: SEP #$20
+
 #_03B983: LDX.w $0E02
+
 #_03B986: LDA.b #$80
 #_03B988: STA.w $1A00,X
 
 #_03B98B: REP #$20
+
 #_03B98D: INC.w $0E02
+
 #_03B990: INC.w $0E04
 #_03B993: INC.w $0E04
+
 #_03B996: PLX
 #_03B997: INX
+
 #_03B998: CPX.w $09F1
-#_03B99B: BCC .branch03B959
-#_03B99D: BEQ .branch03B959
+#_03B99B: BCC .next
+#_03B99D: BEQ .next
 
 #_03B99F: JSL AddSelfAsVectorAndMakeSpace
+
 #_03B9A3: RTS
 
 ;===================================================================================================
 
 routine03B9A4:
 #_03B9A4: SEP #$30
+
 #_03B9A6: STA.w $0E02
+
 #_03B9A9: LDX.b #$FF
+
 #_03B9AB: LDA.w $0713
 
-.branch03B9AE
+.search
 #_03B9AE: INX
+
 #_03B9AF: CMP.w $098C,X
-#_03B9B2: BNE .branch03B9AE
+#_03B9B2: BNE .search
 
 #_03B9B4: LDY.b #$00
+
 #_03B9B6: STX.w $0E00
+
 #_03B9B9: CPX.w $09F3
-#_03B9BC: BNE .branch03B9BF
+#_03B9BC: BNE .continue
+
 #_03B9BE: RTS
 
-.branch03B9BF
-#_03B9BF: BCC .branch03B9C3
+;---------------------------------------------------------------------------------------------------
+
+.continue
+#_03B9BF: BCC .lower
 
 #_03B9C1: LDY.b #$32
 
-.branch03B9C3
+.lower
 #_03B9C3: PHY
+
 #_03B9C4: LDA.b #$30 ; SFX 30
 #_03B9C6: JSL Write_to_APU_transferrable
+
 #_03B9CA: PLY
 
-.branch03B9CB
+.next
 #_03B9CB: PHY
 
 #_03B9CC: REP #$20
+
 #_03B9CE: LDX.w $0E02
-#_03B9D1: LDA.w data03BA23,Y
-#_03B9D4: BEQ .branch03B9F3
+
+#_03B9D1: LDA.w data03BA23+0,Y
+#_03B9D4: BEQ .done
 
 #_03B9D6: CLC
 #_03B9D7: ADC.w $0F4F,X
 #_03B9DA: STA.w $0F4F,X
 
 #_03B9DD: SEP #$20
+
 #_03B9DF: LDA.b #$01
 #_03B9E1: STA.w $0ED4
-#_03B9E4: LDA.w data03BA25,Y
+
+#_03B9E4: LDA.w data03BA23+2,Y
 #_03B9E7: TAY
+
 #_03B9E8: JSL RunFramesYTimes
 
 #_03B9EC: PLY
+
 #_03B9ED: INY
 #_03B9EE: INY
 #_03B9EF: INY
 #_03B9F0: INY
-#_03B9F1: BRA .branch03B9CB
+#_03B9F1: BRA .next
 
-.branch03B9F3
+;---------------------------------------------------------------------------------------------------
+
+.done
 #_03B9F3: PLY
+
 #_03B9F4: LDY.b #$0A
 #_03B9F6: JSL RunFramesYTimes
 
 #_03B9FA: SEP #$30
+
 #_03B9FC: LDX.w $09F3
+
 #_03B9FF: LDA.w $098C,X
-
 #_03BA02: STA.w $0713
+
 #_03BA05: LDA.w $0996,X
-
 #_03BA08: STA.w $070C
+
 #_03BA0B: LDA.w $09A0,X
-
 #_03BA0E: STA.w $070D
-#_03BA11: LDA.w $09AA,X
 
+#_03BA11: LDA.w $09AA,X
 #_03BA14: STA.w $0710
+
 #_03BA17: LDA.b #$01
 #_03BA19: STA.w $0C4F
+
 #_03BA1C: STZ.w $0584
 #_03BA1F: STZ.w $0585
+
 #_03BA22: RTS
 
-; TODO merge
-data03BA23:
-#_03BA23: dw $FFFF
+;---------------------------------------------------------------------------------------------------
 
-data03BA25:
-#_03BA25: dw $0001,$FFFF,$0001,$FFFF
-#_03BA2D: dw $0001,$FFFF,$0001,$0001
-#_03BA35: dw $0001,$0001,$0001,$0001
-#_03BA3D: dw $0001,$0001,$0001,$0001
-#_03BA45: dw $0002,$0001,$0002,$FFFF
-#_03BA4D: dw $0002,$FFFF,$0002,$0000
-#_03BA55: dw $0001,$0001,$0001,$0001
-#_03BA5D: dw $0001,$0001,$0001,$0001
-#_03BA65: dw $FFFF,$0001,$FFFF,$0001
-#_03BA6D: dw $FFFF,$0001,$FFFF,$0001
-#_03BA75: dw $FFFF,$0002,$FFFF,$0002
-#_03BA7D: dw $0001,$0002,$0001,$0002
-#_03BA85: dw $0000
+data03BA23:
+; set 1
+#_03BA23: dw $FFFF, $0001
+#_03BA27: dw $FFFF, $0001
+#_03BA2B: dw $FFFF, $0001
+#_03BA2F: dw $FFFF, $0001
+#_03BA33: dw $0001, $0001
+#_03BA37: dw $0001, $0001
+#_03BA3B: dw $0001, $0001
+#_03BA3F: dw $0001, $0001
+#_03BA43: dw $0001, $0002
+#_03BA47: dw $0001, $0002
+#_03BA4B: dw $FFFF, $0002
+#_03BA4F: dw $FFFF, $0002
+#_03BA53: dw $0000 ; done
+
+; set 2
+#_03BA55: dw $0001, $0001
+#_03BA59: dw $0001, $0001
+#_03BA5D: dw $0001, $0001
+#_03BA61: dw $0001, $0001
+#_03BA65: dw $FFFF, $0001
+#_03BA69: dw $FFFF, $0001
+#_03BA6D: dw $FFFF, $0001
+#_03BA71: dw $FFFF, $0001
+#_03BA75: dw $FFFF, $0002
+#_03BA79: dw $FFFF, $0002
+#_03BA7D: dw $0001, $0002
+#_03BA81: dw $0001, $0002
+#_03BA85: dw $0000 ; done
 
 ;===================================================================================================
 
 routine03BA87:
 #_03BA87: SEP #$30
+
 #_03BA89: JSR routine03B8CD
+
 #_03BA8C: LDA.w $0E00
 #_03BA8F: CMP.w $09F3
-#_03BA92: BEQ .branch03BA9A
+#_03BA92: BEQ .loop
 
 #_03BA94: LDA.b #$0C ; SFX 0C
 #_03BA96: JSL Write_to_APU_transferrable
 
-.branch03BA9A
+;---------------------------------------------------------------------------------------------------
+
+.loop
 #_03BA9A: PHP
+
 #_03BA9B: REP #$20
+
 #_03BA9D: LDA.w #$0014
 #_03BAA0: STA.w $0E08
+
 #_03BAA3: JSR routine03B93B
+
 #_03BAA6: PLP
+
 #_03BAA7: LDA.w $0E00
 #_03BAAA: CMP.w $09F3
-#_03BAAD: BEQ .branch03BAF5
+#_03BAAD: BEQ .finished
 
-#_03BAAF: BCC .branch03BAD3
+#_03BAAF: BCC .lower
 
 #_03BAB1: LDA.w $0E00
 #_03BAB4: PHA
@@ -8199,33 +9158,45 @@ routine03BA87:
 #_03BAC7: STA.w $0E02
 #_03BACA: PLA
 #_03BACB: STA.w $0E00
-#_03BACE: DEC.w $0E00
-#_03BAD1: BRA .branch03BA9A
 
-.branch03BAD3
+#_03BACE: DEC.w $0E00
+#_03BAD1: BRA .loop
+
+;---------------------------------------------------------------------------------------------------
+
+.lower
 #_03BAD3: LDA.w $0E00
 #_03BAD6: PHA
 #_03BAD7: LDA.w $0E02
 #_03BADA: PHA
 #_03BADB: LDA.w $0E04
 #_03BADE: PHA
+
 #_03BADF: PHP
 #_03BAE0: JSR routine03BBF0
 #_03BAE3: PLP
+
 #_03BAE4: PLA
 #_03BAE5: STA.w $0E04
 #_03BAE8: PLA
 #_03BAE9: STA.w $0E02
 #_03BAEC: PLA
 #_03BAED: STA.w $0E00
-#_03BAF0: INC.w $0E00
-#_03BAF3: BRA .branch03BA9A
 
-.branch03BAF5
+#_03BAF0: INC.w $0E00
+
+#_03BAF3: BRA .loop
+
+;---------------------------------------------------------------------------------------------------
+
+.finished
 #_03BAF5: REP #$30
+
 #_03BAF7: LDA.w #$0013
 #_03BAFA: STA.w $0E08
+
 #_03BAFD: JSR routine03B93B
+
 #_03BB00: RTS
 
 ;===================================================================================================
@@ -8249,6 +9220,8 @@ routine03BB01:
 #_03BB26: STA.w DMA3MODE
 #_03BB29: LDY.b #$00
 #_03BB2B: LDX.b #$00
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03BB2D
 #_03BB2D: REP #$20
@@ -8322,6 +9295,8 @@ routine03BB01:
 #_03BBBD: BEQ .branch03BBC2
 
 #_03BBBF: JMP .branch03BB2D
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03BBC2
 #_03BBC2: LDA.w #$0081
@@ -8463,25 +9438,33 @@ routine03BBF0:
 
 routine03BCD3:
 #_03BCD3: REP #$30
+
 #_03BCD5: LDA.w #$0008 ; SFX 08
 #_03BCD8: JSL Write_to_APU_transferrable
+
 #_03BCDC: LDA.w #$0000
 
-.branch03BCDF
+.next
 #_03BCDF: PHA
+
 #_03BCE0: PHP
+
 #_03BCE1: JSR routine03BD22
+
 #_03BCE4: LDA.w #$0001
 #_03BCE7: JSL VRAM_From_7FXXXX
 
 #_03BCEB: SEP #$10
+
 #_03BCED: LDY.b #$03
 #_03BCEF: JSL RunFramesYTimes
+
 #_03BCF3: PLP
+
 #_03BCF4: PLA
 #_03BCF5: INC A
 #_03BCF6: CMP.w #$0005
-#_03BCF9: BNE .branch03BCDF
+#_03BCF9: BNE .next
 
 #_03BCFB: RTS
 
@@ -8489,113 +9472,136 @@ routine03BCD3:
 
 routine03BCFC:
 #_03BCFC: REP #$30
+
 #_03BCFE: LDA.w #$0008 ; SFX 08
 #_03BD01: JSL Write_to_APU_transferrable
+
 #_03BD05: LDA.w #$0004
 
-.branch03BD08
+.next
 #_03BD08: PHA
+
 #_03BD09: PHP
+
 #_03BD0A: JSR routine03BD22
+
 #_03BD0D: LDA.w #$0001
 #_03BD10: JSL VRAM_From_7FXXXX
 
 #_03BD14: SEP #$10
+
 #_03BD16: LDY.b #$03
 #_03BD18: JSL RunFramesYTimes
+
 #_03BD1C: PLP
+
 #_03BD1D: PLA
 #_03BD1E: DEC A
-#_03BD1F: BPL .branch03BD08
+#_03BD1F: BPL .next
+
 #_03BD21: RTS
 
 ;===================================================================================================
 
 routine03BD22:
 #_03BD22: REP #$30
+
 #_03BD24: AND.w #$00FF
 #_03BD27: STA.w $0E00
+
 #_03BD2A: ASL A
 #_03BD2B: TAY
+
 #_03BD2C: LDX.w #$0000
 
-.branch03BD2F
-#_03BD2F: LDA.w data03BD89,Y
+.next
+#_03BD2F: LDA.w data03BD89+0,Y
 #_03BD32: STA.l $7F5158,X
+
 #_03BD36: CLC
 #_03BD37: ADC.w #$4000
 #_03BD3A: AND.w #$7FFF
 #_03BD3D: STA.l $7F5166,X
-#_03BD41: LDA.w data03BD8B,Y
+
+#_03BD41: LDA.w data03BD89+2,Y
 #_03BD44: STA.l $7F515A,X
+
 #_03BD48: CLC
 #_03BD49: ADC.w #$4000
 #_03BD4C: AND.w #$7FFF
 #_03BD4F: STA.l $7F5164,X
-#_03BD53: LDA.w data03BD8D,Y
+
+#_03BD53: LDA.w data03BD89+4,Y
 #_03BD56: STA.l $7F515C,X
+
 #_03BD5A: CLC
 #_03BD5B: ADC.w #$4000
 #_03BD5E: AND.w #$7FFF
 #_03BD61: STA.l $7F5162,X
-#_03BD65: LDA.w data03BD8F,Y
+
+#_03BD65: LDA.w data03BD89+6,Y
 #_03BD68: STA.l $7F515E,X
+
 #_03BD6C: CLC
 #_03BD6D: ADC.w #$4000
 #_03BD70: AND.w #$7FFF
 #_03BD73: STA.l $7F5160,X
+
 #_03BD77: TYA
 #_03BD78: CLC
 #_03BD79: ADC.w #$0010
 #_03BD7C: TAY
+
 #_03BD7D: TXA
 #_03BD7E: CLC
 #_03BD7F: ADC.w #$0040
 #_03BD82: TAX
+
 #_03BD83: CPX.w #$01C0
-#_03BD86: BNE .branch03BD2F
+#_03BD86: BNE .next
 
 #_03BD88: RTS
 
-; TODO merge
+
+;---------------------------------------------------------------------------------------------------
+
 data03BD89:
-#_03BD89: dw $0933
+#_03BD89: dw $0933, $0934, $0934, $4933
+#_03BD91: dw $0103, $0103, $0103, $0103
 
-data03BD8B:
-#_03BD8B: dw $0934
+#_03BD99: dw $0936, $0937, $0937, $4936
+#_03BDA1: dw $0103, $0103, $0103, $0103
 
-data03BD8D:
-#_03BD8D: dw $0934
+#_03BDA9: dw $0936, $0937, $0937, $4936
+#_03BDB1: dw $0103, $0103, $0103, $0103
 
-data03BD8F:
-#_03BD8F: dw $4933,$0103,$0103,$0103
-#_03BD97: dw $0103,$0936,$0937,$0937
-#_03BD9F: dw $4936,$0103,$0103,$0103
-#_03BDA7: dw $0103,$0936,$0937,$0937
-#_03BDAF: dw $4936,$0103,$0103,$0103
-#_03BDB7: dw $0103,$0936,$0937,$0937
-#_03BDBF: dw $4936,$0103,$0103,$0103
-#_03BDC7: dw $0103,$0936,$0937,$0937
-#_03BDCF: dw $4936,$0103,$0103,$0103
-#_03BDD7: dw $0103,$0936,$0937,$0937
-#_03BDDF: dw $4936,$0103,$0103,$0103
-#_03BDE7: dw $0103,$0936,$0937,$0937
-#_03BDEF: dw $4936,$0103,$0103,$0103
-#_03BDF7: dw $0103,$0936,$0937,$0937
-#_03BDFF: dw $4936,$0103,$0103,$0103
-#_03BE07: dw $0103
+#_03BDB9: dw $0936, $0937, $0937, $4936
+#_03BDC1: dw $0103, $0103, $0103, $0103
+
+#_03BDC9: dw $0936, $0937, $0937, $4936
+#_03BDD1: dw $0103, $0103, $0103, $0103
+
+#_03BDD9: dw $0936, $0937, $0937, $4936
+#_03BDE1: dw $0103, $0103, $0103, $0103
+
+#_03BDE9: dw $0936, $0937, $0937, $4936
+#_03BDF1: dw $0103, $0103, $0103, $0103
+
+#_03BDF9: dw $0936, $0937, $0937, $4936
+#_03BE01: dw $0103, $0103, $0103, $0103
 
 ;===================================================================================================
 
 TextExtCMD_3A:
 #_03BE09: REP #$30
+
 #_03BE0B: JSR GetNextTextByte
 #_03BE0E: AND.w #$00FF
 
 #_03BE11: DEC A
 #_03BE12: ASL A
-
 #_03BE13: STA.w $0E02
+
 #_03BE16: JSR GetNextTextByte
 #_03BE19: AND.w #$00FF
 #_03BE1C: ASL A
@@ -8603,17 +9609,20 @@ TextExtCMD_3A:
 #_03BE1E: TAY
 
 #_03BE1F: LDX.w $0E02
-#_03BE22: LDA.w .somedata+0,Y
+
+#_03BE22: LDA.w .some_data+0,Y
 #_03BE25: STA.w $0A95,X
 
-#_03BE28: LDA.w .somedata+2,Y
+#_03BE28: LDA.w .some_data+2,Y
 #_03BE2B: STA.w $0A99,X
+
 #_03BE2E: RTS
 
-; TODO
-.somedata
-#_03BE2F: dw $FF00,$0070,$0100,$0070
-#_03BE37: dw $FF00,$0030,$0100,$0030
+.some_data
+#_03BE2F: dw $FF00, $0070
+#_03BE33: dw $0100, $0070
+#_03BE37: dw $FF00, $0030
+#_03BE3B: dw $0100, $0030
 
 ;===================================================================================================
 
@@ -8625,6 +9634,7 @@ TextExtCMD_3B:
 
 #_03BE47: LDA.b #$30
 #_03BE49: STA.w $0A9F
+
 #_03BE4C: LDA.b #$3C
 #_03BE4E: STA.w $0AA0
 
@@ -8641,60 +9651,65 @@ TextExtCMD_3B:
 ;===================================================================================================
 
 TextExtCMD_3C:
-#_03BE60: JSL routine03BE71
-#_03BE64: BCC .branch03BE6D
+#_03BE60: JSL LookForEmptyInventorySpace
+#_03BE64: BCC .had_room
 
 #_03BE66: JSR GetNextTextByte
 #_03BE69: JSR RelocateTextPointer
+
 #_03BE6C: RTS
 
-.branch03BE6D
+.had_room
 #_03BE6D: JSR GetNextTextByte
+
 #_03BE70: RTS
 
 ;===================================================================================================
 
-routine03BE71:
+LookForEmptyInventorySpace:
 #_03BE71: PHP
 #_03BE72: SEP #$30
+
 #_03BE74: LDX.b #$00
 
-.branch_03BE76
+.next_slot
 #_03BE76: LDA.w $0781,X
-#_03BE79: BEQ .branch03BE90
+#_03BE79: BEQ .empty_space
 
 #_03BE7B: CMP.b #$09
-#_03BE7D: BCS .branch03BE87
+#_03BE7D: BCS .slot_full
 
 #_03BE7F: LDA.w $0780,X
 #_03BE82: CMP.w $0A50
-#_03BE85: BEQ .branch03BE90
+#_03BE85: BEQ .empty_space
 
-.branch03BE87
+.slot_full
 #_03BE87: INX
 #_03BE88: INX
 #_03BE89: CPX.b #$3C
-#_03BE8B: BNE .branch_03BE76
+#_03BE8B: BNE .next_slot
 
 #_03BE8D: PLP
 #_03BE8E: SEC
+
 #_03BE8F: RTL
 
-.branch03BE90
+.empty_space
 #_03BE90: PLP
 #_03BE91: CLC
+
 #_03BE92: RTL
 
 ;===================================================================================================
 
 TextExtCMD_3D:
 #_03BE93: REP #$30
+
 #_03BE95: LDA.w #$000C
 #_03BE98: STA.w $0E00
+
 #_03BE9B: LDA.w #$00F0
 #_03BE9E: JSL TestGameProgressBit
-
-#CODE_03BEA2:
 #_03BEA2: BCS .branch03BEAA
 
 #_03BEA4: DEC.w $0E00
@@ -8703,51 +9718,60 @@ TextExtCMD_3D:
 .branch03BEAA
 #_03BEAA: LDX.w #$0000
 
-.branch03BEAD
+.next
 #_03BEAD: LDA.w $0700,X
 #_03BEB0: CMP.w #$FFFF
-#_03BEB3: BEQ .branch03BEC3
+#_03BEB3: BEQ .found_slot
 
 #_03BEB5: INX
 #_03BEB6: INX
 #_03BEB7: CPX.w $0E00
-#_03BEBA: BNE .branch03BEAD
+#_03BEBA: BNE .next
 
 #_03BEBC: JSR GetNextTextByte
 #_03BEBF: JSR RelocateTextPointer
+
 #_03BEC2: RTS
 
-.branch03BEC3
+.found_slot
 #_03BEC3: JSR GetNextTextByte
+
 #_03BEC6: RTS
 
 ;===================================================================================================
 
 TextCommand_55:
 #_03BEC7: SEP #$30
+
 #_03BEC9: JSR GetNextTextByte
 #_03BECC: STA.w $0A54
+
 #_03BECF: JSR GetNextTextByte
 #_03BED2: STA.w $0A55
+
 #_03BED5: STZ.w $0A56
 #_03BED8: STZ.w $0A57
+
 #_03BEDB: RTS
 
 ;===================================================================================================
 
 TextExtCMD_40:
 #_03BEDC: JSL routine0F9D30
+
 #_03BEE0: RTS
 
 ;===================================================================================================
 
 TextExtCMD_41:
 #_03BEE1: SEP #$30
+
 #_03BEE3: JSR GetNextTextByte
 #_03BEE6: TAX
+
 #_03BEE7: LDA.w $07E2,X
 #_03BEEA: CMP.b #$FF
-#_03BEEC: BEQ .branch03BF1A
+#_03BEEC: BEQ .no_one_here
 
 #_03BEEE: STA.w $050A
 #_03BEF1: STA.w $050A
@@ -8764,21 +9788,26 @@ TextExtCMD_41:
 #_03BF08: LDA.b #$00
 
 #_03BF0A: JSR GetDemonXClass
+
 #_03BF0D: LDA.w $0BF3
 #_03BF10: STA.w $0506
 #_03BF13: STZ.w $0507
+
 #_03BF16: JSR GetNextTextByte
+
 #_03BF19: RTS
 
-.branch03BF1A
+.no_one_here
 #_03BF1A: JSR GetNextTextByte
 #_03BF1D: JSR RelocateTextPointer
+
 #_03BF20: RTS
 
 ;===================================================================================================
 
 TextExtCMD_42:
 #_03BF21: SEP #$30
+
 #_03BF23: JSL DarkenScreen
 
 #_03BF27: LDA.b #$F4
@@ -8788,58 +9817,73 @@ TextExtCMD_42:
 
 #_03BF2F: LDA.b #$04
 #_03BF31: JSL TestGameProgressBit
-#_03BF35: BCC .branch03BF3F
+#_03BF35: BCC .dont_clear
 
 #_03BF37: LDA.b #$04
 #_03BF39: JSR ClearGameProgressBit
+
 #_03BF3C: INC.w $0C41
 
-.branch03BF3F
+.dont_clear
 #_03BF3F: LDA.b #$01
 #_03BF41: JSL routine0F8836
+
 #_03BF45: LDA.b #$1F
 #_03BF47: STA.w $0F74
 #_03BF4A: STA.w TM
+
 #_03BF4D: STZ.w $0F7F
 #_03BF50: STZ.w $0F80
+
 #_03BF53: STZ.w $0A33
+
 #_03BF56: LDA.b #$00
 #_03BF58: JSL routine02F609
 #_03BF5C: JSL routine00A17E
+
 #_03BF60: LDA.b #$01
 #_03BF62: JSL routine02CBD1
+
 #_03BF66: LDA.b #$07
 #_03BF68: JSL routine02CBD1
+
 #_03BF6C: JSL Reset_OAMrelatedWRAM
 #_03BF70: JSL BrightenScreen
 #_03BF74: JSL routine0F84F6
+
 #_03BF78: LDA.b #$07
 #_03BF7A: JSL InitializeTextBoxToSizeForNewMessage
 #_03BF7E: JSL routine00A056
 
 #_03BF82: SEP #$20
+
 #_03BF84: LDA.w $0C41
-#_03BF87: BNE .branch03BF8A
+#_03BF87: BNE .set_flag_back
 
 #_03BF89: RTS
 
-.branch03BF8A
+.set_flag_back
 #_03BF8A: LDA.b #$04
 #_03BF8C: JSR SetGameProgressBit
+
 #_03BF8F: RTS
 
 ;===================================================================================================
 
 TextExtCMD_43:
 #_03BF90: SEP #$20
+
 #_03BF92: JSR GetNextTextByte
 #_03BF95: STA.w $0453
+
 #_03BF98: RTS
 
 ;===================================================================================================
 
 TextExtCMD_44:
 #_03BF99: REP #$30
+
+; demon ID * 24
 #_03BF9B: LDA.w $050A
 #_03BF9E: ASL A
 #_03BF9F: ASL A
@@ -8849,42 +9893,52 @@ TextExtCMD_44:
 #_03BFA5: CLC
 #_03BFA6: ADC.w $0E00
 #_03BFA9: TAX
-#_03BFAA: LDA.l DemonStats_demon_001-1,X ; 07CC11 double check this TODO
+
+#_03BFAA: LDA.l DemonStats+23,X
 #_03BFAE: AND.w #$00F0
 #_03BFB1: CMP.w #$0020
-#_03BFB4: BEQ .branch03BFBF
+#_03BFB4: BEQ .change_message
 
 #_03BFB6: CMP.w #$0070
-#_03BFB9: BEQ .branch03BFBF
+#_03BFB9: BEQ .change_message
 
 #_03BFBB: JSR GetNextTextByte
+
 #_03BFBE: RTS
 
-.branch03BFBF
+.change_message
 #_03BFBF: JSR GetNextTextByte
 #_03BFC2: JSR RelocateTextPointer
+
 #_03BFC5: RTS
 
 ;===================================================================================================
 
 TextExtCMD_45:
 #_03BFC6: SEP #$30
+
 #_03BFC8: JSR GetNextTextByte
 #_03BFCB: AND.b #$FF
-#_03BFCD: BMI .branch03BFD9
+#_03BFCD: BMI .delete
 
 #_03BFCF: TAX
+
 #_03BFD0: LDA.b #$FF
 #_03BFD2: STA.w $0A7D,X
+
 #_03BFD5: JSR GetNextTextByte
+
 #_03BFD8: RTS
 
-.branch03BFD9
+.delete
 #_03BFD9: AND.b #$0F
 #_03BFDB: TAX
+
 #_03BFDC: LDA.b #$00
 #_03BFDE: STA.w $0A7D,X
+
 #_03BFE1: JSR GetNextTextByte
+
 #_03BFE4: RTS
 
 ;===================================================================================================
@@ -8892,16 +9946,19 @@ TextExtCMD_45:
 ; TODO POSSIBLY UNUSED ROUTINE
 routine03BFEE_long:
 #_03BFE5: JSR routine03BFEE
+
 #_03BFE8: RTL
 
 ;===================================================================================================
 
 TextExtCMD_46:
 #_03BFE9: SEP #$30
+
 #_03BFEB: JSR GetNextTextByte
 
 routine03BFEE:
 #_03BFEE: SEP #$30
+
 #_03BFF0: STA.w $0E00
 #_03BFF3: AND.b #$0F
 #_03BFF5: ASL A
@@ -8909,53 +9966,65 @@ routine03BFEE:
 #_03BFF7: ASL A
 #_03BFF8: ASL A
 #_03BFF9: STA.l $7E22FE
+
 #_03BFFD: LDA.b #$10
 #_03BFFF: STA.l $7E22FF
 
 #_03C003: REP #$20
+
 #_03C005: LDA.w $0E00
 #_03C008: AND.w #$00F0
 #_03C00B: BEQ .branch03C012
 
 #_03C00D: LDA.w #$0000
-#_03C010: BRA .branch03C015
+#_03C010: BRA .start_fill
 
 .branch03C012
 #_03C012: LDA.w #$FFFF
 
-.branch03C015
+;---------------------------------------------------------------------------------------------------
+
+.start_fill
 #_03C015: LDX.b #$00
 
-.branch03C017
+.fill_next
 #_03C017: STA.l $7E2300,X
 #_03C01B: INX
 #_03C01C: INX
 #_03C01D: CPX.b #$20
-#_03C01F: BNE .branch03C017
+#_03C01F: BNE .fill_next
 
 #_03C021: SEP #$20
+
 #_03C023: LDA.b #$01
 #_03C025: STA.l $7E22FD
+
 #_03C029: RTS
 
 ;===================================================================================================
 
 TextExtCMD_47:
 #_03C02A: REP #$30
+
 #_03C02C: JSR GetNextTextByte
 #_03C02F: AND.w #$0007
 #_03C032: STA.w $0A6A
+
 #_03C035: ASL A
 #_03C036: TAY
+
 #_03C037: ASL A
 #_03C038: TAX
+
 #_03C039: JSR GetNextTextByte
+
 #_03C03C: RTS
 
 ;===================================================================================================
 
-TextExtCMD_48:
+TextCommand_TryToTake1000Money:
 #_03C03D: REP #$30
+
 #_03C03F: LDA.w $0405
 #_03C042: SEC
 #_03C043: SBC.w #$03E8
@@ -8964,23 +10033,28 @@ TextExtCMD_48:
 #_03C049: LDA.w $0407
 #_03C04C: SBC.w #$0000
 #_03C04F: STA.w $0407
-#_03C052: BMI .branch03C05F
+#_03C052: BMI .not_enough_money
 
 #_03C054: INC.w $07E0
+
 #_03C057: JSL routine0F945E
 #_03C05B: JSR GetNextTextByte
+
 #_03C05E: RTS
 
-.branch03C05F
+.not_enough_money
 #_03C05F: LDA.w $0405
 #_03C062: CLC
 #_03C063: ADC.w #$03E8
 #_03C066: STA.w $0405
+
 #_03C069: LDA.w $0407
 #_03C06C: ADC.w #$0000
 #_03C06F: STA.w $0407
+
 #_03C072: JSR GetNextTextByte
 #_03C075: JSR RelocateTextPointer
+
 #_03C078: RTS
 
 ;===================================================================================================
@@ -8990,13 +10064,13 @@ TextExtCMD_49:
 
 #_03C07B: LDA.w $07E0
 #_03C07E: CMP.b #$0A
-#_03C080: BCS .branch03C086
+#_03C080: BCS .change_message
 
 #_03C082: JSR GetNextTextByte
 
 #_03C085: RTS
 
-.branch03C086
+.change_message
 #_03C086: JSR GetNextTextByte
 #_03C089: JSR RelocateTextPointer
 
@@ -9009,18 +10083,22 @@ TextExtCMD_4A:
 #_03C08F: INC.w $0A3D
 
 #_03C092: REP #$20
+
 #_03C094: LDA.w $0A22
 #_03C097: PHA
 #_03C098: LDA.w $0A24
 #_03C09B: PHA
 #_03C09C: LDA.w $0A26
 #_03C09F: PHA
+
 #_03C0A0: JSR GetNextTextByte
 #_03C0A3: AND.w #$00FF
 #_03C0A6: STA.w $0A22
 #_03C0A9: BNE .branch03C0AE
 
 #_03C0AB: JSR routine03C102
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03C0AE
 #_03C0AE: LDA.w $00C2
@@ -9037,8 +10115,8 @@ TextExtCMD_4A:
 #_03C0BF: CLC
 #_03C0C0: ADC.w $0A22
 #_03C0C3: STA.w $0A22
-#_03C0C6: LDA.w #$0005
 
+#_03C0C6: LDA.w #$0005
 #_03C0C9: STA.w $0A24
 #_03C0CC: STZ.w $0A26
 
@@ -9053,6 +10131,8 @@ TextExtCMD_4A:
 #_03C0DC: PLA
 #_03C0DD: STA.w $00C2
 
+;---------------------------------------------------------------------------------------------------
+
 #_03C0E0: PLA
 #_03C0E1: STA.w $0A26
 
@@ -9063,7 +10143,9 @@ TextExtCMD_4A:
 #_03C0E9: STA.w $0A22
 
 #_03C0EC: SEP #$20
+
 #_03C0EE: DEC.w $0A3D
+
 #_03C0F1: RTS
 
 ;===================================================================================================
@@ -9071,48 +10153,59 @@ TextExtCMD_4A:
 routine03C0F2:
 #_03C0F2: PHP
 #_03C0F3: REP #$30
+
 #_03C0F5: PHY
+
 #_03C0F6: TYA
 #_03C0F7: AND.w #$00FF
 #_03C0FA: ASL A
 #_03C0FB: TAY
-#_03C0FC: LDX.w CharacterOffsets_bank03,Y
+
+#_03C0FC: LDX.w PartyIDtoOffset,Y
+
 #_03C0FF: PLY
-#_03C100: BRA .branch03C10B
+#_03C100: BRA .loop
 
 ;===================================================================================================
 
-routine03C102:
+#routine03C102:
 #_03C102: PHP
 #_03C103: REP #$30
+
 #_03C105: LDY.w #$0000
 #_03C108: LDX.w #$0000
 
-.branch03C10B
+.loop
 #_03C10B: LDA.w $1000,X
 #_03C10E: AND.w #$C000
-#_03C111: BEQ .branch03C11B
+#_03C111: BEQ .skip_party_member
 
 #_03C113: LDA.w $1002,X
 #_03C116: AND.w #$E000
-#_03C119: BEQ .branch03C12A
+#_03C119: BEQ .not_dead_or_stoned
 
-.branch03C11B
+.skip_party_member
 #_03C11B: INY
+
 #_03C11C: TXA
 #_03C11D: CLC
 #_03C11E: ADC.w #$0060
 #_03C121: TAX
+
 #_03C122: CPX.w #$0180
-#_03C125: BNE .branch03C10B
+#_03C125: BNE .loop
+
+;---------------------------------------------------------------------------------------------------
 
 #_03C127: LDY.w #$FFFF
 
-.branch03C12A
+.not_dead_or_stoned
 #_03C12A: STY.w $0C43
+
 #_03C12D: TYA
 #_03C12E: ORA.w #$8000
 #_03C131: STA.w $0A3E
+
 #_03C134: PLP
 #_03C135: RTS
 
@@ -9120,95 +10213,135 @@ routine03C102:
 
 TextExtCMD_4B:
 #_03C136: REP #$30
+
 #_03C138: LDA.w #$0007
 #_03C13B: STA.w $0E00
+
 #_03C13E: JSR routine0392C1
+
 #_03C141: LDA.w $0A1A
 #_03C144: CLC
 #_03C145: ADC.w #$0041
 #_03C148: STA.w $0980
+
 #_03C14B: LDA.w $0C41
 #_03C14E: AND.w #$00FF
 #_03C151: STA.w $0E00
+
 #_03C154: ASL A
 #_03C155: CLC
 #_03C156: ADC.w $0E00
 #_03C159: TAY
+
+;---------------------------------------------------------------------------------------------------
+
 #_03C15A: LDX.w #$0000
 
-.branch03C15D
+.next_drink
 #_03C15D: JSR routine03E6DF
+
 #_03C160: LDA.w data03C318,Y
 #_03C163: AND.w #$00FF
 #_03C166: STA.w $0A39
 #_03C169: STA.w $0BE5,X
+
 #_03C16C: STZ.w $0A33
+
 #_03C16F: PHX
 #_03C170: PHY
+
 #_03C171: TAY
+
 #_03C172: LDA.w data03C336,Y
 #_03C175: AND.w #$00FF
 #_03C178: ASL A
 #_03C179: STA.w $0E00
+
 #_03C17C: ASL A
 #_03C17D: ASL A
 #_03C17E: CLC
 #_03C17F: ADC.w $0E00
 #_03C182: STA.w $0A14
 #_03C185: STZ.w $0A16
+
 #_03C188: PHP
+
 #_03C189: LDA.w #DrinkNamePointers
 #_03C18C: STA.w $00C3
 
 #_03C18F: SEP #$20
+
 #_03C191: LDA.b #DrinkNamePointers>>16
 #_03C193: STA.w $00C5
-#_03C196: JSR WriteTextIndexW0A39
+
+#_03C196: JSR WriteIndexedEntityNameToBuffer
 
 #_03C199: REP #$20
+
 #_03C19B: LDA.w #$001E
 #_03C19E: STA.w $0A33
+
 #_03C1A1: JSR routine038D1C
 #_03C1A4: JSR TextExtCMD_36
 #_03C1A7: JSR routine0384F9
 #_03C1AA: JSL RunFramesUntil0100IsFlagged
+
 #_03C1AE: PLP
+
 #_03C1AF: PLY
 #_03C1B0: PLX
+
 #_03C1B1: LDA.w $0980
 #_03C1B4: CLC
 #_03C1B5: ADC.w #$0040
 #_03C1B8: STA.w $0980
+
 #_03C1BB: INY
+
 #_03C1BC: INX
 #_03C1BD: CPX.w #$0003
-#_03C1C0: BNE .branch03C15D
+#_03C1C0: BNE .next_drink
+
+;---------------------------------------------------------------------------------------------------
 
 #_03C1C2: SEP #$20
+
 #_03C1C4: STZ.w $0A58
+
 #_03C1C7: LDA.b #$04
 #_03C1C9: STA.w $09F4
+
 #_03C1CC: STZ.w $09F0
+
 #_03C1CF: STZ.w $09F2
 #_03C1D2: STZ.w $09F3
+
 #_03C1D5: LDA.b #$02
 #_03C1D7: STA.w $09F1
+
 #_03C1DA: JSL routine02C8E9
 #_03C1DE: JSR routine03E6DF
+
 #_03C1E1: STZ.w $0A33
 
 #_03C1E4: SEP #$20
+
 #_03C1E6: LDA.w $0A58
 #_03C1E9: BMI .branch03C1F5
 
 #_03C1EB: LDA.w $09F3
 #_03C1EE: STA.w $0C42
+
 #_03C1F1: JSR GetNextTextByte
+
 #_03C1F4: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .branch03C1F5
 #_03C1F5: JSR GetNextTextByte
 #_03C1F8: JSR RelocateTextPointer
+
 #_03C1FB: RTS
 
 ;===================================================================================================
@@ -9250,7 +10383,7 @@ TextExtCMD_4C:
 #_03C24B: AND.w #$00FF
 #_03C24E: ASL A
 #_03C24F: TAY
-#_03C250: LDX.w CharacterOffsets_bank03,Y
+#_03C250: LDX.w PartyIDtoOffset,Y
 #_03C253: LDA.w $0C42
 #_03C256: BEQ .branch03C26D
 
@@ -9290,83 +10423,102 @@ TextExtCMD_4C:
 
 HealPercetageOfHP:
 #_03C292: PHX
+
 #_03C293: LDA.w $1030,X
 #_03C296: LDX.w #$0000
 #_03C299: JSL DivisionBig_XA_by_Y
+
 #_03C29D: PLX
+
 #_03C29E: LDA.w $0E80
 #_03C2A1: CLC
 #_03C2A2: ADC.w $102E,X
 #_03C2A5: CMP.w $1030,X
-#_03C2A8: BCC .branch03C2AD
+#_03C2A8: BCC .no_overflow
 
 #_03C2AA: LDA.w $1030,X
 
-.branch03C2AD
+.no_overflow
 #_03C2AD: STA.w $102E,X
+
 #_03C2B0: RTS
 
 ;===================================================================================================
 
 HealPercetageOfMP:
 #_03C2B1: PHX
+
 #_03C2B2: LDA.w $1034,X
 #_03C2B5: LDX.w #$0000
 #_03C2B8: JSL DivisionBig_XA_by_Y
+
 #_03C2BC: PLX
+
 #_03C2BD: LDA.w $0E80
 #_03C2C0: CLC
 #_03C2C1: ADC.w $1032,X
 #_03C2C4: CMP.w $1034,X
-#_03C2C7: BCC .branch03C2CC
+#_03C2C7: BCC .no_overflow
 
 #_03C2C9: LDA.w $1034,X
 
-.branch03C2CC
+.no_overflow
 #_03C2CC: STA.w $1032,X
+
 #_03C2CF: RTS
 
 ;===================================================================================================
 
 TextExtCMD_4D:
 #_03C2D0: SEP #$20
+
 #_03C2D2: LDA.b #DrinkNamePointers>>16
 #_03C2D4: STA.w $00C5
 
 #_03C2D7: REP #$30
+
 #_03C2D9: LDA.w $0C42
 #_03C2DC: AND.w #$00FF
 #_03C2DF: TAY
+
 #_03C2E0: LDA.w $0BE5,Y
 #_03C2E3: AND.w #$00FF
 #_03C2E6: STA.w $0A39
+
 #_03C2E9: LDA.w #DrinkNamePointers
 #_03C2EC: STA.w $00C3
-#_03C2EF: JSR WriteTextIndexW0A39
+
+#_03C2EF: JSR WriteIndexedEntityNameToBuffer
+
 #_03C2F2: RTS
 
 ;===================================================================================================
 
 TextExtCMD_4E:
 #_03C2F3: REP #$30
+
 #_03C2F5: JSR GetNextTextByte
 #_03C2F8: STA.w $0E00
+
 #_03C2FB: LDA.w $0C43
 #_03C2FE: AND.w #$00FF
 #_03C301: TAY
+
 #_03C302: INY
 #_03C303: CPY.w #$0004
-#_03C306: BEQ .branch03C311
+#_03C306: BEQ .change_message
 
 #_03C308: JSR routine03C0F2
+
 #_03C30B: LDA.w $0C43
-#_03C30E: BMI .branch03C311
+#_03C30E: BMI .change_message
 
 #_03C310: RTS
 
-.branch03C311
+.change_message
 #_03C311: LDA.w $0E00
 #_03C314: JSR RelocateTextPointer
+
 #_03C317: RTS
 
 ;===================================================================================================
@@ -9671,49 +10823,67 @@ TextExtCMD_58:
 #_03C4FF: RTS
 
 ;===================================================================================================
-; TODO this looks interesting
-;===================================================================================================
-TextExtCMD_59:
+
+TextCommand_TradeGemForItem:
 #_03C500: PHP
 #_03C501: SEP #$30
+
 #_03C503: LDA.w $0C39
 #_03C506: PHA
+
 #_03C507: STA.w $0A50
 #_03C50A: STZ.w $0A51
 #_03C50D: JSR TakeItemFromSomewhere
+
 #_03C510: PLA
 #_03C511: SEC
 #_03C512: SBC.b #$E4
 #_03C514: TAX
-#_03C515: LDA.w TextExtCMD_59_items,X
+
+#_03C515: LDA.w RagsGemToItemTrades,X
 #_03C518: STA.w $0A50
 #_03C51B: STZ.w $0A51
 #_03C51E: JSR AddItemToInventory
+
 #_03C521: PLP
 #_03C522: RTS
 
 ;---------------------------------------------------------------------------------------------------
 
-TextExtCMD_59_items:
-#_03C523: db $CB,$DF,$D4,$BB,$E0,$B9,$E1,$C9
-#_03C52B: db $D6,$DE,$D5,$BC
+RagsGemToItemTrades:
+#_03C523: db $CB ; Garnet     => Mahazio stone
+#_03C524: db $DF ; Amethyst   => Fuma bell
+#_03C525: db $D4 ; Aquamarine => Angel hair
+#_03C526: db $BB ; Diamond    => Soul incense
+#_03C527: db $E0 ; Emerald    => Core shield
+#_03C528: db $B9 ; Pearl      => Soma
+#_03C529: db $E1 ; Ruby       => Gushing jar
+#_03C52A: db $C9 ; Onyx       => Maha-agi stone
+#_03C52B: db $D6 ; Sapphire   => Pentagram
+#_03C52C: db $DE ; Opal       => Talisaman
+#_03C52D: db $D5 ; Topaz      => Asura hand
+#_03C52E: db $BC ; Turquoise  => Magic bottle
 
 ;===================================================================================================
 
-TextExtCMD_5A:
+TextCommand_Take3Items:
 #_03C52F: SEP #$30
+
 #_03C531: LDA.w $0C39
 #_03C534: STA.w $0A50
 #_03C537: STZ.w $0A51
 #_03C53A: JSR TakeItemFromSomewhere
+
 #_03C53D: LDA.w $0C3B
 #_03C540: STA.w $0A50
 #_03C543: STZ.w $0A51
 #_03C546: JSR TakeItemFromSomewhere
+
 #_03C549: LDA.w $0C3D
 #_03C54C: STA.w $0A50
 #_03C54F: STZ.w $0A51
 #_03C552: JSR TakeItemFromSomewhere
+
 #_03C555: RTS
 
 ;===================================================================================================
@@ -9777,11 +10947,11 @@ TextExtCMD_65:
 TextExtCMD_66:
 #_03C58F: SEP #$30
 
-#_03C591: LDA.b #$A7
-#_03C593: JSL WriteSingleCharacterTo0900
+#_03C591: LDA.b #$A7 ; ᴍ
+#_03C593: JSL WriteSingleTileToMessageBuffer
 
-#_03C597: LDA.b #$A8
-#_03C599: JSL WriteSingleCharacterTo0900
+#_03C597: LDA.b #$A8 ; ᴀɢ
+#_03C599: JSL WriteSingleTileToMessageBuffer
 
 #_03C59D: RTS
 
@@ -10692,16 +11862,20 @@ TextCommand_3E:
 
 ;===================================================================================================
 
-TextCommand_3F:
+TextCommand_InflictStatus:
 #_03CB34: REP #$30
+
 #_03CB36: JSR GetNextTextByte
 #_03CB39: AND.w #$00FF
 #_03CB3C: ASL A
 #_03CB3D: TAY
-#_03CB3E: LDA.w Bits_Descending_15to0,Y
+
+#_03CB3E: LDA.w StatusConditionBits,Y
 #_03CB41: ORA.w $1002
 #_03CB44: STA.w $1002
+
 #_03CB47: JSL routine00A17E
+
 #_03CB4B: RTS
 
 ;===================================================================================================
@@ -10790,7 +11964,7 @@ routine03CBC4:
 #_03CBD1: CLC
 #_03CBD2: ADC.w #$0004
 #_03CBD5: STA.w $0E12
-#_03CBD8: JSL Multiply0E1x_b03_long
+#_03CBD8: JSL BigMultiplication_long
 #_03CBDC: INC.w $0E14
 #_03CBDF: LDA.w $0E14
 #_03CBE2: STA.w $0E00
@@ -11096,7 +12270,7 @@ data03CDF1:
 
 ;===================================================================================================
 
-TextCommand_41:
+TextCommand_RemoveFractionOfHP:
 #_03CDFD: REP #$30
 
 #_03CDFF: JSR GetNextTextByte
@@ -11104,12 +12278,13 @@ TextCommand_41:
 #_03CE05: ASL A
 #_03CE06: TAY
 
-#_03CE07: LDX.w data03CE1F,Y
+#_03CE07: LDX.w .shifts,Y
 
 #_03CE0A: LDA.w $102E
 
 .shift
 #_03CE0D: LSR A
+
 #_03CE0E: DEX
 #_03CE0F: BPL .shift
 
@@ -11122,8 +12297,10 @@ TextCommand_41:
 
 #_03CE1E: RTS
 
-data03CE1F:
-#_03CE1F: dw $0000,$0001,$0002
+.shifts
+#_03CE1F: dw $0000 ; 1/2
+#_03CE21: dw $0001 ; 1/4
+#_03CE23: dw $0002 ; 1/8
 
 ;===================================================================================================
 
@@ -11293,7 +12470,7 @@ TextCommand_46:
 
 ;===================================================================================================
 
-TextCommand_47:
+TextCommand_PickRandomOf4Messages:
 #_03CEFF: REP #$30
 
 #_03CF01: LDX.w #$0000
@@ -11309,6 +12486,7 @@ TextCommand_47:
 #_03CF12: BNE .next_byte
 
 #_03CF14: JSL GetRandomInt
+
 #_03CF18: LDA.w $0ED5
 #_03CF1B: AND.w #$0003
 #_03CF1E: ASL A
@@ -11366,7 +12544,7 @@ TextCommand_48:
 #_03CF63: AND.w #$00FF
 #_03CF66: STA.w $0E11
 
-#_03CF69: JSR Multiply_0E10_by_0E11
+#_03CF69: JSR SmallMultiplication
 
 #_03CF6C: LDA.w $0A4A
 #_03CF6F: AND.w #$000F
@@ -11444,7 +12622,7 @@ TextCommand_4D:
 #_03CFDF: LDA.w #DemonNamePointers>>0
 #_03CFE2: STA.w $00C3
 
-#_03CFE5: JSR WriteTextIndexW0A39
+#_03CFE5: JSR WriteIndexedEntityNameToBuffer
 
 #_03CFE8: RTS
 
@@ -11466,7 +12644,7 @@ TextCommand_4E:
 #_03CFFB: LDA.w #ClassNamePointers>>0
 #_03CFFE: STA.w $00C3
 
-#_03D001: JSR WriteTextIndexW0A39
+#_03D001: JSR WriteIndexedEntityNameToBuffer
 
 #_03D004: RTS
 
@@ -11495,7 +12673,7 @@ data03D014:
 
 ;===================================================================================================
 
-TextCommand_56:
+TextCommand_AskForItemOrMoney:
 #_03D038: SEP #$30
 
 #_03D03A: LDA.w $0A44
@@ -11514,7 +12692,7 @@ TextCommand_56:
 #_03D04C: dw routine03D05D
 #_03D04E: dw routine03D064
 #_03D050: dw routine03D072
-#_03D052: dw TextCommand_23_localbounce
+#_03D052: dw TextCommand_WriteItemName_localbounce
 #_03D054: dw routine03D088
 
 ;===================================================================================================
@@ -11538,7 +12716,7 @@ routine03D064:
 #_03D066: LDA.b #$B2
 #_03D068: STA.w $0A50
 #_03D06B: STZ.w $0A51
-#_03D06E: JSR TextCommand_23
+#_03D06E: JSR TextCommand_WriteItemName
 #_03D071: RTS
 
 ;===================================================================================================
@@ -11550,14 +12728,14 @@ routine03D072:
 #_03D078: ADC.b #$E4
 #_03D07A: STA.w $0A50
 #_03D07D: STZ.w $0A51
-#_03D080: JSR TextCommand_23
+#_03D080: JSR TextCommand_WriteItemName
 #_03D083: RTS
 
 ;===================================================================================================
 ; Pointless
 ;===================================================================================================
-TextCommand_23_localbounce:
-#_03D084: JSR TextCommand_23
+TextCommand_WriteItemName_localbounce:
+#_03D084: JSR TextCommand_WriteItemName
 #_03D087: RTS
 
 ;===================================================================================================
@@ -11567,7 +12745,7 @@ routine03D088:
 #_03D08A: LDA.b #$B4
 #_03D08C: STA.w $0A50
 #_03D08F: STZ.w $0A51
-#_03D092: JSR TextCommand_23
+#_03D092: JSR TextCommand_WriteItemName
 #_03D095: RTS
 
 ;===================================================================================================
@@ -11767,7 +12945,7 @@ TextCommand_5A:
 
 ;===================================================================================================
 
-TextCommand_5B:
+TextCommand_SetOrClearProgressFlag:
 #_03D1DE: SEP #$30
 
 #_03D1E0: JSR GetNextTextByte
@@ -11880,7 +13058,7 @@ TextCommand_5E:
 #_03D2AB: CMP.b #$02
 #_03D2AD: BEQ .branch03D2C6
 
-#_03D2AF: JMP TextCommand_2F
+#_03D2AF: JMP TerminateMessage
 
 .branch03D2B2
 #_03D2B2: REP #$20
@@ -11893,7 +13071,7 @@ TextCommand_5E:
 
 .branch03D2C0
 #_03D2C0: STA.w $0A40
-#_03D2C3: JMP TextCommand_2F
+#_03D2C3: JMP TerminateMessage
 
 .branch03D2C6
 #_03D2C6: REP #$20
@@ -11906,7 +13084,7 @@ TextCommand_5E:
 
 .branch03D2D4
 #_03D2D4: STA.w $0A42
-#_03D2D7: JMP TextCommand_2F
+#_03D2D7: JMP TerminateMessage
 
 ;===================================================================================================
 
@@ -12169,19 +13347,19 @@ data03D45C:
 #_03D460: dw data03D482
 #_03D462: dw data03D482
 
-; #  NAME     HITーPTS  MP  ちりょうひ
+; "#  NAME     HITーPTS  MP  ちりょうひ"
 data03D464:
-#_03D464: db $A0, $CF, $CF, $18, $0B, $17, $0F, $CF ; #⎵⎵NAME⎵
-#_03D46C: db $CF, $CF, $CF, $CF, $12, $13, $1E, $5A ; ⎵⎵⎵⎵HITー
-#_03D474: db $1A, $1E, $1D, $CF, $CF, $17, $1A, $CF ; PTS⎵⎵MP⎵
-#_03D47C: db $CF, $35, $4C, $57, $27, $3F ; ⎵ちりょうひ
+#_03D464: db $A0, $CF, $CF, $18, $0B, $17, $0F, $CF ; "#  NAME "
+#_03D46C: db $CF, $CF, $CF, $CF, $12, $13, $1E, $5A ; "    HITー"
+#_03D474: db $1A, $1E, $1D, $CF, $CF, $17, $1A, $CF ; "PTS  MP "
+#_03D47C: db $CF, $35, $4C, $57, $27, $3F ; " ちりょうひ"
 
-; #  NAME      STATUS      ちりょうひ  
+; "#  NAME      STATUS      ちりょうひ  "
 data03D482:
-#_03D482: db $A0, $CF, $CF, $18, $0B, $17, $0F, $CF ; #⎵⎵NAME⎵
-#_03D48A: db $CF, $CF, $CF, $CF, $CF, $1D, $1E, $0B ; ⎵⎵⎵⎵⎵STA
-#_03D492: db $1E, $1F, $1D, $CF, $CF, $CF, $CF, $CF ; TUS⎵⎵⎵⎵⎵
-#_03D49A: db $CF, $35, $4C, $57, $27, $3F, $CF, $CF ; ⎵ちりょうひ⎵⎵
+#_03D482: db $A0, $CF, $CF, $18, $0B, $17, $0F, $CF ; "#  NAME ""
+#_03D48A: db $CF, $CF, $CF, $CF, $CF, $1D, $1E, $0B ; "     STA"
+#_03D492: db $1E, $1F, $1D, $CF, $CF, $CF, $CF, $CF ; "TUS     "
+#_03D49A: db $CF, $35, $4C, $57, $27, $3F, $CF, $CF ; " ちりょうひ  "
 
 DATA8_03D4A2:
 #_03D4A2: db $CF,$CF,$CF,$CF,$CF,$CF,$CF,$CF
@@ -12366,7 +13544,7 @@ routine03D569:
 #_03D588: TAX
 #_03D589: LDA.w data03D60E,X
 #_03D58C: STA.w $0E12
-#_03D58F: JSR Multiply0E1x_b03
+#_03D58F: JSR BigMultiplication
 #_03D592: LDA.w $0E14
 #_03D595: CLC
 #_03D596: ADC.w #$0005
@@ -12394,7 +13572,7 @@ routine03D569:
 #_03D5CA: TAX
 #_03D5CB: LDA.w data03D614,X
 #_03D5CE: STA.w $0E12
-#_03D5D1: JSR Multiply0E1x_b03
+#_03D5D1: JSR BigMultiplication
 #_03D5D4: LDA.w $0E14
 #_03D5D7: CLC
 #_03D5D8: ADC.w #$0005
@@ -12480,7 +13658,7 @@ routine03D648:
 #_03D650: TAX
 #_03D651: LDA.w data03D69C,X
 #_03D654: STA.w $0E12
-#_03D657: JSR Multiply0E1x_b03
+#_03D657: JSR BigMultiplication
 #_03D65A: LDA.w $0E14
 #_03D65D: STA.w $0E10
 #_03D660: LDA.w $07E1
@@ -12489,7 +13667,7 @@ routine03D648:
 #_03D667: TAX
 #_03D668: LDA.w data03D60E,X
 #_03D66B: STA.w $0E12
-#_03D66E: JSR Multiply0E1x_b03
+#_03D66E: JSR BigMultiplication
 #_03D671: LDA.w $0E14
 #_03D674: CLC
 #_03D675: ADC.w #$0005
@@ -12607,7 +13785,7 @@ routine03D775:
 
 .branch03D76E
 #_03D76E: LDA.w $0E00,Y
-#_03D771: JSL WriteSingleCharacterTo0900
+#_03D771: JSL WriteSingleTileToMessageBuffer
 #_03D775: DEY
 #_03D776: BPL .branch03D76E
 
@@ -12830,7 +14008,9 @@ HEXtoDEC_32bit_Bank03:
 #_03D891: PLP
 #_03D892: RTS
 
-.branch03D893
+;===================================================================================================
+
+routine03D893:
 #_03D893: JSL DarkenScreen
 #_03D897: JSL Reset_OAMrelatedWRAM
 
@@ -13160,7 +14340,7 @@ routine03DADB:
 #_03DB0E: REP #$30
 #_03DB10: LDY.w $0BE9
 #_03DB13: LDA.w data03D4BE,Y
-#_03DB16: JSL WriteSingleCharacterTo0900
+#_03DB16: JSL WriteSingleTileToMessageBuffer
 
 #_03DB1A: SEP #$20
 #_03DB1C: LDA.b #$06
@@ -13181,7 +14361,7 @@ routine03DADB:
 #_03DB44: LDA.w #$001E
 #_03DB47: STA.w $0A33
 #_03DB4A: LDA.w #$005A
-#_03DB4D: JSL WriteSingleCharacterTo0900
+#_03DB4D: JSL WriteSingleTileToMessageBuffer
 #_03DB51: LDX.w $0BA1
 #_03DB54: LDA.w $1034,X
 #_03DB57: BEQ .branch03DB67
@@ -13196,11 +14376,11 @@ routine03DADB:
 #_03DB67: LDA.w #$0028
 #_03DB6A: STA.w $0A33
 #_03DB6D: LDA.w #$0093
-#_03DB70: JSL WriteSingleCharacterTo0900
+#_03DB70: JSL WriteSingleTileToMessageBuffer
 #_03DB74: LDA.w #$0093
-#_03DB77: JSL WriteSingleCharacterTo0900
+#_03DB77: JSL WriteSingleTileToMessageBuffer
 #_03DB7B: LDA.w #$0093
-#_03DB7E: JSL WriteSingleCharacterTo0900
+#_03DB7E: JSL WriteSingleTileToMessageBuffer
 
 .branch03DB82
 #_03DB82: REP #$30
@@ -13262,7 +14442,7 @@ routine03DBD6:
 #_03DC09: REP #$30
 #_03DC0B: LDY.w $0BE9
 #_03DC0E: LDA.w data03D4BE,Y
-#_03DC11: JSL WriteSingleCharacterTo0900
+#_03DC11: JSL WriteSingleTileToMessageBuffer
 
 #_03DC15: SEP #$20
 #_03DC17: LDA.b #$06
@@ -13312,7 +14492,7 @@ routine03DC5D:
 #_03DC6E: STA.w $0A39
 #_03DC71: LDA.w #DemonNamePointers
 #_03DC74: STA.w $00C3
-#_03DC77: JSR WriteTextIndexW0A39
+#_03DC77: JSR WriteIndexedEntityNameToBuffer
 #_03DC7A: RTS
 
 .branch03DC7B
@@ -14195,7 +15375,7 @@ routine03E1AB:
 #_03E1B7: AND.w #$00FF
 #_03E1BA: STA.w $0A39
 
-#_03E1BD: LDA.w #data08FF89>>0
+#_03E1BD: LDA.w #FusionOptionPointers>>0
 #_03E1C0: STA.w $00C3
 
 #_03E1C3: LDA.w #$3CC4
@@ -14205,11 +15385,11 @@ routine03E1AB:
 
 #_03E1CC: SEP #$20
 
-#_03E1CE: LDA.b #data08FF89>>16
+#_03E1CE: LDA.b #FusionOptionPointers>>16
 #_03E1D0: STA.w $00C5
 #_03E1D3: STZ.w $0A33
 
-#_03E1D6: JSR WriteTextIndexW0A39
+#_03E1D6: JSR WriteIndexedEntityNameToBuffer
 
 #_03E1D9: LDA.b #$16
 #_03E1DB: ASL A
@@ -14261,8 +15441,8 @@ routine03E1E7:
 
 .branch03E220
 #_03E220: REP #$20
-#_03E222: LDA.w data03E40A,X
-#_03E225: JSL WriteSingleCharacterTo0900
+#_03E222: LDA.w TheNumbers1Through12,X
+#_03E225: JSL WriteSingleTileToMessageBuffer
 
 #_03E229: SEP #$20
 #_03E22B: LDA.b #$04
@@ -14287,7 +15467,7 @@ routine03E1E7:
 #_03E251: PHY
 #_03E252: PHD
 #_03E253: PHB
-#_03E254: JSR WriteTextIndexW0A39
+#_03E254: JSR WriteIndexedEntityNameToBuffer
 
 #_03E257: REP #$30
 #_03E259: PLB
@@ -14319,7 +15499,7 @@ routine03E1E7:
 #_03E289: PHY
 #_03E28A: PHD
 #_03E28B: PHB
-#_03E28C: JSR WriteTextIndexW0A39
+#_03E28C: JSR WriteIndexedEntityNameToBuffer
 
 #_03E28F: REP #$30
 #_03E291: PLB
@@ -14389,7 +15569,7 @@ routine03E1E7:
 #_03E2EA: PHD
 #_03E2EB: PHB
 
-#_03E2EC: JSR WriteTextIndexW0A39
+#_03E2EC: JSR WriteIndexedEntityNameToBuffer
 
 #_03E2EF: REP #$30
 #_03E2F1: PLB
@@ -14435,7 +15615,7 @@ routine03E1E7:
 #_03E334: PHY
 #_03E335: PHD
 #_03E336: PHB
-#_03E337: JSR WriteTextIndexW0A39
+#_03E337: JSR WriteIndexedEntityNameToBuffer
 
 #_03E33A: REP #$30
 #_03E33C: PLB
@@ -14509,7 +15689,7 @@ routine03E369:
 #_03E3AC: LDX.b #$24
 
 .branch03E3AE
-#_03E3AE: LDA.w data03E40A,Y
+#_03E3AE: LDA.w TheNumbers1Through12,Y
 #_03E3B1: AND.w #$00FF
 #_03E3B4: ORA.w #$2000
 #_03E3B7: STA.w $0106,X
@@ -14551,9 +15731,23 @@ data03E3EC:
 #_03E3FC: db $CF,$CF,$CF,$CF,$CF,$CF,$CF,$CF
 #_03E404: db $CF,$CF,$CF,$CF,$CF,$CF
 
-data03E40A:
-#_03E40A: db $02,$03,$04,$05,$06,$07,$08,$09
-#_03E412: db $0A,$A2,$A3,$A4
+;===================================================================================================
+
+TheNumbers1Through12:
+#_03E40A: db $02 ;  1
+#_03E40B: db $03 ;  2
+#_03E40C: db $04 ;  3
+#_03E40D: db $05 ;  4
+#_03E40E: db $06 ;  5
+#_03E40F: db $07 ;  6
+#_03E410: db $08 ;  7
+#_03E411: db $09 ;  8
+#_03E412: db $0A ;  9
+#_03E413: db $A2 ; 10
+#_03E414: db $A3 ; 11
+#_03E415: db $A4 ; 12
+
+;===================================================================================================
 
 data03E416:
 #_03E416: db $1C,$0F,$1D,$1F,$16,$1E
@@ -14571,10 +15765,13 @@ routine03E41C:
 #_03E427: PHX
 
 #_03E428: SEP #$20
+
 #_03E42A: JSR routine03E6DF
 #_03E42D: STZ.w $0A33
-#_03E430: LDA.b #$B1
-#_03E432: JSL WriteSingleCharacterTo0900
+
+#_03E430: LDA.b #$B1 ; ◎
+#_03E432: JSL WriteSingleTileToMessageBuffer
+
 #_03E436: LDA.b #$04
 #_03E438: STA.w $0A33
 #_03E43B: LDA.b #ClassNamePointers>>16
@@ -14593,7 +15790,7 @@ routine03E41C:
 #_03E456: PHY
 #_03E457: PHD
 #_03E458: PHB
-#_03E459: JSR WriteTextIndexW0A39
+#_03E459: JSR WriteIndexedEntityNameToBuffer
 
 #_03E45C: REP #$30
 #_03E45E: PLB
@@ -14629,7 +15826,7 @@ routine03E41C:
 #_03E495: PHY
 #_03E496: PHD
 #_03E497: PHB
-#_03E498: JSR WriteTextIndexW0A39
+#_03E498: JSR WriteIndexedEntityNameToBuffer
 
 #_03E49B: REP #$30
 #_03E49D: PLB
@@ -14649,7 +15846,7 @@ routine03E41C:
 #_03E4AC: PHY
 #_03E4AD: PHD
 #_03E4AE: PHB
-#_03E4AF: JSL TextCommand_1F_Write_him_Name_long
+#_03E4AF: JSL TextCommand_Write_him_Name_long
 
 #_03E4B3: REP #$30
 #_03E4B5: PLB
@@ -14661,7 +15858,7 @@ routine03E41C:
 
 .branch03E4BB
 #_03E4BB: SEP #$20
-#_03E4BD: LDA.b #data08FF89>>16
+#_03E4BD: LDA.b #FusionOptionPointers>>16
 #_03E4BF: STA.w $00C5
 #_03E4C2: LDA.b #$24
 #_03E4C4: STA.w $0A33
@@ -14672,7 +15869,7 @@ routine03E41C:
 #_03E4CB: REP #$20
 #_03E4CD: AND.w #$00FF
 #_03E4D0: STA.w $0A39
-#_03E4D3: LDA.w #data08FF89>>0
+#_03E4D3: LDA.w #FusionOptionPointers>>0
 #_03E4D6: STA.w $00C3
 #_03E4D9: PHP
 #_03E4DA: REP #$30
@@ -14681,7 +15878,7 @@ routine03E41C:
 #_03E4DE: PHY
 #_03E4DF: PHD
 #_03E4E0: PHB
-#_03E4E1: JSR WriteTextIndexW0A39
+#_03E4E1: JSR WriteIndexedEntityNameToBuffer
 
 #_03E4E4: REP #$30
 #_03E4E6: PLB
@@ -14773,7 +15970,7 @@ routine03E51A:
 
 .branch03E563
 #_03E563: SEP #$20
-#_03E565: JSL WriteSingleCharacterTo0900
+#_03E565: JSL WriteSingleTileToMessageBuffer
 #_03E569: PLP
 #_03E56A: PLA
 #_03E56B: STA.w $0E00
@@ -14807,7 +16004,7 @@ routine03E51A:
 #_03E590: LDA.w $098C,X
 #_03E593: STA.w $0BEF
 #_03E596: JSR DetermineFusionCompatibility
-#_03E599: JSL WriteSingleCharacterTo0900
+#_03E599: JSL WriteSingleTileToMessageBuffer
 #_03E59D: PLP
 #_03E59E: PLX
 
@@ -14868,7 +16065,7 @@ routine03E51A:
 
 .branch03E5F4
 #_03E5F4: SEP #$20
-#_03E5F6: JSL WriteSingleCharacterTo0900
+#_03E5F6: JSL WriteSingleTileToMessageBuffer
 #_03E5FA: PLP
 #_03E5FB: PLA
 #_03E5FC: STA.w $0E00
@@ -14902,7 +16099,7 @@ routine03E51A:
 #_03E627: LDA.w $098C,X
 #_03E62A: STA.w $0BF1
 #_03E62D: JSR DetermineFusionCompatibility
-#_03E630: JSL WriteSingleCharacterTo0900
+#_03E630: JSL WriteSingleTileToMessageBuffer
 #_03E634: PLP
 #_03E635: PLX
 
@@ -14951,35 +16148,35 @@ DetermineFusionCompatibility:
 #_03E676: dw .load_letter_D
 
 .load_circle
-#_03E678: LDA.b #$A9
+#_03E678: LDA.b #$A9 ; ⭘
 #_03E67A: RTS
 
 .load_refmark
-#_03E67B: LDA.b #$AA
+#_03E67B: LDA.b #$AA ; ※
 #_03E67D: RTS
 
 .load_numeral_1
-#_03E67E: LDA.b #$02
+#_03E67E: LDA.b #$02 ; 1
 #_03E680: RTS
 
 .load_numeral_2
-#_03E681: LDA.b #$03
+#_03E681: LDA.b #$03 ; 2
 #_03E683: RTS
 
 .load_letter_x
-#_03E684: LDA.b #$22
+#_03E684: LDA.b #$22 ; X
 #_03E686: RTS
 
 .load_question_mark
-#_03E687: LDA.b #$95
+#_03E687: LDA.b #$95 ; ?
 #_03E689: RTS
 
 .load_middle_dot
-#_03E68A: LDA.b #$93
+#_03E68A: LDA.b #$93 ; ・
 #_03E68C: RTS
 
 .load_letter_D
-#_03E68D: LDA.b #$0E
+#_03E68D: LDA.b #$0E ; D
 #_03E68F: RTS
 
 ;===================================================================================================
@@ -15269,7 +16466,7 @@ GetDemonXLevel:
 #_03EA4A: LDA.w #$0018
 #_03EA4D: STA.w $0E11
 
-#_03EA50: JSR Multiply_0E10_by_0E11
+#_03EA50: JSR SmallMultiplication
 
 #_03EA53: LDX.w $0E12
 #_03EA56: LDA.l DemonStats,X
@@ -15380,7 +16577,7 @@ routine03EAAA:
 #_03EAF9: STA.w $0E10
 #_03EAFC: LDA.w #$0019
 #_03EAFF: STA.w $0E11
-#_03EB02: JSR Multiply_0E10_by_0E11
+#_03EB02: JSR SmallMultiplication
 #_03EB05: LDA.w $0E12
 #_03EB08: CLC
 #_03EB09: ADC.w $0BF5
@@ -17717,8 +18914,8 @@ routine03FC10:
 #_03FC34: BCS .branch03FCAD
 
 #_03FC36: REP #$20
-#_03FC38: LDA.w data03E40A,X
-#_03FC3B: JSL WriteSingleCharacterTo0900
+#_03FC38: LDA.w TheNumbers1Through12,X
+#_03FC3B: JSL WriteSingleTileToMessageBuffer
 
 #_03FC3F: SEP #$20
 #_03FC41: LDA.b #$04
@@ -17743,7 +18940,7 @@ routine03FC10:
 #_03FC67: PHY
 #_03FC68: PHD
 #_03FC69: PHB
-#_03FC6A: JSR WriteTextIndexW0A39
+#_03FC6A: JSR WriteIndexedEntityNameToBuffer
 
 #_03FC6D: REP #$30
 #_03FC6F: PLB
@@ -17779,7 +18976,7 @@ routine03FC10:
 #_03FCA0: PHD
 #_03FCA1: PHB
 
-#_03FCA2: JSR WriteTextIndexW0A39
+#_03FCA2: JSR WriteIndexedEntityNameToBuffer
 
 #_03FCA5: REP #$30
 #_03FCA7: PLB
@@ -17875,8 +19072,8 @@ routine03FD17:
 
 .branch03FD4C
 #_03FD4C: REP #$20
-#_03FD4E: LDA.w data03E40A,X
-#_03FD51: JSL WriteSingleCharacterTo0900
+#_03FD4E: LDA.w TheNumbers1Through12,X
+#_03FD51: JSL WriteSingleTileToMessageBuffer
 
 #_03FD55: SEP #$20
 #_03FD57: LDA.b #$04
@@ -17901,7 +19098,7 @@ routine03FD17:
 #_03FD7D: PHY
 #_03FD7E: PHD
 #_03FD7F: PHB
-#_03FD80: JSR WriteTextIndexW0A39
+#_03FD80: JSR WriteIndexedEntityNameToBuffer
 
 #_03FD83: REP #$30
 #_03FD85: PLB
@@ -17933,7 +19130,7 @@ routine03FD17:
 #_03FDB5: PHY
 #_03FDB6: PHD
 #_03FDB7: PHB
-#_03FDB8: JSR WriteTextIndexW0A39
+#_03FDB8: JSR WriteIndexedEntityNameToBuffer
 
 #_03FDBB: REP #$30
 #_03FDBD: PLB
@@ -17947,7 +19144,7 @@ routine03FD17:
 #_03FDC5: LDA.b #$24
 #_03FDC7: STA.w $0A33
 #_03FDCA: JSR routine03FE3E
-#_03FDCD: JSL WriteSingleCharacterTo0900
+#_03FDCD: JSL WriteSingleTileToMessageBuffer
 
 .branch03FDD1
 #_03FDD1: SEP #$20

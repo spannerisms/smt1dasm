@@ -182,6 +182,7 @@ UNKNOWN_7E07ED   = $7E07ED
 
 ; Mirror of moon phase? TODO
 UNKNOWN_7E07EE   = $7E07EE
+
 UNKNOWN_7E07EF   = $7E07EF
 UNKNOWN_7E07F0   = $7E07F0
 UNKNOWN_7E07F1   = $7E07F1
@@ -223,12 +224,33 @@ UNKNOWN_7E07FF   = $7E07FF
 ;   $14E0   +0x4E0   Demon 9
 ;   $1540   +0x540   Demon A
 ;   $15A0   +0x5A0   Demon B
-
+;---------------------------------------------------------------------------------------------------
 ; Humans are documented first
 ; See below for demons
+;---------------------------------------------------------------------------------------------------
+
+; TODO some sorta bitfield
 MC_7E1000        = $7E1000
 
 ; Status affliction bitfield
+; bit   value    status
+;   0    0001    Happy
+;   1    0002    Panic
+;   2    0004    Close
+;   3    0008    Shock
+;   4    0010    Freeze
+;   5    0020    Bind
+;   6    0040    Sleep
+;   7    0080    Charm
+;   8    0100    Curse
+;   9    0200    Frog
+;  10    0400    Fly
+;  11    0800    Poison
+;  12    1000    Paralysis
+;  13    2000    Stone
+;  14    4000    Dying
+;  15    8000    Dead
+
 MCSTAFL          = $7E1002
 
 ; TODO not sure yet for humans

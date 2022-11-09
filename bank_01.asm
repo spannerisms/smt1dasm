@@ -5861,11 +5861,13 @@ routine01A6C1:
 ;===================================================================================================
 routine01A700:
 #_01A700: PHP
+
 #_01A701: REP #$30
 #_01A703: LDA.w #$0000
 
 .branch01A706
 #_01A706: STA.w $0698
+
 #_01A709: CLC
 #_01A70A: ADC.w $0715
 #_01A70D: TAX
@@ -5874,6 +5876,7 @@ routine01A700:
 #_01A712: SBC.w $1036,X
 #_01A715: STA.w $1010,X
 #_01A718: STZ.w $1036,X
+
 #_01A71B: LDA.w $0698
 #_01A71E: INC A
 #_01A71F: INC A
@@ -5968,31 +5971,33 @@ routine01A700:
 
 #_01A7BD: LDY.w #$0008
 #_01A7C0: LDA.w $0692
-#_01A7C3: BMI .EXIT_01A7E9
+#_01A7C3: BMI .exit
 
 #_01A7C5: AND.w #$00FF
 #_01A7C8: CMP.w #$0050
 #_01A7CB: BCC .branch01A7D2
 
 #_01A7CD: CMP.w #$0060
-#_01A7D0: BCC .EXIT_01A7E9
+#_01A7D0: BCC .exit
 
 .branch01A7D2
 #_01A7D2: JSL GetEquipmentStat
 #_01A7D6: LDX.w $0715
 #_01A7D9: BIT.w #$0004
-#_01A7DC: BEQ .EXIT_01A7E3
+#_01A7DC: BEQ .set_status
 
 #_01A7DE: LDY.w $1034,X
-#_01A7E1: BEQ .EXIT_01A7E9
+#_01A7E1: BEQ .exit
 
-.EXIT_01A7E3
+.set_status
 #_01A7E3: ORA.w $1002,X
 #_01A7E6: STA.w $1002,X
 
-.EXIT_01A7E9
+.exit
 #_01A7E9: PLP
 #_01A7EA: RTL
+
+;===================================================================================================
 
 ThisRoutineDoesLiterallyNothingButReturn:
 #_01A7EB: RTS

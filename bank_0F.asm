@@ -92,7 +92,7 @@ data0F806D:
 #_0F806D: db $00,$20,$27,$00,$C0,$02,$00,$10
 
 ;===================================================================================================
-; TODO easy data table to deal with
+
 routine0F8075:
 #_0F8075: PHP
 #_0F8076: REP #$30
@@ -109,20 +109,21 @@ routine0F8075:
 #_0F8086: PHK
 #_0F8087: PLB
 
-#_0F8088: LDA.w data0F80F5,Y
+#_0F8088: LDA.w .tiles+0,Y
 #_0F808B: AND.w #$00FF
 #_0F808E: STA.w $00E2
 
-#_0F8091: LDA.w data0F80F6,Y
+#_0F8091: LDA.w .tiles+1,Y
 #_0F8094: STA.w $00E0
 
-#_0F8097: LDA.w data0F80F8,Y
+#_0F8097: LDA.w .tiles+3,Y
 #_0F809A: AND.w #$00FF
 #_0F809D: STA.w $0E00
 
-#_0F80A0: LDA.w data0F80F9,Y
+#_0F80A0: LDA.w .tiles+4,Y
 #_0F80A3: AND.w #$00FF
 #_0F80A6: STA.w $0E02
+
 #_0F80A9: STZ.w $0E04
 
 #_0F80AC: SEP #$20
@@ -132,7 +133,7 @@ routine0F8075:
 
 #_0F80B3: LDX.w $0E02
 
-.branch0F80B6
+.next_chunk
 #_0F80B6: PHX
 
 #_0F80B7: LDA.w $0E04
@@ -143,13 +144,13 @@ routine0F8075:
 
 #_0F80C3: LDY.w #$0000
 
-.branch0F80C6
+.next_char
 #_0F80C6: LDA.b [$E0],Y
 #_0F80C8: STA.w VMDATAL
 
 #_0F80CB: INY
 #_0F80CC: CPY.w $0E00
-#_0F80CF: BNE .branch0F80C6
+#_0F80CF: BNE .next_char
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -169,7 +170,7 @@ routine0F8075:
 
 #_0F80E9: PLX
 #_0F80EA: DEX
-#_0F80EB: BNE .branch0F80B6
+#_0F80EB: BNE .next_chunk
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -181,66 +182,71 @@ routine0F8075:
 
 #_0F80F4: RTL
 
-; TODO merge
-data0F80F5:
-#_0F80F5: db $0F
+;---------------------------------------------------------------------------------------------------
 
-data0F80F6:
-#_0F80F6: db $FA,$80
+; TODO verify the 0xD0+ chars?
+.tiles
+#_0F80F5: db $0F : dw $80FA : db $20, $0C
 
-data0F80F8:
-#_0F80F8: db $20
+#_0F80FA: db $00, $00, $00, $00, $00, $01, $02, $03 ; "     012"
+#_0F8102: db $04, $05, $06, $75, $76, $77, $78, $79 ; "345ノハヒフヘ"
+#_0F810A: db $7A, $00, $00, $00, $00, $00, $00, $00 ; "ホ       "
+#_0F8112: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
 
-data0F80F9:
-#_0F80F9: db $0C,$00,$00,$00,$00,$00,$01,$02
-#_0F8101: db $03,$04,$05,$06,$75,$76,$77,$78
-#_0F8109: db $79,$7A,$00,$00,$00,$00,$00,$00
-#_0F8111: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8119: db $00,$00,$00,$07,$08,$09,$0A,$0B
-#_0F8121: db $0C,$0D,$0E,$0F,$7B,$7C,$7D,$7E
-#_0F8129: db $7F,$80,$81,$82,$83,$00,$00,$00
-#_0F8131: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8139: db $00,$00,$10,$11,$12,$13,$14,$15
-#_0F8141: db $16,$17,$18,$19,$84,$85,$86,$87
-#_0F8149: db $88,$89,$8A,$8B,$8C,$8D,$00,$00
-#_0F8151: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8159: db $00,$1A,$1B,$1C,$1D,$1E,$1F,$20
-#_0F8161: db $21,$22,$23,$24,$8E,$8F,$90,$91
-#_0F8169: db $92,$93,$94,$95,$96,$97,$98,$00
-#_0F8171: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8179: db $00,$25,$26,$27,$28,$29,$2A,$2B
-#_0F8181: db $2C,$2D,$2E,$2F,$99,$9A,$9B,$9C
-#_0F8189: db $9D,$9E,$9F,$A0,$A1,$A2,$A3,$00
-#_0F8191: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8199: db $00,$30,$31,$32,$33,$34,$35,$36
-#_0F81A1: db $37,$38,$39,$3A,$A4,$A5,$A6,$A7
-#_0F81A9: db $A8,$A9,$AA,$AB,$AC,$AD,$AE,$00
-#_0F81B1: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F81B9: db $00,$3B,$3C,$3D,$3E,$3F,$40,$41
-#_0F81C1: db $42,$43,$44,$45,$AF,$B0,$B1,$B2
-#_0F81C9: db $B3,$B4,$B5,$B6,$B7,$B8,$B9,$00
-#_0F81D1: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F81D9: db $00,$46,$47,$48,$49,$4A,$4B,$4C
-#_0F81E1: db $4D,$4E,$4F,$50,$BA,$BB,$BC,$BD
-#_0F81E9: db $BE,$BF,$C0,$C1,$C2,$C3,$C4,$00
-#_0F81F1: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F81F9: db $00,$51,$52,$53,$54,$55,$56,$57
-#_0F8201: db $58,$59,$5A,$5B,$C5,$C6,$C7,$C8
-#_0F8209: db $C9,$CA,$CB,$CC,$CD,$CE,$CF,$00
-#_0F8211: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8219: db $00,$00,$5C,$5D,$5E,$5F,$60,$61
-#_0F8221: db $62,$63,$64,$65,$D0,$D1,$D2,$D3
-#_0F8229: db $D4,$D5,$D6,$D7,$D8,$D9,$00,$00
-#_0F8231: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8239: db $00,$00,$00,$66,$67,$68,$69,$6A
-#_0F8241: db $6B,$6C,$6D,$6E,$DA,$DB,$DC,$DD
-#_0F8249: db $DE,$DF,$E0,$E1,$E2,$00,$00,$00
-#_0F8251: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8259: db $00,$00,$00,$00,$00,$00,$6F,$70
-#_0F8261: db $71,$72,$73,$74,$E3,$E4,$E5,$E6
-#_0F8269: db $E7,$E8,$E9,$00,$00,$00,$00,$00
-#_0F8271: db $00,$00,$00,$00,$00,$00,$00,$00
-#_0F8279: db $00
+#_0F811A: db $00, $00, $07, $08, $09, $0A, $0B, $0C ; "  6789AB"
+#_0F8122: db $0D, $0E, $0F, $7B, $7C, $7D, $7E, $7F ; "CDEマミムメモ"
+#_0F812A: db $80, $81, $82, $83, $00, $00, $00, $00 ; "ヤユヨラ    "
+#_0F8132: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F813A: db $00, $10, $11, $12, $13, $14, $15, $16 ; " FGHIJKL"
+#_0F8142: db $17, $18, $19, $84, $85, $86, $87, $88 ; "MNOリルレロワ"
+#_0F814A: db $89, $8A, $8B, $8C, $8D, $00, $00, $00 ; "ヲンァィェ   "
+#_0F8152: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F815A: db $1A, $1B, $1C, $1D, $1E, $1F, $20, $21 ; "PQRSTUVW"
+#_0F8162: db $22, $23, $24, $8E, $8F, $90, $91, $92 ; "XYZォャュョッ"
+#_0F816A: db $93, $94, $95, $96, $97, $98, $00, $00 ; "・!?&>/  "
+#_0F8172: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F817A: db $25, $26, $27, $28, $29, $2A, $2B, $2C ; "あいうえおかきく"
+#_0F8182: db $2D, $2E, $2F, $99, $9A, $9B, $9C, $9D ; "けこさ':.がぎ"
+#_0F818A: db $9E, $9F, $A0, $A1, $A2, $A3, $00, $00 ; "ぐげござじず  "
+#_0F8192: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F819A: db $30, $31, $32, $33, $34, $35, $36, $37 ; "しすせそたちつて"
+#_0F81A2: db $38, $39, $3A, $A4, $A5, $A6, $A7, $A8 ; "となにぜぞだぢづ"
+#_0F81AA: db $A9, $AA, $AB, $AC, $AD, $AE, $00, $00 ; "でどばびぶべ  "
+#_0F81B2: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F81BA: db $3B, $3C, $3D, $3E, $3F, $40, $41, $42 ; "ぬねのはひふへほ"
+#_0F81C2: db $43, $44, $45, $AF, $B0, $B1, $B2, $B3 ; "まみむぼぱぴぷぺ"
+#_0F81CA: db $B4, $B5, $B6, $B7, $B8, $B9, $00, $00 ; "ぽガギグゲゴ  "
+#_0F81D2: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F81DA: db $46, $47, $48, $49, $4A, $4B, $4C, $4D ; "めもやゆよらりる"
+#_0F81E2: db $4E, $4F, $50, $BA, $BB, $BC, $BD, $BE ; "れろわザジズゼゾ"
+#_0F81EA: db $BF, $C0, $C1, $C2, $C3, $C4, $00, $00 ; "ダヂヅデドバ  "
+#_0F81F2: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F81FA: db $51, $52, $53, $54, $55, $56, $57, $58 ; "をんぁぉゃゅょっ"
+#_0F8202: db $59, $5A, $5B, $C5, $C6, $C7, $C8, $C9 ; "ぅー￥ビブベボパ"
+#_0F820A: db $CA, $CB, $CC, $CD, $CE, $CF, $00, $00 ; "ピプペポヴ   "
+#_0F8212: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F821A: db $00, $5C, $5D, $5E, $5F, $60, $61, $62 ; " ℏアイウエオカ"
+#_0F8222: db $63, $64, $65, $D0, $D1, $D2, $D3, $D4 ; "キクケ     "
+#_0F822A: db $D5, $D6, $D7, $D8, $D9, $00, $00, $00 ; "        "
+#_0F8232: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F823A: db $00, $00, $66, $67, $68, $69, $6A, $6B ; "  コサシスセソ"
+#_0F8242: db $6C, $6D, $6E, $DA, $DB, $DC, $DD, $DE ; "タチツ     "
+#_0F824A: db $DF, $E0, $E1, $E2, $00, $00, $00, $00 ; "        "
+#_0F8252: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
+
+#_0F825A: db $00, $00, $00, $00, $00, $6F, $70, $71 ; "     テトナ"
+#_0F8262: db $72, $73, $74, $E3, $E4, $E5, $E6, $E7 ; "ニヌネ     "
+#_0F826A: db $E8, $E9, $00, $00, $00, $00, $00, $00 ; "        "
+#_0F8272: db $00, $00, $00, $00, $00, $00, $00, $00 ; "        "
 
 ;===================================================================================================
 
@@ -279,17 +285,18 @@ routine0F827A:
 
 #_0F8299: SEP #$20
 
-#_0F829B: LDA.w data0F82DD,X
+#_0F829B: LDA.w data0F82DD+0,X
 #_0F829E: STA.w $0E00
 
-#_0F82A1: LDA.w data0F82DE,X
+#_0F82A1: LDA.w data0F82DD+1,X
 #_0F82A4: STA.w $0E02
 
-#_0F82A7: LDA.w data0F82DF,X
+#_0F82A7: LDA.w data0F82DD+2,X
 #_0F82AA: STA.w $0E04
 
-#_0F82AD: LDA.w data0F82E0,X
+#_0F82AD: LDA.w data0F82DD+3,X
 #_0F82B0: STA.w $0E06
+
 #_0F82B3: LDY.w #$001F
 
 .next_tile
@@ -314,45 +321,62 @@ routine0F827A:
 
 #_0F82D5: LDA.b #$80
 #_0F82D7: STA.w VMAIN
+
 #_0F82DA: PLB
 #_0F82DB: PLP
+
 #_0F82DC: RTL
 
-; TODO merge
+;---------------------------------------------------------------------------------------------------
+
 data0F82DD:
-#_0F82DD: db $01
-
-data0F82DE:
-#_0F82DE: db $01
-
-data0F82DF:
-#_0F82DF: db $01
-
-data0F82E0:
-#_0F82E0: db $01,$01,$01,$01,$01,$01,$01,$01
-#_0F82E8: db $01,$01,$01,$01,$01,$01,$01,$01
-#_0F82F0: db $01,$02,$02,$02,$02,$03,$03,$03
-#_0F82F8: db $03,$04,$04,$04,$04,$05,$05,$05
-#_0F8300: db $05,$06,$06,$06,$06,$07,$07,$07
-#_0F8308: db $07,$07,$07,$07,$07,$07,$07,$07
-#_0F8310: db $07,$07,$07,$07,$07,$07,$07,$07
-#_0F8318: db $07,$07,$07,$07,$07,$08,$08,$08
-#_0F8320: db $08,$09,$0A,$0B,$09,$0C,$0D,$0E
-#_0F8328: db $0C,$0F,$10,$11,$0F,$12,$13,$14
-#_0F8330: db $12,$15,$16,$17,$15,$18,$19,$1A
-#_0F8338: db $18,$1B,$1C,$1D,$1B,$1E,$1F,$20
-#_0F8340: db $21,$22,$23,$24,$25,$26,$27,$28
-#_0F8348: db $29,$2A,$2B,$2C,$2D,$2E,$2F,$30
-#_0F8350: db $31,$32,$33,$34,$35,$36,$37,$38
-#_0F8358: db $39,$3A,$3B,$3C,$3D,$3E,$3F,$40
-#_0F8360: db $41,$42,$43,$44,$45,$46,$47,$48
-#_0F8368: db $49,$4A,$4B,$4C,$4D,$4E,$4F,$50
-#_0F8370: db $51,$52,$53,$54,$55,$56,$56,$56
-#_0F8378: db $56,$56,$56,$56,$56,$56,$56,$56
-#_0F8380: db $56,$57,$58,$59,$5A,$5B,$5C,$5D
-#_0F8388: db $5E,$5F,$60,$61,$62,$57,$58,$59
-#_0F8390: db $5A,$5B,$5C,$5D,$5E,$5F,$60,$61
-#_0F8398: db $62
+#_0F82DD: db $01, $01, $01, $01
+#_0F82E1: db $01, $01, $01, $01
+#_0F82E5: db $01, $01, $01, $01
+#_0F82E9: db $01, $01, $01, $01
+#_0F82ED: db $01, $01, $01, $01
+#_0F82F1: db $02, $02, $02, $02
+#_0F82F5: db $03, $03, $03, $03
+#_0F82F9: db $04, $04, $04, $04
+#_0F82FD: db $05, $05, $05, $05
+#_0F8301: db $06, $06, $06, $06
+#_0F8305: db $07, $07, $07, $07
+#_0F8309: db $07, $07, $07, $07
+#_0F830D: db $07, $07, $07, $07
+#_0F8311: db $07, $07, $07, $07
+#_0F8315: db $07, $07, $07, $07
+#_0F8319: db $07, $07, $07, $07
+#_0F831D: db $08, $08, $08, $08
+#_0F8321: db $09, $0A, $0B, $09
+#_0F8325: db $0C, $0D, $0E, $0C
+#_0F8329: db $0F, $10, $11, $0F
+#_0F832D: db $12, $13, $14, $12
+#_0F8331: db $15, $16, $17, $15
+#_0F8335: db $18, $19, $1A, $18
+#_0F8339: db $1B, $1C, $1D, $1B
+#_0F833D: db $1E, $1F, $20, $21
+#_0F8341: db $22, $23, $24, $25
+#_0F8345: db $26, $27, $28, $29
+#_0F8349: db $2A, $2B, $2C, $2D
+#_0F834D: db $2E, $2F, $30, $31
+#_0F8351: db $32, $33, $34, $35
+#_0F8355: db $36, $37, $38, $39
+#_0F8359: db $3A, $3B, $3C, $3D
+#_0F835D: db $3E, $3F, $40, $41
+#_0F8361: db $42, $43, $44, $45
+#_0F8365: db $46, $47, $48, $49
+#_0F8369: db $4A, $4B, $4C, $4D
+#_0F836D: db $4E, $4F, $50, $51
+#_0F8371: db $52, $53, $54, $55
+#_0F8375: db $56, $56, $56, $56
+#_0F8379: db $56, $56, $56, $56
+#_0F837D: db $56, $56, $56, $56
+#_0F8381: db $57, $58, $59, $5A
+#_0F8385: db $5B, $5C, $5D, $5E
+#_0F8389: db $5F, $60, $61, $62
+#_0F838D: db $57, $58, $59, $5A
+#_0F8391: db $5B, $5C, $5D, $5E
+#_0F8395: db $5F, $60, $61, $62
 
 ;===================================================================================================
 
@@ -1006,10 +1030,12 @@ routine0F8677:
 ;---------------------------------------------------------------------------------------------------
 
 #_0F872B: SEP #$20
+
 #_0F872D: LDA.b #$01
 #_0F872F: STA.l $7E22FD
 
 #_0F8733: PLB
+
 #_0F8734: PLP
 #_0F8735: RTL
 
@@ -1441,7 +1467,7 @@ routine0F8836:
 ;---------------------------------------------------------------------------------------------------
 
 data0F89B1:
-#_0F89B1: db $1F,$6F
+#_0F89B1: db $1F, $6F
 
 ;===================================================================================================
 
@@ -1470,7 +1496,7 @@ routine0F89B3:
 #_0F89D1: ASL A
 #_0F89D2: TAY
 
-#_0F89D3: LDA.w data0F8D8F,Y
+#_0F89D3: LDA.w SaveOrLoadPickVRAM,Y
 #_0F89D6: STA.w $0E00
 
 #_0F89D9: LDY.w #$0000
@@ -1523,12 +1549,14 @@ routine0F89B3:
 ;---------------------------------------------------------------------------------------------------
 
 #_0F8A22: SEP #$30
+
 #_0F8A24: STZ.w $09F3
 
 .loop
 #_0F8A27: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F8A2B: SEP #$10
+
 #_0F8A2D: LDY.w $09F3
 
 #_0F8A30: REP #$20
@@ -1677,31 +1705,22 @@ routine0F89B3:
 #_0F8B00: PLP
 #_0F8B01: RTL
 
-; TODO confirm save text
 data0F8B02:
-#_0F8B02: dw $00D8,$0010,$0013,$0016
-#_0F8B0A: dw $000F,$00CF,$00CF,$40D8
-#_0F8B12: dw $00DA,$00CF,$00CF,$009E
-#_0F8B1A: dw $00CF,$00CF,$00CF,$40DA
-#_0F8B22: dw $00DA,$0026,$0026,$0037
-#_0F8B2A: dw $0031,$002A,$0095,$40DA
-#_0F8B32: dw $00DA,$00CF,$00CF,$00CF
-#_0F8B3A: dw $00CF,$00CF,$00CF,$40DA
-#_0F8B42: dw $00DA,$00CF,$00CF,$003E
-#_0F8B4A: dw $0026,$00CF,$00CF,$40DA
-#_0F8B52: dw $00DA,$00CF,$00CF,$00CF
-#_0F8B5A: dw $00CF,$00CF,$00CF,$40DA
-#_0F8B62: dw $00DA,$00CF,$00CF,$0026
-#_0F8B6A: dw $0026,$0028,$00CF,$40DA
-#_0F8B72: dw $80D8,$80D9,$80D9,$80D9
-#_0F8B7A: dw $80D9,$80D9,$80D9,$C0D8
+#_0F8B02: dw $00D8, $0010, $0013, $0016, $000F, $00CF, $00CF, $40D8 ; " FILE   "
+#_0F8B12: dw $00DA, $00CF, $00CF, $009E, $00CF, $00CF, $00CF, $40DA ; "   ゛    "
+#_0F8B22: dw $00DA, $0026, $0026, $0037, $0031, $002A, $0095, $40DA ; " いいてすか? "
+#_0F8B32: dw $00DA, $00CF, $00CF, $00CF, $00CF, $00CF, $00CF, $40DA ; "        "
+#_0F8B42: dw $00DA, $00CF, $00CF, $003E, $0026, $00CF, $00CF, $40DA ; "   はい   "
+#_0F8B52: dw $00DA, $00CF, $00CF, $00CF, $00CF, $00CF, $00CF, $40DA ; "        "
+#_0F8B62: dw $00DA, $00CF, $00CF, $0026, $0026, $0028, $00CF, $40DA ; "   いいえ  "
+#_0F8B72: dw $80D8, $80D9, $80D9, $80D9, $80D9, $80D9, $80D9, $C0D8 ; "        "
+
 
 data0F8B82:
-#_0F8B82: dw $00CF,$0010,$0013,$0016
-#_0F8B8A: dw $000F,$00CF,$00CF,$00CF
+#_0F8B82: dw $00CF, $0010, $0013, $0016, $000F, $00CF, $00CF, $00CF ; " FILE   "
 
 data0F8B92:
-#_0F8B92: db $3F,$4F
+#_0F8B92: db $3F, $4F
 
 ;===================================================================================================
 
@@ -1751,7 +1770,7 @@ routine0F8B94:
 #_0F8BCF: LDA.w data0F8D93,Y
 #_0F8BD2: STA.w $0E02
 
-#_0F8BD5: LDA.w data0F8D8F,Y
+#_0F8BD5: LDA.w SaveOrLoadPickVRAM,Y
 #_0F8BD8: INC A
 #_0F8BD9: STA.w VMADDL
 #_0F8BDC: STA.w $0E04
@@ -1800,9 +1819,9 @@ routine0F8B94:
 
 ; TODO label for this
 #_0F8C2B: REP #$20
-#_0F8C2D: LDA.w #data08FF9B
+#_0F8C2D: LDA.w #TerminalDestinationNamePointers
 #_0F8C30: STA.w $00C3
-#_0F8C33: JSL WriteTextIndexW0A39_long
+#_0F8C33: JSL WriteIndexedEntityNameToBuffer_long
 
 #_0F8C37: LDA.w $0E04
 #_0F8C3A: CLC
@@ -1993,26 +2012,33 @@ routine0F8D2E:
 #_0F8D69: BNE .branch0F8D5D
 
 #_0F8D6B: PLP
+
 #_0F8D6C: PLY
 #_0F8D6D: PLX
+
 #_0F8D6E: RTS
 
 ;===================================================================================================
 
 SaveOrLoadPickText:
-#_0F8D6F: db $38, $3D, $78, $8B, $5E, $85, $51, $CF ; とのファイルを⎵
-#_0F8D77: db $4A, $44, $2E, $44, $43, $31, $2A, $95 ; よみこみますか?
+#_0F8D6F: db $38, $3D, $78, $8B, $5E, $85, $51, $CF ; "とのファイルを "
+#_0F8D77: db $4A, $44, $2E, $44, $43, $31, $2A, $95 ; "よみこみますか?"
 
-#_0F8D7F: db $38, $3D, $78, $8B, $5E, $85, $3A, $CF ; とのファイルに⎵
-#_0F8D87: db $2B, $4F, $2C, $30, $43, $31, $2A, $95 ; きろくしますか?
+#_0F8D7F: db $38, $3D, $78, $8B, $5E, $85, $3A, $CF ; "とのファイルに "
+#_0F8D87: db $2B, $4F, $2C, $30, $43, $31, $2A, $95 ; "きろくしますか?"
 
-;===================================================================================================
+;---------------------------------------------------------------------------------------------------
 
-data0F8D8F:
-#_0F8D8F: dw $3CC2,$3E02
+SaveOrLoadPickVRAM:
+#_0F8D8F: dw $3CC2 ; $7984 in VRAM
+#_0F8D8F: dw $3E02 ; $7C04 in VRAM
+
+;---------------------------------------------------------------------------------------------------
 
 data0F8D93:
 #_0F8D93: db $00,$00,$00,$10
+
+;===================================================================================================
 
 routine0F8D97:
 #_0F8D97: SEP #$20
@@ -2027,7 +2053,7 @@ routine0F8D97:
 #_0F8DA7: ASL A
 #_0F8DA8: TAY
 
-#_0F8DA9: LDA.w data0F8DFE,Y
+#_0F8DA9: LDA.w .vram_address,Y
 #_0F8DAC: STA.w $0102
 
 #_0F8DAF: LDA.w #$0007
@@ -2036,24 +2062,24 @@ routine0F8D97:
 #_0F8DB5: LDY.w #$0000
 #_0F8DB8: TYX
 
-.branch0F8DB9
-#_0F8DB9: LDA.w data0F8E02,Y
+.next_char
+#_0F8DB9: LDA.w .text,Y
 #_0F8DBC: AND.w #$00FF
 #_0F8DBF: STA.w $0106,X
 #_0F8DC2: INX
 #_0F8DC3: INX
 #_0F8DC4: INY
 #_0F8DC5: CPY.w #$0007
-#_0F8DC8: BNE .branch0F8DB9
+#_0F8DC8: BNE .next_char
 
 #_0F8DCA: LDA.w #$0001
 #_0F8DCD: STA.w $0100
 
-.branch0F8DD0
+.wait
 #_0F8DD0: JSL AddSelfAsVectorAndMakeSpace
 
 #_0F8DD4: LDA.w $0F2B
-#_0F8DD7: BEQ .branch0F8DD0
+#_0F8DD7: BEQ .wait
 
 #_0F8DD9: SEP #$20
 #_0F8DDB: LDA.b #$02 ; SFX 02
@@ -2062,24 +2088,26 @@ routine0F8D97:
 #_0F8DE1: REP #$20
 #_0F8DE3: LDX.w #$0000
 
-.branch0F8DE6
+.next_clear
 #_0F8DE6: LDA.w #$00CF
 #_0F8DE9: STA.w $0106,X
+
 #_0F8DEC: INX
 #_0F8DED: INX
 #_0F8DEE: CPX.w #$000E
-#_0F8DF1: BNE .branch0F8DE6
+#_0F8DF1: BNE .next_clear
 
 #_0F8DF3: LDA.w #$0001
 #_0F8DF6: STA.w $0100
 #_0F8DF9: JSL AddSelfAsVectorAndMakeSpace
 #_0F8DFD: RTS
 
-data0F8DFE:
-#_0F8DFE: dw $3D0C,$3E4C
+.vram_address
+#_0F8DFE: dw $3D0C ; $7A18 in VRAM
+#_0F8E00: dw $3E4C ; $7C98 in VRAM
 
-data0F8E02:
-#_0F8E02: db $18,$19,$CF,$0E,$0B,$1E,$0B
+.text
+#_0F8E02: db $18, $19, $CF, $0E, $0B, $1E, $0B ; "NO DATA"
 
 ;===================================================================================================
 
@@ -2640,73 +2668,89 @@ routine0F90EB:
 
 #_0F90F5: LDX.b #$00
 
-.branch0F90F7
-#_0F90F7: LDA.w data0F9166,X
+.check_next
+#_0F90F7: LDA.w .sword_trades+0,X
 #_0F90FA: CMP.b #$FF
-#_0F90FC: BEQ .branch0F910C
+#_0F90FC: BEQ .take_it
 
 #_0F90FE: CMP.w $0BED
 #_0F9101: BNE .branch0F9108
 
-#_0F9103: LDA.w data0F9167,X
-#_0F9106: BRA .branch0F910C
+#_0F9103: LDA.w .sword_trades+1,X
+#_0F9106: BRA .take_it
 
 .branch0F9108
 #_0F9108: INX
 #_0F9109: INX
-#_0F910A: BRA .branch0F90F7
+#_0F910A: BRA .check_next
 
-.branch0F910C
+;---------------------------------------------------------------------------------------------------
+
+.take_it
 #_0F910C: STA.w $0A50
 #_0F910F: STZ.w $0A51
 #_0F9112: JSL TakeItemFromSomewhere_long
+
 #_0F9116: PLA
+
 #_0F9117: STA.w $0A50
 #_0F911A: STZ.w $0A51
 #_0F911D: JSL AddItemToInventory_long
+
 #_0F9121: LDA.w $0A58
-#_0F9124: BNE .branch0F913B
+#_0F9124: BNE .item_not_found
 
 #_0F9126: REP #$30
 
 #_0F9128: LDA.w $0BEF
-#_0F912B: CMP.w #$0109
-#_0F912E: BEQ .branch0F9152
+#_0F912B: CMP.w #$0109 ; demon 0109
+#_0F912E: BEQ .take_vase
 
 #_0F9130: JSL routine0F84C1
 #_0F9134: JSL GetNextTextByte_long
+
 #_0F9138: PLB
 #_0F9139: PLP
 #_0F913A: RTL
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch0F913B
+.item_not_found
 #_0F913B: REP #$30
+
 #_0F913D: LDA.w $0BED
 #_0F9140: STA.w $0A50
+
 #_0F9143: JSL AddItemToInventory_long
 #_0F9147: JSL GetNextTextByte_long
 #_0F914B: JSL RelocateTextPointer_long
+
 #_0F914F: PLB
+
 #_0F9150: PLP
 #_0F9151: RTL
 
-.branch0F9152
+;---------------------------------------------------------------------------------------------------
+
+.take_vase
 #_0F9152: LDA.w #$00FC
 #_0F9155: STA.w $0A50
 #_0F9158: STZ.w $0A51
 #_0F915B: JSL TakeItemFromSomewhere_long
+
 #_0F915F: JSL GetNextTextByte_long
+
 #_0F9163: PLB
+
 #_0F9164: PLP
 #_0F9165: RTL
 
-data0F9166:
-#_0F9166: db $2F
-
-data0F9167:
-#_0F9167: db $19,$30,$1D,$31,$38,$2B,$2A,$FF
+.sword_trades
+#_0F9166: db $2F, $19 ; hades hazuki for hina tsurugi's sword
+#_0F9168: db $30, $1D ; angel's trumpet for futsu-no-mitama
+#_0F916A: db $31, $38 ; luna blade for ame-no-murakumo
+#_0F916C: db $2B, $2A ; ame-no-nuboko for renki-no-ken
+#_0F916E: db $FF
 
 ;===================================================================================================
 ; 00 - status
@@ -2718,7 +2762,7 @@ routine0F916F:
 #_0F9171: LDA.w $0A3D
 #_0F9174: PHA
 
-#_0F9175: JSL TextCommand_2A_long
+#_0F9175: JSL TextCommand_ClearMessageBox_long
 
 #_0F9179: JSL GetNextTextByte_long
 #_0F917D: STA.w $0E00
@@ -2992,6 +3036,7 @@ routine0F92A6:
 .copy_next
 #_0F930D: LDA.b [$D0],Y
 #_0F930F: STA.b [$D4],Y
+
 #_0F9311: INY
 #_0F9312: CPY.w $0E0E
 #_0F9315: BNE .copy_next
@@ -3088,6 +3133,7 @@ routine0F9342:
 
 routine0F939C:
 #_0F939C: PHP
+
 #_0F939D: JSL routine02E835
 #_0F93A1: JSL AddSelfAsVectorAndMakeSpace
 
@@ -3278,6 +3324,7 @@ routine0F94B2:
 .clear_next
 #_0F94C6: STA.w $0900,X
 #_0F94C9: STA.w $0940,X
+
 #_0F94CC: DEX
 #_0F94CD: DEX
 #_0F94CE: BPL .clear_next
@@ -3288,8 +3335,8 @@ routine0F94B2:
 
 #_0F94D2: STZ.w $0A33
 
-#_0F94D5: LDA.b #$CF
-#_0F94D7: JSL WriteSingleCharacterTo0900
+#_0F94D5: LDA.b #$CF ; space
+#_0F94D7: JSL WriteSingleTileToMessageBuffer
 
 #_0F94DB: LDA.b #ItemNamePointers>>16
 #_0F94DD: STA.w $00C5
@@ -3303,7 +3350,7 @@ routine0F94B2:
 
 #_0F94E9: LDA.w #ItemNamePointers
 #_0F94EC: STA.w $00C3
-#_0F94EF: JSL WriteTextIndexW0A39_long
+#_0F94EF: JSL WriteIndexedEntityNameToBuffer_long
 
 #_0F94F3: SEP #$30
 
@@ -3313,29 +3360,40 @@ routine0F94B2:
 
 #_0F94FC: LDA.b #$14
 #_0F94FE: STA.w $0A33
-#_0F9501: LDA.b #$22
-#_0F9503: JSL WriteSingleCharacterTo0900
+
+#_0F9501: LDA.b #$22 ; X
+#_0F9503: JSL WriteSingleTileToMessageBuffer
+
 #_0F9507: LDY.w $098C
+
 #_0F950A: LDA.w $098E,Y
 #_0F950D: PHA
-#_0F950E: AND.b #$0F
+
+#_0F950E: AND.b #$0F ; number
 #_0F9510: INC A
-#_0F9511: JSL WriteSingleCharacterTo0900
-#_0F9515: LDA.b #$CF
-#_0F9517: JSL WriteSingleCharacterTo0900
+#_0F9511: JSL WriteSingleTileToMessageBuffer
+
+#_0F9515: LDA.b #$CF ; E
+#_0F9517: JSL WriteSingleTileToMessageBuffer
+
 #_0F951B: PLA
 #_0F951C: AND.b #$F0
 #_0F951E: BEQ .exit
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F9520: PHA
+
 #_0F9521: LSR A
 #_0F9522: LSR A
 #_0F9523: LSR A
 #_0F9524: LSR A
 #_0F9525: DEC A
 #_0F9526: TAY
-#_0F9527: LDA.w data0F953E,Y
-#_0F952A: JSL WriteSingleCharacterTo0900
+
+#_0F9527: LDA.w .sex_symbols,Y
+#_0F952A: JSL WriteSingleTileToMessageBuffer
+
 #_0F952E: PLA
 #_0F952F: SEC
 #_0F9530: SBC.b #$10
@@ -3351,11 +3409,13 @@ routine0F94B2:
 #_0F953C: PLP
 #_0F953D: RTL
 
-data0F953E:
-#_0F953E: db $A1
-#_0F953F: db $9D
-#_0F9540: db $A1
-#_0F9541: db $A1
+;---------------------------------------------------------------------------------------------------
+
+.sex_symbols
+#_0F953E: db $A1 ; ♂
+#_0F953F: db $9D ; ♀
+#_0F9540: db $A1 ; ♂
+#_0F9541: db $A1 ; ♂
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -3385,16 +3445,16 @@ data0F953E:
 #_0F956A: BIT.w #$0080
 #_0F956D: BEQ .no_boys_allowed
 
-#_0F956F: LDA.w #$00A1
-#_0F9572: JSL WriteSingleCharacterTo0900
+#_0F956F: LDA.w #$00A1 ; ♂
+#_0F9572: JSL WriteSingleTileToMessageBuffer
 
 .no_boys_allowed
 #_0F9576: LDA.w $0E00
 #_0F9579: BIT.w #$0040
 #_0F957C: BEQ .no_girls_allowed
 
-#_0F957E: LDA.w #$009D
-#_0F9581: JSL WriteSingleCharacterTo0900
+#_0F957E: LDA.w #$009D ; ♀
+#_0F9581: JSL WriteSingleTileToMessageBuffer
 
 .no_girls_allowed
 #_0F9585: LDA.w #$001A
@@ -3405,10 +3465,11 @@ data0F953E:
 #_0F9591: TAY
 
 #_0F9592: LDA.w EquipmentAlignmentLetters,Y
-#_0F9595: JSL WriteSingleCharacterTo0900
+#_0F9595: JSL WriteSingleTileToMessageBuffer
 
 .branch0F9599
 #_0F9599: PLB
+
 #_0F959A: PLP
 #_0F959B: RTL
 
@@ -3426,83 +3487,108 @@ EquipmentAlignmentLetters:
 
 ;===================================================================================================
 
-routine0F95A4:
+ProbablyTriesToUnequipAnItem:
 #_0F95A4: PHP
+
 #_0F95A5: PHB
 #_0F95A6: PHK
 #_0F95A7: PLB
 
 #_0F95A8: REP #$30
+
 #_0F95AA: LDX.w $0BA1
 #_0F95AD: LDY.w #$0006
 
-.branch0F95B0
+.check_next
 #_0F95B0: LDA.w $1042,X
-#_0F95B3: JSL routine0F95FC
-#_0F95B7: BCS .branch0F95C2
+#_0F95B3: JSL CheckItemForCurses
+#_0F95B7: BCS .cursed
 
 #_0F95B9: INX
 #_0F95BA: INX
+
 #_0F95BB: DEY
-#_0F95BC: BPL .branch0F95B0
+#_0F95BC: BPL .check_next
 
 #_0F95BE: PLB
+
 #_0F95BF: PLP
 #_0F95C0: CLC
+
 #_0F95C1: RTL
 
-.branch0F95C2
+;---------------------------------------------------------------------------------------------------
+
+.cursed
 #_0F95C2: PHX
+
 #_0F95C3: LDA.w $1042,X
 #_0F95C6: STA.w $0A50
-#_0F95C9: JSL routine03BE71
-#_0F95CD: BCS .branch0F95F7
+
+#_0F95C9: JSL LookForEmptyInventorySpace
+#_0F95CD: BCS .no_space
 
 #_0F95CF: PLX
+
 #_0F95D0: LDA.w #$FFFF
 #_0F95D3: STA.w $1042,X
 #_0F95D6: JSL AddItemToInventory_long
 
 #_0F95DA: REP #$30
+
 #_0F95DC: LDA.w #$FFFF
 #_0F95DF: STA.w $0692
+
 #_0F95E2: LDA.w $0BA1
 #_0F95E5: STA.w $0715
+
 #_0F95E8: JSL routine01A700
+
 #_0F95EC: LDX.w $0715
 #_0F95EF: JSL UpdatePlayerStats
+
 #_0F95F3: PLB
+
 #_0F95F4: PLP
 #_0F95F5: CLC
+
 #_0F95F6: RTL
 
-.branch0F95F7
+;---------------------------------------------------------------------------------------------------
+
+.no_space
 #_0F95F7: PLX
+
 #_0F95F8: PLB
+
 #_0F95F9: PLP
 #_0F95FA: SEC
+
 #_0F95FB: RTL
 
 ;===================================================================================================
 
-routine0F95FC:
+CheckItemForCurses:
 #_0F95FC: PHP
 #_0F95FD: REP #$30
+
 #_0F95FF: PHA
 #_0F9600: PHX
 #_0F9601: PHY
+
 #_0F9602: PHD
 #_0F9603: PHB
+
 #_0F9604: CMP.w #$FFFF
-#_0F9607: BEQ .branch0F9631
+#_0F9607: BEQ .everything_fine
 
 #_0F9609: CMP.w #$0050
-#_0F960C: BCC .branch0F9613
+#_0F960C: BCC .weapon
 
 #_0F960E: CMP.w #$0060
-#_0F9611: BCC .branch0F9631
+#_0F9611: BCC .everything_fine
 
-.branch0F9613
+.weapon
 #_0F9613: ASL A
 #_0F9614: ASL A
 #_0F9615: STA.w $0E02
@@ -3510,147 +3596,193 @@ routine0F95FC:
 #_0F9619: CLC
 #_0F961A: ADC.w $0E02
 #_0F961D: TAX
+
+; check for curse, frog, fly
 #_0F961E: LDA.l EquipmentStats+8,X
 #_0F9622: AND.w #$0700
-#_0F9625: BEQ .branch0F9631
+#_0F9625: BEQ .everything_fine
 
 #_0F9627: REP #$30
+
 #_0F9629: PLB
 #_0F962A: PLD
+
 #_0F962B: PLY
 #_0F962C: PLX
 #_0F962D: PLA
+
 #_0F962E: PLP
 #_0F962F: SEC
+
 #_0F9630: RTL
 
-.branch0F9631
+;---------------------------------------------------------------------------------------------------
+
+.everything_fine
 #_0F9631: REP #$30
+
 #_0F9633: PLB
 #_0F9634: PLD
+
 #_0F9635: PLY
 #_0F9636: PLX
 #_0F9637: PLA
+
 #_0F9638: PLP
 #_0F9639: CLC
+
 #_0F963A: RTL
 
 ;===================================================================================================
 
 routine0F963B:
 #_0F963B: PHP
+
 #_0F963C: PHB
 #_0F963D: PHK
 #_0F963E: PLB
 
 #_0F963F: REP #$30
+
 #_0F9641: LDX.w $0BA1
+
 #_0F9644: LDA.w $1002,X
 #_0F9647: BIT.w #$8000
-#_0F964A: BNE .branch0F9659
+#_0F964A: BNE .dead
 
 #_0F964C: BIT.w #$4000
-#_0F964F: BEQ .branch0F968D
+#_0F964F: BEQ .fail
 
 #_0F9651: LDA.w #$003F
 #_0F9654: STA.w $0E00
-#_0F9657: BRA .branch0F965F
 
-.branch0F9659
+#_0F9657: BRA .roll_dice
+
+.dead
 #_0F9659: LDA.w #$007F
 #_0F965C: STA.w $0E00
 
-.branch0F965F
+;---------------------------------------------------------------------------------------------------
+
+.roll_dice
 #_0F965F: JSL GetRandomInt
 #_0F9663: AND.w $0E00
-#_0F9666: BNE .branch0F968D
+#_0F9666: BNE .fail
 
 #_0F9668: LDX.w $0BA1
+
 #_0F966B: LDA.w $1004,X
-#_0F966E: CMP.w #$008B
-#_0F9671: BEQ .branch0F968D
+#_0F966E: CMP.w #$008B ; demon 08B - Cerberus
+#_0F9671: BEQ .fail
 
-#_0F9673: CMP.w #$0020
-#_0F9676: BEQ .branch0F968D
+#_0F9673: CMP.w #$0020 ; demon 020 - Gabriel
+#_0F9676: BEQ .fail
 
-#_0F9678: CMP.w #$0021
-#_0F967B: BEQ .branch0F968D
+#_0F9678: CMP.w #$0021 ; demon 021 - Raphael
+#_0F967B: BEQ .fail
 
-#_0F967D: CMP.w #$0022
-#_0F9680: BEQ .branch0F968D
+#_0F967D: CMP.w #$0022 ; demon 022 - Uriel
+#_0F9680: BEQ .fail
 
 #_0F9682: SEP #$20
+
 #_0F9684: LDA.b #$FF
 #_0F9686: STA.w $0A58
+
 #_0F9689: PLB
+
 #_0F968A: PLP
 #_0F968B: SEC
+
 #_0F968C: RTL
 
-.branch0F968D
+;---------------------------------------------------------------------------------------------------
+
+.fail
 #_0F968D: SEP #$20
+
 #_0F968F: STZ.w $0A58
+
 #_0F9692: PLB
+
 #_0F9693: PLP
 #_0F9694: CLC
+
 #_0F9695: RTL
 
 ;===================================================================================================
 
 routine0F9696:
 #_0F9696: PHP
+
 #_0F9697: PHB
 #_0F9698: PHK
 #_0F9699: PLB
 
 #_0F969A: SEP #$20
+
 #_0F969C: LDA.b #$20
 #_0F969E: STA.w $0A2C
+
 #_0F96A1: LDA.b #$04 ; SFX 04
 #_0F96A3: JSL Write_to_APU_transferrable
 
 #_0F96A7: REP #$20
+
 #_0F96A9: STZ.w $0A33
-#_0F96AC: LDA.w #$3CC8
+
+#_0F96AC: LDA.w #$3CC8 ; TODO vram address
 #_0F96AF: STA.w $0980
 
 #_0F96B2: SEP #$30
+
 #_0F96B4: LDX.b #$00
 #_0F96B6: TXY
 
-.branch0F96B7
-#_0F96B7: LDA.w data0F96DE,Y
+.next_char
+#_0F96B7: LDA.w .char,Y
 #_0F96BA: JSL WriteNextMessageChar
+
 #_0F96BE: INY
+
 #_0F96BF: INX
 #_0F96C0: CPX.b #$0F
-#_0F96C2: BNE .branch0F96B7
+#_0F96C2: BNE .next_char
 
-#_0F96C4: LDA.w data0F96DE,Y
-#_0F96C7: JSL WriteSingleCharacterTo0900
+#_0F96C4: LDA.w .char,Y
+#_0F96C7: JSL WriteSingleTileToMessageBuffer
+
 #_0F96CB: JSL routine0384F9_long
+
 #_0F96CF: JSL RunFramesUntil0100IsFlagged
 #_0F96D3: JSL Update19XXUntilInput
+
 #_0F96D7: JSL routine0F9720
+
 #_0F96DB: PLB
+
 #_0F96DC: PLP
 #_0F96DD: RTL
 
-; TODO 
-; すまない しっぱいしたようだ ば
-data0F96DE:
-#_0F96DE: db $31,$43,$39,$26,$CF,$30,$58,$B0
-#_0F96E6: db $26,$30,$34,$4A,$27,$A6,$CF,$AB
+;---------------------------------------------------------------------------------------------------
+
+; "すまない しっぱいしたようだ ⏷"
+.char
+#_0F96DE: db $31, $43, $39, $26, $CF, $30, $58, $B0 ; "すまない しっぱ"
+#_0F96E6: db $26, $30, $34, $4A, $27, $A6, $CF ; "いしたようだ "
+#_0F96ED: db $AB ; ⏷
 
 ;===================================================================================================
 
 routine0F96EE:
 #_0F96EE: PHP
+
 #_0F96EF: PHB
 #_0F96F0: PHK
 #_0F96F1: PLB
 
 #_0F96F2: SEP #$30
+
 #_0F96F4: LDA.w $0BA3
 #_0F96F7: CMP.b #$02
 #_0F96F9: BCC .branch0F971C
@@ -3659,7 +3791,7 @@ routine0F96EE:
 #_0F96FD: BEQ .branch0F9709
 
 #_0F96FF: REP #$20
-#_0F9701: JSL routine0F95A4
+#_0F9701: JSL ProbablyTriesToUnequipAnItem
 #_0F9705: BCS .branch0F9714
 
 #_0F9707: BRA .branch0F971C
@@ -3672,31 +3804,41 @@ routine0F96EE:
 
 .branch0F9714
 #_0F9714: JSL routine0F9696
+
 #_0F9718: PLB
+
 #_0F9719: PLP
 #_0F971A: SEC
+
 #_0F971B: RTL
 
 .branch0F971C
 #_0F971C: PLB
+
 #_0F971D: PLP
 #_0F971E: CLC
+
 #_0F971F: RTL
 
 ;===================================================================================================
 
 routine0F9720:
 #_0F9720: PHP
+
 #_0F9721: PHB
 #_0F9722: PHK
 #_0F9723: PLB
 
 #_0F9724: REP #$30
+
 #_0F9726: LDA.w $0A33
 #_0F9729: PHA
+
 #_0F972A: STZ.w $0A33
-#_0F972D: LDA.w #$3CC8
+
+#_0F972D: LDA.w #$3CC8 ; TODO vram address
 #_0F9730: STA.w $0980
+
 #_0F9733: LDA.w $07E1
 #_0F9736: AND.w #$00FF
 #_0F9739: ASL A
@@ -3706,6 +3848,7 @@ routine0F9720:
 #_0F973D: ASL A
 #_0F973E: ASL A
 #_0F973F: STA.w $0E00
+
 #_0F9742: LDA.w $0BA3
 #_0F9745: AND.w #$00FF
 #_0F9748: ASL A
@@ -3715,198 +3858,241 @@ routine0F9720:
 #_0F974C: CLC
 #_0F974D: ADC.w $0E00
 #_0F9750: TAY
+
 #_0F9751: LDX.w #$0000
 
-.branch0F9754
-#_0F9754: LDA.w data0F9773,Y
+.next_char
+#_0F9754: LDA.w .chars,Y
 #_0F9757: JSL WriteNextMessageChar
+
 #_0F975B: INY
+
 #_0F975C: INX
 #_0F975D: CPX.w #$0010
-#_0F9760: BNE .branch0F9754
+#_0F9760: BNE .next_char
 
 #_0F9762: JSL routine0384F9_long
 #_0F9766: JSL RunFramesUntil0100IsFlagged
 
 #_0F976A: REP #$20
+
 #_0F976C: PLA
 #_0F976D: STA.w $0A33
+
 #_0F9770: PLB
+
 #_0F9771: PLP
 #_0F9772: RTL
 
-; TODO static text and bytes?
-data0F9773:
-; だれを かいふくさせるのか?  
-#_0F9773: db $A6, $4E, $51, $CF, $2A, $26, $40, $2C ; だれを⎵かいふく
-#_0F977B: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; させるのか?⎵⎵
+;---------------------------------------------------------------------------------------------------
 
-; だれを ちりょうするのか?   
-#_0F9783: db $A6, $4E, $51, $CF, $35, $4C, $57, $27 ; だれを⎵ちりょう
-#_0F978B: db $31, $4D, $3D, $2A, $95, $CF, $CF, $CF ; するのか?⎵⎵⎵
+.chars
+; "だれを かいふくさせるのか?  "
+#_0F9773: db $A6, $4E, $51, $CF, $2A, $26, $40, $2C ; "だれを かいふく"
+#_0F977B: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; "させるのか?  "
 
-; だれの のろいをとくのか?   
-#_0F9793: db $A6, $4E, $3D, $CF, $3D, $4F, $26, $51 ; だれの⎵のろいを
-#_0F979B: db $38, $2C, $3D, $2A, $95, $CF, $CF, $CF ; とくのか?⎵⎵⎵
+; "だれを ちりょうするのか?   "
+#_0F9783: db $A6, $4E, $51, $CF, $35, $4C, $57, $27 ; "だれを ちりょう"
+#_0F978B: db $31, $4D, $3D, $2A, $95, $CF, $CF, $CF ; "するのか?   "
 
-; だれを ふっかつさせるのか?  
-#_0F97A3: db $A6, $4E, $51, $CF, $40, $58, $2A, $36 ; だれを⎵ふっかつ
-#_0F97AB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; させるのか?⎵⎵
+; "だれの のろいをとくのか?   "
+#_0F9793: db $A6, $4E, $3D, $CF, $3D, $4F, $26, $51 ; "だれの のろいを"
+#_0F979B: db $38, $2C, $3D, $2A, $95, $CF, $CF, $CF ; "とくのか?   "
 
-; だれを かいふくさせるのか?  
-#_0F97B3: db $A6, $4E, $51, $CF, $2A, $26, $40, $2C ; だれを⎵かいふく
-#_0F97BB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; させるのか?⎵⎵
+; "だれを ふっかつさせるのか?  "
+#_0F97A3: db $A6, $4E, $51, $CF, $40, $58, $2A, $36 ; "だれを ふっかつ"
+#_0F97AB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; "させるのか?  "
 
-; だれを ちりょうするのか?   
-#_0F97C3: db $A6, $4E, $51, $CF, $35, $4C, $57, $27 ; だれを⎵ちりょう
-#_0F97CB: db $31, $4D, $3D, $2A, $95, $CF, $CF, $CF ; するのか?⎵⎵⎵
+; "だれを かいふくさせるのか?  "
+#_0F97B3: db $A6, $4E, $51, $CF, $2A, $26, $40, $2C ; "だれを かいふく"
+#_0F97BB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; "させるのか?  "
 
-; だれの のろいをとくのか?   
-#_0F97D3: db $A6, $4E, $3D, $CF, $3D, $4F, $26, $51 ; だれの⎵のろいを
-#_0F97DB: db $38, $2C, $3D, $2A, $95, $CF, $CF, $CF ; とくのか?⎵⎵⎵
+; "だれを ちりょうするのか?   "
+#_0F97C3: db $A6, $4E, $51, $CF, $35, $4C, $57, $27 ; "だれを ちりょう"
+#_0F97CB: db $31, $4D, $3D, $2A, $95, $CF, $CF, $CF ; "するのか?   "
 
-; だれを ふっかつさせるのか?  
-#_0F97E3: db $A6, $4E, $51, $CF, $40, $58, $2A, $36 ; だれを⎵ふっかつ
-#_0F97EB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; させるのか?⎵⎵
+; "だれの のろいをとくのか?   "
+#_0F97D3: db $A6, $4E, $3D, $CF, $3D, $4F, $26, $51 ; "だれの のろいを"
+#_0F97DB: db $38, $2C, $3D, $2A, $95, $CF, $CF, $CF ; "とくのか?   "
 
-; だれを かいふくさせるのか?  
-#_0F97F3: db $A6, $4E, $51, $CF, $2A, $26, $40, $2C ; だれを⎵かいふく
-#_0F97FB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; させるのか?⎵⎵
+; "だれを ふっかつさせるのか?  "
+#_0F97E3: db $A6, $4E, $51, $CF, $40, $58, $2A, $36 ; "だれを ふっかつ"
+#_0F97EB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; "させるのか?  "
 
-; だれを ちりょうするのか?   
-#_0F9803: db $A6, $4E, $51, $CF, $35, $4C, $57, $27 ; だれを⎵ちりょう
-#_0F980B: db $31, $4D, $3D, $2A, $95, $CF, $CF, $CF ; するのか?⎵⎵⎵
+; "だれを かいふくさせるのか?  "
+#_0F97F3: db $A6, $4E, $51, $CF, $2A, $26, $40, $2C ; "だれを かいふく"
+#_0F97FB: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; "させるのか?  "
 
-; だれの のろいをとくのか?   
-#_0F9813: db $A6, $4E, $3D, $CF, $3D, $4F, $26, $51 ; だれの⎵のろいを
-#_0F981B: db $38, $2C, $3D, $2A, $95, $CF, $CF, $CF ; とくのか?⎵⎵⎵
+; "だれを ちりょうするのか?   "
+#_0F9803: db $A6, $4E, $51, $CF, $35, $4C, $57, $27 ; "だれを ちりょう"
+#_0F980B: db $31, $4D, $3D, $2A, $95, $CF, $CF, $CF ; "するのか?   "
 
-; だれを ふっかつさせるのか?  
-#_0F9823: db $A6, $4E, $51, $CF, $40, $58, $2A, $36 ; だれを⎵ふっかつ
-#_0F982B: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; させるのか?⎵⎵
+; "だれの のろいをとくのか?   "
+#_0F9813: db $A6, $4E, $3D, $CF, $3D, $4F, $26, $51 ; "だれの のろいを"
+#_0F981B: db $38, $2C, $3D, $2A, $95, $CF, $CF, $CF ; "とくのか?   "
+
+; "だれを ふっかつさせるのか?  "
+#_0F9823: db $A6, $4E, $51, $CF, $40, $58, $2A, $36 ; "だれを ふっかつ"
+#_0F982B: db $2F, $32, $4D, $3D, $2A, $95, $CF, $CF ; "させるのか?  "
 
 ;===================================================================================================
-
+; TODO these are teleport locations
 routine0F9833:
 #_0F9833: PHP
+
 #_0F9834: PHB
 #_0F9835: PHK
 #_0F9836: PLB
 
 #_0F9837: REP #$30
+
 #_0F9839: LDA.w $0F53
 #_0F983C: PHA
+
 #_0F983D: LDA.w #$00B4
 
-.branch0F9840
+.next_shake
 #_0F9840: PHA
+
 #_0F9841: AND.w #$0003
 #_0F9844: ASL A
 #_0F9845: TAX
-#_0F9846: LDA.w data0F98BC,X
+
+#_0F9846: LDA.w .bg_offset,X
 #_0F9849: CLC
 #_0F984A: ADC.w $0F53
 #_0F984D: STA.w $0F53
+
 #_0F9850: JSL AddSelfAsVectorAndMakeSpace
+
 #_0F9854: PLA
 #_0F9855: DEC A
-#_0F9856: BPL .branch0F9840
+#_0F9856: BPL .next_shake
 
 #_0F9858: PLA
 #_0F9859: STA.w $0F53
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F985C: SEP #$20
+
+; TODO sets overworld coordinates
 #_0F985E: LDA.w $101C
 #_0F9861: BMI .branch0F986F
 
 #_0F9863: LDA.b #$57
 #_0F9865: STA.w $07F5
+
 #_0F9868: LDA.b #$63
 #_0F986A: STA.w $07F6
-#_0F986D: BRA .branch0F9879
+
+#_0F986D: BRA .set_underworld_coordinates
 
 .branch0F986F
 #_0F986F: LDA.b #$56
 #_0F9871: STA.w $07F5
+
 #_0F9874: LDA.b #$4D
 #_0F9876: STA.w $07F6
 
-.branch0F9879
+.set_underworld_coordinates
 #_0F9879: REP #$20
+
+; TODO these seem to be places in the cathedral
 #_0F987B: LDA.w $046C
 #_0F987E: CMP.w #$3C2E
-#_0F9881: BEQ .EXIT_0F98B9
+#_0F9881: BEQ .exit
 
 #_0F9883: CMP.w #$2A2A
-#_0F9886: BEQ .EXIT_0F98B9
+#_0F9886: BEQ .exit
 
 #_0F9888: SEP #$20
+
 #_0F988A: LDA.w $101C
 #_0F988D: BMI .branch0F98A5
 
 #_0F988F: LDA.b #$2E
 #_0F9891: STA.w $046C
+
 #_0F9894: LDA.b #$3C
 #_0F9896: STA.w $046D
+
 #_0F9899: LDA.b #$13
 #_0F989B: STA.w $046B
+
 #_0F989E: LDA.b #$03
 #_0F98A0: STA.w $046A
-#_0F98A3: BRA .EXIT_0F98B9
+
+#_0F98A3: BRA .exit
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F98A5
 #_0F98A5: LDA.b #$2A
 #_0F98A7: STA.w $046C
+
 #_0F98AA: LDA.b #$2A
 #_0F98AC: STA.w $046D
+
 #_0F98AF: LDA.b #$13
 #_0F98B1: STA.w $046B
+
 #_0F98B4: LDA.b #$00
 #_0F98B6: STA.w $046A
 
-.EXIT_0F98B9
+.exit
 #_0F98B9: PLB
 #_0F98BA: PLP
+
 #_0F98BB: RTL
 
-data0F98BC:
-#_0F98BC: dw $FFFF,$0001,$0001,$FFFF
+;---------------------------------------------------------------------------------------------------
+
+.bg_offset
+#_0F98BC: dw $FFFF, $0001, $0001, $FFFF
 
 ;===================================================================================================
 
 routine0F98C4:
 #_0F98C4: PHP
+
 #_0F98C5: PHB
 #_0F98C6: PHK
 #_0F98C7: PLB
 
 #_0F98C8: REP #$30
+
 #_0F98CA: STZ.w $0E00
+
 #_0F98CD: LDX.w #$0000
 
-.branch0F98D0
+.next_party_member_a
 #_0F98D0: LDA.w $1000,X
 #_0F98D3: AND.w #$4000
-#_0F98D6: BEQ .branch0F98EC
+#_0F98D6: BEQ .skip_party_member_a
 
 #_0F98D8: LDA.w $1002,X
 #_0F98DB: AND.w #$1100
-#_0F98DE: BEQ .branch0F98EC
+#_0F98DE: BEQ .skip_party_member_a
 
 #_0F98E0: LDA.w $102E,X
-#_0F98E3: BEQ .branch0F98EC
+#_0F98E3: BEQ .skip_party_member_a
 
 #_0F98E5: DEC A
 #_0F98E6: STA.w $102E,X
+
 #_0F98E9: INC.w $0E00
 
-.branch0F98EC
+.skip_party_member_a
 #_0F98EC: TXA
 #_0F98ED: CLC
 #_0F98EE: ADC.w #$0060
 #_0F98F1: TAX
+
 #_0F98F2: CPX.w #$0600
-#_0F98F5: BNE .branch0F98D0
+#_0F98F5: BNE .next_party_member_a
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F98F7: LDA.w $0B34
 #_0F98FA: AND.w #$0003
@@ -3914,118 +4100,143 @@ routine0F98C4:
 
 #_0F98FF: LDX.w #$0000
 
-.branch0F9902
+.next_party_member_b
 #_0F9902: LDA.w $1000,X
 #_0F9905: AND.w #$4000
-#_0F9908: BEQ .branch0F991E
+#_0F9908: BEQ .skip_party_member_b
 
 #_0F990A: LDA.w $1002,X
 #_0F990D: AND.w #$0800
-#_0F9910: BEQ .branch0F991E
+#_0F9910: BEQ .skip_party_member_b
 
 #_0F9912: LDA.w $102E,X
-#_0F9915: BEQ .branch0F991E
+#_0F9915: BEQ .skip_party_member_b
 
 #_0F9917: DEC A
 #_0F9918: STA.w $102E,X
 #_0F991B: INC.w $0E00
 
-.branch0F991E
+.skip_party_member_b
 #_0F991E: TXA
 #_0F991F: CLC
 #_0F9920: ADC.w #$0060
 #_0F9923: TAX
 #_0F9924: CPX.w #$0600
-#_0F9927: BNE .branch0F9902
+#_0F9927: BNE .next_party_member_b
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0F9929
 #_0F9929: LDA.w $0E00
 #_0F992C: BNE .branch0F9931
 
-#_0F992E: JMP .EXIT_0F99BF
+#_0F992E: JMP .exit
 
 .branch0F9931
 #_0F9931: LDA.w $0A71
 #_0F9934: PHA
+
 #_0F9935: PHP
+
 #_0F9936: LDA.w #$00FF
 #_0F9939: STA.w $0A71
+
 #_0F993C: LDA.w #$002D ; SFX 2D
 #_0F993F: JSL Write_to_APU_transferrable
+
 #_0F9943: LDA.w #$00FC
 #_0F9946: LDX.w #$0000
 #_0F9949: LDY.w #$0001
 #_0F994C: JSL routine009443
+
 #_0F9950: PLP
+
 #_0F9951: PLA
 #_0F9952: STA.w $0A71
+
 #_0F9955: LDX.w #$0000
 
-.branch0F9958
+.next_party_member_c
 #_0F9958: LDA.w $1000,X
 #_0F995B: AND.w #$4000
-#_0F995E: BEQ .branch0F997F
+#_0F995E: BEQ .skip_party_member_c
 
 #_0F9960: LDA.w $102E,X
-#_0F9963: BNE .branch0F997F
+#_0F9963: BNE .skip_party_member_c
 
 #_0F9965: LDA.w #$4000
 #_0F9968: STA.w $1002,X
+
 #_0F996B: PHP
 #_0F996C: REP #$30
+
 #_0F996E: PHA
 #_0F996F: PHX
 #_0F9970: PHY
+
 #_0F9971: PHD
 #_0F9972: PHB
+
 #_0F9973: JSL routine00AB74
 
 #_0F9977: REP #$30
+
 #_0F9979: PLB
 #_0F997A: PLD
+
 #_0F997B: PLY
 #_0F997C: PLX
 #_0F997D: PLA
+
 #_0F997E: PLP
 
-.branch0F997F
+.skip_party_member_c
 #_0F997F: TXA
 #_0F9980: CLC
 #_0F9981: ADC.w #$0060
 #_0F9984: TAX
+
 #_0F9985: CMP.w #$0600
-#_0F9988: BNE .branch0F9958
+#_0F9988: BNE .next_party_member_c
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F998A: STZ.w $0E00
+
 #_0F998D: LDX.w #$0000
 
-.branch0F9990
+.next_human
 #_0F9990: LDA.w $1000,X
-#_0F9993: BPL .branch0F999E
+#_0F9993: BPL .skip_human
 
 #_0F9995: LDA.w $102E,X
 #_0F9998: ORA.w $0E00
 #_0F999B: STA.w $0E00
 
-.branch0F999E
+.skip_human
 #_0F999E: TXA
 #_0F999F: CLC
 #_0F99A0: ADC.w #$0060
 #_0F99A3: TAX
+
 #_0F99A4: CPX.w #$0180
-#_0F99A7: BNE .branch0F9990
+#_0F99A7: BNE .next_human
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F99A9: LDA.w $0E00
-#_0F99AC: BNE .EXIT_0F99BF
+#_0F99AC: BNE .exit
 
 #_0F99AE: LDA.w $0400
 #_0F99B1: ORA.w #$8000
 #_0F99B4: STA.w $0400
+
 #_0F99B7: JSL routine02D0B8
 #_0F99BB: JSL AddSelfAsVector
 
-.EXIT_0F99BF
+.exit
 #_0F99BF: PLB
+
 #_0F99C0: PLP
 #_0F99C1: RTL
 
@@ -4033,60 +4244,81 @@ routine0F98C4:
 
 routine0F99C2:
 #_0F99C2: PHP
+
 #_0F99C3: PHB
 #_0F99C4: PHK
 #_0F99C5: PLB
 
 #_0F99C6: REP #$30
+
+; chase level - momo level
 #_0F99C8: LDA.w $100A
 #_0F99CB: SEC
 #_0F99CC: SBC.w $106A
 #_0F99CF: STA.w $0E00
+
 #_0F99D2: STZ.w $0E02
+
 #_0F99D5: LDX.w #$000A
 
-.branch0F99D8
+.momos_next_stat
 #_0F99D8: LDA.w $1070,X
 #_0F99DB: CLC
 #_0F99DC: ADC.w $0E02
 #_0F99DF: STA.w $0E02
+
 #_0F99E2: DEX
 #_0F99E3: DEX
-#_0F99E4: BPL .branch0F99D8
+#_0F99E4: BPL .momos_next_stat
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F99E6: LDX.w #$0000
 
-.branch0F99E9
+.give_momo_points
 #_0F99E9: PHX
+
 #_0F99EA: LDA.w $1070,X
 #_0F99ED: STA.w $0E10
+
 #_0F99F0: LDA.w $0E00
 #_0F99F3: STA.w $0E12
-#_0F99F6: JSL Multiply0E1x_b03_long
+
+#_0F99F6: JSL BigMultiplication_long
+
 #_0F99FA: LDA.w $0E14
 #_0F99FD: LDX.w #$0000
 #_0F9A00: LDY.w $0E02
 #_0F9A03: JSL DivisionBig_XA_by_Y
+
 #_0F9A07: PLX
+
 #_0F9A08: LDA.w $0E80
 #_0F9A0B: CLC
 #_0F9A0C: ADC.w $1070,X
 #_0F9A0F: STA.w $1070,X
+
 #_0F9A12: INX
 #_0F9A13: INX
 #_0F9A14: CPX.w #$000C
-#_0F9A17: BNE .branch0F99E9
+#_0F9A17: BNE .give_momo_points
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F9A19: LDA.w $100A
 #_0F9A1C: STA.w $106A
 
 #_0F9A1F: REP #$30
+
 #_0F9A21: LDX.w #$0060
 #_0F9A24: JSL UpdatePlayerStats
+
 #_0F9A28: LDA.w $1090
 #_0F9A2B: STA.w $108E
+
 #_0F9A2E: LDA.w $1094
 #_0F9A31: STA.w $1092
+
 #_0F9A34: LDA.w $106A
 #_0F9A37: DEC A
 #_0F9A38: ASL A
@@ -4094,14 +4326,19 @@ routine0F99C2:
 #_0F9A3A: ADC.w $106A
 #_0F9A3D: DEC A
 #_0F9A3E: TAX
+
 #_0F9A3F: LDA.l ExperienceTable+0,X
 #_0F9A43: STA.w $106C
+
 #_0F9A46: LDA.l ExperienceTable+2,X
 #_0F9A4A: AND.w #$00FF
 #_0F9A4D: STA.w $106E
+
 #_0F9A50: LDA.w $101C
 #_0F9A53: STA.w $107C
+
 #_0F9A56: PLB
+
 #_0F9A57: PLP
 #_0F9A58: RTL
 
@@ -4111,41 +4348,51 @@ routine0F9A59:
 #_0F9A59: PHP
 #_0F9A5A: SEP #$20
 #_0F9A5C: REP #$10
+
 #_0F9A5E: PHA
+
 #_0F9A5F: LDA.l $7E22FD
-#_0F9A63: BEQ .branch0F9A69
+#_0F9A63: BEQ .no_wait
 
 #_0F9A65: JSL AddSelfAsVectorAndMakeSpace
 
-.branch0F9A69
+.no_wait
 #_0F9A69: PLA
 #_0F9A6A: ASL A
 #_0F9A6B: ASL A
 #_0F9A6C: ASL A
 #_0F9A6D: ASL A
 #_0F9A6E: STA.l $7E22FE
+
 #_0F9A72: LDA.b #$10
 #_0F9A74: STA.l $7E22FF
+
 #_0F9A78: PHB
 #_0F9A79: PHK
 #_0F9A7A: PLB
 
 #_0F9A7B: REP #$20
+
 #_0F9A7D: LDX.w #$0000
 #_0F9A80: LDA.w #$7FFF
 
-.branch0F9A83
+.clear_next
 #_0F9A83: STA.l $7E2300,X
+
 #_0F9A87: INX
 #_0F9A88: INX
 #_0F9A89: CPX.w #$0020
-#_0F9A8C: BNE .branch0F9A83
+#_0F9A8C: BNE .clear_next
 
 #_0F9A8E: SEP #$20
+
 #_0F9A90: LDA.b #$01
 #_0F9A92: STA.l $7E22FD
+
 #_0F9A96: JSL AddSelfAsVectorAndMakeSpace
+
 #_0F9A9A: PLB
+
 #_0F9A9B: PLP
 #_0F9A9C: RTL
 
@@ -4155,21 +4402,25 @@ routine0F9A9D:
 #_0F9A9D: PHP
 #_0F9A9E: SEP #$20
 #_0F9AA0: REP #$10
+
 #_0F9AA2: PHA
+
 #_0F9AA3: LDA.l $7E22FD
-#_0F9AA7: BEQ .branch0F9AAD
+#_0F9AA7: BEQ .no_wait
 
 #_0F9AA9: JSL AddSelfAsVectorAndMakeSpace
 
-.branch0F9AAD
+.no_wait
 #_0F9AAD: PLA
 #_0F9AAE: ASL A
 #_0F9AAF: ASL A
 #_0F9AB0: ASL A
 #_0F9AB1: ASL A
 #_0F9AB2: STA.l $7E22FE
+
 #_0F9AB6: LDA.b #$10
 #_0F9AB8: STA.l $7E22FF
+
 #_0F9ABC: PHB
 #_0F9ABD: PHK
 #_0F9ABE: PLB
@@ -4178,18 +4429,23 @@ routine0F9A9D:
 #_0F9AC1: LDX.w #$0000
 #_0F9AC4: LDA.w #$0000
 
-.branch0F9AC7
+.clear_next
 #_0F9AC7: STA.l $7E2300,X
+
 #_0F9ACB: INX
 #_0F9ACC: INX
 #_0F9ACD: CPX.w #$0020
-#_0F9AD0: BNE .branch0F9AC7
+#_0F9AD0: BNE .clear_next
 
 #_0F9AD2: SEP #$20
+
 #_0F9AD4: LDA.b #$01
 #_0F9AD6: STA.l $7E22FD
+
 #_0F9ADA: JSL AddSelfAsVectorAndMakeSpace
+
 #_0F9ADE: PLB
+
 #_0F9ADF: PLP
 #_0F9AE0: RTL
 
@@ -4197,47 +4453,59 @@ routine0F9A9D:
 
 routine0F9AE1:
 #_0F9AE1: PHP
+
 #_0F9AE2: PHB
 #_0F9AE3: PHK
 #_0F9AE4: PLB
 
 #_0F9AE5: REP #$30
+
 #_0F9AE7: LDA.w #$00E6
 #_0F9AEA: JSL TestGameProgressBit
-#_0F9AEE: BCC .EXIT_0F9AF7
+#_0F9AEE: BCC .exit
 
 #_0F9AF0: LDA.w #$0028
 #_0F9AF3: JSL routine02F609
 
-.EXIT_0F9AF7
+.exit
 #_0F9AF7: PLB
+
 #_0F9AF8: PLP
 #_0F9AF9: RTL
+
+;===================================================================================================
 
 Transfer16Colors_F9AFA:
 #_0F9AFA: PHP
 #_0F9AFB: SEP #$20
 #_0F9AFD: REP #$10
+
 #_0F9AFF: PHA
+
 #_0F9B00: LDA.l $7E22FD
-#_0F9B04: BEQ .branch0F9B0A
+#_0F9B04: BEQ .no_wait
 
 #_0F9B06: JSL AddSelfAsVectorAndMakeSpace
 
-.branch0F9B0A
+.no_wait
 #_0F9B0A: PLA ; A holds 4bpp palette number I think
 #_0F9B0B: ASL A
 #_0F9B0C: ASL A
 #_0F9B0D: ASL A
 #_0F9B0E: ASL A
 #_0F9B0F: STA.l $7E22FE
+
 #_0F9B13: LDA.b #$10 ; 16 colors
 #_0F9B15: STA.l $7E22FF
+
+;---------------------------------------------------------------------------------------------------
+
 #_0F9B19: PHB
 #_0F9B1A: PHK
 #_0F9B1B: PLB
 
 #_0F9B1C: REP #$20
+
 #_0F9B1E: TXA
 #_0F9B1F: ASL A
 #_0F9B20: ASL A
@@ -4245,25 +4513,36 @@ Transfer16Colors_F9AFA:
 #_0F9B22: ASL A
 #_0F9B23: ASL A
 #_0F9B24: TAX
+
 #_0F9B25: LDY.w #$0000
 
-.branch0F9B28
+.next_color
 #_0F9B28: LDA.l SomePalette1CB000,X
+
 #_0F9B2C: PHX
 #_0F9B2D: TYX
+
 #_0F9B2E: STA.l $7E2300,X ; Also to the wram buffer
+
 #_0F9B32: PLX
+
 #_0F9B33: INX
 #_0F9B34: INX
+
 #_0F9B35: INY
 #_0F9B36: INY
 #_0F9B37: CPY.w #$0020
-#_0F9B3A: BNE .branch0F9B28
+#_0F9B3A: BNE .next_color
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F9B3C: SEP #$20
+
 #_0F9B3E: LDA.b #$01
 #_0F9B40: STA.l $7E22FD
+
 #_0F9B44: PLB
+
 #_0F9B45: PLP
 #_0F9B46: RTL
 
@@ -4272,6 +4551,7 @@ Transfer16Colors_F9AFA:
 routine0F9B47:
 #_0F9B47: PHP
 #_0F9B48: REP #$30
+
 #_0F9B4A: AND.w #$00FF
 #_0F9B4D: ASL A
 #_0F9B4E: ASL A
@@ -4279,6 +4559,7 @@ routine0F9B47:
 #_0F9B50: ASL A
 #_0F9B51: ASL A
 #_0F9B52: STA.w $0E00
+
 #_0F9B55: TXA
 #_0F9B56: AND.w #$00FF
 #_0F9B59: ASL A
@@ -4287,25 +4568,32 @@ routine0F9B47:
 #_0F9B5C: ASL A
 #_0F9B5D: ASL A
 #_0F9B5E: STA.w $0E02
+
 #_0F9B61: PHB
 #_0F9B62: PHK
 #_0F9B63: PLB
+
 #_0F9B64: LDY.w #$0000
 
-.branch0F9B67
+.next_color
 #_0F9B67: LDX.w $0E02
 #_0F9B6A: LDA.l SomePalette1CB000,X
+
 #_0F9B6E: LDX.w $0E00
 #_0F9B71: STA.l $7E2500,X
+
 #_0F9B75: INC.w $0E00
 #_0F9B78: INC.w $0E00
+
 #_0F9B7B: INC.w $0E02
 #_0F9B7E: INC.w $0E02
+
 #_0F9B81: INY
 #_0F9B82: CPY.w #$0010
-#_0F9B85: BNE .branch0F9B67
+#_0F9B85: BNE .next_color
 
 #_0F9B87: PLB
+
 #_0F9B88: PLP
 #_0F9B89: RTL
 
@@ -4318,23 +4606,24 @@ routine0F9B8A:
 
 #_0F9B8F: LDA.w $0A3B
 #_0F9B92: AND.w #$0001
-#_0F9B95: BEQ .branch0F9B9A
+#_0F9B95: BEQ .loop
 
 #_0F9B97: LDY.w #$0004
 
-.branch0F9B9A
+.loop
 #_0F9B9A: LDX.w $0C05,Y
 #_0F9B9D: CPX.w #$FFFF
-#_0F9BA0: BEQ .branch0F9BAC
+#_0F9BA0: BEQ .skip
 
 #_0F9BA2: LDA.w #$0000
 #_0F9BA5: STA.w $1000,X
+
 #_0F9BA8: JSL routine0F853F
 
-.branch0F9BAC
+.skip
 #_0F9BAC: DEY
 #_0F9BAD: DEY
-#_0F9BAE: BPL .branch0F9B9A
+#_0F9BAE: BPL .loop
 
 #_0F9BB0: RTL
 
@@ -4342,9 +4631,10 @@ routine0F9B8A:
 
 routine0F9BB1:
 #_0F9BB1: REP #$30
+
 #_0F9BB3: LDX.w #$0180
 
-.branch0F9BB6
+.next_party_member_check
 #_0F9BB6: LDA.w $1000,X
 #_0F9BB9: AND.w #$8000
 #_0F9BBC: BEQ .branch0F9BCA
@@ -4354,48 +4644,59 @@ routine0F9BB1:
 #_0F9BC0: ADC.w #$0060
 #_0F9BC3: TAX
 #_0F9BC4: CPX.w #$0600
-#_0F9BC7: BNE .branch0F9BB6
+#_0F9BC7: BNE .next_party_member_check
 
 #_0F9BC9: RTS
 
+;---------------------------------------------------------------------------------------------------
+
 .branch0F9BCA
 #_0F9BCA: STX.w $0E00
+
 #_0F9BCD: LDA.w $0C0B
 #_0F9BD0: STA.w $050A
+
 #_0F9BD3: STZ.w $0524
+
 #_0F9BD6: LDA.w #$0001
 #_0F9BD9: STA.w $050E
+
 #_0F9BDC: JSL LoadDemonStats
+
 #_0F9BE0: LDX.w #$0600
 #_0F9BE3: LDY.w $0E00
 
 .branch0F9BE6
 #_0F9BE6: LDA.w $1000,X
 #_0F9BE9: STA.w $1000,Y
+
 #_0F9BEC: INY
 #_0F9BED: INY
+
 #_0F9BEE: INX
 #_0F9BEF: INX
 #_0F9BF0: CPX.w #$0660
 #_0F9BF3: BNE .branch0F9BE6
 
 #_0F9BF5: LDY.w $0E00
+
 #_0F9BF8: LDA.w $101C,Y
 #_0F9BFB: CMP.w #$0070
 #_0F9BFE: BCC .branch0F9C0E
 
 #_0F9C00: CMP.w #$0090
-#_0F9C03: BCC .EXIT_0F9C15
+#_0F9C03: BCC .exit
 
 #_0F9C05: LDA.w #$199A
 #_0F9C08: JSL routine0F9C16
-#_0F9C0C: BRA .EXIT_0F9C15
+
+#_0F9C0C: BRA .exit
 
 .branch0F9C0E
 #_0F9C0E: LDA.w #$199A
 #_0F9C11: JSL routine0F9C48
 
-.EXIT_0F9C15
+.exit
 #_0F9C15: RTL
 
 ;===================================================================================================
@@ -4403,26 +4704,29 @@ routine0F9BB1:
 routine0F9C16:
 #_0F9C16: PHP
 #_0F9C17: REP #$20
+
 #_0F9C19: STA.w $0E00
+
 #_0F9C1C: LDA.w $0726
 #_0F9C1F: AND.w #$00FF
 #_0F9C22: CMP.w #$00FF
-#_0F9C25: BEQ .EXIT_0F9C46
+#_0F9C25: BEQ .exit
 
 #_0F9C27: LDA.w #$00FB
 #_0F9C2A: JSL TestGameProgressBit
-#_0F9C2E: BCS .EXIT_0F9C46
+#_0F9C2E: BCS .exit
 
 #_0F9C30: LDA.w $0E00
 #_0F9C33: CLC
 #_0F9C34: ADC.w $0726
 #_0F9C37: STA.w $0726
+
 #_0F9C3A: LDA.w $101C
 #_0F9C3D: ADC.w #$0000
 #_0F9C40: STA.w $101C
 #_0F9C43: STA.w $107C
 
-.EXIT_0F9C46
+.exit
 #_0F9C46: PLP
 #_0F9C47: RTL
 
@@ -4431,25 +4735,28 @@ routine0F9C16:
 routine0F9C48:
 #_0F9C48: PHP
 #_0F9C49: REP #$20
+
 #_0F9C4B: STA.w $0E00
+
 #_0F9C4E: LDA.w $0726
 #_0F9C51: AND.w #$00FF
-#_0F9C54: BEQ .EXIT_0F9C75
+#_0F9C54: BEQ .exit
 
 #_0F9C56: LDA.w #$00FB
 #_0F9C59: JSL TestGameProgressBit
-#_0F9C5D: BCS .EXIT_0F9C75
+#_0F9C5D: BCS .exit
 
 #_0F9C5F: LDA.w $0726
 #_0F9C62: SEC
 #_0F9C63: SBC.w $0E00
 #_0F9C66: STA.w $0726
+
 #_0F9C69: LDA.w $101C
 #_0F9C6C: SBC.w #$0000
 #_0F9C6F: STA.w $101C
 #_0F9C72: STA.w $107C
 
-.EXIT_0F9C75
+.exit
 #_0F9C75: PLP
 #_0F9C76: RTL
 
@@ -4457,172 +4764,219 @@ routine0F9C48:
 
 routine0F9C77:
 #_0F9C77: REP #$20
+
 #_0F9C79: LDA.w #$00F8
 #_0F9C7C: STA.w $0F53
 #_0F9C7F: STZ.w $0F51
 #_0F9C82: STZ.w $0F4F
 #_0F9C85: STZ.w $0F4D
+
 #_0F9C88: LDA.w #$FFFF
 #_0F9C8B: STA.w $0A99
 #_0F9C8E: STA.w $0A9A
 #_0F9C91: STA.w $0A9B
 #_0F9C94: STA.w $0A9C
+
 #_0F9C97: STZ.w $0A95
 #_0F9C9A: STZ.w $0A96
 #_0F9C9D: STZ.w $0A97
 #_0F9CA0: STZ.w $0A98
 
+;---------------------------------------------------------------------------------------------------
+
 #_0F9CA3: SEP #$30
+
 #_0F9CA5: LDA.b #$FF
 #_0F9CA7: STA.w $0A71
+
 #_0F9CAA: LDA.b #$48
 #_0F9CAC: STA.w $046C
 #_0F9CAF: LDA.b #$08
 #_0F9CB1: STA.w $046D
+
 #_0F9CB4: LDA.b #$0A
 #_0F9CB6: STA.w $046B
 #_0F9CB9: LDA.b #$02
 #_0F9CBB: STA.w $046A
+
 #_0F9CBE: LDA.b #$47
 #_0F9CC0: STA.w $070C
 #_0F9CC3: LDA.b #$07
 #_0F9CC5: STA.w $070D
+
 #_0F9CC8: LDA.b #$0A
 #_0F9CCA: STA.w $0710
+
 #_0F9CCD: LDA.b #$00
 #_0F9CCF: STA.w $040D
+
 #_0F9CD2: LDA.b #$01
 #_0F9CD4: STA.w $0C4F
+
 #_0F9CD7: LDA.b #$FF
 #_0F9CD9: STA.w $0EEF
+
 #_0F9CDC: STZ.w $0F7F
 #_0F9CDF: STZ.w $0F80
+
+;---------------------------------------------------------------------------------------------------
+
 #_0F9CE2: JSL routine009BDE
 #_0F9CE6: STA.w $0711
+
 #_0F9CE9: LDA.b #$00
 #_0F9CEB: JSL routine02F609
+
 #_0F9CEF: LDA.b #$00
 #_0F9CF1: JSL routine02FC6E
 #_0F9CF5: JSL routine00A17E
+
 #_0F9CF9: LDA.b #$01
 #_0F9CFB: JSL routine02CBD1
+
 #_0F9CFF: LDA.b #$07
 #_0F9D01: JSL routine02CBD1
+
 #_0F9D05: LDA.b #$1F
 #_0F9D07: STA.w $0F74
 #_0F9D0A: STA.w TM
+
 #_0F9D0D: JSL BrightenScreen
+
 #_0F9D11: JSL routine00A17E
 #_0F9D15: JSL routine00C7AA
 #_0F9D19: JSL routine0F84F6
 
 #_0F9D1D: SEP #$30
+
 #_0F9D1F: LDA.b #$03
 #_0F9D21: JSL InitializeTextBoxToSizeForNewMessage
 #_0F9D25: JSL routine00A056
+
 #_0F9D29: LDA.b #$E5
 #_0F9D2B: JSL ClearGameProgressBit_long
+
 #_0F9D2F: RTL
 
 ;===================================================================================================
 
 routine0F9D30:
 #_0F9D30: REP #$30
+
 #_0F9D32: LDX.w #$0180
 
-.branch0F9D35
+.next_party_member
 #_0F9D35: LDA.w $1000,X
-#_0F9D38: BPL .branch0F9D4C
+#_0F9D38: BPL .skip
 
 #_0F9D3A: LDA.w $1004,X
-#_0F9D3D: CMP.w #$008B
-#_0F9D40: BNE .branch0F9D4C
+#_0F9D3D: CMP.w #$008B ; demon 08B - Cerberus
+#_0F9D40: BNE .skip
 
 #_0F9D42: LDA.w $1002,X
 #_0F9D45: AND.w #$F640
-#_0F9D48: BNE .branch0F9D57
+#_0F9D48: BNE .demon_badly_afflicted
 
-#_0F9D4A: BRA .branch0F9D60
+#_0F9D4A: BRA .dont_relocate
 
-.branch0F9D4C
+.skip
 #_0F9D4C: TXA
 #_0F9D4D: CLC
 #_0F9D4E: ADC.w #$0060
 #_0F9D51: TAX
-#_0F9D52: CPX.w #$0600
-#_0F9D55: BNE .branch0F9D35
 
-.branch0F9D57
+#_0F9D52: CPX.w #$0600
+#_0F9D55: BNE .next_party_member
+
+;---------------------------------------------------------------------------------------------------
+
+.demon_badly_afflicted
 #_0F9D57: JSL GetNextTextByte_long
 #_0F9D5B: JSL RelocateTextPointer_long
+
 #_0F9D5F: RTL
 
-.branch0F9D60
+.dont_relocate
 #_0F9D60: JSL GetNextTextByte_long
+
 #_0F9D64: RTL
 
 ;===================================================================================================
 
 routine0F9D65:
 #_0F9D65: REP #$30
+
 #_0F9D67: LDX.w #$0180
 #_0F9D6A: LDY.w #$0000
 
-.branch0F9D6D
+.next_party_member
 #_0F9D6D: LDA.w $1000,X
-#_0F9D70: BPL .branch0F9D7B
+#_0F9D70: BPL .skip_party_member
 
 #_0F9D72: LDA.w $1002,X
 #_0F9D75: AND.w #$F640
-#_0F9D78: BNE .branch0F9D7B
+#_0F9D78: BNE .skip_party_member
 
 #_0F9D7A: INY
 
-.branch0F9D7B
+.skip_party_member
 #_0F9D7B: TXA
 #_0F9D7C: CLC
 #_0F9D7D: ADC.w #$0060
 #_0F9D80: TAX
+
 #_0F9D81: CMP.w #$0600
-#_0F9D84: BNE .branch0F9D6D
+#_0F9D84: BNE .next_party_member
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F9D86: CPY.w #$0000
-#_0F9D89: BEQ .branch0F9D90
+#_0F9D89: BEQ .no_one_afflicted
 
 #_0F9D8B: JSL GetNextTextByte_long
+
 #_0F9D8F: RTL
 
-.branch0F9D90
+.no_one_afflicted
 #_0F9D90: JSL GetNextTextByte_long
 #_0F9D94: JSL RelocateTextPointer_long
+
 #_0F9D98: RTL
 
 ;===================================================================================================
 
 routine0F9D99:
 #_0F9D99: SEP #$20
+
 #_0F9D9B: LDA.b #$16
 #_0F9D9D: STA.w $0F74
 #_0F9DA0: STA.w TM
+
 #_0F9DA3: LDA.b #$02
 #_0F9DA5: STA.w $0A3B
 
 #_0F9DA8: REP #$30
+
 #_0F9DAA: LDA.w #$0135
 #_0F9DAD: STA.w $0BED
+
 #_0F9DB0: LDA.w #$011C
 #_0F9DB3: STA.w $0C0B
+
 #_0F9DB6: LDA.w #$0025
 #_0F9DB9: STA.w $0BF3
+
 #_0F9DBC: JSL routine03F9B7
 
 #_0F9DC0: REP #$30
+
 #_0F9DC2: STZ.w $0E00
 #_0F9DC5: STZ.w $0E02
 #_0F9DC8: STZ.w $0E04
 #_0F9DCB: STZ.w $0E06
 #_0F9DCE: STZ.w $0E08
 #_0F9DD1: STZ.w $0E0A
+
 #_0F9DD4: LDX.w #$0180
 
 .branch0F9DD7
@@ -4790,78 +5144,96 @@ routine0F9D99:
 .branch0F9F14
 #_0F9F14: JMP .branch0F9DF4
 
+;===================================================================================================
+
 ; TODO is it really?
-RearrangeItems:
+CountAndArrangeGemsOrSomething:
 #_0F9F17: PHP
 #_0F9F18: PHB
 #_0F9F19: PHK
 #_0F9F1A: PLB
 
 #_0F9F1B: SEP #$30
+
 #_0F9F1D: STZ.w $0E00
+
 #_0F9F20: LDX.b #$00
 #_0F9F22: LDY.b #$00
 
-.branch0F9F24
+.next_cleanse
 #_0F9F24: LDA.w $0781,Y
-#_0F9F27: BEQ .branch0F9F69
+#_0F9F27: BEQ .to_next_slot
 
 #_0F9F29: LDA.w $0780,Y
 #_0F9F2C: CMP.b #$E4
-#_0F9F2E: BCC .branch0F9F4E
+#_0F9F2E: BCC .not_gem
 
 #_0F9F30: PHX
+
 #_0F9F31: LDX.w $0E00
+
 #_0F9F34: STA.w $098C,X
+
 #_0F9F37: LDA.w $0781,Y
 #_0F9F3A: STA.w $098D,X
+
 #_0F9F3D: LDA.b #$00
 #_0F9F3F: STA.w $0780,Y
 #_0F9F42: STA.w $0781,Y
+
 #_0F9F45: INC.w $0E00
 #_0F9F48: INC.w $0E00
-#_0F9F4B: PLX
-#_0F9F4C: BRA .branch0F9F69
 
-.branch0F9F4E
+#_0F9F4B: PLX
+#_0F9F4C: BRA .to_next_slot
+
+.not_gem
 #_0F9F4E: STA.w $0780,X
+
 #_0F9F51: LDA.w $0781,Y
 #_0F9F54: STA.w $0781,X
+
 #_0F9F57: STX.w $0E02
+
 #_0F9F5A: CPY.w $0E02
-#_0F9F5D: BEQ .branch0F9F67
+#_0F9F5D: BEQ .same_slot
 
 #_0F9F5F: LDA.b #$00
 #_0F9F61: STA.w $0780,Y
 #_0F9F64: STA.w $0781,Y
 
-.branch0F9F67
+.same_slot
 #_0F9F67: INX
 #_0F9F68: INX
 
-.branch0F9F69
+.to_next_slot
 #_0F9F69: INY
 #_0F9F6A: INY
 #_0F9F6B: CPY.b #$3C
-#_0F9F6D: BNE .branch0F9F24
+#_0F9F6D: BNE .next_cleanse
+
+;---------------------------------------------------------------------------------------------------
 
 #_0F9F6F: LDY.b #$00
 
-.branch0F9F71
+.copy_next_gem
 #_0F9F71: CPY.w $0E00
-#_0F9F74: BEQ .branch0F9F88
+#_0F9F74: BEQ .done
 
 #_0F9F76: LDA.w $098C,Y
 #_0F9F79: STA.w $0780,X
+
 #_0F9F7C: LDA.w $098D,Y
 #_0F9F7F: STA.w $0781,X
+
 #_0F9F82: INY
 #_0F9F83: INY
+
 #_0F9F84: INX
 #_0F9F85: INX
-#_0F9F86: BRA .branch0F9F71
+#_0F9F86: BRA .copy_next_gem
 
-.branch0F9F88
+.done
 #_0F9F88: CPX.b #$3C
 #_0F9F8A: BEQ .exit
 
@@ -4871,6 +5243,7 @@ RearrangeItems:
 
 .exit
 #_0F9F94: PLB
+
 #_0F9F95: PLP
 #_0F9F96: RTL
 
@@ -4880,6 +5253,7 @@ RearrangeItems:
 ;===================================================================================================
 ClampMoneyAndMAG:
 #_0F9F97: PHP
+
 #_0F9F98: PHB
 #_0F9F99: PHK
 #_0F9F9A: PLB
@@ -4894,7 +5268,7 @@ ClampMoneyAndMAG:
 #_0F9FA8: BRA .clipMAG
 
 .moneypositive
-#_0F9FAA: CMP.w #$0F ; 1,000,000>>16
+#_0F9FAA: CMP.w #$0F ; 1,000,000 >> 16
 #_0F9FAD: BCC .clipMAG
 #_0F9FAF: BCS .toomuchmoney
 
@@ -4905,7 +5279,7 @@ ClampMoneyAndMAG:
 #_0F9FB7: BCC .clipMAG
 
 .toomuchmoney
-#_0F9FB9: LDA.w #$0F ; 999,999>>16
+#_0F9FB9: LDA.w #$0F ; 999,999 >> 16
 #_0F9FBC: STA.w $0407
 #_0F9FBF: LDA.w #$423F ; 999,999 & 0xFFFF
 #_0F9FC2: STA.w $0405
@@ -4916,13 +5290,14 @@ ClampMoneyAndMAG:
 
 #_0F9FCA: STZ.w $0409
 #_0F9FCD: STZ.w $040B
+
 #_0F9FD0: BRA .done
 
 .magpositive
 #_0F9FD2: LDA.w $040B
 #_0F9FD5: BEQ .done
 
-#_0F9FD7: CMP.w #$01 ; 100,000>>16
+#_0F9FD7: CMP.w #$01 ; 100,000 >> 16
 #_0F9FDA: BNE .checkmaglow
 
 #_0F9FDC: LDA.w $0409
@@ -4930,7 +5305,7 @@ ClampMoneyAndMAG:
 #_0F9FE2: BCC .done
 
 .checkmaglow
-#_0F9FE4: LDA.w #$01 ; 99,999>>16
+#_0F9FE4: LDA.w #$01 ; 99,999 >> 16
 #_0F9FE7: STA.w $0407
 #_0F9FEA: LDA.w #$869F ; 99,999 & 0xFFFF
 #_0F9FED: STA.w $0405
@@ -5139,13 +5514,13 @@ routine0FA0EC:
 .branch0FA104
 #_0FA104: LDY.w $0E00
 
-#_0FA107: LDA.w multiplicand,Y
+#_0FA107: LDA.w .multiplicand,Y
 #_0FA10A: STA.w $0E10
 
 #_0FA10D: LDA.w $0A14
 #_0FA110: STA.w $0E12
 
-#_0FA113: JSL Multiply0E1x_b03_long
+#_0FA113: JSL BigMultiplication_long
 
 #_0FA117: LDA.w $0E14
 #_0FA11A: STA.w $0E02
@@ -5154,12 +5529,12 @@ routine0FA0EC:
 #_0FA120: STA.w $0E04
 
 #_0FA123: LDY.w $0E00
-#_0FA126: LDA.w multiplicand,Y
+#_0FA126: LDA.w .multiplicand,Y
 #_0FA129: STA.w $0E10
 
 #_0FA12C: LDA.w $0A16
 #_0FA12F: STA.w $0E12
-#_0FA132: JSL Multiply0E1x_b03_long
+#_0FA132: JSL BigMultiplication_long
 
 #_0FA136: LDA.w $0E02
 #_0FA139: STA.w $0A14
@@ -5173,7 +5548,7 @@ routine0FA0EC:
 #_0FA147: PLP
 #_0FA148: RTL
 
-multiplicand:
+.multiplicand:
 #_0FA149: dw $000A
 #_0FA14B: dw $0001
 
@@ -5244,6 +5619,7 @@ routine0FA1A2:
 #_0FA1A5: PLB
 
 #_0FA1A6: SEP #$30
+
 #_0FA1A8: LDA.b #$51
 #_0FA1AA: JSL TestGameProgressBit
 #_0FA1AE: BCC .branch0FA1D2
@@ -5252,18 +5628,22 @@ routine0FA1A2:
 #_0FA1B2: JSL TestGameProgressBit
 #_0FA1B6: BCS .branch0FA1D2
 
+; TODO make sure mirror moon phase matches?
 #_0FA1B8: LDA.w $040F
 #_0FA1BB: EOR.w $07EE
 #_0FA1BE: AND.b #$F0
 #_0FA1C0: BEQ .branch0FA1D2
 
 #_0FA1C2: INC.w $07EF
+
 #_0FA1C5: LDA.w $07EF
 #_0FA1C8: CMP.b #$20
 #_0FA1CA: BNE .branch0FA1D2
 
 #_0FA1CC: LDA.b #$55
 #_0FA1CE: JSL SetGameProgressBit_long
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FA1D2
 #_0FA1D2: LDA.b #$52
@@ -5291,8 +5671,11 @@ routine0FA1A2:
 
 #_0FA1FF: INC.w $07F1
 
+;---------------------------------------------------------------------------------------------------
+
 .branch0FA202
 #_0FA202: SEP #$30
+
 #_0FA204: LDA.b #$58
 #_0FA206: JSL TestGameProgressBit
 #_0FA20A: BCS .branch0FA22E
@@ -5314,6 +5697,8 @@ routine0FA1A2:
 #_0FA228: LDA.b #$58
 #_0FA22A: JSL SetGameProgressBit_long
 
+;---------------------------------------------------------------------------------------------------
+
 .branch0FA22E
 #_0FA22E: LDA.w $0404
 #_0FA231: BEQ .branch0FA253
@@ -5323,13 +5708,16 @@ routine0FA1A2:
 #_0FA238: BNE .branch0FA247
 
 #_0FA23A: REP #$20
+
 #_0FA23C: LDA.w $0400
 #_0FA23F: AND.w #$FF7F
 #_0FA242: STA.w $0400
+
 #_0FA245: BRA .branch0FA253
 
 .branch0FA247
 #_0FA247: SEP #$20
+
 #_0FA249: CMP.b #$80
 #_0FA24B: BNE .branch0FA253
 
@@ -5338,9 +5726,12 @@ routine0FA1A2:
 
 .branch0FA253
 #_0FA253: SEP #$20
+
 #_0FA255: LDA.w $040F
 #_0FA258: STA.w $07EE
+
 #_0FA25B: PLB
+
 #_0FA25C: PLP
 #_0FA25D: RTL
 
@@ -5348,16 +5739,19 @@ routine0FA1A2:
 
 routine0FA25E:
 #_0FA25E: PHP
+
 #_0FA25F: PHB
 #_0FA260: PHK
 #_0FA261: PLB
 
 #_0FA262: REP #$20
+
 #_0FA264: LDA.w #$0007
 #_0FA267: STA.w $0E00
 #_0FA26A: JSL routine0392C1_long
 
 #_0FA26E: REP #$20
+
 #_0FA270: JSL GetNextTextByte_long
 #_0FA274: AND.w #$00FF
 #_0FA277: JSL routine02AD0D
@@ -5379,7 +5773,7 @@ routine0FA25E:
 #_0FA294: SEC
 #_0FA295: SBC.b #$E4
 #_0FA297: TAX
-#_0FA298: LDA.l TextExtCMD_59_items,X
+#_0FA298: LDA.l RagsGemToItemTrades,X
 #_0FA29C: STA.w $0A50
 #_0FA29F: STZ.w $0A51
 
@@ -5745,7 +6139,7 @@ routine0FA470:
 #_0FA4AC: BNE .branch0FA486
 
 .branch0FA4AE
-#_0FA4AE: JSL RearrangeItems
+#_0FA4AE: JSL CountAndArrangeGemsOrSomething
 #_0FA4B2: PLB
 #_0FA4B3: PLP
 #_0FA4B4: RTL
@@ -5787,7 +6181,7 @@ routine0FA470:
 #_0FA4DF: BNE .branch0FA4B9
 
 .branch0FA4E1
-#_0FA4E1: JSL RearrangeItems
+#_0FA4E1: JSL CountAndArrangeGemsOrSomething
 #_0FA4E5: PLB
 #_0FA4E6: PLP
 #_0FA4E7: RTL
@@ -5814,7 +6208,7 @@ routine0FA4FB:
 #_0FA4FC: PHB
 #_0FA4FD: PHK
 #_0FA4FE: PLB
-#_0FA4FF: JSL RearrangeItems
+#_0FA4FF: JSL CountAndArrangeGemsOrSomething
 
 #_0FA503: SEP #$30
 #_0FA505: LDY.b #$00
@@ -5862,7 +6256,7 @@ routine0FA4FB:
 #_0FA540: BNE .branch0FA507
 
 .branch0FA542
-#_0FA542: JSL RearrangeItems
+#_0FA542: JSL CountAndArrangeGemsOrSomething
 #_0FA546: PLB
 #_0FA547: PLP
 #_0FA548: RTL

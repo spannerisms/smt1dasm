@@ -97,7 +97,7 @@
 50      わ		wa
 51      を		wo
 
-52      ん		nn
+52      ん		n
 
 53      ぁ		a
 54      ぉ		o
@@ -170,18 +170,18 @@
 88      ワ		wa
 89      ヲ		wo
 
-8A      ン		nn
+8A      ン		n
 
-8B      ァ		aa
-8C      ィ		ii
-8D      ェ		ee
-8E      ォ		oo		why doesn't ゥ exist ????
+8B      ァ		a
+8C      ィ		i
+8D      ェ		e
+8E      ォ		o		why doesn't ゥ exist ????
 
-8F      ャ		yas
-90      ュ		yus
-91      ョ		yos
+8F      ャ		ya
+90      ュ		yu
+91      ョ		yo
 
-92      ッ		tsus
+92      ッ		tsu
 
 # punctuation 2
 93      ・		interpunct
@@ -281,7 +281,7 @@ A9      ⭘		fusion symbol
 AA      ※		fusion symbol
 AB      ⏷		wait cursor
 AF      り<		???
-B0      ○		
+B0      ⭘		
 B1      ◎		fusion symbol
 
 #===================================================================================================

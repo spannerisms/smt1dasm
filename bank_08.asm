@@ -6771,7 +6771,7 @@ Message_00_06_13:
 #_08A7DF: db $D5, $11 ; send 11 to APU
 #_08A7E1: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_08A7E4: db $D5, $2D ; send 2D to APU
-#_08A7E6: db $FE, $0B, $00, $19 ; ext command 0B: something 19, 00
+#_08A7E6: db $FE, $0B, $00, $19 ; ext command 0B: remove 25% of chase hp
 #_08A7EA: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_08A7EC: db $FA ; clear message box
 #_08A7ED: db $97 ; >
@@ -8114,9 +8114,9 @@ Message_00_08_20:
 ; しんぱいだから
 ; でも おとこのこは げんきなほうが いいか
 Message_00_08_21:
-#_08B3C0: db $FE, $15, $00, $22 ; ext command 15: something message 22, 00
-#_08B3C4: db $FE, $15, $01, $22 ; ext command 15: something message 22, 01
-#_08B3C8: db $FE, $15, $02, $22 ; ext command 15: something message 22, 02
+#_08B3C0: db $FE, $15, $00, $22 ; ext command 15: goto message 22 if someone has general affliction
+#_08B3C4: db $FE, $15, $01, $22 ; ext command 15: goto message 22 if someone is cursed
+#_08B3C8: db $FE, $15, $02, $22 ; ext command 15: goto message 22 if someone is dead
 #_08B3CC: db $29, $2A, $28, $4C, $CF ; おかえり⎵
 #_08B3D1: db $F0 ; write player name
 #_08B3D2: db $CF, $AA, $2E, $26, $58, $37, $34, $3D ; ⎵どこいってたの
@@ -8496,9 +8496,9 @@ Message_00_08_31:
 #_08B6D5: db $D6, $00, $40, $70, $28 ; place sprite 40 in slot 00 at XY:{70,28}
 #_08B6DA: db $38, $39, $4C, $3D, $26, $30, $55, $9A ; となりのいしゃ:
 #_08B6E2: db $F9 ; new line
-#_08B6E3: db $FE, $15, $00, $3B ; ext command 15: something message 3B, 00
-#_08B6E7: db $FE, $15, $01, $3B ; ext command 15: something message 3B, 01
-#_08B6EB: db $FE, $15, $02, $3B ; ext command 15: something message 3B, 02
+#_08B6E3: db $FE, $15, $00, $3B ; ext command 15: goto message 3B if someone has general affliction
+#_08B6E7: db $FE, $15, $01, $3B ; ext command 15: goto message 3B if someone is cursed
+#_08B6EB: db $FE, $15, $02, $3B ; ext command 15: goto message 3B if someone is dead
 #_08B6EF: db $29, $29, $CF ; おお⎵
 #_08B6F2: db $F0 ; write player name
 #_08B6F3: db $2C, $52, $2A ; くんか
@@ -10159,7 +10159,7 @@ Message_00_09_3D:
 #_08C626: db $D5, $11 ; send 11 to APU
 #_08C628: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_08C62B: db $D5, $2D ; send 2D to APU
-#_08C62D: db $FE, $0B, $FF, $3C ; ext command 0B: something 3C, FF
+#_08C62D: db $FE, $0B, $FF, $3C ; ext command 0B: remove 60% of everyone's hp
 #_08C631: db $E9, $02, $3E ; go to message 3E maybe TODO
 #_08C634: db $FA ; clear message box
 #_08C635: db $EE ; write lawful hero name
@@ -10354,7 +10354,7 @@ Message_00_09_46:
 #_08C7D3: db $97, $61, $BA, $88, $51, $CF, $34, $29 ; >オザワを⎵たお
 #_08C7DB: db $30, $43, $31, $2A, $95 ; しますか?
 #_08C7E0: db $F8, $47 ; YES/NO - go to message 47 if YES
-#_08C7E2: db $FE, $02, $FB ; ext command 02: add 251 to STAT_11C if progress bit FB
+#_08C7E2: db $FE, $02, $FB ; ext command 02: add 251 to alignment if progress bit FB
 #_08C7E5: db $EF ; write chaos hero name
 #_08C7E6: db $9A ; :
 #_08C7E7: db $F9 ; new line
@@ -10370,7 +10370,7 @@ Message_00_09_46:
 ; オザワに とどめを さすのは おれだ!
 ; いいな?
 Message_00_09_47:
-#_08C804: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
+#_08C804: db $FE, $02, $05 ; ext command 02: add 5 to alignment if progress bit FB
 #_08C807: db $EF ; write chaos hero name
 #_08C808: db $9A ; :
 #_08C809: db $F9 ; new line
@@ -10394,13 +10394,13 @@ Message_00_09_48:
 ;===================================================================================================
 
 Message_00_09_49:
-#_08C82F: db $FE, $02, $FB ; ext command 02: add 251 to STAT_11C if progress bit FB
+#_08C82F: db $FE, $02, $FB ; ext command 02: add 251 to alignment if progress bit FB
 #_08C832: db $D3, $4B ; go to message 4B
 
 ;===================================================================================================
 
 Message_00_09_4A:
-#_08C834: db $FE, $02, $05 ; ext command 02: add 5 to STAT_11C if progress bit FB
+#_08C834: db $FE, $02, $05 ; ext command 02: add 5 to alignment if progress bit FB
 
 ;===================================================================================================
 
@@ -10599,7 +10599,7 @@ Message_00_09_57:
 #_08C9A2: db $26, $58, $34 ; いった
 #_08C9A5: db $F2, $0B ; prewritten text 0B
 #_08C9A7: db $FE, $1C, $03 ; ext command 1C: $03 TODO
-#_08C9AA: db $FE, $0B, $00, $0A ; ext command 0B: something 0A, 00
+#_08C9AA: db $FE, $0B, $00, $0A ; ext command 0B: remove 10% of chase hp
 #_08C9AE: db $FC ; wait for key and new line
 #_08C9AF: db $D0, $4B ; set progress bit 4B
 #_08C9B1: db $D0, $A8 ; set progress bit A8
@@ -12225,7 +12225,7 @@ Message_00_0A_25:
 #_08D917: db $D6, $00, $64, $70, $28 ; place sprite 64 in slot 00 at XY:{70,28}
 #_08D91C: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_08D921: db $F9 ; new line
-#_08D922: db $FE, $13, $27 ; ext command 13: something message 27 TODO
+#_08D922: db $FE, $13, $27 ; ext command 13: goto message 27 if there's a dying demon
 
 ;===================================================================================================
 
@@ -12239,7 +12239,7 @@ Message_00_0A_26:
 ;===================================================================================================
 
 Message_00_0A_27:
-#_08D92B: db $FE, $13, $28 ; ext command 13: something message 28 TODO
+#_08D92B: db $FE, $13, $28 ; ext command 13: goto message 28 if there's a dying demon
 #_08D92E: db $D3, $26 ; go to message 26
 
 ;===================================================================================================
@@ -15632,7 +15632,7 @@ Message_00_0C_75:
 ;===================================================================================================
 
 ; まずは 1たいめだ
-Message_08F48B:
+FusionMessage_00:
 #_08F48B: db $43, $A3, $3E, $CF, $02, $34, $26, $46 ; まずは⎵1たいめ
 #_08F493: db $A6 ; だ
 #_08F494: db $FF ; end of message
@@ -15640,7 +15640,7 @@ Message_08F48B:
 ;===================================================================================================
 
 ; そして 2たいめだ
-Message_08F495:
+FusionMessage_01:
 #_08F495: db $33, $30, $37, $CF, $03, $34, $26, $46 ; そして⎵2たいめ
 #_08F49D: db $A6 ; だ
 #_08F49E: db $FF ; end of message
@@ -15648,7 +15648,7 @@ Message_08F495:
 ;===================================================================================================
 
 ; さいごに 3たいめをえらぶのだ
-Message_08F49F:
+FusionMessage_02:
 #_08F49F: db $2F, $26, $A0, $3A, $CF, $04, $34, $26 ; さいごに⎵3たい
 #_08F4A7: db $46, $51, $28, $4B, $AD, $3D, $A6 ; めをえらぶのだ
 #_08F4AE: db $FF ; end of message
@@ -15656,7 +15656,7 @@ Message_08F49F:
 ;===================================================================================================
 
 ; がったいさせるケンを えらぶのだ
-Message_08F4AF:
+FusionMessage_03:
 #_08F4AF: db $9C, $58, $34, $26, $2F, $32, $4D, $65 ; がったいさせるケ
 #_08F4B7: db $8A, $51, $CF, $28, $4B, $AD, $3D, $A6 ; ンを⎵えらぶのだ
 #_08F4BF: db $FF ; end of message
@@ -15664,7 +15664,7 @@ Message_08F4AF:
 ;===================================================================================================
 
 ; 1ST SELECT
-Message_08F4C0:
+FusionMessage_04:
 #_08F4C0: db $02, $1D, $1E, $CF, $1D, $0F, $16, $0F ; 1ST⎵SELE
 #_08F4C8: db $0D, $1E ; CT
 #_08F4CA: db $FF ; end of message
@@ -15672,7 +15672,7 @@ Message_08F4C0:
 ;===================================================================================================
 
 ; 2ND SELECT
-Message_08F4CB:
+FusionMessage_05:
 #_08F4CB: db $03, $18, $0E, $CF, $1D, $0F, $16, $0F ; 2ND⎵SELE
 #_08F4D3: db $0D, $1E ; CT
 #_08F4D5: db $FF ; end of message
@@ -15680,7 +15680,7 @@ Message_08F4CB:
 ;===================================================================================================
 
 ; 3RD SELECT
-Message_08F4D6:
+FusionMessage_06:
 #_08F4D6: db $04, $1C, $0E, $CF, $1D, $0F, $16, $0F ; 3RD⎵SELE
 #_08F4DE: db $0D, $1E ; CT
 #_08F4E0: db $FF ; end of message
@@ -15688,14 +15688,14 @@ Message_08F4D6:
 ;===================================================================================================
 
 ; RESULT
-Message_08F4E1:
+FusionMessage_07:
 #_08F4E1: db $1C, $0F, $1D, $1F, $16, $1E ; RESULT
 #_08F4E7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ケンと がったいさせるナカマを えらぶのだ
-Message_08F4E8:
+FusionMessage_08:
 #_08F4E8: db $65, $8A, $38, $CF, $9C, $58, $34, $26 ; ケンと⎵がったい
 #_08F4F0: db $2F, $32, $4D, $71, $62, $7B, $51, $CF ; させるナカマを⎵
 #_08F4F8: db $28, $4B, $AD, $3D, $A6 ; えらぶのだ
@@ -15704,161 +15704,161 @@ Message_08F4E8:
 ;===================================================================================================
 
 ; エコービル
-Message_08F4FE:
+TerminalDestinationName_00:
 #_08F4FE: db $60, $66, $5A, $C5, $85 ; エコービル
 #_08F503: db $FF ; end of message
 
 ;===================================================================================================
 
 ; けんきゅうじょ
-Message_08F504:
+TerminalDestinationName_01:
 #_08F504: db $2D, $52, $2B, $56, $27, $A2, $57 ; けんきゅうじょ
 #_08F50B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; シンジュク
-Message_08F50C:
+TerminalDestinationName_02:
 #_08F50C: db $68, $8A, $BB, $90, $64 ; シンジュク
 #_08F511: db $FF ; end of message
 
 ;===================================================================================================
 
 ; イケブクロ
-Message_08F512:
+TerminalDestinationName_03:
 #_08F512: db $5E, $65, $C6, $64, $87 ; イケブクロ
 #_08F517: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ギンザ
-Message_08F518:
+TerminalDestinationName_04:
 #_08F518: db $B6, $8A, $BA ; ギンザ
 #_08F51B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; シナガワ
-Message_08F51C:
+TerminalDestinationName_05:
 #_08F51C: db $68, $71, $B5, $88 ; シナガワ
 #_08F520: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ウエノ
-Message_08F521:
+TerminalDestinationName_06:
 #_08F521: db $5F, $60, $75 ; ウエノ
 #_08F524: db $FF ; end of message
 
 ;===================================================================================================
 
 ; カテドラルカオス
-Message_08F525:
+TerminalDestinationName_07:
 #_08F525: db $62, $6F, $C3, $83, $85, $62, $61, $69 ; カテドラルカオス
 #_08F52D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; カテドラルロウ
-Message_08F52E:
+TerminalDestinationName_08:
 #_08F52E: db $62, $6F, $C3, $83, $85, $87, $5F ; カテドラルロウ
 #_08F535: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ロッポンギ
-Message_08F536:
+TerminalDestinationName_09:
 #_08F536: db $87, $92, $CD, $8A, $B6 ; ロッポンギ
 #_08F53B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; T.D.L.
-Message_08F53C:
+TerminalDestinationName_0A:
 #_08F53C: db $1E, $9B, $0E, $9B, $16, $9B ; T.D.L.
 #_08F542: db $FF ; end of message
 
 ;===================================================================================================
 
 ; シブヤ
-Message_08F543:
+TerminalDestinationName_0B:
 #_08F543: db $68, $C6, $80 ; シブヤ
 #_08F546: db $FF ; end of message
 
 ;===================================================================================================
 
 ; トウキョウタワー
-Message_08F547:
+TerminalDestinationName_0C:
 #_08F547: db $70, $5F, $63, $91, $5F, $6C, $88, $5A ; トウキョウタワー
 #_08F54F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; とちょう
-Message_08F550:
+TerminalDestinationName_0D:
 #_08F550: db $38, $35, $57, $27 ; とちょう
 #_08F554: db $FF ; end of message
 
 ;===================================================================================================
 
 ; じたく
-Message_08F555:
+TerminalDestinationName_0E:
 #_08F555: db $A2, $34, $2C ; じたく
 #_08F558: db $FF ; end of message
 
 ;===================================================================================================
 
 ; こんごうしんかい
-Message_08F559:
+TerminalDestinationName_0F:
 #_08F559: db $2E, $52, $A0, $27, $30, $52, $2A, $26 ; こんごうしんかい
 #_08F561: db $FF ; end of message
 
 ;===================================================================================================
 
 ; びょういん
-Message_08F562:
+TerminalDestinationName_10:
 #_08F562: db $AC, $57, $27, $26, $52 ; びょういん
 #_08F567: db $FF ; end of message
 
 ;===================================================================================================
 
 ; スガモプリズン
-Message_08F568:
+TerminalDestinationName_11:
 #_08F568: db $69, $B5, $7F, $CB, $84, $BC, $8A ; スガモプリズン
 #_08F56F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ERROR
-Message_08F570:
+TerminalDestinationName_ERROR:
 #_08F570: db $0F, $1C, $1C, $19, $1C ; ERROR
 #_08F575: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  かう
-Message_08F576:
+ShopActionMessage_00:
 #_08F576: db $CF, $2A, $27 ; ⎵かう
 #_08F579: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  うる
-Message_08F57A:
+ShopActionMessage_01:
 #_08F57A: db $CF, $27, $4D ; ⎵うる
 #_08F57D: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  そうび する
-Message_08F57E:
+ShopActionMessage_02:
 #_08F57E: db $CF, $33, $27, $AC, $CF, $31, $4D ; ⎵そうび⎵する
 #_08F585: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  ステータスを みる
-Message_08F586:
+ShopActionMessage_03:
 #_08F586: db $CF, $69, $6F, $5A, $6C, $69, $51, $CF ; ⎵ステータスを⎵
 #_08F58E: db $44, $4D ; みる
 #_08F590: db $FF ; end of message
@@ -15866,21 +15866,21 @@ Message_08F586:
 ;===================================================================================================
 
 ;  みせを でる
-Message_08F591:
+ShopActionMessage_04:
 #_08F591: db $CF, $44, $32, $51, $CF, $A9, $4D ; ⎵みせを⎵でる
 #_08F598: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  そとに でる
-Message_08F599:
+ShopActionMessage_05:
 #_08F599: db $CF, $33, $38, $3A, $CF, $A9, $4D ; ⎵そとに⎵でる
 #_08F5A0: db $FF ; end of message
 
 ;===================================================================================================
 
 ;  かうのを やめる
-Message_08F5A1:
+ShopActionMessage_06:
 #_08F5A1: db $CF, $2A, $27, $3D, $51, $CF, $48, $46 ; ⎵かうのを⎵やめ
 #_08F5A9: db $4D ; る
 #_08F5AA: db $FF ; end of message
@@ -15888,7 +15888,7 @@ Message_08F5A1:
 ;===================================================================================================
 
 ;  もちものを せいとんする
-Message_08F5AB:
+ShopActionMessage_07:
 #_08F5AB: db $CF, $47, $35, $47, $3D, $51, $CF, $32 ; ⎵もちものを⎵せ
 #_08F5B3: db $26, $38, $52, $31, $4D ; いとんする
 #_08F5B8: db $FF ; end of message
@@ -17203,54 +17203,55 @@ Message_00_0C_Pointers:
 
 ;===================================================================================================
 
-; TODO
-data08FF89:
-#_08FF89: dw Message_08F48B
-#_08FF8B: dw Message_08F495
-#_08FF8D: dw Message_08F49F
-#_08FF8F: dw Message_08F4AF
-#_08FF91: dw Message_08F4C0
-#_08FF93: dw Message_08F4CB
-#_08FF95: dw Message_08F4D6
-#_08FF97: dw Message_08F4E1
-#_08FF99: dw Message_08F4E8
+FusionOptionPointers:
+#_08FF89: dw FusionMessage_00
+#_08FF8B: dw FusionMessage_01
+#_08FF8D: dw FusionMessage_02
+#_08FF8F: dw FusionMessage_03
+#_08FF91: dw FusionMessage_04
+#_08FF93: dw FusionMessage_05
+#_08FF95: dw FusionMessage_06
+#_08FF97: dw FusionMessage_07
+#_08FF99: dw FusionMessage_08
 
 ;===================================================================================================
 
-data08FF9B:
-#_08FF9B: dw Message_08F4FE
-#_08FF9D: dw Message_08F504
-#_08FF9F: dw Message_08F50C
-#_08FFA1: dw Message_08F512
-#_08FFA3: dw Message_08F518
-#_08FFA5: dw Message_08F51C
-#_08FFA7: dw Message_08F521
-#_08FFA9: dw Message_08F525
-#_08FFAB: dw Message_08F52E
-#_08FFAD: dw Message_08F536
-#_08FFAF: dw Message_08F53C
-#_08FFB1: dw Message_08F543
-#_08FFB3: dw Message_08F547
-#_08FFB5: dw Message_08F550
-#_08FFB7: dw Message_08F555
-#_08FFB9: dw Message_08F559
-#_08FFBB: dw Message_08F562
-#_08FFBD: dw Message_08F568
-#_08FFBF: dw Message_08F570
+TerminalDestinationNamePointers:
+#_08FF9B: dw TerminalDestinationName_00
+#_08FF9D: dw TerminalDestinationName_01
+#_08FF9F: dw TerminalDestinationName_02
+#_08FFA1: dw TerminalDestinationName_03
+#_08FFA3: dw TerminalDestinationName_04
+#_08FFA5: dw TerminalDestinationName_05
+#_08FFA7: dw TerminalDestinationName_06
+#_08FFA9: dw TerminalDestinationName_07
+#_08FFAB: dw TerminalDestinationName_08
+#_08FFAD: dw TerminalDestinationName_09
+#_08FFAF: dw TerminalDestinationName_0A
+#_08FFB1: dw TerminalDestinationName_0B
+#_08FFB3: dw TerminalDestinationName_0C
+#_08FFB5: dw TerminalDestinationName_0D
+#_08FFB7: dw TerminalDestinationName_0E
+#_08FFB9: dw TerminalDestinationName_0F
+#_08FFBB: dw TerminalDestinationName_10
+#_08FFBD: dw TerminalDestinationName_11
+#_08FFBF: dw TerminalDestinationName_ERROR
 
 ;===================================================================================================
 
-data08FFC1:
-#_08FFC1: dw Message_08F576
-#_08FFC3: dw Message_08F57A
-#_08FFC5: dw Message_08F57E
-#_08FFC7: dw Message_08F586
-#_08FFC9: dw Message_08F591
-#_08FFCB: dw Message_08F599
-#_08FFCD: dw Message_08F5A1
-#_08FFCF: dw Message_08F5AB
+ShopActionMessagePointers:
+#_08FFC1: dw ShopActionMessage_00
+#_08FFC3: dw ShopActionMessage_01
+#_08FFC5: dw ShopActionMessage_02
+#_08FFC7: dw ShopActionMessage_03
+#_08FFC9: dw ShopActionMessage_04
+#_08FFCB: dw ShopActionMessage_05
+#_08FFCD: dw ShopActionMessage_06
+#_08FFCF: dw ShopActionMessage_07
 
-; TODO ????
+;===================================================================================================
+
+; TODO garbage?
 #_08FFD1: db $F5,$59,$F5,$60,$F5,$64,$F5,$6D
 #_08FFD9: db $F5,$72,$F5,$76,$F5,$7F,$F5,$85
 #_08FFE1: db $F5,$8D,$F5,$93,$F5,$97,$F5,$9B

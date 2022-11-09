@@ -5573,7 +5573,7 @@ routine02AD0D:
 #_02AD8F: ADC.w #$00E4
 #_02AD92: STA.w $0A50
 #_02AD95: JSR routine02AE93
-#_02AD98: JSL TextCommand_23_long
+#_02AD98: JSL TextCommand_WriteItemName_long
 #_02AD9C: LDA.w #$000E
 #_02AD9F: STA.w $0A33
 #_02ADA2: LDA.w #$0022
@@ -5596,7 +5596,7 @@ routine02AD0D:
 #_02ADCE: INX
 #_02ADCF: INX
 #_02ADD0: JSR routine02AE93
-#_02ADD3: JSL TextCommand_23_long
+#_02ADD3: JSL TextCommand_WriteItemName_long
 #_02ADD7: LDA.w #$0026
 #_02ADDA: STA.w $0A33
 #_02ADDD: LDA.w #$0022
@@ -8493,7 +8493,7 @@ routine02C98F:
 #_02C99F: STA.w $0E10
 #_02C9A2: LDA.w data02C951,Y
 #_02C9A5: STA.w $0E11
-#_02C9A8: JSL Multiply_0E10_by_0E11_long
+#_02C9A8: JSL SmallMultiplication_long
 #_02C9AC: LDA.w data02C94F,Y
 #_02C9AF: CLC
 #_02C9B0: ADC.w $0E12
@@ -8504,7 +8504,7 @@ routine02C98F:
 #_02C9BC: STA.w $0E10
 #_02C9BF: LDA.w data02C952,Y
 #_02C9C2: STA.w $0E11
-#_02C9C5: JSL Multiply_0E10_by_0E11_long
+#_02C9C5: JSL SmallMultiplication_long
 #_02C9C9: LDA.w data02C950,Y
 #_02C9CC: CLC
 #_02C9CD: ADC.w $0E12
@@ -11198,7 +11198,7 @@ routine02DDFD:
 #_02DE05: STA.w $0E10
 #_02DE08: LDA.w #$004E
 #_02DE0B: STA.w $0E12
-#_02DE0E: JSL Multiply0E1x_b03_long
+#_02DE0E: JSL BigMultiplication_long
 #_02DE12: LDA.w $0E14
 #_02DE15: STA.w $0E00
 #_02DE18: LDA.w $098D
@@ -11206,7 +11206,7 @@ routine02DDFD:
 #_02DE1E: STA.w $0E10
 #_02DE21: LDA.w #$000D
 #_02DE24: STA.w $0E12
-#_02DE27: JSL Multiply0E1x_b03_long
+#_02DE27: JSL BigMultiplication_long
 #_02DE2B: LDA.w $098C
 #_02DE2E: AND.w #$00FF
 #_02DE31: CLC
