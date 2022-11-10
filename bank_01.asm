@@ -283,7 +283,7 @@ GameMenuOptions:
 
 GameMenu_COMP:
 #_0181D7: LDA.w #$0005 ; SFX 05
-#_0181DA: JSL Write_to_APU_transferrable
+#_0181DA: JSL WriteAPUCareful
 
 ; Can't access computer right now
 #_0181DE: LDX.w #$0001
@@ -711,7 +711,7 @@ routine0183E5:
 #_018459: JSR routine0185D8
 #_01845C: JSL Update19XXUntilInput
 #_018460: LDA.w #$0002 ; SFX 02
-#_018463: JSL Write_to_APU_transferrable
+#_018463: JSL WriteAPUCareful
 #_018467: LDA.w #$0000
 #_01846A: JSL routine01E5CD
 #_01846E: JSL Write7066VRAM
@@ -1078,7 +1078,7 @@ routine018768:
 #_018768: PHP
 #_018769: REP #$30
 #_01876B: LDA.w #$0005 ; SFX 05
-#_01876E: JSL Write_to_APU_transferrable
+#_01876E: JSL WriteAPUCareful
 #_018772: LDX.w #$0001
 #_018775: LDA.w $1002
 #_018778: BIT.w #$F678
@@ -1813,7 +1813,7 @@ Module_DistributeStatPoints:
 
  ; blip when moving
 #_018CB8: LDA.w #$0001 ; SFX 01
-#_018CBB: JSL Write_to_APU_transferrable
+#_018CBB: JSL WriteAPUCareful
 
 #_018CBF: LDA.w $0F2B
 #_018CC2: BIT.w #$0C00 ; check for UP/DOWN
@@ -1960,7 +1960,7 @@ Module_DistributeStatPoints:
 #_018DA2: BNE .stat_updates_finished
 
 #_018DA4: LDA.w #$0002 ; SFX 02
-#_018DA7: JSL Write_to_APU_transferrable
+#_018DA7: JSL WriteAPUCareful
 #_018DAB: LDX.w $0715
 #_018DAE: BNE .branch018DB7
 
@@ -1980,7 +1980,7 @@ Module_DistributeStatPoints:
 
 .stat_updates_finished
 #_018DBF: LDA.w #$0003 ; SFX 03
-#_018DC2: JSL Write_to_APU_transferrable
+#_018DC2: JSL WriteAPUCareful
 #_018DC6: RTS
 
 ;---------------------------------------------------------------------------------------------------
@@ -10081,7 +10081,7 @@ routine01C04D:
 #_01C072: BNE .branch01C09D
 
 #_01C074: LDA.w #$0001 ; SFX 01
-#_01C077: JSL Write_to_APU_transferrable
+#_01C077: JSL WriteAPUCareful
 #_01C07B: LDA.w $0F2B
 #_01C07E: AND.w #$0300
 #_01C081: XBA
@@ -10103,13 +10103,13 @@ routine01C04D:
 #_01C0A0: BNE .branch01C0AB
 
 #_01C0A2: LDA.w #$0003 ; SFX 03
-#_01C0A5: JSL Write_to_APU_transferrable
+#_01C0A5: JSL WriteAPUCareful
 #_01C0A9: SEC
 #_01C0AA: RTS
 
 .branch01C0AB
 #_01C0AB: LDA.w #$0002 ; SFX 02
-#_01C0AE: JSL Write_to_APU_transferrable
+#_01C0AE: JSL WriteAPUCareful
 #_01C0B2: LDA.w $0564
 #_01C0B5: ASL A
 #_01C0B6: BRA .branch01C0C5
@@ -10970,7 +10970,7 @@ data01C606:
 
 routine01C60E:
 #_01C60E: LDA.w #$0038 ; SONG 38
-#_01C611: JSL Write_to_APU_transferrable
+#_01C611: JSL WriteAPUCareful
 #_01C615: LDY.w #$0000
 
 .branch01C618
@@ -11553,12 +11553,12 @@ LevelUpAfterBattle:
 #_01C97F: STA.w $1032,X
 
 #_01C982: LDA.w #$003D ; SONG 3D
-#_01C985: JSL Write_to_APU_transferrable
+#_01C985: JSL WriteAPUCareful
 
 #_01C989: JSL routine0183E5
 
 #_01C98D: LDA.w #$0038 ; SONG 38
-#_01C990: JSL Write_to_APU_transferrable
+#_01C990: JSL WriteAPUCareful
 
 #_01C994: SEP #$20
 
@@ -11697,7 +11697,7 @@ HandleBattleSong:
 #_01CA57: LDA.w #$0051 ; SONG 51
 
 .normalbattle
-#_01CA5A: JSL Write_to_APU_transferrable
+#_01CA5A: JSL WriteAPUCareful
 #_01CA5E: DEC.w $05D4
 #_01CA61: DEC.w $05BA
 
@@ -13102,7 +13102,7 @@ routine01D303:
 #_01D324: BCC .branch01D361
 
 #_01D326: LDA.w #$002C ; SFX 2C
-#_01D329: JSL Write_to_APU_transferrable
+#_01D329: JSL WriteAPUCareful
 #_01D32D: JSR DistributeExperiencePointsToTeam
 #_01D330: INC.w $054C
 #_01D333: LDX.w $0564
@@ -13135,7 +13135,7 @@ routine01D303:
 
 .branch01D361
 #_01D361: LDA.w #$002F ; SFX 2F
-#_01D364: JSL Write_to_APU_transferrable
+#_01D364: JSL WriteAPUCareful
 
 #_01D368: DEC.w $0516
 
@@ -13259,7 +13259,7 @@ routine01D408:
 #_01D413: LDA.w #$002B ; SFX 2B
 
 .branch01D416
-#_01D416: JSL Write_to_APU_transferrable
+#_01D416: JSL WriteAPUCareful
 #_01D41A: LDX.w $051A
 #_01D41D: LDY.w #$0002
 #_01D420: LDA.w $1030,X
@@ -13704,7 +13704,7 @@ routine01D5D0:
 #_01D68A: AND.w #$00FF
 #_01D68D: TAX
 #_01D68E: LDA.l data01D90E,X
-#_01D692: JSL Write_to_APU_transferrable
+#_01D692: JSL WriteAPUCareful
 #_01D696: LDY.w $0518
 #_01D699: LDA.w $1042,Y
 #_01D69C: AND.w #$00FF
@@ -13732,7 +13732,7 @@ routine01D5D0:
 #_01D6C2: SBC.w #$0040
 #_01D6C5: TAX
 #_01D6C6: LDA.l data01D94E,X
-#_01D6CA: JSL Write_to_APU_transferrable
+#_01D6CA: JSL WriteAPUCareful
 #_01D6CE: LDA.l data01D9FE,X
 #_01D6D2: BRA .branch01D6FB
 
@@ -13755,7 +13755,7 @@ routine01D5D0:
 .branch01D6EC
 #_01D6EC: LDA.l data01D95E,X
 #_01D6F0: AND.w #$00FF
-#_01D6F3: JSL Write_to_APU_transferrable
+#_01D6F3: JSL WriteAPUCareful
 #_01D6F7: LDA.l data01DAE0,X
 
 .branch01D6FB
@@ -15152,7 +15152,7 @@ routine01E277:
 
 #_01E285: LDA.l .songs,X
 #_01E289: AND.w #$00FF
-#_01E28C: JSL Write_to_APU_transferrable
+#_01E28C: JSL WriteAPUCareful
 
 #_01E290: DEC.w $05BA
 
@@ -16220,7 +16220,7 @@ routine01E95F:
 #_01E9A1: BNE .branch01E9AE
 
 #_01E9A3: LDA.w #$0021 ; SFX 21
-#_01E9A6: JSL Write_to_APU_transferrable
+#_01E9A6: JSL WriteAPUCareful
 #_01E9AA: JSL DisplayMessageDescribingAttack
 
 ; TODO examine logic

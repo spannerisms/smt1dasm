@@ -1323,7 +1323,7 @@ TextCommand_WriteToAPU:
 #_0386A8: JSR GetNextTextByte
 #_0386AB: PHA
 
-#_0386AC: JSL Write_to_APU_transferrable
+#_0386AC: JSL WriteAPUCareful
 
 #_0386B0: PLA
 #_0386B1: CMP.b #$38
@@ -3756,7 +3756,7 @@ UNREACHABLE_0394EE:
 .branch0394F8
 #_0394F8: SEP #$30
 #_0394FA: LDA.b #$02 ; SFX 02
-#_0394FC: JSL Write_to_APU_transferrable
+#_0394FC: JSL WriteAPUCareful
 #_039500: LDX.w $0A33
 #_039503: DEX
 #_039504: DEX
@@ -8852,7 +8852,7 @@ routine03B8E8:
 #_03B8F3: BEQ .equal
 
 #_03B8F5: LDA.b #$0C ; SFX 0C
-#_03B8F7: JSL Write_to_APU_transferrable
+#_03B8F7: JSL WriteAPUCareful
 
 .next
 #_03B8FB: PHP
@@ -9006,7 +9006,7 @@ routine03B9A4:
 #_03B9C3: PHY
 
 #_03B9C4: LDA.b #$30 ; SFX 30
-#_03B9C6: JSL Write_to_APU_transferrable
+#_03B9C6: JSL WriteAPUCareful
 
 #_03B9CA: PLY
 
@@ -9119,7 +9119,7 @@ routine03BA87:
 #_03BA92: BEQ .loop
 
 #_03BA94: LDA.b #$0C ; SFX 0C
-#_03BA96: JSL Write_to_APU_transferrable
+#_03BA96: JSL WriteAPUCareful
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -9440,7 +9440,7 @@ routine03BCD3:
 #_03BCD3: REP #$30
 
 #_03BCD5: LDA.w #$0008 ; SFX 08
-#_03BCD8: JSL Write_to_APU_transferrable
+#_03BCD8: JSL WriteAPUCareful
 
 #_03BCDC: LDA.w #$0000
 
@@ -9474,7 +9474,7 @@ routine03BCFC:
 #_03BCFC: REP #$30
 
 #_03BCFE: LDA.w #$0008 ; SFX 08
-#_03BD01: JSL Write_to_APU_transferrable
+#_03BD01: JSL WriteAPUCareful
 
 #_03BD05: LDA.w #$0004
 
@@ -14598,7 +14598,7 @@ routine03DCDB:
 
 .branch03DD21
 #_03DD21: LDA.b #$04 ; SFX 04
-#_03DD23: JSL Write_to_APU_transferrable
+#_03DD23: JSL WriteAPUCareful
 
 .branch03DD27
 #_03DD27: LDA.b #$01

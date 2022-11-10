@@ -187,7 +187,7 @@ routine02813F:
 #_02814E: LDA.b #$4F ; SONG 4F
 
 .branch028150
-#_028150: JSL Write_to_APU_transferrable
+#_028150: JSL WriteAPUCareful
 #_028154: BRA .branch02816B
 
 routine028156:
@@ -205,7 +205,7 @@ routine028156:
 #_028165: LDA.b #$4F ; SONG 4F
 
 .branch028167
-#_028167: JSL Write_to_APU
+#_028167: JSL WriteAPU
 
 .branch02816B
 #_02816B: LDA.b #$01
@@ -1347,26 +1347,37 @@ data028821:
 
 ;===================================================================================================
 
-EnableNMI_B02:
+EnableNMI:
 #_028831: PHA
+
 #_028832: PHP
 #_028833: SEP #$20
+
 #_028835: LDA.b #$81
 #_028837: STA.w NMITIMEN
+
 #_02883A: PLP
+
 #_02883B: PLA
+
 #_02883C: RTS
 
 ;===================================================================================================
 
-DisableNMI_B02:
+DisableNMI:
 #_02883D: PHA
+
 #_02883E: PHP
+
 #_02883F: SEP #$20
+
 #_028841: LDA.b #$01
 #_028843: STA.w NMITIMEN
+
 #_028846: PLP
+
 #_028847: PLA
+
 #_028848: RTS
 
 ;===================================================================================================
@@ -2787,7 +2798,7 @@ routine029039:
 
 #_029063: JSL Reset_OAMrelatedWRAM
 #_029067: JSR EnableFBlank_02
-#_02906A: JSR DisableNMI_B02
+#_02906A: JSR DisableNMI
 #_02906D: JSL ZeroVRAM_02
 #_029071: JSL ZeroCGRAM_02
 
@@ -2801,7 +2812,7 @@ routine029039:
 #_029082: JSL routine02FC6E
 
 #_029086: JSR DisableFBlank_02
-#_029089: JSR EnableNMI_B02
+#_029089: JSR EnableNMI
 
 #_02908C: LDA.w $0B16
 #_02908F: LSR A
@@ -2867,7 +2878,7 @@ routine0290E3:
 #_0290EF: SEP #$30
 #_0290F1: JSR routine02C07B
 #_0290F4: JSR EnableFBlank_02
-#_0290F7: JSR DisableNMI_B02
+#_0290F7: JSR DisableNMI
 #_0290FA: LDA.b #$81
 #_0290FC: STA.w $0F00
 #_0290FF: STA.w NMITIMEN
@@ -2880,7 +2891,7 @@ routine0290E3:
 #_029111: LDA.b #$02
 #_029113: STA.w TS
 #_029116: JSL routine028DB7
-#_02911A: JSR EnableNMI_B02
+#_02911A: JSR EnableNMI
 #_02911D: JSR routine02B75C
 #_029120: JSR routine02BC34
 #_029123: JSR routine028659
@@ -3221,8 +3232,8 @@ data0296D7:
 #_0296EE: JSL routine02981B
 
 #_0296F2: SEP #$20
-#_0296F4: LDA.b #$FD ; SONG FD COMMAND
-#_0296F6: JSL Write_to_APU_transferrable
+#_0296F4: LDA.b #$FD ; SONG COMMAND FD - FADE
+#_0296F6: JSL WriteAPUCareful
 
 #_0296FA: REP #$20
 #_0296FC: LDA.w $0400
@@ -3255,7 +3266,7 @@ data0296D7:
 #_029743: LDY.b #$04
 #_029745: JSL routine009508
 #_029749: LDA.b #$52 ; SONG 52
-#_02974B: JSL Write_to_APU_transferrable
+#_02974B: JSL WriteAPUCareful
 #_02974F: JSR routine02997B
 #_029752: JSL DarkenScreen
 #_029756: JSL Reset_OAMrelatedWRAM
@@ -3273,20 +3284,20 @@ data0296D7:
 #_029772: STZ.w $0CF2
 #_029775: JSR routine02987B
 #_029778: JSR EnableFBlank_02
-#_02977B: JSR DisableNMI_B02
+#_02977B: JSR DisableNMI
 #_02977E: STZ.w $0F00
 #_029781: JSL ZeroVRAM_02
 #_029785: JSL ZeroCGRAM_02
 #_029789: LDA.b #$00
 #_02978B: JSR routine02C10F
-#_02978E: JSR EnableNMI_B02
+#_02978E: JSR EnableNMI
 #_029791: JSR DisableFBlank_02
 #_029794: LDA.b #$A1
 #_029796: STA.w $0F00
 
 #_029799: SEP #$30
-#_02979B: LDA.b #$FD ; SONG FD COMMAND
-#_02979D: JSL Write_to_APU_transferrable
+#_02979B: LDA.b #$FD ; SONG COMMAND FD - FADE
+#_02979D: JSL WriteAPUCareful
 #_0297A1: LDY.b #$78
 #_0297A3: JSL RunFramesYTimes
 
@@ -3499,7 +3510,7 @@ routine02987B:
 #_02994E: LDA.w #$4200
 #_029951: TCD
 #_029952: LDX.b #$FF
-#_029954: STX.b JOYPADIO
+#_029954: STX.b WRIO
 #_029956: LDA.w #$0000
 #_029959: STA.b HTIMEL
 #_02995B: STA.w $0F01
@@ -3682,7 +3693,7 @@ routine029A7E:
 #_029ADF: STA.w SETINI
 #_029AE2: STA.w NMITIMEN
 #_029AE5: LDA.b #$FF
-#_029AE7: STA.w JOYPADIO
+#_029AE7: STA.w WRIO
 #_029AEA: LDA.b #$00
 #_029AEC: STA.w WRMPYA
 #_029AEF: STA.w WRMPYB
@@ -4239,7 +4250,7 @@ routine029E97:
 #_029F2B: JSL routine02FC6E
 #_029F2F: JSL BrightenScreen
 #_029F33: LDA.w #$0040 ; SONG 40
-#_029F36: JSL Write_to_APU_transferrable
+#_029F36: JSL WriteAPUCareful
 #_029F3A: LDY.w #$0028
 #_029F3D: JSL RunFramesYTimes
 #_029F41: LDA.w #$0027
@@ -4249,7 +4260,7 @@ routine029E97:
 .branch029F4B
 #_029F4B: PHX
 #_029F4C: LDA.w #$0032 ; SFX 32
-#_029F4F: JSL Write_to_APU_transferrable
+#_029F4F: JSL WriteAPUCareful
 #_029F53: JSR routine02A163
 #_029F56: JSR routine02A18E
 #_029F59: JSR routine02A177
@@ -4259,7 +4270,7 @@ routine029E97:
 #_029F61: BNE .branch029F4B
 
 #_029F63: LDA.w #$0033 ; SFX 33
-#_029F66: JSL Write_to_APU_transferrable
+#_029F66: JSL WriteAPUCareful
 #_029F6A: JSR routine02A465
 #_029F6D: JSR routine02A51F
 #_029F70: JSR routine02A10D
@@ -4331,7 +4342,7 @@ routine029FCC:
 
 #_02A003: SEP #$30
 #_02A005: LDA.b #$44 ; SONG 44
-#_02A007: JSL Write_to_APU
+#_02A007: JSL WriteAPU
 #_02A00B: LDA.b #$07
 #_02A00D: JSL InitializeTextBoxToSizeForNewMessage
 #_02A011: JSL routine00A056
@@ -4453,7 +4464,7 @@ routine02A10D:
 #_02A112: STA.w $0F74
 #_02A115: STA.w TM
 #_02A118: LDA.b #$35 ; SFX 35
-#_02A11A: JSL Write_to_APU_transferrable
+#_02A11A: JSL WriteAPUCareful
 
 #_02A11E: REP #$30
 #_02A120: LDA.w $0C0B
@@ -5032,7 +5043,7 @@ routine02A51F:
 
 #_02A524: SEP #$30
 #_02A526: LDA.b #$34 ; SFX 34
-#_02A528: JSL Write_to_APU_transferrable
+#_02A528: JSL WriteAPUCareful
 #_02A52C: LDA.b #$2E
 #_02A52E: JSL routine02F609
 #_02A532: LDA.b #$28
@@ -7230,7 +7241,7 @@ routine02BE47:
 #_02BE86: STA.w $0A2C
 #_02BE89: JSL Reset_OAMrelatedWRAM
 #_02BE8D: JSR EnableFBlank_02
-#_02BE90: JSR DisableNMI_B02
+#_02BE90: JSR DisableNMI
 #_02BE93: JSL ZeroVRAM_02
 #_02BE97: JSL ZeroCGRAM_02
 
@@ -7264,7 +7275,7 @@ routine02BE47:
 #_02BECD: STA.w $0A1C
 
 #_02BED0: JSR DisableFBlank_02
-#_02BED3: JSR EnableNMI_B02
+#_02BED3: JSR EnableNMI
 
 #_02BED6: LDA.w #$0001
 #_02BED9: JSL routine02CBD1
@@ -7291,7 +7302,7 @@ routine02BEEB:
 #_02BEF7: SEP #$30
 #_02BEF9: JSR routine02C07B
 #_02BEFC: JSR EnableFBlank_02
-#_02BEFF: JSR DisableNMI_B02
+#_02BEFF: JSR DisableNMI
 #_02BF02: LDA.b #$81
 #_02BF04: STA.w $0F00
 #_02BF07: STA.w NMITIMEN
@@ -7301,7 +7312,7 @@ routine02BEEB:
 #_02BF11: JSR routine02C10F
 #_02BF14: JSL routine028DB7
 #_02BF18: JSR Desi_TM23O_TS2
-#_02BF1B: JSR EnableNMI_B02
+#_02BF1B: JSR EnableNMI
 #_02BF1E: JSR routine02B75C
 #_02BF21: JSR routine02BC34
 #_02BF24: JSL routine028A36
@@ -7353,7 +7364,7 @@ Overworld_EnactInteraction:
 #_02BF79: SEP #$30
 #_02BF7B: JSR routine02C07B
 #_02BF7E: JSR EnableFBlank_02
-#_02BF81: JSR DisableNMI_B02
+#_02BF81: JSR DisableNMI
 #_02BF84: LDA.b #$81
 #_02BF86: STA.w $0F00
 #_02BF89: STA.w NMITIMEN
@@ -7374,7 +7385,7 @@ routine02BF91:
 #_02BFA6: STA.w $0A71
 #_02BFA9: JSL Reset_OAMrelatedWRAM
 #_02BFAD: JSR EnableFBlank_02
-#_02BFB0: JSR DisableNMI_B02
+#_02BFB0: JSR DisableNMI
 #_02BFB3: JSL ZeroVRAM_02
 #_02BFB7: LDA.b #$00
 #_02BFB9: JSR routine02C10F
@@ -7383,7 +7394,7 @@ routine02BF91:
 #_02BFC2: LDA.b #$00
 #_02BFC4: JSL routine02FC6E
 #_02BFC8: JSL routine0F9AE1
-#_02BFCC: JSR EnableNMI_B02
+#_02BFCC: JSR EnableNMI
 #_02BFCF: JSR DisableFBlank_02
 #_02BFD2: STZ.w $0F7F
 #_02BFD5: STZ.w $0F80
@@ -7403,12 +7414,12 @@ routine02BF91:
 #_02BFFF: JSL Reset_OAMrelatedWRAM
 #_02C003: JSR routine02C07B
 #_02C006: JSR EnableFBlank_02
-#_02C009: JSR DisableNMI_B02
+#_02C009: JSR DisableNMI
 #_02C00C: LDA.b #$01
 #_02C00E: JSR routine02C10F
 #_02C011: JSL routine028DB7
 #_02C015: JSR Desi_TM23O_TS2
-#_02C018: JSR EnableNMI_B02
+#_02C018: JSR EnableNMI
 #_02C01B: JSR routine02B75C
 #_02C01E: JSR routine02BC34
 #_02C021: JSR routine028659
@@ -7916,7 +7927,7 @@ routine02C3FC:
 #_02C411: STA.w $0F7F
 #_02C414: JSR routine02C07B
 #_02C417: JSR EnableFBlank_02
-#_02C41A: JSR DisableNMI_B02
+#_02C41A: JSR DisableNMI
 #_02C41D: JSL Reset_OAMrelatedWRAM
 
 #_02C421: REP #$20
@@ -7934,7 +7945,7 @@ routine02C3FC:
 #_02C437: LDA.b #$A1
 #_02C439: STA.w $0F00
 #_02C43C: JSR DisableFBlank_02
-#_02C43F: JSR EnableNMI_B02
+#_02C43F: JSR EnableNMI
 
 #_02C442: REP #$20
 #_02C444: LDA.w #$3CC5
@@ -8302,7 +8313,7 @@ routine02C74B:
 #_02C768: STA.w TM
 #_02C76B: JSL Reset_OAMrelatedWRAM
 #_02C76F: JSR EnableFBlank_02
-#_02C772: JSR DisableNMI_B02
+#_02C772: JSR DisableNMI
 #_02C775: JSL ZeroVRAM_02
 #_02C779: LDA.b #$00
 #_02C77B: JSR routine02C10F
@@ -8311,7 +8322,7 @@ routine02C74B:
 #_02C784: LDA.b #$00
 #_02C786: JSL routine02FC6E
 #_02C78A: JSL routine0F9AE1
-#_02C78E: JSR EnableNMI_B02
+#_02C78E: JSR EnableNMI
 #_02C791: JSR DisableFBlank_02
 
 #_02C794: SEP #$30
@@ -8349,12 +8360,12 @@ routine02C74B:
 #_02C7E9: JSL Reset_OAMrelatedWRAM
 #_02C7ED: JSR routine02C07B
 #_02C7F0: JSR EnableFBlank_02
-#_02C7F3: JSR DisableNMI_B02
+#_02C7F3: JSR DisableNMI
 #_02C7F6: LDA.b #$01
 #_02C7F8: JSR routine02C10F
 #_02C7FB: JSL routine028DB7
 #_02C7FF: JSR Desi_TM23O_TS2
-#_02C802: JSR EnableNMI_B02
+#_02C802: JSR EnableNMI
 #_02C805: JSR routine02B75C
 #_02C808: JSR routine02BC34
 #_02C80B: JSR routine028659
@@ -8443,7 +8454,7 @@ routine02C929:
 
 .branch02C92E
 #_02C92E: LDA.b #$03 ; SFX 03
-#_02C930: JSL Write_to_APU_transferrable
+#_02C930: JSL WriteAPUCareful
 #_02C934: LDA.b #$FF
 #_02C936: STA.w $0A58
 #_02C939: STA.w $09F2
@@ -8453,7 +8464,7 @@ routine02C929:
 .selection:
 #_02C941: SEP #$20
 #_02C943: LDA.b #$02 ; SFX 02
-#_02C945: JSL Write_to_APU_transferrable
+#_02C945: JSL WriteAPUCareful
 
 .branch02C949
 #_02C949: JSL routine02CBA4
@@ -8614,7 +8625,7 @@ routine02CA4B:
 
 #_02CA96: DEC.w $09F3
 #_02CA99: LDA.b #$01 ; SFX 01
-#_02CA9B: JSL Write_to_APU_transferrable
+#_02CA9B: JSL WriteAPUCareful
 
 .branch02CA9F
 #_02CA9F: REP #$20
@@ -8625,7 +8636,7 @@ routine02CA4B:
 #_02CAA9: SEP #$20
 #_02CAAB: INC.w $09F3
 #_02CAAE: LDA.b #$01 ; SFX 01
-#_02CAB0: JSL Write_to_APU_transferrable
+#_02CAB0: JSL WriteAPUCareful
 
 .branch02CAB4
 #_02CAB4: REP #$20
@@ -8636,7 +8647,7 @@ routine02CA4B:
 #_02CABE: SEP #$20
 #_02CAC0: DEC.w $09F2
 #_02CAC3: LDA.b #$01 ; SFX 01
-#_02CAC5: JSL Write_to_APU_transferrable
+#_02CAC5: JSL WriteAPUCareful
 
 .branch02CAC9
 #_02CAC9: REP #$20
@@ -8647,7 +8658,7 @@ routine02CA4B:
 #_02CAD3: SEP #$20
 #_02CAD5: INC.w $09F2
 #_02CAD8: LDA.b #$01 ; SFX 01
-#_02CADA: JSL Write_to_APU_transferrable
+#_02CADA: JSL WriteAPUCareful
 
 .branch02CADE
 #_02CADE: REP #$20
@@ -9102,7 +9113,7 @@ routine02CE87:
 #_02CF21: LDA.b #$01
 #_02CF23: STA.w $0CF2
 #_02CF26: LDA.b #$0D ; SFX 0D
-#_02CF28: JSL Write_to_APU_transferrable
+#_02CF28: JSL WriteAPUCareful
 #_02CF2C: LDA.b #$01
 #_02CF2E: STA.w $0EFE
 
@@ -9383,7 +9394,7 @@ routine02D0B8:
 
 #_02D1AB: SEP #$20
 #_02D1AD: LDA.b #$56 ; SONG 56
-#_02D1AF: JSL Write_to_APU_transferrable
+#_02D1AF: JSL WriteAPUCareful
 #_02D1B3: LDA.b #$01
 #_02D1B5: STA.w $0CF2
 
@@ -9536,6 +9547,7 @@ routine02D279:
 #_02D2B3: PLP
 #_02D2B4: RTS
 
+; TODO text
 data02D2B5:
 #_02D2B5: db $CF,$CF,$CF,$CF,$CF,$9E,$CF,$CF
 #_02D2BD: db $CF,$9E,$9E,$CF,$CF,$CF,$CF,$CF
@@ -10324,7 +10336,7 @@ routine02D7C0:
 #_02D805: SEP #$20
 #_02D807: DEC.w $098D
 #_02D80A: LDA.b #$01 ; SFX 01
-#_02D80C: JSL Write_to_APU_transferrable
+#_02D80C: JSL WriteAPUCareful
 
 .branch02D810
 #_02D810: REP #$20
@@ -10335,7 +10347,7 @@ routine02D7C0:
 #_02D81A: SEP #$20
 #_02D81C: INC.w $098D
 #_02D81F: LDA.b #$01 ; SFX 01
-#_02D821: JSL Write_to_APU_transferrable
+#_02D821: JSL WriteAPUCareful
 
 .branch02D825
 #_02D825: REP #$20
@@ -10346,7 +10358,7 @@ routine02D7C0:
 #_02D82F: SEP #$20
 #_02D831: DEC.w $098C
 #_02D834: LDA.b #$01 ; SFX 01
-#_02D836: JSL Write_to_APU_transferrable
+#_02D836: JSL WriteAPUCareful
 
 .branch02D83A
 #_02D83A: REP #$20
@@ -10357,7 +10369,7 @@ routine02D7C0:
 #_02D844: SEP #$20
 #_02D846: INC.w $098C
 #_02D849: LDA.b #$01 ; SFX 01
-#_02D84B: JSL Write_to_APU_transferrable
+#_02D84B: JSL WriteAPUCareful
 
 .branch02D84F
 #_02D84F: JSR routine02D897
@@ -10604,7 +10616,7 @@ routine02D9DF:
 
 .branch02DA1A
 #_02DA1A: LDA.w #$0002 ; SFX 02
-#_02DA1D: JSL Write_to_APU_transferrable
+#_02DA1D: JSL WriteAPUCareful
 
 #_02DA21: SEP #$30
 #_02DA23: LDA.b #$0B
@@ -10617,7 +10629,7 @@ routine02D9DF:
 .branch02DA30
 #_02DA30: SEP #$30
 #_02DA32: LDA.b #$02 ; SFX 02
-#_02DA34: JSL Write_to_APU_transferrable
+#_02DA34: JSL WriteAPUCareful
 #_02DA38: LDX.w $098E
 #_02DA3B: LDA.w $09AC,X
 #_02DA3E: BNE .branch02DA75
@@ -10660,7 +10672,7 @@ data02DA84:
 .branch02DA8C
 #_02DA8C: SEP #$30
 #_02DA8E: LDA.b #$03 ; SFX 03
-#_02DA90: JSL Write_to_APU_transferrable
+#_02DA90: JSL WriteAPUCareful
 #_02DA94: JSR routine02DB0A
 #_02DA97: LDX.w $098E
 #_02DA9A: LDA.w $09C4,X
@@ -10775,7 +10787,7 @@ routine02DB45:
 #_02DB45: PHP
 #_02DB46: SEP #$20
 #_02DB48: LDA.b #$02 ; SFX 02
-#_02DB4A: JSL Write_to_APU_transferrable
+#_02DB4A: JSL WriteAPUCareful
 #_02DB4E: INC.w $0990
 #_02DB51: JSR routine02DB6D
 #_02DB54: JSR routine02DB2C
@@ -10788,7 +10800,7 @@ routine02DB59:
 #_02DB59: PHP
 #_02DB5A: SEP #$20
 #_02DB5C: LDA.b #$02 ; SFX 02
-#_02DB5E: JSL Write_to_APU_transferrable
+#_02DB5E: JSL WriteAPUCareful
 #_02DB62: DEC.w $0990
 #_02DB65: JSR routine02DB6D
 #_02DB68: JSR routine02DB2C
@@ -11724,22 +11736,28 @@ data02E456:
 #_02E45E: db $20,$21,$22,$24,$25,$30,$31,$32
 #_02E466: db $33,$34,$26,$35,$36
 
+;===================================================================================================
+
 routine02E468:
 #_02E46B: SEP #$20
+
 #_02E46D: LDA.w $0A5F
 #_02E470: AND.b #$3F
 #_02E472: DEC A
 #_02E473: STA.w $0E00
+
 #_02E476: ASL A
 #_02E477: CLC
 #_02E478: ADC.w $0E00
 #_02E47B: TAY
+
 #_02E47C: LDA.w data02F56A+0,Y
 #_02E47F: STA.w $00C6
 #_02E482: LDA.w data02F56A+1,Y
 #_02E485: STA.w $00C7
 #_02E488: LDA.w data02F56A+2,Y
 #_02E48B: STA.w $00C8
+
 #_02E48E: LDA.w $0A5F
 #_02E491: AND.b #$C0
 #_02E493: LSR A
@@ -11750,19 +11768,25 @@ routine02E468:
 #_02E498: TAY
 
 #_02E499: REP #$20
+
 #_02E49B: LDA.w data02E573,Y
 #_02E49E: STA.w $0E0C
 
 #_02E4A1: REP #$30
+
 #_02E4A3: LDY.w #$0000
+
 #_02E4A6: LDA.b [$C6],Y
 #_02E4A8: STA.w $00C9
+
 #_02E4AB: INY
 #_02E4AC: INY
+
 #_02E4AD: LDA.b [$C6],Y
 #_02E4AF: STA.w $00CC
 
 #_02E4B2: SEP #$20
+
 #_02E4B4: LDA.w $00C8
 #_02E4B7: STA.w $00CB
 #_02E4BA: STA.w $00CE
@@ -11774,17 +11798,21 @@ routine02E468:
 
 .branch02E4C8
 #_02E4C8: PHX
+
 #_02E4C9: STZ.w $0E08
 
 .branch02E4CC
 #_02E4CC: REP #$30
+
 #_02E4CE: PHY
+
 #_02E4CF: LDA.b [$CC],Y
 #_02E4D1: AND.w #$00FF
 #_02E4D4: ASL A
 #_02E4D5: ASL A
 #_02E4D6: ASL A
 #_02E4D7: TAY
+
 #_02E4D8: PHY
 #_02E4D9: LDA.b [$C9],Y
 #_02E4DB: ORA.w $0E0C
@@ -11830,7 +11858,9 @@ routine02E468:
 #_02E524: INX
 
 #_02E525: SEP #$20
+
 #_02E527: INC.w $0E08
+
 #_02E52A: LDA.w $0E08
 #_02E52D: CMP.w $0A61
 #_02E530: BNE .branch02E535
@@ -11841,6 +11871,8 @@ routine02E468:
 #_02E535: BCS .branch02E53A
 
 #_02E537: JMP .branch02E4CC
+
+;---------------------------------------------------------------------------------------------------
 
 .branch02E53A
 #_02E53A: REP #$20
@@ -11878,8 +11910,12 @@ routine02E468:
 #_02E571: PLB
 #_02E572: RTL
 
+;---------------------------------------------------------------------------------------------------
+
 data02E573:
 #_02E573: dw $0900,$0F00,$0E00,$2E00
+
+;===================================================================================================
 
 routine02E57B:
 #_02E57B: REP #$30
@@ -12550,21 +12586,28 @@ data02EA16:
 
 routine02EA1E:
 #_02EA1E: SEP #$30
+
 #_02EA20: LDA.b #$00
 #_02EA22: STA.w $0A6B
 #_02EA25: STA.w $0F51
+
 #_02EA28: LDA.b #$F8
 #_02EA2A: STA.w $0A6D
 #_02EA2D: STA.w $0F53
 
 #_02EA30: REP #$30
+
 #_02EA32: LDA.w #$0002
 #_02EA35: STA.w $0E00
+
 #_02EA38: LDA.w #$0000
 #_02EA3B: STA.w $0E02
+
 #_02EA3E: STZ.w $0E0A
+
 #_02EA41: LDA.w #$0900
 #_02EA44: STA.w $0E04
+
 #_02EA47: LDA.w $0A59
 #_02EA4A: AND.w #$0080
 #_02EA4D: BEQ .branch02EA55
@@ -12574,90 +12617,116 @@ routine02EA1E:
 
 .branch02EA55
 #_02EA55: SEP #$20
-#_02EA57: LDA.b #$10
+
+#_02EA57: LDA.b #data10F800>>16
 #_02EA59: STA.w $00C8
 
 #_02EA5C: REP #$20
+
 #_02EA5E: LDA.w $0A59
 #_02EA61: AND.w #$007F
 #_02EA64: ASL A
 #_02EA65: TAY
-#_02EA66: LDA.w data02EB2A,Y
+
+#_02EA66: LDA.w pointers02EB2A,Y
 #_02EA69: STA.w $00C6
+
 #_02EA6C: LDY.w #$0000
+
 #_02EA6F: LDA.b [$C6],Y
 #_02EA71: STA.w $0A65
+
 #_02EA74: INY
 #_02EA75: INY
 
 #_02EA76: REP #$20
+
 #_02EA78: LDA.b [$C6],Y
 #_02EA7A: STA.w $00C6
+
+;---------------------------------------------------------------------------------------------------
+
 #_02EA7D: LDY.w #$0000
 
-.branch02EA80
+.next_item
 #_02EA80: SEP #$20
 #_02EA82: REP #$10
+
 #_02EA84: LDA.b [$C6],Y
 #_02EA86: CMP.b #$FF
-#_02EA88: BEQ .branch02EABF
+#_02EA88: BEQ .sequential_rle
 
 #_02EA8A: CMP.b #$FE
-#_02EA8C: BEQ .branch02EAA6
+#_02EA8C: BEQ .straight_rle
 
 #_02EA8E: JSR routine02EADB
 
-.branch02EA91
+.done_rle
 #_02EA91: REP #$20
+
 #_02EA93: INY
+
 #_02EA94: LDA.w $0E0A
 #_02EA97: CMP.w #$00D2
-#_02EA9A: BNE .branch02EA80
+#_02EA9A: BNE .next_item
 
 #_02EA9C: SEP #$20
+
 #_02EA9E: LDA.w $0A65
 #_02EAA1: JSL routine02F609
+
 #_02EAA5: RTS
 
-.branch02EAA6
+;---------------------------------------------------------------------------------------------------
+
+.straight_rle
 #_02EAA6: INY
 #_02EAA7: LDA.b [$C6],Y
 #_02EAA9: STA.w $0E06
+
 #_02EAAC: INY
 #_02EAAD: LDA.b [$C6],Y
 #_02EAAF: STA.w $0E08
 
-.branch02EAB2
+.next_straight_rle
 #_02EAB2: LDA.w $0E06
 #_02EAB5: JSR routine02EADB
+
 #_02EAB8: DEC.w $0E08
-#_02EABB: BNE .branch02EAB2
+#_02EABB: BNE .next_straight_rle
 
-#_02EABD: BRA .branch02EA91
+#_02EABD: BRA .done_rle
 
-.branch02EABF
+;---------------------------------------------------------------------------------------------------
+
+.sequential_rle
 #_02EABF: INY
 #_02EAC0: LDA.b [$C6],Y
 #_02EAC2: STA.w $0E06
+
 #_02EAC5: INY
 #_02EAC6: LDA.b [$C6],Y
 #_02EAC8: STA.w $0E08
 
-.branch02EACB
+.next_sequential_rle
 #_02EACB: LDA.w $0E06
 #_02EACE: JSR routine02EADB
-#_02EAD1: INC.w $0E06
-#_02EAD4: DEC.w $0E08
-#_02EAD7: BNE .branch02EACB
 
-#_02EAD9: BRA .branch02EA91
+#_02EAD1: INC.w $0E06
+
+#_02EAD4: DEC.w $0E08
+#_02EAD7: BNE .next_sequential_rle
+
+#_02EAD9: BRA .done_rle
 
 ;===================================================================================================
 
 routine02EADB:
 #_02EADB: PHP
 #_02EADC: REP #$30
+
 #_02EADE: PHA
+
 #_02EADF: LDA.w $0A59
 #_02EAE2: AND.w #$0080
 #_02EAE5: BEQ .branch02EAF4
@@ -12667,6 +12736,7 @@ routine02EADB:
 #_02EAEB: ADC.w #$003E
 #_02EAEE: SEC
 #_02EAEF: SBC.w $0E00
+
 #_02EAF2: BRA .branch02EAFB
 
 .branch02EAF4
@@ -12676,39 +12746,52 @@ routine02EADB:
 
 .branch02EAFB
 #_02EAFB: TAX
+
 #_02EAFC: PLA
 #_02EAFD: AND.w #$00FF
 #_02EB00: ORA.w $0E04
 #_02EB03: STA.l $7F5000,X
+
 #_02EB07: INC.w $0E0A
+
 #_02EB0A: INC.w $0E00
 #_02EB0D: INC.w $0E00
+
 #_02EB10: LDA.w $0E00
 #_02EB13: AND.w #$0020
-#_02EB16: BEQ .branch02EB28
+#_02EB16: BEQ .exit
 
 #_02EB18: LDA.w #$0002
 #_02EB1B: STA.w $0E00
+
 #_02EB1E: LDA.w $0E02
 #_02EB21: CLC
 #_02EB22: ADC.w #$0040
 #_02EB25: STA.w $0E02
 
-.branch02EB28
+.exit
 #_02EB28: PLP
 #_02EB29: RTS
 
 ;===================================================================================================
 
-data02EB2A:
-#_02EB2A: dw $F800,$F804,$F808,$F80C
-#_02EB32: dw $F810,$F814,$F818,$F81C
-#_02EB3A: dw $F820,$F824,$F828,$F82C
-#_02EB42: dw $F830,$F834,$F838,$F83C
-#_02EB4A: dw $F840,$F844,$F848,$F84C
-#_02EB52: dw $F850,$F854,$F858,$F85C
-#_02EB5A: dw $F860,$F864,$F868,$F86C
-#_02EB62: dw $F870,$F874,$F878,$F87C
+pointers02EB2A:
+#_02EB2A: dw data10F800+$00, data10F800+$04
+#_02EB2E: dw data10F800+$08, data10F800+$0C
+#_02EB32: dw data10F800+$10, data10F800+$14
+#_02EB36: dw data10F800+$18, data10F800+$1C
+#_02EB3A: dw data10F800+$20, data10F800+$24
+#_02EB3E: dw data10F800+$28, data10F800+$2C
+#_02EB42: dw data10F800+$30, data10F800+$34
+#_02EB46: dw data10F800+$38, data10F800+$3C
+#_02EB4A: dw data10F800+$40, data10F800+$44
+#_02EB4E: dw data10F800+$48, data10F800+$4C
+#_02EB52: dw data10F800+$50, data10F800+$54
+#_02EB56: dw data10F800+$58, data10F800+$5C
+#_02EB5A: dw data10F800+$60, data10F800+$64
+#_02EB5E: dw data10F800+$68, data10F800+$6C
+#_02EB62: dw data10F800+$70, data10F800+$74
+#_02EB66: dw data10F800+$78, data10F800+$7C
 
 data02EB6A:
 #_02EB6A: dw $0000,$00FF,$FFFF,$FFFF
@@ -13037,29 +13120,64 @@ SomeAddresses_02F38A:
 #_02F561: dw $0228,$2550,$2A07,$009E
 #_02F569: db $28
 
-; TODO fix this into bytes
+
+;===================================================================================================
+
 data02F56A:
-#_02F56A: db $00
-#_02F56B: dw $1CC0,$C004,$081C,$1CC0
-#_02F573: dw $C00C,$101C,$1CC0,$C014
-#_02F57B: dw $181C,$1CC0,$C01C,$201C
-#_02F583: dw $1CC0,$C024,$281C,$1CC0
-#_02F58B: dw $C02C,$301C,$1CC0,$C034
-#_02F593: dw $381C,$1CC0,$C03C,$401C
-#_02F59B: dw $1CC0,$C044,$481C,$1CC0
-#_02F5A3: dw $C04C,$501C,$1CC0,$C054
-#_02F5AB: dw $581C,$1CC0,$C05C,$601C
-#_02F5B3: dw $1CC0,$C064,$641C,$1CC0
-#_02F5BB: dw $C064,$681C,$1CC0,$C06C
-#_02F5C3: dw $701C,$1CC0,$C074,$781C
-#_02F5CB: dw $1CC0,$C07C,$801C,$1CC0
-#_02F5D3: dw $C084,$6E1C,$0FA5,$A572
-#_02F5DB: dw $760F,$0FA5,$A57A,$7E0F
-#_02F5E3: dw $0FA5,$A582,$860F,$0FA5
-#_02F5EB: dw $A58A,$8E0F,$0FA5,$A592
-#_02F5F3: dw $960F,$0FA5,$A59A,$9E0F
-#_02F5FB: dw $0FA5,$A59E,$A20F,$0FA5
-#_02F603: dw $A5A6,$AA0F,$0FA5
+
+#_02F56A: dl pointers1CC000+$00
+#_02F56D: dl pointers1CC000+$04
+#_02F570: dl pointers1CC000+$08
+#_02F573: dl pointers1CC000+$0C
+#_02F576: dl pointers1CC000+$10
+#_02F579: dl pointers1CC000+$14
+#_02F57C: dl pointers1CC000+$18
+#_02F57F: dl pointers1CC000+$1C
+#_02F582: dl pointers1CC000+$20
+#_02F585: dl pointers1CC000+$24
+#_02F588: dl pointers1CC000+$28
+#_02F58B: dl pointers1CC000+$2C
+#_02F58E: dl pointers1CC000+$30
+#_02F591: dl pointers1CC000+$34
+#_02F594: dl pointers1CC000+$38
+#_02F597: dl pointers1CC000+$3C
+#_02F59A: dl pointers1CC000+$40
+#_02F59D: dl pointers1CC000+$44
+#_02F5A0: dl pointers1CC000+$48
+#_02F5A3: dl pointers1CC000+$4C
+#_02F5A6: dl pointers1CC000+$50
+#_02F5A9: dl pointers1CC000+$54
+#_02F5AC: dl pointers1CC000+$58
+#_02F5AF: dl pointers1CC000+$5C
+#_02F5B2: dl pointers1CC000+$60
+#_02F5B5: dl pointers1CC000+$64
+#_02F5B8: dl pointers1CC000+$64
+#_02F5BB: dl pointers1CC000+$64
+#_02F5BE: dl pointers1CC000+$68
+#_02F5C1: dl pointers1CC000+$6C
+#_02F5C4: dl pointers1CC000+$70
+#_02F5C7: dl pointers1CC000+$74
+#_02F5CA: dl pointers1CC000+$78
+#_02F5CD: dl pointers1CC000+$7C
+#_02F5D0: dl pointers1CC000+$80
+#_02F5D3: dl pointers1CC000+$84
+#_02F5D6: dl pointers0FA56E+$00
+#_02F5D9: dl pointers0FA56E+$04
+#_02F5DC: dl pointers0FA56E+$08
+#_02F5DF: dl pointers0FA56E+$0C
+#_02F5E2: dl pointers0FA56E+$10
+#_02F5E5: dl pointers0FA56E+$14
+#_02F5E8: dl pointers0FA56E+$18
+#_02F5EB: dl pointers0FA56E+$1C
+#_02F5EE: dl pointers0FA56E+$20
+#_02F5F1: dl pointers0FA56E+$24
+#_02F5F4: dl pointers0FA56E+$28
+#_02F5F7: dl pointers0FA56E+$2C
+#_02F5FA: dl pointers0FA56E+$30
+#_02F5FD: dl pointers0FA56E+$30
+#_02F600: dl pointers0FA56E+$34
+#_02F603: dl pointers0FA56E+$38
+#_02F606: dl pointers0FA56E+$3C
 
 ;===================================================================================================
 
@@ -13127,34 +13245,42 @@ routine02F609:
 
 .branch02F66B
 #_02F66B: REP #$30
+
 #_02F66D: LDA.w $0E00
 #_02F670: AND.w #$00FF
 #_02F673: ASL A
 #_02F674: TAY
+
 #_02F675: PHB
 #_02F676: PHK
 #_02F677: PLB
+
 #_02F678: LDA.w data02F6B9,Y
 #_02F67B: STA.w $00E0
+
 #_02F67E: LDY.w #$0000
 
 .branch02F681
 #_02F681: LDA.b ($E0),Y
 #_02F683: CMP.w #$FFFF
-#_02F686: BEQ .branch02F6B6
+#_02F686: BEQ .done
 
 #_02F688: STA.w VMADDL
+
 #_02F68B: INY
 #_02F68C: INY
 #_02F68D: LDA.b ($E0),Y
 #_02F68F: STA.w $00E2
+
 #_02F692: INY
 #_02F693: INY
 #_02F694: LDA.b ($E0),Y
 #_02F696: TAX
+
 #_02F697: INY
 #_02F698: INY
 #_02F699: LDA.b ($E0),Y
+
 #_02F69B: INY
 #_02F69C: INY
 
@@ -13177,330 +13303,509 @@ routine02F609:
 #_02F6B3: PLY
 #_02F6B4: BRA .branch02F681
 
-.branch02F6B6
+.done
 #_02F6B6: PLB
 #_02F6B7: PLP
 #_02F6B8: RTL
 
+;---------------------------------------------------------------------------------------------------
+
 data02F6B9:
-#_02F6B9: dw DATA16_02F739
-#_02F6BB: dw DATA16_02F75B
-#_02F6BD: dw DATA16_02F795
-#_02F6BF: dw DATA16_02F7AF
-#_02F6C1: dw DATA16_02F7C9
-#_02F6C3: dw DATA16_02F7E3
-#_02F6C5: dw DATA16_02F7FD
-#_02F6C7: dw DATA16_02F817
-#_02F6C9: dw DATA16_02F831
-#_02F6CB: dw DATA16_02F843
-#_02F6CD: dw DATA16_02F855
-#_02F6CF: dw DATA16_02F86F
-#_02F6D1: dw DATA16_02F889
-#_02F6D3: dw DATA16_02F89B
-#_02F6D5: dw DATA16_02F8AD
-#_02F6D7: dw DATA16_02F8C7
-#_02F6D9: dw DATA16_02F8E1
-#_02F6DB: dw DATA16_02F8FB
-#_02F6DD: dw DATA16_02F915
-#_02F6DF: dw DATA16_02F927
-#_02F6E1: dw DATA16_02F939
-#_02F6E3: dw DATA16_02F94B
-#_02F6E5: dw DATA16_02F749
-#_02F6E7: dw DATA16_02F95D
-#_02F6E9: dw DATA16_02F967
-#_02F6EB: dw DATA16_02F981
-#_02F6ED: dw DATA16_02F99B
-#_02F6EF: dw DATA16_02F9B5
-#_02F6F1: dw DATA16_02F9CF
-#_02F6F3: dw DATA16_02F9E9
-#_02F6F5: dw DATA16_02F9FB
-#_02F6F7: dw DATA16_02FA0D
-#_02F6F9: dw DATA16_02FA1F
-#_02F6FB: dw DATA16_02FA31
-#_02F6FD: dw DATA16_02FA43
-#_02F6FF: dw DATA16_02FA55
-#_02F701: dw DATA16_02FA67
-#_02F703: dw DATA16_02FA79
-#_02F705: dw DATA16_02FA8B
-#_02F707: dw DATA16_02FA9D
-#_02F709: dw DATA16_02FAAF
-#_02F70B: dw DATA16_02F751
-#_02F70D: dw DATA16_02FAB9
-#_02F70F: dw DATA16_02FB13
-#_02F711: dw DATA16_02FB45
-#_02F713: dw DATA16_02FB4F
-#_02F715: dw DATA16_02FB59
-#_02F717: dw DATA16_02FB63
-#_02F719: dw DATA16_02FB6D
-#_02F71B: dw DATA16_02FB7F
-#_02F71D: dw DATA16_02FB91
-#_02F71F: dw DATA16_02FBA3
-#_02F721: dw DATA16_02FBB5
-#_02F723: dw DATA16_02FBC7
-#_02F725: dw DATA16_02FBD1
-#_02F727: dw DATA16_02FBD1
-#_02F729: dw DATA16_02FBD1
-#_02F72B: dw DATA16_02FBD1
-#_02F72D: dw DATA16_02FBDB
-#_02F72F: dw DATA16_02FBE5
-#_02F731: dw DATA16_02FBFF
-#_02F733: dw DATA16_02FB4F
-#_02F735: dw DATA16_02FB59
-#_02F737: dw DATA16_02FB63
-DATA16_02F739:
-#_02F739: dw $2000,$8000,$1000,$0010
-#_02F741: dw $0000,$E000,$1000,$0027
-DATA16_02F749:
-#_02F749: dw $3400,$9800,$0800,$0010
-DATA16_02F751:
-#_02F751: dw $3C00,$A000,$0800,$0010
+#_02F6B9: dw data02F739
+#_02F6BB: dw data02F75B
+#_02F6BD: dw data02F795
+#_02F6BF: dw data02F7AF
+#_02F6C1: dw data02F7C9
+#_02F6C3: dw data02F7E3
+#_02F6C5: dw data02F7FD
+#_02F6C7: dw data02F817
+#_02F6C9: dw data02F831
+#_02F6CB: dw data02F843
+#_02F6CD: dw data02F855
+#_02F6CF: dw data02F86F
+#_02F6D1: dw data02F889
+#_02F6D3: dw data02F89B
+#_02F6D5: dw data02F8AD
+#_02F6D7: dw data02F8C7
+#_02F6D9: dw data02F8E1
+#_02F6DB: dw data02F8FB
+#_02F6DD: dw data02F915
+#_02F6DF: dw data02F927
+#_02F6E1: dw data02F939
+#_02F6E3: dw data02F94B
+#_02F6E5: dw data02F749
+#_02F6E7: dw data02F95D
+#_02F6E9: dw data02F967
+#_02F6EB: dw data02F981
+#_02F6ED: dw data02F99B
+#_02F6EF: dw data02F9B5
+#_02F6F1: dw data02F9CF
+#_02F6F3: dw data02F9E9
+#_02F6F5: dw data02F9FB
+#_02F6F7: dw data02FA0D
+#_02F6F9: dw data02FA1F
+#_02F6FB: dw data02FA31
+#_02F6FD: dw data02FA43
+#_02F6FF: dw data02FA55
+#_02F701: dw data02FA67
+#_02F703: dw data02FA79
+#_02F705: dw data02FA8B
+#_02F707: dw data02FA9D
+#_02F709: dw data02FAAF
+#_02F70B: dw data02F751
+#_02F70D: dw data02FAB9
+#_02F70F: dw data02FB13
+#_02F711: dw data02FB45
+#_02F713: dw data02FB4F
+#_02F715: dw data02FB59
+#_02F717: dw data02FB63
+#_02F719: dw data02FB6D
+#_02F71B: dw data02FB7F
+#_02F71D: dw data02FB91
+#_02F71F: dw data02FBA3
+#_02F721: dw data02FBB5
+#_02F723: dw data02FBC7
+#_02F725: dw data02FBD1
+#_02F727: dw data02FBD1
+#_02F729: dw data02FBD1
+#_02F72B: dw data02FBD1
+#_02F72D: dw data02FBDB
+#_02F72F: dw data02FBE5
+#_02F731: dw data02FBFF
+#_02F733: dw data02FB4F
+#_02F735: dw data02FB59
+#_02F737: dw data02FB63
+
+;---------------------------------------------------------------------------------------------------
+; dw <vram>, <address>, <size>, <bank>
+;---------------------------------------------------------------------------------------------------
+data02F739:
+#_02F739: dw $2000, GFX108000, $1000, GFX108000>>16
+#_02F741: dw $0000, GFX27E000, $1000, GFX27E000>>16
+
+;---------------------------------------------------------------------------------------------------
+
+data02F749:
+#_02F749: dw $3400, GFX109800, $0800, GFX109800>>16
+
+;---------------------------------------------------------------------------------------------------
+
+data02F751:
+#_02F751: dw $3C00, GFX10A000, $0800, GFX10A000>>16
 #_02F759: dw $FFFF
-DATA16_02F75B:
-#_02F75B: dw $2000,$C000,$1000,$0010
-#_02F763: dw $4000,$8000,$1000,$001A
-#_02F76B: dw $4800,$9000,$1000,$001A
-#_02F773: dw $5000,$A000,$1000,$001A
-#_02F77B: dw $5800,$B000,$1000,$001A
-#_02F783: dw $0000,$E000,$1800,$0027
-#_02F78B: dw $3C00,$E000,$0800,$0010
+
+;---------------------------------------------------------------------------------------------------
+
+data02F75B:
+#_02F75B: dw $2000, MoreFontGFX, $1000, MoreFontGFX>>16
+#_02F763: dw $4000, GFX1A8000, $1000, GFX1A8000>>16
+#_02F76B: dw $4800, GFX1A9000, $1000, GFX1A9000>>16
+#_02F773: dw $5000, GFX1AA000, $1000, GFX1AA000>>16
+#_02F77B: dw $5800, GFX1AB000, $1000, GFX1AB000>>16
+#_02F783: dw $0000, GFX27E000, $1800, GFX27E000>>16
+#_02F78B: dw $3C00, GFX10E000, $0800, GFX10E000>>16
 #_02F793: dw $FFFF
-DATA16_02F795:
-#_02F795: dw $5000,$8000,$0020,$001E
-#_02F79D: dw $5010,$BF60,$1000,$001B
-#_02F7A5: dw $5810,$CF60,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F795:
+#_02F795: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F79D: dw $5010, GFX1BBF60, $1000, GFX1BBF60>>16
+#_02F7A5: dw $5810, GFX1BCF60, $0FE0, GFX1BCF60>>16
 #_02F7AD: dw $FFFF
-DATA16_02F7AF:
-#_02F7AF: dw $6000,$8000,$0020,$001E
-#_02F7B7: dw $6010,$BF60,$1000,$001B
-#_02F7BF: dw $6810,$CF60,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F7AF:
+#_02F7AF: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F7B7: dw $6010, GFX1BBF60, $1000, GFX1BBF60>>16
+#_02F7BF: dw $6810, GFX1BCF60, $0FE0, GFX1BCF60>>16
 #_02F7C7: dw $FFFF
-DATA16_02F7C9:
-#_02F7C9: dw $5000,$8000,$0020,$001E
-#_02F7D1: dw $5010,$93E0,$1000,$001B
-#_02F7D9: dw $5810,$A3E0,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F7C9:
+#_02F7C9: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F7D1: dw $5010, GFX1B93E0, $1000, GFX1B93E0>>16
+#_02F7D9: dw $5810, GFX1BA3E0, $0FE0, GFX1BA3E0>>16
 #_02F7E1: dw $FFFF
-DATA16_02F7E3:
-#_02F7E3: dw $6000,$8000,$0020,$001E
-#_02F7EB: dw $6010,$93E0,$1000,$001B
-#_02F7F3: dw $6810,$A3E0,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F7E3:
+#_02F7E3: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F7EB: dw $6010, GFX1B93E0, $1000, GFX1B93E0>>16
+#_02F7F3: dw $6810, GFX1BA3E0, $0FE0, GFX1BA3E0>>16
 #_02F7FB: dw $FFFF
-DATA16_02F7FD:
-#_02F7FD: dw $5000,$8000,$0020,$001E
-#_02F805: dw $5010,$B140,$1000,$001B
-#_02F80D: dw $5810,$C140,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F7FD:
+#_02F7FD: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F805: dw $5010, GFX1BB140, $1000, GFX1BB140>>16
+#_02F80D: dw $5810, GFX1BC140, $0FE0, GFX1BC140>>16
 #_02F815: dw $FFFF
-DATA16_02F817:
-#_02F817: dw $6000,$8000,$0020,$001E
-#_02F81F: dw $6010,$B140,$1000,$001B
-#_02F827: dw $6810,$C140,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F817:
+#_02F817: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F81F: dw $6010, GFX1BB140, $1000, GFX1BB140>>16
+#_02F827: dw $6810, GFX1BC140, $0FE0, GFX1BC140>>16
 #_02F82F: dw $FFFF
-DATA16_02F831:
-#_02F831: dw $5000,$8000,$1000,$001B
-#_02F839: dw $5800,$9000,$1000,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F831:
+#_02F831: dw $5000, GFX1B8000, $1000, GFX1B8000>>16
+#_02F839: dw $5800, GFX1B9000, $1000, GFX1B9000>>16
 #_02F841: dw $FFFF
-DATA16_02F843:
-#_02F843: dw $6000,$8000,$1000,$001B
-#_02F84B: dw $6800,$9000,$1000,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F843:
+#_02F843: dw $6000, GFX1B8000, $1000, GFX1B8000>>16
+#_02F84B: dw $6800, GFX1B9000, $1000, GFX1B9000>>16
 #_02F853: dw $FFFF
-DATA16_02F855:
-#_02F855: dw $5000,$8000,$0020,$001E
-#_02F85D: dw $5010,$CB60,$1000,$001B
-#_02F865: dw $5810,$DB60,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F855:
+#_02F855: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F85D: dw $5010, GFX1BCB60, $1000, GFX1BCB60>>16
+#_02F865: dw $5810, GFX1BDB60, $0FE0, GFX1BDB60>>16
 #_02F86D: dw $FFFF
-DATA16_02F86F:
-#_02F86F: dw $6000,$8000,$0020,$001E
-#_02F877: dw $6010,$CB60,$1000,$001B
-#_02F87F: dw $6810,$DB60,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F86F:
+#_02F86F: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F877: dw $6010, GFX1BCB60, $1000, GFX1BCB60>>16
+#_02F87F: dw $6810, GFX1BDB60, $0FE0, GFX1BDB60>>16
 #_02F887: dw $FFFF
-DATA16_02F889:
-#_02F889: dw $5000,$8000,$0020,$001E
-#_02F891: dw $5010,$F980,$0680,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F889:
+#_02F889: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F891: dw $5010, GFX1BF980, $0680, GFX1BF980>>16
 #_02F899: dw $FFFF
-DATA16_02F89B:
-#_02F89B: dw $6000,$8000,$0020,$001E
-#_02F8A3: dw $6010,$F980,$0680,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F89B:
+#_02F89B: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F8A3: dw $6010, GFX1BF980, $0680, GFX1BF980>>16
 #_02F8AB: dw $FFFF
-DATA16_02F8AD:
-#_02F8AD: dw $5000,$8000,$0020,$001E
-#_02F8B5: dw $5010,$EC00,$1000,$001B
-#_02F8BD: dw $5810,$FC00,$0720,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F8AD:
+#_02F8AD: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F8B5: dw $5010, GFX1BEC00, $1000, GFX1BEC00>>16
+#_02F8BD: dw $5810, GFX1BFC00, $0720, GFX1BFC00>>16
 #_02F8C5: dw $FFFF
-DATA16_02F8C7:
-#_02F8C7: dw $6000,$8000,$0020,$001E
-#_02F8CF: dw $6010,$EC00,$1000,$001B
-#_02F8D7: dw $6810,$FC00,$0720,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F8C7:
+#_02F8C7: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F8CF: dw $6010, GFX1BEC00, $1000, GFX1BEC00>>16
+#_02F8D7: dw $6810, GFX1BFC00, $0720, GFX1BFC00>>16
 #_02F8DF: dw $FFFF
-DATA16_02F8E1:
-#_02F8E1: dw $5000,$8000,$0020,$001E
-#_02F8E9: dw $5010,$D7E0,$1000,$001B
-#_02F8F1: dw $5810,$E7E0,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F8E1:
+#_02F8E1: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F8E9: dw $5010, GFX1BD7E0, $1000, GFX1BD7E0>>16
+#_02F8F1: dw $5810, GFX1BE7E0, $0FE0, GFX1BE7E0>>16
 #_02F8F9: dw $FFFF
-DATA16_02F8FB:
-#_02F8FB: dw $6000,$8000,$0020,$001E
-#_02F903: dw $6010,$D7E0,$1000,$001B
-#_02F90B: dw $6810,$E7E0,$0FE0,$001B
+
+;---------------------------------------------------------------------------------------------------
+
+data02F8FB:
+#_02F8FB: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F903: dw $6010, GFX1BD7E0, $1000, GFX1BD7E0>>16
+#_02F90B: dw $6810, GFX1BE7E0, $0FE0, GFX1BE7E0>>16
 #_02F913: dw $FFFF
-DATA16_02F915:
-#_02F915: dw $5000,$8000,$0020,$001E
-#_02F91D: dw $5010,$94E0,$1000,$001C
+
+;---------------------------------------------------------------------------------------------------
+
+data02F915:
+#_02F915: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F91D: dw $5010, GFX1C94E0, $1000, GFX1C94E0>>16
 #_02F925: dw $FFFF
-DATA16_02F927:
-#_02F927: dw $6000,$8000,$0020,$001E
-#_02F92F: dw $6010,$94E0,$1000,$001C
+
+;---------------------------------------------------------------------------------------------------
+
+data02F927:
+#_02F927: dw $6000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F92F: dw $6010, GFX1C94E0, $1000, GFX1C94E0>>16
 #_02F937: dw $FFFF
-DATA16_02F939:
-#_02F939: dw $5000,$8000,$1000,$001C
-#_02F941: dw $5800,$9000,$1000,$001C
+
+;---------------------------------------------------------------------------------------------------
+
+data02F939:
+#_02F939: dw $5000, GFX1C8000, $1000, GFX1C8000>>16
+#_02F941: dw $5800, GFX1C9000, $1000, GFX1C9000>>16
 #_02F949: dw $FFFF
-DATA16_02F94B:
-#_02F94B: dw $6000,$8000,$1000,$001C
-#_02F953: dw $6800,$9000,$1000,$001C
+
+;---------------------------------------------------------------------------------------------------
+
+data02F94B:
+#_02F94B: dw $6000, GFX1C8000, $1000, GFX1C8000>>16
+#_02F953: dw $6800, GFX1C9000, $1000, GFX1C9000>>16
 #_02F95B: dw $FFFF
-DATA16_02F95D:
-#_02F95D: dw $3000,$C000,$0800,$001F
+
+;---------------------------------------------------------------------------------------------------
+
+data02F95D:
+#_02F95D: dw $3000, GFX1FC000, $0800, GFX1FC000>>16
 #_02F965: dw $FFFF
-DATA16_02F967:
-#_02F967: dw $5000,$8000,$0020,$001E
-#_02F96F: dw $5010,$8020,$1000,$001E
-#_02F977: dw $5810,$9020,$0FE0,$001E
+
+;---------------------------------------------------------------------------------------------------
+
+data02F967:
+#_02F967: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F96F: dw $5010, GFX1E8020, $1000, GFX1E8020>>16
+#_02F977: dw $5810, GFX1E9020, $0FE0, GFX1E9020>>16
 #_02F97F: dw $FFFF
-DATA16_02F981:
-#_02F981: dw $5000,$8000,$0020,$001E
-#_02F989: dw $5010,$98A0,$1000,$001E
-#_02F991: dw $5810,$A8A0,$0FE0,$001E
+
+;---------------------------------------------------------------------------------------------------
+
+data02F981:
+#_02F981: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F989: dw $5010, GFX1E98A0, $1000, GFX1E98A0>>16
+#_02F991: dw $5810, GFX1EA8A0, $0FE0, GFX1EA8A0>>16
 #_02F999: dw $FFFF
-DATA16_02F99B:
-#_02F99B: dw $5000,$8000,$0020,$001E
-#_02F9A3: dw $5010,$B120,$1000,$001E
-#_02F9AB: dw $5810,$C120,$0FE0,$001E
+
+;---------------------------------------------------------------------------------------------------
+
+data02F99B:
+#_02F99B: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F9A3: dw $5010, GFX1EB120, $1000, GFX1EB120>>16
+#_02F9AB: dw $5810, GFX1EC120, $0FE0, GFX1EC120>>16
 #_02F9B3: dw $FFFF
-DATA16_02F9B5:
-#_02F9B5: dw $5000,$8000,$0020,$001E
-#_02F9BD: dw $5010,$C9A0,$1000,$001E
-#_02F9C5: dw $5810,$D9A0,$0FE0,$001E
+
+;---------------------------------------------------------------------------------------------------
+
+data02F9B5:
+#_02F9B5: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F9BD: dw $5010, GFX1EC9A0, $1000, GFX1EC9A0>>16
+#_02F9C5: dw $5810, GFX1ED9A0, $0FE0, GFX1ED9A0>>16
 #_02F9CD: dw $FFFF
-DATA16_02F9CF:
-#_02F9CF: dw $5000,$8000,$0020,$001E
-#_02F9D7: dw $5010,$E220,$1000,$001E
-#_02F9DF: dw $5810,$F220,$0FE0,$001E
+
+;---------------------------------------------------------------------------------------------------
+
+data02F9CF:
+#_02F9CF: dw $5000, GFX1E8000, $0020, GFX1E8000>>16
+#_02F9D7: dw $5010, GFX1EE220, $1000, GFX1EE220>>16
+#_02F9DF: dw $5810, GFX1EF220, $0FE0, GFX1EF220>>16
 #_02F9E7: dw $FFFF
-DATA16_02F9E9:
-#_02F9E9: dw $5000,$8000,$1000,$001F
-#_02F9F1: dw $5800,$9000,$1000,$001F
+
+;---------------------------------------------------------------------------------------------------
+
+data02F9E9:
+#_02F9E9: dw $5000, GFX1F8000, $1000, GFX1F8000>>16
+#_02F9F1: dw $5800, GFX1F9000, $1000, GFX1F9000>>16
 #_02F9F9: dw $FFFF
-DATA16_02F9FB:
-#_02F9FB: dw $5000,$A000,$1000,$001F
-#_02FA03: dw $5800,$B000,$1000,$001F
+
+;---------------------------------------------------------------------------------------------------
+
+data02F9FB:
+#_02F9FB: dw $5000, GFX1FA000, $1000, GFX1FA000>>16
+#_02FA03: dw $5800, GFX1FB000, $1000, GFX1FB000>>16
 #_02FA0B: dw $FFFF
-DATA16_02FA0D:
-#_02FA0D: dw $5000,$C000,$1000,$001F
-#_02FA15: dw $5800,$D000,$1000,$001F
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA0D:
+#_02FA0D: dw $5000, GFX1FC000, $1000, GFX1FC000>>16
+#_02FA15: dw $5800, GFX1FD000, $1000, GFX1FD000>>16
 #_02FA1D: dw $FFFF
-DATA16_02FA1F:
-#_02FA1F: dw $6000,$E000,$1000,$001F
-#_02FA27: dw $6800,$F000,$1000,$001F
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA1F:
+#_02FA1F: dw $6000, GFX1FE000, $1000, GFX1FE000>>16
+#_02FA27: dw $6800, GFX1FF000, $1000, GFX1FF000>>16
 #_02FA2F: dw $FFFF
-DATA16_02FA31:
-#_02FA31: dw $5000,$8000,$1000,$0020
-#_02FA39: dw $5800,$9000,$1000,$0020
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA31:
+#_02FA31: dw $5000, GFX208000, $1000, GFX208000>>16
+#_02FA39: dw $5800, GFX209000, $1000, GFX209000>>16
 #_02FA41: dw $FFFF
-DATA16_02FA43:
-#_02FA43: dw $5000,$A000,$1000,$0020
-#_02FA4B: dw $5800,$B000,$1000,$0020
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA43:
+#_02FA43: dw $5000, GFX20A000, $1000, GFX20A000>>16
+#_02FA4B: dw $5800, GFX20B000, $1000, GFX20B000>>16
 #_02FA53: dw $FFFF
-DATA16_02FA55:
-#_02FA55: dw $5000,$C000,$1000,$0020
-#_02FA5D: dw $5800,$D000,$1000,$0020
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA55:
+#_02FA55: dw $5000, GFX20C000, $1000, GFX20C000>>16
+#_02FA5D: dw $5800, GFX20D000, $1000, GFX20D000>>16
 #_02FA65: dw $FFFF
-DATA16_02FA67:
-#_02FA67: dw $5000,$E000,$1000,$0020
-#_02FA6F: dw $5800,$F000,$1000,$0020
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA67:
+#_02FA67: dw $5000, GFX20E000, $1000, GFX20E000>>16
+#_02FA6F: dw $5800, GFX20F000, $1000, GFX20F000>>16
 #_02FA77: dw $FFFF
-DATA16_02FA79:
-#_02FA79: dw $5000,$8000,$1000,$0021
-#_02FA81: dw $5800,$9000,$1000,$0021
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA79:
+#_02FA79: dw $5000, GFX218000, $1000, GFX218000>>16
+#_02FA81: dw $5800, GFX219000, $1000, GFX219000>>16
 #_02FA89: dw $FFFF
-DATA16_02FA8B:
-#_02FA8B: dw $5000,$A000,$1000,$0021
-#_02FA93: dw $5800,$B000,$1000,$0021
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA8B:
+#_02FA8B: dw $5000, GFX21A000, $1000, GFX21A000>>16
+#_02FA93: dw $5800, GFX21B000, $1000, GFX21B000>>16
 #_02FA9B: dw $FFFF
-DATA16_02FA9D:
-#_02FA9D: dw $4000,$8000,$0020,$001E
-#_02FAA5: dw $4800,$8000,$0020,$001E
+
+;---------------------------------------------------------------------------------------------------
+
+data02FA9D:
+#_02FA9D: dw $4000, GFX1E8000, $0020, GFX1E8000>>16
+#_02FAA5: dw $4800, GFX1E8000, $0020, GFX1E8000>>16
 #_02FAAD: dw $FFFF
-DATA16_02FAAF:
-#_02FAAF: dw $0600,$F000,$0400,$0027
+
+;---------------------------------------------------------------------------------------------------
+
+data02FAAF:
+#_02FAAF: dw $0600, GFX27F000, $0400, GFX27F000>>16
 #_02FAB7: dw $FFFF
-DATA16_02FAB9:
-#_02FAB9: dw $2000,$C000,$1000,$0010
-#_02FAC1: dw $4000,$8000,$0020,$001E
-#_02FAC9: dw $4010,$9440,$1000,$001A
-#_02FAD1: dw $4810,$A440,$1000,$001A
-#_02FAD9: dw $5010,$B440,$1000,$001A
-#_02FAE1: dw $5810,$C440,$1000,$001A
-#_02FAE9: dw $6010,$D440,$1000,$001A
-#_02FAF1: dw $6810,$E440,$1000,$001A
-#_02FAF9: dw $7010,$F440,$1000,$001A
-#_02FB01: dw $0000,$E000,$1800,$0027
-#_02FB09: dw $3C00,$E000,$0800,$0010
+
+;---------------------------------------------------------------------------------------------------
+
+data02FAB9:
+#_02FAB9: dw $2000, MoreFontGFX, $1000, MoreFontGFX>>16
+#_02FAC1: dw $4000, GFX1E8000, $0020, GFX1E8000>>16
+#_02FAC9: dw $4010, GFX1A9440, $1000, GFX1A9440>>16
+#_02FAD1: dw $4810, GFX1AA440, $1000, GFX1AA440>>16
+#_02FAD9: dw $5010, GFX1AB440, $1000, GFX1AB440>>16
+#_02FAE1: dw $5810, GFX1AC440, $1000, GFX1AC440>>16
+#_02FAE9: dw $6010, GFX1AD440, $1000, GFX1AD440>>16
+#_02FAF1: dw $6810, GFX1AE440, $1000, GFX1AE440>>16
+#_02FAF9: dw $7010, GFX1AF440, $1000, GFX1AF440>>16
+#_02FB01: dw $0000, GFX27E000, $1800, GFX27E000>>16
+#_02FB09: dw $3C00, GFX10E000, $0800, GFX10E000>>16
 #_02FB11: dw $FFFF
-DATA16_02FB13:
-#_02FB13: dw $4000,$9000,$1000,$0023
-#_02FB1B: dw $4800,$A000,$1000,$0023
-#_02FB23: dw $5000,$B000,$1000,$0023
-#_02FB2B: dw $5800,$C000,$1000,$0023
-#_02FB33: dw $6000,$C160,$1000,$0023
-#_02FB3B: dw $6800,$D160,$1000,$0023
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB13:
+#_02FB13: dw $4000, GFX239000, $1000, GFX239000>>16
+#_02FB1B: dw $4800, GFX23A000, $1000, GFX23A000>>16
+#_02FB23: dw $5000, GFX23B000, $1000, GFX23B000>>16
+#_02FB2B: dw $5800, GFX23C000, $1000, GFX23C000>>16
+#_02FB33: dw $6000, GFX23C160, $1000, GFX23C160>>16
+#_02FB3B: dw $6800, GFX23D160, $1000, GFX23D160>>16
 #_02FB43: dw $FFFF
-DATA16_02FB45:
-#_02FB45: dw $2800,$8000,$0800,$0023
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB45:
+#_02FB45: dw $2800, GFX238000, $0800, GFX238000>>16
 #_02FB4D: dw $FFFF
-DATA16_02FB4F:
-#_02FB4F: dw $2800,$8800,$0800,$0023
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB4F:
+#_02FB4F: dw $2800, GFX238800, $0800, GFX238800>>16
 #_02FB57: dw $FFFF
-DATA16_02FB59:
-#_02FB59: dw $0800,$DDE0,$1000,$0023
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB59:
+#_02FB59: dw $0800, GFX23DDE0, $1000, GFX23DDE0>>16
 #_02FB61: dw $FFFF
-DATA16_02FB63:
-#_02FB63: dw $2000,$8000,$1000,$0010
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB63:
+#_02FB63: dw $2000, GFX108000, $1000, GFX108000>>16
 #_02FB6B: dw $FFFF
-DATA16_02FB6D:
-#_02FB6D: dw $5000,$C000,$1000,$0021
-#_02FB75: dw $5800,$D000,$1000,$0021
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB6D:
+#_02FB6D: dw $5000, GFX21C000, $1000, GFX21C000>>16
+#_02FB75: dw $5800, GFX21D000, $1000, GFX21D000>>16
 #_02FB7D: dw $FFFF
-DATA16_02FB7F:
-#_02FB7F: dw $6000,$E000,$1000,$0020
-#_02FB87: dw $6800,$F000,$1000,$0020
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB7F:
+#_02FB7F: dw $6000, GFX20E000, $1000, GFX20E000>>16
+#_02FB87: dw $6800, GFX20F000, $1000, GFX20F000>>16
 #_02FB8F: dw $FFFF
-DATA16_02FB91:
-#_02FB91: dw $6000,$8000,$1000,$0021
-#_02FB99: dw $6800,$9000,$1000,$0021
+
+;---------------------------------------------------------------------------------------------------
+
+data02FB91:
+#_02FB91: dw $6000, GFX218000, $1000, GFX218000>>16
+#_02FB99: dw $6800, GFX219000, $1000, GFX219000>>16
 #_02FBA1: dw $FFFF
-DATA16_02FBA3:
-#_02FBA3: dw $6000,$A000,$1000,$0020
-#_02FBAB: dw $6800,$B000,$1000,$0020
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBA3:
+#_02FBA3: dw $6000, GFX20A000, $1000, GFX20A000>>16
+#_02FBAB: dw $6800, GFX20B000, $1000, GFX20B000>>16
 #_02FBB3: dw $FFFF
-DATA16_02FBB5:
-#_02FBB5: dw $7400,$A000,$0800,$002B
-#_02FBBD: dw $7800,$D800,$0800,$002B
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBB5:
+#_02FBB5: dw $7400, GFX2BA000, $0800, GFX2BA000>>16
+#_02FBBD: dw $7800, GFX2BD800, $0800, GFX2BD800>>16
 #_02FBC5: dw $FFFF
-DATA16_02FBC7:
-#_02FBC7: dw $7400,$B000,$1000,$002C
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBC7:
+#_02FBC7: dw $7400, GFX2CB000, $1000, GFX2CB000>>16
 #_02FBCF: dw $FFFF
-DATA16_02FBD1:
-#_02FBD1: dw $5000,$A000,$1000,$001C
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBD1:
+#_02FBD1: dw $5000, GFX1CA000, $1000, GFX1CA000>>16
 #_02FBD9: dw $FFFF
-DATA16_02FBDB:
-#_02FBDB: dw $6000,$A000,$1000,$001C
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBDB:
+#_02FBDB: dw $6000, GFX1CA000, $1000, GFX1CA000>>16
 #_02FBE3: dw $FFFF
-DATA16_02FBE5:
-#_02FBE5: dw $2000,$8000,$1000,$0010
-#_02FBED: dw $0000,$E000,$1000,$0027
-#_02FBF5: dw $3C00,$E000,$0800,$0010
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBE5:
+#_02FBE5: dw $2000, GFX108000, $1000, GFX108000>>16
+#_02FBED: dw $0000, GFX27E000, $1000, GFX27E000>>16
+#_02FBF5: dw $3C00, GFX10E000, $0800, GFX10E000>>16
 #_02FBFD: dw $FFFF
-DATA16_02FBFF:
-#_02FBFF: dw $06C0,$F500,$0400,$0027
+
+;---------------------------------------------------------------------------------------------------
+
+data02FBFF:
+#_02FBFF: dw $06C0, GFX27F500, $0400, GFX27F500>>16
 #_02FC07: dw $FFFF
+
+;===================================================================================================
 
 routine02FC09:
 #_02FC09: PHP
@@ -13706,156 +14011,156 @@ routine02FC6E:
 #_02FD4C: RTL
 
 data02FD4D:
-#_02FD4D: dw DATA16_02FDDD
-#_02FD4F: dw DATA16_02FDEE
-#_02FD51: dw DATA16_02FDFE
-#_02FD53: dw DATA16_02FE03
-#_02FD55: dw DATA16_02FE06
-#_02FD57: dw DATA16_02FE09
-#_02FD59: dw DATA16_02FE0C
-#_02FD5B: dw DATA16_02FE0F
-#_02FD5D: dw DATA16_02FE12
-#_02FD5F: dw DATA16_02FE15
-#_02FD61: dw DATA16_02FE18
-#_02FD63: dw DATA16_02FE1B
-#_02FD65: dw DATA16_02FE1E
-#_02FD67: dw DATA16_02FE21
-#_02FD69: dw DATA16_02FE24
-#_02FD6B: dw DATA16_02FE27
-#_02FD6D: dw DATA16_02FE2A
-#_02FD6F: dw DATA16_02FE2D
-#_02FD71: dw DATA16_02FE30
-#_02FD73: dw DATA16_02FE33
-#_02FD75: dw DATA16_02FE36
-#_02FD77: dw DATA16_02FE39
-#_02FD79: dw DATA16_02FE3C
-#_02FD7B: dw DATA16_02FE3F
-#_02FD7D: dw DATA16_02FE42
-#_02FD7F: dw DATA16_02FE45
-#_02FD81: dw DATA16_02FE48
-#_02FD83: dw DATA16_02FE4B
-#_02FD85: dw DATA16_02FE4E
-#_02FD87: dw DATA16_02FE51
-#_02FD89: dw DATA16_02FE54
-#_02FD8B: dw DATA16_02FE57
-#_02FD8D: dw DATA16_02FE5A
-#_02FD8F: dw DATA16_02FE5D
-#_02FD91: dw DATA16_02FE60
-#_02FD93: dw DATA16_02FE63
-#_02FD95: dw DATA16_02FE66
-#_02FD97: dw DATA16_02FE69
-#_02FD99: dw DATA16_02FE7E
-#_02FD9B: dw DATA16_02FE81
-#_02FD9D: dw DATA16_02FE8C
-#_02FD9F: dw DATA16_02FE8F
-#_02FDA1: dw DATA16_02FE92
-#_02FDA3: dw DATA16_02FE95
-#_02FDA5: dw DATA16_02FE98
-#_02FDA7: dw DATA16_02FE9B
-#_02FDA9: dw DATA16_02FE9E
-#_02FDAB: dw DATA16_02FEA1
-#_02FDAD: dw DATA16_02FEA4
-#_02FDAF: dw DATA16_02FEA7
-#_02FDB1: dw DATA16_02FEAA
-#_02FDB3: dw DATA16_02FEAD
-#_02FDB5: dw DATA16_02FEB0
-#_02FDB7: dw DATA16_02FEB3
-#_02FDB9: dw DATA16_02FEB6
-#_02FDBB: dw DATA16_02FEB9
-#_02FDBD: dw DATA16_02FEBC
-#_02FDBF: dw DATA16_02FEBF
-#_02FDC1: dw DATA16_02FEC2
-#_02FDC3: dw DATA16_02FEC5
-#_02FDC5: dw DATA16_02FEC8
-#_02FDC7: dw DATA16_02FECB
-#_02FDC9: dw DATA16_02FECE
-#_02FDCB: dw DATA16_02FED1
-#_02FDCD: dw DATA16_02FED4
-#_02FDCF: dw DATA16_02FED7
-#_02FDD1: dw DATA16_02FEDA
-#_02FDD3: dw DATA16_02FEDD
-#_02FDD5: dw DATA16_02FEE0
-#_02FDD7: dw DATA16_02FEE3
-#_02FDD9: dw DATA16_02FEE6
-#_02FDDB: dw DATA16_02FEE9
-DATA16_02FDDD:
+#_02FD4D: dw data02FDDD
+#_02FD4F: dw data02FDEE
+#_02FD51: dw data02FDFE
+#_02FD53: dw data02FE03
+#_02FD55: dw data02FE06
+#_02FD57: dw data02FE09
+#_02FD59: dw data02FE0C
+#_02FD5B: dw data02FE0F
+#_02FD5D: dw data02FE12
+#_02FD5F: dw data02FE15
+#_02FD61: dw data02FE18
+#_02FD63: dw data02FE1B
+#_02FD65: dw data02FE1E
+#_02FD67: dw data02FE21
+#_02FD69: dw data02FE24
+#_02FD6B: dw data02FE27
+#_02FD6D: dw data02FE2A
+#_02FD6F: dw data02FE2D
+#_02FD71: dw data02FE30
+#_02FD73: dw data02FE33
+#_02FD75: dw data02FE36
+#_02FD77: dw data02FE39
+#_02FD79: dw data02FE3C
+#_02FD7B: dw data02FE3F
+#_02FD7D: dw data02FE42
+#_02FD7F: dw data02FE45
+#_02FD81: dw data02FE48
+#_02FD83: dw data02FE4B
+#_02FD85: dw data02FE4E
+#_02FD87: dw data02FE51
+#_02FD89: dw data02FE54
+#_02FD8B: dw data02FE57
+#_02FD8D: dw data02FE5A
+#_02FD8F: dw data02FE5D
+#_02FD91: dw data02FE60
+#_02FD93: dw data02FE63
+#_02FD95: dw data02FE66
+#_02FD97: dw data02FE69
+#_02FD99: dw data02FE7E
+#_02FD9B: dw data02FE81
+#_02FD9D: dw data02FE8C
+#_02FD9F: dw data02FE8F
+#_02FDA1: dw data02FE92
+#_02FDA3: dw data02FE95
+#_02FDA5: dw data02FE98
+#_02FDA7: dw data02FE9B
+#_02FDA9: dw data02FE9E
+#_02FDAB: dw data02FEA1
+#_02FDAD: dw data02FEA4
+#_02FDAF: dw data02FEA7
+#_02FDB1: dw data02FEAA
+#_02FDB3: dw data02FEAD
+#_02FDB5: dw data02FEB0
+#_02FDB7: dw data02FEB3
+#_02FDB9: dw data02FEB6
+#_02FDBB: dw data02FEB9
+#_02FDBD: dw data02FEBC
+#_02FDBF: dw data02FEBF
+#_02FDC1: dw data02FEC2
+#_02FDC3: dw data02FEC5
+#_02FDC5: dw data02FEC8
+#_02FDC7: dw data02FECB
+#_02FDC9: dw data02FECE
+#_02FDCB: dw data02FED1
+#_02FDCD: dw data02FED4
+#_02FDCF: dw data02FED7
+#_02FDD1: dw data02FEDA
+#_02FDD3: dw data02FEDD
+#_02FDD5: dw data02FEE0
+#_02FDD7: dw data02FEE3
+#_02FDD9: dw data02FEE6
+#_02FDDB: dw data02FEE9
+data02FDDD:
 #_02FDDD: dw $0000,$0004,$0101,$5905
 #_02FDE5: dw $5A06,$5B07,$0208,$020C
 #_02FDED: dw $00FF,$0100,$0201,$0303
 #_02FDF5: dw $0404,$0505,$0606,$0707
 #_02FDFD: dw $0808,$0C02,$FF02
-DATA16_02FE03:
+data02FE03:
 #_02FE03: dw $0E02,$02FF,$FF0F
-DATA16_02FE09:
+data02FE09:
 #_02FE09: dw $2002,$02FF,$FF21
-DATA16_02FE0F:
+data02FE0F:
 #_02FE0F: dw $2202,$02FF,$FF23
-DATA16_02FE15:
+data02FE15:
 #_02FE15: dw $2402,$02FF,$FF25
-DATA16_02FE1B:
+data02FE1B:
 #_02FE1B: dw $2602,$02FF,$FF27
-DATA16_02FE21:
+data02FE21:
 #_02FE21: dw $2803,$02FF,$FF29
-DATA16_02FE27:
+data02FE27:
 #_02FE27: dw $2A02,$02FF,$FF2C
-DATA16_02FE2D:
+data02FE2D:
 #_02FE2D: dw $2D02,$03FF,$FF2E
-DATA16_02FE33:
+data02FE33:
 #_02FE33: dw $2F03,$03FF,$FF30
-DATA16_02FE39:
+data02FE39:
 #_02FE39: dw $3103,$03FF,$FF32
-DATA16_02FE3F:
+data02FE3F:
 #_02FE3F: dw $3303,$03FF,$FF34
-DATA16_02FE45:
+data02FE45:
 #_02FE45: dw $1002,$02FF,$FF35
-DATA16_02FE4B:
+data02FE4B:
 #_02FE4B: dw $3602,$02FF,$FF37
-DATA16_02FE51:
+data02FE51:
 #_02FE51: dw $3802,$02FF,$FF39
-DATA16_02FE57:
+data02FE57:
 #_02FE57: dw $3A02,$03FF,$FF3B
-DATA16_02FE5D:
+data02FE5D:
 #_02FE5D: dw $3C02,$02FF,$FF3D
-DATA16_02FE63:
+data02FE63:
 #_02FE63: dw $5101,$07FF,$FF11
-DATA16_02FE69:
+data02FE69:
 #_02FE69: dw $0000,$0101,$0802,$0903
 #_02FE71: dw $0A04,$0B05,$0C06,$0D07
 #_02FE79: dw $0208,$020C,$06FF,$FF12
-DATA16_02FE81:
+data02FE81:
 #_02FE81: dw $0000,$5301,$5402,$5503
 #_02FE89: dw $5204,$0BFF,$FF56
-DATA16_02FE8F:
+data02FE8F:
 #_02FE8F: dw $3E03,$02FF,$FF45
-DATA16_02FE95:
+data02FE95:
 #_02FE95: dw $4602,$02FF,$FF47
-DATA16_02FE9B:
+data02FE9B:
 #_02FE9B: dw $4202,$02FF,$FF43
-DATA16_02FEA1:
+data02FEA1:
 #_02FEA1: dw $4402,$02FF,$FF45
-DATA16_02FEA7:
+data02FEA7:
 #_02FEA7: dw $4603,$02FF,$FF47
-DATA16_02FEAD:
+data02FEAD:
 #_02FEAD: dw $4D02,$03FF,$FF2D
-DATA16_02FEB3:
+data02FEB3:
 #_02FEB3: dw $4A02,$02FF,$FF4B
-DATA16_02FEB9:
+data02FEB9:
 #_02FEB9: dw $4C02,$02FF,$FF4E
-DATA16_02FEBF:
+data02FEBF:
 #_02FEBF: dw $4F02,$02FF,$FF50
-DATA16_02FEC5:
+data02FEC5:
 #_02FEC5: dw $1602,$02FF,$FF17
-DATA16_02FECB:
+data02FECB:
 #_02FECB: dw $1802,$02FF,$FF19
-DATA16_02FED1:
+data02FED1:
 #_02FED1: dw $1A02,$02FF,$FF1B
-DATA16_02FED7:
+data02FED7:
 #_02FED7: dw $1C02,$02FF,$FF1D
-DATA16_02FEDD:
+data02FEDD:
 #_02FEDD: dw $1E02,$08FF,$FF00
-DATA16_02FEE3:
+data02FEE3:
 #_02FEE3: dw $5703,$03FF,$FF58
-DATA16_02FEE9:
+data02FEE9:
 #_02FEE9: dw $5901,$5905,$23FF,$02FF
 #_02FEF1: dw $FF24,$2502,$02FF,$FF26
 #_02FEF9: dw $2702,$03FF,$FF28,$2902

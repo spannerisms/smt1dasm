@@ -84,12 +84,14 @@ InitializeSPC:
 #_0C805D: STA.w APUIO1
 
 #_0C8060: ADC.b #$7F
+
 #_0C8062: PLA
 #_0C8063: STA.w APUIO0
 
 .sync_c
 #_0C8066: CMP.w APUIO0
 #_0C8069: BNE .sync_c
+
 #_0C806B: BVS .next_transfer
 
 #_0C806D: PLP
@@ -98,7 +100,7 @@ InitializeSPC:
 
 ;===================================================================================================
 
-Write_to_APU:
+WriteAPU:
 #_0C806F: PHP
 
 #_0C8070: SEP #$30
@@ -112,7 +114,7 @@ Write_to_APU:
 ;===================================================================================================
 
 ; This APU write can initiate a music transfer
-Write_to_APU_transferrable:
+WriteAPUCareful:
 #_0C807A: PHP
 
 #_0C807B: SEP #$30
@@ -162,13 +164,13 @@ MusicTransferCommand:
 #_0C80AA: ASL A
 #_0C80AB: TAX
 
-#_0C80AC: LDA.l MusicPackage_Pointers+0,X
+#_0C80AC: LDA.l SongPacks+0,X
 #_0C80B0: STA.w $0090
 
-#_0C80B3: LDA.l MusicPackage_Pointers+1,X
+#_0C80B3: LDA.l SongPacks+1,X
 #_0C80B7: STA.w $0091
 
-#_0C80BA: LDA.b #MusicPackage_Pointers>>16
+#_0C80BA: LDA.b #SongPacks>>16
 #_0C80BC: STA.w $0092
 
 .sync_a
@@ -177,6 +179,8 @@ MusicTransferCommand:
 
 #_0C80C4: LDA.b #$FE ; send magic FE to APU
 #_0C80C6: STA.w APUIO0
+
+;---------------------------------------------------------------------------------------------------
 
 .next_transfer
 #_0C80C9: SEP #$20
@@ -210,7 +214,9 @@ MusicTransferCommand:
 
 .sync_c
 #_0C80F7: LDA.w APUIO0
-#_0C80FA: BNE ..sync_c
+#_0C80FA: BNE .sync_c
+
+;---------------------------------------------------------------------------------------------------
 
 #_0C80FC: STA.w $0F88
 
@@ -235,13 +241,14 @@ MusicTransferCommand:
 
 #_0C811C: INY
 #_0C811D: INY
+
 #_0C811E: DEC.w $0F8C
-#_0C8121: BEQ ..done_transfer
+#_0C8121: BEQ .done_transfer
 
 #_0C8123: DEC.w $0F8C
 #_0C8126: BNE .next_byte
 
-..done_transfer
+.done_transfer
 #_0C8128: INC.w $0090
 #_0C812B: INC.w $0090
 
@@ -252,7 +259,10 @@ MusicTransferCommand:
 
 #_0C8135: LDA.w #$FFFF
 #_0C8138: STA.w APUIO0
+
 #_0C813B: BRA .next_transfer
+
+;---------------------------------------------------------------------------------------------------
 
 .no_more_transfers
 #_0C813D: LDA.w #$0000
@@ -268,174 +278,219 @@ MusicTransferCommand:
 
 ;===================================================================================================
 
-MusicPackage_Pointers:
-#_0C814C: dw Jakyou_APU_Package                  ; 44
-#_0C814E: dw Law_APU_Package                     ; 45 "Law"
-#_0C8150: dw Chaos_APU_Package                   ; 46 "Chaos"
-#_0C8152: dw Neutral_APU_Package                 ; 47 "Neutral"
-#_0C8154: dw Ginza_APU_Package                   ; 48 "Ginza"
-#_0C8156: dw Cathedral_APU_Package               ; 49 "Cathedral"
-#_0C8158: dw Shibuya_APU_Package                 ; 4A "Shibuya"
-#_0C815A: dw Shitenou_APU_Package                ; 4B "Shitenou's Lair"
-#_0C815C: dw Embassy_APU_Package                 ; 4C "Embassy"
-#_0C815E: dw Arcade_APU_Package                  ; 4D "Arcade"
-#_0C8160: dw Kichijoi_APU_Package                ; 4E "Kichijoi"
-#_0C8162: dw Ruins_APU_Package                   ; 4F "Ruins"
-#_0C8164: dw Shop_APU_Package                    ; 50 "Shop"
-#_0C8166: dw Boss_APU_Package                    ; 51 "Boss Battle"
-#_0C8168: dw Dream_APU_Package                   ; 52 "Dream"
-#_0C816A: dw Home_APU_Package                    ; 53 "Home"
-#_0C816C: dw Pascal_APU_Package                  ; 54 "Pascal's Theme"
-#_0C816E: dw NaturalCyborgKiller_APU_Package     ; 55 Unused song
-#_0C8170: dw GameOver_APU_Package                ; 56 "Game Over"
-#_0C8172: dw Terminal_APU_Package                ; 57 "Terminal"
-#_0C8174: dw Epilogue_APU_Package                ; 58 "Epilogue"
-#_0C8176: dw Ginza_APU_Package                   ; 59 "Ginza"
-#_0C8178: dw Ginza_APU_Package                   ; 5A "Ginza"
-#_0C817A: dw Ginza_APU_Package                   ; 5B "Ginza"
-#_0C817C: dw Ginza_APU_Package                   ; 5C "Ginza"
-#_0C817E: dw Opening_APU_Package                 ; 5D "Title" - opening
-#_0C8180: dw Title_APU_Package                   ; 5E Title screen
-#_0C8182: dw Ending_APU_Package                  ; 5F "Ending"
+SongPacks:
+#_0C814C: dw SongPack_Jakyou                  ; 44 "Jakyou"
+#_0C814E: dw SongPack_Law                     ; 45 "Law"
+#_0C8150: dw SongPack_Chaos                   ; 46 "Chaos"
+#_0C8152: dw SongPack_Neutral                 ; 47 "Neutral"
+#_0C8154: dw SongPack_Ginza                   ; 48 "Ginza"
+#_0C8156: dw SongPack_Cathedral               ; 49 "Cathedral"
+#_0C8158: dw SongPack_Shibuya                 ; 4A "Shibuya"
+#_0C815A: dw SongPack_Shitenou                ; 4B "Shitenou's Lair"
+#_0C815C: dw SongPack_Embassy                 ; 4C "Embassy"
+#_0C815E: dw SongPack_Arcade                  ; 4D "Arcade"
+#_0C8160: dw SongPack_Kichijoi                ; 4E "Kichijoi"
+#_0C8162: dw SongPack_Ruins                   ; 4F "Ruins"
+#_0C8164: dw SongPack_Shop                    ; 50 "Shop"
+#_0C8166: dw SongPack_Boss                    ; 51 "Boss Battle"
+#_0C8168: dw SongPack_Dream                   ; 52 "Dream"
+#_0C816A: dw SongPack_Home                    ; 53 "Home"
+#_0C816C: dw SongPack_Pascal                  ; 54 "Pascal's Theme"
+#_0C816E: dw SongPack_NaturalCyborgKiller     ; 55 Unused song
+#_0C8170: dw SongPack_GameOver                ; 56 "Game Over"
+#_0C8172: dw SongPack_Terminal                ; 57 "Terminal"
+#_0C8174: dw SongPack_Epilogue                ; 58 "Epilogue"
+#_0C8176: dw SongPack_Ginza                   ; 59 "Ginza"
+#_0C8178: dw SongPack_Ginza                   ; 5A "Ginza"
+#_0C817A: dw SongPack_Ginza                   ; 5B "Ginza"
+#_0C817C: dw SongPack_Ginza                   ; 5C "Ginza"
+#_0C817E: dw SongPack_Opening                 ; 5D "Title" - opening
+#_0C8180: dw SongPack_Title                   ; 5E Title screen
+#_0C8182: dw SongPack_Ending                  ; 5F "Ending"
 
 ;===================================================================================================
 
-; TODO look at both songs one is probably fusion
-Jakyou_APU_Package:
-#_0C8184: dd Jakyou_SPC_Data
-#_0C8188: dd Fusion_SPC_Data
+SongPack_Jakyou:
+#_0C8184: dd JakyouTrackData
+#_0C8188: dd FusionTrackData
 #_0C818C: dd Sample_0DAA3A
 #_0C8190: dd Sample_0DA90D
 #_0C8194: dw $0000
 
-Law_APU_Package:
-#_0C8196: dd Law_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Law:
+#_0C8196: dd LawTrackData
 #_0C819A: dd Sample_0DBDD9
 #_0C819E: dd Sample_0DDAB1
 #_0C81A2: dw $0000
 
-Chaos_APU_Package:
-#_0C81A4: dd Chaos_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Chaos:
+#_0C81A4: dd ChaosTrackData
 #_0C81A8: dd Sample_0DBDD9
 #_0C81AC: dd Sample_0DDAB1
 #_0C81B0: dw $0000
 
-Neutral_APU_Package:
-#_0C81B2: dd Neutral_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Neutral:
+#_0C81B2: dd NeutralTrackData
 #_0C81B6: dd Sample_0DBDD9
 #_0C81BA: dw $0000
 
-Ginza_APU_Package:
-#_0C81BC: dd Ginza_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Ginza:
+#_0C81BC: dd GinzaTrackData
 #_0C81C0: dd Sample_0D88E4
 #_0C81C4: dd Sample_0D883E
 #_0C81C8: dw $0000
 
-Cathedral_APU_Package:
-#_0C81CA: dd Cathedral_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Cathedral:
+#_0C81CA: dd CathedralTrackData
 #_0C81CE: dd Sample_0DBDD9
 #_0C81D2: dw $0000
 
-Shibuya_APU_Package:
-#_0C81D4: dd Shibuya_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Shibuya:
+#_0C81D4: dd ShibuyaTrackData
 #_0C81D8: dd Sample_0DB353
 #_0C81DC: dd Sample_0DBDD9
 #_0C81E0: dd Sample_0DB9E1
 #_0C81E4: dw $0000
 
-Shitenou_APU_Package:
-#_0C81E6: dd Shitenou_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Shitenou:
+#_0C81E6: dd ShitenouTrackData
 #_0C81EA: dd Sample_0DA774
 #_0C81EE: dd Sample_0DBDD9
 #_0C81F2: dw $0000
 
-Embassy_APU_Package:
-#_0C81F4: dd Embassy_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Embassy:
+#_0C81F4: dd EmbassyTrackData
 #_0C81F8: dd Sample_0D8A11
 #_0C81FC: dw $0000
 
-Arcade_APU_Package:
-#_0C81FE: dd Arcade_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Arcade:
+#_0C81FE: dd ArcadeTrackData
 #_0C8202: dd Sample_0D8000
 #_0C8206: dd Sample_0DA774
 #_0C820A: dw $0000
 
-Kichijoi_APU_Package:
-#_0C820C: dd Kichijoi_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Kichijoi:
+#_0C820C: dd KichijoiTrackData
 #_0C8210: dd Sample_0DB1C8
 #_0C8214: dd Sample_0E8000
 #_0C8218: dw $0000
 
-Ruins_APU_Package:
-#_0C821A: dd Ruins_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Ruins:
+#_0C821A: dd RuinsTrackData
 #_0C821E: dd Sample_0D8A11
 #_0C8222: dd Sample_0DA774
 #_0C8226: dw $0000
 
-Shop_APU_Package:
-#_0C8228: dd Shop_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Shop:
+#_0C8228: dd ShopTrackData
 #_0C822C: dd Sample_0DB2F5
 #_0C8230: dd Sample_0DEB29
 #_0C8234: dw $0000
 
-Boss_APU_Package:
-#_0C8236: dd Boss_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Boss:
+#_0C8236: dd BossTrackData
 #_0C823A: dd Sample_0D8A66
 #_0C823E: dd Sample_0DB353
 #_0C8242: dw $0000
 
-Dream_APU_Package:
-#_0C8244: dd Dream_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Dream:
+#_0C8244: dd DreamTrackData
 #_0C8248: dw $0000
 
-Home_APU_Package:
-#_0C824A: dd Home_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Home:
+#_0C824A: dd HomeTrackData
 #_0C824E: dd Sample_0D8000
 #_0C8252: dd Sample_0D8A11
 #_0C8256: dw $0000
 
-Pascal_APU_Package:
-#_0C8258: dd Pascal_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Pascal:
+#_0C8258: dd PascalTrackData
 #_0C825C: dd Sample_0D8A11
 #_0C8260: dd Sample_0DA774
 #_0C8264: dw $0000
 
-NaturalCyborgKiller_APU_Package:
-#_0C8266: dd NaturalCyborgKiller_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_NaturalCyborgKiller:
+#_0C8266: dd NaturalCyborgKillerTrackData
 #_0C826A: dd Sample_0EA3BC
 #_0C826E: dd Sample_0D8A66
 #_0C8272: dw $0000
 
-GameOver_APU_Package:
-#_0C8274: dd Gameover_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_GameOver:
+#_0C8274: dd GameoverTrackData
 #_0C8278: dd Sample_0D8000
 #_0C827C: dd Sample_0DBDD9
 #_0C8280: dw $0000
 
-Terminal_APU_Package:
-#_0C8282: dd Terminal_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Terminal:
+#_0C8282: dd TerminalTrackData
 #_0C8286: dw $0000
 
-Epilogue_APU_Package:
-#_0C8288: dd Epilogue_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Epilogue:
+#_0C8288: dd EpilogueTrackData
 #_0C828C: dd Sample_0DBDD9
 #_0C8290: dd Sample_0DDAB1
 #_0C8294: dd Sample_0D8000
 #_0C8298: dd Sample_0DA774
 #_0C829C: dw $0000
 
-Opening_APU_Package:
-#_0C829E: dd Opening_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Opening:
+#_0C829E: dd OpeningTrackData
 #_0C82A2: dd Sample_0DBDD9
 #_0C82A6: dw $0000
 
-Title_APU_Package:
-#_0C82A8: dd Title_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Title:
+#_0C82A8: dd TitleTrackData
 #_0C82AC: dd Sample_0DAACE
 #_0C82B0: dw $0000
 
-Ending_APU_Package:
-#_0C82B2: dd Ending_SPC_Data
+;---------------------------------------------------------------------------------------------------
+
+SongPack_Ending:
+#_0C82B2: dd EndingTrackData
 #_0C82B6: dd Sample_0D8000
 #_0C82BA: dd Sample_0D8A11
 #_0C82BE: dd Sample_0DB9E1
@@ -446,7 +501,7 @@ Ending_APU_Package:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Jakyou_SPC_Data:
+JakyouTrackData:
 #_0C82CC: dw $036F, $0000
 
 SONG_JAKYOU:
@@ -1278,7 +1333,7 @@ JAKYOU_SEGMENT_7AE5:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Law_SPC_Data:
+LawTrackData:
 #_0C863F: dw $0126, $0000
 
 SONG_LAW:
@@ -1542,7 +1597,7 @@ LAW_SEGMENT_790B:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Chaos_SPC_Data:
+ChaosTrackData:
 #_0C8769: dw $0069, $0000
 
 SONG_CHAOS:
@@ -1640,7 +1695,7 @@ CHAOS_SEGMENT_7867:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Neutral_SPC_Data:
+NeutralTrackData:
 #_0C87D6: dw $0092, $0000
 
 SONG_NEUTRAL:
@@ -1775,7 +1830,7 @@ NEUTRAL_SEGMENT_7886:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Ginza_SPC_Data:
+GinzaTrackData:
 #_0C886C: dw $0446, $0000
 
 SONG_GINZA:
@@ -2736,7 +2791,7 @@ GINZA_SEGMENT_7C30:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Cathedral_SPC_Data:
+CathedralTrackData:
 #_0C8CB6: dw $0113, $0000
 
 SONG_CATHEDRAL:
@@ -2953,7 +3008,7 @@ CATHEDRAL_SEGMENT_78DD:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Shibuya_SPC_Data:
+ShibuyaTrackData:
 #_0C8DCD: dw $016A, $0000
 
 SONG_SHIBUYA:
@@ -3251,7 +3306,7 @@ SHIBUYA_SEGMENT_7918:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Shitenou_SPC_Data:
+ShitenouTrackData:
 #_0C8F3B: dw $0128, $0000
 
 SONG_SHITENOU:
@@ -3520,7 +3575,7 @@ SHITENOU_SEGMENT_7922:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Embassy_SPC_Data:
+EmbassyTrackData:
 #_0C9067: dw $00A6, $0000
 
 SONG_EMBASSY:
@@ -3668,7 +3723,7 @@ EMBASSY_SEGMENT_7894:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Arcade_SPC_Data:
+ArcadeTrackData:
 #_0C9111: dw $0216, $0000
 
 SONG_ARCADE:
@@ -4153,7 +4208,7 @@ ARCADE_SEGMENT_79DC:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Kichijoi_SPC_Data:
+KichijoiTrackData:
 #_0C932B: dw $012E, $0000
 
 SONG_KICHIJOI:
@@ -4401,7 +4456,7 @@ KICHIJOI_SEGMENT_78F4:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Ruins_SPC_Data:
+RuinsTrackData:
 #_0C945D: dw $06DE, $0000
 
 SONG_RUINS:
@@ -6095,7 +6150,7 @@ RUINS_SEGMENT_7ECF:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Shop_SPC_Data:
+ShopTrackData:
 #_0C9B3F: dw $01E7, $0000
 
 SONG_SHOP:
@@ -6482,7 +6537,7 @@ SHOP_SEGMENT_798A:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Boss_SPC_Data:
+BossTrackData:
 #_0C9D2A: dw $02AC, $0000
 
 SONG_BOSS:
@@ -7073,7 +7128,7 @@ BOSS_SEGMENT_79F5:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Opening_SPC_Data:
+OpeningTrackData:
 #_0C9FDA: dw $00AF, $0000
 
 SONG_OPENING:
@@ -7221,7 +7276,7 @@ OPENING_SEGMENT_789D:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Dream_SPC_Data:
+DreamTrackData:
 #_0CA08D: dw $00CB, $0000
 
 SONG_DREAM:
@@ -7396,7 +7451,7 @@ DREAM_SEGMENT_7889:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Title_SPC_Data:
+TitleTrackData:
 #_0CA15C: dw $0083, $0000
 
 SONG_TITLE:
@@ -7509,7 +7564,7 @@ TITLE_SEGMENT_7877:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Fusion_SPC_Data:
+FusionTrackData:
 #_0CA1E3: dw $4044, $0000
 
 SONG_FUSION:
@@ -7573,7 +7628,7 @@ FUSION_SEGMENT_7040:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Home_SPC_Data:
+HomeTrackData:
 #_0CA22B: dw $0342, $0000
 
 SONG_HOME:
@@ -8363,7 +8418,7 @@ HOME_SEGMENT_7B0A:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Pascal_SPC_Data:
+PascalTrackData:
 #_0CA571: dw $012D, $0000
 
 SONG_PASCAL:
@@ -8626,7 +8681,7 @@ PASCAL_SEGMENT_7926:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-NaturalCyborgKiller_SPC_Data:
+NaturalCyborgKillerTrackData:
 #_0CA6A2: dw $0199, $0000
 
 SONG_CYBORG:
@@ -8981,7 +9036,7 @@ CYBORG_SEGMENT_7971:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Gameover_SPC_Data:
+GameoverTrackData:
 #_0CA83F: dw $01F8, $0000
 
 SONG_GAMEOVER:
@@ -9410,7 +9465,7 @@ GAMEOVER_SEGMENT_79AD:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Terminal_SPC_Data:
+TerminalTrackData:
 #_0CAA3B: dw $0076, $0000
 
 SONG_TERMINAL:
@@ -9513,7 +9568,7 @@ TERMINAL_SEGMENT_786F:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Ending_SPC_Data:
+EndingTrackData:
 #_0CAAB5: dw $469E, $0000
 
 SONG_ENDING:
@@ -10970,7 +11025,7 @@ ENDING_SEGMENT_7661:
 ;===================================================================================================
 ; 
 ;===================================================================================================
-Epilogue_SPC_Data:
+EpilogueTrackData:
 #_0CB157: dw $03AD, $0000
 
 SONG_EPILOGUE:
@@ -11846,13 +11901,13 @@ EPILOGUE_SEGMENT_7B95:
 ;===================================================================================================
 InitialAPUData:
 #_0CB508: dw $3795
-#_0CB50A: dw $0300
+#_0CB50A: dw EngineStart
 
 incsrc "spc.asm"
 
 EndInitialAPUBanks:
 #_0CECA1: dw $0000
-#_0CECA3: dw $0300
+#_0CECA3: dw EngineStart
 
 ;===================================================================================================
 

@@ -34,28 +34,28 @@ CheckForConsoleReset:
 
 #_008020: LDX.w #$0000
 
-.next_checksum_letter
-#_008023: LDA.l TableByCozy,X ; Seems to be some checksum for WRAM
+.next_cozy_letter
+#_008023: LDA.l TableByCozy,X ; Seems to be some identifier for WRAM
 #_008027: CMP.l $7EFFE0,X
-#_00802B: BNE .checksum_mismatch
+#_00802B: BNE .cozy_mismatch
 
 #_00802D: INX
 #_00802E: CPX.w #$0014
-#_008031: BCC .next_checksum_letter
+#_008031: BCC .next_cozy_letter
 #_008033: BCS .skip_ATLUS
 
-.checksum_mismatch
+.cozy_mismatch
 #_008035: JSL Animated_ATLUS
 
 #_008039: LDX.w #$0000
 
-.write_checksum
+.write_cozy
 #_00803C: LDA.l TableByCozy,X
 #_008040: STA.l $7EFFE0,X
 
 #_008044: INX
 #_008045: CPX.w #$0014
-#_008048: BCC .write_checksum
+#_008048: BCC .write_cozy
 
 .skip_ATLUS
 #_00804A: JSL InitializeSPC
@@ -241,7 +241,7 @@ ResetMemory:
 #_00816A: TCD
 
 #_00816B: LDX.b #$FF
-#_00816D: STX.b JOYPADIO
+#_00816D: STX.b WRIO
 
 #_00816F: LDA.w #$0000
 #_008172: STA.b HTIMEL
@@ -1499,7 +1499,10 @@ WaitForVBlankExceptItsNotUsed:
 ;===================================================================================================
 
 TableByCozy:
-#_008773: db "programming by cozy!"
+; "programming by cozy!"
+#_008773: db $70, $72, $6F, $67, $72, $61, $6D, $6D
+#_00877B: db $69, $6E, $67, $20, $62, $79, $20, $63
+#_008783: db $6F, $7A, $79, $21, $08, $C2, $30, $8B
 
 ;===================================================================================================
 ; TODO This seems entirely related to OAM
@@ -2946,7 +2949,7 @@ WaitForMenuChoice_FirstPerson:
 #_00904C: STX.w $0EB6
 
 #_00904F: LDA.w #$0001 ; SFX 01
-#_009052: JSL Write_to_APU_transferrable
+#_009052: JSL WriteAPUCareful
 
 #_009056: LDA.w $0F2B
 #_009059: BIT.w #$0400
@@ -2989,7 +2992,7 @@ WaitForMenuChoice_FirstPerson:
 #_009091: STA.w $0E9A
 
 #_009094: LDA.w #$0003 ; SFX 03
-#_009097: JSL Write_to_APU_transferrable
+#_009097: JSL WriteAPUCareful
 
 #_00909B: BRA .exit
 
@@ -2997,7 +3000,7 @@ WaitForMenuChoice_FirstPerson:
 
 .pressed_A
 #_00909D: LDA.w #$0002 ; SFX 02
-#_0090A0: JSL Write_to_APU_transferrable
+#_0090A0: JSL WriteAPUCareful
 
 #_0090A4: BIT.w $0EC4
 #_0090A7: BVS .exit
@@ -11210,7 +11213,7 @@ routine00C197:
 #_00C2C6: LDX.w $0710
 
 #_00C2C9: LDA.l MusicTracksTable,X
-#_00C2CD: JSL Write_to_APU_transferrable
+#_00C2CD: JSL WriteAPUCareful
 
 #_00C2D1: LDA.b #$03
 #_00C2D3: JSL PrepHDMAtypeFromA
@@ -11355,7 +11358,7 @@ routine00C351:
 
 .branch00C3C3
 #_00C3C3: LDA.w #$00FD ; SONG FD
-#_00C3C6: JSL Write_to_APU_transferrable
+#_00C3C6: JSL WriteAPUCareful
 
 #_00C3CA: SEP #$30
 
@@ -11543,7 +11546,7 @@ PPUSettings_00C409:
 #_00C4F0: TCD
 
 #_00C4F1: LDX.b #$FF
-#_00C4F3: STX.b JOYPADIO
+#_00C4F3: STX.b WRIO
 
 #_00C4F5: LDA.w #$0000
 #_00C4F8: STA.b HTIMEL
@@ -12256,7 +12259,7 @@ Dungeon_BonkWall:
 #_00C91A: JSL routine00983C
 
 #_00C91E: LDA.b #$0A ; SFX 0A
-#_00C920: JSL Write_to_APU_transferrable
+#_00C920: JSL WriteAPUCareful
 
 #_00C924: REP #$30
 
@@ -12709,7 +12712,7 @@ routine00CB52:
 
 #_00CBB1: LDX.w $0710
 #_00CBB4: LDA.l MusicTracksTable,X
-#_00CBB8: JSL Write_to_APU_transferrable
+#_00CBB8: JSL WriteAPUCareful
 
 .fail
 #_00CBBC: PLP
@@ -12787,7 +12790,7 @@ LookForAlwaysThereNPC:
 
 #_00CC28: LDX.w $0710
 #_00CC2B: LDA.l MusicTracksTable,X
-#_00CC2F: JSL Write_to_APU_transferrable
+#_00CC2F: JSL WriteAPUCareful
 #_00CC33: BRA .branch00CC45
 
 .branch00CC35
@@ -12796,7 +12799,7 @@ LookForAlwaysThereNPC:
 
 #_00CC3A: LDX.w $0710
 #_00CC3D: LDA.l MusicTracksTable,X
-#_00CC41: JSL Write_to_APU
+#_00CC41: JSL WriteAPU
 
 .branch00CC45
 #_00CC45: LDA.w $0712
@@ -13138,7 +13141,7 @@ RoomEvent_01_AutoTurn:
 #_00CE07: JSL AddSelfAsVector
 
 #_00CE0B: LDA.b #$0E ; SFX 0E
-#_00CE0D: JSL Write_to_APU_transferrable
+#_00CE0D: JSL WriteAPUCareful
 
 #_00CE11: LDX.w $040D
 #_00CE14: STX.w $040E
@@ -13292,7 +13295,7 @@ RoomEvent_Trap:
 #_00CED2: PHX
 
 #_00CED3: LDA.w #$000F ; SFX 0F
-#_00CED6: JSL Write_to_APU_transferrable
+#_00CED6: JSL WriteAPUCareful
 
 #_00CEDA: PLX
 #_00CEDB: PLA
@@ -13388,7 +13391,7 @@ RoomEvent_05_Freehole:
 #_00CF5D: REP #$20
 
 #_00CF5F: LDA.w #$000B ; SFX 0B
-#_00CF62: JSL Write_to_APU_transferrable
+#_00CF62: JSL WriteAPUCareful
 
 #_00CF66: PLA
 
@@ -13403,7 +13406,7 @@ RoomEvent_05_Freehole:
 
 #_00CF75: LDX.w $0710
 #_00CF78: LDA.l MusicTracksTable,X
-#_00CF7C: JSL Write_to_APU_transferrable
+#_00CF7C: JSL WriteAPUCareful
 #_00CF80: BRA .continue
 
 .no_theme_change
@@ -13446,7 +13449,7 @@ RoomEvent_06_Warp:
 #_00CFB3: REP #$20
 
 #_00CFB5: LDA.w #$0031 ; SFX 31
-#_00CFB8: JSL Write_to_APU_transferrable
+#_00CFB8: JSL WriteAPUCareful
 
 #_00CFBC: PLA
 
@@ -13461,7 +13464,7 @@ RoomEvent_06_Warp:
 
 #_00CFCB: LDX.w $0710
 #_00CFCE: LDA.l MusicTracksTable,X
-#_00CFD2: JSL Write_to_APU_transferrable
+#_00CFD2: JSL WriteAPUCareful
 #_00CFD6: BRA .continue
 
 .no_theme_change
@@ -13654,7 +13657,7 @@ HandleTransitionFromRoomEvent:
 #_00D0D1: STZ.w $0584
 
 #_00D0D4: LDA.w #$0009 ; SFX 09
-#_00D0D7: JSL Write_to_APU_transferrable
+#_00D0D7: JSL WriteAPUCareful
 
 #_00D0DB: PLA
 #_00D0DC: STA.w $070C
@@ -13676,7 +13679,7 @@ HandleTransitionFromRoomEvent:
 
 #_00D0F5: LDX.w $0710
 #_00D0F8: LDA.l MusicTracksTable,X
-#_00D0FC: JSL Write_to_APU_transferrable
+#_00D0FC: JSL WriteAPUCareful
 
 .no_theme_change
 #_00D100: REP #$30
@@ -13783,7 +13786,7 @@ RoomEvent_0B_TurnNPC:
 
 #_00D18B: LDX.w $0710
 #_00D18E: LDA.l MusicTracksTable,X
-#_00D192: JSL Write_to_APU
+#_00D192: JSL WriteAPU
 
 .branch00D196
 #_00D196: LDA.w $0EEF
@@ -14120,7 +14123,7 @@ routine00D304:
 
 #_00D32A: LDX.w $0710
 #_00D32D: LDA.l MusicTracksTable,X
-#_00D331: JSL Write_to_APU
+#_00D331: JSL WriteAPU
 
 #_00D335: JSL Dungeon_UpdateAutoMapper
 

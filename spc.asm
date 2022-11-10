@@ -42,6 +42,7 @@ EngineStart:
 ; reset the sample addresses
 #_0CB533: #_0327: mov.b SamplePointerWriteAddr+0, #SamplePointersArb>>0
 #_0CB536: #_032A: mov.b SamplePointerWriteAddr+1, #SamplePointersArb>>8
+
 #_0CB539: #_032D: mov.b SampleDataWriteAddr+0, #Sample08>>0
 #_0CB53C: #_0330: mov.b SampleDataWriteAddr+1, #Sample08>>8
 
@@ -50,6 +51,7 @@ EngineStart:
 SPCMainLoop:
 #_0CB53F: #_0333: mov.w A, T0OUT
 #_0CB542: #_0336: beq .counter0wait
+
 #_0CB544: #_0338: call HandleSongTracks
 
 .counter0wait
@@ -229,6 +231,7 @@ ReadDataHeader:
 #_0CB616: #_040A: and A, #$0F
 #_0CB618: #_040C: asl A
 #_0CB619: #_040D: mov X, A
+
 #_0CB61A: #_040E: jmp (HeaderCommands+X)
 
 HeaderCommands:
@@ -2087,7 +2090,7 @@ VibratoPointers:
 ;===================================================================================================
 
 SongSFXPointers:
-#_0CBF74: #_0D68: dw SFX_00_Nothing
+#_0CBF74: #_0D68: dw NoTrack ; SFX 00
 #_0CBF76: #_0D6A: dw SFX_01
 #_0CBF78: #_0D6C: dw SFX_02
 #_0CBF7A: #_0D6E: dw SFX_03
@@ -2126,9 +2129,9 @@ SongSFXPointers:
 #_0CBFBC: #_0DB0: dw SFX_24_Silence
 #_0CBFBE: #_0DB2: dw SFX_25_Silence
 #_0CBFC0: #_0DB4: dw SFX_26_Silence
-#_0CBFC2: #_0DB6: dw SFX_27_Nothing
-#_0CBFC4: #_0DB8: dw SFX_28_Nothing
-#_0CBFC6: #_0DBA: dw SFX_29_Nothing
+#_0CBFC2: #_0DB6: dw NoTrack ; SFX 27
+#_0CBFC4: #_0DB8: dw NoTrack ; SFX 28
+#_0CBFC6: #_0DBA: dw NoTrack ; SFX 29
 #_0CBFC8: #_0DBC: dw SFX_2A
 #_0CBFCA: #_0DBE: dw SFX_2B
 #_0CBFCC: #_0DC0: dw SFX_2C
@@ -2141,20 +2144,22 @@ SongSFXPointers:
 #_0CBFDA: #_0DCE: dw SFX_33
 #_0CBFDC: #_0DD0: dw SFX_34
 #_0CBFDE: #_0DD2: dw SFX_35
-#_0CBFE0: #_0DD4: dw SFX_36_Nothing
-#_0CBFE2: #_0DD6: dw SFX_37_Nothing
+#_0CBFE0: #_0DD4: dw NoTrack ; SFX 36
+#_0CBFE2: #_0DD6: dw NoTrack ; SFX 37
+
 #_0CBFE4: #_0DD8: dw Song_38_DemonAppears
 #_0CBFE6: #_0DDA: dw Song_39_DemonAppears
 #_0CBFE8: #_0DDC: dw Song_3A_DemonAppears
 #_0CBFEA: #_0DDE: dw Song_3B_DemonAppears
 #_0CBFEC: #_0DE0: dw Song_3C_Battle
 #_0CBFEE: #_0DE2: dw Song_3D_LevelUp
-#_0CBFF0: #_0DE4: dw Song_3E_Nothing
+#_0CBFF0: #_0DE4: dw NoTrack ; Song 3E
 #_0CBFF2: #_0DE6: dw Song_3F_DemonAppears
 #_0CBFF4: #_0DE8: dw ArbSong_7000 ; 40
-#_0CBFF6: #_0DEA: dw Song_41_Nothing
+#_0CBFF6: #_0DEA: dw NoTrack ; Song 41
 #_0CBFF8: #_0DEC: dw Song_42_DemonAppears
 #_0CBFFA: #_0DEE: dw Song_43_DemonAppears
+
 #_0CBFFC: #_0DF0: dw ArbSong_7800 ; 44 - "Jakyou"
 #_0CBFFE: #_0DF2: dw ArbSong_7800 ; 45 - "Law"
 #_0CC000: #_0DF4: dw ArbSong_7800 ; 46 - "Chaos"
@@ -2199,15 +2204,7 @@ SongSFXPointers:
 ;
 ; db $xx   - xx >= $80 indicates a command
 ;===================================================================================================
-SFX_Nothing:
-SFX_00_Nothing:
-SFX_27_Nothing:
-SFX_28_Nothing:
-SFX_29_Nothing:
-SFX_36_Nothing:
-SFX_37_Nothing:
-Song_3E_Nothing:
-Song_41_Nothing:
+NoTrack:
 #_0CC038: #_0E2C: db $FF ; end track
 
 ;===================================================================================================

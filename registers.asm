@@ -533,7 +533,6 @@ NMITIMEN = $004200
 ; a - controller port 2 pin 6 (0: no ppu latching | 1: ppu can be latched)
 ; b - controller port 1 pin 6
 WRIO = $004201
-JOYPADIO = $004201
 
 ; MULTIPLIER AND MULTIPLICAND
 ; $4202 w1 fvha
