@@ -5,9 +5,12 @@ org $028000
 routine028000:
 #_028000: PHP
 #_028001: SEP #$20
+
 #_028003: STZ.w $0C4F
+
 #_028006: LDA.b #$FF
 #_028008: STA.w $0F7F
+
 #_02800B: JSL routine008F57
 #_02800F: JSR Module_Overworld
 

@@ -7661,7 +7661,7 @@ routine0FC929:
 #_0FC973: JSR routine0FCA0A
 #_0FC976: JSR routine0FCA0A
 #_0FC979: JSR routine0FD081
-#_0FC97C: JSR routine0FCC11
+#_0FC97C: JSR IntroResetOAMBuffer
 #_0FC97F: JSR routine0FD4FF
 
 #_0FC982: LDA.b #$5E ; SONG 5E
@@ -7701,7 +7701,7 @@ routine0FC929:
 #_0FC9B1: LDX.w $0D17
 #_0FC9B4: TXS
 
-#_0FC9B5: JSR routine0FCC11
+#_0FC9B5: JSR IntroResetOAMBuffer
 #_0FC9B8: JSR routine0FD081
 
 #_0FC9BB: LDA.w #$005E ; SONG 5E
@@ -7746,7 +7746,7 @@ routine0FC929:
 ;---------------------------------------------------------------------------------------------------
 
 #_0FC9F1: JSR SlowlyDarkenScreen
-#_0FC9F4: JSR routine0FCC11
+#_0FC9F4: JSR IntroResetOAMBuffer
 
 #_0FC9F7: JMP .branch0FC945
 
@@ -7757,7 +7757,7 @@ routine0FC929:
 #_0FC9FE: JSL WriteAPUCareful
 
 #_0FCA02: JSR SlowlyDarkenScreen
-#_0FCA05: JSR routine0FCC11
+#_0FCA05: JSR IntroResetOAMBuffer
 
 #_0FCA08: PLP
 #_0FCA09: RTL
@@ -7841,7 +7841,7 @@ routine0FCA3C:
 #_0FCA74: BEQ .branch0FCA62
 
 #_0FCA76: JSR routine0FCA0A
-#_0FCA79: JSR routine0FD2AA
+#_0FCA79: JSR DrawHexagramBeam
 #_0FCA7C: PLP
 #_0FCA7D: RTS
 
@@ -8125,7 +8125,7 @@ TransferHexagramAndBeam:
 
 ;---------------------------------------------------------------------------------------------------
 
-#_0FCBF8: JSR routine0FCC11
+#_0FCBF8: JSR IntroResetOAMBuffer
 
 #_0FCBFB: PLP
 #_0FCBFC: RTS
@@ -8148,7 +8148,7 @@ TransferIntroBeamSegment:
 
 ;===================================================================================================
 
-routine0FCC11:
+IntroResetOAMBuffer:
 #_0FCC11: PHP
 #_0FCC12: REP #$30
 
@@ -8254,7 +8254,7 @@ TransferFirst16IntroColorsToBGAndSprites:
 
 ;===================================================================================================
 
-routine0FCC8A:
+ModifyHexagramPalette:
 #_0FCC8A: PHP
 
 #_0FCC8B: PHX
@@ -9144,7 +9144,7 @@ IntroBeamGraphics:
 
 ;===================================================================================================
 
-routine0FD2AA:
+DrawHexagramBeam:
 #_0FD2AA: PHP
 #_0FD2AB: REP #$30
 
@@ -9169,9 +9169,9 @@ routine0FD2AA:
 .next_frame
 #_0FD2CC: PHY
 
-#_0FD2CD: JSR routine0FD340
+#_0FD2CD: JSR AddBeamCoordinatesInOAM
 #_0FD2D0: JSR routine0FD331
-#_0FD2D3: JSR routine0FD351
+#_0FD2D3: JSR Subtract32FromBeamX
 
 #_0FD2D6: PHX
 #_0FD2D7: JSL AddSelfAsVectorAndMakeSpace
@@ -9189,13 +9189,13 @@ routine0FD2AA:
 .cant_skip
 #_0FD2EB: SEP #$20
 
-#_0FD2ED: JSR routine0FD340
-#_0FD2F0: JSR routine0FD324
-#_0FD2F3: JSR routine0FD35B
+#_0FD2ED: JSR AddBeamCoordinatesInOAM
+#_0FD2F0: JSR ClearBeamPropsInOAM
+#_0FD2F3: JSR Add32ToBeamY
 
 #_0FD2F6: PHX
 
-#_0FD2F7: JSR routine0FCC8A
+#_0FD2F7: JSR ModifyHexagramPalette
 #_0FD2FA: JSL AddSelfAsVectorAndMakeSpace
 
 #_0FD2FE: PLX
@@ -9233,8 +9233,7 @@ routine0FD2AA:
 
 ;===================================================================================================
 
-; TODO oam related or something
-routine0FD324:
+ClearBeamPropsInOAM:
 #_0FD324: LDA.b #$00
 #_0FD326: STA.l $7E2000,X
 
@@ -9263,7 +9262,7 @@ routine0FD331:
 
 ;===================================================================================================
 
-routine0FD340:
+AddBeamCoordinatesInOAM:
 #_0FD340: LDA.w $0D11
 #_0FD343: STA.l $7E2000,X
 
@@ -9279,7 +9278,7 @@ routine0FD340:
 ;===================================================================================================
 ; Just why...?
 ;===================================================================================================
-routine0FD351:
+Subtract32FromBeamX:
 #_0FD351: SEC
 
 #_0FD352: LDA.w $0D11
@@ -9291,7 +9290,7 @@ routine0FD351:
 ;===================================================================================================
 ; Both of these...
 ;===================================================================================================
-routine0FD35B:
+Add32ToBeamY:
 #_0FD35B: CLC
 
 #_0FD35C: LDA.w $0D12
@@ -10295,7 +10294,7 @@ AttemptIntroSequenceCreepShots:
 
 #_0FD9F5: JSR RemoveEvidenceOfVoyeurismFromOAM
 
-#_0FD9F8: JSR routine0FCC11
+#_0FD9F8: JSR IntroResetOAMBuffer
 #_0FD9FB: JSR WaitForNMIthenProhibit
 #_0FD9FE: JSR SwitchToMode5AssemblyTerminal
 
@@ -11273,7 +11272,7 @@ routine0FE7A6:
 #_0FE7B3: LDY.w #$0018
 
 .next
-#_0FE7B6: LDA.l data0FE7CD,X
+#_0FE7B6: LDA.l .sprites,X
 
 #_0FE7BA: PHX
 
@@ -11292,13 +11291,19 @@ routine0FE7A6:
 #_0FE7CB: PLP
 #_0FE7CC: RTS
 
-data0FE7CD:
-#_0FE7CD: db $80,$90,$00,$00,$90,$90,$02,$00
-#_0FE7D5: db $A0,$90,$02,$00,$B0,$90,$02,$00
-#_0FE7DD: db $C0,$90,$02,$00,$D0,$90,$00,$70
-#_0FE7E5: db $38,$90,$00,$00,$48,$90,$02,$00
-#_0FE7ED: db $58,$90,$02,$00,$60,$90,$02,$00
-#_0FE7F5: db $70,$90,$00,$70,$00,$E0,$00,$E0
+.sprites
+#_0FE7CD: db $80,$90,$00,$00
+#_0FE7D1: db $90,$90,$02,$00
+#_0FE7D5: db $A0,$90,$02,$00
+#_0FE7D9: db $B0,$90,$02,$00
+#_0FE7DD: db $C0,$90,$02,$00
+#_0FE7E1: db $D0,$90,$00,$70
+#_0FE7E5: db $38,$90,$00,$00
+#_0FE7E9: db $48,$90,$02,$00
+#_0FE7ED: db $58,$90,$02,$00
+#_0FE7F1: db $60,$90,$02,$00
+#_0FE7F5: db $70,$90,$00,$70
+#_0FE7F9: db $00,$E0,$00,$E0
 
 ;===================================================================================================
 
@@ -12533,7 +12538,7 @@ routine0FF01A:
 #_0FF026: JSR routine0FF0A0
 #_0FF029: JSR routine0FF10C
 #_0FF02C: JSR routine0FF146
-#_0FF02F: JSR routine0FCC11
+#_0FF02F: JSR IntroResetOAMBuffer
 #_0FF032: JSR routine0FF210
 #_0FF035: JSR routine0FF1A3
 
@@ -12564,7 +12569,7 @@ routine0FF01A:
 #_0FF064: LDX.w #$3F00
 #_0FF067: JSR routine0FF0D3
 #_0FF06A: JSR routine0FF146
-#_0FF06D: JSR routine0FCC11
+#_0FF06D: JSR IntroResetOAMBuffer
 #_0FF070: JSR routine0FF210
 #_0FF073: JSR routine0FF1A3
 
@@ -13795,7 +13800,7 @@ Vestigial_0FF668:
 #_0FF76C: LDA.b #$01
 #_0FF76E: STA.w $0D13
 #_0FF771: JSR EmptyLast32KBofVRAM
-#_0FF774: JSR routine0FCC11
+#_0FF774: JSR IntroResetOAMBuffer
 #_0FF777: JSL Reset_OAMrelatedWRAM
 #_0FF77B: JSL PPUSettings_00C409
 #_0FF77F: LDA.b #$00
@@ -14122,7 +14127,7 @@ routine0FF9A0:
 #_0FF9A6: STA.w $0D19
 #_0FF9A9: JSR DisableNMIwithFBlank
 #_0FF9AC: JSR EmptyLast32KBofVRAM
-#_0FF9AF: JSR routine0FCC11
+#_0FF9AF: JSR IntroResetOAMBuffer
 #_0FF9B2: JSR EnableNMIwithBrightness0
 #_0FF9B5: JSR routine0FCA3C
 #_0FF9B8: JSR routine0FF9BD

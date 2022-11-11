@@ -731,7 +731,7 @@ routine0183E5:
 #_018491: STA.w $0F0D
 #_018494: STA.w $0F0E
 #_018497: JSL routine00CB2F
-#_01849B: JSL routine00C51A
+#_01849B: JSL FlashHUDItSeems
 
 #_01849F: SEP #$20
 #_0184A1: LDA.w $0404
@@ -3844,7 +3844,7 @@ COMP_Automapper:
 #_019975: LDX.b #$00
 #_019977: LDY.b #$01
 #_019979: JSL routine0091A1
-#_01997D: JSL routine00C51A
+#_01997D: JSL FlashHUDItSeems
 
 #_019981: REP #$30
 #_019983: LDA.w #$0000
@@ -4576,7 +4576,7 @@ routine019C06:
 #_019EDB: LDA.w #$002B
 #_019EDE: STA.w $0040,Y
 #_019EE1: STA.w $0040,X
-#_019EE4: JSL routine00C51A
+#_019EE4: JSL FlashHUDItSeems
 #_019EE8: LDA.w #$0002
 #_019EEB: JSL RunOpenMenuDMA_Xplus6
 #_019EEF: LDA.w #$0002
@@ -5233,7 +5233,7 @@ routine01A2A5:
 #_01A317: AND.b #$EF
 #_01A319: STA.w $0F0D
 #_01A31C: STA.w $0F0E
-#_01A31F: JSL routine00C51A
+#_01A31F: JSL FlashHUDItSeems
 #_01A323: PHP
 #_01A324: SEP #$20
 #_01A326: LDA.w $0404
@@ -7727,6 +7727,7 @@ routine01B263:
 
 #_01B2C6: INC.w $0548
 #_01B2C9: INC.w $0548
+
 #_01B2CC: LDY.w $0548
 #_01B2CF: CPY.w #$001C
 #_01B2D2: BCS .branch01B2DC
@@ -7771,18 +7772,19 @@ routine01B263:
 #_01B322: JSL Cache_WRAM_CGWRAM_First8
 #_01B326: JSL AddSelfAsVector
 #_01B32A: JSR routine01C60E
+
 #_01B32D: LDA.w $052A
 #_01B330: AND.w #$2400
-#_01B333: BEQ .branch01B33D
+#_01B333: BEQ .do_give_loot
 
 #_01B335: LDA.w $0512
 #_01B338: ORA.w $0514
-#_01B33B: BNE .branch01B340
+#_01B33B: BNE .dont_give_loot
 
-.branch01B33D
+.do_give_loot
 #_01B33D: JSR GiveAllLootFromBattle
 
-.branch01B340
+.dont_give_loot
 #_01B340: JSR routine01B9D6
 #_01B343: JSL UpdateDialogBox
 #_01B347: PLB
@@ -7839,7 +7841,8 @@ routine01B369:
 #_01B397: RTS
 
 ;===================================================================================================
-
+; Messages 03_01_XX
+;===================================================================================================
 DisplayCombatMessage:
 #_01B398: PHA
 
@@ -8200,10 +8203,13 @@ routine01B51F:
 #_01B55C: CMP.w #$FFFF
 #_01B55F: BNE .branch01B536
 
+;---------------------------------------------------------------------------------------------------
+
 .branch01B561
 #_01B561: JSR routine01B477
 #_01B564: JSR routine01C538
 #_01B567: JSL routine00AB74
+
 #_01B56B: LDA.w $0512
 #_01B56E: ORA.w $0514
 #_01B571: BNE .exit
@@ -8221,6 +8227,7 @@ routine01B51F:
 #_01B58B: JSL routine01E8F1
 #_01B58F: JSR routine01C60E
 #_01B592: JSR routine01B8F5
+
 #_01B595: LDA.w $052A
 #_01B598: AND.w #$2400
 #_01B59B: BEQ .distribute_loot
@@ -8258,6 +8265,7 @@ routine01B5AE:
 #_01B5BA: JSL routine01B4EA
 
 #_01B5BE: STZ.w $052A
+
 #_01B5C1: JSR routine01B34A
 #_01B5C4: JSR routine01BAB9
 
@@ -8289,10 +8297,13 @@ routine01B5AE:
 #_01B5F5: CMP.w #$FFFF
 #_01B5F8: BNE .branch01B5CF
 
+;---------------------------------------------------------------------------------------------------
+
 .branch01B5FA
 #_01B5FA: JSR routine01B477
 #_01B5FD: JSR routine01C538
 #_01B600: JSL routine00AB74
+
 #_01B604: LDA.w $0512
 #_01B607: ORA.w $0514
 #_01B60A: BNE .branch01B5C7
@@ -8301,6 +8312,8 @@ routine01B5AE:
 #_01B60F: LDA.w #$FFFF
 #_01B612: STA.w $0566
 #_01B615: JSR routine01B8A3
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01B618
 #_01B618: JSL routine01E60C
@@ -8311,18 +8324,20 @@ routine01B5AE:
 #_01B62B: JSR routine01B8F5
 #_01B62E: LDA.w $052A
 #_01B631: AND.w #$2400
-#_01B634: BEQ .branch01B63E
+#_01B634: BEQ .give_loop
 
 #_01B636: LDA.w $0512
 #_01B639: ORA.w $0514
 #_01B63C: BNE .branch01B641
 
-.branch01B63E
+.give_loop
 #_01B63E: JSR GiveAllLootFromBattle
 
 .branch01B641
 #_01B641: JSR routine01B9D6
+
 #_01B644: PLB
+
 #_01B645: PLP
 #_01B646: RTL
 
@@ -8911,7 +8926,7 @@ routine01B8F5:
 #_01B8F8: AND.w #$0800
 #_01B8FB: BEQ .exit
 
-#_01B8FD: JSL routine00C51A
+#_01B8FD: JSL FlashHUDItSeems
 
 #_01B901: LDA.w $052A
 #_01B904: AND.w #$F7FF
@@ -9285,16 +9300,16 @@ branch01BB77:
 
 #_01BB7E: LDA.w $052A
 #_01BB81: AND.w #$0800
-#_01BB84: BEQ .branch01BB93
+#_01BB84: BEQ .skip_hud
 
-#_01BB86: JSL routine00C51A
+#_01BB86: JSL FlashHUDItSeems
 
 #_01BB8A: LDA.w $052A
 #_01BB8D: AND.w #$F7FF
 #_01BB90: STA.w $052A
 
-; what will you do??
-.branch01BB93
+; what will you do?????
+.skip_hud
 #_01BB93: LDA.w #$0007
 #_01BB96: JSR DisplayCombatMessage
 
@@ -9313,6 +9328,7 @@ branch01BB77:
 
 #_01BBAE: LDA.w #$0001
 #_01BBB1: JSL RunOpenMenuDMA_Xplus6
+
 #_01BBB5: BRA .next
 
 ;---------------------------------------------------------------------------------------------------
@@ -9396,74 +9412,89 @@ CombatMenu_Escape:
 CombatMenu_Talk:
 #_01BC0B: LDA.w $052A
 #_01BC0E: AND.w #$0100
-#_01BC11: BNE .branch01BC1A
+#_01BC11: BNE .demons_wont_talk
 
 #_01BC13: BIT.w $0524
-#_01BC16: BPL .branch01BC23
-#_01BC18: BVC .branch01BC23
+#_01BC16: BPL .might_talk
+#_01BC18: BVC .might_talk
 
-.branch01BC1A
+.demons_wont_talk
 #_01BC1A: LDA.w #$0026
 
-.branch01BC1D
+.display_no_talking_message
 #_01BC1D: JSR DisplayCombatMessage
+
 #_01BC20: JMP branch01BB64
 
-.branch01BC23
+.might_talk
 #_01BC23: LDA.w $057A
-#_01BC26: BNE .branch01BC1A
+#_01BC26: BNE .demons_wont_talk
 
 #_01BC28: LDA.w $1002
 #_01BC2B: AND.w #$F070
-#_01BC2E: BEQ .branch01BC35
+#_01BC2E: BEQ .not_too_injured_to_talk
 
 #_01BC30: LDA.w #$0027
-#_01BC33: BRA .branch01BC1D
 
-.branch01BC35
+#_01BC33: BRA .display_no_talking_message
+
+;---------------------------------------------------------------------------------------------------
+
+.not_too_injured_to_talk
 #_01BC35: STZ.w $0528
+
 #_01BC38: LDA.w $052A
 #_01BC3B: ORA.w #$9000
 #_01BC3E: STA.w $052A
+
 #_01BC41: LDA.w #$000D
 #_01BC44: JSR DisplayCombatMessage
+
 #_01BC47: LDA.w #$3DC4
 #_01BC4A: STA.w $0A1A
+
 #_01BC4D: LDX.w #$0600
 
-.branch01BC50
+.test_next_enemy
 #_01BC50: LDA.w $1000,X
-#_01BC53: BPL .branch01BC5D
+#_01BC53: BPL .skip_enemy
 
 #_01BC55: LDA.w $1002,X
 #_01BC58: AND.w #$C000
-#_01BC5B: BEQ .branch01BC6F
+#_01BC5B: BEQ .demon_not_dead
 
-.branch01BC5D
+.skip_enemy
 #_01BC5D: TXA
 #_01BC5E: CLC
 #_01BC5F: ADC.w #$0060
 #_01BC62: TAX
+
 #_01BC63: CMP.w #$0900
-#_01BC66: BCC .branch01BC50
+#_01BC66: BCC .test_next_enemy
 
 #_01BC68: JSL routine01CA65
+
 #_01BC6C: LDX.w #$0600
 
-.branch01BC6F
+;---------------------------------------------------------------------------------------------------
+
+.demon_not_dead
 #_01BC6F: LDY.w #$0000
+
 #_01BC72: LDA.w $0524
-#_01BC75: BEQ .branch01BC7E
+#_01BC75: BEQ .first_set_of_guys
 
 #_01BC77: CPX.w #$0780
-#_01BC7A: BCC .branch01BC7E
+#_01BC7A: BCC .first_set_of_guys
 
 #_01BC7C: INY
 #_01BC7D: INY
 
-.branch01BC7E
+.first_set_of_guys
 #_01BC7E: STY.w $0564
 #_01BC81: STX.w $0526
+
+;---------------------------------------------------------------------------------------------------
 
 #_01BC84: LDA.w $104C,X
 #_01BC87: STA.w $0A22
@@ -9490,7 +9521,7 @@ CombatMenu_Talk:
 
 .vectors
 #_01BCB4: dw branch01BB64_bounce
-#_01BCB6: dw branch01BB64_Reset057A
+#_01BCB6: dw PreventFutureNegotiations
 #_01BCB8: dw routine01BCCA
 #_01BCBA: dw routine01BCCF
 #_01BCBC: dw routine01BD1C
@@ -9526,15 +9557,16 @@ routine01BCD7:
 #_01BCDE: STA.w $0512,Y
 
 #_01BCE1: CMP.w $050E,Y
-#_01BCE4: BCC .branch01BCE9
+#_01BCE4: BCC .too_many_friends
 
 #_01BCE6: STA.w $050E,Y
 
-.branch01BCE9
+.too_many_friends
 #_01BCE9: LDY.w $0526
 
 #_01BCEC: LDA.w #$0001
-#_01BCEF: JSL routine01F537
+#_01BCEF: JSL CallDemonFriendIntoBattle
+
 #_01BCF3: BRA branch01BD0D
 
 ;===================================================================================================
@@ -9549,6 +9581,7 @@ routine01BCF5:
 
 #_01BD03: LDX.w $0526
 #_01BD06: STX.w $051A
+
 #_01BD09: JSL routine01E76D
 
 ;===================================================================================================
@@ -9563,7 +9596,7 @@ branch01BB64_bounce:
 
 ;===================================================================================================
 
-branch01BB64_Reset057A:
+PreventFutureNegotiations:
 #_01BD13: LDA.w #$FFFF
 #_01BD16: STA.w $057A
 
@@ -9674,7 +9707,7 @@ branch01BDBE:
 
 #_01BDC1: LDA.w $052A
 #_01BDC4: AND.w #$0800
-#_01BDC7: BNE .branch01BDD6
+#_01BDC7: BNE .no_menu
 
 #_01BDC9: JSL HideTheMenu
 
@@ -9682,7 +9715,7 @@ branch01BDBE:
 #_01BDD0: ORA.w #$0800
 #_01BDD3: STA.w $052A
 
-.branch01BDD6
+.no_menu
 #_01BDD6: PLP
 #_01BDD7: CLC
 
@@ -9695,33 +9728,38 @@ CombatMenu_HandleFightMenu:
 #_01BDD9: STZ.w $0500
 #_01BDDC: STZ.w $0ED2
 
-.branch01BDDF
+.next_party_member
 #_01BDDF: LDA.w #$3C58 ; $78B0 VRAM
 #_01BDE2: LDY.w #$0004
 #_01BDE5: LDX.w #$1006
 #_01BDE8: JSL CacheCursorPositionAndSet
 
-.nextcombatant
+.undo_individual_choice
 #_01BDEC: LDY.w $0500
 #_01BDEF: LDX.w $0700,Y
-#_01BDF2: BPL .branch01BDF7
-#_01BDF4: JMP .branch01BEB8
+#_01BDF2: BPL .someone_to_command
 
-.branch01BDF7
+#_01BDF4: JMP .done_everyone
+
+.someone_to_command
 #_01BDF7: LDA.w $1002,X
 #_01BDFA: AND.w #$F070
-#_01BDFD: BEQ .notinflicted
-#_01BDFF: JMP .branch01BEA5
+#_01BDFD: BEQ .not_inflicted
 
-; is this the stuff that prevents fighting?
-.notinflicted
+#_01BDFF: JMP .skip_over
+
+;---------------------------------------------------------------------------------------------------
+
+.not_inflicted
 #_01BE02: LDA.w $1008,X
 #_01BE05: AND.w #$FF00
 #_01BE08: STA.w $1008,X
 
 #_01BE0B: LDY.w #$0002
+
 #_01BE0E: LDA.w $1004,X
 #_01BE11: PHA
+
 #_01BE12: BPL .handle_menu_options
 
 #_01BE14: LDY.w #$0000
@@ -9735,399 +9773,491 @@ CombatMenu_HandleFightMenu:
 #_01BE1E: CLC
 #_01BE1F: ADC.w #$0002
 #_01BE22: JSL RunOpenMenuDMA_Xplus6
+
 #_01BE26: PLA
 #_01BE27: STA.w $0A3E
 
-.branch01BE2A
+.choose_something_else
 #_01BE2A: JSR routine01C1B9
 #_01BE2D: LDA.w #$0009
 #_01BE30: JSR DisplayCombatMessage
 #_01BE33: JSL WaitForMenuChoice_FirstPerson
-#_01BE37: LDA.w $0E9A
-#_01BE3A: BPL .branch01BE95
 
-.branch01BE3C
+#_01BE37: LDA.w $0E9A
+#_01BE3A: BPL .chose_something
+
+.go_back_further
 #_01BE3C: DEC.w $0500
 #_01BE3F: DEC.w $0500
-#_01BE42: BPL .branch01BE6F
+#_01BE42: BPL .go_back
 
-.branch01BE44
+;---------------------------------------------------------------------------------------------------
+
+.restart_commands
 #_01BE44: STZ.w $0500
 
-.branch01BE47
+.check_team_for_actions
 #_01BE47: LDY.w $0500
+
 #_01BE4A: LDX.w $0700,Y
-#_01BE4D: BMI .branch01BE6D
+#_01BE4D: BMI .end_of_party
 
 #_01BE4F: LDA.w $1008,X
 #_01BE52: AND.w #$FF00
 #_01BE55: STA.w $1008,X
+
 #_01BE58: JSL routine00A1E7
 #_01BE5C: JSL AddSelfAsVector
+
 #_01BE60: LDA.w $0500
 #_01BE63: INC A
 #_01BE64: INC A
 #_01BE65: STA.w $0500
-#_01BE68: CMP.w #$000C
-#_01BE6B: BCC .branch01BE47
 
-.branch01BE6D
+#_01BE68: CMP.w #$000C
+#_01BE6B: BCC .check_team_for_actions
+
+.end_of_party
 #_01BE6D: SEC
 #_01BE6E: RTS
 
-.branch01BE6F
+;---------------------------------------------------------------------------------------------------
+
+.go_back
 #_01BE6F: LDY.w $0500
+
 #_01BE72: LDX.w $0700,Y
+
 #_01BE75: LDA.w $1002,X
 #_01BE78: AND.w #$F070
-#_01BE7B: BNE .branch01BE3C
+#_01BE7B: BNE .go_back_further
 
 #_01BE7D: LDA.w $1008,X
 #_01BE80: AND.w #$FF00
 #_01BE83: STA.w $1008,X
+
 #_01BE86: JSL routine00A1E7
 #_01BE8A: JSL AddSelfAsVector
 #_01BE8E: JSL GoToPreviousMenu
-#_01BE92: JMP .nextcombatant
 
-.branch01BE95
+#_01BE92: JMP .undo_individual_choice
+
+;---------------------------------------------------------------------------------------------------
+
+.chose_something
 #_01BE95: JSR routine01BEF3
-#_01BE98: BCS .branch01BE2A
+#_01BE98: BCS .choose_something_else
 
 #_01BE9A: LDY.w $0500
 #_01BE9D: JSL routine00A1E7
 #_01BEA1: JSL AddSelfAsVector
 
-.branch01BEA5
+;---------------------------------------------------------------------------------------------------
+
+.skip_over
 #_01BEA5: STZ.w $0E9A
+
 #_01BEA8: LDA.w $0500
 #_01BEAB: INC A
 #_01BEAC: INC A
 #_01BEAD: STA.w $0500
-#_01BEB0: CMP.w #$000C
-#_01BEB3: BCS .branch01BEB8
-#_01BEB5: JMP .branch01BDDF
 
-.branch01BEB8
+#_01BEB0: CMP.w #$000C
+#_01BEB3: BCS .done_everyone
+
+#_01BEB5: JMP .next_party_member
+
+;===================================================================================================
+
+.done_everyone
 #_01BEB8: JSR routine01C1B9
+
 #_01BEBB: LDA.w #$0010
 #_01BEBE: JSR DisplayCombatMessage
 #_01BEC1: JSL RunOpenMenuDMA_type0B
+
 #_01BEC5: LDA.w #$3C58
 #_01BEC8: LDY.w #$0001
 #_01BECB: LDX.w #$5003
 #_01BECE: JSL WaitForMenuChoice_A
 #_01BED2: LDA.w $0E9A
-#_01BED5: BEQ .branch01BEDA
-#_01BED7: JMP .branch01BE44
+#_01BED5: BEQ .cement_choices
 
-.branch01BEDA
+#_01BED7: JMP .restart_commands
+
+.cement_choices
 #_01BEDA: LDA.w $052A
 #_01BEDD: ORA.w #$0800
 #_01BEE0: STA.w $052A
+
 #_01BEE3: JSL HideTheMenu
+
 #_01BEE7: CLC
 #_01BEE8: RTS
 
-data01BEE9:
-#_01BEE9: dw $0001,$0002,$0004,$0008
+;===================================================================================================
+
+CombatActionFlags:
+#_01BEE9: dw $0001 ; sword/attack
+#_01BEEB: dw $0002 ; gun/extra
+#_01BEED: dw $0004 ; magic
+#_01BEEF: dw $0008
 #_01BEF1: dw $0010
 
 ;===================================================================================================
-; 
-;===================================================================================================
+
 routine01BEF3:
 #_01BEF3: PHB
 #_01BEF4: PHK
 #_01BEF5: PLB
+
 #_01BEF6: LDY.w $0500
+
 #_01BEF9: LDX.w $0700,Y
 #_01BEFC: ASL A
 #_01BEFD: TAY
-#_01BEFE: LDA.w data01BEE9,Y
+
+#_01BEFE: LDA.w CombatActionFlags,Y
 #_01BF01: ORA.w $1008,X
 #_01BF04: STA.w $1008,X
+
 #_01BF07: PLB
+
 #_01BF08: STZ.w $105C,X
+
 #_01BF0B: CPX.w #$0180
-#_01BF0E: BCC .branch01BF2D
+#_01BF0E: BCC .human_attacker
 
 #_01BF10: BIT.w #$0007
-#_01BF13: BNE .branch01BF18
-#_01BF15: JMP .branch01BF9C
+#_01BF13: BNE .demon_attacking
 
-.branch01BF18
+#_01BF15: JMP .successful_action
+
+.demon_attacking
 #_01BF18: BIT.w #$0006
-#_01BF1B: BNE .branch01BF20
-#_01BF1D: JMP .branch01BF97
+#_01BF1B: BNE .extra_or_magic
 
-.branch01BF20
+#_01BF1D: JMP .perform_normal_attack
+
+.extra_or_magic
 #_01BF20: BIT.w #$0004
-#_01BF23: BNE .branch01BF4D
+#_01BF23: BNE .magic
 
-#_01BF25: JSR routine01BFE2
-#_01BF28: BCC .branch01BF56
-#_01BF2A: JMP .branch01BF9E
+#_01BF25: JSR SelectSpecialMove
+#_01BF28: BCC .successful_special_move
 
-.branch01BF2D
+#_01BF2A: JMP .invalid_action_selected
+
+;---------------------------------------------------------------------------------------------------
+
+.human_attacker
 #_01BF2D: BIT.w #$0007
-#_01BF30: BEQ .branch01BF70
+#_01BF30: BEQ .not_attacking
 
 #_01BF32: BIT.w #$0003
-#_01BF35: BNE .branch01BF45
+#_01BF35: BNE .gun_or_sword
 
 #_01BF37: CPX.w #$0060
-#_01BF3A: BCS .branch01BF4D
+#_01BF3A: BCS .magic
 
 #_01BF3C: JSL routine018768
-#_01BF40: BCC .branch01BF9C
+#_01BF40: BCC .successful_action
 
-#_01BF42: JMP .branch01BF9E
+#_01BF42: JMP .invalid_action_selected
 
-.branch01BF45
-#_01BF45: JSR routine01BFB2
-#_01BF48: BCC .branch01BF97
+.gun_or_sword
+#_01BF45: JSR SelectGunOrSwordAttack
+#_01BF48: BCC .perform_normal_attack
 
-#_01BF4A: JMP .branch01BF9E
+#_01BF4A: JMP .invalid_action_selected
 
-.branch01BF4D
+;---------------------------------------------------------------------------------------------------
+
+.magic
 #_01BF4D: STX.w $0715
 #_01BF50: JSL routine01AB0B
-#_01BF54: BCS .branch01BF9E
+#_01BF54: BCS .invalid_action_selected
 
-.branch01BF56
+.successful_special_move
 #_01BF56: LDY.w $0500
+
 #_01BF59: LDX.w $0700,Y
+
 #_01BF5C: LDA.w $1058,X
 #_01BF5F: AND.w #$00FF
 #_01BF62: LDY.w #$0001
 #_01BF65: JSL GetSkillProperty
-#_01BF69: AND.w #$00FF
-#_01BF6C: BEQ .branch01BF9C
-#_01BF6E: BRA .branch01BF97
 
-.branch01BF70
+#_01BF69: AND.w #$00FF
+#_01BF6C: BEQ .successful_action
+#_01BF6E: BRA .perform_normal_attack
+
+;---------------------------------------------------------------------------------------------------
+
+.not_attacking
 #_01BF70: BIT.w #$0008
-#_01BF73: BEQ .branch01BF9C
+#_01BF73: BEQ .successful_action
 
 #_01BF75: STX.w $0715
+
 #_01BF78: JSL routine019F04
-#_01BF7C: BCS .branch01BF9E
+#_01BF7C: BCS .invalid_action_selected
 
 #_01BF7E: LDX.w $0715
+
 #_01BF81: LDA.w $1058,X
 #_01BF84: AND.w #$00FF
 #_01BF87: SEC
 #_01BF88: SBC.w #$00B0
 #_01BF8B: LDY.w #$0002
+
 #_01BF8E: JSL GetUseItemStat
 #_01BF92: AND.w #$FF00
-#_01BF95: BMI .branch01BF9C
+#_01BF95: BMI .successful_action
 
-.branch01BF97
-#_01BF97: JSR routine01C04D
-#_01BF9A: BCS .branch01BF9E
+.perform_normal_attack
+#_01BF97: JSR PickEnemyToAttack
+#_01BF9A: BCS .invalid_action_selected
 
-.branch01BF9C
+;---------------------------------------------------------------------------------------------------
+
+.successful_action
 #_01BF9C: CLC
 #_01BF9D: RTS
 
-.branch01BF9E
+;---------------------------------------------------------------------------------------------------
+
+.invalid_action_selected
 #_01BF9E: DEC.w $0ED2
+
 #_01BFA1: LDY.w $0500
+
 #_01BFA4: LDX.w $0700,Y
+
 #_01BFA7: LDA.w $1008,X
 #_01BFAA: AND.w #$FF00
 #_01BFAD: STA.w $1008,X
+
 #_01BFB0: SEC
 #_01BFB1: RTS
 
 ;===================================================================================================
 
-routine01BFB2:
+SelectGunOrSwordAttack:
 #_01BFB2: BIT.w #$0001
-#_01BFB5: BNE .branch01BFD3
+#_01BFB5: BNE .chose_sword
 
 #_01BFB7: LDA.w $1044,X
-#_01BFBA: BMI .branch01BFD8
+#_01BFBA: BMI .no_weapon
 
 #_01BFBC: LDA.w $1046,X
-#_01BFBF: BPL .branch01BFE0
+#_01BFBF: BPL .success
 
+; Megiddo and peacemaker don't need bullets
 #_01BFC1: LDA.w $1044,X
 #_01BFC4: CMP.w #$004E
-#_01BFC7: BEQ .branch01BFE0
+#_01BFC7: BEQ .success
 
 #_01BFC9: CMP.w #$004F
-#_01BFCC: BEQ .branch01BFE0
+#_01BFCC: BEQ .success
 
 #_01BFCE: LDA.w #$0029
-#_01BFD1: BRA .branch01BFDB
+#_01BFD1: BRA .display_lacking_message
 
-.branch01BFD3
+.chose_sword
 #_01BFD3: LDA.w $1042,X
-#_01BFD6: BPL .branch01BFE0
+#_01BFD6: BPL .success
 
-.branch01BFD8
+.no_weapon
 #_01BFD8: LDA.w #$0028
 
-.branch01BFDB
+.display_lacking_message
 #_01BFDB: JSR DisplayCombatMessage
+
 #_01BFDE: SEC
 #_01BFDF: RTS
 
-.branch01BFE0
+.success
 #_01BFE0: CLC
 #_01BFE1: RTS
 
 ;===================================================================================================
 
-routine01BFE2:
+SelectSpecialMove:
 #_01BFE2: PHX
+
 #_01BFE3: LDY.w #$0000
 #_01BFE6: STY.w $0600
 
-.branch01BFE9
+.search_for_special_move
 #_01BFE9: LDA.w $103E,X
 #_01BFEC: CMP.w #$0040
-#_01BFEF: BCC .branch01BFFE
+#_01BFEF: BCC .not_special
 
 #_01BFF1: CMP.w #$00FF
-#_01BFF4: BEQ .branch01BFFE
+#_01BFF4: BEQ .not_special
 
 #_01BFF6: CMP.w #$006A
-#_01BFF9: BCS .branch01BFFE
+#_01BFF9: BCS .not_special
 
 #_01BFFB: INC.w $0600
 
-.branch01BFFE
+.not_special
 #_01BFFE: INX
 #_01BFFF: INX
+
 #_01C000: INY
 #_01C001: CPY.w #$0003
-#_01C004: BCC .branch01BFE9
+#_01C004: BCC .search_for_special_move
+
+;---------------------------------------------------------------------------------------------------
 
 #_01C006: LDA.w $0600
-#_01C009: BEQ .branch01C044
+#_01C009: BEQ .no_special_move
 
 #_01C00B: DEC.w $0600
-#_01C00E: BEQ .branch01C01A
+#_01C00E: BEQ .only_one_special_move
 
 #_01C010: JSL GetRandomInt
 #_01C014: AND.w #$0001
 #_01C017: STA.w $0600
 
-.branch01C01A
+.only_one_special_move
 #_01C01A: PLX
 #_01C01B: PHX
+
 #_01C01C: LDY.w #$0000
 
-.branch01C01F
+.find_which_special_to_use
 #_01C01F: LDA.w $103E,X
 #_01C022: CMP.w #$0040
-#_01C025: BCC .branch01C037
+#_01C025: BCC .not_even_special
 
 #_01C027: CMP.w #$00FF
-#_01C02A: BEQ .branch01C037
+#_01C02A: BEQ .not_even_special
 
 #_01C02C: CMP.w #$006A
-#_01C02F: BCS .branch01C037
+#_01C02F: BCS .not_even_special
 
 #_01C031: CPY.w $0600
-#_01C034: BEQ .branch01C03E
+#_01C034: BEQ .this_was_our_special_move
 
 #_01C036: INY
 
-.branch01C037
+.not_even_special
 #_01C037: INX
 #_01C038: INX
 #_01C039: CPY.w #$0003
-#_01C03C: BCC .branch01C01F
+#_01C03C: BCC .find_which_special_to_use
 
-.branch01C03E
+;---------------------------------------------------------------------------------------------------
+
+.this_was_our_special_move
 #_01C03E: PLX
+
 #_01C03F: STA.w $1058,X
+
 #_01C042: CLC
 #_01C043: RTS
 
-.branch01C044
+.no_special_move
 #_01C044: LDA.w #$002B
 #_01C047: JSR DisplayCombatMessage
+
 #_01C04A: PLX
+
 #_01C04B: SEC
 #_01C04C: RTS
 
 ;===================================================================================================
 
-routine01C04D:
+PickEnemyToAttack:
 #_01C04D: BIT.w $0524
-#_01C050: BPL .branch01C0B8
+#_01C050: BPL .only_one_available
 
-#_01C052: BVC .branch01C0B8
+#_01C052: BVC .only_one_available
 
 #_01C054: STZ.w $0564
+
 #_01C057: LDA.w #$000F
 #_01C05A: JSR routine01B369
+
 #_01C05D: LDA.w #$0006
 #_01C060: JSR DisplayCombatMessage
 
-.branch01C063
+.wait_for_selection
 #_01C063: JSL AddSelfAsVector
 #_01C067: LDA.w $0F2B
 #_01C06A: BIT.w #$8380
-#_01C06D: BEQ .branch01C063
+#_01C06D: BEQ .wait_for_selection
 
 #_01C06F: BIT.w #$8080
-#_01C072: BNE .branch01C09D
+#_01C072: BNE .pressed_b_or_a
 
 #_01C074: LDA.w #$0001 ; SFX 01
 #_01C077: JSL WriteAPUCareful
+
+; up or down inputs
 #_01C07B: LDA.w $0F2B
 #_01C07E: AND.w #$0300
 #_01C081: XBA
 #_01C082: DEC A
 #_01C083: EOR.w #$0001
 #_01C086: STA.w $0564
+
 #_01C089: ASL A
 #_01C08A: TAY
+
 #_01C08B: LDX.w $0512,Y
 #_01C08E: STX.w $0A54
 #_01C091: STZ.w $0A56
+
 #_01C094: CLC
 #_01C095: ADC.w #$0006
 #_01C098: JSR DisplayCombatMessage
-#_01C09B: BRA .branch01C063
 
-.branch01C09D
+#_01C09B: BRA .wait_for_selection
+
+;---------------------------------------------------------------------------------------------------
+
+.pressed_b_or_a
 #_01C09D: BIT.w #$0080
-#_01C0A0: BNE .branch01C0AB
+#_01C0A0: BNE .pressed_a
 
 #_01C0A2: LDA.w #$0003 ; SFX 03
 #_01C0A5: JSL WriteAPUCareful
+
 #_01C0A9: SEC
 #_01C0AA: RTS
 
-.branch01C0AB
+;---------------------------------------------------------------------------------------------------
+
+.pressed_a
 #_01C0AB: LDA.w #$0002 ; SFX 02
+
 #_01C0AE: JSL WriteAPUCareful
 #_01C0B2: LDA.w $0564
 #_01C0B5: ASL A
-#_01C0B6: BRA .branch01C0C5
 
-.branch01C0B8
+#_01C0B6: BRA .made_selection
+
+;---------------------------------------------------------------------------------------------------
+
+.only_one_available
 #_01C0B8: LDA.w #$0000
 #_01C0BB: LDX.w $0512
-#_01C0BE: BMI .branch01C0C2
+#_01C0BE: BMI .team_2
 
-#_01C0C0: BNE .branch01C0C5
+#_01C0C0: BNE .made_selection
 
-.branch01C0C2
+.team_2
 #_01C0C2: LDA.w #$0002
 
-.branch01C0C5
+.made_selection
 #_01C0C5: LDY.w $0500
 #_01C0C8: LDX.w $0700,Y
 #_01C0CB: STA.w $105C,X
+
 #_01C0CE: CLC
 #_01C0CF: RTS
 
@@ -10138,6 +10268,7 @@ routine01C0D0:
 
 .branch01C0D3
 #_01C0D3: STX.w $0502
+
 #_01C0D6: LDA.w $1000,X
 #_01C0D9: BPL .branch01C14D
 
@@ -10151,6 +10282,7 @@ routine01C0D0:
 #_01C0E8: LDA.w $103C,X
 #_01C0EB: AND.w #$001F
 #_01C0EE: TAX
+
 #_01C0EF: LDY.w #$0004
 #_01C0F2: LDA.w #data07CB96
 #_01C0F5: JSR GetDynamicSuccessiveHitChances
@@ -10216,6 +10348,8 @@ routine01C0D0:
 #_01C158: BCS .branch01C15D
 
 #_01C15A: JMP .branch01C0D3
+
+;---------------------------------------------------------------------------------------------------
 
 .branch01C15D
 #_01C15D: RTS
@@ -15773,14 +15907,14 @@ routine01E642:
 #_01E6B9: LDA.w $0620
 #_01E6BC: XBA
 #_01E6BD: LSR A
-#_01E6BE: JSR routine01E8CE
+#_01E6BE: JSR GetIndividualCombatantOffset
 #_01E6C1: CLC
 #_01E6C2: ADC.w #$6200
 #_01E6C5: STA.w $0094
 #_01E6C8: LDA.w #$007F
 #_01E6CB: STA.w $0096
 #_01E6CE: LDX.w $0622
-#_01E6D1: JSR routine01E93C
+#_01E6D1: JSR GetStatusBasedStanceIconPointer
 #_01E6D4: STA.w $0090
 #_01E6D7: LDA.w #$0007
 #_01E6DA: STA.w $0092
@@ -15824,14 +15958,14 @@ routine01E642:
 #_01E727: LDA.w $0620
 #_01E72A: XBA
 #_01E72B: LSR A
-#_01E72C: JSR routine01E8CE
+#_01E72C: JSR GetIndividualCombatantOffset
 #_01E72F: CLC
 #_01E730: ADC.w #$6400
 #_01E733: STA.w $0094
 #_01E736: LDA.w #$007F
 #_01E739: STA.w $0096
 #_01E73C: LDX.w $0622
-#_01E73F: JSR routine01E93C
+#_01E73F: JSR GetStatusBasedStanceIconPointer
 #_01E742: STA.w $0090
 #_01E745: LDA.w #$0007
 #_01E748: STA.w $0092
@@ -15862,19 +15996,21 @@ routine01E76D:
 
 #_01E770: LDX.w $050A
 #_01E773: CPX.w #$0100
-#_01E776: BCC .branch01E77B
+#_01E776: BCC .not_boss
 
-#_01E778: JMP .branch01E86C
+#_01E778: JMP .exit
 
-.branch01E77B
+.not_boss
 #_01E77B: LDA.w $051A
 #_01E77E: SEC
 #_01E77F: SBC.w #$0600
 #_01E782: STA.w WRDIVL
 
 #_01E785: SEP #$20
+
 #_01E787: LDA.b #$60
 #_01E789: STA.w WRDIVB
+
 #_01E78C: NOP
 #_01E78D: NOP
 #_01E78E: NOP
@@ -15889,16 +16025,17 @@ routine01E76D:
 #_01E796: LDA.w RDDIVL
 #_01E799: XBA
 #_01E79A: LSR A
-#_01E79B: JSR routine01E8CE
+#_01E79B: JSR GetIndividualCombatantOffset
+
 #_01E79E: CLC
-#_01E79F: ADC.w #$6200
+#_01E79F: ADC.w #$7F6200
 #_01E7A2: STA.w $0094
 
 #_01E7A5: LDA.w #$007F
 #_01E7A8: STA.w $0096
-#_01E7AB: LDX.w $051A
 
-#_01E7AE: JSR routine01E93C
+#_01E7AB: LDX.w $051A
+#_01E7AE: JSR GetStatusBasedStanceIconPointer
 #_01E7B1: STA.w $0090
 
 #_01E7B4: LDA.w #pointers07F969>>16
@@ -15907,21 +16044,28 @@ routine01E76D:
 #_01E7BA: LDA.w #$0002
 #_01E7BD: STA.w $0476
 #_01E7C0: STZ.w $0478
+
 #_01E7C3: JSR routine01E86E
+
 #_01E7C6: LDX.w $051A
+
 #_01E7C9: LDA.w $1002,X
 #_01E7CC: BIT.w #$C000
-#_01E7CF: BEQ .branch01E81D
+#_01E7CF: BEQ .not_dying
 
-.branch01E7D1
+;---------------------------------------------------------------------------------------------------
+
+.next_dead_guy
 #_01E7D1: LDA.w $051A
 #_01E7D4: SEC
 #_01E7D5: SBC.w #$0600
 #_01E7D8: STA.w WRDIVL
 
 #_01E7DB: SEP #$20
+
 #_01E7DD: LDA.b #$60
 #_01E7DF: STA.w WRDIVB
+
 #_01E7E2: NOP
 #_01E7E3: NOP
 #_01E7E4: NOP
@@ -15932,12 +16076,14 @@ routine01E76D:
 #_01E7E9: NOP
 
 #_01E7EA: REP #$20
+
 #_01E7EC: LDA.w RDDIVL
 #_01E7EF: XBA
 #_01E7F0: LSR A
-#_01E7F1: JSR routine01E8CE
+#_01E7F1: JSR GetIndividualCombatantOffset
+
 #_01E7F4: CLC
-#_01E7F5: ADC.w #$6200
+#_01E7F5: ADC.w #$7F6200
 #_01E7F8: STA.w $0094
 
 #_01E7FB: LDA.w #$007F
@@ -15952,28 +16098,31 @@ routine01E76D:
 #_01E80D: JSR routine01E89E
 
 #_01E810: INC.w $0478
+
 #_01E813: LDA.w $0478
 #_01E816: CMP.w #$0010
-#_01E819: BCC .branch01E7D1
+#_01E819: BCC .next_dead_guy
 
 #_01E81B: PLP
 #_01E81C: RTL
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch01E81D
+.not_dying
 #_01E81D: LDA.w $1000,X
-#_01E820: BMI .branch01E86C
+#_01E820: BMI .exit
 
-.branch01E822
+.next_not_dead_guy
 #_01E822: LDA.w $051A
 #_01E825: SEC
 #_01E826: SBC.w #$0600
 #_01E829: STA.w WRDIVL
 
 #_01E82C: SEP #$20
+
 #_01E82E: LDA.b #$60
 #_01E830: STA.w WRDIVB
+
 #_01E833: NOP
 #_01E834: NOP
 #_01E835: NOP
@@ -15988,7 +16137,7 @@ routine01E76D:
 #_01E83D: LDA.w RDDIVL
 #_01E840: XBA
 #_01E841: LSR A
-#_01E842: JSR routine01E8CE
+#_01E842: JSR GetIndividualCombatantOffset
 
 #_01E845: CLC
 #_01E846: ADC.w #$6200
@@ -16003,12 +16152,16 @@ routine01E76D:
 #_01E85B: STA.w $0092
 
 #_01E85E: JSR routine01E86E
+
 #_01E861: INC.w $0478
+
 #_01E864: LDA.w $0478
 #_01E867: CMP.w #$0010
-#_01E86A: BCC .branch01E822
+#_01E86A: BCC .next_not_dead_guy
 
-.branch01E86C
+;---------------------------------------------------------------------------------------------------
+
+.exit
 #_01E86C: PLP
 #_01E86D: RTL
 
@@ -16072,7 +16225,7 @@ routine01E89E:
 
 ;===================================================================================================
 
-routine01E8CE:
+GetIndividualCombatantOffset:
 #_01E8CE: LDX.w $0524
 #_01E8D1: BNE .exit
 
@@ -16085,12 +16238,12 @@ routine01E8CE:
 
 #_01E8DA: PLA
 #_01E8DB: CLC
-#_01E8DC: ADC.l data01E8E1,X
+#_01E8DC: ADC.l .offset,X
 
 .exit
 #_01E8E0: RTS
 
-data01E8E1:
+.offset:
 #_01E8E1: dw $01C0,$0180,$0140,$0100
 #_01E8E9: dw $00C0,$0080,$0040,$0000
 
@@ -16147,7 +16300,7 @@ routine01E8F1:
 
 ;===================================================================================================
 
-routine01E93C:
+GetStatusBasedStanceIconPointer:
 #_01E93C: LDY.w #$0022
 
 #_01E93F: LDA.w $1030,X
@@ -18337,7 +18490,7 @@ Cast_Rally:
 .not_too_many
 #_01F523: LDY.w $0518
 #_01F526: LDA.w #$0001
-#_01F529: JSL routine01F537
+#_01F529: JSL CallDemonFriendIntoBattle
 
 #_01F52D: CLC
 #_01F52E: RTS
@@ -18350,7 +18503,7 @@ Cast_Rally:
 
 ;===================================================================================================
 ; TODO call enemies into battle?
-routine01F537:
+CallDemonFriendIntoBattle:
 #_01F537: STY.w $0518
 
 #_01F53A: LDX.w #$0600
