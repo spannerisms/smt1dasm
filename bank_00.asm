@@ -7263,7 +7263,7 @@ routine00A63C:
 
 routine00A774:
 #_00A774: LDA.w $0400
-#_00A777: BPL .EXIT_00A795
+#_00A777: BPL .exit
 
 #_00A779: JSL routine00C76F
 #_00A77D: LDA.b #$05
@@ -7271,12 +7271,14 @@ routine00A774:
 #_00A783: JSL UpdateDialogBox
 
 #_00A787: SEP #$20
+
 #_00A789: LDA.w $0400
 #_00A78C: AND.b #$7F
 #_00A78E: STA.w $0400
+
 #_00A791: JSL routine00AD90
 
-.EXIT_00A795
+.exit
 #_00A795: RTS
 
 ;===================================================================================================
@@ -8304,53 +8306,66 @@ routine00AD90:
 
 ;===================================================================================================
 
-#branch00ADAE:
+ResetTheGame:
 #_00ADAE: LDA.w #$FFFF
 #_00ADB1: STA.l $7EFFFE
 #_00ADB5: JMP ResetMemory
 
+;---------------------------------------------------------------------------------------------------
+
 routine00ADB8:
 #_00ADB8: REP #$30
-#_00ADBA: LDA.l $7EFFFE
-#_00ADBE: JSL routine0FC929
-#_00ADC2: JSL routine0F8819
 
-.branch00ADC6
+#_00ADBA: LDA.l $7EFFFE
+#_00ADBE: JSL TitleScreen
+#_00ADC2: JSL FileSelect
+
+.loop
 #_00ADC6: JSL AddSelfAsVector
 
 #_00ADCA: REP #$20
+
 #_00ADCC: LDA.w $0400
 #_00ADCF: AND.w #$8000
-#_00ADD2: BNE branch00ADAE
+#_00ADD2: BNE ResetTheGame
 
 #_00ADD4: SEP #$30
+
 #_00ADD6: LDA.b #$FE
 #_00ADD8: JSL CheckGameProgressFlag
-#_00ADDC: BCS .branch00ADFB
+#_00ADDC: BCS .no_waviness
 
 #_00ADDE: REP #$30
+
+; check controller 2 for 
 #_00ADE0: LDA.w $0F31
 #_00ADE3: AND.w #$3000
 #_00ADE6: BEQ .branch00AE3E
 
 #_00ADE8: AND.w #$1000
-#_00ADEB: BEQ .branch00AE0A
+#_00ADEB: BEQ .dont_disable
 
 #_00ADED: LDA.w $045E
 #_00ADF0: EOR.w #$FFFF
 #_00ADF3: STA.w $045E
+
 #_00ADF6: BIT.w $045E
 #_00ADF9: BMI .branch00AE43
 
-.branch00ADFB
+;---------------------------------------------------------------------------------------------------
+
+.no_waviness
 #_00ADFB: SEP #$20
+
 #_00ADFD: LDA.w $0F0D
 #_00AE00: AND.b #$F7
 #_00AE02: STA.w $0F0D
 #_00AE05: STA.w $0F0E
-#_00AE08: BRA .branch00ADC6
+#_00AE08: BRA .loop
 
-.branch00AE0A
+;---------------------------------------------------------------------------------------------------
+
+.dont_disable
 #_00AE0A: BIT.w $045E
 #_00AE0D: BMI .branch00AE2C
 
@@ -8359,13 +8374,13 @@ routine00ADB8:
 #_00AE13: AND.w #$0007
 #_00AE16: STA.w $0460
 #_00AE19: CMP.w #$0004
-#_00AE1C: BNE .branch00ADC6
+#_00AE1C: BNE .loop
 
 #_00AE1E: LDA.w #$0001
 #_00AE21: STA.w $0462
 #_00AE24: LDA.w #$0010
 #_00AE27: STA.w $0464
-#_00AE2A: BRA .branch00ADC6
+#_00AE2A: BRA .loop
 
 .branch00AE2C
 #_00AE2C: LDA.w $0460
@@ -8379,11 +8394,11 @@ routine00ADB8:
 
 .branch00AE3E
 #_00AE3E: BIT.w $045E
-#_00AE41: BPL .branch00ADC6
+#_00AE41: BPL .loop
 
 .branch00AE43
 #_00AE43: JSR routine00AE49
-#_00AE46: JMP .branch00ADC6
+#_00AE46: JMP .loop
 
 ;===================================================================================================
 
@@ -8395,21 +8410,22 @@ routine00AE49:
 #_00AE4E: LDA.l .vectors,X
 
 #_00AE52: STA.w $0468
+
 #_00AE55: JMP ($0468)
 
 .vectors
-#_00AE58: dw routine00AE68
-#_00AE5A: dw routine00AEB5
-#_00AE5C: dw routine00AF19
-#_00AE5E: dw routine00AF63
-#_00AE60: dw routine00AFBB
-#_00AE62: dw routine00B02F
-#_00AE64: dw routine00B079
-#_00AE66: dw routine00B0C3
+#_00AE58: dw WavyPOV_HorizontalUpSlow
+#_00AE5A: dw WavyPOV_HorizontalUpFast
+#_00AE5C: dw WavyPOV_HorizontalUpSlowBlocky
+#_00AE5E: dw WavyPOV_VerticalDream
+#_00AE60: dw WavyPOV_HorizontalUpJanky
+#_00AE62: dw WavyPOV_HorizontalUpExcrutiatinglySlow
+#_00AE64: dw WavyPOV_VerticalHeft
+#_00AE66: dw WavyPOV_VerticalWobble
 
 ;===================================================================================================
 
-routine00AE68:
+WavyPOV_HorizontalUpSlow:
 #_00AE68: DEC.w $0462
 #_00AE6B: DEC.w $0462
 #_00AE6E: BPL .exit
@@ -8417,26 +8433,31 @@ routine00AE68:
 #_00AE70: LDY.w $0466
 #_00AE73: LDX.w #$0000
 
-.branch00AE76
-#_00AE76: LDA.w data00B11B,Y
+.copy_next
+#_00AE76: LDA.w WavyHDMAValuesA,Y
 #_00AE79: STA.l $7E2801,X
+
 #_00AE7D: INY
 #_00AE7E: INY
 #_00AE7F: CPY.w #$0040
-#_00AE82: BCC .branch00AE87
+#_00AE82: BCC .dont_reset
 
 #_00AE84: LDY.w #$0000
 
-.branch00AE87
+.dont_reset
 #_00AE87: INX
 #_00AE88: INX
 #_00AE89: CPX.w #$0100
-#_00AE8C: BCC .branch00AE76
+#_00AE8C: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00AE8E: LDA.w #$0000
 #_00AE91: STA.l $7E2801,X
+
 #_00AE95: LDA.w $0464
 #_00AE98: STA.w $0462
+
 #_00AE9B: LDA.w $0466
 #_00AE9E: INC A
 #_00AE9F: INC A
@@ -8444,8 +8465,10 @@ routine00AE68:
 #_00AEA3: STA.w $0466
 
 #_00AEA6: SEP #$30
+
 #_00AEA8: LDA.b #$FF
 #_00AEAA: STA.l $7E2800
+
 #_00AEAE: LDA.b #$00
 #_00AEB0: JSL PrepHDMAtypeFromA
 
@@ -8454,40 +8477,49 @@ routine00AE68:
 
 ;===================================================================================================
 
-routine00AEB5:
+WavyPOV_HorizontalUpFast:
 #_00AEB5: DEC.w $0462
 #_00AEB8: BPL .exit
 
 #_00AEBA: LDY.w $0466
+
 #_00AEBD: LDX.w #$0000
 
-.branch00AEC0
-#_00AEC0: LDA.w data00B11B,Y
+.copy_next
+#_00AEC0: LDA.w WavyHDMAValuesA,Y
 #_00AEC3: STA.l $7E2804,X
+
 #_00AEC7: INY
 #_00AEC8: INY
 #_00AEC9: CPY.w #$0040
-#_00AECC: BCC .branch00AED1
+#_00AECC: BCC .dont_reset
 
 #_00AECE: LDY.w #$0000
 
-.branch00AED1
+.dont_reset
 #_00AED1: INX
 #_00AED2: INX
 #_00AED3: CPX.w #$0100
-#_00AED6: BCC .branch00AEC0
+#_00AED6: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00AED8: LDA.w #$0000
 #_00AEDB: STA.l $7E2804,X
+
 #_00AEDF: LDA.w #$0001
 #_00AEE2: STA.w $0462
+
 #_00AEE5: LDA.w $0466
 #_00AEE8: INC A
 #_00AEE9: INC A
 #_00AEEA: AND.w #$003F
 #_00AEED: STA.w $0466
 
+;---------------------------------------------------------------------------------------------------
+
 #_00AEF0: SEP #$30
+
 #_00AEF2: LDA.w $0464
 #_00AEF5: ASL A
 #_00AEF6: ASL A
@@ -8495,12 +8527,14 @@ routine00AEB5:
 #_00AEF8: SBC.b #$60
 #_00AEFA: EOR.b #$FF
 #_00AEFC: STA.l $7E2800
+
 #_00AF00: LDA.b #$00
 #_00AF02: STA.l $7E2801
 #_00AF06: LDA.b #$00
 #_00AF08: STA.l $7E2802
 #_00AF0C: LDA.b #$DF
 #_00AF0E: STA.l $7E2803
+
 #_00AF12: LDA.b #$00
 #_00AF14: JSL PrepHDMAtypeFromA
 
@@ -8509,33 +8543,39 @@ routine00AEB5:
 
 ;===================================================================================================
 
-routine00AF19:
+WavyPOV_HorizontalUpSlowBlocky:
 #_00AF19: DEC.w $0462
 #_00AF1C: BPL .exit
 
 #_00AF1E: LDY.w $0466
+
 #_00AF21: LDX.w #$0000
 
-.branch00AF24
-#_00AF24: LDA.w data00B15B,Y
+.copy_next
+#_00AF24: LDA.w WavyHDMAValuesB,Y
 #_00AF27: STA.l $7E2801,X
+
 #_00AF2B: INY
 #_00AF2C: INY
 #_00AF2D: CPY.w #$0040
-#_00AF30: BCC .branch00AF35
+#_00AF30: BCC .dont_reset
 
 #_00AF32: LDY.w #$0000
 
-.branch00AF35
+.dont_reset
 #_00AF35: INX
 #_00AF36: INX
 #_00AF37: CPX.w #$0100
-#_00AF3A: BCC .branch00AF24
+#_00AF3A: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00AF3C: LDA.w #$0000
 #_00AF3F: STA.l $7E2801,X
+
 #_00AF43: LDA.w $0464
 #_00AF46: STA.w $0462
+
 #_00AF49: LDA.w $0466
 #_00AF4C: INC A
 #_00AF4D: INC A
@@ -8543,8 +8583,10 @@ routine00AF19:
 #_00AF51: STA.w $0466
 
 #_00AF54: SEP #$30
+
 #_00AF56: LDA.b #$FF
 #_00AF58: STA.l $7E2800
+
 #_00AF5C: LDA.b #$00
 #_00AF5E: JSL PrepHDMAtypeFromA
 
@@ -8552,40 +8594,45 @@ routine00AF19:
 #_00AF62: RTS
 
 ;===================================================================================================
-; TODO HDMA stuff with wavy stuff
-;===================================================================================================
-routine00AF63:
+
+WavyPOV_VerticalDream:
 #_00AF63: DEC.w $0462
 #_00AF66: DEC.w $0462
 #_00AF69: BPL .exit
 
 #_00AF6B: LDY.w $0466
+
 #_00AF6E: LDX.w #$0000
 
-.branch00AF71
-#_00AF71: LDA.w data00B11B,Y
+.copy_next
+#_00AF71: LDA.w WavyHDMAValuesA,Y
 #_00AF74: SEC
 #_00AF75: SBC.w #$0008
 #_00AF78: AND.w #$01FF
 #_00AF7B: STA.l $7E2801,X
+
 #_00AF7F: INY
 #_00AF80: INY
 #_00AF81: CPY.w #$0040
-#_00AF84: BCC .branch00AF89
+#_00AF84: BCC .dont_reset
 
 #_00AF86: LDY.w #$0000
 
-.branch00AF89
+.dont_reset
 #_00AF89: INX
 #_00AF8A: INX
 #_00AF8B: CPX.w #$0100
-#_00AF8E: BCC .branch00AF71
+#_00AF8E: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00AF90: LDA.w #$0000
 #_00AF93: STA.l $7E27FF,X
 #_00AF97: STA.l $7E2801,X
+
 #_00AF9B: LDA.w $0464
 #_00AF9E: STA.w $0462
+
 #_00AFA1: LDA.w $0466
 #_00AFA4: INC A
 #_00AFA5: INC A
@@ -8593,8 +8640,10 @@ routine00AF63:
 #_00AFA9: STA.w $0466
 
 #_00AFAC: SEP #$30
+
 #_00AFAE: LDA.b #$FF
 #_00AFB0: STA.l $7E2800
+
 #_00AFB4: LDA.b #$01
 #_00AFB6: JSL PrepHDMAtypeFromA
 
@@ -8603,31 +8652,36 @@ routine00AF63:
 
 ;===================================================================================================
 
-routine00AFBB:
+WavyPOV_HorizontalUpJanky:
 #_00AFBB: DEC.w $0462
-#_00AFBE: BNE .branch00B000
+#_00AFBE: BNE .dont_copy
 
 #_00AFC0: LDY.w $0466
+
 #_00AFC3: LDX.w #$0000
 
-.branch00ADC5
-#_00AFC6: LDA.w data00B21B,Y
+.copy_next
+#_00AFC6: LDA.w WavyHDMAValuesJanky,Y
 #_00AFC9: STA.l $7E2801,X
+
 #_00AFCD: INY
 #_00AFCE: INY
 #_00AFCF: CPY.w #$0040
-#_00AFD2: BCC .branch00AFD7
+#_00AFD2: BCC .dont_reset
 
 #_00AFD4: LDY.w #$0000
 
-.branch00AFD7
+.dont_reset
 #_00AFD7: INX
 #_00AFD8: INX
 #_00AFD9: CPX.w #$0100
-#_00AFDC: BCC .branch00ADC5
+#_00AFDC: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00AFDE: LDA.w #$0000
 #_00AFE1: STA.l $7E2801,X
+
 #_00AFE5: LDA.w $0466
 #_00AFE8: INC A
 #_00AFE9: INC A
@@ -8635,66 +8689,83 @@ routine00AFBB:
 #_00AFED: STA.w $0466
 
 #_00AFF0: SEP #$30
+
 #_00AFF2: LDA.b #$FF
 #_00AFF4: STA.l $7E2800
+
 #_00AFF8: LDA.b #$00
 #_00AFFA: JSL PrepHDMAtypeFromA
+
 #_00AFFE: REP #$30
 
-.branch00B000
+;---------------------------------------------------------------------------------------------------
+
+.dont_copy
 #_00B000: DEC.w $0464
-#_00B003: BNE .branch00B02B
+#_00B003: BNE .abort
 
 #_00B005: LDA.w #$0010
 #_00B008: STA.w $0464
+
 #_00B00B: LDA.w $0462
 #_00B00E: EOR.w #$8000
 #_00B011: STA.w $0462
-#_00B014: BPL .branch00B02B
+
+#_00B014: BPL .abort
 
 #_00B016: SEP #$20
+
 #_00B018: LDA.w $0F0D
 #_00B01B: AND.b #$F7
 #_00B01D: STA.w $0F0D
 #_00B020: STA.w $0F0E
 
 #_00B023: REP #$20
+
 #_00B025: LDA.w #$0080
 #_00B028: STA.w $0464
 
-.branch00B02B
+.abort
 #_00B02B: INC.w $0462
+
 #_00B02E: RTS
 
 ;===================================================================================================
 
-routine00B02F:
+WavyPOV_HorizontalUpExcrutiatinglySlow:
 #_00B02F: DEC.w $0462
 #_00B032: BPL .exit
 
 #_00B034: LDY.w $0466
+
 #_00B037: LDX.w #$0000
 
-.branch00B03A
-#_00B03A: LDA.w data00B1DB,Y
+.copy_next
+#_00B03A: LDA.w WavyHDMAValuesD,Y
 #_00B03D: STA.l $7E2801,X
+
 #_00B041: INY
 #_00B042: INY
 #_00B043: CPY.w #$0040
-#_00B046: BCC .branch00B04B
+#_00B046: BCC .dont_reset
 
 #_00B048: LDY.w #$0000
 
-.branch00B04B
+.dont_reset
 #_00B04B: INX
 #_00B04C: INX
 #_00B04D: CPX.w #$0100
-#_00B050: BCC .branch00B03A
+#_00B050: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
+
 
 #_00B052: LDA.w #$0000
 #_00B055: STA.l $7E2801,X
+
 #_00B059: LDA.w $0464
 #_00B05C: STA.w $0462
+
 #_00B05F: LDA.w $0466
 #_00B062: INC A
 #_00B063: INC A
@@ -8702,8 +8773,10 @@ routine00B02F:
 #_00B067: STA.w $0466
 
 #_00B06A: SEP #$30
+
 #_00B06C: LDA.b #$FF
 #_00B06E: STA.l $7E2800
+
 #_00B072: LDA.b #$00
 #_00B074: JSL PrepHDMAtypeFromA
 
@@ -8712,33 +8785,39 @@ routine00B02F:
 
 ;===================================================================================================
 
-routine00B079:
+WavyPOV_VerticalHeft:
 #_00B079: DEC.w $0462
 #_00B07C: BPL .exit
 
 #_00B07E: LDY.w $0466
+
 #_00B081: LDX.w #$0000
 
-.branch00B084
-#_00B084: LDA.w data00B19B,Y
+.copy_next
+#_00B084: LDA.w WavyHDMAValuesHefty,Y
 #_00B087: STA.l $7E2801,X
+
 #_00B08B: INY
 #_00B08C: INY
 #_00B08D: CPY.w #$0040
-#_00B090: BCC .branch00B095
+#_00B090: BCC .dont_reset
 
 #_00B092: LDY.w #$0000
 
-.branch00B095
+.dont_reset
 #_00B095: INX
 #_00B096: INX
 #_00B097: CPX.w #$0100
-#_00B09A: BCC .branch00B084
+#_00B09A: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00B09C: LDA.w #$0000
 #_00B09F: STA.l $7E2801,X
+
 #_00B0A3: LDA.w $0464
 #_00B0A6: STA.w $0462
+
 #_00B0A9: LDA.w $0466
 #_00B0AC: INC A
 #_00B0AD: INC A
@@ -8746,8 +8825,10 @@ routine00B079:
 #_00B0B1: STA.w $0466
 
 #_00B0B4: SEP #$30
+
 #_00B0B6: LDA.b #$FF
 #_00B0B8: STA.l $7E2800
+
 #_00B0BC: LDA.b #$01
 #_00B0BE: JSL PrepHDMAtypeFromA
 
@@ -8756,38 +8837,44 @@ routine00B079:
 
 ;===================================================================================================
 
-routine00B0C3:
+WavyPOV_VerticalWobble:
 #_00B0C3: DEC.w $0462
 #_00B0C6: DEC.w $0462
 #_00B0C9: BPL .exit
 
 #_00B0CB: LDY.w $0466
+
 #_00B0CE: LDX.w #$0000
 
-.branch00B0D1
-#_00B0D1: LDA.w data00B1DB,Y
+.copy_next
+#_00B0D1: LDA.w WavyHDMAValuesD,Y
 #_00B0D4: SEC
 #_00B0D5: SBC.w #$0008
 #_00B0D8: AND.w #$01FF
 #_00B0DB: STA.l $7E2801,X
+
 #_00B0DF: INY
 #_00B0E0: INY
 #_00B0E1: CPY.w #$0040
-#_00B0E4: BCC .branch00B0E9
+#_00B0E4: BCC .dont_reset
 
 #_00B0E6: LDY.w #$0000
 
-.branch00B0E9
+.dont_reset
 #_00B0E9: INX
 #_00B0EA: INX
 #_00B0EB: CPX.w #$0100
-#_00B0EE: BCC .branch00B0D1
+#_00B0EE: BCC .copy_next
+
+;---------------------------------------------------------------------------------------------------
 
 #_00B0F0: LDA.w #$0000
 #_00B0F3: STA.l $7E27FF,X
 #_00B0F7: STA.l $7E2801,X
+
 #_00B0FB: LDA.w $0464
 #_00B0FE: STA.w $0462
+
 #_00B101: LDA.w $0466
 #_00B104: INC A
 #_00B105: INC A
@@ -8795,8 +8882,10 @@ routine00B0C3:
 #_00B109: STA.w $0466
 
 #_00B10C: SEP #$30
+
 #_00B10E: LDA.b #$FF
 #_00B110: STA.l $7E2800
+
 #_00B114: LDA.b #$01
 #_00B116: JSL PrepHDMAtypeFromA
 
@@ -8805,8 +8894,7 @@ routine00B0C3:
 
 ;===================================================================================================
 
-; TODO hdma tables? perhaps indirect stuff?
-data00B11B:
+WavyHDMAValuesA:
 #_00B11B: dw $0000,$01FF,$01FE,$01FE
 #_00B123: dw $01FD,$01FD,$01FD,$01FC
 #_00B12B: dw $01FC,$01FC,$01FD,$01FD
@@ -8816,7 +8904,9 @@ data00B11B:
 #_00B14B: dw $0004,$0004,$0003,$0003
 #_00B153: dw $0003,$0002,$0002,$0001
 
-data00B15B:
+;===================================================================================================
+
+WavyHDMAValuesB:
 #_00B15B: dw $0000,$01FE,$01FC,$01FC
 #_00B163: dw $01FA,$01FA,$01FA,$01F8
 #_00B16B: dw $01F8,$01F8,$01FA,$01FA
@@ -8826,7 +8916,9 @@ data00B15B:
 #_00B18B: dw $0008,$0008,$0006,$0006
 #_00B193: dw $0006,$0004,$0004,$0002
 
-data00B19B:
+;===================================================================================================
+
+WavyHDMAValuesHefty:
 #_00B19B: dw $0000,$01FF,$01FE,$01FE
 #_00B1A3: dw $01FF,$0000,$0001,$0002
 #_00B1AB: dw $0002,$0001,$0000,$01FF
@@ -8836,7 +8928,9 @@ data00B19B:
 #_00B1CB: dw $01FF,$0000,$0001,$0002
 #_00B1D3: dw $0002,$0001,$0000,$0000
 
-data00B1DB:
+;===================================================================================================
+
+WavyHDMAValuesD:
 #_00B1DB: dw $0000,$01FF,$01FE,$01FE
 #_00B1E3: dw $01FF,$0000,$0001,$0002
 #_00B1EB: dw $0002,$0001,$0000,$01FF
@@ -8846,7 +8940,9 @@ data00B1DB:
 #_00B20B: dw $0000,$0000,$0000,$0000
 #_00B213: dw $0000,$0000,$0000,$0000
 
-data00B21B:
+;===================================================================================================
+
+WavyHDMAValuesJanky:
 #_00B21B: dw $0000,$01FC,$01F8,$01F4
 #_00B223: dw $01F3,$01F2,$01F1,$01F0
 #_00B22B: dw $01F0,$01F4,$01F8,$01FC
@@ -8855,6 +8951,11 @@ data00B21B:
 #_00B243: dw $000D,$000E,$000F,$0010
 #_00B24B: dw $0010,$000C,$0008,$0004
 #_00B253: dw $0003,$0002,$0001,$0000
+
+;===================================================================================================
+; TODO this has to be something else, pretty sure
+; unused tables?
+;===================================================================================================
 #_00B25B: dw $0000,$0010,$0001,$000F
 #_00B263: dw $0002,$000E,$0003,$000D
 #_00B26B: dw $0004,$000C,$0005,$000B
@@ -8863,6 +8964,7 @@ data00B21B:
 #_00B283: dw $01F5,$01FB,$01F4,$01FC
 #_00B28B: dw $01F3,$01FD,$01F2,$01FE
 #_00B293: dw $01F1,$01FF,$01F0,$0000
+
 #_00B29B: dw $0000,$01F8,$01F0,$01E8
 #_00B2A3: dw $01E0,$01D8,$01D0,$01C8
 #_00B2AB: dw $01C8,$01D0,$01D8,$01E0
@@ -8876,20 +8978,25 @@ data00B21B:
 
 routine00B2DB:
 #_00B2DB: SEP #$20
+
 #_00B2DD: LDA.w $0CF3
-#_00B2E0: BEQ .branch00B2E5
+#_00B2E0: BEQ .loop
 
-#_00B2E2: JSR ResetStatsMaybe
+#_00B2E2: JSR InitializeSaveFile
 
-.branch00B2E5
+.loop
 #_00B2E5: SEP #$20
+
 #_00B2E7: LDA.b #$00
 #_00B2E9: STA.w $0404
+
 #_00B2EC: JSL routine00C197
+
 #_00B2F0: LDA.b #$FF
 #_00B2F2: STA.w $0404
 #_00B2F5: JSL routine028000
-#_00B2F9: BRA .branch00B2E5
+
+#_00B2F9: BRA .loop
 
 ;===================================================================================================
 
@@ -8897,6 +9004,7 @@ routine00B2DB:
 routine00B2FB:
 #_00B2FB: REP #$20
 #_00B2FD: JSL AddSelfAsVector
+
 #_00B301: LDA.w $0F2B
 #_00B304: BIT.w #$3000
 #_00B307: BNE .useless
@@ -8906,127 +9014,170 @@ routine00B2FB:
 
 ;===================================================================================================
 
-ResetStatsMaybe:
+InitializeSaveFile:
 #_00B30C: REP #$30
+
 #_00B30E: LDX.w #$0000
+
 #_00B311: STX.w $0720
 #_00B314: STZ.w $0715
 
-.branch00B317
+.next_human
 #_00B317: LDA.w #$8000
 #_00B31A: ORA.w $0715
 #_00B31D: STA.w $1004,X
 #_00B320: STA.w $1006,X
+
 #_00B323: LDA.w #$0001
 #_00B326: STA.w $100A,X
+
+;---------------------------------------------------------------------------------------------------
+
 #_00B329: LDY.w #$0000
 
-.branch00B32C
+.next_equip
 #_00B32C: LDA.w #$0005
 #_00B32F: STA.w $1010,X
+
 #_00B332: LDA.w #$FFFF
 #_00B335: STA.w $1042,X
+
 #_00B338: INX
 #_00B339: INX
+
 #_00B33A: INY
 #_00B33B: INY
 #_00B33C: CPY.w #$000E
-#_00B33F: BCC .branch00B32C
+#_00B33F: BCC .next_equip
+
+;---------------------------------------------------------------------------------------------------
 
 #_00B341: TXA
 #_00B342: AND.w #$FFE0
 #_00B345: TAX
+
 #_00B346: LDA.w #$0080
 #_00B349: CPX.w #$00C0
-#_00B34C: BCC .branch00B359
+#_00B34C: BCC .set_alignment
 
 #_00B34E: LDA.w #$0000
 #_00B351: CPX.w #$0120
-#_00B354: BCC .branch00B359
+#_00B354: BCC .set_alignment
 
 #_00B356: LDA.w #$00FF
 
-.branch00B359
+.set_alignment
 #_00B359: STA.w $101C,X
+
+;---------------------------------------------------------------------------------------------------
+
 #_00B35C: JSL UpdateMaxHP
 #_00B360: STA.w $102E,X
+
 #_00B363: JSL UpdateSwordPower
 #_00B367: JSL UpdateGunPower
 #_00B36B: JSL UpdateSwordAccuracy
 #_00B36F: JSL UpdateGunAccuracy
 #_00B373: JSL UpdateDefense
 #_00B377: JSL UpdateEvade
+
 #_00B37B: CPX.w #$0060
-#_00B37E: BCC .branch00B387
+#_00B37E: BCC .chase_has_no_magic
 
 #_00B380: JSL UpdateMaxMP
 #_00B384: STA.w $1032,X
 
-.branch00B387
+.chase_has_no_magic
 #_00B387: JSL UpdateMagicPower
 #_00B38B: JSL UpdateMagicEffect
+
 #_00B38F: INC.w $0715
+
 #_00B392: TXA
 #_00B393: CLC
 #_00B394: ADC.w #$0060
 #_00B397: TAX
-#_00B398: CMP.w #$0180
-#_00B39B: BCS .branch00B3A0
 
-#_00B39D: JMP .branch00B317
+#_00B398: CMP.w #$0180
+#_00B39B: BCS .done
+
+#_00B39D: JMP .next_human
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch00B3A0
+.done
 #_00B3A0: LDA.w #$FFFF
 #_00B3A3: LDX.w #$0000
 
-.branch00B3A6
+.clear_roster
 #_00B3A6: STA.w $0700,X
+
 #_00B3A9: INX
 #_00B3AA: INX
 #_00B3AB: CPX.w #$000C
-#_00B3AE: BCC .branch00B3A6
+#_00B3AE: BCC .clear_roster
+
+;---------------------------------------------------------------------------------------------------
 
 #_00B3B0: SEP #$20
+
 #_00B3B2: LDX.w #$0000
 
-.branch00B3B5
+.clear_names
 #_00B3B5: STZ.w $0410,X
+
 #_00B3B8: INX
 #_00B3B9: CPX.w #$0020
-#_00B3BC: BCC .branch00B3B5
+#_00B3BC: BCC .clear_names
+
+;---------------------------------------------------------------------------------------------------
 
 #_00B3BE: LDX.w #$0000
 
-.branch00B3C1
+.clear_inventory
 #_00B3C1: STZ.w $0780,X
+
 #_00B3C4: INX
 #_00B3C5: CPX.w #$003C
-#_00B3C8: BCC .branch00B3C1
+#_00B3C8: BCC .clear_inventory
+
+;---------------------------------------------------------------------------------------------------
 
 #_00B3CA: LDA.b #$80
 #_00B3CC: STA.w $0726
 #_00B3CF: STZ.w $0726
+
+; set spawn point
 #_00B3D2: LDA.b #$0F
 #_00B3D4: STA.w $070C
 #_00B3D7: LDA.b #$0E
 #_00B3D9: STA.w $070D
+
 #_00B3DC: LDA.b #$03
+
 #_00B3DE: STA.w $040D
+
 #_00B3E1: LDA.b #$05
 #_00B3E3: STA.w $0710
+
+; Dreaming
 #_00B3E6: LDA.b #$FF
 #_00B3E8: JSL SetGameProgressFlag
+
 #_00B3EC: LDA.b #$FE
 #_00B3EE: JSL SetGameProgressFlag
+
+; Initialize dream waves
 #_00B3F2: LDA.b #$03
 #_00B3F4: STA.w $0460
+
 #_00B3F7: LDA.b #$10
 #_00B3F9: STA.w $0464
+
 #_00B3FC: LDA.b #$FF
 #_00B3FE: STA.w $045E
 #_00B401: STA.w $045F
+
 #_00B404: RTS
 
 ;---------------------------------------------------------------------------------------------------
@@ -10170,66 +10321,78 @@ PrepHDMAtypeFromA:
 #_00BB34: PHK
 #_00BB35: PLB
 
+;---------------------------------------------------------------------------------------------------
+
 #_00BB36: LDX.w #$0000
 
-.branch00BB39
-#_00BB39: LDA.w data00BDB5,Y
+.ascertain_channel_bit
+#_00BB39: LDA.w TypedHDMAProperties+5,Y
 #_00BB3C: AND.w $0E80
-#_00BB3F: BNE .branch00BB4B
+#_00BB3F: BNE .this_channel
 
 #_00BB41: TXA
 #_00BB42: CLC
 #_00BB43: ADC.b #$10
 #_00BB45: TAX
-#_00BB46: ASL.w $0E80
-#_00BB49: BRA .branch00BB39
 
-.branch00BB4B
-#_00BB4B: LDA.w data00BDB0,Y
+#_00BB46: ASL.w $0E80
+#_00BB49: BRA .ascertain_channel_bit
+
+.this_channel
+#_00BB4B: LDA.w TypedHDMAProperties+0,Y
 #_00BB4E: STA.w DMAXMODE,X
+
+;---------------------------------------------------------------------------------------------------
 
 #_00BB51: LDA.b #$01
 #_00BB53: STA.w $0E80
 
+; Why didn't you do this with the previous loop?
 #_00BB56: LDX.w #$0000
 
-.branch00BB59
-#_00BB59: LDA.w data00BDB5,Y
+.ascertain_channel_again
+#_00BB59: LDA.w TypedHDMAProperties+5,Y
 #_00BB5C: AND.w $0E80
-#_00BB5F: BNE .branch00BB6A
+#_00BB5F: BNE .this_channel_again
 
 #_00BB61: INX
 #_00BB62: INX
 #_00BB63: INX
 #_00BB64: INX
-#_00BB65: ASL.w $0E80
-#_00BB68: BRA .branch00BB59
 
-.branch00BB6A
-#_00BB6A: LDA.w data00BDB1,Y
+#_00BB65: ASL.w $0E80
+#_00BB68: BRA .ascertain_channel_again
+
+;---------------------------------------------------------------------------------------------------
+
+.this_channel_again
+#_00BB6A: LDA.w TypedHDMAProperties+1,Y
 #_00BB6D: STA.w $0F0F,X
 
-#_00BB70: LDA.w data00BDB2,Y
+#_00BB70: LDA.w TypedHDMAProperties+2,Y
 #_00BB73: STA.w $0F10,X
 
-#_00BB76: LDA.w data00BDB3,Y
+#_00BB76: LDA.w TypedHDMAProperties+3,Y
 #_00BB79: STA.w $0F11,X
 
-#_00BB7C: LDA.w data00BDB4,Y
+#_00BB7C: LDA.w TypedHDMAProperties+4,Y
 #_00BB7F: STA.w $0F12,X
 
-#_00BB82: LDA.w data00BDB5,Y
+#_00BB82: LDA.w TypedHDMAProperties+5,Y
 #_00BB85: ORA.w $0F0E
 #_00BB88: STA.w $0F0E
+
 #_00BB8B: PLB
+
 #_00BB8C: PLP
 #_00BB8D: RTL
 
 ;===================================================================================================
 
-SomeOtherDMAsFromE80:
+PrepareTypedDMA:
 #_00BB8E: PHP
 #_00BB8F: REP #$30
+
 #_00BB91: AND.w #$00FF
 #_00BB94: ASL A
 #_00BB95: ASL A
@@ -10237,63 +10400,72 @@ SomeOtherDMAsFromE80:
 #_00BB97: TAY
 
 #_00BB98: SEP #$20
+
 #_00BB9A: LDA.b #$01
 #_00BB9C: STA.w $0E80
+
 #_00BB9F: PHB
 #_00BBA0: PHK
 #_00BBA1: PLB
+
+;---------------------------------------------------------------------------------------------------
+
 #_00BBA2: LDX.w #$0000
 
-.branch00BBA5
-#_00BBA5: LDA.w DMA_DATA_00BFD7+7,Y
+.ascertain_channel_bit
+#_00BBA5: LDA.w TypedDMAProperties+7,Y
 #_00BBA8: AND.w $0E80
-#_00BBAB: BNE .branch00BBB7
+#_00BBAB: BNE .this_channel
 
 #_00BBAD: TXA
 #_00BBAE: CLC
 #_00BBAF: ADC.b #$10
 #_00BBB1: TAX
-#_00BBB2: ASL.w $0E80
-#_00BBB5: BRA .branch00BBA5
 
-.branch00BBB7
-#_00BBB7: LDA.w DMA_DATA_00BFD7+0,Y
+#_00BBB2: ASL.w $0E80
+#_00BBB5: BRA .ascertain_channel_bit
+
+;---------------------------------------------------------------------------------------------------
+
+.this_channel
+#_00BBB7: LDA.w TypedDMAProperties+0,Y
 #_00BBBA: STA.w DMAXMODE,X
 
-#_00BBBD: LDA.w DMA_DATA_00BFD7+1,Y
+#_00BBBD: LDA.w TypedDMAProperties+1,Y
 #_00BBC0: STA.w DMAXPORT,X
 
-#_00BBC3: LDA.w DMA_DATA_00BFD7+2,Y
+#_00BBC3: LDA.w TypedDMAProperties+2,Y
 #_00BBC6: STA.w DMAXADDRL,X
 
-#_00BBC9: LDA.w DMA_DATA_00BFD7+3,Y
+#_00BBC9: LDA.w TypedDMAProperties+3,Y
 #_00BBCC: STA.w DMAXADDRH,X
 
-#_00BBCF: LDA.w DMA_DATA_00BFD7+4,Y
+#_00BBCF: LDA.w TypedDMAProperties+4,Y
 #_00BBD2: STA.w DMAXADDRB,X
 
-#_00BBD5: LDA.w DMA_DATA_00BFD7+5,Y
+#_00BBD5: LDA.w TypedDMAProperties+5,Y
 #_00BBD8: STA.w DMAXSIZEL,X
 
-#_00BBDB: LDA.w DMA_DATA_00BFD7+6,Y
+#_00BBDB: LDA.w TypedDMAProperties+6,Y
 #_00BBDE: STA.w DMAXSIZEH,X
 
-#_00BBE1: LDA.w DMA_DATA_00BFD7+7,Y
+#_00BBE1: LDA.w TypedDMAProperties+7,Y
 #_00BBE4: ORA.w $0F06
 #_00BBE7: STA.w $0F06
 
 #_00BBEA: SEP #$30
+
 #_00BBEC: LDX.b #$00
 #_00BBEE: STX.w MDMAEN
 
 #_00BBF1: PLB
+
 #_00BBF2: PLP
 #_00BBF3: RTL
 
 ;===================================================================================================
 
-; TODO some manual DMA
-routine00BBF4:
+ManuallyCopyTypedDMAToWRAM:
 #_00BBF4: REP #$30
 
 #_00BBF6: AND.w #$00FF
@@ -10317,18 +10489,18 @@ routine00BBF4:
 #_00BC12: PHK
 #_00BC13: PLB
 
-#_00BC14: LDA.w DMA_DATA_00BFD7+2,Y
+#_00BC14: LDA.w TypedDMAProperties+2,Y
 #_00BC17: STA.w $0093
 
-#_00BC1A: LDA.w DMA_DATA_00BFD7+3,Y
+#_00BC1A: LDA.w TypedDMAProperties+3,Y
 #_00BC1D: STA.w $0094
 
-#_00BC20: LDA.w DMA_DATA_00BFD7+4,Y
+#_00BC20: LDA.w TypedDMAProperties+4,Y
 #_00BC23: STA.w $0095
 
-#_00BC26: LDA.w DMA_DATA_00BFD7+6,Y
+#_00BC26: LDA.w TypedDMAProperties+6,Y
 #_00BC29: XBA
-#_00BC2A: LDA.w DMA_DATA_00BFD7+5,Y
+#_00BC2A: LDA.w TypedDMAProperties+5,Y
 
 #_00BC2D: PLB
 
@@ -10654,101 +10826,232 @@ CheckGameProgressFlag:
 ;===================================================================================================
 
 ; TODO put these together
-data00BDB0:
-#_00BDB0: db $02 ; DMA type $43x0
-
-data00BDB1:
-#_00BDB1: db $0F
-
-data00BDB2:
-#_00BDB2: db $00
-
-data00BDB3:
-#_00BDB3: db $28
-
-data00BDB4:
-#_00BDB4: db $7E
-
-data00BDB5:
-#_00BDB5: db $08,$02,$10,$00,$28,$7E,$08,$02
-#_00BDBD: db $12,$00,$27,$7E,$40,$02,$14,$5D
-#_00BDC5: db $BE,$00,$20,$02,$10,$79,$BE,$00
-#_00BDCD: db $10,$02,$10,$80,$BE,$00,$10,$02
-#_00BDD5: db $10,$B1,$BE,$00,$10,$02,$10,$E2
-#_00BDDD: db $BE,$00,$10,$02,$10,$13,$BF,$00
-#_00BDE5: db $10,$02,$10,$44,$BF,$00,$10,$02
-#_00BDED: db $10,$75,$BF,$00,$10,$02,$10,$A6
-#_00BDF5: db $BF,$00,$10,$02,$12,$35,$BE,$00
-#_00BDFD: db $40,$02,$0E,$0A,$BE,$00,$10,$02
-#_00BE05: db $0E,$00,$28,$7E,$08,$81,$00,$00
-#_00BE0D: db $16,$00,$00,$15,$FC,$01,$0C,$00
-#_00BE15: db $00,$0C,$04,$00,$0C,$08,$00,$0C
-#_00BE1D: db $0C,$00,$0C,$10,$00,$0C,$14,$00
-#_00BE25: db $0C,$18,$00,$0C,$1C,$00,$10,$20
-#_00BE2D: db $00,$3C,$24,$00,$08,$FC,$00,$00
-#_00BE35: db $81,$00,$00,$03,$00,$00,$07,$FC
-#_00BE3D: db $01,$0D,$00,$00,$0C,$04,$00,$0C
-#_00BE45: db $08,$00,$0C,$0C,$00,$0C,$10,$00
-#_00BE4D: db $0C,$14,$00,$4C,$18,$00,$34,$1C
-#_00BE55: db $00,$01,$1B,$00,$0B,$1A,$00,$00
-
-; TODO some HDMA table?
-#_00BE5D: db $81,$00,$00,$7E,$00,$00,$10,$80
-#_00BE65: db $00,$0C,$84,$00,$0C,$88,$00,$0C
-#_00BE6D: db $8C,$00,$0C,$90,$00,$0C,$94,$00
-#_00BE75: db $14,$98,$00,$00,$81,$F8,$00,$07
-#_00BE7D: db $F8,$00,$00,$81,$80,$00,$0E,$80
-#_00BE85: db $00,$07,$F1,$00,$07,$F2,$00,$07
-#_00BE8D: db $F3,$00,$07,$F4,$00,$07,$F5,$00
-#_00BE95: db $07,$F6,$00,$07,$F7,$00,$07,$F8
-#_00BE9D: db $00,$07,$F9,$00,$07,$FA,$00,$07
-#_00BEA5: db $FB,$00,$07,$FC,$00,$07,$FD,$00
-#_00BEAD: db $07,$FE,$00,$00,$81,$80,$00,$15
-#_00BEB5: db $80,$00,$06,$EA,$00,$06,$EC,$00
-#_00BEBD: db $06,$EE,$00,$06,$F0,$00,$06,$F2
-#_00BEC5: db $00,$06,$F4,$00,$06,$F6,$00,$06
-#_00BECD: db $F8,$00,$06,$FA,$00,$06,$FC,$00
-#_00BED5: db $06,$FE,$00,$06,$00,$00,$06,$02
-#_00BEDD: db $00,$06,$04,$00,$00,$81,$80,$00
-#_00BEE5: db $1C,$80,$00,$05,$E3,$00,$05,$E6
-#_00BEED: db $00,$05,$E9,$00,$05,$EC,$00,$05
-#_00BEF5: db $EF,$00,$05,$F2,$00,$05,$F5,$00
-#_00BEFD: db $05,$F8,$00,$05,$FB,$00,$05,$FE
-#_00BF05: db $00,$05,$01,$00,$05,$04,$00,$05
-#_00BF0D: db $07,$00,$05,$0A,$00,$00,$81,$80
-#_00BF15: db $00,$23,$80,$00,$04,$DC,$00,$04
-#_00BF1D: db $E0,$00,$04,$E4,$00,$04,$E8,$00
-#_00BF25: db $04,$EC,$00,$04,$F0,$00,$04,$F4
-#_00BF2D: db $00,$04,$F8,$00,$04,$FC,$00,$04
-#_00BF35: db $00,$00,$04,$04,$00,$04,$08,$00
-#_00BF3D: db $04,$0C,$00,$04,$10,$00,$00,$81
-#_00BF45: db $80,$00,$2A,$80,$00,$03,$D5,$00
-#_00BF4D: db $03,$DA,$00,$03,$DF,$00,$03,$E4
-#_00BF55: db $00,$03,$E9,$00,$03,$EE,$00,$03
-#_00BF5D: db $F3,$00,$03,$F8,$00,$03,$FD,$00
-#_00BF65: db $03,$02,$00,$03,$07,$00,$03,$0C
-#_00BF6D: db $00,$03,$11,$00,$03,$16,$00,$00
-#_00BF75: db $81,$80,$00,$31,$80,$00,$02,$CE
-#_00BF7D: db $00,$02,$D4,$00,$02,$DA,$00,$02
-#_00BF85: db $E0,$00,$02,$E6,$00,$02,$EC,$00
-#_00BF8D: db $02,$F2,$00,$02,$F8,$00,$02,$FE
-#_00BF95: db $00,$02,$04,$00,$02,$0A,$00,$02
-#_00BF9D: db $10,$00,$02,$16,$00,$02,$1C,$00
-#_00BFA5: db $00,$81,$80,$00,$38,$80,$00,$01
-#_00BFAD: db $C7,$00,$01,$CE,$00,$01,$D5,$00
-#_00BFB5: db $01,$DC,$00,$01,$E3,$00,$01,$EA
-#_00BFBD: db $00,$01,$F1,$00,$01,$F8,$00,$01
-#_00BFC5: db $FF,$00,$01,$06,$00,$01,$0D,$00
-#_00BFCD: db $01,$14,$00,$01,$1D,$00,$01,$22
-#_00BFD5: db $00
-
-data00BFD6:
-#_00BFD6: db $00
+; db <mode>, <register> : dl <table> : db <channel_bit>
+TypedHDMAProperties:
+#_00BDB0: db $02, BG2HOFS : dl $7E2800    : db $08 ; 00
+#_00BDB6: db $02, BG2VOFS : dl $7E2800    : db $08 ; 01
+#_00BDBC: db $02, BG3VOFS : dl $7E2700    : db $40 ; 02
+#_00BDC2: db $02, BG4VOFS : dl HDMAType03 : db $20 ; 03
+#_00BDC8: db $02, BG2VOFS : dl HDMAType04 : db $10 ; 04
+#_00BDCE: db $02, BG2VOFS : dl HDMAType05 : db $10 ; 05
+#_00BDD4: db $02, BG2VOFS : dl HDMAType06 : db $10 ; 06
+#_00BDDA: db $02, BG2VOFS : dl HDMAType07 : db $10 ; 07
+#_00BDE0: db $02, BG2VOFS : dl HDMAType08 : db $10 ; 08
+#_00BDE6: db $02, BG2VOFS : dl HDMAType09 : db $10 ; 09
+#_00BDEC: db $02, BG2VOFS : dl HDMAType0A : db $10 ; 0A
+#_00BDF2: db $02, BG2VOFS : dl HDMAType0B : db $10 ; 0B
+#_00BDF8: db $02, BG3VOFS : dl HDMAType0C : db $40 ; 0C
+#_00BDFE: db $02, BG1VOFS : dl HDMAType0D : db $10 ; 0D
+#_00BE04: db $02, BG1VOFS : dl $7E2800    : db $08 ; 0E
 
 ;===================================================================================================
 
-; TODO I think some of these are HDMA actually...
-DMA_DATA_00BFD7:
+HDMAType0D:
+#_00BE0A: db $81 : dw $0000 ;  1 line continuous
+#_00BE0D: db $16 : dw $0000 ; 22 lines
+#_00BE10: db $15 : dw $01FC ; 21 lines
+#_00BE13: db $0C : dw $0000 ; 12 lines
+#_00BE16: db $0C : dw $0004 ; 12 lines
+#_00BE19: db $0C : dw $0008 ; 12 lines
+#_00BE1C: db $0C : dw $000C ; 12 lines
+#_00BE1F: db $0C : dw $0010 ; 12 lines
+#_00BE22: db $0C : dw $0014 ; 12 lines
+#_00BE25: db $0C : dw $0018 ; 12 lines
+#_00BE28: db $0C : dw $001C ; 12 lines
+#_00BE2B: db $10 : dw $0020 ; 16 lines
+#_00BE2E: db $3C : dw $0024 ; 60 lines
+#_00BE31: db $08 : dw $00FC ;  8 lines
+#_00BE34: db $00 ; end
+
+;===================================================================================================
+
+HDMAType0C:
+#_00BE35: db $81 : dw $0000 ;  1 line continuous
+#_00BE38: db $03 : dw $0000 ;  3 lines
+#_00BE3B: db $07 : dw $01FC ;  7 lines
+#_00BE3E: db $0D : dw $0000 ; 13 lines
+#_00BE41: db $0C : dw $0004 ; 12 lines
+#_00BE44: db $0C : dw $0008 ; 12 lines
+#_00BE47: db $0C : dw $000C ; 12 lines
+#_00BE4A: db $0C : dw $0010 ; 12 lines
+#_00BE4D: db $0C : dw $0014 ; 12 lines
+#_00BE50: db $4C : dw $0018 ; 76 lines
+#_00BE53: db $34 : dw $001C ; 52 lines
+#_00BE56: db $01 : dw $001B ;  1 line
+#_00BE59: db $0B : dw $001A ; 11 lines
+#_00BE5C: db $00 ; end
+
+;===================================================================================================
+
+HDMAType03:
+#_00BE5D: db $81 : dw $0000 ;   1 line continuous
+#_00BE60: db $7E : dw $0000 ; 126 lines
+#_00BE63: db $10 : dw $0080 ;  16 lines
+#_00BE66: db $0C : dw $0084 ;  12 lines
+#_00BE69: db $0C : dw $0088 ;  12 lines
+#_00BE6C: db $0C : dw $008C ;  12 lines
+#_00BE6F: db $0C : dw $0090 ;  12 lines
+#_00BE72: db $0C : dw $0094 ;  12 lines
+#_00BE75: db $14 : dw $0098 ;  20 lines
+#_00BE78: db $00 ; end
+
+;===================================================================================================
+
+HDMAType04:
+#_00BE79: db $81 : dw $00F8 ; 1 line continuous
+#_00BE7C: db $07 : dw $00F8 ; 7 lines
+#_00BE7F: db $00 ; end
+
+;===================================================================================================
+
+HDMAType05:
+#_00BE80: db $81 : dw $0080 ;  1 line continuous
+#_00BE83: db $0E : dw $0080 ; 14 lines
+#_00BE86: db $07 : dw $00F1 ;  7 lines
+#_00BE89: db $07 : dw $00F2 ;  7 lines
+#_00BE8C: db $07 : dw $00F3 ;  7 lines
+#_00BE8F: db $07 : dw $00F4 ;  7 lines
+#_00BE92: db $07 : dw $00F5 ;  7 lines
+#_00BE95: db $07 : dw $00F6 ;  7 lines
+#_00BE98: db $07 : dw $00F7 ;  7 lines
+#_00BE9B: db $07 : dw $00F8 ;  7 lines
+#_00BE9E: db $07 : dw $00F9 ;  7 lines
+#_00BEA1: db $07 : dw $00FA ;  7 lines
+#_00BEA4: db $07 : dw $00FB ;  7 lines
+#_00BEA7: db $07 : dw $00FC ;  7 lines
+#_00BEAA: db $07 : dw $00FD ;  7 lines
+#_00BEAD: db $07 : dw $00FE ;  7 lines
+#_00BEB0: db $00 ; end
+
+;===================================================================================================
+
+HDMAType06:
+#_00BEB1: db $81 : dw $0080 ;  1 line continuous
+#_00BEB4: db $15 : dw $0080 ; 21 lines
+#_00BEB7: db $06 : dw $00EA ;  6 lines
+#_00BEBA: db $06 : dw $00EC ;  6 lines
+#_00BEBD: db $06 : dw $00EE ;  6 lines
+#_00BEC0: db $06 : dw $00F0 ;  6 lines
+#_00BEC3: db $06 : dw $00F2 ;  6 lines
+#_00BEC6: db $06 : dw $00F4 ;  6 lines
+#_00BEC9: db $06 : dw $00F6 ;  6 lines
+#_00BECC: db $06 : dw $00F8 ;  6 lines
+#_00BECF: db $06 : dw $00FA ;  6 lines
+#_00BED2: db $06 : dw $00FC ;  6 lines
+#_00BED5: db $06 : dw $00FE ;  6 lines
+#_00BED8: db $06 : dw $0000 ;  6 lines
+#_00BEDB: db $06 : dw $0002 ;  6 lines
+#_00BEDE: db $06 : dw $0004 ;  6 lines
+#_00BEE1: db $00 ; end
+
+;===================================================================================================
+
+HDMAType07:
+#_00BEE2: db $81 : dw $0080 ;  1 line continuous
+#_00BEE5: db $1C : dw $0080 ; 28 lines
+#_00BEE8: db $05 : dw $00E3 ;  5 lines
+#_00BEEB: db $05 : dw $00E6 ;  5 lines
+#_00BEEE: db $05 : dw $00E9 ;  5 lines
+#_00BEF1: db $05 : dw $00EC ;  5 lines
+#_00BEF4: db $05 : dw $00EF ;  5 lines
+#_00BEF7: db $05 : dw $00F2 ;  5 lines
+#_00BEFA: db $05 : dw $00F5 ;  5 lines
+#_00BEFD: db $05 : dw $00F8 ;  5 lines
+#_00BF00: db $05 : dw $00FB ;  5 lines
+#_00BF03: db $05 : dw $00FE ;  5 lines
+#_00BF06: db $05 : dw $0001 ;  5 lines
+#_00BF09: db $05 : dw $0004 ;  5 lines
+#_00BF0C: db $05 : dw $0007 ;  5 lines
+#_00BF0F: db $05 : dw $000A ;  5 lines
+#_00BF12: db $00 ; end
+
+;===================================================================================================
+
+HDMAType08:
+#_00BF13: db $81 : dw $0080 ;  1 line continuous
+#_00BF16: db $23 : dw $0080 ; 35 lines
+#_00BF19: db $04 : dw $00DC ;  4 lines
+#_00BF1C: db $04 : dw $00E0 ;  4 lines
+#_00BF1F: db $04 : dw $00E4 ;  4 lines
+#_00BF22: db $04 : dw $00E8 ;  4 lines
+#_00BF25: db $04 : dw $00EC ;  4 lines
+#_00BF28: db $04 : dw $00F0 ;  4 lines
+#_00BF2B: db $04 : dw $00F4 ;  4 lines
+#_00BF2E: db $04 : dw $00F8 ;  4 lines
+#_00BF31: db $04 : dw $00FC ;  4 lines
+#_00BF34: db $04 : dw $0000 ;  4 lines
+#_00BF37: db $04 : dw $0004 ;  4 lines
+#_00BF3A: db $04 : dw $0008 ;  4 lines
+#_00BF3D: db $04 : dw $000C ;  4 lines
+#_00BF40: db $04 : dw $0010 ;  4 lines
+#_00BF43: db $00 ; end
+
+;===================================================================================================
+
+HDMAType09:
+#_00BF44: db $81 : dw $0080 ;  1 line continuous
+#_00BF47: db $2A : dw $0080 ; 42 lines
+#_00BF4A: db $03 : dw $00D5 ;  3 lines
+#_00BF4D: db $03 : dw $00DA ;  3 lines
+#_00BF50: db $03 : dw $00DF ;  3 lines
+#_00BF53: db $03 : dw $00E4 ;  3 lines
+#_00BF56: db $03 : dw $00E9 ;  3 lines
+#_00BF59: db $03 : dw $00EE ;  3 lines
+#_00BF5C: db $03 : dw $00F3 ;  3 lines
+#_00BF5F: db $03 : dw $00F8 ;  3 lines
+#_00BF62: db $03 : dw $00FD ;  3 lines
+#_00BF65: db $03 : dw $0002 ;  3 lines
+#_00BF68: db $03 : dw $0007 ;  3 lines
+#_00BF6B: db $03 : dw $000C ;  3 lines
+#_00BF6E: db $03 : dw $0011 ;  3 lines
+#_00BF71: db $03 : dw $0016 ;  3 lines
+#_00BF74: db $00 ; end
+
+;===================================================================================================
+
+HDMAType0A:
+#_00BF75: db $81 : dw $0080 ;  1 line continuous
+#_00BF78: db $31 : dw $0080 ; 49 lines
+#_00BF7B: db $02 : dw $00CE ;  2 lines
+#_00BF7E: db $02 : dw $00D4 ;  2 lines
+#_00BF81: db $02 : dw $00DA ;  2 lines
+#_00BF84: db $02 : dw $00E0 ;  2 lines
+#_00BF87: db $02 : dw $00E6 ;  2 lines
+#_00BF8A: db $02 : dw $00EC ;  2 lines
+#_00BF8D: db $02 : dw $00F2 ;  2 lines
+#_00BF90: db $02 : dw $00F8 ;  2 lines
+#_00BF93: db $02 : dw $00FE ;  2 lines
+#_00BF96: db $02 : dw $0004 ;  2 lines
+#_00BF99: db $02 : dw $000A ;  2 lines
+#_00BF9C: db $02 : dw $0010 ;  2 lines
+#_00BF9F: db $02 : dw $0016 ;  2 lines
+#_00BFA2: db $02 : dw $001C ;  2 lines
+#_00BFA5: db $00 ; end
+
+;===================================================================================================
+
+HDMAType0B:
+#_00BFA6: db $81 : dw $0080 ;  1 line continuous
+#_00BFA9: db $38 : dw $0080 ; 56 lines
+#_00BFAC: db $01 : dw $00C7 ;  1 line
+#_00BFAF: db $01 : dw $00CE ;  1 line
+#_00BFB2: db $01 : dw $00D5 ;  1 line
+#_00BFB5: db $01 : dw $00DC ;  1 line
+#_00BFB8: db $01 : dw $00E3 ;  1 line
+#_00BFBB: db $01 : dw $00EA ;  1 line
+#_00BFBE: db $01 : dw $00F1 ;  1 line
+#_00BFC1: db $01 : dw $00F8 ;  1 line
+#_00BFC4: db $01 : dw $00FF ;  1 line
+#_00BFC7: db $01 : dw $0006 ;  1 line
+#_00BFCA: db $01 : dw $000D ;  1 line
+#_00BFCD: db $01 : dw $0014 ;  1 line
+#_00BFD0: db $01 : dw $001D ;  1 line
+#_00BFD3: db $01 : dw $0022 ;  1 line
+#_00BFD6: db $00 ; end
+
+;===================================================================================================
+
+TypedDMAProperties:
 ; TODO is this unused? it makes no sense
 .type_00
 #_00BFD7: db $00, OAMDATA ; transfer type, port
@@ -10756,17 +11059,24 @@ DMA_DATA_00BFD7:
 #_00BFDC: dw $2002 ; size
 #_00BFDE: db $80 ; channel
 
+;===================================================================================================
+; VRAM
+;===================================================================================================
 .type_01
 #_00BFDF: db $01, VMDATA ; transfer type, port
 #_00BFE1: dl $109000 ; A bus address
 #_00BFE4: dw $0200 ; size
 #_00BFE6: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_02
 #_00BFE7: db $01, VMDATA ; transfer type, port
-#_00BFE9: dl $108000 ; A bus address
+#_00BFE9: dl FontGFX ; A bus address
 #_00BFEC: dw $1000 ; size
 #_00BFEE: db $01 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_03
 #_00BFEF: db $01, VMDATA ; transfer type, port
@@ -10774,107 +11084,147 @@ DMA_DATA_00BFD7:
 #_00BFF4: dw $1000 ; size
 #_00BFF6: db $01 ; channel
 
+;===================================================================================================
+; Dungeon themes
+;===================================================================================================
 .type_04
 #_00BFF7: db $01, VMDATA ; transfer type, port
-#_00BFF9: dl $118000 ; A bus address
+#_00BFF9: dl DungeonTheme0GFX ; A bus address
 #_00BFFC: dw $8000 ; size
 #_00BFFE: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_05
 #_00BFFF: db $01, VMDATA ; transfer type, port
-#_00C001: dl $128000 ; A bus address
+#_00C001: dl DungeonTheme1GFX ; A bus address
 #_00C004: dw $8000 ; size
 #_00C006: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_06
 #_00C007: db $01, VMDATA ; transfer type, port
-#_00C009: dl $138000 ; A bus address
+#_00C009: dl DungeonTheme2GFX ; A bus address
 #_00C00C: dw $8000 ; size
 #_00C00E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_07
 #_00C00F: db $01, VMDATA ; transfer type, port
-#_00C011: dl $148000 ; A bus address
+#_00C011: dl DungeonTheme3GFX ; A bus address
 #_00C014: dw $8000 ; size
 #_00C016: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_08
 #_00C017: db $01, VMDATA ; transfer type, port
-#_00C019: dl $158000 ; A bus address
+#_00C019: dl DungeonTheme4GFX ; A bus address
 #_00C01C: dw $8000 ; size
 #_00C01E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_09
 #_00C01F: db $01, VMDATA ; transfer type, port
-#_00C021: dl $168000 ; A bus address
+#_00C021: dl DungeonTheme5GFX ; A bus address
 #_00C024: dw $8000 ; size
 #_00C026: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_0A
 #_00C027: db $01, VMDATA ; transfer type, port
-#_00C029: dl $118000 ; A bus address
+#_00C029: dl DungeonTheme0GFX ; A bus address
 #_00C02C: dw $8000 ; size
 #_00C02E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_0B
 #_00C02F: db $01, VMDATA ; transfer type, port
-#_00C031: dl $128000 ; A bus address
+#_00C031: dl DungeonTheme1GFX ; A bus address
 #_00C034: dw $8000 ; size
 #_00C036: db $01 ; channel
 
+;===================================================================================================
+; TODO seems related to turning
+; TODO wtf are these -$4000 just why (handed at 00CB12)
+;===================================================================================================
 .type_0C
 #_00C037: db $01, VMDATA ; transfer type, port
-#_00C039: dl $174000 ; A bus address
+#_00C039: dl $178000-$4000 ; A bus address
 #_00C03C: dw $1000 ; size
 #_00C03E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_0D
 #_00C03F: db $01, VMDATA ; transfer type, port
-#_00C041: dl $178000 ; A bus address
+#_00C041: dl $17C000-$4000 ; A bus address
 #_00C044: dw $1000 ; size
 #_00C046: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_0E
 #_00C047: db $01, VMDATA ; transfer type, port
-#_00C049: dl $184000 ; A bus address
+#_00C049: dl $188000-$4000 ; A bus address
 #_00C04C: dw $1000 ; size
 #_00C04E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_0F
 #_00C04F: db $01, VMDATA ; transfer type, port
-#_00C051: dl $188000 ; A bus address
+#_00C051: dl $18C000-$4000 ; A bus address
 #_00C054: dw $1000 ; size
 #_00C056: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_10
 #_00C057: db $01, VMDATA ; transfer type, port
-#_00C059: dl $194000 ; A bus address
+#_00C059: dl $198000-$4000 ; A bus address
 #_00C05C: dw $1000 ; size
 #_00C05E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_11
 #_00C05F: db $01, VMDATA ; transfer type, port
-#_00C061: dl $198000 ; A bus address
+#_00C061: dl $19C000-$4000 ; A bus address
 #_00C064: dw $1000 ; size
 #_00C066: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_12
 #_00C067: db $01, VMDATA ; transfer type, port
-#_00C069: dl $174000 ; A bus address
+#_00C069: dl $178000-$4000 ; A bus address
 #_00C06C: dw $1000 ; size
 #_00C06E: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_13
 #_00C06F: db $01, VMDATA ; transfer type, port
-#_00C071: dl $178000 ; A bus address
+#_00C071: dl $17C000-$4000 ; A bus address
 #_00C074: dw $1000 ; size
 #_00C076: db $01 ; channel
 
+;===================================================================================================
+; CGRAM
+;===================================================================================================
 .type_14
 #_00C077: db $00, CGDATA ; transfer type, port
 #_00C079: dl $078000 ; A bus address
 #_00C07C: dw $0020 ; size
 #_00C07E: db $02 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_15
 #_00C07F: db $00, CGDATA ; transfer type, port
@@ -10882,11 +11232,15 @@ DMA_DATA_00BFD7:
 #_00C084: dw $0020 ; size
 #_00C086: db $02 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_16
 #_00C087: db $00, CGDATA ; transfer type, port
 #_00C089: dl $078040 ; A bus address
 #_00C08C: dw $0020 ; size
 #_00C08E: db $02 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_17
 #_00C08F: db $00, CGDATA ; transfer type, port
@@ -10894,11 +11248,15 @@ DMA_DATA_00BFD7:
 #_00C094: dw $0020 ; size
 #_00C096: db $02 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_18
 #_00C097: db $00, CGDATA ; transfer type, port
 #_00C099: dl $078080 ; A bus address
 #_00C09C: dw $0020 ; size
 #_00C09E: db $02 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_19
 #_00C09F: db $00, CGDATA ; transfer type, port
@@ -10906,11 +11264,15 @@ DMA_DATA_00BFD7:
 #_00C0A4: dw $0020 ; size
 #_00C0A6: db $02 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_1A
 #_00C0A7: db $00, CGDATA ; transfer type, port
 #_00C0A9: dl $0780C0 ; A bus address
 #_00C0AC: dw $0020 ; size
 #_00C0AE: db $02 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_1B
 #_00C0AF: db $00, CGDATA ; transfer type, port
@@ -10918,11 +11280,16 @@ DMA_DATA_00BFD7:
 #_00C0B4: dw $0020 ; size
 #_00C0B6: db $02 ; channel
 
+;===================================================================================================
+; 
+;===================================================================================================
 .type_1C
 #_00C0B7: db $01, VMDATA ; transfer type, port
 #_00C0B9: dl $10A000 ; A bus address
 #_00C0BC: dw $0500 ; size
 #_00C0BE: db $01 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_1D
 #_00C0BF: db $01, VMDATA ; transfer type, port
@@ -10930,83 +11297,113 @@ DMA_DATA_00BFD7:
 #_00C0C4: dw $0800 ; size
 #_00C0C6: db $01 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_1E
 #_00C0C7: db $00, CGDATA ; transfer type, port
 #_00C0C9: dl $1CB040 ; A bus address
 #_00C0CC: dw $0100 ; size
 #_00C0CE: db $02 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_1F
 #_00C0CF: db $00, CGDATA ; transfer type, port
-#_00C0D1: dl $078000 ; A bus address
+#_00C0D1: dl Palettes ; A bus address
 #_00C0D4: dw $0100 ; size
 #_00C0D6: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+; WRAM palettes
+;---------------------------------------------------------------------------------------------------
+
 .type_20
 #_00C0D7: db $00, WMDATA ; transfer type, port
-#_00C0D9: dl $078100 ; A bus address
+#_00C0D9: dl Palettes_theme_00 ; A bus address
 #_00C0DC: dw $0020 ; size
 #_00C0DE: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_21
 #_00C0DF: db $00, WMDATA ; transfer type, port
-#_00C0E1: dl $078120 ; A bus address
+#_00C0E1: dl Palettes_theme_01 ; A bus address
 #_00C0E4: dw $0020 ; size
 #_00C0E6: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_22
 #_00C0E7: db $00, WMDATA ; transfer type, port
-#_00C0E9: dl $078140 ; A bus address
+#_00C0E9: dl Palettes_theme_02 ; A bus address
 #_00C0EC: dw $0020 ; size
 #_00C0EE: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_23
 #_00C0EF: db $00, WMDATA ; transfer type, port
-#_00C0F1: dl $078160 ; A bus address
+#_00C0F1: dl Palettes_theme_03 ; A bus address
 #_00C0F4: dw $0020 ; size
 #_00C0F6: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_24
 #_00C0F7: db $00, WMDATA ; transfer type, port
-#_00C0F9: dl $078180 ; A bus address
+#_00C0F9: dl Palettes_theme_04 ; A bus address
 #_00C0FC: dw $0020 ; size
 #_00C0FE: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_25
 #_00C0FF: db $00, WMDATA ; transfer type, port
-#_00C101: dl $0781A0 ; A bus address
+#_00C101: dl Palettes_theme_05 ; A bus address
 #_00C104: dw $0020 ; size
 #_00C106: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_26
 #_00C107: db $00, WMDATA ; transfer type, port
-#_00C109: dl $0781C0 ; A bus address
+#_00C109: dl Palettes_theme_06 ; A bus address
 #_00C10C: dw $0020 ; size
 #_00C10E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_27
 #_00C10F: db $00, WMDATA ; transfer type, port
-#_00C111: dl $0781E0 ; A bus address
+#_00C111: dl Palettes_theme_07 ; A bus address
 #_00C114: dw $0020 ; size
 #_00C116: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_28
 #_00C117: db $00, WMDATA ; transfer type, port
-#_00C119: dl $078200 ; A bus address
+#_00C119: dl Palettes_theme_08 ; A bus address
 #_00C11C: dw $0020 ; size
 #_00C11E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_29
 #_00C11F: db $00, WMDATA ; transfer type, port
-#_00C121: dl $078220 ; A bus address
+#_00C121: dl Palettes_theme_09 ; A bus address
 #_00C124: dw $0020 ; size
 #_00C126: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_2A
 #_00C127: db $00, WMDATA ; transfer type, port
-#_00C129: dl $078240 ; A bus address
+#_00C129: dl Palettes_theme_0A ; A bus address
 #_00C12C: dw $0020 ; size
 #_00C12E: db $04 ; channel
+
+;---------------------------------------------------------------------------------------------------
 
 .type_2B
 #_00C12F: db $00, WMDATA ; transfer type, port
@@ -11014,75 +11411,99 @@ DMA_DATA_00BFD7:
 #_00C134: dw $0020 ; size
 #_00C136: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_2C
 #_00C137: db $00, WMDATA ; transfer type, port
-#_00C139: dl $078280 ; A bus address
+#_00C139: dl Palettes_theme_0B ; A bus address
 #_00C13C: dw $0020 ; size
 #_00C13E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_2D
 #_00C13F: db $00, WMDATA ; transfer type, port
-#_00C141: dl $0782A0 ; A bus address
+#_00C141: dl Palettes_theme_0C ; A bus address
 #_00C144: dw $0020 ; size
 #_00C146: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_2E
 #_00C147: db $00, WMDATA ; transfer type, port
-#_00C149: dl $0782C0 ; A bus address
+#_00C149: dl Palettes_theme_0D ; A bus address
 #_00C14C: dw $0020 ; size
 #_00C14E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_2F
 #_00C14F: db $00, WMDATA ; transfer type, port
-#_00C151: dl $0782E0 ; A bus address
+#_00C151: dl Palettes_theme_0F ; A bus address
 #_00C154: dw $0020 ; size
 #_00C156: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_30
 #_00C157: db $00, WMDATA ; transfer type, port
-#_00C159: dl $078300 ; A bus address
+#_00C159: dl Palettes_theme_10 ; A bus address
 #_00C15C: dw $0020 ; size
 #_00C15E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_31
 #_00C15F: db $00, WMDATA ; transfer type, port
-#_00C161: dl $078320 ; A bus address
+#_00C161: dl Palettes_theme_11 ; A bus address
 #_00C164: dw $0020 ; size
 #_00C166: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_32
 #_00C167: db $00, WMDATA ; transfer type, port
-#_00C169: dl $078340 ; A bus address
+#_00C169: dl Palettes_theme_12 ; A bus address
 #_00C16C: dw $0020 ; size
 #_00C16E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_33
 #_00C16F: db $00, WMDATA ; transfer type, port
-#_00C171: dl $078360 ; A bus address
+#_00C171: dl Palettes_theme_13 ; A bus address
 #_00C174: dw $0020 ; size
 #_00C176: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_34
 #_00C177: db $00, WMDATA ; transfer type, port
-#_00C179: dl $078380 ; A bus address
+#_00C179: dl Palettes_theme_14 ; A bus address
 #_00C17C: dw $0020 ; size
 #_00C17E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_35
 #_00C17F: db $00, WMDATA ; transfer type, port
-#_00C181: dl $0783A0 ; A bus address
+#_00C181: dl Palettes_theme_15 ; A bus address
 #_00C184: dw $0020 ; size
 #_00C186: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_36
 #_00C187: db $00, WMDATA ; transfer type, port
-#_00C189: dl $0783C0 ; A bus address
+#_00C189: dl Palettes_theme_16 ; A bus address
 #_00C18C: dw $0020 ; size
 #_00C18E: db $04 ; channel
 
+;---------------------------------------------------------------------------------------------------
+
 .type_37
 #_00C18F: db $00, WMDATA ; transfer type, port
-#_00C191: dl $0783E0 ; A bus address
+#_00C191: dl Palettes_theme_17 ; A bus address
 #_00C194: dw $0020 ; size
 #_00C196: db $04 ; channel
 
@@ -11114,7 +11535,7 @@ routine00C197:
 #_00C1C2: STA.w VMADDH
 
 #_00C1C5: LDA.b #$02
-#_00C1C7: JSL SomeOtherDMAsFromE80
+#_00C1C7: JSL PrepareTypedDMA
 #_00C1CB: STA.w MDMAEN
 
 ; $8000 in VRAM
@@ -11130,7 +11551,7 @@ routine00C197:
 #_00C1DD: LDA.l DungeonThemes+0,X
 #_00C1E1: CLC
 #_00C1E2: ADC.b #$04
-#_00C1E4: JSL SomeOtherDMAsFromE80
+#_00C1E4: JSL PrepareTypedDMA
 #_00C1E8: STA.w MDMAEN
 
 ; $7800 in VRAM
@@ -11140,7 +11561,7 @@ routine00C197:
 #_00C1F2: STA.w VMADDH
 
 #_00C1F5: LDA.b #$1C
-#_00C1F7: JSL SomeOtherDMAsFromE80
+#_00C1F7: JSL PrepareTypedDMA
 #_00C1FB: STA.w MDMAEN
 
 ; $6800 in VRAM
@@ -11150,7 +11571,7 @@ routine00C197:
 #_00C205: STA.w VMADDH
 
 #_00C208: LDA.b #$1D
-#_00C20A: JSL SomeOtherDMAsFromE80
+#_00C20A: JSL PrepareTypedDMA
 #_00C20E: STA.w MDMAEN
 
 ; $0000 in VRAM
@@ -11160,7 +11581,7 @@ routine00C197:
 #_00C218: STA.w VMADDH
 
 #_00C21B: LDA.b #$03
-#_00C21D: JSL SomeOtherDMAsFromE80
+#_00C21D: JSL PrepareTypedDMA
 #_00C221: STA.w MDMAEN
 
 ;---------------------------------------------------------------------------------------------------
@@ -11178,7 +11599,7 @@ routine00C197:
 #_00C237: STA.w $0F0C
 
 #_00C23A: LDA.b #$1F
-#_00C23C: JSL routine00BBF4
+#_00C23C: JSL ManuallyCopyTypedDMAToWRAM
 
 ; TODO wram address?
 #_00C240: LDA.b #$40
@@ -11194,7 +11615,7 @@ routine00C197:
 #_00C254: LDA.l DungeonThemes+1,X
 #_00C258: CLC
 #_00C259: ADC.b #$20
-#_00C25B: JSL routine00BBF4
+#_00C25B: JSL ManuallyCopyTypedDMAToWRAM
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -11202,14 +11623,14 @@ routine00C197:
 #_00C261: STA.w CGADD
 
 #_00C264: LDA.b #$1E
-#_00C266: JSL SomeOtherDMAsFromE80
+#_00C266: JSL PrepareTypedDMA
 #_00C26A: STA.w MDMAEN
 
 #_00C26D: LDA.b #$C0
 #_00C26F: STA.w CGADD
 
 #_00C272: LDA.b #$1E
-#_00C274: JSL SomeOtherDMAsFromE80
+#_00C274: JSL PrepareTypedDMA
 #_00C278: STA.w MDMAEN
 
 ; TODO wram address?
@@ -11221,7 +11642,7 @@ routine00C197:
 #_00C287: STA.w $0F0C
 
 #_00C28A: LDA.b #$1E
-#_00C28C: JSL routine00BBF4
+#_00C28C: JSL ManuallyCopyTypedDMAToWRAM
 
 ; TODO wram address?
 #_00C290: LDA.b #$80
@@ -11232,7 +11653,7 @@ routine00C197:
 #_00C29C: STA.w $0F0C
 
 #_00C29F: LDA.b #$1E
-#_00C2A1: JSL routine00BBF4
+#_00C2A1: JSL ManuallyCopyTypedDMAToWRAM
 
 ;---------------------------------------------------------------------------------------------------
 
@@ -11254,7 +11675,7 @@ routine00C197:
 #_00C2B6: SEP #$20
 
 #_00C2B8: LDA.b #$00
-#_00C2BA: JSL SomeOtherDMAsFromE80
+#_00C2BA: JSL PrepareTypedDMA
 
 #_00C2BE: LDX.b #$80
 #_00C2C0: STX.w MDMAEN
@@ -11371,7 +11792,8 @@ routine00C351:
 
 .branch00C386
 #_00C386: JSL AddSelfAsVector
-#_00C38A: JSR routine00D484
+
+#_00C38A: JSR AttemptAutoMovement
 
 #_00C38D: LDA.w $0F2B
 #_00C390: BEQ .skip
@@ -11789,7 +12211,7 @@ routine00C57F:
 #_00C612: STA.w $0F0C
 
 #_00C615: LDA.b #$19
-#_00C617: JSL routine00BBF4
+#_00C617: JSL ManuallyCopyTypedDMAToWRAM
 
 #_00C61B: LDA.b #$04
 #_00C61D: LDX.b #$00
@@ -11880,7 +12302,7 @@ routine00C686:
 .branch00C699
 #_00C699: LDX.w $0E00
 
-#_00C69C: LDA.l data00C72E,X
+#_00C69C: LDA.l SomeHDMATypes,X
 #_00C6A0: CLC
 #_00C6A1: ADC.b #$04
 #_00C6A3: JSL PrepHDMAtypeFromA
@@ -11911,7 +12333,7 @@ routine00C686:
 #_00C6CF: JSL routine0091FD
 #_00C6D3: JSL AddSelfAsVectorAndMakeSpace
 
-#_00C6D7: LDA.l data00C739
+#_00C6D7: LDA.l SomeHDMATypes+$0A
 #_00C6DB: CLC
 #_00C6DC: ADC.b #$04
 #_00C6DE: JSL PrepHDMAtypeFromA
@@ -11936,7 +12358,7 @@ routine00C686:
 .next_wait
 #_00C6FE: LDX.w $0E00
 
-#_00C701: LDA.l data00C72E,X
+#_00C701: LDA.l SomeHDMATypes,X
 #_00C705: CLC
 #_00C706: ADC.b #$04
 #_00C708: JSL PrepHDMAtypeFromA
@@ -11965,13 +12387,18 @@ routine00C686:
 
 ;---------------------------------------------------------------------------------------------------
 
-data00C72E:
-#_00C72E: db $02,$04,$06,$07
-#_00C732: db $05,$00,$01,$00
-#_00C736: db $02,$04,$06
-
-data00C739:
-#_00C739: db $07
+SomeHDMATypes:
+#_00C72E: db $02 ; 00
+#_00C72F: db $04 ; 01
+#_00C730: db $06 ; 02
+#_00C731: db $07 ; 03
+#_00C732: db $05 ; 04
+#_00C733: db $00 ; 05
+#_00C734: db $01 ; 06
+#_00C735: db $00 ; 07
+#_00C736: db $02 ; 08
+#_00C737: db $04 ; 09
+#_00C739: db $07 ; 0A
 
 ;===================================================================================================
 
@@ -12116,7 +12543,7 @@ routine00C805:
 #_00C812: LDA.l DungeonThemes+0,X
 #_00C816: CLC
 #_00C817: ADC.b #$04
-#_00C819: JSL SomeOtherDMAsFromE80
+#_00C819: JSL PrepareTypedDMA
 
 #_00C81D: LDA.w $0E00
 #_00C820: ASL A
@@ -12163,7 +12590,7 @@ routine00C805:
 #_00C861: LDA.l DungeonThemes+1,X
 #_00C865: CLC
 #_00C866: ADC.b #$20
-#_00C868: JSL routine00BBF4
+#_00C868: JSL ManuallyCopyTypedDMAToWRAM
 #_00C86C: JSL AddSelfAsVectorAndMakeSpace
 
 #_00C870: PLP
@@ -12216,11 +12643,11 @@ TryToMoveOrTurn:
 #_00C8A7: JSL CheckGameProgressFlag
 
 #_00C8AB: LDA.b #$04
-#_00C8AD: BCS .branch00C8B1
+#_00C8AD: BCS .not_automoving
 
 #_00C8AF: LDA.b #$0C
 
-.branch00C8B1
+.not_automoving
 #_00C8B1: REP #$20
 
 #_00C8B3: AND.w #$00FF
@@ -12636,7 +13063,7 @@ routine00CAF4:
 #_00CAFD: TYA
 #_00CAFE: CLC
 #_00CAFF: ADC.l DungeonThemes+0,X
-#_00CB03: JSL SomeOtherDMAsFromE80
+#_00CB03: JSL PrepareTypedDMA
 
 #_00CB07: LDA.w $0E00
 #_00CB0A: ASL A
@@ -14410,7 +14837,7 @@ RemoveSomeHP:
 
 ;===================================================================================================
 
-routine00D484:
+AttemptAutoMovement:
 #_00D484: LDA.w #$00FE
 #_00D487: JSL CheckGameProgressFlag
 #_00D48B: BCS .exit
@@ -14422,45 +14849,154 @@ routine00D484:
 #_00D497: ASL A
 #_00D498: TAX
 
-#_00D499: LDA.l data00D4A4,X
+#_00D499: LDA.l .forced_inputs,X
+
 #_00D49D: INC.w $0722
+
 #_00D4A0: STA.w $0F2B
 
 .exit
 #_00D4A3: RTS
 
-data00D4A4:
-#_00D4A4: dw $0800,$0800,$0800,$0800
-#_00D4AC: dw $0800,$0800,$0800,$0800
-#_00D4B4: dw $0800,$0800,$0800,$0800
-#_00D4BC: dw $0800,$0800,$0800,$0100
-#_00D4C4: dw $0800,$0800,$0800,$0800
-#_00D4CC: dw $0200,$0800,$0800,$0800
-#_00D4D4: dw $0800,$0800,$0800,$0800
-#_00D4DC: dw $0800,$0800,$0800,$0100
-#_00D4E4: dw $0800,$0800,$0800
-#_00D4EA: dw $0100,$0800,$0800,$0800
-#_00D4F2: dw $0800,$0800,$0800,$0800
-#_00D4FA: dw $0800,$0800,$0800,$0800
-#_00D502: dw $0800,$0200,$0800,$0800
-#_00D50A: dw $0800,$0200,$0800,$0800
-#_00D512: dw $0800,$0800,$0800,$0200
-#_00D51A: dw $0800,$0800,$0200,$0800
-#_00D522: dw $0800,$0100,$0800,$0200
-#_00D52A: dw $0800,$0100,$0800,$0800
-#_00D532: dw $0800,$0800,$0100,$0800
-#_00D53A: dw $0800,$0800,$0800,$0800
-#_00D542: dw $0800,$0800,$0100,$0800
-#_00D54A: dw $0800,$0800,$0100,$0800
-#_00D552: dw $0800,$0800,$0800,$0800
-#_00D55A: dw $0200,$0800,$0100,$0800
-#_00D562: dw $0100,$0800,$0200,$0800
-#_00D56A: dw $0200,$0800,$0200,$0800
-#_00D572: dw $0200,$0800,$0200,$0800
-#_00D57A: dw $0200,$0800,$0200,$0800
-#_00D582: dw $0200,$0800,$0100,$0800
-#_00D58A: dw $0800,$0200,$0800,$0200
-#_00D592: dw $0800,$0800,$0800
+;---------------------------------------------------------------------------------------------------
+; Dream 1
+;---------------------------------------------------------------------------------------------------
+.forced_inputs
+#_00D4A4: dw $0800 ; up
+#_00D4A6: dw $0800 ; up
+#_00D4A8: dw $0800 ; up
+#_00D4AA: dw $0800 ; up
+#_00D4AC: dw $0800 ; up
+#_00D4AE: dw $0800 ; up
+#_00D4B0: dw $0800 ; up
+#_00D4B2: dw $0800 ; up
+#_00D4B4: dw $0800 ; up
+#_00D4B6: dw $0800 ; up
+#_00D4B8: dw $0800 ; up
+#_00D4BA: dw $0800 ; up
+#_00D4BC: dw $0800 ; up => Big Giant Head
+
+#_00D4BE: dw $0800 ; up
+#_00D4C0: dw $0800 ; up
+#_00D4C2: dw $0100 ; right
+#_00D4C4: dw $0800 ; up
+#_00D4C6: dw $0800 ; up
+#_00D4C8: dw $0800 ; up
+#_00D4CA: dw $0800 ; up
+#_00D4CC: dw $0200 ; left
+#_00D4CE: dw $0800 ; up
+#_00D4D0: dw $0800 ; up
+#_00D4D2: dw $0800 ; up
+#_00D4D4: dw $0800 ; up
+#_00D4D6: dw $0800 ; up => Jimmy
+
+#_00D4D8: dw $0800 ; up
+#_00D4DA: dw $0800 ; up
+#_00D4DC: dw $0800 ; up
+#_00D4DE: dw $0800 ; up
+#_00D4E0: dw $0800 ; up
+#_00D4E2: dw $0100 ; right
+#_00D4E4: dw $0800 ; up
+#_00D4E6: dw $0800 ; up
+#_00D4E8: dw $0800 ; up
+#_00D4EA: dw $0100 ; right
+#_00D4EC: dw $0800 ; up
+#_00D4EE: dw $0800 ; up
+#_00D4F0: dw $0800 ; up
+#_00D4F2: dw $0800 ; up => "him"
+
+#_00D4F4: dw $0800 ; up
+#_00D4F6: dw $0800 ; up
+#_00D4F8: dw $0800 ; up
+#_00D4FA: dw $0800 ; up
+#_00D4FC: dw $0800 ; up
+#_00D4FE: dw $0800 ; up
+#_00D500: dw $0800 ; up => Yuriko
+
+#_00D502: dw $0800 ; up
+#_00D504: dw $0200 ; left
+#_00D506: dw $0800 ; up
+#_00D508: dw $0800 ; up
+#_00D50A: dw $0800 ; up
+#_00D50C: dw $0200 ; left
+#_00D50E: dw $0800 ; up
+#_00D510: dw $0800 ; up => end of dream
+
+;---------------------------------------------------------------------------------------------------
+; Dream 2
+;---------------------------------------------------------------------------------------------------
+#_00D512: dw $0800 ; up
+#_00D514: dw $0800 ; up
+#_00D516: dw $0800 ; up
+#_00D518: dw $0200 ; left
+#_00D51A: dw $0800 ; up
+#_00D51C: dw $0800 ; up
+#_00D51E: dw $0200 ; left
+#_00D520: dw $0800 ; up
+#_00D522: dw $0800 ; up
+#_00D524: dw $0100 ; right
+#_00D526: dw $0800 ; up
+#_00D528: dw $0200 ; left
+#_00D52A: dw $0800 ; up
+#_00D52C: dw $0100 ; right
+#_00D52E: dw $0800 ; up
+#_00D530: dw $0800 ; up
+#_00D532: dw $0800 ; up
+#_00D534: dw $0800 ; up
+#_00D536: dw $0100 ; right
+#_00D538: dw $0800 ; up => Yuriko
+
+#_00D53A: dw $0800 ; up
+#_00D53C: dw $0800 ; up
+#_00D53E: dw $0800 ; up
+#_00D540: dw $0800 ; up
+#_00D542: dw $0800 ; up
+#_00D544: dw $0800 ; up
+#_00D546: dw $0100 ; right
+#_00D548: dw $0800 ; up
+#_00D54A: dw $0800 ; up
+#_00D54C: dw $0800 ; up
+#_00D54E: dw $0100 ; right
+#_00D550: dw $0800 ; up
+#_00D552: dw $0800 ; up
+#_00D554: dw $0800 ; up
+#_00D556: dw $0800 ; up
+#_00D558: dw $0800 ; up => Momo; end of dream
+
+;---------------------------------------------------------------------------------------------------
+; Park dream
+;---------------------------------------------------------------------------------------------------
+#_00D55A: dw $0200 ; left
+#_00D55C: dw $0800 ; up
+#_00D55E: dw $0100 ; right
+#_00D560: dw $0800 ; up
+#_00D562: dw $0100 ; right
+#_00D564: dw $0800 ; up
+#_00D566: dw $0200 ; left
+#_00D568: dw $0800 ; up
+#_00D56A: dw $0200 ; left
+#_00D56C: dw $0800 ; up
+#_00D56E: dw $0200 ; left
+#_00D570: dw $0800 ; up
+#_00D572: dw $0200 ; left
+#_00D574: dw $0800 ; up
+#_00D576: dw $0200 ; left
+#_00D578: dw $0800 ; up
+#_00D57A: dw $0200 ; left
+#_00D57C: dw $0800 ; up
+#_00D57E: dw $0200 ; left
+#_00D580: dw $0800 ; up
+#_00D582: dw $0200 ; left
+#_00D584: dw $0800 ; up
+#_00D586: dw $0100 ; right
+#_00D588: dw $0800 ; up
+#_00D58A: dw $0800 ; up
+#_00D58C: dw $0200 ; left
+#_00D58E: dw $0800 ; up
+#_00D590: dw $0200 ; left
+#_00D592: dw $0800 ; up
+#_00D594: dw $0800 ; up
+#_00D596: dw $0800 ; up
 
 ;===================================================================================================
 

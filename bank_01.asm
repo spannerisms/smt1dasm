@@ -673,11 +673,11 @@ routine0183E5:
 #_0183FD: LDA.b #$6C
 #_0183FF: STA.w $0F08
 #_018402: LDA.b #$01
-#_018404: JSL SomeOtherDMAsFromE80
+#_018404: JSL PrepareTypedDMA
 #_018408: LDA.b #$50
 #_01840A: STA.w $0F09
 #_01840D: LDA.b #$19
-#_01840F: JSL SomeOtherDMAsFromE80
+#_01840F: JSL PrepareTypedDMA
 
 #_018413: REP #$30
 #_018415: JSL HideTheMenu
@@ -2199,7 +2199,7 @@ routine018F11:
 
 #_018F64: SEP #$30
 #_018F66: LDA.b #$1C
-#_018F68: JSL SomeOtherDMAsFromE80
+#_018F68: JSL PrepareTypedDMA
 #_018F6C: LDA.b #$02
 #_018F6E: JSL InitializeTextBoxToSizeForNewMessage
 #_018F72: LDA.b #$00
@@ -3839,7 +3839,7 @@ COMP_Automapper:
 #_019968: LDA.b #$7E
 #_01996A: STA.w $0F0C
 #_01996D: LDA.b #$19
-#_01996F: JSL routine00BBF4
+#_01996F: JSL ManuallyCopyTypedDMAToWRAM
 #_019973: LDA.b #$04
 #_019975: LDX.b #$00
 #_019977: LDY.b #$01
@@ -5199,7 +5199,7 @@ routine01A2A5:
 #_01A2BC: LDA.b #$6C
 #_01A2BE: STA.w $0F08
 #_01A2C1: LDA.b #$01
-#_01A2C3: JSL SomeOtherDMAsFromE80
+#_01A2C3: JSL PrepareTypedDMA
 
 #_01A2C7: REP #$30
 #_01A2C9: STZ.w $0F4F

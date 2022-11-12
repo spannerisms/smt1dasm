@@ -51,86 +51,32 @@ CUROFF           = $7E0715
 UNKNOWN_7E0717   = $7E0717
 UNKNOWN_7E0718   = $7E0718
 UNKNOWN_7E0719   = $7E0719
-UNKNOWN_7E071A   = $7E071A
-UNKNOWN_7E071B   = $7E071B
+
+; Counts down from 8 constantly; seems related to movement
+MVCTDN           = $7E071A
+
 UNKNOWN_7E071C   = $7E071C
-UNKNOWN_7E071D   = $7E071D
+
 UNKNOWN_7E071E   = $7E071E
-UNKNOWN_7E071F   = $7E071F
+
 UNKNOWN_7E0720   = $7E0720
-UNKNOWN_7E0721   = $7E0721
-UNKNOWN_7E0722   = $7E0722
-UNKNOWN_7E0723   = $7E0723
+
+; Step counter for automoving
+AUTOSTEP         = $7E0722
 
 ; Movement counter in dungeons
 STEPCT           = $7E0724
 
 
 UNKNOWN_7E0726   = $7E0726
-UNKNOWN_7E0727   = $7E0727
-UNKNOWN_7E0728   = $7E0728
-UNKNOWN_7E0729   = $7E0729
-UNKNOWN_7E072A   = $7E072A
-UNKNOWN_7E072B   = $7E072B
-UNKNOWN_7E072C   = $7E072C
-UNKNOWN_7E072D   = $7E072D
-UNKNOWN_7E072E   = $7E072E
-UNKNOWN_7E072F   = $7E072F
-UNKNOWN_7E0730   = $7E0730
-UNKNOWN_7E0731   = $7E0731
-UNKNOWN_7E0732   = $7E0732
-UNKNOWN_7E0733   = $7E0733
-UNKNOWN_7E0734   = $7E0734
-UNKNOWN_7E0735   = $7E0735
-UNKNOWN_7E0736   = $7E0736
-UNKNOWN_7E0737   = $7E0737
-UNKNOWN_7E0738   = $7E0738
-UNKNOWN_7E0739   = $7E0739
-UNKNOWN_7E073A   = $7E073A
-UNKNOWN_7E073B   = $7E073B
-UNKNOWN_7E073C   = $7E073C
-UNKNOWN_7E073D   = $7E073D
-UNKNOWN_7E073E   = $7E073E
-UNKNOWN_7E073F   = $7E073F
-UNKNOWN_7E0740   = $7E0740
-UNKNOWN_7E0741   = $7E0741
-UNKNOWN_7E0742   = $7E0742
-UNKNOWN_7E0743   = $7E0743
-UNKNOWN_7E0744   = $7E0744
-UNKNOWN_7E0745   = $7E0745
-UNKNOWN_7E0746   = $7E0746
-UNKNOWN_7E0747   = $7E0747
-UNKNOWN_7E0748   = $7E0748
-UNKNOWN_7E0749   = $7E0749
-UNKNOWN_7E074A   = $7E074A
-UNKNOWN_7E074B   = $7E074B
-UNKNOWN_7E074C   = $7E074C
-UNKNOWN_7E074D   = $7E074D
-UNKNOWN_7E074E   = $7E074E
-UNKNOWN_7E074F   = $7E074F
-UNKNOWN_7E0750   = $7E0750
-UNKNOWN_7E0751   = $7E0751
-UNKNOWN_7E0752   = $7E0752
-UNKNOWN_7E0753   = $7E0753
-UNKNOWN_7E0754   = $7E0754
-UNKNOWN_7E0755   = $7E0755
-UNKNOWN_7E0756   = $7E0756
-UNKNOWN_7E0757   = $7E0757
-UNKNOWN_7E0758   = $7E0758
-UNKNOWN_7E0759   = $7E0759
-UNKNOWN_7E075A   = $7E075A
-UNKNOWN_7E075B   = $7E075B
-UNKNOWN_7E075C   = $7E075C
-UNKNOWN_7E075D   = $7E075D
-UNKNOWN_7E075E   = $7E075E
-UNKNOWN_7E075F   = $7E075F
+
+; TODO unused?
+; [7E0728..7E075F]
 
 ; Stat points left to be distributed when leveling up/creating a character
 PTLEFT           = $7E0760
 
-UNKNOWN_7E0761   = $7E0761
 UNKNOWN_7E0762   = $7E0762
-UNKNOWN_7E0763   = $7E0763
 
 ; Copy of stats and stat bonuses before the level up
 STSTR            = $7E0764
@@ -148,10 +94,8 @@ BNSPD            = $7E0778
 BNLUK            = $7E077A
 
 
-UNKNOWN_7E077C   = $7E077C
-UNKNOWN_7E077D   = $7E077D
-UNKNOWN_7E077E   = $7E077E
-UNKNOWN_7E077F   = $7E077F
+; TODO unused?
+; [7E077C..7E077F]
 
 ; Inventory
 ; 2 bytes for each item
@@ -164,45 +108,36 @@ ITEMS            = $7E0780
 ; see «resources/progressflags.txt»
 PROGRESS         = $7E07C0
 
-
+; TODO something with money in text
 UNKNOWN_7E07E0   = $7E07E0
 UNKNOWN_7E07E1   = $7E07E1
+
+; TODO something with party arrangement?
 UNKNOWN_7E07E2   = $7E07E2
-UNKNOWN_7E07E3   = $7E07E3
-UNKNOWN_7E07E4   = $7E07E4
-UNKNOWN_7E07E5   = $7E07E5
-UNKNOWN_7E07E6   = $7E07E6
-UNKNOWN_7E07E7   = $7E07E7
-UNKNOWN_7E07E8   = $7E07E8
-UNKNOWN_7E07E9   = $7E07E9
-UNKNOWN_7E07EA   = $7E07EA
-UNKNOWN_7E07EB   = $7E07EB
-UNKNOWN_7E07EC   = $7E07EC
-UNKNOWN_7E07ED   = $7E07ED
 
-; Mirror of moon phase? TODO
+
+; TODO Mirror of moon phase?
 UNKNOWN_7E07EE   = $7E07EE
-
 UNKNOWN_7E07EF   = $7E07EF
+
+; TODO
 UNKNOWN_7E07F0   = $7E07F0
+
+; TODO
 UNKNOWN_7E07F1   = $7E07F1
+
+; TODO Flags 1 thing in text
 UNKNOWN_7E07F2   = $7E07F2
+
+; TODO flags stuff in text
 UNKNOWN_7E07F3   = $7E07F3
-UNKNOWN_7E07F4   = $7E07F4
 
 ; Overworld coordinates
 OWX              = $7E07F5
 OWY              = $7E07F6
 
-UNKNOWN_7E07F7   = $7E07F7
-UNKNOWN_7E07F8   = $7E07F8
-UNKNOWN_7E07F9   = $7E07F9
-UNKNOWN_7E07FA   = $7E07FA
-UNKNOWN_7E07FB   = $7E07FB
-UNKNOWN_7E07FC   = $7E07FC
-UNKNOWN_7E07FD   = $7E07FD
-UNKNOWN_7E07FE   = $7E07FE
-UNKNOWN_7E07FF   = $7E07FF
+; TODO unused?
+; [7E07F7..7E07FF]
 
 ;===================================================================================================
 ; Block 2 - copied from [x100,x6FF] to [7E1000,7E15FF]
@@ -253,11 +188,13 @@ MC_7E1000        = $7E1000
 
 MCSTAFL          = $7E1002
 
-; TODO not sure yet for humans
+; TODO seems to be offset of the character?
+; hooooooo oooooooo
+;    h - human?
+;    o - offset
 MC_7E1004        = $7E1004
 
 MC_7E1006        = $7E1006
-MC_7E1007        = $7E1007
 
 ; Action
 ; .... .... ...d ....
@@ -279,6 +216,9 @@ MCSPD            = $7E1018
 MCLUK            = $7E101A
 
 ; Alignment
+; Chase and Momo start at $80
+; Jimmy starts at $00
+; "him" starts at $FF
 MCALIGN         = $7E101C
 
 ; Sword and gun stats
@@ -323,10 +263,20 @@ MCBODY           = $7E104A
 MCARMS           = $7E104C
 MCLEGS           = $7E104E
 
+; TODO unused?
+; [7E1050..7E1057]
+
 ; Spell/item ID used
 MCUSE            = $7E1058
 
+; TODO
+MCUNKNOWNA       = $7E105A
 
+; TODO
+MCUNKNOWNC       = $7E105C
+
+; TODO
+MCUNKNOWNE       = $7E105E
 
 ;---------------------------------------------------------------------------------------------------
 ; Demon stat differences (this also applies to $7E:1600)
@@ -352,10 +302,13 @@ MCUSE            = $7E1058
 ;===================================================================================================
 
 ; Some sort of bitfield
-; m... ....
+; r... ....   mb.d ....
+;   r - resets the game
 ;   m - Mapper active
+;   b - in combat?
+;   d - someone talking?
 UNKNOWN_7E0400   = $7E0400
-UNKNOWN_7E0401   = $7E0401
+
 UNKNOWN_7E0402   = $7E0402
 UNKNOWN_7E0403   = $7E0403
 UNKNOWN_7E0404   = $7E0404
@@ -445,19 +398,19 @@ UNKNOWN_7E045B   = $7E045B
 ; Total mag taken per step (x10 with rollover)
 MAGCP            = $7E045C
 
+; Flags wavy HDMA 
+WAVEFLAG         = $7E045E
 
-UNKNOWN_7E045E   = $7E045E
-UNKNOWN_7E045F   = $7E045F
-UNKNOWN_7E0460   = $7E0460
-UNKNOWN_7E0461   = $7E0461
-UNKNOWN_7E0462   = $7E0462
-UNKNOWN_7E0463   = $7E0463
-UNKNOWN_7E0464   = $7E0464
-UNKNOWN_7E0465   = $7E0465
-UNKNOWN_7E0466   = $7E0466
-UNKNOWN_7E0467   = $7E0467
-UNKNOWN_7E0468   = $7E0468
-UNKNOWN_7E0469   = $7E0469
+; Wavy HDMA type
+WAVEMODE         = $7E0460
+
+; Wavy HDMA params
+WAVEP0           = $7E0462
+WAVEP1           = $7E0464
+WAVEP2           = $7E0466
+
+; Holds the HDMA wave vector
+WAVEV            = $7E0468
 
 ; Caches destintation properties for teleporting
 ; direction, theme, x coord, y coord
