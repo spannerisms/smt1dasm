@@ -2677,7 +2677,7 @@ RoundQuotient:
 
 ;===================================================================================================
 
-WriteAmountHEXtoDEC:
+HexToDec:
 #_008E89: STA.w $0090
 
 #_008E8C: LDX.w #$000A
@@ -2790,7 +2790,7 @@ routine008F11:
 #_008F1A: LDA.w #$0106
 
 #_008F1D: PHK
-#_008F1E: JSR WriteAmountHEXtoDEC
+#_008F1E: JSR HexToDec
 
 #_008F21: LDA.w #$0001
 #_008F24: STA.w $0100
@@ -6045,7 +6045,7 @@ WriteMoneyToHUD:
 
 #_009F7E: LDY.w #$000C
 #_009F81: LDA.w #$0108
-#_009F84: JSL WriteAmountHEXtoDEC
+#_009F84: JSL HexToDec
 
 #_009F88: LDA.w #$20CD
 #_009F8B: PHA
@@ -6137,7 +6137,7 @@ WriteMAGToHUD:
 
 #_00A006: LDY.w #$000A
 #_00A009: LDA.w #$010A
-#_00A00C: JSL WriteAmountHEXtoDEC
+#_00A00C: JSL HexToDec
 
 #_00A010: LDA.w #$20CE
 #_00A013: STA.w $0106
@@ -6563,7 +6563,7 @@ routine00A232:
 #_00A282: STA.w $0E82
 #_00A285: LDY.w #$0008
 #_00A288: LDA.w #$0116
-#_00A28B: JSL WriteAmountHEXtoDEC
+#_00A28B: JSL HexToDec
 #_00A28F: LDA.w #$0098
 #_00A292: ORA.w $0EFB
 #_00A295: STA.w $011E
@@ -6574,7 +6574,7 @@ routine00A232:
 #_00A2A4: STA.w $0E82
 #_00A2A7: LDY.w #$0006
 #_00A2AA: LDA.w #$0120
-#_00A2AD: JSL WriteAmountHEXtoDEC
+#_00A2AD: JSL HexToDec
 #_00A2B1: LDY.w $00EE
 #_00A2B4: LDA.w $1032,Y
 #_00A2B7: STA.w $0E80
@@ -6582,7 +6582,7 @@ routine00A232:
 #_00A2BD: STA.w $0E82
 #_00A2C0: LDY.w #$0008
 #_00A2C3: LDA.w #$0126
-#_00A2C6: JSL WriteAmountHEXtoDEC
+#_00A2C6: JSL HexToDec
 #_00A2CA: LDY.w $00EE
 #_00A2CD: LDA.w $1034,Y
 #_00A2D0: BNE .branch00A2E1
@@ -6814,7 +6814,7 @@ routine00A3EE:
 #_00A42E: STA.w $0E82
 #_00A431: LDY.w #$0008
 #_00A434: LDA.w #$0116
-#_00A437: JSL WriteAmountHEXtoDEC
+#_00A437: JSL HexToDec
 #_00A43B: LDA.w #$0098
 #_00A43E: ORA.w $0EFB
 #_00A441: STA.w $011E
@@ -6825,7 +6825,7 @@ routine00A3EE:
 #_00A450: STA.w $0E82
 #_00A453: LDY.w #$0006
 #_00A456: LDA.w #$0120
-#_00A459: JSL WriteAmountHEXtoDEC
+#_00A459: JSL HexToDec
 #_00A45D: RTL
 
 ;===================================================================================================
@@ -6861,7 +6861,7 @@ routine00A45E:
 #_00A49E: STA.w $0E82
 #_00A4A1: LDY.w #$0008
 #_00A4A4: LDA.w #$0116
-#_00A4A7: JSL WriteAmountHEXtoDEC
+#_00A4A7: JSL HexToDec
 #_00A4AB: LDA.w #$0098
 #_00A4AE: ORA.w $0EFB
 #_00A4B1: STA.w $011E
@@ -6872,7 +6872,7 @@ routine00A45E:
 #_00A4C0: STA.w $0E82
 #_00A4C3: LDY.w #$0006
 #_00A4C6: LDA.w #$0120
-#_00A4C9: JSL WriteAmountHEXtoDEC
+#_00A4C9: JSL HexToDec
 #_00A4CD: LDY.w $00EE
 #_00A4D0: LDA.w $1032,Y
 #_00A4D3: STA.w $0E80
@@ -6880,7 +6880,7 @@ routine00A45E:
 #_00A4D9: STA.w $0E82
 #_00A4DC: LDY.w #$0008
 #_00A4DF: LDA.w #$0126
-#_00A4E2: JSL WriteAmountHEXtoDEC
+#_00A4E2: JSL HexToDec
 #_00A4E6: LDY.w $00EE
 #_00A4E9: LDA.w $1034,Y
 #_00A4EC: BNE .exit
@@ -6937,7 +6937,7 @@ routine00A4FE:
 #_00A54E: STA.w $0E82
 #_00A551: LDY.w #$0008
 #_00A554: LDA.w #$0116
-#_00A557: JSL WriteAmountHEXtoDEC
+#_00A557: JSL HexToDec
 #_00A55B: LDY.w $00EE
 #_00A55E: LDA.w $1032,Y
 #_00A561: STA.w $0E80
@@ -6945,7 +6945,7 @@ routine00A4FE:
 #_00A567: STA.w $0E82
 #_00A56A: LDY.w #$0008
 #_00A56D: LDA.w #$011E
-#_00A570: JSL WriteAmountHEXtoDEC
+#_00A570: JSL HexToDec
 #_00A574: LDY.w $00EE
 #_00A577: LDA.w $1034,Y
 #_00A57A: BNE .branch00A58B

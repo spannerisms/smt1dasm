@@ -2498,11 +2498,11 @@ Message_02_1F_Pointers:
 
 ;===================================================================================================
 
-; [CLASSX] [DEMONX]さまだぞ!
+; [MYCLASS] [MYNAME]さまだぞ!
 Message_02_00_00:
-#_0A9278: db $EE ; [set2] write class name indexed from $0526
+#_0A9278: db $EE ; [set2] write class of speaker
 #_0A9279: db $CF ; ⎵
-#_0A927A: db $ED ; [set2] write demon name indexed from $0526
+#_0A927A: db $ED ; [set2] write name of speaker
 #_0A927B: db $2F, $43, $A6, $A5, $94 ; さまだぞ!
 #_0A9280: db $FF ; end of message
 
@@ -2627,21 +2627,21 @@ Message_02_00_0F:
 
 ;===================================================================================================
 
-; >[DEMONX]は わらっている
+; >[MYNAME]は わらっている
 Message_02_00_10:
 #_0A933F: db $97 ; >
-#_0A9340: db $ED ; [set2] write demon name indexed from $0526
+#_0A9340: db $ED ; [set2] write name of speaker
 #_0A9341: db $3E, $CF, $50, $4B, $58, $37, $26, $4D ; は⎵わらっている
 #_0A9349: db $FF ; end of message
 
 ;===================================================================================================
 
-; わがはいは [CLASSX] [DEMONX]!
+; わがはいは [MYCLASS] [MYNAME]!
 Message_02_00_11:
 #_0A934A: db $50, $9C, $3E, $26, $3E, $CF ; わがはいは⎵
-#_0A9350: db $EE ; [set2] write class name indexed from $0526
+#_0A9350: db $EE ; [set2] write class of speaker
 #_0A9351: db $CF ; ⎵
-#_0A9352: db $ED ; [set2] write demon name indexed from $0526
+#_0A9352: db $ED ; [set2] write name of speaker
 #_0A9353: db $94 ; !
 #_0A9354: db $FF ; end of message
 
@@ -2732,20 +2732,20 @@ Message_02_00_1B:
 
 ;===================================================================================================
 
-; >[DEMONX]は きくたいせいに はいった
+; >[MYNAME]は きくたいせいに はいった
 Message_02_00_1C:
 #_0A93EA: db $97 ; >
-#_0A93EB: db $ED ; [set2] write demon name indexed from $0526
+#_0A93EB: db $ED ; [set2] write name of speaker
 #_0A93EC: db $3E, $CF, $2B, $2C, $34, $26, $32, $26 ; は⎵きくたいせい
 #_0A93F4: db $3A, $CF, $3E, $26, $58, $34 ; に⎵はいった
 #_0A93FA: db $FF ; end of message
 
 ;===================================================================================================
 
-; [DEMONX]は いわを もちあげると
+; [MYNAME]は いわを もちあげると
 ; くだいて みせた・・・
 Message_02_00_1D:
-#_0A93FB: db $ED ; [set2] write demon name indexed from $0526
+#_0A93FB: db $ED ; [set2] write name of speaker
 #_0A93FC: db $3E, $CF, $26, $50, $51, $CF, $47, $35 ; は⎵いわを⎵もち
 #_0A9404: db $25, $9F, $4D, $38 ; あげると
 #_0A9408: db $F0 ; [set2] new line
@@ -2766,7 +2766,7 @@ Message_02_00_1F:
 #_0A9416: db $A9, $2A, $26, $2C, $35, $CF, $34, $34 ; でかいくち⎵たた
 #_0A941E: db $2C, $52, $39, $4B, $CF ; くんなら⎵
 #_0A9423: db $F0 ; [set2] new line
-#_0A9424: db $EB, $13 ; [set2] prewritten text 13
+#_0A9424: db $EB, $13 ; [set2] phrase 13
 #_0A9426: db $39, $94 ; な!
 #_0A9428: db $FF ; end of message
 
@@ -2921,9 +2921,9 @@ Message_02_00_32:
 
 ;===================================================================================================
 
-; [DEMONX]は [GIVEME] を
+; [MYNAME]は [GIVEME] を
 Message_02_00_33:
-#_0A9515: db $ED ; [set2] write demon name indexed from $0526
+#_0A9515: db $ED ; [set2] write name of speaker
 #_0A9516: db $3E, $CF ; は⎵
 #_0A9518: db $F6 ; [set2] ask for currency or item
 #_0A9519: db $CF, $51 ; ⎵を
@@ -3008,19 +3008,19 @@ Message_02_00_3D:
 
 ;===================================================================================================
 
-; [DEMONX]は きびすを かえした
+; [MYNAME]は きびすを かえした
 Message_02_00_3E:
-#_0A9590: db $ED ; [set2] write demon name indexed from $0526
+#_0A9590: db $ED ; [set2] write name of speaker
 #_0A9591: db $3E, $CF, $2B, $AC, $31, $51, $CF, $2A ; は⎵きびすを⎵か
 #_0A9599: db $28, $30, $34 ; えした
 #_0A959C: db $FF ; end of message
 
 ;===================================================================================================
 
-; [DEMONX]が [CHASE]の
+; [MYNAME]が [CHASE]の
 ; ふくを かんで ひきとめた
 Message_02_00_3F:
-#_0A959D: db $ED ; [set2] write demon name indexed from $0526
+#_0A959D: db $ED ; [set2] write name of speaker
 #_0A959E: db $9C, $CF ; が⎵
 #_0A95A0: db $F8 ; [set2] write player name
 #_0A95A1: db $3D ; の
@@ -3035,7 +3035,7 @@ Message_02_00_3F:
 ; これで ナカマに なろう
 Message_02_00_40:
 #_0A95B1: db $29, $4E, $2F, $43, $3E, $CF ; おれさまは⎵
-#_0A95B7: db $EB, $A3 ; [set2] prewritten text A3
+#_0A95B7: db $EB, $A3 ; [set2] phrase A3
 #_0A95B9: db $F0 ; [set2] new line
 #_0A95BA: db $2E, $4E, $A9, $CF, $71, $62, $7B, $3A ; これで⎵ナカマに
 #_0A95C2: db $CF, $39, $4F, $27 ; ⎵なろう
@@ -3060,9 +3060,9 @@ Message_02_00_42:
 
 ;===================================================================================================
 
-; [DEMONX]は さらに [GIVEME]
+; [MYNAME]は さらに [GIVEME]
 Message_02_00_43:
-#_0A95DF: db $ED ; [set2] write demon name indexed from $0526
+#_0A95DF: db $ED ; [set2] write name of speaker
 #_0A95E0: db $3E, $CF, $2F, $4B, $3A, $CF ; は⎵さらに⎵
 #_0A95E6: db $F6 ; [set2] ask for currency or item
 #_0A95E7: db $FF ; end of message
@@ -3094,11 +3094,11 @@ Message_02_00_46:
 
 ;===================================================================================================
 
-; グオオオーン! [DEMONX]は くやしそうに
+; グオオオーン! [MYNAME]は くやしそうに
 ; ひとこえ ほえた
 Message_02_00_47:
 #_0A960A: db $B7, $61, $61, $61, $5A, $8A, $94, $CF ; グオオオーン!⎵
-#_0A9612: db $ED ; [set2] write demon name indexed from $0526
+#_0A9612: db $ED ; [set2] write name of speaker
 #_0A9613: db $3E, $CF, $2C, $48, $30, $33, $27, $3A ; は⎵くやしそうに
 #_0A961B: db $F0 ; [set2] new line
 #_0A961C: db $3F, $38, $2E, $28, $CF, $42, $28, $34 ; ひとこえ⎵ほえた
@@ -3107,23 +3107,23 @@ Message_02_00_47:
 ;===================================================================================================
 
 ; >[CHASE]の がんこうは するどく
-; [DEMONX]を とらえた!
+; [MYNAME]を とらえた!
 Message_02_00_48:
 #_0A9625: db $97 ; >
 #_0A9626: db $F8 ; [set2] write player name
 #_0A9627: db $3D, $CF, $9C, $52, $2E, $27, $3E, $CF ; の⎵がんこうは⎵
 #_0A962F: db $31, $4D, $AA, $2C ; するどく
 #_0A9633: db $F0 ; [set2] new line
-#_0A9634: db $ED ; [set2] write demon name indexed from $0526
+#_0A9634: db $ED ; [set2] write name of speaker
 #_0A9635: db $51, $CF, $38, $4B, $28, $34, $94 ; を⎵とらえた!
 #_0A963C: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は あばれだした!
+; >[MYNAME]は あばれだした!
 Message_02_00_49:
 #_0A963D: db $97 ; >
-#_0A963E: db $ED ; [set2] write demon name indexed from $0526
+#_0A963E: db $ED ; [set2] write name of speaker
 #_0A963F: db $3E, $CF, $25, $AB, $4E, $A6, $30, $34 ; は⎵あばれだした
 #_0A9647: db $94 ; !
 #_0A9648: db $FF ; end of message
@@ -3290,12 +3290,12 @@ Message_02_00_5B:
 
 ;===================================================================================================
 
-; われは こうきなる [CLASSX]の
+; われは こうきなる [MYCLASS]の
 ; いちぞくの もの
 Message_02_00_5C:
 #_0A976A: db $50, $4E, $3E, $CF, $2E, $27, $2B, $39 ; われは⎵こうきな
 #_0A9772: db $4D, $CF ; る⎵
-#_0A9774: db $EE ; [set2] write class name indexed from $0526
+#_0A9774: db $EE ; [set2] write class of speaker
 #_0A9775: db $3D ; の
 #_0A9776: db $F0 ; [set2] new line
 #_0A9777: db $26, $35, $A5, $2C, $3D, $CF, $47, $3D ; いちぞくの⎵もの
@@ -3303,16 +3303,16 @@ Message_02_00_5C:
 
 ;===================================================================================================
 
-; ワシは [CLASSX] [DEMONX]だ
+; ワシは [MYCLASS] [MYNAME]だ
 ; «ようを いってみろ»
 Message_02_00_5D:
 #_0A9780: db $88, $68, $3E, $CF ; ワシは⎵
-#_0A9784: db $EE ; [set2] write class name indexed from $0526
+#_0A9784: db $EE ; [set2] write class of speaker
 #_0A9785: db $CF ; ⎵
-#_0A9786: db $ED ; [set2] write demon name indexed from $0526
+#_0A9786: db $ED ; [set2] write name of speaker
 #_0A9787: db $A6 ; だ
 #_0A9788: db $F0 ; [set2] new line
-#_0A9789: db $EB, $06 ; [set2] prewritten text 06
+#_0A9789: db $EB, $06 ; [set2] phrase 06
 #_0A978B: db $FF ; end of message
 
 ;===================================================================================================
@@ -3351,7 +3351,7 @@ Message_02_00_61:
 
 ; «ε» みんな こわしてやる!
 Message_02_00_62:
-#_0A97C0: db $EB, $2A ; [set2] prewritten text 2A
+#_0A97C0: db $EB, $2A ; [set2] phrase 2A
 #_0A97C2: db $CF, $44, $52, $39, $CF, $2E, $50, $30 ; ⎵みんな⎵こわし
 #_0A97CA: db $37, $48, $4D, $94 ; てやる!
 #_0A97CE: db $FF ; end of message
@@ -3363,7 +3363,7 @@ Message_02_00_62:
 Message_02_00_63:
 #_0A97CF: db $A9, $2B, $4D, $39, $93, $93, $93, $93 ; できるな・・・・
 #_0A97D7: db $F0 ; [set2] new line
-#_0A97D8: db $EB, $06 ; [set2] prewritten text 06
+#_0A97D8: db $EB, $06 ; [set2] phrase 06
 #_0A97DA: db $FF ; end of message
 
 ;===================================================================================================
@@ -3414,7 +3414,7 @@ Message_02_00_68:
 ; «[GIVEME] いただきたい»
 ; だせるかな?
 Message_02_00_69:
-#_0A981F: db $EB, $A3 ; [set2] prewritten text A3
+#_0A981F: db $EB, $A3 ; [set2] phrase A3
 #_0A9821: db $F0 ; [set2] new line
 #_0A9822: db $A6, $32, $4D, $2A, $39, $95 ; だせるかな?
 #_0A9828: db $FF ; end of message
@@ -3425,7 +3425,7 @@ Message_02_00_69:
 ; これで きめよう
 Message_02_00_6A:
 #_0A9829: db $2F, $4B, $3A, $CF ; さらに⎵
-#_0A982D: db $EB, $A3 ; [set2] prewritten text A3
+#_0A982D: db $EB, $A3 ; [set2] phrase A3
 #_0A982F: db $F0 ; [set2] new line
 #_0A9830: db $2E, $4E, $A9, $CF, $2B, $46, $4A, $27 ; これで⎵きめよう
 #_0A9838: db $FF ; end of message
@@ -3435,9 +3435,9 @@ Message_02_00_6A:
 ; «ついでに [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_00_6B:
-#_0A9839: db $EB, $42 ; [set2] prewritten text 42
+#_0A9839: db $EB, $42 ; [set2] phrase 42
 #_0A983B: db $F0 ; [set2] new line
-#_0A983C: db $EB, $34 ; [set2] prewritten text 34
+#_0A983C: db $EB, $34 ; [set2] phrase 34
 #_0A983E: db $FF ; end of message
 
 ;===================================================================================================
@@ -3445,9 +3445,9 @@ Message_02_00_6B:
 ; «そんなら [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_00_6C:
-#_0A983F: db $EB, $44 ; [set2] prewritten text 44
+#_0A983F: db $EB, $44 ; [set2] phrase 44
 #_0A9841: db $F0 ; [set2] new line
-#_0A9842: db $EB, $34 ; [set2] prewritten text 34
+#_0A9842: db $EB, $34 ; [set2] phrase 34
 #_0A9844: db $FF ; end of message
 
 ;===================================================================================================
@@ -3456,7 +3456,7 @@ Message_02_00_6C:
 ; これで きめよう
 Message_02_00_6D:
 #_0A9845: db $39, $4B, $AB, $CF ; ならば⎵
-#_0A9849: db $EB, $A3 ; [set2] prewritten text A3
+#_0A9849: db $EB, $A3 ; [set2] phrase A3
 #_0A984B: db $F0 ; [set2] new line
 #_0A984C: db $2E, $4E, $A9, $CF, $2B, $46, $4A, $27 ; これで⎵きめよう
 #_0A9854: db $FF ; end of message
@@ -3554,7 +3554,7 @@ Message_02_00_78:
 ;===================================================================================================
 
 ; これで まんぞくだ
-; この[CLASSX] [DEMONX]
+; この[MYCLASS] [MYNAME]
 ; きょうより あなたの しもべ
 ; なんなりと おもうしつけ ください
 Message_02_00_79:
@@ -3563,9 +3563,9 @@ Message_02_00_79:
 #_0A990D: db $F3 ; [set2] wait for key and new line
 #_0A990E: db $F1 ; [set2] clear message box
 #_0A990F: db $2E, $3D ; この
-#_0A9911: db $EE ; [set2] write class name indexed from $0526
+#_0A9911: db $EE ; [set2] write class of speaker
 #_0A9912: db $CF ; ⎵
-#_0A9913: db $ED ; [set2] write demon name indexed from $0526
+#_0A9913: db $ED ; [set2] write name of speaker
 #_0A9914: db $F0 ; [set2] new line
 #_0A9915: db $2B, $57, $27, $4A, $4C, $CF, $25, $39 ; きょうより⎵あな
 #_0A991D: db $34, $3D, $CF, $30, $47, $AE ; たの⎵しもべ
@@ -3600,7 +3600,7 @@ Message_02_00_7C:
 #_0A995A: db $F6 ; [set2] ask for currency or item
 #_0A995B: db $CF, $2C, $4E, $48 ; ⎵くれや
 #_0A995F: db $F0 ; [set2] new line
-#_0A9960: db $EB, $41 ; [set2] prewritten text 41
+#_0A9960: db $EB, $41 ; [set2] phrase 41
 #_0A9962: db $FF ; end of message
 
 ;===================================================================================================
@@ -3608,7 +3608,7 @@ Message_02_00_7C:
 ; «[GIVEME] いただきたい»
 ; どうだろうか?
 Message_02_00_7D:
-#_0A9963: db $EB, $A3 ; [set2] prewritten text A3
+#_0A9963: db $EB, $A3 ; [set2] phrase A3
 #_0A9965: db $F0 ; [set2] new line
 #_0A9966: db $AA, $27, $A6, $4F, $27, $2A, $95 ; どうだろうか?
 #_0A996D: db $FF ; end of message
@@ -3618,7 +3618,7 @@ Message_02_00_7D:
 ; «さらに [GIVEME] を いただけんかな»
 ; これで きめよう
 Message_02_00_7E:
-#_0A996E: db $EB, $AA ; [set2] prewritten text AA
+#_0A996E: db $EB, $AA ; [set2] phrase AA
 #_0A9970: db $F0 ; [set2] new line
 #_0A9971: db $2E, $4E, $A9, $CF, $2B, $46, $4A, $27 ; これで⎵きめよう
 #_0A9979: db $FF ; end of message
@@ -3628,9 +3628,9 @@ Message_02_00_7E:
 ; «ついでに [GIVEME] だな»
 ; «そんだけで いいから・・・»
 Message_02_00_7F:
-#_0A997A: db $EB, $42 ; [set2] prewritten text 42
+#_0A997A: db $EB, $42 ; [set2] phrase 42
 #_0A997C: db $F0 ; [set2] new line
-#_0A997D: db $EB, $41 ; [set2] prewritten text 41
+#_0A997D: db $EB, $41 ; [set2] phrase 41
 #_0A997F: db $FF ; end of message
 
 ;===================================================================================================
@@ -3644,10 +3644,10 @@ Message_02_00_80:
 
 ;===================================================================================================
 
-; >[DEMONX]は けいかい している
+; >[MYNAME]は けいかい している
 Message_02_00_81:
 #_0A998D: db $97 ; >
-#_0A998E: db $ED ; [set2] write demon name indexed from $0526
+#_0A998E: db $ED ; [set2] write name of speaker
 #_0A998F: db $3E, $CF, $2D, $26, $2A, $26, $CF, $30 ; は⎵けいかい⎵し
 #_0A9997: db $37, $26, $4D ; ている
 #_0A999A: db $FF ; end of message
@@ -3676,13 +3676,13 @@ Message_02_00_84:
 
 ;===================================================================================================
 
-; この [CLASSX] [DEMONX]を
+; この [MYCLASS] [MYNAME]を
 ; ほんきで おこらせた ようだな・・・
 Message_02_00_85:
 #_0A99B7: db $2E, $3D, $CF ; この⎵
-#_0A99BA: db $EE ; [set2] write class name indexed from $0526
+#_0A99BA: db $EE ; [set2] write class of speaker
 #_0A99BB: db $CF ; ⎵
-#_0A99BC: db $ED ; [set2] write demon name indexed from $0526
+#_0A99BC: db $ED ; [set2] write name of speaker
 #_0A99BD: db $51 ; を
 #_0A99BE: db $F0 ; [set2] new line
 #_0A99BF: db $42, $52, $2B, $A9, $CF, $29, $2E, $4B ; ほんきで⎵おこら
@@ -3767,7 +3767,7 @@ Message_02_00_8E:
 #_0A9A50: db $27, $33, $A9, $47, $CF, $27, $4E, $30 ; うそでも⎵うれし
 #_0A9A58: db $26, $94 ; い!
 #_0A9A5A: db $F0 ; [set2] new line
-#_0A9A5B: db $EB, $84 ; [set2] prewritten text 84
+#_0A9A5B: db $EB, $84 ; [set2] phrase 84
 #_0A9A5D: db $50, $94 ; わ!
 #_0A9A5F: db $FF ; end of message
 
@@ -3868,7 +3868,7 @@ Message_02_00_99:
 #_0A9B04: db $2C, $51, $CF, $25, $34, $28, $4A, $27 ; くを⎵あたえよう
 #_0A9B0C: db $A5, $94 ; ぞ!
 #_0A9B0E: db $F0 ; [set2] new line
-#_0A9B0F: db $EB, $82 ; [set2] prewritten text 82
+#_0A9B0F: db $EB, $82 ; [set2] phrase 82
 #_0A9B11: db $FF ; end of message
 
 ;===================================================================================================
@@ -3912,7 +3912,7 @@ Message_02_00_9D:
 Message_02_00_9E:
 #_0A9B56: db $2E, $3D, $CF, $9F, $4F, $27, $9C, $94 ; この⎵げろうが!
 #_0A9B5E: db $F0 ; [set2] new line
-#_0A9B5F: db $EB, $39 ; [set2] prewritten text 39
+#_0A9B5F: db $EB, $39 ; [set2] phrase 39
 #_0A9B61: db $FF ; end of message
 
 ;===================================================================================================
@@ -4052,10 +4052,10 @@ Message_02_00_AE:
 
 ;===================================================================================================
 
-; >[DEMONX]は くちぶえを ふいた
+; >[MYNAME]は くちぶえを ふいた
 Message_02_00_AF:
 #_0A9C2D: db $97 ; >
-#_0A9C2E: db $ED ; [set2] write demon name indexed from $0526
+#_0A9C2E: db $ED ; [set2] write name of speaker
 #_0A9C2F: db $3E, $CF, $2C, $35, $AD, $28, $51, $CF ; は⎵くちぶえを⎵
 #_0A9C37: db $40, $26, $34 ; ふいた
 #_0A9C3A: db $FF ; end of message
@@ -4091,13 +4091,13 @@ Message_02_00_B3:
 
 ;===================================================================================================
 
-; >[CHASE]は [DEMONX]が
+; >[CHASE]は [MYNAME]が
 ; ようきゅうしたぶんを もっていなかった
 Message_02_00_B4:
 #_0A9C5A: db $97 ; >
 #_0A9C5B: db $F8 ; [set2] write player name
 #_0A9C5C: db $3E, $CF ; は⎵
-#_0A9C5E: db $ED ; [set2] write demon name indexed from $0526
+#_0A9C5E: db $ED ; [set2] write name of speaker
 #_0A9C5F: db $9C ; が
 #_0A9C60: db $F0 ; [set2] new line
 #_0A9C61: db $4A, $27, $2B, $56, $27, $30, $34, $AD ; ようきゅうしたぶ
@@ -4116,7 +4116,7 @@ Message_02_00_B5:
 
 ; «ナカマを »よろしく 
 Message_02_00_B6:
-#_0A9C7B: db $EB, $B5 ; [set2] prewritten text B5
+#_0A9C7B: db $EB, $B5 ; [set2] phrase B5
 #_0A9C7D: db $4A, $4F, $30, $2C, $CF ; よろしく⎵
 #_0A9C82: db $FF ; end of message
 
@@ -4164,10 +4164,10 @@ Message_02_00_C0:
 
 ;===================================================================================================
 
-; >[DEMONX]が ちょうはつしています
+; >[MYNAME]が ちょうはつしています
 Message_02_00_C1:
 #_0A9CB3: db $97 ; >
-#_0A9CB4: db $ED ; [set2] write demon name indexed from $0526
+#_0A9CB4: db $ED ; [set2] write name of speaker
 #_0A9CB5: db $9C, $CF, $35, $57, $27, $3E, $36, $30 ; が⎵ちょうはつし
 #_0A9CBD: db $37, $26, $43, $31 ; ています
 #_0A9CC1: db $FF ; end of message
@@ -4188,96 +4188,96 @@ Message_02_00_C2:
 
 ;===================================================================================================
 
-; >[DEMONX]に ばかにされた
+; >[MYNAME]に ばかにされた
 Message_02_00_C3:
 #_0A9CD0: db $97 ; >
-#_0A9CD1: db $ED ; [set2] write demon name indexed from $0526
+#_0A9CD1: db $ED ; [set2] write name of speaker
 #_0A9CD2: db $3A, $CF, $AB, $2A, $3A, $2F, $4E, $34 ; に⎵ばかにされた
 #_0A9CDA: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]が よんでいる
+; >[MYNAME]が よんでいる
 Message_02_00_C4:
 #_0A9CDB: db $97 ; >
-#_0A9CDC: db $ED ; [set2] write demon name indexed from $0526
+#_0A9CDC: db $ED ; [set2] write name of speaker
 #_0A9CDD: db $9C, $CF, $4A, $52, $A9, $26, $4D ; が⎵よんでいる
 #_0A9CE4: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は ナカマをよんだ!!
+; >[MYNAME]は ナカマをよんだ!!
 Message_02_00_C5:
 #_0A9CE5: db $97 ; >
-#_0A9CE6: db $ED ; [set2] write demon name indexed from $0526
+#_0A9CE6: db $ED ; [set2] write name of speaker
 #_0A9CE7: db $3E, $CF, $71, $62, $7B, $51, $4A, $52 ; は⎵ナカマをよん
 #_0A9CEF: db $A6, $94, $94 ; だ!!
 #_0A9CF2: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は けいかいしている
+; >[MYNAME]は けいかいしている
 Message_02_00_C6:
 #_0A9CF3: db $97 ; >
-#_0A9CF4: db $ED ; [set2] write demon name indexed from $0526
+#_0A9CF4: db $ED ; [set2] write name of speaker
 #_0A9CF5: db $3E, $CF, $2D, $26, $2A, $26, $30, $37 ; は⎵けいかいして
 #_0A9CFD: db $26, $4D ; いる
 #_0A9CFF: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]に わらわれた
+; >[MYNAME]に わらわれた
 Message_02_00_C7:
 #_0A9D00: db $97 ; >
-#_0A9D01: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D01: db $ED ; [set2] write name of speaker
 #_0A9D02: db $3A, $CF, $50, $4B, $50, $4E, $34 ; に⎵わらわれた
 #_0A9D09: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は おどしてきた
+; >[MYNAME]は おどしてきた
 Message_02_00_C8:
 #_0A9D0A: db $97 ; >
-#_0A9D0B: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D0B: db $ED ; [set2] write name of speaker
 #_0A9D0C: db $3E, $CF, $29, $AA, $30, $37, $2B, $34 ; は⎵おどしてきた
 #_0A9D14: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は おこっている
+; >[MYNAME]は おこっている
 Message_02_00_C9:
 #_0A9D15: db $97 ; >
-#_0A9D16: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D16: db $ED ; [set2] write name of speaker
 #_0A9D17: db $3E, $CF, $29, $2E, $58, $37, $26, $4D ; は⎵おこっている
 #_0A9D1F: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]が なまえをきいてきた
+; >[MYNAME]が なまえをきいてきた
 Message_02_00_CA:
 #_0A9D20: db $97 ; >
-#_0A9D21: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D21: db $ED ; [set2] write name of speaker
 #_0A9D22: db $9C, $CF, $39, $43, $28, $51, $2B, $26 ; が⎵なまえをきい
 #_0A9D2A: db $37, $2B, $34 ; てきた
 #_0A9D2D: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は なんたいかにげだした
+; >[MYNAME]は なんたいかにげだした
 Message_02_00_CB:
 #_0A9D2E: db $97 ; >
-#_0A9D2F: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D2F: db $ED ; [set2] write name of speaker
 #_0A9D30: db $3E, $CF, $39, $52, $34, $26, $2A, $3A ; は⎵なんたいかに
 #_0A9D38: db $9F, $A6, $30, $34 ; げだした
 #_0A9D3C: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は [CHASE]のことを
+; >[MYNAME]は [CHASE]のことを
 ; しらないようだ
 Message_02_00_CC:
 #_0A9D3D: db $97 ; >
-#_0A9D3E: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D3E: db $ED ; [set2] write name of speaker
 #_0A9D3F: db $3E, $CF ; は⎵
 #_0A9D41: db $F8 ; [set2] write player name
 #_0A9D42: db $3D, $2E, $38, $51 ; のことを
@@ -4287,40 +4287,40 @@ Message_02_00_CC:
 
 ;===================================================================================================
 
-; >[DEMONX]を ナカマにしますか?
+; >[MYNAME]を ナカマにしますか?
 Message_02_00_CD:
 #_0A9D4F: db $97 ; >
-#_0A9D50: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D50: db $ED ; [set2] write name of speaker
 #_0A9D51: db $51, $CF, $71, $62, $7B, $3A, $30, $43 ; を⎵ナカマにしま
 #_0A9D59: db $31, $2A, $95 ; すか?
 #_0A9D5C: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は おだてに おこった
+; >[MYNAME]は おだてに おこった
 Message_02_00_CE:
 #_0A9D5D: db $97 ; >
-#_0A9D5E: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D5E: db $ED ; [set2] write name of speaker
 #_0A9D5F: db $3E, $CF, $29, $A6, $37, $3A, $CF, $29 ; は⎵おだてに⎵お
 #_0A9D67: db $2E, $58, $34 ; こった
 #_0A9D6A: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]に からかわれています
+; >[MYNAME]に からかわれています
 Message_02_00_CF:
 #_0A9D6B: db $97 ; >
-#_0A9D6C: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D6C: db $ED ; [set2] write name of speaker
 #_0A9D6D: db $3A, $CF, $2A, $4B, $2A, $50, $4E, $37 ; に⎵からかわれて
 #_0A9D75: db $26, $43, $31 ; います
 #_0A9D78: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は たちさろうとしている
+; >[MYNAME]は たちさろうとしている
 Message_02_00_D0:
 #_0A9D79: db $97 ; >
-#_0A9D7A: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D7A: db $ED ; [set2] write name of speaker
 #_0A9D7B: db $3E, $CF, $34, $35, $2F, $4F, $27, $38 ; は⎵たちさろうと
 #_0A9D83: db $30, $37, $26, $4D ; している
 #_0A9D87: db $FF ; end of message
@@ -4342,9 +4342,9 @@ Message_02_00_D2:
 
 ;===================================================================================================
 
-; [DEMONX]は ひるんでいる
+; [MYNAME]は ひるんでいる
 Message_02_00_D3:
-#_0A9D9A: db $ED ; [set2] write demon name indexed from $0526
+#_0A9D9A: db $ED ; [set2] write name of speaker
 #_0A9D9B: db $3E, $CF, $3F, $4D, $52, $A9, $26, $4D ; は⎵ひるんでいる
 #_0A9DA3: db $FF ; end of message
 
@@ -4358,10 +4358,10 @@ Message_02_00_D4:
 
 ;===================================================================================================
 
-; >[DEMONX]は いかく している
+; >[MYNAME]は いかく している
 Message_02_00_D5:
 #_0A9DB2: db $97 ; >
-#_0A9DB3: db $ED ; [set2] write demon name indexed from $0526
+#_0A9DB3: db $ED ; [set2] write name of speaker
 #_0A9DB4: db $3E, $CF, $26, $2A, $2C, $CF, $30, $37 ; は⎵いかく⎵して
 #_0A9DBC: db $26, $4D ; いる
 #_0A9DBE: db $FF ; end of message
@@ -4386,11 +4386,11 @@ Message_02_00_D7:
 
 ;===================================================================================================
 
-; >[DEMONX]は [GIVEME] を
+; >[MYNAME]は [GIVEME] を
 ; おとしていった
 Message_02_00_D8:
 #_0A9DDC: db $97 ; >
-#_0A9DDD: db $ED ; [set2] write demon name indexed from $0526
+#_0A9DDD: db $ED ; [set2] write name of speaker
 #_0A9DDE: db $3E, $CF ; は⎵
 #_0A9DE0: db $F6 ; [set2] ask for currency or item
 #_0A9DE1: db $CF, $51 ; ⎵を
@@ -4425,13 +4425,13 @@ Message_02_00_DF:
 
 ;===================================================================================================
 
-; >[CLASSX] [DEMONX]は
+; >[MYCLASS] [MYNAME]は
 ; ナカマに なった
 Message_02_00_E0:
 #_0A9E0E: db $97 ; >
-#_0A9E0F: db $EE ; [set2] write class name indexed from $0526
+#_0A9E0F: db $EE ; [set2] write class of speaker
 #_0A9E10: db $CF ; ⎵
-#_0A9E11: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E11: db $ED ; [set2] write name of speaker
 #_0A9E12: db $3E ; は
 #_0A9E13: db $F0 ; [set2] new line
 #_0A9E14: db $71, $62, $7B, $3A, $CF, $39, $58, $34 ; ナカマに⎵なった
@@ -4439,19 +4439,19 @@ Message_02_00_E0:
 
 ;===================================================================================================
 
-; >[DEMONX]は さっていった
+; >[MYNAME]は さっていった
 Message_02_00_E1:
 #_0A9E1D: db $97 ; >
-#_0A9E1E: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E1E: db $ED ; [set2] write name of speaker
 #_0A9E1F: db $3E, $CF, $2F, $58, $37, $26, $58, $34 ; は⎵さっていった
 #_0A9E27: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は にげていった!
+; >[MYNAME]は にげていった!
 Message_02_00_E2:
 #_0A9E28: db $97 ; >
-#_0A9E29: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E29: db $ED ; [set2] write name of speaker
 #_0A9E2A: db $3E, $CF, $3A, $9F, $37, $26, $58, $34 ; は⎵にげていった
 #_0A9E32: db $94 ; !
 #_0A9E33: db $FF ; end of message
@@ -4487,15 +4487,15 @@ Message_02_00_E6:
 ;===================================================================================================
 
 ; >[CHASE]の うたは
-; [CLASSX] [DEMONX]を とりこにした
+; [MYCLASS] [MYNAME]を とりこにした
 Message_02_00_E7:
 #_0A9E4F: db $97 ; >
 #_0A9E50: db $F8 ; [set2] write player name
 #_0A9E51: db $3D, $CF, $27, $34, $3E ; の⎵うたは
 #_0A9E56: db $F0 ; [set2] new line
-#_0A9E57: db $EE ; [set2] write class name indexed from $0526
+#_0A9E57: db $EE ; [set2] write class of speaker
 #_0A9E58: db $CF ; ⎵
-#_0A9E59: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E59: db $ED ; [set2] write name of speaker
 #_0A9E5A: db $51, $CF, $38, $4C, $2E, $3A, $30, $34 ; を⎵とりこにした
 #_0A9E62: db $FF ; end of message
 
@@ -4509,21 +4509,21 @@ Message_02_00_E8:
 
 ;===================================================================================================
 
-; >[DEMONX]は ちかづいてきた
+; >[MYNAME]は ちかづいてきた
 Message_02_00_E9:
 #_0A9E71: db $97 ; >
-#_0A9E72: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E72: db $ED ; [set2] write name of speaker
 #_0A9E73: db $3E, $CF, $35, $2A, $A8, $26, $37, $2B ; は⎵ちかづいてき
 #_0A9E7B: db $34 ; た
 #_0A9E7C: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]に すきが できた
+; >[MYNAME]に すきが できた
 ; こうげき しますか?
 Message_02_00_EA:
 #_0A9E7D: db $97 ; >
-#_0A9E7E: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E7E: db $ED ; [set2] write name of speaker
 #_0A9E7F: db $3A, $CF, $31, $2B, $9C, $CF, $A9, $2B ; に⎵すきが⎵でき
 #_0A9E87: db $34 ; た
 #_0A9E88: db $F0 ; [set2] new line
@@ -4533,11 +4533,11 @@ Message_02_00_EA:
 
 ;===================================================================================================
 
-; >[DEMONX]も つられて おどりだした!
+; >[MYNAME]も つられて おどりだした!
 ; このまま おどりますか?
 Message_02_00_EB:
 #_0A9E94: db $97 ; >
-#_0A9E95: db $ED ; [set2] write demon name indexed from $0526
+#_0A9E95: db $ED ; [set2] write name of speaker
 #_0A9E96: db $47, $CF, $36, $4B, $4E, $37, $CF, $29 ; も⎵つられて⎵お
 #_0A9E9E: db $AA, $4C, $A6, $30, $34, $94 ; どりだした!
 #_0A9EA4: db $F0 ; [set2] new line
@@ -4547,13 +4547,13 @@ Message_02_00_EB:
 
 ;===================================================================================================
 
-; >[CHASE]と [DEMONX]は
+; >[CHASE]と [MYNAME]は
 ; ひとばんじゅう おどりあかした!
 Message_02_00_EC:
 #_0A9EB2: db $97 ; >
 #_0A9EB3: db $F8 ; [set2] write player name
 #_0A9EB4: db $38, $CF ; と⎵
-#_0A9EB6: db $ED ; [set2] write demon name indexed from $0526
+#_0A9EB6: db $ED ; [set2] write name of speaker
 #_0A9EB7: db $3E ; は
 #_0A9EB8: db $F0 ; [set2] new line
 #_0A9EB9: db $3F, $38, $AB, $52, $A2, $56, $27, $CF ; ひとばんじゅう⎵
@@ -4580,33 +4580,33 @@ Message_02_00_EE:
 ;===================================================================================================
 
 ; >[CHASE]の がんこうは
-; [DEMONX]を とりこに した
+; [MYNAME]を とりこに した
 Message_02_00_EF:
 #_0A9EEE: db $97 ; >
 #_0A9EEF: db $F8 ; [set2] write player name
 #_0A9EF0: db $3D, $CF, $9C, $52, $2E, $27, $3E ; の⎵がんこうは
 #_0A9EF7: db $F0 ; [set2] new line
-#_0A9EF8: db $ED ; [set2] write demon name indexed from $0526
+#_0A9EF8: db $ED ; [set2] write name of speaker
 #_0A9EF9: db $51, $CF, $38, $4C, $2E, $3A, $CF, $30 ; を⎵とりこに⎵し
 #_0A9F01: db $34 ; た
 #_0A9F02: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は にげようと している
+; >[MYNAME]は にげようと している
 Message_02_00_F0:
 #_0A9F03: db $97 ; >
-#_0A9F04: db $ED ; [set2] write demon name indexed from $0526
+#_0A9F04: db $ED ; [set2] write name of speaker
 #_0A9F05: db $3E, $CF, $3A, $9F, $4A, $27, $38, $CF ; は⎵にげようと⎵
 #_0A9F0D: db $30, $37, $26, $4D ; している
 #_0A9F11: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は いいきに なっています
+; >[MYNAME]は いいきに なっています
 Message_02_00_F1:
 #_0A9F12: db $97 ; >
-#_0A9F13: db $ED ; [set2] write demon name indexed from $0526
+#_0A9F13: db $ED ; [set2] write name of speaker
 #_0A9F14: db $3E, $CF, $26, $26, $2B, $3A, $CF, $39 ; は⎵いいきに⎵な
 #_0A9F1C: db $58, $37, $26, $43, $31 ; っています
 #_0A9F21: db $FF ; end of message
@@ -4634,23 +4634,23 @@ Message_02_00_F4:
 ;===================================================================================================
 
 ; >[CHASE]は
-; [DEMONX]に みいられた
+; [MYNAME]に みいられた
 Message_02_00_F5:
 #_0A9F46: db $97 ; >
 #_0A9F47: db $F8 ; [set2] write player name
 #_0A9F48: db $3E ; は
 #_0A9F49: db $F0 ; [set2] new line
-#_0A9F4A: db $ED ; [set2] write demon name indexed from $0526
+#_0A9F4A: db $ED ; [set2] write name of speaker
 #_0A9F4B: db $3A, $CF, $44, $26, $4B, $4E, $34 ; に⎵みいられた
 #_0A9F52: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は [CHASE]の
+; >[MYNAME]は [CHASE]の
 ; ナカマが いっぱいなので さっていった
 Message_02_00_F6:
 #_0A9F53: db $97 ; >
-#_0A9F54: db $ED ; [set2] write demon name indexed from $0526
+#_0A9F54: db $ED ; [set2] write name of speaker
 #_0A9F55: db $3E, $CF ; は⎵
 #_0A9F57: db $F8 ; [set2] write player name
 #_0A9F58: db $3D ; の
@@ -4662,11 +4662,11 @@ Message_02_00_F6:
 
 ;===================================================================================================
 
-; >[DEMONX]は [CHASE]の
+; >[MYNAME]は [CHASE]の
 ; [GIVEME] を うけとると さっていった
 Message_02_00_F7:
 #_0A9F6E: db $97 ; >
-#_0A9F6F: db $ED ; [set2] write demon name indexed from $0526
+#_0A9F6F: db $ED ; [set2] write name of speaker
 #_0A9F70: db $3E, $CF ; は⎵
 #_0A9F72: db $F8 ; [set2] write player name
 #_0A9F73: db $3D ; の
@@ -4686,7 +4686,7 @@ Message_02_00_F8:
 ; どんな たいどでせっしますか?
 Message_02_01_00:
 #_0A9F86: db $F1 ; [set2] clear message box
-#_0A9F87: db $FB, $00, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 00 is nonzero; otherwise reset
+#_0A9F87: db $FB, $00, $E9 ; [set2] clear progress flag E9
 #_0A9F8A: db $D0, $03 ; [set2] maybe go to message 03
 #_0A9F8C: db $D1, $04, $05 ; [set2] maybe go to message 04 TODO
 #_0A9F8F: db $AA, $52, $39, $CF, $34, $26, $AA, $A9 ; どんな⎵たいどで
@@ -4709,10 +4709,10 @@ Message_02_01_02:
 
 ;===================================================================================================
 
-; >[DEMONX]は みみを かそうとしない!
+; >[MYNAME]は みみを かそうとしない!
 Message_02_01_03:
 #_0A9FAB: db $97 ; >
-#_0A9FAC: db $ED ; [set2] write demon name indexed from $0526
+#_0A9FAC: db $ED ; [set2] write name of speaker
 #_0A9FAD: db $3E, $CF, $44, $44, $51, $CF, $2A, $33 ; は⎵みみを⎵かそ
 #_0A9FB5: db $27, $38, $30, $39, $26, $94 ; うとしない!
 #_0A9FBB: db $F3 ; [set2] wait for key and new line
@@ -4729,27 +4729,27 @@ Message_02_01_04:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_01_05:
 #_0A9FD0: db $E8, $31 ; [set2] [COMMAND 48:31]
 #_0A9FD2: db $F3 ; [set2] wait for key and new line
 #_0A9FD3: db $F1 ; [set2] clear message box
 #_0A9FD4: db $D4, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
-#_0A9FD7: db $EB, $E1 ; [set2] prewritten text E1
+#_0A9FD7: db $EB, $E1 ; [set2] phrase E1
 #_0A9FD9: db $F3 ; [set2] wait for key and new line
 #_0A9FDA: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; >[DEMONX]は [CHASE]に
+; >[MYNAME]は [CHASE]に
 ; [GIVEME] を てわたした
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_01_06:
 #_0A9FDC: db $DD ; [set2] [COMMAND 3D]
 #_0A9FDD: db $97 ; >
-#_0A9FDE: db $ED ; [set2] write demon name indexed from $0526
+#_0A9FDE: db $ED ; [set2] write name of speaker
 #_0A9FDF: db $3E, $CF ; は⎵
 #_0A9FE1: db $F8 ; [set2] write player name
 #_0A9FE2: db $3A ; に
@@ -4758,10 +4758,10 @@ Message_02_01_06:
 #_0A9FE5: db $CF, $51, $CF, $37, $50, $34, $30, $34 ; ⎵を⎵てわたした
 #_0A9FED: db $F3 ; [set2] wait for key and new line
 #_0A9FEE: db $F1 ; [set2] clear message box
-#_0A9FEF: db $EB, $C2 ; [set2] prewritten text C2
+#_0A9FEF: db $EB, $C2 ; [set2] phrase C2
 #_0A9FF1: db $F3 ; [set2] wait for key and new line
 #_0A9FF2: db $F1 ; [set2] clear message box
-#_0A9FF3: db $EB, $E1 ; [set2] prewritten text E1
+#_0A9FF3: db $EB, $E1 ; [set2] phrase E1
 #_0A9FF5: db $F3 ; [set2] wait for key and new line
 #_0A9FF6: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -4773,16 +4773,16 @@ Message_02_02_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_02_01:
 #_0A9FFE: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA000: db $F3 ; [set2] wait for key and new line
 #_0AA001: db $F1 ; [set2] clear message box
-#_0AA002: db $EB, $C1 ; [set2] prewritten text C1
+#_0AA002: db $EB, $C1 ; [set2] phrase C1
 #_0AA004: db $F3 ; [set2] wait for key and new line
 #_0AA005: db $F1 ; [set2] clear message box
-#_0AA006: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA006: db $EB, $C0 ; [set2] phrase C0
 #_0AA008: db $F2, $01 ; [set2] option list with 2 options
 #_0AA00A: db $08, $02 ; option 1 [08]: go to message 02
 #_0AA00C: db $23, $07 ; option 2 [23]: go to message 07
@@ -4791,7 +4791,7 @@ Message_02_02_01:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_02_02:
 #_0AA00E: db $D8, $00, $06 ; [set2] go to message 06 if LUK < RNG(0, DemonLUK+8)
 #_0AA011: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
@@ -4799,10 +4799,10 @@ Message_02_02_02:
 #_0AA016: db $F3 ; [set2] wait for key and new line
 #_0AA017: db $F1 ; [set2] clear message box
 #_0AA018: db $DD ; [set2] [COMMAND 3D]
-#_0AA019: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA019: db $EB, $C2 ; [set2] phrase C2
 #_0AA01B: db $F3 ; [set2] wait for key and new line
 #_0AA01C: db $F1 ; [set2] clear message box
-#_0AA01D: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA01D: db $EB, $E1 ; [set2] phrase E1
 #_0AA01F: db $F3 ; [set2] wait for key and new line
 #_0AA020: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -4825,7 +4825,7 @@ Message_02_02_04:
 ; «>[CHASE]は もうれつな すいまに»
 ; «とらわれ ねむりに おちていった・・・»
 Message_02_02_05:
-#_0AA02D: db $EB, $F4 ; [set2] prewritten text F4
+#_0AA02D: db $EB, $F4 ; [set2] phrase F4
 #_0AA02F: db $F3 ; [set2] wait for key and new line
 #_0AA030: db $F1 ; [set2] clear message box
 #_0AA031: db $DF, $09 ; [set2] inflict status: sleep
@@ -4845,7 +4845,7 @@ Message_02_02_06:
 
 ;===================================================================================================
 
-; «>[DEMONX]は いいきに なっています»
+; «>[MYNAME]は いいきに なっています»
 ; «どうしますか?»
 Message_02_02_07:
 #_0AA042: db $E8, $0E ; [set2] [COMMAND 48:0E]
@@ -4855,10 +4855,10 @@ Message_02_02_07:
 #_0AA049: db $E8, $2B ; [set2] [COMMAND 48:2B]
 #_0AA04B: db $F3 ; [set2] wait for key and new line
 #_0AA04C: db $F1 ; [set2] clear message box
-#_0AA04D: db $EB, $F1 ; [set2] prewritten text F1
+#_0AA04D: db $EB, $F1 ; [set2] phrase F1
 #_0AA04F: db $F3 ; [set2] wait for key and new line
 #_0AA050: db $F1 ; [set2] clear message box
-#_0AA051: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA051: db $EB, $C0 ; [set2] phrase C0
 #_0AA053: db $F2, $01 ; [set2] option list with 2 options
 #_0AA055: db $0E, $08 ; option 1 [0E]: go to message 08
 #_0AA057: db $24, $0B ; option 2 [24]: go to message 0B
@@ -4874,12 +4874,12 @@ Message_02_02_08:
 ;===================================================================================================
 
 ; «>[CHASE]は»
-; «[DEMONX]に みいられた»
+; «[MYNAME]に みいられた»
 Message_02_02_09:
 #_0AA062: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AA064: db $F3 ; [set2] wait for key and new line
 #_0AA065: db $F1 ; [set2] clear message box
-#_0AA066: db $EB, $F5 ; [set2] prewritten text F5
+#_0AA066: db $EB, $F5 ; [set2] phrase F5
 #_0AA068: db $F3 ; [set2] wait for key and new line
 #_0AA069: db $F1 ; [set2] clear message box
 #_0AA06A: db $DF, $08 ; [set2] inflict status: charm
@@ -4897,10 +4897,10 @@ Message_02_02_0A:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは»
-; «[DEMONX]を とりこに した»
+; «[MYNAME]を とりこに した»
 Message_02_02_0B:
 #_0AA077: db $D8, $02, $0C ; [set2] go to message 0C if LUK < RNG(0, DemonLUK+32)
-#_0AA07A: db $EB, $EF ; [set2] prewritten text EF
+#_0AA07A: db $EB, $EF ; [set2] phrase EF
 #_0AA07C: db $F3 ; [set2] wait for key and new line
 #_0AA07D: db $F1 ; [set2] clear message box
 #_0AA07E: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -4916,16 +4916,16 @@ Message_02_02_0C:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_02_0D:
 #_0AA089: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA08B: db $F3 ; [set2] wait for key and new line
 #_0AA08C: db $F1 ; [set2] clear message box
-#_0AA08D: db $EB, $C3 ; [set2] prewritten text C3
+#_0AA08D: db $EB, $C3 ; [set2] phrase C3
 #_0AA08F: db $F3 ; [set2] wait for key and new line
 #_0AA090: db $F1 ; [set2] clear message box
-#_0AA091: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA091: db $EB, $C0 ; [set2] phrase C0
 #_0AA093: db $F2, $01 ; [set2] option list with 2 options
 #_0AA095: db $03, $0E ; option 1 [03]: go to message 0E
 #_0AA097: db $1B, $13 ; option 2 [1B]: go to message 13
@@ -4948,16 +4948,16 @@ Message_02_02_0F:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_02_10:
 #_0AA0AB: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA0AD: db $F3 ; [set2] wait for key and new line
 #_0AA0AE: db $F1 ; [set2] clear message box
-#_0AA0AF: db $EB, $C4 ; [set2] prewritten text C4
+#_0AA0AF: db $EB, $C4 ; [set2] phrase C4
 #_0AA0B1: db $F3 ; [set2] wait for key and new line
 #_0AA0B2: db $F1 ; [set2] clear message box
-#_0AA0B3: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA0B3: db $EB, $C0 ; [set2] phrase C0
 #_0AA0B5: db $F2, $01 ; [set2] option list with 2 options
 #_0AA0B7: db $0D, $11 ; option 1 [0D]: go to message 11
 #_0AA0B9: db $06, $12 ; option 2 [06]: go to message 12
@@ -4990,13 +4990,13 @@ Message_02_02_13:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_02_14:
 #_0AA0D5: db $DA, $01, $15 ; [set2] ext command 01: go to message 15 if MC INT = 0
 #_0AA0D8: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AA0DA: db $F3 ; [set2] wait for key and new line
 #_0AA0DB: db $F1 ; [set2] clear message box
-#_0AA0DC: db $EB, $C5 ; [set2] prewritten text C5
+#_0AA0DC: db $EB, $C5 ; [set2] phrase C5
 #_0AA0DE: db $F3 ; [set2] wait for key and new line
 #_0AA0DF: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -5012,10 +5012,10 @@ Message_02_02_15:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_02_16:
-#_0AA0E6: db $EB, $E8 ; [set2] prewritten text E8
+#_0AA0E6: db $EB, $E8 ; [set2] phrase E8
 #_0AA0E8: db $F3 ; [set2] wait for key and new line
 #_0AA0E9: db $F1 ; [set2] clear message box
-#_0AA0EA: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA0EA: db $EB, $C0 ; [set2] phrase C0
 #_0AA0EC: db $F2, $01 ; [set2] option list with 2 options
 #_0AA0EE: db $0E, $08 ; option 1 [0E]: go to message 08
 #_0AA0F0: db $14, $17 ; option 2 [14]: go to message 17
@@ -5041,12 +5041,12 @@ Message_02_02_19:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_02_1A:
 #_0AA103: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AA105: db $F3 ; [set2] wait for key and new line
 #_0AA106: db $F1 ; [set2] clear message box
-#_0AA107: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA107: db $EB, $E1 ; [set2] phrase E1
 #_0AA109: db $F3 ; [set2] wait for key and new line
 #_0AA10A: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5065,16 +5065,16 @@ Message_02_03_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_03_01:
 #_0AA118: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA11A: db $F3 ; [set2] wait for key and new line
 #_0AA11B: db $F1 ; [set2] clear message box
-#_0AA11C: db $EB, $C6 ; [set2] prewritten text C6
+#_0AA11C: db $EB, $C6 ; [set2] phrase C6
 #_0AA11E: db $F3 ; [set2] wait for key and new line
 #_0AA11F: db $F1 ; [set2] clear message box
-#_0AA120: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA120: db $EB, $C0 ; [set2] phrase C0
 #_0AA122: db $F2, $01 ; [set2] option list with 2 options
 #_0AA124: db $0D, $02 ; option 1 [0D]: go to message 02
 #_0AA126: db $15, $07 ; option 2 [15]: go to message 07
@@ -5089,28 +5089,28 @@ Message_02_03_02:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_03_03:
 #_0AA12D: db $D7, $01, $04 ; [set2] go to message 04 if LUK < RNG(0, 32)
 #_0AA130: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA132: db $F3 ; [set2] wait for key and new line
 #_0AA133: db $F1 ; [set2] clear message box
 #_0AA134: db $DD ; [set2] [COMMAND 3D]
-#_0AA135: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA135: db $EB, $C2 ; [set2] phrase C2
 #_0AA137: db $F3 ; [set2] wait for key and new line
 #_0AA138: db $F1 ; [set2] clear message box
-#_0AA139: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA139: db $EB, $E2 ; [set2] phrase E2
 #_0AA13B: db $F3 ; [set2] wait for key and new line
 #_0AA13C: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_03_04:
 #_0AA13E: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA140: db $F3 ; [set2] wait for key and new line
 #_0AA141: db $F1 ; [set2] clear message box
-#_0AA142: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA142: db $EB, $E2 ; [set2] phrase E2
 #_0AA144: db $F3 ; [set2] wait for key and new line
 #_0AA145: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -5132,10 +5132,10 @@ Message_02_03_06:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは»
-; «[DEMONX]を とりこに した»
+; «[MYNAME]を とりこに した»
 Message_02_03_07:
 #_0AA157: db $D8, $01, $08 ; [set2] go to message 08 if LUK < RNG(0, DemonLUK+16)
-#_0AA15A: db $EB, $EF ; [set2] prewritten text EF
+#_0AA15A: db $EB, $EF ; [set2] phrase EF
 #_0AA15C: db $F3 ; [set2] wait for key and new line
 #_0AA15D: db $F1 ; [set2] clear message box
 #_0AA15E: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -5151,16 +5151,16 @@ Message_02_03_08:
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_03_09:
 #_0AA169: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA16B: db $F3 ; [set2] wait for key and new line
 #_0AA16C: db $F1 ; [set2] clear message box
-#_0AA16D: db $EB, $C7 ; [set2] prewritten text C7
+#_0AA16D: db $EB, $C7 ; [set2] phrase C7
 #_0AA16F: db $F3 ; [set2] wait for key and new line
 #_0AA170: db $F1 ; [set2] clear message box
-#_0AA171: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA171: db $EB, $C0 ; [set2] phrase C0
 #_0AA173: db $F2, $01 ; [set2] option list with 2 options
 #_0AA175: db $05, $0A ; option 1 [05]: go to message 0A
 #_0AA177: db $29, $14 ; option 2 [29]: go to message 14
@@ -5173,12 +5173,12 @@ Message_02_03_0A:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_03_0B:
 #_0AA181: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA183: db $F3 ; [set2] wait for key and new line
 #_0AA184: db $F1 ; [set2] clear message box
-#_0AA185: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA185: db $EB, $E1 ; [set2] phrase E1
 #_0AA187: db $F3 ; [set2] wait for key and new line
 #_0AA188: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5186,33 +5186,33 @@ Message_02_03_0B:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_03_0C:
 #_0AA18A: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AA18C: db $F3 ; [set2] wait for key and new line
 #_0AA18D: db $F1 ; [set2] clear message box
 #_0AA18E: db $DD ; [set2] [COMMAND 3D]
-#_0AA18F: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA18F: db $EB, $C2 ; [set2] phrase C2
 #_0AA191: db $F3 ; [set2] wait for key and new line
 #_0AA192: db $F1 ; [set2] clear message box
-#_0AA193: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA193: db $EB, $E1 ; [set2] phrase E1
 #_0AA195: db $F3 ; [set2] wait for key and new line
 #_0AA196: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]を ナカマにしますか?»
+; «>[MYNAME]は さっていった»
 Message_02_03_0D:
 #_0AA198: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AA19A: db $F3 ; [set2] wait for key and new line
 #_0AA19B: db $F1 ; [set2] clear message box
-#_0AA19C: db $EB, $CD ; [set2] prewritten text CD
+#_0AA19C: db $EB, $CD ; [set2] phrase CD
 #_0AA19E: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
 #_0AA1A0: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA1A2: db $F3 ; [set2] wait for key and new line
 #_0AA1A3: db $F1 ; [set2] clear message box
-#_0AA1A4: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA1A4: db $EB, $E1 ; [set2] phrase E1
 #_0AA1A6: db $F3 ; [set2] wait for key and new line
 #_0AA1A7: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5233,12 +5233,12 @@ Message_02_03_0F:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_03_10:
 #_0AA1B7: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA1B9: db $F3 ; [set2] wait for key and new line
 #_0AA1BA: db $F1 ; [set2] clear message box
-#_0AA1BB: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA1BB: db $EB, $E1 ; [set2] phrase E1
 #_0AA1BD: db $F3 ; [set2] wait for key and new line
 #_0AA1BE: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5265,9 +5265,9 @@ Message_02_03_12:
 ;===================================================================================================
 
 ; «>[CHASE]は»
-; «[DEMONX]に みいられた»
+; «[MYNAME]に みいられた»
 Message_02_03_13:
-#_0AA1D6: db $EB, $F5 ; [set2] prewritten text F5
+#_0AA1D6: db $EB, $F5 ; [set2] phrase F5
 #_0AA1D8: db $F3 ; [set2] wait for key and new line
 #_0AA1D9: db $F1 ; [set2] clear message box
 #_0AA1DA: db $DF, $08 ; [set2] inflict status: charm
@@ -5296,12 +5296,12 @@ Message_02_03_16:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_03_17:
 #_0AA1F4: db $E8, $1A ; [set2] [COMMAND 48:1A]
 #_0AA1F6: db $F3 ; [set2] wait for key and new line
 #_0AA1F7: db $F1 ; [set2] clear message box
-#_0AA1F8: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA1F8: db $EB, $E1 ; [set2] phrase E1
 #_0AA1FA: db $F3 ; [set2] wait for key and new line
 #_0AA1FB: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5310,7 +5310,7 @@ Message_02_03_17:
 ; «>[CHASE]は もうれつな すいまに»
 ; «とらわれ ねむりに おちていった・・・»
 Message_02_03_18:
-#_0AA1FD: db $EB, $F4 ; [set2] prewritten text F4
+#_0AA1FD: db $EB, $F4 ; [set2] phrase F4
 #_0AA1FF: db $F3 ; [set2] wait for key and new line
 #_0AA200: db $DF, $09 ; [set2] inflict status: sleep
 #_0AA202: db $F1 ; [set2] clear message box
@@ -5330,18 +5330,18 @@ Message_02_03_19:
 
 ;===================================================================================================
 
-; >[DEMONX]は あまえてきた
+; >[MYNAME]は あまえてきた
 ; «どうしますか?»
 Message_02_03_1A:
 #_0AA212: db $E8, $0B ; [set2] [COMMAND 48:0B]
 #_0AA214: db $F3 ; [set2] wait for key and new line
 #_0AA215: db $F1 ; [set2] clear message box
 #_0AA216: db $97 ; >
-#_0AA217: db $ED ; [set2] write demon name indexed from $0526
+#_0AA217: db $ED ; [set2] write name of speaker
 #_0AA218: db $3E, $CF, $25, $43, $28, $37, $2B, $34 ; は⎵あまえてきた
 #_0AA220: db $F3 ; [set2] wait for key and new line
 #_0AA221: db $F1 ; [set2] clear message box
-#_0AA222: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA222: db $EB, $C0 ; [set2] phrase C0
 #_0AA224: db $F2, $01 ; [set2] option list with 2 options
 #_0AA226: db $0F, $1B ; option 1 [0F]: go to message 1B
 #_0AA228: db $06, $1E ; option 2 [06]: go to message 1E
@@ -5354,12 +5354,12 @@ Message_02_03_1B:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_03_1C:
 #_0AA232: db $E8, $1F ; [set2] [COMMAND 48:1F]
 #_0AA234: db $F3 ; [set2] wait for key and new line
 #_0AA235: db $F1 ; [set2] clear message box
-#_0AA236: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA236: db $EB, $E2 ; [set2] phrase E2
 #_0AA238: db $F3 ; [set2] wait for key and new line
 #_0AA239: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -5378,10 +5378,10 @@ Message_02_03_1E:
 #_0AA241: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AA243: db $F3 ; [set2] wait for key and new line
 #_0AA244: db $F1 ; [set2] clear message box
-#_0AA245: db $EB, $ED ; [set2] prewritten text ED
+#_0AA245: db $EB, $ED ; [set2] phrase ED
 #_0AA247: db $F3 ; [set2] wait for key and new line
 #_0AA248: db $F1 ; [set2] clear message box
-#_0AA249: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA249: db $EB, $C0 ; [set2] phrase C0
 #_0AA24B: db $F2, $01 ; [set2] option list with 2 options
 #_0AA24D: db $14, $1F ; option 1 [14]: go to message 1F
 #_0AA24F: db $21, $20 ; option 2 [21]: go to message 20
@@ -5394,10 +5394,10 @@ Message_02_03_1F:
 ;===================================================================================================
 
 ; «>[CHASE]の うたは»
-; «[CLASSX] [DEMONX]を とりこにした»
+; «[MYCLASS] [MYNAME]を とりこにした»
 Message_02_03_20:
 #_0AA254: db $D8, $01, $21 ; [set2] go to message 21 if LUK < RNG(0, DemonLUK+16)
-#_0AA257: db $EB, $E7 ; [set2] prewritten text E7
+#_0AA257: db $EB, $E7 ; [set2] phrase E7
 #_0AA259: db $F3 ; [set2] wait for key and new line
 #_0AA25A: db $FE, $03 ; [set2] [COMMAND 5E:03]
 
@@ -5415,16 +5415,16 @@ Message_02_04_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_04_01:
 #_0AA266: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AA268: db $F3 ; [set2] wait for key and new line
 #_0AA269: db $F1 ; [set2] clear message box
-#_0AA26A: db $EB, $C8 ; [set2] prewritten text C8
+#_0AA26A: db $EB, $C8 ; [set2] phrase C8
 #_0AA26C: db $F3 ; [set2] wait for key and new line
 #_0AA26D: db $F1 ; [set2] clear message box
-#_0AA26E: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA26E: db $EB, $C0 ; [set2] phrase C0
 #_0AA270: db $F2, $01 ; [set2] option list with 2 options
 #_0AA272: db $00, $02 ; option 1 [00]: go to message 02
 #_0AA274: db $01, $06 ; option 2 [01]: go to message 06
@@ -5440,27 +5440,27 @@ Message_02_04_02:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_04_03:
 #_0AA27E: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA280: db $F3 ; [set2] wait for key and new line
 #_0AA281: db $F1 ; [set2] clear message box
 #_0AA282: db $DD ; [set2] [COMMAND 3D]
-#_0AA283: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA283: db $EB, $C2 ; [set2] phrase C2
 #_0AA285: db $F3 ; [set2] wait for key and new line
 #_0AA286: db $F1 ; [set2] clear message box
-#_0AA287: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA287: db $EB, $E2 ; [set2] phrase E2
 #_0AA289: db $F3 ; [set2] wait for key and new line
 #_0AA28A: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_04_04:
 #_0AA28C: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA28E: db $F3 ; [set2] wait for key and new line
 #_0AA28F: db $F1 ; [set2] clear message box
-#_0AA290: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA290: db $EB, $E2 ; [set2] phrase E2
 #_0AA292: db $F3 ; [set2] wait for key and new line
 #_0AA293: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -5477,13 +5477,13 @@ Message_02_04_06:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; >ちかづきますか?
 Message_02_04_07:
 #_0AA29D: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA29F: db $F3 ; [set2] wait for key and new line
 #_0AA2A0: db $F1 ; [set2] clear message box
-#_0AA2A1: db $EB, $C4 ; [set2] prewritten text C4
+#_0AA2A1: db $EB, $C4 ; [set2] phrase C4
 #_0AA2A3: db $F3 ; [set2] wait for key and new line
 #_0AA2A4: db $F1 ; [set2] clear message box
 #_0AA2A5: db $97, $35, $2A, $A8, $2B, $43, $31, $2A ; >ちかづきますか
@@ -5509,47 +5509,47 @@ Message_02_04_09:
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
-; «>[DEMONX]を ナカマにしますか?»
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]を ナカマにしますか?»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_04_0A:
-#_0AA2C4: db $EB, $EA ; [set2] prewritten text EA
+#_0AA2C4: db $EB, $EA ; [set2] phrase EA
 #_0AA2C6: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
 #_0AA2C8: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AA2CA: db $F3 ; [set2] wait for key and new line
 #_0AA2CB: db $F1 ; [set2] clear message box
-#_0AA2CC: db $EB, $CD ; [set2] prewritten text CD
+#_0AA2CC: db $EB, $CD ; [set2] phrase CD
 #_0AA2CE: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
 #_0AA2D0: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA2D2: db $F3 ; [set2] wait for key and new line
 #_0AA2D3: db $F1 ; [set2] clear message box
-#_0AA2D4: db $EB, $D0 ; [set2] prewritten text D0
+#_0AA2D4: db $EB, $D0 ; [set2] phrase D0
 #_0AA2D6: db $F3 ; [set2] wait for key and new line
 #_0AA2D7: db $F1 ; [set2] clear message box
-#_0AA2D8: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA2D8: db $EB, $C0 ; [set2] phrase C0
 #_0AA2DA: db $F2, $01 ; [set2] option list with 2 options
 #_0AA2DC: db $0A, $0B ; option 1 [0A]: go to message 0B
 #_0AA2DE: db $0B, $0C ; option 2 [0B]: go to message 0C
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_04_0B:
 #_0AA2E0: db $DA, $01, $05 ; [set2] ext command 01: go to message 05 if MC INT = 0
 #_0AA2E3: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AA2E5: db $F3 ; [set2] wait for key and new line
 #_0AA2E6: db $F1 ; [set2] clear message box
-#_0AA2E7: db $EB, $C5 ; [set2] prewritten text C5
+#_0AA2E7: db $EB, $C5 ; [set2] phrase C5
 #_0AA2E9: db $F3 ; [set2] wait for key and new line
 #_0AA2EA: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_04_0C:
-#_0AA2EC: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA2EC: db $EB, $E1 ; [set2] phrase E1
 #_0AA2EE: db $F3 ; [set2] wait for key and new line
 #_0AA2EF: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5580,7 +5580,7 @@ Message_02_04_10:
 #_0AA2FF: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA301: db $F3 ; [set2] wait for key and new line
 #_0AA302: db $F1 ; [set2] clear message box
-#_0AA303: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA303: db $EB, $C0 ; [set2] phrase C0
 #_0AA305: db $F2, $01 ; [set2] option list with 2 options
 #_0AA307: db $0C, $11 ; option 1 [0C]: go to message 11
 #_0AA309: db $08, $15 ; option 2 [08]: go to message 15
@@ -5589,7 +5589,7 @@ Message_02_04_10:
 
 Message_02_04_11:
 #_0AA30B: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
-#_0AA30E: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AA30E: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AA311: db $D4, $00, $13 ; [set2] go to message 13 if RNG, 00 TODO
 #_0AA314: db $D7, $01, $12 ; [set2] go to message 12 if LUK < RNG(0, 32)
 #_0AA317: db $E9, $09 ; [set2] go to message 09
@@ -5606,16 +5606,16 @@ Message_02_04_12:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_04_13:
 #_0AA322: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA324: db $F3 ; [set2] wait for key and new line
 #_0AA325: db $F1 ; [set2] clear message box
-#_0AA326: db $EB, $C4 ; [set2] prewritten text C4
+#_0AA326: db $EB, $C4 ; [set2] phrase C4
 #_0AA328: db $F3 ; [set2] wait for key and new line
 #_0AA329: db $F1 ; [set2] clear message box
-#_0AA32A: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA32A: db $EB, $C0 ; [set2] phrase C0
 #_0AA32C: db $F2, $01 ; [set2] option list with 2 options
 #_0AA32E: db $0D, $0F ; option 1 [0D]: go to message 0F
 #_0AA330: db $06, $14 ; option 2 [06]: go to message 14
@@ -5632,15 +5632,15 @@ Message_02_04_14:
 
 ;===================================================================================================
 
-; [DEMONX]は しょうじょに
+; [MYNAME]は しょうじょに
 ; なにか ささやいて おくりものを わたした
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_04_15:
 #_0AA33B: db $D8, $01, $16 ; [set2] go to message 16 if LUK < RNG(0, DemonLUK+16)
 #_0AA33E: db $DA, $00, $0B, $97 ; [set2] ext command 00: go to message 97 if MC INT > 11
-#_0AA342: db $ED ; [set2] write demon name indexed from $0526
+#_0AA342: db $ED ; [set2] write name of speaker
 #_0AA343: db $3E, $CF, $30, $57, $27, $A2, $57, $3A ; は⎵しょうじょに
 #_0AA34B: db $F0 ; [set2] new line
 #_0AA34C: db $39, $3A, $2A, $CF, $2F, $2F, $48, $26 ; なにか⎵ささやい
@@ -5649,10 +5649,10 @@ Message_02_04_15:
 #_0AA361: db $F3 ; [set2] wait for key and new line
 #_0AA362: db $F1 ; [set2] clear message box
 #_0AA363: db $DD ; [set2] [COMMAND 3D]
-#_0AA364: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA364: db $EB, $C2 ; [set2] phrase C2
 #_0AA366: db $F3 ; [set2] wait for key and new line
 #_0AA367: db $F1 ; [set2] clear message box
-#_0AA368: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA368: db $EB, $E1 ; [set2] phrase E1
 #_0AA36A: db $F3 ; [set2] wait for key and new line
 #_0AA36B: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5667,16 +5667,16 @@ Message_02_04_16:
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_04_17:
 #_0AA376: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA378: db $F3 ; [set2] wait for key and new line
 #_0AA379: db $F1 ; [set2] clear message box
-#_0AA37A: db $EB, $C7 ; [set2] prewritten text C7
+#_0AA37A: db $EB, $C7 ; [set2] phrase C7
 #_0AA37C: db $F3 ; [set2] wait for key and new line
 #_0AA37D: db $F1 ; [set2] clear message box
-#_0AA37E: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA37E: db $EB, $C0 ; [set2] phrase C0
 #_0AA380: db $F2, $01 ; [set2] option list with 2 options
 #_0AA382: db $13, $18 ; option 1 [13]: go to message 18
 #_0AA384: db $06, $1B ; option 2 [06]: go to message 1B
@@ -5691,28 +5691,28 @@ Message_02_04_18:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_04_19:
 #_0AA38B: db $D7, $01, $1A ; [set2] go to message 1A if LUK < RNG(0, 32)
 #_0AA38E: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0AA390: db $F3 ; [set2] wait for key and new line
 #_0AA391: db $F1 ; [set2] clear message box
 #_0AA392: db $DD ; [set2] [COMMAND 3D]
-#_0AA393: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA393: db $EB, $C2 ; [set2] phrase C2
 #_0AA395: db $F3 ; [set2] wait for key and new line
 #_0AA396: db $F1 ; [set2] clear message box
-#_0AA397: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA397: db $EB, $E1 ; [set2] phrase E1
 #_0AA399: db $F3 ; [set2] wait for key and new line
 #_0AA39A: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_04_1A:
 #_0AA39C: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA39E: db $F3 ; [set2] wait for key and new line
 #_0AA39F: db $F1 ; [set2] clear message box
-#_0AA3A0: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA3A0: db $EB, $E1 ; [set2] phrase E1
 #_0AA3A2: db $F3 ; [set2] wait for key and new line
 #_0AA3A3: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5723,16 +5723,16 @@ Message_02_04_1B:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_04_1C:
 #_0AA3AA: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA3AC: db $F3 ; [set2] wait for key and new line
 #_0AA3AD: db $F1 ; [set2] clear message box
-#_0AA3AE: db $EB, $C1 ; [set2] prewritten text C1
+#_0AA3AE: db $EB, $C1 ; [set2] phrase C1
 #_0AA3B0: db $F3 ; [set2] wait for key and new line
 #_0AA3B1: db $F1 ; [set2] clear message box
-#_0AA3B2: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA3B2: db $EB, $C0 ; [set2] phrase C0
 #_0AA3B4: db $F2, $01 ; [set2] option list with 2 options
 #_0AA3B6: db $1B, $1D ; option 1 [1B]: go to message 1D
 #_0AA3B8: db $01, $06 ; option 2 [01]: go to message 06
@@ -5760,16 +5760,16 @@ Message_02_05_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_05_01:
 #_0AA3CF: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA3D1: db $F3 ; [set2] wait for key and new line
 #_0AA3D2: db $F1 ; [set2] clear message box
-#_0AA3D3: db $EB, $C1 ; [set2] prewritten text C1
+#_0AA3D3: db $EB, $C1 ; [set2] phrase C1
 #_0AA3D5: db $F3 ; [set2] wait for key and new line
 #_0AA3D6: db $F1 ; [set2] clear message box
-#_0AA3D7: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA3D7: db $EB, $C0 ; [set2] phrase C0
 #_0AA3D9: db $F2, $01 ; [set2] option list with 2 options
 #_0AA3DB: db $02, $02 ; option 1 [02]: go to message 02
 #_0AA3DD: db $04, $08 ; option 2 [04]: go to message 08
@@ -5790,18 +5790,18 @@ Message_02_05_03:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_05_04:
 #_0AA3ED: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA3EF: db $F3 ; [set2] wait for key and new line
 #_0AA3F0: db $F1 ; [set2] clear message box
-#_0AA3F1: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA3F1: db $EB, $E2 ; [set2] phrase E2
 #_0AA3F3: db $F3 ; [set2] wait for key and new line
 #_0AA3F4: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; >[DEMONX]は
+; >[MYNAME]は
 ; あまり どうようしていないようだ
 ; «どうしますか?»
 Message_02_05_05:
@@ -5810,14 +5810,14 @@ Message_02_05_05:
 #_0AA3FB: db $F3 ; [set2] wait for key and new line
 #_0AA3FC: db $F1 ; [set2] clear message box
 #_0AA3FD: db $97 ; >
-#_0AA3FE: db $ED ; [set2] write demon name indexed from $0526
+#_0AA3FE: db $ED ; [set2] write name of speaker
 #_0AA3FF: db $3E ; は
 #_0AA400: db $F0 ; [set2] new line
 #_0AA401: db $25, $43, $4C, $CF, $AA, $27, $4A, $27 ; あまり⎵どうよう
 #_0AA409: db $30, $37, $26, $39, $26, $4A, $27, $A6 ; していないようだ
 #_0AA411: db $F3 ; [set2] wait for key and new line
 #_0AA412: db $F1 ; [set2] clear message box
-#_0AA413: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA413: db $EB, $C0 ; [set2] phrase C0
 #_0AA415: db $F2, $01 ; [set2] option list with 2 options
 #_0AA417: db $04, $03 ; option 1 [04]: go to message 03
 #_0AA419: db $1B, $06 ; option 2 [1B]: go to message 06
@@ -5836,16 +5836,16 @@ Message_02_05_07:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_05_08:
 #_0AA424: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA426: db $F3 ; [set2] wait for key and new line
 #_0AA427: db $F1 ; [set2] clear message box
-#_0AA428: db $EB, $C3 ; [set2] prewritten text C3
+#_0AA428: db $EB, $C3 ; [set2] phrase C3
 #_0AA42A: db $F3 ; [set2] wait for key and new line
 #_0AA42B: db $F1 ; [set2] clear message box
-#_0AA42C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA42C: db $EB, $C0 ; [set2] phrase C0
 #_0AA42E: db $F2, $01 ; [set2] option list with 2 options
 #_0AA430: db $0F, $07 ; option 1 [0F]: go to message 07
 #_0AA432: db $14, $09 ; option 2 [14]: go to message 09
@@ -5871,7 +5871,7 @@ Message_02_05_0B:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_05_0C:
 #_0AA445: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA447: db $F3 ; [set2] wait for key and new line
@@ -5879,7 +5879,7 @@ Message_02_05_0C:
 #_0AA449: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA44B: db $F3 ; [set2] wait for key and new line
 #_0AA44C: db $F1 ; [set2] clear message box
-#_0AA44D: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA44D: db $EB, $E1 ; [set2] phrase E1
 #_0AA44F: db $F3 ; [set2] wait for key and new line
 #_0AA450: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -5895,10 +5895,10 @@ Message_02_05_0D:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_05_0E:
-#_0AA458: db $EB, $E8 ; [set2] prewritten text E8
+#_0AA458: db $EB, $E8 ; [set2] phrase E8
 #_0AA45A: db $F3 ; [set2] wait for key and new line
 #_0AA45B: db $F1 ; [set2] clear message box
-#_0AA45C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA45C: db $EB, $C0 ; [set2] phrase C0
 #_0AA45E: db $F2, $01 ; [set2] option list with 2 options
 #_0AA460: db $0D, $0F ; option 1 [0D]: go to message 0F
 #_0AA462: db $10, $16 ; option 2 [10]: go to message 16
@@ -5911,16 +5911,16 @@ Message_02_05_0F:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_05_10:
 #_0AA469: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AA46B: db $F3 ; [set2] wait for key and new line
 #_0AA46C: db $F1 ; [set2] clear message box
-#_0AA46D: db $EB, $C9 ; [set2] prewritten text C9
+#_0AA46D: db $EB, $C9 ; [set2] phrase C9
 #_0AA46F: db $F3 ; [set2] wait for key and new line
 #_0AA470: db $F1 ; [set2] clear message box
-#_0AA471: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA471: db $EB, $C0 ; [set2] phrase C0
 #_0AA473: db $F2, $01 ; [set2] option list with 2 options
 #_0AA475: db $04, $02 ; option 1 [04]: go to message 02
 #_0AA477: db $15, $11 ; option 2 [15]: go to message 11
@@ -5928,10 +5928,10 @@ Message_02_05_10:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは するどく»
-; «[DEMONX]を とらえた!»
+; «[MYNAME]を とらえた!»
 Message_02_05_11:
 #_0AA479: db $D8, $02, $12 ; [set2] go to message 12 if LUK < RNG(0, DemonLUK+32)
-#_0AA47C: db $EB, $48 ; [set2] prewritten text 48
+#_0AA47C: db $EB, $48 ; [set2] phrase 48
 #_0AA47E: db $F3 ; [set2] wait for key and new line
 #_0AA47F: db $F1 ; [set2] clear message box
 #_0AA480: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -5970,7 +5970,7 @@ Message_02_05_15:
 ; «>[CHASE]たちは にげだした»
 Message_02_05_16:
 #_0AA49B: db $F9, $00, $17 ; [set2] [COMMAND 59] go to message 17 if something 00 TODO
-#_0AA49E: db $EB, $E6 ; [set2] prewritten text E6
+#_0AA49E: db $EB, $E6 ; [set2] phrase E6
 #_0AA4A0: db $F3 ; [set2] wait for key and new line
 #_0AA4A1: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -5978,7 +5978,7 @@ Message_02_05_16:
 
 ; «だめだ にげられない!!»
 Message_02_05_17:
-#_0AA4A3: db $EB, $E5 ; [set2] prewritten text E5
+#_0AA4A3: db $EB, $E5 ; [set2] phrase E5
 #_0AA4A5: db $F3 ; [set2] wait for key and new line
 #_0AA4A6: db $F1 ; [set2] clear message box
 #_0AA4A7: db $E8, $0E ; [set2] [COMMAND 48:0E]
@@ -5987,16 +5987,16 @@ Message_02_05_17:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_05_18:
 #_0AA4AD: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AA4AF: db $F3 ; [set2] wait for key and new line
 #_0AA4B0: db $F1 ; [set2] clear message box
-#_0AA4B1: db $EB, $CA ; [set2] prewritten text CA
+#_0AA4B1: db $EB, $CA ; [set2] phrase CA
 #_0AA4B3: db $F3 ; [set2] wait for key and new line
 #_0AA4B4: db $F1 ; [set2] clear message box
-#_0AA4B5: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA4B5: db $EB, $C0 ; [set2] phrase C0
 #_0AA4B7: db $F2, $01 ; [set2] option list with 2 options
 #_0AA4B9: db $14, $09 ; option 1 [14]: go to message 09
 #_0AA4BB: db $06, $19 ; option 2 [06]: go to message 19
@@ -6009,10 +6009,10 @@ Message_02_05_19:
 #_0AA4BD: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AA4BF: db $F3 ; [set2] wait for key and new line
 #_0AA4C0: db $F1 ; [set2] clear message box
-#_0AA4C1: db $EB, $ED ; [set2] prewritten text ED
+#_0AA4C1: db $EB, $ED ; [set2] phrase ED
 #_0AA4C3: db $F3 ; [set2] wait for key and new line
 #_0AA4C4: db $F1 ; [set2] clear message box
-#_0AA4C5: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA4C5: db $EB, $C0 ; [set2] phrase C0
 #_0AA4C7: db $F2, $01 ; [set2] option list with 2 options
 #_0AA4C9: db $04, $05 ; option 1 [04]: go to message 05
 #_0AA4CB: db $0B, $1A ; option 2 [0B]: go to message 1A
@@ -6025,18 +6025,18 @@ Message_02_05_1A:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_05_1B:
 #_0AA4D2: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA4D4: db $F3 ; [set2] wait for key and new line
 #_0AA4D5: db $F1 ; [set2] clear message box
-#_0AA4D6: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA4D6: db $EB, $E1 ; [set2] phrase E1
 #_0AA4D8: db $F3 ; [set2] wait for key and new line
 #_0AA4D9: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_06_00:
 #_0AA4DB: db $FC, $E9, $06 ; [set2] test progress flag E9 for message 06
@@ -6044,17 +6044,17 @@ Message_02_06_00:
 #_0AA4E1: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA4E3: db $F3 ; [set2] wait for key and new line
 #_0AA4E4: db $F1 ; [set2] clear message box
-#_0AA4E5: db $EB, $C6 ; [set2] prewritten text C6
+#_0AA4E5: db $EB, $C6 ; [set2] phrase C6
 #_0AA4E7: db $F3 ; [set2] wait for key and new line
 #_0AA4E8: db $F1 ; [set2] clear message box
-#_0AA4E9: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA4E9: db $EB, $C0 ; [set2] phrase C0
 #_0AA4EB: db $F2, $01 ; [set2] option list with 2 options
 #_0AA4ED: db $08, $01 ; option 1 [08]: go to message 01
 #_0AA4EF: db $0C, $04 ; option 2 [0C]: go to message 04
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_06_01:
 #_0AA4F1: db $D4, $00, $03 ; [set2] go to message 03 if RNG, 00 TODO
 #_0AA4F4: db $D4, $00, $02 ; [set2] go to message 02 if RNG, 00 TODO
@@ -6062,15 +6062,15 @@ Message_02_06_01:
 #_0AA4F9: db $F3 ; [set2] wait for key and new line
 #_0AA4FA: db $F1 ; [set2] clear message box
 #_0AA4FB: db $DA, $01, $05 ; [set2] ext command 01: go to message 05 if MC INT = 0
-#_0AA4FE: db $EB, $C5 ; [set2] prewritten text C5
+#_0AA4FE: db $EB, $C5 ; [set2] phrase C5
 #_0AA500: db $F3 ; [set2] wait for key and new line
 #_0AA501: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_06_02:
-#_0AA503: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA503: db $EB, $E1 ; [set2] phrase E1
 #_0AA505: db $F3 ; [set2] wait for key and new line
 #_0AA506: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -6083,11 +6083,11 @@ Message_02_06_03:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ちかづいてきた»
+; «>[MYNAME]は ちかづいてきた»
 Message_02_06_04:
-#_0AA50E: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AA50E: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AA511: db $F9, $00, $05 ; [set2] [COMMAND 59] go to message 05 if something 00 TODO
-#_0AA514: db $EB, $E9 ; [set2] prewritten text E9
+#_0AA514: db $EB, $E9 ; [set2] phrase E9
 #_0AA516: db $F3 ; [set2] wait for key and new line
 #_0AA517: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
@@ -6107,33 +6107,33 @@ Message_02_06_06:
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_07_00:
 #_0AA525: db $D4, $00, $0A ; [set2] go to message 0A if RNG, 00 TODO
 #_0AA528: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA52A: db $F3 ; [set2] wait for key and new line
 #_0AA52B: db $F1 ; [set2] clear message box
-#_0AA52C: db $EB, $C6 ; [set2] prewritten text C6
+#_0AA52C: db $EB, $C6 ; [set2] phrase C6
 #_0AA52E: db $F3 ; [set2] wait for key and new line
 #_0AA52F: db $F1 ; [set2] clear message box
-#_0AA530: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA530: db $EB, $C0 ; [set2] phrase C0
 #_0AA532: db $F2, $01 ; [set2] option list with 2 options
 #_0AA534: db $04, $01 ; option 1 [04]: go to message 01
 #_0AA536: db $0D, $06 ; option 2 [0D]: go to message 06
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_07_01:
 #_0AA538: db $E8, $5A ; [set2] [COMMAND 48:5A]
 #_0AA53A: db $F3 ; [set2] wait for key and new line
 #_0AA53B: db $F1 ; [set2] clear message box
-#_0AA53C: db $EB, $CA ; [set2] prewritten text CA
+#_0AA53C: db $EB, $CA ; [set2] phrase CA
 #_0AA53E: db $F3 ; [set2] wait for key and new line
 #_0AA53F: db $F1 ; [set2] clear message box
-#_0AA540: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA540: db $EB, $C0 ; [set2] phrase C0
 #_0AA542: db $F2, $01 ; [set2] option list with 2 options
 #_0AA544: db $14, $02 ; option 1 [14]: go to message 02
 #_0AA546: db $06, $05 ; option 2 [06]: go to message 05
@@ -6153,13 +6153,13 @@ Message_02_07_03:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_07_04:
 #_0AA553: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AA555: db $F3 ; [set2] wait for key and new line
 #_0AA556: db $F1 ; [set2] clear message box
 #_0AA557: db $DA, $01, $09 ; [set2] ext command 01: go to message 09 if MC INT = 0
-#_0AA55A: db $EB, $C5 ; [set2] prewritten text C5
+#_0AA55A: db $EB, $C5 ; [set2] phrase C5
 #_0AA55C: db $F3 ; [set2] wait for key and new line
 #_0AA55D: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -6172,12 +6172,12 @@ Message_02_07_05:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_07_06:
 #_0AA565: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AA567: db $EF, $07 ; [set2] YES/NO - go to message 07 if YES
 #_0AA569: db $D7, $00, $09 ; [set2] go to message 09 if LUK < RNG(0, 16)
-#_0AA56C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA56C: db $EB, $E1 ; [set2] phrase E1
 #_0AA56E: db $F3 ; [set2] wait for key and new line
 #_0AA56F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -6204,16 +6204,16 @@ Message_02_07_09:
 
 ;===================================================================================================
 
-; «>[DEMONX]は いかく している»
+; «>[MYNAME]は いかく している»
 ; «どうしますか?»
 Message_02_07_0A:
 #_0AA582: db $E8, $5D ; [set2] [COMMAND 48:5D]
 #_0AA584: db $F3 ; [set2] wait for key and new line
 #_0AA585: db $F1 ; [set2] clear message box
-#_0AA586: db $EB, $D5 ; [set2] prewritten text D5
+#_0AA586: db $EB, $D5 ; [set2] phrase D5
 #_0AA588: db $F3 ; [set2] wait for key and new line
 #_0AA589: db $F1 ; [set2] clear message box
-#_0AA58A: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA58A: db $EB, $C0 ; [set2] phrase C0
 #_0AA58C: db $F2, $01 ; [set2] option list with 2 options
 #_0AA58E: db $00, $03 ; option 1 [00]: go to message 03
 #_0AA590: db $0D, $0B ; option 2 [0D]: go to message 0B
@@ -6233,7 +6233,7 @@ Message_02_07_0C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_08_00:
 #_0AA59C: db $FC, $E9, $07 ; [set2] test progress flag E9 for message 07
@@ -6241,10 +6241,10 @@ Message_02_08_00:
 #_0AA5A2: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA5A4: db $F3 ; [set2] wait for key and new line
 #_0AA5A5: db $F1 ; [set2] clear message box
-#_0AA5A6: db $EB, $C6 ; [set2] prewritten text C6
+#_0AA5A6: db $EB, $C6 ; [set2] phrase C6
 #_0AA5A8: db $F3 ; [set2] wait for key and new line
 #_0AA5A9: db $F1 ; [set2] clear message box
-#_0AA5AA: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA5AA: db $EB, $C0 ; [set2] phrase C0
 #_0AA5AC: db $F2, $01 ; [set2] option list with 2 options
 #_0AA5AE: db $08, $01 ; option 1 [08]: go to message 01
 #_0AA5B0: db $0C, $03 ; option 2 [0C]: go to message 03
@@ -6265,7 +6265,7 @@ Message_02_08_02:
 ;===================================================================================================
 
 Message_02_08_03:
-#_0AA5BD: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AA5BD: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AA5C0: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AA5C2: db $EF, $05 ; [set2] YES/NO - go to message 05 if YES
 #_0AA5C4: db $E8, $57 ; [set2] [COMMAND 48:57]
@@ -6295,22 +6295,22 @@ Message_02_08_05:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_08_06:
 #_0AA5DE: db $E8, $55 ; [set2] [COMMAND 48:55]
 #_0AA5E0: db $F3 ; [set2] wait for key and new line
 #_0AA5E1: db $F1 ; [set2] clear message box
 #_0AA5E2: db $DD ; [set2] [COMMAND 3D]
-#_0AA5E3: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA5E3: db $EB, $C2 ; [set2] phrase C2
 #_0AA5E5: db $F3 ; [set2] wait for key and new line
 #_0AA5E6: db $F1 ; [set2] clear message box
-#_0AA5E7: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA5E7: db $EB, $E1 ; [set2] phrase E1
 #_0AA5E9: db $F3 ; [set2] wait for key and new line
 #_0AA5EA: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; >[DEMONX]が たずねています
+; >[MYNAME]が たずねています
 ; «どうしますか?»
 Message_02_08_07:
 #_0AA5EC: db $E0 ; [set2] [COMMAND 40]
@@ -6320,12 +6320,12 @@ Message_02_08_07:
 #_0AA5F3: db $F3 ; [set2] wait for key and new line
 #_0AA5F4: db $F1 ; [set2] clear message box
 #_0AA5F5: db $97 ; >
-#_0AA5F6: db $ED ; [set2] write demon name indexed from $0526
+#_0AA5F6: db $ED ; [set2] write name of speaker
 #_0AA5F7: db $9C, $CF, $34, $A3, $3C, $37, $26, $43 ; が⎵たずねていま
 #_0AA5FF: db $31 ; す
 #_0AA600: db $F3 ; [set2] wait for key and new line
 #_0AA601: db $F1 ; [set2] clear message box
-#_0AA602: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA602: db $EB, $C0 ; [set2] phrase C0
 #_0AA604: db $F2, $01 ; [set2] option list with 2 options
 #_0AA606: db $19, $08 ; option 1 [19]: go to message 08
 #_0AA608: db $26, $09 ; option 2 [26]: go to message 09
@@ -6340,9 +6340,9 @@ Message_02_08_08:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_08_09:
-#_0AA612: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA612: db $EB, $E1 ; [set2] phrase E1
 #_0AA614: db $F3 ; [set2] wait for key and new line
 #_0AA615: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -6350,23 +6350,23 @@ Message_02_08_09:
 
 Message_02_08_0A:
 #_0AA617: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0AA619: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
-#_0AA61C: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AA619: db $FB, $01, $EA ; [set2] set progress flag EA
+#_0AA61C: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AA61F: db $F7, $1E, $80 ; [set2] [COMMAND 57] $1E $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_09_00:
 #_0AA622: db $D4, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
 #_0AA625: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AA627: db $F3 ; [set2] wait for key and new line
 #_0AA628: db $F1 ; [set2] clear message box
-#_0AA629: db $EB, $C6 ; [set2] prewritten text C6
+#_0AA629: db $EB, $C6 ; [set2] phrase C6
 #_0AA62B: db $F3 ; [set2] wait for key and new line
 #_0AA62C: db $F1 ; [set2] clear message box
-#_0AA62D: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA62D: db $EB, $C0 ; [set2] phrase C0
 #_0AA62F: db $F2, $01 ; [set2] option list with 2 options
 #_0AA631: db $04, $01 ; option 1 [04]: go to message 01
 #_0AA633: db $0D, $02 ; option 2 [0D]: go to message 02
@@ -6407,16 +6407,16 @@ Message_02_09_05:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_09_06:
 #_0AA651: db $E8, $5A ; [set2] [COMMAND 48:5A]
 #_0AA653: db $F3 ; [set2] wait for key and new line
 #_0AA654: db $F1 ; [set2] clear message box
-#_0AA655: db $EB, $CA ; [set2] prewritten text CA
+#_0AA655: db $EB, $CA ; [set2] phrase CA
 #_0AA657: db $F3 ; [set2] wait for key and new line
 #_0AA658: db $F1 ; [set2] clear message box
-#_0AA659: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA659: db $EB, $C0 ; [set2] phrase C0
 #_0AA65B: db $F2, $01 ; [set2] option list with 2 options
 #_0AA65D: db $14, $07 ; option 1 [14]: go to message 07
 #_0AA65F: db $06, $08 ; option 2 [06]: go to message 08
@@ -6432,32 +6432,32 @@ Message_02_09_07:
 
 ;===================================================================================================
 
-; «>[DEMONX]は くちぶえを ふいた»
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は くちぶえを ふいた»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_09_08:
 #_0AA66C: db $DA, $01, $04 ; [set2] ext command 01: go to message 04 if MC INT = 0
 #_0AA66F: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AA671: db $F3 ; [set2] wait for key and new line
 #_0AA672: db $F1 ; [set2] clear message box
-#_0AA673: db $EB, $AF ; [set2] prewritten text AF
+#_0AA673: db $EB, $AF ; [set2] phrase AF
 #_0AA675: db $F3 ; [set2] wait for key and new line
 #_0AA676: db $F1 ; [set2] clear message box
-#_0AA677: db $EB, $C5 ; [set2] prewritten text C5
+#_0AA677: db $EB, $C5 ; [set2] phrase C5
 #_0AA679: db $F3 ; [set2] wait for key and new line
 #_0AA67A: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
 ;===================================================================================================
 
-; «>[DEMONX]は いかく している»
+; «>[MYNAME]は いかく している»
 ; «どうしますか?»
 Message_02_09_09:
 #_0AA67C: db $E8, $5D ; [set2] [COMMAND 48:5D]
 #_0AA67E: db $F3 ; [set2] wait for key and new line
 #_0AA67F: db $F1 ; [set2] clear message box
-#_0AA680: db $EB, $D5 ; [set2] prewritten text D5
+#_0AA680: db $EB, $D5 ; [set2] phrase D5
 #_0AA682: db $F3 ; [set2] wait for key and new line
 #_0AA683: db $F1 ; [set2] clear message box
-#_0AA684: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA684: db $EB, $C0 ; [set2] phrase C0
 #_0AA686: db $F2, $01 ; [set2] option list with 2 options
 #_0AA688: db $00, $0A ; option 1 [00]: go to message 0A
 #_0AA68A: db $27, $0B ; option 2 [27]: go to message 0B
@@ -6480,7 +6480,7 @@ Message_02_09_0B:
 
 ; «>[CHASE]たちは にげだした»
 Message_02_09_0C:
-#_0AA699: db $EB, $E6 ; [set2] prewritten text E6
+#_0AA699: db $EB, $E6 ; [set2] phrase E6
 #_0AA69B: db $F3 ; [set2] wait for key and new line
 #_0AA69C: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -6492,9 +6492,9 @@ Message_02_09_0D:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_09_0E:
-#_0AA6A2: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA6A2: db $EB, $E1 ; [set2] phrase E1
 #_0AA6A4: db $F3 ; [set2] wait for key and new line
 #_0AA6A5: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -6504,7 +6504,7 @@ Message_02_09_0F:
 #_0AA6A7: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AA6A9: db $F3 ; [set2] wait for key and new line
 #_0AA6AA: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0AA6AC: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AA6AC: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AA6AF: db $F7, $22, $80 ; [set2] [COMMAND 57] $22 $80 TODO
 
 ;===================================================================================================
@@ -6516,16 +6516,16 @@ Message_02_0A_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0A_01:
 #_0AA6BB: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AA6BD: db $F3 ; [set2] wait for key and new line
 #_0AA6BE: db $F1 ; [set2] clear message box
-#_0AA6BF: db $EB, $C8 ; [set2] prewritten text C8
+#_0AA6BF: db $EB, $C8 ; [set2] phrase C8
 #_0AA6C1: db $F3 ; [set2] wait for key and new line
 #_0AA6C2: db $F1 ; [set2] clear message box
-#_0AA6C3: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA6C3: db $EB, $C0 ; [set2] phrase C0
 #_0AA6C5: db $F2, $01 ; [set2] option list with 2 options
 #_0AA6C7: db $00, $02 ; option 1 [00]: go to message 02
 #_0AA6C9: db $01, $0B ; option 2 [01]: go to message 0B
@@ -6547,7 +6547,7 @@ Message_02_0A_04:
 #_0AA6D3: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AA6D5: db $F3 ; [set2] wait for key and new line
 #_0AA6D6: db $F1 ; [set2] clear message box
-#_0AA6D7: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA6D7: db $EB, $C0 ; [set2] phrase C0
 #_0AA6D9: db $F2, $01 ; [set2] option list with 2 options
 #_0AA6DB: db $20, $05 ; option 1 [20]: go to message 05
 #_0AA6DD: db $03, $06 ; option 2 [03]: go to message 06
@@ -6574,7 +6574,7 @@ Message_02_0A_07:
 #_0AA6EF: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AA6F1: db $F3 ; [set2] wait for key and new line
 #_0AA6F2: db $F1 ; [set2] clear message box
-#_0AA6F3: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA6F3: db $EB, $C0 ; [set2] phrase C0
 #_0AA6F5: db $F2, $01 ; [set2] option list with 2 options
 #_0AA6F7: db $04, $08 ; option 1 [04]: go to message 08
 #_0AA6F9: db $03, $09 ; option 2 [03]: go to message 09
@@ -6590,18 +6590,18 @@ Message_02_0A_09:
 #_0AA6FE: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA700: db $F3 ; [set2] wait for key and new line
 #_0AA701: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AA703: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
+#_0AA703: db $FB, $01, $EA ; [set2] set progress flag EA
 #_0AA706: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0A_0A:
 #_0AA709: db $DA, $01, $03 ; [set2] ext command 01: go to message 03 if MC INT = 0
 #_0AA70C: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AA70E: db $F3 ; [set2] wait for key and new line
 #_0AA70F: db $F1 ; [set2] clear message box
-#_0AA710: db $EB, $C5 ; [set2] prewritten text C5
+#_0AA710: db $EB, $C5 ; [set2] phrase C5
 #_0AA712: db $F3 ; [set2] wait for key and new line
 #_0AA713: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -6634,12 +6634,12 @@ Message_02_0A_0E:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0A_0F:
 #_0AA732: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA734: db $F3 ; [set2] wait for key and new line
 #_0AA735: db $F1 ; [set2] clear message box
-#_0AA736: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA736: db $EB, $E2 ; [set2] phrase E2
 #_0AA738: db $F3 ; [set2] wait for key and new line
 #_0AA739: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -6647,29 +6647,29 @@ Message_02_0A_0F:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0A_10:
 #_0AA73B: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AA73D: db $F3 ; [set2] wait for key and new line
 #_0AA73E: db $F1 ; [set2] clear message box
 #_0AA73F: db $DD ; [set2] [COMMAND 3D]
-#_0AA740: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA740: db $EB, $C2 ; [set2] phrase C2
 #_0AA742: db $F3 ; [set2] wait for key and new line
 #_0AA743: db $F1 ; [set2] clear message box
-#_0AA744: db $EB, $E2 ; [set2] prewritten text E2
+#_0AA744: db $EB, $E2 ; [set2] phrase E2
 #_0AA746: db $F3 ; [set2] wait for key and new line
 #_0AA747: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は なんたいかにげだした»
+; «>[MYNAME]は なんたいかにげだした»
 Message_02_0A_11:
 #_0AA749: db $D7, $00, $12 ; [set2] go to message 12 if LUK < RNG(0, 16)
 #_0AA74C: db $DA, $02, $0F ; [set2] ext command 02: add 15 to alignment if progress flag FB
 #_0AA74F: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AA751: db $F3 ; [set2] wait for key and new line
 #_0AA752: db $F1 ; [set2] clear message box
-#_0AA753: db $EB, $CB ; [set2] prewritten text CB
+#_0AA753: db $EB, $CB ; [set2] phrase CB
 #_0AA755: db $F3 ; [set2] wait for key and new line
 #_0AA756: db $FE, $05 ; [set2] [COMMAND 5E:05]
 
@@ -6682,45 +6682,45 @@ Message_02_0A_12:
 
 ;===================================================================================================
 
-; «>[DEMONX]は わらっている»
+; «>[MYNAME]は わらっている»
 ; «どうしますか?»
 Message_02_0A_13:
 #_0AA75D: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA75F: db $F3 ; [set2] wait for key and new line
 #_0AA760: db $F1 ; [set2] clear message box
-#_0AA761: db $EB, $10 ; [set2] prewritten text 10
+#_0AA761: db $EB, $10 ; [set2] phrase 10
 #_0AA763: db $F3 ; [set2] wait for key and new line
 #_0AA764: db $F1 ; [set2] clear message box
-#_0AA765: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA765: db $EB, $C0 ; [set2] phrase C0
 #_0AA767: db $F2, $01 ; [set2] option list with 2 options
 #_0AA769: db $05, $14 ; option 1 [05]: go to message 14
 #_0AA76B: db $06, $19 ; option 2 [06]: go to message 19
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0A_14:
 #_0AA76D: db $D8, $01, $15 ; [set2] go to message 15 if LUK < RNG(0, DemonLUK+16)
 #_0AA770: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA772: db $F3 ; [set2] wait for key and new line
 #_0AA773: db $F1 ; [set2] clear message box
-#_0AA774: db $EB, $1C ; [set2] prewritten text 1C
+#_0AA774: db $EB, $1C ; [set2] phrase 1C
 #_0AA776: db $F3 ; [set2] wait for key and new line
 #_0AA777: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AA779: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0A_15:
 #_0AA77C: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA77E: db $F3 ; [set2] wait for key and new line
 #_0AA77F: db $F1 ; [set2] clear message box
-#_0AA780: db $EB, $C3 ; [set2] prewritten text C3
+#_0AA780: db $EB, $C3 ; [set2] phrase C3
 #_0AA782: db $F3 ; [set2] wait for key and new line
 #_0AA783: db $F1 ; [set2] clear message box
-#_0AA784: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA784: db $EB, $C0 ; [set2] phrase C0
 #_0AA786: db $F2, $01 ; [set2] option list with 2 options
 #_0AA788: db $07, $16 ; option 1 [07]: go to message 16
 #_0AA78A: db $03, $18 ; option 2 [03]: go to message 18
@@ -6732,12 +6732,12 @@ Message_02_0A_16:
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0A_17:
 #_0AA791: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA793: db $F3 ; [set2] wait for key and new line
 #_0AA794: db $F1 ; [set2] clear message box
-#_0AA795: db $EB, $1C ; [set2] prewritten text 1C
+#_0AA795: db $EB, $1C ; [set2] phrase 1C
 #_0AA797: db $F3 ; [set2] wait for key and new line
 #_0AA798: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AA79A: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
@@ -6754,23 +6754,23 @@ Message_02_0A_19:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0A_1A:
 #_0AA7A4: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AA7A6: db $F3 ; [set2] wait for key and new line
 #_0AA7A7: db $F1 ; [set2] clear message box
-#_0AA7A8: db $EB, $C9 ; [set2] prewritten text C9
+#_0AA7A8: db $EB, $C9 ; [set2] phrase C9
 #_0AA7AA: db $F3 ; [set2] wait for key and new line
 #_0AA7AB: db $F1 ; [set2] clear message box
-#_0AA7AC: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA7AC: db $EB, $C0 ; [set2] phrase C0
 #_0AA7AE: db $F2, $01 ; [set2] option list with 2 options
 #_0AA7B0: db $20, $1B ; option 1 [20]: go to message 1B
 #_0AA7B2: db $03, $21 ; option 2 [03]: go to message 21
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
+; «>[MYNAME]を ナカマにしますか?»
 Message_02_0A_1B:
 #_0AA7B4: db $D6, $00, $1E ; [set2] go to message 1E if RNG, 00 TODO
 #_0AA7B7: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -6778,7 +6778,7 @@ Message_02_0A_1B:
 #_0AA7BC: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AA7BE: db $F3 ; [set2] wait for key and new line
 #_0AA7BF: db $F1 ; [set2] clear message box
-#_0AA7C0: db $EB, $CD ; [set2] prewritten text CD
+#_0AA7C0: db $EB, $CD ; [set2] phrase CD
 #_0AA7C2: db $EF, $1C ; [set2] YES/NO - go to message 1C if YES
 #_0AA7C4: db $E9, $2B ; [set2] go to message 2B
 
@@ -6787,7 +6787,7 @@ Message_02_0A_1B:
 Message_02_0A_1C:
 #_0AA7C6: db $D8, $01, $1D ; [set2] go to message 1D if LUK < RNG(0, DemonLUK+16)
 #_0AA7C9: db $E5, $02 ; [set2] [COMMAND 45:02]
-#_0AA7CB: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AA7CB: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AA7CE: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
 ;===================================================================================================
@@ -6831,29 +6831,29 @@ Message_02_0A_21:
 
 ;===================================================================================================
 
-; «>[DEMONX]は いいきに なっています»
+; «>[MYNAME]は いいきに なっています»
 ; «どうしますか?»
 Message_02_0A_22:
 #_0AA7F6: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AA7F8: db $F3 ; [set2] wait for key and new line
 #_0AA7F9: db $F1 ; [set2] clear message box
-#_0AA7FA: db $EB, $F1 ; [set2] prewritten text F1
+#_0AA7FA: db $EB, $F1 ; [set2] phrase F1
 #_0AA7FC: db $F3 ; [set2] wait for key and new line
 #_0AA7FD: db $F1 ; [set2] clear message box
-#_0AA7FE: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA7FE: db $EB, $C0 ; [set2] phrase C0
 #_0AA800: db $F2, $01 ; [set2] option list with 2 options
 #_0AA802: db $04, $23 ; option 1 [04]: go to message 23
 #_0AA804: db $03, $24 ; option 2 [03]: go to message 24
 
 ;===================================================================================================
 
-; «>[DEMONX]は なんたいかにげだした»
+; «>[MYNAME]は なんたいかにげだした»
 Message_02_0A_23:
 #_0AA806: db $DA, $02, $0F ; [set2] ext command 02: add 15 to alignment if progress flag FB
 #_0AA809: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA80B: db $F3 ; [set2] wait for key and new line
 #_0AA80C: db $F1 ; [set2] clear message box
-#_0AA80D: db $EB, $CB ; [set2] prewritten text CB
+#_0AA80D: db $EB, $CB ; [set2] phrase CB
 #_0AA80F: db $F3 ; [set2] wait for key and new line
 #_0AA810: db $FE, $05 ; [set2] [COMMAND 5E:05]
 
@@ -6862,7 +6862,7 @@ Message_02_0A_23:
 Message_02_0A_24:
 #_0AA812: db $E8, $06 ; [set2] [COMMAND 48:06]
 #_0AA814: db $F3 ; [set2] wait for key and new line
-#_0AA815: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
+#_0AA815: db $FB, $01, $EA ; [set2] set progress flag EA
 #_0AA818: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
@@ -6873,10 +6873,10 @@ Message_02_0A_25:
 #_0AA81B: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AA81D: db $F3 ; [set2] wait for key and new line
 #_0AA81E: db $F1 ; [set2] clear message box
-#_0AA81F: db $EB, $ED ; [set2] prewritten text ED
+#_0AA81F: db $EB, $ED ; [set2] phrase ED
 #_0AA821: db $F3 ; [set2] wait for key and new line
 #_0AA822: db $F1 ; [set2] clear message box
-#_0AA823: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA823: db $EB, $C0 ; [set2] phrase C0
 #_0AA825: db $F2, $01 ; [set2] option list with 2 options
 #_0AA827: db $08, $26 ; option 1 [08]: go to message 26
 #_0AA829: db $21, $28 ; option 2 [21]: go to message 28
@@ -6892,12 +6892,12 @@ Message_02_0A_26:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 Message_02_0A_27:
 #_0AA836: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA838: db $F3 ; [set2] wait for key and new line
 #_0AA839: db $F1 ; [set2] clear message box
-#_0AA83A: db $EB, $C3 ; [set2] prewritten text C3
+#_0AA83A: db $EB, $C3 ; [set2] phrase C3
 #_0AA83C: db $F3 ; [set2] wait for key and new line
 #_0AA83D: db $E6, $FF ; [set2] [COMMAND 46:FF]
 #_0AA83F: db $FE, $00 ; [set2] [COMMAND 5E:00]
@@ -6905,55 +6905,55 @@ Message_02_0A_27:
 ;===================================================================================================
 
 ; «>[CHASE]の うたは»
-; «[CLASSX] [DEMONX]を とりこにした»
-; «>[DEMONX]は きくたいせいに はいった»
+; «[MYCLASS] [MYNAME]を とりこにした»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0A_28:
 #_0AA841: db $D8, $02, $29 ; [set2] go to message 29 if LUK < RNG(0, DemonLUK+32)
-#_0AA844: db $EB, $E7 ; [set2] prewritten text E7
+#_0AA844: db $EB, $E7 ; [set2] phrase E7
 #_0AA846: db $F3 ; [set2] wait for key and new line
 #_0AA847: db $F1 ; [set2] clear message box
-#_0AA848: db $EB, $1C ; [set2] prewritten text 1C
+#_0AA848: db $EB, $1C ; [set2] phrase 1C
 #_0AA84A: db $F3 ; [set2] wait for key and new line
 #_0AA84B: db $E5, $06 ; [set2] [COMMAND 45:06]
 #_0AA84D: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0A_29:
 #_0AA850: db $DB, $00, $2A ; [set2] [COMMAND 3B] go to message 2A if something 00 TODO
 #_0AA853: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AA855: db $F3 ; [set2] wait for key and new line
 #_0AA856: db $F1 ; [set2] clear message box
-#_0AA857: db $EB, $1C ; [set2] prewritten text 1C
+#_0AA857: db $EB, $1C ; [set2] phrase 1C
 #_0AA859: db $F3 ; [set2] wait for key and new line
 #_0AA85A: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AA85C: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_2A:
 #_0AA85F: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA861: db $F3 ; [set2] wait for key and new line
 #_0AA862: db $F1 ; [set2] clear message box
-#_0AA863: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA863: db $EB, $E1 ; [set2] phrase E1
 #_0AA865: db $F3 ; [set2] wait for key and new line
 #_0AA866: db $E5, $FF ; [set2] [COMMAND 45:FF]
 #_0AA868: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0A_2B:
 #_0AA86A: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA86C: db $F3 ; [set2] wait for key and new line
 #_0AA86D: db $F1 ; [set2] clear message box
-#_0AA86E: db $EB, $D0 ; [set2] prewritten text D0
+#_0AA86E: db $EB, $D0 ; [set2] phrase D0
 #_0AA870: db $F3 ; [set2] wait for key and new line
 #_0AA871: db $F1 ; [set2] clear message box
-#_0AA872: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA872: db $EB, $C0 ; [set2] phrase C0
 #_0AA874: db $F2, $01 ; [set2] option list with 2 options
 #_0AA876: db $0A, $2C ; option 1 [0A]: go to message 2C
 #_0AA878: db $0B, $2F ; option 2 [0B]: go to message 2F
@@ -6970,68 +6970,68 @@ Message_02_0A_2C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_2D:
 #_0AA888: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA88A: db $F3 ; [set2] wait for key and new line
 #_0AA88B: db $F1 ; [set2] clear message box
-#_0AA88C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA88C: db $EB, $E1 ; [set2] phrase E1
 #_0AA88E: db $F3 ; [set2] wait for key and new line
 #_0AA88F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は なんたいかにげだした»
+; «>[MYNAME]は なんたいかにげだした»
 Message_02_0A_2E:
 #_0AA891: db $DA, $02, $0F ; [set2] ext command 02: add 15 to alignment if progress flag FB
 #_0AA894: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA896: db $F3 ; [set2] wait for key and new line
 #_0AA897: db $F1 ; [set2] clear message box
-#_0AA898: db $EB, $CB ; [set2] prewritten text CB
+#_0AA898: db $EB, $CB ; [set2] phrase CB
 #_0AA89A: db $F3 ; [set2] wait for key and new line
 #_0AA89B: db $FE, $05 ; [set2] [COMMAND 5E:05]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_2F:
 #_0AA89D: db $D4, $02, $31 ; [set2] go to message 31 if RNG, 02 TODO
 #_0AA8A0: db $D4, $01, $30 ; [set2] go to message 30 if RNG, 01 TODO
 #_0AA8A3: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AA8A5: db $F3 ; [set2] wait for key and new line
 #_0AA8A6: db $F1 ; [set2] clear message box
-#_0AA8A7: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA8A7: db $EB, $E1 ; [set2] phrase E1
 #_0AA8A9: db $F3 ; [set2] wait for key and new line
 #_0AA8AA: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0A_30:
 #_0AA8AC: db $E8, $49 ; [set2] [COMMAND 48:49]
 #_0AA8AE: db $F3 ; [set2] wait for key and new line
 #_0AA8AF: db $F1 ; [set2] clear message box
-#_0AA8B0: db $EB, $1C ; [set2] prewritten text 1C
+#_0AA8B0: db $EB, $1C ; [set2] phrase 1C
 #_0AA8B2: db $F3 ; [set2] wait for key and new line
 #_0AA8B3: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AA8B5: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は [GIVEME] を»
+; «>[MYNAME]は [GIVEME] を»
 ; «おとしていった»
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_31:
 #_0AA8B8: db $DD ; [set2] [COMMAND 3D]
-#_0AA8B9: db $EB, $D8 ; [set2] prewritten text D8
+#_0AA8B9: db $EB, $D8 ; [set2] phrase D8
 #_0AA8BB: db $F3 ; [set2] wait for key and new line
 #_0AA8BC: db $F1 ; [set2] clear message box
-#_0AA8BD: db $EB, $C2 ; [set2] prewritten text C2
+#_0AA8BD: db $EB, $C2 ; [set2] phrase C2
 #_0AA8BF: db $F3 ; [set2] wait for key and new line
 #_0AA8C0: db $F1 ; [set2] clear message box
-#_0AA8C1: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA8C1: db $EB, $E1 ; [set2] phrase E1
 #_0AA8C3: db $F3 ; [set2] wait for key and new line
 #_0AA8C4: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7043,22 +7043,22 @@ Message_02_0A_32:
 #_0AA8C9: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AA8CB: db $F3 ; [set2] wait for key and new line
 #_0AA8CC: db $F1 ; [set2] clear message box
-#_0AA8CD: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA8CD: db $EB, $C0 ; [set2] phrase C0
 #_0AA8CF: db $F2, $01 ; [set2] option list with 2 options
 #_0AA8D1: db $0C, $33 ; option 1 [0C]: go to message 33
 #_0AA8D3: db $08, $39 ; option 2 [08]: go to message 39
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0A_33:
-#_0AA8D5: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AA8D5: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AA8D8: db $D4, $00, $35 ; [set2] go to message 35 if RNG, 00 TODO
 #_0AA8DB: db $D7, $00, $34 ; [set2] go to message 34 if LUK < RNG(0, 16)
 #_0AA8DE: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AA8E0: db $F3 ; [set2] wait for key and new line
 #_0AA8E1: db $F1 ; [set2] clear message box
-#_0AA8E2: db $EB, $1C ; [set2] prewritten text 1C
+#_0AA8E2: db $EB, $1C ; [set2] phrase 1C
 #_0AA8E4: db $F3 ; [set2] wait for key and new line
 #_0AA8E5: db $E5, $04 ; [set2] [COMMAND 45:04]
 #_0AA8E7: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
@@ -7075,16 +7075,16 @@ Message_02_0A_34:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0A_35:
 #_0AA8F3: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AA8F5: db $F3 ; [set2] wait for key and new line
 #_0AA8F6: db $F1 ; [set2] clear message box
-#_0AA8F7: db $EB, $C4 ; [set2] prewritten text C4
+#_0AA8F7: db $EB, $C4 ; [set2] phrase C4
 #_0AA8F9: db $F3 ; [set2] wait for key and new line
 #_0AA8FA: db $F1 ; [set2] clear message box
-#_0AA8FB: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA8FB: db $EB, $C0 ; [set2] phrase C0
 #_0AA8FD: db $F2, $01 ; [set2] option list with 2 options
 #_0AA8FF: db $0D, $36 ; option 1 [0D]: go to message 36
 #_0AA901: db $06, $37 ; option 2 [06]: go to message 37
@@ -7099,12 +7099,12 @@ Message_02_0A_36:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 Message_02_0A_37:
 #_0AA90C: db $E8, $1D ; [set2] [COMMAND 48:1D]
 #_0AA90E: db $F3 ; [set2] wait for key and new line
 #_0AA90F: db $F1 ; [set2] clear message box
-#_0AA910: db $EB, $C3 ; [set2] prewritten text C3
+#_0AA910: db $EB, $C3 ; [set2] phrase C3
 #_0AA912: db $F3 ; [set2] wait for key and new line
 #_0AA913: db $F1 ; [set2] clear message box
 #_0AA914: db $D4, $01, $38 ; [set2] go to message 38 if RNG, 01 TODO
@@ -7112,12 +7112,12 @@ Message_02_0A_37:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_38:
 #_0AA919: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AA91B: db $F3 ; [set2] wait for key and new line
 #_0AA91C: db $F1 ; [set2] clear message box
-#_0AA91D: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA91D: db $EB, $E1 ; [set2] phrase E1
 #_0AA91F: db $F3 ; [set2] wait for key and new line
 #_0AA920: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7133,16 +7133,16 @@ Message_02_0A_39:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0A_3A:
 #_0AA930: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AA932: db $F3 ; [set2] wait for key and new line
 #_0AA933: db $F1 ; [set2] clear message box
-#_0AA934: db $EB, $CA ; [set2] prewritten text CA
+#_0AA934: db $EB, $CA ; [set2] phrase CA
 #_0AA936: db $F3 ; [set2] wait for key and new line
 #_0AA937: db $F1 ; [set2] clear message box
-#_0AA938: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA938: db $EB, $C0 ; [set2] phrase C0
 #_0AA93A: db $F2, $01 ; [set2] option list with 2 options
 #_0AA93C: db $14, $3B ; option 1 [14]: go to message 3B
 #_0AA93E: db $08, $42 ; option 2 [08]: go to message 42
@@ -7168,14 +7168,14 @@ Message_02_0A_3C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_3D:
 #_0AA959: db $E8, $11 ; [set2] [COMMAND 48:11]
 #_0AA95B: db $EF, $3E ; [set2] YES/NO - go to message 3E if YES
 #_0AA95D: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA95F: db $F3 ; [set2] wait for key and new line
 #_0AA960: db $F1 ; [set2] clear message box
-#_0AA961: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA961: db $EB, $E1 ; [set2] phrase E1
 #_0AA963: db $F3 ; [set2] wait for key and new line
 #_0AA964: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7185,7 +7185,7 @@ Message_02_0A_3D:
 Message_02_0A_3E:
 #_0AA966: db $E5, $01 ; [set2] [COMMAND 45:01]
 #_0AA968: db $D9, $3F ; [set2] go to message 3F if (STR+STR_BONUS) < (8+RNG(0, 32))
-#_0AA96A: db $EB, $DE ; [set2] prewritten text DE
+#_0AA96A: db $EB, $DE ; [set2] phrase DE
 #_0AA96C: db $F3 ; [set2] wait for key and new line
 #_0AA96D: db $F1 ; [set2] clear message box
 #_0AA96E: db $E8, $37 ; [set2] [COMMAND 48:37]
@@ -7196,27 +7196,27 @@ Message_02_0A_3E:
 ;===================================================================================================
 
 ; «>[CHASE]には いわを くだけなかった»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_3F:
-#_0AA976: db $EB, $DF ; [set2] prewritten text DF
+#_0AA976: db $EB, $DF ; [set2] phrase DF
 #_0AA978: db $F3 ; [set2] wait for key and new line
 #_0AA979: db $F1 ; [set2] clear message box
 #_0AA97A: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AA97C: db $F3 ; [set2] wait for key and new line
 #_0AA97D: db $F1 ; [set2] clear message box
-#_0AA97E: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA97E: db $EB, $E1 ; [set2] phrase E1
 #_0AA980: db $F3 ; [set2] wait for key and new line
 #_0AA981: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_40:
 #_0AA983: db $D7, $01, $41 ; [set2] go to message 41 if LUK < RNG(0, 32)
 #_0AA986: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AA988: db $F3 ; [set2] wait for key and new line
 #_0AA989: db $F1 ; [set2] clear message box
-#_0AA98A: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA98A: db $EB, $E1 ; [set2] phrase E1
 #_0AA98C: db $F3 ; [set2] wait for key and new line
 #_0AA98D: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7239,31 +7239,31 @@ Message_02_0A_42:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0A_43:
 #_0AA9A2: db $D4, $01, $44 ; [set2] go to message 44 if RNG, 01 TODO
 #_0AA9A5: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AA9A7: db $F3 ; [set2] wait for key and new line
 #_0AA9A8: db $F1 ; [set2] clear message box
-#_0AA9A9: db $EB, $C3 ; [set2] prewritten text C3
+#_0AA9A9: db $EB, $C3 ; [set2] phrase C3
 #_0AA9AB: db $F3 ; [set2] wait for key and new line
 #_0AA9AC: db $F1 ; [set2] clear message box
-#_0AA9AD: db $EB, $C0 ; [set2] prewritten text C0
+#_0AA9AD: db $EB, $C0 ; [set2] phrase C0
 #_0AA9AF: db $F2, $01 ; [set2] option list with 2 options
 #_0AA9B1: db $20, $1B ; option 1 [20]: go to message 1B
 #_0AA9B3: db $21, $28 ; option 2 [21]: go to message 28
 
 ;===================================================================================================
 
-; >[DEMONX]は あきれてなんたいかさった
+; >[MYNAME]は あきれてなんたいかさった
 Message_02_0A_44:
 #_0AA9B5: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AA9B7: db $F3 ; [set2] wait for key and new line
 #_0AA9B8: db $F1 ; [set2] clear message box
 #_0AA9B9: db $DA, $02, $45 ; [set2] ext command 02: add 69 to alignment if progress flag FB
 #_0AA9BC: db $97 ; >
-#_0AA9BD: db $ED ; [set2] write demon name indexed from $0526
+#_0AA9BD: db $ED ; [set2] write name of speaker
 #_0AA9BE: db $3E, $CF, $25, $2B, $4E, $37, $39, $52 ; は⎵あきれてなん
 #_0AA9C6: db $34, $26, $2A, $2F, $58, $34 ; たいかさった
 #_0AA9CC: db $F3 ; [set2] wait for key and new line
@@ -7271,9 +7271,9 @@ Message_02_0A_44:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_45:
-#_0AA9CF: db $EB, $E1 ; [set2] prewritten text E1
+#_0AA9CF: db $EB, $E1 ; [set2] phrase E1
 #_0AA9D1: db $F3 ; [set2] wait for key and new line
 #_0AA9D2: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7317,23 +7317,23 @@ Message_02_0A_4A:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0A_4B:
 #_0AA9FD: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AA9FF: db $F3 ; [set2] wait for key and new line
 #_0AAA00: db $F1 ; [set2] clear message box
-#_0AAA01: db $EB, $C3 ; [set2] prewritten text C3
+#_0AAA01: db $EB, $C3 ; [set2] phrase C3
 #_0AAA03: db $F3 ; [set2] wait for key and new line
 #_0AAA04: db $F1 ; [set2] clear message box
-#_0AAA05: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAA05: db $EB, $C0 ; [set2] phrase C0
 #_0AAA07: db $F2, $01 ; [set2] option list with 2 options
 #_0AAA09: db $0E, $4C ; option 1 [0E]: go to message 4C
 #_0AAA0B: db $0F, $56 ; option 2 [0F]: go to message 56
 
 ;===================================================================================================
 
-; >[DEMONX]は ちょうしにのっている
+; >[MYNAME]は ちょうしにのっている
 ; «どうしますか?»
 Message_02_0A_4C:
 #_0AAA0D: db $E5, $02 ; [set2] [COMMAND 45:02]
@@ -7344,12 +7344,12 @@ Message_02_0A_4C:
 #_0AAA19: db $F3 ; [set2] wait for key and new line
 #_0AAA1A: db $F1 ; [set2] clear message box
 #_0AAA1B: db $97 ; >
-#_0AAA1C: db $ED ; [set2] write demon name indexed from $0526
+#_0AAA1C: db $ED ; [set2] write name of speaker
 #_0AAA1D: db $3E, $CF, $35, $57, $27, $30, $3A, $3D ; は⎵ちょうしにの
 #_0AAA25: db $58, $37, $26, $4D ; っている
 #_0AAA29: db $F3 ; [set2] wait for key and new line
 #_0AAA2A: db $F1 ; [set2] clear message box
-#_0AAA2B: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAA2B: db $EB, $C0 ; [set2] phrase C0
 #_0AAA2D: db $F2, $01 ; [set2] option list with 2 options
 #_0AAA2F: db $0E, $4D ; option 1 [0E]: go to message 4D
 #_0AAA31: db $10, $4F ; option 2 [10]: go to message 4F
@@ -7361,17 +7361,17 @@ Message_02_0A_4D:
 #_0AAA36: db $E8, $29 ; [set2] [COMMAND 48:29]
 #_0AAA38: db $F3 ; [set2] wait for key and new line
 #_0AAA39: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0AAA3B: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
+#_0AAA3B: db $FB, $01, $EA ; [set2] set progress flag EA
 #_0AAA3E: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は おだてに おこった»
+; «>[MYNAME]は おだてに おこった»
 Message_02_0A_4E:
 #_0AAA41: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AAA43: db $F3 ; [set2] wait for key and new line
 #_0AAA44: db $F1 ; [set2] clear message box
-#_0AAA45: db $EB, $CE ; [set2] prewritten text CE
+#_0AAA45: db $EB, $CE ; [set2] phrase CE
 #_0AAA47: db $F3 ; [set2] wait for key and new line
 #_0AAA48: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
@@ -7380,7 +7380,7 @@ Message_02_0A_4E:
 ; «>[CHASE]たちは にげだした»
 Message_02_0A_4F:
 #_0AAA4A: db $F9, $00, $50 ; [set2] [COMMAND 59] go to message 50 if something 00 TODO
-#_0AAA4D: db $EB, $E6 ; [set2] prewritten text E6
+#_0AAA4D: db $EB, $E6 ; [set2] phrase E6
 #_0AAA4F: db $F3 ; [set2] wait for key and new line
 #_0AAA50: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -7393,19 +7393,19 @@ Message_02_0A_50:
 
 ;===================================================================================================
 
-; >[DEMONX]は おだてに おこった
+; >[MYNAME]は おだてに おこった
 ; «どうしますか?»
 Message_02_0A_51:
 #_0AAA57: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0AAA59: db $F3 ; [set2] wait for key and new line
 #_0AAA5A: db $F1 ; [set2] clear message box
 #_0AAA5B: db $97 ; >
-#_0AAA5C: db $ED ; [set2] write demon name indexed from $0526
+#_0AAA5C: db $ED ; [set2] write name of speaker
 #_0AAA5D: db $3E, $CF, $29, $A6, $37, $3A, $CF, $29 ; は⎵おだてに⎵お
 #_0AAA65: db $2E, $58, $34 ; こった
 #_0AAA68: db $F3 ; [set2] wait for key and new line
 #_0AAA69: db $F1 ; [set2] clear message box
-#_0AAA6A: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAA6A: db $EB, $C0 ; [set2] phrase C0
 #_0AAA6C: db $F2, $01 ; [set2] option list with 2 options
 #_0AAA6E: db $11, $52 ; option 1 [11]: go to message 52
 #_0AAA70: db $12, $54 ; option 2 [12]: go to message 54
@@ -7414,7 +7414,7 @@ Message_02_0A_51:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_52:
 #_0AAA72: db $E6, $80 ; [set2] [COMMAND 46:80]
 #_0AAA74: db $D8, $01, $53 ; [set2] go to message 53 if LUK < RNG(0, DemonLUK+16)
@@ -7422,10 +7422,10 @@ Message_02_0A_52:
 #_0AAA79: db $F3 ; [set2] wait for key and new line
 #_0AAA7A: db $F1 ; [set2] clear message box
 #_0AAA7B: db $DD ; [set2] [COMMAND 3D]
-#_0AAA7C: db $EB, $C2 ; [set2] prewritten text C2
+#_0AAA7C: db $EB, $C2 ; [set2] phrase C2
 #_0AAA7E: db $F3 ; [set2] wait for key and new line
 #_0AAA7F: db $F1 ; [set2] clear message box
-#_0AAA80: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAA80: db $EB, $E1 ; [set2] phrase E1
 #_0AAA82: db $F3 ; [set2] wait for key and new line
 #_0AAA83: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7468,10 +7468,10 @@ Message_02_0A_57:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0A_58:
-#_0AAAA4: db $EB, $E8 ; [set2] prewritten text E8
+#_0AAAA4: db $EB, $E8 ; [set2] phrase E8
 #_0AAAA6: db $F3 ; [set2] wait for key and new line
 #_0AAAA7: db $F1 ; [set2] clear message box
-#_0AAAA8: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAAA8: db $EB, $C0 ; [set2] phrase C0
 #_0AAAAA: db $F2, $01 ; [set2] option list with 2 options
 #_0AAAAC: db $0C, $59 ; option 1 [0C]: go to message 59
 #_0AAAAE: db $10, $5A ; option 2 [10]: go to message 5A
@@ -7479,7 +7479,7 @@ Message_02_0A_58:
 ;===================================================================================================
 
 Message_02_0A_59:
-#_0AAAB0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AAAB0: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AAAB3: db $D7, $01, $34 ; [set2] go to message 34 if LUK < RNG(0, 32)
 #_0AAAB6: db $E8, $09 ; [set2] [COMMAND 48:09]
 #_0AAAB8: db $F3 ; [set2] wait for key and new line
@@ -7491,7 +7491,7 @@ Message_02_0A_59:
 ; «>[CHASE]たちは にげだした»
 Message_02_0A_5A:
 #_0AAABE: db $D7, $00, $5B ; [set2] go to message 5B if LUK < RNG(0, 16)
-#_0AAAC1: db $EB, $E6 ; [set2] prewritten text E6
+#_0AAAC1: db $EB, $E6 ; [set2] phrase E6
 #_0AAAC3: db $F3 ; [set2] wait for key and new line
 #_0AAAC4: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -7499,23 +7499,23 @@ Message_02_0A_5A:
 
 ; «だめだ にげられない!!»
 Message_02_0A_5B:
-#_0AAAC6: db $EB, $E5 ; [set2] prewritten text E5
+#_0AAAC6: db $EB, $E5 ; [set2] phrase E5
 #_0AAAC8: db $F3 ; [set2] wait for key and new line
 #_0AAAC9: db $F1 ; [set2] clear message box
 #_0AAACA: db $E9, $5C ; [set2] go to message 5C
 
 ;===================================================================================================
 
-; «>[DEMONX]は わらっている»
+; «>[MYNAME]は わらっている»
 ; «どうしますか?»
 Message_02_0A_5C:
 #_0AAACC: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAACE: db $F3 ; [set2] wait for key and new line
 #_0AAACF: db $F1 ; [set2] clear message box
-#_0AAAD0: db $EB, $10 ; [set2] prewritten text 10
+#_0AAAD0: db $EB, $10 ; [set2] phrase 10
 #_0AAAD2: db $F3 ; [set2] wait for key and new line
 #_0AAAD3: db $F1 ; [set2] clear message box
-#_0AAAD4: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAAD4: db $EB, $C0 ; [set2] phrase C0
 #_0AAAD6: db $F2, $01 ; [set2] option list with 2 options
 #_0AAAD8: db $13, $5D ; option 1 [13]: go to message 5D
 #_0AAADA: db $14, $63 ; option 2 [14]: go to message 63
@@ -7524,7 +7524,7 @@ Message_02_0A_5C:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_5D:
 #_0AAADC: db $D4, $00, $5F ; [set2] go to message 5F if RNG, 00 TODO
 #_0AAADF: db $D7, $01, $5E ; [set2] go to message 5E if LUK < RNG(0, 32)
@@ -7532,46 +7532,46 @@ Message_02_0A_5D:
 #_0AAAE4: db $F3 ; [set2] wait for key and new line
 #_0AAAE5: db $F1 ; [set2] clear message box
 #_0AAAE6: db $DD ; [set2] [COMMAND 3D]
-#_0AAAE7: db $EB, $C2 ; [set2] prewritten text C2
+#_0AAAE7: db $EB, $C2 ; [set2] phrase C2
 #_0AAAE9: db $F3 ; [set2] wait for key and new line
 #_0AAAEA: db $F1 ; [set2] clear message box
-#_0AAAEB: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAAEB: db $EB, $E1 ; [set2] phrase E1
 #_0AAAED: db $F3 ; [set2] wait for key and new line
 #_0AAAEE: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_5E:
 #_0AAAF0: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AAAF2: db $F3 ; [set2] wait for key and new line
 #_0AAAF3: db $F1 ; [set2] clear message box
-#_0AAAF4: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAAF4: db $EB, $E1 ; [set2] phrase E1
 #_0AAAF6: db $F3 ; [set2] wait for key and new line
 #_0AAAF7: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 Message_02_0A_5F:
 #_0AAAF9: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AAAFB: db $F3 ; [set2] wait for key and new line
 #_0AAAFC: db $F1 ; [set2] clear message box
 #_0AAAFD: db $D4, $00, $60 ; [set2] go to message 60 if RNG, 00 TODO
-#_0AAB00: db $EB, $C3 ; [set2] prewritten text C3
+#_0AAB00: db $EB, $C3 ; [set2] phrase C3
 #_0AAB02: db $F3 ; [set2] wait for key and new line
 #_0AAB03: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
 ; «どうしますか?»
 Message_02_0A_60:
-#_0AAB05: db $EB, $EA ; [set2] prewritten text EA
+#_0AAB05: db $EB, $EA ; [set2] phrase EA
 #_0AAB07: db $F3 ; [set2] wait for key and new line
 #_0AAB08: db $F1 ; [set2] clear message box
-#_0AAB09: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAB09: db $EB, $C0 ; [set2] phrase C0
 #_0AAB0B: db $F2, $01 ; [set2] option list with 2 options
 #_0AAB0D: db $12, $61 ; option 1 [12]: go to message 61
 #_0AAB0F: db $10, $62 ; option 2 [10]: go to message 62
@@ -7585,7 +7585,7 @@ Message_02_0A_61:
 
 ; «>[CHASE]たちは にげだした»
 Message_02_0A_62:
-#_0AAB13: db $EB, $E6 ; [set2] prewritten text E6
+#_0AAB13: db $EB, $E6 ; [set2] phrase E6
 #_0AAB15: db $F3 ; [set2] wait for key and new line
 #_0AAB16: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -7600,13 +7600,13 @@ Message_02_0A_63:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0A_64:
 #_0AAB23: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AAB25: db $F3 ; [set2] wait for key and new line
 #_0AAB26: db $F1 ; [set2] clear message box
 #_0AAB27: db $D4, $01, $65 ; [set2] go to message 65 if RNG, 01 TODO
-#_0AAB2A: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAB2A: db $EB, $E1 ; [set2] phrase E1
 #_0AAB2C: db $F3 ; [set2] wait for key and new line
 #_0AAB2D: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7624,16 +7624,16 @@ Message_02_0B_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0B_01:
 #_0AAB3B: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAB3D: db $F3 ; [set2] wait for key and new line
 #_0AAB3E: db $F1 ; [set2] clear message box
-#_0AAB3F: db $EB, $C1 ; [set2] prewritten text C1
+#_0AAB3F: db $EB, $C1 ; [set2] phrase C1
 #_0AAB41: db $F3 ; [set2] wait for key and new line
 #_0AAB42: db $F1 ; [set2] clear message box
-#_0AAB43: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAB43: db $EB, $C0 ; [set2] phrase C0
 #_0AAB45: db $F2, $01 ; [set2] option list with 2 options
 #_0AAB47: db $02, $02 ; option 1 [02]: go to message 02
 #_0AAB49: db $0D, $05 ; option 2 [0D]: go to message 05
@@ -7650,12 +7650,12 @@ Message_02_0B_02:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0B_03:
 #_0AAB59: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AAB5B: db $F3 ; [set2] wait for key and new line
 #_0AAB5C: db $F1 ; [set2] clear message box
-#_0AAB5D: db $EB, $E2 ; [set2] prewritten text E2
+#_0AAB5D: db $EB, $E2 ; [set2] phrase E2
 #_0AAB5F: db $F3 ; [set2] wait for key and new line
 #_0AAB60: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -7676,16 +7676,16 @@ Message_02_0B_05:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0B_06:
 #_0AAB73: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AAB75: db $F3 ; [set2] wait for key and new line
 #_0AAB76: db $F1 ; [set2] clear message box
-#_0AAB77: db $EB, $C9 ; [set2] prewritten text C9
+#_0AAB77: db $EB, $C9 ; [set2] phrase C9
 #_0AAB79: db $F3 ; [set2] wait for key and new line
 #_0AAB7A: db $F1 ; [set2] clear message box
-#_0AAB7B: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAB7B: db $EB, $C0 ; [set2] phrase C0
 #_0AAB7D: db $F2, $01 ; [set2] option list with 2 options
 #_0AAB7F: db $04, $07 ; option 1 [04]: go to message 07
 #_0AAB81: db $15, $0C ; option 2 [15]: go to message 0C
@@ -7699,33 +7699,33 @@ Message_02_0B_07:
 
 ;===================================================================================================
 
-; >[DEMONX]は あまりこたえていない
+; >[MYNAME]は あまりこたえていない
 ; «どうしますか?»
 Message_02_0B_08:
 #_0AAB8B: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0AAB8D: db $F3 ; [set2] wait for key and new line
 #_0AAB8E: db $F1 ; [set2] clear message box
 #_0AAB8F: db $97 ; >
-#_0AAB90: db $ED ; [set2] write demon name indexed from $0526
+#_0AAB90: db $ED ; [set2] write name of speaker
 #_0AAB91: db $3E, $CF, $25, $43, $4C, $2E, $34, $28 ; は⎵あまりこたえ
 #_0AAB99: db $37, $26, $39, $26 ; ていない
 #_0AAB9D: db $F3 ; [set2] wait for key and new line
 #_0AAB9E: db $F1 ; [set2] clear message box
-#_0AAB9F: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAB9F: db $EB, $C0 ; [set2] phrase C0
 #_0AABA1: db $F2, $01 ; [set2] option list with 2 options
 #_0AABA3: db $16, $09 ; option 1 [16]: go to message 09
 #_0AABA5: db $03, $0A ; option 2 [03]: go to message 0A
 
 ;===================================================================================================
 
-; >[DEMONX]は したてにでた
+; >[MYNAME]は したてにでた
 Message_02_0B_09:
 #_0AABA7: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0AABAA: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AABAC: db $F3 ; [set2] wait for key and new line
 #_0AABAD: db $F1 ; [set2] clear message box
 #_0AABAE: db $97 ; >
-#_0AABAF: db $ED ; [set2] write demon name indexed from $0526
+#_0AABAF: db $ED ; [set2] write name of speaker
 #_0AABB0: db $3E, $CF, $30, $34, $37, $3A, $A9, $34 ; は⎵したてにでた
 #_0AABB8: db $F3 ; [set2] wait for key and new line
 #_0AABB9: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -7747,11 +7747,11 @@ Message_02_0B_0B:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは するどく»
-; «[DEMONX]を とらえた!»
-; >[DEMONX]は おびえている
+; «[MYNAME]を とらえた!»
+; >[MYNAME]は おびえている
 Message_02_0B_0C:
 #_0AABCA: db $D8, $02, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+32)
-#_0AABCD: db $EB, $48 ; [set2] prewritten text 48
+#_0AABCD: db $EB, $48 ; [set2] phrase 48
 #_0AABCF: db $F3 ; [set2] wait for key and new line
 #_0AABD0: db $F1 ; [set2] clear message box
 #_0AABD1: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -7759,31 +7759,31 @@ Message_02_0B_0C:
 #_0AABD4: db $F1 ; [set2] clear message box
 #_0AABD5: db $E6, $06 ; [set2] [COMMAND 46:06]
 #_0AABD7: db $97 ; >
-#_0AABD8: db $ED ; [set2] write demon name indexed from $0526
+#_0AABD8: db $ED ; [set2] write name of speaker
 #_0AABD9: db $3E, $CF, $29, $AC, $28, $37, $26, $4D ; は⎵おびえている
 #_0AABE1: db $F3 ; [set2] wait for key and new line
 #_0AABE2: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 Message_02_0B_0D:
 #_0AABE5: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0AABE7: db $F3 ; [set2] wait for key and new line
 #_0AABE8: db $F1 ; [set2] clear message box
-#_0AABE9: db $EB, $C3 ; [set2] prewritten text C3
+#_0AABE9: db $EB, $C3 ; [set2] phrase C3
 #_0AABEB: db $F3 ; [set2] wait for key and new line
 #_0AABEC: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0B_0E:
 #_0AABEE: db $D5, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AABF1: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AABF3: db $F3 ; [set2] wait for key and new line
 #_0AABF4: db $F1 ; [set2] clear message box
-#_0AABF5: db $EB, $E2 ; [set2] prewritten text E2
+#_0AABF5: db $EB, $E2 ; [set2] phrase E2
 #_0AABF7: db $F3 ; [set2] wait for key and new line
 #_0AABF8: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -7796,23 +7796,23 @@ Message_02_0B_0F:
 
 ;===================================================================================================
 
-; «>[DEMONX]は あばれだした!»
+; «>[MYNAME]は あばれだした!»
 ; «どうしますか?»
 Message_02_0B_10:
 #_0AABFF: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0AAC01: db $F3 ; [set2] wait for key and new line
 #_0AAC02: db $F1 ; [set2] clear message box
-#_0AAC03: db $EB, $49 ; [set2] prewritten text 49
+#_0AAC03: db $EB, $49 ; [set2] phrase 49
 #_0AAC05: db $F3 ; [set2] wait for key and new line
 #_0AAC06: db $F1 ; [set2] clear message box
-#_0AAC07: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAC07: db $EB, $C0 ; [set2] phrase C0
 #_0AAC09: db $F2, $01 ; [set2] option list with 2 options
 #_0AAC0B: db $17, $11 ; option 1 [17]: go to message 11
 #_0AAC0D: db $18, $14 ; option 2 [18]: go to message 14
 
 ;===================================================================================================
 
-; >[DEMONX]は おとなしくなった
+; >[MYNAME]は おとなしくなった
 ; «どうしますか?»
 Message_02_0B_11:
 #_0AAC0F: db $D5, $02, $04 ; [set2] go to message 04 if RNG, 02 TODO
@@ -7820,13 +7820,13 @@ Message_02_0B_11:
 #_0AAC14: db $F3 ; [set2] wait for key and new line
 #_0AAC15: db $F1 ; [set2] clear message box
 #_0AAC16: db $97 ; >
-#_0AAC17: db $ED ; [set2] write demon name indexed from $0526
+#_0AAC17: db $ED ; [set2] write name of speaker
 #_0AAC18: db $3E, $CF, $29, $38, $39, $30, $2C, $39 ; は⎵おとなしくな
 #_0AAC20: db $58, $34 ; った
 #_0AAC22: db $F3 ; [set2] wait for key and new line
 #_0AAC23: db $F1 ; [set2] clear message box
 #_0AAC24: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0AAC26: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAC26: db $EB, $C0 ; [set2] phrase C0
 #_0AAC28: db $F2, $01 ; [set2] option list with 2 options
 #_0AAC2A: db $00, $12 ; option 1 [00]: go to message 12
 #_0AAC2C: db $1A, $13 ; option 2 [1A]: go to message 13
@@ -7840,12 +7840,12 @@ Message_02_0B_12:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0B_13:
 #_0AAC34: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAC36: db $F3 ; [set2] wait for key and new line
 #_0AAC37: db $F1 ; [set2] clear message box
-#_0AAC38: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAC38: db $EB, $E1 ; [set2] phrase E1
 #_0AAC3A: db $F3 ; [set2] wait for key and new line
 #_0AAC3B: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -7869,16 +7869,16 @@ Message_02_0B_15:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_16:
 #_0AAC54: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAC56: db $F3 ; [set2] wait for key and new line
 #_0AAC57: db $F1 ; [set2] clear message box
-#_0AAC58: db $EB, $C8 ; [set2] prewritten text C8
+#_0AAC58: db $EB, $C8 ; [set2] phrase C8
 #_0AAC5A: db $F3 ; [set2] wait for key and new line
 #_0AAC5B: db $F1 ; [set2] clear message box
-#_0AAC5C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAC5C: db $EB, $C0 ; [set2] phrase C0
 #_0AAC5E: db $F2, $01 ; [set2] option list with 2 options
 #_0AAC60: db $1B, $17 ; option 1 [1B]: go to message 17
 #_0AAC62: db $03, $19 ; option 2 [03]: go to message 19
@@ -7910,10 +7910,10 @@ Message_02_0B_1A:
 #_0AAC74: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AAC76: db $F3 ; [set2] wait for key and new line
 #_0AAC77: db $F1 ; [set2] clear message box
-#_0AAC78: db $EB, $ED ; [set2] prewritten text ED
+#_0AAC78: db $EB, $ED ; [set2] phrase ED
 #_0AAC7A: db $F3 ; [set2] wait for key and new line
 #_0AAC7B: db $F1 ; [set2] clear message box
-#_0AAC7C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAC7C: db $EB, $C0 ; [set2] phrase C0
 #_0AAC7E: db $F2, $01 ; [set2] option list with 2 options
 #_0AAC80: db $03, $1B ; option 1 [03]: go to message 1B
 #_0AAC82: db $1C, $1D ; option 2 [1C]: go to message 1D
@@ -7929,26 +7929,26 @@ Message_02_0B_1B:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0B_1C:
 #_0AAC8F: db $DA, $01, $04 ; [set2] ext command 01: go to message 04 if MC INT = 0
 #_0AAC92: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AAC94: db $F3 ; [set2] wait for key and new line
 #_0AAC95: db $F1 ; [set2] clear message box
 #_0AAC96: db $E6, $FF ; [set2] [COMMAND 46:FF]
-#_0AAC98: db $EB, $C5 ; [set2] prewritten text C5
+#_0AAC98: db $EB, $C5 ; [set2] phrase C5
 #_0AAC9A: db $F3 ; [set2] wait for key and new line
 #_0AAC9B: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0B_1D:
 #_0AAC9D: db $D6, $02, $15 ; [set2] go to message 15 if RNG, 02 TODO
 #_0AACA0: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AACA2: db $F3 ; [set2] wait for key and new line
 #_0AACA3: db $F1 ; [set2] clear message box
-#_0AACA4: db $EB, $1C ; [set2] prewritten text 1C
+#_0AACA4: db $EB, $1C ; [set2] phrase 1C
 #_0AACA6: db $F3 ; [set2] wait for key and new line
 #_0AACA7: db $E5, $04 ; [set2] [COMMAND 45:04]
 #_0AACA9: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
@@ -7960,7 +7960,7 @@ Message_02_0B_1E:
 #_0AACAC: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AACAE: db $F3 ; [set2] wait for key and new line
 #_0AACAF: db $F1 ; [set2] clear message box
-#_0AACB0: db $EB, $C0 ; [set2] prewritten text C0
+#_0AACB0: db $EB, $C0 ; [set2] phrase C0
 #_0AACB2: db $F2, $01 ; [set2] option list with 2 options
 #_0AACB4: db $04, $1F ; option 1 [04]: go to message 1F
 #_0AACB6: db $0D, $25 ; option 2 [0D]: go to message 25
@@ -7976,31 +7976,31 @@ Message_02_0B_1F:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0B_20:
 #_0AACC0: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AACC2: db $F3 ; [set2] wait for key and new line
 #_0AACC3: db $F1 ; [set2] clear message box
 #_0AACC4: db $DD ; [set2] [COMMAND 3D]
-#_0AACC5: db $EB, $C2 ; [set2] prewritten text C2
+#_0AACC5: db $EB, $C2 ; [set2] phrase C2
 #_0AACC7: db $F3 ; [set2] wait for key and new line
 #_0AACC8: db $F1 ; [set2] clear message box
-#_0AACC9: db $EB, $E2 ; [set2] prewritten text E2
+#_0AACC9: db $EB, $E2 ; [set2] phrase E2
 #_0AACCB: db $F3 ; [set2] wait for key and new line
 #_0AACCC: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_21:
 #_0AACCE: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AACD0: db $F3 ; [set2] wait for key and new line
 #_0AACD1: db $F1 ; [set2] clear message box
-#_0AACD2: db $EB, $C8 ; [set2] prewritten text C8
+#_0AACD2: db $EB, $C8 ; [set2] phrase C8
 #_0AACD4: db $F3 ; [set2] wait for key and new line
 #_0AACD5: db $F1 ; [set2] clear message box
-#_0AACD6: db $EB, $C0 ; [set2] prewritten text C0
+#_0AACD6: db $EB, $C0 ; [set2] phrase C0
 #_0AACD8: db $F2, $01 ; [set2] option list with 2 options
 #_0AACDA: db $0D, $22 ; option 1 [0D]: go to message 22
 #_0AACDC: db $15, $24 ; option 2 [15]: go to message 24
@@ -8024,10 +8024,10 @@ Message_02_0B_23:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは するどく»
-; «[DEMONX]を とらえた!»
+; «[MYNAME]を とらえた!»
 Message_02_0B_24:
 #_0AACEC: db $D8, $02, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+32)
-#_0AACEF: db $EB, $48 ; [set2] prewritten text 48
+#_0AACEF: db $EB, $48 ; [set2] phrase 48
 #_0AACF1: db $F3 ; [set2] wait for key and new line
 #_0AACF2: db $F1 ; [set2] clear message box
 #_0AACF3: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -8037,8 +8037,8 @@ Message_02_0B_24:
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]を ナカマにしますか?»
+; «>[MYNAME]は さっていった»
 Message_02_0B_25:
 #_0AACFB: db $D5, $01, $26 ; [set2] go to message 26 if RNG, 01 TODO
 #_0AACFE: db $D4, $01, $03 ; [set2] go to message 03 if RNG, 01 TODO
@@ -8048,55 +8048,55 @@ Message_02_0B_25:
 #_0AAD07: db $F3 ; [set2] wait for key and new line
 #_0AAD08: db $F1 ; [set2] clear message box
 #_0AAD09: db $E6, $02 ; [set2] [COMMAND 46:02]
-#_0AAD0B: db $EB, $CD ; [set2] prewritten text CD
+#_0AAD0B: db $EB, $CD ; [set2] phrase CD
 #_0AAD0D: db $EF, $28 ; [set2] YES/NO - go to message 28 if YES
 #_0AAD0F: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAD11: db $F3 ; [set2] wait for key and new line
 #_0AAD12: db $F1 ; [set2] clear message box
-#_0AAD13: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAD13: db $EB, $E1 ; [set2] phrase E1
 #_0AAD15: db $F3 ; [set2] wait for key and new line
 #_0AAD16: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0B_26:
 #_0AAD18: db $D4, $00, $15 ; [set2] go to message 15 if RNG, 00 TODO
 #_0AAD1B: db $DA, $01, $00 ; [set2] ext command 01: go to message 00 if MC INT = 0
 #_0AAD1E: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AAD20: db $F3 ; [set2] wait for key and new line
 #_0AAD21: db $F1 ; [set2] clear message box
-#_0AAD22: db $EB, $C5 ; [set2] prewritten text C5
+#_0AAD22: db $EB, $C5 ; [set2] phrase C5
 #_0AAD24: db $F3 ; [set2] wait for key and new line
 #_0AAD25: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0B_27:
 #_0AAD27: db $D4, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
 #_0AAD2A: db $E8, $1F ; [set2] [COMMAND 48:1F]
 #_0AAD2C: db $F3 ; [set2] wait for key and new line
 #_0AAD2D: db $F1 ; [set2] clear message box
-#_0AAD2E: db $EB, $E2 ; [set2] prewritten text E2
+#_0AAD2E: db $EB, $E2 ; [set2] phrase E2
 #_0AAD30: db $F3 ; [set2] wait for key and new line
 #_0AAD31: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
 Message_02_0B_28:
-#_0AAD33: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AAD33: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AAD36: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげようと している»
+; «>[MYNAME]は にげようと している»
 ; «どうしますか?»
 Message_02_0B_29:
-#_0AAD39: db $EB, $F0 ; [set2] prewritten text F0
+#_0AAD39: db $EB, $F0 ; [set2] phrase F0
 #_0AAD3B: db $F3 ; [set2] wait for key and new line
 #_0AAD3C: db $F1 ; [set2] clear message box
-#_0AAD3D: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAD3D: db $EB, $C0 ; [set2] phrase C0
 #_0AAD3F: db $F2, $01 ; [set2] option list with 2 options
 #_0AAD41: db $1D, $2A ; option 1 [1D]: go to message 2A
 #_0AAD43: db $0B, $34 ; option 2 [0B]: go to message 34
@@ -8109,16 +8109,16 @@ Message_02_0B_2A:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0B_2B:
 #_0AAD4D: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AAD4F: db $F3 ; [set2] wait for key and new line
 #_0AAD50: db $F1 ; [set2] clear message box
-#_0AAD51: db $EB, $CA ; [set2] prewritten text CA
+#_0AAD51: db $EB, $CA ; [set2] phrase CA
 #_0AAD53: db $F3 ; [set2] wait for key and new line
 #_0AAD54: db $F1 ; [set2] clear message box
-#_0AAD55: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAD55: db $EB, $C0 ; [set2] phrase C0
 #_0AAD57: db $F2, $01 ; [set2] option list with 2 options
 #_0AAD59: db $1E, $2C ; option 1 [1E]: go to message 2C
 #_0AAD5B: db $06, $2E ; option 2 [06]: go to message 2E
@@ -8134,24 +8134,24 @@ Message_02_0B_2C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0B_2D:
 #_0AAD68: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AAD6A: db $F3 ; [set2] wait for key and new line
 #_0AAD6B: db $F1 ; [set2] clear message box
-#_0AAD6C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAD6C: db $EB, $E1 ; [set2] phrase E1
 #_0AAD6E: db $F3 ; [set2] wait for key and new line
 #_0AAD6F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0B_2E:
 #_0AAD71: db $D4, $00, $2F ; [set2] go to message 2F if RNG, 00 TODO
 #_0AAD74: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AAD76: db $F3 ; [set2] wait for key and new line
 #_0AAD77: db $F1 ; [set2] clear message box
-#_0AAD78: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAD78: db $EB, $E1 ; [set2] phrase E1
 #_0AAD7A: db $F3 ; [set2] wait for key and new line
 #_0AAD7B: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -8174,32 +8174,32 @@ Message_02_0B_31:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0B_32:
 #_0AAD87: db $D4, $00, $33 ; [set2] go to message 33 if RNG, 00 TODO
 #_0AAD8A: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAD8C: db $F3 ; [set2] wait for key and new line
 #_0AAD8D: db $F1 ; [set2] clear message box
-#_0AAD8E: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAD8E: db $EB, $E1 ; [set2] phrase E1
 #_0AAD90: db $F3 ; [set2] wait for key and new line
 #_0AAD91: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0B_33:
 #_0AAD93: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAD95: db $F3 ; [set2] wait for key and new line
 #_0AAD96: db $F1 ; [set2] clear message box
-#_0AAD97: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAD97: db $EB, $E1 ; [set2] phrase E1
 #_0AAD99: db $F3 ; [set2] wait for key and new line
 #_0AAD9A: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0B_34:
-#_0AAD9C: db $EB, $E2 ; [set2] prewritten text E2
+#_0AAD9C: db $EB, $E2 ; [set2] phrase E2
 #_0AAD9E: db $F3 ; [set2] wait for key and new line
 #_0AAD9F: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -8210,23 +8210,23 @@ Message_02_0B_35:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0B_36:
 #_0AADA6: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AADA8: db $F3 ; [set2] wait for key and new line
 #_0AADA9: db $F1 ; [set2] clear message box
-#_0AADAA: db $EB, $C3 ; [set2] prewritten text C3
+#_0AADAA: db $EB, $C3 ; [set2] phrase C3
 #_0AADAC: db $F3 ; [set2] wait for key and new line
 #_0AADAD: db $F1 ; [set2] clear message box
-#_0AADAE: db $EB, $C0 ; [set2] prewritten text C0
+#_0AADAE: db $EB, $C0 ; [set2] phrase C0
 #_0AADB0: db $F2, $01 ; [set2] option list with 2 options
 #_0AADB2: db $17, $37 ; option 1 [17]: go to message 37
 #_0AADB4: db $15, $3F ; option 2 [15]: go to message 3F
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0B_37:
 #_0AADB6: db $D7, $01, $04 ; [set2] go to message 04 if LUK < RNG(0, 32)
@@ -8235,10 +8235,10 @@ Message_02_0B_37:
 #_0AADBE: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AADC0: db $F3 ; [set2] wait for key and new line
 #_0AADC1: db $F1 ; [set2] clear message box
-#_0AADC2: db $EB, $CA ; [set2] prewritten text CA
+#_0AADC2: db $EB, $CA ; [set2] phrase CA
 #_0AADC4: db $F3 ; [set2] wait for key and new line
 #_0AADC5: db $F1 ; [set2] clear message box
-#_0AADC6: db $EB, $C0 ; [set2] prewritten text C0
+#_0AADC6: db $EB, $C0 ; [set2] phrase C0
 #_0AADC8: db $F2, $01 ; [set2] option list with 2 options
 #_0AADCA: db $1E, $38 ; option 1 [1E]: go to message 38
 #_0AADCC: db $06, $3A ; option 2 [06]: go to message 3A
@@ -8254,12 +8254,12 @@ Message_02_0B_38:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0B_39:
 #_0AADD9: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AADDB: db $F3 ; [set2] wait for key and new line
 #_0AADDC: db $F1 ; [set2] clear message box
-#_0AADDD: db $EB, $E1 ; [set2] prewritten text E1
+#_0AADDD: db $EB, $E1 ; [set2] phrase E1
 #_0AADDF: db $F3 ; [set2] wait for key and new line
 #_0AADE0: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -8273,16 +8273,16 @@ Message_02_0B_3A:
 
 ;===================================================================================================
 
-; «>[DEMONX]は わらっている»
+; «>[MYNAME]は わらっている»
 ; «どうしますか?»
 Message_02_0B_3B:
 #_0AADE8: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AADEA: db $F3 ; [set2] wait for key and new line
 #_0AADEB: db $F1 ; [set2] clear message box
-#_0AADEC: db $EB, $10 ; [set2] prewritten text 10
+#_0AADEC: db $EB, $10 ; [set2] phrase 10
 #_0AADEE: db $F3 ; [set2] wait for key and new line
 #_0AADEF: db $F1 ; [set2] clear message box
-#_0AADF0: db $EB, $C0 ; [set2] prewritten text C0
+#_0AADF0: db $EB, $C0 ; [set2] phrase C0
 #_0AADF2: db $F2, $01 ; [set2] option list with 2 options
 #_0AADF4: db $10, $3C ; option 1 [10]: go to message 3C
 #_0AADF6: db $1B, $3E ; option 2 [1B]: go to message 3E
@@ -8293,7 +8293,7 @@ Message_02_0B_3B:
 Message_02_0B_3C:
 #_0AADF8: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AADFA: db $F9, $00, $3D ; [set2] [COMMAND 59] go to message 3D if something 00 TODO
-#_0AADFD: db $EB, $E6 ; [set2] prewritten text E6
+#_0AADFD: db $EB, $E6 ; [set2] phrase E6
 #_0AADFF: db $F3 ; [set2] wait for key and new line
 #_0AAE00: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -8301,7 +8301,7 @@ Message_02_0B_3C:
 
 ; «だめだ にげられない!!»
 Message_02_0B_3D:
-#_0AAE02: db $EB, $E5 ; [set2] prewritten text E5
+#_0AAE02: db $EB, $E5 ; [set2] phrase E5
 #_0AAE04: db $F3 ; [set2] wait for key and new line
 #_0AAE05: db $F1 ; [set2] clear message box
 #_0AAE06: db $E8, $07 ; [set2] [COMMAND 48:07]
@@ -8311,20 +8311,20 @@ Message_02_0B_3D:
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0B_3E:
 #_0AAE0C: db $E6, $02 ; [set2] [COMMAND 46:02]
 #_0AAE0E: db $D7, $01, $15 ; [set2] go to message 15 if LUK < RNG(0, 32)
 #_0AAE11: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAE13: db $F3 ; [set2] wait for key and new line
 #_0AAE14: db $F1 ; [set2] clear message box
-#_0AAE15: db $EB, $1C ; [set2] prewritten text 1C
+#_0AAE15: db $EB, $1C ; [set2] phrase 1C
 #_0AAE17: db $F3 ; [set2] wait for key and new line
 #_0AAE18: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0B_3F:
 #_0AAE1B: db $D8, $01, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+16)
@@ -8332,10 +8332,10 @@ Message_02_0B_3F:
 #_0AAE20: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAE22: db $F3 ; [set2] wait for key and new line
 #_0AAE23: db $F1 ; [set2] clear message box
-#_0AAE24: db $EB, $C1 ; [set2] prewritten text C1
+#_0AAE24: db $EB, $C1 ; [set2] phrase C1
 #_0AAE26: db $F3 ; [set2] wait for key and new line
 #_0AAE27: db $F1 ; [set2] clear message box
-#_0AAE28: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAE28: db $EB, $C0 ; [set2] phrase C0
 #_0AAE2A: db $F2, $01 ; [set2] option list with 2 options
 #_0AAE2C: db $02, $40 ; option 1 [02]: go to message 40
 #_0AAE2E: db $1B, $41 ; option 2 [1B]: go to message 41
@@ -8347,13 +8347,13 @@ Message_02_0B_40:
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0B_41:
 #_0AAE32: db $D7, $01, $15 ; [set2] go to message 15 if LUK < RNG(0, 32)
 #_0AAE35: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAE37: db $F3 ; [set2] wait for key and new line
 #_0AAE38: db $F1 ; [set2] clear message box
-#_0AAE39: db $EB, $1C ; [set2] prewritten text 1C
+#_0AAE39: db $EB, $1C ; [set2] phrase 1C
 #_0AAE3B: db $F3 ; [set2] wait for key and new line
 #_0AAE3C: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
@@ -8362,17 +8362,17 @@ Message_02_0B_41:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0B_42:
-#_0AAE3F: db $EB, $E8 ; [set2] prewritten text E8
+#_0AAE3F: db $EB, $E8 ; [set2] phrase E8
 #_0AAE41: db $F3 ; [set2] wait for key and new line
 #_0AAE42: db $F1 ; [set2] clear message box
-#_0AAE43: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAE43: db $EB, $C0 ; [set2] phrase C0
 #_0AAE45: db $F2, $01 ; [set2] option list with 2 options
 #_0AAE47: db $0D, $43 ; option 1 [0D]: go to message 43
 #_0AAE49: db $10, $47 ; option 2 [10]: go to message 47
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0B_43:
 #_0AAE4B: db $D7, $01, $46 ; [set2] go to message 46 if LUK < RNG(0, 32)
@@ -8380,10 +8380,10 @@ Message_02_0B_43:
 #_0AAE50: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAE52: db $F3 ; [set2] wait for key and new line
 #_0AAE53: db $F1 ; [set2] clear message box
-#_0AAE54: db $EB, $C8 ; [set2] prewritten text C8
+#_0AAE54: db $EB, $C8 ; [set2] phrase C8
 #_0AAE56: db $F3 ; [set2] wait for key and new line
 #_0AAE57: db $F1 ; [set2] clear message box
-#_0AAE58: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAE58: db $EB, $C0 ; [set2] phrase C0
 #_0AAE5A: db $F2, $01 ; [set2] option list with 2 options
 #_0AAE5C: db $06, $44 ; option 1 [06]: go to message 44
 #_0AAE5E: db $12, $45 ; option 2 [12]: go to message 45
@@ -8416,7 +8416,7 @@ Message_02_0B_46:
 Message_02_0B_47:
 #_0AAE76: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AAE78: db $D7, $00, $48 ; [set2] go to message 48 if LUK < RNG(0, 16)
-#_0AAE7B: db $EB, $E6 ; [set2] prewritten text E6
+#_0AAE7B: db $EB, $E6 ; [set2] phrase E6
 #_0AAE7D: db $F3 ; [set2] wait for key and new line
 #_0AAE7E: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -8424,29 +8424,29 @@ Message_02_0B_47:
 
 ; «だめだ にげられない!!»
 Message_02_0B_48:
-#_0AAE80: db $EB, $E5 ; [set2] prewritten text E5
+#_0AAE80: db $EB, $E5 ; [set2] phrase E5
 #_0AAE82: db $F3 ; [set2] wait for key and new line
 #_0AAE83: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]は わらっている»
+; «>[MYNAME]は わらっている»
 ; «どうしますか?»
 Message_02_0B_49:
 #_0AAE85: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAE87: db $F3 ; [set2] wait for key and new line
 #_0AAE88: db $F1 ; [set2] clear message box
-#_0AAE89: db $EB, $10 ; [set2] prewritten text 10
+#_0AAE89: db $EB, $10 ; [set2] phrase 10
 #_0AAE8B: db $F3 ; [set2] wait for key and new line
 #_0AAE8C: db $F1 ; [set2] clear message box
-#_0AAE8D: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAE8D: db $EB, $C0 ; [set2] phrase C0
 #_0AAE8F: db $F2, $01 ; [set2] option list with 2 options
 #_0AAE91: db $17, $4A ; option 1 [17]: go to message 4A
 #_0AAE93: db $14, $55 ; option 2 [14]: go to message 55
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0B_4A:
 #_0AAE95: db $D4, $00, $51 ; [set2] go to message 51 if RNG, 00 TODO
@@ -8455,35 +8455,35 @@ Message_02_0B_4A:
 #_0AAE9D: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAE9F: db $F3 ; [set2] wait for key and new line
 #_0AAEA0: db $F1 ; [set2] clear message box
-#_0AAEA1: db $EB, $C1 ; [set2] prewritten text C1
+#_0AAEA1: db $EB, $C1 ; [set2] phrase C1
 #_0AAEA3: db $F3 ; [set2] wait for key and new line
 #_0AAEA4: db $F1 ; [set2] clear message box
-#_0AAEA5: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAEA5: db $EB, $C0 ; [set2] phrase C0
 #_0AAEA7: db $F2, $01 ; [set2] option list with 2 options
 #_0AAEA9: db $1B, $4B ; option 1 [1B]: go to message 4B
 #_0AAEAB: db $1F, $4D ; option 2 [1F]: go to message 4D
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_0B_4B:
 #_0AAEAD: db $D8, $01, $4C ; [set2] go to message 4C if LUK < RNG(0, DemonLUK+16)
 #_0AAEB0: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AAEB2: db $F3 ; [set2] wait for key and new line
 #_0AAEB3: db $F1 ; [set2] clear message box
-#_0AAEB4: db $EB, $1C ; [set2] prewritten text 1C
+#_0AAEB4: db $EB, $1C ; [set2] phrase 1C
 #_0AAEB6: db $F3 ; [set2] wait for key and new line
 #_0AAEB7: db $E6, $04 ; [set2] [COMMAND 46:04]
 #_0AAEB9: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 Message_02_0B_4C:
 #_0AAEBC: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AAEBE: db $F3 ; [set2] wait for key and new line
 #_0AAEBF: db $F1 ; [set2] clear message box
-#_0AAEC0: db $EB, $C3 ; [set2] prewritten text C3
+#_0AAEC0: db $EB, $C3 ; [set2] phrase C3
 #_0AAEC2: db $F3 ; [set2] wait for key and new line
 #_0AAEC3: db $E9, $00 ; [set2] go to message 00
 
@@ -8503,16 +8503,16 @@ Message_02_0B_4E:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0B_4F:
 #_0AAED2: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAED4: db $F3 ; [set2] wait for key and new line
 #_0AAED5: db $F1 ; [set2] clear message box
-#_0AAED6: db $EB, $C1 ; [set2] prewritten text C1
+#_0AAED6: db $EB, $C1 ; [set2] phrase C1
 #_0AAED8: db $F3 ; [set2] wait for key and new line
 #_0AAED9: db $F1 ; [set2] clear message box
-#_0AAEDA: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAEDA: db $EB, $C0 ; [set2] phrase C0
 #_0AAEDC: db $F2, $01 ; [set2] option list with 2 options
 #_0AAEDE: db $1B, $50 ; option 1 [1B]: go to message 50
 #_0AAEE0: db $1F, $04 ; option 2 [1F]: go to message 04
@@ -8529,16 +8529,16 @@ Message_02_0B_50:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0B_51:
 #_0AAEEB: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AAEED: db $F3 ; [set2] wait for key and new line
 #_0AAEEE: db $F1 ; [set2] clear message box
-#_0AAEEF: db $EB, $C4 ; [set2] prewritten text C4
+#_0AAEEF: db $EB, $C4 ; [set2] phrase C4
 #_0AAEF1: db $F3 ; [set2] wait for key and new line
 #_0AAEF2: db $F1 ; [set2] clear message box
-#_0AAEF3: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAEF3: db $EB, $C0 ; [set2] phrase C0
 #_0AAEF5: db $F2, $01 ; [set2] option list with 2 options
 #_0AAEF7: db $0D, $52 ; option 1 [0D]: go to message 52
 #_0AAEF9: db $06, $54 ; option 2 [06]: go to message 54
@@ -8585,13 +8585,13 @@ Message_02_0B_56:
 
 ;===================================================================================================
 
-; «>[DEMONX]は わらっている»
+; «>[MYNAME]は わらっている»
 Message_02_0B_57:
 #_0AAF23: db $D4, $00, $58 ; [set2] go to message 58 if RNG, 00 TODO
 #_0AAF26: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AAF28: db $F3 ; [set2] wait for key and new line
 #_0AAF29: db $F1 ; [set2] clear message box
-#_0AAF2A: db $EB, $10 ; [set2] prewritten text 10
+#_0AAF2A: db $EB, $10 ; [set2] phrase 10
 #_0AAF2C: db $F3 ; [set2] wait for key and new line
 #_0AAF2D: db $E9, $00 ; [set2] go to message 00
 
@@ -8612,16 +8612,16 @@ Message_02_0C_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]に からかわれています»
+; «>[MYNAME]に からかわれています»
 ; «どうしますか?»
 Message_02_0C_01:
 #_0AAF40: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AAF42: db $F3 ; [set2] wait for key and new line
 #_0AAF43: db $F1 ; [set2] clear message box
-#_0AAF44: db $EB, $CF ; [set2] prewritten text CF
+#_0AAF44: db $EB, $CF ; [set2] phrase CF
 #_0AAF46: db $F3 ; [set2] wait for key and new line
 #_0AAF47: db $F1 ; [set2] clear message box
-#_0AAF48: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAF48: db $EB, $C0 ; [set2] phrase C0
 #_0AAF4A: db $F2, $01 ; [set2] option list with 2 options
 #_0AAF4C: db $08, $02 ; option 1 [08]: go to message 02
 #_0AAF4E: db $23, $15 ; option 2 [23]: go to message 15
@@ -8651,16 +8651,16 @@ Message_02_0C_04:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0C_05:
 #_0AAF6B: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AAF6D: db $F3 ; [set2] wait for key and new line
 #_0AAF6E: db $F1 ; [set2] clear message box
-#_0AAF6F: db $EB, $C8 ; [set2] prewritten text C8
+#_0AAF6F: db $EB, $C8 ; [set2] phrase C8
 #_0AAF71: db $F3 ; [set2] wait for key and new line
 #_0AAF72: db $F1 ; [set2] clear message box
-#_0AAF73: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAF73: db $EB, $C0 ; [set2] phrase C0
 #_0AAF75: db $F2, $01 ; [set2] option list with 2 options
 #_0AAF77: db $03, $06 ; option 1 [03]: go to message 06
 #_0AAF79: db $24, $08 ; option 2 [24]: go to message 08
@@ -8685,10 +8685,10 @@ Message_02_0C_07:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは»
-; «[DEMONX]を とりこに した»
+; «[MYNAME]を とりこに した»
 Message_02_0C_08:
 #_0AAF8F: db $D8, $02, $09 ; [set2] go to message 09 if LUK < RNG(0, DemonLUK+32)
-#_0AAF92: db $EB, $EF ; [set2] prewritten text EF
+#_0AAF92: db $EB, $EF ; [set2] phrase EF
 #_0AAF94: db $F3 ; [set2] wait for key and new line
 #_0AAF95: db $F1 ; [set2] clear message box
 #_0AAF96: db $E5, $06 ; [set2] [COMMAND 45:06]
@@ -8711,7 +8711,7 @@ Message_02_0C_0A:
 #_0AAFA5: db $F3 ; [set2] wait for key and new line
 #_0AAFA6: db $E5, $FE ; [set2] [COMMAND 45:FE]
 #_0AAFA8: db $F1 ; [set2] clear message box
-#_0AAFA9: db $EB, $ED ; [set2] prewritten text ED
+#_0AAFA9: db $EB, $ED ; [set2] phrase ED
 #_0AAFAB: db $F3 ; [set2] wait for key and new line
 #_0AAFAC: db $E9, $00 ; [set2] go to message 00
 
@@ -8732,34 +8732,34 @@ Message_02_0C_0C:
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
+; «>[MYNAME]を ナカマにしますか?»
 Message_02_0C_0D:
 #_0AAFC1: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AAFC3: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AAFC5: db $F3 ; [set2] wait for key and new line
 #_0AAFC6: db $F1 ; [set2] clear message box
-#_0AAFC7: db $EB, $CD ; [set2] prewritten text CD
+#_0AAFC7: db $EB, $CD ; [set2] phrase CD
 #_0AAFC9: db $EF, $0E ; [set2] YES/NO - go to message 0E if YES
 #_0AAFCB: db $E9, $0F ; [set2] go to message 0F
 
 ;===================================================================================================
 
 Message_02_0C_0E:
-#_0AAFCD: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AAFCD: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AAFD0: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0C_0F:
 #_0AAFD3: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AAFD5: db $F3 ; [set2] wait for key and new line
 #_0AAFD6: db $F1 ; [set2] clear message box
-#_0AAFD7: db $EB, $D0 ; [set2] prewritten text D0
+#_0AAFD7: db $EB, $D0 ; [set2] phrase D0
 #_0AAFD9: db $F3 ; [set2] wait for key and new line
 #_0AAFDA: db $F1 ; [set2] clear message box
-#_0AAFDB: db $EB, $C0 ; [set2] prewritten text C0
+#_0AAFDB: db $EB, $C0 ; [set2] phrase C0
 #_0AAFDD: db $F2, $01 ; [set2] option list with 2 options
 #_0AAFDF: db $0A, $10 ; option 1 [0A]: go to message 10
 #_0AAFE1: db $0B, $12 ; option 2 [0B]: go to message 12
@@ -8772,21 +8772,21 @@ Message_02_0C_10:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_11:
 #_0AAFE8: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AAFEA: db $F3 ; [set2] wait for key and new line
 #_0AAFEB: db $F1 ; [set2] clear message box
-#_0AAFEC: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAFEC: db $EB, $E1 ; [set2] phrase E1
 #_0AAFEE: db $F3 ; [set2] wait for key and new line
 #_0AAFEF: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_12:
 #_0AAFF1: db $D4, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
-#_0AAFF4: db $EB, $E1 ; [set2] prewritten text E1
+#_0AAFF4: db $EB, $E1 ; [set2] phrase E1
 #_0AAFF6: db $F3 ; [set2] wait for key and new line
 #_0AAFF7: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -8806,7 +8806,7 @@ Message_02_0C_14:
 
 ;===================================================================================================
 
-; «>[DEMONX]は いいきに なっています»
+; «>[MYNAME]は いいきに なっています»
 ; «どうしますか?»
 Message_02_0C_15:
 #_0AB003: db $E8, $0E ; [set2] [COMMAND 48:0E]
@@ -8818,35 +8818,35 @@ Message_02_0C_15:
 #_0AB00F: db $E8, $2B ; [set2] [COMMAND 48:2B]
 #_0AB011: db $F3 ; [set2] wait for key and new line
 #_0AB012: db $F1 ; [set2] clear message box
-#_0AB013: db $EB, $F1 ; [set2] prewritten text F1
+#_0AB013: db $EB, $F1 ; [set2] phrase F1
 #_0AB015: db $F3 ; [set2] wait for key and new line
 #_0AB016: db $F1 ; [set2] clear message box
-#_0AB017: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB017: db $EB, $C0 ; [set2] phrase C0
 #_0AB019: db $F2, $01 ; [set2] option list with 2 options
 #_0AB01B: db $0E, $1A ; option 1 [0E]: go to message 1A
 #_0AB01D: db $20, $16 ; option 2 [20]: go to message 16
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
-; «>[DEMONX]は [GIVEME] を»
+; «>[MYNAME]を ナカマにしますか?»
+; «>[MYNAME]は [GIVEME] を»
 ; «おとしていった»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_16:
 #_0AB01F: db $D6, $01, $18 ; [set2] go to message 18 if RNG, 01 TODO
 #_0AB022: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB024: db $F3 ; [set2] wait for key and new line
 #_0AB025: db $F1 ; [set2] clear message box
-#_0AB026: db $EB, $CD ; [set2] prewritten text CD
+#_0AB026: db $EB, $CD ; [set2] phrase CD
 #_0AB028: db $EF, $17 ; [set2] YES/NO - go to message 17 if YES
 #_0AB02A: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB02C: db $F3 ; [set2] wait for key and new line
 #_0AB02D: db $F1 ; [set2] clear message box
 #_0AB02E: db $DD ; [set2] [COMMAND 3D]
-#_0AB02F: db $EB, $D8 ; [set2] prewritten text D8
+#_0AB02F: db $EB, $D8 ; [set2] phrase D8
 #_0AB031: db $F3 ; [set2] wait for key and new line
 #_0AB032: db $F1 ; [set2] clear message box
-#_0AB033: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB033: db $EB, $E1 ; [set2] phrase E1
 #_0AB035: db $F3 ; [set2] wait for key and new line
 #_0AB036: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -8854,7 +8854,7 @@ Message_02_0C_16:
 
 Message_02_0C_17:
 #_0AB038: db $E5, $03 ; [set2] [COMMAND 45:03]
-#_0AB03A: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AB03A: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AB03D: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
 ;===================================================================================================
@@ -8864,7 +8864,7 @@ Message_02_0C_18:
 #_0AB040: db $E8, $19 ; [set2] [COMMAND 48:19]
 #_0AB042: db $F3 ; [set2] wait for key and new line
 #_0AB043: db $F1 ; [set2] clear message box
-#_0AB044: db $EB, $D4 ; [set2] prewritten text D4
+#_0AB044: db $EB, $D4 ; [set2] phrase D4
 #_0AB046: db $F3 ; [set2] wait for key and new line
 #_0AB047: db $E9, $00 ; [set2] go to message 00
 
@@ -8873,27 +8873,27 @@ Message_02_0C_18:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0C_19:
-#_0AB049: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB049: db $EB, $E8 ; [set2] phrase E8
 #_0AB04B: db $F3 ; [set2] wait for key and new line
 #_0AB04C: db $F1 ; [set2] clear message box
-#_0AB04D: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB04D: db $EB, $C0 ; [set2] phrase C0
 #_0AB04F: db $F2, $01 ; [set2] option list with 2 options
 #_0AB051: db $0E, $1A ; option 1 [0E]: go to message 1A
 #_0AB053: db $14, $21 ; option 2 [14]: go to message 21
 
 ;===================================================================================================
 
-; «>[DEMONX]は いいきに なっています»
+; «>[MYNAME]は いいきに なっています»
 ; «どうしますか?»
 Message_02_0C_1A:
 #_0AB055: db $D6, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
 #_0AB058: db $E8, $2C ; [set2] [COMMAND 48:2C]
 #_0AB05A: db $F3 ; [set2] wait for key and new line
 #_0AB05B: db $F1 ; [set2] clear message box
-#_0AB05C: db $EB, $F1 ; [set2] prewritten text F1
+#_0AB05C: db $EB, $F1 ; [set2] phrase F1
 #_0AB05E: db $F3 ; [set2] wait for key and new line
 #_0AB05F: db $F1 ; [set2] clear message box
-#_0AB060: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB060: db $EB, $C0 ; [set2] phrase C0
 #_0AB062: db $F2, $01 ; [set2] option list with 2 options
 #_0AB064: db $0E, $1B ; option 1 [0E]: go to message 1B
 #_0AB066: db $20, $1F ; option 2 [20]: go to message 1F
@@ -8968,12 +8968,12 @@ Message_02_0C_24:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0C_25:
 #_0AB0A8: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB0AA: db $F3 ; [set2] wait for key and new line
 #_0AB0AB: db $F1 ; [set2] clear message box
-#_0AB0AC: db $EB, $E2 ; [set2] prewritten text E2
+#_0AB0AC: db $EB, $E2 ; [set2] phrase E2
 #_0AB0AE: db $F3 ; [set2] wait for key and new line
 #_0AB0AF: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -9002,29 +9002,29 @@ Message_02_0C_28:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_29:
 #_0AB0C9: db $D4, $02, $28 ; [set2] go to message 28 if RNG, 02 TODO
 #_0AB0CC: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB0CE: db $F3 ; [set2] wait for key and new line
 #_0AB0CF: db $F1 ; [set2] clear message box
-#_0AB0D0: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB0D0: db $EB, $E1 ; [set2] phrase E1
 #_0AB0D2: db $F3 ; [set2] wait for key and new line
 #_0AB0D3: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_0C_2A:
 #_0AB0D5: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
 #_0AB0D8: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AB0DA: db $F3 ; [set2] wait for key and new line
 #_0AB0DB: db $F1 ; [set2] clear message box
-#_0AB0DC: db $EB, $C6 ; [set2] prewritten text C6
+#_0AB0DC: db $EB, $C6 ; [set2] phrase C6
 #_0AB0DE: db $F3 ; [set2] wait for key and new line
 #_0AB0DF: db $F1 ; [set2] clear message box
-#_0AB0E0: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB0E0: db $EB, $C0 ; [set2] phrase C0
 #_0AB0E2: db $F2, $01 ; [set2] option list with 2 options
 #_0AB0E4: db $0C, $2B ; option 1 [0C]: go to message 2B
 #_0AB0E6: db $08, $32 ; option 2 [08]: go to message 32
@@ -9032,7 +9032,7 @@ Message_02_0C_2A:
 ;===================================================================================================
 
 Message_02_0C_2B:
-#_0AB0E8: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AB0E8: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AB0EB: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB0ED: db $D4, $00, $2D ; [set2] go to message 2D if RNG, 00 TODO
 #_0AB0F0: db $D7, $01, $2C ; [set2] go to message 2C if LUK < RNG(0, 32)
@@ -9053,16 +9053,16 @@ Message_02_0C_2C:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0C_2D:
 #_0AB104: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB106: db $F3 ; [set2] wait for key and new line
 #_0AB107: db $F1 ; [set2] clear message box
-#_0AB108: db $EB, $C4 ; [set2] prewritten text C4
+#_0AB108: db $EB, $C4 ; [set2] phrase C4
 #_0AB10A: db $F3 ; [set2] wait for key and new line
 #_0AB10B: db $F1 ; [set2] clear message box
-#_0AB10C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB10C: db $EB, $C0 ; [set2] phrase C0
 #_0AB10E: db $F2, $01 ; [set2] option list with 2 options
 #_0AB110: db $0D, $2E ; option 1 [0D]: go to message 2E
 #_0AB112: db $06, $30 ; option 2 [06]: go to message 30
@@ -9101,7 +9101,7 @@ Message_02_0C_31:
 
 ;===================================================================================================
 
-; «>[DEMONX]に からかわれています»
+; «>[MYNAME]に からかわれています»
 ; «どうしますか?»
 Message_02_0C_32:
 #_0AB132: db $D8, $00, $3E ; [set2] go to message 3E if LUK < RNG(0, DemonLUK+8)
@@ -9110,27 +9110,27 @@ Message_02_0C_32:
 #_0AB13A: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AB13C: db $F3 ; [set2] wait for key and new line
 #_0AB13D: db $F1 ; [set2] clear message box
-#_0AB13E: db $EB, $CF ; [set2] prewritten text CF
+#_0AB13E: db $EB, $CF ; [set2] phrase CF
 #_0AB140: db $F3 ; [set2] wait for key and new line
 #_0AB141: db $F1 ; [set2] clear message box
-#_0AB142: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB142: db $EB, $C0 ; [set2] phrase C0
 #_0AB144: db $F2, $01 ; [set2] option list with 2 options
 #_0AB146: db $20, $16 ; option 1 [20]: go to message 16
 #_0AB148: db $09, $33 ; option 2 [09]: go to message 33
 
 ;===================================================================================================
 
-; «>[DEMONX]は ちかづいてきた»
+; «>[MYNAME]は ちかづいてきた»
 ; «どうしますか?»
 Message_02_0C_33:
 #_0AB14A: db $D8, $01, $37 ; [set2] go to message 37 if LUK < RNG(0, DemonLUK+16)
 #_0AB14D: db $E8, $15 ; [set2] [COMMAND 48:15]
 #_0AB14F: db $F3 ; [set2] wait for key and new line
 #_0AB150: db $F1 ; [set2] clear message box
-#_0AB151: db $EB, $E9 ; [set2] prewritten text E9
+#_0AB151: db $EB, $E9 ; [set2] phrase E9
 #_0AB153: db $F3 ; [set2] wait for key and new line
 #_0AB154: db $F1 ; [set2] clear message box
-#_0AB155: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB155: db $EB, $C0 ; [set2] phrase C0
 #_0AB157: db $F2, $01 ; [set2] option list with 2 options
 #_0AB159: db $24, $08 ; option 1 [24]: go to message 08
 #_0AB15B: db $25, $34 ; option 2 [25]: go to message 34
@@ -9164,7 +9164,7 @@ Message_02_0C_36:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_37:
 #_0AB17A: db $D5, $01, $3A ; [set2] go to message 3A if RNG, 01 TODO
 #_0AB17D: db $E8, $1E ; [set2] [COMMAND 48:1E]
@@ -9175,7 +9175,7 @@ Message_02_0C_37:
 #_0AB187: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AB189: db $F3 ; [set2] wait for key and new line
 #_0AB18A: db $F1 ; [set2] clear message box
-#_0AB18B: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB18B: db $EB, $E1 ; [set2] phrase E1
 #_0AB18D: db $F3 ; [set2] wait for key and new line
 #_0AB18E: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -9190,32 +9190,32 @@ Message_02_0C_38:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0C_39:
 #_0AB196: db $D4, $00, $25 ; [set2] go to message 25 if RNG, 00 TODO
 #_0AB199: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AB19B: db $F3 ; [set2] wait for key and new line
 #_0AB19C: db $F1 ; [set2] clear message box
 #_0AB19D: db $DD ; [set2] [COMMAND 3D]
-#_0AB19E: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB19E: db $EB, $C2 ; [set2] phrase C2
 #_0AB1A0: db $F3 ; [set2] wait for key and new line
 #_0AB1A1: db $F1 ; [set2] clear message box
-#_0AB1A2: db $EB, $E2 ; [set2] prewritten text E2
+#_0AB1A2: db $EB, $E2 ; [set2] phrase E2
 #_0AB1A4: db $F3 ; [set2] wait for key and new line
 #_0AB1A5: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0C_3A:
 #_0AB1A7: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB1A9: db $F3 ; [set2] wait for key and new line
 #_0AB1AA: db $F1 ; [set2] clear message box
-#_0AB1AB: db $EB, $C9 ; [set2] prewritten text C9
+#_0AB1AB: db $EB, $C9 ; [set2] phrase C9
 #_0AB1AD: db $F3 ; [set2] wait for key and new line
 #_0AB1AE: db $F1 ; [set2] clear message box
-#_0AB1AF: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB1AF: db $EB, $C0 ; [set2] phrase C0
 #_0AB1B1: db $F2, $01 ; [set2] option list with 2 options
 #_0AB1B3: db $03, $3B ; option 1 [03]: go to message 3B
 #_0AB1B5: db $0B, $3C ; option 2 [0B]: go to message 3C
@@ -9233,32 +9233,32 @@ Message_02_0C_3C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は いいきに なっています»
+; «>[MYNAME]は いいきに なっています»
 ; «どうしますか?»
 Message_02_0C_3D:
 #_0AB1BF: db $E8, $2B ; [set2] [COMMAND 48:2B]
 #_0AB1C1: db $F3 ; [set2] wait for key and new line
 #_0AB1C2: db $F1 ; [set2] clear message box
-#_0AB1C3: db $EB, $F1 ; [set2] prewritten text F1
+#_0AB1C3: db $EB, $F1 ; [set2] phrase F1
 #_0AB1C5: db $F3 ; [set2] wait for key and new line
 #_0AB1C6: db $F1 ; [set2] clear message box
-#_0AB1C7: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB1C7: db $EB, $C0 ; [set2] phrase C0
 #_0AB1C9: db $F2, $01 ; [set2] option list with 2 options
 #_0AB1CB: db $0E, $1A ; option 1 [0E]: go to message 1A
 #_0AB1CD: db $14, $21 ; option 2 [14]: go to message 21
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0C_3E:
 #_0AB1CF: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB1D1: db $F3 ; [set2] wait for key and new line
 #_0AB1D2: db $F1 ; [set2] clear message box
-#_0AB1D3: db $EB, $C4 ; [set2] prewritten text C4
+#_0AB1D3: db $EB, $C4 ; [set2] phrase C4
 #_0AB1D5: db $F3 ; [set2] wait for key and new line
 #_0AB1D6: db $F1 ; [set2] clear message box
-#_0AB1D7: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB1D7: db $EB, $C0 ; [set2] phrase C0
 #_0AB1D9: db $F2, $01 ; [set2] option list with 2 options
 #_0AB1DB: db $0D, $3F ; option 1 [0D]: go to message 3F
 #_0AB1DD: db $06, $30 ; option 2 [06]: go to message 30
@@ -9312,16 +9312,16 @@ Message_02_0C_44:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0C_45:
 #_0AB213: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AB215: db $F3 ; [set2] wait for key and new line
 #_0AB216: db $F1 ; [set2] clear message box
-#_0AB217: db $EB, $C3 ; [set2] prewritten text C3
+#_0AB217: db $EB, $C3 ; [set2] phrase C3
 #_0AB219: db $F3 ; [set2] wait for key and new line
 #_0AB21A: db $F1 ; [set2] clear message box
-#_0AB21B: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB21B: db $EB, $C0 ; [set2] phrase C0
 #_0AB21D: db $F2, $01 ; [set2] option list with 2 options
 #_0AB21F: db $03, $46 ; option 1 [03]: go to message 46
 #_0AB221: db $1B, $57 ; option 2 [1B]: go to message 57
@@ -9355,7 +9355,7 @@ Message_02_0C_49:
 #_0AB23A: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0AB23C: db $F3 ; [set2] wait for key and new line
 #_0AB23D: db $F1 ; [set2] clear message box
-#_0AB23E: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB23E: db $EB, $C0 ; [set2] phrase C0
 #_0AB240: db $F2, $01 ; [set2] option list with 2 options
 #_0AB242: db $21, $4A ; option 1 [21]: go to message 4A
 #_0AB244: db $22, $4D ; option 2 [22]: go to message 4D
@@ -9374,16 +9374,16 @@ Message_02_0C_4A:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_4B:
 #_0AB254: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB256: db $F3 ; [set2] wait for key and new line
 #_0AB257: db $F1 ; [set2] clear message box
 #_0AB258: db $DD ; [set2] [COMMAND 3D]
-#_0AB259: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB259: db $EB, $C2 ; [set2] phrase C2
 #_0AB25B: db $F3 ; [set2] wait for key and new line
 #_0AB25C: db $F1 ; [set2] clear message box
-#_0AB25D: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB25D: db $EB, $E1 ; [set2] phrase E1
 #_0AB25F: db $F3 ; [set2] wait for key and new line
 #_0AB260: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -9407,19 +9407,19 @@ Message_02_0C_4D:
 
 ;===================================================================================================
 
-; «>[DEMONX]も つられて おどりだした!»
+; «>[MYNAME]も つられて おどりだした!»
 ; «このまま おどりますか?»
 Message_02_0C_4E:
-#_0AB278: db $EB, $EB ; [set2] prewritten text EB
+#_0AB278: db $EB, $EB ; [set2] phrase EB
 #_0AB27A: db $EF, $4F ; [set2] YES/NO - go to message 4F if YES
 #_0AB27C: db $E9, $11 ; [set2] go to message 11
 
 ;===================================================================================================
 
-; «>[CHASE]と [DEMONX]は»
+; «>[CHASE]と [MYNAME]は»
 ; «ひとばんじゅう おどりあかした!»
 Message_02_0C_4F:
-#_0AB27E: db $EB, $EC ; [set2] prewritten text EC
+#_0AB27E: db $EB, $EC ; [set2] phrase EC
 #_0AB280: db $F3 ; [set2] wait for key and new line
 #_0AB281: db $F1 ; [set2] clear message box
 #_0AB282: db $E1, $02 ; [set2] remove 1/8 of player's hp
@@ -9429,10 +9429,10 @@ Message_02_0C_4F:
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
 Message_02_0C_50:
-#_0AB28A: db $EB, $EA ; [set2] prewritten text EA
+#_0AB28A: db $EB, $EA ; [set2] phrase EA
 #_0AB28C: db $EF, $51 ; [set2] YES/NO - go to message 51 if YES
 #_0AB28E: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB290: db $F3 ; [set2] wait for key and new line
@@ -9446,13 +9446,13 @@ Message_02_0C_51:
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
 Message_02_0C_52:
 #_0AB298: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AB29A: db $EF, $54 ; [set2] YES/NO - go to message 54 if YES
 #_0AB29C: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
-#_0AB29F: db $EB, $EA ; [set2] prewritten text EA
+#_0AB29F: db $EB, $EA ; [set2] phrase EA
 #_0AB2A1: db $EF, $53 ; [set2] YES/NO - go to message 53 if YES
 #_0AB2A3: db $E9, $49 ; [set2] go to message 49
 
@@ -9474,19 +9474,19 @@ Message_02_0C_54:
 
 ; «なにが おのぞみ?»
 Message_02_0C_55:
-#_0AB2B3: db $EB, $93 ; [set2] prewritten text 93
+#_0AB2B3: db $EB, $93 ; [set2] phrase 93
 #_0AB2B5: db $F3 ; [set2] wait for key and new line
 #_0AB2B6: db $E5, $05 ; [set2] [COMMAND 45:05]
-#_0AB2B8: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
+#_0AB2B8: db $FB, $01, $EA ; [set2] set progress flag EA
 #_0AB2BB: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
 ; «>[CHASE]は»
-; «[DEMONX]に みいられた»
+; «[MYNAME]に みいられた»
 Message_02_0C_56:
 #_0AB2BE: db $F1 ; [set2] clear message box
-#_0AB2BF: db $EB, $F5 ; [set2] prewritten text F5
+#_0AB2BF: db $EB, $F5 ; [set2] phrase F5
 #_0AB2C1: db $F3 ; [set2] wait for key and new line
 #_0AB2C2: db $F1 ; [set2] clear message box
 #_0AB2C3: db $DF, $08 ; [set2] inflict status: charm
@@ -9515,33 +9515,33 @@ Message_02_0C_58:
 ; «どうしますか?»
 Message_02_0C_59:
 #_0AB2D9: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
-#_0AB2DC: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB2DC: db $EB, $E8 ; [set2] phrase E8
 #_0AB2DE: db $F3 ; [set2] wait for key and new line
 #_0AB2DF: db $F1 ; [set2] clear message box
-#_0AB2E0: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB2E0: db $EB, $C0 ; [set2] phrase C0
 #_0AB2E2: db $F2, $01 ; [set2] option list with 2 options
 #_0AB2E4: db $08, $5A ; option 1 [08]: go to message 5A
 #_0AB2E6: db $14, $6D ; option 2 [14]: go to message 6D
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0C_5A:
 #_0AB2E8: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0AB2EA: db $F3 ; [set2] wait for key and new line
 #_0AB2EB: db $F1 ; [set2] clear message box
-#_0AB2EC: db $EB, $C3 ; [set2] prewritten text C3
+#_0AB2EC: db $EB, $C3 ; [set2] phrase C3
 #_0AB2EE: db $F3 ; [set2] wait for key and new line
 #_0AB2EF: db $F1 ; [set2] clear message box
 #_0AB2F0: db $D8, $01, $6B ; [set2] go to message 6B if LUK < RNG(0, DemonLUK+16)
 #_0AB2F3: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB2F5: db $D4, $00, $63 ; [set2] go to message 63 if RNG, 00 TODO
-#_0AB2F8: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB2F8: db $EB, $E8 ; [set2] phrase E8
 #_0AB2FA: db $F3 ; [set2] wait for key and new line
 #_0AB2FB: db $F1 ; [set2] clear message box
-#_0AB2FC: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB2FC: db $EB, $C0 ; [set2] phrase C0
 #_0AB2FE: db $F2, $01 ; [set2] option list with 2 options
 #_0AB300: db $28, $5B ; option 1 [28]: go to message 5B
 #_0AB302: db $20, $60 ; option 2 [20]: go to message 60
@@ -9570,15 +9570,15 @@ Message_02_0C_5D:
 
 ; «・・・・・・・・・・・・・ ・ ・ ・»
 Message_02_0C_5E:
-#_0AB316: db $EB, $EE ; [set2] prewritten text EE
+#_0AB316: db $EB, $EE ; [set2] phrase EE
 #_0AB318: db $F3 ; [set2] wait for key and new line
 #_0AB319: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_5F:
-#_0AB31B: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB31B: db $EB, $E1 ; [set2] phrase E1
 #_0AB31D: db $F3 ; [set2] wait for key and new line
 #_0AB31E: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -9598,28 +9598,28 @@ Message_02_0C_61:
 
 ;===================================================================================================
 
-; «>[DEMONX]は なんたいかにげだした»
+; «>[MYNAME]は なんたいかにげだした»
 Message_02_0C_62:
 #_0AB32F: db $DA, $02, $11 ; [set2] ext command 02: add 17 to alignment if progress flag FB
 #_0AB332: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB334: db $F3 ; [set2] wait for key and new line
 #_0AB335: db $F1 ; [set2] clear message box
-#_0AB336: db $EB, $CB ; [set2] prewritten text CB
+#_0AB336: db $EB, $CB ; [set2] phrase CB
 #_0AB338: db $F3 ; [set2] wait for key and new line
 #_0AB339: db $FE, $05 ; [set2] [COMMAND 5E:05]
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0C_63:
 #_0AB33B: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB33D: db $F3 ; [set2] wait for key and new line
 #_0AB33E: db $F1 ; [set2] clear message box
-#_0AB33F: db $EB, $CA ; [set2] prewritten text CA
+#_0AB33F: db $EB, $CA ; [set2] phrase CA
 #_0AB341: db $F3 ; [set2] wait for key and new line
 #_0AB342: db $F1 ; [set2] clear message box
-#_0AB343: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB343: db $EB, $C0 ; [set2] phrase C0
 #_0AB345: db $F2, $01 ; [set2] option list with 2 options
 #_0AB347: db $14, $6D ; option 1 [14]: go to message 6D
 #_0AB349: db $06, $64 ; option 2 [06]: go to message 64
@@ -9634,10 +9634,10 @@ Message_02_0C_64:
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
 Message_02_0C_65:
-#_0AB350: db $EB, $ED ; [set2] prewritten text ED
+#_0AB350: db $EB, $ED ; [set2] phrase ED
 #_0AB352: db $F3 ; [set2] wait for key and new line
 #_0AB353: db $F1 ; [set2] clear message box
-#_0AB354: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB354: db $EB, $C0 ; [set2] phrase C0
 #_0AB356: db $F2, $01 ; [set2] option list with 2 options
 #_0AB358: db $03, $66 ; option 1 [03]: go to message 66
 #_0AB35A: db $0B, $67 ; option 2 [0B]: go to message 67
@@ -9669,10 +9669,10 @@ Message_02_0C_68:
 ; «>アクマは むし している»
 ; «・・・・・・・・・・・・・ ・ ・ ・»
 Message_02_0C_69:
-#_0AB372: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB372: db $EB, $E8 ; [set2] phrase E8
 #_0AB374: db $F3 ; [set2] wait for key and new line
 #_0AB375: db $F1 ; [set2] clear message box
-#_0AB376: db $EB, $EE ; [set2] prewritten text EE
+#_0AB376: db $EB, $EE ; [set2] phrase EE
 #_0AB378: db $F3 ; [set2] wait for key and new line
 #_0AB379: db $E9, $00 ; [set2] go to message 00
 
@@ -9687,7 +9687,7 @@ Message_02_0C_6A:
 
 ; «どうしますか?»
 Message_02_0C_6B:
-#_0AB381: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB381: db $EB, $C0 ; [set2] phrase C0
 #_0AB383: db $F2, $01 ; [set2] option list with 2 options
 #_0AB385: db $0F, $6C ; option 1 [0F]: go to message 6C
 #_0AB387: db $0C, $2B ; option 2 [0C]: go to message 2B
@@ -9724,28 +9724,28 @@ Message_02_0C_6F:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_70:
 #_0AB3A9: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB3AB: db $F3 ; [set2] wait for key and new line
 #_0AB3AC: db $F1 ; [set2] clear message box
-#_0AB3AD: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB3AD: db $EB, $E1 ; [set2] phrase E1
 #_0AB3AF: db $F3 ; [set2] wait for key and new line
 #_0AB3B0: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_0C_71:
 #_0AB3B2: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
 #_0AB3B5: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB3B7: db $F3 ; [set2] wait for key and new line
 #_0AB3B8: db $F1 ; [set2] clear message box
-#_0AB3B9: db $EB, $C7 ; [set2] prewritten text C7
+#_0AB3B9: db $EB, $C7 ; [set2] phrase C7
 #_0AB3BB: db $F3 ; [set2] wait for key and new line
 #_0AB3BC: db $F1 ; [set2] clear message box
-#_0AB3BD: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB3BD: db $EB, $C0 ; [set2] phrase C0
 #_0AB3BF: db $F2, $01 ; [set2] option list with 2 options
 #_0AB3C1: db $13, $72 ; option 1 [13]: go to message 72
 #_0AB3C3: db $06, $74 ; option 2 [06]: go to message 74
@@ -9754,7 +9754,7 @@ Message_02_0C_71:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_72:
 #_0AB3C5: db $D4, $00, $14 ; [set2] go to message 14 if RNG, 00 TODO
 #_0AB3C8: db $D7, $01, $73 ; [set2] go to message 73 if LUK < RNG(0, 32)
@@ -9762,21 +9762,21 @@ Message_02_0C_72:
 #_0AB3CD: db $F3 ; [set2] wait for key and new line
 #_0AB3CE: db $F1 ; [set2] clear message box
 #_0AB3CF: db $DD ; [set2] [COMMAND 3D]
-#_0AB3D0: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB3D0: db $EB, $C2 ; [set2] phrase C2
 #_0AB3D2: db $F3 ; [set2] wait for key and new line
 #_0AB3D3: db $F1 ; [set2] clear message box
-#_0AB3D4: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB3D4: db $EB, $E1 ; [set2] phrase E1
 #_0AB3D6: db $F3 ; [set2] wait for key and new line
 #_0AB3D7: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0C_73:
 #_0AB3D9: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AB3DB: db $F3 ; [set2] wait for key and new line
 #_0AB3DC: db $F1 ; [set2] clear message box
-#_0AB3DD: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB3DD: db $EB, $E1 ; [set2] phrase E1
 #_0AB3DF: db $F3 ; [set2] wait for key and new line
 #_0AB3E0: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -9787,13 +9787,13 @@ Message_02_0C_74:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ちかづいてきた»
+; «>[MYNAME]は ちかづいてきた»
 ; «どうしますか?»
 Message_02_0C_75:
-#_0AB3E7: db $EB, $E9 ; [set2] prewritten text E9
+#_0AB3E7: db $EB, $E9 ; [set2] phrase E9
 #_0AB3E9: db $F3 ; [set2] wait for key and new line
 #_0AB3EA: db $F1 ; [set2] clear message box
-#_0AB3EB: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB3EB: db $EB, $C0 ; [set2] phrase C0
 #_0AB3ED: db $F2, $01 ; [set2] option list with 2 options
 #_0AB3EF: db $00, $76 ; option 1 [00]: go to message 76
 #_0AB3F1: db $0C, $2B ; option 2 [0C]: go to message 2B
@@ -9806,13 +9806,13 @@ Message_02_0C_76:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0C_77:
 #_0AB3F8: db $DA, $01, $78 ; [set2] ext command 01: go to message 78 if MC INT = 0
 #_0AB3FB: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB3FD: db $F3 ; [set2] wait for key and new line
 #_0AB3FE: db $F1 ; [set2] clear message box
-#_0AB3FF: db $EB, $C5 ; [set2] prewritten text C5
+#_0AB3FF: db $EB, $C5 ; [set2] phrase C5
 #_0AB401: db $F3 ; [set2] wait for key and new line
 #_0AB402: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -9832,16 +9832,16 @@ Message_02_0D_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]に からかわれています»
+; «>[MYNAME]に からかわれています»
 ; «どうしますか?»
 Message_02_0D_01:
 #_0AB413: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AB415: db $F3 ; [set2] wait for key and new line
 #_0AB416: db $F1 ; [set2] clear message box
-#_0AB417: db $EB, $CF ; [set2] prewritten text CF
+#_0AB417: db $EB, $CF ; [set2] phrase CF
 #_0AB419: db $F3 ; [set2] wait for key and new line
 #_0AB41A: db $F1 ; [set2] clear message box
-#_0AB41B: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB41B: db $EB, $C0 ; [set2] phrase C0
 #_0AB41D: db $F2, $01 ; [set2] option list with 2 options
 #_0AB41F: db $04, $02 ; option 1 [04]: go to message 02
 #_0AB421: db $0D, $10 ; option 2 [0D]: go to message 10
@@ -9863,27 +9863,27 @@ Message_02_0D_03:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0D_04:
 #_0AB431: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AB433: db $F3 ; [set2] wait for key and new line
 #_0AB434: db $F1 ; [set2] clear message box
 #_0AB435: db $DD ; [set2] [COMMAND 3D]
-#_0AB436: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB436: db $EB, $C2 ; [set2] phrase C2
 #_0AB438: db $F3 ; [set2] wait for key and new line
 #_0AB439: db $F1 ; [set2] clear message box
-#_0AB43A: db $EB, $E2 ; [set2] prewritten text E2
+#_0AB43A: db $EB, $E2 ; [set2] phrase E2
 #_0AB43C: db $F3 ; [set2] wait for key and new line
 #_0AB43D: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0D_05:
 #_0AB43F: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB441: db $F3 ; [set2] wait for key and new line
 #_0AB442: db $F1 ; [set2] clear message box
-#_0AB443: db $EB, $E2 ; [set2] prewritten text E2
+#_0AB443: db $EB, $E2 ; [set2] phrase E2
 #_0AB445: db $F3 ; [set2] wait for key and new line
 #_0AB446: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -9896,35 +9896,35 @@ Message_02_0D_06:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0D_07:
 #_0AB452: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB454: db $F3 ; [set2] wait for key and new line
 #_0AB455: db $F1 ; [set2] clear message box
-#_0AB456: db $EB, $CA ; [set2] prewritten text CA
+#_0AB456: db $EB, $CA ; [set2] phrase CA
 #_0AB458: db $F3 ; [set2] wait for key and new line
 #_0AB459: db $F1 ; [set2] clear message box
-#_0AB45A: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB45A: db $EB, $C0 ; [set2] phrase C0
 #_0AB45C: db $F2, $01 ; [set2] option list with 2 options
 #_0AB45E: db $14, $40 ; option 1 [14]: go to message 40
 #_0AB460: db $06, $2D ; option 2 [06]: go to message 2D
 
 ;===================================================================================================
 
-; >[DEMONX]は わかいを もとめてきた
+; >[MYNAME]は わかいを もとめてきた
 ; «どうしますか?»
 Message_02_0D_08:
 #_0AB462: db $E8, $0A ; [set2] [COMMAND 48:0A]
 #_0AB464: db $F3 ; [set2] wait for key and new line
 #_0AB465: db $F1 ; [set2] clear message box
 #_0AB466: db $97 ; >
-#_0AB467: db $ED ; [set2] write demon name indexed from $0526
+#_0AB467: db $ED ; [set2] write name of speaker
 #_0AB468: db $3E, $CF, $50, $2A, $26, $51, $CF, $47 ; は⎵わかいを⎵も
 #_0AB470: db $38, $46, $37, $2B, $34 ; とめてきた
 #_0AB475: db $F3 ; [set2] wait for key and new line
 #_0AB476: db $F1 ; [set2] clear message box
-#_0AB477: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB477: db $EB, $C0 ; [set2] phrase C0
 #_0AB479: db $F2, $01 ; [set2] option list with 2 options
 #_0AB47B: db $2A, $09 ; option 1 [2A]: go to message 09
 #_0AB47D: db $16, $0A ; option 2 [16]: go to message 0A
@@ -9985,16 +9985,16 @@ Message_02_0D_10:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0D_11:
 #_0AB4B4: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB4B6: db $F3 ; [set2] wait for key and new line
 #_0AB4B7: db $F1 ; [set2] clear message box
-#_0AB4B8: db $EB, $C9 ; [set2] prewritten text C9
+#_0AB4B8: db $EB, $C9 ; [set2] phrase C9
 #_0AB4BA: db $F3 ; [set2] wait for key and new line
 #_0AB4BB: db $F1 ; [set2] clear message box
-#_0AB4BC: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB4BC: db $EB, $C0 ; [set2] phrase C0
 #_0AB4BE: db $F2, $01 ; [set2] option list with 2 options
 #_0AB4C0: db $04, $02 ; option 1 [04]: go to message 02
 #_0AB4C2: db $15, $12 ; option 2 [15]: go to message 12
@@ -10002,13 +10002,13 @@ Message_02_0D_11:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは»
-; «[DEMONX]を とりこに した»
+; «[MYNAME]を とりこに した»
 Message_02_0D_12:
 #_0AB4C4: db $D8, $01, $13 ; [set2] go to message 13 if LUK < RNG(0, DemonLUK+16)
 #_0AB4C7: db $E8, $33 ; [set2] [COMMAND 48:33]
 #_0AB4C9: db $F3 ; [set2] wait for key and new line
 #_0AB4CA: db $F1 ; [set2] clear message box
-#_0AB4CB: db $EB, $EF ; [set2] prewritten text EF
+#_0AB4CB: db $EB, $EF ; [set2] phrase EF
 #_0AB4CD: db $F3 ; [set2] wait for key and new line
 #_0AB4CE: db $E6, $06 ; [set2] [COMMAND 46:06]
 #_0AB4D0: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
@@ -10035,17 +10035,17 @@ Message_02_0D_15:
 
 ;===================================================================================================
 
-; [DEMONX]が あまえてきた
+; [MYNAME]が あまえてきた
 ; «どうしますか?»
 Message_02_0D_16:
 #_0AB4E3: db $E8, $0B ; [set2] [COMMAND 48:0B]
 #_0AB4E5: db $F3 ; [set2] wait for key and new line
 #_0AB4E6: db $F1 ; [set2] clear message box
-#_0AB4E7: db $ED ; [set2] write demon name indexed from $0526
+#_0AB4E7: db $ED ; [set2] write name of speaker
 #_0AB4E8: db $9C, $CF, $25, $43, $28, $37, $2B, $34 ; が⎵あまえてきた
 #_0AB4F0: db $F3 ; [set2] wait for key and new line
 #_0AB4F1: db $F1 ; [set2] clear message box
-#_0AB4F2: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB4F2: db $EB, $C0 ; [set2] phrase C0
 #_0AB4F4: db $F2, $01 ; [set2] option list with 2 options
 #_0AB4F6: db $0F, $17 ; option 1 [0F]: go to message 17
 #_0AB4F8: db $06, $3E ; option 2 [06]: go to message 3E
@@ -10066,18 +10066,18 @@ Message_02_0D_18:
 
 ;===================================================================================================
 
-; >[DEMONX]は なきだした
+; >[MYNAME]は なきだした
 ; «どうしますか?»
 Message_02_0D_19:
 #_0AB50B: db $E8, $1F ; [set2] [COMMAND 48:1F]
 #_0AB50D: db $F3 ; [set2] wait for key and new line
 #_0AB50E: db $F1 ; [set2] clear message box
 #_0AB50F: db $97 ; >
-#_0AB510: db $ED ; [set2] write demon name indexed from $0526
+#_0AB510: db $ED ; [set2] write name of speaker
 #_0AB511: db $3E, $CF, $39, $2B, $A6, $30, $34 ; は⎵なきだした
 #_0AB518: db $F3 ; [set2] wait for key and new line
 #_0AB519: db $F1 ; [set2] clear message box
-#_0AB51A: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB51A: db $EB, $C0 ; [set2] phrase C0
 #_0AB51C: db $F2, $01 ; [set2] option list with 2 options
 #_0AB51E: db $03, $1A ; option 1 [03]: go to message 1A
 #_0AB520: db $0B, $2B ; option 2 [0B]: go to message 2B
@@ -10093,7 +10093,7 @@ Message_02_0D_1B:
 #_0AB527: db $E8, $28 ; [set2] [COMMAND 48:28]
 #_0AB529: db $F3 ; [set2] wait for key and new line
 #_0AB52A: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0AB52C: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
+#_0AB52C: db $FB, $01, $EA ; [set2] set progress flag EA
 #_0AB52F: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
 ;===================================================================================================
@@ -10110,7 +10110,7 @@ Message_02_0D_1D:
 #_0AB538: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0AB53A: db $F3 ; [set2] wait for key and new line
 #_0AB53B: db $F1 ; [set2] clear message box
-#_0AB53C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB53C: db $EB, $C0 ; [set2] phrase C0
 #_0AB53E: db $F2, $01 ; [set2] option list with 2 options
 #_0AB540: db $21, $1E ; option 1 [21]: go to message 1E
 #_0AB542: db $22, $21 ; option 2 [22]: go to message 21
@@ -10129,16 +10129,16 @@ Message_02_0D_1E:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_1F:
 #_0AB552: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB554: db $F3 ; [set2] wait for key and new line
 #_0AB555: db $F1 ; [set2] clear message box
 #_0AB556: db $DD ; [set2] [COMMAND 3D]
-#_0AB557: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB557: db $EB, $C2 ; [set2] phrase C2
 #_0AB559: db $F3 ; [set2] wait for key and new line
 #_0AB55A: db $F1 ; [set2] clear message box
-#_0AB55B: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB55B: db $EB, $E1 ; [set2] phrase E1
 #_0AB55D: db $F3 ; [set2] wait for key and new line
 #_0AB55E: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -10162,10 +10162,10 @@ Message_02_0D_21:
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
 Message_02_0D_22:
-#_0AB576: db $EB, $EA ; [set2] prewritten text EA
+#_0AB576: db $EB, $EA ; [set2] phrase EA
 #_0AB578: db $EF, $23 ; [set2] YES/NO - go to message 23 if YES
 #_0AB57A: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0AB57C: db $F3 ; [set2] wait for key and new line
@@ -10179,25 +10179,25 @@ Message_02_0D_23:
 
 ;===================================================================================================
 
-; «>[DEMONX]も つられて おどりだした!»
+; «>[MYNAME]も つられて おどりだした!»
 ; «このまま おどりますか?»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_24:
-#_0AB584: db $EB, $EB ; [set2] prewritten text EB
+#_0AB584: db $EB, $EB ; [set2] phrase EB
 #_0AB586: db $EF, $25 ; [set2] YES/NO - go to message 25 if YES
 #_0AB588: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB58A: db $F3 ; [set2] wait for key and new line
 #_0AB58B: db $F1 ; [set2] clear message box
-#_0AB58C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB58C: db $EB, $E1 ; [set2] phrase E1
 #_0AB58E: db $F3 ; [set2] wait for key and new line
 #_0AB58F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[CHASE]と [DEMONX]は»
+; «>[CHASE]と [MYNAME]は»
 ; «ひとばんじゅう おどりあかした!»
 Message_02_0D_25:
-#_0AB591: db $EB, $EC ; [set2] prewritten text EC
+#_0AB591: db $EB, $EC ; [set2] phrase EC
 #_0AB593: db $F3 ; [set2] wait for key and new line
 #_0AB594: db $F1 ; [set2] clear message box
 #_0AB595: db $E1, $02 ; [set2] remove 1/8 of player's hp
@@ -10235,16 +10235,16 @@ Message_02_0D_28:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_29:
 #_0AB5BC: db $E8, $37 ; [set2] [COMMAND 48:37]
 #_0AB5BE: db $F3 ; [set2] wait for key and new line
 #_0AB5BF: db $F1 ; [set2] clear message box
 #_0AB5C0: db $DD ; [set2] [COMMAND 3D]
-#_0AB5C1: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB5C1: db $EB, $C2 ; [set2] phrase C2
 #_0AB5C3: db $F3 ; [set2] wait for key and new line
 #_0AB5C4: db $F1 ; [set2] clear message box
-#_0AB5C5: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB5C5: db $EB, $E1 ; [set2] phrase E1
 #_0AB5C7: db $F3 ; [set2] wait for key and new line
 #_0AB5C8: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -10253,7 +10253,7 @@ Message_02_0D_29:
 ; «>[CHASE]は もうれつな すいまに»
 ; «とらわれ ねむりに おちていった・・・»
 Message_02_0D_2A:
-#_0AB5CA: db $EB, $F4 ; [set2] prewritten text F4
+#_0AB5CA: db $EB, $F4 ; [set2] phrase F4
 #_0AB5CC: db $F3 ; [set2] wait for key and new line
 #_0AB5CD: db $F1 ; [set2] clear message box
 #_0AB5CE: db $DF, $09 ; [set2] inflict status: sleep
@@ -10279,16 +10279,16 @@ Message_02_0D_2C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0D_2D:
 #_0AB5E6: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0AB5E8: db $F3 ; [set2] wait for key and new line
 #_0AB5E9: db $F1 ; [set2] clear message box
-#_0AB5EA: db $EB, $C9 ; [set2] prewritten text C9
+#_0AB5EA: db $EB, $C9 ; [set2] phrase C9
 #_0AB5EC: db $F3 ; [set2] wait for key and new line
 #_0AB5ED: db $F1 ; [set2] clear message box
-#_0AB5EE: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB5EE: db $EB, $C0 ; [set2] phrase C0
 #_0AB5F0: db $F2, $01 ; [set2] option list with 2 options
 #_0AB5F2: db $06, $2E ; option 1 [06]: go to message 2E
 #_0AB5F4: db $20, $39 ; option 2 [20]: go to message 39
@@ -10301,16 +10301,16 @@ Message_02_0D_2E:
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0D_2F:
 #_0AB5FB: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AB5FD: db $F3 ; [set2] wait for key and new line
 #_0AB5FE: db $F1 ; [set2] clear message box
-#_0AB5FF: db $EB, $D0 ; [set2] prewritten text D0
+#_0AB5FF: db $EB, $D0 ; [set2] phrase D0
 #_0AB601: db $F3 ; [set2] wait for key and new line
 #_0AB602: db $F1 ; [set2] clear message box
-#_0AB603: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB603: db $EB, $C0 ; [set2] phrase C0
 #_0AB605: db $F2, $01 ; [set2] option list with 2 options
 #_0AB607: db $0A, $30 ; option 1 [0A]: go to message 30
 #_0AB609: db $0B, $37 ; option 2 [0B]: go to message 37
@@ -10323,28 +10323,28 @@ Message_02_0D_30:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0D_31:
 #_0AB610: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AB612: db $F3 ; [set2] wait for key and new line
 #_0AB613: db $F1 ; [set2] clear message box
-#_0AB614: db $EB, $C4 ; [set2] prewritten text C4
+#_0AB614: db $EB, $C4 ; [set2] phrase C4
 #_0AB616: db $F3 ; [set2] wait for key and new line
 #_0AB617: db $F1 ; [set2] clear message box
-#_0AB618: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB618: db $EB, $C0 ; [set2] phrase C0
 #_0AB61A: db $F2, $01 ; [set2] option list with 2 options
 #_0AB61C: db $0D, $33 ; option 1 [0D]: go to message 33
 #_0AB61E: db $06, $35 ; option 2 [06]: go to message 35
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_32:
 #_0AB620: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB622: db $F3 ; [set2] wait for key and new line
 #_0AB623: db $F1 ; [set2] clear message box
-#_0AB624: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB624: db $EB, $E1 ; [set2] phrase E1
 #_0AB626: db $F3 ; [set2] wait for key and new line
 #_0AB627: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -10383,10 +10383,10 @@ Message_02_0D_36:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_37:
 #_0AB649: db $D4, $01, $38 ; [set2] go to message 38 if RNG, 01 TODO
-#_0AB64C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB64C: db $EB, $E1 ; [set2] phrase E1
 #_0AB64E: db $F3 ; [set2] wait for key and new line
 #_0AB64F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -10400,13 +10400,13 @@ Message_02_0D_38:
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
+; «>[MYNAME]を ナカマにしますか?»
 Message_02_0D_39:
 #_0AB659: db $D6, $01, $3B ; [set2] go to message 3B if RNG, 01 TODO
 #_0AB65C: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB65E: db $F3 ; [set2] wait for key and new line
 #_0AB65F: db $F1 ; [set2] clear message box
-#_0AB660: db $EB, $CD ; [set2] prewritten text CD
+#_0AB660: db $EB, $CD ; [set2] phrase CD
 #_0AB662: db $EF, $3A ; [set2] YES/NO - go to message 3A if YES
 #_0AB664: db $E9, $1D ; [set2] go to message 1D
 
@@ -10414,7 +10414,7 @@ Message_02_0D_39:
 
 Message_02_0D_3A:
 #_0AB666: db $E6, $02 ; [set2] [COMMAND 46:02]
-#_0AB668: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AB668: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AB66B: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
 ;===================================================================================================
@@ -10424,7 +10424,7 @@ Message_02_0D_3B:
 #_0AB66E: db $E8, $19 ; [set2] [COMMAND 48:19]
 #_0AB670: db $F3 ; [set2] wait for key and new line
 #_0AB671: db $F1 ; [set2] clear message box
-#_0AB672: db $EB, $D4 ; [set2] prewritten text D4
+#_0AB672: db $EB, $D4 ; [set2] phrase D4
 #_0AB674: db $F3 ; [set2] wait for key and new line
 #_0AB675: db $E9, $00 ; [set2] go to message 00
 
@@ -10455,10 +10455,10 @@ Message_02_0D_3F:
 #_0AB686: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AB688: db $F3 ; [set2] wait for key and new line
 #_0AB689: db $F1 ; [set2] clear message box
-#_0AB68A: db $EB, $ED ; [set2] prewritten text ED
+#_0AB68A: db $EB, $ED ; [set2] phrase ED
 #_0AB68C: db $F3 ; [set2] wait for key and new line
 #_0AB68D: db $F1 ; [set2] clear message box
-#_0AB68E: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB68E: db $EB, $C0 ; [set2] phrase C0
 #_0AB690: db $F2, $01 ; [set2] option list with 2 options
 #_0AB692: db $14, $40 ; option 1 [14]: go to message 40
 #_0AB694: db $21, $1E ; option 2 [21]: go to message 1E
@@ -10505,28 +10505,28 @@ Message_02_0D_44:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_45:
 #_0AB6C4: db $D4, $02, $44 ; [set2] go to message 44 if RNG, 02 TODO
 #_0AB6C7: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB6C9: db $F3 ; [set2] wait for key and new line
 #_0AB6CA: db $F1 ; [set2] clear message box
-#_0AB6CB: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB6CB: db $EB, $E1 ; [set2] phrase E1
 #_0AB6CD: db $F3 ; [set2] wait for key and new line
 #_0AB6CE: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_0D_46:
 #_0AB6D0: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0AB6D2: db $F3 ; [set2] wait for key and new line
 #_0AB6D3: db $F1 ; [set2] clear message box
-#_0AB6D4: db $EB, $C6 ; [set2] prewritten text C6
+#_0AB6D4: db $EB, $C6 ; [set2] phrase C6
 #_0AB6D6: db $F3 ; [set2] wait for key and new line
 #_0AB6D7: db $F1 ; [set2] clear message box
-#_0AB6D8: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB6D8: db $EB, $C0 ; [set2] phrase C0
 #_0AB6DA: db $F2, $01 ; [set2] option list with 2 options
 #_0AB6DC: db $0D, $33 ; option 1 [0D]: go to message 33
 #_0AB6DE: db $15, $47 ; option 2 [15]: go to message 47
@@ -10534,10 +10534,10 @@ Message_02_0D_46:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは»
-; «[DEMONX]を とりこに した»
+; «[MYNAME]を とりこに した»
 Message_02_0D_47:
 #_0AB6E0: db $D8, $02, $48 ; [set2] go to message 48 if LUK < RNG(0, DemonLUK+32)
-#_0AB6E3: db $EB, $EF ; [set2] prewritten text EF
+#_0AB6E3: db $EB, $EF ; [set2] phrase EF
 #_0AB6E5: db $F3 ; [set2] wait for key and new line
 #_0AB6E6: db $F1 ; [set2] clear message box
 #_0AB6E7: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -10558,10 +10558,10 @@ Message_02_0D_48:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0D_49:
-#_0AB6F9: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB6F9: db $EB, $E8 ; [set2] phrase E8
 #_0AB6FB: db $F3 ; [set2] wait for key and new line
 #_0AB6FC: db $F1 ; [set2] clear message box
-#_0AB6FD: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB6FD: db $EB, $C0 ; [set2] phrase C0
 #_0AB6FF: db $F2, $01 ; [set2] option list with 2 options
 #_0AB701: db $14, $40 ; option 1 [14]: go to message 40
 #_0AB703: db $15, $47 ; option 2 [15]: go to message 47
@@ -10573,16 +10573,16 @@ Message_02_0D_4A:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0D_4B:
 #_0AB70A: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AB70C: db $F3 ; [set2] wait for key and new line
 #_0AB70D: db $F1 ; [set2] clear message box
-#_0AB70E: db $EB, $C3 ; [set2] prewritten text C3
+#_0AB70E: db $EB, $C3 ; [set2] phrase C3
 #_0AB710: db $F3 ; [set2] wait for key and new line
 #_0AB711: db $F1 ; [set2] clear message box
-#_0AB712: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB712: db $EB, $C0 ; [set2] phrase C0
 #_0AB714: db $F2, $01 ; [set2] option list with 2 options
 #_0AB716: db $0F, $4C ; option 1 [0F]: go to message 4C
 #_0AB718: db $06, $54 ; option 2 [06]: go to message 54
@@ -10599,28 +10599,28 @@ Message_02_0D_4C:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_4D:
 #_0AB728: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0AB72A: db $F3 ; [set2] wait for key and new line
 #_0AB72B: db $F1 ; [set2] clear message box
-#_0AB72C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB72C: db $EB, $E1 ; [set2] phrase E1
 #_0AB72E: db $F3 ; [set2] wait for key and new line
 #_0AB72F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0D_4E:
 #_0AB731: db $D4, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
 #_0AB734: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB736: db $F3 ; [set2] wait for key and new line
 #_0AB737: db $F1 ; [set2] clear message box
-#_0AB738: db $EB, $C8 ; [set2] prewritten text C8
+#_0AB738: db $EB, $C8 ; [set2] phrase C8
 #_0AB73A: db $F3 ; [set2] wait for key and new line
 #_0AB73B: db $F1 ; [set2] clear message box
-#_0AB73C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB73C: db $EB, $C0 ; [set2] phrase C0
 #_0AB73E: db $F2, $01 ; [set2] option list with 2 options
 #_0AB740: db $01, $4F ; option 1 [01]: go to message 4F
 #_0AB742: db $00, $53 ; option 2 [00]: go to message 53
@@ -10641,16 +10641,16 @@ Message_02_0D_50:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0D_51:
 #_0AB751: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB753: db $F3 ; [set2] wait for key and new line
 #_0AB754: db $F1 ; [set2] clear message box
-#_0AB755: db $EB, $CA ; [set2] prewritten text CA
+#_0AB755: db $EB, $CA ; [set2] phrase CA
 #_0AB757: db $F3 ; [set2] wait for key and new line
 #_0AB758: db $F1 ; [set2] clear message box
-#_0AB759: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB759: db $EB, $C0 ; [set2] phrase C0
 #_0AB75B: db $F2, $01 ; [set2] option list with 2 options
 #_0AB75D: db $14, $5C ; option 1 [14]: go to message 5C
 #_0AB75F: db $06, $52 ; option 2 [06]: go to message 52
@@ -10662,7 +10662,7 @@ Message_02_0D_52:
 #_0AB761: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AB763: db $F3 ; [set2] wait for key and new line
 #_0AB764: db $F1 ; [set2] clear message box
-#_0AB765: db $EB, $ED ; [set2] prewritten text ED
+#_0AB765: db $EB, $ED ; [set2] phrase ED
 #_0AB767: db $F3 ; [set2] wait for key and new line
 #_0AB768: db $E6, $FF ; [set2] [COMMAND 46:FF]
 #_0AB76A: db $E9, $00 ; [set2] go to message 00
@@ -10680,12 +10680,12 @@ Message_02_0D_54:
 
 ;===================================================================================================
 
-; «>[DEMONX]を ナカマにしますか?»
+; «>[MYNAME]を ナカマにしますか?»
 Message_02_0D_55:
 #_0AB776: db $E8, $20 ; [set2] [COMMAND 48:20]
 #_0AB778: db $F3 ; [set2] wait for key and new line
 #_0AB779: db $F1 ; [set2] clear message box
-#_0AB77A: db $EB, $CD ; [set2] prewritten text CD
+#_0AB77A: db $EB, $CD ; [set2] phrase CD
 #_0AB77C: db $EF, $26 ; [set2] YES/NO - go to message 26 if YES
 #_0AB77E: db $E9, $2F ; [set2] go to message 2F
 
@@ -10725,10 +10725,10 @@ Message_02_0D_59:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0D_5A:
-#_0AB79C: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB79C: db $EB, $E8 ; [set2] phrase E8
 #_0AB79E: db $F3 ; [set2] wait for key and new line
 #_0AB79F: db $F1 ; [set2] clear message box
-#_0AB7A0: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB7A0: db $EB, $C0 ; [set2] phrase C0
 #_0AB7A2: db $F2, $01 ; [set2] option list with 2 options
 #_0AB7A4: db $04, $5B ; option 1 [04]: go to message 5B
 #_0AB7A6: db $14, $5C ; option 2 [14]: go to message 5C
@@ -10753,12 +10753,12 @@ Message_02_0D_5D:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0D_5E:
 #_0AB7BA: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB7BC: db $F3 ; [set2] wait for key and new line
 #_0AB7BD: db $F1 ; [set2] clear message box
-#_0AB7BE: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB7BE: db $EB, $E1 ; [set2] phrase E1
 #_0AB7C0: db $F3 ; [set2] wait for key and new line
 #_0AB7C1: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -10772,16 +10772,16 @@ Message_02_0D_5F:
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_0D_60:
 #_0AB7CB: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AB7CD: db $F3 ; [set2] wait for key and new line
 #_0AB7CE: db $F1 ; [set2] clear message box
-#_0AB7CF: db $EB, $C7 ; [set2] prewritten text C7
+#_0AB7CF: db $EB, $C7 ; [set2] phrase C7
 #_0AB7D1: db $F3 ; [set2] wait for key and new line
 #_0AB7D2: db $F1 ; [set2] clear message box
-#_0AB7D3: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB7D3: db $EB, $C0 ; [set2] phrase C0
 #_0AB7D5: db $F2, $01 ; [set2] option list with 2 options
 #_0AB7D7: db $05, $61 ; option 1 [05]: go to message 61
 #_0AB7D9: db $29, $65 ; option 2 [29]: go to message 65
@@ -10816,17 +10816,17 @@ Message_02_0D_64:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0D_65:
 #_0AB7F6: db $D6, $00, $6C ; [set2] go to message 6C if RNG, 00 TODO
 #_0AB7F9: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB7FB: db $F3 ; [set2] wait for key and new line
 #_0AB7FC: db $F1 ; [set2] clear message box
-#_0AB7FD: db $EB, $C8 ; [set2] prewritten text C8
+#_0AB7FD: db $EB, $C8 ; [set2] phrase C8
 #_0AB7FF: db $F3 ; [set2] wait for key and new line
 #_0AB800: db $F1 ; [set2] clear message box
-#_0AB801: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB801: db $EB, $C0 ; [set2] phrase C0
 #_0AB803: db $F2, $01 ; [set2] option list with 2 options
 #_0AB805: db $00, $66 ; option 1 [00]: go to message 66
 #_0AB807: db $01, $69 ; option 2 [01]: go to message 69
@@ -10838,13 +10838,13 @@ Message_02_0D_66:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0D_67:
 #_0AB80E: db $DA, $01, $68 ; [set2] ext command 01: go to message 68 if MC INT = 0
 #_0AB811: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB813: db $F3 ; [set2] wait for key and new line
 #_0AB814: db $F1 ; [set2] clear message box
-#_0AB815: db $EB, $C5 ; [set2] prewritten text C5
+#_0AB815: db $EB, $C5 ; [set2] phrase C5
 #_0AB817: db $F3 ; [set2] wait for key and new line
 #_0AB818: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -10860,13 +10860,13 @@ Message_02_0D_69:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ちかづいてきた»
+; «>[MYNAME]は ちかづいてきた»
 ; «どうしますか?»
 Message_02_0D_6A:
-#_0AB822: db $EB, $E9 ; [set2] prewritten text E9
+#_0AB822: db $EB, $E9 ; [set2] phrase E9
 #_0AB824: db $F3 ; [set2] wait for key and new line
 #_0AB825: db $F1 ; [set2] clear message box
-#_0AB826: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB826: db $EB, $C0 ; [set2] phrase C0
 #_0AB828: db $F2, $01 ; [set2] option list with 2 options
 #_0AB82A: db $00, $0F ; option 1 [00]: go to message 0F
 #_0AB82C: db $01, $6B ; option 2 [01]: go to message 6B
@@ -10879,13 +10879,13 @@ Message_02_0D_6B:
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
 Message_02_0D_6C:
 #_0AB833: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AB835: db $EF, $6D ; [set2] YES/NO - go to message 6D if YES
 #_0AB837: db $D6, $01, $0F ; [set2] go to message 0F if RNG, 01 TODO
-#_0AB83A: db $EB, $EA ; [set2] prewritten text EA
+#_0AB83A: db $EB, $EA ; [set2] phrase EA
 #_0AB83C: db $EF, $23 ; [set2] YES/NO - go to message 23 if YES
 #_0AB83E: db $E9, $1D ; [set2] go to message 1D
 
@@ -10903,15 +10903,15 @@ Message_02_0D_6D:
 
 Message_02_0D_6E:
 #_0AB84D: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0AB84F: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
+#_0AB84F: db $FB, $01, $EA ; [set2] set progress flag EA
 #_0AB852: db $F7, $20, $80 ; [set2] [COMMAND 57] $20 $80 TODO
 
 ;===================================================================================================
 
 ; «>[CHASE]は»
-; «[DEMONX]に みいられた»
+; «[MYNAME]に みいられた»
 Message_02_0D_6F:
-#_0AB855: db $EB, $F5 ; [set2] prewritten text F5
+#_0AB855: db $EB, $F5 ; [set2] phrase F5
 #_0AB857: db $F3 ; [set2] wait for key and new line
 #_0AB858: db $F1 ; [set2] clear message box
 #_0AB859: db $DF, $08 ; [set2] inflict status: charm
@@ -10928,16 +10928,16 @@ Message_02_0E_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0E_01:
 #_0AB869: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AB86B: db $F3 ; [set2] wait for key and new line
 #_0AB86C: db $F1 ; [set2] clear message box
-#_0AB86D: db $EB, $C8 ; [set2] prewritten text C8
+#_0AB86D: db $EB, $C8 ; [set2] phrase C8
 #_0AB86F: db $F3 ; [set2] wait for key and new line
 #_0AB870: db $F1 ; [set2] clear message box
-#_0AB871: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB871: db $EB, $C0 ; [set2] phrase C0
 #_0AB873: db $F2, $01 ; [set2] option list with 2 options
 #_0AB875: db $00, $02 ; option 1 [00]: go to message 02
 #_0AB877: db $01, $1D ; option 2 [01]: go to message 1D
@@ -10959,7 +10959,7 @@ Message_02_0E_04:
 #_0AB881: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AB883: db $F3 ; [set2] wait for key and new line
 #_0AB884: db $F1 ; [set2] clear message box
-#_0AB885: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB885: db $EB, $C0 ; [set2] phrase C0
 #_0AB887: db $F2, $01 ; [set2] option list with 2 options
 #_0AB889: db $02, $05 ; option 1 [02]: go to message 05
 #_0AB88B: db $03, $0A ; option 2 [03]: go to message 0A
@@ -10982,16 +10982,16 @@ Message_02_0E_06:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0E_07:
 #_0AB89D: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0AB89F: db $F3 ; [set2] wait for key and new line
 #_0AB8A0: db $F1 ; [set2] clear message box
 #_0AB8A1: db $DD ; [set2] [COMMAND 3D]
-#_0AB8A2: db $EB, $C2 ; [set2] prewritten text C2
+#_0AB8A2: db $EB, $C2 ; [set2] phrase C2
 #_0AB8A4: db $F3 ; [set2] wait for key and new line
 #_0AB8A5: db $F1 ; [set2] clear message box
-#_0AB8A6: db $EB, $E2 ; [set2] prewritten text E2
+#_0AB8A6: db $EB, $E2 ; [set2] phrase E2
 #_0AB8A8: db $F3 ; [set2] wait for key and new line
 #_0AB8A9: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -11004,12 +11004,12 @@ Message_02_0E_08:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0E_09:
 #_0AB8B0: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB8B2: db $F3 ; [set2] wait for key and new line
 #_0AB8B3: db $F1 ; [set2] clear message box
-#_0AB8B4: db $EB, $E2 ; [set2] prewritten text E2
+#_0AB8B4: db $EB, $E2 ; [set2] phrase E2
 #_0AB8B6: db $F3 ; [set2] wait for key and new line
 #_0AB8B7: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -11035,10 +11035,10 @@ Message_02_0E_0C:
 #_0AB8C9: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0AB8CB: db $F3 ; [set2] wait for key and new line
 #_0AB8CC: db $F1 ; [set2] clear message box
-#_0AB8CD: db $EB, $ED ; [set2] prewritten text ED
+#_0AB8CD: db $EB, $ED ; [set2] phrase ED
 #_0AB8CF: db $F3 ; [set2] wait for key and new line
 #_0AB8D0: db $F1 ; [set2] clear message box
-#_0AB8D1: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB8D1: db $EB, $C0 ; [set2] phrase C0
 #_0AB8D3: db $F2, $01 ; [set2] option list with 2 options
 #_0AB8D5: db $0E, $0D ; option 1 [0E]: go to message 0D
 #_0AB8D7: db $21, $0F ; option 2 [21]: go to message 0F
@@ -11062,12 +11062,12 @@ Message_02_0E_0E:
 ;===================================================================================================
 
 ; «>[CHASE]の うたは»
-; «[CLASSX] [DEMONX]を とりこにした»
+; «[MYCLASS] [MYNAME]を とりこにした»
 Message_02_0E_0F:
 #_0AB8EA: db $D8, $01, $11 ; [set2] go to message 11 if LUK < RNG(0, DemonLUK+16)
 #_0AB8ED: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0AB8EF: db $D4, $00, $10 ; [set2] go to message 10 if RNG, 00 TODO
-#_0AB8F2: db $EB, $E7 ; [set2] prewritten text E7
+#_0AB8F2: db $EB, $E7 ; [set2] phrase E7
 #_0AB8F4: db $F3 ; [set2] wait for key and new line
 #_0AB8F5: db $F1 ; [set2] clear message box
 #_0AB8F6: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -11092,16 +11092,16 @@ Message_02_0E_11:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0E_12:
 #_0AB90B: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AB90D: db $F3 ; [set2] wait for key and new line
 #_0AB90E: db $F1 ; [set2] clear message box
-#_0AB90F: db $EB, $CA ; [set2] prewritten text CA
+#_0AB90F: db $EB, $CA ; [set2] phrase CA
 #_0AB911: db $F3 ; [set2] wait for key and new line
 #_0AB912: db $F1 ; [set2] clear message box
-#_0AB913: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB913: db $EB, $C0 ; [set2] phrase C0
 #_0AB915: db $F2, $01 ; [set2] option list with 2 options
 #_0AB917: db $14, $13 ; option 1 [14]: go to message 13
 #_0AB919: db $06, $19 ; option 2 [06]: go to message 19
@@ -11130,14 +11130,14 @@ Message_02_0E_15:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0E_16:
 #_0AB933: db $DA, $01, $23 ; [set2] ext command 01: go to message 23 if MC INT = 0
 #_0AB936: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB938: db $F3 ; [set2] wait for key and new line
 #_0AB939: db $F1 ; [set2] clear message box
 #_0AB93A: db $E5, $01 ; [set2] [COMMAND 45:01]
-#_0AB93C: db $EB, $C5 ; [set2] prewritten text C5
+#_0AB93C: db $EB, $C5 ; [set2] phrase C5
 #_0AB93E: db $F3 ; [set2] wait for key and new line
 #_0AB93F: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -11149,12 +11149,12 @@ Message_02_0E_17:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_18:
 #_0AB946: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0AB948: db $F3 ; [set2] wait for key and new line
 #_0AB949: db $F1 ; [set2] clear message box
-#_0AB94A: db $EB, $E1 ; [set2] prewritten text E1
+#_0AB94A: db $EB, $E1 ; [set2] phrase E1
 #_0AB94C: db $F3 ; [set2] wait for key and new line
 #_0AB94D: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -11167,7 +11167,7 @@ Message_02_0E_19:
 #_0AB955: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AB957: db $F3 ; [set2] wait for key and new line
 #_0AB958: db $F1 ; [set2] clear message box
-#_0AB959: db $EB, $ED ; [set2] prewritten text ED
+#_0AB959: db $EB, $ED ; [set2] phrase ED
 #_0AB95B: db $F3 ; [set2] wait for key and new line
 #_0AB95C: db $E9, $00 ; [set2] go to message 00
 
@@ -11188,13 +11188,13 @@ Message_02_0E_1B:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0E_1C:
 #_0AB96C: db $DA, $01, $03 ; [set2] ext command 01: go to message 03 if MC INT = 0
 #_0AB96F: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0AB971: db $F3 ; [set2] wait for key and new line
 #_0AB972: db $F1 ; [set2] clear message box
-#_0AB973: db $EB, $C5 ; [set2] prewritten text C5
+#_0AB973: db $EB, $C5 ; [set2] phrase C5
 #_0AB975: db $F3 ; [set2] wait for key and new line
 #_0AB976: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -11226,14 +11226,14 @@ Message_02_0E_20:
 
 ;===================================================================================================
 
-; «>[DEMONX]は なんたいかにげだした»
+; «>[MYNAME]は なんたいかにげだした»
 Message_02_0E_21:
 #_0AB993: db $D7, $00, $22 ; [set2] go to message 22 if LUK < RNG(0, 16)
 #_0AB996: db $E8, $05 ; [set2] [COMMAND 48:05]
 #_0AB998: db $F3 ; [set2] wait for key and new line
 #_0AB999: db $F1 ; [set2] clear message box
 #_0AB99A: db $DA, $02, $46 ; [set2] ext command 02: add 70 to alignment if progress flag FB
-#_0AB99D: db $EB, $CB ; [set2] prewritten text CB
+#_0AB99D: db $EB, $CB ; [set2] phrase CB
 #_0AB99F: db $F3 ; [set2] wait for key and new line
 #_0AB9A0: db $FE, $05 ; [set2] [COMMAND 5E:05]
 
@@ -11250,10 +11250,10 @@ Message_02_0E_22:
 ; «どうしますか?»
 Message_02_0E_23:
 #_0AB9A7: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
-#_0AB9AA: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB9AA: db $EB, $E8 ; [set2] phrase E8
 #_0AB9AC: db $F3 ; [set2] wait for key and new line
 #_0AB9AD: db $F1 ; [set2] clear message box
-#_0AB9AE: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB9AE: db $EB, $C0 ; [set2] phrase C0
 #_0AB9B0: db $F2, $01 ; [set2] option list with 2 options
 #_0AB9B2: db $08, $24 ; option 1 [08]: go to message 24
 #_0AB9B4: db $14, $3C ; option 2 [14]: go to message 3C
@@ -11266,10 +11266,10 @@ Message_02_0E_24:
 #_0AB9B6: db $D8, $01, $30 ; [set2] go to message 30 if LUK < RNG(0, DemonLUK+16)
 #_0AB9B9: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0AB9BB: db $D4, $01, $2C ; [set2] go to message 2C if RNG, 01 TODO
-#_0AB9BE: db $EB, $E8 ; [set2] prewritten text E8
+#_0AB9BE: db $EB, $E8 ; [set2] phrase E8
 #_0AB9C0: db $F3 ; [set2] wait for key and new line
 #_0AB9C1: db $F1 ; [set2] clear message box
-#_0AB9C2: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB9C2: db $EB, $C0 ; [set2] phrase C0
 #_0AB9C4: db $F2, $01 ; [set2] option list with 2 options
 #_0AB9C6: db $28, $25 ; option 1 [28]: go to message 25
 #_0AB9C8: db $20, $29 ; option 2 [20]: go to message 29
@@ -11288,13 +11288,13 @@ Message_02_0E_26:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ちかづいてきた»
+; «>[MYNAME]は ちかづいてきた»
 ; «どうしますか?»
 Message_02_0E_27:
-#_0AB9D4: db $EB, $E9 ; [set2] prewritten text E9
+#_0AB9D4: db $EB, $E9 ; [set2] phrase E9
 #_0AB9D6: db $F3 ; [set2] wait for key and new line
 #_0AB9D7: db $F1 ; [set2] clear message box
-#_0AB9D8: db $EB, $C0 ; [set2] prewritten text C0
+#_0AB9D8: db $EB, $C0 ; [set2] phrase C0
 #_0AB9DA: db $F2, $01 ; [set2] option list with 2 options
 #_0AB9DC: db $00, $03 ; option 1 [00]: go to message 03
 #_0AB9DE: db $0C, $28 ; option 2 [0C]: go to message 28
@@ -11302,7 +11302,7 @@ Message_02_0E_27:
 ;===================================================================================================
 
 Message_02_0E_28:
-#_0AB9E0: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AB9E0: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AB9E3: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
 #_0AB9E6: db $D8, $01, $37 ; [set2] go to message 37 if LUK < RNG(0, DemonLUK+16)
 #_0AB9E9: db $E9, $36 ; [set2] go to message 36
@@ -11323,19 +11323,19 @@ Message_02_0E_2A:
 
 ;===================================================================================================
 
-; «>[DEMONX]は なんたいかにげだした»
+; «>[MYNAME]は なんたいかにげだした»
 Message_02_0E_2B:
 #_0AB9FA: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AB9FC: db $F3 ; [set2] wait for key and new line
 #_0AB9FD: db $F1 ; [set2] clear message box
 #_0AB9FE: db $DA, $02, $3A ; [set2] ext command 02: add 58 to alignment if progress flag FB
-#_0ABA01: db $EB, $CB ; [set2] prewritten text CB
+#_0ABA01: db $EB, $CB ; [set2] phrase CB
 #_0ABA03: db $F3 ; [set2] wait for key and new line
 #_0ABA04: db $FE, $05 ; [set2] [COMMAND 5E:05]
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0E_2C:
 #_0ABA06: db $E8, $20 ; [set2] [COMMAND 48:20]
@@ -11343,10 +11343,10 @@ Message_02_0E_2C:
 #_0ABA0A: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABA0C: db $F3 ; [set2] wait for key and new line
 #_0ABA0D: db $F1 ; [set2] clear message box
-#_0ABA0E: db $EB, $D0 ; [set2] prewritten text D0
+#_0ABA0E: db $EB, $D0 ; [set2] phrase D0
 #_0ABA10: db $F3 ; [set2] wait for key and new line
 #_0ABA11: db $F1 ; [set2] clear message box
-#_0ABA12: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABA12: db $EB, $C0 ; [set2] phrase C0
 #_0ABA14: db $F2, $01 ; [set2] option list with 2 options
 #_0ABA16: db $0A, $2D ; option 1 [0A]: go to message 2D
 #_0ABA18: db $0B, $3A ; option 2 [0B]: go to message 3A
@@ -11359,50 +11359,50 @@ Message_02_0E_2D:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_2E:
 #_0ABA1F: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0ABA21: db $F3 ; [set2] wait for key and new line
 #_0ABA22: db $F1 ; [set2] clear message box
-#_0ABA23: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABA23: db $EB, $E1 ; [set2] phrase E1
 #_0ABA25: db $F3 ; [set2] wait for key and new line
 #_0ABA26: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
 Message_02_0E_2F:
-#_0ABA28: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0ABA28: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0ABA2B: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0E_30:
 #_0ABA2E: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0ABA30: db $F3 ; [set2] wait for key and new line
 #_0ABA31: db $F1 ; [set2] clear message box
-#_0ABA32: db $EB, $C3 ; [set2] prewritten text C3
+#_0ABA32: db $EB, $C3 ; [set2] phrase C3
 #_0ABA34: db $F3 ; [set2] wait for key and new line
 #_0ABA35: db $F1 ; [set2] clear message box
-#_0ABA36: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABA36: db $EB, $C0 ; [set2] phrase C0
 #_0ABA38: db $F2, $01 ; [set2] option list with 2 options
 #_0ABA3A: db $0F, $31 ; option 1 [0F]: go to message 31
 #_0ABA3C: db $0C, $34 ; option 2 [0C]: go to message 34
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0E_31:
 #_0ABA3E: db $D5, $01, $04 ; [set2] go to message 04 if RNG, 01 TODO
 #_0ABA41: db $E8, $08 ; [set2] [COMMAND 48:08]
 #_0ABA43: db $F3 ; [set2] wait for key and new line
 #_0ABA44: db $F1 ; [set2] clear message box
-#_0ABA45: db $EB, $C8 ; [set2] prewritten text C8
+#_0ABA45: db $EB, $C8 ; [set2] phrase C8
 #_0ABA47: db $F3 ; [set2] wait for key and new line
 #_0ABA48: db $F1 ; [set2] clear message box
-#_0ABA49: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABA49: db $EB, $C0 ; [set2] phrase C0
 #_0ABA4B: db $F2, $01 ; [set2] option list with 2 options
 #_0ABA4D: db $03, $32 ; option 1 [03]: go to message 32
 #_0ABA4F: db $1B, $33 ; option 2 [1B]: go to message 33
@@ -11427,19 +11427,19 @@ Message_02_0E_33:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0E_34:
 #_0ABA67: db $E5, $01 ; [set2] [COMMAND 45:01]
-#_0ABA69: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0ABA69: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0ABA6C: db $D7, $01, $3B ; [set2] go to message 3B if LUK < RNG(0, 32)
 #_0ABA6F: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0ABA71: db $F3 ; [set2] wait for key and new line
 #_0ABA72: db $F1 ; [set2] clear message box
-#_0ABA73: db $EB, $C4 ; [set2] prewritten text C4
+#_0ABA73: db $EB, $C4 ; [set2] phrase C4
 #_0ABA75: db $F3 ; [set2] wait for key and new line
 #_0ABA76: db $F1 ; [set2] clear message box
-#_0ABA77: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABA77: db $EB, $C0 ; [set2] phrase C0
 #_0ABA79: db $F2, $01 ; [set2] option list with 2 options
 #_0ABA7B: db $0D, $35 ; option 1 [0D]: go to message 35
 #_0ABA7D: db $06, $39 ; option 2 [06]: go to message 39
@@ -11485,9 +11485,9 @@ Message_02_0E_39:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_3A:
-#_0ABAA3: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABAA3: db $EB, $E1 ; [set2] phrase E1
 #_0ABAA5: db $F3 ; [set2] wait for key and new line
 #_0ABAA6: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -11547,7 +11547,7 @@ Message_02_0E_41:
 #_0ABADF: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0ABAE1: db $F3 ; [set2] wait for key and new line
 #_0ABAE2: db $F1 ; [set2] clear message box
-#_0ABAE3: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABAE3: db $EB, $C0 ; [set2] phrase C0
 #_0ABAE5: db $F2, $01 ; [set2] option list with 2 options
 #_0ABAE7: db $0C, $42 ; option 1 [0C]: go to message 42
 #_0ABAE9: db $0D, $48 ; option 2 [0D]: go to message 48
@@ -11555,7 +11555,7 @@ Message_02_0E_41:
 ;===================================================================================================
 
 Message_02_0E_42:
-#_0ABAEB: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0ABAEB: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0ABAEE: db $D4, $00, $43 ; [set2] go to message 43 if RNG, 00 TODO
 #_0ABAF1: db $D7, $01, $3B ; [set2] go to message 3B if LUK < RNG(0, 32)
 #_0ABAF4: db $E8, $09 ; [set2] [COMMAND 48:09]
@@ -11565,16 +11565,16 @@ Message_02_0E_42:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0E_43:
 #_0ABAFC: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0ABAFE: db $F3 ; [set2] wait for key and new line
 #_0ABAFF: db $F1 ; [set2] clear message box
-#_0ABB00: db $EB, $C4 ; [set2] prewritten text C4
+#_0ABB00: db $EB, $C4 ; [set2] phrase C4
 #_0ABB02: db $F3 ; [set2] wait for key and new line
 #_0ABB03: db $F1 ; [set2] clear message box
-#_0ABB04: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABB04: db $EB, $C0 ; [set2] phrase C0
 #_0ABB06: db $F2, $01 ; [set2] option list with 2 options
 #_0ABB08: db $0D, $44 ; option 1 [0D]: go to message 44
 #_0ABB0A: db $06, $45 ; option 2 [06]: go to message 45
@@ -11595,28 +11595,28 @@ Message_02_0E_45:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0E_46:
 #_0ABB19: db $F1 ; [set2] clear message box
-#_0ABB1A: db $EB, $E2 ; [set2] prewritten text E2
+#_0ABB1A: db $EB, $E2 ; [set2] phrase E2
 #_0ABB1C: db $F3 ; [set2] wait for key and new line
 #_0ABB1D: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_47:
 #_0ABB1F: db $F1 ; [set2] clear message box
 #_0ABB20: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0ABB22: db $F3 ; [set2] wait for key and new line
 #_0ABB23: db $F1 ; [set2] clear message box
-#_0ABB24: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABB24: db $EB, $E1 ; [set2] phrase E1
 #_0ABB26: db $F3 ; [set2] wait for key and new line
 #_0ABB27: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_48:
 #_0ABB29: db $D5, $01, $4A ; [set2] go to message 4A if RNG, 01 TODO
 #_0ABB2C: db $D4, $01, $09 ; [set2] go to message 09 if RNG, 01 TODO
@@ -11628,18 +11628,18 @@ Message_02_0E_48:
 #_0ABB39: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABB3B: db $F3 ; [set2] wait for key and new line
 #_0ABB3C: db $F1 ; [set2] clear message box
-#_0ABB3D: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABB3D: db $EB, $E1 ; [set2] phrase E1
 #_0ABB3F: db $F3 ; [set2] wait for key and new line
 #_0ABB40: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; >[DEMONX]は きょうふのあまり
+; >[MYNAME]は きょうふのあまり
 ; にげだした
 Message_02_0E_49:
 #_0ABB42: db $D4, $00, $07 ; [set2] go to message 07 if RNG, 00 TODO
 #_0ABB45: db $97 ; >
-#_0ABB46: db $ED ; [set2] write demon name indexed from $0526
+#_0ABB46: db $ED ; [set2] write name of speaker
 #_0ABB47: db $3E, $CF, $2B, $57, $27, $40, $3D, $25 ; は⎵きょうふのあ
 #_0ABB4F: db $43, $4C ; まり
 #_0ABB51: db $F0 ; [set2] new line
@@ -11649,13 +11649,13 @@ Message_02_0E_49:
 
 ;===================================================================================================
 
-; «>[DEMONX]は あばれだした!»
+; «>[MYNAME]は あばれだした!»
 Message_02_0E_4A:
 #_0ABB5A: db $D4, $00, $1C ; [set2] go to message 1C if RNG, 00 TODO
 #_0ABB5D: db $E8, $35 ; [set2] [COMMAND 48:35]
 #_0ABB5F: db $F3 ; [set2] wait for key and new line
 #_0ABB60: db $F1 ; [set2] clear message box
-#_0ABB61: db $EB, $49 ; [set2] prewritten text 49
+#_0ABB61: db $EB, $49 ; [set2] phrase 49
 #_0ABB63: db $F3 ; [set2] wait for key and new line
 #_0ABB64: db $F7, $1F, $80 ; [set2] [COMMAND 57] $1F $80 TODO
 
@@ -11703,22 +11703,22 @@ Message_02_0E_4F:
 ;===================================================================================================
 
 Message_02_0E_50:
-#_0ABB91: db $FB, $00, $E7 ; [set2] [COMMAND 5B] set progress flag E7 if 00 is nonzero; otherwise reset
+#_0ABB91: db $FB, $00, $E7 ; [set2] clear progress flag E7
 #_0ABB94: db $F7, $1A, $80 ; [set2] [COMMAND 57] $1A $80 TODO
 
 ;===================================================================================================
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_51:
 #_0ABB97: db $F1 ; [set2] clear message box
 #_0ABB98: db $DD ; [set2] [COMMAND 3D]
-#_0ABB99: db $EB, $C2 ; [set2] prewritten text C2
+#_0ABB99: db $EB, $C2 ; [set2] phrase C2
 #_0ABB9B: db $F3 ; [set2] wait for key and new line
 #_0ABB9C: db $F1 ; [set2] clear message box
-#_0ABB9D: db $FB, $00, $E8 ; [set2] [COMMAND 5B] set progress flag E8 if 00 is nonzero; otherwise reset
-#_0ABBA0: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABB9D: db $FB, $00, $E8 ; [set2] clear progress flag E8
+#_0ABBA0: db $EB, $E1 ; [set2] phrase E1
 #_0ABBA2: db $F3 ; [set2] wait for key and new line
 #_0ABBA3: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -11734,16 +11734,16 @@ Message_02_0E_53:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0E_54:
 #_0ABBAD: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0ABBAF: db $F3 ; [set2] wait for key and new line
 #_0ABBB0: db $F1 ; [set2] clear message box
-#_0ABBB1: db $EB, $C3 ; [set2] prewritten text C3
+#_0ABBB1: db $EB, $C3 ; [set2] phrase C3
 #_0ABBB3: db $F3 ; [set2] wait for key and new line
 #_0ABBB4: db $F1 ; [set2] clear message box
-#_0ABBB5: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABBB5: db $EB, $C0 ; [set2] phrase C0
 #_0ABBB7: db $F2, $01 ; [set2] option list with 2 options
 #_0ABBB9: db $0E, $55 ; option 1 [0E]: go to message 55
 #_0ABBBB: db $0F, $64 ; option 2 [0F]: go to message 64
@@ -11766,12 +11766,12 @@ Message_02_0E_56:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_57:
 #_0ABBD1: db $E8, $2E ; [set2] [COMMAND 48:2E]
 #_0ABBD3: db $F3 ; [set2] wait for key and new line
 #_0ABBD4: db $F1 ; [set2] clear message box
-#_0ABBD5: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABBD5: db $EB, $E1 ; [set2] phrase E1
 #_0ABBD7: db $F3 ; [set2] wait for key and new line
 #_0ABBD8: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -11783,10 +11783,10 @@ Message_02_0E_58:
 #_0ABBDA: db $E8, $13 ; [set2] [COMMAND 48:13]
 #_0ABBDC: db $F3 ; [set2] wait for key and new line
 #_0ABBDD: db $F1 ; [set2] clear message box
-#_0ABBDE: db $EB, $ED ; [set2] prewritten text ED
+#_0ABBDE: db $EB, $ED ; [set2] phrase ED
 #_0ABBE0: db $F3 ; [set2] wait for key and new line
 #_0ABBE1: db $F1 ; [set2] clear message box
-#_0ABBE2: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABBE2: db $EB, $C0 ; [set2] phrase C0
 #_0ABBE4: db $F2, $01 ; [set2] option list with 2 options
 #_0ABBE6: db $21, $59 ; option 1 [21]: go to message 59
 #_0ABBE8: db $22, $5B ; option 2 [22]: go to message 5B
@@ -11802,7 +11802,7 @@ Message_02_0E_59:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_5A:
 #_0ABBF2: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0ABBF4: db $F0 ; [set2] new line
@@ -11810,10 +11810,10 @@ Message_02_0E_5A:
 #_0ABBF7: db $F3 ; [set2] wait for key and new line
 #_0ABBF8: db $F1 ; [set2] clear message box
 #_0ABBF9: db $DD ; [set2] [COMMAND 3D]
-#_0ABBFA: db $EB, $C2 ; [set2] prewritten text C2
+#_0ABBFA: db $EB, $C2 ; [set2] phrase C2
 #_0ABBFC: db $F3 ; [set2] wait for key and new line
 #_0ABBFD: db $F1 ; [set2] clear message box
-#_0ABBFE: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABBFE: db $EB, $E1 ; [set2] phrase E1
 #_0ABC00: db $F3 ; [set2] wait for key and new line
 #_0ABC01: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -11830,10 +11830,10 @@ Message_02_0E_5B:
 
 ;===================================================================================================
 
-; «>[DEMONX]に すきが できた»
+; «>[MYNAME]に すきが できた»
 ; «こうげき しますか?»
 Message_02_0E_5C:
-#_0ABC14: db $EB, $EA ; [set2] prewritten text EA
+#_0ABC14: db $EB, $EA ; [set2] phrase EA
 #_0ABC16: db $EF, $5D ; [set2] YES/NO - go to message 5D if YES
 #_0ABC18: db $E8, $10 ; [set2] [COMMAND 48:10]
 #_0ABC1A: db $F3 ; [set2] wait for key and new line
@@ -11848,19 +11848,19 @@ Message_02_0E_5D:
 
 ;===================================================================================================
 
-; «>[DEMONX]も つられて おどりだした!»
+; «>[MYNAME]も つられて おどりだした!»
 ; «このまま おどりますか?»
 Message_02_0E_5E:
-#_0ABC23: db $EB, $EB ; [set2] prewritten text EB
+#_0ABC23: db $EB, $EB ; [set2] phrase EB
 #_0ABC25: db $EF, $5F ; [set2] YES/NO - go to message 5F if YES
 #_0ABC27: db $E9, $2E ; [set2] go to message 2E
 
 ;===================================================================================================
 
-; «>[CHASE]と [DEMONX]は»
+; «>[CHASE]と [MYNAME]は»
 ; «ひとばんじゅう おどりあかした!»
 Message_02_0E_5F:
-#_0ABC29: db $EB, $EC ; [set2] prewritten text EC
+#_0ABC29: db $EB, $EC ; [set2] phrase EC
 #_0ABC2B: db $F3 ; [set2] wait for key and new line
 #_0ABC2C: db $F1 ; [set2] clear message box
 #_0ABC2D: db $E1, $02 ; [set2] remove 1/8 of player's hp
@@ -11870,16 +11870,16 @@ Message_02_0E_5F:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おだてに おこった»
+; «>[MYNAME]は おだてに おこった»
 ; «どうしますか?»
 Message_02_0E_60:
 #_0ABC34: db $E8, $2A ; [set2] [COMMAND 48:2A]
 #_0ABC36: db $F3 ; [set2] wait for key and new line
 #_0ABC37: db $F1 ; [set2] clear message box
-#_0ABC38: db $EB, $CE ; [set2] prewritten text CE
+#_0ABC38: db $EB, $CE ; [set2] phrase CE
 #_0ABC3A: db $F3 ; [set2] wait for key and new line
 #_0ABC3B: db $F1 ; [set2] clear message box
-#_0ABC3C: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABC3C: db $EB, $C0 ; [set2] phrase C0
 #_0ABC3E: db $F2, $01 ; [set2] option list with 2 options
 #_0ABC40: db $11, $61 ; option 1 [11]: go to message 61
 #_0ABC42: db $12, $63 ; option 2 [12]: go to message 63
@@ -11923,10 +11923,10 @@ Message_02_0E_65:
 ; «どうしますか?»
 Message_02_0E_66:
 #_0ABC61: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
-#_0ABC64: db $EB, $E8 ; [set2] prewritten text E8
+#_0ABC64: db $EB, $E8 ; [set2] phrase E8
 #_0ABC66: db $F3 ; [set2] wait for key and new line
 #_0ABC67: db $F1 ; [set2] clear message box
-#_0ABC68: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABC68: db $EB, $C0 ; [set2] phrase C0
 #_0ABC6A: db $F2, $01 ; [set2] option list with 2 options
 #_0ABC6C: db $08, $67 ; option 1 [08]: go to message 67
 #_0ABC6E: db $14, $77 ; option 2 [14]: go to message 77
@@ -11939,10 +11939,10 @@ Message_02_0E_67:
 #_0ABC70: db $D8, $01, $75 ; [set2] go to message 75 if LUK < RNG(0, DemonLUK+16)
 #_0ABC73: db $E5, $03 ; [set2] [COMMAND 45:03]
 #_0ABC75: db $D4, $01, $6A ; [set2] go to message 6A if RNG, 01 TODO
-#_0ABC78: db $EB, $E8 ; [set2] prewritten text E8
+#_0ABC78: db $EB, $E8 ; [set2] phrase E8
 #_0ABC7A: db $F3 ; [set2] wait for key and new line
 #_0ABC7B: db $F1 ; [set2] clear message box
-#_0ABC7C: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABC7C: db $EB, $C0 ; [set2] phrase C0
 #_0ABC7E: db $F2, $01 ; [set2] option list with 2 options
 #_0ABC80: db $28, $68 ; option 1 [28]: go to message 68
 #_0ABC82: db $20, $29 ; option 2 [20]: go to message 29
@@ -11956,22 +11956,22 @@ Message_02_0E_68:
 
 ; «・・・・・・・・・・・・・ ・ ・ ・»
 Message_02_0E_69:
-#_0ABC89: db $EB, $EE ; [set2] prewritten text EE
+#_0ABC89: db $EB, $EE ; [set2] phrase EE
 #_0ABC8B: db $F3 ; [set2] wait for key and new line
 #_0ABC8C: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0E_6A:
 #_0ABC8E: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0ABC90: db $F3 ; [set2] wait for key and new line
 #_0ABC91: db $F1 ; [set2] clear message box
-#_0ABC92: db $EB, $CA ; [set2] prewritten text CA
+#_0ABC92: db $EB, $CA ; [set2] phrase CA
 #_0ABC94: db $F3 ; [set2] wait for key and new line
 #_0ABC95: db $F1 ; [set2] clear message box
-#_0ABC96: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABC96: db $EB, $C0 ; [set2] phrase C0
 #_0ABC98: db $F2, $01 ; [set2] option list with 2 options
 #_0ABC9A: db $14, $77 ; option 1 [14]: go to message 77
 #_0ABC9C: db $06, $6B ; option 2 [06]: go to message 6B
@@ -11986,10 +11986,10 @@ Message_02_0E_6B:
 ; «>だいぶ きまずく なってきた»
 ; «どうしますか?»
 Message_02_0E_6C:
-#_0ABCA3: db $EB, $ED ; [set2] prewritten text ED
+#_0ABCA3: db $EB, $ED ; [set2] phrase ED
 #_0ABCA5: db $F3 ; [set2] wait for key and new line
 #_0ABCA6: db $F1 ; [set2] clear message box
-#_0ABCA7: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABCA7: db $EB, $C0 ; [set2] phrase C0
 #_0ABCA9: db $F2, $01 ; [set2] option list with 2 options
 #_0ABCAB: db $03, $6D ; option 1 [03]: go to message 6D
 #_0ABCAD: db $0B, $6E ; option 2 [0B]: go to message 6E
@@ -12005,17 +12005,17 @@ Message_02_0E_6D:
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0E_6E:
 #_0ABCBA: db $D4, $00, $20 ; [set2] go to message 20 if RNG, 00 TODO
 #_0ABCBD: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABCBF: db $F3 ; [set2] wait for key and new line
 #_0ABCC0: db $F1 ; [set2] clear message box
-#_0ABCC1: db $EB, $D0 ; [set2] prewritten text D0
+#_0ABCC1: db $EB, $D0 ; [set2] phrase D0
 #_0ABCC3: db $F3 ; [set2] wait for key and new line
 #_0ABCC4: db $F1 ; [set2] clear message box
-#_0ABCC5: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABCC5: db $EB, $C0 ; [set2] phrase C0
 #_0ABCC7: db $F2, $01 ; [set2] option list with 2 options
 #_0ABCC9: db $1D, $6F ; option 1 [1D]: go to message 6F
 #_0ABCCB: db $28, $3A ; option 2 [28]: go to message 3A
@@ -12039,25 +12039,25 @@ Message_02_0E_70:
 ; «・・・・・・・・・・・・・ ・ ・ ・»
 ; «>アクマは むし している»
 Message_02_0E_71:
-#_0ABCDA: db $EB, $EE ; [set2] prewritten text EE
+#_0ABCDA: db $EB, $EE ; [set2] phrase EE
 #_0ABCDC: db $F3 ; [set2] wait for key and new line
 #_0ABCDD: db $F1 ; [set2] clear message box
-#_0ABCDE: db $EB, $E8 ; [set2] prewritten text E8
+#_0ABCDE: db $EB, $E8 ; [set2] phrase E8
 #_0ABCE0: db $F3 ; [set2] wait for key and new line
 #_0ABCE1: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0E_72:
 #_0ABCE3: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABCE5: db $F3 ; [set2] wait for key and new line
 #_0ABCE6: db $F1 ; [set2] clear message box
-#_0ABCE7: db $EB, $D0 ; [set2] prewritten text D0
+#_0ABCE7: db $EB, $D0 ; [set2] phrase D0
 #_0ABCE9: db $F3 ; [set2] wait for key and new line
 #_0ABCEA: db $F1 ; [set2] clear message box
-#_0ABCEB: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABCEB: db $EB, $C0 ; [set2] phrase C0
 #_0ABCED: db $F2, $01 ; [set2] option list with 2 options
 #_0ABCEF: db $1D, $74 ; option 1 [1D]: go to message 74
 #_0ABCF1: db $28, $3A ; option 2 [28]: go to message 3A
@@ -12077,16 +12077,16 @@ Message_02_0E_74:
 
 ;===================================================================================================
 
-; «>[DEMONX]に からかわれています»
+; «>[MYNAME]に からかわれています»
 ; «どうしますか?»
 Message_02_0E_75:
 #_0ABCFE: db $E8, $14 ; [set2] [COMMAND 48:14]
 #_0ABD00: db $F3 ; [set2] wait for key and new line
 #_0ABD01: db $F1 ; [set2] clear message box
-#_0ABD02: db $EB, $CF ; [set2] prewritten text CF
+#_0ABD02: db $EB, $CF ; [set2] phrase CF
 #_0ABD04: db $F3 ; [set2] wait for key and new line
 #_0ABD05: db $F1 ; [set2] clear message box
-#_0ABD06: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABD06: db $EB, $C0 ; [set2] phrase C0
 #_0ABD08: db $F2, $01 ; [set2] option list with 2 options
 #_0ABD0A: db $0F, $76 ; option 1 [0F]: go to message 76
 #_0ABD0C: db $0C, $34 ; option 2 [0C]: go to message 34
@@ -12123,16 +12123,16 @@ Message_02_0E_79:
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0E_7A:
 #_0ABD2E: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABD30: db $F3 ; [set2] wait for key and new line
 #_0ABD31: db $F1 ; [set2] clear message box
-#_0ABD32: db $EB, $D0 ; [set2] prewritten text D0
+#_0ABD32: db $EB, $D0 ; [set2] phrase D0
 #_0ABD34: db $F3 ; [set2] wait for key and new line
 #_0ABD35: db $F1 ; [set2] clear message box
-#_0ABD36: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABD36: db $EB, $C0 ; [set2] phrase C0
 #_0ABD38: db $F2, $01 ; [set2] option list with 2 options
 #_0ABD3A: db $0A, $7B ; option 1 [0A]: go to message 7B
 #_0ABD3C: db $28, $3A ; option 2 [28]: go to message 3A
@@ -12148,17 +12148,17 @@ Message_02_0E_7B:
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_0E_7C:
 #_0ABD49: db $FC, $E9, $00 ; [set2] test progress flag E9 for message 00
 #_0ABD4C: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0ABD4E: db $F3 ; [set2] wait for key and new line
 #_0ABD4F: db $F1 ; [set2] clear message box
-#_0ABD50: db $EB, $C7 ; [set2] prewritten text C7
+#_0ABD50: db $EB, $C7 ; [set2] phrase C7
 #_0ABD52: db $F3 ; [set2] wait for key and new line
 #_0ABD53: db $F1 ; [set2] clear message box
-#_0ABD54: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABD54: db $EB, $C0 ; [set2] phrase C0
 #_0ABD56: db $F2, $01 ; [set2] option list with 2 options
 #_0ABD58: db $13, $7D ; option 1 [13]: go to message 7D
 #_0ABD5A: db $06, $80 ; option 2 [06]: go to message 80
@@ -12174,16 +12174,16 @@ Message_02_0E_7D:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_7E:
 #_0ABD64: db $E8, $2D ; [set2] [COMMAND 48:2D]
 #_0ABD66: db $F3 ; [set2] wait for key and new line
 #_0ABD67: db $F1 ; [set2] clear message box
 #_0ABD68: db $DD ; [set2] [COMMAND 3D]
-#_0ABD69: db $EB, $C2 ; [set2] prewritten text C2
+#_0ABD69: db $EB, $C2 ; [set2] phrase C2
 #_0ABD6B: db $F3 ; [set2] wait for key and new line
 #_0ABD6C: db $F1 ; [set2] clear message box
-#_0ABD6D: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABD6D: db $EB, $E1 ; [set2] phrase E1
 #_0ABD6F: db $F3 ; [set2] wait for key and new line
 #_0ABD70: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -12201,13 +12201,13 @@ Message_02_0E_80:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ちかづいてきた»
+; «>[MYNAME]は ちかづいてきた»
 ; «どうしますか?»
 Message_02_0E_81:
-#_0ABD7C: db $EB, $E9 ; [set2] prewritten text E9
+#_0ABD7C: db $EB, $E9 ; [set2] phrase E9
 #_0ABD7E: db $F3 ; [set2] wait for key and new line
 #_0ABD7F: db $F1 ; [set2] clear message box
-#_0ABD80: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABD80: db $EB, $C0 ; [set2] phrase C0
 #_0ABD82: db $F2, $01 ; [set2] option list with 2 options
 #_0ABD84: db $00, $82 ; option 1 [00]: go to message 82
 #_0ABD86: db $0C, $83 ; option 2 [0C]: go to message 83
@@ -12221,7 +12221,7 @@ Message_02_0E_82:
 ;===================================================================================================
 
 Message_02_0E_83:
-#_0ABD8D: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0ABD8D: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0ABD90: db $E5, $02 ; [set2] [COMMAND 45:02]
 #_0ABD92: db $D7, $01, $03 ; [set2] go to message 03 if LUK < RNG(0, 32)
 #_0ABD95: db $DB, $01, $37 ; [set2] [COMMAND 3B] go to message 37 if something 01 TODO
@@ -12229,23 +12229,23 @@ Message_02_0E_83:
 
 ;===================================================================================================
 
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_0E_84:
 #_0ABD9A: db $F1 ; [set2] clear message box
 #_0ABD9B: db $D2, $85 ; [set2] something to message 85 TODO
-#_0ABD9D: db $EB, $E0 ; [set2] prewritten text E0
+#_0ABD9D: db $EB, $E0 ; [set2] phrase E0
 #_0ABD9F: db $F3 ; [set2] wait for key and new line
 #_0ABDA0: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
 ;===================================================================================================
 
-; >[DEMONX]は ナカマに なろうとしたが
+; >[MYNAME]は ナカマに なろうとしたが
 ; すでに ナカマが いっぱいだった
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0E_85:
 #_0ABDA2: db $97 ; >
-#_0ABDA3: db $ED ; [set2] write demon name indexed from $0526
+#_0ABDA3: db $ED ; [set2] write name of speaker
 #_0ABDA4: db $3E, $CF, $71, $62, $7B, $3A, $CF, $39 ; は⎵ナカマに⎵な
 #_0ABDAC: db $4F, $27, $38, $30, $34, $9C ; ろうとしたが
 #_0ABDB2: db $F0 ; [set2] new line
@@ -12253,7 +12253,7 @@ Message_02_0E_85:
 #_0ABDBB: db $CF, $26, $58, $B0, $26, $A6, $58, $34 ; ⎵いっぱいだった
 #_0ABDC3: db $F3 ; [set2] wait for key and new line
 #_0ABDC4: db $F1 ; [set2] clear message box
-#_0ABDC5: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABDC5: db $EB, $E1 ; [set2] phrase E1
 #_0ABDC7: db $F3 ; [set2] wait for key and new line
 #_0ABDC8: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -12266,16 +12266,16 @@ Message_02_0F_00:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0F_01:
 #_0ABDD3: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0ABDD5: db $F3 ; [set2] wait for key and new line
 #_0ABDD6: db $F1 ; [set2] clear message box
-#_0ABDD7: db $EB, $C1 ; [set2] prewritten text C1
+#_0ABDD7: db $EB, $C1 ; [set2] phrase C1
 #_0ABDD9: db $F3 ; [set2] wait for key and new line
 #_0ABDDA: db $F1 ; [set2] clear message box
-#_0ABDDB: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABDDB: db $EB, $C0 ; [set2] phrase C0
 #_0ABDDD: db $F2, $01 ; [set2] option list with 2 options
 #_0ABDDF: db $02, $02 ; option 1 [02]: go to message 02
 #_0ABDE1: db $0D, $06 ; option 2 [0D]: go to message 06
@@ -12320,16 +12320,16 @@ Message_02_0F_07:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0F_08:
 #_0ABE06: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0ABE08: db $F3 ; [set2] wait for key and new line
 #_0ABE09: db $F1 ; [set2] clear message box
-#_0ABE0A: db $EB, $C9 ; [set2] prewritten text C9
+#_0ABE0A: db $EB, $C9 ; [set2] phrase C9
 #_0ABE0C: db $F3 ; [set2] wait for key and new line
 #_0ABE0D: db $F1 ; [set2] clear message box
-#_0ABE0E: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABE0E: db $EB, $C0 ; [set2] phrase C0
 #_0ABE10: db $F2, $01 ; [set2] option list with 2 options
 #_0ABE12: db $04, $09 ; option 1 [04]: go to message 09
 #_0ABE14: db $15, $0E ; option 2 [15]: go to message 0E
@@ -12353,7 +12353,7 @@ Message_02_0F_0A:
 #_0ABE2A: db $2A, $58, $34 ; かった
 #_0ABE2D: db $F3 ; [set2] wait for key and new line
 #_0ABE2E: db $F1 ; [set2] clear message box
-#_0ABE2F: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABE2F: db $EB, $C0 ; [set2] phrase C0
 #_0ABE31: db $F2, $01 ; [set2] option list with 2 options
 #_0ABE33: db $16, $0B ; option 1 [16]: go to message 0B
 #_0ABE35: db $03, $0C ; option 2 [03]: go to message 0C
@@ -12387,9 +12387,9 @@ Message_02_0F_0E:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは するどく»
-; «[DEMONX]を とらえた!»
+; «[MYNAME]を とらえた!»
 Message_02_0F_0F:
-#_0ABE4F: db $EB, $48 ; [set2] prewritten text 48
+#_0ABE4F: db $EB, $48 ; [set2] phrase 48
 #_0ABE51: db $F3 ; [set2] wait for key and new line
 #_0ABE52: db $F1 ; [set2] clear message box
 #_0ABE53: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -12419,16 +12419,16 @@ Message_02_0F_12:
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0F_13:
 #_0ABE6A: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0ABE6C: db $F3 ; [set2] wait for key and new line
 #_0ABE6D: db $F1 ; [set2] clear message box
-#_0ABE6E: db $EB, $CA ; [set2] prewritten text CA
+#_0ABE6E: db $EB, $CA ; [set2] phrase CA
 #_0ABE70: db $F3 ; [set2] wait for key and new line
 #_0ABE71: db $F1 ; [set2] clear message box
-#_0ABE72: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABE72: db $EB, $C0 ; [set2] phrase C0
 #_0ABE74: db $F2, $01 ; [set2] option list with 2 options
 #_0ABE76: db $14, $14 ; option 1 [14]: go to message 14
 #_0ABE78: db $06, $1B ; option 2 [06]: go to message 1B
@@ -12457,12 +12457,12 @@ Message_02_0F_16:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0F_17:
 #_0ABE92: db $E8, $30 ; [set2] [COMMAND 48:30]
 #_0ABE94: db $F3 ; [set2] wait for key and new line
 #_0ABE95: db $F1 ; [set2] clear message box
-#_0ABE96: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABE96: db $EB, $E1 ; [set2] phrase E1
 #_0ABE98: db $F3 ; [set2] wait for key and new line
 #_0ABE99: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -12473,12 +12473,12 @@ Message_02_0F_18:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_0F_19:
 #_0ABE9E: db $E8, $21 ; [set2] [COMMAND 48:21]
 #_0ABEA0: db $F3 ; [set2] wait for key and new line
 #_0ABEA1: db $F1 ; [set2] clear message box
-#_0ABEA2: db $EB, $C5 ; [set2] prewritten text C5
+#_0ABEA2: db $EB, $C5 ; [set2] phrase C5
 #_0ABEA4: db $F3 ; [set2] wait for key and new line
 #_0ABEA5: db $E6, $01 ; [set2] [COMMAND 46:01]
 #_0ABEA7: db $FE, $08 ; [set2] [COMMAND 5E:08]
@@ -12498,33 +12498,33 @@ Message_02_0F_1B:
 
 ;===================================================================================================
 
-; «>[DEMONX]は たちさろうとしている»
+; «>[MYNAME]は たちさろうとしている»
 ; «どうしますか?»
 Message_02_0F_1C:
 #_0ABEB8: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0ABEBA: db $F3 ; [set2] wait for key and new line
 #_0ABEBB: db $F1 ; [set2] clear message box
-#_0ABEBC: db $EB, $D0 ; [set2] prewritten text D0
+#_0ABEBC: db $EB, $D0 ; [set2] phrase D0
 #_0ABEBE: db $F3 ; [set2] wait for key and new line
 #_0ABEBF: db $F1 ; [set2] clear message box
-#_0ABEC0: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABEC0: db $EB, $C0 ; [set2] phrase C0
 #_0ABEC2: db $F2, $01 ; [set2] option list with 2 options
 #_0ABEC4: db $1D, $1D ; option 1 [1D]: go to message 1D
 #_0ABEC6: db $28, $22 ; option 2 [28]: go to message 22
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0F_1D:
 #_0ABEC8: db $D4, $00, $21 ; [set2] go to message 21 if RNG, 00 TODO
 #_0ABECB: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0ABECD: db $F3 ; [set2] wait for key and new line
 #_0ABECE: db $F1 ; [set2] clear message box
-#_0ABECF: db $EB, $C4 ; [set2] prewritten text C4
+#_0ABECF: db $EB, $C4 ; [set2] phrase C4
 #_0ABED1: db $F3 ; [set2] wait for key and new line
 #_0ABED2: db $F1 ; [set2] clear message box
-#_0ABED3: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABED3: db $EB, $C0 ; [set2] phrase C0
 #_0ABED5: db $F2, $01 ; [set2] option list with 2 options
 #_0ABED7: db $0D, $1E ; option 1 [0D]: go to message 1E
 #_0ABED9: db $06, $20 ; option 2 [06]: go to message 20
@@ -12555,21 +12555,21 @@ Message_02_0F_20:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0F_21:
 #_0ABEF1: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0ABEF3: db $F3 ; [set2] wait for key and new line
 #_0ABEF4: db $F1 ; [set2] clear message box
-#_0ABEF5: db $EB, $E2 ; [set2] prewritten text E2
+#_0ABEF5: db $EB, $E2 ; [set2] phrase E2
 #_0ABEF7: db $F3 ; [set2] wait for key and new line
 #_0ABEF8: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0F_22:
 #_0ABEFA: db $D4, $02, $23 ; [set2] go to message 23 if RNG, 02 TODO
-#_0ABEFD: db $EB, $E1 ; [set2] prewritten text E1
+#_0ABEFD: db $EB, $E1 ; [set2] phrase E1
 #_0ABEFF: db $F3 ; [set2] wait for key and new line
 #_0ABF00: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -12583,16 +12583,16 @@ Message_02_0F_23:
 
 ;===================================================================================================
 
-; «>[DEMONX]は おこっている»
+; «>[MYNAME]は おこっている»
 ; «どうしますか?»
 Message_02_0F_24:
 #_0ABF0A: db $E8, $0F ; [set2] [COMMAND 48:0F]
 #_0ABF0C: db $F3 ; [set2] wait for key and new line
 #_0ABF0D: db $F1 ; [set2] clear message box
-#_0ABF0E: db $EB, $C9 ; [set2] prewritten text C9
+#_0ABF0E: db $EB, $C9 ; [set2] phrase C9
 #_0ABF10: db $F3 ; [set2] wait for key and new line
 #_0ABF11: db $F1 ; [set2] clear message box
-#_0ABF12: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABF12: db $EB, $C0 ; [set2] phrase C0
 #_0ABF14: db $F2, $01 ; [set2] option list with 2 options
 #_0ABF16: db $1B, $25 ; option 1 [1B]: go to message 25
 #_0ABF18: db $04, $26 ; option 2 [04]: go to message 26
@@ -12654,10 +12654,10 @@ Message_02_0F_2C:
 #_0ABF4D: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0ABF4F: db $F3 ; [set2] wait for key and new line
 #_0ABF50: db $F1 ; [set2] clear message box
-#_0ABF51: db $EB, $ED ; [set2] prewritten text ED
+#_0ABF51: db $EB, $ED ; [set2] phrase ED
 #_0ABF53: db $F3 ; [set2] wait for key and new line
 #_0ABF54: db $F1 ; [set2] clear message box
-#_0ABF55: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABF55: db $EB, $C0 ; [set2] phrase C0
 #_0ABF57: db $F2, $01 ; [set2] option list with 2 options
 #_0ABF59: db $14, $2D ; option 1 [14]: go to message 2D
 #_0ABF5B: db $0D, $2E ; option 2 [0D]: go to message 2E
@@ -12695,16 +12695,16 @@ Message_02_0F_30:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0F_31:
 #_0ABF7E: db $E8, $0C ; [set2] [COMMAND 48:0C]
 #_0ABF80: db $F3 ; [set2] wait for key and new line
 #_0ABF81: db $F1 ; [set2] clear message box
 #_0ABF82: db $DD ; [set2] [COMMAND 3D]
-#_0ABF83: db $EB, $C2 ; [set2] prewritten text C2
+#_0ABF83: db $EB, $C2 ; [set2] phrase C2
 #_0ABF85: db $F3 ; [set2] wait for key and new line
 #_0ABF86: db $F1 ; [set2] clear message box
-#_0ABF87: db $EB, $E2 ; [set2] prewritten text E2
+#_0ABF87: db $EB, $E2 ; [set2] phrase E2
 #_0ABF89: db $F3 ; [set2] wait for key and new line
 #_0ABF8A: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -12740,7 +12740,7 @@ Message_02_0F_35:
 #_0ABFA5: db $E8, $18 ; [set2] [COMMAND 48:18]
 #_0ABFA7: db $F3 ; [set2] wait for key and new line
 #_0ABFA8: db $F1 ; [set2] clear message box
-#_0ABFA9: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABFA9: db $EB, $C0 ; [set2] phrase C0
 #_0ABFAB: db $F2, $01 ; [set2] option list with 2 options
 #_0ABFAD: db $04, $2E ; option 1 [04]: go to message 2E
 #_0ABFAF: db $15, $36 ; option 2 [15]: go to message 36
@@ -12748,10 +12748,10 @@ Message_02_0F_35:
 ;===================================================================================================
 
 ; «>[CHASE]の がんこうは するどく»
-; «[DEMONX]を とらえた!»
+; «[MYNAME]を とらえた!»
 Message_02_0F_36:
 #_0ABFB1: db $D8, $01, $37 ; [set2] go to message 37 if LUK < RNG(0, DemonLUK+16)
-#_0ABFB4: db $EB, $48 ; [set2] prewritten text 48
+#_0ABFB4: db $EB, $48 ; [set2] phrase 48
 #_0ABFB6: db $F3 ; [set2] wait for key and new line
 #_0ABFB7: db $F1 ; [set2] clear message box
 #_0ABFB8: db $E8, $33 ; [set2] [COMMAND 48:33]
@@ -12761,16 +12761,16 @@ Message_02_0F_36:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0F_37:
 #_0ABFC0: db $E8, $34 ; [set2] [COMMAND 48:34]
 #_0ABFC2: db $F3 ; [set2] wait for key and new line
 #_0ABFC3: db $F1 ; [set2] clear message box
-#_0ABFC4: db $EB, $C3 ; [set2] prewritten text C3
+#_0ABFC4: db $EB, $C3 ; [set2] phrase C3
 #_0ABFC6: db $F3 ; [set2] wait for key and new line
 #_0ABFC7: db $F1 ; [set2] clear message box
-#_0ABFC8: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABFC8: db $EB, $C0 ; [set2] phrase C0
 #_0ABFCA: db $F2, $01 ; [set2] option list with 2 options
 #_0ABFCC: db $0F, $2E ; option 1 [0F]: go to message 2E
 #_0ABFCE: db $20, $38 ; option 2 [20]: go to message 38
@@ -12788,7 +12788,7 @@ Message_02_0F_38:
 
 Message_02_0F_39:
 #_0ABFDC: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0ABFDE: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0ABFDE: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0ABFE1: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
 ;===================================================================================================
@@ -12796,11 +12796,11 @@ Message_02_0F_39:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0F_3A:
-#_0ABFE4: db $EB, $E8 ; [set2] prewritten text E8
+#_0ABFE4: db $EB, $E8 ; [set2] phrase E8
 #_0ABFE6: db $F3 ; [set2] wait for key and new line
 #_0ABFE7: db $F1 ; [set2] clear message box
 #_0ABFE8: db $E6, $01 ; [set2] [COMMAND 46:01]
-#_0ABFEA: db $EB, $C0 ; [set2] prewritten text C0
+#_0ABFEA: db $EB, $C0 ; [set2] phrase C0
 #_0ABFEC: db $F2, $01 ; [set2] option list with 2 options
 #_0ABFEE: db $15, $3B ; option 1 [15]: go to message 3B
 #_0ABFF0: db $0F, $24 ; option 2 [0F]: go to message 24
@@ -12836,13 +12836,13 @@ Message_02_0F_3E:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげようと している»
+; «>[MYNAME]は にげようと している»
 ; «どうしますか?»
 Message_02_0F_3F:
-#_0AC00C: db $EB, $F0 ; [set2] prewritten text F0
+#_0AC00C: db $EB, $F0 ; [set2] phrase F0
 #_0AC00E: db $F3 ; [set2] wait for key and new line
 #_0AC00F: db $F1 ; [set2] clear message box
-#_0AC010: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC010: db $EB, $C0 ; [set2] phrase C0
 #_0AC012: db $F2, $01 ; [set2] option list with 2 options
 #_0AC014: db $0A, $40 ; option 1 [0A]: go to message 40
 #_0AC016: db $0B, $44 ; option 2 [0B]: go to message 44
@@ -12869,20 +12869,20 @@ Message_02_0F_42:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0F_43:
 #_0AC02D: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC02F: db $F3 ; [set2] wait for key and new line
 #_0AC030: db $F1 ; [set2] clear message box
-#_0AC031: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC031: db $EB, $E1 ; [set2] phrase E1
 #_0AC033: db $F3 ; [set2] wait for key and new line
 #_0AC034: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_0F_44:
-#_0AC036: db $EB, $E2 ; [set2] prewritten text E2
+#_0AC036: db $EB, $E2 ; [set2] phrase E2
 #_0AC038: db $F3 ; [set2] wait for key and new line
 #_0AC039: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -12893,23 +12893,23 @@ Message_02_0F_45:
 
 ;===================================================================================================
 
-; «>[DEMONX]に ばかにされた»
+; «>[MYNAME]に ばかにされた»
 ; «どうしますか?»
 Message_02_0F_46:
 #_0AC040: db $E8, $27 ; [set2] [COMMAND 48:27]
 #_0AC042: db $F3 ; [set2] wait for key and new line
 #_0AC043: db $F1 ; [set2] clear message box
-#_0AC044: db $EB, $C3 ; [set2] prewritten text C3
+#_0AC044: db $EB, $C3 ; [set2] phrase C3
 #_0AC046: db $F3 ; [set2] wait for key and new line
 #_0AC047: db $F1 ; [set2] clear message box
-#_0AC048: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC048: db $EB, $C0 ; [set2] phrase C0
 #_0AC04A: db $F2, $01 ; [set2] option list with 2 options
 #_0AC04C: db $04, $47 ; option 1 [04]: go to message 47
 #_0AC04E: db $15, $4E ; option 2 [15]: go to message 4E
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_0F_47:
 #_0AC050: db $D7, $01, $05 ; [set2] go to message 05 if LUK < RNG(0, 32)
@@ -12918,10 +12918,10 @@ Message_02_0F_47:
 #_0AC058: db $E8, $38 ; [set2] [COMMAND 48:38]
 #_0AC05A: db $F3 ; [set2] wait for key and new line
 #_0AC05B: db $F1 ; [set2] clear message box
-#_0AC05C: db $EB, $CA ; [set2] prewritten text CA
+#_0AC05C: db $EB, $CA ; [set2] phrase CA
 #_0AC05E: db $F3 ; [set2] wait for key and new line
 #_0AC05F: db $F1 ; [set2] clear message box
-#_0AC060: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC060: db $EB, $C0 ; [set2] phrase C0
 #_0AC062: db $F2, $01 ; [set2] option list with 2 options
 #_0AC064: db $14, $48 ; option 1 [14]: go to message 48
 #_0AC066: db $06, $2A ; option 2 [06]: go to message 2A
@@ -12937,16 +12937,16 @@ Message_02_0F_48:
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_0F_49:
 #_0AC073: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC075: db $F3 ; [set2] wait for key and new line
 #_0AC076: db $F1 ; [set2] clear message box
-#_0AC077: db $EB, $C7 ; [set2] prewritten text C7
+#_0AC077: db $EB, $C7 ; [set2] phrase C7
 #_0AC079: db $F3 ; [set2] wait for key and new line
 #_0AC07A: db $F1 ; [set2] clear message box
-#_0AC07B: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC07B: db $EB, $C0 ; [set2] phrase C0
 #_0AC07D: db $F2, $01 ; [set2] option list with 2 options
 #_0AC07F: db $10, $4A ; option 1 [10]: go to message 4A
 #_0AC081: db $1B, $4C ; option 2 [1B]: go to message 4C
@@ -12957,7 +12957,7 @@ Message_02_0F_49:
 Message_02_0F_4A:
 #_0AC083: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AC085: db $F9, $00, $4B ; [set2] [COMMAND 59] go to message 4B if something 00 TODO
-#_0AC088: db $EB, $E6 ; [set2] prewritten text E6
+#_0AC088: db $EB, $E6 ; [set2] phrase E6
 #_0AC08A: db $F3 ; [set2] wait for key and new line
 #_0AC08B: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -12965,7 +12965,7 @@ Message_02_0F_4A:
 
 ; «だめだ にげられない!!»
 Message_02_0F_4B:
-#_0AC08D: db $EB, $E5 ; [set2] prewritten text E5
+#_0AC08D: db $EB, $E5 ; [set2] phrase E5
 #_0AC08F: db $F3 ; [set2] wait for key and new line
 #_0AC090: db $E9, $00 ; [set2] go to message 00
 
@@ -12987,7 +12987,7 @@ Message_02_0F_4D:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0F_4E:
 #_0AC0A3: db $D8, $01, $10 ; [set2] go to message 10 if LUK < RNG(0, DemonLUK+16)
@@ -12995,10 +12995,10 @@ Message_02_0F_4E:
 #_0AC0A8: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC0AA: db $F3 ; [set2] wait for key and new line
 #_0AC0AB: db $F1 ; [set2] clear message box
-#_0AC0AC: db $EB, $C1 ; [set2] prewritten text C1
+#_0AC0AC: db $EB, $C1 ; [set2] phrase C1
 #_0AC0AE: db $F3 ; [set2] wait for key and new line
 #_0AC0AF: db $F1 ; [set2] clear message box
-#_0AC0B0: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC0B0: db $EB, $C0 ; [set2] phrase C0
 #_0AC0B2: db $F2, $01 ; [set2] option list with 2 options
 #_0AC0B4: db $02, $05 ; option 1 [02]: go to message 05
 #_0AC0B6: db $1B, $4F ; option 2 [1B]: go to message 4F
@@ -13016,17 +13016,17 @@ Message_02_0F_4F:
 ; «>アクマは むし している»
 ; «どうしますか?»
 Message_02_0F_50:
-#_0AC0C1: db $EB, $E8 ; [set2] prewritten text E8
+#_0AC0C1: db $EB, $E8 ; [set2] phrase E8
 #_0AC0C3: db $F3 ; [set2] wait for key and new line
 #_0AC0C4: db $F1 ; [set2] clear message box
-#_0AC0C5: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC0C5: db $EB, $C0 ; [set2] phrase C0
 #_0AC0C7: db $F2, $01 ; [set2] option list with 2 options
 #_0AC0C9: db $0D, $51 ; option 1 [0D]: go to message 51
 #_0AC0CB: db $10, $5E ; option 2 [10]: go to message 5E
 
 ;===================================================================================================
 
-; «>[DEMONX]は おどしてきた»
+; «>[MYNAME]は おどしてきた»
 ; «どうしますか?»
 Message_02_0F_51:
 #_0AC0CD: db $D7, $01, $5D ; [set2] go to message 5D if LUK < RNG(0, 32)
@@ -13034,10 +13034,10 @@ Message_02_0F_51:
 #_0AC0D2: db $E8, $01 ; [set2] [COMMAND 48:01]
 #_0AC0D4: db $F3 ; [set2] wait for key and new line
 #_0AC0D5: db $F1 ; [set2] clear message box
-#_0AC0D6: db $EB, $C8 ; [set2] prewritten text C8
+#_0AC0D6: db $EB, $C8 ; [set2] phrase C8
 #_0AC0D8: db $F3 ; [set2] wait for key and new line
 #_0AC0D9: db $F1 ; [set2] clear message box
-#_0AC0DA: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC0DA: db $EB, $C0 ; [set2] phrase C0
 #_0AC0DC: db $F2, $01 ; [set2] option list with 2 options
 #_0AC0DE: db $06, $52 ; option 1 [06]: go to message 52
 #_0AC0E0: db $00, $57 ; option 2 [00]: go to message 57
@@ -13059,17 +13059,17 @@ Message_02_0F_53:
 #_0AC0ED: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AC0EF: db $F3 ; [set2] wait for key and new line
 #_0AC0F0: db $F1 ; [set2] clear message box
-#_0AC0F1: db $EB, $ED ; [set2] prewritten text ED
+#_0AC0F1: db $EB, $ED ; [set2] phrase ED
 #_0AC0F3: db $F3 ; [set2] wait for key and new line
 #_0AC0F4: db $F1 ; [set2] clear message box
-#_0AC0F5: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC0F5: db $EB, $C0 ; [set2] phrase C0
 #_0AC0F7: db $F2, $01 ; [set2] option list with 2 options
 #_0AC0F9: db $20, $54 ; option 1 [20]: go to message 54
 #_0AC0FB: db $12, $56 ; option 2 [12]: go to message 56
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0F_54:
 #_0AC0FD: db $D6, $01, $3C ; [set2] go to message 3C if RNG, 01 TODO
 #_0AC100: db $E8, $20 ; [set2] [COMMAND 48:20]
@@ -13078,7 +13078,7 @@ Message_02_0F_54:
 #_0AC105: db $E8, $16 ; [set2] [COMMAND 48:16]
 #_0AC107: db $F3 ; [set2] wait for key and new line
 #_0AC108: db $F1 ; [set2] clear message box
-#_0AC109: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC109: db $EB, $E1 ; [set2] phrase E1
 #_0AC10B: db $F3 ; [set2] wait for key and new line
 #_0AC10C: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13086,7 +13086,7 @@ Message_02_0F_54:
 
 Message_02_0F_55:
 #_0AC10E: db $E6, $02 ; [set2] [COMMAND 46:02]
-#_0AC110: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AC110: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AC113: db $F7, $21, $80 ; [set2] [COMMAND 57] $21 $80 TODO
 
 ;===================================================================================================
@@ -13109,10 +13109,10 @@ Message_02_0F_58:
 #_0AC120: db $E8, $12 ; [set2] [COMMAND 48:12]
 #_0AC122: db $F3 ; [set2] wait for key and new line
 #_0AC123: db $F1 ; [set2] clear message box
-#_0AC124: db $EB, $ED ; [set2] prewritten text ED
+#_0AC124: db $EB, $ED ; [set2] phrase ED
 #_0AC126: db $F3 ; [set2] wait for key and new line
 #_0AC127: db $F1 ; [set2] clear message box
-#_0AC128: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC128: db $EB, $C0 ; [set2] phrase C0
 #_0AC12A: db $F2, $01 ; [set2] option list with 2 options
 #_0AC12C: db $1C, $59 ; option 1 [1C]: go to message 59
 #_0AC12E: db $21, $5A ; option 2 [21]: go to message 5A
@@ -13140,16 +13140,16 @@ Message_02_0F_5A:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_0F_5B:
 #_0AC149: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC14B: db $F3 ; [set2] wait for key and new line
 #_0AC14C: db $F1 ; [set2] clear message box
 #_0AC14D: db $DD ; [set2] [COMMAND 3D]
-#_0AC14E: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC14E: db $EB, $C2 ; [set2] phrase C2
 #_0AC150: db $F3 ; [set2] wait for key and new line
 #_0AC151: db $F1 ; [set2] clear message box
-#_0AC152: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC152: db $EB, $E1 ; [set2] phrase E1
 #_0AC154: db $F3 ; [set2] wait for key and new line
 #_0AC155: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13176,7 +13176,7 @@ Message_02_0F_5D:
 Message_02_0F_5E:
 #_0AC165: db $E6, $FC ; [set2] [COMMAND 46:FC]
 #_0AC167: db $D7, $00, $5F ; [set2] go to message 5F if LUK < RNG(0, 16)
-#_0AC16A: db $EB, $E6 ; [set2] prewritten text E6
+#_0AC16A: db $EB, $E6 ; [set2] phrase E6
 #_0AC16C: db $F3 ; [set2] wait for key and new line
 #_0AC16D: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -13184,29 +13184,29 @@ Message_02_0F_5E:
 
 ; «だめだ にげられない!!»
 Message_02_0F_5F:
-#_0AC16F: db $EB, $E5 ; [set2] prewritten text E5
+#_0AC16F: db $EB, $E5 ; [set2] phrase E5
 #_0AC171: db $F3 ; [set2] wait for key and new line
 #_0AC172: db $E9, $00 ; [set2] go to message 00
 
 ;===================================================================================================
 
-; «>[DEMONX]に わらわれた»
+; «>[MYNAME]に わらわれた»
 ; «どうしますか?»
 Message_02_0F_60:
 #_0AC174: db $E8, $0E ; [set2] [COMMAND 48:0E]
 #_0AC176: db $F3 ; [set2] wait for key and new line
 #_0AC177: db $F1 ; [set2] clear message box
-#_0AC178: db $EB, $C7 ; [set2] prewritten text C7
+#_0AC178: db $EB, $C7 ; [set2] phrase C7
 #_0AC17A: db $F3 ; [set2] wait for key and new line
 #_0AC17B: db $F1 ; [set2] clear message box
-#_0AC17C: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC17C: db $EB, $C0 ; [set2] phrase C0
 #_0AC17E: db $F2, $01 ; [set2] option list with 2 options
 #_0AC180: db $04, $61 ; option 1 [04]: go to message 61
 #_0AC182: db $14, $6B ; option 2 [14]: go to message 6B
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0F_61:
 #_0AC184: db $D4, $00, $68 ; [set2] go to message 68 if RNG, 00 TODO
@@ -13215,10 +13215,10 @@ Message_02_0F_61:
 #_0AC18C: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC18E: db $F3 ; [set2] wait for key and new line
 #_0AC18F: db $F1 ; [set2] clear message box
-#_0AC190: db $EB, $C1 ; [set2] prewritten text C1
+#_0AC190: db $EB, $C1 ; [set2] phrase C1
 #_0AC192: db $F3 ; [set2] wait for key and new line
 #_0AC193: db $F1 ; [set2] clear message box
-#_0AC194: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC194: db $EB, $C0 ; [set2] phrase C0
 #_0AC196: db $F2, $01 ; [set2] option list with 2 options
 #_0AC198: db $05, $62 ; option 1 [05]: go to message 62
 #_0AC19A: db $02, $64 ; option 2 [02]: go to message 64
@@ -13255,16 +13255,16 @@ Message_02_0F_65:
 
 ;===================================================================================================
 
-; «>[DEMONX]が ちょうはつしています»
+; «>[MYNAME]が ちょうはつしています»
 ; «どうしますか?»
 Message_02_0F_66:
 #_0AC1B9: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC1BB: db $F3 ; [set2] wait for key and new line
 #_0AC1BC: db $F1 ; [set2] clear message box
-#_0AC1BD: db $EB, $C1 ; [set2] prewritten text C1
+#_0AC1BD: db $EB, $C1 ; [set2] phrase C1
 #_0AC1BF: db $F3 ; [set2] wait for key and new line
 #_0AC1C0: db $F1 ; [set2] clear message box
-#_0AC1C1: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC1C1: db $EB, $C0 ; [set2] phrase C0
 #_0AC1C3: db $F2, $01 ; [set2] option list with 2 options
 #_0AC1C5: db $05, $67 ; option 1 [05]: go to message 67
 #_0AC1C7: db $02, $05 ; option 2 [02]: go to message 05
@@ -13281,16 +13281,16 @@ Message_02_0F_67:
 
 ;===================================================================================================
 
-; «>[DEMONX]が よんでいる»
+; «>[MYNAME]が よんでいる»
 ; «どうしますか?»
 Message_02_0F_68:
 #_0AC1D2: db $E8, $1B ; [set2] [COMMAND 48:1B]
 #_0AC1D4: db $F3 ; [set2] wait for key and new line
 #_0AC1D5: db $F1 ; [set2] clear message box
-#_0AC1D6: db $EB, $C4 ; [set2] prewritten text C4
+#_0AC1D6: db $EB, $C4 ; [set2] phrase C4
 #_0AC1D8: db $F3 ; [set2] wait for key and new line
 #_0AC1D9: db $F1 ; [set2] clear message box
-#_0AC1DA: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC1DA: db $EB, $C0 ; [set2] phrase C0
 #_0AC1DC: db $F2, $01 ; [set2] option list with 2 options
 #_0AC1DE: db $0D, $69 ; option 1 [0D]: go to message 69
 #_0AC1E0: db $06, $6A ; option 2 [06]: go to message 6A
@@ -13331,7 +13331,7 @@ Message_02_0F_6C:
 ; «>なにを ようきゅうしますか?»
 Message_02_10_00:
 #_0AC204: db $F1 ; [set2] clear message box
-#_0AC205: db $EB, $D7 ; [set2] prewritten text D7
+#_0AC205: db $EB, $D7 ; [set2] phrase D7
 #_0AC207: db $F2, $03 ; [set2] option list with 4 options
 #_0AC209: db $2B, $01 ; option 1 [2B]: go to message 01
 #_0AC20B: db $2C, $19 ; option 2 [2C]: go to message 19
@@ -13374,7 +13374,7 @@ Message_02_10_04:
 ; «>[GIVEME] を あたえますか?»
 Message_02_10_05:
 #_0AC228: db $F1 ; [set2] clear message box
-#_0AC229: db $EB, $D6 ; [set2] prewritten text D6
+#_0AC229: db $EB, $D6 ; [set2] phrase D6
 #_0AC22B: db $EF, $0F ; [set2] YES/NO - go to message 0F if YES
 #_0AC22D: db $D5, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
 #_0AC230: db $D6, $01, $06 ; [set2] go to message 06 if RNG, 01 TODO
@@ -13402,13 +13402,13 @@ Message_02_10_07:
 
 ;===================================================================================================
 
-; «>[DEMONX]は あばれだした!»
+; «>[MYNAME]は あばれだした!»
 ; «どうしますか?»
 Message_02_10_08:
-#_0AC24A: db $EB, $49 ; [set2] prewritten text 49
+#_0AC24A: db $EB, $49 ; [set2] phrase 49
 #_0AC24C: db $F3 ; [set2] wait for key and new line
 #_0AC24D: db $F1 ; [set2] clear message box
-#_0AC24E: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC24E: db $EB, $C0 ; [set2] phrase C0
 #_0AC250: db $F2, $01 ; [set2] option list with 2 options
 #_0AC252: db $03, $09 ; option 1 [03]: go to message 09
 #_0AC254: db $28, $0D ; option 2 [28]: go to message 0D
@@ -13422,10 +13422,10 @@ Message_02_10_09:
 
 ;===================================================================================================
 
-; >[DEMONX]は おとなしくなった
+; >[MYNAME]は おとなしくなった
 Message_02_10_0A:
 #_0AC25E: db $97 ; >
-#_0AC25F: db $ED ; [set2] write demon name indexed from $0526
+#_0AC25F: db $ED ; [set2] write name of speaker
 #_0AC260: db $3E, $CF, $29, $38, $39, $30, $2C, $39 ; は⎵おとなしくな
 #_0AC268: db $58, $34 ; った
 #_0AC26A: db $F3 ; [set2] wait for key and new line
@@ -13463,7 +13463,7 @@ Message_02_10_0E:
 
 ;===================================================================================================
 
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_10_0F:
 #_0AC28B: db $D2, $10 ; [set2] something to message 10 TODO
@@ -13473,7 +13473,7 @@ Message_02_10_0F:
 #_0AC295: db $E8, $48 ; [set2] [COMMAND 48:48]
 #_0AC297: db $F3 ; [set2] wait for key and new line
 #_0AC298: db $F1 ; [set2] clear message box
-#_0AC299: db $EB, $E0 ; [set2] prewritten text E0
+#_0AC299: db $EB, $E0 ; [set2] phrase E0
 #_0AC29B: db $F3 ; [set2] wait for key and new line
 #_0AC29C: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
@@ -13520,32 +13520,32 @@ Message_02_10_15:
 
 ;===================================================================================================
 
-; «>[CHASE]は [DEMONX]が»
+; «>[CHASE]は [MYNAME]が»
 ; «ようきゅうしたぶんを もっていなかった»
 Message_02_10_16:
-#_0AC2BF: db $EB, $B4 ; [set2] prewritten text B4
+#_0AC2BF: db $EB, $B4 ; [set2] phrase B4
 #_0AC2C1: db $F3 ; [set2] wait for key and new line
 #_0AC2C2: db $F1 ; [set2] clear message box
 #_0AC2C3: db $E9, $06 ; [set2] go to message 06
 
 ;===================================================================================================
 
-; «>[DEMONX]は [CHASE]の»
+; «>[MYNAME]は [CHASE]の»
 ; «ナカマが いっぱいなので さっていった»
 Message_02_10_17:
 #_0AC2C5: db $F1 ; [set2] clear message box
 #_0AC2C6: db $FC, $E4, $02 ; [set2] test progress flag E4 for message 02
-#_0AC2C9: db $EB, $F6 ; [set2] prewritten text F6
+#_0AC2C9: db $EB, $F6 ; [set2] phrase F6
 #_0AC2CB: db $F3 ; [set2] wait for key and new line
 #_0AC2CC: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は [CHASE]の»
+; «>[MYNAME]は [CHASE]の»
 ; «[GIVEME] を うけとると さっていった»
 Message_02_10_18:
-#_0AC2CE: db $FB, $00, $E4 ; [set2] [COMMAND 5B] set progress flag E4 if 00 is nonzero; otherwise reset
-#_0AC2D1: db $EB, $F7 ; [set2] prewritten text F7
+#_0AC2CE: db $FB, $00, $E4 ; [set2] clear progress flag E4
+#_0AC2D1: db $EB, $F7 ; [set2] phrase F7
 #_0AC2D3: db $F3 ; [set2] wait for key and new line
 #_0AC2D4: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13553,17 +13553,17 @@ Message_02_10_18:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_10_19:
 #_0AC2D6: db $DB, $01, $1A ; [set2] [COMMAND 3B] go to message 1A if something 01 TODO
 #_0AC2D9: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC2DB: db $F3 ; [set2] wait for key and new line
 #_0AC2DC: db $F1 ; [set2] clear message box
 #_0AC2DD: db $FA, $00 ; [set2] [COMMAND 5A:00]
-#_0AC2DF: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC2DF: db $EB, $C2 ; [set2] phrase C2
 #_0AC2E1: db $F3 ; [set2] wait for key and new line
 #_0AC2E2: db $F1 ; [set2] clear message box
-#_0AC2E3: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC2E3: db $EB, $E1 ; [set2] phrase E1
 #_0AC2E5: db $F3 ; [set2] wait for key and new line
 #_0AC2E6: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13571,17 +13571,17 @@ Message_02_10_19:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_10_1A:
 #_0AC2E8: db $DB, $00, $1B ; [set2] [COMMAND 3B] go to message 1B if something 00 TODO
 #_0AC2EB: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC2ED: db $F3 ; [set2] wait for key and new line
 #_0AC2EE: db $F1 ; [set2] clear message box
 #_0AC2EF: db $FA, $10 ; [set2] [COMMAND 5A:10]
-#_0AC2F1: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC2F1: db $EB, $C2 ; [set2] phrase C2
 #_0AC2F3: db $F3 ; [set2] wait for key and new line
 #_0AC2F4: db $F1 ; [set2] clear message box
-#_0AC2F5: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC2F5: db $EB, $E1 ; [set2] phrase E1
 #_0AC2F7: db $F3 ; [set2] wait for key and new line
 #_0AC2F8: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13610,17 +13610,17 @@ Message_02_10_1D:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_10_1E:
 #_0AC30A: db $DB, $01, $1F ; [set2] [COMMAND 3B] go to message 1F if something 01 TODO
 #_0AC30D: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC30F: db $F3 ; [set2] wait for key and new line
 #_0AC310: db $F1 ; [set2] clear message box
 #_0AC311: db $FA, $01 ; [set2] [COMMAND 5A:01]
-#_0AC313: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC313: db $EB, $C2 ; [set2] phrase C2
 #_0AC315: db $F3 ; [set2] wait for key and new line
 #_0AC316: db $F1 ; [set2] clear message box
-#_0AC317: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC317: db $EB, $E1 ; [set2] phrase E1
 #_0AC319: db $F3 ; [set2] wait for key and new line
 #_0AC31A: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13628,17 +13628,17 @@ Message_02_10_1E:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_10_1F:
 #_0AC31C: db $DB, $00, $20 ; [set2] [COMMAND 3B] go to message 20 if something 00 TODO
 #_0AC31F: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC321: db $F3 ; [set2] wait for key and new line
 #_0AC322: db $F1 ; [set2] clear message box
 #_0AC323: db $FA, $11 ; [set2] [COMMAND 5A:11]
-#_0AC325: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC325: db $EB, $C2 ; [set2] phrase C2
 #_0AC327: db $F3 ; [set2] wait for key and new line
 #_0AC328: db $F1 ; [set2] clear message box
-#_0AC329: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC329: db $EB, $E1 ; [set2] phrase E1
 #_0AC32B: db $F3 ; [set2] wait for key and new line
 #_0AC32C: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13658,13 +13658,13 @@ Message_02_10_21:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_10_22:
 #_0AC339: db $DB, $00, $1C ; [set2] [COMMAND 3B] go to message 1C if something 00 TODO
 #_0AC33C: db $E8, $47 ; [set2] [COMMAND 48:47]
 #_0AC33E: db $F3 ; [set2] wait for key and new line
 #_0AC33F: db $F1 ; [set2] clear message box
-#_0AC340: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC340: db $EB, $E1 ; [set2] phrase E1
 #_0AC342: db $F3 ; [set2] wait for key and new line
 #_0AC343: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13687,7 +13687,7 @@ Message_02_10_24:
 ; «>なにを ようきゅうしますか?»
 Message_02_11_00:
 #_0AC350: db $F1 ; [set2] clear message box
-#_0AC351: db $EB, $D7 ; [set2] prewritten text D7
+#_0AC351: db $EB, $D7 ; [set2] phrase D7
 #_0AC353: db $F2, $03 ; [set2] option list with 4 options
 #_0AC355: db $2B, $01 ; option 1 [2B]: go to message 01
 #_0AC357: db $2C, $0C ; option 2 [2C]: go to message 0C
@@ -13714,7 +13714,7 @@ Message_02_11_02:
 ; «>[GIVEME] を あたえますか?»
 Message_02_11_03:
 #_0AC368: db $F1 ; [set2] clear message box
-#_0AC369: db $EB, $D6 ; [set2] prewritten text D6
+#_0AC369: db $EB, $D6 ; [set2] phrase D6
 #_0AC36B: db $EF, $06 ; [set2] YES/NO - go to message 06 if YES
 #_0AC36D: db $E8, $3E ; [set2] [COMMAND 48:3E]
 #_0AC36F: db $F3 ; [set2] wait for key and new line
@@ -13727,10 +13727,10 @@ Message_02_11_03:
 
 ;===================================================================================================
 
-; «>[CHASE]は [DEMONX]が»
+; «>[CHASE]は [MYNAME]が»
 ; «ようきゅうしたぶんを もっていなかった»
 Message_02_11_04:
-#_0AC37A: db $EB, $B4 ; [set2] prewritten text B4
+#_0AC37A: db $EB, $B4 ; [set2] phrase B4
 #_0AC37C: db $F3 ; [set2] wait for key and new line
 
 ;===================================================================================================
@@ -13746,7 +13746,7 @@ Message_02_11_06:
 
 ;===================================================================================================
 
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_11_07:
 #_0AC385: db $D2, $0B ; [set2] something to message 0B TODO
@@ -13754,7 +13754,7 @@ Message_02_11_07:
 #_0AC38A: db $E8, $48 ; [set2] [COMMAND 48:48]
 #_0AC38C: db $F3 ; [set2] wait for key and new line
 #_0AC38D: db $F1 ; [set2] clear message box
-#_0AC38E: db $EB, $E0 ; [set2] prewritten text E0
+#_0AC38E: db $EB, $E0 ; [set2] phrase E0
 #_0AC390: db $F3 ; [set2] wait for key and new line
 #_0AC391: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
@@ -13771,11 +13771,11 @@ Message_02_11_08:
 
 ;===================================================================================================
 
-; «>[DEMONX]は [CHASE]の»
+; «>[MYNAME]は [CHASE]の»
 ; «ナカマが いっぱいなので さっていった»
 Message_02_11_09:
 #_0AC39D: db $F1 ; [set2] clear message box
-#_0AC39E: db $EB, $F6 ; [set2] prewritten text F6
+#_0AC39E: db $EB, $F6 ; [set2] phrase F6
 #_0AC3A0: db $F3 ; [set2] wait for key and new line
 #_0AC3A1: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13786,10 +13786,10 @@ Message_02_11_0A:
 
 ;===================================================================================================
 
-; «>[DEMONX]は [CHASE]の»
+; «>[MYNAME]は [CHASE]の»
 ; «[GIVEME] を うけとると さっていった»
 Message_02_11_0B:
-#_0AC3A6: db $EB, $F7 ; [set2] prewritten text F7
+#_0AC3A6: db $EB, $F7 ; [set2] phrase F7
 #_0AC3A8: db $F3 ; [set2] wait for key and new line
 #_0AC3A9: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13797,17 +13797,17 @@ Message_02_11_0B:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_11_0C:
 #_0AC3AB: db $DC, $01, $0D ; [set2] [COMMAND 3C] go to message 0D if something 01 TODO
 #_0AC3AE: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3B0: db $F3 ; [set2] wait for key and new line
 #_0AC3B1: db $F1 ; [set2] clear message box
 #_0AC3B2: db $FA, $00 ; [set2] [COMMAND 5A:00]
-#_0AC3B4: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC3B4: db $EB, $C2 ; [set2] phrase C2
 #_0AC3B6: db $F3 ; [set2] wait for key and new line
 #_0AC3B7: db $F1 ; [set2] clear message box
-#_0AC3B8: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC3B8: db $EB, $E1 ; [set2] phrase E1
 #_0AC3BA: db $F3 ; [set2] wait for key and new line
 #_0AC3BB: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13815,17 +13815,17 @@ Message_02_11_0C:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_11_0D:
 #_0AC3BD: db $DC, $00, $0E ; [set2] [COMMAND 3C] go to message 0E if something 00 TODO
 #_0AC3C0: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3C2: db $F3 ; [set2] wait for key and new line
 #_0AC3C3: db $F1 ; [set2] clear message box
 #_0AC3C4: db $FA, $10 ; [set2] [COMMAND 5A:10]
-#_0AC3C6: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC3C6: db $EB, $C2 ; [set2] phrase C2
 #_0AC3C8: db $F3 ; [set2] wait for key and new line
 #_0AC3C9: db $F1 ; [set2] clear message box
-#_0AC3CA: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC3CA: db $EB, $E1 ; [set2] phrase E1
 #_0AC3CC: db $F3 ; [set2] wait for key and new line
 #_0AC3CD: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13840,17 +13840,17 @@ Message_02_11_0E:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_11_0F:
 #_0AC3D4: db $DC, $01, $10 ; [set2] [COMMAND 3C] go to message 10 if something 01 TODO
 #_0AC3D7: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3D9: db $F3 ; [set2] wait for key and new line
 #_0AC3DA: db $F1 ; [set2] clear message box
 #_0AC3DB: db $FA, $01 ; [set2] [COMMAND 5A:01]
-#_0AC3DD: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC3DD: db $EB, $C2 ; [set2] phrase C2
 #_0AC3DF: db $F3 ; [set2] wait for key and new line
 #_0AC3E0: db $F1 ; [set2] clear message box
-#_0AC3E1: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC3E1: db $EB, $E1 ; [set2] phrase E1
 #_0AC3E3: db $F3 ; [set2] wait for key and new line
 #_0AC3E4: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13858,34 +13858,34 @@ Message_02_11_0F:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_11_10:
 #_0AC3E6: db $DC, $00, $0E ; [set2] [COMMAND 3C] go to message 0E if something 00 TODO
 #_0AC3E9: db $E8, $45 ; [set2] [COMMAND 48:45]
 #_0AC3EB: db $F3 ; [set2] wait for key and new line
 #_0AC3EC: db $F1 ; [set2] clear message box
 #_0AC3ED: db $FA, $11 ; [set2] [COMMAND 5A:11]
-#_0AC3EF: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC3EF: db $EB, $C2 ; [set2] phrase C2
 #_0AC3F1: db $F3 ; [set2] wait for key and new line
 #_0AC3F2: db $F1 ; [set2] clear message box
-#_0AC3F3: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC3F3: db $EB, $E1 ; [set2] phrase E1
 #_0AC3F5: db $F3 ; [set2] wait for key and new line
 #_0AC3F6: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_11_11:
 #_0AC3F8: db $E8, $47 ; [set2] [COMMAND 48:47]
 #_0AC3FA: db $F3 ; [set2] wait for key and new line
 #_0AC3FB: db $F1 ; [set2] clear message box
-#_0AC3FC: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC3FC: db $EB, $E1 ; [set2] phrase E1
 #_0AC3FE: db $F3 ; [set2] wait for key and new line
 #_0AC3FF: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_12_00:
 #_0AC401: db $FC, $E9, $07 ; [set2] test progress flag E9 for message 07
@@ -13893,21 +13893,21 @@ Message_02_12_00:
 #_0AC407: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AC409: db $F3 ; [set2] wait for key and new line
 #_0AC40A: db $F1 ; [set2] clear message box
-#_0AC40B: db $EB, $C6 ; [set2] prewritten text C6
+#_0AC40B: db $EB, $C6 ; [set2] phrase C6
 #_0AC40D: db $F3 ; [set2] wait for key and new line
 #_0AC40E: db $F1 ; [set2] clear message box
-#_0AC40F: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC40F: db $EB, $C0 ; [set2] phrase C0
 #_0AC411: db $F2, $01 ; [set2] option list with 2 options
 #_0AC413: db $08, $01 ; option 1 [08]: go to message 01
 #_0AC415: db $0C, $03 ; option 2 [0C]: go to message 03
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_12_01:
 #_0AC417: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AC419: db $EF, $02 ; [set2] YES/NO - go to message 02 if YES
-#_0AC41B: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC41B: db $EB, $E1 ; [set2] phrase E1
 #_0AC41D: db $F3 ; [set2] wait for key and new line
 #_0AC41E: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13920,7 +13920,7 @@ Message_02_12_02:
 ;===================================================================================================
 
 Message_02_12_03:
-#_0AC424: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AC424: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AC427: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AC429: db $EF, $05 ; [set2] YES/NO - go to message 05 if YES
 #_0AC42B: db $E8, $57 ; [set2] [COMMAND 48:57]
@@ -13940,7 +13940,7 @@ Message_02_12_04:
 ;===================================================================================================
 
 Message_02_12_05:
-#_0AC43C: db $FB, $01, $E9 ; [set2] [COMMAND 5B] set progress flag E9 if 01 is nonzero; otherwise reset
+#_0AC43C: db $FB, $01, $E9 ; [set2] set progress flag E9
 #_0AC43F: db $D8, $00, $06 ; [set2] go to message 06 if LUK < RNG(0, DemonLUK+8)
 #_0AC442: db $E8, $54 ; [set2] [COMMAND 48:54]
 #_0AC444: db $F3 ; [set2] wait for key and new line
@@ -13950,16 +13950,16 @@ Message_02_12_05:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_12_06:
 #_0AC448: db $E8, $55 ; [set2] [COMMAND 48:55]
 #_0AC44A: db $F3 ; [set2] wait for key and new line
 #_0AC44B: db $F1 ; [set2] clear message box
 #_0AC44C: db $DD ; [set2] [COMMAND 3D]
-#_0AC44D: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC44D: db $EB, $C2 ; [set2] phrase C2
 #_0AC44F: db $F3 ; [set2] wait for key and new line
 #_0AC450: db $F1 ; [set2] clear message box
-#_0AC451: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC451: db $EB, $E1 ; [set2] phrase E1
 #_0AC453: db $F3 ; [set2] wait for key and new line
 #_0AC454: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -13977,39 +13977,39 @@ Message_02_12_07:
 ;===================================================================================================
 
 Message_02_12_08:
-#_0AC464: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
-#_0AC467: db $FB, $01, $E4 ; [set2] [COMMAND 5B] set progress flag E4 if 01 is nonzero; otherwise reset
+#_0AC464: db $FB, $01, $E3 ; [set2] set progress flag E3
+#_0AC467: db $FB, $01, $E4 ; [set2] set progress flag E4
 #_0AC46A: db $F7, $1B, $80 ; [set2] [COMMAND 57] $1B $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかいしている»
+; «>[MYNAME]は けいかいしている»
 ; «どうしますか?»
 Message_02_13_00:
 #_0AC46D: db $D4, $00, $09 ; [set2] go to message 09 if RNG, 00 TODO
 #_0AC470: db $E8, $51 ; [set2] [COMMAND 48:51]
 #_0AC472: db $F3 ; [set2] wait for key and new line
 #_0AC473: db $F1 ; [set2] clear message box
-#_0AC474: db $EB, $C6 ; [set2] prewritten text C6
+#_0AC474: db $EB, $C6 ; [set2] phrase C6
 #_0AC476: db $F3 ; [set2] wait for key and new line
 #_0AC477: db $F1 ; [set2] clear message box
-#_0AC478: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC478: db $EB, $C0 ; [set2] phrase C0
 #_0AC47A: db $F2, $01 ; [set2] option list with 2 options
 #_0AC47C: db $04, $01 ; option 1 [04]: go to message 01
 #_0AC47E: db $0D, $06 ; option 2 [0D]: go to message 06
 
 ;===================================================================================================
 
-; «>[DEMONX]が なまえをきいてきた»
+; «>[MYNAME]が なまえをきいてきた»
 ; «どうしますか?»
 Message_02_13_01:
 #_0AC480: db $E8, $5A ; [set2] [COMMAND 48:5A]
 #_0AC482: db $F3 ; [set2] wait for key and new line
 #_0AC483: db $F1 ; [set2] clear message box
-#_0AC484: db $EB, $CA ; [set2] prewritten text CA
+#_0AC484: db $EB, $CA ; [set2] phrase CA
 #_0AC486: db $F3 ; [set2] wait for key and new line
 #_0AC487: db $F1 ; [set2] clear message box
-#_0AC488: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC488: db $EB, $C0 ; [set2] phrase C0
 #_0AC48A: db $F2, $01 ; [set2] option list with 2 options
 #_0AC48C: db $14, $02 ; option 1 [14]: go to message 02
 #_0AC48E: db $06, $05 ; option 2 [06]: go to message 05
@@ -14025,17 +14025,17 @@ Message_02_13_02:
 
 ;===================================================================================================
 
-; «>[DEMONX]は くちぶえを ふいた»
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は くちぶえを ふいた»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_13_03:
 #_0AC49B: db $DA, $01, $04 ; [set2] ext command 01: go to message 04 if MC INT = 0
 #_0AC49E: db $E8, $5C ; [set2] [COMMAND 48:5C]
 #_0AC4A0: db $F3 ; [set2] wait for key and new line
 #_0AC4A1: db $F1 ; [set2] clear message box
-#_0AC4A2: db $EB, $AF ; [set2] prewritten text AF
+#_0AC4A2: db $EB, $AF ; [set2] phrase AF
 #_0AC4A4: db $F3 ; [set2] wait for key and new line
 #_0AC4A5: db $F1 ; [set2] clear message box
-#_0AC4A6: db $EB, $C5 ; [set2] prewritten text C5
+#_0AC4A6: db $EB, $C5 ; [set2] phrase C5
 #_0AC4A8: db $F3 ; [set2] wait for key and new line
 #_0AC4A9: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -14053,14 +14053,14 @@ Message_02_13_05:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_13_06:
 #_0AC4B4: db $E8, $53 ; [set2] [COMMAND 48:53]
 #_0AC4B6: db $EF, $07 ; [set2] YES/NO - go to message 07 if YES
 #_0AC4B8: db $E8, $52 ; [set2] [COMMAND 48:52]
 #_0AC4BA: db $EF, $0D ; [set2] YES/NO - go to message 0D if YES
 #_0AC4BC: db $D8, $00, $0D ; [set2] go to message 0D if LUK < RNG(0, DemonLUK+8)
-#_0AC4BF: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC4BF: db $EB, $E1 ; [set2] phrase E1
 #_0AC4C1: db $F3 ; [set2] wait for key and new line
 #_0AC4C2: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -14079,16 +14079,16 @@ Message_02_13_08:
 
 ;===================================================================================================
 
-; «>[DEMONX]は いかく している»
+; «>[MYNAME]は いかく している»
 ; «どうしますか?»
 Message_02_13_09:
 #_0AC4D0: db $E8, $5D ; [set2] [COMMAND 48:5D]
 #_0AC4D2: db $F3 ; [set2] wait for key and new line
 #_0AC4D3: db $F1 ; [set2] clear message box
-#_0AC4D4: db $EB, $D5 ; [set2] prewritten text D5
+#_0AC4D4: db $EB, $D5 ; [set2] phrase D5
 #_0AC4D6: db $F3 ; [set2] wait for key and new line
 #_0AC4D7: db $F1 ; [set2] clear message box
-#_0AC4D8: db $EB, $C0 ; [set2] prewritten text C0
+#_0AC4D8: db $EB, $C0 ; [set2] phrase C0
 #_0AC4DA: db $F2, $01 ; [set2] option list with 2 options
 #_0AC4DC: db $00, $0A ; option 1 [00]: go to message 0A
 #_0AC4DE: db $27, $0C ; option 2 [27]: go to message 0C
@@ -14131,7 +14131,7 @@ Message_02_13_0D:
 
 ; «>[CHASE]たちは にげだした»
 Message_02_13_0E:
-#_0AC502: db $EB, $E6 ; [set2] prewritten text E6
+#_0AC502: db $EB, $E6 ; [set2] phrase E6
 #_0AC504: db $F3 ; [set2] wait for key and new line
 #_0AC505: db $FE, $04 ; [set2] [COMMAND 5E:04]
 
@@ -14141,18 +14141,18 @@ Message_02_13_0F:
 #_0AC507: db $E8, $58 ; [set2] [COMMAND 48:58]
 #_0AC509: db $F3 ; [set2] wait for key and new line
 #_0AC50A: db $E6, $04 ; [set2] [COMMAND 46:04]
-#_0AC50C: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AC50C: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AC50F: db $F7, $22, $80 ; [set2] [COMMAND 57] $22 $80 TODO
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_14_00:
 #_0AC512: db $D5, $02, $01 ; [set2] go to message 01 if RNG, 02 TODO
 #_0AC515: db $E8, $02 ; [set2] [COMMAND 48:02]
 #_0AC517: db $F3 ; [set2] wait for key and new line
 #_0AC518: db $F1 ; [set2] clear message box
-#_0AC519: db $EB, $E2 ; [set2] prewritten text E2
+#_0AC519: db $EB, $E2 ; [set2] phrase E2
 #_0AC51B: db $F3 ; [set2] wait for key and new line
 #_0AC51C: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -14177,10 +14177,10 @@ Message_02_14_03:
 
 ;===================================================================================================
 
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_14_04:
 #_0AC52C: db $F1 ; [set2] clear message box
-#_0AC52D: db $EB, $E2 ; [set2] prewritten text E2
+#_0AC52D: db $EB, $E2 ; [set2] phrase E2
 #_0AC52F: db $F3 ; [set2] wait for key and new line
 #_0AC530: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -14195,7 +14195,7 @@ Message_02_14_05:
 ; やくざ«を ころして へいきなの?»
 Message_02_14_06:
 #_0AC537: db $48, $2C, $A1 ; やくざ
-#_0AC53A: db $EB, $BA ; [set2] prewritten text BA
+#_0AC53A: db $EB, $BA ; [set2] phrase BA
 #_0AC53C: db $F3 ; [set2] wait for key and new line
 #_0AC53D: db $E9, $04 ; [set2] go to message 04
 
@@ -14210,17 +14210,17 @@ Message_02_14_07:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は にげていった!»
+; «>[MYNAME]は にげていった!»
 Message_02_14_08:
 #_0AC544: db $D5, $01, $07 ; [set2] go to message 07 if RNG, 01 TODO
 #_0AC547: db $E8, $03 ; [set2] [COMMAND 48:03]
 #_0AC549: db $F3 ; [set2] wait for key and new line
 #_0AC54A: db $F1 ; [set2] clear message box
 #_0AC54B: db $DD ; [set2] [COMMAND 3D]
-#_0AC54C: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC54C: db $EB, $C2 ; [set2] phrase C2
 #_0AC54E: db $F3 ; [set2] wait for key and new line
 #_0AC54F: db $F1 ; [set2] clear message box
-#_0AC550: db $EB, $E2 ; [set2] prewritten text E2
+#_0AC550: db $EB, $E2 ; [set2] phrase E2
 #_0AC552: db $F3 ; [set2] wait for key and new line
 #_0AC553: db $FE, $07 ; [set2] [COMMAND 5E:07]
 
@@ -14231,13 +14231,13 @@ Message_02_14_09:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_14_0A:
 #_0AC55A: db $DA, $01, $09 ; [set2] ext command 01: go to message 09 if MC INT = 0
 #_0AC55D: db $E8, $04 ; [set2] [COMMAND 48:04]
 #_0AC55F: db $F3 ; [set2] wait for key and new line
 #_0AC560: db $F1 ; [set2] clear message box
-#_0AC561: db $EB, $C5 ; [set2] prewritten text C5
+#_0AC561: db $EB, $C5 ; [set2] phrase C5
 #_0AC563: db $F3 ; [set2] wait for key and new line
 #_0AC564: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -14270,7 +14270,7 @@ Message_02_14_0E:
 
 ;===================================================================================================
 
-; «>[DEMONX]は ナカマをよんだ!!»
+; «>[MYNAME]は ナカマをよんだ!!»
 Message_02_14_0F:
 #_0AC57A: db $D5, $01, $11 ; [set2] go to message 11 if RNG, 01 TODO
 #_0AC57D: db $DA, $01, $10 ; [set2] ext command 01: go to message 10 if MC INT = 0
@@ -14278,7 +14278,7 @@ Message_02_14_0F:
 #_0AC583: db $E8, $07 ; [set2] [COMMAND 48:07]
 #_0AC585: db $F3 ; [set2] wait for key and new line
 #_0AC586: db $F1 ; [set2] clear message box
-#_0AC587: db $EB, $C5 ; [set2] prewritten text C5
+#_0AC587: db $EB, $C5 ; [set2] phrase C5
 #_0AC589: db $F3 ; [set2] wait for key and new line
 #_0AC58A: db $FE, $08 ; [set2] [COMMAND 5E:08]
 
@@ -14338,12 +14338,12 @@ Message_02_15_03:
 
 ; «>[CHASE]は [GIVEME] を»
 ; «てにいれた»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_15_04:
-#_0AC5C8: db $EB, $C2 ; [set2] prewritten text C2
+#_0AC5C8: db $EB, $C2 ; [set2] phrase C2
 #_0AC5CA: db $F3 ; [set2] wait for key and new line
 #_0AC5CB: db $F1 ; [set2] clear message box
-#_0AC5CC: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC5CC: db $EB, $E1 ; [set2] phrase E1
 #_0AC5CE: db $F3 ; [set2] wait for key and new line
 #_0AC5CF: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -14389,13 +14389,13 @@ Message_02_15_09:
 
 ;===================================================================================================
 
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_15_0A:
 #_0AC5F9: db $D5, $00, $0B ; [set2] go to message 0B if RNG, 00 TODO
 #_0AC5FC: db $E8, $0D ; [set2] [COMMAND 48:0D]
 #_0AC5FE: db $F3 ; [set2] wait for key and new line
 #_0AC5FF: db $F1 ; [set2] clear message box
-#_0AC600: db $EB, $E1 ; [set2] prewritten text E1
+#_0AC600: db $EB, $E1 ; [set2] phrase E1
 #_0AC602: db $F3 ; [set2] wait for key and new line
 #_0AC603: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -14419,18 +14419,18 @@ Message_0AC60E:
 #_0AC61E: db $76, $8A, $B5, $8A, $BF, $85, $C4, $67 ; ハンガンダルバサ
 #_0AC626: db $8A, $63, $C7, $84, $69, $2B, $2F, $43 ; ンキベリスきさま
 #_0AC62E: db $94 ; !
-#_0AC62F: db $EB, $1A ; [set2] prewritten text 1A
+#_0AC62F: db $EB, $1A ; [set2] phrase 1A
 
 ;===================================================================================================
 
 ; きさま!« わがはいを だれだと おもっておる!»
-; «[CLASSX] [DEMONX]さまだぞ!»
+; «[MYCLASS] [MYNAME]さまだぞ!»
 ; きやすく こえを かけるでない!
 Message_02_16_00:
 #_0AC62B: db $2B, $2F, $43, $94 ; きさま!
-#_0AC62F: db $EB, $1A ; [set2] prewritten text 1A
+#_0AC62F: db $EB, $1A ; [set2] phrase 1A
 #_0AC631: db $F0 ; [set2] new line
-#_0AC632: db $EB, $00 ; [set2] prewritten text 00
+#_0AC632: db $EB, $00 ; [set2] phrase 00
 #_0AC634: db $F0 ; [set2] new line
 #_0AC635: db $2B, $48, $31, $2C, $CF, $2E, $28, $51 ; きやすく⎵こえを
 #_0AC63D: db $CF, $2A, $2D, $4D, $A9, $39, $26, $94 ; ⎵かけるでない!
@@ -14444,7 +14444,7 @@ Message_02_16_01:
 #_0AC646: db $61, $7B, $60, $4B, $CF, $43, $38, $46 ; オマエら⎵まとめ
 #_0AC64E: db $37, $CF, $A2, $A0, $2C, $26, $2B, $94 ; て⎵じごくいき!
 #_0AC656: db $F0 ; [set2] new line
-#_0AC657: db $EB, $01 ; [set2] prewritten text 01
+#_0AC657: db $EB, $01 ; [set2] phrase 01
 #_0AC659: db $FF ; end of message
 
 ;===================================================================================================
@@ -14452,7 +14452,7 @@ Message_02_16_01:
 ; «オレは きょう ちに うえてるんだ!»
 ; かくごは できてんだろーなあ!?
 Message_02_16_02:
-#_0AC65A: db $EB, $02 ; [set2] prewritten text 02
+#_0AC65A: db $EB, $02 ; [set2] phrase 02
 #_0AC65C: db $F0 ; [set2] new line
 #_0AC65D: db $2A, $2C, $A0, $3E, $CF, $A9, $2B, $37 ; かくごは⎵できて
 #_0AC665: db $52, $A6, $4F, $5A, $39, $25, $94, $95 ; んだろーなあ!?
@@ -14483,14 +14483,14 @@ Message_02_16_05:
 
 ; «いますぐ あのよに おくってやるぜー!!»
 Message_02_16_06:
-#_0AC682: db $EB, $2E ; [set2] prewritten text 2E
+#_0AC682: db $EB, $2E ; [set2] phrase 2E
 #_0AC684: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
 Message_02_16_07:
-#_0AC685: db $EB, $0F ; [set2] prewritten text 0F
+#_0AC685: db $EB, $0F ; [set2] phrase 0F
 #_0AC687: db $FF ; end of message
 
 ;===================================================================================================
@@ -14533,10 +14533,10 @@ Message_02_16_0A:
 
 ;===================================================================================================
 
-; >[DEMONX]は ちょうはつてきな たいどだ
+; >[MYNAME]は ちょうはつてきな たいどだ
 Message_02_16_0B:
 #_0AC6E7: db $97 ; >
-#_0AC6E8: db $ED ; [set2] write demon name indexed from $0526
+#_0AC6E8: db $ED ; [set2] write name of speaker
 #_0AC6E9: db $3E, $CF, $35, $57, $27, $3E, $36, $37 ; は⎵ちょうはつて
 #_0AC6F1: db $2B, $39, $CF, $34, $26, $AA, $A6 ; きな⎵たいどだ
 #_0AC6F8: db $FF ; end of message
@@ -14552,7 +14552,7 @@ Message_02_16_0C:
 #_0AC710: db $F0 ; [set2] new line
 #_0AC711: db $AA, $27, $2A, $CF, $29, $49, $4D, $30 ; どうか⎵おゆるし
 #_0AC719: db $51, $94, $CF ; を!⎵
-#_0AC71C: db $EB, $03 ; [set2] prewritten text 03
+#_0AC71C: db $EB, $03 ; [set2] phrase 03
 #_0AC71E: db $31 ; す
 #_0AC71F: db $FF ; end of message
 
@@ -14564,7 +14564,7 @@ Message_02_16_0C:
 ; みんなを あいしてます おゆるしください!
 Message_02_16_0D:
 #_0AC720: db $3F, $2B, $55, $58, $94 ; ひきゃっ!
-#_0AC725: db $EB, $04 ; [set2] prewritten text 04
+#_0AC725: db $EB, $04 ; [set2] phrase 04
 #_0AC727: db $F0 ; [set2] new line
 #_0AC728: db $61, $93, $61, $5E, $83, $3E, $CF, $33 ; オ・オイラは⎵そ
 #_0AC730: db $52, $39, $CF, $36, $47, $4C, $A2, $55 ; んな⎵つもりじゃ
@@ -14589,21 +14589,21 @@ Message_02_16_0E:
 #_0AC774: db $50, $4D, $2A, $58, $34, $94 ; わるかった!
 #_0AC77A: db $F0 ; [set2] new line
 #_0AC77B: db $39, $93 ; な・
-#_0AC77D: db $EB, $03 ; [set2] prewritten text 03
+#_0AC77D: db $EB, $03 ; [set2] phrase 03
 #_0AC77F: db $31, $94 ; す!
 #_0AC781: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は しかたなく こうべをたれ
+; >[MYNAME]は しかたなく こうべをたれ
 ; «[CHASE]の あしもとに ひざまづいた»
 Message_02_16_0F:
 #_0AC782: db $97 ; >
-#_0AC783: db $ED ; [set2] write demon name indexed from $0526
+#_0AC783: db $ED ; [set2] write name of speaker
 #_0AC784: db $3E, $CF, $30, $2A, $34, $39, $2C, $CF ; は⎵しかたなく⎵
 #_0AC78C: db $2E, $27, $AE, $51, $34, $4E ; こうべをたれ
 #_0AC792: db $F0 ; [set2] new line
-#_0AC793: db $EB, $05 ; [set2] prewritten text 05
+#_0AC793: db $EB, $05 ; [set2] phrase 05
 #_0AC795: db $FF ; end of message
 
 ;===================================================================================================
@@ -14633,10 +14633,10 @@ Message_02_16_12:
 
 ;===================================================================================================
 
-; «グオオオーン! [DEMONX]は くやしそうに»
+; «グオオオーン! [MYNAME]は くやしそうに»
 ; «ひとこえ ほえた»
 Message_02_16_13:
-#_0AC7C5: db $EB, $47 ; [set2] prewritten text 47
+#_0AC7C5: db $EB, $47 ; [set2] phrase 47
 #_0AC7C7: db $FF ; end of message
 
 ;===================================================================================================
@@ -14644,7 +14644,7 @@ Message_02_16_13:
 ; やっと わがはいの いだいさが わかったか?
 ; で?
 ; «ようを いってみろ»
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_16_14:
 #_0AC7C8: db $48, $58, $38, $CF, $50, $9C, $3E, $26 ; やっと⎵わがはい
 #_0AC7D0: db $3D, $CF, $26, $A6, $26, $2F, $9C, $CF ; の⎵いだいさが⎵
@@ -14652,17 +14652,17 @@ Message_02_16_14:
 #_0AC7DE: db $F0 ; [set2] new line
 #_0AC7DF: db $A9, $95 ; で?
 #_0AC7E1: db $F0 ; [set2] new line
-#_0AC7E2: db $EB, $06 ; [set2] prewritten text 06
+#_0AC7E2: db $EB, $06 ; [set2] phrase 06
 #_0AC7E4: db $F3 ; [set2] wait for key and new line
 #_0AC7E5: db $F1 ; [set2] clear message box
-#_0AC7E6: db $EB, $1C ; [set2] prewritten text 1C
+#_0AC7E6: db $EB, $1C ; [set2] phrase 1C
 #_0AC7E8: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ヒョエー! ニンゲンが オイラに ようかよ!
 ; よかよか ようかよー!
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_16_15:
 #_0AC7E9: db $77, $91, $60, $5A, $94, $CF, $72, $8A ; ヒョエー!⎵ニン
 #_0AC7F1: db $B8, $8A, $9C, $CF, $61, $5E, $83, $3A ; ゲンが⎵オイラに
@@ -14672,25 +14672,25 @@ Message_02_16_15:
 #_0AC808: db $4A, $5A, $94 ; よー!
 #_0AC80B: db $F3 ; [set2] wait for key and new line
 #_0AC80C: db $F1 ; [set2] clear message box
-#_0AC80D: db $EB, $1C ; [set2] prewritten text 1C
+#_0AC80D: db $EB, $1C ; [set2] phrase 1C
 #_0AC80F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ようを いってみろ»
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_16_16:
-#_0AC810: db $EB, $06 ; [set2] prewritten text 06
+#_0AC810: db $EB, $06 ; [set2] phrase 06
 #_0AC812: db $F3 ; [set2] wait for key and new line
 #_0AC813: db $F1 ; [set2] clear message box
-#_0AC814: db $EB, $1C ; [set2] prewritten text 1C
+#_0AC814: db $EB, $1C ; [set2] phrase 1C
 #_0AC816: db $FF ; end of message
 
 ;===================================================================================================
 
-; «>[DEMONX]は きくたいせいに はいった»
+; «>[MYNAME]は きくたいせいに はいった»
 Message_02_16_17:
-#_0AC817: db $EB, $1C ; [set2] prewritten text 1C
+#_0AC817: db $EB, $1C ; [set2] phrase 1C
 #_0AC819: db $FF ; end of message
 
 ;===================================================================================================
@@ -14709,13 +14709,13 @@ Message_02_16_18:
 Message_02_16_19:
 #_0AC829: db $77, $8F, $5A, $76, $76, $76, $94 ; ヒャーハハハ!
 #_0AC830: db $F0 ; [set2] new line
-#_0AC831: db $EB, $07 ; [set2] prewritten text 07
+#_0AC831: db $EB, $07 ; [set2] phrase 07
 #_0AC833: db $94, $CF ; !⎵
-#_0AC835: db $EB, $07 ; [set2] prewritten text 07
+#_0AC835: db $EB, $07 ; [set2] phrase 07
 #_0AC837: db $94 ; !
 #_0AC838: db $F0 ; [set2] new line
 #_0AC839: db $AA, $2E, $43, $A9, $47, $CF ; どこまでも⎵
-#_0AC83F: db $EB, $07 ; [set2] prewritten text 07
+#_0AC83F: db $EB, $07 ; [set2] phrase 07
 #_0AC841: db $5A, $94 ; ー!
 #_0AC843: db $FF ; end of message
 
@@ -14735,23 +14735,23 @@ Message_02_16_1A:
 ;===================================================================================================
 
 ; グオアアアア!
-; >[DEMONX]は ずにのって さわぎだした
+; >[MYNAME]は ずにのって さわぎだした
 Message_02_16_1B:
 #_0AC869: db $B7, $61, $5D, $5D, $5D, $5D, $94 ; グオアアアア!
 #_0AC870: db $F3 ; [set2] wait for key and new line
 #_0AC871: db $F1 ; [set2] clear message box
 #_0AC872: db $97 ; >
-#_0AC873: db $ED ; [set2] write demon name indexed from $0526
+#_0AC873: db $ED ; [set2] write name of speaker
 #_0AC874: db $3E, $CF, $A3, $3A, $3D, $58, $37, $CF ; は⎵ずにのって⎵
 #_0AC87C: db $2F, $50, $9D, $A6, $30, $34 ; さわぎだした
 #_0AC882: db $FF ; end of message
 
 ;===================================================================================================
 
-; この [DEMONX]さまに たてつくか!
+; この [MYNAME]さまに たてつくか!
 Message_02_16_1C:
 #_0AC883: db $2E, $3D, $CF ; この⎵
-#_0AC886: db $ED ; [set2] write demon name indexed from $0526
+#_0AC886: db $ED ; [set2] write name of speaker
 #_0AC887: db $2F, $43, $3A, $CF, $34, $37, $36, $2C ; さまに⎵たてつく
 #_0AC88F: db $2A, $94 ; か!
 #_0AC891: db $FF ; end of message
@@ -14774,10 +14774,10 @@ Message_02_16_1E:
 
 ;===================================================================================================
 
-; >[DEMONX]は すこし ひるんだ
+; >[MYNAME]は すこし ひるんだ
 Message_02_16_1F:
 #_0AC8B0: db $97 ; >
-#_0AC8B1: db $ED ; [set2] write demon name indexed from $0526
+#_0AC8B1: db $ED ; [set2] write name of speaker
 #_0AC8B2: db $3E, $CF, $31, $2E, $30, $CF, $3F, $4D ; は⎵すこし⎵ひる
 #_0AC8BA: db $52, $A6 ; んだ
 #_0AC8BC: db $FF ; end of message
@@ -14787,16 +14787,16 @@ Message_02_16_1F:
 ; «みかけによらず どきょうが あるな!»
 ; «ようを いってみろ»
 Message_02_16_20:
-#_0AC8BD: db $EB, $09 ; [set2] prewritten text 09
+#_0AC8BD: db $EB, $09 ; [set2] phrase 09
 #_0AC8BF: db $F0 ; [set2] new line
-#_0AC8C0: db $EB, $06 ; [set2] prewritten text 06
+#_0AC8C0: db $EB, $06 ; [set2] phrase 06
 #_0AC8C2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «みかけによらず どきょうが あるな!»
 Message_02_16_21:
-#_0AC8C3: db $EB, $09 ; [set2] prewritten text 09
+#_0AC8C3: db $EB, $09 ; [set2] phrase 09
 #_0AC8C5: db $FF ; end of message
 
 ;===================================================================================================
@@ -14814,9 +14814,9 @@ Message_02_16_22:
 
 ;===================================================================================================
 
-; [DEMONX]は ニヤリと わらった
+; [MYNAME]は ニヤリと わらった
 Message_02_16_23:
-#_0AC8EE: db $ED ; [set2] write demon name indexed from $0526
+#_0AC8EE: db $ED ; [set2] write name of speaker
 #_0AC8EF: db $3E, $CF, $72, $80, $84, $38, $CF, $50 ; は⎵ニヤリと⎵わ
 #_0AC8F7: db $4B, $58, $34 ; らった
 #_0AC8FA: db $FF ; end of message
@@ -14834,9 +14834,9 @@ Message_02_16_24:
 ; «ア・アンタ なにもんだよ ホントに ニンゲン?»
 ; «はなせば わかるよ・・・ナ?»
 Message_02_16_25:
-#_0AC909: db $EB, $0B ; [set2] prewritten text 0B
+#_0AC909: db $EB, $0B ; [set2] phrase 0B
 #_0AC90B: db $F0 ; [set2] new line
-#_0AC90C: db $EB, $0C ; [set2] prewritten text 0C
+#_0AC90C: db $EB, $0C ; [set2] phrase 0C
 #_0AC90E: db $FF ; end of message
 
 ;===================================================================================================
@@ -14846,9 +14846,9 @@ Message_02_16_25:
 ; え? なにか おはなしでも?
 Message_02_16_26:
 #_0AC90F: db $9F, $9F, $58, $CF ; げげっ⎵
-#_0AC913: db $EB, $04 ; [set2] prewritten text 04
+#_0AC913: db $EB, $04 ; [set2] phrase 04
 #_0AC915: db $F0 ; [set2] new line
-#_0AC916: db $EB, $0D ; [set2] prewritten text 0D
+#_0AC916: db $EB, $0D ; [set2] phrase 0D
 #_0AC918: db $F0 ; [set2] new line
 #_0AC919: db $28, $95, $CF, $39, $3A, $2A, $CF, $29 ; え?⎵なにか⎵お
 #_0AC921: db $3E, $39, $30, $A9, $47, $95 ; はなしでも?
@@ -14856,9 +14856,9 @@ Message_02_16_26:
 
 ;===================================================================================================
 
-; «[DEMONX]は ひるんでいる»
+; «[MYNAME]は ひるんでいる»
 Message_02_16_27:
-#_0AC928: db $EB, $D3 ; [set2] prewritten text D3
+#_0AC928: db $EB, $D3 ; [set2] phrase D3
 #_0AC92A: db $FF ; end of message
 
 ;===================================================================================================
@@ -14898,7 +14898,7 @@ Message_02_16_2C:
 ; «ア・アンタ なにもんだよ ホントに ニンゲン?»
 ; これ やるから ほっといて ちょーだい!
 Message_02_16_2D:
-#_0AC94E: db $EB, $0B ; [set2] prewritten text 0B
+#_0AC94E: db $EB, $0B ; [set2] phrase 0B
 #_0AC950: db $F0 ; [set2] new line
 #_0AC951: db $2E, $4E, $CF, $48, $4D, $2A, $4B, $CF ; これ⎵やるから⎵
 #_0AC959: db $42, $58, $38, $26, $37, $CF, $35, $57 ; ほっといて⎵ちょ
@@ -14912,7 +14912,7 @@ Message_02_16_2D:
 ; そんじゃ わたしは しつれいして・・・・
 Message_02_16_2E:
 #_0AC966: db $27, $9F, $58, $CF ; うげっ⎵
-#_0AC96A: db $EB, $04 ; [set2] prewritten text 04
+#_0AC96A: db $EB, $04 ; [set2] phrase 04
 #_0AC96C: db $F0 ; [set2] new line
 #_0AC96D: db $2E, $93, $2E, $4E, $51, $CF, $AA, $27 ; こ・これを⎵どう
 #_0AC975: db $A5, $93, $93, $93 ; ぞ・・・
@@ -14924,22 +14924,22 @@ Message_02_16_2E:
 
 ;===================================================================================================
 
-; >[DEMONX]は うわめづかいに
+; >[MYNAME]は うわめづかいに
 ; «なにか さしだした»
 Message_02_16_2F:
 #_0AC98F: db $97 ; >
-#_0AC990: db $ED ; [set2] write demon name indexed from $0526
+#_0AC990: db $ED ; [set2] write name of speaker
 #_0AC991: db $3E, $CF, $27, $50, $46, $A8, $2A, $26 ; は⎵うわめづかい
 #_0AC999: db $3A ; に
 #_0AC99A: db $F0 ; [set2] new line
-#_0AC99B: db $EB, $0E ; [set2] prewritten text 0E
+#_0AC99B: db $EB, $0E ; [set2] phrase 0E
 #_0AC99D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «つぎにあうまで いのちを だいじに するんだな»
 Message_02_16_30:
-#_0AC99E: db $EB, $24 ; [set2] prewritten text 24
+#_0AC99E: db $EB, $24 ; [set2] phrase 24
 #_0AC9A0: db $FF ; end of message
 
 ;===================================================================================================
@@ -14960,46 +14960,46 @@ Message_02_16_32:
 
 ; «グオオオオー!»
 Message_02_16_33:
-#_0AC9AF: db $EB, $0F ; [set2] prewritten text 0F
+#_0AC9AF: db $EB, $0F ; [set2] phrase 0F
 #_0AC9B1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はーはははは!»
 Message_02_16_34:
-#_0AC9B2: db $EB, $61 ; [set2] prewritten text 61
+#_0AC9B2: db $EB, $61 ; [set2] phrase 61
 #_0AC9B4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ひゃっひゃっひゃ!»
 Message_02_16_35:
-#_0AC9B5: db $EB, $22 ; [set2] prewritten text 22
+#_0AC9B5: db $EB, $22 ; [set2] phrase 22
 #_0AC9B7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぎゃはははは!»
 Message_02_16_36:
-#_0AC9B8: db $EB, $20 ; [set2] prewritten text 20
+#_0AC9B8: db $EB, $20 ; [set2] phrase 20
 #_0AC9BA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぐッ・ぐッ・ぐッ・ぐッ»
 Message_02_16_37:
-#_0AC9BB: db $EB, $12 ; [set2] prewritten text 12
+#_0AC9BB: db $EB, $12 ; [set2] phrase 12
 #_0AC9BD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; キサマ!« わがはいを だれだと おもっておる!»
-; «[CLASSX] [DEMONX]さまだぞ!»
+; «[MYCLASS] [MYNAME]さまだぞ!»
 Message_02_16_38:
 #_0AC9BE: db $63, $67, $7B, $94 ; キサマ!
-#_0AC9C2: db $EB, $1A ; [set2] prewritten text 1A
+#_0AC9C2: db $EB, $1A ; [set2] phrase 1A
 #_0AC9C4: db $F0 ; [set2] new line
-#_0AC9C5: db $EB, $00 ; [set2] prewritten text 00
+#_0AC9C5: db $EB, $00 ; [set2] phrase 00
 #_0AC9C7: db $FF ; end of message
 
 ;===================================================================================================
@@ -15010,9 +15010,9 @@ Message_02_16_39:
 #_0AC9C8: db $2E, $26, $36, $CF, $35, $57, $5A, $71 ; こいつ⎵ちょーナ
 #_0AC9D0: db $7B, $A6, $A4, $26, $94 ; マだぜい!
 #_0AC9D5: db $F0 ; [set2] new line
-#_0AC9D6: db $EB, $07 ; [set2] prewritten text 07
+#_0AC9D6: db $EB, $07 ; [set2] phrase 07
 #_0AC9D8: db $CF, $A4, $58, $34, $26, $CF ; ⎵ぜったい⎵
-#_0AC9DE: db $EB, $07 ; [set2] prewritten text 07
+#_0AC9DE: db $EB, $07 ; [set2] phrase 07
 #_0AC9E0: db $5A, $94 ; ー!
 #_0AC9E2: db $FF ; end of message
 
@@ -15028,13 +15028,13 @@ Message_02_16_3A:
 ;===================================================================================================
 
 ; «グオオオオー!»
-; >[DEMONX]は いきり たっている
+; >[MYNAME]は いきり たっている
 Message_02_16_3B:
-#_0AC9FA: db $EB, $0F ; [set2] prewritten text 0F
+#_0AC9FA: db $EB, $0F ; [set2] phrase 0F
 #_0AC9FC: db $F3 ; [set2] wait for key and new line
 #_0AC9FD: db $F1 ; [set2] clear message box
 #_0AC9FE: db $97 ; >
-#_0AC9FF: db $ED ; [set2] write demon name indexed from $0526
+#_0AC9FF: db $ED ; [set2] write name of speaker
 #_0ACA00: db $3E, $CF, $26, $2B, $4C, $CF, $34, $58 ; は⎵いきり⎵たっ
 #_0ACA08: db $37, $26, $4D ; ている
 #_0ACA0B: db $FF ; end of message
@@ -15042,13 +15042,13 @@ Message_02_16_3B:
 ;===================================================================================================
 
 ; はっはっはっ おもしろいやつ!
-; «わがはいは [CLASSX] [DEMONX]!»
+; «わがはいは [MYCLASS] [MYNAME]!»
 ; なにようだ?
 Message_02_16_3C:
 #_0ACA0C: db $3E, $58, $3E, $58, $3E, $58, $CF, $29 ; はっはっはっ⎵お
 #_0ACA14: db $47, $30, $4F, $26, $48, $36, $94 ; もしろいやつ!
 #_0ACA1B: db $F0 ; [set2] new line
-#_0ACA1C: db $EB, $11 ; [set2] prewritten text 11
+#_0ACA1C: db $EB, $11 ; [set2] phrase 11
 #_0ACA1E: db $F0 ; [set2] new line
 #_0ACA1F: db $39, $3A, $4A, $27, $A6, $95 ; なにようだ?
 #_0ACA25: db $FF ; end of message
@@ -15069,17 +15069,17 @@ Message_02_16_3D:
 ;===================================================================================================
 
 ; ヒーホー! «きにいった»ぜ!
-; オレは [CLASSX] [DEMONX]!
+; オレは [MYCLASS] [MYNAME]!
 ; なんか ようか?
 Message_02_16_3E:
 #_0ACA4E: db $77, $5A, $7A, $5A, $94, $CF ; ヒーホー!⎵
-#_0ACA54: db $EB, $25 ; [set2] prewritten text 25
+#_0ACA54: db $EB, $25 ; [set2] phrase 25
 #_0ACA56: db $A4, $94 ; ぜ!
 #_0ACA58: db $F0 ; [set2] new line
 #_0ACA59: db $61, $86, $3E, $CF ; オレは⎵
-#_0ACA5D: db $EE ; [set2] write class name indexed from $0526
+#_0ACA5D: db $EE ; [set2] write class of speaker
 #_0ACA5E: db $CF ; ⎵
-#_0ACA5F: db $ED ; [set2] write demon name indexed from $0526
+#_0ACA5F: db $ED ; [set2] write name of speaker
 #_0ACA60: db $94 ; !
 #_0ACA61: db $F0 ; [set2] new line
 #_0ACA62: db $39, $52, $2A, $CF, $4A, $27, $2A, $95 ; なんか⎵ようか?
@@ -15090,7 +15090,7 @@ Message_02_16_3E:
 ; «ぐッ・ぐッ・ぐッ・ぐッ»
 ; ナンノ ヨウダ?
 Message_02_16_3F:
-#_0ACA6B: db $EB, $12 ; [set2] prewritten text 12
+#_0ACA6B: db $EB, $12 ; [set2] phrase 12
 #_0ACA6D: db $F0 ; [set2] new line
 #_0ACA6E: db $71, $8A, $75, $CF, $82, $5F, $BF, $95 ; ナンノ⎵ヨウダ?
 #_0ACA76: db $FF ; end of message
@@ -15099,7 +15099,7 @@ Message_02_16_3F:
 
 ; キサマの ちからを みせて もらおうか?
 ; «この いわを すでで くだいてみ»ろ!
-; «[DEMONX]は いわを もちあげると»
+; «[MYNAME]は いわを もちあげると»
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
@@ -15108,91 +15108,91 @@ Message_02_16_40:
 #_0ACA7F: db $51, $CF, $44, $32, $37, $CF, $47, $4B ; を⎵みせて⎵もら
 #_0ACA87: db $29, $27, $2A, $95 ; おうか?
 #_0ACA8B: db $F0 ; [set2] new line
-#_0ACA8C: db $EB, $13 ; [set2] prewritten text 13
+#_0ACA8C: db $EB, $13 ; [set2] phrase 13
 #_0ACA8E: db $4F, $94 ; ろ!
 #_0ACA90: db $F3 ; [set2] wait for key and new line
 #_0ACA91: db $F1 ; [set2] clear message box
-#_0ACA92: db $EB, $1D ; [set2] prewritten text 1D
+#_0ACA92: db $EB, $1D ; [set2] phrase 1D
 #_0ACA94: db $F3 ; [set2] wait for key and new line
 #_0ACA95: db $F1 ; [set2] clear message box
-#_0ACA96: db $EB, $14 ; [set2] prewritten text 14
+#_0ACA96: db $EB, $14 ; [set2] phrase 14
 #_0ACA98: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «でかいくち たたくんなら »
 ; «この いわを すでで くだいてみな!»
-; «[DEMONX]は いわを もちあげると»
+; «[MYNAME]は いわを もちあげると»
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
 Message_02_16_41:
-#_0ACA99: db $EB, $1F ; [set2] prewritten text 1F
+#_0ACA99: db $EB, $1F ; [set2] phrase 1F
 #_0ACA9B: db $F3 ; [set2] wait for key and new line
 #_0ACA9C: db $F1 ; [set2] clear message box
-#_0ACA9D: db $EB, $1D ; [set2] prewritten text 1D
+#_0ACA9D: db $EB, $1D ; [set2] phrase 1D
 #_0ACA9F: db $F3 ; [set2] wait for key and new line
 #_0ACAA0: db $F1 ; [set2] clear message box
-#_0ACAA1: db $EB, $14 ; [set2] prewritten text 14
+#_0ACAA1: db $EB, $14 ; [set2] phrase 14
 #_0ACAA3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «でかいくち たたくんなら »
 ; «この いわを すでで くだいてみな!»
-; «[DEMONX]は いわを もちあげると»
+; «[MYNAME]は いわを もちあげると»
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
 Message_02_16_42:
-#_0ACAA4: db $EB, $1F ; [set2] prewritten text 1F
+#_0ACAA4: db $EB, $1F ; [set2] phrase 1F
 #_0ACAA6: db $F3 ; [set2] wait for key and new line
 #_0ACAA7: db $F1 ; [set2] clear message box
-#_0ACAA8: db $EB, $1D ; [set2] prewritten text 1D
+#_0ACAA8: db $EB, $1D ; [set2] phrase 1D
 #_0ACAAA: db $F3 ; [set2] wait for key and new line
 #_0ACAAB: db $F1 ; [set2] clear message box
-#_0ACAAC: db $EB, $14 ; [set2] prewritten text 14
+#_0ACAAC: db $EB, $14 ; [set2] phrase 14
 #_0ACAAE: db $FF ; end of message
 
 ;===================================================================================================
 
-; «[DEMONX]は いわを もちあげると»
+; «[MYNAME]は いわを もちあげると»
 ; «くだいて みせた・・・»
 ; «[CHASE]に いわを さしだしている»
 ; «おなじことを ためして みますか?»
 Message_02_16_43:
-#_0ACAAF: db $EB, $1D ; [set2] prewritten text 1D
+#_0ACAAF: db $EB, $1D ; [set2] phrase 1D
 #_0ACAB1: db $F3 ; [set2] wait for key and new line
 #_0ACAB2: db $F1 ; [set2] clear message box
-#_0ACAB3: db $EB, $14 ; [set2] prewritten text 14
+#_0ACAB3: db $EB, $14 ; [set2] phrase 14
 #_0ACAB5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «き・きさまあ・・・・・»
 Message_02_16_44:
-#_0ACAB6: db $EB, $15 ; [set2] prewritten text 15
+#_0ACAB6: db $EB, $15 ; [set2] phrase 15
 #_0ACAB8: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «やなやつ!»
 Message_02_16_45:
-#_0ACAB9: db $EB, $17 ; [set2] prewritten text 17
+#_0ACAB9: db $EB, $17 ; [set2] phrase 17
 #_0ACABB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «じょうとう じゃねえか!»
 Message_02_16_46:
-#_0ACABC: db $EB, $18 ; [set2] prewritten text 18
+#_0ACABC: db $EB, $18 ; [set2] phrase 18
 #_0ACABE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぐるるるるる・・・・»
 Message_02_16_47:
-#_0ACABF: db $EB, $19 ; [set2] prewritten text 19
+#_0ACABF: db $EB, $19 ; [set2] phrase 19
 #_0ACAC1: db $FF ; end of message
 
 ;===================================================================================================
@@ -15229,7 +15229,7 @@ Message_02_16_4C:
 ; «ひゃーははは!»
 ; えに かいたような ばか!
 Message_02_16_4D:
-#_0ACADA: db $EB, $01 ; [set2] prewritten text 01
+#_0ACADA: db $EB, $01 ; [set2] phrase 01
 #_0ACADC: db $F0 ; [set2] new line
 #_0ACADD: db $28, $3A, $CF, $2A, $26, $34, $4A, $27 ; えに⎵かいたよう
 #_0ACAE5: db $39, $CF, $AB, $2A, $94 ; な⎵ばか!
@@ -15239,7 +15239,7 @@ Message_02_16_4D:
 
 ; «ケッ・・・きもちわるい ヤツ!»
 Message_02_16_4E:
-#_0ACAEB: db $EB, $1B ; [set2] prewritten text 1B
+#_0ACAEB: db $EB, $1B ; [set2] phrase 1B
 #_0ACAED: db $FF ; end of message
 
 ;===================================================================================================
@@ -15298,9 +15298,9 @@ Message_02_16_56:
 
 ;===================================================================================================
 
-; «[DEMONX]は きびすを かえした»
+; «[MYNAME]は きびすを かえした»
 Message_02_16_57:
-#_0ACB3B: db $EB, $3E ; [set2] prewritten text 3E
+#_0ACB3B: db $EB, $3E ; [set2] phrase 3E
 #_0ACB3D: db $FF ; end of message
 
 ;===================================================================================================
@@ -15325,42 +15325,42 @@ Message_02_16_5B:
 
 ;===================================================================================================
 
-; なにものだ? わがはいが [DEMONX]と
+; なにものだ? わがはいが [MYNAME]と
 ; しっての ことか?
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_16_5C:
 #_0ACB42: db $39, $3A, $47, $3D, $A6, $95, $CF, $50 ; なにものだ?⎵わ
 #_0ACB4A: db $9C, $3E, $26, $9C, $CF ; がはいが⎵
-#_0ACB4F: db $ED ; [set2] write demon name indexed from $0526
+#_0ACB4F: db $ED ; [set2] write name of speaker
 #_0ACB50: db $38 ; と
 #_0ACB51: db $F0 ; [set2] new line
 #_0ACB52: db $30, $58, $37, $3D, $CF, $2E, $38, $2A ; しっての⎵ことか
 #_0ACB5A: db $95 ; ?
 #_0ACB5B: db $F3 ; [set2] wait for key and new line
 #_0ACB5C: db $F1 ; [set2] clear message box
-#_0ACB5D: db $EB, $81 ; [set2] prewritten text 81
+#_0ACB5D: db $EB, $81 ; [set2] phrase 81
 #_0ACB5F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ひゃっひゃっひゃ!»
 ; やれるもんなら やってみな!
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_16_5D:
-#_0ACB60: db $EB, $22 ; [set2] prewritten text 22
+#_0ACB60: db $EB, $22 ; [set2] phrase 22
 #_0ACB62: db $F0 ; [set2] new line
 #_0ACB63: db $48, $4E, $4D, $47, $52, $39, $4B, $CF ; やれるもんなら⎵
 #_0ACB6B: db $48, $58, $37, $44, $39, $94 ; やってみな!
 #_0ACB71: db $F3 ; [set2] wait for key and new line
 #_0ACB72: db $F1 ; [set2] clear message box
-#_0ACB73: db $EB, $81 ; [set2] prewritten text 81
+#_0ACB73: db $EB, $81 ; [set2] phrase 81
 #_0ACB75: db $FF ; end of message
 
 ;===================================================================================================
 
 ; オマエ デビル・バスターか?
 ; ならば ようしゃ しないぜ!
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_16_5E:
 #_0ACB76: db $61, $7B, $60, $CF, $C2, $C5, $85, $93 ; オマエ⎵デビル・
 #_0ACB7E: db $C4, $69, $6C, $5A, $2A, $95 ; バスターか?
@@ -15369,14 +15369,14 @@ Message_02_16_5E:
 #_0ACB8D: db $CF, $30, $39, $26, $A4, $94 ; ⎵しないぜ!
 #_0ACB93: db $F3 ; [set2] wait for key and new line
 #_0ACB94: db $F1 ; [set2] clear message box
-#_0ACB95: db $EB, $81 ; [set2] prewritten text 81
+#_0ACB95: db $EB, $81 ; [set2] phrase 81
 #_0ACB97: db $FF ; end of message
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_16_5F:
-#_0ACB98: db $EB, $81 ; [set2] prewritten text 81
+#_0ACB98: db $EB, $81 ; [set2] phrase 81
 #_0ACB9A: db $FF ; end of message
 
 ;===================================================================================================
@@ -15403,7 +15403,7 @@ Message_02_16_63:
 
 ; «はーはははは!» あまい! あまいぞお!
 Message_02_16_64:
-#_0ACB9F: db $EB, $61 ; [set2] prewritten text 61
+#_0ACB9F: db $EB, $61 ; [set2] phrase 61
 #_0ACBA1: db $CF, $25, $43, $26, $94, $CF, $25, $43 ; ⎵あまい!⎵あま
 #_0ACBA9: db $26, $A5, $29, $94 ; いぞお!
 #_0ACBAD: db $FF ; end of message
@@ -15413,7 +15413,7 @@ Message_02_16_64:
 ; «ひゃーははは!»
 ; これで こわいもん なし!
 Message_02_16_65:
-#_0ACBAE: db $EB, $01 ; [set2] prewritten text 01
+#_0ACBAE: db $EB, $01 ; [set2] phrase 01
 #_0ACBB0: db $F0 ; [set2] new line
 #_0ACBB1: db $2E, $4E, $A9, $CF, $2E, $50, $26, $47 ; これで⎵こわいも
 #_0ACBB9: db $52, $CF, $39, $30, $94 ; ん⎵なし!
@@ -15424,7 +15424,7 @@ Message_02_16_65:
 ; «ぎゃはははは!»
 ; マヌケな やつめ!
 Message_02_16_66:
-#_0ACBBF: db $EB, $20 ; [set2] prewritten text 20
+#_0ACBBF: db $EB, $20 ; [set2] phrase 20
 #_0ACBC1: db $F0 ; [set2] new line
 #_0ACBC2: db $7B, $73, $65, $39, $CF, $48, $36, $46 ; マヌケな⎵やつめ
 #_0ACBCA: db $94 ; !
@@ -15471,9 +15471,9 @@ Message_02_16_6A:
 
 ;===================================================================================================
 
-; [DEMONX]は てまねき している
+; [MYNAME]は てまねき している
 Message_02_16_6B:
-#_0ACC22: db $ED ; [set2] write demon name indexed from $0526
+#_0ACC22: db $ED ; [set2] write name of speaker
 #_0ACC23: db $3E, $CF, $37, $43, $3C, $2B, $CF, $30 ; は⎵てまねき⎵し
 #_0ACC2B: db $37, $26, $4D ; ている
 #_0ACC2E: db $FF ; end of message
@@ -15484,10 +15484,10 @@ Message_02_16_6B:
 ; わがはいは «きにいった»ぞ
 Message_02_16_6C:
 #_0ACC2F: db $2B, $2F, $43, $3D ; きさまの
-#_0ACC33: db $EB, $21 ; [set2] prewritten text 21
+#_0ACC33: db $EB, $21 ; [set2] phrase 21
 #_0ACC35: db $F0 ; [set2] new line
 #_0ACC36: db $50, $9C, $3E, $26, $3E, $CF ; わがはいは⎵
-#_0ACC3C: db $EB, $25 ; [set2] prewritten text 25
+#_0ACC3C: db $EB, $25 ; [set2] phrase 25
 #_0ACC3E: db $A5 ; ぞ
 #_0ACC3F: db $FF ; end of message
 
@@ -15510,7 +15510,7 @@ Message_02_16_6D:
 ; オレは いま もうれつに かんどうしている・・・
 Message_02_16_6E:
 #_0ACC63: db $5D, $8A, $6C, $3D ; アンタの
-#_0ACC67: db $EB, $21 ; [set2] prewritten text 21
+#_0ACC67: db $EB, $21 ; [set2] phrase 21
 #_0ACC69: db $F0 ; [set2] new line
 #_0ACC6A: db $61, $86, $3E, $CF, $26, $43, $CF, $47 ; オレは⎵いま⎵も
 #_0ACC72: db $27, $4E, $36, $3A, $CF, $2A, $52, $AA ; うれつに⎵かんど
@@ -15519,21 +15519,21 @@ Message_02_16_6E:
 
 ;===================================================================================================
 
-; [DEMONX]は こうべを たれ
+; [MYNAME]は こうべを たれ
 ; «[CHASE]の あしもとに ひざまづいた»
 Message_02_16_6F:
-#_0ACC83: db $ED ; [set2] write demon name indexed from $0526
+#_0ACC83: db $ED ; [set2] write name of speaker
 #_0ACC84: db $3E, $CF, $2E, $27, $AE, $51, $CF, $34 ; は⎵こうべを⎵た
 #_0ACC8C: db $4E ; れ
 #_0ACC8D: db $F0 ; [set2] new line
-#_0ACC8E: db $EB, $05 ; [set2] prewritten text 05
+#_0ACC8E: db $EB, $05 ; [set2] phrase 05
 #_0ACC90: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おくびょうものに ようは ないわ!»
 Message_02_16_70:
-#_0ACC91: db $EB, $56 ; [set2] prewritten text 56
+#_0ACC91: db $EB, $56 ; [set2] phrase 56
 #_0ACC93: db $FF ; end of message
 
 ;===================================================================================================
@@ -15541,7 +15541,7 @@ Message_02_16_70:
 ; «ひゃっひゃっひゃ!»
 ; そんな ゆうき あるわけ ないもんな
 Message_02_16_71:
-#_0ACC94: db $EB, $22 ; [set2] prewritten text 22
+#_0ACC94: db $EB, $22 ; [set2] phrase 22
 #_0ACC96: db $F0 ; [set2] new line
 #_0ACC97: db $33, $52, $39, $CF, $49, $27, $2B, $CF ; そんな⎵ゆうき⎵
 #_0ACC9F: db $25, $4D, $50, $2D, $CF, $39, $26, $47 ; あるわけ⎵ないも
@@ -15552,19 +15552,19 @@ Message_02_16_71:
 
 ; «おじけづいたな!»
 Message_02_16_72:
-#_0ACCAA: db $EB, $57 ; [set2] prewritten text 57
+#_0ACCAA: db $EB, $57 ; [set2] phrase 57
 #_0ACCAC: db $FF ; end of message
 
 ;===================================================================================================
 
 ; フン!
-; >[DEMONX]は はなで わらった
+; >[MYNAME]は はなで わらった
 Message_02_16_73:
 #_0ACCAD: db $78, $8A, $94 ; フン!
 #_0ACCB0: db $F3 ; [set2] wait for key and new line
 #_0ACCB1: db $F1 ; [set2] clear message box
 #_0ACCB2: db $97 ; >
-#_0ACCB3: db $ED ; [set2] write demon name indexed from $0526
+#_0ACCB3: db $ED ; [set2] write name of speaker
 #_0ACCB4: db $3E, $CF, $3E, $39, $A9, $CF, $50, $4B ; は⎵はなで⎵わら
 #_0ACCBC: db $58, $34 ; った
 #_0ACCBE: db $FF ; end of message
@@ -15667,16 +15667,16 @@ Message_02_16_7D:
 
 ; «ニンゲンの ナカマに なれだと?»
 Message_02_16_7E:
-#_0ACD7A: db $EB, $23 ; [set2] prewritten text 23
+#_0ACD7A: db $EB, $23 ; [set2] phrase 23
 #_0ACD7C: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は [CHASE]の
+; >[MYNAME]は [CHASE]の
 ; なかまに なろうかと なやんでいる
 Message_02_16_7F:
 #_0ACD7D: db $97 ; >
-#_0ACD7E: db $ED ; [set2] write demon name indexed from $0526
+#_0ACD7E: db $ED ; [set2] write name of speaker
 #_0ACD7F: db $3E, $CF ; は⎵
 #_0ACD81: db $F8 ; [set2] write player name
 #_0ACD82: db $3D ; の
@@ -15706,24 +15706,24 @@ Message_02_16_81:
 
 ;===================================================================================================
 
-; «>[DEMONX]は くちぶえを ふいた»
+; «>[MYNAME]は くちぶえを ふいた»
 Message_02_16_82:
-#_0ACDC0: db $EB, $AF ; [set2] prewritten text AF
+#_0ACDC0: db $EB, $AF ; [set2] phrase AF
 #_0ACDC2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
 Message_02_16_83:
-#_0ACDC3: db $EB, $0F ; [set2] prewritten text 0F
+#_0ACDC3: db $EB, $0F ; [set2] phrase 0F
 #_0ACDC5: db $FF ; end of message
 
 ;===================================================================================================
 
-; «わがはいは [CLASSX] [DEMONX]!»
+; «わがはいは [MYCLASS] [MYNAME]!»
 ; わがはいの めいせいを きいて やってきたのか?
 Message_02_16_84:
-#_0ACDC6: db $EB, $11 ; [set2] prewritten text 11
+#_0ACDC6: db $EB, $11 ; [set2] phrase 11
 #_0ACDC8: db $F0 ; [set2] new line
 #_0ACDC9: db $50, $9C, $3E, $26, $3D, $CF, $46, $26 ; わがはいの⎵めい
 #_0ACDD1: db $32, $26, $51, $CF, $2B, $26, $37, $CF ; せいを⎵きいて⎵
@@ -15777,10 +15777,10 @@ Message_02_16_88:
 #_0ACE4A: db $33, $27, $2A, $33, $27, $2A, $CF, $2A ; そうかそうか⎵か
 #_0ACE52: db $52, $30, $52, $39, $CF, $48, $36, $46 ; んしんな⎵やつめ
 #_0ACE5A: db $F0 ; [set2] new line
-#_0ACE5B: db $EB, $28 ; [set2] prewritten text 28
+#_0ACE5B: db $EB, $28 ; [set2] phrase 28
 #_0ACE5D: db $F3 ; [set2] wait for key and new line
 #_0ACE5E: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0ACE60: db $FB, $01, $E7 ; [set2] [COMMAND 5B] set progress flag E7 if 01 is nonzero; otherwise reset
+#_0ACE60: db $FB, $01, $E7 ; [set2] set progress flag E7
 #_0ACE63: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -15795,7 +15795,7 @@ Message_02_16_89:
 #_0ACE7D: db $26, $71 ; いナ
 #_0ACE7F: db $F3 ; [set2] wait for key and new line
 #_0ACE80: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0ACE82: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0ACE82: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0ACE85: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -15816,7 +15816,7 @@ Message_02_16_8B:
 #_0ACEA9: db $86, $93, $93, $93 ; レ・・・
 #_0ACEAD: db $F3 ; [set2] wait for key and new line
 #_0ACEAE: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0ACEB0: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0ACEB0: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0ACEB3: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -15827,7 +15827,7 @@ Message_02_16_8C:
 #_0ACEBD: db $4B, $3A, $3E, $CF, $2E, $4E, $51, $CF ; らには⎵これを⎵
 #_0ACEC5: db $48, $4F, $27 ; やろう
 #_0ACEC8: db $F3 ; [set2] wait for key and new line
-#_0ACEC9: db $FB, $01, $E8 ; [set2] [COMMAND 5B] set progress flag E8 if 01 is nonzero; otherwise reset
+#_0ACEC9: db $FB, $01, $E8 ; [set2] set progress flag E8
 #_0ACECC: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -15843,7 +15843,7 @@ Message_02_16_8D:
 ;===================================================================================================
 
 ; だから オレが すくって やるって
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_16_8E:
 #_0ACEE1: db $A6, $2A, $4B, $CF, $61, $86, $9C, $CF ; だから⎵オレが⎵
@@ -15851,7 +15851,7 @@ Message_02_16_8E:
 #_0ACEF1: db $37 ; て
 #_0ACEF2: db $F3 ; [set2] wait for key and new line
 #_0ACEF3: db $F1 ; [set2] clear message box
-#_0ACEF4: db $EB, $E0 ; [set2] prewritten text E0
+#_0ACEF4: db $EB, $E0 ; [set2] phrase E0
 #_0ACEF6: db $F3 ; [set2] wait for key and new line
 #_0ACEF7: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
@@ -15905,13 +15905,13 @@ Message_02_16_93:
 ;===================================================================================================
 
 ; とっとと かえれ このタコ!
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_16_94:
 #_0ACF51: db $38, $58, $38, $38, $CF, $2A, $28, $4E ; とっとと⎵かえれ
 #_0ACF59: db $CF, $2E, $3D, $6C, $66, $94 ; ⎵このタコ!
 #_0ACF5F: db $F3 ; [set2] wait for key and new line
 #_0ACF60: db $F1 ; [set2] clear message box
-#_0ACF61: db $EB, $E1 ; [set2] prewritten text E1
+#_0ACF61: db $EB, $E1 ; [set2] phrase E1
 #_0ACF63: db $F3 ; [set2] wait for key and new line
 #_0ACF64: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -15969,7 +15969,7 @@ Message_02_16_99:
 #_0ACFD9: db $26, $9C, $58, $37 ; いがって
 #_0ACFDD: db $F0 ; [set2] new line
 #_0ACFDE: db $47, $4B, $26, $39, $94, $CF ; もらいな!⎵
-#_0ACFE4: db $EB, $01 ; [set2] prewritten text 01
+#_0ACFE4: db $EB, $01 ; [set2] phrase 01
 #_0ACFE6: db $FF ; end of message
 
 ;===================================================================================================
@@ -16008,7 +16008,7 @@ Message_02_16_9C:
 ; «ひゃっひゃっひゃ!»
 ; おだてても なんにも でないぜ!
 Message_02_16_9D:
-#_0AD02C: db $EB, $22 ; [set2] prewritten text 22
+#_0AD02C: db $EB, $22 ; [set2] phrase 22
 #_0AD02E: db $F0 ; [set2] new line
 #_0AD02F: db $29, $A6, $37, $37, $47, $CF, $39, $52 ; おだてても⎵なん
 #_0AD037: db $3A, $47, $CF, $A9, $39, $26, $A4, $94 ; にも⎵でないぜ!
@@ -16025,10 +16025,10 @@ Message_02_16_9E:
 
 ;===================================================================================================
 
-; >[DEMONX]は ニヤニヤしている
+; >[MYNAME]は ニヤニヤしている
 Message_02_16_9F:
 #_0AD053: db $97 ; >
-#_0AD054: db $ED ; [set2] write demon name indexed from $0526
+#_0AD054: db $ED ; [set2] write name of speaker
 #_0AD055: db $3E, $CF, $72, $80, $72, $80, $30, $37 ; は⎵ニヤニヤして
 #_0AD05D: db $26, $4D ; いる
 #_0AD05F: db $FF ; end of message
@@ -16051,7 +16051,7 @@ Message_02_16_A0:
 ; «ひゃっひゃっひゃ!»
 ; コリャ おいしすぎるぜ! なにが ねらいだ?
 Message_02_16_A1:
-#_0AD07E: db $EB, $22 ; [set2] prewritten text 22
+#_0AD07E: db $EB, $22 ; [set2] phrase 22
 #_0AD080: db $F0 ; [set2] new line
 #_0AD081: db $66, $84, $8F, $CF, $29, $26, $30, $31 ; コリャ⎵おいしす
 #_0AD089: db $9D, $4D, $A4, $94, $CF, $39, $3A, $9C ; ぎるぜ!⎵なにが
@@ -16066,7 +16066,7 @@ Message_02_16_A2:
 #_0AD098: db $AC, $37, $2B, $6A, $8A, $69, $3D, $CF ; びてきセンスの⎵
 #_0AD0A0: db $26, $26, $48, $36, $A6, $39 ; いいやつだな
 #_0AD0A6: db $F0 ; [set2] new line
-#_0AD0A7: db $EB, $28 ; [set2] prewritten text 28
+#_0AD0A7: db $EB, $28 ; [set2] phrase 28
 #_0AD0A9: db $FF ; end of message
 
 ;===================================================================================================
@@ -16096,7 +16096,7 @@ Message_02_16_A4:
 ; «ひゃっひゃっひゃ!»
 ; その セリフ はがういて ぬけちまうぜ!
 Message_02_16_A5:
-#_0AD0D3: db $EB, $22 ; [set2] prewritten text 22
+#_0AD0D3: db $EB, $22 ; [set2] phrase 22
 #_0AD0D5: db $F0 ; [set2] new line
 #_0AD0D6: db $33, $3D, $CF, $6A, $84, $78, $CF, $3E ; その⎵セリフ⎵は
 #_0AD0DE: db $9C, $27, $26, $37, $CF, $3B, $2D, $35 ; がういて⎵ぬけち
@@ -16112,7 +16112,7 @@ Message_02_16_A6:
 #_0AD0F3: db $26, $CF, $5D, $64, $7B, $A6, $38, $CF ; い⎵アクマだと⎵
 #_0AD0FB: db $29, $47, $58, $37, $52, $A6, $4F, $94 ; おもってんだろ!
 #_0AD103: db $F0 ; [set2] new line
-#_0AD104: db $EB, $29 ; [set2] prewritten text 29
+#_0AD104: db $EB, $29 ; [set2] phrase 29
 #_0AD106: db $48, $9C, $58, $37, $94, $94 ; やがって!!
 #_0AD10C: db $FF ; end of message
 
@@ -16140,7 +16140,7 @@ Message_02_16_A8:
 ; «ひゃっひゃっひゃ!»
 ; にげるなよ はなしは まだだろ
 Message_02_16_A9:
-#_0AD12D: db $EB, $22 ; [set2] prewritten text 22
+#_0AD12D: db $EB, $22 ; [set2] phrase 22
 #_0AD12F: db $F0 ; [set2] new line
 #_0AD130: db $3A, $9F, $4D, $39, $4A, $CF, $3E, $39 ; にげるなよ⎵はな
 #_0AD138: db $30, $3E, $CF, $43, $A6, $A6, $4F ; しは⎵まだだろ
@@ -16159,10 +16159,10 @@ Message_02_16_AA:
 
 ;===================================================================================================
 
-; «[DEMONX]が [CHASE]の»
+; «[MYNAME]が [CHASE]の»
 ; «ふくを かんで ひきとめた»
 Message_02_16_AB:
-#_0AD155: db $EB, $3F ; [set2] prewritten text 3F
+#_0AD155: db $EB, $3F ; [set2] phrase 3F
 #_0AD157: db $FF ; end of message
 
 ;===================================================================================================
@@ -16193,7 +16193,7 @@ Message_02_16_B0:
 #_0AD15C: db $40, $52, $93, $93, $93, $2B, $2F, $43 ; ふん・・・きさま
 #_0AD164: db $3A, $3E, $CF, $25, $2B, $34 ; には⎵あきた
 #_0AD16A: db $F0 ; [set2] new line
-#_0AD16B: db $EB, $2B ; [set2] prewritten text 2B
+#_0AD16B: db $EB, $2B ; [set2] phrase 2B
 #_0AD16D: db $FF ; end of message
 
 ;===================================================================================================
@@ -16201,7 +16201,7 @@ Message_02_16_B0:
 ; «ひゃっひゃっひゃ!»
 ; なさけないヤツ・・・もお サイコーだぜ
 Message_02_16_B1:
-#_0AD16E: db $EB, $22 ; [set2] prewritten text 22
+#_0AD16E: db $EB, $22 ; [set2] phrase 22
 #_0AD170: db $F0 ; [set2] new line
 #_0AD171: db $39, $2F, $2D, $39, $26, $80, $6E, $93 ; なさけないヤツ・
 #_0AD179: db $93, $93, $47, $29, $CF, $67, $5E, $66 ; ・・もお⎵サイコ
@@ -16215,15 +16215,15 @@ Message_02_16_B1:
 Message_02_16_B2:
 #_0AD185: db $2C, $A6, $4B, $3C, $28 ; くだらねえ
 #_0AD18A: db $F0 ; [set2] new line
-#_0AD18B: db $EB, $2B ; [set2] prewritten text 2B
+#_0AD18B: db $EB, $2B ; [set2] phrase 2B
 #_0AD18D: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は あきれて なにか くれた
+; >[MYNAME]は あきれて なにか くれた
 Message_02_16_B3:
 #_0AD18E: db $97 ; >
-#_0AD18F: db $ED ; [set2] write demon name indexed from $0526
+#_0AD18F: db $ED ; [set2] write name of speaker
 #_0AD190: db $3E, $CF, $25, $2B, $4E, $37, $CF, $39 ; は⎵あきれて⎵な
 #_0AD198: db $3A, $2A, $CF, $2C, $4E, $34 ; にか⎵くれた
 #_0AD19E: db $FF ; end of message
@@ -16233,7 +16233,7 @@ Message_02_16_B3:
 ; «くだらんものと はなす ひまは ない»
 ; «さらば・・・»
 Message_02_16_B4:
-#_0AD19F: db $EB, $5B ; [set2] prewritten text 5B
+#_0AD19F: db $EB, $5B ; [set2] phrase 5B
 #_0AD1A1: db $FF ; end of message
 
 ;===================================================================================================
@@ -16241,7 +16241,7 @@ Message_02_16_B4:
 ; «ひゃっひゃっひゃ!» はやく かえって
 ; ママの おっぱいでも しゃぶりな
 Message_02_16_B5:
-#_0AD1A2: db $EB, $22 ; [set2] prewritten text 22
+#_0AD1A2: db $EB, $22 ; [set2] phrase 22
 #_0AD1A4: db $CF, $3E, $48, $2C, $CF, $2A, $28, $58 ; ⎵はやく⎵かえっ
 #_0AD1AC: db $37 ; て
 #_0AD1AD: db $F0 ; [set2] new line
@@ -16253,29 +16253,29 @@ Message_02_16_B5:
 
 ; «ケッ・・・きもちわるい ヤツ!»
 Message_02_16_B6:
-#_0AD1BF: db $EB, $1B ; [set2] prewritten text 1B
+#_0AD1BF: db $EB, $1B ; [set2] phrase 1B
 #_0AD1C1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; ニヤリ・・・
-; >[DEMONX]は あきれたわらいをうかべた
+; >[MYNAME]は あきれたわらいをうかべた
 Message_02_16_B7:
 #_0AD1C2: db $72, $80, $84, $93, $93, $93 ; ニヤリ・・・
 #_0AD1C8: db $F3 ; [set2] wait for key and new line
 #_0AD1C9: db $F1 ; [set2] clear message box
 #_0AD1CA: db $97 ; >
-#_0AD1CB: db $ED ; [set2] write demon name indexed from $0526
+#_0AD1CB: db $ED ; [set2] write name of speaker
 #_0AD1CC: db $3E, $CF, $25, $2B, $4E, $34, $50, $4B ; は⎵あきれたわら
 #_0AD1D4: db $26, $51, $27, $2A, $AE, $34 ; いをうかべた
 #_0AD1DA: db $FF ; end of message
 
 ;===================================================================================================
 
-; «わがはいは [CLASSX] [DEMONX]!»
+; «わがはいは [MYCLASS] [MYNAME]!»
 ; いったい なんの ようだ?
 Message_02_16_B8:
-#_0AD1DB: db $EB, $11 ; [set2] prewritten text 11
+#_0AD1DB: db $EB, $11 ; [set2] phrase 11
 #_0AD1DD: db $F0 ; [set2] new line
 #_0AD1DE: db $26, $58, $34, $26, $CF, $39, $52, $3D ; いったい⎵なんの
 #_0AD1E6: db $CF, $4A, $27, $A6, $95 ; ⎵ようだ?
@@ -16283,11 +16283,11 @@ Message_02_16_B8:
 
 ;===================================================================================================
 
-; オイラは [DEMONX]だ
+; オイラは [MYNAME]だ
 ; ようが あるんだろ? きいてやるぜ
 Message_02_16_B9:
 #_0AD1EC: db $61, $5E, $83, $3E, $CF ; オイラは⎵
-#_0AD1F1: db $ED ; [set2] write demon name indexed from $0526
+#_0AD1F1: db $ED ; [set2] write name of speaker
 #_0AD1F2: db $A6 ; だ
 #_0AD1F3: db $F0 ; [set2] new line
 #_0AD1F4: db $4A, $27, $9C, $CF, $25, $4D, $52, $A6 ; ようが⎵あるんだ
@@ -16304,19 +16304,19 @@ Message_02_16_BA:
 #_0AD20E: db $48, $9C, $58, $37, $CF, $43, $58, $93 ; やがって⎵まっ・
 #_0AD216: db $93 ; ・
 #_0AD217: db $F0 ; [set2] new line
-#_0AD218: db $EB, $28 ; [set2] prewritten text 28
+#_0AD218: db $EB, $28 ; [set2] phrase 28
 #_0AD21A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
-; >[DEMONX]は なのりに こたえた
+; >[MYNAME]は なのりに こたえた
 Message_02_16_BB:
-#_0AD21B: db $EB, $0F ; [set2] prewritten text 0F
+#_0AD21B: db $EB, $0F ; [set2] phrase 0F
 #_0AD21D: db $F3 ; [set2] wait for key and new line
 #_0AD21E: db $F1 ; [set2] clear message box
 #_0AD21F: db $97 ; >
-#_0AD220: db $ED ; [set2] write demon name indexed from $0526
+#_0AD220: db $ED ; [set2] write name of speaker
 #_0AD221: db $3E, $CF, $39, $3D, $4C, $3A, $CF, $2E ; は⎵なのりに⎵こ
 #_0AD229: db $34, $28, $34 ; たえた
 #_0AD22C: db $FF ; end of message
@@ -16325,7 +16325,7 @@ Message_02_16_BB:
 
 ; «きいたこと ないぞ»
 Message_02_16_BC:
-#_0AD22D: db $EB, $2C ; [set2] prewritten text 2C
+#_0AD22D: db $EB, $2C ; [set2] phrase 2C
 #_0AD22F: db $FF ; end of message
 
 ;===================================================================================================
@@ -16354,7 +16354,7 @@ Message_02_16_BF:
 
 ; «ナカマを よろしく»おねがいします
 Message_02_16_C0:
-#_0AD24B: db $EB, $B6 ; [set2] prewritten text B6
+#_0AD24B: db $EB, $B6 ; [set2] phrase B6
 #_0AD24D: db $29, $3C, $9C, $26, $30, $43, $31 ; おねがいします
 #_0AD254: db $FF ; end of message
 
@@ -16367,7 +16367,7 @@ Message_02_16_C1:
 #_0AD25A: db $F0 ; [set2] new line
 #_0AD25B: db $61, $5E, $83, $3D, $CF, $BF, $6D, $38 ; オイラの⎵ダチと
 #_0AD263: db $CF ; ⎵
-#_0AD264: db $EB, $B7 ; [set2] prewritten text B7
+#_0AD264: db $EB, $B7 ; [set2] phrase B7
 #_0AD266: db $35, $57, $5A, $A6, $26 ; ちょーだい
 #_0AD26B: db $FF ; end of message
 
@@ -16375,7 +16375,7 @@ Message_02_16_C1:
 
 ; «ナカマを »たのむぜ!
 Message_02_16_C2:
-#_0AD26C: db $EB, $B5 ; [set2] prewritten text B5
+#_0AD26C: db $EB, $B5 ; [set2] phrase B5
 #_0AD26E: db $34, $3D, $45, $A4, $94 ; たのむぜ!
 #_0AD273: db $FF ; end of message
 
@@ -16383,14 +16383,14 @@ Message_02_16_C2:
 
 ; «ナカマヲ タノム»
 Message_02_16_C3:
-#_0AD274: db $EB, $B9 ; [set2] prewritten text B9
+#_0AD274: db $EB, $B9 ; [set2] phrase B9
 #_0AD276: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おそいわあ!»
 Message_02_17_00:
-#_0AD277: db $EB, $2D ; [set2] prewritten text 2D
+#_0AD277: db $EB, $2D ; [set2] phrase 2D
 #_0AD279: db $FF ; end of message
 
 ;===================================================================================================
@@ -16420,7 +16420,7 @@ Message_02_17_03:
 
 ; «は! な・なんの ごようで しょうか?»
 Message_02_17_04:
-#_0AD29F: db $EB, $5E ; [set2] prewritten text 5E
+#_0AD29F: db $EB, $5E ; [set2] phrase 5E
 #_0AD2A1: db $FF ; end of message
 
 ;===================================================================================================
@@ -16441,9 +16441,9 @@ Message_02_17_06:
 
 ;===================================================================================================
 
-; «[DEMONX]は ひるんでいる»
+; «[MYNAME]は ひるんでいる»
 Message_02_17_07:
-#_0AD2BF: db $EB, $D3 ; [set2] prewritten text D3
+#_0AD2BF: db $EB, $D3 ; [set2] phrase D3
 #_0AD2C1: db $FF ; end of message
 
 ;===================================================================================================
@@ -16467,15 +16467,15 @@ Message_02_17_09:
 
 ; «なに やってんだ?»
 Message_02_17_0A:
-#_0AD2E7: db $EB, $60 ; [set2] prewritten text 60
+#_0AD2E7: db $EB, $60 ; [set2] phrase 60
 #_0AD2E9: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]も にらみかえした
+; >[MYNAME]も にらみかえした
 Message_02_17_0B:
 #_0AD2EA: db $97 ; >
-#_0AD2EB: db $ED ; [set2] write demon name indexed from $0526
+#_0AD2EB: db $ED ; [set2] write name of speaker
 #_0AD2EC: db $47, $CF, $3A, $4B, $44, $2A, $28, $30 ; も⎵にらみかえし
 #_0AD2F4: db $34 ; た
 #_0AD2F5: db $FF ; end of message
@@ -16494,7 +16494,7 @@ Message_02_17_0C:
 ; «ひゃーははは!»
 ; しね! しね! しねー!
 Message_02_17_0D:
-#_0AD308: db $EB, $01 ; [set2] prewritten text 01
+#_0AD308: db $EB, $01 ; [set2] phrase 01
 #_0AD30A: db $F0 ; [set2] new line
 #_0AD30B: db $30, $3C, $94, $CF, $30, $3C, $94, $CF ; しね!⎵しね!⎵
 #_0AD313: db $30, $3C, $5A, $94 ; しねー!
@@ -16505,23 +16505,23 @@ Message_02_17_0D:
 ; «オレは きょう ちに うえてるんだ!»
 ; «いますぐ あのよに おくってやるぜー!!»
 Message_02_17_0E:
-#_0AD318: db $EB, $02 ; [set2] prewritten text 02
+#_0AD318: db $EB, $02 ; [set2] phrase 02
 #_0AD31A: db $F0 ; [set2] new line
-#_0AD31B: db $EB, $2E ; [set2] prewritten text 2E
+#_0AD31B: db $EB, $2E ; [set2] phrase 2E
 #_0AD31D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
 Message_02_17_0F:
-#_0AD31E: db $EB, $0F ; [set2] prewritten text 0F
+#_0AD31E: db $EB, $0F ; [set2] phrase 0F
 #_0AD320: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «もう 1ど チャンスを やろう»
 Message_02_17_10:
-#_0AD321: db $EB, $2F ; [set2] prewritten text 2F
+#_0AD321: db $EB, $2F ; [set2] phrase 2F
 #_0AD323: db $FF ; end of message
 
 ;===================================================================================================
@@ -16536,7 +16536,7 @@ Message_02_17_11:
 
 ; «もう 1ど チャンスを やろう»
 Message_02_17_12:
-#_0AD32F: db $EB, $2F ; [set2] prewritten text 2F
+#_0AD32F: db $EB, $2F ; [set2] phrase 2F
 #_0AD331: db $FF ; end of message
 
 ;===================================================================================================
@@ -16555,7 +16555,7 @@ Message_02_17_14:
 #_0AD343: db $47, $3D, $A9, $3E, $CF, $39, $26, $39 ; ものでは⎵ないな
 #_0AD34B: db $95 ; ?
 #_0AD34C: db $F0 ; [set2] new line
-#_0AD34D: db $EB, $30 ; [set2] prewritten text 30
+#_0AD34D: db $EB, $30 ; [set2] phrase 30
 #_0AD34F: db $FF ; end of message
 
 ;===================================================================================================
@@ -16563,7 +16563,7 @@ Message_02_17_14:
 ; «ひゃーははは!»
 ; まいったね! はなしに ノルよ
 Message_02_17_15:
-#_0AD350: db $EB, $01 ; [set2] prewritten text 01
+#_0AD350: db $EB, $01 ; [set2] phrase 01
 #_0AD352: db $F0 ; [set2] new line
 #_0AD353: db $43, $26, $58, $34, $3C, $94, $CF, $3E ; まいったね!⎵は
 #_0AD35B: db $39, $30, $3A, $CF, $75, $85, $4A ; なしに⎵ノルよ
@@ -16574,7 +16574,7 @@ Message_02_17_15:
 ; «アンタは もしや!»
 ; な・なんの ようだ?
 Message_02_17_16:
-#_0AD363: db $EB, $04 ; [set2] prewritten text 04
+#_0AD363: db $EB, $04 ; [set2] phrase 04
 #_0AD365: db $F0 ; [set2] new line
 #_0AD366: db $39, $93, $39, $52, $3D, $CF, $4A, $27 ; な・なんの⎵よう
 #_0AD36E: db $A6, $95 ; だ?
@@ -16591,7 +16591,7 @@ Message_02_17_17:
 
 ; «ようが あるなら なを なのれ»
 Message_02_17_18:
-#_0AD379: db $EB, $64 ; [set2] prewritten text 64
+#_0AD379: db $EB, $64 ; [set2] phrase 64
 #_0AD37B: db $FF ; end of message
 
 ;===================================================================================================
@@ -16621,9 +16621,9 @@ Message_02_17_1B:
 ; «キサマが・・・・»
 ; «はなしを きこうじゃないか»
 Message_02_17_1C:
-#_0AD397: db $EB, $65 ; [set2] prewritten text 65
+#_0AD397: db $EB, $65 ; [set2] phrase 65
 #_0AD399: db $F0 ; [set2] new line
-#_0AD39A: db $EB, $30 ; [set2] prewritten text 30
+#_0AD39A: db $EB, $30 ; [set2] phrase 30
 #_0AD39C: db $FF ; end of message
 
 ;===================================================================================================
@@ -16645,9 +16645,9 @@ Message_02_17_1D:
 ; «ようを いってみろ»
 ; «はなしを きこうじゃないか»
 Message_02_17_1E:
-#_0AD3BC: db $EB, $31 ; [set2] prewritten text 31
+#_0AD3BC: db $EB, $31 ; [set2] phrase 31
 #_0AD3BE: db $F0 ; [set2] new line
-#_0AD3BF: db $EB, $30 ; [set2] prewritten text 30
+#_0AD3BF: db $EB, $30 ; [set2] phrase 30
 #_0AD3C1: db $FF ; end of message
 
 ;===================================================================================================
@@ -16663,7 +16663,7 @@ Message_02_17_1F:
 ; «おれさまは [GIVEME] いただきたい»
 ; «これで ナカマに なろう»
 Message_02_17_20:
-#_0AD3CF: db $EB, $40 ; [set2] prewritten text 40
+#_0AD3CF: db $EB, $40 ; [set2] phrase 40
 #_0AD3D1: db $FF ; end of message
 
 ;===================================================================================================
@@ -16693,12 +16693,12 @@ Message_02_17_22:
 
 ;===================================================================================================
 
-; «[DEMONX]は [GIVEME] を»
+; «[MYNAME]は [GIVEME] を»
 ; «ほしがっている»
 Message_02_17_23:
-#_0AD407: db $EB, $33 ; [set2] prewritten text 33
+#_0AD407: db $EB, $33 ; [set2] phrase 33
 #_0AD409: db $F0 ; [set2] new line
-#_0AD40A: db $EB, $32 ; [set2] prewritten text 32
+#_0AD40A: db $EB, $32 ; [set2] phrase 32
 #_0AD40C: db $FF ; end of message
 
 ;===================================================================================================
@@ -16706,7 +16706,7 @@ Message_02_17_23:
 ; «さらに [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_17_24:
-#_0AD40D: db $EB, $6A ; [set2] prewritten text 6A
+#_0AD40D: db $EB, $6A ; [set2] phrase 6A
 #_0AD40F: db $FF ; end of message
 
 ;===================================================================================================
@@ -16735,13 +16735,13 @@ Message_02_17_26:
 
 ;===================================================================================================
 
-; «[DEMONX]は さらに [GIVEME]» を
+; «[MYNAME]は さらに [GIVEME]» を
 ; «ほしがっている»
 Message_02_17_27:
-#_0AD430: db $EB, $43 ; [set2] prewritten text 43
+#_0AD430: db $EB, $43 ; [set2] phrase 43
 #_0AD432: db $CF, $51 ; ⎵を
 #_0AD434: db $F0 ; [set2] new line
-#_0AD435: db $EB, $32 ; [set2] prewritten text 32
+#_0AD435: db $EB, $32 ; [set2] phrase 32
 #_0AD437: db $FF ; end of message
 
 ;===================================================================================================
@@ -16749,7 +16749,7 @@ Message_02_17_27:
 ; «ならば [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_17_28:
-#_0AD438: db $EB, $6D ; [set2] prewritten text 6D
+#_0AD438: db $EB, $6D ; [set2] phrase 6D
 #_0AD43A: db $FF ; end of message
 
 ;===================================================================================================
@@ -16776,19 +16776,19 @@ Message_02_17_2A:
 
 ;===================================================================================================
 
-; «[DEMONX]は [GIVEME] を»
+; «[MYNAME]は [GIVEME] を»
 ; «ほしがっている»
 Message_02_17_2B:
-#_0AD459: db $EB, $33 ; [set2] prewritten text 33
+#_0AD459: db $EB, $33 ; [set2] phrase 33
 #_0AD45B: db $F0 ; [set2] new line
-#_0AD45C: db $EB, $32 ; [set2] prewritten text 32
+#_0AD45C: db $EB, $32 ; [set2] phrase 32
 #_0AD45E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
 Message_02_17_2C:
-#_0AD45F: db $EB, $35 ; [set2] prewritten text 35
+#_0AD45F: db $EB, $35 ; [set2] phrase 35
 #_0AD461: db $FF ; end of message
 
 ;===================================================================================================
@@ -16821,7 +16821,7 @@ Message_02_17_2F:
 
 ; «なんだとお?»
 Message_02_17_30:
-#_0AD487: db $EB, $36 ; [set2] prewritten text 36
+#_0AD487: db $EB, $36 ; [set2] phrase 36
 #_0AD489: db $FF ; end of message
 
 ;===================================================================================================
@@ -16835,7 +16835,7 @@ Message_02_17_31:
 
 ; «なんだとお?»
 Message_02_17_32:
-#_0AD490: db $EB, $36 ; [set2] prewritten text 36
+#_0AD490: db $EB, $36 ; [set2] phrase 36
 #_0AD492: db $FF ; end of message
 
 ;===================================================================================================
@@ -16874,7 +16874,7 @@ Message_02_17_36:
 
 ; «グオオオオー!»
 Message_02_17_37:
-#_0AD4C9: db $EB, $0F ; [set2] prewritten text 0F
+#_0AD4C9: db $EB, $0F ; [set2] phrase 0F
 #_0AD4CB: db $FF ; end of message
 
 ;===================================================================================================
@@ -16907,7 +16907,7 @@ Message_02_17_3A:
 
 ; «グオオオオー!»
 Message_02_17_3B:
-#_0AD4FA: db $EB, $0F ; [set2] prewritten text 0F
+#_0AD4FA: db $EB, $0F ; [set2] phrase 0F
 #_0AD4FC: db $FF ; end of message
 
 ;===================================================================================================
@@ -16915,9 +16915,9 @@ Message_02_17_3B:
 ; «うーむ まだ ものたりんな»
 ; «キサマの いのちを いただこう!»
 Message_02_17_3C:
-#_0AD4FD: db $EB, $35 ; [set2] prewritten text 35
+#_0AD4FD: db $EB, $35 ; [set2] phrase 35
 #_0AD4FF: db $F0 ; [set2] new line
-#_0AD500: db $EB, $70 ; [set2] prewritten text 70
+#_0AD500: db $EB, $70 ; [set2] phrase 70
 #_0AD502: db $FF ; end of message
 
 ;===================================================================================================
@@ -16925,7 +16925,7 @@ Message_02_17_3C:
 ; ついでに« アンタの いのちが ほしいナ!»
 Message_02_17_3D:
 #_0AD503: db $36, $26, $A9, $3A ; ついでに
-#_0AD507: db $EB, $37 ; [set2] prewritten text 37
+#_0AD507: db $EB, $37 ; [set2] phrase 37
 #_0AD509: db $FF ; end of message
 
 ;===================================================================================================
@@ -16935,7 +16935,7 @@ Message_02_17_3D:
 Message_02_17_3E:
 #_0AD50A: db $47, $3D, $34, $4C, $52, $94 ; ものたりん!
 #_0AD510: db $F0 ; [set2] new line
-#_0AD511: db $EB, $71 ; [set2] prewritten text 71
+#_0AD511: db $EB, $71 ; [set2] phrase 71
 #_0AD513: db $FF ; end of message
 
 ;===================================================================================================
@@ -16960,14 +16960,14 @@ Message_02_17_40:
 ; じゃあ« アンタの いのちが ほしいナ!»
 Message_02_17_41:
 #_0AD533: db $A2, $55, $25 ; じゃあ
-#_0AD536: db $EB, $37 ; [set2] prewritten text 37
+#_0AD536: db $EB, $37 ; [set2] phrase 37
 #_0AD538: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなら オマエの いのちを よこせ!»
 Message_02_17_42:
-#_0AD539: db $EB, $38 ; [set2] prewritten text 38
+#_0AD539: db $EB, $38 ; [set2] phrase 38
 #_0AD53B: db $FF ; end of message
 
 ;===================================================================================================
@@ -16982,56 +16982,56 @@ Message_02_17_43:
 ; きさま «やっぱり かねが ねらいか!»
 Message_02_17_44:
 #_0AD545: db $2B, $2F, $43, $CF ; きさま⎵
-#_0AD549: db $EB, $39 ; [set2] prewritten text 39
+#_0AD549: db $EB, $39 ; [set2] phrase 39
 #_0AD54B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «かねだってえ!? かねだってえ!?»
 Message_02_17_45:
-#_0AD54C: db $EB, $75 ; [set2] prewritten text 75
+#_0AD54C: db $EB, $75 ; [set2] phrase 75
 #_0AD54E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «やっぱり かねが ねらいか!»
 Message_02_17_46:
-#_0AD54F: db $EB, $39 ; [set2] prewritten text 39
+#_0AD54F: db $EB, $39 ; [set2] phrase 39
 #_0AD551: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
 Message_02_17_47:
-#_0AD552: db $EB, $0F ; [set2] prewritten text 0F
+#_0AD552: db $EB, $0F ; [set2] phrase 0F
 #_0AD554: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_17_48:
-#_0AD555: db $EB, $36 ; [set2] prewritten text 36
+#_0AD555: db $EB, $36 ; [set2] phrase 36
 #_0AD557: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ぜったい やだー!»
 Message_02_17_49:
-#_0AD558: db $EB, $3A ; [set2] prewritten text 3A
+#_0AD558: db $EB, $3A ; [set2] phrase 3A
 #_0AD55A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_17_4A:
-#_0AD55B: db $EB, $36 ; [set2] prewritten text 36
+#_0AD55B: db $EB, $36 ; [set2] phrase 36
 #_0AD55D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グオオオオー!»
 Message_02_17_4B:
-#_0AD55E: db $EB, $0F ; [set2] prewritten text 0F
+#_0AD55E: db $EB, $0F ; [set2] phrase 0F
 #_0AD560: db $FF ; end of message
 
 ;===================================================================================================
@@ -17046,22 +17046,22 @@ Message_02_17_4C:
 
 ; «こいつを もって とっとと きえな!»
 Message_02_17_4D:
-#_0AD56C: db $EB, $77 ; [set2] prewritten text 77
+#_0AD56C: db $EB, $77 ; [set2] phrase 77
 #_0AD56E: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «これで いいか?»
 Message_02_17_4E:
-#_0AD56F: db $EB, $3B ; [set2] prewritten text 3B
+#_0AD56F: db $EB, $3B ; [set2] phrase 3B
 #_0AD571: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は なにか さしだした
+; >[MYNAME]は なにか さしだした
 Message_02_17_4F:
 #_0AD572: db $97 ; >
-#_0AD573: db $ED ; [set2] write demon name indexed from $0526
+#_0AD573: db $ED ; [set2] write name of speaker
 #_0AD574: db $3E, $CF, $39, $3A, $2A, $CF, $2F, $30 ; は⎵なにか⎵さし
 #_0AD57C: db $A6, $30, $34 ; だした
 #_0AD57F: db $FF ; end of message
@@ -17070,7 +17070,7 @@ Message_02_17_4F:
 
 ; «いやだね»
 Message_02_17_50:
-#_0AD580: db $EB, $3C ; [set2] prewritten text 3C
+#_0AD580: db $EB, $3C ; [set2] phrase 3C
 #_0AD582: db $FF ; end of message
 
 ;===================================================================================================
@@ -17084,15 +17084,15 @@ Message_02_17_51:
 
 ; «いやだね»
 Message_02_17_52:
-#_0AD588: db $EB, $3C ; [set2] prewritten text 3C
+#_0AD588: db $EB, $3C ; [set2] phrase 3C
 #_0AD58A: db $FF ; end of message
 
 ;===================================================================================================
 
-; >[DEMONX]は くびを よこに ふった
+; >[MYNAME]は くびを よこに ふった
 Message_02_17_53:
 #_0AD58B: db $97 ; >
-#_0AD58C: db $ED ; [set2] write demon name indexed from $0526
+#_0AD58C: db $ED ; [set2] write name of speaker
 #_0AD58D: db $3E, $CF, $2C, $AC, $51, $CF, $4A, $2E ; は⎵くびを⎵よこ
 #_0AD595: db $3A, $CF, $40, $58, $34 ; に⎵ふった
 #_0AD59A: db $FF ; end of message
@@ -17108,31 +17108,31 @@ Message_02_17_54:
 
 ; «そんなことか!»
 Message_02_17_55:
-#_0AD5A3: db $EB, $3D ; [set2] prewritten text 3D
+#_0AD5A3: db $EB, $3D ; [set2] phrase 3D
 #_0AD5A5: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなことか!»
 Message_02_17_56:
-#_0AD5A6: db $EB, $3D ; [set2] prewritten text 3D
+#_0AD5A6: db $EB, $3D ; [set2] phrase 3D
 #_0AD5A8: db $FF ; end of message
 
 ;===================================================================================================
 
-; «[DEMONX]は きびすを かえした»
+; «[MYNAME]は きびすを かえした»
 Message_02_17_57:
-#_0AD5A9: db $EB, $3E ; [set2] prewritten text 3E
+#_0AD5A9: db $EB, $3E ; [set2] phrase 3E
 #_0AD5AB: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «これで まんぞくだ»
-; «この[CLASSX] [DEMONX]»
+; «この[MYCLASS] [MYNAME]»
 ; «きょうより あなたの しもべ»
 ; «なんなりと おもうしつけ ください»
 Message_02_17_58:
-#_0AD5AC: db $EB, $79 ; [set2] prewritten text 79
+#_0AD5AC: db $EB, $79 ; [set2] phrase 79
 #_0AD5AE: db $FF ; end of message
 
 ;===================================================================================================
@@ -17151,7 +17151,7 @@ Message_02_17_59:
 
 ; «これで けいやく せいりつだ!»
 Message_02_17_5A:
-#_0AD5C9: db $EB, $7A ; [set2] prewritten text 7A
+#_0AD5C9: db $EB, $7A ; [set2] phrase 7A
 #_0AD5CB: db $FF ; end of message
 
 ;===================================================================================================
@@ -17188,19 +17188,19 @@ Message_02_17_5E:
 
 ;===================================================================================================
 
-; «[DEMONX]が [CHASE]の»
+; «[MYNAME]が [CHASE]の»
 ; «ふくを かんで ひきとめた»
 Message_02_17_5F:
-#_0AD60A: db $EB, $3F ; [set2] prewritten text 3F
+#_0AD60A: db $EB, $3F ; [set2] phrase 3F
 #_0AD60C: db $FF ; end of message
 
 ;===================================================================================================
 
-; «われは こうきなる [CLASSX]の»
+; «われは こうきなる [MYCLASS]の»
 ; «いちぞくの もの»
 ; わが ちからを みたいのか!
 Message_02_18_00:
-#_0AD60D: db $EB, $5C ; [set2] prewritten text 5C
+#_0AD60D: db $EB, $5C ; [set2] phrase 5C
 #_0AD60F: db $F0 ; [set2] new line
 #_0AD610: db $50, $9C, $CF, $35, $2A, $4B, $51, $CF ; わが⎵ちからを⎵
 #_0AD618: db $44, $34, $26, $3D, $2A, $94 ; みたいのか!
@@ -17322,14 +17322,14 @@ Message_02_18_0C:
 
 ; «おぼえてろ!»
 Message_02_18_0D:
-#_0AD705: db $EB, $4B ; [set2] prewritten text 4B
+#_0AD705: db $EB, $4B ; [set2] phrase 4B
 #_0AD707: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おぼえてろ!»
 Message_02_18_0E:
-#_0AD708: db $EB, $4B ; [set2] prewritten text 4B
+#_0AD708: db $EB, $4B ; [set2] phrase 4B
 #_0AD70A: db $FF ; end of message
 
 ;===================================================================================================
@@ -17380,7 +17380,7 @@ Message_02_18_14:
 
 ; «この わたしが ニンゲンを おそれるか»
 Message_02_18_15:
-#_0AD74D: db $EB, $4C ; [set2] prewritten text 4C
+#_0AD74D: db $EB, $4C ; [set2] phrase 4C
 #_0AD74F: db $FF ; end of message
 
 ;===================================================================================================
@@ -17395,7 +17395,7 @@ Message_02_18_16:
 
 ; «この わたしが ニンゲンを おそれるか»
 Message_02_18_17:
-#_0AD75E: db $EB, $4C ; [set2] prewritten text 4C
+#_0AD75E: db $EB, $4C ; [set2] phrase 4C
 #_0AD760: db $FF ; end of message
 
 ;===================================================================================================
@@ -17403,7 +17403,7 @@ Message_02_18_17:
 ; «その どきょうに めんじて»
 ; «はなしを きいてやろう»
 Message_02_18_18:
-#_0AD761: db $EB, $4D ; [set2] prewritten text 4D
+#_0AD761: db $EB, $4D ; [set2] phrase 4D
 #_0AD763: db $FF ; end of message
 
 ;===================================================================================================
@@ -17423,7 +17423,7 @@ Message_02_18_19:
 ; «その どきょうに めんじて»
 ; «はなしを きいてやろう»
 Message_02_18_1A:
-#_0AD77D: db $EB, $4D ; [set2] prewritten text 4D
+#_0AD77D: db $EB, $4D ; [set2] phrase 4D
 #_0AD77F: db $FF ; end of message
 
 ;===================================================================================================
@@ -17431,7 +17431,7 @@ Message_02_18_1A:
 ; «はなしあいも わるくは ないな»
 ; «そうだろ?»
 Message_02_18_1B:
-#_0AD780: db $EB, $4E ; [set2] prewritten text 4E
+#_0AD780: db $EB, $4E ; [set2] phrase 4E
 #_0AD782: db $FF ; end of message
 
 ;===================================================================================================
@@ -17451,7 +17451,7 @@ Message_02_18_1C:
 ; «はなしあいも わるくは ないな»
 ; «そうだろ?»
 Message_02_18_1D:
-#_0AD79E: db $EB, $4E ; [set2] prewritten text 4E
+#_0AD79E: db $EB, $4E ; [set2] phrase 4E
 #_0AD7A0: db $FF ; end of message
 
 ;===================================================================================================
@@ -17498,14 +17498,14 @@ Message_02_18_21:
 Message_02_18_22:
 #_0AD7ED: db $39, $52, $37, $48, $36, $A6, $94 ; なんてやつだ!
 #_0AD7F4: db $F0 ; [set2] new line
-#_0AD7F5: db $EB, $4F ; [set2] prewritten text 4F
+#_0AD7F5: db $EB, $4F ; [set2] phrase 4F
 #_0AD7F7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «これを やるから ほっといてくれ!»
 Message_02_18_23:
-#_0AD7F8: db $EB, $4F ; [set2] prewritten text 4F
+#_0AD7F8: db $EB, $4F ; [set2] phrase 4F
 #_0AD7FA: db $FF ; end of message
 
 ;===================================================================================================
@@ -17532,36 +17532,36 @@ Message_02_18_25:
 
 ; «つぎにあうまで いのちを だいじに するんだな»
 Message_02_18_26:
-#_0AD823: db $EB, $24 ; [set2] prewritten text 24
+#_0AD823: db $EB, $24 ; [set2] phrase 24
 #_0AD825: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はっはっはっはっはっ!»
 Message_02_18_27:
-#_0AD826: db $EB, $50 ; [set2] prewritten text 50
+#_0AD826: db $EB, $50 ; [set2] phrase 50
 #_0AD828: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «フォッフォッフォッ!»
 Message_02_18_28:
-#_0AD829: db $EB, $0A ; [set2] prewritten text 0A
+#_0AD829: db $EB, $0A ; [set2] phrase 0A
 #_0AD82B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «グフフフフフ・・・・»
 Message_02_18_29:
-#_0AD82C: db $EB, $51 ; [set2] prewritten text 51
+#_0AD82C: db $EB, $51 ; [set2] phrase 51
 #_0AD82E: db $FF ; end of message
 
 ;===================================================================================================
 
-; «この [CLASSX] [DEMONX]を»
+; «この [MYCLASS] [MYNAME]を»
 ; «ほんきで おこらせた ようだな・・・»
 Message_02_18_2A:
-#_0AD82F: db $EB, $85 ; [set2] prewritten text 85
+#_0AD82F: db $EB, $85 ; [set2] phrase 85
 #_0AD831: db $FF ; end of message
 
 ;===================================================================================================
@@ -17585,10 +17585,10 @@ Message_02_18_2C:
 ; «はっはっはっはっはっ!»
 ; きにいった! なん100ねんか ぶりの
 ; おもしろい ニンゲンだ
-; わがなは [DEMONX]!
+; わがなは [MYNAME]!
 ; のぞみを きこう!
 Message_02_18_2D:
-#_0AD852: db $EB, $50 ; [set2] prewritten text 50
+#_0AD852: db $EB, $50 ; [set2] phrase 50
 #_0AD854: db $F0 ; [set2] new line
 #_0AD855: db $2B, $3A, $26, $58, $34, $94, $CF, $39 ; きにいった!⎵な
 #_0AD85D: db $52, $02, $01, $01, $3C, $52, $2A, $CF ; ん100ねんか⎵
@@ -17599,7 +17599,7 @@ Message_02_18_2D:
 #_0AD874: db $F3 ; [set2] wait for key and new line
 #_0AD875: db $F1 ; [set2] clear message box
 #_0AD876: db $50, $9C, $39, $3E, $CF ; わがなは⎵
-#_0AD87B: db $ED ; [set2] write demon name indexed from $0526
+#_0AD87B: db $ED ; [set2] write name of speaker
 #_0AD87C: db $94 ; !
 #_0AD87D: db $F0 ; [set2] new line
 #_0AD87E: db $3D, $A5, $44, $51, $CF, $2B, $2E, $27 ; のぞみを⎵きこう
@@ -17611,11 +17611,11 @@ Message_02_18_2D:
 ; «フォッフォッフォッ!»
 ; おもしろい やつじゃい «はなしを きこうぞ»
 Message_02_18_2E:
-#_0AD888: db $EB, $0A ; [set2] prewritten text 0A
+#_0AD888: db $EB, $0A ; [set2] phrase 0A
 #_0AD88A: db $F0 ; [set2] new line
 #_0AD88B: db $29, $47, $30, $4F, $26, $CF, $48, $36 ; おもしろい⎵やつ
 #_0AD893: db $A2, $55, $26, $CF ; じゃい⎵
-#_0AD897: db $EB, $52 ; [set2] prewritten text 52
+#_0AD897: db $EB, $52 ; [set2] phrase 52
 #_0AD899: db $FF ; end of message
 
 ;===================================================================================================
@@ -17624,7 +17624,7 @@ Message_02_18_2E:
 ; わたしの はらに おさめるには おしいやつ
 ; なにが のぞみだ
 Message_02_18_2F:
-#_0AD89A: db $EB, $51 ; [set2] prewritten text 51
+#_0AD89A: db $EB, $51 ; [set2] phrase 51
 #_0AD89C: db $F0 ; [set2] new line
 #_0AD89D: db $50, $34, $30, $3D, $CF, $3E, $4B, $3A ; わたしの⎵はらに
 #_0AD8A5: db $CF, $29, $2F, $46, $4D, $3A, $3E, $CF ; ⎵おさめるには⎵
@@ -17652,42 +17652,42 @@ Message_02_18_32:
 
 ; «くずめ・・・»
 Message_02_18_33:
-#_0AD8BF: db $EB, $B1 ; [set2] prewritten text B1
+#_0AD8BF: db $EB, $B1 ; [set2] phrase B1
 #_0AD8C1: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おろかもんが»
 Message_02_18_34:
-#_0AD8C2: db $EB, $B2 ; [set2] prewritten text B2
+#_0AD8C2: db $EB, $B2 ; [set2] phrase B2
 #_0AD8C4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くわせものが»
 Message_02_18_35:
-#_0AD8C5: db $EB, $B3 ; [set2] prewritten text B3
+#_0AD8C5: db $EB, $B3 ; [set2] phrase B3
 #_0AD8C7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くずめ・・・»
 Message_02_18_36:
-#_0AD8C8: db $EB, $B1 ; [set2] prewritten text B1
+#_0AD8C8: db $EB, $B1 ; [set2] phrase B1
 #_0AD8CA: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おろかもんが»
 Message_02_18_37:
-#_0AD8CB: db $EB, $B2 ; [set2] prewritten text B2
+#_0AD8CB: db $EB, $B2 ; [set2] phrase B2
 #_0AD8CD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «くわせものが»
 Message_02_18_38:
-#_0AD8CE: db $EB, $B3 ; [set2] prewritten text B3
+#_0AD8CE: db $EB, $B3 ; [set2] phrase B3
 #_0AD8D0: db $FF ; end of message
 
 ;===================================================================================================
@@ -17762,14 +17762,14 @@ Message_02_18_41:
 
 ; «もういい やめろ!»
 Message_02_18_42:
-#_0AD934: db $EB, $88 ; [set2] prewritten text 88
+#_0AD934: db $EB, $88 ; [set2] phrase 88
 #_0AD936: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «やめんか! あたまが おかしくなりそう»じゃ!
 Message_02_18_43:
-#_0AD937: db $EB, $53 ; [set2] prewritten text 53
+#_0AD937: db $EB, $53 ; [set2] phrase 53
 #_0AD939: db $A2, $55, $94 ; じゃ!
 #_0AD93C: db $FF ; end of message
 
@@ -17777,7 +17777,7 @@ Message_02_18_43:
 
 ; «やめんか! あたまが おかしくなりそう»だ!
 Message_02_18_44:
-#_0AD93D: db $EB, $53 ; [set2] prewritten text 53
+#_0AD93D: db $EB, $53 ; [set2] phrase 53
 #_0AD93F: db $A6, $94 ; だ!
 #_0AD941: db $FF ; end of message
 
@@ -17785,7 +17785,7 @@ Message_02_18_44:
 
 ; ニンゲン ごときが なんなのだ?
 ; この キは・・・?
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_18_45:
 #_0AD942: db $72, $8A, $B8, $8A, $CF, $A0, $38, $2B ; ニンゲン⎵ごとき
 #_0AD94A: db $9C, $CF, $39, $52, $39, $3D, $A6, $95 ; が⎵なんなのだ?
@@ -17794,27 +17794,27 @@ Message_02_18_45:
 #_0AD95B: db $95 ; ?
 #_0AD95C: db $F3 ; [set2] wait for key and new line
 #_0AD95D: db $F1 ; [set2] clear message box
-#_0AD95E: db $EB, $81 ; [set2] prewritten text 81
+#_0AD95E: db $EB, $81 ; [set2] phrase 81
 #_0AD960: db $FF ; end of message
 
 ;===================================================================================================
 
 ; おまえ« デビルバスター»だな?
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_18_46:
 #_0AD961: db $29, $43, $28 ; おまえ
-#_0AD964: db $EB, $89 ; [set2] prewritten text 89
+#_0AD964: db $EB, $89 ; [set2] phrase 89
 #_0AD966: db $A6, $39, $95 ; だな?
 #_0AD969: db $F3 ; [set2] wait for key and new line
 #_0AD96A: db $F1 ; [set2] clear message box
-#_0AD96B: db $EB, $81 ; [set2] prewritten text 81
+#_0AD96B: db $EB, $81 ; [set2] phrase 81
 #_0AD96D: db $FF ; end of message
 
 ;===================================================================================================
 
-; «>[DEMONX]は けいかい している»
+; «>[MYNAME]は けいかい している»
 Message_02_18_47:
-#_0AD96E: db $EB, $81 ; [set2] prewritten text 81
+#_0AD96E: db $EB, $81 ; [set2] phrase 81
 #_0AD970: db $FF ; end of message
 
 ;===================================================================================================
@@ -17837,7 +17837,7 @@ Message_02_18_4A:
 ; «はっはっはっはっはっ!»
 ; あまいわあ!
 Message_02_18_4B:
-#_0AD974: db $EB, $50 ; [set2] prewritten text 50
+#_0AD974: db $EB, $50 ; [set2] phrase 50
 #_0AD976: db $F0 ; [set2] new line
 #_0AD977: db $25, $43, $26, $50, $25, $94 ; あまいわあ!
 #_0AD97D: db $FF ; end of message
@@ -17855,7 +17855,7 @@ Message_02_18_4C:
 ; «グフフフフフ・・・・»
 ; おのれを かしん しすぎだ!
 Message_02_18_4D:
-#_0AD989: db $EB, $51 ; [set2] prewritten text 51
+#_0AD989: db $EB, $51 ; [set2] phrase 51
 #_0AD98B: db $F0 ; [set2] new line
 #_0AD98C: db $29, $3D, $4E, $51, $CF, $2A, $30, $52 ; おのれを⎵かしん
 #_0AD994: db $CF, $30, $31, $9D, $A6, $94 ; ⎵しすぎだ!
@@ -17865,14 +17865,14 @@ Message_02_18_4D:
 
 ; «はなしが あるなら こちらに くるのだ!»
 Message_02_18_4E:
-#_0AD99B: db $EB, $55 ; [set2] prewritten text 55
+#_0AD99B: db $EB, $55 ; [set2] phrase 55
 #_0AD99D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きも すわってるな・・・こっち こいや»
 Message_02_18_4F:
-#_0AD99E: db $EB, $54 ; [set2] prewritten text 54
+#_0AD99E: db $EB, $54 ; [set2] phrase 54
 #_0AD9A0: db $FF ; end of message
 
 ;===================================================================================================
@@ -17883,7 +17883,7 @@ Message_02_18_50:
 #_0AD9A1: db $38, $58, $37, $CF, $2C, $29, $27, $38 ; とって⎵くおうと
 #_0AD9A9: db $3E, $CF, $26, $50, $52 ; は⎵いわん
 #_0AD9AE: db $F0 ; [set2] new line
-#_0AD9AF: db $EB, $55 ; [set2] prewritten text 55
+#_0AD9AF: db $EB, $55 ; [set2] phrase 55
 #_0AD9B1: db $FF ; end of message
 
 ;===================================================================================================
@@ -17933,7 +17933,7 @@ Message_02_18_53:
 
 ; «おくびょうものに ようは ないわ!»
 Message_02_18_54:
-#_0ADA29: db $EB, $56 ; [set2] prewritten text 56
+#_0ADA29: db $EB, $56 ; [set2] phrase 56
 #_0ADA2B: db $FF ; end of message
 
 ;===================================================================================================
@@ -17947,15 +17947,15 @@ Message_02_18_55:
 
 ; «おじけづいたな!»
 Message_02_18_56:
-#_0ADA34: db $EB, $57 ; [set2] prewritten text 57
+#_0ADA34: db $EB, $57 ; [set2] phrase 57
 #_0ADA36: db $FF ; end of message
 
 ;===================================================================================================
 
-; この[DEMONX]を ころそうと いうのか?
+; この[MYNAME]を ころそうと いうのか?
 Message_02_18_57:
 #_0ADA37: db $2E, $3D ; この
-#_0ADA39: db $ED ; [set2] write demon name indexed from $0526
+#_0ADA39: db $ED ; [set2] write name of speaker
 #_0ADA3A: db $51, $CF, $2E, $4F, $33, $27, $38, $CF ; を⎵ころそうと⎵
 #_0ADA42: db $26, $27, $3D, $2A, $95 ; いうのか?
 #_0ADA47: db $FF ; end of message
@@ -17993,10 +17993,10 @@ Message_02_18_5C:
 
 ;===================================================================================================
 
-; この[DEMONX]に ナカマに なれと?
+; この[MYNAME]に ナカマに なれと?
 Message_02_18_5D:
 #_0ADA66: db $2E, $3D ; この
-#_0ADA68: db $ED ; [set2] write demon name indexed from $0526
+#_0ADA68: db $ED ; [set2] write name of speaker
 #_0ADA69: db $3A, $CF, $71, $62, $7B, $3A, $CF, $39 ; に⎵ナカマに⎵な
 #_0ADA71: db $4E, $38, $95 ; れと?
 #_0ADA74: db $FF ; end of message
@@ -18005,7 +18005,7 @@ Message_02_18_5D:
 
 ; «ニンゲンの ナカマに なれだと?»
 Message_02_18_5E:
-#_0ADA75: db $EB, $23 ; [set2] prewritten text 23
+#_0ADA75: db $EB, $23 ; [set2] phrase 23
 #_0ADA77: db $FF ; end of message
 
 ;===================================================================================================
@@ -18021,7 +18021,7 @@ Message_02_18_5F:
 
 ; «きたれ わがいちぞくの ちにうえたる ものよ!»
 Message_02_18_60:
-#_0ADA8D: db $EB, $8D ; [set2] prewritten text 8D
+#_0ADA8D: db $EB, $8D ; [set2] phrase 8D
 #_0ADA8F: db $FF ; end of message
 
 ;===================================================================================================
@@ -18104,7 +18104,7 @@ Message_02_18_66:
 #_0ADB6C: db $9C, $CF, $42, $AA, $2E, $30, $51, $CF ; が⎵ほどこしを⎵
 #_0ADB74: db $27, $2D, $4A ; うけよ
 #_0ADB77: db $F3 ; [set2] wait for key and new line
-#_0ADB78: db $FB, $01, $E8 ; [set2] [COMMAND 5B] set progress flag E8 if 01 is nonzero; otherwise reset
+#_0ADB78: db $FB, $01, $E8 ; [set2] set progress flag E8
 #_0ADB7B: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -18123,17 +18123,17 @@ Message_02_18_67:
 #_0ADB99: db $F0 ; [set2] new line
 #_0ADB9A: db $27, $5A, $45, $93, $93, $93, $2E, $34 ; うーむ・・・こた
 #_0ADBA2: db $28, $4B, $4E, $52, $CF ; えられん⎵
-#_0ADBA7: db $EB, $52 ; [set2] prewritten text 52
+#_0ADBA7: db $EB, $52 ; [set2] phrase 52
 #_0ADBA9: db $F3 ; [set2] wait for key and new line
 #_0ADBAA: db $E5, $05 ; [set2] [COMMAND 45:05]
-#_0ADBAC: db $FB, $01, $E7 ; [set2] [COMMAND 5B] set progress flag E7 if 01 is nonzero; otherwise reset
+#_0ADBAC: db $FB, $01, $E7 ; [set2] set progress flag E7
 #_0ADBAF: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
 
 ; そうおもうか?
 ; ならば たがいに ちからを あわせよう!
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_18_68:
 #_0ADBB1: db $33, $27, $29, $47, $27, $2A, $95 ; そうおもうか?
@@ -18143,7 +18143,7 @@ Message_02_18_68:
 #_0ADBC9: db $32, $4A, $27, $94 ; せよう!
 #_0ADBCD: db $F3 ; [set2] wait for key and new line
 #_0ADBCE: db $F1 ; [set2] clear message box
-#_0ADBCF: db $EB, $E0 ; [set2] prewritten text E0
+#_0ADBCF: db $EB, $E0 ; [set2] phrase E0
 #_0ADBD1: db $F3 ; [set2] wait for key and new line
 #_0ADBD2: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
@@ -18151,15 +18151,15 @@ Message_02_18_68:
 
 ; せんなきゆえ あきらめよ!
 ; «はっはっはっはっはっ!»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_18_69:
 #_0ADBD4: db $32, $52, $39, $2B, $49, $28, $CF, $25 ; せんなきゆえ⎵あ
 #_0ADBDC: db $2B, $4B, $46, $4A, $94 ; きらめよ!
 #_0ADBE1: db $F0 ; [set2] new line
-#_0ADBE2: db $EB, $50 ; [set2] prewritten text 50
+#_0ADBE2: db $EB, $50 ; [set2] phrase 50
 #_0ADBE4: db $F3 ; [set2] wait for key and new line
 #_0ADBE5: db $F1 ; [set2] clear message box
-#_0ADBE6: db $EB, $E1 ; [set2] prewritten text E1
+#_0ADBE6: db $EB, $E1 ; [set2] phrase E1
 #_0ADBE8: db $F3 ; [set2] wait for key and new line
 #_0ADBE9: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -18168,7 +18168,7 @@ Message_02_18_69:
 ; [CHASE]は さけなど もってなかった!
 ; ウソつきめ!
 ; «ワシャ かえるよ»
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_18_6A:
 #_0ADBEB: db $F8 ; [set2] write player name
 #_0ADBEC: db $3E, $CF, $2F, $2D, $39, $AA, $CF, $47 ; は⎵さけなど⎵も
@@ -18177,10 +18177,10 @@ Message_02_18_6A:
 #_0ADBFC: db $F1 ; [set2] clear message box
 #_0ADBFD: db $5F, $6B, $36, $2B, $46, $94 ; ウソつきめ!
 #_0ADC03: db $F0 ; [set2] new line
-#_0ADC04: db $EB, $58 ; [set2] prewritten text 58
+#_0ADC04: db $EB, $58 ; [set2] phrase 58
 #_0ADC06: db $F3 ; [set2] wait for key and new line
 #_0ADC07: db $F1 ; [set2] clear message box
-#_0ADC08: db $EB, $E1 ; [set2] prewritten text E1
+#_0ADC08: db $EB, $E1 ; [set2] phrase E1
 #_0ADC0A: db $F3 ; [set2] wait for key and new line
 #_0ADC0B: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -18193,8 +18193,8 @@ Message_02_18_6B:
 #_0ADC1D: db $30, $37, $47, $4B, $29, $27 ; してもらおう
 #_0ADC23: db $F3 ; [set2] wait for key and new line
 #_0ADC24: db $E5, $03 ; [set2] [COMMAND 45:03]
-#_0ADC26: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
-#_0ADC29: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0ADC26: db $FB, $01, $EA ; [set2] set progress flag EA
+#_0ADC29: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0ADC2C: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -18236,7 +18236,7 @@ Message_02_18_6E:
 ; われらは ししても まかいに もどるのみ・・・
 ; たまさかなれど ひとのこに ちからを
 ; かさんと おもう・・・
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_18_6F:
 #_0ADC7F: db $32, $52, $39, $2B, $38, $3E, $CF, $29 ; せんなきとは⎵お
@@ -18256,7 +18256,7 @@ Message_02_18_6F:
 #_0ADCCB: db $93, $93, $93 ; ・・・
 #_0ADCCE: db $F3 ; [set2] wait for key and new line
 #_0ADCCF: db $F1 ; [set2] clear message box
-#_0ADCD0: db $EB, $E0 ; [set2] prewritten text E0
+#_0ADCD0: db $EB, $E0 ; [set2] phrase E0
 #_0ADCD2: db $F3 ; [set2] wait for key and new line
 #_0ADCD3: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
@@ -18273,14 +18273,14 @@ Message_02_18_70:
 ;===================================================================================================
 
 ; かんがえが かわったら また あおう
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_18_71:
 #_0ADCED: db $2A, $52, $9C, $28, $9C, $CF, $2A, $50 ; かんがえが⎵かわ
 #_0ADCF5: db $58, $34, $4B, $CF, $43, $34, $CF, $25 ; ったら⎵また⎵あ
 #_0ADCFD: db $29, $27 ; おう
 #_0ADCFF: db $F3 ; [set2] wait for key and new line
 #_0ADD00: db $F1 ; [set2] clear message box
-#_0ADD01: db $EB, $E1 ; [set2] prewritten text E1
+#_0ADD01: db $EB, $E1 ; [set2] phrase E1
 #_0ADD03: db $F3 ; [set2] wait for key and new line
 #_0ADD04: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -18288,7 +18288,7 @@ Message_02_18_71:
 
 ; «ひとのこの ぶんざいで みのほど しらずよ»
 Message_02_18_72:
-#_0ADD06: db $EB, $8F ; [set2] prewritten text 8F
+#_0ADD06: db $EB, $8F ; [set2] phrase 8F
 #_0ADD08: db $FF ; end of message
 
 ;===================================================================================================
@@ -18336,7 +18336,7 @@ Message_02_18_78:
 #_0ADD49: db $34, $CF, $35, $57, $27, $35, $52, $47 ; た⎵ちょうちんも
 #_0ADD51: db $35, $46 ; ちめ
 #_0ADD53: db $F0 ; [set2] new line
-#_0ADD54: db $EB, $59 ; [set2] prewritten text 59
+#_0ADD54: db $EB, $59 ; [set2] phrase 59
 #_0ADD56: db $FF ; end of message
 
 ;===================================================================================================
@@ -18344,7 +18344,7 @@ Message_02_18_78:
 ; «フォッフォッフォッ!» 
 ; なにが のぞみだ いえ!
 Message_02_18_79:
-#_0ADD57: db $EB, $0A ; [set2] prewritten text 0A
+#_0ADD57: db $EB, $0A ; [set2] phrase 0A
 #_0ADD59: db $CF ; ⎵
 #_0ADD5A: db $F0 ; [set2] new line
 #_0ADD5B: db $39, $3A, $9C, $CF, $3D, $A5, $44, $A6 ; なにが⎵のぞみだ
@@ -18356,25 +18356,25 @@ Message_02_18_79:
 ; «グフフフフフ・・・・» くちの うまいやつめ
 ; «なにが めあてだ?»
 Message_02_18_7A:
-#_0ADD68: db $EB, $51 ; [set2] prewritten text 51
+#_0ADD68: db $EB, $51 ; [set2] phrase 51
 #_0ADD6A: db $CF, $2C, $35, $3D, $CF, $27, $43, $26 ; ⎵くちの⎵うまい
 #_0ADD72: db $48, $36, $46 ; やつめ
 #_0ADD75: db $F0 ; [set2] new line
-#_0ADD76: db $EB, $59 ; [set2] prewritten text 59
+#_0ADD76: db $EB, $59 ; [set2] phrase 59
 #_0ADD78: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «この くちさきだけの けがらわしい げろうめ»
 Message_02_18_7B:
-#_0ADD79: db $EB, $90 ; [set2] prewritten text 90
+#_0ADD79: db $EB, $90 ; [set2] phrase 90
 #_0ADD7B: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «こころにも ないことを!»
 Message_02_18_7C:
-#_0ADD7C: db $EB, $91 ; [set2] prewritten text 91
+#_0ADD7C: db $EB, $91 ; [set2] phrase 91
 #_0ADD7E: db $FF ; end of message
 
 ;===================================================================================================
@@ -18382,7 +18382,7 @@ Message_02_18_7C:
 ; «グフフフフフ・・・・» そうした いつわりは
 ; しご おまえの したを やくぞ・・・・
 Message_02_18_7D:
-#_0ADD7F: db $EB, $51 ; [set2] prewritten text 51
+#_0ADD7F: db $EB, $51 ; [set2] phrase 51
 #_0ADD81: db $CF, $33, $27, $30, $34, $CF, $26, $36 ; ⎵そうした⎵いつ
 #_0ADD89: db $50, $4C, $3E ; わりは
 #_0ADD8C: db $F0 ; [set2] new line
@@ -18434,7 +18434,7 @@ Message_02_18_84:
 ; «コレを やる»
 ; «いちから でなおせ おろかものが»
 Message_02_18_85:
-#_0ADDB2: db $EB, $5A ; [set2] prewritten text 5A
+#_0ADDB2: db $EB, $5A ; [set2] phrase 5A
 #_0ADDB4: db $FF ; end of message
 
 ;===================================================================================================
@@ -18450,7 +18450,7 @@ Message_02_18_86:
 ; «くだらんものと はなす ひまは ない»
 ; «さらば・・・»
 Message_02_18_87:
-#_0ADDC4: db $EB, $5B ; [set2] prewritten text 5B
+#_0ADDC4: db $EB, $5B ; [set2] phrase 5B
 #_0ADDC6: db $FF ; end of message
 
 ;===================================================================================================
@@ -18461,7 +18461,7 @@ Message_02_18_88:
 #_0ADDC7: db $48, $4D, $2B, $3D, $CF, $27, $32, $4D ; やるきの⎵うせる
 #_0ADDCF: db $2E, $38 ; こと
 #_0ADDD1: db $F0 ; [set2] new line
-#_0ADDD2: db $EB, $58 ; [set2] prewritten text 58
+#_0ADDD2: db $EB, $58 ; [set2] phrase 58
 #_0ADDD4: db $FF ; end of message
 
 ;===================================================================================================
@@ -18478,44 +18478,44 @@ Message_02_18_89:
 
 ;===================================================================================================
 
-; «われは こうきなる [CLASSX]の»
-; «いちぞくの もの» [DEMONX]なり
+; «われは こうきなる [MYCLASS]の»
+; «いちぞくの もの» [MYNAME]なり
 ; «はなしを きこうぞ»
 Message_02_18_8A:
-#_0ADDF5: db $EB, $5C ; [set2] prewritten text 5C
+#_0ADDF5: db $EB, $5C ; [set2] phrase 5C
 #_0ADDF7: db $CF ; ⎵
-#_0ADDF8: db $ED ; [set2] write demon name indexed from $0526
+#_0ADDF8: db $ED ; [set2] write name of speaker
 #_0ADDF9: db $39, $4C ; なり
 #_0ADDFB: db $F0 ; [set2] new line
-#_0ADDFC: db $EB, $52 ; [set2] prewritten text 52
+#_0ADDFC: db $EB, $52 ; [set2] phrase 52
 #_0ADDFE: db $FF ; end of message
 
 ;===================================================================================================
 
-; «ワシは [CLASSX] [DEMONX]だ»
+; «ワシは [MYCLASS] [MYNAME]だ»
 ; «ようを いってみろ»
 Message_02_18_8B:
-#_0ADDFF: db $EB, $5D ; [set2] prewritten text 5D
+#_0ADDFF: db $EB, $5D ; [set2] phrase 5D
 #_0ADE01: db $FF ; end of message
 
 ;===================================================================================================
 
-; わたしは [CLASSX] [DEMONX]
+; わたしは [MYCLASS] [MYNAME]
 ; «はなしを きいてやろう»
 Message_02_18_8C:
 #_0ADE02: db $50, $34, $30, $3E, $CF ; わたしは⎵
-#_0ADE07: db $EE ; [set2] write class name indexed from $0526
+#_0ADE07: db $EE ; [set2] write class of speaker
 #_0ADE08: db $CF ; ⎵
-#_0ADE09: db $ED ; [set2] write demon name indexed from $0526
+#_0ADE09: db $ED ; [set2] write name of speaker
 #_0ADE0A: db $F0 ; [set2] new line
-#_0ADE0B: db $EB, $28 ; [set2] prewritten text 28
+#_0ADE0B: db $EB, $28 ; [set2] phrase 28
 #_0ADE0D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «しらぬわ»
 Message_02_18_8D:
-#_0ADE0E: db $EB, $94 ; [set2] prewritten text 94
+#_0ADE0E: db $EB, $94 ; [set2] phrase 94
 #_0ADE10: db $FF ; end of message
 
 ;===================================================================================================
@@ -18523,7 +18523,7 @@ Message_02_18_8D:
 ; «フォッフォッフォッ!»
 ; きいたことも ない
 Message_02_18_8E:
-#_0ADE11: db $EB, $0A ; [set2] prewritten text 0A
+#_0ADE11: db $EB, $0A ; [set2] phrase 0A
 #_0ADE13: db $F0 ; [set2] new line
 #_0ADE14: db $2B, $26, $34, $2E, $38, $47, $CF, $39 ; きいたことも⎵な
 #_0ADE1C: db $26 ; い
@@ -18541,7 +18541,7 @@ Message_02_18_8F:
 
 ; «ナカマを よろしく»たのみますぞ!
 Message_02_18_90:
-#_0ADE29: db $EB, $B6 ; [set2] prewritten text B6
+#_0ADE29: db $EB, $B6 ; [set2] phrase B6
 #_0ADE2B: db $34, $3D, $44, $43, $31, $A5, $94 ; たのみますぞ!
 #_0ADE32: db $FF ; end of message
 
@@ -18551,7 +18551,7 @@ Message_02_18_90:
 Message_02_18_91:
 #_0ADE33: db $50, $30, $3D, $CF, $71, $62, $7B, $38 ; わしの⎵ナカマと
 #_0ADE3B: db $CF ; ⎵
-#_0ADE3C: db $EB, $B7 ; [set2] prewritten text B7
+#_0ADE3C: db $EB, $B7 ; [set2] phrase B7
 #_0ADE3E: db $2C, $4E, $48 ; くれや
 #_0ADE41: db $FF ; end of message
 
@@ -18559,7 +18559,7 @@ Message_02_18_91:
 
 ; «ナカマを よろしく»たのんだぞ!
 Message_02_18_92:
-#_0ADE42: db $EB, $B6 ; [set2] prewritten text B6
+#_0ADE42: db $EB, $B6 ; [set2] phrase B6
 #_0ADE44: db $34, $3D, $52, $A6, $A5, $94 ; たのんだぞ!
 #_0ADE4A: db $FF ; end of message
 
@@ -18567,42 +18567,42 @@ Message_02_18_92:
 
 ; «おそいわあ!»
 Message_02_18_93:
-#_0ADE4B: db $EB, $2D ; [set2] prewritten text 2D
+#_0ADE4B: db $EB, $2D ; [set2] phrase 2D
 #_0ADE4D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «おそいわあ!»
 Message_02_18_94:
-#_0ADE4E: db $EB, $2D ; [set2] prewritten text 2D
+#_0ADE4E: db $EB, $2D ; [set2] phrase 2D
 #_0ADE50: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «むだだ!»
 Message_02_18_95:
-#_0ADE51: db $EB, $D1 ; [set2] prewritten text D1
+#_0ADE51: db $EB, $D1 ; [set2] phrase D1
 #_0ADE53: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «は! な・なんの ごようで しょうか?»
 Message_02_18_96:
-#_0ADE54: db $EB, $5E ; [set2] prewritten text 5E
+#_0ADE54: db $EB, $5E ; [set2] phrase 5E
 #_0ADE56: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ワシに な・に・か・・・?»
 Message_02_18_97:
-#_0ADE57: db $EB, $5F ; [set2] prewritten text 5F
+#_0ADE57: db $EB, $5F ; [set2] phrase 5F
 #_0ADE59: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «は! な・なんの ごようで しょうか?»
 Message_02_18_98:
-#_0ADE5A: db $EB, $5E ; [set2] prewritten text 5E
+#_0ADE5A: db $EB, $5E ; [set2] phrase 5E
 #_0ADE5C: db $FF ; end of message
 
 ;===================================================================================================
@@ -18616,14 +18616,14 @@ Message_02_18_99:
 
 ; «むなくそわるい!»
 Message_02_18_9A:
-#_0ADE66: db $EB, $95 ; [set2] prewritten text 95
+#_0ADE66: db $EB, $95 ; [set2] phrase 95
 #_0ADE68: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なに やってんだ?»
 Message_02_18_9B:
-#_0ADE69: db $EB, $60 ; [set2] prewritten text 60
+#_0ADE69: db $EB, $60 ; [set2] phrase 60
 #_0ADE6B: db $FF ; end of message
 
 ;===================================================================================================
@@ -18635,14 +18635,14 @@ Message_02_18_9C:
 #_0ADE74: db $CF, $50, $4E, $38, $38, $47, $3A, $CF ; ⎵われとともに⎵
 #_0ADE7C: db $34, $2D, $4C, $CF, $2C, $4D, $28, $94 ; たけり⎵くるえ!
 #_0ADE84: db $F0 ; [set2] new line
-#_0ADE85: db $EB, $61 ; [set2] prewritten text 61
+#_0ADE85: db $EB, $61 ; [set2] phrase 61
 #_0ADE87: db $FF ; end of message
 
 ;===================================================================================================
 
 ; « みんな こわしてやる!»
 Message_02_18_9D:
-#_0ADE88: db $EB, $62 ; [set2] prewritten text 62
+#_0ADE88: db $EB, $62 ; [set2] phrase 62
 #_0ADE8A: db $FF ; end of message
 
 ;===================================================================================================
@@ -18651,7 +18651,7 @@ Message_02_18_9D:
 ; ちだ! ちだ! わが こころ しずめるのに
 ; ちを ささげよ!
 Message_02_18_9E:
-#_0ADE8B: db $EB, $61 ; [set2] prewritten text 61
+#_0ADE8B: db $EB, $61 ; [set2] phrase 61
 #_0ADE8D: db $F0 ; [set2] new line
 #_0ADE8E: db $35, $A6, $94, $CF, $35, $A6, $94, $CF ; ちだ!⎵ちだ!⎵
 #_0ADE96: db $50, $9C, $CF, $2E, $2E, $4F, $CF, $30 ; わが⎵こころ⎵し
@@ -18692,7 +18692,7 @@ Message_02_18_A2:
 #_0ADEDA: db $47, $3D, $A9, $3E, $CF, $39, $26, $39 ; ものでは⎵ないな
 #_0ADEE2: db $95 ; ?
 #_0ADEE3: db $F0 ; [set2] new line
-#_0ADEE4: db $EB, $52 ; [set2] prewritten text 52
+#_0ADEE4: db $EB, $52 ; [set2] phrase 52
 #_0ADEE6: db $FF ; end of message
 
 ;===================================================================================================
@@ -18700,7 +18700,7 @@ Message_02_18_A2:
 ; «できるな・・・・»
 ; «ようを いってみろ»
 Message_02_18_A3:
-#_0ADEE7: db $EB, $63 ; [set2] prewritten text 63
+#_0ADEE7: db $EB, $63 ; [set2] phrase 63
 #_0ADEE9: db $FF ; end of message
 
 ;===================================================================================================
@@ -18708,7 +18708,7 @@ Message_02_18_A3:
 ; «できるな・・・・»
 ; «ようを いってみろ»
 Message_02_18_A4:
-#_0ADEEA: db $EB, $63 ; [set2] prewritten text 63
+#_0ADEEA: db $EB, $63 ; [set2] phrase 63
 #_0ADEEC: db $FF ; end of message
 
 ;===================================================================================================
@@ -18723,14 +18723,14 @@ Message_02_18_A5:
 
 ; «なにものだ? なを なのれ!»
 Message_02_18_A6:
-#_0ADEFB: db $EB, $AD ; [set2] prewritten text AD
+#_0ADEFB: db $EB, $AD ; [set2] phrase AD
 #_0ADEFD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ようが あるなら なを なのれ»
 Message_02_18_A7:
-#_0ADEFE: db $EB, $64 ; [set2] prewritten text 64
+#_0ADEFE: db $EB, $64 ; [set2] phrase 64
 #_0ADF00: db $FF ; end of message
 
 ;===================================================================================================
@@ -18738,10 +18738,10 @@ Message_02_18_A7:
 ; «キサマが・・・・»
 ; «おもしろい »«はなしを きこうぞ»
 Message_02_18_A8:
-#_0ADF01: db $EB, $65 ; [set2] prewritten text 65
+#_0ADF01: db $EB, $65 ; [set2] phrase 65
 #_0ADF03: db $F0 ; [set2] new line
-#_0ADF04: db $EB, $67 ; [set2] prewritten text 67
-#_0ADF06: db $EB, $52 ; [set2] prewritten text 52
+#_0ADF04: db $EB, $67 ; [set2] phrase 67
+#_0ADF06: db $EB, $52 ; [set2] phrase 52
 #_0ADF08: db $FF ; end of message
 
 ;===================================================================================================
@@ -18749,9 +18749,9 @@ Message_02_18_A8:
 ; «なにい? オマエが・・・»
 ; «ようを いってみろ»
 Message_02_18_A9:
-#_0ADF09: db $EB, $66 ; [set2] prewritten text 66
+#_0ADF09: db $EB, $66 ; [set2] phrase 66
 #_0ADF0B: db $F0 ; [set2] new line
-#_0ADF0C: db $EB, $31 ; [set2] prewritten text 31
+#_0ADF0C: db $EB, $31 ; [set2] phrase 31
 #_0ADF0E: db $FF ; end of message
 
 ;===================================================================================================
@@ -18762,8 +18762,8 @@ Message_02_18_AA:
 #_0ADF0F: db $30, $58, $37, $26, $4D, $A5, $93, $93 ; しっているぞ・・
 #_0ADF17: db $93 ; ・
 #_0ADF18: db $F0 ; [set2] new line
-#_0ADF19: db $EB, $67 ; [set2] prewritten text 67
-#_0ADF1B: db $EB, $31 ; [set2] prewritten text 31
+#_0ADF19: db $EB, $67 ; [set2] phrase 67
+#_0ADF1B: db $EB, $31 ; [set2] phrase 31
 #_0ADF1D: db $FF ; end of message
 
 ;===================================================================================================
@@ -18771,14 +18771,14 @@ Message_02_18_AA:
 ; «[GIVEME] いただきたい»
 ; «だせるかな?»
 Message_02_18_AB:
-#_0ADF1E: db $EB, $69 ; [set2] prewritten text 69
+#_0ADF1E: db $EB, $69 ; [set2] phrase 69
 #_0ADF20: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ワシに [GIVEME] くれや»
 Message_02_18_AC:
-#_0ADF21: db $EB, $68 ; [set2] prewritten text 68
+#_0ADF21: db $EB, $68 ; [set2] phrase 68
 #_0ADF23: db $FF ; end of message
 
 ;===================================================================================================
@@ -18786,7 +18786,7 @@ Message_02_18_AC:
 ; «[GIVEME] いただきたい»
 ; «だせるかな?»
 Message_02_18_AD:
-#_0ADF24: db $EB, $69 ; [set2] prewritten text 69
+#_0ADF24: db $EB, $69 ; [set2] phrase 69
 #_0ADF26: db $FF ; end of message
 
 ;===================================================================================================
@@ -18794,7 +18794,7 @@ Message_02_18_AD:
 ; «さらに [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_18_AE:
-#_0ADF27: db $EB, $6A ; [set2] prewritten text 6A
+#_0ADF27: db $EB, $6A ; [set2] phrase 6A
 #_0ADF29: db $FF ; end of message
 
 ;===================================================================================================
@@ -18802,7 +18802,7 @@ Message_02_18_AE:
 ; «ついでに [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_18_AF:
-#_0ADF2A: db $EB, $6B ; [set2] prewritten text 6B
+#_0ADF2A: db $EB, $6B ; [set2] phrase 6B
 #_0ADF2C: db $FF ; end of message
 
 ;===================================================================================================
@@ -18810,7 +18810,7 @@ Message_02_18_AF:
 ; «さらに [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_18_B0:
-#_0ADF2D: db $EB, $6A ; [set2] prewritten text 6A
+#_0ADF2D: db $EB, $6A ; [set2] phrase 6A
 #_0ADF2F: db $FF ; end of message
 
 ;===================================================================================================
@@ -18818,7 +18818,7 @@ Message_02_18_B0:
 ; «ならば [GIVEME] いただきたい»
 ; «これで きめよう»
 Message_02_18_B1:
-#_0ADF30: db $EB, $6D ; [set2] prewritten text 6D
+#_0ADF30: db $EB, $6D ; [set2] phrase 6D
 #_0ADF32: db $FF ; end of message
 
 ;===================================================================================================
@@ -18826,14 +18826,14 @@ Message_02_18_B1:
 ; «そんなら [GIVEME] だな»
 ; «いやとは いわんな?»
 Message_02_18_B2:
-#_0ADF33: db $EB, $6C ; [set2] prewritten text 6C
+#_0ADF33: db $EB, $6C ; [set2] phrase 6C
 #_0ADF35: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ならば [GIVEME] だ!»
 Message_02_18_B3:
-#_0ADF36: db $EB, $A4 ; [set2] prewritten text A4
+#_0ADF36: db $EB, $A4 ; [set2] phrase A4
 #_0ADF38: db $FF ; end of message
 
 ;===================================================================================================
@@ -18848,35 +18848,35 @@ Message_02_18_B4:
 
 ; «うーむ まだ ものたりんな»
 Message_02_18_B5:
-#_0ADF4A: db $EB, $35 ; [set2] prewritten text 35
+#_0ADF4A: db $EB, $35 ; [set2] phrase 35
 #_0ADF4C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
 Message_02_18_B6:
-#_0ADF4D: db $EB, $35 ; [set2] prewritten text 35
+#_0ADF4D: db $EB, $35 ; [set2] phrase 35
 #_0ADF4F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ほかに ほしいものか・・・»
 Message_02_18_B7:
-#_0ADF50: db $EB, $73 ; [set2] prewritten text 73
+#_0ADF50: db $EB, $73 ; [set2] phrase 73
 #_0ADF52: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_18_B8:
-#_0ADF53: db $EB, $36 ; [set2] prewritten text 36
+#_0ADF53: db $EB, $36 ; [set2] phrase 36
 #_0ADF55: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_18_B9:
-#_0ADF56: db $EB, $36 ; [set2] prewritten text 36
+#_0ADF56: db $EB, $36 ; [set2] phrase 36
 #_0ADF58: db $FF ; end of message
 
 ;===================================================================================================
@@ -18891,7 +18891,7 @@ Message_02_18_BA:
 
 ; «むむむむ・・・ワシは こんな やすく ない!»
 Message_02_18_BB:
-#_0ADF69: db $EB, $6E ; [set2] prewritten text 6E
+#_0ADF69: db $EB, $6E ; [set2] phrase 6E
 #_0ADF6B: db $FF ; end of message
 
 ;===================================================================================================
@@ -18919,7 +18919,7 @@ Message_02_18_BD:
 
 ; «なんだとお?»
 Message_02_18_BE:
-#_0ADF9E: db $EB, $36 ; [set2] prewritten text 36
+#_0ADF9E: db $EB, $36 ; [set2] phrase 36
 #_0ADFA0: db $FF ; end of message
 
 ;===================================================================================================
@@ -18936,9 +18936,9 @@ Message_02_18_BF:
 ; «まだ まんぞくとは いえぬ・・・»
 ; «キサマの いのちを いただこう!»
 Message_02_18_C0:
-#_0ADFB4: db $EB, $6F ; [set2] prewritten text 6F
+#_0ADFB4: db $EB, $6F ; [set2] phrase 6F
 #_0ADFB6: db $F0 ; [set2] new line
-#_0ADFB7: db $EB, $70 ; [set2] prewritten text 70
+#_0ADFB7: db $EB, $70 ; [set2] phrase 70
 #_0ADFB9: db $FF ; end of message
 
 ;===================================================================================================
@@ -18946,9 +18946,9 @@ Message_02_18_C0:
 ; «うーむ まだ ものたりんな»
 ; «オマエの いのちも よこせ!»
 Message_02_18_C1:
-#_0ADFBA: db $EB, $35 ; [set2] prewritten text 35
+#_0ADFBA: db $EB, $35 ; [set2] phrase 35
 #_0ADFBC: db $F0 ; [set2] new line
-#_0ADFBD: db $EB, $71 ; [set2] prewritten text 71
+#_0ADFBD: db $EB, $71 ; [set2] phrase 71
 #_0ADFBF: db $FF ; end of message
 
 ;===================================================================================================
@@ -18956,7 +18956,7 @@ Message_02_18_C1:
 ; «なにか たりん!»
 ; そうだ!・・・・ちだ!
 Message_02_18_C2:
-#_0ADFC0: db $EB, $72 ; [set2] prewritten text 72
+#_0ADFC0: db $EB, $72 ; [set2] phrase 72
 #_0ADFC2: db $F0 ; [set2] new line
 #_0ADFC3: db $33, $27, $A6, $94, $93, $93, $93, $93 ; そうだ!・・・・
 #_0ADFCB: db $35, $A6, $94 ; ちだ!
@@ -18967,21 +18967,21 @@ Message_02_18_C2:
 ; では «キサマの いのちを いただこう!»
 Message_02_18_C3:
 #_0ADFCF: db $A9, $3E, $CF ; では⎵
-#_0ADFD2: db $EB, $70 ; [set2] prewritten text 70
+#_0ADFD2: db $EB, $70 ; [set2] phrase 70
 #_0ADFD4: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか では ちまつりに してやろう!»
 Message_02_18_C4:
-#_0ADFD5: db $EB, $9C ; [set2] prewritten text 9C
+#_0ADFD5: db $EB, $9C ; [set2] phrase 9C
 #_0ADFD7: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ならば キサマの いのちを いただきたい»
 Message_02_18_C5:
-#_0ADFD8: db $EB, $74 ; [set2] prewritten text 74
+#_0ADFD8: db $EB, $74 ; [set2] phrase 74
 #_0ADFDA: db $FF ; end of message
 
 ;===================================================================================================
@@ -18989,14 +18989,14 @@ Message_02_18_C5:
 ; «この げろうが!»
 ; «やっぱり かねが ねらいか!»
 Message_02_18_C6:
-#_0ADFDB: db $EB, $9E ; [set2] prewritten text 9E
+#_0ADFDB: db $EB, $9E ; [set2] phrase 9E
 #_0ADFDD: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «かねだってえ!? かねだってえ!?»
 Message_02_18_C7:
-#_0ADFDE: db $EB, $75 ; [set2] prewritten text 75
+#_0ADFDE: db $EB, $75 ; [set2] phrase 75
 #_0ADFE0: db $FF ; end of message
 
 ;===================================================================================================
@@ -19011,28 +19011,28 @@ Message_02_18_C8:
 
 ; «なんだとお?»
 Message_02_18_C9:
-#_0ADFF1: db $EB, $36 ; [set2] prewritten text 36
+#_0ADFF1: db $EB, $36 ; [set2] phrase 36
 #_0ADFF3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_18_CA:
-#_0ADFF4: db $EB, $36 ; [set2] prewritten text 36
+#_0ADFF4: db $EB, $36 ; [set2] phrase 36
 #_0ADFF6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_18_CB:
-#_0ADFF7: db $EB, $36 ; [set2] prewritten text 36
+#_0ADFF7: db $EB, $36 ; [set2] phrase 36
 #_0ADFF9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «では うけとるが いい!»
 Message_02_18_CC:
-#_0ADFFA: db $EB, $76 ; [set2] prewritten text 76
+#_0ADFFA: db $EB, $76 ; [set2] phrase 76
 #_0ADFFC: db $FF ; end of message
 
 ;===================================================================================================
@@ -19048,16 +19048,16 @@ Message_02_18_CD:
 ; «では うけとるが いい!»
 ; «こいつを もって とっとと きえな!»
 Message_02_18_CE:
-#_0AE007: db $EB, $76 ; [set2] prewritten text 76
+#_0AE007: db $EB, $76 ; [set2] phrase 76
 #_0AE009: db $F0 ; [set2] new line
-#_0AE00A: db $EB, $77 ; [set2] prewritten text 77
+#_0AE00A: db $EB, $77 ; [set2] phrase 77
 #_0AE00C: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きょひする»
 Message_02_18_CF:
-#_0AE00D: db $EB, $A7 ; [set2] prewritten text A7
+#_0AE00D: db $EB, $A7 ; [set2] phrase A7
 #_0AE00F: db $FF ; end of message
 
 ;===================================================================================================
@@ -19071,47 +19071,47 @@ Message_02_18_D0:
 
 ; «おことわりだ!»
 Message_02_18_D1:
-#_0AE018: db $EB, $A8 ; [set2] prewritten text A8
+#_0AE018: db $EB, $A8 ; [set2] phrase A8
 #_0AE01A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «しょうちした»
 Message_02_18_D2:
-#_0AE01B: db $EB, $A1 ; [set2] prewritten text A1
+#_0AE01B: db $EB, $A1 ; [set2] phrase A1
 #_0AE01D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか わかった»
 Message_02_18_D3:
-#_0AE01E: db $EB, $78 ; [set2] prewritten text 78
+#_0AE01E: db $EB, $78 ; [set2] phrase 78
 #_0AE020: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなことか!»
 Message_02_18_D4:
-#_0AE021: db $EB, $3D ; [set2] prewritten text 3D
+#_0AE021: db $EB, $3D ; [set2] phrase 3D
 #_0AE023: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «これで まんぞくだ»
-; «この[CLASSX] [DEMONX]»
+; «この[MYCLASS] [MYNAME]»
 ; «きょうより あなたの しもべ»
 ; «なんなりと おもうしつけ ください»
 Message_02_18_D5:
-#_0AE024: db $EB, $79 ; [set2] prewritten text 79
+#_0AE024: db $EB, $79 ; [set2] phrase 79
 #_0AE026: db $FF ; end of message
 
 ;===================================================================================================
 
-; ワシは [DEMONX]
+; ワシは [MYNAME]
 ; こんごとも よろしく!
 Message_02_18_D6:
 #_0AE027: db $88, $68, $3E, $CF ; ワシは⎵
-#_0AE02B: db $ED ; [set2] write demon name indexed from $0526
+#_0AE02B: db $ED ; [set2] write name of speaker
 #_0AE02C: db $F0 ; [set2] new line
 #_0AE02D: db $2E, $52, $A0, $38, $47, $CF, $4A, $4F ; こんごとも⎵よろ
 #_0AE035: db $30, $2C, $94 ; しく!
@@ -19121,7 +19121,7 @@ Message_02_18_D6:
 
 ; «これで けいやく せいりつだ!»
 Message_02_18_D7:
-#_0AE039: db $EB, $7A ; [set2] prewritten text 7A
+#_0AE039: db $EB, $7A ; [set2] phrase 7A
 #_0AE03B: db $FF ; end of message
 
 ;===================================================================================================
@@ -19132,7 +19132,7 @@ Message_02_18_D8:
 #_0AE03C: db $43, $25, $CF, $43, $37, $CF, $33, $27 ; まあ⎵まて⎵そう
 #_0AE044: db $CF, $26, $33, $9E, $39 ; ⎵いそぐな
 #_0AE049: db $F0 ; [set2] new line
-#_0AE04A: db $EB, $7B ; [set2] prewritten text 7B
+#_0AE04A: db $EB, $7B ; [set2] phrase 7B
 #_0AE04C: db $FF ; end of message
 
 ;===================================================================================================
@@ -19143,7 +19143,7 @@ Message_02_18_D9:
 #_0AE04D: db $35, $57, $58, $38, $CF, $43, $34, $52 ; ちょっと⎵またん
 #_0AE055: db $2A, $94 ; か!
 #_0AE057: db $F0 ; [set2] new line
-#_0AE058: db $EB, $7B ; [set2] prewritten text 7B
+#_0AE058: db $EB, $7B ; [set2] phrase 7B
 #_0AE05A: db $FF ; end of message
 
 ;===================================================================================================
@@ -19154,7 +19154,7 @@ Message_02_18_DA:
 #_0AE05B: db $43, $25, $CF, $43, $37, $CF, $33, $27 ; まあ⎵まて⎵そう
 #_0AE063: db $CF, $26, $33, $9E, $39 ; ⎵いそぐな
 #_0AE068: db $F0 ; [set2] new line
-#_0AE069: db $EB, $7B ; [set2] prewritten text 7B
+#_0AE069: db $EB, $7B ; [set2] phrase 7B
 #_0AE06B: db $FF ; end of message
 
 ;===================================================================================================
@@ -19166,13 +19166,13 @@ Message_0AE06C:
 #_0AE074: db $5A, $6C, $5A, $29, $30, $35, $88, $5A ; ーターおしちワー
 #_0AE07C: db $63, $8F, $92, $70, $C8, $C2, $8C, $66 ; キャットボディコ
 #_0AE084: db $72, $5D, $8A ; ニアン
-#_0AE087: db $EB, $98 ; [set2] prewritten text 98
+#_0AE087: db $EB, $98 ; [set2] phrase 98
 
 ;===================================================================================================
 
 ; «こうかい するでないぞ!»
 Message_02_19_00:
-#_0AE087: db $EB, $98 ; [set2] prewritten text 98
+#_0AE087: db $EB, $98 ; [set2] phrase 98
 #_0AE089: db $FF ; end of message
 
 ;===================================================================================================
@@ -19217,7 +19217,7 @@ Message_02_19_05:
 ; «しこうの かいらくを あたえようぞ!»
 ; «ほっほっほっほっ»
 Message_02_19_06:
-#_0AE0AB: db $EB, $99 ; [set2] prewritten text 99
+#_0AE0AB: db $EB, $99 ; [set2] phrase 99
 #_0AE0AD: db $FF ; end of message
 
 ;===================================================================================================
@@ -19244,7 +19244,7 @@ Message_02_19_08:
 Message_02_19_09:
 #_0AE0D1: db $49, $4D, $30, $37, $CF, $34, $47, $4E ; ゆるして⎵たもれ
 #_0AE0D9: db $F0 ; [set2] new line
-#_0AE0DA: db $EB, $A2 ; [set2] prewritten text A2
+#_0AE0DA: db $EB, $A2 ; [set2] phrase A2
 #_0AE0DC: db $FF ; end of message
 
 ;===================================================================================================
@@ -19255,7 +19255,7 @@ Message_02_19_0A:
 #_0AE0DD: db $25, $25, $94, $CF, $47, $27, $A6, $46 ; ああ!⎵もうだめ
 #_0AE0E5: db $94 ; !
 #_0AE0E6: db $F0 ; [set2] new line
-#_0AE0E7: db $EB, $8A ; [set2] prewritten text 8A
+#_0AE0E7: db $EB, $8A ; [set2] phrase 8A
 #_0AE0E9: db $FF ; end of message
 
 ;===================================================================================================
@@ -19292,28 +19292,28 @@ Message_02_19_0D:
 Message_02_19_0E:
 #_0AE116: db $34, $31, $2D, $37, $5A, $94 ; たすけてー!
 #_0AE11C: db $F0 ; [set2] new line
-#_0AE11D: db $EB, $83 ; [set2] prewritten text 83
+#_0AE11D: db $EB, $83 ; [set2] phrase 83
 #_0AE11F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «わらわに なにか ようか?»
 Message_02_19_0F:
-#_0AE120: db $EB, $92 ; [set2] prewritten text 92
+#_0AE120: db $EB, $92 ; [set2] phrase 92
 #_0AE122: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なにが おのぞみ?»
 Message_02_19_10:
-#_0AE123: db $EB, $93 ; [set2] prewritten text 93
+#_0AE123: db $EB, $93 ; [set2] phrase 93
 #_0AE125: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はなし きいたげる»わ!
 Message_02_19_11:
-#_0AE126: db $EB, $84 ; [set2] prewritten text 84
+#_0AE126: db $EB, $84 ; [set2] phrase 84
 #_0AE128: db $50, $94 ; わ!
 #_0AE12A: db $FF ; end of message
 
@@ -19371,7 +19371,7 @@ Message_02_19_17:
 #_0AE18D: db $F0 ; [set2] new line
 #_0AE18E: db $63, $83, $5E, $94 ; キライ!
 #_0AE192: db $F0 ; [set2] new line
-#_0AE193: db $EB, $83 ; [set2] prewritten text 83
+#_0AE193: db $EB, $83 ; [set2] phrase 83
 #_0AE195: db $FF ; end of message
 
 ;===================================================================================================
@@ -19379,7 +19379,7 @@ Message_02_19_17:
 ; «ほっほっほっほっ» りりしき おのこじゃ
 ; その きがいにめんじて はなし うけたまわろう
 Message_02_19_18:
-#_0AE196: db $EB, $82 ; [set2] prewritten text 82
+#_0AE196: db $EB, $82 ; [set2] phrase 82
 #_0AE198: db $CF, $4C, $4C, $30, $2B, $CF, $29, $3D ; ⎵りりしき⎵おの
 #_0AE1A0: db $2E, $A2, $55 ; こじゃ
 #_0AE1A3: db $F0 ; [set2] new line
@@ -19407,7 +19407,7 @@ Message_02_19_19:
 Message_02_19_1A:
 #_0AE1D8: db $26, $26, $50, $25, $94 ; いいわあ!
 #_0AE1DD: db $F0 ; [set2] new line
-#_0AE1DE: db $EB, $84 ; [set2] prewritten text 84
+#_0AE1DE: db $EB, $84 ; [set2] phrase 84
 #_0AE1E0: db $5A, $94 ; ー!
 #_0AE1E2: db $FF ; end of message
 
@@ -19529,29 +19529,29 @@ Message_02_19_26:
 
 ; «ほっほっほっほっ»
 Message_02_19_27:
-#_0AE2B7: db $EB, $82 ; [set2] prewritten text 82
+#_0AE2B7: db $EB, $82 ; [set2] phrase 82
 #_0AE2B9: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うふふふふ・・・»
 Message_02_19_28:
-#_0AE2BA: db $EB, $86 ; [set2] prewritten text 86
+#_0AE2BA: db $EB, $86 ; [set2] phrase 86
 #_0AE2BC: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きゃーはははは!»
 Message_02_19_29:
-#_0AE2BD: db $EB, $83 ; [set2] prewritten text 83
+#_0AE2BD: db $EB, $83 ; [set2] phrase 83
 #_0AE2BF: db $FF ; end of message
 
 ;===================================================================================================
 
-; «この [CLASSX] [DEMONX]を»
+; «この [MYCLASS] [MYNAME]を»
 ; «ほんきで おこらせた ようだな・・・»
 Message_02_19_2A:
-#_0AE2C0: db $EB, $85 ; [set2] prewritten text 85
+#_0AE2C0: db $EB, $85 ; [set2] phrase 85
 #_0AE2C2: db $FF ; end of message
 
 ;===================================================================================================
@@ -19575,7 +19575,7 @@ Message_02_19_2C:
 ; «ほっほっほっほっ»
 ; おもしろい のぞみを もうせ
 Message_02_19_2D:
-#_0AE2D8: db $EB, $82 ; [set2] prewritten text 82
+#_0AE2D8: db $EB, $82 ; [set2] phrase 82
 #_0AE2DA: db $F0 ; [set2] new line
 #_0AE2DB: db $29, $47, $30, $4F, $26, $CF, $3D, $A5 ; おもしろい⎵のぞ
 #_0AE2E3: db $44, $51, $CF, $47, $27, $32 ; みを⎵もうせ
@@ -19586,7 +19586,7 @@ Message_02_19_2D:
 ; «うふふふふ・・・»
 ; いいわ はなして ごらんなさい
 Message_02_19_2E:
-#_0AE2EA: db $EB, $86 ; [set2] prewritten text 86
+#_0AE2EA: db $EB, $86 ; [set2] phrase 86
 #_0AE2EC: db $F0 ; [set2] new line
 #_0AE2ED: db $26, $26, $50, $CF, $3E, $39, $30, $37 ; いいわ⎵はなして
 #_0AE2F5: db $CF, $A0, $4B, $52, $39, $2F, $26 ; ⎵ごらんなさい
@@ -19618,14 +19618,14 @@ Message_02_19_30:
 
 ; «ねえ あたしのこと すき?»
 Message_02_19_31:
-#_0AE331: db $EB, $87 ; [set2] prewritten text 87
+#_0AE331: db $EB, $87 ; [set2] phrase 87
 #_0AE333: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ねえ あたしのこと すき?»
 Message_02_19_32:
-#_0AE334: db $EB, $87 ; [set2] prewritten text 87
+#_0AE334: db $EB, $87 ; [set2] phrase 87
 #_0AE336: db $FF ; end of message
 
 ;===================================================================================================
@@ -19746,7 +19746,7 @@ Message_02_19_41:
 
 ; «もういい やめろ!»
 Message_02_19_42:
-#_0AE3CB: db $EB, $88 ; [set2] prewritten text 88
+#_0AE3CB: db $EB, $88 ; [set2] phrase 88
 #_0AE3CD: db $FF ; end of message
 
 ;===================================================================================================
@@ -19765,7 +19765,7 @@ Message_02_19_44:
 #_0AE3DC: db $3F, $5A, $94, $CF, $48, $93, $48, $46 ; ひー!⎵や・やめ
 #_0AE3E4: db $37, $28, $94 ; てえ!
 #_0AE3E7: db $F0 ; [set2] new line
-#_0AE3E8: db $EB, $83 ; [set2] prewritten text 83
+#_0AE3E8: db $EB, $83 ; [set2] phrase 83
 #_0AE3EA: db $FF ; end of message
 
 ;===================================================================================================
@@ -19785,7 +19785,7 @@ Message_02_19_45:
 ; あなた« デビルバスター»ね?
 Message_02_19_46:
 #_0AE405: db $25, $39, $34 ; あなた
-#_0AE408: db $EB, $89 ; [set2] prewritten text 89
+#_0AE408: db $EB, $89 ; [set2] phrase 89
 #_0AE40A: db $3C, $95 ; ね?
 #_0AE40C: db $FF ; end of message
 
@@ -19823,7 +19823,7 @@ Message_02_19_4A:
 ; «ほっほっほっほっ»
 ; あまいわあ!
 Message_02_19_4B:
-#_0AE430: db $EB, $82 ; [set2] prewritten text 82
+#_0AE430: db $EB, $82 ; [set2] phrase 82
 #_0AE432: db $F0 ; [set2] new line
 #_0AE433: db $25, $43, $26, $50, $25, $94 ; あまいわあ!
 #_0AE439: db $FF ; end of message
@@ -19835,7 +19835,7 @@ Message_02_19_4B:
 Message_02_19_4C:
 #_0AE43A: db $29, $AB, $2A, $2F, $52, $3C, $94 ; おばかさんね!
 #_0AE441: db $F0 ; [set2] new line
-#_0AE442: db $EB, $86 ; [set2] prewritten text 86
+#_0AE442: db $EB, $86 ; [set2] phrase 86
 #_0AE444: db $FF ; end of message
 
 ;===================================================================================================
@@ -19845,7 +19845,7 @@ Message_02_19_4C:
 Message_02_19_4D:
 #_0AE445: db $AB, $2A, $39, $CF, $48, $36, $5A, $94 ; ばかな⎵やつー!
 #_0AE44D: db $F0 ; [set2] new line
-#_0AE44E: db $EB, $83 ; [set2] prewritten text 83
+#_0AE44E: db $EB, $83 ; [set2] phrase 83
 #_0AE450: db $FF ; end of message
 
 ;===================================================================================================
@@ -19889,9 +19889,9 @@ Message_02_19_51:
 ; «あなたの ような ひと はじめてよ!»
 ; «なんでも おのぞみ どおり するわ»
 Message_02_19_52:
-#_0AE49D: db $EB, $8B ; [set2] prewritten text 8B
+#_0AE49D: db $EB, $8B ; [set2] phrase 8B
 #_0AE49F: db $F0 ; [set2] new line
-#_0AE4A0: db $EB, $8A ; [set2] prewritten text 8A
+#_0AE4A0: db $EB, $8A ; [set2] phrase 8A
 #_0AE4A2: db $FF ; end of message
 
 ;===================================================================================================
@@ -19899,7 +19899,7 @@ Message_02_19_52:
 ; «あなたの ような ひと はじめてよ!»
 ; もう あたしを すきにして!
 Message_02_19_53:
-#_0AE4A3: db $EB, $8B ; [set2] prewritten text 8B
+#_0AE4A3: db $EB, $8B ; [set2] phrase 8B
 #_0AE4A5: db $F0 ; [set2] new line
 #_0AE4A6: db $47, $27, $CF, $25, $34, $30, $51, $CF ; もう⎵あたしを⎵
 #_0AE4AE: db $31, $2B, $3A, $30, $37, $94 ; すきにして!
@@ -19909,7 +19909,7 @@ Message_02_19_53:
 
 ; «おくびょうものに ようは ないわ!»
 Message_02_19_54:
-#_0AE4B5: db $EB, $56 ; [set2] prewritten text 56
+#_0AE4B5: db $EB, $56 ; [set2] phrase 56
 #_0AE4B7: db $FF ; end of message
 
 ;===================================================================================================
@@ -19917,7 +19917,7 @@ Message_02_19_54:
 ; «うふふふふ・・・»
 ; あたしが こわいの?
 Message_02_19_55:
-#_0AE4B8: db $EB, $86 ; [set2] prewritten text 86
+#_0AE4B8: db $EB, $86 ; [set2] phrase 86
 #_0AE4BA: db $F0 ; [set2] new line
 #_0AE4BB: db $25, $34, $30, $9C, $CF, $2E, $50, $26 ; あたしが⎵こわい
 #_0AE4C3: db $3D, $95 ; の?
@@ -19953,7 +19953,7 @@ Message_02_19_58:
 ; アクマ«を ころして へいきなの?»
 Message_02_19_59:
 #_0AE4F3: db $5D, $64, $7B ; アクマ
-#_0AE4F6: db $EB, $BA ; [set2] prewritten text BA
+#_0AE4F6: db $EB, $BA ; [set2] phrase BA
 #_0AE4F8: db $FF ; end of message
 
 ;===================================================================================================
@@ -19995,7 +19995,7 @@ Message_02_19_5D:
 ; «おんなは プレゼントに よわいのよ»
 ; «わかる?»
 Message_02_19_5E:
-#_0AE531: db $EB, $8C ; [set2] prewritten text 8C
+#_0AE531: db $EB, $8C ; [set2] phrase 8C
 #_0AE533: db $FF ; end of message
 
 ;===================================================================================================
@@ -20003,21 +20003,21 @@ Message_02_19_5E:
 ; «おんなは プレゼントに よわいのよ»
 ; «わかる?»
 Message_02_19_5F:
-#_0AE534: db $EB, $8C ; [set2] prewritten text 8C
+#_0AE534: db $EB, $8C ; [set2] phrase 8C
 #_0AE536: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きたれ わがいちぞくの ちにうえたる ものよ!»
 Message_02_19_60:
-#_0AE537: db $EB, $8D ; [set2] prewritten text 8D
+#_0AE537: db $EB, $8D ; [set2] phrase 8D
 #_0AE539: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «きたれ わがいちぞくの ちにうえたる ものよ!»
 Message_02_19_61:
-#_0AE53A: db $EB, $8D ; [set2] prewritten text 8D
+#_0AE53A: db $EB, $8D ; [set2] phrase 8D
 #_0AE53C: db $FF ; end of message
 
 ;===================================================================================================
@@ -20056,14 +20056,14 @@ Message_02_19_65:
 ;===================================================================================================
 
 ; ならば ちからを かさんや
-; «>[CLASSX] [DEMONX]は»
+; «>[MYCLASS] [MYNAME]は»
 ; «ナカマに なった»
 Message_02_19_66:
 #_0AE581: db $39, $4B, $AB, $CF, $35, $2A, $4B, $51 ; ならば⎵ちからを
 #_0AE589: db $CF, $2A, $2F, $52, $48 ; ⎵かさんや
 #_0AE58E: db $F3 ; [set2] wait for key and new line
 #_0AE58F: db $F1 ; [set2] clear message box
-#_0AE590: db $EB, $E0 ; [set2] prewritten text E0
+#_0AE590: db $EB, $E0 ; [set2] phrase E0
 #_0AE592: db $F3 ; [set2] wait for key and new line
 #_0AE593: db $FE, $09 ; [set2] [COMMAND 5E:09]
 
@@ -20072,10 +20072,10 @@ Message_02_19_66:
 ; «うそでも うれしい!»
 ; «はなし きいたげるわ!»
 Message_02_19_67:
-#_0AE595: db $EB, $8E ; [set2] prewritten text 8E
+#_0AE595: db $EB, $8E ; [set2] phrase 8E
 #_0AE597: db $F3 ; [set2] wait for key and new line
 #_0AE598: db $E5, $03 ; [set2] [COMMAND 45:03]
-#_0AE59A: db $FB, $01, $E7 ; [set2] [COMMAND 5B] set progress flag E7 if 01 is nonzero; otherwise reset
+#_0AE59A: db $FB, $01, $E7 ; [set2] set progress flag E7
 #_0AE59D: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -20083,10 +20083,10 @@ Message_02_19_67:
 ; «うそでも うれしい!»
 ; «はなし きいたげるわ!»
 Message_02_19_68:
-#_0AE59F: db $EB, $8E ; [set2] prewritten text 8E
+#_0AE59F: db $EB, $8E ; [set2] phrase 8E
 #_0AE5A1: db $F3 ; [set2] wait for key and new line
 #_0AE5A2: db $E5, $03 ; [set2] [COMMAND 45:03]
-#_0AE5A4: db $FB, $01, $E7 ; [set2] [COMMAND 5B] set progress flag E7 if 01 is nonzero; otherwise reset
+#_0AE5A4: db $FB, $01, $E7 ; [set2] set progress flag E7
 #_0AE5A7: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -20105,7 +20105,7 @@ Message_02_19_69:
 
 ; じしんが でてきたわ!
 ; ありがとー!
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_19_6A:
 #_0AE5BA: db $A2, $30, $52, $9C, $CF, $A9, $37, $2B ; じしんが⎵でてき
 #_0AE5C2: db $34, $50, $94 ; たわ!
@@ -20113,7 +20113,7 @@ Message_02_19_6A:
 #_0AE5C6: db $25, $4C, $9C, $38, $5A, $94 ; ありがとー!
 #_0AE5CC: db $F3 ; [set2] wait for key and new line
 #_0AE5CD: db $F1 ; [set2] clear message box
-#_0AE5CE: db $EB, $E1 ; [set2] prewritten text E1
+#_0AE5CE: db $EB, $E1 ; [set2] phrase E1
 #_0AE5D0: db $F3 ; [set2] wait for key and new line
 #_0AE5D1: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -20125,8 +20125,8 @@ Message_02_19_6B:
 #_0AE5DB: db $4F, $9C, $CF, $42, $30, $26, $3D, $94 ; ろが⎵ほしいの!
 #_0AE5E3: db $F3 ; [set2] wait for key and new line
 #_0AE5E4: db $E5, $04 ; [set2] [COMMAND 45:04]
-#_0AE5E6: db $FB, $01, $EA ; [set2] [COMMAND 5B] set progress flag EA if 01 is nonzero; otherwise reset
-#_0AE5E9: db $FB, $01, $E3 ; [set2] [COMMAND 5B] set progress flag E3 if 01 is nonzero; otherwise reset
+#_0AE5E6: db $FB, $01, $EA ; [set2] set progress flag EA
+#_0AE5E9: db $FB, $01, $E3 ; [set2] set progress flag E3
 #_0AE5EC: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
@@ -20139,30 +20139,30 @@ Message_02_19_6C:
 #_0AE5F7: db $2E, $4E, $51, $CF, $39, $3A, $2A, $3D ; これを⎵なにかの
 #_0AE5FF: db $CF, $34, $30, $3A, $32, $4A ; ⎵たしにせよ
 #_0AE605: db $F3 ; [set2] wait for key and new line
-#_0AE606: db $FB, $01, $E8 ; [set2] [COMMAND 5B] set progress flag E8 if 01 is nonzero; otherwise reset
+#_0AE606: db $FB, $01, $E8 ; [set2] set progress flag E8
 #_0AE609: db $FE, $00 ; [set2] [COMMAND 5E:00]
 
 ;===================================================================================================
 
 ; あっそう
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_19_6D:
 #_0AE60B: db $25, $58, $33, $27 ; あっそう
 #_0AE60F: db $F3 ; [set2] wait for key and new line
 #_0AE610: db $F1 ; [set2] clear message box
-#_0AE611: db $EB, $E1 ; [set2] prewritten text E1
+#_0AE611: db $EB, $E1 ; [set2] phrase E1
 #_0AE613: db $F3 ; [set2] wait for key and new line
 #_0AE614: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
 ;===================================================================================================
 
 ; エーン!
-; «>[DEMONX]は さっていった»
+; «>[MYNAME]は さっていった»
 Message_02_19_6E:
 #_0AE616: db $60, $5A, $8A, $94 ; エーン!
 #_0AE61A: db $F3 ; [set2] wait for key and new line
 #_0AE61B: db $F1 ; [set2] clear message box
-#_0AE61C: db $EB, $E1 ; [set2] prewritten text E1
+#_0AE61C: db $EB, $E1 ; [set2] phrase E1
 #_0AE61E: db $F3 ; [set2] wait for key and new line
 #_0AE61F: db $FE, $06 ; [set2] [COMMAND 5E:06]
 
@@ -20198,7 +20198,7 @@ Message_02_19_71:
 
 ; «ひとのこの ぶんざいで みのほど しらずよ»
 Message_02_19_72:
-#_0AE648: db $EB, $8F ; [set2] prewritten text 8F
+#_0AE648: db $EB, $8F ; [set2] phrase 8F
 #_0AE64A: db $FF ; end of message
 
 ;===================================================================================================
@@ -20247,7 +20247,7 @@ Message_02_19_77:
 ; よいぞ よいぞ
 ; なにが のぞみじゃ?
 Message_02_19_78:
-#_0AE691: db $EB, $82 ; [set2] prewritten text 82
+#_0AE691: db $EB, $82 ; [set2] phrase 82
 #_0AE693: db $F0 ; [set2] new line
 #_0AE694: db $4A, $26, $A5, $CF, $4A, $26, $A5 ; よいぞ⎵よいぞ
 #_0AE69B: db $F0 ; [set2] new line
@@ -20261,7 +20261,7 @@ Message_02_19_78:
 ; やーね! もう!
 ; めあては なに?
 Message_02_19_79:
-#_0AE6A7: db $EB, $86 ; [set2] prewritten text 86
+#_0AE6A7: db $EB, $86 ; [set2] phrase 86
 #_0AE6A9: db $F0 ; [set2] new line
 #_0AE6AA: db $48, $5A, $3C, $94, $CF, $47, $27, $94 ; やーね!⎵もう!
 #_0AE6B2: db $F0 ; [set2] new line
@@ -20273,7 +20273,7 @@ Message_02_19_79:
 ; «きゃーはははは!»
 ; おいしいじゃん!
 Message_02_19_7A:
-#_0AE6BC: db $EB, $83 ; [set2] prewritten text 83
+#_0AE6BC: db $EB, $83 ; [set2] phrase 83
 #_0AE6BE: db $F0 ; [set2] new line
 #_0AE6BF: db $29, $26, $30, $26, $A2, $55, $52, $94 ; おいしいじゃん!
 #_0AE6C7: db $FF ; end of message
@@ -20282,7 +20282,7 @@ Message_02_19_7A:
 
 ; «この くちさきだけの けがらわしい げろうめ»
 Message_02_19_7B:
-#_0AE6C8: db $EB, $90 ; [set2] prewritten text 90
+#_0AE6C8: db $EB, $90 ; [set2] phrase 90
 #_0AE6CA: db $FF ; end of message
 
 ;===================================================================================================
@@ -20290,7 +20290,7 @@ Message_02_19_7B:
 ; «こころにも ないことを!»
 ; サイテー!
 Message_02_19_7C:
-#_0AE6CB: db $EB, $91 ; [set2] prewritten text 91
+#_0AE6CB: db $EB, $91 ; [set2] phrase 91
 #_0AE6CD: db $F0 ; [set2] new line
 #_0AE6CE: db $67, $5E, $6F, $5A, $94 ; サイテー!
 #_0AE6D3: db $FF ; end of message
@@ -20307,7 +20307,7 @@ Message_02_19_7D:
 ; «ほっほっほっほっ»
 ; おそるるで ないぞよ
 Message_02_19_7E:
-#_0AE6DA: db $EB, $82 ; [set2] prewritten text 82
+#_0AE6DA: db $EB, $82 ; [set2] phrase 82
 #_0AE6DC: db $F0 ; [set2] new line
 #_0AE6DD: db $29, $33, $4D, $4D, $A9, $CF, $39, $26 ; おそるるで⎵ない
 #_0AE6E5: db $A5, $4A ; ぞよ
@@ -20319,7 +20319,7 @@ Message_02_19_7E:
 ; かわいいのね ぼうや あなたが
 ; ほしくなってきたわ
 Message_02_19_7F:
-#_0AE6E8: db $EB, $86 ; [set2] prewritten text 86
+#_0AE6E8: db $EB, $86 ; [set2] phrase 86
 #_0AE6EA: db $F0 ; [set2] new line
 #_0AE6EB: db $2A, $50, $26, $26, $3D, $3C, $CF, $AF ; かわいいのね⎵ぼ
 #_0AE6F3: db $27, $48, $CF, $25, $39, $34, $9C ; うや⎵あなたが
@@ -20335,7 +20335,7 @@ Message_02_19_7F:
 Message_02_19_80:
 #_0AE705: db $2A, $50, $26, $5A, $94 ; かわいー!
 #_0AE70A: db $F0 ; [set2] new line
-#_0AE70B: db $EB, $83 ; [set2] prewritten text 83
+#_0AE70B: db $EB, $83 ; [set2] phrase 83
 #_0AE70D: db $FF ; end of message
 
 ;===================================================================================================
@@ -20350,7 +20350,7 @@ Message_02_19_81:
 ; «うふふふふ・・・»
 ; うれしいわ
 Message_02_19_82:
-#_0AE717: db $EB, $86 ; [set2] prewritten text 86
+#_0AE717: db $EB, $86 ; [set2] phrase 86
 #_0AE719: db $F0 ; [set2] new line
 #_0AE71A: db $27, $4E, $30, $26, $50 ; うれしいわ
 #_0AE71F: db $FF ; end of message
@@ -20390,7 +20390,7 @@ Message_02_19_85:
 ; «きゃーはははは!»
 ; これでも とっとけー!
 Message_02_19_86:
-#_0AE74D: db $EB, $83 ; [set2] prewritten text 83
+#_0AE74D: db $EB, $83 ; [set2] phrase 83
 #_0AE74F: db $F0 ; [set2] new line
 #_0AE750: db $2E, $4E, $A9, $47, $CF, $38, $58, $38 ; これでも⎵とっと
 #_0AE758: db $2D, $5A, $94 ; けー!
@@ -20401,7 +20401,7 @@ Message_02_19_86:
 ; «くだらんものと はなす ひまは ない»
 ; «さらば・・・»
 Message_02_19_87:
-#_0AE75C: db $EB, $5B ; [set2] prewritten text 5B
+#_0AE75C: db $EB, $5B ; [set2] phrase 5B
 #_0AE75E: db $FF ; end of message
 
 ;===================================================================================================
@@ -20428,41 +20428,41 @@ Message_02_19_89:
 
 ;===================================================================================================
 
-; わらわは [CLASSX] [DEMONX]なり
+; わらわは [MYCLASS] [MYNAME]なり
 ; «わらわに なにか ようか?»
 Message_02_19_8A:
 #_0AE780: db $50, $4B, $50, $3E, $CF ; わらわは⎵
-#_0AE785: db $EE ; [set2] write class name indexed from $0526
+#_0AE785: db $EE ; [set2] write class of speaker
 #_0AE786: db $CF ; ⎵
-#_0AE787: db $ED ; [set2] write demon name indexed from $0526
+#_0AE787: db $ED ; [set2] write name of speaker
 #_0AE788: db $39, $4C ; なり
 #_0AE78A: db $F3 ; [set2] wait for key and new line
 #_0AE78B: db $F1 ; [set2] clear message box
-#_0AE78C: db $EB, $92 ; [set2] prewritten text 92
+#_0AE78C: db $EB, $92 ; [set2] phrase 92
 #_0AE78E: db $FF ; end of message
 
 ;===================================================================================================
 
-; あたしは [DEMONX]よ
+; あたしは [MYNAME]よ
 ; «なにが おのぞみ?»
 Message_02_19_8B:
 #_0AE78F: db $25, $34, $30, $3E, $CF ; あたしは⎵
-#_0AE794: db $ED ; [set2] write demon name indexed from $0526
+#_0AE794: db $ED ; [set2] write name of speaker
 #_0AE795: db $4A ; よ
 #_0AE796: db $F0 ; [set2] new line
-#_0AE797: db $EB, $93 ; [set2] prewritten text 93
+#_0AE797: db $EB, $93 ; [set2] phrase 93
 #_0AE799: db $FF ; end of message
 
 ;===================================================================================================
 
-; あたし [DEMONX]!
+; あたし [MYNAME]!
 ; «はなし きいたげる»わ!
 Message_02_19_8C:
 #_0AE79A: db $25, $34, $30, $CF ; あたし⎵
-#_0AE79E: db $ED ; [set2] write demon name indexed from $0526
+#_0AE79E: db $ED ; [set2] write name of speaker
 #_0AE79F: db $94 ; !
 #_0AE7A0: db $F0 ; [set2] new line
-#_0AE7A1: db $EB, $84 ; [set2] prewritten text 84
+#_0AE7A1: db $EB, $84 ; [set2] phrase 84
 #_0AE7A3: db $50, $94 ; わ!
 #_0AE7A5: db $FF ; end of message
 
@@ -20470,7 +20470,7 @@ Message_02_19_8C:
 
 ; «しらぬわ»
 Message_02_19_8D:
-#_0AE7A6: db $EB, $94 ; [set2] prewritten text 94
+#_0AE7A6: db $EB, $94 ; [set2] phrase 94
 #_0AE7A8: db $FF ; end of message
 
 ;===================================================================================================
@@ -20492,7 +20492,7 @@ Message_02_19_8F:
 ; わらわの«ナカマを よろしく»たのむぞよ
 Message_02_19_90:
 #_0AE7B8: db $50, $4B, $50, $3D ; わらわの
-#_0AE7BC: db $EB, $B6 ; [set2] prewritten text B6
+#_0AE7BC: db $EB, $B6 ; [set2] phrase B6
 #_0AE7BE: db $34, $3D, $45, $A5, $4A ; たのむぞよ
 #_0AE7C3: db $FF ; end of message
 
@@ -20500,7 +20500,7 @@ Message_02_19_90:
 
 ; «あたしの ともだち»を かわいがってね!
 Message_02_19_91:
-#_0AE7C4: db $EB, $B8 ; [set2] prewritten text B8
+#_0AE7C4: db $EB, $B8 ; [set2] phrase B8
 #_0AE7C6: db $51, $CF, $2A, $50, $26, $9C, $58, $37 ; を⎵かわいがって
 #_0AE7CE: db $3C, $94 ; ね!
 #_0AE7D0: db $FF ; end of message
@@ -20510,11 +20510,11 @@ Message_02_19_91:
 ; «きゃーはははは!»
 ; «あたしの ともだち»と «なかよくして»えーン!
 Message_02_19_92:
-#_0AE7D1: db $EB, $83 ; [set2] prewritten text 83
+#_0AE7D1: db $EB, $83 ; [set2] phrase 83
 #_0AE7D3: db $F0 ; [set2] new line
-#_0AE7D4: db $EB, $B8 ; [set2] prewritten text B8
+#_0AE7D4: db $EB, $B8 ; [set2] phrase B8
 #_0AE7D6: db $38, $CF ; と⎵
-#_0AE7D8: db $EB, $B7 ; [set2] prewritten text B7
+#_0AE7D8: db $EB, $B7 ; [set2] phrase B7
 #_0AE7DA: db $28, $5A, $8A, $94 ; えーン!
 #_0AE7DE: db $FF ; end of message
 
@@ -20522,7 +20522,7 @@ Message_02_19_92:
 
 ; «おそいわあ!»
 Message_02_19_93:
-#_0AE7DF: db $EB, $2D ; [set2] prewritten text 2D
+#_0AE7DF: db $EB, $2D ; [set2] phrase 2D
 #_0AE7E1: db $FF ; end of message
 
 ;===================================================================================================
@@ -20537,7 +20537,7 @@ Message_02_19_94:
 ; «きゃーはははは!»
 ; むだむだむだよーむだなのよー!
 Message_02_19_95:
-#_0AE7E8: db $EB, $83 ; [set2] prewritten text 83
+#_0AE7E8: db $EB, $83 ; [set2] phrase 83
 #_0AE7EA: db $F0 ; [set2] new line
 #_0AE7EB: db $45, $A6, $45, $A6, $45, $A6, $4A, $5A ; むだむだむだよー
 #_0AE7F3: db $45, $A6, $39, $3D, $4A, $5A, $94 ; むだなのよー!
@@ -20568,14 +20568,14 @@ Message_02_19_98:
 #_0AE81D: db $25, $34, $30, $CF, $38, $4C, $2E, $3A ; あたし⎵とりこに
 #_0AE825: db $CF, $39, $58, $37, $4D, $50, $94 ; ⎵なってるわ!
 #_0AE82C: db $F0 ; [set2] new line
-#_0AE82D: db $EB, $83 ; [set2] prewritten text 83
+#_0AE82D: db $EB, $83 ; [set2] phrase 83
 #_0AE82F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «むなくそわるい!»
 Message_02_19_99:
-#_0AE830: db $EB, $95 ; [set2] prewritten text 95
+#_0AE830: db $EB, $95 ; [set2] phrase 95
 #_0AE832: db $FF ; end of message
 
 ;===================================================================================================
@@ -20609,7 +20609,7 @@ Message_02_19_9C:
 ; «ねえ めを とじて!»
 ; «いいこと したげるわ»
 Message_02_19_9D:
-#_0AE85C: db $EB, $96 ; [set2] prewritten text 96
+#_0AE85C: db $EB, $96 ; [set2] phrase 96
 #_0AE85E: db $FF ; end of message
 
 ;===================================================================================================
@@ -20617,7 +20617,7 @@ Message_02_19_9D:
 ; «ねえ めを とじて!»
 ; «いいこと したげるわ»
 Message_02_19_9E:
-#_0AE85F: db $EB, $96 ; [set2] prewritten text 96
+#_0AE85F: db $EB, $96 ; [set2] phrase 96
 #_0AE861: db $FF ; end of message
 
 ;===================================================================================================
@@ -20737,7 +20737,7 @@ Message_02_19_AB:
 ; «[GIVEME] ちょうだい»
 ; かんがえて あげるわ
 Message_02_19_AC:
-#_0AE915: db $EB, $97 ; [set2] prewritten text 97
+#_0AE915: db $EB, $97 ; [set2] phrase 97
 #_0AE917: db $F0 ; [set2] new line
 #_0AE918: db $2A, $52, $9C, $28, $37, $CF, $25, $9F ; かんがえて⎵あげ
 #_0AE920: db $4D, $50 ; るわ
@@ -20747,7 +20747,7 @@ Message_02_19_AC:
 
 ; «[GIVEME] ちょうだい»!
 Message_02_19_AD:
-#_0AE923: db $EB, $97 ; [set2] prewritten text 97
+#_0AE923: db $EB, $97 ; [set2] phrase 97
 #_0AE925: db $94 ; !
 #_0AE926: db $FF ; end of message
 
@@ -20779,7 +20779,7 @@ Message_02_19_B0:
 #_0AE93F: db $47, $58, $38, $94, $CF, $47, $58, $38 ; もっと!⎵もっと
 #_0AE947: db $94 ; !
 #_0AE948: db $F0 ; [set2] new line
-#_0AE949: db $EB, $97 ; [set2] prewritten text 97
+#_0AE949: db $EB, $97 ; [set2] phrase 97
 #_0AE94B: db $FF ; end of message
 
 ;===================================================================================================
@@ -20811,7 +20811,7 @@ Message_02_19_B2:
 Message_02_19_B3:
 #_0AE968: db $52, $5A, $38, $3C ; んーとね
 #_0AE96C: db $F0 ; [set2] new line
-#_0AE96D: db $EB, $97 ; [set2] prewritten text 97
+#_0AE96D: db $EB, $97 ; [set2] phrase 97
 #_0AE96F: db $F0 ; [set2] new line
 #_0AE970: db $A6, $46, $95 ; だめ?
 #_0AE973: db $FF ; end of message
@@ -20820,7 +20820,7 @@ Message_02_19_B3:
 
 ; «まだ まんぞくとは いえぬ・・・»
 Message_02_19_B4:
-#_0AE974: db $EB, $6F ; [set2] prewritten text 6F
+#_0AE974: db $EB, $6F ; [set2] phrase 6F
 #_0AE976: db $FF ; end of message
 
 ;===================================================================================================
@@ -20857,7 +20857,7 @@ Message_02_19_B8:
 
 ; «えー? じゃあね・・・»
 Message_02_19_B9:
-#_0AE99F: db $EB, $9D ; [set2] prewritten text 9D
+#_0AE99F: db $EB, $9D ; [set2] phrase 9D
 #_0AE9A1: db $FF ; end of message
 
 ;===================================================================================================
@@ -20873,7 +20873,7 @@ Message_02_19_BA:
 
 ; «だめだめ! ぜんぜん だめよ!»
 Message_02_19_BB:
-#_0AE9B7: db $EB, $9A ; [set2] prewritten text 9A
+#_0AE9B7: db $EB, $9A ; [set2] phrase 9A
 #_0AE9B9: db $FF ; end of message
 
 ;===================================================================================================
@@ -20887,7 +20887,7 @@ Message_02_19_BC:
 
 ; «こうかい するでないぞ!»
 Message_02_19_BD:
-#_0AE9C1: db $EB, $98 ; [set2] prewritten text 98
+#_0AE9C1: db $EB, $98 ; [set2] phrase 98
 #_0AE9C3: db $FF ; end of message
 
 ;===================================================================================================
@@ -20913,10 +20913,10 @@ Message_02_19_BF:
 ; «しこうの かいらくを あたえようぞ!»
 ; «ほっほっほっほっ»
 Message_02_19_C0:
-#_0AE9DA: db $EB, $6F ; [set2] prewritten text 6F
+#_0AE9DA: db $EB, $6F ; [set2] phrase 6F
 #_0AE9DC: db $F3 ; [set2] wait for key and new line
 #_0AE9DD: db $F1 ; [set2] clear message box
-#_0AE9DE: db $EB, $99 ; [set2] prewritten text 99
+#_0AE9DE: db $EB, $99 ; [set2] phrase 99
 #_0AE9E0: db $FF ; end of message
 
 ;===================================================================================================
@@ -20924,9 +20924,9 @@ Message_02_19_C0:
 ; «だめだめ! ぜんぜん だめよ!»
 ; «あたしは あなたのすべてが ほしいの!»
 Message_02_19_C1:
-#_0AE9E1: db $EB, $9A ; [set2] prewritten text 9A
+#_0AE9E1: db $EB, $9A ; [set2] phrase 9A
 #_0AE9E3: db $F0 ; [set2] new line
-#_0AE9E4: db $EB, $9B ; [set2] prewritten text 9B
+#_0AE9E4: db $EB, $9B ; [set2] phrase 9B
 #_0AE9E6: db $FF ; end of message
 
 ;===================================================================================================
@@ -20934,9 +20934,9 @@ Message_02_19_C1:
 ; «だめだめ! ぜんぜん だめよ!»
 ; «あたしは あなたのすべてが ほしいの!»
 Message_02_19_C2:
-#_0AE9E7: db $EB, $9A ; [set2] prewritten text 9A
+#_0AE9E7: db $EB, $9A ; [set2] phrase 9A
 #_0AE9E9: db $F0 ; [set2] new line
-#_0AE9EA: db $EB, $9B ; [set2] prewritten text 9B
+#_0AE9EA: db $EB, $9B ; [set2] phrase 9B
 #_0AE9EC: db $FF ; end of message
 
 ;===================================================================================================
@@ -20944,16 +20944,16 @@ Message_02_19_C2:
 ; «ほっほっほっほっ»
 ; «そうか では ちまつりに してやろう!»
 Message_02_19_C3:
-#_0AE9ED: db $EB, $82 ; [set2] prewritten text 82
+#_0AE9ED: db $EB, $82 ; [set2] phrase 82
 #_0AE9EF: db $F0 ; [set2] new line
-#_0AE9F0: db $EB, $9C ; [set2] prewritten text 9C
+#_0AE9F0: db $EB, $9C ; [set2] phrase 9C
 #_0AE9F2: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «あたしは あなたのすべてが ほしいの!»
 Message_02_19_C4:
-#_0AE9F3: db $EB, $9B ; [set2] prewritten text 9B
+#_0AE9F3: db $EB, $9B ; [set2] phrase 9B
 #_0AE9F5: db $FF ; end of message
 
 ;===================================================================================================
@@ -20961,9 +20961,9 @@ Message_02_19_C4:
 ; «えー? じゃあね・・・»
 ; «あたしは あなたのすべてが ほしいの!»
 Message_02_19_C5:
-#_0AE9F6: db $EB, $9D ; [set2] prewritten text 9D
+#_0AE9F6: db $EB, $9D ; [set2] phrase 9D
 #_0AE9F8: db $F0 ; [set2] new line
-#_0AE9F9: db $EB, $9B ; [set2] prewritten text 9B
+#_0AE9F9: db $EB, $9B ; [set2] phrase 9B
 #_0AE9FB: db $FF ; end of message
 
 ;===================================================================================================
@@ -20971,7 +20971,7 @@ Message_02_19_C5:
 ; «この げろうが!»
 ; «やっぱり かねが ねらいか!»
 Message_02_19_C6:
-#_0AE9FC: db $EB, $9E ; [set2] prewritten text 9E
+#_0AE9FC: db $EB, $9E ; [set2] phrase 9E
 #_0AE9FE: db $FF ; end of message
 
 ;===================================================================================================
@@ -21001,35 +21001,35 @@ Message_02_19_C9:
 
 ; «つまんない!»
 Message_02_19_CA:
-#_0AEA22: db $EB, $9F ; [set2] prewritten text 9F
+#_0AEA22: db $EB, $9F ; [set2] phrase 9F
 #_0AEA24: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «つまんない!»
 Message_02_19_CB:
-#_0AEA25: db $EB, $9F ; [set2] prewritten text 9F
+#_0AEA25: db $EB, $9F ; [set2] phrase 9F
 #_0AEA27: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «では うけとるが いい!»
 Message_02_19_CC:
-#_0AEA28: db $EB, $76 ; [set2] prewritten text 76
+#_0AEA28: db $EB, $76 ; [set2] phrase 76
 #_0AEA2A: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はい わたしたわよ!»
 Message_02_19_CD:
-#_0AEA2B: db $EB, $A0 ; [set2] prewritten text A0
+#_0AEA2B: db $EB, $A0 ; [set2] phrase A0
 #_0AEA2D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «はい わたしたわよ!»
 Message_02_19_CE:
-#_0AEA2E: db $EB, $A0 ; [set2] prewritten text A0
+#_0AEA2E: db $EB, $A0 ; [set2] phrase A0
 #_0AEA30: db $FF ; end of message
 
 ;===================================================================================================
@@ -21057,7 +21057,7 @@ Message_02_19_D1:
 
 ; «しょうちした»
 Message_02_19_D2:
-#_0AEA40: db $EB, $A1 ; [set2] prewritten text A1
+#_0AEA40: db $EB, $A1 ; [set2] phrase A1
 #_0AEA42: db $FF ; end of message
 
 ;===================================================================================================
@@ -21083,7 +21083,7 @@ Message_02_19_D5:
 #_0AEA4D: db $44, $35, $34, $4C, $34, $93, $93, $93 ; みちたりた・・・
 #_0AEA55: db $F3 ; [set2] wait for key and new line
 #_0AEA56: db $F1 ; [set2] clear message box
-#_0AEA57: db $EB, $A2 ; [set2] prewritten text A2
+#_0AEA57: db $EB, $A2 ; [set2] phrase A2
 #_0AEA59: db $F0 ; [set2] new line
 #_0AEA5A: db $39, $52, $39, $4C, $38, $CF, $29, $47 ; なんなりと⎵おも
 #_0AEA62: db $27, $30, $36, $2D, $CF, $2C, $A6, $2F ; うしつけ⎵くださ
@@ -21097,7 +21097,7 @@ Message_02_19_D5:
 Message_02_19_D6:
 #_0AEA6C: db $43, $52, $A5, $2C, $4A, $CF, $2F, $25 ; まんぞくよ⎵さあ
 #_0AEA74: db $F0 ; [set2] new line
-#_0AEA75: db $EB, $8A ; [set2] prewritten text 8A
+#_0AEA75: db $EB, $8A ; [set2] phrase 8A
 #_0AEA77: db $FF ; end of message
 
 ;===================================================================================================
@@ -21120,7 +21120,7 @@ Message_02_19_D8:
 #_0AEA93: db $33, $27, $CF, $26, $33, $9E, $A9, $39 ; そう⎵いそぐでな
 #_0AEA9B: db $26 ; い
 #_0AEA9C: db $F0 ; [set2] new line
-#_0AEA9D: db $EB, $52 ; [set2] prewritten text 52
+#_0AEA9D: db $EB, $52 ; [set2] phrase 52
 #_0AEA9F: db $FF ; end of message
 
 ;===================================================================================================
@@ -21143,7 +21143,7 @@ Message_02_19_DA:
 #_0AEABD: db $46 ; め
 #_0AEABE: db $F0 ; [set2] new line
 #_0AEABF: db $35, $55, $52, $38, $CF ; ちゃんと⎵
-#_0AEAC4: db $EB, $84 ; [set2] prewritten text 84
+#_0AEAC4: db $EB, $84 ; [set2] phrase 84
 #_0AEAC6: db $50, $94 ; わ!
 #_0AEAC8: db $FF ; end of message
 
@@ -21176,7 +21176,7 @@ Message_02_1A_30:
 
 ; «むだだ!»
 Message_02_1A_31:
-#_0AEAE1: db $EB, $D1 ; [set2] prewritten text D1
+#_0AEAE1: db $EB, $D1 ; [set2] phrase D1
 #_0AEAE3: db $FF ; end of message
 
 ;===================================================================================================
@@ -21188,7 +21188,7 @@ Message_02_1A_32:
 
 ; «[GIVEME] いただきたい»
 Message_02_1A_39:
-#_0AEAE5: db $EB, $A3 ; [set2] prewritten text A3
+#_0AEAE5: db $EB, $A3 ; [set2] phrase A3
 #_0AEAE7: db $FF ; end of message
 
 ;===================================================================================================
@@ -21196,7 +21196,7 @@ Message_02_1A_39:
 ; さらに «[GIVEME] いただきたい»
 Message_02_1A_3A:
 #_0AEAE8: db $2F, $4B, $3A, $CF ; さらに⎵
-#_0AEAEC: db $EB, $A3 ; [set2] prewritten text A3
+#_0AEAEC: db $EB, $A3 ; [set2] phrase A3
 #_0AEAEE: db $FF ; end of message
 
 ;===================================================================================================
@@ -21204,7 +21204,7 @@ Message_02_1A_3A:
 ; ならば «[GIVEME] いただきたい»
 Message_02_1A_3B:
 #_0AEAEF: db $39, $4B, $AB, $CF ; ならば⎵
-#_0AEAF3: db $EB, $A3 ; [set2] prewritten text A3
+#_0AEAF3: db $EB, $A3 ; [set2] phrase A3
 #_0AEAF5: db $FF ; end of message
 
 ;===================================================================================================
@@ -21227,7 +21227,7 @@ Message_02_1A_3D:
 
 ; «この [GIVEME] は けがれている!»
 Message_02_1A_3E:
-#_0AEB0D: db $EB, $A5 ; [set2] prewritten text A5
+#_0AEB0D: db $EB, $A5 ; [set2] phrase A5
 #_0AEB0F: db $FF ; end of message
 
 ;===================================================================================================
@@ -21241,7 +21241,7 @@ Message_02_1A_3F:
 
 ; «この [GIVEME] は けがれている!»
 Message_02_1A_40:
-#_0AEB18: db $EB, $A5 ; [set2] prewritten text A5
+#_0AEB18: db $EB, $A5 ; [set2] phrase A5
 #_0AEB1A: db $FF ; end of message
 
 ;===================================================================================================
@@ -21249,7 +21249,7 @@ Message_02_1A_40:
 ; «かみに そむく はいしんしゃめ!»
 ; «こうかいさせて やろう!»
 Message_02_1A_41:
-#_0AEB1B: db $EB, $A6 ; [set2] prewritten text A6
+#_0AEB1B: db $EB, $A6 ; [set2] phrase A6
 #_0AEB1D: db $FF ; end of message
 
 ;===================================================================================================
@@ -21280,14 +21280,14 @@ Message_02_1A_44:
 
 ; «きょひする»
 Message_02_1A_45:
-#_0AEB40: db $EB, $A7 ; [set2] prewritten text A7
+#_0AEB40: db $EB, $A7 ; [set2] phrase A7
 #_0AEB42: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか わかった»
 Message_02_1A_46:
-#_0AEB43: db $EB, $78 ; [set2] prewritten text 78
+#_0AEB43: db $EB, $78 ; [set2] phrase 78
 #_0AEB45: db $FF ; end of message
 
 ;===================================================================================================
@@ -21312,7 +21312,7 @@ Message_02_1A_48:
 ; «[GIVEME] いただきたい»
 ; どうだろうか?
 Message_02_1A_49:
-#_0AEB6C: db $EB, $A3 ; [set2] prewritten text A3
+#_0AEB6C: db $EB, $A3 ; [set2] phrase A3
 #_0AEB6E: db $F0 ; [set2] new line
 #_0AEB6F: db $AA, $27, $A6, $4F, $27, $2A, $95 ; どうだろうか?
 #_0AEB76: db $FF ; end of message
@@ -21321,14 +21321,14 @@ Message_02_1A_49:
 
 ; «さらに [GIVEME] を いただけんかな»
 Message_02_1A_4A:
-#_0AEB77: db $EB, $AA ; [set2] prewritten text AA
+#_0AEB77: db $EB, $AA ; [set2] phrase AA
 #_0AEB79: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «ならば [GIVEME] で どうか?»
 Message_02_1A_4B:
-#_0AEB7A: db $EB, $80 ; [set2] prewritten text 80
+#_0AEB7A: db $EB, $80 ; [set2] phrase 80
 #_0AEB7C: db $FF ; end of message
 
 ;===================================================================================================
@@ -21382,7 +21382,7 @@ Message_02_1A_52:
 ; «そうですか! では »
 ; ぜひ おナカマに!
 Message_02_1A_53:
-#_0AEBAF: db $EB, $AB ; [set2] prewritten text AB
+#_0AEBAF: db $EB, $AB ; [set2] phrase AB
 #_0AEBB1: db $F0 ; [set2] new line
 #_0AEBB2: db $A4, $3F, $CF, $29, $71, $62, $7B, $3A ; ぜひ⎵おナカマに
 #_0AEBBA: db $94 ; !
@@ -21393,7 +21393,7 @@ Message_02_1A_53:
 ; «そうですか! では »すくないですが
 ; これを やくだてて ください
 Message_02_1A_54:
-#_0AEBBC: db $EB, $AB ; [set2] prewritten text AB
+#_0AEBBC: db $EB, $AB ; [set2] phrase AB
 #_0AEBBE: db $31, $2C, $39, $26, $A9, $31, $9C ; すくないですが
 #_0AEBC5: db $F0 ; [set2] new line
 #_0AEBC6: db $2E, $4E, $51, $CF, $48, $2C, $A6, $37 ; これを⎵やくだて
@@ -21472,7 +21472,7 @@ Message_02_1A_5A:
 
 ; «あやしい やつめ!»
 Message_02_1A_5B:
-#_0AEC75: db $EB, $AE ; [set2] prewritten text AE
+#_0AEC75: db $EB, $AE ; [set2] phrase AE
 #_0AEC77: db $FF ; end of message
 
 ;===================================================================================================
@@ -21491,7 +21491,7 @@ Message_02_1A_5C:
 
 ; «なにしに きた!?»
 Message_02_1A_5D:
-#_0AEC95: db $EB, $B0 ; [set2] prewritten text B0
+#_0AEC95: db $EB, $B0 ; [set2] phrase B0
 #_0AEC97: db $FF ; end of message
 
 ;===================================================================================================
@@ -21511,7 +21511,7 @@ Message_02_1A_5F:
 
 ; «あやしい やつめ!»
 Message_02_1A_60:
-#_0AECA4: db $EB, $AE ; [set2] prewritten text AE
+#_0AECA4: db $EB, $AE ; [set2] phrase AE
 #_0AECA6: db $FF ; end of message
 
 ;===================================================================================================
@@ -21544,7 +21544,7 @@ Message_02_1B_30:
 
 ; «いまさら ておくれだぜ!»
 Message_02_1B_31:
-#_0AECC0: db $EB, $D2 ; [set2] prewritten text D2
+#_0AECC0: db $EB, $D2 ; [set2] phrase D2
 #_0AECC2: db $FF ; end of message
 
 ;===================================================================================================
@@ -21556,7 +21556,7 @@ Message_02_1B_32:
 
 ; «[GIVEME] よこしな»
 Message_02_1B_39:
-#_0AECC4: db $EB, $A9 ; [set2] prewritten text A9
+#_0AECC4: db $EB, $A9 ; [set2] phrase A9
 #_0AECC6: db $FF ; end of message
 
 ;===================================================================================================
@@ -21572,21 +21572,21 @@ Message_02_1B_3A:
 
 ; «ならば [GIVEME] だ!»
 Message_02_1B_3B:
-#_0AECD1: db $EB, $A4 ; [set2] prewritten text A4
+#_0AECD1: db $EB, $A4 ; [set2] phrase A4
 #_0AECD3: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «うーむ まだ ものたりんな»
 Message_02_1B_3C:
-#_0AECD4: db $EB, $35 ; [set2] prewritten text 35
+#_0AECD4: db $EB, $35 ; [set2] phrase 35
 #_0AECD6: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_1B_3D:
-#_0AECD7: db $EB, $36 ; [set2] prewritten text 36
+#_0AECD7: db $EB, $36 ; [set2] phrase 36
 #_0AECD9: db $FF ; end of message
 
 ;===================================================================================================
@@ -21601,7 +21601,7 @@ Message_02_1B_3E:
 
 ; «なんだとお?»
 Message_02_1B_3F:
-#_0AECE9: db $EB, $36 ; [set2] prewritten text 36
+#_0AECE9: db $EB, $36 ; [set2] phrase 36
 #_0AECEB: db $FF ; end of message
 
 ;===================================================================================================
@@ -21630,14 +21630,14 @@ Message_02_1B_41:
 
 ; «なんだとお?»
 Message_02_1B_42:
-#_0AED1B: db $EB, $36 ; [set2] prewritten text 36
+#_0AED1B: db $EB, $36 ; [set2] phrase 36
 #_0AED1D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «なんだとお?»
 Message_02_1B_43:
-#_0AED1E: db $EB, $36 ; [set2] prewritten text 36
+#_0AED1E: db $EB, $36 ; [set2] phrase 36
 #_0AED20: db $FF ; end of message
 
 ;===================================================================================================
@@ -21653,14 +21653,14 @@ Message_02_1B_44:
 
 ; «おことわりだ!»
 Message_02_1B_45:
-#_0AED34: db $EB, $A8 ; [set2] prewritten text A8
+#_0AED34: db $EB, $A8 ; [set2] phrase A8
 #_0AED36: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そうか わかった»
 Message_02_1B_46:
-#_0AED37: db $EB, $78 ; [set2] prewritten text 78
+#_0AED37: db $EB, $78 ; [set2] phrase 78
 #_0AED39: db $FF ; end of message
 
 ;===================================================================================================
@@ -21678,14 +21678,14 @@ Message_02_1B_47:
 
 ; «まだ なにも はなしていないぞ»
 Message_02_1B_48:
-#_0AED4D: db $EB, $7B ; [set2] prewritten text 7B
+#_0AED4D: db $EB, $7B ; [set2] phrase 7B
 #_0AED4F: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «[GIVEME] よこしな»
 Message_02_1B_49:
-#_0AED50: db $EB, $A9 ; [set2] prewritten text A9
+#_0AED50: db $EB, $A9 ; [set2] phrase A9
 #_0AED52: db $FF ; end of message
 
 ;===================================================================================================
@@ -21693,14 +21693,14 @@ Message_02_1B_49:
 ; «ついでに [GIVEME] だな»
 ; «そんだけで いいから・・・»
 Message_02_1B_4A:
-#_0AED53: db $EB, $7F ; [set2] prewritten text 7F
+#_0AED53: db $EB, $7F ; [set2] phrase 7F
 #_0AED55: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «そんなら [GIVEME] だな»
 Message_02_1B_4B:
-#_0AED56: db $EB, $44 ; [set2] prewritten text 44
+#_0AED56: db $EB, $44 ; [set2] phrase 44
 #_0AED58: db $FF ; end of message
 
 ;===================================================================================================
@@ -21785,7 +21785,7 @@ Message_02_1B_56:
 ; じゃあ «だすもん だして もらおうか・・・»
 Message_02_1B_57:
 #_0AEDCE: db $A2, $55, $25, $CF ; じゃあ⎵
-#_0AEDD2: db $EB, $AC ; [set2] prewritten text AC
+#_0AEDD2: db $EB, $AC ; [set2] phrase AC
 #_0AEDD4: db $FF ; end of message
 
 ;===================================================================================================
@@ -21797,7 +21797,7 @@ Message_02_1B_58:
 
 ; «なにものだ? なを なのれ!»
 Message_02_1B_59:
-#_0AEDD6: db $EB, $AD ; [set2] prewritten text AD
+#_0AEDD6: db $EB, $AD ; [set2] phrase AD
 #_0AEDD8: db $FF ; end of message
 
 ;===================================================================================================
@@ -21805,16 +21805,16 @@ Message_02_1B_59:
 ; «なにい? オマエが・・・»
 ; «ようを いってみろ»
 Message_02_1B_5A:
-#_0AEDD9: db $EB, $66 ; [set2] prewritten text 66
+#_0AEDD9: db $EB, $66 ; [set2] phrase 66
 #_0AEDDB: db $F0 ; [set2] new line
-#_0AEDDC: db $EB, $31 ; [set2] prewritten text 31
+#_0AEDDC: db $EB, $31 ; [set2] phrase 31
 #_0AEDDE: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «あやしい やつめ!»
 Message_02_1B_5B:
-#_0AEDDF: db $EB, $AE ; [set2] prewritten text AE
+#_0AEDDF: db $EB, $AE ; [set2] phrase AE
 #_0AEDE1: db $FF ; end of message
 
 ;===================================================================================================
@@ -21830,7 +21830,7 @@ Message_02_1B_5C:
 
 ; «なにしに きた!?»
 Message_02_1B_5D:
-#_0AEDF4: db $EB, $B0 ; [set2] prewritten text B0
+#_0AEDF4: db $EB, $B0 ; [set2] phrase B0
 #_0AEDF6: db $FF ; end of message
 
 ;===================================================================================================
@@ -21851,14 +21851,14 @@ Message_02_1B_5F:
 #_0AEE11: db $93, $93, $93 ; ・・・
 #_0AEE14: db $F0 ; [set2] new line
 #_0AEE15: db $29, $38, $39, $30, $2C, $CF ; おとなしく⎵
-#_0AEE1B: db $EB, $AC ; [set2] prewritten text AC
+#_0AEE1B: db $EB, $AC ; [set2] phrase AC
 #_0AEE1D: db $FF ; end of message
 
 ;===================================================================================================
 
 ; «あやしい やつめ!»
 Message_02_1B_60:
-#_0AEE1E: db $EB, $AE ; [set2] prewritten text AE
+#_0AEE1E: db $EB, $AE ; [set2] phrase AE
 #_0AEE20: db $FF ; end of message
 
 ;===================================================================================================
@@ -21875,7 +21875,7 @@ Message_02_1C_00:
 
 ; «おぼえてろ!»
 Message_02_1C_01:
-#_0AEE32: db $EB, $4B ; [set2] prewritten text 4B
+#_0AEE32: db $EB, $4B ; [set2] phrase 4B
 #_0AEE34: db $FF ; end of message
 
 ;===================================================================================================
@@ -21893,10 +21893,10 @@ Message_02_1C_02:
 
 ;===================================================================================================
 
-; あらたな [DEMONX]の けはいがする
+; あらたな [MYNAME]の けはいがする
 Message_02_1C_03:
 #_0AEE53: db $25, $4B, $34, $39, $CF ; あらたな⎵
-#_0AEE58: db $ED ; [set2] write demon name indexed from $0526
+#_0AEE58: db $ED ; [set2] write name of speaker
 #_0AEE59: db $3D, $CF, $2D, $3E, $26, $9C, $31, $4D ; の⎵けはいがする
 #_0AEE61: db $FF ; end of message
 
@@ -21910,18 +21910,18 @@ Message_02_1C_04:
 
 ;===================================================================================================
 
-; [DEMONX]は じっと みている
+; [MYNAME]は じっと みている
 Message_02_1C_05:
-#_0AEE72: db $ED ; [set2] write demon name indexed from $0526
+#_0AEE72: db $ED ; [set2] write name of speaker
 #_0AEE73: db $3E, $CF, $A2, $58, $38, $CF, $44, $37 ; は⎵じっと⎵みて
 #_0AEE7B: db $26, $4D ; いる
 #_0AEE7D: db $FF ; end of message
 
 ;===================================================================================================
 
-; [DEMONX]は しんごうを おくっている
+; [MYNAME]は しんごうを おくっている
 Message_02_1C_06:
-#_0AEE7E: db $ED ; [set2] write demon name indexed from $0526
+#_0AEE7E: db $ED ; [set2] write name of speaker
 #_0AEE7F: db $3E, $CF, $30, $52, $A0, $27, $51, $CF ; は⎵しんごうを⎵
 #_0AEE87: db $29, $2C, $58, $37, $26, $4D ; おくっている
 #_0AEE8D: db $FF ; end of message
@@ -21935,7 +21935,7 @@ Message_02_1C_07:
 
 ; «ナカマヲ タノム»
 Message_02_1C_30:
-#_0AEE8F: db $EB, $B9 ; [set2] prewritten text B9
+#_0AEE8F: db $EB, $B9 ; [set2] phrase B9
 #_0AEE91: db $FF ; end of message
 
 ;===================================================================================================
@@ -22123,7 +22123,7 @@ Message_02_1D_15:
 #_0AEF93: db $D2, $58, $16 ; test progress flag 58 for message 16
 #_0AEF96: db $D7, $85, $1C ; load scenes 85 and 1C
 #_0AEF99: db $97 ; >
-#_0AEF9A: db $F2, $2C ; prewritten text 2C
+#_0AEF9A: db $F2, $2C ; phrase 2C
 #_0AEF9C: db $FC ; wait for key and new line
 #_0AEF9D: db $FF ; end of message
 
@@ -22208,7 +22208,7 @@ Message_02_1D_1E:
 #_0AF010: db $D2, $58, $1F ; test progress flag 58 for message 1F
 #_0AF013: db $D7, $85, $1D ; load scenes 85 and 1D
 #_0AF016: db $97 ; >
-#_0AF017: db $F2, $2C ; prewritten text 2C
+#_0AF017: db $F2, $2C ; phrase 2C
 #_0AF019: db $FC ; wait for key and new line
 #_0AF01A: db $FF ; end of message
 
@@ -22302,7 +22302,7 @@ Message_02_1D_28:
 #_0AF09A: db $D2, $58, $29 ; test progress flag 58 for message 29
 #_0AF09D: db $D7, $85, $1B ; load scenes 85 and 1B
 #_0AF0A0: db $97 ; >
-#_0AF0A1: db $F2, $2C ; prewritten text 2C
+#_0AF0A1: db $F2, $2C ; phrase 2C
 #_0AF0A3: db $FC ; wait for key and new line
 #_0AF0A4: db $FF ; end of message
 
@@ -22427,7 +22427,7 @@ Message_02_1E_02:
 #_0AF188: db $25, $4D, $3E, $A3 ; あるはず
 #_0AF18C: db $FC ; wait for key and new line
 #_0AF18D: db $FA ; clear message box
-#_0AF18E: db $F2, $26 ; prewritten text 26
+#_0AF18E: db $F2, $26 ; phrase 26
 #_0AF190: db $FC ; wait for key and new line
 #_0AF191: db $FE, $0C, $00 ; ext command 0C: $00 TODO
 
@@ -22550,7 +22550,7 @@ Message_02_1E_06:
 #_0AF2DD: db $25, $4C, $43, $31 ; あります
 #_0AF2E1: db $FC ; wait for key and new line
 #_0AF2E2: db $FA ; clear message box
-#_0AF2E3: db $F2, $26 ; prewritten text 26
+#_0AF2E3: db $F2, $26 ; phrase 26
 #_0AF2E5: db $FC ; wait for key and new line
 #_0AF2E6: db $FE, $0C, $02 ; ext command 0C: $02 TODO
 
@@ -22575,7 +22575,7 @@ Message_02_1E_07:
 #_0AF2FF: db $F9 ; new line
 #_0AF300: db $2E, $2E, $3E, $CF, $AA, $2E, $A6, $4F ; ここは⎵どこだろ
 #_0AF308: db $27 ; う
-#_0AF309: db $F2, $0B ; prewritten text 0B
+#_0AF309: db $F2, $0B ; phrase 0B
 #_0AF30B: db $FC ; wait for key and new line
 #_0AF30C: db $AF, $2C, $3E, $CF, $39, $3A, $2A, $51 ; ぼくは⎵なにかを
 #_0AF314: db $CF, $39, $30, $38, $9F, $4D, $CF, $3E ; ⎵なしとげる⎵は
@@ -22589,7 +22589,7 @@ Message_02_1E_07:
 #_0AF337: db $2B, $44, $38, $26, $4E, $AB, $CF, $2E ; きみといれば⎵こ
 #_0AF33F: db $34, $28, $9C, $CF, $44, $36, $2A, $4D ; たえが⎵みつかる
 #_0AF347: db $2A, $47 ; かも
-#_0AF349: db $F2, $0B ; prewritten text 0B
+#_0AF349: db $F2, $0B ; phrase 0B
 #_0AF34B: db $F9 ; new line
 #_0AF34C: db $26, $58, $30, $57, $3A, $CF, $36, $4E ; いっしょに⎵つれ
 #_0AF354: db $37, $26, $58, $37, $2C, $A6, $2F, $26 ; ていってください
@@ -22599,7 +22599,7 @@ Message_02_1E_07:
 #_0AF361: db $97 ; >
 #_0AF362: db $EE ; write lawful hero name
 #_0AF363: db $9C, $CF ; が⎵
-#_0AF365: db $F2, $2F ; prewritten text 2F
+#_0AF365: db $F2, $2F ; phrase 2F
 #_0AF367: db $FC ; wait for key and new line
 #_0AF368: db $FF ; end of message
 
@@ -22662,7 +22662,7 @@ Message_02_1E_0A:
 #_0AF3FC: db $4D ; る
 #_0AF3FD: db $FC ; wait for key and new line
 #_0AF3FE: db $FA ; clear message box
-#_0AF3FF: db $F2, $26 ; prewritten text 26
+#_0AF3FF: db $F2, $26 ; phrase 26
 #_0AF401: db $FC ; wait for key and new line
 #_0AF402: db $FE, $0C, $03 ; ext command 0C: $03 TODO
 
@@ -22683,14 +22683,14 @@ Message_02_1E_0B:
 #_0AF416: db $EF ; write chaos hero name
 #_0AF417: db $9A ; :
 #_0AF418: db $F9 ; new line
-#_0AF419: db $F2, $0B ; prewritten text 0B
+#_0AF419: db $F2, $0B ; phrase 0B
 #_0AF41B: db $39, $A4, $CF, $29, $4E, $51, $CF, $29 ; なぜ⎵おれを⎵お
 #_0AF423: db $2E, $30, $34, $94 ; こした!
 #_0AF427: db $FC ; wait for key and new line
 #_0AF428: db $32, $58, $2A, $2C, $CF, $26, $26, $49 ; せっかく⎵いいゆ
 #_0AF430: db $46, $51, $CF, $44, $37, $26, $34, $3D ; めを⎵みていたの
 #_0AF438: db $3A ; に
-#_0AF439: db $F2, $0B ; prewritten text 0B
+#_0AF439: db $F2, $0B ; phrase 0B
 #_0AF43B: db $FC ; wait for key and new line
 #_0AF43C: db $FA ; clear message box
 #_0AF43D: db $64, $6B, $92 ; クソッ
@@ -22704,7 +22704,7 @@ Message_02_1E_0B:
 #_0AF459: db $97 ; >
 #_0AF45A: db $EF ; write chaos hero name
 #_0AF45B: db $9C, $CF ; が⎵
-#_0AF45D: db $F2, $2F ; prewritten text 2F
+#_0AF45D: db $F2, $2F ; phrase 2F
 #_0AF45F: db $FC ; wait for key and new line
 #_0AF460: db $FF ; end of message
 
@@ -22735,11 +22735,11 @@ Message_02_1E_0C:
 #_0AF498: db $FC ; wait for key and new line
 #_0AF499: db $D6, $01, $33, $78, $48 ; place sprite 33 in slot 01 at XY:{78,48}
 #_0AF49E: db $25, $4B ; あら
-#_0AF4A0: db $F2, $0B ; prewritten text 0B
+#_0AF4A0: db $F2, $0B ; phrase 0B
 #_0AF4A2: db $CF, $25, $39, $34, $CF ; ⎵あなた⎵
 #_0AF4A7: db $F0 ; write player name
 #_0AF4A8: db $3C ; ね
-#_0AF4A9: db $F2, $0B ; prewritten text 0B
+#_0AF4A9: db $F2, $0B ; phrase 0B
 #_0AF4AB: db $FC ; wait for key and new line
 #_0AF4AC: db $FA ; clear message box
 #_0AF4AD: db $50, $34, $30, $3D, $CF, $39, $3E, $CF ; わたしの⎵なは⎵
@@ -22748,11 +22748,11 @@ Message_02_1E_0C:
 #_0AF4B9: db $25, $39, $34, $3D, $2E, $38, $CF, $A3 ; あなたのこと⎵ず
 #_0AF4C1: db $58, $38, $CF, $43, $58, $37, $26, $34 ; っと⎵まっていた
 #_0AF4C9: db $3D, $4A ; のよ
-#_0AF4CB: db $F2, $0B ; prewritten text 0B
+#_0AF4CB: db $F2, $0B ; phrase 0B
 #_0AF4CD: db $F9 ; new line
 #_0AF4CE: db $28, $26, $28, $52, $3D, $CF, $C9, $5A ; えいえんの⎵パー
 #_0AF4D6: db $70, $71, $5A, $38, $30, $37, $3C ; トナーとしてね
-#_0AF4DD: db $F2, $0B ; prewritten text 0B
+#_0AF4DD: db $F2, $0B ; phrase 0B
 #_0AF4DF: db $FC ; wait for key and new line
 #_0AF4E0: db $FE, $07, $1E ; ext command 07: draw buffered text then wait 29 frames
 #_0AF4E3: db $D6, $00, $00 ; delete sprite in slot 00
@@ -22780,7 +22780,7 @@ Message_02_1E_0D:
 #_0AF515: db $3A, $CF, $26, $4D, $3D, $4A ; に⎵いるのよ
 #_0AF51B: db $F9 ; new line
 #_0AF51C: db $50, $31, $4E, $39, $26, $A9, $3C ; わすれないでね
-#_0AF523: db $F2, $0B ; prewritten text 0B
+#_0AF523: db $F2, $0B ; phrase 0B
 #_0AF525: db $FC ; wait for key and new line
 #_0AF526: db $FE, $07, $30 ; ext command 07: draw buffered text then wait 47 frames
 #_0AF529: db $D6, $00, $00 ; delete sprite in slot 00
@@ -22795,7 +22795,7 @@ Message_02_1E_0D:
 ; «はやく おきてらっしゃい»
 Message_02_1E_0E:
 #_0AF52F: db $D5, $FD ; send FD to APU
-#_0AF531: db $F2, $82 ; prewritten text 82
+#_0AF531: db $F2, $82 ; phrase 82
 #_0AF533: db $D3, $1D ; go to message 1D
 
 ;===================================================================================================
@@ -22907,7 +22907,7 @@ Message_02_1E_14:
 #_0AF5FF: db $FA ; clear message box
 #_0AF600: db $30, $2F, $26, $9A ; しさい:
 #_0AF604: db $F9 ; new line
-#_0AF605: db $F2, $0B ; prewritten text 0B
+#_0AF605: db $F2, $0B ; phrase 0B
 #_0AF607: db $40, $2A, $2B, $3A, $CF, $3C, $45, $4D ; ふかきに⎵ねむる
 #_0AF60F: db $CF, $50, $9C, $CF, $25, $52, $2E, $2C ; ⎵わが⎵あんこく
 #_0AF617: db $3D, $CF, $29, $27, $4A ; の⎵おうよ
@@ -22919,7 +22919,7 @@ Message_02_1E_14:
 #_0AF633: db $D2, $2F, $18 ; test progress flag 2F for message 18
 #_0AF636: db $FA ; clear message box
 #_0AF637: db $97, $3F, $38, $4C, $3D, $CF ; >ひとりの⎵
-#_0AF63D: db $F2, $00 ; prewritten text 00
+#_0AF63D: db $F2, $00 ; phrase 00
 #_0AF63F: db $9C ; が
 #_0AF640: db $F9 ; new line
 #_0AF641: db $26, $2D, $3A, $28, $3A, $CF, $2F, $4E ; いけにえに⎵され
@@ -22927,7 +22927,7 @@ Message_02_1E_14:
 #_0AF650: db $FC ; wait for key and new line
 #_0AF651: db $FA ; clear message box
 #_0AF652: db $26, $2D, $3A, $28, $3D, $CF ; いけにえの⎵
-#_0AF658: db $F2, $00 ; prewritten text 00
+#_0AF658: db $F2, $00 ; phrase 00
 #_0AF65A: db $51, $CF, $34, $31, $2D, $43, $31, $2A ; を⎵たすけますか
 #_0AF662: db $95 ; ?
 #_0AF663: db $F8, $15 ; YES/NO - go to message 15 if YES
@@ -22977,7 +22977,7 @@ Message_02_1E_16:
 #_0AF6C6: db $55, $43, $31, $4D, $3D, $3E, $94 ; ゃまするのは!
 #_0AF6CD: db $FC ; wait for key and new line
 #_0AF6CE: db $FA ; clear message box
-#_0AF6CF: db $F2, $00 ; prewritten text 00
+#_0AF6CF: db $F2, $00 ; phrase 00
 #_0AF6D1: db $9A ; :
 #_0AF6D2: db $F9 ; new line
 #_0AF6D3: db $F0 ; write player name
@@ -23003,7 +23003,7 @@ Message_02_1E_17:
 #_0AF6FD: db $30, $2F, $26, $9A ; しさい:
 #_0AF701: db $F9 ; new line
 #_0AF702: db $39, $3A, $58, $94, $CF, $2E, $3D, $CF ; なにっ!⎵この⎵
-#_0AF70A: db $F2, $00 ; prewritten text 00
+#_0AF70A: db $F2, $00 ; phrase 00
 #_0AF70C: db $3D, $CF, $39, $43, $28, $3E ; の⎵なまえは
 #_0AF712: db $F9 ; new line
 #_0AF713: db $ED ; write female protag name
@@ -23019,10 +23019,10 @@ Message_02_1E_18:
 #_0AF71C: db $D4, $03 ; set text box size to 3
 #_0AF71E: db $33, $58, $CF, $33, $3D, $CF, $39, $43 ; そっ⎵その⎵なま
 #_0AF726: db $28, $3E ; えは
-#_0AF728: db $F2, $0B ; prewritten text 0B
-#_0AF72A: db $F2, $0B ; prewritten text 0B
+#_0AF728: db $F2, $0B ; phrase 0B
+#_0AF72A: db $F2, $0B ; phrase 0B
 #_0AF72C: db $FC ; wait for key and new line
-#_0AF72D: db $F2, $0B ; prewritten text 0B
+#_0AF72D: db $F2, $0B ; phrase 0B
 #_0AF72F: db $B7, $CF, $B7, $88, $5A, $92, $94 ; グ⎵グワーッ!
 #_0AF736: db $FC ; wait for key and new line
 #_0AF737: db $FE, $30, $00 ; ext command 30: 00 TODO
@@ -23064,7 +23064,7 @@ Message_02_1E_1A:
 #_0AF76E: db $ED ; write female protag name
 #_0AF76F: db $9A ; :
 #_0AF770: db $F9 ; new line
-#_0AF771: db $F2, $0D ; prewritten text 0D
+#_0AF771: db $F2, $0D ; phrase 0D
 #_0AF773: db $CF ; ⎵
 #_0AF774: db $F0 ; write player name
 #_0AF775: db $2F, $52 ; さん
@@ -23082,7 +23082,7 @@ Message_02_1E_1A:
 #_0AF7AB: db $F9 ; new line
 #_0AF7AC: db $4A, $AC, $A6, $2F, $4E, $37, $CF, $26 ; よびだされて⎵い
 #_0AF7B4: db $34, $2E, $38, $A9, $30, $57, $27 ; たことでしょう
-#_0AF7BB: db $F2, $0B ; prewritten text 0B
+#_0AF7BB: db $F2, $0B ; phrase 0B
 #_0AF7BD: db $FC ; wait for key and new line
 #_0AF7BE: db $FA ; clear message box
 #_0AF7BF: db $25, $25, $CF, $50, $34, $30, $3D, $CF ; ああ⎵わたしの⎵
@@ -23098,7 +23098,7 @@ Message_02_1E_1A:
 ; «ふりわけてください»
 Message_02_1E_1B:
 #_0AF7DE: db $D4, $03 ; set text box size to 3
-#_0AF7E0: db $F2, $26 ; prewritten text 26
+#_0AF7E0: db $F2, $26 ; phrase 26
 #_0AF7E2: db $FC ; wait for key and new line
 #_0AF7E3: db $FE, $0C, $01 ; ext command 0C: $01 TODO
 #_0AF7E6: db $FE, $30, $02 ; ext command 30: 02 TODO
@@ -23123,13 +23123,13 @@ Message_02_1E_1C:
 #_0AF805: db $F9 ; new line
 #_0AF806: db $33, $30, $37, $CF, $26, $35, $AA, $3E ; そして⎵いちどは
 #_0AF80E: db $CF, $50, $2A, $4E, $4D, $2F, $A6, $46 ; ⎵わかれるさだめ
-#_0AF816: db $F2, $0B ; prewritten text 0B
+#_0AF816: db $F2, $0B ; phrase 0B
 #_0AF818: db $FC ; wait for key and new line
 #_0AF819: db $FA ; clear message box
 #_0AF81A: db $26, $36, $2A, $CF, $50, $34, $30, $3A ; いつか⎵わたしに
 #_0AF822: db $CF, $25, $26, $3A, $2B, $37 ; ⎵あいにきて
-#_0AF828: db $F2, $0B ; prewritten text 0B
-#_0AF82A: db $F2, $0B ; prewritten text 0B
+#_0AF828: db $F2, $0B ; phrase 0B
+#_0AF82A: db $F2, $0B ; phrase 0B
 #_0AF82C: db $FC ; wait for key and new line
 #_0AF82D: db $D2, $30, $1E ; test progress flag 30 for message 1E
 #_0AF830: db $D6, $00, $00 ; delete sprite in slot 00
@@ -23163,7 +23163,7 @@ Message_02_1E_1E:
 ; なぜか わかっていたの«・・・»
 Message_02_1E_1F:
 #_0AF850: db $FA ; clear message box
-#_0AF851: db $F2, $00 ; prewritten text 00
+#_0AF851: db $F2, $00 ; phrase 00
 #_0AF853: db $3D, $26, $30, $2B, $9A ; のいしき:
 #_0AF858: db $F9 ; new line
 #_0AF859: db $49, $46, $3D, $39, $2A, $A9, $CF ; ゆめのなかで⎵
@@ -23172,7 +23172,7 @@ Message_02_1E_1F:
 #_0AF862: db $F9 ; new line
 #_0AF863: db $50, $34, $30, $51, $CF, $34, $31, $2D ; わたしを⎵たすけ
 #_0AF86B: db $37, $2C, $4E, $34 ; てくれた
-#_0AF86F: db $F2, $0B ; prewritten text 0B
+#_0AF86F: db $F2, $0B ; phrase 0B
 #_0AF871: db $FC ; wait for key and new line
 #_0AF872: db $FA ; clear message box
 #_0AF873: db $39, $3A, $47, $CF, $2E, $50, $2C, $39 ; なにも⎵こわくな
@@ -23188,7 +23188,7 @@ Message_02_1E_1F:
 #_0AF8A0: db $FA ; clear message box
 #_0AF8A1: db $39, $A4, $2A, $CF, $50, $2A, $58, $37 ; なぜか⎵わかって
 #_0AF8A9: db $26, $34, $3D ; いたの
-#_0AF8AC: db $F2, $0B ; prewritten text 0B
+#_0AF8AC: db $F2, $0B ; phrase 0B
 #_0AF8AE: db $FC ; wait for key and new line
 #_0AF8AF: db $FE, $30, $00 ; ext command 30: 00 TODO
 #_0AF8B2: db $FF ; end of message
@@ -23216,7 +23216,7 @@ Message_02_1E_20:
 #_0AF8DF: db $47, $CF, $48, $46, $37, $94 ; も⎵やめて!
 #_0AF8E5: db $FC ; wait for key and new line
 #_0AF8E6: db $FA ; clear message box
-#_0AF8E7: db $F2, $0B ; prewritten text 0B
+#_0AF8E7: db $F2, $0B ; phrase 0B
 #_0AF8E9: db $38, $46, $37, $47, $CF, $45, $A6, $39 ; とめても⎵むだな
 #_0AF8F1: db $3D, $3E, $CF, $50, $2A, $58, $37, $4D ; のは⎵わかってる
 #_0AF8F9: db $3D ; の
@@ -23226,7 +23226,7 @@ Message_02_1E_20:
 #_0AF90A: db $F9 ; new line
 #_0AF90B: db $50, $34, $30, $3E, $CF, $AA, $27, $31 ; わたしは⎵どうす
 #_0AF913: db $4E, $AB, $26, $26, $3D ; ればいいの
-#_0AF918: db $F2, $0B ; prewritten text 0B
+#_0AF918: db $F2, $0B ; phrase 0B
 #_0AF91A: db $FC ; wait for key and new line
 #_0AF91B: db $D6, $00, $00 ; delete sprite in slot 00
 #_0AF91E: db $FF ; end of message
@@ -23258,7 +23258,7 @@ Message_02_1E_21:
 ; >«だれもいない»
 Message_02_1E_22:
 #_0AF955: db $97 ; >
-#_0AF956: db $F2, $2C ; prewritten text 2C
+#_0AF956: db $F2, $2C ; phrase 2C
 #_0AF958: db $FC ; wait for key and new line
 #_0AF959: db $FF ; end of message
 
@@ -23313,7 +23313,7 @@ Message_02_1E_23:
 #_0AF9E7: db $9D, $30, $2B, $51, $CF, $44, $34, $2A ; ぎしきを⎵みたか
 #_0AF9EF: db $4B, $3A, $3E ; らには
 #_0AF9F2: db $F9 ; new line
-#_0AF9F3: db $F2, $04 ; prewritten text 04
+#_0AF9F3: db $F2, $04 ; phrase 04
 #_0AF9F5: db $51, $CF, $26, $2A, $30, $37, $3E, $CF ; を⎵いかしては⎵
 #_0AF9FD: db $2A, $28, $2F, $52, $A5 ; かえさんぞ
 #_0AFA02: db $FC ; wait for key and new line
@@ -23342,7 +23342,7 @@ Message_02_1E_24:
 #_0AFA37: db $42, $27, $51, $CF, $45, $2A, $28, $4D ; ほうを⎵むかえる
 #_0AFA3F: db $AB, $30, $57, $51 ; ばしょを
 #_0AFA43: db $F9 ; new line
-#_0AFA44: db $F2, $04 ; prewritten text 04
+#_0AFA44: db $F2, $04 ; phrase 04
 #_0AFA46: db $3D, $CF, $35, $A9, $CF, $4A, $A0, $31 ; の⎵ちで⎵よごす
 #_0AFA4E: db $50, $2D, $3A, $3E, $CF, $26, $2A, $52 ; わけには⎵いかん
 #_0AFA56: db $FC ; wait for key and new line
@@ -23452,16 +23452,16 @@ Message_02_1E_2E:
 #_0AFB0A: db $D2, $1B, $2F ; test progress flag 1B for message 2F
 #_0AFB0D: db $DE, $01, $00, $34, $01 ; load 1x demon 0134
 #_0AFB12: db $E4, $00 ; load demon $00
-#_0AFB14: db $F2, $0A ; prewritten text 0A
+#_0AFB14: db $F2, $0A ; phrase 0A
 #_0AFB16: db $9A ; :
 #_0AFB17: db $F9 ; new line
-#_0AFB18: db $F2, $0B ; prewritten text 0B
+#_0AFB18: db $F2, $0B ; phrase 0B
 #_0AFB1A: db $5F, $5F, $5F, $CF ; ウウウ⎵
-#_0AFB1E: db $F2, $0C ; prewritten text 0C
+#_0AFB1E: db $F2, $0C ; phrase 0C
 #_0AFB20: db $FC ; wait for key and new line
 #_0AFB21: db $FA ; clear message box
 #_0AFB22: db $97 ; >
-#_0AFB23: db $F2, $0A ; prewritten text 0A
+#_0AFB23: db $F2, $0A ; phrase 0A
 #_0AFB25: db $9C, $CF, $2B, $2A, $26, $3A, $CF, $42 ; が⎵きかいに⎵ほ
 #_0AFB2D: db $28, $37, $26, $4D ; えている
 #_0AFB31: db $FC ; wait for key and new line
@@ -23477,15 +23477,15 @@ Message_02_1E_2F:
 #_0AFB34: db $FE, $40, $2D ; ext command 40: R0F9D30 2D TODO
 #_0AFB37: db $DE, $00, $00, $8B, $01 ; load 1x demon 008B
 #_0AFB3C: db $E4, $00 ; load demon $00
-#_0AFB3E: db $F5 ; write demon name from $050A
+#_0AFB3E: db $F5 ; write demon 0 name
 #_0AFB3F: db $9A ; :
 #_0AFB40: db $F9 ; new line
 #_0AFB41: db $B5, $85, $85, $85, $85 ; ガルルルル
-#_0AFB46: db $F2, $0B ; prewritten text 0B
+#_0AFB46: db $F2, $0B ; phrase 0B
 #_0AFB48: db $FC ; wait for key and new line
 #_0AFB49: db $FA ; clear message box
 #_0AFB4A: db $97 ; >
-#_0AFB4B: db $F5 ; write demon name from $050A
+#_0AFB4B: db $F5 ; write demon 0 name
 #_0AFB4C: db $9C, $CF, $2B, $2A, $26, $3A, $CF, $45 ; が⎵きかいに⎵む
 #_0AFB54: db $2A, $26, $CF, $27, $39, $58, $37, $26 ; かい⎵うなってい
 #_0AFB5C: db $4D ; る
@@ -23499,15 +23499,15 @@ Message_02_1E_2F:
 
 ; そして きえてしまった«・・・»
 Message_02_1E_30:
-#_0AFB6E: db $F2, $7C ; prewritten text 7C
-#_0AFB70: db $F2, $7D ; prewritten text 7D
+#_0AFB6E: db $F2, $7C ; phrase 7C
+#_0AFB70: db $F2, $7D ; phrase 7D
 #_0AFB72: db $D6, $00, $9E, $78, $28 ; place sprite 9E in slot 00 at XY:{78,28}
 #_0AFB77: db $FE, $07, $09 ; ext command 07: draw buffered text then wait 8 frames
 #_0AFB7A: db $D6, $00, $00 ; delete sprite in slot 00
 #_0AFB7D: db $FA ; clear message box
 #_0AFB7E: db $33, $30, $37, $CF, $2B, $28, $37, $30 ; そして⎵きえてし
 #_0AFB86: db $43, $58, $34 ; まった
-#_0AFB89: db $F2, $0B ; prewritten text 0B
+#_0AFB89: db $F2, $0B ; phrase 0B
 #_0AFB8B: db $FC ; wait for key and new line
 #_0AFB8C: db $D0, $1C ; set progress flag 1C
 #_0AFB8E: db $D2, $1B, $31 ; test progress flag 1B for message 31
@@ -23529,7 +23529,7 @@ Message_02_1F_00:
 #_0AFB9A: db $D5, $45 ; send 45 to APU
 #_0AFB9C: db $D7, $01 ; load scene 01
 #_0AFB9E: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
-#_0AFBA3: db $FE, $17, $00 ; ext command 17: set $0BE2 and $07E1 to $00 TODO
+#_0AFBA3: db $FE, $17, $00 ; ext command 17: set last terminal visited
 #_0AFBA6: db $FE, $04, $01, $0C ; ext command 04: message 01 if alignment >= 112; 0C if >= 144
 
 ;===================================================================================================
@@ -23539,7 +23539,7 @@ Message_02_1F_00:
 ; まよえる こひつじよ いのりなさい
 Message_02_1F_01:
 #_0AFBAA: db $FA ; clear message box
-#_0AFBAB: db $F2, $33 ; prewritten text 33
+#_0AFBAB: db $F2, $33 ; phrase 33
 #_0AFBAD: db $CF, $30, $52, $B2, $9A ; ⎵しんぷ:
 #_0AFBB2: db $F9 ; new line
 #_0AFBB3: db $30, $52, $A2, $4D, $47, $3D, $3E, $CF ; しんじるものは⎵
@@ -23574,7 +23574,7 @@ Message_02_1F_03:
 #_0AFBFD: db $FA ; clear message box
 #_0AFBFE: db $2A, $44, $3D, $CF, $A0, $2A, $A0, $3D ; かみの⎵ごかごの
 #_0AFC06: db $25, $4B, $52, $2E, $38, $51 ; あらんことを
-#_0AFC0C: db $F2, $0B ; prewritten text 0B
+#_0AFC0C: db $F2, $0B ; phrase 0B
 #_0AFC0E: db $FC ; wait for key and new line
 #_0AFC0F: db $FF ; end of message
 
@@ -23591,7 +23591,7 @@ Message_02_1F_04:
 ; «みな げんきなようだな»
 Message_02_1F_05:
 #_0AFC18: db $FA ; clear message box
-#_0AFC19: db $F2, $48 ; prewritten text 48
+#_0AFC19: db $F2, $48 ; phrase 48
 #_0AFC1B: db $FC ; wait for key and new line
 #_0AFC1C: db $D3, $02 ; go to message 02
 
@@ -23603,7 +23603,7 @@ Message_02_1F_06:
 #_0AFC22: db $FA ; clear message box
 #_0AFC23: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
 #_0AFC2B: db $27, $39, $47, $3D ; うなもの
-#_0AFC2F: db $F2, $47 ; prewritten text 47
+#_0AFC2F: db $F2, $47 ; phrase 47
 #_0AFC31: db $FC ; wait for key and new line
 #_0AFC32: db $D3, $02 ; go to message 02
 
@@ -23620,7 +23620,7 @@ Message_02_1F_07:
 Message_02_1F_08:
 #_0AFC39: db $FE, $15, $12, $09 ; ext command 15: goto message 09 if someone is dead; permissive
 #_0AFC3D: db $FA ; clear message box
-#_0AFC3E: db $F2, $49 ; prewritten text 49
+#_0AFC3E: db $F2, $49 ; phrase 49
 #_0AFC40: db $FC ; wait for key and new line
 #_0AFC41: db $D3, $02 ; go to message 02
 
@@ -23639,7 +23639,7 @@ Message_02_1F_0A:
 #_0AFC4C: db $FA ; clear message box
 #_0AFC4D: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
 #_0AFC55: db $37 ; て
-#_0AFC56: db $F2, $47 ; prewritten text 47
+#_0AFC56: db $F2, $47 ; phrase 47
 #_0AFC58: db $FC ; wait for key and new line
 #_0AFC59: db $D3, $02 ; go to message 02
 
@@ -23660,7 +23660,7 @@ Message_02_1F_0C:
 #_0AFC69: db $2A, $4B, $3A, $CF, $44, $35, $25, $40 ; からに⎵みちあふ
 #_0AFC71: db $4E, $30, $47, $3D ; れしもの
 #_0AFC75: db $FC ; wait for key and new line
-#_0AFC76: db $F2, $33 ; prewritten text 33
+#_0AFC76: db $F2, $33 ; phrase 33
 #_0AFC78: db $2A, $26, $3A, $CF, $34, $35, $26, $4D ; かいに⎵たちいる
 #_0AFC80: db $2E, $38, $CF, $43, $2A, $4C, $39, $4B ; こと⎵まかりなら
 #_0AFC88: db $52, $94 ; ん!
@@ -23696,8 +23696,8 @@ Message_02_1F_10:
 #_0AFCA2: db $D5, $46 ; send 46 to APU
 #_0AFCA4: db $D7, $02 ; load scene 02
 #_0AFCA6: db $D6, $00, $35, $70, $28 ; place sprite 35 in slot 00 at XY:{70,28}
-#_0AFCAB: db $FE, $17, $01 ; ext command 17: set $0BE2 and $07E1 to $01 TODO
-#_0AFCAE: db $F2, $34 ; prewritten text 34
+#_0AFCAB: db $FE, $17, $01 ; ext command 17: set last terminal visited
+#_0AFCAE: db $F2, $34 ; phrase 34
 #_0AFCB0: db $CF, $30, $2F, $26, $9A ; ⎵しさい:
 #_0AFCB5: db $F9 ; new line
 #_0AFCB6: db $FE, $04, $15, $12 ; ext command 04: message 15 if alignment >= 112; 12 if >= 144
@@ -23751,7 +23751,7 @@ Message_02_1F_14:
 #_0AFD1F: db $FA ; clear message box
 #_0AFD20: db $2E, $3D, $4A, $3A, $CF, $62, $61, $69 ; このよに⎵カオス
 #_0AFD28: db $51, $47, $34, $4B, $2F, $52 ; をもたらさん
-#_0AFD2E: db $F2, $0B ; prewritten text 0B
+#_0AFD2E: db $F2, $0B ; phrase 0B
 #_0AFD30: db $FC ; wait for key and new line
 #_0AFD31: db $FF ; end of message
 
@@ -23771,7 +23771,7 @@ Message_02_1F_15:
 #_0AFD50: db $CF, $43, $2A, $4C, $39, $4B, $52, $94 ; ⎵まかりならん!
 #_0AFD58: db $FC ; wait for key and new line
 #_0AFD59: db $FA ; clear message box
-#_0AFD5A: db $F2, $0B ; prewritten text 0B
+#_0AFD5A: db $F2, $0B ; phrase 0B
 #_0AFD5C: db $38, $26, $26, $34, $26, $CF, $38, $2E ; といいたい⎵とこ
 #_0AFD64: db $4F, $A6, $9C ; ろだが
 #_0AFD67: db $F9 ; new line
@@ -23838,7 +23838,7 @@ Message_02_1F_1A:
 ; «みな げんきなようだな»
 Message_02_1F_1B:
 #_0AFDCA: db $FA ; clear message box
-#_0AFDCB: db $F2, $48 ; prewritten text 48
+#_0AFDCB: db $F2, $48 ; phrase 48
 #_0AFDCD: db $FC ; wait for key and new line
 #_0AFDCE: db $D3, $13 ; go to message 13
 
@@ -23850,7 +23850,7 @@ Message_02_1F_1C:
 #_0AFDD4: db $FA ; clear message box
 #_0AFDD5: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
 #_0AFDDD: db $27, $39, $47, $3D ; うなもの
-#_0AFDE1: db $F2, $47 ; prewritten text 47
+#_0AFDE1: db $F2, $47 ; phrase 47
 #_0AFDE3: db $FC ; wait for key and new line
 #_0AFDE4: db $D3, $13 ; go to message 13
 
@@ -23867,7 +23867,7 @@ Message_02_1F_1D:
 Message_02_1F_1E:
 #_0AFDEB: db $FE, $15, $12, $1F ; ext command 15: goto message 1F if someone is dead; permissive
 #_0AFDEF: db $FA ; clear message box
-#_0AFDF0: db $F2, $49 ; prewritten text 49
+#_0AFDF0: db $F2, $49 ; phrase 49
 #_0AFDF2: db $FC ; wait for key and new line
 #_0AFDF3: db $D3, $13 ; go to message 13
 
@@ -23886,7 +23886,7 @@ Message_02_1F_20:
 #_0AFDFE: db $FA ; clear message box
 #_0AFDFF: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
 #_0AFE07: db $37 ; て
-#_0AFE08: db $F2, $47 ; prewritten text 47
+#_0AFE08: db $F2, $47 ; phrase 47
 #_0AFE0A: db $FC ; wait for key and new line
 #_0AFE0B: db $D3, $13 ; go to message 13
 
@@ -23919,7 +23919,7 @@ Message_02_1F_24:
 #_0AFE1D: db $D5, $47 ; send 47 to APU
 #_0AFE1F: db $D7, $03 ; load scene 03
 #_0AFE21: db $D6, $00, $58, $70, $38 ; place sprite 58 in slot 00 at XY:{70,38}
-#_0AFE26: db $FE, $17, $02 ; ext command 17: set $0BE2 and $07E1 to $02 TODO
+#_0AFE26: db $FE, $17, $02 ; ext command 17: set last terminal visited
 #_0AFE29: db $FA ; clear message box
 #_0AFE2A: db $2A, $26, $40, $2C, $30, $9A ; かいふくし:
 #_0AFE30: db $F9 ; new line
@@ -23970,7 +23970,7 @@ Message_02_1F_27:
 ; «みな げんきなようだな»
 Message_02_1F_28:
 #_0AFE8C: db $FA ; clear message box
-#_0AFE8D: db $F2, $48 ; prewritten text 48
+#_0AFE8D: db $F2, $48 ; phrase 48
 #_0AFE8F: db $FC ; wait for key and new line
 #_0AFE90: db $D3, $25 ; go to message 25
 
@@ -23982,7 +23982,7 @@ Message_02_1F_29:
 #_0AFE96: db $FA ; clear message box
 #_0AFE97: db $35, $4C, $57, $27, $9C, $3F, $36, $4A ; ちりょうがひつよ
 #_0AFE9F: db $27, $39, $47, $3D ; うなもの
-#_0AFEA3: db $F2, $47 ; prewritten text 47
+#_0AFEA3: db $F2, $47 ; phrase 47
 #_0AFEA5: db $FC ; wait for key and new line
 #_0AFEA6: db $D3, $25 ; go to message 25
 
@@ -23999,7 +23999,7 @@ Message_02_1F_2A:
 Message_02_1F_2B:
 #_0AFEAD: db $FE, $15, $12, $2C ; ext command 15: goto message 2C if someone is dead; permissive
 #_0AFEB1: db $FA ; clear message box
-#_0AFEB2: db $F2, $49 ; prewritten text 49
+#_0AFEB2: db $F2, $49 ; phrase 49
 #_0AFEB4: db $FC ; wait for key and new line
 #_0AFEB5: db $D3, $25 ; go to message 25
 
@@ -24018,7 +24018,7 @@ Message_02_1F_2D:
 #_0AFEC0: db $FA ; clear message box
 #_0AFEC1: db $A6, $4E, $47, $CF, $3D, $4F, $50, $4E ; だれも⎵のろわれ
 #_0AFEC9: db $37 ; て
-#_0AFECA: db $F2, $47 ; prewritten text 47
+#_0AFECA: db $F2, $47 ; phrase 47
 #_0AFECC: db $FC ; wait for key and new line
 #_0AFECD: db $D3, $25 ; go to message 25
 
@@ -24187,7 +24187,7 @@ Message_0AFFB5:
 ; TODO unused garbage?
 ; «みつけたが もちきれなかった»
 Message_0AFFB8:
-#_0AFFB8: db $F2, $72 ; prewritten text 72
+#_0AFFB8: db $F2, $72 ; phrase 72
 #_0AFFBA: db $FC ; wait for key and new line
 #_0AFFBB: db $FF ; end of message
 
@@ -24212,7 +24212,7 @@ Message_0AFFC0:
 #_0AFFCB: db $51 ; を
 #_0AFFCC: db $F9 ; new line
 #_0AFFCD: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
-#_0AFFD0: db $F2, $2D ; prewritten text 2D
+#_0AFFD0: db $F2, $2D ; phrase 2D
 #_0AFFD2: db $FC ; wait for key and new line
 #_0AFFD3: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_0AFFD5: db $FF ; end of message
@@ -24223,7 +24223,7 @@ Message_0AFFC0:
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_0AFFD6:
-#_0AFFD6: db $F2, $74 ; prewritten text 74
+#_0AFFD6: db $F2, $74 ; phrase 74
 #_0AFFD8: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
@@ -24235,7 +24235,7 @@ Message_0AFFDA:
 #_0AFFDA: db $51 ; を
 #_0AFFDB: db $F9 ; new line
 #_0AFFDC: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
-#_0AFFDF: db $F2, $2D ; prewritten text 2D
+#_0AFFDF: db $F2, $2D ; phrase 2D
 #_0AFFE1: db $FC ; wait for key and new line
 #_0AFFE2: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_0AFFE4: db $FF ; end of message
@@ -24246,7 +24246,7 @@ Message_0AFFDA:
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_0AFFE5:
-#_0AFFE5: db $F2, $74 ; prewritten text 74
+#_0AFFE5: db $F2, $74 ; phrase 74
 #_0AFFE7: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================
@@ -24262,7 +24262,7 @@ Message_0AFFE9:
 #_0AFFEF: db $51 ; を
 #_0AFFF0: db $F9 ; new line
 #_0AFFF1: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
-#_0AFFF4: db $F2, $2D ; prewritten text 2D
+#_0AFFF4: db $F2, $2D ; phrase 2D
 #_0AFFF6: db $FC ; wait for key and new line
 #_0AFFF7: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_0AFFF9: db $FF ; end of message
@@ -24271,7 +24271,7 @@ Message_0AFFE9:
 
 ; TODO unused garbage?
 Message_0AFFFA:
-#_0AFFFA: db $F2, $74 ; prewritten text 74
+#_0AFFFA: db $F2, $74 ; phrase 74
 #_0AFFFC: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================

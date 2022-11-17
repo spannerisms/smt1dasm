@@ -3762,7 +3762,7 @@ Message_01_01_00:
 #_099233: db $9A ; :
 #_099234: db $F9 ; new line
 #_099235: db $F0 ; write player name
-#_099236: db $F2, $0B ; prewritten text 0B
+#_099236: db $F2, $0B ; phrase 0B
 #_099238: db $F9 ; new line
 #_099239: db $2C, $4D, $39, $58, $37, $CF, $26, $58 ; くるなって⎵いっ
 #_099241: db $34, $4F, $27 ; たろう
@@ -3773,7 +3773,7 @@ Message_01_01_00:
 #_099256: db $2C, $3E ; くは
 #_099258: db $F9 ; new line
 #_099259: db $39, $2A, $58, $34, $52, $A6 ; なかったんだ
-#_09925F: db $F2, $0B ; prewritten text 0B
+#_09925F: db $F2, $0B ; phrase 0B
 #_099261: db $FC ; wait for key and new line
 #_099262: db $FA ; clear message box
 #_099263: db $30, $2A, $34, $9C, $39, $26 ; しかたがない
@@ -3782,7 +3782,7 @@ Message_01_01_00:
 #_099272: db $2B, $51, $CF, $27, $2D, $37, $47, $4B ; きを⎵うけてもら
 #_09927A: db $27, $A5 ; うぞ
 #_09927C: db $F9 ; new line
-#_09927D: db $F2, $0B ; prewritten text 0B
+#_09927D: db $F2, $0B ; phrase 0B
 #_09927F: db $2F, $25, $CF, $2C, $4D, $52, $A6 ; さあ⎵くるんだ
 #_099286: db $FC ; wait for key and new line
 #_099287: db $FE, $1C, $01 ; ext command 1C: $01 TODO
@@ -3802,7 +3802,7 @@ Message_01_01_00:
 ; そのなが いま ふっかつしたわけだ
 Message_01_01_01:
 #_09929A: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
-#_09929F: db $F2, $34 ; prewritten text 34
+#_09929F: db $F2, $34 ; phrase 34
 #_0992A1: db $38, $9A ; と:
 #_0992A3: db $F9 ; new line
 #_0992A4: db $31, $9E, $63, $6C, $3A, $CF, $44, $28 ; すぐキタに⎵みえ
@@ -3847,7 +3847,7 @@ Message_01_01_02:
 #_099318: db $FC ; wait for key and new line
 #_099319: db $FA ; clear message box
 #_09931A: db $2E, $4E, $2A, $4B, $CF ; これから⎵
-#_09931F: db $F2, $6D ; prewritten text 6D
+#_09931F: db $F2, $6D ; phrase 6D
 #_099321: db $CF ; ⎵
 #_099322: db $F0 ; write player name
 #_099323: db $F9 ; new line
@@ -3877,7 +3877,7 @@ Message_01_01_03:
 #_099370: db $F9 ; new line
 #_099371: db $D2, $6F, $04 ; test progress flag 6F for message 04
 #_099374: db $D2, $6E, $04 ; test progress flag 6E for message 04
-#_099377: db $F2, $68 ; prewritten text 68
+#_099377: db $F2, $68 ; phrase 68
 #_099379: db $F8, $05 ; YES/NO - go to message 05 if YES
 #_09937B: db $FF ; end of message
 
@@ -3885,7 +3885,7 @@ Message_01_01_03:
 
 ; «とびらは とざされている»
 Message_01_01_04:
-#_09937C: db $F2, $69 ; prewritten text 69
+#_09937C: db $F2, $69 ; phrase 69
 #_09937E: db $FC ; wait for key and new line
 #_09937F: db $FF ; end of message
 
@@ -3919,7 +3919,7 @@ Message_01_01_06:
 #_0993B3: db $D2, $6E, $07 ; test progress flag 6E for message 07
 #_0993B6: db $4A, $2A, $58, $34, $39, $CF, $45, $A1 ; よかったな⎵むざ
 #_0993BE: db $26, $A9 ; いで
-#_0993C0: db $F2, $0B ; prewritten text 0B
+#_0993C0: db $F2, $0B ; phrase 0B
 #_0993C2: db $29, $4E, $47, $CF, $7A, $92, $38, $30 ; おれも⎵ホッとし
 #_0993CA: db $34, $A4 ; たぜ
 #_0993CC: db $FC ; wait for key and new line
@@ -3946,19 +3946,19 @@ Message_01_01_06:
 Message_01_01_07:
 #_0993ED: db $80, $CF, $80, $7B, $51, $CF, $34, $29 ; ヤ⎵ヤマを⎵たお
 #_0993F5: db $30, $35, $43, $58, $34 ; しちまった
-#_0993FA: db $F2, $0B ; prewritten text 0B
+#_0993FA: db $F2, $0B ; phrase 0B
 #_0993FC: db $F9 ; new line
 #_0993FD: db $39, $52, $37, $2E, $38, $CF, $31, $4D ; なんてこと⎵する
 #_099405: db $52, $A6 ; んだ
 #_099407: db $FC ; wait for key and new line
 #_099408: db $FA ; clear message box
-#_099409: db $F2, $0B ; prewritten text 0B
+#_099409: db $F2, $0B ; phrase 0B
 #_09940B: db $80, $7B, $3D, $48, $36, $47, $CF, $34 ; ヤマのやつも⎵た
 #_099413: db $26, $30, $34, $2E, $38 ; いしたこと
 #_099418: db $F9 ; new line
 #_099419: db $39, $2A, $58, $34, $58, $37, $2E, $38 ; なかったってこと
 #_099421: db $2A ; か
-#_099422: db $F2, $0B ; prewritten text 0B
+#_099422: db $F2, $0B ; phrase 0B
 #_099424: db $F9 ; new line
 #_099425: db $80, $C4, $5E, $2E, $38, $3A, $CF, $39 ; ヤバイことに⎵な
 #_09942D: db $4C, $33, $27, $A6 ; りそうだ
@@ -3990,7 +3990,7 @@ Message_01_01_09:
 #_099462: db $D7, $2C ; load scene 2C
 #_099464: db $DE, $01, $00, $0E, $01 ; load 1x demon 010E
 #_099469: db $E4, $00 ; load demon $00
-#_09946B: db $F5 ; write demon name from $050A
+#_09946B: db $F5 ; write demon 0 name
 #_09946C: db $9A ; :
 #_09946D: db $F9 ; new line
 #_09946E: db $D2, $72, $14 ; test progress flag 72 for message 14
@@ -4019,8 +4019,8 @@ Message_01_01_0A:
 #_09948E: db $F0 ; write player name
 #_09948F: db $4A, $CF, $33, $3D, $42, $27 ; よ⎵そのほう
 #_099495: db $F9 ; new line
-#_099496: db $F2, $13 ; prewritten text 13
-#_099498: db $F2, $08 ; prewritten text 08
+#_099496: db $F2, $13 ; phrase 13
+#_099498: db $F2, $08 ; phrase 08
 #_09949A: db $39, $4D, $47, $3D, $51 ; なるものを
 #_09949F: db $F9 ; new line
 #_0994A0: db $47, $35, $26, $37, $CF, $5D, $64, $7B ; もちいて⎵アクマ
@@ -4107,7 +4107,7 @@ Message_01_01_0E:
 #_099590: db $26, $3D, $CF, $30, $57, $27, $35, $57 ; いの⎵しょうちょ
 #_099598: db $27 ; う
 #_099599: db $F9 ; new line
-#_09959A: db $F2, $5C ; prewritten text 5C
+#_09959A: db $F2, $5C ; phrase 5C
 #_09959C: db $3D, $CF, $2A, $52, $32, $26, $51, $CF ; の⎵かんせいを⎵
 #_0995A4: db $3E, $AB, $52, $A9, $42, $30, $26 ; はばんでほしい
 #_0995AB: db $F9 ; new line
@@ -4144,7 +4144,7 @@ Message_01_01_0F:
 #_099611: db $62, $61, $69, $3D, $CF, $9C, $50, $3A ; カオスの⎵がわに
 #_099619: db $CF, $2F, $2F, $9F ; ⎵ささげ
 #_09961D: db $F9 ; new line
-#_09961E: db $F2, $5C ; prewritten text 5C
+#_09961E: db $F2, $5C ; phrase 5C
 #_099620: db $51, $CF, $35, $A2, $57, $27, $4A, $4C ; を⎵ちじょうより
 #_099628: db $CF, $42, $27, $45, $4C, $2F, $4D, $43 ; ⎵ほうむりさるま
 #_099630: db $A9 ; で
@@ -4288,7 +4288,7 @@ Message_01_01_19:
 #_099763: db $D7, $33 ; load scene 33
 #_099765: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
 #_09976A: db $FE, $1C, $00 ; ext command 1C: $00 TODO
-#_09976D: db $F2, $34 ; prewritten text 34
+#_09976D: db $F2, $34 ; phrase 34
 #_09976F: db $38, $9A ; と:
 #_099771: db $F9 ; new line
 #_099772: db $2E, $2E, $3A, $CF, $3E, $26, $58, $37 ; ここに⎵はいって
@@ -4302,7 +4302,7 @@ Message_01_01_19:
 ; «おまえたち»の いのちも あしたまでだ
 Message_01_01_1A:
 #_099782: db $FA ; clear message box
-#_099783: db $F2, $04 ; prewritten text 04
+#_099783: db $F2, $04 ; phrase 04
 #_099785: db $3D, $CF, $26, $3D, $35, $47, $CF, $25 ; の⎵いのちも⎵あ
 #_09978D: db $30, $34, $43, $A9, $A6 ; したまでだ
 #_099792: db $FC ; wait for key and new line
@@ -4321,7 +4321,7 @@ Message_01_01_1C:
 #_09979E: db $D2, $72, $1E ; test progress flag 72 for message 1E
 #_0997A1: db $D7, $33 ; load scene 33
 #_0997A3: db $D2, $76, $1D ; test progress flag 76 for message 1D
-#_0997A6: db $F2, $84 ; prewritten text 84
+#_0997A6: db $F2, $84 ; phrase 84
 #_0997A8: db $FF ; end of message
 
 ;===================================================================================================
@@ -4374,7 +4374,7 @@ Message_01_01_1D:
 Message_01_01_1E:
 #_099816: db $D7, $33 ; load scene 33
 #_099818: db $97 ; >
-#_099819: db $F2, $2C ; prewritten text 2C
+#_099819: db $F2, $2C ; phrase 2C
 #_09981B: db $FC ; wait for key and new line
 #_09981C: db $FF ; end of message
 
@@ -4401,7 +4401,7 @@ Message_01_01_20:
 #_09983A: db $D2, $74, $21 ; test progress flag 74 for message 21
 #_09983D: db $25, $25, $58, $CF, $AA, $27, $30, $34 ; ああっ⎵どうした
 #_099845: db $4B, $CF, $26, $26, $3D, $4A ; ら⎵いいのよ
-#_09984B: db $F2, $0B ; prewritten text 0B
+#_09984B: db $F2, $0B ; phrase 0B
 #_09984D: db $FC ; wait for key and new line
 #_09984E: db $D0, $74 ; set progress flag 74
 #_099850: db $FF ; end of message
@@ -4438,7 +4438,7 @@ Message_01_01_23:
 #_09987C: db $DE, $01, $00, $0F, $01 ; load 1x demon 010F
 #_099881: db $D2, $77, $28 ; test progress flag 77 for message 28
 #_099884: db $E4, $00 ; load demon $00
-#_099886: db $F5 ; write demon name from $050A
+#_099886: db $F5 ; write demon 0 name
 #_099887: db $9A ; :
 #_099888: db $F9 ; new line
 #_099889: db $D2, $72, $25 ; test progress flag 72 for message 25
@@ -4501,7 +4501,7 @@ Message_01_01_28:
 ; >プリズンの «そとに でますか?»
 Message_01_01_29:
 #_0998F6: db $97, $CB, $84, $BC, $8A, $3D, $CF ; >プリズンの⎵
-#_0998FD: db $F2, $89 ; prewritten text 89
+#_0998FD: db $F2, $89 ; phrase 89
 #_0998FF: db $F8, $2B ; YES/NO - go to message 2B if YES
 #_099901: db $FF ; end of message
 
@@ -4510,7 +4510,7 @@ Message_01_01_29:
 ; >プリズンの «なかに はいりますか?»
 Message_01_01_2A:
 #_099902: db $97, $CB, $84, $BC, $8A, $3D, $CF ; >プリズンの⎵
-#_099909: db $F2, $68 ; prewritten text 68
+#_099909: db $F2, $68 ; phrase 68
 #_09990B: db $F8, $2C ; YES/NO - go to message 2C if YES
 #_09990D: db $FF ; end of message
 
@@ -4542,7 +4542,7 @@ Message_01_01_2C:
 Message_01_01_2D:
 #_09993A: db $D7, $A4, $33 ; load scenes A4 and 33
 #_09993D: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_099942: db $F2, $33 ; prewritten text 33
+#_099942: db $F2, $33 ; phrase 33
 #_099944: db $38, $9A ; と:
 #_099946: db $F9 ; new line
 #_099947: db $2A, $44, $3D, $CF, $34, $46, $39, $4B ; かみの⎵ためなら
@@ -4562,7 +4562,7 @@ Message_01_01_2D:
 Message_01_01_2E:
 #_099963: db $D7, $A4, $33 ; load scenes A4 and 33
 #_099966: db $D6, $00, $0E, $70, $38 ; place sprite 0E in slot 00 at XY:{70,38}
-#_09996B: db $F2, $33 ; prewritten text 33
+#_09996B: db $F2, $33 ; phrase 33
 #_09996D: db $38, $9A ; と:
 #_09996F: db $F9 ; new line
 #_099970: db $AF, $2C, $3E, $CF, $2A, $44, $2F, $43 ; ぼくは⎵かみさま
@@ -4587,10 +4587,10 @@ Message_01_01_2E:
 Message_01_01_2F:
 #_0999A1: db $D7, $A4, $33 ; load scenes A4 and 33
 #_0999A4: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_0999A9: db $F2, $33 ; prewritten text 33
+#_0999A9: db $F2, $33 ; phrase 33
 #_0999AB: db $38, $9A ; と:
 #_0999AD: db $F9 ; new line
-#_0999AE: db $F2, $33 ; prewritten text 33
+#_0999AE: db $F2, $33 ; phrase 33
 #_0999B0: db $3D, $34, $46, $CF, $30, $3B, $2E, $38 ; のため⎵しぬこと
 #_0999B8: db $3A ; に
 #_0999B9: db $F9 ; new line
@@ -4600,12 +4600,12 @@ Message_01_01_2F:
 #_0999C4: db $FA ; clear message box
 #_0999C5: db $34, $A6, $CF, $30, $3B, $43, $28, $3A ; ただ⎵しぬまえに
 #_0999CD: db $CF ; ⎵
-#_0999CE: db $F2, $5C ; prewritten text 5C
+#_0999CE: db $F2, $5C ; phrase 5C
 #_0999D0: db $51 ; を
 #_0999D1: db $F9 ; new line
 #_0999D2: db $26, $35, $AA, $CF, $44, $34, $2A, $58 ; いちど⎵みたかっ
 #_0999DA: db $34 ; た
-#_0999DB: db $F2, $0B ; prewritten text 0B
+#_0999DB: db $F2, $0B ; phrase 0B
 #_0999DD: db $FC ; wait for key and new line
 #_0999DE: db $FF ; end of message
 
@@ -4621,7 +4621,7 @@ Message_01_01_30:
 #_0999E7: db $30, $56, $27, $A2, $52, $9A ; しゅうじん:
 #_0999ED: db $F9 ; new line
 #_0999EE: db $50, $34, $30, $3E, $CF ; わたしは⎵
-#_0999F3: db $F2, $34 ; prewritten text 34
+#_0999F3: db $F2, $34 ; phrase 34
 #_0999F5: db $38, $51 ; とを
 #_0999F7: db $F9 ; new line
 #_0999F8: db $39, $52, $3A, $52, $47, $CF, $2E, $4F ; なんにんも⎵ころ
@@ -4682,7 +4682,7 @@ Message_01_01_32:
 Message_01_01_33:
 #_099A96: db $D7, $A4, $33 ; load scenes A4 and 33
 #_099A99: db $97 ; >
-#_099A9A: db $F2, $2C ; prewritten text 2C
+#_099A9A: db $F2, $2C ; phrase 2C
 #_099A9C: db $FC ; wait for key and new line
 #_099A9D: db $FF ; end of message
 
@@ -4694,7 +4694,7 @@ Message_01_01_33:
 ; みな しけいに なるんだ
 Message_01_01_34:
 #_099A9E: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
-#_099AA3: db $F2, $34 ; prewritten text 34
+#_099AA3: db $F2, $34 ; phrase 34
 #_099AA5: db $38, $9A ; と:
 #_099AA7: db $F9 ; new line
 #_099AA8: db $80, $7B, $A6, $26, $29, $27, $2F, $43 ; ヤマだいおうさま
@@ -4703,7 +4703,7 @@ Message_01_01_34:
 #_099ABC: db $FC ; wait for key and new line
 #_099ABD: db $FA ; clear message box
 #_099ABE: db $25, $2C, $3A, $52, $38, $CF ; あくにんと⎵
-#_099AC4: db $F2, $33 ; prewritten text 33
+#_099AC4: db $F2, $33 ; phrase 33
 #_099AC6: db $38, $3E ; とは
 #_099AC8: db $F9 ; new line
 #_099AC9: db $44, $39, $CF, $30, $2D, $26, $3A, $CF ; みな⎵しけいに⎵
@@ -4731,7 +4731,7 @@ Message_01_01_35:
 ; ちかづくしかくも ないわね
 Message_01_01_36:
 #_099AF6: db $D6, $00, $8A, $70, $28 ; place sprite 8A in slot 00 at XY:{70,28}
-#_099AFB: db $F2, $34 ; prewritten text 34
+#_099AFB: db $F2, $34 ; phrase 34
 #_099AFD: db $38, $9A ; と:
 #_099AFF: db $F9 ; new line
 #_099B00: db $25, $52, $34, $44, $34, $26, $39, $48 ; あんたみたいなや
@@ -4750,7 +4750,7 @@ Message_01_01_36:
 ; せんれいを うければいいのよ
 Message_01_01_37:
 #_099B28: db $25, $52, $34, $CF ; あんた⎵
-#_099B2C: db $F2, $34 ; prewritten text 34
+#_099B2C: db $F2, $34 ; phrase 34
 #_099B2E: db $38, $3A, $CF, $39, $58, $34, $4B, $95 ; とに⎵なったら?
 #_099B36: db $F9 ; new line
 #_099B37: db $5F, $60, $75, $3D, $CF, $B5, $5E, $5D ; ウエノの⎵ガイア
@@ -4801,7 +4801,7 @@ Message_01_01_39:
 #_099BAC: db $50, $2F, $A6, $9C ; わさだが
 #_099BB0: db $F9 ; new line
 #_099BB1: db $26, $58, $34, $48, $36, $3E, $CF ; いったやつは⎵
-#_099BB8: db $F2, $2C ; prewritten text 2C
+#_099BB8: db $F2, $2C ; phrase 2C
 #_099BBA: db $FC ; wait for key and new line
 #_099BBB: db $FA ; clear message box
 #_099BBC: db $33, $2E, $3A, $CF, $5D, $64, $7B, $9C ; そこに⎵アクマが
@@ -4812,7 +4812,7 @@ Message_01_01_39:
 #_099BD7: db $58, $37, $CF, $27, $50, $2F, $A6, $9C ; って⎵うわさだが
 #_099BDF: db $F9 ; new line
 #_099BE0: db $44, $34, $48, $36, $3E, $CF ; みたやつは⎵
-#_099BE6: db $F2, $2C ; prewritten text 2C
+#_099BE6: db $F2, $2C ; phrase 2C
 #_099BE8: db $FC ; wait for key and new line
 #_099BE9: db $FF ; end of message
 
@@ -4863,7 +4863,7 @@ Message_01_01_3B:
 #_099C5B: db $D2, $77, $41 ; test progress flag 77 for message 41
 #_099C5E: db $D5, $47 ; send 47 to APU
 #_099C60: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
-#_099C65: db $F2, $83 ; prewritten text 83
+#_099C65: db $F2, $83 ; phrase 83
 #_099C67: db $9A ; :
 #_099C68: db $F9 ; new line
 #_099C69: db $D2, $69, $3C ; test progress flag 69 for message 3C
@@ -4930,9 +4930,9 @@ Message_01_01_3F:
 #_099D07: db $FE, $22, $40 ; ext command 22: go to message 40 if $0A58 flags failure
 #_099D0A: db $FA ; clear message box
 #_099D0B: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
-#_099D10: db $F2, $5A ; prewritten text 5A
+#_099D10: db $F2, $5A ; phrase 5A
 #_099D12: db $FA ; clear message box
-#_099D13: db $F2, $5B ; prewritten text 5B
+#_099D13: db $F2, $5B ; phrase 5B
 #_099D15: db $F8, $40 ; YES/NO - go to message 40 if YES
 #_099D17: db $FE, $1D, $24, $03 ; ext command 1D: load classy message 0324
 
@@ -4954,7 +4954,7 @@ Message_01_01_40:
 ; >«だれもいない»
 Message_01_01_41:
 #_099D3B: db $97 ; >
-#_099D3C: db $F2, $2C ; prewritten text 2C
+#_099D3C: db $F2, $2C ; phrase 2C
 #_099D3E: db $FC ; wait for key and new line
 #_099D3F: db $FF ; end of message
 
@@ -4972,14 +4972,14 @@ Message_01_02_00:
 #_099D44: db $FE, $3A, $02, $03 ; ext command 3A: 02 03 TODO
 #_099D48: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
 #_099D4B: db $D6, $00, $84, $70, $28 ; place sprite 84 in slot 00 at XY:{70,28}
-#_099D50: db $F2, $34 ; prewritten text 34
+#_099D50: db $F2, $34 ; phrase 34
 #_099D52: db $CF, $2B, $57, $27, $33, $9A ; ⎵きょうそ:
 #_099D58: db $F9 ; new line
 #_099D59: db $D2, $7D, $08 ; test progress flag 7D for message 08
 #_099D5C: db $D2, $79, $06 ; test progress flag 79 for message 06
 #_099D5F: db $D2, $78, $01 ; test progress flag 78 for message 01
 #_099D62: db $2E, $2E, $3E, $CF, $50, $9C, $CF ; ここは⎵わが⎵
-#_099D69: db $F2, $34 ; prewritten text 34
+#_099D69: db $F2, $34 ; phrase 34
 #_099D6B: db $3D, $CF, $33, $27, $42, $52, $A1, $52 ; の⎵そうほんざん
 #_099D73: db $F9 ; new line
 #_099D74: db $B5, $5E, $5D, $A6, $26, $30, $52, $A9 ; ガイアだいしんで
@@ -5012,7 +5012,7 @@ Message_01_02_01:
 #_099DC7: db $EF ; write chaos hero name
 #_099DC8: db $3E ; は
 #_099DC9: db $F9 ; new line
-#_099DCA: db $F2, $67 ; prewritten text 67
+#_099DCA: db $F2, $67 ; phrase 67
 #_099DCC: db $38, $30, $37 ; として
 #_099DCF: db $F9 ; new line
 #_099DD0: db $50, $4E, $4B, $3D, $34, $46, $3A, $CF ; われらのために⎵
@@ -5031,7 +5031,7 @@ Message_01_02_02:
 #_099DE6: db $F9 ; new line
 #_099DE7: db $4A, $2C, $A5, $CF, $2E, $2E, $43, $A9 ; よくぞ⎵ここまで
 #_099DEF: db $2B, $34 ; きた
-#_099DF1: db $F2, $0B ; prewritten text 0B
+#_099DF1: db $F2, $0B ; phrase 0B
 #_099DF3: db $FC ; wait for key and new line
 #_099DF4: db $FE, $05, $EF, $FF, $03 ; ext command 05: go to message 03 if alignment >= -17
 #_099DF9: db $D3, $04 ; go to message 04
@@ -5067,7 +5067,7 @@ Message_01_02_03:
 ; また いつでも くるがよい
 Message_01_02_04:
 #_099E31: db $29, $43, $28, $3E, $CF, $50, $9C, $CF ; おまえは⎵わが⎵
-#_099E39: db $F2, $34 ; prewritten text 34
+#_099E39: db $F2, $34 ; phrase 34
 #_099E3B: db $A6, $52, $3D, $CF, $26, $35, $26, $52 ; だんの⎵いちいん
 #_099E43: db $38 ; と
 #_099E44: db $F9 ; new line
@@ -5079,20 +5079,20 @@ Message_01_02_04:
 #_099E5A: db $51, $27, $2D, $37 ; をうけて
 #_099E5E: db $F9 ; new line
 #_099E5F: db $50, $9C, $CF ; わが⎵
-#_099E62: db $F2, $34 ; prewritten text 34
+#_099E62: db $F2, $34 ; phrase 34
 #_099E64: db $A6, $52, $41, $CF, $2C, $50, $50, $4C ; だんへ⎵くわわり
 #_099E6C: db $34, $43, $28 ; たまえ
 #_099E6F: db $FC ; wait for key and new line
 #_099E70: db $FA ; clear message box
 #_099E71: db $97 ; >
-#_099E72: db $F2, $34 ; prewritten text 34
+#_099E72: db $F2, $34 ; phrase 34
 #_099E74: db $3D, $CF, $32, $52, $4E, $26, $51, $CF ; の⎵せんれいを⎵
 #_099E7C: db $27, $2D, $43, $31, $2A, $95 ; うけますか?
 #_099E82: db $F8, $05 ; YES/NO - go to message 05 if YES
 #_099E84: db $D4, $03 ; set text box size to 3
 #_099E86: db $39, $52, $38, $CF, $2E, $38, $50, $4D ; なんと⎵ことわる
 #_099E8E: db $38, $CF, $47, $27, $31, $2A ; と⎵もうすか
-#_099E94: db $F2, $0B ; prewritten text 0B
+#_099E94: db $F2, $0B ; phrase 0B
 #_099E96: db $F9 ; new line
 #_099E97: db $33, $4E, $3E, $CF, $A1, $52, $3C, $52 ; それは⎵ざんねん
 #_099E9F: db $30, $A0, $2C ; しごく
@@ -5128,13 +5128,13 @@ Message_01_02_05:
 #_099EF3: db $D6, $00, $00 ; delete sprite in slot 00
 #_099EF6: db $D6, $00, $91, $60, $28 ; place sprite 91 in slot 00 at XY:{60,28}
 #_099EFB: db $97 ; >
-#_099EFC: db $F2, $34 ; prewritten text 34
+#_099EFC: db $F2, $34 ; phrase 34
 #_099EFE: db $3D ; の
 #_099EFF: db $F9 ; new line
 #_099F00: db $32, $52, $4E, $26, $3D, $CF, $9D, $30 ; せんれいの⎵ぎし
 #_099F08: db $2B, $9C, $CF, $29, $2E, $39, $50, $4E ; きが⎵おこなわれ
 #_099F10: db $34 ; た
-#_099F11: db $F2, $0B ; prewritten text 0B
+#_099F11: db $F2, $0B ; phrase 0B
 #_099F13: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
 #_099F16: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_099F19: db $FC ; wait for key and new line
@@ -5150,7 +5150,7 @@ Message_01_02_05:
 #_099F33: db $D6, $03, $00 ; delete sprite in slot 03
 #_099F36: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_099F39: db $D6, $00, $84, $70, $28 ; place sprite 84 in slot 00 at XY:{70,28}
-#_099F3E: db $F2, $34 ; prewritten text 34
+#_099F3E: db $F2, $34 ; phrase 34
 #_099F40: db $2B, $57, $27, $33, $9A ; きょうそ:
 #_099F45: db $F9 ; new line
 #_099F46: db $D3, $07 ; go to message 07
@@ -5182,7 +5182,7 @@ Message_01_02_07:
 #_099F78: db $FE, $23, $FF ; ext command 23: something FF TODO
 #_099F7B: db $FE, $24, $FF ; ext command 24: something FF TODO
 #_099F7E: db $2E, $4E, $2A, $4B, $47, $CF ; これからも⎵
-#_099F84: db $F2, $34 ; prewritten text 34
+#_099F84: db $F2, $34 ; phrase 34
 #_099F86: db $38, $CF, $50, $9C, $CF, $2B, $57, $27 ; と⎵わが⎵きょう
 #_099F8E: db $A6, $52, $3A ; だんに
 #_099F91: db $F9 ; new line
@@ -5274,9 +5274,9 @@ Message_01_02_0D:
 ; «[LEADER]は»
 ; «たからばこを あきらめた»
 Message_01_02_0E:
-#_09A04B: db $F2, $74 ; prewritten text 74
+#_09A04B: db $F2, $74 ; phrase 74
 #_09A04D: db $F8, $0F ; YES/NO - go to message 0F if YES
-#_09A04F: db $F2, $75 ; prewritten text 75
+#_09A04F: db $F2, $75 ; phrase 75
 #_09A051: db $FC ; wait for key and new line
 #_09A052: db $FF ; end of message
 
@@ -5295,7 +5295,7 @@ Message_01_02_0F:
 #_09A063: db $51 ; を
 #_09A064: db $F9 ; new line
 #_09A065: db $FE, $3C, $11 ; ext command 3C: go to message 11 if no space for item
-#_09A068: db $F2, $2D ; prewritten text 2D
+#_09A068: db $F2, $2D ; phrase 2D
 #_09A06A: db $FC ; wait for key and new line
 #_09A06B: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_09A06D: db $D0, $7B ; set progress flag 7B
@@ -5305,7 +5305,7 @@ Message_01_02_0F:
 
 ; «なかは からっぽだった»
 Message_01_02_10:
-#_09A070: db $F2, $76 ; prewritten text 76
+#_09A070: db $F2, $76 ; phrase 76
 #_09A072: db $FC ; wait for key and new line
 #_09A073: db $FF ; end of message
 
@@ -5313,7 +5313,7 @@ Message_01_02_10:
 
 ; «みつけたが もちきれなかった»
 Message_01_02_11:
-#_09A074: db $F2, $72 ; prewritten text 72
+#_09A074: db $F2, $72 ; phrase 72
 #_09A076: db $FC ; wait for key and new line
 #_09A077: db $FF ; end of message
 
@@ -5326,7 +5326,7 @@ Message_01_02_12:
 #_09A078: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09A07D: db $29, $38, $2E, $9A ; おとこ:
 #_09A081: db $F9 ; new line
-#_09A082: db $F2, $34 ; prewritten text 34
+#_09A082: db $F2, $34 ; phrase 34
 #_09A084: db $3D, $CF, $32, $52, $4E, $26, $51, $CF ; の⎵せんれいを⎵
 #_09A08C: db $27, $2D, $3A, $2B, $34, $9C ; うけにきたが
 #_09A092: db $F9 ; new line
@@ -5347,9 +5347,9 @@ Message_01_02_13:
 #_09A0A6: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09A0AB: db $29, $38, $2E, $9A ; おとこ:
 #_09A0AF: db $F9 ; new line
-#_09A0B0: db $F2, $33 ; prewritten text 33
+#_09A0B0: db $F2, $33 ; phrase 33
 #_09A0B2: db $38, $9C, $CF ; とが⎵
-#_09A0B5: db $F2, $5C ; prewritten text 5C
+#_09A0B5: db $F2, $5C ; phrase 5C
 #_09A0B7: db $51 ; を
 #_09A0B8: db $F9 ; new line
 #_09A0B9: db $47, $27, $A2, $2B, $CF, $2A, $52, $32 ; もうじき⎵かんせ
@@ -5357,10 +5357,10 @@ Message_01_02_13:
 #_09A0C8: db $FC ; wait for key and new line
 #_09A0C9: db $FA ; clear message box
 #_09A0CA: db $A6, $9C, $CF ; だが⎵
-#_09A0CD: db $F2, $34 ; prewritten text 34
+#_09A0CD: db $F2, $34 ; phrase 34
 #_09A0CF: db $38, $34, $35, $9C ; とたちが
 #_09A0D3: db $F9 ; new line
-#_09A0D4: db $F2, $5C ; prewritten text 5C
+#_09A0D4: db $F2, $5C ; phrase 5C
 #_09A0D6: db $3D, $58, $38, $4C, $51, $CF, $34, $2C ; のっとりを⎵たく
 #_09A0DE: db $4B, $52, $A9, $CF, $26, $4D, $4B, $30 ; らんで⎵いるらし
 #_09A0E6: db $26, $A5 ; いぞ
@@ -5375,17 +5375,17 @@ Message_01_02_13:
 ; すきかってされて たまるか!
 Message_01_02_14:
 #_09A0EA: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
-#_09A0EF: db $F2, $34 ; prewritten text 34
+#_09A0EF: db $F2, $34 ; phrase 34
 #_09A0F1: db $38, $9A ; と:
 #_09A0F3: db $F9 ; new line
 #_09A0F4: db $29, $4E, $3E, $CF ; おれは⎵
-#_09A0F8: db $F2, $5C ; prewritten text 5C
+#_09A0F8: db $F2, $5C ; phrase 5C
 #_09A0FA: db $3D, $58, $38, $4C, $3A, $CF, $26, $2C ; のっとりに⎵いく
 #_09A102: db $A4 ; ぜ
 #_09A103: db $FC ; wait for key and new line
 #_09A104: db $FA ; clear message box
 #_09A105: db $2E, $4E, $26, $A2, $57, $27, $CF ; これいじょう⎵
-#_09A10C: db $F2, $33 ; prewritten text 33
+#_09A10C: db $F2, $33 ; phrase 33
 #_09A10E: db $38, $AA, $47, $3A ; とどもに
 #_09A112: db $F9 ; new line
 #_09A113: db $31, $2B, $2A, $58, $37, $2F, $4E, $37 ; すきかってされて
@@ -5401,11 +5401,11 @@ Message_01_02_14:
 ; ダメージ うけまくりよ
 Message_01_02_15:
 #_09A123: db $D6, $00, $8A, $70, $28 ; place sprite 8A in slot 00 at XY:{70,28}
-#_09A128: db $F2, $34 ; prewritten text 34
+#_09A128: db $F2, $34 ; phrase 34
 #_09A12A: db $38, $9A ; と:
 #_09A12C: db $F9 ; new line
 #_09A12D: db $2E, $2E, $3E, $CF ; ここは⎵
-#_09A131: db $F2, $34 ; prewritten text 34
+#_09A131: db $F2, $34 ; phrase 34
 #_09A133: db $3D, $CF, $33, $27, $42, $52, $A1, $52 ; の⎵そうほんざん
 #_09A13B: db $F9 ; new line
 #_09A13C: db $A5, $2C, $32, $26, $9C, $CF, $62, $61 ; ぞくせいが⎵カオ
@@ -5425,7 +5425,7 @@ Message_01_02_15:
 ; ムカつくぜ
 Message_01_02_16:
 #_09A159: db $D6, $00, $0A, $70, $28 ; place sprite 0A in slot 00 at XY:{70,28}
-#_09A15E: db $F2, $34 ; prewritten text 34
+#_09A15E: db $F2, $34 ; phrase 34
 #_09A160: db $38, $9A ; と:
 #_09A162: db $F9 ; new line
 #_09A163: db $9C, $26, $38, $27, $1E, $20, $3E, $CF ; がいとうTVは⎵
@@ -5433,7 +5433,7 @@ Message_01_02_16:
 #_09A173: db $58, $34, $4A ; ったよ
 #_09A176: db $FC ; wait for key and new line
 #_09A177: db $FA ; clear message box
-#_09A178: db $F2, $1C ; prewritten text 1C
+#_09A178: db $F2, $1C ; phrase 1C
 #_09A17A: db $6C, $88, $5A, $3A, $CF, $6F, $8A, $68 ; タワーに⎵テンシ
 #_09A182: db $9C, $CF, $2B, $37 ; が⎵きて
 #_09A186: db $F9 ; new line
@@ -5453,19 +5453,19 @@ Message_01_02_16:
 ; «エネルギー»は どうすんだろう
 Message_01_02_17:
 #_09A1A2: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
-#_09A1A7: db $F2, $34 ; prewritten text 34
+#_09A1A7: db $F2, $34 ; phrase 34
 #_09A1A9: db $38, $9A ; と:
 #_09A1AB: db $F9 ; new line
-#_09A1AC: db $F2, $5C ; prewritten text 5C
+#_09A1AC: db $F2, $5C ; phrase 5C
 #_09A1AE: db $2A ; か
-#_09A1AF: db $F2, $0B ; prewritten text 0B
+#_09A1AF: db $F2, $0B ; phrase 0B
 #_09A1B1: db $FC ; wait for key and new line
 #_09A1B2: db $FA ; clear message box
 #_09A1B3: db $2A, $52, $32, $26, $2F, $32, $4D, $3A ; かんせいさせるに
 #_09A1BB: db $30, $37, $47, $CF, $3D, $58, $38, $4D ; しても⎵のっとる
 #_09A1C3: db $3A, $30, $37, $47 ; にしても
 #_09A1C7: db $F9 ; new line
-#_09A1C8: db $F2, $56 ; prewritten text 56
+#_09A1C8: db $F2, $56 ; phrase 56
 #_09A1CA: db $3E, $CF, $AA, $27, $31, $52, $A6, $4F ; は⎵どうすんだろ
 #_09A1D2: db $27 ; う
 #_09A1D3: db $FC ; wait for key and new line
@@ -5484,7 +5484,7 @@ Message_01_02_18:
 #_09A1DA: db $29, $52, $39, $9A ; おんな:
 #_09A1DE: db $F9 ; new line
 #_09A1DF: db $3C, $28, $CF ; ねえ⎵
-#_09A1E2: db $F2, $62 ; prewritten text 62
+#_09A1E2: db $F2, $62 ; phrase 62
 #_09A1E4: db $58, $37, $CF, $30, $58, $37, $4D, $2A ; って⎵しってるか
 #_09A1EC: db $26, $95 ; い?
 #_09A1EE: db $F8, $1A ; YES/NO - go to message 1A if YES
@@ -5579,7 +5579,7 @@ Message_01_02_1C:
 #_09A2D2: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09A2D7: db $29, $38, $2E, $9A ; おとこ:
 #_09A2DB: db $F9 ; new line
-#_09A2DC: db $F2, $62 ; prewritten text 62
+#_09A2DC: db $F2, $62 ; phrase 62
 #_09A2DE: db $3A, $CF, $26, $2B, $34, $26, $52, $A6 ; に⎵いきたいんだ
 #_09A2E6: db $F9 ; new line
 #_09A2E7: db $A9, $47, $CF, $26, $4C, $9E, $35, $3A ; でも⎵いりぐちに
@@ -5611,7 +5611,7 @@ Message_01_02_1D:
 #_09A33A: db $4D, $A5 ; るぞ
 #_09A33C: db $FC ; wait for key and new line
 #_09A33D: db $FA ; clear message box
-#_09A33E: db $F2, $34 ; prewritten text 34
+#_09A33E: db $F2, $34 ; phrase 34
 #_09A340: db $3D, $48, $36, $4B, $CF, $4A, $2C, $CF ; のやつら⎵よく⎵
 #_09A348: db $41, $26, $2B, $A2, $55, $39 ; へいきじゃな
 #_09A34E: db $FC ; wait for key and new line
@@ -5629,8 +5629,8 @@ Message_01_02_1E:
 #_09A366: db $FC ; wait for key and new line
 #_09A367: db $FA ; clear message box
 #_09A368: db $33, $4C, $55, $CF, $31, $A0, $26 ; そりゃ⎵すごい
-#_09A36F: db $F2, $0B ; prewritten text 0B
-#_09A371: db $F2, $0B ; prewritten text 0B
+#_09A36F: db $F2, $0B ; phrase 0B
+#_09A371: db $F2, $0B ; phrase 0B
 #_09A373: db $F9 ; new line
 #_09A374: db $26, $48, $CF, $30, $52, $A2, $4B, $4E ; いや⎵しんじられ
 #_09A37C: db $52, $3D, $5A ; んのー
@@ -5673,8 +5673,8 @@ Message_01_02_1F:
 #_09A396: db $2C, $52, $A6, $3C ; くんだね
 #_09A39A: db $F9 ; new line
 #_09A39B: db $50, $34, $30, $3E, $CF ; わたしは⎵
-#_09A3A0: db $F2, $6C ; prewritten text 6C
-#_09A3A2: db $F2, $0B ; prewritten text 0B
+#_09A3A0: db $F2, $6C ; phrase 6C
+#_09A3A2: db $F2, $0B ; phrase 0B
 #_09A3A4: db $FC ; wait for key and new line
 #_09A3A5: db $FA ; clear message box
 #_09A3A6: db $85, $5E, $38, $CF, $4A, $52, $A9, $2C ; ルイと⎵よんでく
@@ -5693,7 +5693,7 @@ Message_01_02_1F:
 #_09A3DD: db $37, $26, $4D, $CF, $3F, $38, $A6 ; ている⎵ひとだ
 #_09A3E4: db $FC ; wait for key and new line
 #_09A3E5: db $2F, $25, $CF, $2B, $39, $2F, $26 ; さあ⎵きなさい
-#_09A3EC: db $F2, $0B ; prewritten text 0B
+#_09A3EC: db $F2, $0B ; phrase 0B
 #_09A3EE: db $FC ; wait for key and new line
 #_09A3EF: db $D4, $03 ; set text box size to 3
 #_09A3F1: db $D6, $00, $00 ; delete sprite in slot 00
@@ -5702,7 +5702,7 @@ Message_01_02_1F:
 #_09A3FC: db $49, $4C, $2E, $9A ; ゆりこ:
 #_09A400: db $F9 ; new line
 #_09A401: db $F0 ; write player name
-#_09A402: db $F2, $0B ; prewritten text 0B
+#_09A402: db $F2, $0B ; phrase 0B
 #_09A404: db $50, $34, $30, $CF, $47, $27, $26, $35 ; わたし⎵もういち
 #_09A40C: db $AA ; ど
 #_09A40D: db $F9 ; new line
@@ -5723,7 +5723,7 @@ Message_01_02_1F:
 #_09A44D: db $51 ; を
 #_09A44E: db $F9 ; new line
 #_09A44F: db $28, $4B, $52, $A6 ; えらんだ
-#_09A453: db $F2, $0B ; prewritten text 0B
+#_09A453: db $F2, $0B ; phrase 0B
 #_09A455: db $26, $28, $CF, $28, $4B, $AB, $2F, $4E ; いえ⎵えらばされ
 #_09A45D: db $34, $38 ; たと
 #_09A45F: db $F9 ; new line
@@ -5736,10 +5736,10 @@ Message_01_02_1F:
 #_09A478: db $F9 ; new line
 #_09A479: db $25, $39, $34, $51, $CF, $3F, $2B, $3E ; あなたを⎵ひきは
 #_09A481: db $39, $33, $27, $38, $30, $34 ; なそうとした
-#_09A487: db $F2, $0B ; prewritten text 0B
+#_09A487: db $F2, $0B ; phrase 0B
 #_09A489: db $F9 ; new line
 #_09A48A: db $A9, $47, $CF, $A6, $46, $A6, $58, $34 ; でも⎵だめだった
-#_09A492: db $F2, $0B ; prewritten text 0B
+#_09A492: db $F2, $0B ; phrase 0B
 #_09A494: db $F9 ; new line
 #_09A495: db $50, $34, $30, $3D, $47, $3D, $3A, $CF ; わたしのものに⎵
 #_09A49D: db $39, $4B, $39, $26, $CF, $25, $39, $34 ; ならない⎵あなた
@@ -5785,7 +5785,7 @@ Message_01_02_20:
 #_09A4FB: db $84, $84, $69, $9A ; リリス:
 #_09A4FF: db $F9 ; new line
 #_09A500: db $25, $25, $CF, $A6, $46 ; ああ⎵だめ
-#_09A505: db $F2, $0B ; prewritten text 0B
+#_09A505: db $F2, $0B ; phrase 0B
 #_09A507: db $F9 ; new line
 #_09A508: db $48, $58, $B0, $4C, $CF, $25, $39, $34 ; やっぱり⎵あなた
 #_09A510: db $38, $3E, $CF, $34, $34, $2A, $28, $39 ; とは⎵たたかえな
@@ -5804,14 +5804,14 @@ Message_01_02_20:
 #_09A53C: db $F9 ; new line
 #_09A53D: db $2F, $4A, $27, $39, $4B, $CF ; さようなら⎵
 #_09A543: db $F0 ; write player name
-#_09A544: db $F2, $0B ; prewritten text 0B
+#_09A544: db $F2, $0B ; phrase 0B
 #_09A546: db $FC ; wait for key and new line
 #_09A547: db $D6, $00, $00 ; delete sprite in slot 00
 #_09A54A: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09A54D: db $D6, $00, $2F, $70, $28 ; place sprite 2F in slot 00 at XY:{70,28}
 #_09A552: db $FA ; clear message box
 #_09A553: db $FE, $2D, $03 ; ext command 2D: call routine 00B99C with value 03 TODO
-#_09A556: db $F2, $6C ; prewritten text 6C
+#_09A556: db $F2, $6C ; phrase 6C
 #_09A558: db $9A ; :
 #_09A559: db $F9 ; new line
 #_09A55A: db $29, $48, $29, $48, $CF, $43, $2F, $2A ; おやおや⎵まさか
@@ -5869,7 +5869,7 @@ Message_01_02_22:
 ; オレノ ジャマスル ヤツ コロス!
 Message_01_02_23:
 #_09A5E5: db $D6, $00, $0C, $70, $38 ; place sprite 0C in slot 00 at XY:{70,38}
-#_09A5EA: db $F2, $6D ; prewritten text 6D
+#_09A5EA: db $F2, $6D ; phrase 6D
 #_09A5EC: db $9A ; :
 #_09A5ED: db $F9 ; new line
 #_09A5EE: db $D2, $35, $2D ; test progress flag 35 for message 2D
@@ -5936,7 +5936,7 @@ Message_01_02_29:
 #_09A653: db $E7, $01 ; call routine 01E5CD with value 02 TODO
 #_09A655: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09A658: db $D6, $00, $0C, $70, $38 ; place sprite 0C in slot 00 at XY:{70,38}
-#_09A65D: db $F2, $0B ; prewritten text 0B
+#_09A65D: db $F2, $0B ; phrase 0B
 #_09A65F: db $6C, $CF, $6C, $75, $7D, $CF, $5E, $75 ; タ⎵タノム⎵イノ
 #_09A667: db $6D, $CF, $6C, $69, $65, $6F ; チ⎵タスケテ
 #_09A66D: db $F9 ; new line
@@ -5946,7 +5946,7 @@ Message_01_02_29:
 #_09A67B: db $D0, $35 ; set progress flag 35
 #_09A67D: db $FA ; clear message box
 #_09A67E: db $97 ; >
-#_09A67F: db $F2, $6D ; prewritten text 6D
+#_09A67F: db $F2, $6D ; phrase 6D
 #_09A681: db $3E ; は
 #_09A682: db $F9 ; new line
 #_09A683: db $E1, $F5 ; set $0A50 to item F5
@@ -5975,7 +5975,7 @@ Message_01_02_2B:
 #_09A697: db $51 ; を
 #_09A698: db $F9 ; new line
 #_09A699: db $FE, $3C, $2C ; ext command 3C: go to message 2C if no space for item
-#_09A69C: db $F2, $2D ; prewritten text 2D
+#_09A69C: db $F2, $2D ; phrase 2D
 #_09A69E: db $FC ; wait for key and new line
 #_09A69F: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_09A6A1: db $D0, $1F ; set progress flag 1F
@@ -5985,7 +5985,7 @@ Message_01_02_2B:
 
 ; «みつけたが もちきれなかった»
 Message_01_02_2C:
-#_09A6A4: db $F2, $72 ; prewritten text 72
+#_09A6A4: db $F2, $72 ; phrase 72
 #_09A6A6: db $FC ; wait for key and new line
 #_09A6A7: db $FF ; end of message
 
@@ -6028,7 +6028,7 @@ Message_01_02_2F:
 ; >«なかに はいりますか?»
 Message_01_02_30:
 #_09A6E1: db $97 ; >
-#_09A6E2: db $F2, $68 ; prewritten text 68
+#_09A6E2: db $F2, $68 ; phrase 68
 #_09A6E4: db $F8, $32 ; YES/NO - go to message 32 if YES
 #_09A6E6: db $FF ; end of message
 
@@ -6037,7 +6037,7 @@ Message_01_02_30:
 ; >«そとに でますか?»
 Message_01_02_31:
 #_09A6E7: db $97 ; >
-#_09A6E8: db $F2, $89 ; prewritten text 89
+#_09A6E8: db $F2, $89 ; phrase 89
 #_09A6EA: db $F8, $32 ; YES/NO - go to message 32 if YES
 #_09A6EC: db $FF ; end of message
 
@@ -6064,7 +6064,7 @@ Message_01_02_33:
 ; >«とびらは とざされている»
 Message_01_02_34:
 #_09A711: db $97 ; >
-#_09A712: db $F2, $69 ; prewritten text 69
+#_09A712: db $F2, $69 ; phrase 69
 #_09A714: db $FC ; wait for key and new line
 #_09A715: db $FF ; end of message
 
@@ -6167,9 +6167,9 @@ Message_01_03_03:
 #_09A808: db $FC ; wait for key and new line
 #_09A809: db $FA ; clear message box
 #_09A80A: db $2E, $3D, $43, $35, $3E, $3C, $5A, $CF ; このまちはねー⎵
-#_09A812: db $F2, $52 ; prewritten text 52
+#_09A812: db $F2, $52 ; phrase 52
 #_09A814: db $38, $CF ; と⎵
-#_09A816: db $F2, $53 ; prewritten text 53
+#_09A816: db $F2, $53 ; phrase 53
 #_09A818: db $9C ; が
 #_09A819: db $F9 ; new line
 #_09A81A: db $50, $34, $30, $3A, $CF, $36, $2C, $58 ; わたしに⎵つくっ
@@ -6179,7 +6179,7 @@ Message_01_03_03:
 #_09A82A: db $25, $58, $CF, $33, $27, $A6 ; あっ⎵そうだ
 #_09A830: db $F9 ; new line
 #_09A831: db $3C, $28, $3C, $28, $CF ; ねえねえ⎵
-#_09A836: db $F2, $52 ; prewritten text 52
+#_09A836: db $F2, $52 ; phrase 52
 #_09A838: db $3A, $CF, $25, $58, $37, $4A, $5A ; に⎵あってよー
 #_09A83F: db $F9 ; new line
 #_09A840: db $50, $34, $30, $9C, $CF, $34, $3D, $52 ; わたしが⎵たのん
@@ -6198,7 +6198,7 @@ Message_01_03_04:
 #_09A853: db $5D, $84, $69, $9A ; アリス:
 #_09A857: db $F9 ; new line
 #_09A858: db $3C, $28, $3C, $28, $CF ; ねえねえ⎵
-#_09A85D: db $F2, $52 ; prewritten text 52
+#_09A85D: db $F2, $52 ; phrase 52
 #_09A85F: db $3A, $CF, $25, $58, $37, $4A, $5A ; に⎵あってよー
 #_09A866: db $F9 ; new line
 #_09A867: db $5D, $84, $69, $3D, $CF, $38, $47, $A6 ; アリスの⎵ともだ
@@ -6214,7 +6214,7 @@ Message_01_03_05:
 #_09A87E: db $FA ; clear message box
 #_09A87F: db $97, $29, $52, $39, $3D, $2E, $3E, $CF ; >おんなのこは⎵
 #_09A887: db $47, $27, $26, $39, $26 ; もういない
-#_09A88C: db $F2, $0B ; prewritten text 0B
+#_09A88C: db $F2, $0B ; phrase 0B
 #_09A88E: db $FC ; wait for key and new line
 #_09A88F: db $FF ; end of message
 
@@ -6244,7 +6244,7 @@ Message_01_03_07:
 ; «あかはくしゃく»さまは
 ; ただいま がいしゅつしております
 Message_01_03_08:
-#_09A8B2: db $F2, $50 ; prewritten text 50
+#_09A8B2: db $F2, $50 ; phrase 50
 #_09A8B4: db $2F, $43, $3E ; さまは
 #_09A8B7: db $F9 ; new line
 #_09A8B8: db $34, $A6, $26, $43, $CF, $9C, $26, $30 ; ただいま⎵がいし
@@ -6316,8 +6316,8 @@ Message_01_03_09:
 #_09A967: db $3F, $30, $57, $9A ; ひしょ:
 #_09A96B: db $F9 ; new line
 #_09A96C: db $2E, $43, $4C, $43, $30, $34, $3C ; こまりましたね
-#_09A973: db $F2, $0B ; prewritten text 0B
-#_09A975: db $F2, $0B ; prewritten text 0B
+#_09A973: db $F2, $0B ; phrase 0B
+#_09A975: db $F2, $0B ; phrase 0B
 #_09A977: db $F9 ; new line
 #_09A978: db $A9, $3E, $CF, $30, $AB, $4B, $2C, $29 ; では⎵しばらくお
 #_09A980: db $43, $35, $2C, $A6, $2F, $26 ; まちください
@@ -6326,10 +6326,10 @@ Message_01_03_09:
 #_09A98A: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_09A98D: db $D6, $00, $67, $70, $28 ; place sprite 67 in slot 00 at XY:{70,28}
 #_09A992: db $FA ; clear message box
-#_09A993: db $F2, $50 ; prewritten text 50
+#_09A993: db $F2, $50 ; phrase 50
 #_09A995: db $2F, $43, $3E ; さまは
 #_09A998: db $F9 ; new line
-#_09A999: db $F2, $03 ; prewritten text 03
+#_09A999: db $F2, $03 ; phrase 03
 #_09A99B: db $3A, $CF, $25, $50, $4E, $4D, $33, $27 ; に⎵あわれるそう
 #_09A9A3: db $A9, $31 ; です
 #_09A9A5: db $F9 ; new line
@@ -6401,7 +6401,7 @@ Message_01_03_10:
 #_09AA17: db $97 ; >
 #_09AA18: db $F1 ; write leader's name for team
 #_09AA19: db $3E, $CF ; は⎵
-#_09AA1B: db $F2, $50 ; prewritten text 50
+#_09AA1B: db $F2, $50 ; phrase 50
 #_09AA1D: db $3D ; の
 #_09AA1E: db $F9 ; new line
 #_09AA1F: db $41, $48, $2A, $4B, $CF, $A9, $34 ; へやから⎵でた
@@ -6416,7 +6416,7 @@ Message_01_03_11:
 #_09AA29: db $97 ; >
 #_09AA2A: db $F1 ; write leader's name for team
 #_09AA2B: db $3E, $CF ; は⎵
-#_09AA2D: db $F2, $50 ; prewritten text 50
+#_09AA2D: db $F2, $50 ; phrase 50
 #_09AA2F: db $3D ; の
 #_09AA30: db $F9 ; new line
 #_09AA31: db $41, $48, $3A, $CF, $3E, $26, $58, $34 ; へやに⎵はいった
@@ -6451,7 +6451,7 @@ Message_01_03_11:
 Message_01_03_12:
 #_09AA3C: db $D5, $46 ; send 46 to APU
 #_09AA3E: db $D6, $00, $BE, $70, $18 ; place sprite BE in slot 00 at XY:{70,18}
-#_09AA43: db $F2, $51 ; prewritten text 51
+#_09AA43: db $F2, $51 ; phrase 51
 #_09AA45: db $9A ; :
 #_09AA46: db $F9 ; new line
 #_09AA47: db $2B, $44, $34, $35, $3E, $CF, $AA, $27 ; きみたちは⎵どう
@@ -6463,7 +6463,7 @@ Message_01_03_12:
 #_09AA65: db $FC ; wait for key and new line
 #_09AA66: db $FA ; clear message box
 #_09AA67: db $3F, $38, $4C, $3D ; ひとりの
-#_09AA6B: db $F2, $00 ; prewritten text 00
+#_09AA6B: db $F2, $00 ; phrase 00
 #_09AA6D: db $3D ; の
 #_09AA6E: db $F9 ; new line
 #_09AA6F: db $2F, $2F, $48, $2A, $39, $49, $46, $51 ; ささやかなゆめを
@@ -6484,7 +6484,7 @@ Message_01_03_12:
 #_09AABB: db $F9 ; new line
 #_09AABC: db $25, $34, $28, $34, $38, $26, $27, $3D ; あたえたというの
 #_09AAC4: db $3A ; に
-#_09AAC5: db $F2, $0B ; prewritten text 0B
+#_09AAC5: db $F2, $0B ; phrase 0B
 #_09AAC7: db $FC ; wait for key and new line
 #_09AAC8: db $D4, $03 ; set text box size to 3
 #_09AACA: db $EE ; write lawful hero name
@@ -6499,7 +6499,7 @@ Message_01_03_12:
 #_09AAF1: db $FC ; wait for key and new line
 #_09AAF2: db $FA ; clear message box
 #_09AAF3: db $D6, $00, $BE, $70, $18 ; place sprite BE in slot 00 at XY:{70,18}
-#_09AAF8: db $F2, $51 ; prewritten text 51
+#_09AAF8: db $F2, $51 ; phrase 51
 #_09AAFA: db $9A ; :
 #_09AAFB: db $F9 ; new line
 #_09AAFC: db $2A, $4E, $4B, $3E, $CF, $2E, $2E, $3A ; かれらは⎵ここに
@@ -6511,11 +6511,11 @@ Message_01_03_12:
 #_09AB20: db $31, $4A ; すよ
 #_09AB22: db $FC ; wait for key and new line
 #_09AB23: db $28, $26, $28, $52, $3A ; えいえんに
-#_09AB28: db $F2, $0B ; prewritten text 0B
+#_09AB28: db $F2, $0B ; phrase 0B
 #_09AB2A: db $FC ; wait for key and new line
 #_09AB2B: db $FA ; clear message box
 #_09AB2C: db $D5, $3C ; send 3C to APU
-#_09AB2E: db $F2, $03 ; prewritten text 03
+#_09AB2E: db $F2, $03 ; phrase 03
 #_09AB30: db $3A, $47, $CF, $2F, $30, $25, $9F, $43 ; にも⎵さしあげま
 #_09AB38: db $30, $57, $27, $94 ; しょう!
 #_09AB3C: db $F9 ; new line
@@ -6536,7 +6536,7 @@ Message_01_03_12:
 #_09AB6B: db $D6, $01, $C1, $70, $18 ; place sprite C1 in slot 01 at XY:{70,18}
 #_09AB70: db $D6, $00, $C2, $84, $30 ; place sprite C2 in slot 00 at XY:{84,30}
 #_09AB75: db $FA ; clear message box
-#_09AB76: db $F2, $51 ; prewritten text 51
+#_09AB76: db $F2, $51 ; phrase 51
 #_09AB78: db $9A ; :
 #_09AB79: db $F9 ; new line
 #_09AB7A: db $35, $58, $CF, $3F, $38, $4C, $A6, $2D ; ちっ⎵ひとりだけ
@@ -6573,10 +6573,10 @@ Message_01_03_13:
 #_09ABBE: db $29, $58, $38, $CF, $2E, $2E, $2A, $4B ; おっと⎵ここから
 #_09ABC6: db $2F, $2B, $3E ; さきは
 #_09ABC9: db $F9 ; new line
-#_09ABCA: db $F2, $2B ; prewritten text 2B
+#_09ABCA: db $F2, $2B ; phrase 2B
 #_09ABCC: db $FC ; wait for key and new line
 #_09ABCD: db $FA ; clear message box
-#_09ABCE: db $F2, $50 ; prewritten text 50
+#_09ABCE: db $F2, $50 ; phrase 50
 #_09ABD0: db $3D, $CF, $A1, $26, $42, $27, $3E ; の⎵ざいほうは
 #_09ABD7: db $F9 ; new line
 #_09ABD8: db $29, $4E, $34, $35, $9C, $CF, $26, $34 ; おれたちが⎵いた
@@ -6615,7 +6615,7 @@ Message_01_03_14:
 #_09AC0C: db $D5, $54 ; send 54 to APU
 #_09AC0E: db $D2, $5A, $1A ; test progress flag 5A for message 1A
 #_09AC11: db $D6, $00, $C5, $70, $28 ; place sprite C5 in slot 00 at XY:{70,28}
-#_09AC16: db $F2, $50 ; prewritten text 50
+#_09AC16: db $F2, $50 ; phrase 50
 #_09AC18: db $9A ; :
 #_09AC19: db $F9 ; new line
 #_09AC1A: db $5D, $84, $69, $9C, $CF, $25, $50, $32 ; アリスが⎵あわせ
@@ -6697,7 +6697,7 @@ Message_01_03_16:
 #_09AD17: db $D4, $03 ; set text box size to 3
 #_09AD19: db $2A, $58, $37, $2C, $4E, $39, $26, $38 ; かってくれないと
 #_09AD21: db $CF ; ⎵
-#_09AD22: db $F2, $52 ; prewritten text 52
+#_09AD22: db $F2, $52 ; phrase 52
 #_09AD24: db $3A ; に
 #_09AD25: db $F9 ; new line
 #_09AD26: db $26, $26, $36, $2D, $35, $55, $27, $4A ; いいつけちゃうよ
@@ -6771,7 +6771,7 @@ Message_01_03_1B:
 #_09ADB1: db $FC ; wait for key and new line
 #_09ADB2: db $FA ; clear message box
 #_09ADB3: db $25, $3D, $3C, $5A ; あのねー
-#_09ADB7: db $F2, $0B ; prewritten text 0B
+#_09ADB7: db $F2, $0B ; phrase 0B
 #_09ADB9: db $30, $52, $A9, $2C, $4E, $4D, $95 ; しんでくれる?
 #_09ADC0: db $F8, $26 ; YES/NO - go to message 26 if YES
 
@@ -6809,7 +6809,7 @@ Message_01_03_1D:
 #_09ADEC: db $26, $4A, $5A, $CF, $3F, $AA, $26, $4A ; いよー⎵ひどいよ
 #_09ADF4: db $5A ; ー
 #_09ADF5: db $F9 ; new line
-#_09ADF6: db $F2, $52 ; prewritten text 52
+#_09ADF6: db $F2, $52 ; phrase 52
 #_09ADF8: db $CF, $2B, $26, $37, $4A, $5A, $94 ; ⎵きいてよー!
 #_09ADFF: db $F9 ; new line
 #_09AE00: db $29, $3A, $26, $35, $55, $52, $34, $35 ; おにいちゃんたち
@@ -6817,7 +6817,7 @@ Message_01_03_1D:
 #_09AE10: db $94 ; !
 #_09AE11: db $FC ; wait for key and new line
 #_09AE12: db $D4, $03 ; set text box size to 3
-#_09AE14: db $F2, $50 ; prewritten text 50
+#_09AE14: db $F2, $50 ; phrase 50
 #_09AE16: db $9A ; :
 #_09AE17: db $F9 ; new line
 #_09AE18: db $AA, $27, $30, $34, $52, $A6, $CF, $5D ; どうしたんだ⎵ア
@@ -6844,14 +6844,14 @@ Message_01_03_1D:
 #_09AE73: db $D6, $00, $00 ; delete sprite in slot 00
 #_09AE76: db $FE, $07, $20 ; ext command 07: draw buffered text then wait 31 frames
 #_09AE79: db $D6, $07, $C5, $70, $28 ; place sprite C5 in slot 07 at XY:{70,28}
-#_09AE7E: db $F2, $50 ; prewritten text 50
+#_09AE7E: db $F2, $50 ; phrase 50
 #_09AE80: db $9A ; :
 #_09AE81: db $F9 ; new line
 #_09AE82: db $33, $27, $2A, $CF, $33, $27, $2A, $CF ; そうか⎵そうか⎵
 #_09AE8A: db $4A, $30, $4A, $30 ; よしよし
 #_09AE8E: db $F9 ; new line
 #_09AE8F: db $A2, $55, $25, $CF ; じゃあ⎵
-#_09AE93: db $F2, $52 ; prewritten text 52
+#_09AE93: db $F2, $52 ; phrase 52
 #_09AE95: db $9C ; が
 #_09AE96: db $F9 ; new line
 #_09AE97: db $5D, $84, $69, $3D, $3C, $9C, $26, $51 ; アリスのねがいを
@@ -6859,7 +6859,7 @@ Message_01_03_1D:
 #_09AEA7: db $27 ; う
 #_09AEA8: db $FC ; wait for key and new line
 #_09AEA9: db $DE, $01, $00, $09, $01 ; load 1x demon 0109
-#_09AEAE: db $F2, $7C ; prewritten text 7C
+#_09AEAE: db $F2, $7C ; phrase 7C
 #_09AEB0: db $D6, $07, $00 ; delete sprite in slot 07
 #_09AEB3: db $D5, $39 ; send 39 to APU
 #_09AEB5: db $E4, $00 ; load demon $00
@@ -6882,7 +6882,7 @@ Message_01_03_1F:
 #_09AEC6: db $EE ; write lawful hero name
 #_09AEC7: db $9A ; :
 #_09AEC8: db $F9 ; new line
-#_09AEC9: db $F5 ; write demon name from $050A
+#_09AEC9: db $F5 ; write demon 0 name
 #_09AECA: db $3E, $CF, $BF, $7E, $5A, $BB, $51, $CF ; は⎵ダメージを⎵
 #_09AED2: db $27, $2D, $37, $43, $32, $52, $4A, $94 ; うけてませんよ!
 #_09AEDA: db $FC ; wait for key and new line
@@ -6911,8 +6911,8 @@ Message_01_03_21:
 #_09AEFF: db $97 ; >
 #_09AF00: db $F1 ; write leader's name for team
 #_09AF01: db $3E, $CF, $3A, $9F, $A6, $30, $34 ; は⎵にげだした
-#_09AF08: db $F2, $0B ; prewritten text 0B
-#_09AF0A: db $F2, $0B ; prewritten text 0B
+#_09AF08: db $F2, $0B ; phrase 0B
+#_09AF0A: db $F2, $0B ; phrase 0B
 #_09AF0C: db $FC ; wait for key and new line
 #_09AF0D: db $D0, $68 ; set progress flag 68
 #_09AF0F: db $FF ; end of message
@@ -6931,7 +6931,7 @@ Message_01_03_21:
 Message_01_03_22:
 #_09AF10: db $D4, $03 ; set text box size to 3
 #_09AF12: db $E1, $E1 ; set $0A50 to item E1
-#_09AF14: db $F5 ; write demon name from $050A
+#_09AF14: db $F5 ; write demon 0 name
 #_09AF15: db $9A ; :
 #_09AF16: db $F9 ; new line
 #_09AF17: db $2B, $CF, $2B, $2F, $43, $CF ; き⎵きさま⎵
@@ -6946,7 +6946,7 @@ Message_01_03_22:
 #_09AF36: db $D5, $FD ; send FD to APU
 #_09AF38: db $FA ; clear message box
 #_09AF39: db $97 ; >
-#_09AF3A: db $F5 ; write demon name from $050A
+#_09AF3A: db $F5 ; write demon 0 name
 #_09AF3B: db $3E, $CF, $36, $AF, $3A, $CF, $40, $27 ; は⎵つぼに⎵ふう
 #_09AF43: db $26, $52, $2F, $4E, $34 ; いんされた
 #_09AF48: db $FC ; wait for key and new line
@@ -6955,13 +6955,13 @@ Message_01_03_22:
 #_09AF4F: db $5D, $84, $69, $9A ; アリス:
 #_09AF53: db $F9 ; new line
 #_09AF54: db $2B, $55, $5A, $58, $94, $CF ; きゃーっ!⎵
-#_09AF5A: db $F2, $52 ; prewritten text 52
+#_09AF5A: db $F2, $52 ; phrase 52
 #_09AF5C: db $9C, $5A, $58, $94 ; がーっ!
 #_09AF60: db $F9 ; new line
 #_09AF61: db $60, $5A, $8A, $60, $5A, $8A ; エーンエーン
 #_09AF67: db $DF ; delay 7 frames
 #_09AF68: db $60, $5A, $8A ; エーン
-#_09AF6B: db $F2, $0B ; prewritten text 0B
+#_09AF6B: db $F2, $0B ; phrase 0B
 #_09AF6D: db $FC ; wait for key and new line
 #_09AF6E: db $D6, $00, $00 ; delete sprite in slot 00
 #_09AF71: db $FA ; clear message box
@@ -6981,7 +6981,7 @@ Message_01_03_22:
 #_09AF9C: db $D6, $00, $2C, $70, $28 ; place sprite 2C in slot 00 at XY:{70,28}
 #_09AFA1: db $49, $4C, $2E, $9A ; ゆりこ:
 #_09AFA5: db $F9 ; new line
-#_09AFA6: db $F2, $1D ; prewritten text 1D
+#_09AFA6: db $F2, $1D ; phrase 1D
 #_09AFA8: db $39, $2A, $39, $2A, $CF, $48, $4D, $A2 ; なかなか⎵やるじ
 #_09AFB0: db $55, $39, $26 ; ゃない
 #_09AFB3: db $F9 ; new line
@@ -7012,7 +7012,7 @@ Message_01_03_23:
 #_09AFEB: db $26 ; い
 #_09AFEC: db $FC ; wait for key and new line
 #_09AFED: db $FA ; clear message box
-#_09AFEE: db $F2, $03 ; prewritten text 03
+#_09AFEE: db $F2, $03 ; phrase 03
 #_09AFF0: db $9C, $CF, $47, $58, $37, $37, $47, $25 ; が⎵もっててもあ
 #_09AFF8: db $AD, $39, $26, $50, $4A ; ぶないわよ
 #_09AFFD: db $F9 ; new line
@@ -7129,7 +7129,7 @@ Message_01_03_26:
 ; >«だれもいない»
 Message_01_03_27:
 #_09B11C: db $97 ; >
-#_09B11D: db $F2, $2C ; prewritten text 2C
+#_09B11D: db $F2, $2C ; phrase 2C
 #_09B11F: db $FC ; wait for key and new line
 #_09B120: db $FF ; end of message
 
@@ -7148,12 +7148,12 @@ Message_01_03_28:
 #_09B123: db $D2, $57, $2E ; test progress flag 57 for message 2E
 #_09B126: db $D5, $54 ; send 54 to APU
 #_09B128: db $D6, $00, $BE, $70, $18 ; place sprite BE in slot 00 at XY:{70,18}
-#_09B12D: db $F2, $51 ; prewritten text 51
+#_09B12D: db $F2, $51 ; phrase 51
 #_09B12F: db $9A ; :
 #_09B130: db $F9 ; new line
 #_09B131: db $D2, $56, $29 ; test progress flag 56 for message 29
 #_09B134: db $AA, $27, $A9, $31, $CF, $2E, $2E, $CF ; どうです⎵ここ⎵
-#_09B13C: db $F2, $4C ; prewritten text 4C
+#_09B13C: db $F2, $4C ; phrase 4C
 #_09B13E: db $3D, $CF, $26, $A0, $A0, $35, $3E, $95 ; の⎵いごごちは?
 #_09B146: db $FC ; wait for key and new line
 #_09B147: db $FA ; clear message box
@@ -7165,7 +7165,7 @@ Message_01_03_28:
 #_09B166: db $FC ; wait for key and new line
 #_09B167: db $FA ; clear message box
 #_09B168: db $50, $34, $30, $47, $CF ; わたしも⎵
-#_09B16D: db $F2, $50 ; prewritten text 50
+#_09B16D: db $F2, $50 ; phrase 50
 #_09B16F: db $47 ; も
 #_09B170: db $F9 ; new line
 #_09B171: db $3E, $A2, $46, $3E, $CF, $5D, $84, $69 ; はじめは⎵アリス
@@ -7192,7 +7192,7 @@ Message_01_03_29:
 #_09B1B0: db $2C, $27, $34, $46, $3A, $CF, $2B, $34 ; くうために⎵きた
 #_09B1B8: db $3D, $A9, $31, $2A, $95 ; のですか?
 #_09B1BD: db $FC ; wait for key and new line
-#_09B1BE: db $F2, $03 ; prewritten text 03
+#_09B1BE: db $F2, $03 ; phrase 03
 #_09B1C0: db $3D, $CF, $42, $27, $2A, $4B, $CF, $48 ; の⎵ほうから⎵や
 #_09B1C8: db $58, $37, $2B, $37, $2C, $4E, $37 ; ってきてくれて
 #_09B1CF: db $F9 ; new line
@@ -7206,7 +7206,7 @@ Message_01_03_29:
 #_09B1EE: db $37, $3A, $CF, $3E, $26, $4D, $A5, $CF ; てに⎵はいるぞ⎵
 #_09B1F6: db $78, $8E, $92, $7A, $92, $7A, $92, $7A ; フォッホッホッホ
 #_09B1FE: db $92, $7A ; ッホ
-#_09B200: db $F2, $0B ; prewritten text 0B
+#_09B200: db $F2, $0B ; phrase 0B
 #_09B202: db $FC ; wait for key and new line
 #_09B203: db $DE, $01, $00, $0A, $01 ; load 1x demon 010A
 #_09B208: db $FE, $46, $09 ; ext command 46: 09 TODO
@@ -7239,31 +7239,31 @@ Message_01_03_2A:
 ; ありがとう«・・・»
 ; これで しごのせかいへ いけます«・・・»
 Message_01_03_2B:
-#_09B222: db $F5 ; write demon name from $050A
+#_09B222: db $F5 ; write demon 0 name
 #_09B223: db $9A ; :
 #_09B224: db $F9 ; new line
-#_09B225: db $F2, $0B ; prewritten text 0B
+#_09B225: db $F2, $0B ; phrase 0B
 #_09B227: db $5D, $84, $69, $CF, $3D, $CF, $34, $46 ; アリス⎵の⎵ため
 #_09B22F: db $3A ; に
-#_09B230: db $F2, $0B ; prewritten text 0B
+#_09B230: db $F2, $0B ; phrase 0B
 #_09B232: db $F9 ; new line
 #_09B233: db $43, $AF, $4F, $30, $3D, $CF, $43, $35 ; まぼろしの⎵まち
 #_09B23B: db $51, $CF, $27, $36, $30, $A6, $30 ; を⎵うつしだし
-#_09B242: db $F2, $0B ; prewritten text 0B
+#_09B242: db $F2, $0B ; phrase 0B
 #_09B244: db $F9 ; new line
 #_09B245: db $30, $AC, $38, $51, $CF, $27, $A0, $2A ; しびとを⎵うごか
 #_09B24D: db $30, $37, $CF, $A2, $56, $27, $3A, $52 ; して⎵じゅうにん
 #_09B255: db $38, $30 ; とし
-#_09B257: db $F2, $0B ; prewritten text 0B
+#_09B257: db $F2, $0B ; phrase 0B
 #_09B259: db $F9 ; new line
 #_09B25A: db $29, $29, $2C, $3D, $CF, $32, $26, $34 ; おおくの⎵せいた
 #_09B262: db $26 ; い
-#_09B263: db $F2, $56 ; prewritten text 56
+#_09B263: db $F2, $56 ; phrase 56
 #_09B265: db $51 ; を
 #_09B266: db $F9 ; new line
 #_09B267: db $3F, $36, $4A, $27, $38, $CF, $30, $34 ; ひつようと⎵した
 #_09B26F: db $3D, $A6 ; のだ
-#_09B271: db $F2, $0B ; prewritten text 0B
+#_09B271: db $F2, $0B ; phrase 0B
 #_09B273: db $FC ; wait for key and new line
 #_09B274: db $FA ; clear message box
 #_09B275: db $25, $26, $31, $4D, $47, $3D, $3D, $CF ; あいするものの⎵
@@ -7272,7 +7272,7 @@ Message_01_03_2B:
 #_09B286: db $F9 ; new line
 #_09B287: db $39, $A4, $CF, $26, $2D, $39, $26, $3D ; なぜ⎵いけないの
 #_09B28F: db $A6 ; だ
-#_09B290: db $F2, $0B ; prewritten text 0B
+#_09B290: db $F2, $0B ; phrase 0B
 #_09B292: db $FC ; wait for key and new line
 #_09B293: db $D0, $57 ; set progress flag 57
 #_09B295: db $D4, $03 ; set text box size to 3
@@ -7293,12 +7293,12 @@ Message_01_03_2B:
 #_09B2C4: db $26, $42, $27, $2F, $4E, $43, $30, $34 ; いほうされました
 #_09B2CC: db $F9 ; new line
 #_09B2CD: db $25, $4C, $9C, $38, $27 ; ありがとう
-#_09B2D2: db $F2, $0B ; prewritten text 0B
+#_09B2D2: db $F2, $0B ; phrase 0B
 #_09B2D4: db $FC ; wait for key and new line
 #_09B2D5: db $FA ; clear message box
 #_09B2D6: db $2E, $4E, $A9, $CF, $30, $A0, $3D, $32 ; これで⎵しごのせ
 #_09B2DE: db $2A, $26, $41, $CF, $26, $2D, $43, $31 ; かいへ⎵いけます
-#_09B2E6: db $F2, $0B ; prewritten text 0B
+#_09B2E6: db $F2, $0B ; phrase 0B
 #_09B2E8: db $FC ; wait for key and new line
 #_09B2E9: db $D2, $8C, $2C ; test progress flag 8C for message 2C
 #_09B2EC: db $D3, $2D ; go to message 2D
@@ -7313,7 +7313,7 @@ Message_01_03_2C:
 #_09B2F1: db $DE, $00, $00, $EE, $01 ; load 1x demon 00EE
 #_09B2F6: db $FA ; clear message box
 #_09B2F7: db $34, $A6, $CF ; ただ⎵
-#_09B2FA: db $F5 ; write demon name from $050A
+#_09B2FA: db $F5 ; write demon 0 name
 #_09B2FB: db $3A, $CF, $39, $58, $37, $30, $43, $58 ; に⎵なってしまっ
 #_09B303: db $34 ; た
 #_09B304: db $F9 ; new line
@@ -7341,7 +7341,7 @@ Message_01_03_2D:
 #_09B324: db $29, $50, $2A, $4E, $A9, $31 ; おわかれです
 #_09B32A: db $F9 ; new line
 #_09B32B: db $2F, $4A, $27, $39, $4B ; さようなら
-#_09B330: db $F2, $0B ; prewritten text 0B
+#_09B330: db $F2, $0B ; phrase 0B
 #_09B332: db $FE, $07, $60 ; ext command 07: draw buffered text then wait 95 frames
 #_09B335: db $D6, $00, $00 ; delete sprite in slot 00
 #_09B338: db $D6, $00, $17, $70, $38 ; place sprite 17 in slot 00 at XY:{70,38}
@@ -7387,7 +7387,7 @@ Message_01_03_2D:
 ; >«だれもいない»
 Message_01_03_2E:
 #_09B3B7: db $97 ; >
-#_09B3B8: db $F2, $2C ; prewritten text 2C
+#_09B3B8: db $F2, $2C ; phrase 2C
 #_09B3BA: db $FC ; wait for key and new line
 #_09B3BB: db $FF ; end of message
 
@@ -7411,7 +7411,7 @@ Message_01_03_2F:
 #_09B3C4: db $D6, $00, $4B, $78, $28 ; place sprite 4B in slot 00 at XY:{78,28}
 #_09B3C9: db $DE, $00, $00, $EE, $01 ; load 1x demon 00EE
 #_09B3CE: db $97 ; >
-#_09B3CF: db $F2, $00 ; prewritten text 00
+#_09B3CF: db $F2, $00 ; phrase 00
 #_09B3D1: db $9C, $CF, $38, $A2, $2E, $46, $4B, $4E ; が⎵とじこめられ
 #_09B3D9: db $37, $26, $4D ; ている
 #_09B3DC: db $FC ; wait for key and new line
@@ -7428,23 +7428,23 @@ Message_01_03_2F:
 #_09B3F3: db $FC ; wait for key and new line
 #_09B3F4: db $26, $CF, $26, $2B, $37, $26, $34, $3D ; い⎵いきていたの
 #_09B3FC: db $2A ; か
-#_09B3FD: db $F2, $0B ; prewritten text 0B
+#_09B3FD: db $F2, $0B ; phrase 0B
 #_09B3FF: db $FC ; wait for key and new line
 #_09B400: db $FA ; clear message box
-#_09B401: db $F2, $0B ; prewritten text 0B
+#_09B401: db $F2, $0B ; phrase 0B
 #_09B403: db $39, $A4, $CF, $45, $2A, $30, $38, $CF ; なぜ⎵むかしと⎵
 #_09B40B: db $A4, $52, $A4, $52, $CF, $2A, $50, $4B ; ぜんぜん⎵かわら
 #_09B413: db $39, $26 ; ない
 #_09B415: db $F9 ; new line
 #_09B416: db $31, $9C, $34, $39, $52, $A6 ; すがたなんだ
-#_09B41C: db $F2, $0B ; prewritten text 0B
+#_09B41C: db $F2, $0B ; phrase 0B
 #_09B41E: db $FC ; wait for key and new line
 #_09B41F: db $FA ; clear message box
 #_09B420: db $ED ; write female protag name
 #_09B421: db $9A ; :
 #_09B422: db $F9 ; new line
 #_09B423: db $EE ; write lawful hero name
-#_09B424: db $F2, $0B ; prewritten text 0B
+#_09B424: db $F2, $0B ; phrase 0B
 #_09B426: db $CF ; ⎵
 #_09B427: db $EE ; write lawful hero name
 #_09B428: db $39, $3D ; なの
@@ -7483,13 +7483,13 @@ Message_01_03_30:
 #_09B449: db $44, $2A, $2D, $3E, $CF, $2A, $50, $4B ; みかけは⎵かわら
 #_09B451: db $39, $2C, $37, $47, $CF, $26, $43, $3D ; なくても⎵いまの
 #_09B459: db $CF, $25, $34, $30, $3E ; ⎵あたしは
-#_09B45E: db $F2, $0B ; prewritten text 0B
+#_09B45E: db $F2, $0B ; phrase 0B
 #_09B460: db $FE, $07, $24 ; ext command 07: draw buffered text then wait 35 frames
 #_09B463: db $F9 ; new line
 #_09B464: db $2E, $3D, $43, $35, $3E, $CF ; このまちは⎵
-#_09B46A: db $F2, $50 ; prewritten text 50
+#_09B46A: db $F2, $50 ; phrase 50
 #_09B46C: db $38, $CF ; と⎵
-#_09B46E: db $F2, $51 ; prewritten text 51
+#_09B46E: db $F2, $51 ; phrase 51
 #_09B470: db $3D ; の
 #_09B471: db $F9 ; new line
 #_09B472: db $43, $42, $27, $A9, $CF, $26, $2A, $2F ; まほうで⎵いかさ
@@ -7497,7 +7497,7 @@ Message_01_03_30:
 #_09B482: db $3D, $43, $35, $39, $3D ; のまちなの
 #_09B487: db $F9 ; new line
 #_09B488: db $25, $34, $30, $47, $CF ; あたしも⎵
-#_09B48D: db $F5 ; write demon name from $050A
+#_09B48D: db $F5 ; write demon 0 name
 #_09B48E: db $3A, $CF, $2F, $4E, $37, $30, $43, $58 ; に⎵されてしまっ
 #_09B496: db $34, $50 ; たわ
 #_09B498: db $FC ; wait for key and new line
@@ -7507,16 +7507,16 @@ Message_01_03_30:
 #_09B4AA: db $34, $CF, $38, $2B, $3D, $2E, $38, $51 ; た⎵ときのことを
 #_09B4B2: db $F9 ; new line
 #_09B4B3: db $50, $31, $4E, $39, $2A, $58, $34, $3D ; わすれなかったの
-#_09B4BB: db $F2, $0B ; prewritten text 0B
+#_09B4BB: db $F2, $0B ; phrase 0B
 #_09B4BD: db $F9 ; new line
 #_09B4BE: db $33, $3D, $34, $46, $3A, $CF, $2E, $2E ; そのために⎵ここ
 #_09B4C6: db $3A, $CF, $38, $A2, $2E, $46, $4B, $4E ; に⎵とじこめられ
 #_09B4CE: db $37, $30, $43, $58, $34 ; てしまった
 #_09B4D3: db $F9 ; new line
-#_09B4D4: db $F5 ; write demon name from $050A
+#_09B4D4: db $F5 ; write demon 0 name
 #_09B4D5: db $A6, $2A, $4B, $CF, $30, $3B, $2E, $38 ; だから⎵しぬこと
 #_09B4DD: db $47, $A9, $2B, $A3, $3A ; もできずに
-#_09B4E2: db $F2, $0B ; prewritten text 0B
+#_09B4E2: db $F2, $0B ; phrase 0B
 #_09B4E4: db $FC ; wait for key and new line
 #_09B4E5: db $FA ; clear message box
 
@@ -7528,7 +7528,7 @@ Message_01_03_30:
 Message_01_03_31:
 #_09B4E6: db $E1, $BB ; set $0A50 to item BB
 #_09B4E8: db $F3 ; write item name from $0A50
-#_09B4E9: db $F2, $0B ; prewritten text 0B
+#_09B4E9: db $F2, $0B ; phrase 0B
 #_09B4EB: db $FE, $07, $24 ; ext command 07: draw buffered text then wait 35 frames
 #_09B4EE: db $F3 ; write item name from $0A50
 #_09B4EF: db $2F, $28, $25, $4E, $AB ; さえあれば
@@ -7539,7 +7539,7 @@ Message_01_03_31:
 #_09B502: db $F9 ; new line
 #_09B503: db $29, $3C, $9C, $26, $CF, $25, $34, $30 ; おねがい⎵あたし
 #_09B50B: db $51, $CF, $4B, $2C, $3A, $30, $37 ; を⎵らくにして
-#_09B512: db $F2, $0B ; prewritten text 0B
+#_09B512: db $F2, $0B ; phrase 0B
 #_09B514: db $FC ; wait for key and new line
 #_09B515: db $D0, $8C ; set progress flag 8C
 #_09B517: db $DD, $BB, $32 ; go to message 32 if missing item BB
@@ -7584,7 +7584,7 @@ Message_01_03_34:
 #_09B537: db $F9 ; new line
 #_09B538: db $25, $58, $CF, $25, $25, $58, $CF, $2A ; あっ⎵ああっ⎵か
 #_09B540: db $CF, $2A, $4B, $A6, $9C, $53, $53, $53 ; ⎵からだがぁぁぁ
-#_09B548: db $F2, $0B ; prewritten text 0B
+#_09B548: db $F2, $0B ; phrase 0B
 #_09B54A: db $FC ; wait for key and new line
 #_09B54B: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09B54F: db $FE, $07, $20 ; ext command 07: draw buffered text then wait 31 frames
@@ -7613,11 +7613,11 @@ Message_01_03_34:
 #_09B5A8: db $26, $43, $CF, $38, $58, $37, $47, $CF ; いま⎵とっても⎵
 #_09B5B0: db $48, $31, $4B, $2A, $39, $CF, $2B, $AD ; やすらかな⎵きぶ
 #_09B5B8: db $52, $4A ; んよ
-#_09B5BA: db $F2, $0B ; prewritten text 0B
+#_09B5BA: db $F2, $0B ; phrase 0B
 #_09B5BC: db $FC ; wait for key and new line
 #_09B5BD: db $FA ; clear message box
 #_09B5BE: db $25, $4C, $9C, $38, $27 ; ありがとう
-#_09B5C3: db $F2, $0B ; prewritten text 0B
+#_09B5C3: db $F2, $0B ; phrase 0B
 #_09B5C5: db $FC ; wait for key and new line
 #_09B5C6: db $D6, $00, $00 ; delete sprite in slot 00
 #_09B5C9: db $D0, $8B ; set progress flag 8B
@@ -7628,9 +7628,9 @@ Message_01_03_34:
 #_09B5D3: db $9A ; :
 #_09B5D4: db $F9 ; new line
 #_09B5D5: db $ED ; write female protag name
-#_09B5D6: db $F2, $0B ; prewritten text 0B
+#_09B5D6: db $F2, $0B ; phrase 0B
 #_09B5D8: db $43, $34, $CF, $25, $28, $34, $3D, $3A ; また⎵あえたのに
-#_09B5E0: db $F2, $0B ; prewritten text 0B
+#_09B5E0: db $F2, $0B ; phrase 0B
 #_09B5E2: db $FC ; wait for key and new line
 
 ;===================================================================================================
@@ -7643,7 +7643,7 @@ Message_01_03_35:
 ; >«だれもいない»
 Message_01_03_36:
 #_09B5E4: db $97 ; >
-#_09B5E5: db $F2, $2C ; prewritten text 2C
+#_09B5E5: db $F2, $2C ; phrase 2C
 #_09B5E7: db $FC ; wait for key and new line
 #_09B5E8: db $FF ; end of message
 
@@ -7677,7 +7677,7 @@ Message_01_03_38:
 #_09B61C: db $F9 ; new line
 #_09B61D: db $D2, $58, $39 ; test progress flag 58 for message 39
 #_09B620: db $39, $52, $A6, $4A, $CF ; なんだよ⎵
-#_09B625: db $F2, $4C ; prewritten text 4C
+#_09B625: db $F2, $4C ; phrase 4C
 #_09B627: db $3E ; は
 #_09B628: db $F9 ; new line
 #_09B629: db $26, $26, $38, $2E, $A6, $58, $37, $CF ; いいとこだって⎵
@@ -7727,14 +7727,14 @@ Message_01_03_3B:
 Message_01_03_3C:
 #_09B683: db $29, $52, $39, $9A ; おんな:
 #_09B687: db $F9 ; new line
-#_09B688: db $F2, $4C ; prewritten text 4C
+#_09B688: db $F2, $4C ; phrase 4C
 #_09B68A: db $3E, $CF, $40, $34, $4C, $3D, $CF, $29 ; は⎵ふたりの⎵お
 #_09B692: db $38, $2E, $9C, $CF, $30, $3E, $26, $30 ; とこが⎵しはいし
 #_09B69A: db $37, $4D, $3D ; てるの
 #_09B69D: db $F9 ; new line
-#_09B69E: db $F2, $50 ; prewritten text 50
+#_09B69E: db $F2, $50 ; phrase 50
 #_09B6A0: db $CF ; ⎵
-#_09B6A1: db $F2, $51 ; prewritten text 51
+#_09B6A1: db $F2, $51 ; phrase 51
 #_09B6A3: db $38, $2A ; とか
 #_09B6A5: db $F9 ; new line
 #_09B6A6: db $39, $3D, $58, $37, $4D, $50 ; なのってるわ
@@ -7759,7 +7759,7 @@ Message_01_03_3D:
 #_09B6D2: db $D6, $00, $88, $70, $28 ; place sprite 88 in slot 00 at XY:{70,28}
 #_09B6D7: db $29, $52, $39, $9A ; おんな:
 #_09B6DB: db $F9 ; new line
-#_09B6DC: db $F2, $4C ; prewritten text 4C
+#_09B6DC: db $F2, $4C ; phrase 4C
 #_09B6DE: db $58, $37, $CF, $C7, $84, $5D, $85, $38 ; って⎵ベリアルと
 #_09B6E6: db $CF, $74, $C5, $87, $69, $9C ; ⎵ネビロスが
 #_09B6EC: db $F9 ; new line
@@ -7794,7 +7794,7 @@ Message_01_03_40:
 #_09B718: db $CF, $2C, $4F, $26, $29, $58, $2F, $52 ; ⎵くろいおっさん
 #_09B720: db $9C ; が
 #_09B721: db $F9 ; new line
-#_09B722: db $F2, $4C ; prewritten text 4C
+#_09B722: db $F2, $4C ; phrase 4C
 #_09B724: db $3D, $CF, $43, $50, $4C, $3A, $CF, $2D ; の⎵まわりに⎵け
 #_09B72C: db $58, $2A, $26, $51, $3E, $58, $37, $52 ; っかいをはってん
 #_09B734: db $A6 ; だ
@@ -7850,10 +7850,10 @@ Message_01_03_44:
 #_09B797: db $F9 ; new line
 #_09B798: db $2E, $3D, $43, $35, $3D, $CF, $AA, $2E ; このまちの⎵どこ
 #_09B7A0: db $2A, $3A, $CF ; かに⎵
-#_09B7A3: db $F2, $50 ; prewritten text 50
+#_09B7A3: db $F2, $50 ; phrase 50
 #_09B7A5: db $38 ; と
 #_09B7A6: db $F9 ; new line
-#_09B7A7: db $F2, $51 ; prewritten text 51
+#_09B7A7: db $F2, $51 ; phrase 51
 #_09B7A9: db $9C, $CF, $34, $26, $32, $36, $3A, $30 ; が⎵たいせつにし
 #_09B7B1: db $37, $26, $4D ; ている
 #_09B7B4: db $F9 ; new line
@@ -7872,10 +7872,10 @@ Message_01_03_44:
 ; つくろうと おもいます
 Message_01_03_45:
 #_09B7C9: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09B7CE: db $F2, $33 ; prewritten text 33
+#_09B7CE: db $F2, $33 ; phrase 33
 #_09B7D0: db $38, $9A ; と:
 #_09B7D2: db $F9 ; new line
-#_09B7D3: db $F2, $4C ; prewritten text 4C
+#_09B7D3: db $F2, $4C ; phrase 4C
 #_09B7D5: db $3D, $43, $35, $3E, $CF, $5D, $64, $7B ; のまちは⎵アクマ
 #_09B7DD: db $3D, $CF, $37, $2A, $4B ; の⎵てから
 #_09B7E2: db $F9 ; new line
@@ -7884,7 +7884,7 @@ Message_01_03_45:
 #_09B7EB: db $FA ; clear message box
 #_09B7EC: db $2F, $58, $33, $2C, $CF, $2E, $2E, $3A ; さっそく⎵ここに
 #_09B7F4: db $CF ; ⎵
-#_09B7F5: db $F2, $33 ; prewritten text 33
+#_09B7F5: db $F2, $33 ; phrase 33
 #_09B7F7: db $2A, $26, $51 ; かいを
 #_09B7FA: db $F9 ; new line
 #_09B7FB: db $36, $2C, $4F, $27, $38, $CF, $29, $47 ; つくろうと⎵おも
@@ -7922,7 +7922,7 @@ Message_01_03_48:
 #_09B831: db $A2, $2E, $46, $4B, $4E, $37, $4D, $50 ; じこめられてるわ
 #_09B839: db $F9 ; new line
 #_09B83A: db $39, $43, $28, $3E ; なまえは
-#_09B83E: db $F2, $0B ; prewritten text 0B
+#_09B83E: db $F2, $0B ; phrase 0B
 #_09B840: db $ED ; write female protag name
 #_09B841: db $58, $37, $CF, $26, $58, $34, $2A, $39 ; って⎵いったかな
 #_09B849: db $95 ; ?
@@ -7950,13 +7950,13 @@ Message_01_03_48:
 ; ちょうどいいわ
 Message_01_03_49:
 #_09B885: db $D6, $00, $8A, $70, $28 ; place sprite 8A in slot 00 at XY:{70,28}
-#_09B88A: db $F2, $34 ; prewritten text 34
+#_09B88A: db $F2, $34 ; phrase 34
 #_09B88C: db $38, $9A ; と:
 #_09B88E: db $F9 ; new line
 #_09B88F: db $3F, $4F, $2C, $37, $26, $26, $50, $25 ; ひろくていいわあ
 #_09B897: db $CF, $2E, $2E ; ⎵ここ
 #_09B89A: db $F9 ; new line
-#_09B89B: db $F2, $34 ; prewritten text 34
+#_09B89B: db $F2, $34 ; phrase 34
 #_09B89D: db $30, $52, $A9, $52, $51, $CF, $36, $2C ; しんでんを⎵つく
 #_09B8A5: db $4D, $3D, $3A ; るのに
 #_09B8A8: db $F9 ; new line
@@ -8028,7 +8028,7 @@ Message_01_03_4E:
 #_09B90D: db $29, $38, $2E, $9A ; おとこ:
 #_09B911: db $F9 ; new line
 #_09B912: db $29, $2C, $3D, $42, $27, $3A, $CF ; おくのほうに⎵
-#_09B919: db $F2, $2C ; prewritten text 2C
+#_09B919: db $F2, $2C ; phrase 2C
 #_09B91B: db $3D, $3A ; のに
 #_09B91D: db $F9 ; new line
 #_09B91E: db $2E, $28, $A6, $2D, $9C, $CF, $2B, $2E ; こえだけが⎵きこ
@@ -8069,7 +8069,7 @@ Message_01_03_50:
 Message_01_03_51:
 #_09B973: db $29, $52, $39, $9A ; おんな:
 #_09B977: db $F9 ; new line
-#_09B978: db $F2, $18 ; prewritten text 18
+#_09B978: db $F2, $18 ; phrase 18
 #_09B97A: db $2A, $4B, $CF, $2E, $2E, $41, $CF, $3A ; から⎵ここへ⎵に
 #_09B982: db $9F, $A6, $30, $37, $2B, $37 ; げだしてきて
 #_09B988: db $F9 ; new line
@@ -8089,12 +8089,12 @@ Message_01_03_52:
 #_09B99D: db $29, $52, $39, $9A ; おんな:
 #_09B9A1: db $F9 ; new line
 #_09B9A2: db $25, $3C, $9C, $CF ; あねが⎵
-#_09B9A6: db $F2, $18 ; prewritten text 18
+#_09B9A6: db $F2, $18 ; phrase 18
 #_09B9A8: db $2A, $4B, $CF, $2E, $2E, $41 ; から⎵ここへ
 #_09B9AE: db $F9 ; new line
 #_09B9AF: db $3A, $9F, $37, $2B, $34, $CF, $3E, $A3 ; にげてきた⎵はず
 #_09B9B7: db $39, $52, $A9, $31, $9C ; なんですが
-#_09B9BC: db $F2, $0B ; prewritten text 0B
+#_09B9BC: db $F2, $0B ; phrase 0B
 #_09B9BE: db $FC ; wait for key and new line
 #_09B9BF: db $FF ; end of message
 
@@ -8120,7 +8120,7 @@ Message_01_03_54:
 Message_01_03_55:
 #_09B9D6: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_09B9DB: db $F9 ; new line
-#_09B9DC: db $F2, $32 ; prewritten text 32
+#_09B9DC: db $F2, $32 ; phrase 32
 #_09B9DE: db $FC ; wait for key and new line
 #_09B9DF: db $D0, $0C ; set progress flag 0C
 #_09B9E1: db $E7, $00 ; call routine 01E5CD with value 00 TODO
@@ -8161,7 +8161,7 @@ Message_01_03_58:
 Message_01_03_59:
 #_09BA14: db $2C, $4F, $40, $2C, $9A ; くろふく:
 #_09BA19: db $F9 ; new line
-#_09BA1A: db $F2, $31 ; prewritten text 31
+#_09BA1A: db $F2, $31 ; phrase 31
 #_09BA1C: db $FC ; wait for key and new line
 #_09BA1D: db $D1, $0C ; clear progress flag 0C
 #_09BA1F: db $E7, $00 ; call routine 01E5CD with value 00 TODO
@@ -8195,7 +8195,7 @@ Message_01_03_5B:
 #_09BA44: db $F9 ; new line
 #_09BA45: db $2B, $26, $37, $2C, $4E, $CF, $29, $4E ; きいてくれ⎵おれ
 #_09BA4D: db $3E, $CF ; は⎵
-#_09BA4F: db $F2, $51 ; prewritten text 51
+#_09BA4F: db $F2, $51 ; phrase 51
 #_09BA51: db $3A ; に
 #_09BA52: db $F9 ; new line
 #_09BA53: db $2A, $4B, $A6, $2A, $4B, $CF, $34, $43 ; からだから⎵たま
@@ -8206,7 +8206,7 @@ Message_01_03_5B:
 #_09BA68: db $48, $36, $3E, $CF, $2E, $2E, $3A, $CF ; やつは⎵ここに⎵
 #_09BA70: db $34, $43, $30, $26, $51, $25, $36, $46 ; たましいをあつめ
 #_09BA78: db $CF ; ⎵
-#_09BA79: db $F2, $56 ; prewritten text 56
+#_09BA79: db $F2, $56 ; phrase 56
 #_09BA7B: db $3A ; に
 #_09BA7C: db $F9 ; new line
 #_09BA7D: db $2A, $28, $37, $26, $4D, $52, $A6, $CF ; かえているんだ⎵
@@ -8235,7 +8235,7 @@ Message_01_03_5C:
 #_09BAC3: db $4D ; る
 #_09BAC4: db $F9 ; new line
 #_09BAC5: db $29, $52, $3A, $CF, $2B, $4D, $A4 ; おんに⎵きるぜ
-#_09BACC: db $F2, $0B ; prewritten text 0B
+#_09BACC: db $F2, $0B ; phrase 0B
 #_09BACE: db $FC ; wait for key and new line
 #_09BACF: db $FF ; end of message
 
@@ -8253,14 +8253,14 @@ Message_01_03_5D:
 #_09BAD8: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
 #_09BADC: db $29, $38, $2E, $9A ; おとこ:
 #_09BAE0: db $F9 ; new line
-#_09BAE1: db $F2, $51 ; prewritten text 51
+#_09BAE1: db $F2, $51 ; phrase 51
 #_09BAE3: db $38, $CF ; と⎵
-#_09BAE5: db $F2, $50 ; prewritten text 50
+#_09BAE5: db $F2, $50 ; phrase 50
 #_09BAE7: db $3E ; は
 #_09BAE8: db $F9 ; new line
 #_09BAE9: db $39, $3A, $2A, $3D, $47, $2C, $37, $2B ; なにかのもくてき
 #_09BAF1: db $A9, $CF ; で⎵
-#_09BAF3: db $F2, $56 ; prewritten text 56
+#_09BAF3: db $F2, $56 ; phrase 56
 #_09BAF5: db $51, $CF, $25, $36, $46, $37, $26, $34 ; を⎵あつめていた
 #_09BAFD: db $9C ; が
 #_09BAFE: db $FC ; wait for key and new line
@@ -8271,7 +8271,7 @@ Message_01_03_5D:
 #_09BB16: db $F9 ; new line
 #_09BB17: db $26, $43, $A9, $3E, $CF, $25, $36, $46 ; いまでは⎵あつめ
 #_09BB1F: db $34 ; た
-#_09BB20: db $F2, $56 ; prewritten text 56
+#_09BB20: db $F2, $56 ; phrase 56
 #_09BB22: db $51 ; を
 #_09BB23: db $F9 ; new line
 #_09BB24: db $31, $AE, $37, $CF, $33, $3D, $2E, $3D ; すべて⎵そのこの
@@ -8300,7 +8300,7 @@ Message_01_03_5E:
 #_09BB5F: db $2E, $4E, $A9, $CF, $48, $31, $4B, $2A ; これで⎵やすらか
 #_09BB67: db $3A, $CF, $3C, $45, $4E, $4D, $A6, $4F ; に⎵ねむれるだろ
 #_09BB6F: db $27 ; う
-#_09BB70: db $F2, $0B ; prewritten text 0B
+#_09BB70: db $F2, $0B ; phrase 0B
 #_09BB72: db $FC ; wait for key and new line
 #_09BB73: db $FF ; end of message
 
@@ -8327,19 +8327,19 @@ Message_01_03_5F:
 #_09BB97: db $26, $30, $2B, $3D, $39, $26, $CF, $3A ; いしきのない⎵に
 #_09BB9F: db $2C, $34, $26, $A6, $2D, $9C ; くたいだけが
 #_09BBA5: db $F9 ; new line
-#_09BBA6: db $F2, $51 ; prewritten text 51
+#_09BBA6: db $F2, $51 ; phrase 51
 #_09BBA8: db $3A, $CF, $25, $48, $36, $4B, $4E, $37 ; に⎵あやつられて
 #_09BBB0: db $26, $4D, $3D, $A9, $31 ; いるのです
 #_09BBB5: db $FC ; wait for key and new line
 #_09BBB6: db $FA ; clear message box
-#_09BBB7: db $F2, $51 ; prewritten text 51
+#_09BBB7: db $F2, $51 ; phrase 51
 #_09BBB9: db $51, $CF, $34, $29, $2F, $39, $2D, $4E ; を⎵たおさなけれ
 #_09BBC1: db $AB ; ば
 #_09BBC2: db $F9 ; new line
 #_09BBC3: db $2E, $2E, $3A, $CF, $38, $A2, $2E, $46 ; ここに⎵とじこめ
 #_09BBCB: db $4B, $4E, $34, $CF, $43, $43, $A9, $30 ; られた⎵ままでし
 #_09BBD3: db $57, $27 ; ょう
-#_09BBD5: db $F2, $0B ; prewritten text 0B
+#_09BBD5: db $F2, $0B ; phrase 0B
 #_09BBD7: db $FC ; wait for key and new line
 #_09BBD8: db $FF ; end of message
 
@@ -8353,7 +8353,7 @@ Message_01_03_60:
 #_09BBDB: db $3D, $CF, $34, $43, $30, $26, $3E ; の⎵たましいは
 #_09BBE2: db $F9 ; new line
 #_09BBE3: db $2A, $26, $42, $27, $2F, $4E, $34 ; かいほうされた
-#_09BBEA: db $F2, $0B ; prewritten text 0B
+#_09BBEA: db $F2, $0B ; phrase 0B
 #_09BBEC: db $FC ; wait for key and new line
 #_09BBED: db $FF ; end of message
 
@@ -8366,7 +8366,7 @@ Message_01_03_61:
 #_09BBF6: db $D2, $56, $62 ; test progress flag 56 for message 62
 #_09BBF9: db $97, $36, $4A, $26, $CF, $43, $4C, $57 ; >つよい⎵まりょ
 #_09BC01: db $2C, $A9, $CF ; くで⎵
-#_09BC04: db $F2, $69 ; prewritten text 69
+#_09BC04: db $F2, $69 ; phrase 69
 #_09BC06: db $FC ; wait for key and new line
 #_09BC07: db $FF ; end of message
 
@@ -8375,7 +8375,7 @@ Message_01_03_61:
 ; >«なかに はいりますか?»
 Message_01_03_62:
 #_09BC08: db $97 ; >
-#_09BC09: db $F2, $68 ; prewritten text 68
+#_09BC09: db $F2, $68 ; phrase 68
 #_09BC0B: db $F8, $63 ; YES/NO - go to message 63 if YES
 #_09BC0D: db $FF ; end of message
 
@@ -8449,17 +8449,17 @@ Message_01_04_01:
 #_09BC70: db $27, $CF, $34, $58, $30, $55, $A9, $CF ; う⎵たっしゃで⎵
 #_09BC78: db $29, $58, $34, $2A, $95 ; おったか?
 #_09BC7D: db $F9 ; new line
-#_09BC7E: db $F2, $1A ; prewritten text 1A
+#_09BC7E: db $F2, $1A ; phrase 1A
 #_09BC80: db $26, $4B, $26, $A2, $55, $39 ; いらいじゃな
 #_09BC86: db $FC ; wait for key and new line
 #_09BC87: db $FA ; clear message box
 #_09BC88: db $29, $43, $28, $34, $35, $9C, $CF ; おまえたちが⎵
-#_09BC8F: db $F2, $36 ; prewritten text 36
+#_09BC8F: db $F2, $36 ; phrase 36
 #_09BC91: db $3A, $CF, $26, $4D, $25, $26, $A6 ; に⎵いるあいだ
 #_09BC98: db $F9 ; new line
 #_09BC99: db $04, $01, $3C, $52, $CF, $31, $9D, $34 ; 30ねん⎵すぎた
 #_09BCA1: db $9C ; が
-#_09BCA2: db $F2, $0B ; prewritten text 0B
+#_09BCA2: db $F2, $0B ; phrase 0B
 #_09BCA4: db $F9 ; new line
 #_09BCA5: db $3E, $2A, $26, $A0, $3D, $CF, $32, $2A ; はかいごの⎵せか
 #_09BCAD: db $26, $3A, $3E, $CF, $39, $4E, $34, $2A ; いには⎵なれたか
@@ -8560,9 +8560,9 @@ Message_01_04_06:
 ; このおくは «カテドラル»に つうじておる
 ; ここから ゆくが よい
 Message_01_04_07:
-#_09BD93: db $F2, $1C ; prewritten text 1C
+#_09BD93: db $F2, $1C ; phrase 1C
 #_09BD95: db $50, $52, $A2, $57, $27, $3D, $CF ; わんじょうの⎵
-#_09BD9C: db $F2, $5C ; prewritten text 5C
+#_09BD9C: db $F2, $5C ; phrase 5C
 #_09BD9E: db $3E ; は
 #_09BD9F: db $F9 ; new line
 #_09BDA0: db $87, $5F, $3D, $CF, $7C, $62, $60, $85 ; ロウの⎵ミカエル
@@ -8573,7 +8573,7 @@ Message_01_04_07:
 #_09BDBD: db $9C, $CF, $27, $AB, $26, $38, $4F, $27 ; が⎵うばいとろう
 #_09BDC5: db $38 ; と
 #_09BDC6: db $F9 ; new line
-#_09BDC7: db $F2, $04 ; prewritten text 04
+#_09BDC7: db $F2, $04 ; phrase 04
 #_09BDC9: db $CF, $3A, $52, $9F, $52, $3A ; ⎵にんげんに
 #_09BDCF: db $F9 ; new line
 #_09BDD0: db $2E, $27, $40, $2C, $3E, $CF, $47, $34 ; こうふくは⎵もた
@@ -8593,7 +8593,7 @@ Message_01_04_07:
 #_09BE11: db $FC ; wait for key and new line
 #_09BE12: db $FA ; clear message box
 #_09BE13: db $2E, $3D, $29, $2C, $3E, $CF ; このおくは⎵
-#_09BE19: db $F2, $5C ; prewritten text 5C
+#_09BE19: db $F2, $5C ; phrase 5C
 #_09BE1B: db $3A, $CF, $36, $27, $A2, $37, $29, $4D ; に⎵つうじておる
 #_09BE23: db $F9 ; new line
 #_09BE24: db $2E, $2E, $2A, $4B, $CF, $49, $2C, $9C ; ここから⎵ゆくが
@@ -8621,7 +8621,7 @@ Message_01_04_08:
 Message_01_04_09:
 #_09BE4C: db $D2, $9E, $0F ; test progress flag 9E for message 0F
 #_09BE4F: db $D2, $0C, $0B ; test progress flag 0C for message 0B
-#_09BE52: db $F2, $5C ; prewritten text 5C
+#_09BE52: db $F2, $5C ; phrase 5C
 #_09BE54: db $41, $CF, $26, $2C, $3D, $2A, $95 ; へ⎵いくのか?
 #_09BE5B: db $F8, $08 ; YES/NO - go to message 08 if YES
 #_09BE5D: db $D4, $03 ; set text box size to 3
@@ -8726,13 +8726,13 @@ Message_01_04_10:
 Message_01_04_11:
 #_09BF28: db $FA ; clear message box
 #_09BF29: db $29, $48, $95, $CF ; おや?⎵
-#_09BF2D: db $F2, $4E ; prewritten text 4E
+#_09BF2D: db $F2, $4E ; phrase 4E
 #_09BF2F: db $A2, $55, $39, $26 ; じゃない
 #_09BF33: db $F9 ; new line
 #_09BF34: db $BF, $7E, $A6, $3C, $8D, $5A ; ダメだねェー
 #_09BF3A: db $FC ; wait for key and new line
 #_09BF3B: db $FA ; clear message box
-#_09BF3C: db $F2, $4E ; prewritten text 4E
+#_09BF3C: db $F2, $4E ; phrase 4E
 #_09BF3E: db $3F, $38, $3E ; ひとは
 #_09BF41: db $F9 ; new line
 #_09BF42: db $2B, $35, $55, $BF, $7E, $A6, $4A, $5A ; きちゃダメだよー
@@ -8761,7 +8761,7 @@ Message_01_04_12:
 Message_01_04_13:
 #_09BF63: db $FA ; clear message box
 #_09BF64: db $5D, $8B, $CF, $33, $27, $CF ; アァ⎵そう⎵
-#_09BF6A: db $F2, $4F ; prewritten text 4F
+#_09BF6A: db $F2, $4F ; phrase 4F
 #_09BF6C: db $FE, $5C, $01, $12 ; ext command 5C: R0FA25E TODO
 #_09BF70: db $FA ; clear message box
 #_09BF71: db $A2, $55, $CF ; じゃ⎵
@@ -8786,7 +8786,7 @@ Message_01_04_14:
 #_09BF90: db $F3 ; write item name from $0A50
 #_09BF91: db $51 ; を
 #_09BF92: db $F9 ; new line
-#_09BF93: db $F2, $2D ; prewritten text 2D
+#_09BF93: db $F2, $2D ; phrase 2D
 #_09BF95: db $FC ; wait for key and new line
 #_09BF96: db $D3, $12 ; go to message 12
 
@@ -8819,7 +8819,7 @@ Message_01_04_17:
 #_09BFC3: db $FE, $5C, $03, $12 ; ext command 5C: R0FA25E TODO
 #_09BFC7: db $FE, $5B, $1A ; ext command 5B: conditionally go to message 1A TODO
 #_09BFCA: db $FA ; clear message box
-#_09BFCB: db $F5 ; write demon name from $050A
+#_09BFCB: db $F5 ; write demon 0 name
 #_09BFCC: db $38, $CF, $2E, $27, $2A, $52, $A6, $4A ; と⎵こうかんだよ
 #_09BFD4: db $CF, $26, $26, $95 ; ⎵いい?
 #_09BFD8: db $F8, $18 ; YES/NO - go to message 18 if YES
@@ -8839,9 +8839,9 @@ Message_01_04_19:
 #_09BFE5: db $FE, $5A ; ext command 5A: TODO
 #_09BFE7: db $FE, $26, $04 ; ext command 26: something 04 TODO
 #_09BFEA: db $97 ; >
-#_09BFEB: db $F5 ; write demon name from $050A
+#_09BFEB: db $F5 ; write demon 0 name
 #_09BFEC: db $9C, $CF ; が⎵
-#_09BFEE: db $F2, $2F ; prewritten text 2F
+#_09BFEE: db $F2, $2F ; phrase 2F
 #_09BFF0: db $FC ; wait for key and new line
 #_09BFF1: db $D3, $12 ; go to message 12
 
@@ -8945,7 +8945,7 @@ Message_01_04_1E:
 #_09C085: db $FA ; clear message box
 #_09C086: db $2E, $27, $2A, $52, $31, $4D, $CF, $5D ; こうかんする⎵ア
 #_09C08E: db $5E, $6F, $7D, $3E ; イテムは
-#_09C092: db $F2, $0B ; prewritten text 0B
+#_09C092: db $F2, $0B ; phrase 0B
 #_09C094: db $FC ; wait for key and new line
 #_09C095: db $E1, $E4 ; set $0A50 to item E4
 #_09C097: db $F3 ; write item name from $0A50
@@ -9043,8 +9043,8 @@ Message_01_04_1E:
 #_09C14D: db $A9 ; で
 #_09C14E: db $F9 ; new line
 #_09C14F: db $DE, $00, $00, $45, $01 ; load 1x demon 0045
-#_09C154: db $F2, $8D ; prewritten text 8D
-#_09C156: db $F5 ; write demon name from $050A
+#_09C154: db $F2, $8D ; phrase 8D
+#_09C156: db $F5 ; write demon 0 name
 #_09C157: db $F9 ; new line
 #_09C158: db $E1, $ED ; set $0A50 to item ED
 #_09C15A: db $F3 ; write item name from $0A50
@@ -9057,8 +9057,8 @@ Message_01_04_1E:
 #_09C163: db $A9 ; で
 #_09C164: db $F9 ; new line
 #_09C165: db $DE, $00, $00, $44, $01 ; load 1x demon 0044
-#_09C16A: db $F2, $8D ; prewritten text 8D
-#_09C16C: db $F5 ; write demon name from $050A
+#_09C16A: db $F2, $8D ; phrase 8D
+#_09C16C: db $F5 ; write demon 0 name
 #_09C16D: db $F9 ; new line
 #_09C16E: db $E1, $E6 ; set $0A50 to item E6
 #_09C170: db $F3 ; write item name from $0A50
@@ -9071,8 +9071,8 @@ Message_01_04_1E:
 #_09C179: db $A9 ; で
 #_09C17A: db $F9 ; new line
 #_09C17B: db $DE, $00, $00, $43, $01 ; load 1x demon 0043
-#_09C180: db $F2, $8D ; prewritten text 8D
-#_09C182: db $F5 ; write demon name from $050A
+#_09C180: db $F2, $8D ; phrase 8D
+#_09C182: db $F5 ; write demon 0 name
 #_09C183: db $FC ; wait for key and new line
 #_09C184: db $FA ; clear message box
 #_09C185: db $E1, $E4 ; set $0A50 to item E4
@@ -9086,8 +9086,8 @@ Message_01_04_1E:
 #_09C190: db $A9 ; で
 #_09C191: db $F9 ; new line
 #_09C192: db $DE, $00, $00, $42, $01 ; load 1x demon 0042
-#_09C197: db $F2, $8D ; prewritten text 8D
-#_09C199: db $F5 ; write demon name from $050A
+#_09C197: db $F2, $8D ; phrase 8D
+#_09C199: db $F5 ; write demon 0 name
 #_09C19A: db $F9 ; new line
 #_09C19B: db $E1, $E8 ; set $0A50 to item E8
 #_09C19D: db $F3 ; write item name from $0A50
@@ -9100,8 +9100,8 @@ Message_01_04_1E:
 #_09C1A6: db $A9 ; で
 #_09C1A7: db $F9 ; new line
 #_09C1A8: db $DE, $00, $00, $41, $01 ; load 1x demon 0041
-#_09C1AD: db $F2, $8D ; prewritten text 8D
-#_09C1AF: db $F5 ; write demon name from $050A
+#_09C1AD: db $F2, $8D ; phrase 8D
+#_09C1AF: db $F5 ; write demon 0 name
 #_09C1B0: db $F9 ; new line
 #_09C1B1: db $E1, $EC ; set $0A50 to item EC
 #_09C1B3: db $F3 ; write item name from $0A50
@@ -9114,8 +9114,8 @@ Message_01_04_1E:
 #_09C1BC: db $A9 ; で
 #_09C1BD: db $F9 ; new line
 #_09C1BE: db $DE, $00, $00, $40, $01 ; load 1x demon 0040
-#_09C1C3: db $F2, $8D ; prewritten text 8D
-#_09C1C5: db $F5 ; write demon name from $050A
+#_09C1C3: db $F2, $8D ; phrase 8D
+#_09C1C5: db $F5 ; write demon 0 name
 #_09C1C6: db $FC ; wait for key and new line
 #_09C1C7: db $FA ; clear message box
 #_09C1C8: db $E1, $E6 ; set $0A50 to item E6
@@ -9129,8 +9129,8 @@ Message_01_04_1E:
 #_09C1D3: db $A9 ; で
 #_09C1D4: db $F9 ; new line
 #_09C1D5: db $DE, $00, $00, $3F, $01 ; load 1x demon 003F
-#_09C1DA: db $F2, $8D ; prewritten text 8D
-#_09C1DC: db $F5 ; write demon name from $050A
+#_09C1DA: db $F2, $8D ; phrase 8D
+#_09C1DC: db $F5 ; write demon 0 name
 #_09C1DD: db $F9 ; new line
 #_09C1DE: db $E1, $E4 ; set $0A50 to item E4
 #_09C1E0: db $F3 ; write item name from $0A50
@@ -9143,8 +9143,8 @@ Message_01_04_1E:
 #_09C1E9: db $A9 ; で
 #_09C1EA: db $F9 ; new line
 #_09C1EB: db $DE, $00, $00, $3E, $01 ; load 1x demon 003E
-#_09C1F0: db $F2, $8D ; prewritten text 8D
-#_09C1F2: db $F5 ; write demon name from $050A
+#_09C1F0: db $F2, $8D ; phrase 8D
+#_09C1F2: db $F5 ; write demon 0 name
 #_09C1F3: db $FC ; wait for key and new line
 #_09C1F4: db $2C, $44, $25, $50, $32, $3E, $CF, $26 ; くみあわせは⎵い
 #_09C1FC: db $A2, $57, $27, $3D, $CF, $38, $29, $4C ; じょうの⎵とおり
@@ -9182,7 +9182,7 @@ Message_01_04_20:
 #_09C224: db $D2, $EF, $2A ; test progress flag EF for message 2A
 #_09C227: db $D5, $47 ; send 47 to APU
 #_09C229: db $D6, $00, $2D, $70, $28 ; place sprite 2D in slot 00 at XY:{70,28}
-#_09C22E: db $F2, $83 ; prewritten text 83
+#_09C22E: db $F2, $83 ; phrase 83
 #_09C230: db $9A ; :
 #_09C231: db $F9 ; new line
 #_09C232: db $D2, $60, $22 ; test progress flag 60 for message 22
@@ -9213,7 +9213,7 @@ Message_01_04_20:
 #_09C2A4: db $FA ; clear message box
 #_09C2A5: db $2B, $44, $3D, $CF, $76, $8A, $C3, $79 ; きみの⎵ハンドヘ
 #_09C2AD: db $85, $C3 ; ルド
-#_09C2AF: db $F2, $09 ; prewritten text 09
+#_09C2AF: db $F2, $09 ; phrase 09
 #_09C2B1: db $3A ; に
 #_09C2B2: db $F9 ; new line
 #_09C2B3: db $F3 ; write item name from $0A50
@@ -9296,21 +9296,21 @@ Message_01_04_26:
 #_09C33C: db $F9 ; new line
 #_09C33D: db $43, $A6, $CF, $3D, $2E, $58, $37, $26 ; まだ⎵のこってい
 #_09C345: db $34, $38, $3E ; たとは
-#_09C348: db $F2, $0B ; prewritten text 0B
+#_09C348: db $F2, $0B ; phrase 0B
 #_09C34A: db $F9 ; new line
 #_09C34B: db $2F, $58, $33, $2C, $CF, $2B, $44, $3D ; さっそく⎵きみの
 #_09C353: db $CF ; ⎵
-#_09C354: db $F2, $09 ; prewritten text 09
+#_09C354: db $F2, $09 ; phrase 09
 #_09C356: db $3A ; に
 #_09C357: db $F9 ; new line
 #_09C358: db $38, $4C, $36, $2D, $37, $25, $9F, $4A ; とりつけてあげよ
 #_09C360: db $27 ; う
 #_09C361: db $FC ; wait for key and new line
 #_09C362: db $FA ; clear message box
-#_09C363: db $F2, $54 ; prewritten text 54
+#_09C363: db $F2, $54 ; phrase 54
 #_09C365: db $F9 ; new line
 #_09C366: db $4A, $4C, $CF ; より⎵
-#_09C369: db $F2, $55 ; prewritten text 55
+#_09C369: db $F2, $55 ; phrase 55
 #_09C36B: db $50, $2D, $A6 ; わけだ
 #_09C36E: db $FC ; wait for key and new line
 #_09C36F: db $D0, $EE ; set progress flag EE
@@ -9350,10 +9350,10 @@ Message_01_04_29:
 #_09C39F: db $37, $26, $4D, $47, $3D, $A6, $39 ; ているものだな
 #_09C3A6: db $FC ; wait for key and new line
 #_09C3A7: db $FA ; clear message box
-#_09C3A8: db $F2, $54 ; prewritten text 54
+#_09C3A8: db $F2, $54 ; phrase 54
 #_09C3AA: db $F9 ; new line
 #_09C3AB: db $2F, $4B, $3A, $CF ; さらに⎵
-#_09C3AF: db $F2, $55 ; prewritten text 55
+#_09C3AF: db $F2, $55 ; phrase 55
 #_09C3B1: db $A6, $4F, $27 ; だろう
 #_09C3B4: db $FC ; wait for key and new line
 #_09C3B5: db $D0, $EF ; set progress flag EF
@@ -9365,7 +9365,7 @@ Message_01_04_29:
 ; >«だれもいない»
 Message_01_04_2A:
 #_09C3BA: db $97 ; >
-#_09C3BB: db $F2, $2C ; prewritten text 2C
+#_09C3BB: db $F2, $2C ; phrase 2C
 #_09C3BD: db $FC ; wait for key and new line
 #_09C3BE: db $FF ; end of message
 
@@ -9380,11 +9380,11 @@ Message_01_04_2A:
 ; あしを おはこびください
 Message_01_04_2B:
 #_09C3BF: db $D6, $00, $49, $78, $28 ; place sprite 49 in slot 00 at XY:{78,28}
-#_09C3C4: db $F2, $33 ; prewritten text 33
+#_09C3C4: db $F2, $33 ; phrase 33
 #_09C3C6: db $38, $9A ; と:
 #_09C3C8: db $F9 ; new line
-#_09C3C9: db $F2, $0B ; prewritten text 0B
-#_09C3CB: db $F2, $5C ; prewritten text 5C
+#_09C3C9: db $F2, $0B ; phrase 0B
+#_09C3CB: db $F2, $5C ; phrase 5C
 #_09C3CD: db $9C, $CF, $A9, $2B, $25, $9C, $4E, $AB ; が⎵できあがれば
 #_09C3D5: db $F9 ; new line
 #_09C3D6: db $33, $2E, $3A, $CF, $2A, $44, $9C, $CF ; そこに⎵かみが⎵
@@ -9399,7 +9399,7 @@ Message_01_04_2B:
 #_09C401: db $2E, $2E, $2A, $4B, $7C, $71, $7C, $3D ; ここからミナミの
 #_09C409: db $CF, $68, $71, $B5, $88, $3A, $25, $4D ; ⎵シナガワにある
 #_09C411: db $F9 ; new line
-#_09C412: db $F2, $33 ; prewritten text 33
+#_09C412: db $F2, $33 ; phrase 33
 #_09C414: db $3D, $CF, $A6, $26, $2B, $57, $27, $2A ; の⎵だいきょうか
 #_09C41C: db $26, $41 ; いへ
 #_09C41E: db $F9 ; new line
@@ -9416,10 +9416,10 @@ Message_01_04_2B:
 ; そんな まやかしに だまされては ならん!
 Message_01_04_2C:
 #_09C42D: db $D6, $00, $65, $70, $28 ; place sprite 65 in slot 00 at XY:{70,28}
-#_09C432: db $F2, $34 ; prewritten text 34
+#_09C432: db $F2, $34 ; phrase 34
 #_09C434: db $38, $9A ; と:
 #_09C436: db $F9 ; new line
-#_09C437: db $F2, $33 ; prewritten text 33
+#_09C437: db $F2, $33 ; phrase 33
 #_09C439: db $3E, $CF, $2A, $44, $9C, $CF, $31, $AE ; は⎵かみが⎵すべ
 #_09C441: db $37, $3D, $CF, $3A, $52, $9F, $52, $51 ; ての⎵にんげんを
 #_09C449: db $F9 ; new line
@@ -9444,9 +9444,9 @@ Message_01_04_2D:
 #_09C472: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09C477: db $29, $38, $2E, $9A ; おとこ:
 #_09C47B: db $F9 ; new line
-#_09C47C: db $F2, $33 ; prewritten text 33
+#_09C47C: db $F2, $33 ; phrase 33
 #_09C47E: db $47, $CF ; も⎵
-#_09C480: db $F2, $34 ; prewritten text 34
+#_09C480: db $F2, $34 ; phrase 34
 #_09C482: db $47 ; も
 #_09C483: db $F9 ; new line
 #_09C484: db $3F, $38, $AC, $38, $51, $CF, $31, $2C ; ひとびとを⎵すく
@@ -9527,7 +9527,7 @@ Message_01_04_30:
 #_09C53F: db $29, $52, $39, $9A ; おんな:
 #_09C543: db $F9 ; new line
 #_09C544: db $5F, $60, $75, $3A, $CF ; ウエノに⎵
-#_09C549: db $F2, $34 ; prewritten text 34
+#_09C549: db $F2, $34 ; phrase 34
 #_09C54B: db $3D, $CF, $33, $27, $42, $52, $A1, $52 ; の⎵そうほんざん
 #_09C553: db $9C ; が
 #_09C554: db $F9 ; new line
@@ -9540,7 +9540,7 @@ Message_01_04_30:
 #_09C56F: db $F9 ; new line
 #_09C570: db $A6, $26, $3E, $2A, $26, $3D, $25, $38 ; だいはかいのあと
 #_09C578: db $CF ; ⎵
-#_09C579: db $F2, $1C ; prewritten text 1C
+#_09C579: db $F2, $1C ; phrase 1C
 #_09C57B: db $3D, $35, $2D, $26, $3E ; のちけいは
 #_09C580: db $F9 ; new line
 #_09C581: db $7E, $6D, $8F, $7E, $6D, $8F, $CF, $AA ; メチャメチャ⎵ど
@@ -9622,7 +9622,7 @@ Message_01_04_33:
 #_09C654: db $68, $69, $6F, $7D, $9C ; システムが
 #_09C659: db $F9 ; new line
 #_09C65A: db $2F, $AA, $27, $30, $37, $26, $34, $9C ; さどうしていたが
-#_09C662: db $F2, $0B ; prewritten text 0B
+#_09C662: db $F2, $0B ; phrase 0B
 #_09C664: db $FC ; wait for key and new line
 #_09C665: db $FA ; clear message box
 #_09C666: db $47, $27, $CF, $2E, $50, $4E, $37, $4D ; もう⎵こわれてる
@@ -9640,7 +9640,7 @@ Message_01_04_34:
 #_09C672: db $D6, $00, $87, $70, $28 ; place sprite 87 in slot 00 at XY:{70,28}
 #_09C677: db $29, $38, $2E, $9A ; おとこ:
 #_09C67B: db $F9 ; new line
-#_09C67C: db $F2, $1C ; prewritten text 1C
+#_09C67C: db $F2, $1C ; phrase 1C
 #_09C67E: db $3D, $CF, $05, $36, $3D, $CF, $42, $27 ; の⎵4つの⎵ほう
 #_09C686: db $9C, $2C, $3A ; がくに
 #_09C689: db $F9 ; new line
@@ -9649,7 +9649,7 @@ Message_01_04_34:
 #_09C699: db $FC ; wait for key and new line
 #_09C69A: db $FA ; clear message box
 #_09C69B: db $68, $71, $B5, $88, $3D, $CF ; シナガワの⎵
-#_09C6A1: db $F2, $6D ; prewritten text 6D
+#_09C6A1: db $F2, $6D ; phrase 6D
 #_09C6A3: db $9C, $CF, $44, $34, $2E, $38, $25, $4D ; が⎵みたことある
 #_09C6AB: db $4B, $30, $26 ; らしい
 #_09C6AE: db $FC ; wait for key and new line
@@ -9664,7 +9664,7 @@ Message_01_04_34:
 ; ただで とおろうってのか?
 Message_01_04_35:
 #_09C6B0: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
-#_09C6B5: db $F2, $6D ; prewritten text 6D
+#_09C6B5: db $F2, $6D ; phrase 6D
 #_09C6B7: db $9A ; :
 #_09C6B8: db $F9 ; new line
 #_09C6B9: db $D2, $34, $41 ; test progress flag 34 for message 41
@@ -9694,7 +9694,7 @@ Message_01_04_36:
 #_09C70D: db $3A, $CF, $25, $58, $37, $47, $4B, $29 ; に⎵あってもらお
 #_09C715: db $27, $2A ; うか
 #_09C717: db $F9 ; new line
-#_09C718: db $F5 ; write demon name from $050A
+#_09C718: db $F5 ; write demon 0 name
 #_09C719: db $4A, $CF, $26, $2D, $94 ; よ⎵いけ!
 #_09C71E: db $FC ; wait for key and new line
 #_09C71F: db $D6, $00, $00 ; delete sprite in slot 00
@@ -9718,11 +9718,11 @@ Message_01_04_38:
 #_09C733: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09C736: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
 #_09C73B: db $DE, $00, $00, $E0, $08 ; load 8x demon 00E0
-#_09C740: db $F2, $6D ; prewritten text 6D
+#_09C740: db $F2, $6D ; phrase 6D
 #_09C742: db $9A ; :
 #_09C743: db $F9 ; new line
 #_09C744: db $36, $9D, $3E, $CF ; つぎは⎵
-#_09C748: db $F5 ; write demon name from $050A
+#_09C748: db $F5 ; write demon 0 name
 #_09C749: db $A6, $94, $CF, $2A, $37, $4D, $2A, $95 ; だ!⎵かてるか?
 #_09C751: db $FC ; wait for key and new line
 #_09C752: db $D6, $00, $00 ; delete sprite in slot 00
@@ -9746,10 +9746,10 @@ Message_01_04_3A:
 #_09C766: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09C769: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
 #_09C76E: db $DE, $00, $00, $D7, $08 ; load 8x demon 00D7
-#_09C773: db $F2, $6D ; prewritten text 6D
+#_09C773: db $F2, $6D ; phrase 6D
 #_09C775: db $9A ; :
 #_09C776: db $F9 ; new line
-#_09C777: db $F5 ; write demon name from $050A
+#_09C777: db $F5 ; write demon 0 name
 #_09C778: db $3A, $3E, $CF, $2A, $37, $3C, $28, $A6 ; には⎵かてねえだ
 #_09C780: db $4F, $94 ; ろ!
 #_09C782: db $FC ; wait for key and new line
@@ -9777,16 +9777,16 @@ Message_01_04_3C:
 #_09C797: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09C79A: db $D0, $34 ; set progress flag 34
 #_09C79C: db $D6, $00, $A3, $70, $28 ; place sprite A3 in slot 00 at XY:{70,28}
-#_09C7A1: db $F2, $6D ; prewritten text 6D
+#_09C7A1: db $F2, $6D ; phrase 6D
 #_09C7A3: db $9A ; :
 #_09C7A4: db $F9 ; new line
-#_09C7A5: db $F5 ; write demon name from $050A
+#_09C7A5: db $F5 ; write demon 0 name
 #_09C7A6: db $43, $A9, $CF, $34, $29, $30, $35, $43 ; まで⎵たおしちま
 #_09C7AE: db $27, $39, $52, $37 ; うなんて
 #_09C7B2: db $F9 ; new line
 #_09C7B3: db $25, $CF, $25, $52, $34, $CF, $36, $CF ; あ⎵あんた⎵つ⎵
 #_09C7BB: db $36, $28, $28, $48 ; つええや
-#_09C7BF: db $F2, $0B ; prewritten text 0B
+#_09C7BF: db $F2, $0B ; phrase 0B
 #_09C7C1: db $F9 ; new line
 #_09C7C2: db $5D, $72, $63, $58, $37, $CF, $4A, $AB ; アニキって⎵よば
 #_09C7CA: db $32, $37, $2C, $4E, $4A, $CF, $26, $26 ; せてくれよ⎵いい
@@ -9838,7 +9838,7 @@ Message_01_04_3F:
 Message_01_04_40:
 #_09C83A: db $D4, $03 ; set text box size to 3
 #_09C83C: db $AC, $52, $AF, $27, $3A, $52, $51, $CF ; びんぼうにんを⎵
-#_09C844: db $F2, $2B ; prewritten text 2B
+#_09C844: db $F2, $2B ; phrase 2B
 #_09C846: db $FC ; wait for key and new line
 #_09C847: db $FF ; end of message
 
@@ -9939,7 +9939,7 @@ Message_01_05_04:
 #_09C8C7: db $31 ; す
 #_09C8C8: db $F9 ; new line
 #_09C8C9: db $33, $30, $37, $CF ; そして⎵
-#_09C8CD: db $F2, $21 ; prewritten text 21
+#_09C8CD: db $F2, $21 ; phrase 21
 #_09C8CF: db $3D, $CF, $4C, $33, $27, $51 ; の⎵りそうを
 #_09C8D5: db $F9 ; new line
 #_09C8D6: db $2B, $2A, $2F, $4E, $43, $30, $34 ; きかされました
@@ -9949,13 +9949,13 @@ Message_01_05_04:
 #_09C8E7: db $28, $52, $3D, $CF, $41, $26, $50, $51 ; えんの⎵へいわを
 #_09C8EF: db $CF, $47, $34, $4B, $31 ; ⎵もたらす
 #_09C8F4: db $F9 ; new line
-#_09C8F5: db $F2, $21 ; prewritten text 21
-#_09C8F7: db $F2, $0B ; prewritten text 0B
+#_09C8F5: db $F2, $21 ; phrase 21
+#_09C8F7: db $F2, $0B ; phrase 0B
 #_09C8F9: db $F9 ; new line
 #_09C8FA: db $AF, $2C, $3E, $CF, $2D, $58, $30, $52 ; ぼくは⎵けっしん
 #_09C902: db $30, $43, $30, $34 ; しました
 #_09C906: db $FC ; wait for key and new line
-#_09C907: db $F2, $21 ; prewritten text 21
+#_09C907: db $F2, $21 ; phrase 21
 #_09C909: db $CF, $A2, $36, $9F, $52, $3D, $34, $46 ; ⎵じつげんのため
 #_09C911: db $F9 ; new line
 #_09C912: db $2B, $56, $27, $32, $26, $30, $56, $38 ; きゅうせいしゅと
@@ -9967,7 +9967,7 @@ Message_01_05_04:
 #_09C928: db $D2, $63, $09 ; test progress flag 63 for message 09
 #_09C92B: db $FE, $05, $00, $BF, $10 ; ext command 05: go to message 10 if alignment >= -16640
 #_09C930: db $FA ; clear message box
-#_09C931: db $F2, $0B ; prewritten text 0B
+#_09C931: db $F2, $0B ; phrase 0B
 #_09C933: db $30, $2A, $30, $CF, $5D, $64, $7B, $3D ; しかし⎵アクマの
 #_09C93B: db $2A, $A3, $3E, $CF, $25, $43, $4C, $3A ; かずは⎵あまりに
 #_09C943: db $29, $29, $2C ; おおく
@@ -9994,7 +9994,7 @@ Message_01_05_04:
 ; くれませんか?
 Message_01_05_05:
 #_09C97D: db $D2, $63, $09 ; test progress flag 63 for message 09
-#_09C980: db $F2, $1C ; prewritten text 1C
+#_09C980: db $F2, $1C ; phrase 1C
 #_09C982: db $3D, $CF, $77, $B5, $68, $3A, $CF, $31 ; の⎵ヒガシに⎵す
 #_09C98A: db $44, $36, $26, $34 ; みついた
 #_09C98E: db $F9 ; new line
@@ -10019,7 +10019,7 @@ Message_01_05_06:
 #_09C9B0: db $60, $63, $C3, $71, $3E, $CF, $33, $3D ; エキドナは⎵その
 #_09C9B8: db $2B, $57, $34, $26, $A9 ; きょたいで
 #_09C9BD: db $F9 ; new line
-#_09C9BE: db $F2, $5C ; prewritten text 5C
+#_09C9BE: db $F2, $5C ; phrase 5C
 #_09C9C0: db $3D, $CF, $3E, $2A, $26, $51, $CF, $34 ; の⎵はかいを⎵た
 #_09C9C8: db $2C, $4B, $52, $A9, $26, $4D, $4A, $27 ; くらんでいるよう
 #_09C9D0: db $A9, $31 ; です
@@ -10064,7 +10064,7 @@ Message_01_05_08:
 #_09CA3B: db $51, $CF, $34, $29, $30, $37, $2C, $A6 ; を⎵たおしてくだ
 #_09CA43: db $2F, $26 ; さい
 #_09CA45: db $F9 ; new line
-#_09CA46: db $F2, $5C ; prewritten text 5C
+#_09CA46: db $F2, $5C ; phrase 5C
 #_09CA48: db $9C, $CF, $3E, $2A, $26, $2F, $4E, $34 ; が⎵はかいされた
 #_09CA50: db $4B ; ら
 #_09CA51: db $F9 ; new line
@@ -10086,11 +10086,11 @@ Message_01_05_08:
 ; ちからを つくしてくれ よいな?
 Message_01_05_09:
 #_09CA69: db $DE, $01, $00, $0D, $01 ; load 1x demon 010D
-#_09CA6E: db $F2, $0B ; prewritten text 0B
+#_09CA6E: db $F2, $0B ; phrase 0B
 #_09CA70: db $60, $63, $C3, $71, $51, $CF, $34, $29 ; エキドナを⎵たお
 #_09CA78: db $30, $34, $3D, $A9, $31, $3C ; したのですね
 #_09CA7E: db $F9 ; new line
-#_09CA7F: db $F5 ; write demon name from $050A
+#_09CA7F: db $F5 ; write demon 0 name
 #_09CA80: db $2F, $43, $CF ; さま⎵
 #_09CA83: db $F0 ; write player name
 #_09CA84: db $2C, $52, $3E ; くんは
@@ -10101,10 +10101,10 @@ Message_01_05_09:
 #_09CA92: db $FA ; clear message box
 #_09CA93: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CA95: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
-#_09CA98: db $F2, $7C ; prewritten text 7C
-#_09CA9A: db $F2, $7D ; prewritten text 7D
+#_09CA98: db $F2, $7C ; phrase 7C
+#_09CA9A: db $F2, $7D ; phrase 7D
 #_09CA9C: db $E4, $00 ; load demon $00
-#_09CA9E: db $F5 ; write demon name from $050A
+#_09CA9E: db $F5 ; write demon 0 name
 #_09CA9F: db $9A ; :
 #_09CAA0: db $F9 ; new line
 #_09CAA1: db $4A, $2C, $48, $58, $34, $CF ; よくやった⎵
@@ -10113,7 +10113,7 @@ Message_01_05_09:
 #_09CAA9: db $F9 ; new line
 #_09CAAA: db $2E, $4E, $2A, $4B, $47, $CF, $2A, $44 ; これからも⎵かみ
 #_09CAB2: db $3D, $34, $46, $CF ; のため⎵
-#_09CAB6: db $F2, $21 ; prewritten text 21
+#_09CAB6: db $F2, $21 ; phrase 21
 #_09CAB8: db $3D, $34, $46 ; のため
 #_09CABB: db $F9 ; new line
 #_09CABC: db $35, $2A, $4B, $51, $CF, $36, $2C, $30 ; ちからを⎵つくし
@@ -10156,7 +10156,7 @@ Message_01_05_0B:
 Message_01_05_0C:
 #_09CB0C: db $D4, $03 ; set text box size to 3
 #_09CB0E: db $A9, $3E, $CF ; では⎵
-#_09CB11: db $F2, $5C ; prewritten text 5C
+#_09CB11: db $F2, $5C ; phrase 5C
 #_09CB13: db $41, $CF, $49, $2C, $9C, $4A, $26 ; へ⎵ゆくがよい
 #_09CB1A: db $F9 ; new line
 #_09CB1B: db $3E, $30, $51, $CF, $2A, $2D, $37, $48 ; はしを⎵かけてや
@@ -10201,7 +10201,7 @@ Message_01_05_0E:
 #_09CB72: db $27, $2D, $37, $2C, $4E, $4D, $52, $A9 ; うけてくれるんで
 #_09CB7A: db $31, $2A ; すか
 #_09CB7C: db $F9 ; new line
-#_09CB7D: db $F2, $31 ; prewritten text 31
+#_09CB7D: db $F2, $31 ; phrase 31
 #_09CB7F: db $F9 ; new line
 #_09CB80: db $2B, $44, $3E, $CF, $43, $A6, $CF, $5D ; きみは⎵まだ⎵ア
 #_09CB88: db $64, $7B, $3A, $CF, $34, $43, $30, $26 ; クマに⎵たましい
@@ -10263,7 +10263,7 @@ Message_01_05_11:
 #_09CBF2: db $F9 ; new line
 #_09CBF3: db $EE ; write lawful hero name
 #_09CBF4: db $4A ; よ
-#_09CBF5: db $F2, $0B ; prewritten text 0B
+#_09CBF5: db $F2, $0B ; phrase 0B
 #_09CBF7: db $F9 ; new line
 #_09CBF8: db $32, $58, $38, $2C, $3E, $CF, $45, $A6 ; せっとくは⎵むだ
 #_09CC00: db $39, $CF, $4A, $27, $A6, $39 ; な⎵ようだな
@@ -10273,20 +10273,20 @@ Message_01_05_11:
 #_09CC09: db $9A ; :
 #_09CC0A: db $F9 ; new line
 #_09CC0B: db $25 ; あ
-#_09CC0C: db $F2, $0B ; prewritten text 0B
+#_09CC0C: db $F2, $0B ; phrase 0B
 #_09CC0E: db $25, $3D, $CF, $2E, $28, $3E ; あの⎵こえは
-#_09CC14: db $F2, $0B ; prewritten text 0B
+#_09CC14: db $F2, $0B ; phrase 0B
 #_09CC16: db $FC ; wait for key and new line
 #_09CC17: db $FA ; clear message box
 #_09CC18: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CC1A: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
-#_09CC1D: db $F2, $7C ; prewritten text 7C
-#_09CC1F: db $F2, $7D ; prewritten text 7D
+#_09CC1D: db $F2, $7C ; phrase 7C
+#_09CC1F: db $F2, $7D ; phrase 7D
 #_09CC21: db $DE, $01, $00, $0D, $01 ; load 1x demon 010D
 #_09CC26: db $D5, $39 ; send 39 to APU
 #_09CC28: db $E4, $00 ; load demon $00
 #_09CC2A: db $FA ; clear message box
-#_09CC2B: db $F5 ; write demon name from $050A
+#_09CC2B: db $F5 ; write demon 0 name
 #_09CC2C: db $9A ; :
 #_09CC2D: db $F9 ; new line
 #_09CC2E: db $47, $38, $3E, $CF ; もとは⎵
@@ -10300,7 +10300,7 @@ Message_01_05_11:
 #_09CC40: db $2E, $3D ; この
 #_09CC42: db $F6 ; write class name from $0506
 #_09CC43: db $CF ; ⎵
-#_09CC44: db $F5 ; write demon name from $050A
+#_09CC44: db $F5 ; write demon 0 name
 #_09CC45: db $CF, $44, $A3, $2A, $4B ; ⎵みずから
 #_09CC4A: db $F9 ; new line
 #_09CC4B: db $A2, $A0, $2C, $41, $CF, $29, $2C, $58 ; じごくへ⎵おくっ
@@ -10336,7 +10336,7 @@ Message_01_05_14:
 #_09CC72: db $F9 ; new line
 #_09CC73: db $39, $CF, $39, $52, $38, $26, $27, $2E ; な⎵なんというこ
 #_09CC7B: db $38, $51 ; とを
-#_09CC7D: db $F2, $0B ; prewritten text 0B
+#_09CC7D: db $F2, $0B ; phrase 0B
 #_09CC7F: db $F9 ; new line
 #_09CC80: db $76, $72, $60, $85, $2F, $43, $51, $CF ; ハニエルさまを⎵
 #_09CC88: db $34, $29, $30, $37, $30, $43, $27, $38 ; たおしてしまうと
@@ -10350,7 +10350,7 @@ Message_01_05_14:
 #_09CCAB: db $2E, $3D, $43, $43, $A9, $3E, $CF, $26 ; このままでは⎵い
 #_09CCB3: db $36, $2A, $CF, $3E, $46, $36, $30, $43 ; つか⎵はめつしま
 #_09CCBB: db $31, $4A ; すよ
-#_09CCBD: db $F2, $0B ; prewritten text 0B
+#_09CCBD: db $F2, $0B ; phrase 0B
 #_09CCBF: db $FC ; wait for key and new line
 #_09CCC0: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09CCC2: db $D0, $64 ; set progress flag 64
@@ -10373,7 +10373,7 @@ Message_01_05_15:
 Message_01_05_16:
 #_09CCD2: db $D6, $00, $8B, $70, $28 ; place sprite 8B in slot 00 at XY:{70,28}
 #_09CCD7: db $FA ; clear message box
-#_09CCD8: db $F2, $33 ; prewritten text 33
+#_09CCD8: db $F2, $33 ; phrase 33
 #_09CCDA: db $CF, $2B, $57, $27, $33, $9A ; ⎵きょうそ:
 #_09CCE0: db $F9 ; new line
 #_09CCE1: db $D2, $7D, $1B ; test progress flag 7D for message 1B
@@ -10398,7 +10398,7 @@ Message_01_05_17:
 #_09CD10: db $EE ; write lawful hero name
 #_09CD11: db $2F, $52, $3E ; さんは
 #_09CD14: db $F9 ; new line
-#_09CD15: db $F2, $66 ; prewritten text 66
+#_09CD15: db $F2, $66 ; phrase 66
 #_09CD17: db $38, $30, $37, $CF, $29, $29, $2C, $3D ; として⎵おおくの
 #_09CD1F: db $CF, $30, $52, $A2, $55, $3A ; ⎵しんじゃに
 #_09CD25: db $F9 ; new line
@@ -10423,13 +10423,13 @@ Message_01_05_18:
 #_09CD3E: db $4E, $26, $51, $CF, $27, $2D, $37, $26 ; れいを⎵うけてい
 #_09CD46: db $34, $A6, $2B ; ただき
 #_09CD49: db $F9 ; new line
-#_09CD4A: db $F2, $33 ; prewritten text 33
+#_09CD4A: db $F2, $33 ; phrase 33
 #_09CD4C: db $A6, $52, $3A, $CF, $2C, $50, $50, $58 ; だんに⎵くわわっ
 #_09CD54: db $37, $47, $4B, $29, $27, $38 ; てもらおうと
 #_09CD5A: db $F9 ; new line
 #_09CD5B: db $FE, $05, $10, $FF, $19 ; ext command 05: go to message 19 if alignment >= -240
 #_09CD60: db $29, $47, $58, $34, $3D, $A9, $31, $9C ; おもったのですが
-#_09CD68: db $F2, $0B ; prewritten text 0B
+#_09CD68: db $F2, $0B ; phrase 0B
 #_09CD6A: db $FC ; wait for key and new line
 #_09CD6B: db $FA ; clear message box
 #_09CD6C: db $A1, $52, $3C, $52, $39, $9C, $4B, $CF ; ざんねんながら⎵
@@ -10462,14 +10462,14 @@ Message_01_05_19:
 #_09CD93: db $FA ; clear message box
 #_09CD94: db $F0 ; write player name
 #_09CD95: db $2F, $52 ; さん
-#_09CD97: db $F2, $0B ; prewritten text 0B
+#_09CD97: db $F2, $0B ; phrase 0B
 #_09CD99: db $25, $39, $34, $3A, $3E ; あなたには
 #_09CD9E: db $F9 ; new line
 #_09CD9F: db $33, $3D, $30, $2A, $2C, $9C, $CF, $A2 ; そのしかくが⎵じ
 #_09CDA7: db $56, $27, $AD, $52, $3A, $CF, $25, $4D ; ゅうぶんに⎵ある
 #_09CDAF: db $3D, $A9, $31 ; のです
 #_09CDB2: db $F9 ; new line
-#_09CDB3: db $F2, $5C ; prewritten text 5C
+#_09CDB3: db $F2, $5C ; phrase 5C
 #_09CDB5: db $51, $CF, $2A, $52, $32, $26, $2F, $32 ; を⎵かんせいさせ
 #_09CDBD: db $F9 ; new line
 #_09CDBE: db $3F, $38, $AC, $38, $51, $CF, $31, $2C ; ひとびとを⎵すく
@@ -10477,7 +10477,7 @@ Message_01_05_19:
 #_09CDCB: db $F9 ; new line
 #_09CDCC: db $A4, $3F, $CF, $50, $34, $30, $34, $35 ; ぜひ⎵わたしたち
 #_09CDD4: db $CF ; ⎵
-#_09CDD5: db $F2, $33 ; prewritten text 33
+#_09CDD5: db $F2, $33 ; phrase 33
 #_09CDD7: db $2A, $26, $3A ; かいに
 #_09CDDA: db $F9 ; new line
 #_09CDDB: db $35, $2A, $4B, $51, $CF, $2A, $30, $37 ; ちからを⎵かして
@@ -10485,7 +10485,7 @@ Message_01_05_19:
 #_09CDEB: db $FC ; wait for key and new line
 #_09CDEC: db $FA ; clear message box
 #_09CDED: db $97 ; >
-#_09CDEE: db $F2, $33 ; prewritten text 33
+#_09CDEE: db $F2, $33 ; phrase 33
 #_09CDF0: db $3D, $CF, $32, $52, $4E, $26, $51, $CF ; の⎵せんれいを⎵
 #_09CDF8: db $27, $2D, $43, $31, $2A, $95 ; うけますか?
 #_09CDFE: db $F8, $1A ; YES/NO - go to message 1A if YES
@@ -10499,7 +10499,7 @@ Message_01_05_19:
 #_09CE1F: db $F9 ; new line
 #_09CE20: db $31, $2C, $26, $51, $CF, $47, $38, $46 ; すくいを⎵もとめ
 #_09CE28: db $37, $26, $4D, $38, $26, $27, $3D, $3A ; ているというのに
-#_09CE30: db $F2, $0B ; prewritten text 0B
+#_09CE30: db $F2, $0B ; phrase 0B
 #_09CE32: db $FC ; wait for key and new line
 #_09CE33: db $FA ; clear message box
 #_09CE34: db $2B, $9C, $CF, $2A, $50, $4C, $43, $30 ; きが⎵かわりまし
@@ -10541,13 +10541,13 @@ Message_01_05_1A:
 #_09CE9D: db $D6, $00, $00 ; delete sprite in slot 00
 #_09CEA0: db $D6, $00, $93, $70, $28 ; place sprite 93 in slot 00 at XY:{70,28}
 #_09CEA5: db $97 ; >
-#_09CEA6: db $F2, $33 ; prewritten text 33
+#_09CEA6: db $F2, $33 ; phrase 33
 #_09CEA8: db $3D ; の
 #_09CEA9: db $F9 ; new line
 #_09CEAA: db $32, $52, $4E, $26, $3D, $CF, $9D, $30 ; せんれいの⎵ぎし
 #_09CEB2: db $2B, $9C, $CF, $29, $2E, $39, $50, $4E ; きが⎵おこなわれ
 #_09CEBA: db $34 ; た
-#_09CEBB: db $F2, $0B ; prewritten text 0B
+#_09CEBB: db $F2, $0B ; phrase 0B
 #_09CEBD: db $FE, $07, $7F ; ext command 07: draw buffered text then wait 126 frames
 #_09CEC0: db $FE, $1C, $03 ; ext command 1C: $03 TODO
 #_09CEC3: db $FC ; wait for key and new line
@@ -10562,7 +10562,7 @@ Message_01_05_1A:
 #_09CEDD: db $FE, $07, $3C ; ext command 07: draw buffered text then wait 59 frames
 #_09CEE0: db $FA ; clear message box
 #_09CEE1: db $D6, $00, $8B, $70, $28 ; place sprite 8B in slot 00 at XY:{70,28}
-#_09CEE6: db $F2, $33 ; prewritten text 33
+#_09CEE6: db $F2, $33 ; phrase 33
 #_09CEE8: db $CF, $2B, $57, $27, $33, $9A ; ⎵きょうそ:
 #_09CEEE: db $F9 ; new line
 #_09CEEF: db $D3, $1C ; go to message 1C
@@ -10650,7 +10650,7 @@ Message_01_05_1D:
 Message_01_05_1E:
 #_09CFB7: db $D5, $45 ; send 45 to APU
 #_09CFB9: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
-#_09CFBE: db $F2, $33 ; prewritten text 33
+#_09CFBE: db $F2, $33 ; phrase 33
 #_09CFC0: db $30, $52, $B2, $9A ; しんぷ:
 #_09CFC4: db $F9 ; new line
 #_09CFC5: db $44, $47, $CF, $2E, $2E, $4F, $47, $CF ; みも⎵こころも⎵
@@ -10665,7 +10665,7 @@ Message_01_05_1E:
 #_09CFF5: db $26, $43, $31 ; います
 #_09CFF8: db $FC ; wait for key and new line
 #_09CFF9: db $FA ; clear message box
-#_09CFFA: db $F2, $7B ; prewritten text 7B
+#_09CFFA: db $F2, $7B ; phrase 7B
 #_09CFFC: db $F8, $1F ; YES/NO - go to message 1F if YES
 #_09CFFE: db $FF ; end of message
 
@@ -10678,10 +10678,10 @@ Message_01_05_1E:
 ; «>まだ せっきょうを ききますか?»
 Message_01_05_1F:
 #_09CFFF: db $D4, $03 ; set text box size to 3
-#_09D001: db $F2, $33 ; prewritten text 33
+#_09D001: db $F2, $33 ; phrase 33
 #_09D003: db $30, $52, $B2, $9A ; しんぷ:
 #_09D007: db $F9 ; new line
-#_09D008: db $F2, $5C ; prewritten text 5C
+#_09D008: db $F2, $5C ; phrase 5C
 #_09D00A: db $51, $CF, $2A, $52, $32, $26, $2F, $32 ; を⎵かんせいさせ
 #_09D012: db $4D, $34, $46 ; るため
 #_09D015: db $F9 ; new line
@@ -10694,7 +10694,7 @@ Message_01_05_1F:
 #_09D03B: db $43, $A9, $31 ; まです
 #_09D03E: db $FC ; wait for key and new line
 #_09D03F: db $FA ; clear message box
-#_09D040: db $F2, $7B ; prewritten text 7B
+#_09D040: db $F2, $7B ; phrase 7B
 #_09D042: db $F8, $20 ; YES/NO - go to message 20 if YES
 #_09D044: db $FF ; end of message
 
@@ -10710,17 +10710,17 @@ Message_01_05_1F:
 ; «>まだ せっきょうを ききますか?»
 Message_01_05_20:
 #_09D045: db $D4, $03 ; set text box size to 3
-#_09D047: db $F2, $33 ; prewritten text 33
+#_09D047: db $F2, $33 ; phrase 33
 #_09D049: db $30, $52, $B2, $9A ; しんぷ:
 #_09D04D: db $F9 ; new line
-#_09D04E: db $F2, $5C ; prewritten text 5C
+#_09D04E: db $F2, $5C ; phrase 5C
 #_09D050: db $9C, $CF, $2A, $52, $32, $26, $31, $4E ; が⎵かんせいすれ
 #_09D058: db $AB ; ば
 #_09D059: db $F9 ; new line
 #_09D05A: db $2A, $44, $3E, $CF, $33, $2E, $3A, $CF ; かみは⎵そこに⎵
 #_09D062: db $29, $4C, $34, $35 ; おりたち
 #_09D066: db $F9 ; new line
-#_09D067: db $F2, $21 ; prewritten text 21
+#_09D067: db $F2, $21 ; phrase 21
 #_09D069: db $9C, $CF, $3E, $A2, $43, $4C, $3D, $38 ; が⎵はじまりのと
 #_09D071: db $2B, $51 ; きを
 #_09D073: db $F9 ; new line
@@ -10735,7 +10735,7 @@ Message_01_05_20:
 #_09D0A2: db $31 ; す
 #_09D0A3: db $FC ; wait for key and new line
 #_09D0A4: db $FA ; clear message box
-#_09D0A5: db $F2, $7B ; prewritten text 7B
+#_09D0A5: db $F2, $7B ; phrase 7B
 #_09D0A7: db $F8, $21 ; YES/NO - go to message 21 if YES
 #_09D0A9: db $FF ; end of message
 
@@ -10746,11 +10746,11 @@ Message_01_05_20:
 ; ともに とうとい あせを ながしましょう!
 Message_01_05_21:
 #_09D0AA: db $D4, $03 ; set text box size to 3
-#_09D0AC: db $F2, $33 ; prewritten text 33
+#_09D0AC: db $F2, $33 ; phrase 33
 #_09D0AE: db $30, $52, $B2, $9A ; しんぷ:
 #_09D0B2: db $F9 ; new line
 #_09D0B3: db $2F, $25, $CF ; さあ⎵
-#_09D0B6: db $F2, $5C ; prewritten text 5C
+#_09D0B6: db $F2, $5C ; phrase 5C
 #_09D0B8: db $41, $CF, $45, $2A, $26 ; へ⎵むかい
 #_09D0BD: db $F9 ; new line
 #_09D0BE: db $38, $47, $3A, $CF, $38, $27, $38, $26 ; ともに⎵とうとい
@@ -10830,7 +10830,7 @@ Message_01_05_24:
 ; よみがえるのです
 Message_01_05_25:
 #_09D13C: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09D141: db $F2, $33 ; prewritten text 33
+#_09D141: db $F2, $33 ; phrase 33
 #_09D143: db $38, $9A ; と:
 #_09D145: db $F9 ; new line
 #_09D146: db $D2, $83, $26 ; test progress flag 83 for message 26
@@ -10896,15 +10896,15 @@ Message_01_05_26:
 ; おそるるに たりん
 Message_01_05_27:
 #_09D1F4: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09D1F9: db $F2, $33 ; prewritten text 33
+#_09D1F9: db $F2, $33 ; phrase 33
 #_09D1FB: db $38, $9A ; と:
 #_09D1FD: db $F9 ; new line
-#_09D1FE: db $F2, $5C ; prewritten text 5C
+#_09D1FE: db $F2, $5C ; phrase 5C
 #_09D200: db $2F, $28, $CF, $2A, $52, $32, $26, $31 ; さえ⎵かんせいす
 #_09D208: db $4E, $AB ; れば
 #_09D20A: db $F9 ; new line
 #_09D20B: db $5D, $64, $7B, $34, $35, $47, $CF ; アクマたちも⎵
-#_09D212: db $F2, $34 ; prewritten text 34
+#_09D212: db $F2, $34 ; phrase 34
 #_09D214: db $38, $34, $35, $47 ; とたちも
 #_09D218: db $F9 ; new line
 #_09D219: db $29, $33, $4D, $4D, $3A, $CF, $34, $4C ; おそるるに⎵たり
@@ -10923,7 +10923,7 @@ Message_01_05_27:
 ; えさに するって いってた
 Message_01_05_28:
 #_09D224: db $D6, $00, $0E, $70, $38 ; place sprite 0E in slot 00 at XY:{70,38}
-#_09D229: db $F2, $33 ; prewritten text 33
+#_09D229: db $F2, $33 ; phrase 33
 #_09D22B: db $38, $9A ; と:
 #_09D22D: db $F9 ; new line
 #_09D22E: db $E1, $F4 ; set $0A50 to item F4
@@ -10936,7 +10936,7 @@ Message_01_05_28:
 #_09D24B: db $FC ; wait for key and new line
 #_09D24C: db $FA ; clear message box
 #_09D24D: db $A6, $2D, $AA, $CF ; だけど⎵
-#_09D251: db $F2, $34 ; prewritten text 34
+#_09D251: db $F2, $34 ; phrase 34
 #_09D253: db $38, $3A, $CF, $38, $4B, $4E, $37 ; とに⎵とられて
 #_09D25A: db $F9 ; new line
 #_09D25B: db $5F, $60, $75, $3A, $CF, $47, $58, $37 ; ウエノに⎵もって
@@ -10959,10 +10959,10 @@ Message_01_05_28:
 ; [ITEM]が あれば らくになるのですが«・・・»
 Message_01_05_29:
 #_09D289: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09D28E: db $F2, $33 ; prewritten text 33
+#_09D28E: db $F2, $33 ; phrase 33
 #_09D290: db $38, $9A ; と:
 #_09D292: db $F9 ; new line
-#_09D293: db $F2, $33 ; prewritten text 33
+#_09D293: db $F2, $33 ; phrase 33
 #_09D295: db $A6, $26, $2B, $57, $27, $2A, $26, $41 ; だいきょうかいへ
 #_09D29D: db $3D, $CF, $44, $35, $3E ; の⎵みちは
 #_09D2A2: db $F9 ; new line
@@ -10977,7 +10977,7 @@ Message_01_05_29:
 #_09D2C0: db $F3 ; write item name from $0A50
 #_09D2C1: db $9C, $CF, $25, $4E, $AB, $CF, $4B, $2C ; が⎵あれば⎵らく
 #_09D2C9: db $3A, $39, $4D, $3D, $A9, $31, $9C ; になるのですが
-#_09D2D0: db $F2, $0B ; prewritten text 0B
+#_09D2D0: db $F2, $0B ; phrase 0B
 #_09D2D2: db $FC ; wait for key and new line
 #_09D2D3: db $FF ; end of message
 
@@ -10992,7 +10992,7 @@ Message_01_05_2A:
 #_09D2DD: db $F9 ; new line
 #_09D2DE: db $50, $34, $30, $3D, $CF, $29, $58, $38 ; わたしの⎵おっと
 #_09D2E6: db $3E, $CF ; は⎵
-#_09D2E8: db $F2, $5C ; prewritten text 5C
+#_09D2E8: db $F2, $5C ; phrase 5C
 #_09D2EA: db $41, $CF, $26, $58, $34, $43, $43 ; へ⎵いったまま
 #_09D2F1: db $F9 ; new line
 #_09D2F2: db $2A, $28, $58, $37, $2E, $39, $26, $52 ; かえってこないん
@@ -11038,7 +11038,7 @@ Message_01_05_2B:
 ; おお かみよ わたしを おまもりください
 Message_01_05_2C:
 #_09D355: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09D35A: db $F2, $33 ; prewritten text 33
+#_09D35A: db $F2, $33 ; phrase 33
 #_09D35C: db $38, $9A ; と:
 #_09D35E: db $F9 ; new line
 #_09D35F: db $2E, $2E, $2A, $4B, $CF, $44, $39, $44 ; ここから⎵みなみ
@@ -11071,11 +11071,11 @@ Message_01_05_2C:
 Message_01_05_2D:
 #_09D3A6: db $D2, $36, $36 ; test progress flag 36 for message 36
 #_09D3A9: db $D6, $00, $A5, $70, $28 ; place sprite A5 in slot 00 at XY:{70,28}
-#_09D3AE: db $F2, $6D ; prewritten text 6D
+#_09D3AE: db $F2, $6D ; phrase 6D
 #_09D3B0: db $9A ; :
 #_09D3B1: db $F9 ; new line
 #_09D3B2: db $25, $39, $34, $47, $CF ; あなたも⎵
-#_09D3B7: db $F2, $6D ; prewritten text 6D
+#_09D3B7: db $F2, $6D ; phrase 6D
 #_09D3B9: db $3D, $CF, $4A, $27, $A9, $31, $3C ; の⎵ようですね
 #_09D3C0: db $F9 ; new line
 #_09D3C1: db $A2, $AD, $52, $3D, $CF, $71, $62, $7B ; じぶんの⎵ナカマ
@@ -11097,7 +11097,7 @@ Message_01_05_2D:
 #_09D408: db $DE, $00, $00, $D2, $08 ; load 8x demon 00D2
 #_09D40D: db $FA ; clear message box
 #_09D40E: db $2F, $25, $CF ; さあ⎵
-#_09D411: db $F5 ; write demon name from $050A
+#_09D411: db $F5 ; write demon 0 name
 #_09D412: db $2F, $52, $CF, $A9, $37, $4B, $58, $30 ; さん⎵でてらっし
 #_09D41A: db $55, $26 ; ゃい
 #_09D41C: db $FC ; wait for key and new line
@@ -11123,7 +11123,7 @@ Message_01_05_2F:
 #_09D42F: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09D431: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09D434: db $D6, $00, $A5, $70, $28 ; place sprite A5 in slot 00 at XY:{70,28}
-#_09D439: db $F2, $6D ; prewritten text 6D
+#_09D439: db $F2, $6D ; phrase 6D
 #_09D43B: db $9A ; :
 #_09D43C: db $F9 ; new line
 #_09D43D: db $39, $2A, $39, $2A, $CF, $48, $4C, $43 ; なかなか⎵やりま
@@ -11136,7 +11136,7 @@ Message_01_05_2F:
 #_09D45A: db $FA ; clear message box
 #_09D45B: db $DE, $00, $00, $DF, $08 ; load 8x demon 00DF
 #_09D460: db $A9, $3E, $CF ; では⎵
-#_09D463: db $F5 ; write demon name from $050A
+#_09D463: db $F5 ; write demon 0 name
 #_09D464: db $2F, $52, $3D, $CF, $A9, $AB, $52, $A9 ; さんの⎵でばんで
 #_09D46C: db $31 ; す
 #_09D46D: db $FC ; wait for key and new line
@@ -11161,7 +11161,7 @@ Message_01_05_31:
 #_09D480: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09D482: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09D485: db $D6, $00, $A5, $70, $28 ; place sprite A5 in slot 00 at XY:{70,28}
-#_09D48A: db $F2, $6D ; prewritten text 6D
+#_09D48A: db $F2, $6D ; phrase 6D
 #_09D48C: db $9A ; :
 #_09D48D: db $F9 ; new line
 #_09D48E: db $49, $A6, $52, $30, $37, $43, $30, $34 ; ゆだんしてました
@@ -11195,16 +11195,16 @@ Message_01_05_33:
 #_09D4C2: db $E7, $00 ; call routine 01E5CD with value 00 TODO
 #_09D4C4: db $FE, $07, $78 ; ext command 07: draw buffered text then wait 119 frames
 #_09D4C7: db $D6, $00, $A5, $70, $28 ; place sprite A5 in slot 00 at XY:{70,28}
-#_09D4CC: db $F2, $6D ; prewritten text 6D
+#_09D4CC: db $F2, $6D ; phrase 6D
 #_09D4CE: db $9A ; :
 #_09D4CF: db $F9 ; new line
 #_09D4D0: db $50, $34, $30, $3D, $CF, $5D, $64, $7B ; わたしの⎵アクマ
 #_09D4D8: db $2F, $52, $34, $35, $9C ; さんたちが
-#_09D4DD: db $F2, $0B ; prewritten text 0B
+#_09D4DD: db $F2, $0B ; phrase 0B
 #_09D4DF: db $F9 ; new line
 #_09D4E0: db $29, $CF, $29, $AF, $28, $37, $4B, $58 ; お⎵おぼえてらっ
 #_09D4E8: db $30, $55, $26 ; しゃい
-#_09D4EB: db $F2, $0B ; prewritten text 0B
+#_09D4EB: db $F2, $0B ; phrase 0B
 #_09D4ED: db $FC ; wait for key and new line
 #_09D4EE: db $D6, $00, $00 ; delete sprite in slot 00
 #_09D4F1: db $D0, $36 ; set progress flag 36
@@ -11224,7 +11224,7 @@ Message_01_05_34:
 #_09D4FC: db $51 ; を
 #_09D4FD: db $F9 ; new line
 #_09D4FE: db $FE, $3C, $35 ; ext command 3C: go to message 35 if no space for item
-#_09D501: db $F2, $2D ; prewritten text 2D
+#_09D501: db $F2, $2D ; phrase 2D
 #_09D503: db $FC ; wait for key and new line
 #_09D504: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_09D506: db $FF ; end of message
@@ -11247,7 +11247,7 @@ Message_01_05_35:
 ; >«だれもいない»
 Message_01_05_36:
 #_09D521: db $97 ; >
-#_09D522: db $F2, $2C ; prewritten text 2C
+#_09D522: db $F2, $2C ; phrase 2C
 #_09D524: db $FC ; wait for key and new line
 #_09D525: db $DD, $FD, $34 ; go to message 34 if missing item FD
 #_09D528: db $FF ; end of message
@@ -11265,7 +11265,7 @@ Message_01_05_37:
 ; >«なかに はいりますか?»
 Message_01_05_38:
 #_09D536: db $97 ; >
-#_09D537: db $F2, $68 ; prewritten text 68
+#_09D537: db $F2, $68 ; phrase 68
 #_09D539: db $F8, $3A ; YES/NO - go to message 3A if YES
 #_09D53B: db $FF ; end of message
 
@@ -11274,7 +11274,7 @@ Message_01_05_38:
 ; >«そとに でますか?»
 Message_01_05_39:
 #_09D53C: db $97 ; >
-#_09D53D: db $F2, $89 ; prewritten text 89
+#_09D53D: db $F2, $89 ; phrase 89
 #_09D53F: db $F8, $3A ; YES/NO - go to message 3A if YES
 #_09D541: db $FF ; end of message
 
@@ -11309,7 +11309,7 @@ Message_01_05_3C:
 ; >«なかに はいりますか?»
 Message_01_05_3D:
 #_09D573: db $97 ; >
-#_09D574: db $F2, $68 ; prewritten text 68
+#_09D574: db $F2, $68 ; phrase 68
 #_09D576: db $F8, $3F ; YES/NO - go to message 3F if YES
 #_09D578: db $FF ; end of message
 
@@ -11318,7 +11318,7 @@ Message_01_05_3D:
 ; >«そとに でますか?»
 Message_01_05_3E:
 #_09D579: db $97 ; >
-#_09D57A: db $F2, $89 ; prewritten text 89
+#_09D57A: db $F2, $89 ; phrase 89
 #_09D57C: db $F8, $3F ; YES/NO - go to message 3F if YES
 #_09D57E: db $FF ; end of message
 
@@ -11353,7 +11353,7 @@ Message_01_05_41:
 ; >«なかに はいりますか?»
 Message_01_05_42:
 #_09D5B0: db $97 ; >
-#_09D5B1: db $F2, $68 ; prewritten text 68
+#_09D5B1: db $F2, $68 ; phrase 68
 #_09D5B3: db $F8, $44 ; YES/NO - go to message 44 if YES
 #_09D5B5: db $FF ; end of message
 
@@ -11362,7 +11362,7 @@ Message_01_05_42:
 ; >«そとに でますか?»
 Message_01_05_43:
 #_09D5B6: db $97 ; >
-#_09D5B7: db $F2, $89 ; prewritten text 89
+#_09D5B7: db $F2, $89 ; phrase 89
 #_09D5B9: db $F8, $44 ; YES/NO - go to message 44 if YES
 #_09D5BB: db $FF ; end of message
 
@@ -11397,7 +11397,7 @@ Message_01_05_46:
 ; >«なかに はいりますか?»
 Message_01_05_47:
 #_09D5ED: db $97 ; >
-#_09D5EE: db $F2, $68 ; prewritten text 68
+#_09D5EE: db $F2, $68 ; phrase 68
 #_09D5F0: db $F8, $49 ; YES/NO - go to message 49 if YES
 #_09D5F2: db $FF ; end of message
 
@@ -11406,7 +11406,7 @@ Message_01_05_47:
 ; >«そとに でますか?»
 Message_01_05_48:
 #_09D5F3: db $97 ; >
-#_09D5F4: db $F2, $89 ; prewritten text 89
+#_09D5F4: db $F2, $89 ; phrase 89
 #_09D5F6: db $F8, $49 ; YES/NO - go to message 49 if YES
 #_09D5F8: db $FF ; end of message
 
@@ -11433,7 +11433,7 @@ Message_01_05_4A:
 ; >«とびらは とざされている»
 Message_01_05_4B:
 #_09D61D: db $97 ; >
-#_09D61E: db $F2, $69 ; prewritten text 69
+#_09D61E: db $F2, $69 ; phrase 69
 #_09D620: db $FC ; wait for key and new line
 #_09D621: db $FF ; end of message
 
@@ -11464,13 +11464,13 @@ Message_01_00_02:
 #_09D638: db $D2, $50, $04 ; test progress flag 50 for message 04
 #_09D63B: db $D0, $4F ; set progress flag 4F
 #_09D63D: db $97 ; >
-#_09D63E: db $F2, $00 ; prewritten text 00
+#_09D63E: db $F2, $00 ; phrase 00
 #_09D640: db $9C, $CF, $30, $AB, $4B, $4E, $37, $26 ; が⎵しばられてい
 #_09D648: db $4D ; る
 #_09D649: db $FC ; wait for key and new line
 #_09D64A: db $E9, $00, $03 ; go to message 03 maybe TODO
 #_09D64D: db $FA ; clear message box
-#_09D64E: db $F2, $45 ; prewritten text 45
+#_09D64E: db $F2, $45 ; phrase 45
 
 ;===================================================================================================
 
@@ -11490,7 +11490,7 @@ Message_01_00_03:
 ; つれていってやろう
 Message_01_00_04:
 #_09D651: db $D6, $01, $B1, $98, $38 ; place sprite B1 in slot 01 at XY:{98,38}
-#_09D656: db $F2, $46 ; prewritten text 46
+#_09D656: db $F2, $46 ; phrase 46
 #_09D658: db $9A ; :
 #_09D659: db $F9 ; new line
 #_09D65A: db $D2, $0C, $06 ; test progress flag 0C for message 06
@@ -11518,7 +11518,7 @@ Message_01_00_04:
 #_09D6B7: db $2C, $4E, $34, $CF, $4E, $26, $3A ; くれた⎵れいに
 #_09D6BE: db $F9 ; new line
 #_09D6BF: db $29, $52, $39, $3D, $2E, $3D, $CF ; おんなのこの⎵
-#_09D6C6: db $F2, $71 ; prewritten text 71
+#_09D6C6: db $F2, $71 ; phrase 71
 #_09D6C8: db $3A ; に
 #_09D6C9: db $F9 ; new line
 #_09D6CA: db $36, $4E, $37, $26, $58, $37, $48, $4F ; つれていってやろ
@@ -11532,7 +11532,7 @@ Message_01_00_04:
 ; いくぞ!
 Message_01_00_05:
 #_09D6D5: db $A9, $3E, $CF ; では⎵
-#_09D6D8: db $F2, $71 ; prewritten text 71
+#_09D6D8: db $F2, $71 ; phrase 71
 #_09D6DA: db $41 ; へ
 #_09D6DB: db $F9 ; new line
 #_09D6DC: db $26, $2C, $A5, $94 ; いくぞ!
@@ -11559,14 +11559,14 @@ Message_01_00_06:
 #_09D707: db $34, $A5 ; たぞ
 #_09D709: db $F9 ; new line
 #_09D70A: db $43, $34, $CF ; また⎵
-#_09D70D: db $F2, $71 ; prewritten text 71
+#_09D70D: db $F2, $71 ; phrase 71
 #_09D70F: db $41, $CF, $3E, $26, $4D, $39, $4B ; へ⎵はいるなら
 #_09D716: db $F9 ; new line
 #_09D717: db $2E, $2E, $3A, $CF, $2B, $37, $2C, $4E ; ここに⎵きてくれ
 #_09D71F: db $FC ; wait for key and new line
 #_09D720: db $FA ; clear message box
 #_09D721: db $3E, $48, $2C, $CF ; はやく⎵
-#_09D725: db $F2, $71 ; prewritten text 71
+#_09D725: db $F2, $71 ; phrase 71
 #_09D727: db $3A, $CF, $3E, $26, $4C, $2E, $52, $A6 ; に⎵はいりこんだ
 #_09D72F: db $5D, $64, $7B, $51 ; アクマを
 #_09D733: db $F9 ; new line
@@ -11603,12 +11603,12 @@ Message_01_00_07:
 #_09D75F: db $D6, $01, $B1, $90, $38 ; place sprite B1 in slot 01 at XY:{90,38}
 #_09D764: db $D6, $00, $A9, $70, $28 ; place sprite A9 in slot 00 at XY:{70,28}
 #_09D769: db $FE, $62 ; ext command 62: Call routine 0FA371 TODO
-#_09D76B: db $F2, $46 ; prewritten text 46
+#_09D76B: db $F2, $46 ; phrase 46
 #_09D76D: db $9A ; :
 #_09D76E: db $F9 ; new line
 #_09D76F: db $29, $52, $39, $3D, $2E, $3E, $CF, $34 ; おんなのこは⎵た
 #_09D777: db $31, $2A, $58, $34, $A4 ; すかったぜ
-#_09D77C: db $F2, $0B ; prewritten text 0B
+#_09D77C: db $F2, $0B ; phrase 0B
 #_09D77E: db $F9 ; new line
 #_09D77F: db $2E, $4E, $A9, $CF, $29, $4E, $3D, $CF ; これで⎵おれの⎵
 #_09D787: db $48, $2C, $46, $3E, $CF, $29, $50, $4C ; やくめは⎵おわり
@@ -11623,9 +11623,9 @@ Message_01_00_07:
 #_09D7A9: db $ED ; write female protag name
 #_09D7AA: db $9A ; :
 #_09D7AB: db $F9 ; new line
-#_09D7AC: db $F2, $0B ; prewritten text 0B
+#_09D7AC: db $F2, $0B ; phrase 0B
 #_09D7AE: db $F0 ; write player name
-#_09D7AF: db $F2, $0B ; prewritten text 0B
+#_09D7AF: db $F2, $0B ; phrase 0B
 #_09D7B1: db $F9 ; new line
 #_09D7B2: db $25, $39, $34, $9C, $CF, $34, $31, $2D ; あなたが⎵たすけ
 #_09D7BA: db $37, $2C, $4E, $34, $3D, $3C ; てくれたのね
@@ -11636,7 +11636,7 @@ Message_01_00_07:
 #_09D7CD: db $F9 ; new line
 #_09D7CE: db $2E, $3D, $32, $2A, $26, $3A, $CF, $2B ; このせかいに⎵き
 #_09D7D6: db $34, $3D, $3C ; たのね
-#_09D7D9: db $F2, $0B ; prewritten text 0B
+#_09D7D9: db $F2, $0B ; phrase 0B
 #_09D7DB: db $F9 ; new line
 #_09D7DC: db $42, $2A, $3D, $2E, $38, $3E, $CF, $A4 ; ほかのことは⎵ぜ
 #_09D7E4: db $52, $AD, $50, $31, $4E, $34, $2D, $AA ; んぶわすれたけど
@@ -11649,7 +11649,7 @@ Message_01_00_07:
 #_09D800: db $50, $34, $30, $3D, $CF, $2F, $A6, $46 ; わたしの⎵さだめ
 #_09D808: db $3E ; は
 #_09D809: db $F9 ; new line
-#_09D80A: db $F2, $0B ; prewritten text 0B
+#_09D80A: db $F2, $0B ; phrase 0B
 #_09D80C: db $25, $39, $34, $38, $CF, $38, $47, $3A ; あなたと⎵ともに
 #_09D814: db $CF, $31, $31, $52, $A9, $26, $2C, $2E ; ⎵すすんでいくこ
 #_09D81C: db $38 ; と
@@ -11663,7 +11663,7 @@ Message_01_00_07:
 #_09D833: db $97 ; >
 #_09D834: db $ED ; write female protag name
 #_09D835: db $9C, $CF ; が⎵
-#_09D837: db $F2, $2F ; prewritten text 2F
+#_09D837: db $F2, $2F ; phrase 2F
 #_09D839: db $FC ; wait for key and new line
 #_09D83A: db $D0, $54 ; set progress flag 54
 #_09D83C: db $D1, $0C ; clear progress flag 0C
@@ -11679,7 +11679,7 @@ Message_01_00_08:
 ; >«だれもいない»
 Message_01_00_09:
 #_09D847: db $97 ; >
-#_09D848: db $F2, $2C ; prewritten text 2C
+#_09D848: db $F2, $2C ; phrase 2C
 #_09D84A: db $FC ; wait for key and new line
 #_09D84B: db $FF ; end of message
 
@@ -11692,7 +11692,7 @@ Message_01_00_0A:
 #_09D84F: db $D5, $45 ; send 45 to APU
 #_09D851: db $D7, $81, $2B ; load scenes 81 and 2B
 #_09D854: db $D6, $00, $3F, $70, $28 ; place sprite 3F in slot 00 at XY:{70,28}
-#_09D859: db $F2, $33 ; prewritten text 33
+#_09D859: db $F2, $33 ; phrase 33
 #_09D85B: db $30, $52, $B2, $9A ; しんぷ:
 #_09D85F: db $F9 ; new line
 #_09D860: db $D2, $51, $0B ; test progress flag 51 for message 0B
@@ -11712,7 +11712,7 @@ Message_01_00_0A:
 ; «・・・»そうですか
 Message_01_00_0B:
 #_09D873: db $50, $9C, $CF ; わが⎵
-#_09D876: db $F2, $33 ; prewritten text 33
+#_09D876: db $F2, $33 ; phrase 33
 #_09D878: db $2A, $26, $3E ; かいは
 #_09D87B: db $D2, $51, $0D ; test progress flag 51 for message 0D
 #_09D87E: db $CF, $A9, $2B, $37, $29, $4C, $43, $32 ; ⎵できておりませ
@@ -11741,9 +11741,9 @@ Message_01_00_0B:
 #_09D8EA: db $F9 ; new line
 #_09D8EB: db $5C, $02, $01, $01, $01, $42, $AA, $CF ; ℏ1000ほど⎵
 #_09D8F3: db $2B, $40, $51, $CF ; きふを⎵
-#_09D8F7: db $F2, $4A ; prewritten text 4A
+#_09D8F7: db $F2, $4A ; phrase 4A
 #_09D8F9: db $F8, $0E ; YES/NO - go to message 0E if YES
-#_09D8FB: db $F2, $0B ; prewritten text 0B
+#_09D8FB: db $F2, $0B ; phrase 0B
 #_09D8FD: db $33, $27, $A9, $31, $2A ; そうですか
 #_09D902: db $F9 ; new line
 #_09D903: db $D3, $11 ; go to message 11
@@ -11756,7 +11756,7 @@ Message_01_00_0B:
 ; あなたに かみの ごかごの あらんことを«・・・»
 Message_01_00_0C:
 #_09D905: db $FA ; clear message box
-#_09D906: db $F2, $31 ; prewritten text 31
+#_09D906: db $F2, $31 ; phrase 31
 #_09D908: db $F9 ; new line
 #_09D909: db $2B, $57, $27, $2A, $26, $3D, $CF, $2A ; きょうかいの⎵か
 #_09D911: db $52, $32, $26, $3A ; んせいに
@@ -11767,7 +11767,7 @@ Message_01_00_0C:
 #_09D925: db $25, $39, $34, $3A, $CF, $2A, $44, $3D ; あなたに⎵かみの
 #_09D92D: db $CF, $A0, $2A, $A0, $3D, $CF, $25, $4B ; ⎵ごかごの⎵あら
 #_09D935: db $52, $2E, $38, $51 ; んことを
-#_09D939: db $F2, $0B ; prewritten text 0B
+#_09D939: db $F2, $0B ; phrase 0B
 #_09D93B: db $FC ; wait for key and new line
 #_09D93C: db $FF ; end of message
 
@@ -11783,7 +11783,7 @@ Message_01_00_0D:
 #_09D94A: db $44, $39, $2F, $52, $3D, $CF, $29, $2A ; みなさんの⎵おか
 #_09D952: db $9F, $A9, $31 ; げです
 #_09D955: db $F9 ; new line
-#_09D956: db $F2, $31 ; prewritten text 31
+#_09D956: db $F2, $31 ; phrase 31
 #_09D958: db $FC ; wait for key and new line
 #_09D959: db $FF ; end of message
 
@@ -11815,7 +11815,7 @@ Message_01_00_0F:
 #_09D98A: db $29, $29, $CF, $25, $39, $34, $3D, $CF ; おお⎵あなたの⎵
 #_09D992: db $2B, $40, $3A, $4A, $58, $37 ; きふによって
 #_09D998: db $F9 ; new line
-#_09D999: db $F2, $33 ; prewritten text 33
+#_09D999: db $F2, $33 ; phrase 33
 #_09D99B: db $2A, $26, $9C, $CF, $2A, $52, $32, $26 ; かいが⎵かんせい
 #_09D9A3: db $30, $43, $31, $A5 ; しますぞ
 #_09D9A7: db $FC ; wait for key and new line
@@ -11828,7 +11828,7 @@ Message_01_00_0F:
 #_09D9C3: db $4C, $31, $4D, $2E, $4F, $3A, $3E ; りするころには
 #_09D9CA: db $F9 ; new line
 #_09D9CB: db $50, $9C, $CF ; わが⎵
-#_09D9CE: db $F2, $33 ; prewritten text 33
+#_09D9CE: db $F2, $33 ; phrase 33
 #_09D9D0: db $2A, $26, $9C, $CF, $A9, $2B, $25, $9C ; かいが⎵できあが
 #_09D9D8: db $4C, $43, $31 ; ります
 #_09D9DB: db $FC ; wait for key and new line
@@ -11852,7 +11852,7 @@ Message_01_00_10:
 Message_01_00_11:
 #_09D9F9: db $A9, $3E, $CF, $43, $34, $3D, $CF, $2B ; では⎵またの⎵き
 #_09DA01: db $2A, $26, $3A, $CF ; かいに⎵
-#_09DA05: db $F2, $4A ; prewritten text 4A
+#_09DA05: db $F2, $4A ; phrase 4A
 #_09DA07: db $FC ; wait for key and new line
 #_09DA08: db $FF ; end of message
 
@@ -11872,13 +11872,13 @@ Message_01_00_12:
 ; メシアさまを たすけてください
 Message_01_00_13:
 #_09DA0D: db $D6, $00, $49, $78, $28 ; place sprite 49 in slot 00 at XY:{78,28}
-#_09DA12: db $F2, $33 ; prewritten text 33
+#_09DA12: db $F2, $33 ; phrase 33
 #_09DA14: db $38, $9A ; と:
 #_09DA16: db $F9 ; new line
 #_09DA17: db $D2, $52, $14 ; test progress flag 52 for message 14
 #_09DA1A: db $25, $25, $CF, $39, $52, $A9, $CF, $2E ; ああ⎵なんで⎵こ
 #_09DA22: db $52, $39, $2E, $38, $3A ; んなことに
-#_09DA27: db $F2, $0B ; prewritten text 0B
+#_09DA27: db $F2, $0B ; phrase 0B
 #_09DA29: db $F9 ; new line
 #_09DA2A: db $7E, $68, $5D, $2F, $43, $3A, $CF, $5D ; メシアさまに⎵ア
 #_09DA32: db $64, $7B, $9C, $CF, $38, $4C, $36, $26 ; クマが⎵とりつい
@@ -11886,14 +11886,14 @@ Message_01_00_13:
 #_09DA41: db $FC ; wait for key and new line
 #_09DA42: db $FA ; clear message box
 #_09DA43: db $2B, $58, $38, $CF ; きっと⎵
-#_09DA47: db $F2, $34 ; prewritten text 34
+#_09DA47: db $F2, $34 ; phrase 34
 #_09DA49: db $38, $3D ; との
 #_09DA4B: db $F9 ; new line
 #_09DA4C: db $30, $50, $A1, $3A, $CF, $35, $9C, $26 ; しわざに⎵ちがい
 #_09DA54: db $39, $26, $50 ; ないわ
-#_09DA57: db $F2, $0B ; prewritten text 0B
+#_09DA57: db $F2, $0B ; phrase 0B
 #_09DA59: db $F9 ; new line
-#_09DA5A: db $F2, $4A ; prewritten text 4A
+#_09DA5A: db $F2, $4A ; phrase 4A
 #_09DA5C: db $DF, $DF ; delay 7 frames [x2]
 #_09DA5E: db $F9 ; new line
 #_09DA5F: db $7E, $68, $5D, $2F, $43, $51, $CF, $34 ; メシアさまを⎵た
@@ -11906,16 +11906,16 @@ Message_01_00_13:
 ; «・・・»ああ«・・・»メシアさまが いってしまわれる
 ; のこされた わたしは いったいどうすれば«・・・»
 Message_01_00_14:
-#_09DA70: db $F2, $0B ; prewritten text 0B
+#_09DA70: db $F2, $0B ; phrase 0B
 #_09DA72: db $25, $25 ; ああ
-#_09DA74: db $F2, $0B ; prewritten text 0B
+#_09DA74: db $F2, $0B ; phrase 0B
 #_09DA76: db $7E, $68, $5D, $2F, $43, $9C, $CF, $26 ; メシアさまが⎵い
 #_09DA7E: db $58, $37, $30, $43, $50, $4E, $4D ; ってしまわれる
 #_09DA85: db $F9 ; new line
 #_09DA86: db $3D, $2E, $2F, $4E, $34, $CF, $50, $34 ; のこされた⎵わた
 #_09DA8E: db $30, $3E, $CF, $26, $58, $34, $26, $AA ; しは⎵いったいど
 #_09DA96: db $27, $31, $4E, $AB ; うすれば
-#_09DA9A: db $F2, $0B ; prewritten text 0B
+#_09DA9A: db $F2, $0B ; phrase 0B
 #_09DA9C: db $FC ; wait for key and new line
 #_09DA9D: db $FF ; end of message
 
@@ -11938,25 +11938,25 @@ Message_01_00_15:
 Message_01_00_16:
 #_09DAA3: db $D5, $47 ; send 47 to APU
 #_09DAA5: db $D6, $00, $B1, $70, $38 ; place sprite B1 in slot 00 at XY:{70,38}
-#_09DAAA: db $F2, $46 ; prewritten text 46
+#_09DAAA: db $F2, $46 ; phrase 46
 #_09DAAC: db $9A ; :
 #_09DAAD: db $F9 ; new line
 #_09DAAE: db $D2, $52, $1A ; test progress flag 52 for message 1A
 #_09DAB1: db $D2, $0C, $18 ; test progress flag 0C for message 18
-#_09DAB4: db $F2, $71 ; prewritten text 71
+#_09DAB4: db $F2, $71 ; phrase 71
 #_09DAB6: db $3A, $CF, $3E, $26, $58, $34, $A5 ; に⎵はいったぞ
 #_09DABD: db $FC ; wait for key and new line
 #_09DABE: db $D2, $53, $17 ; test progress flag 53 for message 17
 #_09DAC1: db $FA ; clear message box
-#_09DAC2: db $F2, $0B ; prewritten text 0B
+#_09DAC2: db $F2, $0B ; phrase 0B
 #_09DAC4: db $29, $2C, $2A, $4B, $CF, $34, $A6, $4A ; おくから⎵ただよ
 #_09DACC: db $58, $37, $2C, $4D ; ってくる
 #_09DAD0: db $F9 ; new line
 #_09DAD1: db $39, $3A, $2A, $9C ; なにかが
-#_09DAD5: db $F2, $0B ; prewritten text 0B
+#_09DAD5: db $F2, $0B ; phrase 0B
 #_09DAD7: db $CF, $AA, $31, $9E, $4F, $26, $CF, $27 ; ⎵どすぐろい⎵う
 #_09DADF: db $A3, $9C ; ずが
-#_09DAE1: db $F2, $0B ; prewritten text 0B
+#_09DAE1: db $F2, $0B ; phrase 0B
 #_09DAE3: db $FC ; wait for key and new line
 #_09DAE4: db $A6, $46, $A6, $94 ; だめだ!
 #_09DAE8: db $F9 ; new line
@@ -12025,7 +12025,7 @@ Message_01_00_18:
 Message_01_00_19:
 #_09DB98: db $D4, $03 ; set text box size to 3
 #_09DB9A: db $A9, $3E, $CF ; では⎵
-#_09DB9D: db $F2, $71 ; prewritten text 71
+#_09DB9D: db $F2, $71 ; phrase 71
 #_09DB9F: db $2A, $4B, $CF, $33, $38, $41, $A9, $4A ; から⎵そとへでよ
 #_09DBA7: db $27 ; う
 #_09DBA8: db $FC ; wait for key and new line
@@ -12069,7 +12069,7 @@ Message_01_00_1B:
 #_09DBEC: db $D6, $01, $1C, $68, $38 ; place sprite 1C in slot 01 at XY:{68,38}
 #_09DBF1: db $68, $69, $6C, $5A, $9A ; シスター:
 #_09DBF6: db $F9 ; new line
-#_09DBF7: db $F2, $0B ; prewritten text 0B
+#_09DBF7: db $F2, $0B ; phrase 0B
 #_09DBF9: db $26, $26, $A9, $31, $2A, $95 ; いいですか?
 #_09DBFF: db $F9 ; new line
 #_09DC00: db $25, $39, $34, $3E, $CF, $28, $4B, $AB ; あなたは⎵えらば
@@ -12097,7 +12097,7 @@ Message_01_00_1B:
 #_09DC65: db $F9 ; new line
 #_09DC66: db $25, $39, $34, $3D, $CF, $2F, $A6, $46 ; あなたの⎵さだめ
 #_09DC6E: db $39, $3D, $A9, $31 ; なのです
-#_09DC72: db $F2, $0B ; prewritten text 0B
+#_09DC72: db $F2, $0B ; phrase 0B
 #_09DC74: db $FC ; wait for key and new line
 #_09DC75: db $FF ; end of message
 
@@ -12115,7 +12115,7 @@ Message_01_00_1C:
 #_09DC7B: db $D5, $46 ; send 46 to APU
 #_09DC7D: db $DE, $01, $00, $08, $01 ; load 1x demon 0108
 #_09DC82: db $E4, $00 ; load demon $00
-#_09DC84: db $F5 ; write demon name from $050A
+#_09DC84: db $F5 ; write demon 0 name
 #_09DC85: db $9A ; :
 #_09DC86: db $F9 ; new line
 #_09DC87: db $A6, $4E, $A6, $94, $95, $CF, $25, $34 ; だれだ!?⎵あた
@@ -12161,14 +12161,14 @@ Message_01_00_1F:
 #_09DCE8: db $D5, $47 ; send 47 to APU
 #_09DCEA: db $D6, $00, $1E, $78, $28 ; place sprite 1E in slot 00 at XY:{78,28}
 #_09DCEF: db $FE, $45, $00, $01 ; ext command 45: something 00, 01 TODO
-#_09DCF3: db $F2, $00 ; prewritten text 00
+#_09DCF3: db $F2, $00 ; phrase 00
 #_09DCF5: db $3D, $26, $30, $2B, $9A ; のいしき:
 #_09DCFA: db $F9 ; new line
 #_09DCFB: db $50, $34, $30, $3E, $CF, $34, $31, $2A ; わたしは⎵たすか
 #_09DD03: db $58, $34, $3D, $3C, $94 ; ったのね!
 #_09DD08: db $FC ; wait for key and new line
 #_09DD09: db $FA ; clear message box
-#_09DD0A: db $F2, $0B ; prewritten text 0B
+#_09DD0A: db $F2, $0B ; phrase 0B
 #_09DD0C: db $25, $4C, $9C, $38, $27 ; ありがとう
 #_09DD11: db $F9 ; new line
 #_09DD12: db $3E, $48, $2C, $CF, $47, $AA, $58, $37 ; はやく⎵もどって
@@ -12191,32 +12191,32 @@ Message_01_00_1F:
 ; «カテドラル»のばしょ?
 Message_01_00_20:
 #_09DD26: db $D6, $00, $0E, $70, $38 ; place sprite 0E in slot 00 at XY:{70,38}
-#_09DD2B: db $F2, $33 ; prewritten text 33
+#_09DD2B: db $F2, $33 ; phrase 33
 #_09DD2D: db $38, $9A ; と:
 #_09DD2F: db $F9 ; new line
 #_09DD30: db $43, $47, $39, $2C, $CF ; まもなく⎵
-#_09DD35: db $F2, $33 ; prewritten text 33
+#_09DD35: db $F2, $33 ; phrase 33
 #_09DD37: db $3D, $CF, $32, $26, $35, $CF ; の⎵せいち⎵
-#_09DD3D: db $F2, $5C ; prewritten text 5C
+#_09DD3D: db $F2, $5C ; phrase 5C
 #_09DD3F: db $9C ; が
 #_09DD40: db $F9 ; new line
 #_09DD41: db $A9, $2B, $25, $9C, $4D, $4A ; できあがるよ
 #_09DD47: db $FC ; wait for key and new line
 #_09DD48: db $FA ; clear message box
-#_09DD49: db $F2, $5C ; prewritten text 5C
+#_09DD49: db $F2, $5C ; phrase 5C
 #_09DD4B: db $9C, $CF, $A9, $2B, $25, $9C, $4E, $AB ; が⎵できあがれば
 #_09DD53: db $CF, $2A, $44, $9C, $CF, $29, $26, $A9 ; ⎵かみが⎵おいで
 #_09DD5B: db $3A, $39, $4C ; になり
 #_09DD5E: db $F9 ; new line
 #_09DD5F: db $41, $26, $50, $39, $CF, $32, $2A, $26 ; へいわな⎵せかい
 #_09DD67: db $9C, $CF, $29, $38, $A3, $4E, $4D ; が⎵おとずれる
-#_09DD6E: db $F2, $0B ; prewritten text 0B
+#_09DD6E: db $F2, $0B ; phrase 0B
 #_09DD70: db $F9 ; new line
-#_09DD71: db $F2, $33 ; prewritten text 33
+#_09DD71: db $F2, $33 ; phrase 33
 #_09DD73: db $CF, $AB, $52, $A1, $26, $94 ; ⎵ばんざい!
 #_09DD79: db $FC ; wait for key and new line
 #_09DD7A: db $FA ; clear message box
-#_09DD7B: db $F2, $5C ; prewritten text 5C
+#_09DD7B: db $F2, $5C ; phrase 5C
 #_09DD7D: db $3D, $AB, $30, $57, $95 ; のばしょ?
 #_09DD82: db $FC ; wait for key and new line
 #_09DD83: db $FE, $04, $22, $21 ; ext command 04: message 22 if alignment >= 112; 21 if >= 144
@@ -12239,11 +12239,11 @@ Message_01_00_21:
 ; うみには いかれないよ!
 Message_01_00_22:
 #_09DD9C: db $FA ; clear message box
-#_09DD9D: db $F2, $1C ; prewritten text 1C
+#_09DD9D: db $F2, $1C ; phrase 1C
 #_09DD9F: db $93, $C7, $5E, $3A, $CF, $36, $2C, $4B ; ・ベイに⎵つくら
 #_09DDA7: db $4E, $37, $26, $4D, $4A ; れているよ
 #_09DDAC: db $F9 ; new line
-#_09DDAD: db $F2, $4C ; prewritten text 4C
+#_09DDAD: db $F2, $4C ; phrase 4C
 #_09DDAF: db $51, $CF, $38, $29, $4B, $39, $26, $38 ; を⎵とおらないと
 #_09DDB7: db $F9 ; new line
 #_09DDB8: db $27, $44, $3A, $3E, $CF, $26, $2A, $4E ; うみには⎵いかれ
@@ -12259,22 +12259,22 @@ Message_01_00_22:
 ; いったい どうやって つくりだすのか«・・・»
 Message_01_00_23:
 #_09DDC6: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09DDCB: db $F2, $33 ; prewritten text 33
+#_09DDCB: db $F2, $33 ; phrase 33
 #_09DDCD: db $38, $9A ; と:
 #_09DDCF: db $F9 ; new line
-#_09DDD0: db $F2, $5C ; prewritten text 5C
+#_09DDD0: db $F2, $5C ; phrase 5C
 #_09DDD2: db $2A, $52, $32, $26, $3E, $CF, $4A, $4F ; かんせいは⎵よろ
 #_09DDDA: db $2E, $52, $A9, $26, $26, $9C ; こんでいいが
 #_09DDE0: db $F9 ; new line
 #_09DDE1: db $AB, $2C, $A6, $26, $39, $CF ; ばくだいな⎵
-#_09DDE7: db $F2, $56 ; prewritten text 56
+#_09DDE7: db $F2, $56 ; phrase 56
 #_09DDE9: db $9C, $CF, $3F, $36, $4A, $27, $A6 ; が⎵ひつようだ
 #_09DDF0: db $FC ; wait for key and new line
 #_09DDF1: db $FA ; clear message box
 #_09DDF2: db $26, $58, $34, $26, $CF, $AA, $27, $48 ; いったい⎵どうや
 #_09DDFA: db $58, $37, $CF, $36, $2C, $4C, $A6, $31 ; って⎵つくりだす
 #_09DE02: db $3D, $2A ; のか
-#_09DE04: db $F2, $0B ; prewritten text 0B
+#_09DE04: db $F2, $0B ; phrase 0B
 #_09DE06: db $FC ; wait for key and new line
 #_09DE07: db $FF ; end of message
 
@@ -12288,7 +12288,7 @@ Message_01_00_24:
 #_09DE08: db $D6, $00, $88, $70, $28 ; place sprite 88 in slot 00 at XY:{70,28}
 #_09DE0D: db $29, $52, $39, $9A ; おんな:
 #_09DE11: db $F9 ; new line
-#_09DE12: db $F2, $4C ; prewritten text 4C
+#_09DE12: db $F2, $4C ; phrase 4C
 #_09DE14: db $3A, $3E, $CF, $5D, $64, $7B, $51, $CF ; には⎵アクマを⎵
 #_09DE1C: db $40, $27, $26, $52, $A9, $2B, $4D ; ふういんできる
 #_09DE23: db $F9 ; new line
@@ -12312,13 +12312,13 @@ Message_01_00_25:
 #_09DE4A: db $29, $38, $2E, $9A ; おとこ:
 #_09DE4E: db $F9 ; new line
 #_09DE4F: db $29, $4E, $3E, $CF ; おれは⎵
-#_09DE53: db $F2, $5C ; prewritten text 5C
+#_09DE53: db $F2, $5C ; phrase 5C
 #_09DE55: db $41, $CF, $26, $2B, $34, $26, $3D, $A6 ; へ⎵いきたいのだ
 #_09DE5D: db $9C ; が
-#_09DE5E: db $F2, $0B ; prewritten text 0B
+#_09DE5E: db $F2, $0B ; phrase 0B
 #_09DE60: db $F9 ; new line
 #_09DE61: db $D2, $57, $26 ; test progress flag 57 for message 26
-#_09DE64: db $F2, $4C ; prewritten text 4C
+#_09DE64: db $F2, $4C ; phrase 4C
 #_09DE66: db $3A, $CF, $2D, $58, $2A, $26, $9C, $CF ; に⎵けっかいが⎵
 #_09DE6E: db $3E, $4B, $4E, $37, $26, $4D, $34, $46 ; はられているため
 #_09DE76: db $F9 ; new line
@@ -12333,7 +12333,7 @@ Message_01_00_25:
 ; とけたのか
 Message_01_00_26:
 #_09DE85: db $28, $28, $58, $CF ; ええっ⎵
-#_09DE89: db $F2, $4C ; prewritten text 4C
+#_09DE89: db $F2, $4C ; phrase 4C
 #_09DE8B: db $3D, $CF, $2D, $58, $2A, $26, $3E ; の⎵けっかいは
 #_09DE92: db $F9 ; new line
 #_09DE93: db $38, $2D, $34, $3D, $2A ; とけたのか
@@ -12353,7 +12353,7 @@ Message_01_00_27:
 #_09DE9F: db $4F, $27, $A2, $52, $9A ; ろうじん:
 #_09DEA4: db $F9 ; new line
 #_09DEA5: db $D2, $52, $28 ; test progress flag 52 for message 28
-#_09DEA8: db $F2, $18 ; prewritten text 18
+#_09DEA8: db $F2, $18 ; phrase 18
 #_09DEAA: db $3A, $CF, $32, $26, $30, $52, $3D, $39 ; に⎵せいしんのな
 #_09DEB2: db $2A, $3A ; かに
 #_09DEB4: db $F9 ; new line
@@ -12370,7 +12370,7 @@ Message_01_00_27:
 #_09DEE9: db $F9 ; new line
 #_09DEEA: db $34, $29, $31, $2E, $38, $9C, $CF, $A9 ; たおすことが⎵で
 #_09DEF2: db $2B, $4D, $2A, $47, $30, $4E, $52 ; きるかもしれん
-#_09DEF9: db $F2, $0B ; prewritten text 0B
+#_09DEF9: db $F2, $0B ; phrase 0B
 #_09DEFB: db $FC ; wait for key and new line
 #_09DEFC: db $FF ; end of message
 
@@ -12385,7 +12385,7 @@ Message_01_00_28:
 #_09DF0E: db $F9 ; new line
 #_09DF0F: db $47, $58, $34, $3F, $38, $47, $CF, $26 ; もったひとも⎵い
 #_09DF17: db $4D, $47, $52, $A6 ; るもんだ
-#_09DF1B: db $F2, $0B ; prewritten text 0B
+#_09DF1B: db $F2, $0B ; phrase 0B
 #_09DF1D: db $FC ; wait for key and new line
 #_09DF1E: db $FF ; end of message
 
@@ -12396,7 +12396,7 @@ Message_01_00_28:
 ; わたしには かみの ごかごがあるから いいけど
 Message_01_00_29:
 #_09DF1F: db $D6, $00, $49, $78, $28 ; place sprite 49 in slot 00 at XY:{78,28}
-#_09DF24: db $F2, $33 ; prewritten text 33
+#_09DF24: db $F2, $33 ; phrase 33
 #_09DF26: db $38, $9A ; と:
 #_09DF28: db $F9 ; new line
 #_09DF29: db $72, $68, $3A, $CF, $29, $33, $4F, $30 ; ニシに⎵おそろし
@@ -12586,7 +12586,7 @@ Message_01_00_41:
 ; >«だれもいない»
 Message_01_00_42:
 #_09E04A: db $97 ; >
-#_09E04B: db $F2, $2C ; prewritten text 2C
+#_09E04B: db $F2, $2C ; phrase 2C
 #_09E04D: db $FC ; wait for key and new line
 #_09E04E: db $FF ; end of message
 
@@ -12597,7 +12597,7 @@ Message_01_06_00:
 #_09E04F: db $D6, $00, $6D, $60, $28 ; place sprite 6D in slot 00 at XY:{60,28}
 #_09E054: db $D2, $E6, $01 ; test progress flag E6 for message 01
 #_09E057: db $97 ; >
-#_09E058: db $F2, $68 ; prewritten text 68
+#_09E058: db $F2, $68 ; phrase 68
 #_09E05A: db $F8, $02 ; YES/NO - go to message 02 if YES
 #_09E05C: db $FF ; end of message
 
@@ -12606,7 +12606,7 @@ Message_01_06_00:
 ; >«とびらは とざされている»
 Message_01_06_01:
 #_09E05D: db $97 ; >
-#_09E05E: db $F2, $69 ; prewritten text 69
+#_09E05E: db $F2, $69 ; phrase 69
 #_09E060: db $FC ; wait for key and new line
 #_09E061: db $FF ; end of message
 
@@ -12633,7 +12633,7 @@ Message_01_06_03:
 #_09E07B: db $D2, $2F, $13 ; test progress flag 2F for message 13
 #_09E07E: db $D6, $07, $4E, $70, $28 ; place sprite 4E in slot 07 at XY:{70,28}
 #_09E083: db $D2, $2D, $05 ; test progress flag 2D for message 05
-#_09E086: db $F2, $1B ; prewritten text 1B
+#_09E086: db $F2, $1B ; phrase 1B
 #_09E088: db $34, $26, $30, $9A ; たいし:
 #_09E08C: db $F9 ; new line
 #_09E08D: db $21, $0F, $16, $0D, $19, $17, $0F, $94 ; WELCOME!
@@ -12645,7 +12645,7 @@ Message_01_06_03:
 #_09E0AF: db $FC ; wait for key and new line
 #_09E0B0: db $FA ; clear message box
 #_09E0B1: db $88, $6C, $68, $B5, $CF ; ワタシガ⎵
-#_09E0B6: db $F2, $1B ; prewritten text 1B
+#_09E0B6: db $F2, $1B ; phrase 1B
 #_09E0B8: db $6C, $5E, $68, $75, $CF, $70, $5A, $85 ; タイシノ⎵トール
 #_09E0C0: db $7B, $8A, $CF, $C2, $69 ; マン⎵デス
 #_09E0C5: db $F9 ; new line
@@ -12676,19 +12676,19 @@ Message_01_06_04:
 #_09E0EB: db $67, $8A, $89, $CF, $5D, $64, $7B, $62 ; サンヲ⎵アクマカ
 #_09E0F3: db $83, $CF, $6C, $69, $65, $85, $6C, $7E ; ラ⎵タスケルタメ
 #_09E0FB: db $F9 ; new line
-#_09E0FC: db $F2, $1B ; prewritten text 1B
+#_09E0FC: db $F2, $1B ; phrase 1B
 #_09E0FE: db $B7, $8A, $CF, $BF, $68, $7B, $68, $6C ; グン⎵ダシマシタ
 #_09E106: db $F9 ; new line
 #_09E107: db $68, $62, $68 ; シカシ
-#_09E10A: db $F2, $0B ; prewritten text 0B
+#_09E10A: db $F2, $0B ; phrase 0B
 #_09E10C: db $7B, $BF, $CF, $6E, $82, $64, $71, $5E ; マダ⎵ツヨクナイ
 #_09E114: db $C2, $69 ; デス
 #_09E116: db $FC ; wait for key and new line
 #_09E117: db $FA ; clear message box
 #_09E118: db $B9, $70, $5F ; ゴトウ
-#_09E11B: db $F2, $0B ; prewritten text 0B
+#_09E11B: db $F2, $0B ; phrase 0B
 #_09E11D: db $62, $86, $76, $CF ; カレハ⎵
-#_09E121: db $F2, $1C ; prewritten text 1C
+#_09E121: db $F2, $1C ; phrase 1C
 #_09E123: db $72 ; ニ
 #_09E124: db $F9 ; new line
 #_09E125: db $7B, $61, $5F, $CF, $85, $68, $78, $8B ; マオウ⎵ルシファ
@@ -12716,7 +12716,7 @@ Message_01_06_04:
 #_09E18C: db $5D, $71, $6C, $B5, $CF, $6C, $69, $65 ; アナタガ⎵タスケ
 #_09E194: db $6F, $64, $86, $86, $C4 ; テクレレバ
 #_09E199: db $F9 ; new line
-#_09E19A: db $F2, $1C ; prewritten text 1C
+#_09E19A: db $F2, $1C ; phrase 1C
 #_09E19C: db $72, $76, $CF, $79, $5E, $88, $B5, $CF ; ニハ⎵ヘイワガ⎵
 #_09E1A4: db $7F, $C3, $84 ; モドリ
 #_09E1A7: db $F9 ; new line
@@ -12800,7 +12800,7 @@ Message_01_06_09:
 #_09E269: db $62, $95 ; カ?
 #_09E26B: db $F8, $12 ; YES/NO - go to message 12 if YES
 #_09E26D: db $FA ; clear message box
-#_09E26E: db $F2, $0B ; prewritten text 0B
+#_09E26E: db $F2, $0B ; phrase 0B
 #_09E270: db $6B, $5F, $C2, $69, $62, $CF, $C2, $76 ; ソウデスカ⎵デハ
 #_09E278: db $CF, $B9, $70, $5F, $89 ; ⎵ゴトウヲ
 #_09E27D: db $F9 ; new line
@@ -12820,7 +12820,7 @@ Message_01_06_0A:
 #_09E2A6: db $94, $95 ; !?
 #_09E2A8: db $F9 ; new line
 #_09E2A9: db $6B, $86, $76, $CF, $6B, $86, $76 ; ソレハ⎵ソレハ
-#_09E2B0: db $F2, $0B ; prewritten text 0B
+#_09E2B0: db $F2, $0B ; phrase 0B
 #_09E2B2: db $FC ; wait for key and new line
 
 ;===================================================================================================
@@ -12832,12 +12832,12 @@ Message_01_06_0A:
 ; これからも かみのために はたらいてくれるか?
 Message_01_06_0B:
 #_09E2B3: db $DE, $01, $00, $04, $01 ; load 1x demon 0104
-#_09E2B8: db $F2, $7C ; prewritten text 7C
+#_09E2B8: db $F2, $7C ; phrase 7C
 #_09E2BA: db $D6, $07, $00 ; delete sprite in slot 07
-#_09E2BD: db $F2, $7D ; prewritten text 7D
+#_09E2BD: db $F2, $7D ; phrase 7D
 #_09E2BF: db $E4, $00 ; load demon $00
 #_09E2C1: db $D2, $6A, $0E ; test progress flag 6A for message 0E
-#_09E2C4: db $F2, $0B ; prewritten text 0B
+#_09E2C4: db $F2, $0B ; phrase 0B
 #_09E2C6: db $A0, $2C, $4F, $27, $A6, $58, $34, $39 ; ごくろうだったな
 #_09E2CE: db $FC ; wait for key and new line
 #_09E2CF: db $FA ; clear message box
@@ -12846,7 +12846,7 @@ Message_01_06_0B:
 #_09E2D9: db $2E, $3D, $CF ; この⎵
 #_09E2DC: db $F6 ; write class name from $0506
 #_09E2DD: db $CF ; ⎵
-#_09E2DE: db $F5 ; write demon name from $050A
+#_09E2DE: db $F5 ; write demon 0 name
 #_09E2DF: db $9C ; が
 #_09E2E0: db $F9 ; new line
 #_09E2E1: db $2A, $44, $3A, $2A, $50, $58, $37, $CF ; かみにかわって⎵
@@ -12888,7 +12888,7 @@ Message_01_06_0C:
 #_09E334: db $30, $30, $34, $9C ; ししたが
 #_09E338: db $F9 ; new line
 #_09E339: db $31, $A9, $3A, $CF ; すでに⎵
-#_09E33D: db $F2, $1C ; prewritten text 1C
+#_09E33D: db $F2, $1C ; phrase 1C
 #_09E33F: db $3A, $3E, $CF, $2A, $A3, $29, $29, $2C ; には⎵かずおおく
 #_09E347: db $3D ; の
 #_09E348: db $F9 ; new line
@@ -12901,7 +12901,7 @@ Message_01_06_0C:
 #_09E368: db $3A ; に
 #_09E369: db $F9 ; new line
 #_09E36A: db $2E, $3D, $CF ; この⎵
-#_09E36D: db $F5 ; write demon name from $050A
+#_09E36D: db $F5 ; write demon 0 name
 #_09E36E: db $9C ; が
 #_09E36F: db $F9 ; new line
 #_09E370: db $76, $8A, $7B, $5A, $51, $CF, $40, $4C ; ハンマーを⎵ふり
@@ -12909,17 +12909,17 @@ Message_01_06_0C:
 #_09E37C: db $FC ; wait for key and new line
 #_09E37D: db $FA ; clear message box
 #_09E37E: db $43, $47, $39, $2C, $CF ; まもなく⎵
-#_09E383: db $F2, $1C ; prewritten text 1C
+#_09E383: db $F2, $1C ; phrase 1C
 #_09E385: db $3A ; に
 #_09E386: db $F9 ; new line
-#_09E387: db $F2, $24 ; prewritten text 24
+#_09E387: db $F2, $24 ; phrase 24
 #_09E389: db $9C, $CF, $35, $57, $2C, $9F, $2B, $31 ; が⎵ちょくげきす
 #_09E391: db $4D ; る
 #_09E392: db $FC ; wait for key and new line
 #_09E393: db $FA ; clear message box
 #_09E394: db $2D, $9C, $4E, $34, $CF, $2B, $57, $28 ; けがれた⎵きょえ
 #_09E39C: db $26, $3D, $43, $35, $CF ; いのまち⎵
-#_09E3A1: db $F2, $1C ; prewritten text 1C
+#_09E3A1: db $F2, $1C ; phrase 1C
 #_09E3A3: db $3E ; は
 #_09E3A4: db $F9 ; new line
 #_09E3A5: db $5D, $64, $7B, $47, $4F, $38, $47, $CF ; アクマもろとも⎵
@@ -12928,7 +12928,7 @@ Message_01_06_0C:
 #_09E3BA: db $FC ; wait for key and new line
 #_09E3BB: db $FA ; clear message box
 #_09E3BC: db $2E, $4E, $A9, $CF ; これで⎵
-#_09E3C0: db $F2, $21 ; prewritten text 21
+#_09E3C0: db $F2, $21 ; phrase 21
 #_09E3C2: db $2D, $52, $32, $36, $3D, $CF, $A2, $56 ; けんせつの⎵じゅ
 #_09E3CA: db $52, $AC, $47 ; んびも
 #_09E3CD: db $F9 ; new line
@@ -12936,7 +12936,7 @@ Message_01_06_0C:
 #_09E3D6: db $47, $3D ; もの
 #_09E3D8: db $FC ; wait for key and new line
 #_09E3D9: db $A9, $3E, $CF, $2F, $4B, $AB, $A6 ; では⎵さらばだ
-#_09E3E0: db $F2, $0B ; prewritten text 0B
+#_09E3E0: db $F2, $0B ; phrase 0B
 #_09E3E2: db $FC ; wait for key and new line
 #_09E3E3: db $D3, $11 ; go to message 11
 
@@ -12946,10 +12946,10 @@ Message_01_06_0C:
 Message_01_06_0D:
 #_09E3E5: db $D4, $03 ; set text box size to 3
 #_09E3E7: db $D0, $6A ; set progress flag 6A
-#_09E3E9: db $F2, $0B ; prewritten text 0B
+#_09E3E9: db $F2, $0B ; phrase 0B
 #_09E3EB: db $6B, $5F, $C2, $69, $62, $CF, $88, $6C ; ソウデスカ⎵ワタ
 #_09E3F3: db $68, $75, $CF, $5E, $5F, $66, $70, $B5 ; シノ⎵イウコトガ
-#_09E3FB: db $F2, $0B ; prewritten text 0B
+#_09E3FB: db $F2, $0B ; phrase 0B
 #_09E3FD: db $FC ; wait for key and new line
 #_09E3FE: db $D3, $0B ; go to message 0B
 
@@ -12965,19 +12965,19 @@ Message_01_06_0E:
 #_09E402: db $2E, $3D, $CF, $50, $34, $30, $3D, $CF ; この⎵わたしの⎵
 #_09E40A: db $26, $27, $2E, $38, $9C ; いうことが
 #_09E40F: db $F9 ; new line
-#_09E410: db $F2, $0B ; prewritten text 0B
+#_09E410: db $F2, $0B ; phrase 0B
 #_09E412: db $2B, $2D, $3B, $38, $CF, $26, $27, $3D ; きけぬと⎵いうの
 #_09E41A: db $2A, $94 ; か!
 #_09E41C: db $FC ; wait for key and new line
 #_09E41D: db $FA ; clear message box
 #_09E41E: db $39, $4B, $AB, $CF ; ならば⎵
-#_09E422: db $F2, $04 ; prewritten text 04
+#_09E422: db $F2, $04 ; phrase 04
 #_09E424: db $3D, $CF, $26, $3D, $35 ; の⎵いのち
 #_09E429: db $F9 ; new line
 #_09E42A: db $2E, $3D, $CF ; この⎵
 #_09E42D: db $F6 ; write class name from $0506
 #_09E42E: db $CF ; ⎵
-#_09E42F: db $F5 ; write demon name from $050A
+#_09E42F: db $F5 ; write demon 0 name
 #_09E430: db $9C ; が
 #_09E431: db $F9 ; new line
 #_09E432: db $26, $34, $A6, $2E, $27, $94 ; いただこう!
@@ -13002,39 +13002,39 @@ Message_01_06_0F:
 ; きえさるのだ«・・・»
 ; かみの «せんねんおうこく»に えいこうあれ«・・・»
 Message_01_06_10:
-#_09E443: db $F5 ; write demon name from $050A
+#_09E443: db $F5 ; write demon 0 name
 #_09E444: db $9A ; :
 #_09E445: db $F9 ; new line
-#_09E446: db $F2, $0B ; prewritten text 0B
+#_09E446: db $F2, $0B ; phrase 0B
 #_09E448: db $43, $2F, $2A, $CF ; まさか⎵
-#_09E44C: db $F2, $04 ; prewritten text 04
+#_09E44C: db $F2, $04 ; phrase 04
 #_09E44E: db $3A, $CF, $43, $2D, $4A, $27, $38, $3E ; に⎵まけようとは
-#_09E456: db $F2, $0B ; prewritten text 0B
+#_09E456: db $F2, $0B ; phrase 0B
 #_09E458: db $F9 ; new line
 #_09E459: db $A6, $9C, $CF, $31, $A9, $3A, $CF, $50 ; だが⎵すでに⎵わ
 #_09E461: db $9C, $CF, $76, $8A, $7B, $5A, $3E, $CF ; が⎵ハンマーは⎵
 #_09E469: db $40, $4C, $29, $4F, $2F, $4E, $34 ; ふりおろされた
 #_09E470: db $F9 ; new line
 #_09E471: db $43, $47, $39, $2C, $CF ; まもなく⎵
-#_09E476: db $F2, $1C ; prewritten text 1C
+#_09E476: db $F2, $1C ; phrase 1C
 #_09E478: db $3A ; に
 #_09E479: db $F9 ; new line
-#_09E47A: db $F2, $24 ; prewritten text 24
+#_09E47A: db $F2, $24 ; phrase 24
 #_09E47C: db $9C, $CF, $35, $57, $2C, $9F, $2B, $31 ; が⎵ちょくげきす
 #_09E484: db $4D ; る
 #_09E485: db $FC ; wait for key and new line
 #_09E486: db $FA ; clear message box
-#_09E487: db $F2, $1C ; prewritten text 1C
+#_09E487: db $F2, $1C ; phrase 1C
 #_09E489: db $3E, $CF, $5D, $64, $7B, $47, $4F, $38 ; は⎵アクマもろと
 #_09E491: db $47 ; も
 #_09E492: db $F9 ; new line
 #_09E493: db $2B, $28, $2F, $4D, $3D, $A6 ; きえさるのだ
-#_09E499: db $F2, $0B ; prewritten text 0B
+#_09E499: db $F2, $0B ; phrase 0B
 #_09E49B: db $F9 ; new line
 #_09E49C: db $2A, $44, $3D, $CF ; かみの⎵
-#_09E4A0: db $F2, $21 ; prewritten text 21
+#_09E4A0: db $F2, $21 ; phrase 21
 #_09E4A2: db $3A, $CF, $28, $26, $2E, $27, $25, $4E ; に⎵えいこうあれ
-#_09E4AA: db $F2, $0B ; prewritten text 0B
+#_09E4AA: db $F2, $0B ; phrase 0B
 #_09E4AC: db $FC ; wait for key and new line
 #_09E4AD: db $FE, $02, $20 ; ext command 02: add 32 to alignment if progress flag FB
 
@@ -13062,7 +13062,7 @@ Message_01_06_12:
 #_09E4CB: db $15, $CF, $23, $19, $1F, $CF, $20, $0F ; K⎵YOU⎵VE
 #_09E4D3: db $1C, $23, $CF, $17, $1F, $0D, $12 ; RY⎵MUCH
 #_09E4DA: db $F9 ; new line
-#_09E4DB: db $F2, $0B ; prewritten text 0B
+#_09E4DB: db $F2, $0B ; phrase 0B
 #_09E4DD: db $B9, $70, $5F, $89, $CF, $6C, $61, $68 ; ゴトウヲ⎵タオシ
 #_09E4E5: db $6F, $74 ; テネ
 #_09E4E7: db $F9 ; new line
@@ -13077,7 +13077,7 @@ Message_01_06_12:
 ; >«だれもいない»
 Message_01_06_13:
 #_09E4F7: db $97 ; >
-#_09E4F8: db $F2, $2C ; prewritten text 2C
+#_09E4F8: db $F2, $2C ; phrase 2C
 #_09E4FA: db $FC ; wait for key and new line
 
 ;===================================================================================================
@@ -13095,7 +13095,7 @@ Message_01_06_15:
 #_09E506: db $D6, $03, $5F, $38, $48 ; place sprite 5F in slot 03 at XY:{38,48}
 #_09E50B: db $D6, $04, $5F, $88, $48 ; place sprite 5F in slot 04 at XY:{88,48}
 #_09E510: db $D6, $00, $5E, $70, $28 ; place sprite 5E in slot 00 at XY:{70,28}
-#_09E515: db $F2, $1B ; prewritten text 1B
+#_09E515: db $F2, $1B ; phrase 1B
 #_09E517: db $41, $26, $9A ; へい:
 #_09E51A: db $F9 ; new line
 #_09E51B: db $79, $5E, $94, $CF, $66, $66, $76, $CF ; ヘイ!⎵ココハ⎵
@@ -13111,7 +13111,7 @@ Message_01_06_15:
 ; «・・・»オウ [ITEM] モテマスネ
 Message_01_06_16:
 #_09E52B: db $D6, $00, $5E, $70, $28 ; place sprite 5E in slot 00 at XY:{70,28}
-#_09E530: db $F2, $1B ; prewritten text 1B
+#_09E530: db $F2, $1B ; phrase 1B
 #_09E532: db $41, $26, $9A ; へい:
 #_09E535: db $F9 ; new line
 #_09E536: db $D2, $E6, $1A ; test progress flag E6 for message 1A
@@ -13127,7 +13127,7 @@ Message_01_06_16:
 #_09E55F: db $DD, $F2, $19 ; go to message 19 if missing item F2
 #_09E562: db $FA ; clear message box
 #_09E563: db $E1, $F0 ; set $0A50 to item F0
-#_09E565: db $F2, $0B ; prewritten text 0B
+#_09E565: db $F2, $0B ; phrase 0B
 #_09E567: db $61, $5F, $CF ; オウ⎵
 #_09E56A: db $F3 ; write item name from $0A50
 #_09E56B: db $CF, $7F, $6F, $7B, $69, $74 ; ⎵モテマスネ
@@ -13210,7 +13210,7 @@ Message_01_07_02:
 #_09E5F2: db $91, $8A, $3A, $3E ; ョンには
 #_09E5F6: db $F9 ; new line
 #_09E5F7: db $3F, $38, $4C, $3D, $CF ; ひとりの⎵
-#_09E5FC: db $F2, $33 ; prewritten text 33
+#_09E5FC: db $F2, $33 ; phrase 33
 #_09E5FE: db $38, $9C, $CF, $27, $36, $58, $37, $26 ; とが⎵うつってい
 #_09E606: db $4D ; る
 #_09E607: db $FC ; wait for key and new line
@@ -13228,17 +13228,17 @@ Message_01_07_02:
 ; くだらねえ はなし!
 ; じかんのむだだ いこうぜ
 Message_01_07_03:
-#_09E609: db $F2, $33 ; prewritten text 33
+#_09E609: db $F2, $33 ; phrase 33
 #_09E60B: db $38, $9A ; と:
 #_09E60D: db $F9 ; new line
-#_09E60E: db $F2, $0B ; prewritten text 0B
+#_09E60E: db $F2, $0B ; phrase 0B
 #_09E610: db $44, $39, $2F, $52, $CF, $2A, $44, $51 ; みなさん⎵かみを
 #_09E618: db $CF, $30, $52, $A2, $4D, $3D, $A9, $31 ; ⎵しんじるのです
 #_09E620: db $FC ; wait for key and new line
 #_09E621: db $FA ; clear message box
 #_09E622: db $35, $A2, $57, $27, $3D, $4B, $2C, $28 ; ちじょうのらくえ
 #_09E62A: db $52, $CF ; ん⎵
-#_09E62C: db $F2, $21 ; prewritten text 21
+#_09E62C: db $F2, $21 ; phrase 21
 #_09E62E: db $9C ; が
 #_09E62F: db $F9 ; new line
 #_09E630: db $44, $39, $2F, $52, $51, $CF, $43, $58 ; みなさんを⎵まっ
@@ -13248,7 +13248,7 @@ Message_01_07_03:
 #_09E645: db $CF, $50, $31, $4E, $39, $2A, $58, $34 ; ⎵わすれなかった
 #_09E64D: db $47, $3D, $9C ; ものが
 #_09E650: db $F9 ; new line
-#_09E651: db $F2, $21 ; prewritten text 21
+#_09E651: db $F2, $21 ; phrase 21
 #_09E653: db $41, $CF, $26, $2D, $4D, $3D, $A9, $31 ; へ⎵いけるのです
 #_09E65B: db $FC ; wait for key and new line
 #_09E65C: db $FA ; clear message box
@@ -13298,10 +13298,10 @@ Message_01_07_04:
 ; 30ねんごの せかいなのか?
 Message_01_07_05:
 #_09E6A9: db $FA ; clear message box
-#_09E6AA: db $F2, $33 ; prewritten text 33
+#_09E6AA: db $F2, $33 ; phrase 33
 #_09E6AC: db $38, $9A ; と:
 #_09E6AE: db $F9 ; new line
-#_09E6AF: db $F2, $0B ; prewritten text 0B
+#_09E6AF: db $F2, $0B ; phrase 0B
 #_09E6B1: db $2A, $44, $51, $CF, $30, $52, $A2, $37 ; かみを⎵しんじて
 #_09E6B9: db $CF, $26, $2B, $37, $49, $2C, $2E, $38 ; ⎵いきてゆくこと
 #_09E6C1: db $9C ; が
@@ -13324,7 +13324,7 @@ Message_01_07_05:
 #_09E6FC: db $2B, $2B, $43, $30, $34, $2A, $94, $CF ; ききましたか!⎵
 #_09E704: db $25, $4E, $2A, $4B, $CF, $04, $01, $3C ; あれから⎵30ね
 #_09E70C: db $52, $58, $37 ; んって
-#_09E70F: db $F2, $0B ; prewritten text 0B
+#_09E70F: db $F2, $0B ; phrase 0B
 #_09E711: db $FC ; wait for key and new line
 #_09E712: db $FA ; clear message box
 #_09E713: db $EF ; write chaos hero name
@@ -13343,7 +13343,7 @@ Message_01_07_05:
 ; «メシアきょう»と:
 Message_01_07_06:
 #_09E738: db $FA ; clear message box
-#_09E739: db $F2, $33 ; prewritten text 33
+#_09E739: db $F2, $33 ; phrase 33
 #_09E73B: db $38, $9A ; と:
 #_09E73D: db $F9 ; new line
 
@@ -13384,7 +13384,7 @@ Message_01_07_07:
 #_09E7AE: db $44, $32, $37, $26, $43, $31, $CF, $2A ; みせています⎵か
 #_09E7B6: db $44, $51, $CF, $30, $52, $A2, $4D, $2E ; みを⎵しんじるこ
 #_09E7BE: db $38, $9C ; とが
-#_09E7C0: db $F2, $0B ; prewritten text 0B
+#_09E7C0: db $F2, $0B ; phrase 0B
 #_09E7C2: db $FC ; wait for key and new line
 #_09E7C3: db $D4, $03 ; set text box size to 3
 #_09E7C5: db $97, $32, $58, $2B, $57, $27, $3E, $CF ; >せっきょうは⎵
@@ -13409,7 +13409,7 @@ Message_01_07_08:
 #_09E7FA: db $25, $4D ; ある
 #_09E7FC: db $FC ; wait for key and new line
 #_09E7FD: db $FA ; clear message box
-#_09E7FE: db $F2, $33 ; prewritten text 33
+#_09E7FE: db $F2, $33 ; phrase 33
 #_09E800: db $38, $9A ; と:
 #_09E802: db $F9 ; new line
 #_09E803: db $D2, $79, $13 ; test progress flag 79 for message 13
@@ -13432,7 +13432,7 @@ Message_01_07_08:
 ; てんに まします われらのかみは
 ; いつでも ごらんに なっておられます
 Message_01_07_09:
-#_09E81D: db $F2, $18 ; prewritten text 18
+#_09E81D: db $F2, $18 ; phrase 18
 #_09E81F: db $3D, $CF, $30, $3E, $26, $30, $55, $CF ; の⎵しはいしゃ⎵
 #_09E827: db $61, $BA, $88, $9C ; オザワが
 #_09E82B: db $F9 ; new line
@@ -13443,7 +13443,7 @@ Message_01_07_09:
 #_09E83F: db $FA ; clear message box
 #_09E840: db $36, $26, $3A, $CF, $61, $BA, $88, $3A ; ついに⎵オザワに
 #_09E848: db $4A, $4D, $CF ; よる⎵
-#_09E84B: db $F2, $18 ; prewritten text 18
+#_09E84B: db $F2, $18 ; phrase 18
 #_09E84D: db $30, $3E, $26, $3E ; しはいは
 #_09E851: db $F9 ; new line
 #_09E852: db $29, $50, $4C, $51, $CF, $36, $9F, $34 ; おわりを⎵つげた
@@ -13475,7 +13475,7 @@ Message_01_07_0A:
 #_09E89B: db $32, $36, $35, $56, $27, $A6, $58, $34 ; せつちゅうだった
 #_09E8A3: db $F9 ; new line
 #_09E8A4: db $68, $C6, $80, $3D, $CF ; シブヤの⎵
-#_09E8A9: db $F2, $33 ; prewritten text 33
+#_09E8A9: db $F2, $33 ; phrase 33
 #_09E8AB: db $2A, $26, $9C, $CF, $2A, $52, $32, $26 ; かいが⎵かんせい
 #_09E8B3: db $30, $43, $30, $34 ; しました
 #_09E8B7: db $FC ; wait for key and new line
@@ -13495,7 +13495,7 @@ Message_01_07_0A:
 #_09E8F8: db $39, $47, $30, $4E, $3B, $CF, $A4, $52 ; なもしれぬ⎵ぜん
 #_09E900: db $26, $3D, $CF, $2A, $34, $3A ; いの⎵かたに
 #_09E906: db $F9 ; new line
-#_09E907: db $F2, $6F ; prewritten text 6F
+#_09E907: db $F2, $6F ; phrase 6F
 #_09E909: db $FC ; wait for key and new line
 #_09E90A: db $FF ; end of message
 
@@ -13519,7 +13519,7 @@ Message_01_07_0B:
 #_09E948: db $2E, $38, $CF ; こと⎵
 #_09E94B: db $F6 ; write class name from $0506
 #_09E94C: db $CF ; ⎵
-#_09E94D: db $F5 ; write demon name from $050A
+#_09E94D: db $F5 ; write demon 0 name
 #_09E94E: db $9C ; が
 #_09E94F: db $F9 ; new line
 #_09E950: db $36, $26, $3A, $CF, $34, $29, $2F, $4E ; ついに⎵たおされ
@@ -13555,7 +13555,7 @@ Message_01_07_0D:
 #_09E994: db $F0 ; write player name
 #_09E995: db $3A ; に
 #_09E996: db $F9 ; new line
-#_09E997: db $F2, $6F ; prewritten text 6F
+#_09E997: db $F2, $6F ; phrase 6F
 #_09E999: db $FC ; wait for key and new line
 #_09E99A: db $FF ; end of message
 
@@ -13589,7 +13589,7 @@ Message_01_07_0E:
 ; «トウキョウ»の ニシに すみついていた
 ; エキドナが たいじされました
 Message_01_07_0F:
-#_09E9E0: db $F2, $1C ; prewritten text 1C
+#_09E9E0: db $F2, $1C ; phrase 1C
 #_09E9E2: db $3D, $CF, $72, $68, $3A, $CF, $31, $44 ; の⎵ニシに⎵すみ
 #_09E9EA: db $36, $26, $37, $26, $34 ; ついていた
 #_09E9EF: db $F9 ; new line
@@ -13663,7 +13663,7 @@ Message_01_07_12:
 #_09EA94: db $F9 ; new line
 #_09EA95: db $32, $52, $4E, $26, $51, $CF, $27, $2D ; せんれいを⎵うけ
 #_09EA9D: db $CF ; ⎵
-#_09EA9E: db $F2, $33 ; prewritten text 33
+#_09EA9E: db $F2, $33 ; phrase 33
 #_09EAA0: db $3D, $CF, $30, $52, $A2, $55, $3A ; の⎵しんじゃに
 #_09EAA7: db $F9 ; new line
 #_09EAA8: db $39, $4B, $4E, $43, $30, $34 ; なられました
@@ -13693,7 +13693,7 @@ Message_01_07_13:
 #_09EAE5: db $F9 ; new line
 #_09EAE6: db $F0 ; write player name
 #_09EAE7: db $9C, $CF, $5F, $60, $75, $A9, $CF ; が⎵ウエノで⎵
-#_09EAEE: db $F2, $34 ; prewritten text 34
+#_09EAEE: db $F2, $34 ; phrase 34
 #_09EAF0: db $3D ; の
 #_09EAF1: db $F9 ; new line
 #_09EAF2: db $32, $52, $4E, $26, $51, $CF, $27, $2D ; せんれいを⎵うけ
@@ -13720,7 +13720,7 @@ Message_01_07_14:
 ; >«なにも うつっていない»
 Message_01_07_15:
 #_09EB20: db $97 ; >
-#_09EB21: db $F2, $6E ; prewritten text 6E
+#_09EB21: db $F2, $6E ; phrase 6E
 #_09EB23: db $FC ; wait for key and new line
 #_09EB24: db $FF ; end of message
 
@@ -13742,17 +13742,17 @@ Message_01_07_16:
 #_09EB4A: db $D2, $62, $17 ; test progress flag 62 for message 17
 #_09EB4D: db $D5, $45 ; send 45 to APU
 #_09EB4F: db $D6, $00, $85, $70, $28 ; place sprite 85 in slot 00 at XY:{70,28}
-#_09EB54: db $F2, $33 ; prewritten text 33
+#_09EB54: db $F2, $33 ; phrase 33
 #_09EB56: db $38, $9A ; と:
 #_09EB58: db $F9 ; new line
 #_09EB59: db $50, $9C, $CF ; わが⎵
-#_09EB5C: db $F2, $33 ; prewritten text 33
+#_09EB5C: db $F2, $33 ; phrase 33
 #_09EB5E: db $42, $27, $33, $27, $2B, $57, $2C, $41 ; ほうそうきょくへ
 #_09EB66: db $CF, $4A, $27, $2E, $33 ; ⎵ようこそ
 #_09EB6B: db $F9 ; new line
-#_09EB6C: db $F2, $02 ; prewritten text 02
+#_09EB6C: db $F2, $02 ; phrase 02
 #_09EB6E: db $3E, $CF ; は⎵
-#_09EB70: db $F2, $33 ; prewritten text 33
+#_09EB70: db $F2, $33 ; phrase 33
 #_09EB72: db $3D, $CF, $2A, $44, $3D, $CF, $29, $30 ; の⎵かみの⎵おし
 #_09EB7A: db $28, $51 ; えを
 #_09EB7C: db $F9 ; new line
@@ -13767,7 +13767,7 @@ Message_01_07_16:
 ; >«だれもいない»
 Message_01_07_17:
 #_09EB94: db $97 ; >
-#_09EB95: db $F2, $2C ; prewritten text 2C
+#_09EB95: db $F2, $2C ; phrase 2C
 #_09EB97: db $FC ; wait for key and new line
 #_09EB98: db $FF ; end of message
 
@@ -13789,14 +13789,14 @@ Message_01_07_18:
 #_09EB9B: db $D2, $62, $23 ; test progress flag 62 for message 23
 #_09EB9E: db $D5, $45 ; send 45 to APU
 #_09EBA0: db $D6, $00, $49, $78, $28 ; place sprite 49 in slot 00 at XY:{78,28}
-#_09EBA5: db $F2, $33 ; prewritten text 33
+#_09EBA5: db $F2, $33 ; phrase 33
 #_09EBA7: db $38, $9A ; と:
 #_09EBA9: db $F9 ; new line
 #_09EBAA: db $E9, $00, $1D ; go to message 1D maybe TODO
 #_09EBAD: db $25, $39, $34, $9C, $CF ; あなたが⎵
 #_09EBB2: db $F0 ; write player name
 #_09EBB3: db $2F, $52 ; さん
-#_09EBB5: db $F2, $0B ; prewritten text 0B
+#_09EBB5: db $F2, $0B ; phrase 0B
 #_09EBB7: db $95 ; ?
 #_09EBB8: db $FC ; wait for key and new line
 #_09EBB9: db $39, $43, $28, $A6, $2D, $3E, $CF, $4A ; なまえだけは⎵よ
@@ -13852,7 +13852,7 @@ Message_01_07_1A:
 #_09EC6D: db $A2, $55, $39, $26, $50, $3C ; じゃないわね
 #_09EC73: db $F9 ; new line
 #_09EC74: db $50, $34, $30, $34, $35, $CF ; わたしたち⎵
-#_09EC7A: db $F2, $33 ; prewritten text 33
+#_09EC7A: db $F2, $33 ; phrase 33
 #_09EC7C: db $38, $CF, $29, $39, $A2 ; と⎵おなじ
 #_09EC81: db $F9 ; new line
 #_09EC82: db $87, $5F, $9C, $50, $3D, $CF, $3A, $52 ; ロウがわの⎵にん
@@ -13914,7 +13914,7 @@ Message_01_07_1D:
 Message_01_07_1E:
 #_09ECFC: db $FA ; clear message box
 #_09ECFD: db $3E, $2A, $26, $2F, $4E, $34, $CF ; はかいされた⎵
-#_09ED04: db $F2, $1C ; prewritten text 1C
+#_09ED04: db $F2, $1C ; phrase 1C
 #_09ED06: db $51, $CF, $44, $37 ; を⎵みて
 #_09ED0A: db $F9 ; new line
 #_09ED0B: db $25, $39, $34, $3E, $CF, $AA, $27, $CF ; あなたは⎵どう⎵
@@ -13929,7 +13929,7 @@ Message_01_07_1E:
 #_09ED39: db $F8, $22 ; YES/NO - go to message 22 if YES
 #_09ED3B: db $D4, $03 ; set text box size to 3
 #_09ED3D: db $33, $27 ; そう
-#_09ED3F: db $F2, $0B ; prewritten text 0B
+#_09ED3F: db $F2, $0B ; phrase 0B
 #_09ED41: db $33, $4E, $9C, $CF, $25, $39, $34, $3D ; それが⎵あなたの
 #_09ED49: db $CF, $2E, $34, $28, $39, $3D, $3C ; ⎵こたえなのね
 #_09ED50: db $FC ; wait for key and new line
@@ -13953,7 +13953,7 @@ Message_01_07_1F:
 #_09ED76: db $F9 ; new line
 #_09ED77: db $47, $3E, $48, $CF, $2E, $4E, $43, $A9 ; もはや⎵これまで
 #_09ED7F: db $3C ; ね
-#_09ED80: db $F2, $0B ; prewritten text 0B
+#_09ED80: db $F2, $0B ; phrase 0B
 #_09ED82: db $FC ; wait for key and new line
 #_09ED83: db $D5, $39 ; send 39 to APU
 #_09ED85: db $FE, $46, $09 ; ext command 46: 09 TODO
@@ -13963,7 +13963,7 @@ Message_01_07_1F:
 #_09ED93: db $DE, $01, $00, $0C, $01 ; load 1x demon 010C
 #_09ED98: db $E4, $00 ; load demon $00
 #_09ED9A: db $FA ; clear message box
-#_09ED9B: db $F5 ; write demon name from $050A
+#_09ED9B: db $F5 ; write demon 0 name
 #_09ED9C: db $9A ; :
 #_09ED9D: db $F9 ; new line
 #_09ED9E: db $2E, $4E, $26, $A2, $57, $27, $CF, $2A ; これいじょう⎵か
@@ -14013,7 +14013,7 @@ Message_01_07_22:
 ; >«だれもいない»
 Message_01_07_23:
 #_09EE05: db $97 ; >
-#_09EE06: db $F2, $2C ; prewritten text 2C
+#_09EE06: db $F2, $2C ; phrase 2C
 #_09EE08: db $FC ; wait for key and new line
 #_09EE09: db $FF ; end of message
 
@@ -14067,7 +14067,7 @@ Message_01_08_03:
 #_09EE51: db $EF ; write chaos hero name
 #_09EE52: db $9A ; :
 #_09EE53: db $F9 ; new line
-#_09EE54: db $F2, $0B ; prewritten text 0B
+#_09EE54: db $F2, $0B ; phrase 0B
 #_09EE56: db $29, $4E, $3E, $CF, $47, $58, $38, $CF ; おれは⎵もっと⎵
 #_09EE5E: db $35, $2A, $4B, $9C, $CF, $42, $30, $26 ; ちからが⎵ほしい
 #_09EE66: db $94 ; !
@@ -14078,9 +14078,9 @@ Message_01_08_03:
 #_09EE78: db $FA ; clear message box
 #_09EE79: db $61, $BA, $88, $51, $CF, $34, $29, $31 ; オザワを⎵たおす
 #_09EE81: db $34, $46 ; ため
-#_09EE83: db $F2, $0B ; prewritten text 0B
+#_09EE83: db $F2, $0B ; phrase 0B
 #_09EE85: db $26, $48 ; いや
-#_09EE87: db $F2, $0B ; prewritten text 0B
+#_09EE87: db $F2, $0B ; phrase 0B
 #_09EE89: db $F9 ; new line
 #_09EE8A: db $2E, $3D, $32, $2A, $26, $A9, $CF, $34 ; このせかいで⎵た
 #_09EE92: db $34, $2A, $58, $37, $CF, $26, $2B, $3D ; たかって⎵いきの
@@ -14219,7 +14219,7 @@ Message_01_08_12:
 #_09EF8D: db $50, $34, $30, $3E, $CF ; わたしは⎵
 #_09EF92: db $F6 ; write class name from $0506
 #_09EF93: db $CF ; ⎵
-#_09EF94: db $F5 ; write demon name from $050A
+#_09EF94: db $F5 ; write demon 0 name
 #_09EF95: db $FC ; wait for key and new line
 #_09EF96: db $2E ; こ
 #_09EF97: db $DF ; delay 7 frames
@@ -14322,7 +14322,7 @@ Message_01_08_18:
 #_09F043: db $FE, $69, $19 ; ext command 69: R0F90EB, maybe go to message 19 TODO
 #_09F046: db $FE, $22, $04 ; ext command 22: go to message 04 if $0A58 flags failure
 #_09F049: db $FE, $5E ; ext command 5E: show fusion cutscene
-#_09F04B: db $F5 ; write demon name from $050A
+#_09F04B: db $F5 ; write demon 0 name
 #_09F04C: db $CF, $9C, $A9, $2B, $34, $A5 ; ⎵ができたぞ
 #_09F052: db $F9 ; new line
 #_09F053: db $2F, $53, $CF, $47, $58, $37, $26, $2C ; さぁ⎵もっていく
@@ -14356,10 +14356,10 @@ Message_01_09_00:
 #_09F093: db $2E, $58, $38, $27, $3F, $52, $48, $9A ; こっとうひんや:
 #_09F09B: db $F9 ; new line
 #_09F09C: db $D2, $06, $06 ; test progress flag 06 for message 06
-#_09F09F: db $F2, $0B ; prewritten text 0B
-#_09F0A1: db $F2, $0B ; prewritten text 0B
-#_09F0A3: db $F2, $0B ; prewritten text 0B
-#_09F0A5: db $F2, $0B ; prewritten text 0B
+#_09F09F: db $F2, $0B ; phrase 0B
+#_09F0A1: db $F2, $0B ; phrase 0B
+#_09F0A3: db $F2, $0B ; phrase 0B
+#_09F0A5: db $F2, $0B ; phrase 0B
 #_09F0A7: db $FC ; wait for key and new line
 #_09F0A8: db $FA ; clear message box
 
@@ -14437,7 +14437,7 @@ Message_01_09_07:
 ; «あけますか?»
 Message_01_0A_00:
 #_09F116: db $E1, $E4 ; set $0A50 to item E4
-#_09F118: db $F2, $74 ; prewritten text 74
+#_09F118: db $F2, $74 ; phrase 74
 #_09F11A: db $DD, $E4, $11 ; go to message 11 if missing item E4
 #_09F11D: db $D3, $0D ; go to message 0D
 
@@ -14447,7 +14447,7 @@ Message_01_0A_00:
 ; «あけますか?»
 Message_01_0A_01:
 #_09F11F: db $E1, $E5 ; set $0A50 to item E5
-#_09F121: db $F2, $74 ; prewritten text 74
+#_09F121: db $F2, $74 ; phrase 74
 #_09F123: db $DD, $E5, $11 ; go to message 11 if missing item E5
 #_09F126: db $D3, $0D ; go to message 0D
 
@@ -14457,7 +14457,7 @@ Message_01_0A_01:
 ; «あけますか?»
 Message_01_0A_02:
 #_09F128: db $E1, $E6 ; set $0A50 to item E6
-#_09F12A: db $F2, $74 ; prewritten text 74
+#_09F12A: db $F2, $74 ; phrase 74
 #_09F12C: db $DD, $E6, $11 ; go to message 11 if missing item E6
 #_09F12F: db $D3, $0D ; go to message 0D
 
@@ -14467,7 +14467,7 @@ Message_01_0A_02:
 ; «あけますか?»
 Message_01_0A_03:
 #_09F131: db $E1, $E7 ; set $0A50 to item E7
-#_09F133: db $F2, $74 ; prewritten text 74
+#_09F133: db $F2, $74 ; phrase 74
 #_09F135: db $DD, $E7, $11 ; go to message 11 if missing item E7
 #_09F138: db $D3, $0D ; go to message 0D
 
@@ -14477,7 +14477,7 @@ Message_01_0A_03:
 ; «あけますか?»
 Message_01_0A_04:
 #_09F13A: db $E1, $E8 ; set $0A50 to item E8
-#_09F13C: db $F2, $74 ; prewritten text 74
+#_09F13C: db $F2, $74 ; phrase 74
 #_09F13E: db $DD, $E8, $11 ; go to message 11 if missing item E8
 #_09F141: db $D3, $0D ; go to message 0D
 
@@ -14487,7 +14487,7 @@ Message_01_0A_04:
 ; «あけますか?»
 Message_01_0A_05:
 #_09F143: db $E1, $E9 ; set $0A50 to item E9
-#_09F145: db $F2, $74 ; prewritten text 74
+#_09F145: db $F2, $74 ; phrase 74
 #_09F147: db $DD, $E9, $11 ; go to message 11 if missing item E9
 #_09F14A: db $D3, $0D ; go to message 0D
 
@@ -14497,7 +14497,7 @@ Message_01_0A_05:
 ; «あけますか?»
 Message_01_0A_06:
 #_09F14C: db $E1, $EA ; set $0A50 to item EA
-#_09F14E: db $F2, $74 ; prewritten text 74
+#_09F14E: db $F2, $74 ; phrase 74
 #_09F150: db $DD, $EA, $11 ; go to message 11 if missing item EA
 #_09F153: db $D3, $0D ; go to message 0D
 
@@ -14507,7 +14507,7 @@ Message_01_0A_06:
 ; «あけますか?»
 Message_01_0A_07:
 #_09F155: db $E1, $EB ; set $0A50 to item EB
-#_09F157: db $F2, $74 ; prewritten text 74
+#_09F157: db $F2, $74 ; phrase 74
 #_09F159: db $DD, $EB, $11 ; go to message 11 if missing item EB
 #_09F15C: db $D3, $0D ; go to message 0D
 
@@ -14517,7 +14517,7 @@ Message_01_0A_07:
 ; «あけますか?»
 Message_01_0A_08:
 #_09F15E: db $E1, $EC ; set $0A50 to item EC
-#_09F160: db $F2, $74 ; prewritten text 74
+#_09F160: db $F2, $74 ; phrase 74
 #_09F162: db $DD, $EC, $11 ; go to message 11 if missing item EC
 #_09F165: db $D3, $0D ; go to message 0D
 
@@ -14527,7 +14527,7 @@ Message_01_0A_08:
 ; «あけますか?»
 Message_01_0A_09:
 #_09F167: db $E1, $ED ; set $0A50 to item ED
-#_09F169: db $F2, $74 ; prewritten text 74
+#_09F169: db $F2, $74 ; phrase 74
 #_09F16B: db $DD, $ED, $11 ; go to message 11 if missing item ED
 #_09F16E: db $D3, $0D ; go to message 0D
 
@@ -14537,7 +14537,7 @@ Message_01_0A_09:
 ; «あけますか?»
 Message_01_0A_0A:
 #_09F170: db $E1, $EE ; set $0A50 to item EE
-#_09F172: db $F2, $74 ; prewritten text 74
+#_09F172: db $F2, $74 ; phrase 74
 #_09F174: db $DD, $EE, $11 ; go to message 11 if missing item EE
 #_09F177: db $D3, $0D ; go to message 0D
 
@@ -14547,7 +14547,7 @@ Message_01_0A_0A:
 ; «あけますか?»
 Message_01_0A_0B:
 #_09F179: db $E1, $EF ; set $0A50 to item EF
-#_09F17B: db $F2, $74 ; prewritten text 74
+#_09F17B: db $F2, $74 ; phrase 74
 #_09F17D: db $DD, $EF, $11 ; go to message 11 if missing item EF
 #_09F180: db $D3, $0D ; go to message 0D
 
@@ -14558,7 +14558,7 @@ Message_01_0A_0B:
 Message_01_0A_0C:
 #_09F182: db $D2, $56, $13 ; test progress flag 56 for message 13
 #_09F185: db $E1, $E1 ; set $0A50 to item E1
-#_09F187: db $F2, $74 ; prewritten text 74
+#_09F187: db $F2, $74 ; phrase 74
 #_09F189: db $DD, $E1, $11 ; go to message 11 if missing item E1
 
 ;===================================================================================================
@@ -14571,7 +14571,7 @@ Message_01_0A_0D:
 ; «[LEADER]は»
 ; «たからばこを あきらめた»
 Message_01_0A_0E:
-#_09F18E: db $F2, $75 ; prewritten text 75
+#_09F18E: db $F2, $75 ; phrase 75
 #_09F190: db $FC ; wait for key and new line
 #_09F191: db $FF ; end of message
 
@@ -14580,7 +14580,7 @@ Message_01_0A_0E:
 ; «なかは からっぽだった»
 Message_01_0A_0F:
 #_09F192: db $D6, $00, $B7, $70, $48 ; place sprite B7 in slot 00 at XY:{70,48}
-#_09F197: db $F2, $76 ; prewritten text 76
+#_09F197: db $F2, $76 ; phrase 76
 #_09F199: db $FC ; wait for key and new line
 #_09F19A: db $FF ; end of message
 
@@ -14588,7 +14588,7 @@ Message_01_0A_0F:
 
 ; «みつけたが もちきれなかった»
 Message_01_0A_10:
-#_09F19B: db $F2, $72 ; prewritten text 72
+#_09F19B: db $F2, $72 ; phrase 72
 #_09F19D: db $FC ; wait for key and new line
 #_09F19E: db $FF ; end of message
 
@@ -14611,7 +14611,7 @@ Message_01_0A_12:
 #_09F1AE: db $51 ; を
 #_09F1AF: db $F9 ; new line
 #_09F1B0: db $FE, $3C, $10 ; ext command 3C: go to message 10 if no space for item
-#_09F1B3: db $F2, $2D ; prewritten text 2D
+#_09F1B3: db $F2, $2D ; phrase 2D
 #_09F1B5: db $FC ; wait for key and new line
 #_09F1B6: db $FE, $28 ; ext command 28: add item to inventory from $0A50
 #_09F1B8: db $FF ; end of message
@@ -14621,7 +14621,7 @@ Message_01_0A_12:
 ; «>たからばこが ある»
 ; «あけますか?»
 Message_01_0A_13:
-#_09F1B9: db $F2, $74 ; prewritten text 74
+#_09F1B9: db $F2, $74 ; phrase 74
 #_09F1BB: db $D3, $0D ; go to message 0D
 
 ;===================================================================================================

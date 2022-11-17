@@ -110,7 +110,9 @@ PROGRESS         = $7E07C0
 
 ; TODO something with money in text
 UNKNOWN_7E07E0   = $7E07E0
-UNKNOWN_7E07E1   = $7E07E1
+
+; Last save point
+LASTSAVE         = $7E07E1
 
 ; TODO something with party arrangement?
 UNKNOWN_7E07E2   = $7E07E2
@@ -129,8 +131,8 @@ UNKNOWN_7E07F1   = $7E07F1
 ; TODO Flags 1 thing in text
 UNKNOWN_7E07F2   = $7E07F2
 
-; TODO flags stuff in text
-UNKNOWN_7E07F3   = $7E07F3
+; Terminals unlocked
+TERMGO           = $7E07F3
 
 ; Overworld coordinates
 OWX              = $7E07F5
@@ -197,8 +199,11 @@ MC_7E1004        = $7E1004
 MC_7E1006        = $7E1006
 
 ; Action
-; .... .... ...d ....
+; .... .... ...d .mgs
 ;   d - defend
+;   m - magic
+;   g - gun / extra attack
+;   s - sword / normal attack
 MCACT            = $7E1008
 
 ; Level
@@ -309,17 +314,18 @@ MCUNKNOWNE       = $7E105E
 ;   d - someone talking?
 UNKNOWN_7E0400   = $7E0400
 
+; TODO unused?
 UNKNOWN_7E0402   = $7E0402
 UNKNOWN_7E0403   = $7E0403
-UNKNOWN_7E0404   = $7E0404
 
+; TODO something about having the computer
+HASCOMP          = $7E0404
 
 ; Current money, whether it's Yen or Macca
 CASH             = $7E0405
 
 ; Current magnetite
 MAG              = $7E0409
-
 
 ; Current and previous direction
 DIR              = $7E040D
@@ -339,38 +345,8 @@ FMNAME           = $7E0418
 LHNAME           = $7E0420
 CHNAME           = $7E0428
 
-UNKNOWN_7E0430   = $7E0430
-UNKNOWN_7E0431   = $7E0431
-UNKNOWN_7E0432   = $7E0432
-UNKNOWN_7E0433   = $7E0433
-UNKNOWN_7E0434   = $7E0434
-UNKNOWN_7E0435   = $7E0435
-UNKNOWN_7E0436   = $7E0436
-UNKNOWN_7E0437   = $7E0437
-UNKNOWN_7E0438   = $7E0438
-UNKNOWN_7E0439   = $7E0439
-UNKNOWN_7E043A   = $7E043A
-UNKNOWN_7E043B   = $7E043B
-UNKNOWN_7E043C   = $7E043C
-UNKNOWN_7E043D   = $7E043D
-UNKNOWN_7E043E   = $7E043E
-UNKNOWN_7E043F   = $7E043F
-UNKNOWN_7E0440   = $7E0440
-UNKNOWN_7E0441   = $7E0441
-UNKNOWN_7E0442   = $7E0442
-UNKNOWN_7E0443   = $7E0443
-UNKNOWN_7E0444   = $7E0444
-UNKNOWN_7E0445   = $7E0445
-UNKNOWN_7E0446   = $7E0446
-UNKNOWN_7E0447   = $7E0447
-UNKNOWN_7E0448   = $7E0448
-UNKNOWN_7E0449   = $7E0449
-UNKNOWN_7E044A   = $7E044A
-UNKNOWN_7E044B   = $7E044B
-UNKNOWN_7E044C   = $7E044C
-UNKNOWN_7E044D   = $7E044D
-UNKNOWN_7E044E   = $7E044E
-UNKNOWN_7E044F   = $7E044F
+; TODO unused?
+; [7E0430..7E044F]
 
 ; Last turn action?
 ;   1 - right
@@ -381,9 +357,14 @@ UNKNOWN_7E0450   = $7E0450
 ; Frame counter
 FRAME            = $7E0451
 
+; TODO unused?
 UNKNOWN_7E0452   = $7E0452
+
+; TODO written in places, but never read
 UNKNOWN_7E0453   = $7E0453
 UNKNOWN_7E0454   = $7E0454
+
+
 UNKNOWN_7E0455   = $7E0455
 UNKNOWN_7E0456   = $7E0456
 UNKNOWN_7E0457   = $7E0457

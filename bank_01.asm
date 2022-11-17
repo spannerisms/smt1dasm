@@ -772,7 +772,7 @@ routine0164AE:
 #_0184F1: STA.w $0E82
 #_0184F4: LDY.w #$000E
 #_0184F7: LDA.w #$010E
-#_0184FA: JSL WriteAmountHEXtoDEC
+#_0184FA: JSL HexToDec
 #_0184FE: LDA.w #$0002
 #_018501: LDX.w #$0040
 #_018504: LDY.w #$0080
@@ -817,7 +817,7 @@ routine0164AE:
 .branch01854A
 #_01854A: LDY.w #$000E
 #_01854D: LDA.w #$010E
-#_018550: JSL WriteAmountHEXtoDEC
+#_018550: JSL HexToDec
 #_018554: LDA.w #$0002
 #_018557: LDX.w #$0040
 #_01855A: LDY.w #$00C0
@@ -942,7 +942,7 @@ routine0185D8:
 #_018675: STA.w $0E82
 #_018678: LDY.w #$0006
 #_01867B: LDA.w #$010E
-#_01867E: JSL WriteAmountHEXtoDEC
+#_01867E: JSL HexToDec
 #_018682: LDA.w #$0002
 #_018685: LDX.w #$0040
 #_018688: LDY.w #$0080
@@ -1242,7 +1242,7 @@ routine018879:
 #_018888: STZ.w $0E82
 #_01888B: LDY.w #$0006
 #_01888E: LDA.w #$010E
-#_018891: JSL WriteAmountHEXtoDEC
+#_018891: JSL HexToDec
 #_018895: LDA.w #$0001
 #_018898: LDX.w #$0000
 #_01889B: LDY.w #$0000
@@ -1261,7 +1261,7 @@ routine0188A6:
 #_0188B5: STZ.w $0E82
 #_0188B8: LDY.w #$0006
 #_0188BB: LDA.w #$010E
-#_0188BE: JSL WriteAmountHEXtoDEC
+#_0188BE: JSL HexToDec
 #_0188C2: LDA.w #$0098
 #_0188C5: ORA.w $0EFB
 #_0188C8: STA.w $0114
@@ -1271,7 +1271,7 @@ routine0188A6:
 #_0188D4: STZ.w $0E82
 #_0188D7: LDY.w #$0006
 #_0188DA: LDA.w #$0116
-#_0188DD: JSL WriteAmountHEXtoDEC
+#_0188DD: JSL HexToDec
 #_0188E1: LDA.w #$0002
 #_0188E4: LDX.w #$0040
 #_0188E7: LDY.w #$0000
@@ -1301,7 +1301,7 @@ routine0188F2:
 #_018917: STZ.w $0E82
 #_01891A: LDY.w #$0006
 #_01891D: LDA.w #$010E
-#_018920: JSL WriteAmountHEXtoDEC
+#_018920: JSL HexToDec
 
 .branch018924
 #_018924: LDA.w #$0098
@@ -1323,7 +1323,7 @@ routine0188F2:
 #_018949: STZ.w $0E82
 #_01894C: LDY.w #$0006
 #_01894F: LDA.w #$0116
-#_018952: JSL WriteAmountHEXtoDEC
+#_018952: JSL HexToDec
 
 .branch018956
 #_018956: LDA.w #$0002
@@ -1463,7 +1463,7 @@ routine0189FF:
 #_018A49: STZ.w $0E82
 #_018A4C: LDY.w #$0006
 #_018A4F: LDA.w #$0110
-#_018A52: JSL WriteAmountHEXtoDEC
+#_018A52: JSL HexToDec
 
 .branch018A56
 #_018A56: LDA.w $071C
@@ -1476,7 +1476,7 @@ routine0189FF:
 #_018A65: STZ.w $0E82
 #_018A68: LDY.w #$0008
 #_018A6B: LDA.w #$0116
-#_018A6E: JSL WriteAmountHEXtoDEC
+#_018A6E: JSL HexToDec
 #_018A72: LDA.w $071C
 #_018A75: ASL A
 #_018A76: ASL A
@@ -1582,7 +1582,7 @@ routine018B30:
 #_018B49: STZ.w $0E82
 #_018B4C: LDY.w #$0004
 #_018B4F: LDA.w #$010E
-#_018B52: JSL WriteAmountHEXtoDEC
+#_018B52: JSL HexToDec
 #_018B56: LDA.w $071C
 #_018B59: ASL A
 #_018B5A: ASL A
@@ -2059,7 +2059,7 @@ WriteStatPointsLeftMaybe018E52:
 #_018E5E: STZ.w $0E82
 #_018E61: LDY.w #$0006 ; 2 characters, ugly way of inputting this
 #_018E64: LDA.w #$010E ; writing to $010E
-#_018E67: JSL WriteAmountHEXtoDEC
+#_018E67: JSL HexToDec
 
 #_018E6B: SEP #$30
 #_018E6D: LDX.b #$C0
@@ -3190,42 +3190,52 @@ routine019581:
 #_019581: LDA.w $1000,X
 #_019584: AND.w #$BFFF
 #_019587: STA.w $1000,X
+
 #_01958A: LDA.w $1002,X
 #_01958D: AND.w #$F000
 #_019590: STA.w $1002,X
+
 #_019593: STZ.w $1008,X
+
 #_019596: TXA
 #_019597: LDY.w #$0000
 
-.branch01959A
+.bad_slot
 #_01959A: CMP.w $0700,Y
-#_01959D: BEQ .branch0195A3
+#_01959D: BEQ .look_for_slot
 
 #_01959F: INY
 #_0195A0: INY
-#_0195A1: BRA .branch01959A
+#_0195A1: BRA .bad_slot
 
-.branch0195A3
+.look_for_slot
 #_0195A3: INY
 #_0195A4: INY
+
 #_0195A5: LDA.w $0700,Y
-#_0195A8: BMI .branch0195B6
+#_0195A8: BMI .good_slot
 
 #_0195AA: DEY
 #_0195AB: DEY
+
 #_0195AC: STA.w $0700,Y
+
 #_0195AF: INY
 #_0195B0: INY
 #_0195B1: CPY.w #$000C
-#_0195B4: BCC .branch0195A3
+#_0195B4: BCC .look_for_slot
 
-.branch0195B6
+.good_slot
 #_0195B6: DEY
 #_0195B7: DEY
+
 #_0195B8: LDA.w #$FFFF
 #_0195BB: STA.w $0700,Y
+
 #_0195BE: DEC.w $0516
+
 #_0195C1: JSL routine00A17E
+
 #_0195C5: RTL
 
 ;===================================================================================================
@@ -3674,44 +3684,53 @@ routine019842:
 routine01987B:
 #_01987B: LDY.w #$0000
 
-.branch01987E
+.next
 #_01987E: PHY
+
 #_01987F: LDA.w $0700,Y
-#_019882: BMI .branch0198A9
+#_019882: BMI .invalid_target
 
 #_019884: CMP.w $0715
-#_019887: BEQ .branch0198A0
+#_019887: BEQ .skip
 
 #_019889: TAY
+
 #_01988A: LDA.w $1008,Y
 #_01988D: AND.w #$0004
-#_019890: BEQ .branch0198A0
+#_019890: BEQ .skip
 
+; using sabbatma
 #_019892: LDA.w $1058,Y
 #_019895: CMP.w #$003D
-#_019898: BNE .branch0198A0
+#_019898: BNE .skip
 
 #_01989A: TXA
 #_01989B: CMP.w $105A,Y
-#_01989E: BEQ .branch0198AC
+#_01989E: BEQ .valid_target
 
-.branch0198A0
+.skip
 #_0198A0: PLY
 #_0198A1: INY
 #_0198A2: INY
 #_0198A3: CPY.w #$000C
-#_0198A6: BCC .branch01987E
+#_0198A6: BCC .next
+
+;---------------------------------------------------------------------------------------------------
 
 #_0198A8: PHY
 
-.branch0198A9
+.invalid_target
 #_0198A9: PLY
+
 #_0198AA: CLC
+
 #_0198AB: RTS
 
-.branch0198AC
+.valid_target
 #_0198AC: PLY
+
 #_0198AD: SEC
+
 #_0198AE: RTS
 
 ;===================================================================================================
@@ -3720,20 +3739,22 @@ routine0198AF:
 #_0198AF: LDY.w #$0000
 #_0198B2: TYX
 
-.branch0198B3
+.find_party_member
 #_0198B3: LDA.w $0700,Y
 #_0198B6: BMI .branch0198C5
 
 #_0198B8: CMP.w #$0180
-#_0198BB: BCC .branch0198BE
+#_0198BB: BCC .is_human
 
 #_0198BD: INX
 
-.branch0198BE
+.is_human
 #_0198BE: INY
 #_0198BF: INY
 #_0198C0: CPY.w #$000C
-#_0198C3: BCC .branch0198B3
+#_0198C3: BCC .find_party_member
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0198C5
 #_0198C5: CPX.w #$0004
@@ -3743,38 +3764,46 @@ routine0198AF:
 #_0198CD: AND.w #$0040
 #_0198D0: BEQ .branch019901
 
+;---------------------------------------------------------------------------------------------------
+
 #_0198D2: LDY.w #$0000
 
-.branch0198D5
+.next
 #_0198D5: PHY
+
 #_0198D6: LDA.w $0700,Y
-#_0198D9: BMI .branch0198FB
+#_0198D9: BMI .no_one_here
 
 #_0198DB: CMP.w $0715
-#_0198DE: BEQ .branch0198F2
+#_0198DE: BEQ .skip
 
 #_0198E0: TAY
+
 #_0198E1: LDA.w $1008,Y
 #_0198E4: AND.w #$0004
-#_0198E7: BEQ .branch0198F2
+#_0198E7: BEQ .skip
 
 #_0198E9: LDA.w $1058,Y
 #_0198EC: CMP.w #$003D
-#_0198EF: BNE .branch0198F2
+#_0198EF: BNE .skip
 
 #_0198F1: INX
 
-.branch0198F2
+.skip
 #_0198F2: PLY
+
 #_0198F3: INY
 #_0198F4: INY
 #_0198F5: CPY.w #$000C
-#_0198F8: BCC .branch0198D5
+#_0198F8: BCC .next
+
+;---------------------------------------------------------------------------------------------------
 
 #_0198FA: PHY
 
-.branch0198FB
+.no_one_here
 #_0198FB: PLY
+
 #_0198FC: CPX.w #$0004
 #_0198FF: BCS .branch01990F
 
@@ -3799,13 +3828,18 @@ routine0198AF:
 ; TODO open maps
 COMP_Automapper:
 #_019913: SEP #$20
+
 #_019915: LDA.w $0404
 #_019918: BEQ .can_open_map
 
 #_01991A: REP #$20
+
 #_01991C: LDA.w #$0009
 #_01991F: JSL DisplaySystemMessage
+
 #_019923: RTS
+
+;---------------------------------------------------------------------------------------------------
 
 .can_open_map
 #_019924: JSL HideTheMenu
@@ -4351,7 +4385,7 @@ routine019C06:
 #_019D07: STZ.w $0E82
 #_019D0A: LDY.w #$0006
 #_019D0D: LDA.w #$010E
-#_019D10: JSL WriteAmountHEXtoDEC
+#_019D10: JSL HexToDec
 #_019D14: LDA.w #$0008
 #_019D17: LDX.w #$0000
 #_019D1A: LDY.w #$0000
@@ -4365,7 +4399,7 @@ routine019C06:
 #_019D33: STZ.w $0E82
 #_019D36: LDY.w #$0006
 #_019D39: LDA.w #$010E
-#_019D3C: JSL WriteAmountHEXtoDEC
+#_019D3C: JSL HexToDec
 #_019D40: LDA.w #$0098
 #_019D43: ORA.w $0EFB
 #_019D46: STA.w $0114
@@ -4375,7 +4409,7 @@ routine019C06:
 #_019D52: STZ.w $0E82
 #_019D55: LDY.w #$0006
 #_019D58: LDA.w #$0116
-#_019D5B: JSL WriteAmountHEXtoDEC
+#_019D5B: JSL HexToDec
 #_019D5F: LDA.w #$0009
 #_019D62: LDX.w #$0040
 #_019D65: LDY.w #$0000
@@ -4400,7 +4434,7 @@ routine019C06:
 #_019D94: STZ.w $0E82
 #_019D97: LDY.w #$0006
 #_019D9A: LDA.w #$010E
-#_019D9D: JSL WriteAmountHEXtoDEC
+#_019D9D: JSL HexToDec
 
 .branch019DA1
 #_019DA1: LDA.w #$0098
@@ -4422,7 +4456,7 @@ routine019C06:
 #_019DC6: STZ.w $0E82
 #_019DC9: LDY.w #$0006
 #_019DCC: LDA.w #$0116
-#_019DCF: JSL WriteAmountHEXtoDEC
+#_019DCF: JSL HexToDec
 
 .branch019DD3
 #_019DD3: LDA.w #$0009
@@ -4510,7 +4544,7 @@ routine019C06:
 #_019E70: STZ.w $0E82
 #_019E73: LDY.w #$0004
 #_019E76: LDA.w #$010E
-#_019E79: JSL WriteAmountHEXtoDEC
+#_019E79: JSL HexToDec
 #_019E7D: LDA.w $071C
 #_019E80: CMP.w #$0003
 #_019E83: BCC .branch019E94
@@ -6423,7 +6457,7 @@ WriteItemNameAndAmt:
 #_01AA9D: STA.w $0E82
 #_01AAA0: LDY.w #$0006
 #_01AAA3: LDA.w #$0116
-#_01AAA6: JSL WriteAmountHEXtoDEC
+#_01AAA6: JSL HexToDec
 #_01AAAA: LDY.w #$0006
 #_01AAAD: LDA.w #$00CF
 
@@ -7058,7 +7092,7 @@ routine01AE96:
 #_01AECD: STA.w $0E82
 #_01AED0: LDY.w #$0006
 #_01AED3: LDA.w #$0116
-#_01AED6: JSL WriteAmountHEXtoDEC
+#_01AED6: JSL HexToDec
 
 .branch01AEDA
 #_01AEDA: RTS
@@ -9360,10 +9394,11 @@ CombatMenu_Fight:
 #_01BBD7: JSR CombatMenu_HandleFightMenu
 
 #_01BBDA: BCC .branch01BBDF
+
 #_01BBDC: JMP branch01BB77
 
 .branch01BBDF
-#_01BBDF: JSR routine01C0D0
+#_01BBDF: JSR DecideEnemyAttacks
 
 #_01BBE2: PLP
 #_01BBE3: CLC
@@ -9382,7 +9417,7 @@ branch01BBE5:
 ;===================================================================================================
 
 FailedToEscape:
-#_01BBEE: JSR routine01C0D0
+#_01BBEE: JSR DecideEnemyAttacks
 
 #_01BBF1: LDA.w $052A
 #_01BBF4: ORA.w #$8000
@@ -9623,13 +9658,18 @@ routine01BD2E:
 #_01BD2E: LDA.w $052A
 #_01BD31: ORA.w #$0200
 #_01BD34: STA.w $052A
+
 #_01BD37: STZ.w $0512
 #_01BD3A: STZ.w $0514
+
 #_01BD3D: LDA.w #$FFFF
 #_01BD40: STA.w $0566
+
 #_01BD43: JSL routine01E60C
+
 #_01BD47: PLP
 #_01BD48: SEC
+
 #_01BD49: RTS
 
 ;===================================================================================================
@@ -9638,51 +9678,68 @@ routine01BD4A:
 #_01BD4A: LDA.w $052A
 #_01BD4D: ORA.w #$0400
 #_01BD50: STA.w $052A
+
 #_01BD53: LDX.w #$0180
 
-.branch01BD56
+.find_slot
 #_01BD56: LDA.w $1000,X
-#_01BD59: BPL .branch01BD6A
+#_01BD59: BPL .free_slot
 
 #_01BD5B: TXA
 #_01BD5C: CLC
 #_01BD5D: ADC.w #$0060
 #_01BD60: TAX
+
 #_01BD61: CPX.w #$0600
-#_01BD64: BCC .branch01BD56
+#_01BD64: BCC .find_slot
 
 #_01BD66: JSL routine01CA65
 
-.branch01BD6A
+;---------------------------------------------------------------------------------------------------
+
+.free_slot
 #_01BD6A: LDY.w #$0000
 
-.branch01BD6D
+.swap_next_stat
 #_01BD6D: PHY
+
 #_01BD6E: LDY.w $0526
+
 #_01BD71: LDA.w $1000,Y
 #_01BD74: STA.w $1000,X
+
 #_01BD77: INC.w $0526
+
 #_01BD7A: INX
+
 #_01BD7B: PLY
 #_01BD7C: INY
 #_01BD7D: CPY.w #$0060
-#_01BD80: BCC .branch01BD6D
+#_01BD80: BCC .swap_next_stat
+
+;---------------------------------------------------------------------------------------------------
 
 #_01BD82: TXA
 #_01BD83: SEC
 #_01BD84: SBC.w #$0060
 #_01BD87: TAX
+
 #_01BD88: LDA.w #$0000
 #_01BD8B: STA.w $1002,X
 #_01BD8E: STA.w $1008,X
+
 #_01BD91: LDA.w $1030,X
 #_01BD94: STA.w $102E,X
+
 #_01BD97: LDA.w $1034,X
 #_01BD9A: STA.w $1032,X
+
 #_01BD9D: LDA.w #$FFFF
 #_01BDA0: STA.w $0566
+
 #_01BDA3: PLP
 #_01BDA4: SEC
+
 #_01BDA5: RTS
 
 ;===================================================================================================
@@ -9703,7 +9760,7 @@ CombatMenu_Auto:
 ;===================================================================================================
 
 branch01BDBE:
-#_01BDBE: JSR routine01C0D0
+#_01BDBE: JSR DecideEnemyAttacks
 
 #_01BDC1: LDA.w $052A
 #_01BDC4: AND.w #$0800
@@ -10147,6 +10204,7 @@ SelectSpecialMove:
 .not_even_special
 #_01C037: INX
 #_01C038: INX
+
 #_01C039: CPY.w #$0003
 #_01C03C: BCC .find_which_special_to_use
 
@@ -10263,21 +10321,21 @@ PickEnemyToAttack:
 
 ;===================================================================================================
 
-routine01C0D0:
+DecideEnemyAttacks:
 #_01C0D0: LDX.w #$0600
 
-.branch01C0D3
+.next_enemy
 #_01C0D3: STX.w $0502
 
 #_01C0D6: LDA.w $1000,X
-#_01C0D9: BPL .branch01C14D
+#_01C0D9: BPL .skip
 
 #_01C0DB: LDA.w $1002,X
 #_01C0DE: BIT.w #$F170
-#_01C0E1: BNE .branch01C14D
+#_01C0E1: BNE .skip
 
 #_01C0E3: BIT.w #$0604
-#_01C0E6: BNE .branch01C144
+#_01C0E6: BNE .normal_attack
 
 #_01C0E8: LDA.w $103C,X
 #_01C0EB: AND.w #$001F
@@ -10286,140 +10344,161 @@ routine01C0D0:
 #_01C0EF: LDY.w #$0004
 #_01C0F2: LDA.w #data07CB96
 #_01C0F5: JSR GetDynamicSuccessiveHitChances
+
 #_01C0F8: DEX
-#_01C0F9: BMI .branch01C144
+#_01C0F9: BMI .normal_attack
 
 #_01C0FB: TXA
 #_01C0FC: ASL A
 #_01C0FD: CLC
 #_01C0FE: ADC.w $0502
 #_01C101: TAY
+
 #_01C102: LDA.w $103E,Y
 #_01C105: CMP.w #$006A
-#_01C108: BCC .branch01C114
+#_01C108: BCC .do_extra
 
 #_01C10A: CMP.w #$0073
-#_01C10D: BCC .branch01C144
+#_01C10D: BCC .normal_attack
 
 #_01C10F: CMP.w #$0076
-#_01C112: BCS .branch01C144
+#_01C112: BCS .normal_attack
 
-.branch01C114
+.do_extra
 #_01C114: LDX.w $0502
+
 #_01C117: STA.w $1058,X
+
 #_01C11A: CMP.w #$0040
-#_01C11D: BCS .branch01C13F
+#_01C11D: BCS .extra
 
 #_01C11F: CMP.w #$003E
-#_01C122: BCS .branch01C144
+#_01C122: BCS .normal_attack
 
 #_01C124: LDY.w #$0001
 #_01C127: JSL GetSkillProperty
 #_01C12B: AND.w #$FF00
-#_01C12E: BPL .branch01C13A
+#_01C12E: BPL .doesnt_target_friends
 
 #_01C130: CMP.w #$FF00
-#_01C133: BEQ .branch01C13A
+#_01C133: BEQ .doesnt_target_friends
 
-#_01C135: JSR routine01C15E
-#_01C138: BCS .branch01C144
+#_01C135: JSR SearchForSuitableEnemyPartnerToHelp
+#_01C138: BCS .normal_attack
 
-.branch01C13A
+.doesnt_target_friends
 #_01C13A: LDA.w #$0004
+
 #_01C13D: BRA .branch01C147
 
-.branch01C13F
+.extra
 #_01C13F: LDA.w #$0002
+
 #_01C142: BRA .branch01C147
 
-.branch01C144
+.normal_attack
 #_01C144: LDA.w #$0001
 
 .branch01C147
 #_01C147: LDX.w $0502
+
 #_01C14A: STA.w $1008,X
 
-.branch01C14D
+;---------------------------------------------------------------------------------------------------
+
+.skip
 #_01C14D: LDA.w $0502
 #_01C150: CLC
 #_01C151: ADC.w #$0060
 #_01C154: TAX
-#_01C155: CPX.w #$0900
-#_01C158: BCS .branch01C15D
 
-#_01C15A: JMP .branch01C0D3
+#_01C155: CPX.w #$0900
+#_01C158: BCS .exit
+
+#_01C15A: JMP .next_enemy
 
 ;---------------------------------------------------------------------------------------------------
 
-.branch01C15D
+.exit
 #_01C15D: RTS
 
 ;===================================================================================================
 
-routine01C15E:
+SearchForSuitableEnemyPartnerToHelp:
 #_01C15E: XBA
 #_01C15F: AND.w #$0007
-#_01C162: BEQ .branch01C18C
+#_01C162: BEQ .ignore_status
 
 #_01C164: CMP.w #$0002
-#_01C167: BEQ .branch01C16B
+#_01C167: BEQ .continue
 
 #_01C169: SEC
 #_01C16A: RTS
 
-.branch01C16B
+;---------------------------------------------------------------------------------------------------
+
+.continue
 #_01C16B: LDY.w #$0600
 
-.branch01C16E
+.search_for_afflicted
 #_01C16E: LDA.w $1000,Y
-#_01C171: BPL .branch01C180
+#_01C171: BPL .cannot_cure
 
 #_01C173: LDA.w $1002,Y
 #_01C176: AND.w #$C000
-#_01C179: BNE .branch01C180
+#_01C179: BNE .cannot_cure
 
 #_01C17B: LDA.w $1002,Y
-#_01C17E: BNE .branch01C1B0
+#_01C17E: BNE .found_unhealthy_teammate
 
-.branch01C180
+.cannot_cure
 #_01C180: TYA
 #_01C181: CLC
 #_01C182: ADC.w #$0060
 #_01C185: TAY
+
 #_01C186: CPY.w #$0900
-#_01C189: BCC .branch01C16E
+#_01C189: BCC .search_for_afflicted
 
 #_01C18B: RTS
 
-.branch01C18C
+;---------------------------------------------------------------------------------------------------
+
+.ignore_status
 #_01C18C: LDY.w #$0600
 
-.branch01C18F
+.search_for_heal_target
 #_01C18F: LDA.w $1000,Y
-#_01C192: BPL .branch01C1A4
+#_01C192: BPL .cannot_heal
 
 #_01C194: LDA.w $1002,Y
 #_01C197: AND.w #$C000
-#_01C19A: BNE .branch01C1A4
+#_01C19A: BNE .cannot_heal
 
 #_01C19C: LDA.w $102E,Y
 #_01C19F: CMP.w $1030,Y
-#_01C1A2: BCC .branch01C1B0
+#_01C1A2: BCC .found_unhealthy_teammate
 
-.branch01C1A4
+.cannot_heal
 #_01C1A4: TYA
 #_01C1A5: CLC
 #_01C1A6: ADC.w #$0060
 #_01C1A9: TAY
+
 #_01C1AA: CPY.w #$0900
-#_01C1AD: BCC .branch01C18F
+#_01C1AD: BCC .search_for_heal_target
 
 #_01C1AF: RTS
 
-.branch01C1B0
+;---------------------------------------------------------------------------------------------------
+
+.found_unhealthy_teammate
 #_01C1B0: TYA
+
 #_01C1B1: LDX.w $0502
+
 #_01C1B4: STA.w $105A,X
+
 #_01C1B7: CLC
 #_01C1B8: RTS
 
@@ -10465,6 +10544,8 @@ routine01C1B9:
 #_01C1EA: INC A
 #_01C1EB: LDX.w $0514
 #_01C1EE: BRA .branch01C1CF
+
+;---------------------------------------------------------------------------------------------------
 
 CalculateEscapeSuccess:
 #_01C1F0: LDA.w $052A
@@ -10632,15 +10713,17 @@ data01C309:
 data01C30A:
 #_01C30A: db $01,$FF,$00,$00,$FF,$01,$00
 
+;===================================================================================================
+
 routine01C311:
 #_01C311: STZ.w $0500
 
-.branch01C314
+.next
 #_01C314: LDY.w $0500
 #_01C317: LDX.w $0700,Y
 #_01C31A: BPL .branch01C31F
 
-#_01C31C: JMP .branch01C39B
+#_01C31C: JMP .done
 
 .branch01C31F
 #_01C31F: LDA.w $1002,X
@@ -10720,11 +10803,11 @@ routine01C311:
 #_01C38F: INC A
 #_01C390: STA.w $0500
 #_01C393: CMP.w #$000C
-#_01C396: BCS .branch01C39B
+#_01C396: BCS .done
 
-#_01C398: JMP .branch01C314
+#_01C398: JMP .next
 
-.branch01C39B
+.done
 #_01C39B: RTS
 
 ;===================================================================================================
@@ -10732,55 +10815,65 @@ routine01C311:
 routine01C39C:
 #_01C39C: LDA.w $1058,X
 #_01C39F: CMP.w #$0040
-#_01C3A2: BCC .branch01C3A9
+#_01C3A2: BCC .normal_spell
 
 #_01C3A4: CMP.w #$006A
-#_01C3A7: BCC .branch01C3DC
+#_01C3A7: BCC .extra
 
-.branch01C3A9
+.normal_spell
 #_01C3A9: TXY
+
 #_01C3AA: LDA.w $103E,Y
 #_01C3AD: CMP.w #$0040
-#_01C3B0: BCC .branch01C3B7
+#_01C3B0: BCC .move_1_spell
 
 #_01C3B2: CMP.w #$006A
-#_01C3B5: BCC .branch01C3D9
+#_01C3B5: BCC .using_extra
 
-.branch01C3B7
+.move_1_spell
 #_01C3B7: INY
 #_01C3B8: INY
+
 #_01C3B9: LDA.w $103E,Y
 #_01C3BC: CMP.w #$0040
-#_01C3BF: BCC .branch01C3C6
+#_01C3BF: BCC .move_2_spell
 
 #_01C3C1: CMP.w #$006A
-#_01C3C4: BCC .branch01C3D9
+#_01C3C4: BCC .using_extra
 
-.branch01C3C6
+.move_2_spell
 #_01C3C6: INY
 #_01C3C7: INY
 #_01C3C8: LDA.w $103E,Y
 #_01C3CB: CMP.w #$0040
-#_01C3CE: BCC .branch01C3D5
+#_01C3CE: BCC .move_3_spell
 
 #_01C3D0: CMP.w #$006A
-#_01C3D3: BCC .branch01C3D9
+#_01C3D3: BCC .using_extra
 
-.branch01C3D5
+.move_3_spell
 #_01C3D5: INY
 #_01C3D6: INY
-#_01C3D7: BRA .branch01C3E1
 
-.branch01C3D9
+#_01C3D7: BRA .fail
+
+;---------------------------------------------------------------------------------------------------
+
+.using_extra
 #_01C3D9: STA.w $1058,X
 
-.branch01C3DC
+.extra
 #_01C3DC: LDA.w #$0002
+
 #_01C3DF: CLC
+
 #_01C3E0: RTS
 
-.branch01C3E1
+;---------------------------------------------------------------------------------------------------
+
+.fail
 #_01C3E1: SEC
+
 #_01C3E2: RTS
 
 ;===================================================================================================

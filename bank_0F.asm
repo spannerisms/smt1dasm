@@ -19,21 +19,21 @@ routine0F8000:
 #_0F8011: PHK
 #_0F8012: PLB
 
-#_0F8013: LDA.w data0F8069,Y
+#_0F8013: LDA.w data0F8069+0,Y
 #_0F8016: AND.w #$00FF
 #_0F8019: STA.w $00E2
 
-#_0F801C: LDA.w data0F806A,Y
+#_0F801C: LDA.w data0F8069+1,Y
 #_0F801F: STA.w $00E0
 
-#_0F8022: LDA.w data0F806C,Y
+#_0F8022: LDA.w data0F8069+3,Y
 #_0F8025: ASL A
 #_0F8026: ASL A
 #_0F8027: ASL A
 #_0F8028: ASL A
 #_0F8029: STA.w $0E00
 
-#_0F802C: LDA.w data0F806D,Y
+#_0F802C: LDA.w data0F8069+4,Y
 #_0F802F: STA.w $0E02
 
 #_0F8032: SEP #$20
@@ -78,17 +78,11 @@ routine0F8000:
 #_0F8067: PLP
 #_0F8068: RTL
 
-; TODO merge
+; TODO
 data0F8069:
 #_0F8069: db $22
-
-data0F806A:
 #_0F806A: db $00,$A0
-
-data0F806C:
 #_0F806C: db $02
-
-data0F806D:
 #_0F806D: db $00,$20,$27,$00,$C0,$02,$00,$10
 
 ;===================================================================================================
@@ -1821,7 +1815,7 @@ routine0F8B94:
 #_0F8C2B: REP #$20
 #_0F8C2D: LDA.w #TerminalDestinationNamePointers
 #_0F8C30: STA.w $00C3
-#_0F8C33: JSL WriteIndexedEntityNameToBuffer_long
+#_0F8C33: JSL WriteIndexedEntityName_long
 
 #_0F8C37: LDA.w $0E04
 #_0F8C3A: CLC
@@ -2618,7 +2612,7 @@ CheckInventoryForCoolSwordOrVase:
 
 .have_valid_sword
 #_0F90BD: JSL GetNextTextByte_long
-#_0F90C1: JSL RelocateTextPointer_long
+#_0F90C1: JSL ChangeMessageID_long
 
 #_0F90C5: RTL
 
@@ -2640,7 +2634,7 @@ routine0F90C6:
 #_0F90D8: BEQ .dont_relocate
 
 #_0F90DA: JSL GetNextTextByte_long
-#_0F90DE: JSL RelocateTextPointer_long
+#_0F90DE: JSL ChangeMessageID_long
 
 #_0F90E2: RTL
 
@@ -2723,7 +2717,7 @@ routine0F90EB:
 
 #_0F9143: JSL AddItemToInventory_long
 #_0F9147: JSL GetNextTextByte_long
-#_0F914B: JSL RelocateTextPointer_long
+#_0F914B: JSL ChangeMessageID_long
 
 #_0F914F: PLB
 
@@ -3350,7 +3344,7 @@ routine0F94B2:
 
 #_0F94E9: LDA.w #ItemNamePointers
 #_0F94EC: STA.w $00C3
-#_0F94EF: JSL WriteIndexedEntityNameToBuffer_long
+#_0F94EF: JSL WriteIndexedEntityName_long
 
 #_0F94F3: SEP #$30
 
@@ -3754,7 +3748,7 @@ routine0F9696:
 
 #_0F96CB: JSL routine0384F9_long
 
-#_0F96CF: JSL RunFramesUntil0100IsFlagged
+#_0F96CF: JSL RunFramesUntilDrawBufferEmpties
 #_0F96D3: JSL Update19XXUntilInput
 
 #_0F96D7: JSL routine0F9720
@@ -3872,7 +3866,7 @@ routine0F9720:
 #_0F9760: BNE .next_char
 
 #_0F9762: JSL routine0384F9_long
-#_0F9766: JSL RunFramesUntil0100IsFlagged
+#_0F9766: JSL RunFramesUntilDrawBufferEmpties
 
 #_0F976A: REP #$20
 
@@ -4832,10 +4826,10 @@ routine0F9C77:
 #_0F9CF5: JSL routine00A17E
 
 #_0F9CF9: LDA.b #$01
-#_0F9CFB: JSL routine02CBD1
+#_0F9CFB: JSL SomeDMAPrep_02CBD1
 
 #_0F9CFF: LDA.b #$07
-#_0F9D01: JSL routine02CBD1
+#_0F9D01: JSL SomeDMAPrep_02CBD1
 
 #_0F9D05: LDA.b #$1F
 #_0F9D07: STA.w $0F74
@@ -4892,7 +4886,7 @@ routine0F9D30:
 
 .demon_badly_afflicted
 #_0F9D57: JSL GetNextTextByte_long
-#_0F9D5B: JSL RelocateTextPointer_long
+#_0F9D5B: JSL ChangeMessageID_long
 
 #_0F9D5F: RTL
 
@@ -4939,7 +4933,7 @@ routine0F9D65:
 
 .no_one_afflicted
 #_0F9D90: JSL GetNextTextByte_long
-#_0F9D94: JSL RelocateTextPointer_long
+#_0F9D94: JSL ChangeMessageID_long
 
 #_0F9D98: RTL
 
@@ -5785,7 +5779,7 @@ routine0FA25E:
 
 .branch0FA2A9
 #_0FA2A9: JSL GetNextTextByte_long
-#_0FA2AD: JSL RelocateTextPointer_long
+#_0FA2AD: JSL ChangeMessageID_long
 #_0FA2B1: PLB
 #_0FA2B2: PLP
 #_0FA2B3: RTL
@@ -5928,7 +5922,7 @@ routine0FA333:
 
 .relocate
 #_0FA35E: JSL GetNextTextByte_long
-#_0FA362: JSL RelocateTextPointer_long
+#_0FA362: JSL ChangeMessageID_long
 
 #_0FA366: PLB
 
@@ -6053,7 +6047,7 @@ routine0FAEF9:
 
 .relocate
 #_0FA409: JSL GetNextTextByte_long
-#_0FA40D: JSL RelocateTextPointer_long
+#_0FA40D: JSL ChangeMessageID_long
 
 #_0FA411: RTL
 
@@ -6125,7 +6119,7 @@ routine0FA412:
 
 .relocate
 #_0FA467: JSL GetNextTextByte_long
-#_0FA46B: JSL RelocateTextPointer_long
+#_0FA46B: JSL ChangeMessageID_long
 
 #_0FA46F: RTL
 
@@ -11975,11 +11969,12 @@ routine0FEBAD:
 #_0FEBB3: STA.w $0D11
 #_0FEBB6: STA.w $0D13
 
-.branch0FEBB9
+.next_byte
 #_0FEBB9: REP #$10
 #_0FEBBB: SEP #$20
+
 #_0FEBBD: LDX.w $0D0F
-#_0FEBC0: LDA.l UNREACH_1AF002,X
+#_0FEBC0: LDA.l Message_1AF002,X
 
 #_0FEBC4: CMP.b #$FC
 #_0FEBC6: BEQ .branch0FEBFA
@@ -11988,39 +11983,40 @@ routine0FEBAD:
 #_0FEBCA: BEQ .branch0FEC0E
 
 #_0FEBCC: CMP.b #$FA
-
 #_0FEBCE: BEQ .branch0FEBFA
 
 #_0FEBD0: CMP.b #$FF
 #_0FEBD2: BEQ .branch0FEC20
 
 #_0FEBD4: CMP.b #$ED
-#_0FEBD6: BEQ .branch0FEC3B
+#_0FEBD6: BEQ .write_character_name
 
 #_0FEBD8: CMP.b #$EE
-#_0FEBDA: BEQ .branch0FEC3B
+#_0FEBDA: BEQ .write_character_name
 
 #_0FEBDC: CMP.b #$EF
-#_0FEBDE: BEQ .branch0FEC3B
+#_0FEBDE: BEQ .write_character_name
 
 #_0FEBE0: CMP.b #$F0
-#_0FEBE2: BEQ .branch0FEC3B
+#_0FEBE2: BEQ .write_character_name
 
 #_0FEBE4: CMP.b #$CF
-#_0FEBE6: BEQ .branch0FEBF2
+#_0FEBE6: BEQ .space
 
 #_0FEBE8: CMP.b #$D6
 #_0FEBEA: BEQ .branch0FEC6A
 
-#_0FEBEC: JMP .branch0FEC9F
+#_0FEBEC: JMP .check_more_commands
 
-.branch0FEBEF
-#_0FEBEF: JSR routine0FEDE5
+.add_character
+#_0FEBEF: JSR Credits_DrawCharacter
 
-.branch0FEBF2
+.space
 #_0FEBF2: REP #$20
 #_0FEBF4: INC.w $0CF5
 #_0FEBF7: JMP .branch0FED44
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FEBFA
 #_0FEBFA: REP #$20
@@ -12029,7 +12025,7 @@ routine0FEBAD:
 #_0FEC02: LDA.w #$3A64
 #_0FEC05: STA.w $0CF5
 #_0FEC08: JSR WaitForNMIthenProhibit
-#_0FEC0B: JMP .branch0FED47
+#_0FEC0B: JMP .to_next_byte
 
 .branch0FEC0E
 #_0FEC0E: REP #$20
@@ -12038,7 +12034,7 @@ routine0FEBAD:
 #_0FEC16: CLC
 #_0FEC17: ADC.w #$0044
 #_0FEC1A: STA.w $0CF5
-#_0FEC1D: JMP .branch0FED47
+#_0FEC1D: JMP .to_next_byte
 
 .branch0FEC20
 #_0FEC20: REP #$20
@@ -12059,7 +12055,9 @@ routine0FEBAD:
 #_0FEC39: PLP
 #_0FEC3A: RTS
 
-.branch0FEC3B
+;---------------------------------------------------------------------------------------------------
+
+.write_character_name
 #_0FEC3B: REP #$20
 #_0FEC3D: AND.w #$00FF
 
@@ -12078,7 +12076,7 @@ routine0FEBAD:
 
 #_0FEC52: PHY
 #_0FEC53: PHX
-#_0FEC54: JSR routine0FEDE5
+#_0FEC54: JSR Credits_DrawCharacter
 #_0FEC57: JSR routine0FED4F
 
 #_0FEC5A: REP #$20
@@ -12092,23 +12090,23 @@ routine0FEBAD:
 #_0FEC65: BNE .branch0FEC4B
 
 .branch0FEC67
-#_0FEC67: JMP .branch0FED47
+#_0FEC67: JMP .to_next_byte
 
 .branch0FEC6A
 #_0FEC6A: SEP #$20
 #_0FEC6C: REP #$10
 #_0FEC6E: LDX.w $0D0F
 #_0FEC71: INX
-#_0FEC72: LDA.l UNREACH_1AF002,X
+#_0FEC72: LDA.l Message_1AF002,X
 #_0FEC76: STA.w $0A6A
 #_0FEC79: INX
-#_0FEC7A: LDA.l UNREACH_1AF002,X
+#_0FEC7A: LDA.l Message_1AF002,X
 #_0FEC7E: STA.w $0A69
 #_0FEC81: INX
-#_0FEC82: LDA.l UNREACH_1AF002,X
+#_0FEC82: LDA.l Message_1AF002,X
 #_0FEC86: STA.w $0A6B
 #_0FEC89: INX
-#_0FEC8A: LDA.l UNREACH_1AF002,X
+#_0FEC8A: LDA.l Message_1AF002,X
 #_0FEC8E: STA.w $0A6D
 #_0FEC91: PHX
 #_0FEC92: PHY
@@ -12116,9 +12114,11 @@ routine0FEBAD:
 #_0FEC97: PLY
 #_0FEC98: PLX
 #_0FEC99: STX.w $0D0F
-#_0FEC9C: JMP .branch0FED47
+#_0FEC9C: JMP .to_next_byte
 
-.branch0FEC9F
+;---------------------------------------------------------------------------------------------------
+
+.check_more_commands
 #_0FEC9F: CMP.b #$D1
 #_0FECA1: BEQ .branch0FECF9
 
@@ -12137,7 +12137,9 @@ routine0FEBAD:
 #_0FECB3: CMP.b #$DF
 #_0FECB5: BEQ .branch0FECBA
 
-#_0FECB7: JMP .branch0FEBEF
+#_0FECB7: JMP .add_character
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FECBA
 #_0FECBA: REP #$20
@@ -12153,14 +12155,16 @@ routine0FEBAD:
 #_0FECCB: BRA .branch0FECC1
 
 .branch0FECCD
-#_0FECCD: JMP .branch0FED47
+#_0FECCD: JMP .to_next_byte
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FECD0
 #_0FECD0: SEP #$20
 #_0FECD2: JSR WaitForNMIthenProhibit
 #_0FECD5: INX
 #_0FECD6: STX.w $0D0F
-#_0FECD9: LDA.l UNREACH_1AF002,X
+#_0FECD9: LDA.l Message_1AF002,X
 
 #_0FECDD: REP #$20
 #_0FECDF: AND.w #$00FF
@@ -12175,41 +12179,49 @@ routine0FEBAD:
 #_0FECEC: LDA.w #$0020
 #_0FECEF: JSR routine0FEB92
 #_0FECF2: JSR WaitForNMIthenProhibit
-#_0FECF5: JMP .branch0FED47
+#_0FECF5: JMP .to_next_byte
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FECF9
 #_0FECF8: SEP #$20
 #_0FECFA: INX
-#_0FECFB: LDA.l UNREACH_1AF002,X
+#_0FECFB: LDA.l Message_1AF002,X
 #_0FECFF: STA.w $0D12
 #_0FED02: BRA .branch0FED0E
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FED04
 #_0FED04: SEP #$20
 #_0FED06: INX
-#_0FED07: LDA.l UNREACH_1AF002,X
+#_0FED07: LDA.l Message_1AF002,X
 #_0FED0B: STA.w $0CF7
 
 .branch0FED0E
 #_0FED0E: LDA.b #$00
 #_0FED10: STA.w $0D11
+
 #_0FED13: STX.w $0D0F
-#_0FED16: BRA .branch0FED47
+#_0FED16: BRA .to_next_byte
 
 .branch0FED18
 #_0FED18: SEP #$20
 #_0FED1A: INX
-#_0FED1B: LDA.l UNREACH_1AF002,X
+#_0FED1B: LDA.l Message_1AF002,X
 #_0FED1F: STA.w $0D14
 #_0FED22: LDA.b #$00
 #_0FED24: STA.w $0D13
 #_0FED27: STX.w $0D0F
-#_0FED2A: BRA .branch0FED47
+#_0FED2A: BRA .to_next_byte
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FED2C
 #_0FED2C: SEP #$20
+
 #_0FED2E: INX
-#_0FED2F: LDA.l UNREACH_1AF002,X
+#_0FED2F: LDA.l Message_1AF002,X
 
 #_0FED33: REP #$20
 #_0FED35: AND.w #$00FF
@@ -12221,15 +12233,19 @@ routine0FEBAD:
 #_0FED3D: BNE .branch0FED39
 
 #_0FED3F: STX.w $0D0F
-#_0FED42: BRA .branch0FED47
+#_0FED42: BRA .to_next_byte
 
 .branch0FED44
 #_0FED44: JSR routine0FED4F
 
-.branch0FED47
+.to_next_byte
 #_0FED47: REP #$20
+
 #_0FED49: INC.w $0D0F
-#_0FED4C: JMP .branch0FEBB9
+
+#_0FED4C: JMP .next_byte
+
+;===================================================================================================
 
 routine0FED4F:
 #_0FED4F: SEP #$20
@@ -12240,10 +12256,10 @@ routine0FED4F:
 #_0FED57: AND.w #$00FF
 #_0FED5A: TAY
 
-.branch0FED5B
+.wait
 #_0FED5B: JSR routine0FED63
 #_0FED5E: DEY
-#_0FED5F: BNE .branch0FED5B
+#_0FED5F: BNE .wait
 
 #_0FED61: PLY
 #_0FED62: RTS
@@ -12352,7 +12368,7 @@ routine0FED89:
 
 ;===================================================================================================
 
-routine0FEDE5:
+Credits_DrawCharacter:
 #_0FEDE5: PHP
 #_0FEDE6: SEP #$20
 #_0FEDE8: REP #$10
@@ -13231,14 +13247,11 @@ routine0FF361:
 #_0FF39F: RTS
 
 ;===================================================================================================
-; TODO more text..................
 
 ; "かんじるか?"
 ; "せかいを・・・ うちゅうを・・・"
 ; "おまえたちは そのいちぶであり すべてである"
 ; "ほうも こんとんも そのなかに ふくまれるのじゃ"
-
-
 data0FF3A0:
 #_0FF3A0: db $2A, $52, $A2, $4D, $2A, $95           ; "かんじるか?"
 #_0FF3A6: db $F9
@@ -13278,6 +13291,7 @@ data0FF3A0:
 #_0FF41D: db $3D, $CF, $45, $3C, $3D, $CF, $2E      ; "の むねの こ"
 #_0FF424: db $AA, $27, $47, $CF, $44, $39           ; "どうも みな"
 #_0FF42A: db $93, $93, $93 ; "・・・"
+
 #_0FF42C: db $FF
 
 ;---------------------------------------------------------------------------------------------------
@@ -13542,26 +13556,33 @@ routine0FF581:
 routine0FF5B0:
 #_0FF5B0: PHP
 #_0FF5B1: REP #$30
+
 #_0FF5B3: JSR DisableNMIwithFBlank
 #_0FF5B6: JSR EmptyLast32KBofVRAM
+
 #_0FF5B9: LDA.w #$1000
 #_0FF5BC: STA.w $0D11
 #_0FF5BF: STA.w $0D13
+
 #_0FF5C2: LDA.w #$0000
 #_0FF5C5: STA.w $0D0F
+
 #_0FF5C8: JSR EnableNMIwithBrightness0
 #_0FF5CB: JSR AddGrayScaleTextPalette
 
-.branch0FF5CE
+;---------------------------------------------------------------------------------------------------
+
+.next_char
 #_0FF5CE: REP #$10
 #_0FF5D0: SEP #$20
 #_0FF5D2: LDX.w $0D0F
-#_0FF5D5: LDA.l UNREACH_1AF802,X
+#_0FF5D5: LDA.l Message_1AF802,X
+
 #_0FF5D9: CMP.b #$F9
-#_0FF5DB: BEQ .branch0FF632
+#_0FF5DB: BEQ .newline
 
 #_0FF5DD: CMP.b #$FA
-#_0FF5DF: BEQ .branch0FF607
+#_0FF5DF: BEQ .clear_maybe
 
 #_0FF5E1: CMP.b #$FF
 #_0FF5E3: BEQ .branch0FF644
@@ -13579,19 +13600,23 @@ routine0FF5B0:
 #_0FF5F3: BEQ .branch0FF65F
 
 #_0FF5F5: CMP.b #$CF
-#_0FF5F7: BEQ .branch0FF5FF
+#_0FF5F7: BEQ .space
 
-#_0FF5F9: JMP .branch0FF6CB
+#_0FF5F9: JMP .check_more_commands
 
 .branch0FF5FC
-#_0FF5FC: JSR routine0FEDE5
+#_0FF5FC: JSR Credits_DrawCharacter
 
-.branch0FF5FF
+.space
 #_0FF5FF: REP #$20
+
 #_0FF601: INC.w $0CF5
+
 #_0FF604: JMP .branch0FF810
 
-.branch0FF607
+;---------------------------------------------------------------------------------------------------
+
+.clear_maybe
 #_0FF607: SEP #$20
 #_0FF609: LDA.w $0D13
 #_0FF60C: BEQ .branch0FF622
@@ -13602,25 +13627,32 @@ routine0FF5B0:
 #_0FF616: LDA.w #$3D04
 #_0FF619: STA.w $0CF5
 #_0FF61C: JSR WaitForNMIthenProhibit
-#_0FF61F: JMP .branch0FF813
+#_0FF61F: JMP .to_next_char
 
 .branch0FF622
 #_0FF622: SEP #$20
 #_0FF624: JSR routine0FF86F
 
 #_0FF627: REP #$20
+
 #_0FF629: LDA.w #$3E04
 #_0FF62C: STA.w $0CF5
-#_0FF62F: JMP .branch0FF813
+#_0FF62F: JMP .to_next_char
 
-.branch0FF632
+;---------------------------------------------------------------------------------------------------
+
+.newline
 #_0FF632: REP #$20
+
 #_0FF634: LDA.w $0CF5
 #_0FF637: AND.w #$FFE0
 #_0FF63A: CLC
 #_0FF63B: ADC.w #$0044
 #_0FF63E: STA.w $0CF5
-#_0FF641: JMP .branch0FF813
+
+#_0FF641: JMP .to_next_char
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FF644
 #_0FF644: REP #$20
@@ -13647,8 +13679,6 @@ routine0FF5B0:
 
 #_0FF664: SEP #$20
 #_0FF666: AND.b #$03
-
-Vestigial_0FF668:
 #_0FF668: ASL A
 #_0FF669: ASL A
 #_0FF66A: ASL A
@@ -13662,7 +13692,7 @@ Vestigial_0FF668:
 
 #_0FF676: PHY
 #_0FF677: PHX
-#_0FF678: JSR routine0FEDE5
+#_0FF678: JSR Credits_DrawCharacter
 #_0FF67B: JSR routine0FF81B
 
 #_0FF67E: REP #$20
@@ -13676,23 +13706,25 @@ Vestigial_0FF668:
 #_0FF689: BNE .branch0FF66F
 
 .branch0FF68B
-#_0FF68B: JMP .branch0FF813
+#_0FF68B: JMP .to_next_char
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FF68E
 #_0FF68E: SEP #$20
 #_0FF690: REP #$10
 #_0FF692: LDX.w $0D0F
 #_0FF695: INX
-#_0FF696: LDA.l UNREACH_1AF802,X
+#_0FF696: LDA.l Message_1AF802,X
 #_0FF69A: STA.w $0A6A
 #_0FF69D: INX
-#_0FF69E: LDA.l UNREACH_1AF802,X
+#_0FF69E: LDA.l Message_1AF802,X
 #_0FF6A2: STA.w $0A69
 #_0FF6A5: INX
-#_0FF6A6: LDA.l UNREACH_1AF802,X
+#_0FF6A6: LDA.l Message_1AF802,X
 #_0FF6AA: STA.w $0A6B
 #_0FF6AD: INX
-#_0FF6AE: LDA.l UNREACH_1AF802,X
+#_0FF6AE: LDA.l Message_1AF802,X
 #_0FF6B2: STA.w $0A6D
 #_0FF6B5: PHX
 #_0FF6B6: PHY
@@ -13704,9 +13736,11 @@ Vestigial_0FF668:
 #_0FF6C3: PLY
 #_0FF6C4: PLX
 #_0FF6C5: STX.w $0D0F
-#_0FF6C8: JMP .branch0FF813
+#_0FF6C8: JMP .to_next_char
 
-.branch0FF6CB
+;---------------------------------------------------------------------------------------------------
+
+.check_more_commands
 #_0FF6CB: SEP #$20
 #_0FF6CD: CMP.b #$D6
 #_0FF6CF: BEQ .branch0FF68E
@@ -13715,12 +13749,14 @@ Vestigial_0FF668:
 #_0FF6D3: BEQ .branch0FF740
 
 #_0FF6D5: CMP.b #$DF
-#_0FF6D7: BEQ .branch0FF714
+#_0FF6D7: BEQ .draw_X_spaces
 
 #_0FF6D9: CMP.b #$E6
 #_0FF6DB: BEQ .branch0FF6E0
 
-#_0FF6DD: JMP .branch0FF7D9
+#_0FF6DD: JMP .even_more_possible_commands
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FF6E0
 #_0FF6E0: JSR EnableNMIwithBrightness0
@@ -13728,29 +13764,31 @@ Vestigial_0FF668:
 #_0FF6E3: SEP #$20
 #_0FF6E5: LDX.w $0D0F
 #_0FF6E8: INX
-#_0FF6E9: LDA.l UNREACH_1AF802,X
+#_0FF6E9: LDA.l Message_1AF802,X
 #_0FF6ED: STA.w $040D
 #_0FF6F0: INX
-#_0FF6F1: LDA.l UNREACH_1AF802,X
+#_0FF6F1: LDA.l Message_1AF802,X
 #_0FF6F5: STA.w $0710
 #_0FF6F8: INX
-#_0FF6F9: LDA.l UNREACH_1AF802,X
+#_0FF6F9: LDA.l Message_1AF802,X
 #_0FF6FD: STA.w $070C
 #_0FF700: INX
-#_0FF701: LDA.l UNREACH_1AF802,X
+#_0FF701: LDA.l Message_1AF802,X
 #_0FF705: STA.w $070D
 #_0FF708: STX.w $0D0F
 #_0FF70B: PHP
 #_0FF70C: JSL routine00C7AA
 #_0FF710: PLP
-#_0FF711: JMP .branch0FF813
+#_0FF711: JMP .to_next_char
 
-.branch0FF714
+;---------------------------------------------------------------------------------------------------
+
+.draw_X_spaces
 #_0FF714: SEP #$20
 #_0FF716: LDX.w $0D0F
 #_0FF719: INX
 #_0FF71A: STX.w $0D0F
-#_0FF71D: LDA.l UNREACH_1AF802,X
+#_0FF71D: LDA.l Message_1AF802,X
 
 #_0FF721: REP #$20
 #_0FF723: AND.w #$00FF
@@ -13760,7 +13798,7 @@ Vestigial_0FF668:
 #_0FF727: SEP #$20
 #_0FF729: PHY
 #_0FF72A: LDA.b #$CF
-#_0FF72C: JSR routine0FEDE5
+#_0FF72C: JSR Credits_DrawCharacter
 #_0FF72F: JSR routine0FF81B
 
 #_0FF732: REP #$20
@@ -13771,7 +13809,9 @@ Vestigial_0FF668:
 #_0FF73A: DEY
 #_0FF73B: BNE .branch0FF727
 
-#_0FF73D: JMP .branch0FF813
+#_0FF73D: JMP .to_next_char
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FF740
 #_0FF740: JSR EnableNMIwithBrightness0
@@ -13780,7 +13820,7 @@ Vestigial_0FF668:
 #_0FF745: LDX.w $0D0F
 #_0FF748: INX
 #_0FF749: STX.w $0D0F
-#_0FF74C: LDA.l UNREACH_1AF802,X
+#_0FF74C: LDA.l Message_1AF802,X
 #_0FF750: STA.w $0A59
 
 #_0FF753: REP #$20
@@ -13789,12 +13829,14 @@ Vestigial_0FF668:
 #_0FF75B: JSL routine02E32D
 
 #_0FF75F: REP #$30
-#_0FF761: JMP .branch0FF813
+#_0FF761: JMP .to_next_char
 
-.branch0FF764
+;---------------------------------------------------------------------------------------------------
+
+.darken_screen
 #_0FF764: JSR SlowlyDarkenScreen
 
-.branch0FF767
+.clear_screen
 #_0FF767: SEP #$20
 #_0FF769: JSR DisableNMIwithFBlank
 #_0FF76C: LDA.b #$01
@@ -13816,9 +13858,11 @@ Vestigial_0FF668:
 #_0FF798: REP #$20
 #_0FF79A: LDA.w #$3D04
 #_0FF79D: STA.w $0CF5
-#_0FF7A0: JMP .branch0FF813
+#_0FF7A0: JMP .to_next_char
 
-.branch0FF7A3
+;---------------------------------------------------------------------------------------------------
+
+.brighten_screen
 #_0FF7A3: SEP #$20
 #_0FF7A5: JSR DisableNMIwithFBlank
 #_0FF7A8: LDA.b #$00
@@ -13833,31 +13877,40 @@ Vestigial_0FF668:
 #_0FF7BF: REP #$20
 #_0FF7C1: LDA.w #$3E04
 #_0FF7C4: STA.w $0CF5
-#_0FF7C7: JMP .branch0FF813
+#_0FF7C7: JMP .to_next_char
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FF7CA
 #_0FF7CA: SEP #$20
-#_0FF7CC: INX
-#_0FF7CD: LDA.l UNREACH_1AF802,X
-#_0FF7D1: STA.w $0D14
-#_0FF7D4: STX.w $0D0F
-#_0FF7D7: BRA .branch0FF813
 
-.branch0FF7D9
+#_0FF7CC: INX
+
+#_0FF7CD: LDA.l Message_1AF802,X
+#_0FF7D1: STA.w $0D14
+
+#_0FF7D4: STX.w $0D0F
+
+#_0FF7D7: BRA .to_next_char
+
+;---------------------------------------------------------------------------------------------------
+
+.even_more_possible_commands
 #_0FF7D9: SEP #$20
+
 #_0FF7DB: CMP.b #$D1
 #_0FF7DD: BNE .branch0FF7E2
 
-#_0FF7DF: JMP .branch0FF764
+#_0FF7DF: JMP .darken_screen
 
 .branch0FF7E2
 #_0FF7E2: CMP.b #$D0
-#_0FF7E4: BEQ .branch0FF7A3
+#_0FF7E4: BEQ .brighten_screen
 
 #_0FF7E6: CMP.b #$D2
 #_0FF7E8: BNE .branch0FF7ED
 
-#_0FF7EA: JMP .branch0FF767
+#_0FF7EA: JMP .clear_screen
 
 .branch0FF7ED
 #_0FF7ED: CMP.b #$E1
@@ -13868,10 +13921,12 @@ Vestigial_0FF668:
 
 #_0FF7F5: JMP .branch0FF5FC
 
+;---------------------------------------------------------------------------------------------------
+
 .branch0FF7F8
 #_0FF7F8: SEP #$20
 #_0FF7FA: INX
-#_0FF7FB: LDA.l UNREACH_1AF802,X
+#_0FF7FB: LDA.l Message_1AF802,X
 
 #_0FF7FF: REP #$20
 #_0FF801: AND.w #$00FF
@@ -13883,15 +13938,21 @@ Vestigial_0FF668:
 #_0FF809: BNE .branch0FF805
 
 #_0FF80B: STX.w $0D0F
-#_0FF80E: BRA .branch0FF813
+#_0FF80E: BRA .to_next_char
+
+;---------------------------------------------------------------------------------------------------
 
 .branch0FF810
 #_0FF810: JSR routine0FF81B
 
-.branch0FF813
+;---------------------------------------------------------------------------------------------------
+
+.to_next_char
 #_0FF813: REP #$20
 #_0FF815: INC.w $0D0F
-#_0FF818: JMP .branch0FF5CE
+#_0FF818: JMP .next_char
+
+;---------------------------------------------------------------------------------------------------
 
 routine0FF81B:
 #_0FF81B: SEP #$20
@@ -14442,7 +14503,7 @@ Vestigial_0FFB70:
 #_0FFB9E: SEP #$20
 
 #_0FFBA0: LDA.b #$0F
-#_0FFBA2: JSR Vestigial_0FF668
+#_0FFBA2: JSR.w $0FF668
 #_0FFBA5: JSR Vestigial_0FFBDD
 
 #_0FFBA8: REP #$20
@@ -14452,7 +14513,7 @@ Vestigial_0FFB70:
 #_0FFBB0: SEP #$20
 
 #_0FFBB2: LDA.b #$18
-#_0FFBB4: JSR Vestigial_0FF668
+#_0FFBB4: JSR.w $0FF668
 #_0FFBB7: JSR Vestigial_0FFBDD
 
 #_0FFBBA: REP #$20
@@ -14462,7 +14523,7 @@ Vestigial_0FFB70:
 #_0FFBC2: SEP #$20
 
 #_0FFBC4: LDA.b #$0E
-#_0FFBC6: JSR Vestigial_0FF668
+#_0FFBC6: JSR.w $0FF668
 #_0FFBC9: JSR Vestigial_0FFBDD
 
 #_0FFBCC: REP #$20
@@ -14473,7 +14534,7 @@ Vestigial_0FFB70:
 #_0FFBD4: SEP #$20
 
 #_0FFBD6: LDA.b #$9B
-#_0FFBD8: JSR Vestigial_0FF668
+#_0FFBD8: JSR.w $0FF668
 
 #_0FFBDB: PLP
 #_0FFBDC: RTS
